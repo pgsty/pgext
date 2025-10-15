@@ -127,12 +127,9 @@ func RecapMatrix() error {
 
 	// Call the reload_pkg procedure
 	logrus.Info("reload pgext.pkg")
-	// if _, err := ExecSQLContext(ctx, "CALL pgext.reload_pkg()"); err != nil {
-	// 	return fmt.Errorf("failed to refresh pkg: %w", err)
-	// }
 
-	// Apply fix-pkg.sql fixes
-	if err := applyPkgFixes(ctx); err != nil {
+	// Apply reload.sql
+	if err := applyReloadPkg(ctx); err != nil {
 		return fmt.Errorf("failed to apply pkg fixes: %w", err)
 	}
 
@@ -347,10 +344,7 @@ func processYumPackages(ctx context.Context) (int64, error) {
 
 // processAptPackages processes APT packages and inserts into package table
 func processAptPackages(ctx context.Context) (int64, error) {
-	query := `
-		SELECT repo_id, package, version, filename, sha256, size, size_install
-		FROM pgext.apt
-		ORDER BY repo_id, package`
+	query := `SELECT repo_id, package, version, filename, sha256, size, size_install FROM pgext.apt ORDER BY repo_id, package`
 
 	rows, err := QueryContext(ctx, query)
 	if err != nil {
@@ -573,28 +567,25 @@ func RecapPackages() error {
 	return RecapMatrix()
 }
 
-// applyPkgFixes executes db/fix-pkg.sql to apply fixes to pgext.pkg table
-func applyPkgFixes(ctx context.Context) error {
-	logrus.Info("applying pkg fixes from db/fix-pkg.sql...")
-
-	// Read fix-pkg.sql file
-	sqlBytes, err := db.ReadFile("fix-pkg.sql")
+// applyReloadPkg executes db/reload.sql to generate pgext.pkg table
+func applyReloadPkg(ctx context.Context) error {
+	logrus.Info("run db/reload.sql...")
+	sqlBytes, err := db.ReadFile("reload.sql")
 	if err != nil {
-		return fmt.Errorf("failed to read fix-pkg.sql: %w", err)
+		return fmt.Errorf("failed to read reload.sql: %w", err)
 	}
-
 	sqlContent := string(sqlBytes)
 
 	// Skip if file is empty or only contains comments/whitespace
 	trimmed := strings.TrimSpace(sqlContent)
 	if trimmed == "" || !containsSQL(trimmed) {
-		logrus.Debug("fix-pkg.sql is empty or contains no SQL statements, skipping")
+		logrus.Debug("reload.sql is empty, skip")
 		return nil
 	}
 
 	// Execute the SQL
 	if _, err := ExecSQLContext(ctx, sqlContent); err != nil {
-		return fmt.Errorf("failed to execute fix-pkg.sql: %w", err)
+		return fmt.Errorf("failed to execute reload.sql: %w", err)
 	}
 
 	logrus.Info("pkg fixes applied successfully")

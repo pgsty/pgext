@@ -466,8 +466,8 @@ COMMENT ON COLUMN pgext.bin.size_full IS 'Installed size';
 -----------------------------------
 -- Extension Package Availability
 -----------------------------------
--- DROP TYPE IF EXISTS pgext.pkg_state;
-CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK');
+-- DROP TYPE IF EXISTS pgext.pkg_state CASCADE;
+CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK','THROW');
 
 -- Cross-reference table showing extension package availability across PG versions and OS platforms
 -- DROP TABLE IF EXISTS pgext.pkg CASCADE;
@@ -478,7 +478,7 @@ CREATE TABLE IF NOT EXISTS pgext.pkg
     name    TEXT,                                   -- Versioned package name (e.g., 'postgresql-17-pgvector')
     pkg     TEXT,                                   -- Normalized extension package name (like pgvector, postgis)
     ext     TEXT REFERENCES pgext.extension (name), -- Leading extension name in this package
-    state   pgext.pkg_state DEFAULT 'MISS',         -- State: 0: OK, 1: Hide, 2: Break ,4: Miss
+    state   pgext.pkg_state DEFAULT 'MISS',         -- State: AVAIL, MISS, HIDE, BREAK, THROW
     hide    BOOLEAN         DEFAULT false,          -- Hide this entry in the extension category listing
     org     TEXT            DEFAULT NULL,           -- Repository source of latest package (pgdg or pigsty)
     version TEXT            DEFAULT NULL,           -- Latest available version for this combination
@@ -494,56 +494,10 @@ COMMENT ON COLUMN pgext.pkg.os IS 'OS and architecture identifier in format os_c
 COMMENT ON COLUMN pgext.pkg.pkg IS 'Normalized extension package name like pgvector, postgis';
 COMMENT ON COLUMN pgext.pkg.ext IS 'Leading extension name within this package';
 COMMENT ON COLUMN pgext.pkg.name IS 'Full versioned package name (e.g., postgresql-17-pgvector, postgresql-16-postgis)';
-COMMENT ON COLUMN pgext.pkg.state IS 'State code: 0=OK, 1=Hide, 2=Break (e.g deps issue), 4=Miss (no package)';
+COMMENT ON COLUMN pgext.pkg.state IS 'State code: AVAIL, MISS, HIDE, BREAK, THROW';
 COMMENT ON COLUMN pgext.pkg.org IS 'Latest package source organization (pgdg or pigsty)';
 COMMENT ON COLUMN pgext.pkg.version IS 'Latest available package version for this specific PG+OS combination';
 COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (including different repos and versions)';
-
------------------------------------
--- Procedure: Refresh Pkg
------------------------------------
-CREATE OR REPLACE PROCEDURE pgext.reload_pkg() AS $$
-BEGIN
-
-    RAISE NOTICE 'step 1/5: trucnate pgext.pkg ...';
-    TRUNCATE pgext.pkg;
-
-    RAISE NOTICE 'step 2/5: init pgext.pkg combinations ...';
-    INSERT INTO pgext.pkg (pg,os,name,pkg,ext)
-    SELECT pg,os,CASE os.os_type
-        WHEN 'rpm' THEN replace(replace(ext.rpm_pkg, '*', ''), '$v', pg::text)
-        WHEN 'deb' THEN replace(replace(ext.deb_pkg, '*', ''), '$v', pg::text) ELSE NULL END AS name,ext.pkg,ext.name
-    FROM (SELECT * FROM pgext.extension WHERE lead AND NOT contrib) ext,
-         (SELECT * FROM pgext.os WHERE active) os,
-         (SELECT * FROM pgext.pg WHERE active) pg;
-    -- special case handling
-    UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (13,14,15) AND os ~ 'el\d';
-    UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'postgis' AND position(' ' in name) > 0;
-
-    RAISE NOTICE 'step 3/5: update pgext.pkg package count';
-    UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.pg AND b.os = pkg.os AND b.name = pkg.name);
-
-    RAISE NOTICE 'step 4/5: update pgext.pkg org and version ...';
-    UPDATE pgext.pkg SET org = sub.org, version = sub.version
-    FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version FROM pgext.bin b,LATERAL (SELECT org FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version DESC) sub
-    WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
-
-    RAISE NOTICE 'step 5/5: update pgext.pkg state ...';
-    UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
-
-    RAISE NOTICE 'pgext.refresh_pkg complete';
-    UPDATE pgext.status SET recap_time = now();
-EXCEPTION
-    WHEN OTHERS THEN
-        RAISE EXCEPTION 'fail to refresh pgext.pkg: % (SQLSTATE: %)', SQLERRM, SQLSTATE;
-        ROLLBACK;
-END;
-$$ LANGUAGE PlPGSQL;
-
-COMMENT ON PROCEDURE pgext.reload_pkg() IS 'generate pgext.pkg availability matrix';
--- CALL pgext.reload_pkg();
--- VACUUM FULL pgext.pkg;
--- CLUSTER pgext.pkg USING pkg_pkg_os_pg_idx;
 
 -----------------------------------
 -- Domain: Semantic Version
