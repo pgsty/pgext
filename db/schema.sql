@@ -294,7 +294,7 @@ COMMENT ON COLUMN pgext.extension.mtime IS 'Last modification timestamp of this 
 -- YUM Packages
 -----------------------------------
 -- Parsed YUM/RPM repository package metadata from repomd.xml primary database
-DROP TABLE IF EXISTS pgext.dnf;
+-- DROP TABLE IF EXISTS pgext.dnf;
 CREATE TABLE IF NOT EXISTS pgext.dnf
 (
     repo             TEXT    NOT NULL REFERENCES pgext.repository (id), -- Repository identifier
@@ -360,7 +360,7 @@ COMMENT ON COLUMN pgext.dnf.checksum_type IS 'Checksum algorithm type (sha256, s
 -- APT Packages
 -----------------------------------
 -- Parsed APT/DEB repository package metadata from Packages files
-DROP TABLE IF EXISTS pgext.apt;
+-- DROP TABLE IF EXISTS pgext.apt;
 CREATE TABLE IF NOT EXISTS pgext.apt
 (
     repo         TEXT NOT NULL REFERENCES pgext.repository (id), -- Repository identifier
@@ -467,7 +467,7 @@ COMMENT ON COLUMN pgext.bin.size_full IS 'Installed size';
 -- Extension Package Availability
 -----------------------------------
 -- DROP TYPE IF EXISTS pgext.pkg_state;
-CREATE TYPE pgext.pkg_state AS ENUM ('OK', 'HIDE', 'BREAK', 'MISS');
+CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK');
 
 -- Cross-reference table showing extension package availability across PG versions and OS platforms
 -- DROP TABLE IF EXISTS pgext.pkg CASCADE;
@@ -502,7 +502,7 @@ COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (inclu
 -----------------------------------
 -- Procedure: Refresh Pkg
 -----------------------------------
-CREATE OR REPLACE PROCEDURE pgext.refresh_pkg() AS $$
+CREATE OR REPLACE PROCEDURE pgext.reload_pkg() AS $$
 BEGIN
 
     RAISE NOTICE 'step 1/5: trucnate pgext.pkg ...';
@@ -516,6 +516,9 @@ BEGIN
     FROM (SELECT * FROM pgext.extension WHERE lead AND NOT contrib) ext,
          (SELECT * FROM pgext.os WHERE active) os,
          (SELECT * FROM pgext.pg WHERE active) pg;
+    -- special case handling
+    UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (13,14,15) AND os ~ 'el\d';
+    UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'postgis' AND position(' ' in name) > 0;
 
     RAISE NOTICE 'step 3/5: update pgext.pkg package count';
     UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.pg AND b.os = pkg.os AND b.name = pkg.name);
@@ -526,7 +529,7 @@ BEGIN
     WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 
     RAISE NOTICE 'step 5/5: update pgext.pkg state ...';
-    UPDATE pgext.pkg SET state = 'OK' WHERE count > 0;
+    UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 
     RAISE NOTICE 'pgext.refresh_pkg complete';
     UPDATE pgext.status SET recap_time = now();
@@ -537,8 +540,8 @@ EXCEPTION
 END;
 $$ LANGUAGE PlPGSQL;
 
-COMMENT ON PROCEDURE pgext.refresh_pkg() IS 'generate pgext.pkg availability matrix';
--- CALL pgext.refresh_pkg();
+COMMENT ON PROCEDURE pgext.reload_pkg() IS 'generate pgext.pkg availability matrix';
+-- CALL pgext.reload_pkg();
 -- VACUUM FULL pgext.pkg;
 -- CLUSTER pgext.pkg USING pkg_pkg_os_pg_idx;
 

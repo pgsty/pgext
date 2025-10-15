@@ -101,3 +101,12 @@ func GetCSVFile(name string) ([]byte, error) {
 	}
 	return data, nil
 }
+
+// ReadFile returns content of any embedded file by name
+func ReadFile(name string) ([]byte, error) {
+	data, err := embeddedFS.ReadFile(name)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read embedded file %s: %w", name, err)
+	}
+	return data, nil
+}

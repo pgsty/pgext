@@ -30,6 +30,10 @@ var (
 	workers int
 	retry   int
 	keep    bool
+
+	// Query filter flags
+	pgVer    int
+	osFilter string
 )
 
 // rootCmd represents the base command
@@ -39,13 +43,14 @@ var rootCmd = &cobra.Command{
 	Long:  `pgext - PostgreSQL Extension Metadata Manager using PostgreSQL`,
 	Example: `
   pgext init                    # setup everything (schema + reload)
+
   pgext schema [-f]             # initialize pgext schema
-  pgext reload                  # reload data fetch + parse + recap
-  pgext fetch                   # fetch repo metadata
-  pgext parse                   # parse repo data
-  pgext recap                   # generate matrix
-  pgext load <table> [url]      # load CSV data into table
+  pgext reload                  # reload data: fetch + parse + recap
   pgext status                  # show metadata status
+
+  pgext pkg <name>              # show package availability matrix
+  pgext bin <name> -p 17 -o el9 # show binary packages with URLs
+  pgext ext <name>              # show extension information
 `,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		return setupLogging()
@@ -389,6 +394,71 @@ WARNING: This is irreversible and deletes all metadata.`,
 	PostRun: closeDatabase,
 }
 
+// pkgCmd shows package availability matrix
+var pkgCmd = &cobra.Command{
+	Use:   "pkg <name>",
+	Short: "show package availability matrix",
+	Long:  `Display the availability matrix for a specific extension package across PostgreSQL versions and operating systems.`,
+	Args:  cobra.ExactArgs(1),
+	Example: `
+  pgext pkg pgvector            # show pgvector availability
+  pgext pkg postgis             # show postgis availability
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		pkgName := args[0]
+		if err := cli.ShowPackage(pkgName); err != nil {
+			return fmt.Errorf("failed to show package: %w", err)
+		}
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
+// binCmd shows binary package information
+var binCmd = &cobra.Command{
+	Use:   "bin <name>",
+	Short: "show binary package information",
+	Long:  `Display binary packages from pgext.bin table with download URLs.`,
+	Args:  cobra.ExactArgs(1),
+	Example: `
+  pgext bin pgvector            # show all pgvector packages
+  pgext bin pgvector -p 17      # filter by PostgreSQL version
+  pgext bin pgvector -o el9     # filter by OS
+  pgext bin vector -p 17 -o u24 -r china
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		name := args[0]
+		if err := cli.ShowBin(name, pgVer, osFilter, region); err != nil {
+			return fmt.Errorf("failed to show bin: %w", err)
+		}
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
+// extCmd shows extension information
+var extCmd = &cobra.Command{
+	Use:   "ext <name>",
+	Short: "show extension information",
+	Long:  `Display detailed information about a specific extension from pgext.extension table.`,
+	Args:  cobra.ExactArgs(1),
+	Example: `
+  pgext ext pgvector            # show pgvector extension info
+  pgext ext postgis             # show postgis extension info
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		extName := args[0]
+		if err := cli.ShowExt(extName); err != nil {
+			return fmt.Errorf("failed to show extension: %w", err)
+		}
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
 // Helper functions
 
 func setupLogging() error {
@@ -459,7 +529,7 @@ func init() {
 	schemaCmd.Flags().BoolVarP(&force, "force", "f", false, "force recreate schema")
 
 	initCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
-	initCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
+	initCmd.Flags().IntVarP(&workers, "parallel", "p", 16, "concurrent workers")
 	initCmd.Flags().IntVar(&retry, "retry", 1, "retry attempts")
 
 	loadCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
@@ -477,6 +547,11 @@ func init() {
 	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
 	reloadCmd.Flags().IntVar(&retry, "retry", 1, "retry attempts")
 
+	// Query filter flags
+	binCmd.Flags().IntVarP(&pgVer, "pg", "p", 0, "PostgreSQL major version")
+	binCmd.Flags().StringVarP(&osFilter, "os", "o", "", "OS filter (e.g., el9, u24)")
+	binCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
+
 	// Add commands to root
 	rootCmd.AddCommand(initCmd)
 	rootCmd.AddCommand(schemaCmd)
@@ -487,5 +562,8 @@ func init() {
 	rootCmd.AddCommand(loadCmd)
 	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(repoCmd)
+	rootCmd.AddCommand(pkgCmd)
+	rootCmd.AddCommand(binCmd)
+	rootCmd.AddCommand(extCmd)
 	rootCmd.AddCommand(purgeCmd)
 }

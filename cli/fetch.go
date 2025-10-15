@@ -22,14 +22,18 @@ import (
 	"golang.org/x/sync/semaphore"
 )
 
+// Constants for batch operations
+// MaxFileSize defines the maximum allowed file size for downloads (500MB)
+const MaxFileSize = 500 * 1024 * 1024
+
 // RepoMetadata represents a package repository with cached metadata
 type RepoMetadata struct {
-	ID           string
-	Type         string // rpm or deb
-	MetadataURL  string
-	CachedETag   sql.NullString
-	CachedTime   sql.NullTime
-	CachedSize   sql.NullInt64
+	ID          string
+	Type        string // rpm or deb
+	MetadataURL string
+	CachedETag  sql.NullString
+	CachedTime  sql.NullTime
+	CachedSize  sql.NullInt64
 }
 
 // FetchResult represents the result of fetching a repository
@@ -164,19 +168,9 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 		urlColumn = "COALESCE(mirror_meta, default_meta)"
 	}
 
-	query := fmt.Sprintf(`
-		SELECT
-			r.id,
-			r.type,
-			%s as url,
-			d.etag,
-			d.last_modified,
-			d.size
-		FROM pgext.repository r
-		LEFT JOIN pgext.repo_data d ON r.id = d.id
-		WHERE %s IS NOT NULL
-		ORDER BY r.id
-	`, urlColumn, urlColumn)
+	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,d.etag,d.last_modified,d.size 
+		FROM pgext.repository r LEFT JOIN pgext.repo_data d ON r.id = d.id
+		WHERE %s IS NOT NULL ORDER BY r.id `, urlColumn, urlColumn)
 
 	rows, err := QueryContext(ctx, query)
 	if err != nil {
@@ -208,9 +202,17 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 // fetchConcurrent fetches multiple repositories concurrently
 func (f *Fetcher) fetchConcurrent(ctx context.Context, repos []*RepoMetadata) []*FetchResult {
 	results := make([]*FetchResult, len(repos))
+	total := len(repos)
 
 	// Use semaphore to limit concurrency
 	sem := semaphore.NewWeighted(int64(f.maxWorkers))
+
+	// Progress tracking
+	completed := make(chan int, total)
+	done := make(chan bool)
+
+	// Start progress display goroutine
+	go f.displayProgress(completed, total, done)
 
 	// Use errgroup for better error handling
 	g, ctx := errgroup.WithContext(ctx)
@@ -222,6 +224,7 @@ func (f *Fetcher) fetchConcurrent(ctx context.Context, repos []*RepoMetadata) []
 			// Acquire semaphore
 			if err := sem.Acquire(ctx, 1); err != nil {
 				results[i] = &FetchResult{Repository: repo, Error: err}
+				completed <- 1
 				return nil // Don't fail the whole group
 			}
 			defer sem.Release(1)
@@ -230,6 +233,9 @@ func (f *Fetcher) fetchConcurrent(ctx context.Context, repos []*RepoMetadata) []
 			result := f.fetchWithRetry(ctx, repo)
 			results[i] = result
 
+			// Signal completion
+			completed <- 1
+
 			return nil
 		})
 	}
@@ -237,7 +243,48 @@ func (f *Fetcher) fetchConcurrent(ctx context.Context, repos []*RepoMetadata) []
 	// Wait for all fetches to complete
 	_ = g.Wait() // We handle errors in results
 
+	// Stop progress display
+	close(completed)
+	<-done
+
 	return results
+}
+
+// displayProgress shows a progress bar for repository fetching
+func (f *Fetcher) displayProgress(completed chan int, total int, done chan bool) {
+	count := 0
+	barWidth := 40
+
+	// Hide cursor
+	fmt.Print("\033[?25l")
+
+	for range completed {
+		count++
+
+		// Calculate progress
+		percent := float64(count) / float64(total) * 100
+		filled := int(float64(count) / float64(total) * float64(barWidth))
+
+		// Build progress bar
+		bar := "["
+		for i := 0; i < barWidth; i++ {
+			if i < filled {
+				bar += "="
+			} else if i == filled {
+				bar += ">"
+			} else {
+				bar += " "
+			}
+		}
+		bar += "]"
+
+		// Print progress (carriage return to overwrite)
+		fmt.Printf("\r%s %d/%d (%.1f%%)", bar, count, total, percent)
+	}
+
+	// Show cursor and newline
+	fmt.Print("\033[?25h\n")
+	done <- true
 }
 
 // fetchWithRetry fetches a repository with retry logic
@@ -546,8 +593,6 @@ func (r *RepoMD) FindPrimaryDB() *RepoMDData {
 	}
 	return nil
 }
-
-
 
 // normalizeETag normalizes an ETag value for consistent storage and comparison
 // It keeps the quotes but ensures consistent format

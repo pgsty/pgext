@@ -33,6 +33,9 @@ go build -o pgext
 ./pgext load <table> [url]      # Load CSV data into table
 ./pgext status                  # Show metadata status
 ./pgext repo                    # Show repository summary
+./pgext pkg <name>              # Show package availability matrix
+./pgext bin <name> -p 17 -o el9 # Show binary packages with URLs
+./pgext ext <name>              # Show extension information
 
 # Development with custom database
 ./pgext -d "postgres:///vonng" init

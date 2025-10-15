@@ -38,4 +38,11 @@ Thumbs.db
 coverage.txt
 coverage.html
 
-tmp
+tmp/
+CLAUDE.md
+
+.claude/
+.vercel/
+.idea/
+.code/
+public/

@@ -13,169 +13,244 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// MetaStatus represents the status of pgext metadata
-type MetaStatus struct {
-	SchemaExists    bool
-	CategoryCount   int64
-	RepositoryCount int64
-	ExtensionCount  int64
-	RepoDataCount   int64
-	YumCount        int64
-	AptCount        int64
-	PackageCount    int64
-	MatrixCount     int64
-	FetchTime       *time.Time
-	ParseTime       *time.Time
-	RecapTime       *time.Time
+// StatusInfo represents the complete status of pgext metadata
+type StatusInfo struct {
+	SchemaExists bool
+	ActivePG     []int
+	ActiveOS     []string
+	TableCounts  map[string]int64
+	UpdateTimes  map[string]*time.Time
 }
 
-// GetStatus returns the current status of pgext metadata
-func GetStatus() (*MetaStatus, error) {
-	if DB == nil {
-		return nil, fmt.Errorf("database not initialized")
+// ShowStatus displays the metadata status
+func ShowStatus() error {
+	// Check schema existence first
+	exists, err := SchemaExists()
+	if err != nil {
+		return fmt.Errorf("failed to check schema: %w", err)
 	}
 
+	if !exists {
+		printSchemaNotFound()
+		return nil
+	}
+
+	// Gather status information
+	status, err := gatherStatus()
+	if err != nil {
+		return fmt.Errorf("failed to gather status: %w", err)
+	}
+
+	// Display status
+	displayStatus(status)
+
+	return nil
+}
+
+// gatherStatus collects all status information from database
+func gatherStatus() (*StatusInfo, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
-	status := &MetaStatus{}
+	status := &StatusInfo{
+		SchemaExists: true,
+		TableCounts:  make(map[string]int64),
+		UpdateTimes:  make(map[string]*time.Time),
+	}
 
-	// Check schema existence
-	var err error
-	status.SchemaExists, err = SchemaExists()
+	// Get active PG versions (descending)
+	pgVersions, err := getActivePGVersions(ctx)
 	if err != nil {
-		return nil, err
+		logrus.Warnf("failed to get active PG versions: %v", err)
 	}
+	status.ActivePG = pgVersions
 
-	if !status.SchemaExists {
-		return status, nil
+	// Get active OS list (ordered by major)
+	osList, err := getActiveOSVersions(ctx)
+	if err != nil {
+		logrus.Warnf("failed to get active OS list: %v", err)
 	}
+	status.ActiveOS = osList
 
 	// Get table counts
-	type tableCount struct {
-		table string
-		count *int64
-	}
-
-	tables := []tableCount{
-		{"pgext.category", &status.CategoryCount},
-		{"pgext.repository", &status.RepositoryCount},
-		{"pgext.extension", &status.ExtensionCount},
-		{"pgext.repo_data", &status.RepoDataCount},
-		{"pgext.dnf", &status.YumCount},
-		{"pgext.apt", &status.AptCount},
-		{"pgext.bin", &status.PackageCount},
-		{"pgext.pkg", &status.MatrixCount},
-	}
-
-	for _, tc := range tables {
-		err := QueryRowContext(ctx, fmt.Sprintf("SELECT COUNT(*) FROM %s", tc.table)).Scan(tc.count)
+	tables := []string{"pg", "os", "category", "repository", "extension",
+		"apt", "dnf", "bin", "pkg"}
+	for _, table := range tables {
+		count, err := getTableCount(ctx, table)
 		if err != nil {
-			logrus.Debugf("failed to count %s: %v", tc.table, err)
-			*tc.count = 0
+			logrus.Debugf("failed to count %s: %v", table, err)
+			count = 0
 		}
+		status.TableCounts[table] = count
 	}
 
-	// Get timestamps from pgext.status
-	var fetchTime, parseTime, recapTime sql.NullTime
-	err = QueryRowContext(ctx, `
-		SELECT fetch_time, parse_time, recap_time
-		FROM pgext.status
-		WHERE id = 0
-	`).Scan(&fetchTime, &parseTime, &recapTime)
-
-	if err == nil {
-		if fetchTime.Valid {
-			status.FetchTime = &fetchTime.Time
-		}
-		if parseTime.Valid {
-			status.ParseTime = &parseTime.Time
-		}
-		if recapTime.Valid {
-			status.RecapTime = &recapTime.Time
-		}
+	// Get update timestamps
+	times, err := getUpdateTimes(ctx)
+	if err != nil {
+		logrus.Warnf("failed to get update times: %v", err)
+	} else {
+		status.UpdateTimes = times
 	}
 
 	return status, nil
 }
 
-// ShowStatus displays the metadata status
-func ShowStatus() error {
-	status, err := GetStatus()
+// getActivePGVersions retrieves active PostgreSQL versions in descending order
+func getActivePGVersions(ctx context.Context) ([]int, error) {
+	query := "SELECT pg FROM pgext.pg WHERE active ORDER BY pg DESC"
+
+	rows, err := QueryContext(ctx, query)
 	if err != nil {
-		return err
+		return nil, err
+	}
+	defer rows.Close()
+
+	var versions []int
+	for rows.Next() {
+		var pg int
+		if err := rows.Scan(&pg); err != nil {
+			return nil, err
+		}
+		versions = append(versions, pg)
+	}
+	return versions, rows.Err()
+}
+
+// getActiveOSVersions retrieves active OS list ordered by major version
+func getActiveOSVersions(ctx context.Context) ([]string, error) {
+	query := "SELECT os FROM pgext.active_os ORDER BY os"
+
+	rows, err := QueryContext(ctx, query)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var osList []string
+	for rows.Next() {
+		var os string
+		if err := rows.Scan(&os); err != nil {
+			return nil, err
+		}
+		osList = append(osList, os)
+	}
+	return osList, rows.Err()
+}
+
+// getTableCount returns the count for a specific table
+func getTableCount(ctx context.Context, table string) (int64, error) {
+	var count int64
+	query := fmt.Sprintf("SELECT COUNT(*) FROM pgext.%s", table)
+	err := QueryRowContext(ctx, query).Scan(&count)
+	return count, err
+}
+
+// getUpdateTimes retrieves update timestamps from status table
+func getUpdateTimes(ctx context.Context) (map[string]*time.Time, error) {
+	times := make(map[string]*time.Time)
+
+	var fetchTime, parseTime, recapTime sql.NullTime
+	err := QueryRowContext(ctx, `
+		SELECT fetch_time, parse_time, recap_time
+		FROM pgext.status
+		WHERE id = 0
+	`).Scan(&fetchTime, &parseTime, &recapTime)
+
+	if err != nil {
+		return times, err
 	}
 
+	if fetchTime.Valid {
+		times["fetch"] = &fetchTime.Time
+	}
+	if parseTime.Valid {
+		times["parse"] = &parseTime.Time
+	}
+	if recapTime.Valid {
+		times["recap"] = &recapTime.Time
+	}
+
+	return times, nil
+}
+
+// displayStatus prints the status information in a beautiful format
+func displayStatus(status *StatusInfo) {
+	// Header
+	fmt.Println("\n╔═══════════════════════════════════════════╗")
+	fmt.Println("║            pgext Status                   ║")
+	fmt.Println("╚═══════════════════════════════════════════╝")
+	fmt.Printf("\nDatabase: %s\n", sanitizeURL(PGURL))
+
+	// Active PG Versions
+	fmt.Println("\n📌 Active PostgreSQL Versions:")
+	if len(status.ActivePG) > 0 {
+		fmt.Print("  ")
+		for i, pg := range status.ActivePG {
+			if i > 0 {
+				fmt.Print(", ")
+			}
+			fmt.Printf("%d", pg)
+		}
+		fmt.Println()
+	} else {
+		fmt.Println("  (none)")
+	}
+
+	// Active Linux Distributions
+	fmt.Println("\n🐧 Active Linux Distributions:")
+	if len(status.ActiveOS) > 0 {
+		fmt.Print("  ")
+		for i, os := range status.ActiveOS {
+			if i > 0 {
+				fmt.Print(", ")
+			}
+			fmt.Print(os)
+		}
+		fmt.Println()
+	} else {
+		fmt.Println("  (none)")
+	}
+
+	// Metadata Tables (merged)
+	fmt.Println("\n📊 Metadata Tables:")
+	fmt.Println("┌─────────────────┬──────────┐")
+	fmt.Printf("│ %-15s │ %8d │\n", "pg", status.TableCounts["pg"])
+	fmt.Printf("│ %-15s │ %8d │\n", "os", status.TableCounts["os"])
+	fmt.Printf("│ %-15s │ %8d │\n", "category", status.TableCounts["category"])
+	fmt.Printf("│ %-15s │ %8d │\n", "repository", status.TableCounts["repository"])
+	fmt.Printf("│ %-15s │ %8d │\n", "extension", status.TableCounts["extension"])
+	fmt.Printf("│ %-15s │ %8d │\n", "apt", status.TableCounts["apt"])
+	fmt.Printf("│ %-15s │ %8d │\n", "dnf", status.TableCounts["dnf"])
+	fmt.Printf("│ %-15s │ %8d │\n", "bin", status.TableCounts["bin"])
+	fmt.Printf("│ %-15s │ %8d │\n", "pkg", status.TableCounts["pkg"])
+	fmt.Println("└─────────────────┴──────────┘")
+
+	// Update Times
+	fmt.Println("\n🕐 Last Update:")
+	printUpdateTime("Fetch", status.UpdateTimes["fetch"])
+	printUpdateTime("Parse", status.UpdateTimes["parse"])
+	printUpdateTime("Recap", status.UpdateTimes["recap"])
+
+	fmt.Println()
+}
+
+// printUpdateTime formats and prints an update timestamp
+func printUpdateTime(label string, t *time.Time) {
+	if t != nil {
+		fmt.Printf("  %-6s %s\n", label+":", t.Format("2006-01-02 15:04:05"))
+	} else {
+		fmt.Printf("  %-6s %s\n", label+":", "never")
+	}
+}
+
+// printSchemaNotFound displays message when schema doesn't exist
+func printSchemaNotFound() {
 	fmt.Println("\n╔═══════════════════════════════════════════╗")
 	fmt.Println("║         pgext Metadata Status             ║")
 	fmt.Println("╚═══════════════════════════════════════════╝")
 	fmt.Printf("\nDatabase: %s\n", sanitizeURL(PGURL))
-	fmt.Printf("Schema:   %v\n", status.SchemaExists)
-
-	if !status.SchemaExists {
-		fmt.Println("\n⚠️  Schema not initialized. Run 'pgext init' to create it.")
-		return nil
-	}
-
-	// Get additional table counts
-	ctx := context.Background()
-	tableCounts := getTableCounts(ctx)
-
-	fmt.Println("\n📊 Metadata Tables:")
-	fmt.Println("┌─────────────────┬──────────┐")
-	fmt.Printf("│ %-15s │ %8d │\n", "pg", tableCounts["pg"])
-	fmt.Printf("│ %-15s │ %8d │\n", "os", tableCounts["os"])
-	fmt.Printf("│ %-15s │ %8d │\n", "category", status.CategoryCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "repository", status.RepositoryCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "extension", status.ExtensionCount)
-	fmt.Println("└─────────────────┴──────────┘")
-
-	fmt.Println("\n📦 Package Tables:")
-	fmt.Println("┌─────────────────┬──────────┐")
-	fmt.Printf("│ %-15s │ %8d │\n", "repo_data", status.RepoDataCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "dnf", status.YumCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "apt", status.AptCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "bin", status.PackageCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "pkg", status.MatrixCount)
-	fmt.Println("└─────────────────┴──────────┘")
-
-	fmt.Println("\n🕐 Last Update:")
-	if status.FetchTime != nil {
-		fmt.Printf("  Fetch: %s\n", status.FetchTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Fetch: never\n")
-	}
-	if status.ParseTime != nil {
-		fmt.Printf("  Parse: %s\n", status.ParseTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Parse: never\n")
-	}
-	if status.RecapTime != nil {
-		fmt.Printf("  Recap: %s\n", status.RecapTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Recap: never\n")
-	}
-	fmt.Println()
-
-	return nil
-}
-
-// getTableCounts returns counts for additional tables
-func getTableCounts(ctx context.Context) map[string]int64 {
-	counts := make(map[string]int64)
-	tables := []string{"pg", "os"}
-
-	for _, table := range tables {
-		var count int64
-		err := QueryRowContext(ctx, fmt.Sprintf("SELECT COUNT(*) FROM pgext.%s", table)).Scan(&count)
-		if err != nil {
-			logrus.Debugf("failed to count %s: %v", table, err)
-			count = 0
-		}
-		counts[table] = count
-	}
-
-	return counts
+	fmt.Println("Schema:   not found")
+	fmt.Println("\n⚠️  Schema not initialized. Run 'pgext init' to create it.\n")
 }
 
 // ShowRepositories displays repository summary

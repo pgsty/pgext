@@ -7,6 +7,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"pgext/db"
 	"regexp"
 	"strings"
 	"sync"
@@ -124,10 +125,15 @@ func RecapMatrix() error {
 	logrus.Infof("active pg: %s", strings.Join(pgVersions, ", "))
 	logrus.Infof("active os: %s", strings.Join(activeOS, ", "))
 
-	// Call the refresh_pkg procedure
-	logrus.Info("refreshing package availability matrix...")
-	if _, err := ExecSQLContext(ctx, "CALL pgext.refresh_pkg()"); err != nil {
-		return fmt.Errorf("failed to refresh pkg: %w", err)
+	// Call the reload_pkg procedure
+	logrus.Info("reload pgext.pkg")
+	// if _, err := ExecSQLContext(ctx, "CALL pgext.reload_pkg()"); err != nil {
+	// 	return fmt.Errorf("failed to refresh pkg: %w", err)
+	// }
+
+	// Apply fix-pkg.sql fixes
+	if err := applyPkgFixes(ctx); err != nil {
+		return fmt.Errorf("failed to apply pkg fixes: %w", err)
 	}
 
 	// Vacuum full the pkg table
@@ -567,19 +573,45 @@ func RecapPackages() error {
 	return RecapMatrix()
 }
 
-// updateRecapTimestamp updates the recap_mtime in pgext.status table
-func updateRecapTimestamp(ctx context.Context) error {
-	_, err := ExecSQLContext(ctx, `
-		INSERT INTO pgext.status (id, recap_mtime, matrix_mtime)
-		VALUES (0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
-		ON CONFLICT (id) DO UPDATE
-		SET recap_mtime = CURRENT_TIMESTAMP,
-		    matrix_mtime = CURRENT_TIMESTAMP`)
+// applyPkgFixes executes db/fix-pkg.sql to apply fixes to pgext.pkg table
+func applyPkgFixes(ctx context.Context) error {
+	logrus.Info("applying pkg fixes from db/fix-pkg.sql...")
 
+	// Read fix-pkg.sql file
+	sqlBytes, err := db.ReadFile("fix-pkg.sql")
 	if err != nil {
-		return fmt.Errorf("update recap_mtime: %w", err)
+		return fmt.Errorf("failed to read fix-pkg.sql: %w", err)
 	}
 
-	logrus.Debug("Updated recap_mtime and matrix_mtime in pgext.status")
+	sqlContent := string(sqlBytes)
+
+	// Skip if file is empty or only contains comments/whitespace
+	trimmed := strings.TrimSpace(sqlContent)
+	if trimmed == "" || !containsSQL(trimmed) {
+		logrus.Debug("fix-pkg.sql is empty or contains no SQL statements, skipping")
+		return nil
+	}
+
+	// Execute the SQL
+	if _, err := ExecSQLContext(ctx, sqlContent); err != nil {
+		return fmt.Errorf("failed to execute fix-pkg.sql: %w", err)
+	}
+
+	logrus.Info("pkg fixes applied successfully")
 	return nil
+}
+
+// containsSQL checks if the content has actual SQL statements (not just comments)
+func containsSQL(content string) bool {
+	lines := strings.Split(content, "\n")
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		// Skip empty lines and comment lines
+		if trimmed == "" || strings.HasPrefix(trimmed, "--") {
+			continue
+		}
+		// Found a non-comment line
+		return true
+	}
+	return false
 }
