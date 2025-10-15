@@ -1,0 +1,20 @@
+os,active,os_type,os_mark,os_code,os_major,os_arch,os_vendor,os_full,os_minor,tf_img,vg_box,extra,comment
+el7.x86_64,f,rpm,el7i,el7,7,x86_64,EL,CentOS 7 x86,7.9,centos_7_9_x64,,{},EOL
+el8.x86_64,t,rpm,el8i,el8,8,x86_64,EL,RockyLinux 8 x86,8.10,rockylinux_8_10_x64,bento/rockylinux-8,{},Near EOL
+el8.aarch64,t,rpm,el8a,el8,8,aarch64,EL,RockyLinux 8 ARM,8.10,rockylinux_8_10_arm64,bento/rockylinux-8,{},Near EOL
+el9.x86_64,t,rpm,el9i,el9,9,x86_64,EL,RockyLinux 9 x86,9.6,rockylinux_9_6_x64,bento/rockylinux-9,{},OK
+el9.aarch64,t,rpm,el9a,el9,9,aarch64,EL,RockyLinux 9 ARM,9.6,rockylinux_9_6_rm64,bento/rockylinux-9,{},OK
+el10.x86_64,t,rpm,el10,el10,10,x86_64,EL,RockyLinux 10 x86,10.0,rockylinux_10_0_x64,,{},TBD
+el10.aarch64,t,rpm,el10a,el10,10,aarch64,EL,RockyLinux 10 ARM,10.0,rockylinux_10_0_arm64,,{},TBD
+d11.x86_64,f,deb,d11i,d11,11,x86_64,Debian,Debian 11 x86,11.11,debian_11_11_x64,,{},EOL
+d11.aarch64,f,deb,d11a,d11,11,aarch64,Debian,Debian 11 ARM,11.11,debian_12_7_arm64,,{},EOL
+d12.x86_64,t,deb,d12i,d12,12,x86_64,Debian,Debian 12 x86,12.11,debian_12_11_x64,generic/debian12,{},OK
+d12.aarch64,t,deb,d12a,d12,12,aarch64,Debian,Debian 12 ARM,12.11,debian_12_11_arm64,,{},OK
+d13.x86_64,f,deb,d13i,d13,13,x86_64,Debian,Debian 13 x86,13.1,,,{},TBD
+d13.aarch64,f,deb,d13a,d13,13,aarch64,Debian,Debian 13 ARM,13.1,,,{},TBD
+u20.x86_64,f,deb,u20i,u20,20,x86_64,Ubuntu,Ubuntu 20.04 x86,20.04.6,ubuntu_20_04_x64,generic/ubuntu2004,{},EOL
+u20.aarch64,f,deb,u20a,u20,20,aarch64,Ubuntu,Ubuntu 20.04 ARM,20.04.6,ubuntu_20_04_arm64,,{},EOL
+u22.x86_64,t,deb,u22i,u22,22,x86_64,Ubuntu,Ubuntu 22.04 x86,22.04.5,ubuntu_22_04_x64,generic/ubuntu2004,{},OK
+u22.aarch64,t,deb,u22a,u22,22,aarch64,Ubuntu,Ubuntu 22.04 ARM,22.04.5,ubuntu_22_04_arm64,generic/ubuntu2204,{},OK
+u24.x86_64,t,deb,u24i,u24,24,x86_64,Ubuntu,Ubuntu 24.04 x86,24.04.3,ubuntu_24_04_x64,bento/ubuntu-24.04,{},OK
+u24.aarch64,t,deb,u24a,u24,24,aarch64,Ubuntu,Ubuntu 24.04 ARM,24.04.3,ubuntu_24_04_arm64,bento/ubuntu-24.04,{},OK

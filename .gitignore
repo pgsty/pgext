@@ -1,0 +1,41 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Binary
+pgext
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+*.test
+*.out
+
+# Dependencies
+/vendor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Coverage
+*.cover
+*.coverprofile
+coverage.txt
+coverage.html
+
+tmp
