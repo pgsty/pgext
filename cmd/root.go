@@ -25,11 +25,11 @@ var (
 	logFile  *os.File
 
 	// Command-specific flags
-	force    bool
-	region   string
-	workers  int
-	retry    int
-	keep     bool
+	force   bool
+	region  string
+	workers int
+	retry   int
+	keep    bool
 )
 
 // rootCmd represents the base command
@@ -38,12 +38,13 @@ var rootCmd = &cobra.Command{
 	Short: "PostgreSQL Extension Metadata Manager",
 	Long:  `pgext - PostgreSQL Extension Metadata Manager using PostgreSQL`,
 	Example: `
-  pgext init                    # initialize pgext schema
-  pgext load ext                # load extension catalog
+  pgext init                    # setup everything (schema + reload)
+  pgext schema [-f]             # initialize pgext schema
+  pgext reload                  # reload data fetch + parse + recap
   pgext fetch                   # fetch repo metadata
   pgext parse                   # parse repo data
   pgext recap                   # generate matrix
-  pgext reload                  # fetch + parse + recap
+  pgext load <table> [url]      # load CSV data into table
   pgext status                  # show metadata status
 `,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
@@ -51,31 +52,88 @@ var rootCmd = &cobra.Command{
 	},
 }
 
-// initCmd initializes the pgext schema
-var initCmd = &cobra.Command{
-	Use:   "init",
-	Short: "initialize pgext schema and load initial data",
-	Long: `Initialize the pgext schema in the target PostgreSQL database and load initial data.
+// schemaCmd initializes the pgext schema
+var schemaCmd = &cobra.Command{
+	Use:   "schema",
+	Short: "initialize pgext schema",
+	Long: `Initialize the pgext schema in the target PostgreSQL database.
 
 This command will:
 1. Create the pgext schema
-2. Load initial CSV data (pg, os, category, repository, extension) from embedded files
+2. Load initial CSV data (pg, os, category, repository, extension)
 
-If the schema already exists, this command will warn and skip initialization.
+If the schema already exists, this command will skip initialization.
 Use --force to drop and recreate the schema.
 Requires the semver extension to be available in the database.`,
 	Example: `
-  pgext init                              # use default database
-  pgext init --force                      # force drop and recreate
-  pgext init -d postgres:///              # use local PostgreSQL
-  pgext init -d postgres://localhost/vonng
-  PGURL=meta pgext init                   # use env variable
+  pgext schema                  # initialize schema
+  pgext schema -f               # force drop and recreate
+  pgext schema -d vonng         # use specific database
+  PGURL=meta pgext schema       # use env variable
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := cli.InitSchema(force); err != nil {
 			return fmt.Errorf("failed to initialize schema: %w", err)
 		}
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
+// initCmd performs complete initialization: schema + reload
+var initCmd = &cobra.Command{
+	Use:   "init",
+	Short: "complete setup: schema + reload",
+	Long: `Perform complete initialization from scratch:
+1. Initialize pgext schema with force
+2. Fetch repository metadata
+3. Parse repository data into pgext.bin
+4. Generate availability info pgext.pkg 
+
+This is equivalent to: pgext schema && pgext reload`,
+	Example: `
+  pgext init                    # complete setup
+  pgext init -p 16              # use 16 parallel workers
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		// Initialize schema
+		logrus.Info("Step 1/4: Initializing schema...")
+		if err := cli.InitSchema(true); err != nil {
+			return fmt.Errorf("schema initialization failed: %w", err)
+		}
+
+		// Fetch
+		logrus.Info("Step 2/4: Fetching repository metadata...")
+		fetcher := cli.NewFetcher(cli.FetchOptions{
+			Force:    true, // Always fetch for init
+			Region:   region,
+			Parallel: workers,
+			Retry:    retry,
+		})
+
+		ctx := context.Background()
+		if err := fetcher.FetchAll(ctx); err != nil {
+			return fmt.Errorf("fetch failed: %w", err)
+		}
+
+		// Parse
+		logrus.Info("Step 3/4: Parsing repository data...")
+		if err := cli.ParseRepoData(cli.ParseOptions{
+			Keep:     false,
+			Parallel: workers,
+		}); err != nil {
+			return fmt.Errorf("parse failed: %w", err)
+		}
+
+		// Recap
+		logrus.Info("Step 4/4: Generating availability matrix...")
+		if err := cli.RecapPackages(); err != nil {
+			return fmt.Errorf("recap failed: %w", err)
+		}
+
+		logrus.Info("Initialization completed successfully")
 		return nil
 	},
 	PostRun: closeDatabase,
@@ -137,10 +195,10 @@ The source parameter can be:
 var statusCmd = &cobra.Command{
 	Use:   "status",
 	Short: "show metadata status",
-	Long:  `Display the current status of the pgext metadata catalog including update timestamps and statistics.`,
+	Long:  `Display the current status of the pgext metadata catalog including table counts and update timestamps.`,
 	Example: `
-  pgext status          # show current status
-  pgext status -d vonng # use specific database
+  pgext status                  # show status
+  pgext status -d vonng         # use specific database
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -155,13 +213,13 @@ var statusCmd = &cobra.Command{
 // fetchCmd fetches repository metadata
 var fetchCmd = &cobra.Command{
 	Use:   "fetch",
-	Short: "fetch repository metadata from upstream",
+	Short: "fetch repository metadata",
+	Long:  `Fetch repository metadata from upstream package repositories.`,
 	Example: `
-  pgext fetch                   # fetch only missing repos
-  pgext fetch -f                # force re-download all
+  pgext fetch                   # fetch missing repos
+  pgext fetch -f                # force re-download
   pgext fetch -r china          # use China mirrors
-  pgext fetch -p 12             # use 12 concurrent workers
-  pgext fetch --retry 3         # retry 3 times on failure
+  pgext fetch -p 16             # use 16 workers
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -184,17 +242,17 @@ var fetchCmd = &cobra.Command{
 // parseCmd parses repository data
 var parseCmd = &cobra.Command{
 	Use:   "parse",
-	Short: "parse repo data and generate package tables",
-	Long: `Parse repository metadata and populate package tables.
+	Short: "parse repository data",
+	Long: `Parse repository metadata into package tables.
 
-Processes:
-  - YUM SQLite databases → pgext.dnf
-  - APT Packages files → pgext.apt
-  - Combined data → pgext.bin`,
+Processes repository data into:
+  - pgext.dnf  (YUM/DNF packages)
+  - pgext.apt  (APT packages)
+  - pgext.bin  (Combined binary packages)`,
 	Example: `
-  pgext parse           # parse all repos
-  pgext parse -k        # keep existing data (skip truncate)
-  pgext parse -p 16     # use 16 parallel workers
+  pgext parse                   # parse all repos
+  pgext parse -k                # keep existing data
+  pgext parse -p 16             # use 16 workers
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -213,12 +271,12 @@ Processes:
 // recapCmd generates availability matrix
 var recapCmd = &cobra.Command{
 	Use:   "recap",
-	Short: "generate availability matrix from packages",
-	Long: `Recapitulate extension package availability from parsed package data.
-Generates the pgext.pkg availability matrix showing which extensions are available
-for which PostgreSQL versions and operating systems.`,
+	Short: "generate availability matrix",
+	Long: `Generate the pgext.pkg availability matrix from parsed package data.
+
+Shows which extensions are available for which PostgreSQL versions and operating systems.`,
 	Example: `
-  pgext recap           # generate availability matrix
+  pgext recap                   # generate matrix
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -234,16 +292,16 @@ for which PostgreSQL versions and operating systems.`,
 var reloadCmd = &cobra.Command{
 	Use:   "reload",
 	Short: "complete reload: fetch + parse + recap",
-	Long: `Perform a complete metadata refresh cycle:
-1. Fetch repository metadata from upstream
-2. Parse repository data into package tables
-3. Recapitulate availability matrix
+	Long: `Perform complete metadata refresh:
+1. Fetch repository metadata
+2. Parse repository data
+3. Generate availability matrix
 
-This is equivalent to running: pgext fetch && pgext parse && pgext recap`,
+Equivalent to: pgext fetch && pgext parse && pgext recap`,
 	Example: `
-  pgext reload          # complete refresh
-  pgext reload -f       # force re-download all
-  pgext reload -p 16    # use 16 parallel workers
+  pgext reload                  # complete refresh
+  pgext reload -f               # force re-download
+  pgext reload -p 16            # use 16 workers
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -286,9 +344,9 @@ This is equivalent to running: pgext fetch && pgext parse && pgext recap`,
 var repoCmd = &cobra.Command{
 	Use:   "repo",
 	Short: "show repository summary",
-	Long:  `Display a summary of all configured repositories and their status.`,
+	Long:  `Display summary of all configured repositories and their status.`,
 	Example: `
-  pgext repo            # show repository summary
+  pgext repo                    # show repositories
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -303,11 +361,12 @@ var repoCmd = &cobra.Command{
 // purgeCmd drops the pgext schema
 var purgeCmd = &cobra.Command{
 	Use:   "purge",
-	Short: "drop pgext schema and all its objects",
-	Long: `Completely remove the pgext schema and all its objects from the database.
-WARNING: This action is irreversible and will delete all metadata.`,
+	Short: "drop pgext schema",
+	Long: `Drop the pgext schema and all its objects.
+
+WARNING: This is irreversible and deletes all metadata.`,
 	Example: `
-  pgext purge           # drop pgext schema
+  pgext purge                   # drop schema
 `,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -391,37 +450,42 @@ func Execute() {
 
 func init() {
 	// Global flags
-	rootCmd.PersistentFlags().StringVarP(&dbURL, "db", "d", "", "PostgreSQL connection (URL, database name, or key=value format, env: PGURL)")
-	rootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
-	rootCmd.PersistentFlags().StringVar(&logLevel, "log-level", "info", "log level: debug, info, warn, error, fatal, panic")
-	rootCmd.PersistentFlags().StringVar(&logPath, "log-path", "", "log file path, terminal by default")
+	rootCmd.PersistentFlags().StringVarP(&dbURL, "db", "d", "", "database connection (URL/name, env: PGURL)")
+	rootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug logging")
+	rootCmd.PersistentFlags().StringVar(&logLevel, "log-level", "info", "log level (debug|info|warn|error)")
+	rootCmd.PersistentFlags().StringVar(&logPath, "log-path", "", "log file path (default: stderr)")
 
 	// Command-specific flags
-	initCmd.Flags().BoolVarP(&force, "force", "f", false, "force drop and recreate schema")
+	schemaCmd.Flags().BoolVarP(&force, "force", "f", false, "force recreate schema")
 
-	loadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
+	initCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
+	initCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
+	initCmd.Flags().IntVar(&retry, "retry", 1, "retry attempts")
 
-	fetchCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-download all repos")
-	fetchCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
-	fetchCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of concurrent download workers")
-	fetchCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts on failure")
+	loadCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
 
-	parseCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep existing data (skip truncate)")
-	parseCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
+	fetchCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-download")
+	fetchCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
+	fetchCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
+	fetchCmd.Flags().IntVar(&retry, "retry", 1, "retry attempts")
 
-	reloadCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-download all repos")
-	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
-	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of concurrent workers")
-	reloadCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts on failure")
+	parseCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep existing data")
+	parseCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
+
+	reloadCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-download")
+	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region (china/mirror)")
+	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "concurrent workers")
+	reloadCmd.Flags().IntVar(&retry, "retry", 1, "retry attempts")
 
 	// Add commands to root
 	rootCmd.AddCommand(initCmd)
-	rootCmd.AddCommand(loadCmd)
-	rootCmd.AddCommand(statusCmd)
+	rootCmd.AddCommand(schemaCmd)
+	rootCmd.AddCommand(reloadCmd)
 	rootCmd.AddCommand(fetchCmd)
 	rootCmd.AddCommand(parseCmd)
 	rootCmd.AddCommand(recapCmd)
-	rootCmd.AddCommand(reloadCmd)
+	rootCmd.AddCommand(loadCmd)
+	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(repoCmd)
 	rootCmd.AddCommand(purgeCmd)
 }

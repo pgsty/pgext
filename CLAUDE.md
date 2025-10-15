@@ -24,17 +24,20 @@ go build -o pgext
 ./pgext --help
 
 # Database operations (requires PostgreSQL with semver extension)
-./pgext init                    # Initialize pgext schema
-./pgext load ext                # Load extension catalog from CSV
+./pgext init                    # Complete setup (schema + reload)
+./pgext schema                  # Initialize pgext schema only
+./pgext reload                  # Complete reload (fetch + parse + recap)
 ./pgext fetch                   # Fetch repository metadata
-./pgext parse                   # Parse repository data into packages
+./pgext parse                   # Parse repository data
 ./pgext recap                   # Generate availability matrix
-./pgext reload                  # Complete reload cycle (fetch + parse + recap)
+./pgext load <table> [url]      # Load CSV data into table
 ./pgext status                  # Show metadata status
+./pgext repo                    # Show repository summary
 
 # Development with custom database
 ./pgext -d "postgres:///vonng" init
-./pgext -d "host=localhost dbname=mydb" load extension
+./pgext -d vonng schema
+./pgext -d "host=localhost dbname=mydb" status
 
 # Makefile shortcuts (Hugo/documentation related - not for pgext itself)
 make dump                       # Export data from PostgreSQL to CSV files
@@ -53,9 +56,10 @@ The test environment will use the 'postgres:///' URL on a local PostgreSQL, you 
 
 ## Key Workflows
 
-1. **Initial Setup**: `init` → `load extension/repository/category` → `fetch` → `parse` → `recap`
-2. **Update Cycle**: `fetch` (with --force to re-download) → `parse` → `recap`
-3. **Quick Reload**: `reload` command combines fetch + parse + recap
+1. **Complete Setup**: `init` (schema + reload all-in-one)
+2. **Schema Only**: `schema` (initialize database schema and load base data)
+3. **Data Refresh**: `reload` (fetch + parse + recap)
+4. **Update Cycle**: `fetch` (with --force to re-download) → `parse` → `recap`
 
 ## Data Flow
 

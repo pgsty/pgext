@@ -163,18 +163,6 @@ func loadCSVData(table string, data []byte) error {
 
 	logrus.Infof("loaded %d records into pgext.%s", copyResult.RowsAffected(), table)
 
-	// Initialize matrix if loading extension table
-	if table == "extension" {
-		logrus.Info("initializing availability matrix...")
-		var matrixCount int64
-		if err := QueryRow("SELECT pgext.init_matrix()").Scan(&matrixCount); err != nil {
-			logrus.Warnf("failed to initialize matrix: %v", err)
-			// Not a fatal error - matrix can be initialized separately
-		} else {
-			logrus.Infof("initialized %d matrix entries", matrixCount)
-		}
-	}
-
 	return nil
 }
 

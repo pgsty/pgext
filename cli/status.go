@@ -99,107 +99,6 @@ func GetStatus() (*MetaStatus, error) {
 	return status, nil
 }
 
-// PrintStatus prints the metadata status in a formatted way
-func PrintStatus() error {
-	status, err := GetStatus()
-	if err != nil {
-		return err
-	}
-
-	fmt.Println("=== pgext Metadata Status ===")
-	fmt.Printf("Database URL:     %s\n", sanitizeURL(PGURL))
-	fmt.Printf("Schema Exists:    %v\n", status.SchemaExists)
-
-	if !status.SchemaExists {
-		fmt.Println("\nSchema not initialized. Run 'pig meta init' to create it.")
-		return nil
-	}
-
-	fmt.Println("\nTable Counts:")
-	fmt.Printf("  Category:       %d\n", status.CategoryCount)
-	fmt.Printf("  Repository:     %d\n", status.RepositoryCount)
-	fmt.Printf("  Extension:      %d\n", status.ExtensionCount)
-	fmt.Printf("  Repo Data:      %d\n", status.RepoDataCount)
-	fmt.Printf("  YUM Packages:   %d\n", status.YumCount)
-	fmt.Printf("  APT Packages:   %d\n", status.AptCount)
-	fmt.Printf("  Package:        %d\n", status.PackageCount)
-	fmt.Printf("  Matrix:         %d\n", status.MatrixCount)
-
-	fmt.Println("\nTimestamps:")
-	if status.FetchTime != nil {
-		fmt.Printf("  Last Fetch:     %s\n", status.FetchTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Last Fetch:     never\n")
-	}
-	if status.ParseTime != nil {
-		fmt.Printf("  Last Parse:     %s\n", status.ParseTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Last Parse:     never\n")
-	}
-	if status.RecapTime != nil {
-		fmt.Printf("  Last Recap:     %s\n", status.RecapTime.Format("2006-01-02 15:04:05"))
-	} else {
-		fmt.Printf("  Last Recap:     never\n")
-	}
-
-	return nil
-}
-
-// PrintRepoSummary prints a summary of repositories
-func PrintRepoSummary() error {
-	if DB == nil {
-		return fmt.Errorf("database not initialized")
-	}
-
-	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
-	defer cancel()
-
-	rows, err := QueryContext(ctx, `
-		SELECT r.id, r.type, r.os, r.org,
-		       COALESCE(rd.size, 0) as size,
-		       COALESCE(rd.update_at::text, 'never') as last_update
-		FROM pgext.repository r
-		LEFT JOIN pgext.repo_data rd ON r.id = rd.id
-		ORDER BY r.id
-	`)
-	if err != nil {
-		return err
-	}
-	defer rows.Close()
-
-	fmt.Println("=== Repository Summary ===")
-	fmt.Printf("%-30s %-6s %-12s %-8s %-12s %s\n",
-		"ID", "Type", "OS", "Org", "Size", "Last Update")
-	fmt.Println(strings.Repeat("-", 100))
-
-	for rows.Next() {
-		var id, repoType, os, org, lastUpdate string
-		var size int64
-
-		if err := rows.Scan(&id, &repoType, &os, &org, &size, &lastUpdate); err != nil {
-			logrus.Warnf("failed to scan row: %v", err)
-			continue
-		}
-
-		sizeStr := "-"
-		if size > 0 {
-			sizeStr = formatBytes(size)
-		}
-
-		updateStr := lastUpdate
-		if lastUpdate == "never" {
-			updateStr = "-"
-		} else if len(lastUpdate) > 19 {
-			updateStr = lastUpdate[:19]
-		}
-
-		fmt.Printf("%-30s %-6s %-12s %-8s %-12s %s\n",
-			id, repoType, os, org, sizeStr, updateStr)
-	}
-
-	return rows.Err()
-}
-
 // ShowStatus displays the metadata status
 func ShowStatus() error {
 	status, err := GetStatus()
@@ -218,19 +117,29 @@ func ShowStatus() error {
 		return nil
 	}
 
-	fmt.Println("\n📊 Table Statistics:")
+	// Get additional table counts
+	ctx := context.Background()
+	tableCounts := getTableCounts(ctx)
+
+	fmt.Println("\n📊 Metadata Tables:")
 	fmt.Println("┌─────────────────┬──────────┐")
-	fmt.Printf("│ %-15s │ %8d │\n", "Categories", status.CategoryCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "Repositories", status.RepositoryCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "Extensions", status.ExtensionCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "Repo Data", status.RepoDataCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "DNF Packages", status.YumCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "APT Packages", status.AptCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "Binary Packages", status.PackageCount)
-	fmt.Printf("│ %-15s │ %8d │\n", "Availability", status.MatrixCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "pg", tableCounts["pg"])
+	fmt.Printf("│ %-15s │ %8d │\n", "os", tableCounts["os"])
+	fmt.Printf("│ %-15s │ %8d │\n", "category", status.CategoryCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "repository", status.RepositoryCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "extension", status.ExtensionCount)
 	fmt.Println("└─────────────────┴──────────┘")
 
-	fmt.Println("\n🕐 Last Update Times:")
+	fmt.Println("\n📦 Package Tables:")
+	fmt.Println("┌─────────────────┬──────────┐")
+	fmt.Printf("│ %-15s │ %8d │\n", "repo_data", status.RepoDataCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "dnf", status.YumCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "apt", status.AptCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "bin", status.PackageCount)
+	fmt.Printf("│ %-15s │ %8d │\n", "pkg", status.MatrixCount)
+	fmt.Println("└─────────────────┴──────────┘")
+
+	fmt.Println("\n🕐 Last Update:")
 	if status.FetchTime != nil {
 		fmt.Printf("  Fetch: %s\n", status.FetchTime.Format("2006-01-02 15:04:05"))
 	} else {
@@ -249,6 +158,24 @@ func ShowStatus() error {
 	fmt.Println()
 
 	return nil
+}
+
+// getTableCounts returns counts for additional tables
+func getTableCounts(ctx context.Context) map[string]int64 {
+	counts := make(map[string]int64)
+	tables := []string{"pg", "os"}
+
+	for _, table := range tables {
+		var count int64
+		err := QueryRowContext(ctx, fmt.Sprintf("SELECT COUNT(*) FROM pgext.%s", table)).Scan(&count)
+		if err != nil {
+			logrus.Debugf("failed to count %s: %v", table, err)
+			count = 0
+		}
+		counts[table] = count
+	}
+
+	return counts
 }
 
 // ShowRepositories displays repository summary
