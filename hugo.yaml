@@ -1,0 +1,162 @@
+baseURL: 'https://pgext.pgsty.com/'
+languageCode: 'en'
+title: 'PG Extensions'
+
+enableRobotsTXT: true
+# Parse Git commit
+enableGitInfo: true
+# enableEmoji: false
+hasCJKLanguage: true
+
+services:
+  #googleAnalytics:
+  #  ID: G-SGY2FPH1EG
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    languageCode: en
+    weight: 1
+    title: PG Extension Catalog
+  zh:
+    languageName: 简体中文
+    languageCode: zh
+    weight: 1
+    title: PG 扩展目录
+
+sidebar:
+  - identifier: pig
+    name: "PIG Doc"
+    url: "https://pig.pgsty.com"
+    weight: 7
+  - identifier: pigsty
+    name: "Pigsty, PG RDS ↗"
+    url: "https://pgsty.com"
+    weight: 8
+  - identifier: pigsty-doc
+    name: "PigstyDoc ↗"
+    url: "https://doc.pgsty.com"
+    weight: 9
+  - identifier: pgexp
+    name: "PG Exporter ↗"
+    url: "https://exp.pgsty.com"
+    weight: 11
+  - identifier: vonng
+    name: "Author: Vonng ↗"
+    url: "https://vonng.com"
+    weight: 12
+
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true           # 允许渲染原始 HTML
+    extensions:
+      footnote: true         # 开启脚注语法：[^id] / [^id]: text
+      linkify: true          # 自动将 URL 文本转为链接
+      table: true            # 启用 Markdown 表格
+      taskList: true         # 启用任务列表 [ ] / [x]
+      typographer: true      # 智能排版（引号、破折号等）
+    parser:
+      attribute: true        # 允许在标题后写 {#id .class key=val}，用于显式锚点
+      autoHeadingID: true    # 为标题自动生成 ID（手写 {#id} 会覆盖自动生成）
+      autoHeadingIDType: github  # 自动 ID 规则：github / blackfriday / none
+  tableOfContents:
+    startLevel: 2            # ToC 从 h2 开始
+    endLevel: 4              # ToC 到 h4 结束
+
+menu:
+  main:
+    - name: Search
+      weight: 1
+      params:
+        type: search
+    - name: GitHub
+      weight: 2
+      url: "https://github.com/pgsty/pgext"
+      params:
+        icon: github
+
+
+params:
+  description: PG Extension Catalog
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: /logo.png
+      dark: /logo.png
+    width: wide
+
+  page:
+    # full (100%), wide (90rem), normal (80rem)
+    width: full
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+
+  footer:
+    enable: false
+    displayCopyright: true
+    displayPoweredBy: false
+    width: normal
+
+  # Display the last modification date
+  displayUpdatedDate: true
+  dateFormat: "2006-01-02"
+
+  # Search
+  # flexsearch is enabled by default
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+      # full | forward | reverse | strict
+      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
+      tokenize: forward
+
+  editURL:
+    enable: true
+    base: "https://github.com/pgsty/pgext/edit/main/content"
+
+  toc:
+    displayTags: true
+
+  highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+  comments:
+    enable: true
+    type: giscus
+    giscus:
+      repo: "pgsty/pgext"
+      repoId: "MDEwOlJlcG9zaXRvcnkxMjA3MTA2NDQ"
+      category: "Announcements"
+      categoryId: "DIC_kwDOBzHl9M4CtlWB"
+      mapping: pathname
+      strict: 0
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: bottom
+      lang: zh-CN
+      theme: preferred_color_scheme
