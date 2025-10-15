@@ -180,18 +180,10 @@ func displayBinTable(packages []BinPackage) {
 	fmt.Printf("Total: %d packages\n\n", len(packages))
 }
 
-
 // ShowExt displays extension information from pgext.extension table.
 func ShowExt(extName string) error {
 	ctx := context.Background()
-
-	query := `
-		SELECT name, pkg, category, repo, lang, license, ver,
-		       description, requires, website, doc_url, src_url,
-		       created_at, updated_at
-		FROM pgext.extension
-		WHERE name = $1
-	`
+	query := `SELECT name, pkg, category, repo, lang, license, ver,description, requires, website, doc_url, src_url,created_at, updated_at FROM pgext.extension WHERE name = $1`
 
 	var name, pkg, category, repo, lang, license, ver, description string
 	var requires, website, docURL, srcURL string

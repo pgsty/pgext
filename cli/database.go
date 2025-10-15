@@ -158,8 +158,8 @@ func getDBSummary(config *pgx.ConnConfig) string {
 	return fmt.Sprintf("%s@%s", db, host)
 }
 
-// sanitizeURL removes password from connection string for logging
-func sanitizeURL(url string) string {
+// SanitizeURL removes password from connection string for logging
+func SanitizeURL(url string) string {
 	config, err := pgxpool.ParseConfig(url)
 	if err != nil {
 		return "***"

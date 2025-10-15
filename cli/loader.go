@@ -33,18 +33,6 @@ const (
 	RegionChina   Region = "china"
 )
 
-// GetRegion detects the region (can be enhanced with geo-detection)
-func GetRegion() Region {
-	// Check environment variable
-	if region := strings.ToLower(strings.TrimSpace(
-		getEnv("PIG_REGION", ""))); region != "" {
-		if region == "china" || region == "cn" {
-			return RegionChina
-		}
-	}
-	return RegionDefault
-}
-
 // LoadTable loads CSV data into a pgext table
 // tableName can be: extension/ext/e, repository/repo/r, category/cat/c, or any table name
 // source can be: URL, file path, "-" for stdin, or empty for default URL

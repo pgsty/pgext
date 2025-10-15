@@ -179,7 +179,7 @@ func displayStatus(status *StatusInfo) {
 	fmt.Println("\n╔═══════════════════════════════════════════╗")
 	fmt.Println("║            pgext Status                   ║")
 	fmt.Println("╚═══════════════════════════════════════════╝")
-	fmt.Printf("\nDatabase: %s\n", sanitizeURL(PGURL))
+	fmt.Printf("\nDatabase: %s\n", SanitizeURL(PGURL))
 
 	// Active PG Versions
 	fmt.Println("\n📌 Active PostgreSQL Versions:")
@@ -248,7 +248,7 @@ func printSchemaNotFound() {
 	fmt.Println("\n╔═══════════════════════════════════════════╗")
 	fmt.Println("║         pgext Metadata Status             ║")
 	fmt.Println("╚═══════════════════════════════════════════╝")
-	fmt.Printf("\nDatabase: %s\n", sanitizeURL(PGURL))
+	fmt.Printf("\nDatabase: %s\n", SanitizeURL(PGURL))
 	fmt.Println("Schema:   not found")
 	fmt.Println("\n⚠️  Schema not initialized. Run 'pgext init' to create it.\n")
 }
