@@ -8,7 +8,6 @@ import (
 	"database/sql"
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/jackc/pgx/v5"
 	_ "github.com/mattn/go-sqlite3"
@@ -216,68 +215,6 @@ type DNFPackage struct {
 	ChecksumType   sql.NullString
 }
 
-// ExtractDNFPackageInfo extracts package information for a specific PostgreSQL version
-func ExtractDNFPackageInfo(pkg *DNFPackage, pgVer int) *PackageInfo {
-	// Check if this package is for the specified PostgreSQL version
-	pgSuffix := fmt.Sprintf("_%d", pgVer)
-	if !strings.Contains(pkg.Name, pgSuffix) {
-		return nil
-	}
-
-	// Skip development and LLVM JIT packages
-	if strings.Contains(pkg.Name, "-llvmjit") || strings.Contains(pkg.Name, "-devel") {
-		return nil
-	}
-
-	info := &PackageInfo{
-		Name:    pkg.Name,
-		PkgId:   pkg.PkgId,
-		Version: getString2(pkg.Version),
-		Arch:    getString2(pkg.Arch),
-		Release: getString2(pkg.Release),
-	}
-
-	// Extract pname (package name without PG version suffix)
-	if idx := strings.Index(pkg.Name, pgSuffix); idx > 0 {
-		info.PName = pkg.Name[:idx+len(pgSuffix)]
-	} else {
-		info.PName = pkg.Name
-	}
-
-	// Build full version string
-	if pkg.Release.Valid && pkg.Release.String != "" {
-		info.FullVersion = info.Version + "-" + info.Release
-	} else {
-		info.FullVersion = info.Version
-	}
-
-	// Extract base version (without release)
-	info.BaseVersion = info.Version
-
-	// Extract size information
-	if pkg.SizePackage.Valid {
-		info.Size = pkg.SizePackage.Int64
-	}
-	if pkg.SizeInstalled.Valid {
-		info.SizeInstall = pkg.SizeInstalled.Int64
-	}
-
-	// Extract file information
-	if pkg.LocationHref.Valid {
-		info.Filename = pkg.LocationHref.String
-		// Extract just the filename from the path
-		if idx := strings.LastIndex(info.Filename, "/"); idx >= 0 {
-			info.File = info.Filename[idx+1:]
-		} else {
-			info.File = info.Filename
-		}
-	}
-
-	info.SHA256 = pkg.PkgId
-
-	return info
-}
-
 // Helper functions to convert sql.Null types
 func nullStr(ns sql.NullString) interface{} {
 	if ns.Valid {
@@ -291,13 +228,6 @@ func nullInt(ni sql.NullInt64) interface{} {
 		return ni.Int64
 	}
 	return nil
-}
-
-func getString2(ns sql.NullString) string {
-	if ns.Valid {
-		return ns.String
-	}
-	return ""
 }
 
 // PackageInfo represents common package information

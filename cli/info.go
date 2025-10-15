@@ -238,14 +238,6 @@ func ShowExt(extName string) error {
 	return nil
 }
 
-// truncate truncates a string to specified length.
-func truncate(s string, maxLen int) string {
-	if len(s) <= maxLen {
-		return s
-	}
-	return s[:maxLen-3] + "..."
-}
-
 // wrapText wraps text to specified width.
 func wrapText(text string, width int) string {
 	if len(text) <= width {

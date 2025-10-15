@@ -39,8 +39,8 @@ var (
 // rootCmd represents the base command
 var rootCmd = &cobra.Command{
 	Use:   "pgext",
-	Short: "PostgreSQL Extension Metadata Manager",
-	Long:  `pgext - PostgreSQL Extension Metadata Manager using PostgreSQL`,
+	Short: "PG Extension Catalog CLI",
+	Long:  `pgext - PostgreSQL Extension Catalog CLI`,
 	Example: `
   pgext init                    # setup everything (schema + reload)
 
@@ -48,9 +48,12 @@ var rootCmd = &cobra.Command{
   pgext reload                  # reload data: fetch + parse + recap
   pgext status                  # show metadata status
 
+  pgext fetch                   # get repo metadata from upstream
+  pgext parse                   # populate apt, dnf, bin tables 
+  pgext recap                   # generate pkg table from bin info 
+
   pgext pkg <name>              # show package availability matrix
   pgext bin <name> -p 17 -o el9 # show binary packages with URLs
-  pgext ext <name>              # show extension information
 `,
 	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 		return setupLogging()
@@ -438,29 +441,6 @@ var binCmd = &cobra.Command{
 	PostRun: closeDatabase,
 }
 
-// extCmd shows extension information
-var extCmd = &cobra.Command{
-	Use:   "ext <name>",
-	Short: "show extension information",
-	Long:  `Display detailed information about a specific extension from pgext.extension table.`,
-	Args:  cobra.ExactArgs(1),
-	Example: `
-  pgext ext pgvector            # show pgvector extension info
-  pgext ext postgis             # show postgis extension info
-`,
-	PreRunE: initDatabase,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		extName := args[0]
-		if err := cli.ShowExt(extName); err != nil {
-			return fmt.Errorf("failed to show extension: %w", err)
-		}
-		return nil
-	},
-	PostRun: closeDatabase,
-}
-
-// Helper functions
-
 func setupLogging() error {
 	if debug {
 		logLevel = "debug"
@@ -554,16 +534,19 @@ func init() {
 
 	// Add commands to root
 	rootCmd.AddCommand(initCmd)
-	rootCmd.AddCommand(schemaCmd)
 	rootCmd.AddCommand(reloadCmd)
+
+	rootCmd.AddCommand(schemaCmd)
+	rootCmd.AddCommand(purgeCmd)
+	rootCmd.AddCommand(statusCmd)
+
 	rootCmd.AddCommand(fetchCmd)
 	rootCmd.AddCommand(parseCmd)
 	rootCmd.AddCommand(recapCmd)
+
 	rootCmd.AddCommand(loadCmd)
-	rootCmd.AddCommand(statusCmd)
 	rootCmd.AddCommand(repoCmd)
 	rootCmd.AddCommand(pkgCmd)
 	rootCmd.AddCommand(binCmd)
-	rootCmd.AddCommand(extCmd)
-	rootCmd.AddCommand(purgeCmd)
+
 }

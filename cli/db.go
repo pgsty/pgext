@@ -87,11 +87,6 @@ func CloseDB() {
 	}
 }
 
-// ExecSQL executes SQL statement and returns affected rows
-func ExecSQL(sql string, args ...interface{}) (int64, error) {
-	return ExecSQLContext(context.Background(), sql, args...)
-}
-
 // ExecSQLContext executes SQL statement with context and returns affected rows
 func ExecSQLContext(ctx context.Context, sql string, args ...interface{}) (int64, error) {
 	if DB == nil {
@@ -113,11 +108,6 @@ func ExecContext(ctx context.Context, sql string, args ...interface{}) (pgconn.C
 	return DB.Exec(ctx, sql, args...)
 }
 
-// QueryRow executes a query that returns a single row
-func QueryRow(sql string, args ...interface{}) pgx.Row {
-	return QueryRowContext(context.Background(), sql, args...)
-}
-
 // QueryRowContext executes a query with context that returns a single row
 func QueryRowContext(ctx context.Context, sql string, args ...interface{}) pgx.Row {
 	if DB == nil {
@@ -125,11 +115,6 @@ func QueryRowContext(ctx context.Context, sql string, args ...interface{}) pgx.R
 		return &emptyRow{err: fmt.Errorf("database not initialized")}
 	}
 	return DB.QueryRow(ctx, sql, args...)
-}
-
-// Query executes a query that returns multiple rows
-func Query(sql string, args ...interface{}) (pgx.Rows, error) {
-	return QueryContext(context.Background(), sql, args...)
 }
 
 // QueryContext executes a query with context that returns multiple rows

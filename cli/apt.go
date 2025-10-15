@@ -7,7 +7,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
 
@@ -254,67 +253,4 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 	}
 
 	return count
-}
-
-// ExtractAPTPackageInfo extracts package information for a specific PostgreSQL version
-func ExtractAPTPackageInfo(pkg map[string]interface{}, pgVer int) *PackageInfo {
-	packageName, _ := pkg["Package"].(string)
-	if packageName == "" {
-		return nil
-	}
-
-	// Check if this package is for the specified PostgreSQL version
-	pgSuffix := fmt.Sprintf("-%d", pgVer)
-	if !strings.Contains(packageName, pgSuffix) {
-		return nil
-	}
-
-	// Skip debug symbols
-	if strings.Contains(packageName, "-dbgsym") {
-		return nil
-	}
-
-	info := &PackageInfo{
-		Name:    packageName,
-		Version: getString(pkg, "Version"),
-		Arch:    getString(pkg, "Architecture"),
-	}
-
-	// Extract size information
-	if size, ok := pkg["Size"].(int); ok {
-		info.Size = int64(size)
-	}
-	if sizeInstall, ok := pkg["Installed-Size"].(int); ok {
-		info.SizeInstall = int64(sizeInstall)
-	}
-
-	// Extract file information
-	info.Filename = getString(pkg, "Filename")
-	info.SHA256 = getString(pkg, "SHA256")
-
-	// Process package name to remove suffixes
-	pname := packageName
-	pname = strings.ReplaceAll(pname, "-scripts", "")
-	pname = strings.ReplaceAll(pname, "-doc", "")
-	pname = strings.ReplaceAll(pname, "-dbgsym", "")
-	pname = strings.ReplaceAll(pname, "-pgq-node", "-pgq")
-	info.PName = pname
-
-	// Extract version components
-	if matches := regexp.MustCompile(`^(.*)-([^-]+)$`).FindStringSubmatch(info.Version); len(matches) == 3 {
-		info.BaseVersion = matches[1]
-		info.Release = matches[2]
-	} else {
-		info.BaseVersion = info.Version
-	}
-
-	return info
-}
-
-// getString safely extracts a string value from map
-func getString(m map[string]interface{}, key string) string {
-	if val, ok := m[key].(string); ok {
-		return val
-	}
-	return ""
 }

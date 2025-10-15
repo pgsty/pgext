@@ -617,30 +617,3 @@ func normalizeETag(etag string) string {
 	// Add quotes if missing
 	return `"` + etag + `"`
 }
-
-// compareETags compares two ETag values, handling different formats
-func compareETags(etag1, etag2 string) bool {
-	if etag1 == "" || etag2 == "" {
-		return false
-	}
-
-	// Direct comparison first (most common case)
-	if etag1 == etag2 {
-		return true
-	}
-
-	// Strip W/ prefix for weak ETags
-	e1 := strings.TrimPrefix(etag1, "W/")
-	e2 := strings.TrimPrefix(etag2, "W/")
-
-	// Compare after stripping weak prefix
-	if e1 == e2 {
-		return true
-	}
-
-	// Try comparing without quotes
-	e1 = strings.Trim(e1, `"`)
-	e2 = strings.Trim(e2, `"`)
-
-	return e1 == e2
-}

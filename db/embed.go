@@ -87,21 +87,6 @@ func GetCSVFiles() ([]CSVFile, error) {
 	return orderedFiles, nil
 }
 
-// GetCSVFile returns a specific CSV file by name
-func GetCSVFile(name string) ([]byte, error) {
-	// Try with .csv extension
-	filename := name + ".csv"
-	data, err := embeddedFS.ReadFile(filename)
-	if err != nil {
-		// Also try without adding extension (in case it's already included)
-		data, err = embeddedFS.ReadFile(name)
-		if err != nil {
-			return nil, fmt.Errorf("failed to read CSV file %s: %w", name, err)
-		}
-	}
-	return data, nil
-}
-
 // ReadFile returns content of any embedded file by name
 func ReadFile(name string) ([]byte, error) {
 	data, err := embeddedFS.ReadFile(name)
