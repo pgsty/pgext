@@ -10,7 +10,6 @@ import (
 	"context"
 	"fmt"
 	"pgext/db"
-	"regexp"
 	"strings"
 	"time"
 
@@ -38,25 +37,33 @@ type BinaryPackage struct {
 }
 
 // cleanVersion extracts clean semantic version from version strings.
-// Examples: "1:2.0.12-3.el8" -> "2.0.12", "1.2.3.citus-1" -> "1.2.3"
+// Only keeps digits and dots, stops at first non-digit/non-dot character.
+// Examples:
+//   - "0.2.0+git20211101.d7d10f2" -> "0.2.0"
+//   - "5.5.0+debpgdg" -> "5.5.0"
+//   - "1.2_20240606" -> "1.2"
+//   - "2.22.0+dfsg" -> "2.22.0"
+//   - "1.3.0~alpha" -> "1.3.0"
+//   - "1:2.0.12-3.el8" -> "2.0.12"
 func cleanVersion(ver string) string {
 	// Remove epoch prefix (e.g., "1:2.0.12" → "2.0.12")
 	if idx := strings.Index(ver, ":"); idx > 0 && idx <= 2 {
 		ver = ver[idx+1:]
 	}
 
-	// Remove special suffixes (.citus, .pgdg, .el8, etc.)
-	suffixes := regexp.MustCompile(`\.(citus|pgdg|PGDG|el\d+|rhel\d+)`)
-	ver = suffixes.ReplaceAllString(ver, "")
-
-	// Find first delimiter (-, ~, +, _) and truncate
-	for _, delim := range []string{"-", "~", "+", "_"} {
-		if idx := strings.Index(ver, delim); idx > 0 {
-			return ver[:idx]
+	// Extract version: keep only digits and dots
+	// Stop at first character that's not a digit or dot
+	var result strings.Builder
+	for _, ch := range ver {
+		if (ch >= '0' && ch <= '9') || ch == '.' {
+			result.WriteRune(ch)
+		} else {
+			// Found non-version character, stop here
+			break
 		}
 	}
 
-	return ver
+	return strings.TrimRight(result.String(), ".")
 }
 
 // BinGenerator generates pgext.bin records from apt and dnf tables.

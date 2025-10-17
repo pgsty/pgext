@@ -39,28 +39,6 @@ func InitSchema(force bool) error {
 		logrus.Info("existing pgext schema dropped")
 	}
 
-	// Ensure semver extension is available (required dependency)
-	var semverExists bool
-	err = QueryRowContext(ctx, `
-		SELECT EXISTS (
-			SELECT 1 FROM pg_extension
-			WHERE extname = 'semver'
-		)
-	`).Scan(&semverExists)
-	if err != nil {
-		return fmt.Errorf("failed to check semver extension: %w", err)
-	}
-
-	if !semverExists {
-		logrus.Warn("semver extension not found, attempting to create...")
-		if _, err := ExecContext(ctx, "CREATE EXTENSION IF NOT EXISTS semver"); err != nil {
-			logrus.Errorf("failed to create semver extension: %v", err)
-			logrus.Warn("please install semver extension first: CREATE EXTENSION semver;")
-			return fmt.Errorf("semver extension is required but not available")
-		}
-		logrus.Info("semver extension created")
-	}
-
 	// Create pgext schema from embedded SQL
 	schemaSQL, err := db.GetSchema()
 	if err != nil {
