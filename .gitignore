@@ -46,3 +46,5 @@ CLAUDE.md
 .idea/
 .code/
 public/
+.hugo_build.lock
+__pycache__/

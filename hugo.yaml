@@ -1,6 +1,6 @@
 baseURL: 'https://pgext.pgsty.com/'
 languageCode: 'en'
-title: 'PG Extensions'
+title: 'PGEXT Catalog'
 
 enableRobotsTXT: true
 # Parse Git commit
@@ -27,12 +27,12 @@ languages:
     languageName: English
     languageCode: en
     weight: 1
-    title: PG Extension Catalog
+    title: PGEXT Catalog
   zh:
     languageName: 简体中文
     languageCode: zh
-    weight: 1
-    title: PG 扩展目录
+    weight: 2
+    title: PGEXT 扩展目录
 
 sidebar:
   - identifier: pig
@@ -44,7 +44,7 @@ sidebar:
     url: "https://pgsty.com"
     weight: 8
   - identifier: pigsty-doc
-    name: "PigstyDoc ↗"
+    name: "Pigsty Doc ↗"
     url: "https://doc.pgsty.com"
     weight: 9
   - identifier: pgexp
@@ -90,7 +90,7 @@ menu:
 
 
 params:
-  description: PG Extension Catalog
+  description: PGEXT Catalog
 
   navbar:
     displayTitle: true
@@ -158,5 +158,5 @@ params:
       reactionsEnabled: 1
       emitMetadata: 0
       inputPosition: bottom
-      lang: zh-CN
+      lang: en
       theme: preferred_color_scheme

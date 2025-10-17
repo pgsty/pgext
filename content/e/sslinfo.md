@@ -1,0 +1,44 @@
+---
+title: "sslinfo"
+linkTitle: "sslinfo"
+description: "information about SSL certificates"
+weight: 6920
+categories: ["Stat"]
+width: full
+---
+
+information about SSL certificates
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **6920** | {{< badge content="sslinfo" link="https://www.postgresql.org/docs/current/sslinfo.html" >}} | {{< ext "sslinfo" "sslinfo" >}} | `1.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "sslutils" >}} {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} |
+
+
+## Packages
+
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} |
+
+> [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
+
+
+## Install
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```sql
+CREATE EXTENSION sslinfo;
+```

@@ -66,7 +66,6 @@ load:
 	cat db/repository.csv | psql $(PGURL) -c "COPY pgext.repository FROM STDIN CSV HEADER;"
 	cat db/extension.csv  | psql $(PGURL) -c "COPY pgext.extension  FROM STDIN CSV HEADER;"
 
-
 # dump extension data to data dir
 dump2:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.bin ORDER BY pg,os,name DESC)  TO STDOUT CSV HEADER;"  > db/bin.csv

@@ -1,0 +1,46 @@
+---
+title: "jsonb_plperlu"
+linkTitle: "jsonb_plperlu"
+description: "transform between jsonb and plperlu"
+weight: 3272
+categories: ["Lang"]
+width: full
+---
+
+transform between jsonb and plperlu
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **3272** | {{< badge content="jsonb_plperlu" link="https://www.postgresql.org/docs/current/plperl.html" >}} | {{< ext "jsonb_plperlu" "plperlu" >}} | `1.0` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="-----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **Requires**    | {{< ext "plperlu" >}} |
+|   **See Also**    | {{< ext "jsquery" >}} {{< ext "jsonb_plperl" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "pg_jsonschema" >}} {{< ext "plperl" >}} {{< ext "plpgsql" >}} |
+|    **Siblings**   | {{< ext "bool_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "plperlu" >}} |
+
+
+## Packages
+
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} |
+
+> [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
+
+
+## Install
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```sql
+CREATE EXTENSION jsonb_plperlu;
+```

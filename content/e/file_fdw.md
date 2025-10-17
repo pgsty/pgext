@@ -1,0 +1,45 @@
+---
+title: "file_fdw"
+linkTitle: "file_fdw"
+description: "foreign-data wrapper for flat file access"
+weight: 8980
+categories: ["Fdw"]
+width: full
+---
+
+foreign-data wrapper for flat file access
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **8980** | {{< badge content="file_fdw" link="https://www.postgresql.org/docs/current/file-fdw.html" >}} | {{< ext "file_fdw" "file_fdw" >}} | `1.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|    **Need By**    | {{< ext "pg_sqlog" >}} |
+|   **See Also**    | {{< ext "log_fdw" >}} {{< ext "wrappers" >}} {{< ext "sqlite_fdw" >}} {{< ext "aws_s3" >}} {{< ext "pg_bulkload" >}} {{< ext "multicorn" >}} {{< ext "hdfs_fdw" >}} {{< ext "postgres_fdw" >}} |
+
+
+## Packages
+
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} |
+
+> [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
+
+
+## Install
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```sql
+CREATE EXTENSION file_fdw;
+```

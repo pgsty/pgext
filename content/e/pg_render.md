@@ -1,0 +1,167 @@
+---
+title: "pg_render"
+linkTitle: "pg_render"
+description: "Render HTML in SQL"
+weight: 4290
+categories: ["Util"]
+width: full
+---
+
+Render HTML in SQL
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **4290** | {{< badge content="pg_render" link="https://github.com/mkaski/pg_render" >}} | {{< ext "pg_render" "pg_render" >}} | `0.1.2` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
+
+> [!Note] pgrx=0.12.8
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.2` | {{< badge content="18" color="red" alt="pg_render_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_render_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.2` | {{< badge content="18" color="red" alt="postgresql-18-pg-render" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-render` | - |
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |    {{< pkg "pg_render_18" >}}     | {{< pkg "pg_render_17" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_17-0.1.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_render_16" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_16-0.1.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_render_15" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_15-0.1.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_render_14" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_14-0.1.2-1PIGSTY.el8.x86_64.rpm" >}} |
+|    `el8.aarch64`    |    {{< pkg "pg_render_18" >}}     | {{< pkg "pg_render_17" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_17-0.1.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_render_16" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_16-0.1.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_render_15" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_15-0.1.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_render_14" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_14-0.1.2-1PIGSTY.el8.aarch64.rpm" >}} |
+|    `el9.x86_64`    |    {{< pkg "pg_render_18" >}}     | {{< pkg "pg_render_17" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_17-0.1.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_render_16" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_16-0.1.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_render_15" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_15-0.1.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_render_14" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_14-0.1.2-1PIGSTY.el9.x86_64.rpm" >}} |
+|    `el9.aarch64`    |    {{< pkg "pg_render_18" >}}     | {{< pkg "pg_render_17" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_17-0.1.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_render_16" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_16-0.1.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_render_15" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_15-0.1.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_render_14" "0.1.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_14-0.1.2-1PIGSTY.el9.aarch64.rpm" >}} |
+|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb" >}} |
+|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb" >}} |
+|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb" >}} |
+|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb" >}} |
+|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~noble_amd64.deb" >}} |
+|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-render" >}}     | {{< pkg "postgresql-17-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-render" "0.1.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~noble_arm64.deb" >}} |
+
+
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
+
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_render_17` | 0.1.2 | `el8.aarch64` | pigsty | 923.4 KiB | [pg_render_17-0.1.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_17-0.1.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_render_17` | 0.1.2 | `el8.x86_64` | pigsty | 1.0 MiB | [pg_render_17-0.1.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_17-0.1.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_render_17` | 0.1.2 | `el9.aarch64` | pigsty | 990.6 KiB | [pg_render_17-0.1.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_17-0.1.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_render_17` | 0.1.2 | `el9.x86_64` | pigsty | 1.0 MiB | [pg_render_17-0.1.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_17-0.1.2-1PIGSTY.el9.x86_64.rpm) |
+| `postgresql-17-pg-render` | 0.1.2 | `d12.x86_64` | pigsty | 848.9 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-render` | 0.1.2 | `d12.aarch64` | pigsty | 723.8 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-render` | 0.1.2 | `u22.aarch64` | pigsty | 870.8 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-render` | 0.1.2 | `u22.x86_64` | pigsty | 952.2 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-render` | 0.1.2 | `u24.x86_64` | pigsty | 944.6 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-render` | 0.1.2 | `u24.aarch64` | pigsty | 854.8 KiB | [postgresql-17-pg-render_0.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.2-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_render_16` | 0.1.2 | `el8.x86_64` | pigsty | 1.0 MiB | [pg_render_16-0.1.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_16-0.1.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_render_16` | 0.1.2 | `el8.aarch64` | pigsty | 923.3 KiB | [pg_render_16-0.1.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_16-0.1.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_render_16` | 0.1.2 | `el9.aarch64` | pigsty | 994.3 KiB | [pg_render_16-0.1.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_16-0.1.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_render_16` | 0.1.2 | `el9.x86_64` | pigsty | 1.0 MiB | [pg_render_16-0.1.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_16-0.1.2-1PIGSTY.el9.x86_64.rpm) |
+| `postgresql-16-pg-render` | 0.1.2 | `d12.aarch64` | pigsty | 723.0 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-render` | 0.1.2 | `d12.x86_64` | pigsty | 849.1 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-render` | 0.1.2 | `u22.x86_64` | pigsty | 952.3 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-render` | 0.1.2 | `u22.aarch64` | pigsty | 870.8 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-render` | 0.1.2 | `u24.aarch64` | pigsty | 858.3 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-render` | 0.1.2 | `u24.x86_64` | pigsty | 940.4 KiB | [postgresql-16-pg-render_0.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.2-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_render_15` | 0.1.2 | `el8.x86_64` | pigsty | 1.0 MiB | [pg_render_15-0.1.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_15-0.1.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_render_15` | 0.1.2 | `el8.aarch64` | pigsty | 923.3 KiB | [pg_render_15-0.1.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_15-0.1.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_render_15` | 0.1.2 | `el9.x86_64` | pigsty | 1.0 MiB | [pg_render_15-0.1.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_15-0.1.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_render_15` | 0.1.2 | `el9.aarch64` | pigsty | 990.3 KiB | [pg_render_15-0.1.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_15-0.1.2-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-15-pg-render` | 0.1.2 | `d12.x86_64` | pigsty | 848.8 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-render` | 0.1.2 | `d12.aarch64` | pigsty | 723.3 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-render` | 0.1.2 | `u22.aarch64` | pigsty | 870.1 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-render` | 0.1.2 | `u22.x86_64` | pigsty | 952.4 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-render` | 0.1.2 | `u24.aarch64` | pigsty | 859.2 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-render` | 0.1.2 | `u24.x86_64` | pigsty | 944.5 KiB | [postgresql-15-pg-render_0.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.2-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_render_14` | 0.1.2 | `el8.aarch64` | pigsty | 923.1 KiB | [pg_render_14-0.1.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_render_14-0.1.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_render_14` | 0.1.2 | `el8.x86_64` | pigsty | 1.0 MiB | [pg_render_14-0.1.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_render_14-0.1.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_render_14` | 0.1.2 | `el9.x86_64` | pigsty | 1.0 MiB | [pg_render_14-0.1.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_render_14-0.1.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_render_14` | 0.1.2 | `el9.aarch64` | pigsty | 994.9 KiB | [pg_render_14-0.1.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_render_14-0.1.2-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-14-pg-render` | 0.1.2 | `d12.aarch64` | pigsty | 724.0 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-render` | 0.1.2 | `d12.x86_64` | pigsty | 848.7 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-render` | 0.1.2 | `u22.x86_64` | pigsty | 951.2 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-render` | 0.1.2 | `u22.aarch64` | pigsty | 869.6 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-render` | 0.1.2 | `u24.aarch64` | pigsty | 858.3 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-render` | 0.1.2 | `u24.x86_64` | pigsty | 944.9 KiB | [postgresql-14-pg-render_0.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.2-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/mkaski/pg_render" title="Repository" icon="github" subtitle="github.com/mkaski/pg_render" >}}
+{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_render-0.1.2.tar.gz" >}}
+{{< /cards >}}
+
+
+```bash
+pig build get pg_render; # get pg_render source code
+pig build dep pg_render; # install build dependencies
+pig build pkg pg_render; # build extension rpm or deb
+pig build ext pg_render; # build extension rpms
+```
+
+
+## Install
+
+To add the required PGDG / PIGSTY upstream repository, use:
+
+```bash
+pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+```
+
+[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+
+```bash
+pig ext install pg_render; # install by extension name, for the current active PG version
+pig ext install pg_render; # install via package alias, for the active PG version
+pig ext install pg_render -v 17;   # install for PG 17
+pig ext install pg_render -v 16;   # install for PG 16
+pig ext install pg_render -v 15;   # install for PG 15
+pig ext install pg_render -v 14;   # install for PG 14
+
+```
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```bash
+CREATE EXTENSION pg_render;
+```
+

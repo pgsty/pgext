@@ -1,0 +1,194 @@
+---
+title: "h3_postgis"
+linkTitle: "h3_postgis"
+description: "H3 PostGIS integration"
+weight: 1531
+categories: ["Gis"]
+width: full
+---
+
+H3 PostGIS integration
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **1531** | {{< badge content="h3_postgis" link="https://github.com/zachasme/h3-pg" >}} | {{< ext "h3_postgis" "pg_h3" >}} | `4.2.3` | {{< category "GIS" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **Requires**    | {{< ext "h3" >}} {{< ext "postgis" >}} {{< ext "postgis_raster" >}} |
+|   **See Also**    | {{< ext "mobilitydb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} |
+|    **Siblings**   | {{< ext "h3" >}} |
+
+> [!Note] no el8.pg17.x86
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EL** | {{< badge content="PGDG" link="/e/h3" >}} | `4.2.3` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `h3-pg_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/h3" >}} | `4.1.3` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-h3` | - |
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |    {{< pkg "h3-pg_18" >}}     |    {{< pkg "h3-pg_17" >}}     | {{< pkg "h3-pg_16" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/h3-pg_16-4.1.3-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "h3-pg_15" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/h3-pg_15-4.1.3-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "h3-pg_14" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/h3-pg_14-4.1.3-1PGDG.rhel8.x86_64.rpm" >}} |
+|    `el8.aarch64`    | {{< pkg "h3-pg_18" "4.2.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/h3-pg_18-4.2.3-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "h3-pg_17" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/h3-pg_17-4.1.3-3PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "h3-pg_16" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/h3-pg_16-4.1.3-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "h3-pg_15" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/h3-pg_15-4.1.3-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "h3-pg_14" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/h3-pg_14-4.1.3-1PGDG.rhel8.aarch64.rpm" >}} |
+|    `el9.x86_64`    | {{< pkg "h3-pg_18" "4.2.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/h3-pg_18-4.2.3-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "h3-pg_17" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/h3-pg_17-4.1.3-3PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "h3-pg_16" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/h3-pg_16-4.1.3-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "h3-pg_15" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/h3-pg_15-4.1.3-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "h3-pg_14" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/h3-pg_14-4.1.3-1PGDG.rhel9.x86_64.rpm" >}} |
+|    `el9.aarch64`    | {{< pkg "h3-pg_18" "4.2.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/h3-pg_18-4.2.3-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "h3-pg_17" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/h3-pg_17-4.1.3-3PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "h3-pg_16" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/h3-pg_16-4.1.3-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "h3-pg_15" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/h3-pg_15-4.1.3-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "h3-pg_14" "4.1.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/h3-pg_14-4.1.3-1PGDG.rhel9.aarch64.rpm" >}} |
+|    `d12.x86_64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg12+1_amd64.deb" >}} |
+|    `d12.aarch64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg12+1_arm64.deb" >}} |
+|    `u22.x86_64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg22.04+1_amd64.deb" >}} |
+|    `u22.aarch64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg22.04+1_arm64.deb" >}} |
+|    `u24.x86_64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg24.04+1_amd64.deb" >}} |
+|    `u24.aarch64`    | {{< pkg "postgresql-18-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-h3" "4.2.3" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg24.04+1_arm64.deb" >}} |
+
+
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_18` | 4.2.3 | `el8.aarch64` | pgdg | 70.5 KiB | [h3-pg_18-4.2.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/h3-pg_18-4.2.3-1PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_18` | 4.2.3 | `el9.aarch64` | pgdg | 70.7 KiB | [h3-pg_18-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/h3-pg_18-4.2.3-1PGDG.rhel9.aarch64.rpm) |
+| `h3-pg_18` | 4.2.3 | `el9.x86_64` | pgdg | 72.6 KiB | [h3-pg_18-4.2.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/h3-pg_18-4.2.3-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-18-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.7 KiB | [postgresql-18-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-18-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.6 KiB | [postgresql-18-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-18-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.5 KiB | [postgresql-18-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.6 KiB | [postgresql-18-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.6 KiB | [postgresql-18-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.1 KiB | [postgresql-18-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-18-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_17` | 4.1.3 | `el8.aarch64` | pgdg | 63.8 KiB | [h3-pg_17-4.1.3-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/h3-pg_17-4.1.3-3PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_17` | 4.1.3 | `el9.aarch64` | pgdg | 64.3 KiB | [h3-pg_17-4.1.3-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/h3-pg_17-4.1.3-3PGDG.rhel9.aarch64.rpm) |
+| `h3-pg_17` | 4.1.3 | `el9.x86_64` | pgdg | 65.8 KiB | [h3-pg_17-4.1.3-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/h3-pg_17-4.1.3-3PGDG.rhel9.x86_64.rpm) |
+| `postgresql-17-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.7 KiB | [postgresql-17-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-17-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.7 KiB | [postgresql-17-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-17-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.7 KiB | [postgresql-17-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.5 KiB | [postgresql-17-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.6 KiB | [postgresql-17-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.3 KiB | [postgresql-17-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-17-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_16` | 4.1.3 | `el8.aarch64` | pgdg | 63.6 KiB | [h3-pg_16-4.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/h3-pg_16-4.1.3-1PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_16` | 4.1.3 | `el8.x86_64` | pgdg | 65.9 KiB | [h3-pg_16-4.1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/h3-pg_16-4.1.3-1PGDG.rhel8.x86_64.rpm) |
+| `h3-pg_16` | 4.1.3 | `el9.aarch64` | pgdg | 63.8 KiB | [h3-pg_16-4.1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/h3-pg_16-4.1.3-1PGDG.rhel9.aarch64.rpm) |
+| `h3-pg_16` | 4.1.3 | `el9.x86_64` | pgdg | 65.4 KiB | [h3-pg_16-4.1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/h3-pg_16-4.1.3-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-16-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.7 KiB | [postgresql-16-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-16-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.6 KiB | [postgresql-16-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-16-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.7 KiB | [postgresql-16-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.5 KiB | [postgresql-16-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.2 KiB | [postgresql-16-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.7 KiB | [postgresql-16-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-16-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_15` | 4.1.3 | `el8.x86_64` | pgdg | 65.9 KiB | [h3-pg_15-4.1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/h3-pg_15-4.1.3-1PGDG.rhel8.x86_64.rpm) |
+| `h3-pg_15` | 4.1.3 | `el8.aarch64` | pgdg | 63.6 KiB | [h3-pg_15-4.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/h3-pg_15-4.1.3-1PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_15` | 4.1.3 | `el9.aarch64` | pgdg | 63.8 KiB | [h3-pg_15-4.1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/h3-pg_15-4.1.3-1PGDG.rhel9.aarch64.rpm) |
+| `h3-pg_15` | 4.1.3 | `el9.x86_64` | pgdg | 65.5 KiB | [h3-pg_15-4.1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/h3-pg_15-4.1.3-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-15-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.8 KiB | [postgresql-15-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-15-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.7 KiB | [postgresql-15-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-15-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.5 KiB | [postgresql-15-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.6 KiB | [postgresql-15-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.6 KiB | [postgresql-15-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.3 KiB | [postgresql-15-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-15-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_14` | 4.1.3 | `el8.x86_64` | pgdg | 65.9 KiB | [h3-pg_14-4.1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/h3-pg_14-4.1.3-1PGDG.rhel8.x86_64.rpm) |
+| `h3-pg_14` | 4.1.3 | `el8.aarch64` | pgdg | 63.6 KiB | [h3-pg_14-4.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/h3-pg_14-4.1.3-1PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_14` | 4.1.3 | `el9.x86_64` | pgdg | 65.5 KiB | [h3-pg_14-4.1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/h3-pg_14-4.1.3-1PGDG.rhel9.x86_64.rpm) |
+| `h3-pg_14` | 4.1.3 | `el9.aarch64` | pgdg | 63.7 KiB | [h3-pg_14-4.1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/h3-pg_14-4.1.3-1PGDG.rhel9.aarch64.rpm) |
+| `postgresql-14-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.8 KiB | [postgresql-14-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-14-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.7 KiB | [postgresql-14-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-14-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.7 KiB | [postgresql-14-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.5 KiB | [postgresql-14-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.1 KiB | [postgresql-14-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.6 KiB | [postgresql-14-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-14-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `h3-pg_13` | 4.1.3 | `el8.aarch64` | pgdg | 63.7 KiB | [h3-pg_13-4.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/h3-pg_13-4.1.3-1PGDG.rhel8.aarch64.rpm) |
+| `h3-pg_13` | 4.1.3 | `el8.x86_64` | pgdg | 65.6 KiB | [h3-pg_13-4.1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/h3-pg_13-4.1.3-1PGDG.rhel8.x86_64.rpm) |
+| `h3-pg_13` | 4.1.3 | `el9.x86_64` | pgdg | 65.2 KiB | [h3-pg_13-4.1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/h3-pg_13-4.1.3-1PGDG.rhel9.x86_64.rpm) |
+| `h3-pg_13` | 4.1.3 | `el9.aarch64` | pgdg | 64.0 KiB | [h3-pg_13-4.1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/h3-pg_13-4.1.3-1PGDG.rhel9.aarch64.rpm) |
+| `postgresql-13-h3` | 4.2.3 | `d12.x86_64` | pgdg | 52.1 KiB | [postgresql-13-h3_4.2.3-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg12+1_amd64.deb) |
+| `postgresql-13-h3` | 4.2.3 | `d12.aarch64` | pgdg | 50.8 KiB | [postgresql-13-h3_4.2.3-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg12+1_arm64.deb) |
+| `postgresql-13-h3` | 4.2.3 | `u22.x86_64` | pgdg | 48.2 KiB | [postgresql-13-h3_4.2.3-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-h3` | 4.2.3 | `u22.aarch64` | pgdg | 46.7 KiB | [postgresql-13-h3_4.2.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-h3` | 4.2.3 | `u24.x86_64` | pgdg | 48.5 KiB | [postgresql-13-h3_4.2.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-h3` | 4.2.3 | `u24.aarch64` | pgdg | 47.2 KiB | [postgresql-13-h3_4.2.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/h3-pg/postgresql-13-h3_4.2.3-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/zachasme/h3-pg" title="Repository" icon="github" subtitle="github.com/zachasme/h3-pg" >}}
+{{< /cards >}}
+
+
+## Install
+
+To add the required PGDG / PIGSTY upstream repository, use:
+
+```bash
+pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+```
+
+[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+
+```bash
+pig ext install h3_postgis; # install by extension name, for the current active PG version
+pig ext install pg_h3; # install via package alias, for the active PG version
+pig ext install h3_postgis -v 18;   # install for PG 18
+pig ext install h3_postgis -v 17;   # install for PG 17
+pig ext install h3_postgis -v 16;   # install for PG 16
+pig ext install h3_postgis -v 15;   # install for PG 15
+pig ext install h3_postgis -v 14;   # install for PG 14
+pig ext install h3_postgis -v 13;   # install for PG 13
+
+```
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```bash
+CREATE EXTENSION h3_postgis;
+```
+

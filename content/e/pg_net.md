@@ -1,0 +1,217 @@
+---
+title: "pg_net"
+linkTitle: "pg_net"
+description: "Async HTTP Requests"
+weight: 4080
+categories: ["Util"]
+width: full
+---
+
+Async HTTP Requests
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **4080** | {{< badge content="pg_net" link="https://github.com/supabase/pg_net" >}} | {{< ext "pg_net" "pg_net" >}} | `0.9.2` | {{< category "UTIL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} |
+
+> [!Note] break on lower libcurl version
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_net" >}} | `0.9.2` | {{< badge content="18" color="red" alt="pg_net_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_net_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_net" >}} | `0.9.2` | {{< badge content="18" color="red" alt="postgresql-18-pg-net" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-net` | - |
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |    {{< pkg "pg_net_18" >}}     | {{< pkg "pg_net_17" "0.9.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_17-0.9.2-2PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_net_16" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_net_16-0.9.2-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pg_net_15" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_net_15-0.9.2-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pg_net_14" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_net_14-0.9.2-1PGDG.rhel8.x86_64.rpm" >}} |
+|    `el8.aarch64`    |    {{< pkg "pg_net_18" >}}     | {{< pkg "pg_net_17" "0.9.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_17-0.9.2-2PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_net_16" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_net_16-0.9.2-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pg_net_15" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_net_15-0.9.2-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pg_net_14" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_net_14-0.9.2-1PGDG.rhel8.aarch64.rpm" >}} |
+|    `el9.x86_64`    |    {{< pkg "pg_net_18" >}}     | {{< pkg "pg_net_17" "0.9.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_17-0.9.2-2PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_net_16" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_net_16-0.9.2-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pg_net_15" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_net_15-0.9.2-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pg_net_14" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_net_14-0.9.2-1PGDG.rhel9.x86_64.rpm" >}} |
+|    `el9.aarch64`    |    {{< pkg "pg_net_18" >}}     | {{< pkg "pg_net_17" "0.9.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_17-0.9.2-2PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_net_16" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_net_16-0.9.2-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pg_net_15" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_net_15-0.9.2-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pg_net_14" "0.9.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_net_14-0.9.2-1PGDG.rhel9.aarch64.rpm" >}} |
+|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb" >}} |
+|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb" >}} |
+|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb" >}} |
+|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.9.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb" >}} |
+|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~noble_amd64.deb" >}} |
+|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-net" >}}     | {{< pkg "postgresql-17-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-net" "0.14.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~noble_arm64.deb" >}} |
+
+
+{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_net_17` | 0.9.2 | `el8.x86_64` | pigsty | 26.6 KiB | [pg_net_17-0.9.2-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_17-0.9.2-2PIGSTY.el8.x86_64.rpm) |
+| `pg_net_17` | 0.9.2 | `el8.aarch64` | pigsty | 26.3 KiB | [pg_net_17-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_17-0.9.2-2PIGSTY.el8.aarch64.rpm) |
+| `pg_net_17` | 0.9.2 | `el9.aarch64` | pigsty | 26.2 KiB | [pg_net_17-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_17-0.9.2-2PIGSTY.el9.aarch64.rpm) |
+| `pg_net_17` | 0.9.2 | `el9.x86_64` | pigsty | 26.7 KiB | [pg_net_17-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_17-0.9.2-2PIGSTY.el9.x86_64.rpm) |
+| `postgresql-17-pg-net` | 0.14.0 | `d12.aarch64` | pigsty | 51.4 KiB | [postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-net` | 0.14.0 | `d12.x86_64` | pigsty | 52.3 KiB | [postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-net` | 0.9.2 | `u22.aarch64` | pigsty | 43.4 KiB | [postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-net` | 0.9.2 | `u22.x86_64` | pigsty | 44.0 KiB | [postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-net` | 0.14.0 | `u24.x86_64` | pigsty | 54.2 KiB | [postgresql-17-pg-net_0.14.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-net` | 0.14.0 | `u24.aarch64` | pigsty | 53.4 KiB | [postgresql-17-pg-net_0.14.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.14.0-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_net_16` | 0.9.2 | `el8.aarch64` | pgdg | 21.4 KiB | [pg_net_16-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_net_16-0.9.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_16` | 0.9.2 | `el8.x86_64` | pigsty | 26.7 KiB | [pg_net_16-0.9.2-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_16-0.9.2-2PIGSTY.el8.x86_64.rpm) |
+| `pg_net_16` | 0.9.2 | `el8.x86_64` | pgdg | 21.9 KiB | [pg_net_16-0.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_net_16-0.9.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_16` | 0.9.2 | `el8.aarch64` | pigsty | 26.2 KiB | [pg_net_16-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_16-0.9.2-2PIGSTY.el8.aarch64.rpm) |
+| `pg_net_16` | 0.9.1 | `el8.aarch64` | pgdg | 20.6 KiB | [pg_net_16-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_net_16-0.9.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_16` | 0.9.1 | `el8.x86_64` | pgdg | 21.0 KiB | [pg_net_16-0.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_net_16-0.9.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_16` | 0.9.2 | `el9.x86_64` | pgdg | 21.9 KiB | [pg_net_16-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_net_16-0.9.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_net_16` | 0.9.2 | `el9.aarch64` | pgdg | 21.4 KiB | [pg_net_16-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_net_16-0.9.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_16` | 0.9.2 | `el9.x86_64` | pigsty | 26.7 KiB | [pg_net_16-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_16-0.9.2-2PIGSTY.el9.x86_64.rpm) |
+| `pg_net_16` | 0.9.2 | `el9.aarch64` | pigsty | 26.2 KiB | [pg_net_16-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_16-0.9.2-2PIGSTY.el9.aarch64.rpm) |
+| `pg_net_16` | 0.9.1 | `el9.aarch64` | pgdg | 20.4 KiB | [pg_net_16-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_net_16-0.9.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_16` | 0.9.1 | `el9.x86_64` | pgdg | 20.9 KiB | [pg_net_16-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_net_16-0.9.1-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-16-pg-net` | 0.14.0 | `d12.aarch64` | pigsty | 51.3 KiB | [postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-net` | 0.14.0 | `d12.x86_64` | pigsty | 52.2 KiB | [postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-net` | 0.9.2 | `u22.aarch64` | pigsty | 43.4 KiB | [postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-net` | 0.9.2 | `u22.x86_64` | pigsty | 44.1 KiB | [postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-net` | 0.14.0 | `u24.aarch64` | pigsty | 53.4 KiB | [postgresql-16-pg-net_0.14.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-net` | 0.14.0 | `u24.x86_64` | pigsty | 54.1 KiB | [postgresql-16-pg-net_0.14.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.14.0-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_net_15` | 0.9.2 | `el8.aarch64` | pgdg | 21.5 KiB | [pg_net_15-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_net_15-0.9.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_15` | 0.9.2 | `el8.aarch64` | pigsty | 26.3 KiB | [pg_net_15-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_15-0.9.2-2PIGSTY.el8.aarch64.rpm) |
+| `pg_net_15` | 0.9.2 | `el8.x86_64` | pigsty | 26.7 KiB | [pg_net_15-0.9.2-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_15-0.9.2-2PIGSTY.el8.x86_64.rpm) |
+| `pg_net_15` | 0.9.2 | `el8.x86_64` | pgdg | 21.9 KiB | [pg_net_15-0.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_net_15-0.9.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_15` | 0.9.1 | `el8.aarch64` | pgdg | 20.7 KiB | [pg_net_15-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_net_15-0.9.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_15` | 0.9.1 | `el8.x86_64` | pgdg | 21.0 KiB | [pg_net_15-0.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_net_15-0.9.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_15` | 0.9.2 | `el9.aarch64` | pigsty | 26.4 KiB | [pg_net_15-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_15-0.9.2-2PIGSTY.el9.aarch64.rpm) |
+| `pg_net_15` | 0.9.2 | `el9.x86_64` | pgdg | 22.1 KiB | [pg_net_15-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_net_15-0.9.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_net_15` | 0.9.2 | `el9.x86_64` | pigsty | 27.0 KiB | [pg_net_15-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_15-0.9.2-2PIGSTY.el9.x86_64.rpm) |
+| `pg_net_15` | 0.9.2 | `el9.aarch64` | pgdg | 21.6 KiB | [pg_net_15-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_net_15-0.9.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_15` | 0.9.1 | `el9.aarch64` | pgdg | 20.6 KiB | [pg_net_15-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_net_15-0.9.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_15` | 0.9.1 | `el9.x86_64` | pgdg | 21.1 KiB | [pg_net_15-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_net_15-0.9.1-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-15-pg-net` | 0.14.0 | `d12.x86_64` | pigsty | 52.6 KiB | [postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-net` | 0.14.0 | `d12.aarch64` | pigsty | 51.6 KiB | [postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-net` | 0.9.2 | `u22.x86_64` | pigsty | 44.3 KiB | [postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-net` | 0.9.2 | `u22.aarch64` | pigsty | 43.5 KiB | [postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-net` | 0.14.0 | `u24.x86_64` | pigsty | 54.8 KiB | [postgresql-15-pg-net_0.14.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-net` | 0.14.0 | `u24.aarch64` | pigsty | 54.1 KiB | [postgresql-15-pg-net_0.14.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.14.0-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_net_14` | 0.9.2 | `el8.x86_64` | pigsty | 26.7 KiB | [pg_net_14-0.9.2-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_14-0.9.2-2PIGSTY.el8.x86_64.rpm) |
+| `pg_net_14` | 0.9.2 | `el8.aarch64` | pigsty | 26.3 KiB | [pg_net_14-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_14-0.9.2-2PIGSTY.el8.aarch64.rpm) |
+| `pg_net_14` | 0.9.2 | `el8.x86_64` | pgdg | 21.9 KiB | [pg_net_14-0.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_net_14-0.9.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_14` | 0.9.2 | `el8.aarch64` | pgdg | 21.5 KiB | [pg_net_14-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_net_14-0.9.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_14` | 0.9.1 | `el8.aarch64` | pgdg | 20.7 KiB | [pg_net_14-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_net_14-0.9.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_14` | 0.9.1 | `el8.x86_64` | pgdg | 21.0 KiB | [pg_net_14-0.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_net_14-0.9.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_14` | 0.9.2 | `el9.aarch64` | pigsty | 26.4 KiB | [pg_net_14-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_14-0.9.2-2PIGSTY.el9.aarch64.rpm) |
+| `pg_net_14` | 0.9.2 | `el9.x86_64` | pigsty | 26.9 KiB | [pg_net_14-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_14-0.9.2-2PIGSTY.el9.x86_64.rpm) |
+| `pg_net_14` | 0.9.2 | `el9.x86_64` | pgdg | 22.1 KiB | [pg_net_14-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_net_14-0.9.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_net_14` | 0.9.2 | `el9.aarch64` | pgdg | 21.6 KiB | [pg_net_14-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_net_14-0.9.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_14` | 0.9.1 | `el9.aarch64` | pgdg | 20.6 KiB | [pg_net_14-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_net_14-0.9.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_14` | 0.9.1 | `el9.x86_64` | pgdg | 21.1 KiB | [pg_net_14-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_net_14-0.9.1-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-14-pg-net` | 0.14.0 | `d12.aarch64` | pigsty | 51.5 KiB | [postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-net` | 0.14.0 | `d12.x86_64` | pigsty | 52.5 KiB | [postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-net` | 0.9.2 | `u22.x86_64` | pigsty | 44.2 KiB | [postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-net` | 0.9.2 | `u22.aarch64` | pigsty | 43.5 KiB | [postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-net` | 0.14.0 | `u24.x86_64` | pigsty | 54.7 KiB | [postgresql-14-pg-net_0.14.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-net` | 0.14.0 | `u24.aarch64` | pigsty | 54.1 KiB | [postgresql-14-pg-net_0.14.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.14.0-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_net_13` | 0.9.2 | `el8.x86_64` | pgdg | 21.8 KiB | [pg_net_13-0.9.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_net_13-0.9.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_13` | 0.9.2 | `el8.x86_64` | pigsty | 26.6 KiB | [pg_net_13-0.9.2-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_net_13-0.9.2-2PIGSTY.el8.x86_64.rpm) |
+| `pg_net_13` | 0.9.2 | `el8.aarch64` | pigsty | 26.3 KiB | [pg_net_13-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_13-0.9.2-2PIGSTY.el8.aarch64.rpm) |
+| `pg_net_13` | 0.9.2 | `el8.aarch64` | pgdg | 21.5 KiB | [pg_net_13-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_net_13-0.9.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_13` | 0.9.1 | `el8.aarch64` | pgdg | 20.7 KiB | [pg_net_13-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_net_13-0.9.1-1PGDG.rhel8.aarch64.rpm) |
+| `pg_net_13` | 0.9.1 | `el8.x86_64` | pgdg | 20.9 KiB | [pg_net_13-0.9.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_net_13-0.9.1-1PGDG.rhel8.x86_64.rpm) |
+| `pg_net_13` | 0.9.2 | `el9.x86_64` | pigsty | 26.9 KiB | [pg_net_13-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_13-0.9.2-2PIGSTY.el9.x86_64.rpm) |
+| `pg_net_13` | 0.9.2 | `el9.x86_64` | pgdg | 22.1 KiB | [pg_net_13-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_net_13-0.9.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_net_13` | 0.9.2 | `el9.aarch64` | pigsty | 26.4 KiB | [pg_net_13-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_13-0.9.2-2PIGSTY.el9.aarch64.rpm) |
+| `pg_net_13` | 0.9.2 | `el9.aarch64` | pgdg | 21.6 KiB | [pg_net_13-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_net_13-0.9.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_13` | 0.9.1 | `el9.aarch64` | pgdg | 20.6 KiB | [pg_net_13-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_net_13-0.9.1-1PGDG.rhel9.aarch64.rpm) |
+| `pg_net_13` | 0.9.1 | `el9.x86_64` | pgdg | 21.1 KiB | [pg_net_13-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_net_13-0.9.1-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-13-pg-net` | 0.14.0 | `d12.aarch64` | pigsty | 51.1 KiB | [postgresql-13-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-13-pg-net_0.14.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pg-net` | 0.14.0 | `d12.x86_64` | pigsty | 52.0 KiB | [postgresql-13-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-13-pg-net_0.14.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pg-net` | 0.9.2 | `u22.x86_64` | pigsty | 43.7 KiB | [postgresql-13-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-13-pg-net_0.9.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-net` | 0.9.2 | `u22.aarch64` | pigsty | 43.1 KiB | [postgresql-13-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-13-pg-net_0.9.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-net` | 0.14.0 | `u24.x86_64` | pigsty | 54.3 KiB | [postgresql-13-pg-net_0.14.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-13-pg-net_0.14.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pg-net` | 0.14.0 | `u24.aarch64` | pigsty | 53.6 KiB | [postgresql-13-pg-net_0.14.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-13-pg-net_0.14.0-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/supabase/pg_net" title="Repository" icon="github" subtitle="github.com/supabase/pg_net" >}}
+{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_net-0.14.0.tar.gz" >}}
+{{< /cards >}}
+
+
+```bash
+pig build get pg_net; # get pg_net source code
+pig build dep pg_net; # install build dependencies
+pig build pkg pg_net; # build extension rpm or deb
+pig build ext pg_net; # build extension rpms
+```
+
+
+## Install
+
+To add the required PGDG / PIGSTY upstream repository, use:
+
+```bash
+pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+```
+
+[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+
+```bash
+pig ext install pg_net; # install by extension name, for the current active PG version
+pig ext install pg_net; # install via package alias, for the active PG version
+pig ext install pg_net -v 17;   # install for PG 17
+pig ext install pg_net -v 16;   # install for PG 16
+pig ext install pg_net -v 15;   # install for PG 15
+pig ext install pg_net -v 14;   # install for PG 14
+pig ext install pg_net -v 13;   # install for PG 13
+
+```
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```bash
+CREATE EXTENSION pg_net;
+```
+

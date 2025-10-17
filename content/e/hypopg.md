@@ -1,0 +1,231 @@
+---
+title: "hypopg"
+linkTitle: "hypopg"
+description: "Hypothetical indexes for PostgreSQL"
+weight: 2830
+categories: ["Feat"]
+width: full
+---
+
+Hypothetical indexes for PostgreSQL
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **2830** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" "hypopg" >}} | `1.4.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "index_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "powa" >}} {{< ext "pg_hint_plan" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "btree_gin" >}} {{< ext "pg_show_plans" >}} |
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EL** | {{< badge content="PGDG" link="/e/hypopg" >}} | `1.4.1` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `hypopg_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/hypopg" >}} | `1.4.2` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-hypopg` | - |
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    | {{< pkg "hypopg_18" "1.4.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/hypopg_18-1.4.2-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "hypopg_17" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/hypopg_17-1.4.1-2PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "hypopg_16" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/hypopg_16-1.4.1-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "hypopg_15" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/hypopg_15-1.4.1-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "hypopg_14" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/hypopg_14-1.4.1-1PGDG.rhel8.x86_64.rpm" >}} |
+|    `el8.aarch64`    | {{< pkg "hypopg_18" "1.4.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/hypopg_18-1.4.2-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "hypopg_17" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/hypopg_17-1.4.1-2PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "hypopg_16" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/hypopg_16-1.4.1-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "hypopg_15" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/hypopg_15-1.4.1-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "hypopg_14" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/hypopg_14-1.4.1-1PGDG.rhel8.aarch64.rpm" >}} |
+|    `el9.x86_64`    | {{< pkg "hypopg_18" "1.4.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/hypopg_18-1.4.2-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "hypopg_17" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/hypopg_17-1.4.1-2PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "hypopg_16" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/hypopg_16-1.4.1-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "hypopg_15" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hypopg_15-1.4.1-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "hypopg_14" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/hypopg_14-1.4.1-1PGDG.rhel9.x86_64.rpm" >}} |
+|    `el9.aarch64`    | {{< pkg "hypopg_18" "1.4.2" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/hypopg_18-1.4.2-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "hypopg_17" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/hypopg_17-1.4.1-2PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "hypopg_16" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hypopg_16-1.4.1-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "hypopg_15" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hypopg_15-1.4.1-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "hypopg_14" "1.4.1" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.1-1PGDG.rhel9.aarch64.rpm" >}} |
+|    `d12.x86_64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg12+1_amd64.deb" >}} |
+|    `d12.aarch64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg12+1_arm64.deb" >}} |
+|    `u22.x86_64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb" >}} |
+|    `u22.aarch64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb" >}} |
+|    `u24.x86_64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb" >}} |
+|    `u24.aarch64`    | {{< pkg "postgresql-18-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-hypopg" "1.4.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb" >}} |
+
+
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_18` | 1.4.2 | `el8.aarch64` | pgdg | 31.8 KiB | [hypopg_18-1.4.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/hypopg_18-1.4.2-1PGDG.rhel8.aarch64.rpm) |
+| `hypopg_18` | 1.4.2 | `el8.x86_64` | pgdg | 31.1 KiB | [hypopg_18-1.4.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/hypopg_18-1.4.2-1PGDG.rhel8.x86_64.rpm) |
+| `hypopg_18` | 1.4.2 | `el9.aarch64` | pgdg | 31.1 KiB | [hypopg_18-1.4.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/hypopg_18-1.4.2-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_18` | 1.4.2 | `el9.x86_64` | pgdg | 29.7 KiB | [hypopg_18-1.4.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/hypopg_18-1.4.2-1PGDG.rhel9.x86_64.rpm) |
+| `postgresql-18-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.4 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-18-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 57.9 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-18-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 59.2 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 59.3 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 57.7 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.4 KiB | [postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-18-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_17` | 1.4.1 | `el8.aarch64` | pgdg | 30.9 KiB | [hypopg_17-1.4.1-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/hypopg_17-1.4.1-2PGDG.rhel8.aarch64.rpm) |
+| `hypopg_17` | 1.4.1 | `el8.x86_64` | pgdg | 30.2 KiB | [hypopg_17-1.4.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/hypopg_17-1.4.1-2PGDG.rhel8.x86_64.rpm) |
+| `hypopg_17` | 1.4.1 | `el9.x86_64` | pgdg | 29.1 KiB | [hypopg_17-1.4.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/hypopg_17-1.4.1-2PGDG.rhel9.x86_64.rpm) |
+| `hypopg_17` | 1.4.1 | `el9.aarch64` | pgdg | 30.6 KiB | [hypopg_17-1.4.1-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/hypopg_17-1.4.1-2PGDG.rhel9.aarch64.rpm) |
+| `postgresql-17-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.4 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-17-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 57.9 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-17-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 72.0 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 72.1 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 57.6 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.3 KiB | [postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-17-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_16` | 1.4.1 | `el8.aarch64` | pgdg | 30.9 KiB | [hypopg_16-1.4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/hypopg_16-1.4.1-1PGDG.rhel8.aarch64.rpm) |
+| `hypopg_16` | 1.4.1 | `el8.x86_64` | pgdg | 30.1 KiB | [hypopg_16-1.4.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/hypopg_16-1.4.1-1PGDG.rhel8.x86_64.rpm) |
+| `hypopg_16` | 1.4.0 | `el8.aarch64` | pgdg | 30.3 KiB | [hypopg_16-1.4.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/hypopg_16-1.4.0-2PGDG.rhel8.aarch64.rpm) |
+| `hypopg_16` | 1.4.0 | `el8.x86_64` | pgdg | 29.6 KiB | [hypopg_16-1.4.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/hypopg_16-1.4.0-2PGDG.rhel8.x86_64.rpm) |
+| `hypopg_16` | 1.4.1 | `el9.aarch64` | pgdg | 30.3 KiB | [hypopg_16-1.4.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hypopg_16-1.4.1-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_16` | 1.4.1 | `el9.x86_64` | pgdg | 28.9 KiB | [hypopg_16-1.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/hypopg_16-1.4.1-1PGDG.rhel9.x86_64.rpm) |
+| `hypopg_16` | 1.4.0 | `el9.aarch64` | pgdg | 29.7 KiB | [hypopg_16-1.4.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hypopg_16-1.4.0-2PGDG.rhel9.aarch64.rpm) |
+| `hypopg_16` | 1.4.0 | `el9.x86_64` | pgdg | 28.4 KiB | [hypopg_16-1.4.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/hypopg_16-1.4.0-2PGDG.rhel9.x86_64.rpm) |
+| `postgresql-16-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.4 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-16-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 58.1 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-16-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 72.0 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 72.0 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.3 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 57.7 KiB | [postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-16-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_15` | 1.4.1 | `el8.x86_64` | pgdg | 30.5 KiB | [hypopg_15-1.4.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/hypopg_15-1.4.1-1PGDG.rhel8.x86_64.rpm) |
+| `hypopg_15` | 1.4.1 | `el8.aarch64` | pgdg | 31.1 KiB | [hypopg_15-1.4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/hypopg_15-1.4.1-1PGDG.rhel8.aarch64.rpm) |
+| `hypopg_15` | 1.4.0 | `el8.aarch64` | pgdg | 30.3 KiB | [hypopg_15-1.4.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/hypopg_15-1.4.0-1.rhel8.aarch64.rpm) |
+| `hypopg_15` | 1.4.0 | `el8.x86_64` | pgdg | 29.8 KiB | [hypopg_15-1.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/hypopg_15-1.4.0-1.rhel8.x86_64.rpm) |
+| `hypopg_15` | 1.3.1 | `el8.aarch64` | pgdg | 74.8 KiB | [hypopg_15-1.3.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/hypopg_15-1.3.1-1.rhel8.aarch64.rpm) |
+| `hypopg_15` | 1.3.1 | `el8.x86_64` | pgdg | 74.8 KiB | [hypopg_15-1.3.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/hypopg_15-1.3.1-1.rhel8.x86_64.rpm) |
+| `hypopg_15` | 1.4.1 | `el9.x86_64` | pgdg | 29.8 KiB | [hypopg_15-1.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hypopg_15-1.4.1-1PGDG.rhel9.x86_64.rpm) |
+| `hypopg_15` | 1.4.1 | `el9.aarch64` | pgdg | 31.2 KiB | [hypopg_15-1.4.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hypopg_15-1.4.1-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_15` | 1.4.0 | `el9.x86_64` | pgdg | 29.1 KiB | [hypopg_15-1.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hypopg_15-1.4.0-1.rhel9.x86_64.rpm) |
+| `hypopg_15` | 1.4.0 | `el9.aarch64` | pgdg | 30.5 KiB | [hypopg_15-1.4.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hypopg_15-1.4.0-1.rhel9.aarch64.rpm) |
+| `hypopg_15` | 1.3.1 | `el9.x86_64` | pgdg | 75.6 KiB | [hypopg_15-1.3.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hypopg_15-1.3.1-1.rhel9.x86_64.rpm) |
+| `hypopg_15` | 1.3.1 | `el9.aarch64` | pgdg | 76.2 KiB | [hypopg_15-1.3.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hypopg_15-1.3.1-1.rhel9.aarch64.rpm) |
+| `postgresql-15-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 58.1 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-15-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.9 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-15-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 72.5 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 72.5 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 58.2 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.9 KiB | [postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-15-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_14` | 1.4.1 | `el8.aarch64` | pgdg | 31.1 KiB | [hypopg_14-1.4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/hypopg_14-1.4.1-1PGDG.rhel8.aarch64.rpm) |
+| `hypopg_14` | 1.4.1 | `el8.x86_64` | pgdg | 30.6 KiB | [hypopg_14-1.4.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/hypopg_14-1.4.1-1PGDG.rhel8.x86_64.rpm) |
+| `hypopg_14` | 1.4.0 | `el8.aarch64` | pgdg | 30.3 KiB | [hypopg_14-1.4.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/hypopg_14-1.4.0-1.rhel8.aarch64.rpm) |
+| `hypopg_14` | 1.4.0 | `el8.x86_64` | pgdg | 29.8 KiB | [hypopg_14-1.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/hypopg_14-1.4.0-1.rhel8.x86_64.rpm) |
+| `hypopg_14` | 1.3.1 | `el8.aarch64` | pgdg | 73.8 KiB | [hypopg_14-1.3.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/hypopg_14-1.3.1-1.rhel8.aarch64.rpm) |
+| `hypopg_14` | 1.3.1 | `el8.x86_64` | pgdg | 74.4 KiB | [hypopg_14-1.3.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/hypopg_14-1.3.1-1.rhel8.x86_64.rpm) |
+| `hypopg_14` | 1.4.1 | `el9.x86_64` | pgdg | 29.8 KiB | [hypopg_14-1.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/hypopg_14-1.4.1-1PGDG.rhel9.x86_64.rpm) |
+| `hypopg_14` | 1.4.1 | `el9.aarch64` | pgdg | 31.2 KiB | [hypopg_14-1.4.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.1-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_14` | 1.4.0 | `el9.x86_64` | pgdg | 29.1 KiB | [hypopg_14-1.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/hypopg_14-1.4.0-1.rhel9.x86_64.rpm) |
+| `hypopg_14` | 1.4.0 | `el9.aarch64` | pgdg | 30.4 KiB | [hypopg_14-1.4.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.0-1.rhel9.aarch64.rpm) |
+| `hypopg_14` | 1.3.1 | `el9.aarch64` | pgdg | 75.2 KiB | [hypopg_14-1.3.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.3.1-1.rhel9.aarch64.rpm) |
+| `hypopg_14` | 1.3.1 | `el9.x86_64` | pgdg | 74.5 KiB | [hypopg_14-1.3.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/hypopg_14-1.3.1-1.rhel9.x86_64.rpm) |
+| `postgresql-14-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 58.1 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-14-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.8 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-14-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 71.6 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 71.7 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 58.2 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.9 KiB | [postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `hypopg_13` | 1.4.1 | `el8.x86_64` | pgdg | 30.2 KiB | [hypopg_13-1.4.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/hypopg_13-1.4.1-1PGDG.rhel8.x86_64.rpm) |
+| `hypopg_13` | 1.4.1 | `el8.aarch64` | pgdg | 31.1 KiB | [hypopg_13-1.4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/hypopg_13-1.4.1-1PGDG.rhel8.aarch64.rpm) |
+| `hypopg_13` | 1.4.0 | `el8.x86_64` | pgdg | 29.5 KiB | [hypopg_13-1.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/hypopg_13-1.4.0-1.rhel8.x86_64.rpm) |
+| `hypopg_13` | 1.4.0 | `el8.aarch64` | pgdg | 30.3 KiB | [hypopg_13-1.4.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/hypopg_13-1.4.0-1.rhel8.aarch64.rpm) |
+| `hypopg_13` | 1.3.1 | `el8.aarch64` | pgdg | 72.4 KiB | [hypopg_13-1.3.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/hypopg_13-1.3.1-1.rhel8.aarch64.rpm) |
+| `hypopg_13` | 1.3.0 | `el8.x86_64` | pgdg | 72.6 KiB | [hypopg_13-1.3.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/hypopg_13-1.3.0-1.rhel8.x86_64.rpm) |
+| `hypopg_13` | 1.2.0 | `el8.x86_64` | pgdg | 71.8 KiB | [hypopg_13-1.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/hypopg_13-1.2.0-1.rhel8.x86_64.rpm) |
+| `hypopg_13` | 1.1.4 | `el8.x86_64` | pgdg | 67.8 KiB | [hypopg_13-1.1.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/hypopg_13-1.1.4-1.rhel8.x86_64.rpm) |
+| `hypopg_13` | 1.4.1 | `el9.x86_64` | pgdg | 29.8 KiB | [hypopg_13-1.4.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/hypopg_13-1.4.1-1PGDG.rhel9.x86_64.rpm) |
+| `hypopg_13` | 1.4.1 | `el9.aarch64` | pgdg | 31.3 KiB | [hypopg_13-1.4.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/hypopg_13-1.4.1-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_13` | 1.4.0 | `el9.aarch64` | pgdg | 30.5 KiB | [hypopg_13-1.4.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/hypopg_13-1.4.0-1.rhel9.aarch64.rpm) |
+| `hypopg_13` | 1.4.0 | `el9.x86_64` | pgdg | 29.2 KiB | [hypopg_13-1.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/hypopg_13-1.4.0-1.rhel9.x86_64.rpm) |
+| `hypopg_13` | 1.3.1 | `el9.x86_64` | pgdg | 73.2 KiB | [hypopg_13-1.3.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/hypopg_13-1.3.1-1.rhel9.x86_64.rpm) |
+| `hypopg_13` | 1.3.1 | `el9.aarch64` | pgdg | 73.9 KiB | [hypopg_13-1.3.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/hypopg_13-1.3.1-1.rhel9.aarch64.rpm) |
+| `postgresql-13-hypopg` | 1.4.2 | `d12.aarch64` | pgdg | 57.5 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg12+1_arm64.deb) |
+| `postgresql-13-hypopg` | 1.4.2 | `d12.x86_64` | pgdg | 57.8 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg12+1_amd64.deb) |
+| `postgresql-13-hypopg` | 1.4.2 | `u22.aarch64` | pgdg | 70.0 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-hypopg` | 1.4.2 | `u22.x86_64` | pgdg | 69.9 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-hypopg` | 1.4.2 | `u24.x86_64` | pgdg | 57.8 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-hypopg` | 1.4.2 | `u24.aarch64` | pgdg | 57.7 KiB | [postgresql-13-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-13-hypopg_1.4.2-2.pgdg24.04+1_arm64.deb) |
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/HypoPG/hypopg" title="Repository" icon="github" subtitle="github.com/HypoPG/hypopg" >}}
+{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="hypopg-1.4.1.tar.gz" >}}
+{{< /cards >}}
+
+
+```bash
+pig build get hypopg; # get hypopg source code
+pig build dep hypopg; # install build dependencies
+pig build pkg hypopg; # build extension rpm or deb
+pig build ext hypopg; # build extension rpms
+```
+
+
+## Install
+
+To add the required PGDG / PIGSTY upstream repository, use:
+
+```bash
+pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+```
+
+[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+
+```bash
+pig ext install hypopg; # install by extension name, for the current active PG version
+pig ext install hypopg; # install via package alias, for the active PG version
+pig ext install hypopg -v 18;   # install for PG 18
+pig ext install hypopg -v 17;   # install for PG 17
+pig ext install hypopg -v 16;   # install for PG 16
+pig ext install hypopg -v 15;   # install for PG 15
+pig ext install hypopg -v 14;   # install for PG 14
+pig ext install hypopg -v 13;   # install for PG 13
+
+```
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```bash
+CREATE EXTENSION hypopg;
+```
+

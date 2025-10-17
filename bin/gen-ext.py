@@ -474,6 +474,16 @@ class ExtensionGenerator:
         """Generate extension link shortcode"""
         return f'{{{{< ext "{ext_name}" >}}}}'
 
+    def ext_shortcode(self, target: str, label: Optional[str] = None) -> str:
+        """Render ext shortcode with optional display label"""
+        if not target:
+            return '{{< ext "" >}}'
+        safe_target = target.replace('"', '\\"')
+        if label:
+            safe_label = label.replace('"', '\\"')
+            return f'{{{{< ext "{safe_target}" "{safe_label}" >}}}}'
+        return f'{{{{< ext "{safe_target}" >}}}}'
+
     def format_size(self, size_bytes: int) -> str:
         """Format byte size to human-readable format"""
         if size_bytes < 1024:
@@ -515,14 +525,14 @@ width: full
         license = f'{{{{< license "{ext.license}" >}}}}'
         lang = f'{{{{< language "{ext.lang}" >}}}}'
         ext_badge = self.badge(ext.name, link=ext.url or "")
-        pkg_badge = self.badge(ext.pkg, link=f"/e/{ext.name}")
+        pkg_shortcode = self.ext_shortcode(ext.name, ext.pkg)
 
         return f"""
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **{ext.id}** | {ext_badge} | {pkg_badge} | `{ext.version}` | {category} | {license} | {lang} |
+| **{ext.id}** | {ext_badge} | {pkg_shortcode} | `{ext.version}` | {category} | {license} | {lang} |
 
 """
 
@@ -961,8 +971,6 @@ CREATE EXTENSION {ext.name}{cascade_schema};
             header = "| ID | 扩展 | 包 | 版本 | 描述 |"
             header_align = "|:---:|:---|:---|:---|:---|"
 
-        link_prefix = "/zh/e" if locale == "zh" else "/e"
-
         for cat in categories:
             cat_name = cat.name or "Unknown"
             lines.append(f"## {cat_name}")
@@ -993,10 +1001,10 @@ CREATE EXTENSION {ext.name}{cascade_schema};
                     else:
                         ext_desc = ext.zh_desc or ext.en_desc
                     ext_desc = self.sanitize_table_text(ext_desc) or "-"
-                    ext_link = f"[`{ext.name}`]({link_prefix}/{ext.name})"
                     lead_target = ext.lead_ext or ext.name
-                    pkg_link = f"[`{ext.pkg}`]({link_prefix}/{lead_target})"
-                    lines.append(f"| {ext.id} | {ext_link} | {pkg_link} | {version} | {ext_desc} |")
+                    ext_cell = self.ext_shortcode(ext.name)
+                    pkg_cell = self.ext_shortcode(lead_target, ext.pkg)
+                    lines.append(f"| {ext.id} | {ext_cell} | {pkg_cell} | {version} | {ext_desc} |")
             else:
                 empty_msg = "No extensions available in this category" if locale == "en" else "此分类暂无扩展"
                 lines.append(f"| - | - | - | - | {empty_msg} |")
@@ -1060,7 +1068,7 @@ Available PostgreSQL Extensions (%d ext in %d pkg) categorized into %d categorie
 {{< category "etl" >}}
 
 
-""" % (category_count, extension_count, package_count)
+""" % (extension_count, package_count, category_count)
 
         frontmatter_zh = """---
 title: "扩展"

@@ -1,0 +1,46 @@
+---
+title: "bool_plperlu"
+linkTitle: "bool_plperlu"
+description: "transform between bool and plperlu"
+weight: 3271
+categories: ["Lang"]
+width: full
+---
+
+transform between bool and plperlu
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **3271** | {{< badge content="bool_plperlu" link="https://www.postgresql.org/docs/current/plperl.html" >}} | {{< ext "bool_plperlu" "plperlu" >}} | `1.0` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="-----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **Requires**    | {{< ext "plperlu" >}} |
+|   **See Also**    | {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "plpgsql" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} |
+|    **Siblings**   | {{< ext "hstore_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "plperlu" >}} |
+
+
+## Packages
+
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} | {{< badge content="1.0" color="green" >}} |
+
+> [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
+
+
+## Install
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```sql
+CREATE EXTENSION bool_plperlu;
+```

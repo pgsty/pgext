@@ -1,0 +1,267 @@
+---
+title: "pg_profile"
+linkTitle: "pg_profile"
+description: "PostgreSQL load profile repository and report builder"
+weight: 6000
+categories: ["Stat"]
+width: full
+---
+
+PostgreSQL load profile repository and report builder
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **6000** | {{< badge content="pg_profile" link="https://github.com/zubkov-andrei/pg_profile" >}} | {{< ext "pg_profile" "pg_profile" >}} | `4.10` | {{< category "STAT" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **Requires**    | {{< ext "dblink" >}} {{< ext "plpgsql" >}} |
+|   **See Also**    | {{< ext "plprofiler" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} |
+
+
+## Packages
+
+| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
+| **EL** | {{< badge content="PGDG" link="/e/pg_profile" >}} | `4.10` | {{< badge content="18" color="red" alt="pg_profile_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_profile_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_profile" >}} | `4.10` | {{< badge content="18" color="red" alt="postgresql-18-pg-profile" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-profile` | - |
+
+
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    | {{< pkg "pg_profile_18" "4.10" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_17" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_16" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_15" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_14" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm" >}} |
+|    `el8.aarch64`    | {{< pkg "pg_profile_18" "4.10" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_17" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_16" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_15" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm" >}} | {{< pkg "pg_profile_14" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm" >}} |
+|    `el9.x86_64`    | {{< pkg "pg_profile_18" "4.10" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_17" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_16" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_15" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_14" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm" >}} |
+|    `el9.aarch64`    | {{< pkg "pg_profile_18" "4.10" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_17" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_16" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_15" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm" >}} | {{< pkg "pg_profile_14" "4.8" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm" >}} |
+|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb" >}} |
+|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb" >}} |
+|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~jammy_amd64.deb" >}} |
+|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~jammy_arm64.deb" >}} |
+|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~noble_amd64.deb" >}} |
+|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-profile" >}}     | {{< pkg "postgresql-17-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-profile" "4.10" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~noble_arm64.deb" >}} |
+
+
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_18` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_18` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_profile_18-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_18` | 4.10 | `el9.aarch64` | pgdg | 196.9 KiB | [pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_18` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_profile_18-4.10-1PGDG.rhel9.noarch.rpm) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_17` | 4.8 | `el8.x86_64` | pgdg | 130.9 KiB | [pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.8 | `el8.aarch64` | pgdg | 130.9 KiB | [pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_profile_17-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.7 | `el8.aarch64` | pgdg | 130.3 KiB | [pg_profile_17-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_profile_17-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.7 | `el8.x86_64` | pgdg | 130.4 KiB | [pg_profile_17-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_profile_17-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_17-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_profile_17-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_17-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_profile_17-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_17` | 4.8 | `el9.aarch64` | pgdg | 117.0 KiB | [pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_17` | 4.8 | `el9.x86_64` | pgdg | 117.0 KiB | [pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_profile_17-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_17` | 4.7 | `el9.x86_64` | pgdg | 115.8 KiB | [pg_profile_17-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_profile_17-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_17` | 4.7 | `el9.aarch64` | pgdg | 115.7 KiB | [pg_profile_17-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_profile_17-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_17` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_17-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_profile_17-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_17` | 4.10 | `el9.aarch64` | pgdg | 196.8 KiB | [pg_profile_17-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_profile_17-4.10-1PGDG.rhel9.noarch.rpm) |
+| `postgresql-17-pg-profile` | 4.10 | `d12.aarch64` | pigsty | 192.3 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-profile` | 4.10 | `d12.x86_64` | pigsty | 192.3 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-profile` | 4.10 | `u22.x86_64` | pigsty | 193.2 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-profile` | 4.10 | `u22.aarch64` | pigsty | 193.2 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-profile` | 4.10 | `u24.aarch64` | pigsty | 191.6 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-profile` | 4.10 | `u24.x86_64` | pigsty | 191.5 KiB | [postgresql-17-pg-profile_4.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-17-pg-profile_4.10-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_16` | 4.8 | `el8.x86_64` | pgdg | 130.9 KiB | [pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.8 | `el8.aarch64` | pgdg | 130.9 KiB | [pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.7 | `el8.x86_64` | pgdg | 130.4 KiB | [pg_profile_16-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.7 | `el8.aarch64` | pgdg | 130.3 KiB | [pg_profile_16-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.6 | `el8.x86_64` | pgdg | 119.8 KiB | [pg_profile_16-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.6 | `el8.aarch64` | pgdg | 119.8 KiB | [pg_profile_16-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.4 | `el8.aarch64` | pgdg | 109.7 KiB | [pg_profile_16-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.4 | `el8.x86_64` | pgdg | 109.7 KiB | [pg_profile_16-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_16-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_profile_16-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_16-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_profile_16-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_16` | 4.8 | `el9.aarch64` | pgdg | 117.0 KiB | [pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.8 | `el9.x86_64` | pgdg | 117.0 KiB | [pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.7 | `el9.x86_64` | pgdg | 115.8 KiB | [pg_profile_16-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.7 | `el9.aarch64` | pgdg | 115.7 KiB | [pg_profile_16-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.6 | `el9.aarch64` | pgdg | 107.7 KiB | [pg_profile_16-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.6 | `el9.x86_64` | pgdg | 107.8 KiB | [pg_profile_16-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.4 | `el9.x86_64` | pgdg | 99.1 KiB | [pg_profile_16-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.4 | `el9.aarch64` | pgdg | 99.0 KiB | [pg_profile_16-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_16-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_profile_16-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_16` | 4.10 | `el9.aarch64` | pgdg | 196.8 KiB | [pg_profile_16-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_profile_16-4.10-1PGDG.rhel9.noarch.rpm) |
+| `postgresql-16-pg-profile` | 4.10 | `d12.x86_64` | pigsty | 192.3 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-profile` | 4.10 | `d12.aarch64` | pigsty | 192.3 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-profile` | 4.10 | `u22.x86_64` | pigsty | 193.2 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-profile` | 4.10 | `u22.aarch64` | pigsty | 193.2 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-profile` | 4.10 | `u24.aarch64` | pigsty | 191.5 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-profile` | 4.10 | `u24.x86_64` | pigsty | 191.5 KiB | [postgresql-16-pg-profile_4.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-16-pg-profile_4.10-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_15` | 4.8 | `el8.aarch64` | pgdg | 130.9 KiB | [pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.8 | `el8.x86_64` | pgdg | 130.9 KiB | [pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.7 | `el8.x86_64` | pgdg | 130.4 KiB | [pg_profile_15-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.7 | `el8.aarch64` | pgdg | 130.3 KiB | [pg_profile_15-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.6 | `el8.x86_64` | pgdg | 119.8 KiB | [pg_profile_15-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.6 | `el8.aarch64` | pgdg | 119.8 KiB | [pg_profile_15-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.4 | `el8.x86_64` | pgdg | 109.7 KiB | [pg_profile_15-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.4 | `el8.aarch64` | pgdg | 109.7 KiB | [pg_profile_15-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_15-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_profile_15-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_15-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_profile_15-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_15` | 4.8 | `el9.x86_64` | pgdg | 117.0 KiB | [pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.8 | `el9.aarch64` | pgdg | 117.0 KiB | [pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.7 | `el9.x86_64` | pgdg | 115.8 KiB | [pg_profile_15-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.7 | `el9.aarch64` | pgdg | 115.7 KiB | [pg_profile_15-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.6 | `el9.aarch64` | pgdg | 107.7 KiB | [pg_profile_15-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.6 | `el9.x86_64` | pgdg | 107.8 KiB | [pg_profile_15-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.4 | `el9.x86_64` | pgdg | 99.1 KiB | [pg_profile_15-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.4 | `el9.aarch64` | pgdg | 99.0 KiB | [pg_profile_15-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_15-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_profile_15-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_15` | 4.10 | `el9.aarch64` | pgdg | 196.8 KiB | [pg_profile_15-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_profile_15-4.10-1PGDG.rhel9.noarch.rpm) |
+| `postgresql-15-pg-profile` | 4.10 | `d12.aarch64` | pigsty | 192.3 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-profile` | 4.10 | `d12.x86_64` | pigsty | 192.3 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-profile` | 4.10 | `u22.aarch64` | pigsty | 193.2 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-profile` | 4.10 | `u22.x86_64` | pigsty | 193.2 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-profile` | 4.10 | `u24.aarch64` | pigsty | 191.5 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-profile` | 4.10 | `u24.x86_64` | pigsty | 191.6 KiB | [postgresql-15-pg-profile_4.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-15-pg-profile_4.10-1PIGSTY~noble_amd64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_14` | 4.8 | `el8.aarch64` | pgdg | 130.9 KiB | [pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.8 | `el8.x86_64` | pgdg | 130.9 KiB | [pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.7 | `el8.x86_64` | pgdg | 130.4 KiB | [pg_profile_14-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.7 | `el8.aarch64` | pgdg | 130.3 KiB | [pg_profile_14-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.6 | `el8.x86_64` | pgdg | 119.8 KiB | [pg_profile_14-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.6 | `el8.aarch64` | pgdg | 119.8 KiB | [pg_profile_14-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.4 | `el8.aarch64` | pgdg | 109.7 KiB | [pg_profile_14-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.4 | `el8.x86_64` | pgdg | 109.7 KiB | [pg_profile_14-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_14-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_profile_14-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_14-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_profile_14-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_14` | 4.8 | `el9.aarch64` | pgdg | 117.0 KiB | [pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.8 | `el9.x86_64` | pgdg | 117.1 KiB | [pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.7 | `el9.aarch64` | pgdg | 115.7 KiB | [pg_profile_14-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.7 | `el9.x86_64` | pgdg | 115.8 KiB | [pg_profile_14-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.6 | `el9.aarch64` | pgdg | 107.7 KiB | [pg_profile_14-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.6 | `el9.x86_64` | pgdg | 107.8 KiB | [pg_profile_14-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.4 | `el9.aarch64` | pgdg | 99.0 KiB | [pg_profile_14-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.4 | `el9.x86_64` | pgdg | 99.1 KiB | [pg_profile_14-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.10 | `el9.aarch64` | pgdg | 196.8 KiB | [pg_profile_14-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_profile_14-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_14` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_14-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_profile_14-4.10-1PGDG.rhel9.noarch.rpm) |
+| `postgresql-14-pg-profile` | 4.10 | `d12.aarch64` | pigsty | 192.3 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-profile` | 4.10 | `d12.x86_64` | pigsty | 192.3 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-profile` | 4.10 | `u22.aarch64` | pigsty | 193.2 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-profile` | 4.10 | `u22.x86_64` | pigsty | 193.2 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-profile` | 4.10 | `u24.x86_64` | pigsty | 191.6 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-profile` | 4.10 | `u24.aarch64` | pigsty | 191.6 KiB | [postgresql-14-pg-profile_4.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-14-pg-profile_4.10-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+| `pg_profile_13` | 4.8 | `el8.aarch64` | pgdg | 130.9 KiB | [pg_profile_13-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_profile_13-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.8 | `el8.x86_64` | pgdg | 130.9 KiB | [pg_profile_13-4.8-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_profile_13-4.8-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.7 | `el8.aarch64` | pgdg | 130.3 KiB | [pg_profile_13-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_profile_13-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.7 | `el8.x86_64` | pgdg | 130.4 KiB | [pg_profile_13-4.7-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_profile_13-4.7-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.6 | `el8.aarch64` | pgdg | 119.8 KiB | [pg_profile_13-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_profile_13-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.6 | `el8.x86_64` | pgdg | 119.8 KiB | [pg_profile_13-4.6-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_profile_13-4.6-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.4 | `el8.aarch64` | pgdg | 109.7 KiB | [pg_profile_13-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_profile_13-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.4 | `el8.x86_64` | pgdg | 109.7 KiB | [pg_profile_13-4.4-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_profile_13-4.4-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.10 | `el8.x86_64` | pgdg | 214.2 KiB | [pg_profile_13-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_profile_13-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.10 | `el8.aarch64` | pgdg | 214.2 KiB | [pg_profile_13-4.10-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_profile_13-4.10-1PGDG.rhel8.noarch.rpm) |
+| `pg_profile_13` | 4.8 | `el9.aarch64` | pgdg | 117.0 KiB | [pg_profile_13-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_profile_13-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.8 | `el9.x86_64` | pgdg | 117.1 KiB | [pg_profile_13-4.8-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_profile_13-4.8-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.7 | `el9.aarch64` | pgdg | 115.7 KiB | [pg_profile_13-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_profile_13-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.7 | `el9.x86_64` | pgdg | 115.8 KiB | [pg_profile_13-4.7-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_profile_13-4.7-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.6 | `el9.x86_64` | pgdg | 107.7 KiB | [pg_profile_13-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_profile_13-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.6 | `el9.aarch64` | pgdg | 107.7 KiB | [pg_profile_13-4.6-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_profile_13-4.6-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.4 | `el9.x86_64` | pgdg | 99.1 KiB | [pg_profile_13-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_profile_13-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.4 | `el9.aarch64` | pgdg | 99.0 KiB | [pg_profile_13-4.4-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_profile_13-4.4-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.10 | `el9.aarch64` | pgdg | 196.8 KiB | [pg_profile_13-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_profile_13-4.10-1PGDG.rhel9.noarch.rpm) |
+| `pg_profile_13` | 4.10 | `el9.x86_64` | pgdg | 196.9 KiB | [pg_profile_13-4.10-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_profile_13-4.10-1PGDG.rhel9.noarch.rpm) |
+| `postgresql-13-pg-profile` | 4.10 | `d12.x86_64` | pigsty | 192.2 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pg-profile` | 4.10 | `d12.aarch64` | pigsty | 192.3 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pg-profile` | 4.10 | `u22.x86_64` | pigsty | 193.2 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-profile` | 4.10 | `u22.aarch64` | pigsty | 193.3 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-profile` | 4.10 | `u24.x86_64` | pigsty | 191.6 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pg-profile` | 4.10 | `u24.aarch64` | pigsty | 191.5 KiB | [postgresql-13-pg-profile_4.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-profile/postgresql-13-pg-profile_4.10-1PIGSTY~noble_arm64.deb) |
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+## Source
+
+{{< cards cols=3 >}}
+{{< card link="https://github.com/zubkov-andrei/pg_profile" title="Repository" icon="github" subtitle="github.com/zubkov-andrei/pg_profile" >}}
+{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_profile-4.10.tar.gz" >}}
+{{< /cards >}}
+
+
+```bash
+pig build get pg_profile; # get pg_profile source code
+pig build dep pg_profile; # install build dependencies
+pig build pkg pg_profile; # build extension rpm or deb
+pig build ext pg_profile; # build extension rpms
+```
+
+
+## Install
+
+To add the required PGDG / PIGSTY upstream repository, use:
+
+```bash
+pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+```
+
+[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+
+```bash
+pig ext install pg_profile; # install by extension name, for the current active PG version
+pig ext install pg_profile; # install via package alias, for the active PG version
+pig ext install pg_profile -v 17;   # install for PG 17
+pig ext install pg_profile -v 16;   # install for PG 16
+pig ext install pg_profile -v 15;   # install for PG 15
+pig ext install pg_profile -v 14;   # install for PG 14
+pig ext install pg_profile -v 13;   # install for PG 13
+
+```
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```bash
+CREATE EXTENSION pg_profile;
+```
+

@@ -1,0 +1,44 @@
+---
+title: "unaccent"
+linkTitle: "unaccent"
+description: "text search dictionary that removes accents"
+weight: 4990
+categories: ["Func"]
+width: full
+---
+
+text search dictionary that removes accents
+
+## Overview
+
+|    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
+|:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
+| **4990** | {{< badge content="unaccent" link="https://www.postgresql.org/docs/current/unaccent.html" >}} | {{< ext "unaccent" "unaccent" >}} | `1.1` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+
+
+|  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
+|:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
+| {{< badge content="---s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+
+
+| **Relationships** |   |
+|:-----------------:|:----|
+|   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "fuzzystrmatch" >}} {{< ext "citext" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "prefix" >}} {{< ext "dict_xsyn" >}} {{< ext "dict_int" >}} |
+
+
+## Packages
+
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} |
+
+> [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
+
+
+## Install
+
+[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+
+```sql
+CREATE EXTENSION unaccent;
+```
