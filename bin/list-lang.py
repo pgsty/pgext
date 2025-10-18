@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
-"""Generate language index pages for Hugo content."""
+"""
+Generate language-based extension listings for Hugo content.
 
-from __future__ import annotations
+Reads pgext.extension from postgres:///vonng (overridable) and writes:
+  - content/list/lang.md
+  - content/list/lang.zh.md
+"""
 
 import argparse
-import json
-import os
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Dict, List, Optional
 
 import psycopg2
 
-
-# ---------------------------------------------------------------------------
-# Data structures & helpers
-# ---------------------------------------------------------------------------
+LANGUAGE_NAV_ORDER = ["C", "C++", "Rust", "Java", "Python", "SQL", "Data"]
 
 LANGUAGE_DESCRIPTIONS_EN: Dict[str, str] = {
     "C": "The traditional PostgreSQL extension language",
@@ -38,319 +37,232 @@ LANGUAGE_DESCRIPTIONS_ZH: Dict[str, str] = {
     "Data": "仅包含数据的扩展",
 }
 
-NAV_LANGUAGE_ORDER: Tuple[str, ...] = ("C", "C++", "Rust", "Java", "Python", "SQL", "Data")
-
 
 @dataclass
-class ExtensionRow:
-    """Subset of extension metadata required for language index pages."""
+class Extension:
+    """Subset of extension metadata used for language listings."""
 
-    ext_id: int
+    id: int
     name: str
     pkg: str
-    lead_ext: str
-    lang: str
+    lang: Optional[str]
     en_desc: Optional[str]
     zh_desc: Optional[str]
-    extra: Dict[str, Any] = field(default_factory=dict)
+    lead: bool
 
 
-# ---------------------------------------------------------------------------
-# Shortcode helpers
-# ---------------------------------------------------------------------------
-def parse_extra(raw: Any) -> Dict[str, Any]:
-    """Parse extra column into a dictionary."""
-    if not raw:
-        return {}
-    if isinstance(raw, dict):
-        return raw
-    if isinstance(raw, (bytes, bytearray, memoryview)):
-        try:
-            return json.loads(bytes(raw).decode("utf-8"))
-        except Exception:
-            return {}
-    if isinstance(raw, str):
-        try:
-            return json.loads(raw)
-        except Exception:
-            return {}
-    return {}
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Render language-based extension lists.")
+    parser.add_argument("--dsn", default="postgres:///vonng", help="PostgreSQL connection string")
+    parser.add_argument(
+        "--output",
+        default="content/list",
+        help="Output directory for generated Markdown files",
+    )
+    return parser.parse_args()
 
 
-def ext_shortcode(ext_name: str, display: Optional[str] = None) -> str:
-    """Render the ext shortcode with optional custom display text."""
-    safe_ext = ext_name.replace('"', '\\"')
-    if display and display != ext_name:
-        safe_display = display.replace('"', '\\"')
-        return f'{{{{< ext "{safe_ext}" "{safe_display}" >}}}}'
-    return f'{{{{< ext "{safe_ext}" >}}}}'
-
-
-def language_shortcode(lang: str) -> str:
-    """Render the language shortcode."""
-    safe_lang = lang.replace('"', '\\"')
-    return f'{{{{< language "{safe_lang}" >}}}}'
-
-
-def badge_shortcode(text: str, color: str = "gray", icon: Optional[str] = None) -> str:
-    """Render a badge shortcode."""
-    safe_text = text.replace('"', '\\"')
-    safe_color = color.replace('"', '\\"')
-    parts = [f'content="{safe_text}"', f'color="{safe_color}"']
-    if icon:
-        parts.append(f'icon="{icon}"')
-    args = " ".join(parts)
-    return f"{{{{< badge {args} >}}}}"
-
-
-def sanitize(text: Optional[str], fallback: str) -> str:
-    """Prepare text for table cells."""
-    value = (text or fallback).replace("|", r"\|").replace("\n", " ")
-    return " ".join(value.split())
-
-
-# ---------------------------------------------------------------------------
-# Data loading
-# ---------------------------------------------------------------------------
-
-def fetch_extensions(pgurl: str) -> List[ExtensionRow]:
-    """Fetch extension rows required for language pages."""
+def fetch_extensions(dsn: str) -> List[Extension]:
     query = """
-        SELECT
-            id,
-            name,
-            pkg,
-            COALESCE(lead_ext, name) AS lead_ext,
-            lang,
-            en_desc,
-            zh_desc,
-            extra
-        FROM pgext.extension
-        WHERE lang IS NOT NULL AND lang <> ''
-        ORDER BY lang, id
-    """
-
-    with psycopg2.connect(pgurl) as conn, conn.cursor() as cur:
+            SELECT id, name, pkg, lang, en_desc, zh_desc, lead
+            FROM pgext.extension
+            ORDER BY name \
+            """
+    extensions: List[Extension] = []
+    with psycopg2.connect(dsn) as conn, conn.cursor() as cur:
         cur.execute(query)
-        rows = cur.fetchall()
+        for row in cur.fetchall():
+            extensions.append(
+                Extension(
+                    id=row[0],
+                    name=row[1],
+                    pkg=row[2],
+                    lang=row[3],
+                    en_desc=row[4],
+                    zh_desc=row[5],
+                    lead=row[6],
+                )
+            )
+    return extensions
 
-    return [
-        ExtensionRow(
-            ext_id=row[0],
-            name=row[1],
-            pkg=row[2],
-            lead_ext=row[3],
-            lang=row[4],
-            en_desc=row[5],
-            zh_desc=row[6],
-            extra=parse_extra(row[7]),
-        )
-        for row in rows
+
+def build_leading_map(extensions: List[Extension]) -> Dict[str, str]:
+    mapping: Dict[str, str] = {}
+    for ext in extensions:
+        if ext.lead and ext.pkg:
+            mapping[ext.pkg] = ext.name
+    for ext in extensions:
+        mapping.setdefault(ext.pkg, ext.name)
+    return mapping
+
+
+def group_by_language(extensions: List[Extension]) -> Dict[str, List[Extension]]:
+    grouped: Dict[str, List[Extension]] = defaultdict(list)
+    for ext in extensions:
+        if ext.lang:
+            grouped[ext.lang].append(ext)
+    for items in grouped.values():
+        items.sort(key=lambda ext: ext.id)
+    return grouped
+
+
+def language_shortcode(language: str) -> str:
+    return f'{{{{< language "{language}" >}}}}'
+
+
+def badge_shortcode(language: str, count: int, is_zh: bool) -> str:
+    if is_zh:
+        return f'{{{{< badge content="{count} 个扩展" color="gray" >}}}}'
+    icon = ' icon="cube"' if language == "C" else ""
+    return f'{{{{< badge content="{count} Extensions" color="gray"{icon} >}}}}'
+
+
+def sanitize(text: Optional[str]) -> str:
+    if not text:
+        return ""
+    normalized = text.replace("|", "\\|").replace("\n", " ")
+    return " ".join(normalized.split())
+
+
+def build_navigation(languages: List[str]) -> str:
+    preferred = [lang for lang in LANGUAGE_NAV_ORDER if lang in languages]
+    remaining = sorted(lang for lang in languages if lang not in LANGUAGE_NAV_ORDER)
+    return " ".join(language_shortcode(lang) for lang in preferred + remaining)
+
+
+def render_summary(
+        languages: List[str], counts: Dict[str, int], is_zh: bool
+) -> List[str]:
+    headers = ("语言", "数量", "描述") if is_zh else ("Language", "Count", "Description")
+    descriptions = LANGUAGE_DESCRIPTIONS_ZH if is_zh else LANGUAGE_DESCRIPTIONS_EN
+    lines = [
+        f"| {headers[0]} | {headers[1]} | {headers[2]} |",
+        "|:-------:|:-----:|:------------|",
     ]
-
-
-# ---------------------------------------------------------------------------
-# Rendering
-# ---------------------------------------------------------------------------
-
-def render_summary_table(
-    lang_order: Iterable[Tuple[str, List[ExtensionRow]]],
-    locale: str,
-) -> str:
-    """Render the summary table for a locale."""
-    en_headers = (
-        "| Language | Count | Description |",
-        "|:-------:|:-----:|:------------|",
-    )
-    zh_headers = (
-        "| 语言 | 数量 | 描述 |",
-        "|:-------:|:-----:|:------------|",
-    )
-
-    if locale == "zh":
-        lines = [zh_headers[0], zh_headers[1]]
-    else:
-        lines = [en_headers[0], en_headers[1]]
-
-    for lang, extensions in lang_order:
-        badge = language_shortcode(lang)
-        if locale == "zh":
-            desc = sanitize(
-                LANGUAGE_DESCRIPTIONS_ZH.get(lang, f"使用 {lang} 编写的扩展"),
-                f"使用 {lang} 编写的扩展",
-            )
-        else:
-            desc = sanitize(
-                LANGUAGE_DESCRIPTIONS_EN.get(lang, f"Extensions written in {lang}"),
-                f"Extensions written in {lang}",
-            )
-        lines.append(f"| {badge} | {len(extensions)} | {desc} |")
-
-    return "\n".join(lines)
-
-
-def render_language_table(extensions: List[ExtensionRow], locale: str, lang: str) -> str:
-    """Render the per-language extensions table for a locale."""
-    is_rust = lang.lower() == "rust"
-
-    if locale == "zh":
-        if is_rust:
-            header = (
-                "| ID | 扩展 | 包 | PGRX Ver | 描述 |",
-                "|:---:|:---|:---|:---|:---|",
-            )
-        else:
-            header = (
-                "| ID | 扩展 | 包 | 描述 |",
-                "|:---:|:---|:---|:---|",
-            )
-    else:
-        if is_rust:
-            header = (
-                "| ID | Extension | Package | PGRX Ver | Description |",
-                "|:---:|:---|:---|:---|:---|",
-            )
-        else:
-            header = (
-                "| ID | Extension | Package | Description |",
-                "|:---:|:---|:---|:---|",
-            )
-
-    rows = [header[0], header[1]]
-    for ext in extensions:
-        pkg_display = ext.pkg or ext.name
-        if locale == "zh":
-            description = sanitize(ext.zh_desc or ext.en_desc, "暂无描述")
-        else:
-            description = sanitize(ext.en_desc, "No description")
-        if is_rust:
-            pgrx_ver = "-"
-            if isinstance(ext.extra, dict):
-                pgrx_value = ext.extra.get("pgrx")
-                if pgrx_value:
-                    pgrx_ver = sanitize(str(pgrx_value), "-")
-            rows.append(
-                f"| {ext.ext_id} | {ext_shortcode(ext.name)} | "
-                f"{ext_shortcode(ext.lead_ext, pkg_display)} | {pgrx_ver} | {description} |"
-            )
-        else:
-            rows.append(
-                f"| {ext.ext_id} | {ext_shortcode(ext.name)} | "
-                f"{ext_shortcode(ext.lead_ext, pkg_display)} | {description} |"
-            )
-
-    return "\n".join(rows)
-
-
-def render_language_sections(
-    lang_order: Iterable[Tuple[str, List[ExtensionRow]]],
-    locale: str,
-) -> str:
-    """Render all per-language sections for a locale."""
-    sections: List[str] = []
-    for lang, extensions in lang_order:
-        if locale == "zh":
-            count_badge = badge_shortcode(f"{len(extensions)} 个扩展", icon="box")
-            desc = LANGUAGE_DESCRIPTIONS_ZH.get(lang, f"使用 {lang} 编写的扩展")
-        else:
-            count_badge = badge_shortcode(f"{len(extensions)} Extensions", icon="box")
-            desc = LANGUAGE_DESCRIPTIONS_EN.get(lang, f"Extensions written in {lang}")
-        section = (
-            f"\n## {lang}\n\n"
-            f"{language_shortcode(lang)} {count_badge}\n\n"
-            f"{desc}\n\n"
-            f"{render_language_table(extensions, locale, lang)}\n"
+    for language in languages:
+        desc = descriptions.get(
+            language,
+            (f"使用 {language} 编写的扩展" if is_zh else f"Extensions written in {language}"),
         )
-        sections.append(section)
-    return "\n".join(sections)
+        lines.append(
+            f"| {language_shortcode(language)} | {counts[language]} | {desc} |"
+        )
+    return lines
 
 
-def build_nav(lang_order: Iterable[Tuple[str, List[ExtensionRow]]]) -> str:
-    """Render navigation badges."""
-    ordered = []
-    seen = set()
-
-    for lang in NAV_LANGUAGE_ORDER:
-        seen.add(lang)
-        ordered.append(lang)
-
-    for lang, _ in lang_order:
-        if lang not in seen:
-            ordered.append(lang)
-            seen.add(lang)
-
-    badges = [language_shortcode(lang) for lang in ordered if any(lang == item[0] for item in lang_order)]
-    return " ".join(badges)
-
-
-def generate_language_pages(pgurl: str, output_dir: Path) -> None:
-    """Generate both English and Chinese language index pages."""
-    extensions = fetch_extensions(pgurl)
-    if not extensions:
-        print("No extensions with language metadata found; skipping language index generation.")
-        return
-
-    grouped: Dict[str, List[ExtensionRow]] = defaultdict(list)
+def render_table(
+        language: str,
+        extensions: List[Extension],
+        leading_map: Dict[str, str],
+        is_zh: bool,
+) -> List[str]:
+    headers = ("ID", "扩展", "描述") if is_zh else ("ID", "Extension", "Description")
+    lines = [
+        f"| {headers[0]} | {headers[1]} | {headers[2]} |",
+        "|:---:|:---|:---|",
+    ]
+    prefix = "/zh/e/" if is_zh else "/e/"
     for ext in extensions:
-        grouped[ext.lang].append(ext)
+        # Use alias shortcode: {{< alias "ext" "pkg" >}}
+        if ext.name == ext.pkg:
+            # Extension name equals package name
+            ext_cell = f'{{{{< alias "{ext.name}" >}}}}'
+        else:
+            # Extension name differs from package name
+            ext_cell = f'{{{{< alias "{ext.name}" "{ext.pkg}" >}}}}'
 
-    # Sort languages by count desc, then name
-    lang_order = sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0].lower()))
-    for _, items in lang_order:
-        items.sort(key=lambda ext: (ext.ext_id, ext.name.lower()))
+        if is_zh:
+            desc = sanitize(ext.zh_desc) or sanitize(ext.en_desc) or "暂无描述"
+        else:
+            desc = sanitize(ext.en_desc) or "No description"
+        lines.append(f"| {ext.id} | {ext_cell} | {desc} |")
+    return lines
 
-    output_dir.mkdir(parents=True, exist_ok=True)
 
-    # English page
-    english_content = (
-        "---\n"
-        'title: "By Language"\n'
-        'description: "PostgreSQL extensions organized by implementation language"\n'
-        "---\n\n"
-        f"{build_nav(lang_order)}\n\n"
-        "## Summary\n\n"
-        f"{render_summary_table(lang_order, 'en')}\n\n"
-        f"{render_language_sections(lang_order, 'en')}\n"
+def render_sections(
+        languages: List[str],
+        grouped: Dict[str, List[Extension]],
+        leading_map: Dict[str, str],
+        is_zh: bool,
+) -> List[str]:
+    descriptions = LANGUAGE_DESCRIPTIONS_ZH if is_zh else LANGUAGE_DESCRIPTIONS_EN
+    sections: List[str] = []
+    for language in languages:
+        count = len(grouped[language])
+        desc = descriptions.get(
+            language,
+            (f"使用 {language} 编写的扩展" if is_zh else f"Extensions written in {language}"),
+        )
+        block: List[str] = [
+            f"## {language}",
+            "",
+            f"{language_shortcode(language)} {badge_shortcode(language, count, is_zh)}",
+            "",
+            "",
+            desc,
+            "",
+        ]
+        block.extend(render_table(language, grouped[language], leading_map, is_zh))
+        block.append("")
+        sections.extend(block)
+    return sections
+
+
+def render_page(
+        languages: List[str],
+        grouped: Dict[str, List[Extension]],
+        leading_map: Dict[str, str],
+        is_zh: bool,
+) -> str:
+    counts = {language: len(grouped[language]) for language in languages}
+    nav = build_navigation(languages)
+    front_matter = (
+        ["---", "title: 按语言", "description: 按实现语言组织的 PostgreSQL 扩展", "excludeSearch: true", "weight: 1",
+         "---", ] if is_zh
+        else ["---", "title: By Language", "description: PostgreSQL extensions organized by implementation language",
+              "excludeSearch: true", "weight: 1", "---", ]
     )
-    (output_dir / "lang.md").write_text(english_content, encoding="utf-8")
-    print(f"Generated: {(output_dir / 'lang.md')}")
-
-    # Chinese page
-    chinese_content = (
-        "---\n"
-        'title: "按语言"\n'
-        'description: "按实现语言组织的 PostgreSQL 扩展"\n'
-        "---\n\n"
-        f"{build_nav(lang_order)}\n\n"
-        "## 概览\n\n"
-        f"{render_summary_table(lang_order, 'zh')}\n\n"
-        f"{render_language_sections(lang_order, 'zh')}\n"
-    )
-    (output_dir / "lang.zh.md").write_text(chinese_content, encoding="utf-8")
-    print(f"Generated: {(output_dir / 'lang.zh.md')}")
-
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
-
-def resolve_output_dir(value: Optional[str]) -> Path:
-    """Resolve the output directory argument."""
-    if value:
-        return Path(value).expanduser().resolve()
-    return Path(__file__).resolve().parent.parent / "content" / "list"
+    heading = "## 概览" if is_zh else "## Summary"
+    lines: List[str] = []
+    lines.extend(front_matter)
+    lines.append("")
+    lines.append(nav)
+    lines.append("")
+    lines.append(heading)
+    lines.append("")
+    lines.extend(render_summary(languages, counts, is_zh))
+    lines.append("")
+    lines.append("")
+    lines.extend(render_sections(languages, grouped, leading_map, is_zh))
+    return "\n".join(lines).rstrip() + "\n"
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate /list/lang Hugo index pages.")
-    parser.add_argument("pgurl", nargs="?", default=None, help="PostgreSQL connection URL (defaults to $PGURL or postgres:///)")
-    parser.add_argument("output_dir", nargs="?", default=None, help="Output directory (defaults to content/list)")
-    args = parser.parse_args()
+    args = parse_args()
+    extensions = fetch_extensions(args.dsn)
+    leading_map = build_leading_map(extensions)
+    grouped = group_by_language(extensions)
+    if not grouped:
+        raise SystemExit("No extensions with language metadata found.")
 
-    pgurl = args.pgurl or os.getenv("PGURL") or "postgres:///"
-    output_dir = resolve_output_dir(args.output_dir)
+    languages = [
+        lang for lang, _ in sorted(
+            grouped.items(),
+            key=lambda item: (-len(item[1]), item[0].lower()),
+        )
+    ]
 
-    generate_language_pages(pgurl, output_dir)
+    output_dir = Path(args.output)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    (output_dir / "lang.md").write_text(
+        render_page(languages, grouped, leading_map, is_zh=False),
+        encoding="utf-8",
+    )
+    (output_dir / "lang.zh.md").write_text(
+        render_page(languages, grouped, leading_map, is_zh=True),
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":
