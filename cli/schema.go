@@ -51,34 +51,9 @@ func InitSchema(force bool) error {
 	}
 	logrus.Info("pgext schema created")
 
-	// Create repo_status tracking table
-	_, err = ExecContext(ctx, `
-		CREATE TABLE IF NOT EXISTS pgext.repo_status (
-			id            TEXT PRIMARY KEY,
-			downloaded    TIMESTAMPTZ,
-			parsed        TIMESTAMPTZ,
-			error         TEXT,
-			file_size     BIGINT,
-			package_count INTEGER
-		)
-	`)
-	if err != nil {
-		return fmt.Errorf("failed to create repo_status table: %w", err)
-	}
-
 	// Load initial CSV data (pg, os, category, repository, extension)
 	if err := loadEmbeddedCSVData(ctx); err != nil {
 		return fmt.Errorf("failed to load CSV data: %w", err)
-	}
-
-	// Initialize repository tracking
-	_, err = ExecContext(ctx, `
-		INSERT INTO pgext.repo_status (id)
-		SELECT id FROM pgext.repository
-		ON CONFLICT (id) DO NOTHING
-	`)
-	if err != nil {
-		logrus.Warnf("failed to initialize repo_status: %v", err)
 	}
 
 	logrus.Info("pgext schema initialized successfully")
