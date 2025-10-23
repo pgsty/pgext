@@ -1,0 +1,100 @@
+version: 2
+
+env:
+  - CGO_ENABLED=0
+
+before:
+  hooks:
+    - go mod download
+    - go mod tidy
+
+builds:
+  - id: pgext
+    main: ./main.go
+    binary: pgext
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -extldflags "-static"
+    flags:
+      - -a
+
+archives:
+  - id: pgext
+    name_template: >-
+      {{ .ProjectName }}-v{{ .Version }}.
+      {{- if eq .Os "darwin" }}darwin{{- else }}{{ .Os }}{{- end }}-
+      {{- if eq .Arch "amd64" }}amd64
+      {{- else if eq .Arch "arm64" }}arm64
+      {{- else }}{{ .Arch }}{{ end }}
+
+nfpms:
+  - id: pgext-packages
+    package_name: pgext
+    file_name_template: >-
+      {{ .PackageName }}
+      {{- if eq .Format "deb" }}_{{ .Version }}-1_
+        {{- if eq .Arch "amd64" }}amd64
+        {{- else if eq .Arch "arm64" }}arm64
+        {{- else }}{{ .Arch }}{{ end }}
+      {{- else if eq .Format "rpm" }}-{{ .Version }}-1.
+        {{- if eq .Arch "amd64" }}x86_64
+        {{- else if eq .Arch "arm64" }}aarch64
+        {{- else }}{{ .Arch }}{{ end }}
+      {{- end }}
+    vendor: "PGSTY"
+    homepage: "https://pgext.pgsty.com"
+    maintainer: "Ruohang Feng <rh@vonng.com>"
+    description: |
+      PostgreSQL Extension Package Manager and CLI Tool
+    license: "Apache-2.0"
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
+    contents:
+      - src: LICENSE
+        dst: /usr/share/doc/pgext/LICENSE
+        file_info:
+          mode: 0644
+    release: "1"
+    rpm:
+      summary: "PostgreSQL Extension Catalog Util"
+      group: "Applications/Databases"
+
+
+checksum:
+  name_template: 'checksums.txt'
+  algorithm: sha256
+
+snapshot:
+  version_template: "{{ .Tag }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+      - 'Merge pull request'
+      - 'Merge branch'
+
+release:
+  github:
+    owner: pgsty
+    name: pgext
+  draft: false
+  prerelease: false
+  mode: replace
+  replace_existing_artifacts: true
+  name_template: "{{.ProjectName}}-v{{.Version}}"
+  disable: false
+
+announce:
+  skip: true
