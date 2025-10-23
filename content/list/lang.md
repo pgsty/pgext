@@ -2,7 +2,7 @@
 title: By Language
 description: PostgreSQL extensions organized by implementation language
 excludeSearch: true
-weight: 1
+weight: 200
 ---
 
 {{< language "C" >}} {{< language "C++" >}} {{< language "Rust" >}} {{< language "Java" >}} {{< language "Python" >}} {{< language "SQL" >}} {{< language "Data" >}}

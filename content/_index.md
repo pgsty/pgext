@@ -1,5 +1,5 @@
 ---
-title: "PG Extensions"
+title: "PGEXT - the PostgreSQL Extension Catalog"
 cascade:
   type: docs
 breadcrumbs: false
@@ -9,60 +9,28 @@ toc: false
 ---
 
 
-Pigsty allows you to harness the synergistic superpower of the PostgreSQL extensions ecosystem with three things:
+Harness the synergistic superpower of the PostgreSQL extensions ecosystem with three things:
 
+- [**PIG CLI**](/pig/) : The PostgreSQL Extension Package Manager for Linux - `pig`
 - [**Catalog**](/list) : Find the extension you need, with unparalleled 420+ extensions included
 - [**Repository**](/repo) : Get pre-made RPM/DEB packages for 10 mainstream Linux OS
-- [**Package Manager**](/pig/) : Setup everything with a single command - `pig`
 
-{{< cards cols=5 >}}
+
+{{< cards cols=4 >}}
+  {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}  
   {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 420+ available PostgreSQL extensions" >}}
-  {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT/YUM repo that deliver PostgreSQL extensions" >}}
-  {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions" >}}
-  {{< card link="/usage" title="Usage Tutorial" icon="question-mark-circle" subtitle="How to get, install, config, manage these extensions?" >}}
+  {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT / DNF repo that deliver PostgreSQL extensions in native Linux format" >}}
 {{< /cards >}}
 
+**Just use PostgreSQL for everything!** Also check our blog post: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
+[![ecosystem](ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
---------
+## Catalog
 
-Also check our blog post: [PostgreSQL is eating the Database World](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+{{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
 
-[![ecosystem](/img/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
-
-{{< category "time" >}}
-{{< category "gis" >}}
-{{< category "rag" >}}
-{{< category "fts" >}}
-{{< category "olap" >}}
-{{< category "feat" >}}
-{{< category "lang" >}}
-{{< category "type" >}}
-
-{{< category "util" >}}
-{{< category "func" >}}
-{{< category "admin" >}}
-{{< category "stat" >}}
-{{< category "sec" >}}
-{{< category "fdw" >}}
-{{< category "sim" >}}
-{{< category "etl" >}}
-
-
-{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
-
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
-{{< language "c" >}}
-{{< language "c++" >}}
-{{< language "rust" >}}
-{{< language "java" >}}
-{{< language "python" >}}
-{{< language "sql" >}}
-{{< language "data" >}}
-
---------
-
-## Categories
+{{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
 
 {{< cards cols=5 >}}
   {{< card link="/cate/time" title="TIME" icon="clock" subtitle="TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Scheduler, ..." >}}
@@ -82,6 +50,11 @@ Also check our blog post: [PostgreSQL is eating the Database World](https://medi
   {{< card link="/cate/sim" title="SIM" icon="terminal" subtitle="Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQL, Memcached, and Babelfish!" >}}
   {{< card link="/cate/etl" title="ETL" icon="truck" subtitle="Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & Compare Postgres Databases,..." >}}
 {{< /cards >}}
+
+{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
+
+{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
+{{< language "c" >}} {{< language "c++" >}} {{< language "rust" >}} {{< language "java" >}} {{< language "python" >}} {{< language "sql" >}} {{< language "data" >}}
 
 
 --------

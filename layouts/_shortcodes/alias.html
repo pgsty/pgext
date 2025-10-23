@@ -1,0 +1,25 @@
+{{- $ext := trim (.Get 0) " " -}}
+{{- $pkg := cond (ge (len .Params) 2) (trim (.Get 1) " ") "" -}}
+
+{{- $displayName := $ext -}}
+{{- if and $pkg (ne $pkg $ext) -}}
+  {{- $displayName = printf "%s / %s" $ext $pkg -}}
+{{- end -}}
+
+{{- if $ext -}}
+  <span style="white-space: nowrap;"><a href="{{ (printf "/e/%s" $ext) | relLangURL }}" title="Extension: {{ $ext }}{{- if and $pkg (ne $pkg $ext) }} (Package: {{ $pkg }}){{- end }}">
+    {{- partial "shortcodes/badge.html" (dict
+      "content" $displayName
+      "color" "gray"
+      "border" true
+      )
+    -}}
+  </a></span>
+{{- else -}}
+  {{- partial "shortcodes/badge.html" (dict
+    "content" "unknown"
+    "color" "gray"
+    "border" true
+    )
+  -}}
+{{- end -}}

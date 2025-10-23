@@ -1,6 +1,7 @@
 ---
 title: By License
 description: PostgreSQL extensions organized by open source license
+weight: 300
 ---
 
 {{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}

@@ -1,6 +1,6 @@
 baseURL: 'https://pgext.pgsty.com/'
 languageCode: 'en'
-title: 'PGEXT Catalog'
+title: 'PG Extensions'
 
 enableRobotsTXT: true
 # Parse Git commit

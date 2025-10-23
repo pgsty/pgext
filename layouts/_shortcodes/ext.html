@@ -1,0 +1,20 @@
+{{- $ext := trim (.Get 0) " " -}}
+{{- $pkg := cond (ge (len .Params) 2) (trim (.Get 1) " ") $ext -}}
+
+{{- if $ext -}}
+  <a href="{{ (printf "/e/%s" $ext) | relLangURL }}" title="Extension: {{ $ext }}">
+    {{- partial "shortcodes/badge.html" (dict
+      "content" $pkg
+      "color" "gray"
+      "border" true
+      )
+    -}}
+  </a>
+{{- else -}}
+  {{- partial "shortcodes/badge.html" (dict
+    "content" "unknown"
+    "color" "gray"
+    "border" true
+    )
+  -}}
+{{- end -}}

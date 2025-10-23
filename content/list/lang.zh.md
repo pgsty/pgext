@@ -2,7 +2,7 @@
 title: 按语言
 description: 按实现语言组织的 PostgreSQL 扩展
 excludeSearch: true
-weight: 1
+weight: 200
 ---
 
 {{< language "C" >}} {{< language "C++" >}} {{< language "Rust" >}} {{< language "Java" >}} {{< language "Python" >}} {{< language "SQL" >}} {{< language "Data" >}}

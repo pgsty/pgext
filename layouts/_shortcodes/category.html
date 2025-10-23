@@ -1,0 +1,42 @@
+{{- $cateName := upper (trim (.Get 0) " ") -}}
+
+{{- /* Map categories to badge-supported colors */ -}}
+{{- $categories := dict
+  "TIME" (dict "icon" "clock" "color" "purple")
+  "GIS" (dict "icon" "globe" "color" "green")
+  "RAG" (dict "icon" "light-bulb" "color" "red")
+  "FTS" (dict "icon" "search" "color" "blue")
+  "OLAP" (dict "icon" "chart-bar" "color" "indigo")
+  "FEAT" (dict "icon" "sparkles" "color" "amber")
+  "LANG" (dict "icon" "code" "color" "blue")
+  "TYPE" (dict "icon" "cube" "color" "purple")
+  "UTIL" (dict "icon" "cog" "color" "gray")
+  "FUNC" (dict "icon" "variable" "color" "red")
+  "ADMIN" (dict "icon" "office-building" "color" "gray")
+  "STAT" (dict "icon" "trending-up" "color" "green")
+  "SEC" (dict "icon" "shield-check" "color" "yellow")
+  "FDW" (dict "icon" "database" "color" "blue")
+  "SIM" (dict "icon" "duplicate" "color" "purple")
+  "ETL" (dict "icon" "truck" "color" "green")
+-}}
+
+{{- $category := index $categories $cateName -}}
+{{- if $category -}}
+  {{- $href := (printf "/list/cate#%s" (lower $cateName)) | relLangURL -}}
+  <a href="{{ $href }}" title="Category: {{ upper $cateName }}">
+    {{- partial "shortcodes/badge.html" (dict
+      "content" $cateName
+      "color" $category.color
+      "border" true
+      "icon" $category.icon
+      )
+    -}}
+  </a>
+{{- else -}}
+  {{- partial "shortcodes/badge.html" (dict
+    "content" "Unknown"
+    "color" "gray"
+    "border" true
+    )
+  -}}
+{{- end -}}

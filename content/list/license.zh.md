@@ -1,6 +1,7 @@
 ---
 title: 按许可证
 description: 按开源许可证组织的 PostgreSQL 扩展
+weight: 300
 ---
 
 {{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}

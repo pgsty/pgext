@@ -1,0 +1,32 @@
+{{- /*
+PostgreSQL Version Renderer
+
+Renders a compact series of PostgreSQL version numbers with color coding.
+
+@param {string} 0 Comma-separated list of version numbers (e.g., "18,17,16,15,14")
+@param {string} 1 Comma-separated list of color codes (e.g., "r,g,g,g,g")
+              Color codes: r=red, g=green, y=yellow, b=blue, o=orange, gr=gray
+
+@example {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}}
+*/ -}}
+
+{{- $versions := split (trim (.Get 0) " ") "," -}}
+{{- $colors := split (trim (.Get 1) " ") "," -}}
+
+{{- $colorMap := dict
+  "r" "#dc2626"
+  "g" "#16a34a"
+  "y" "#ca8a04"
+  "b" "#2563eb"
+  "o" "#ea580c"
+  "gr" "#6b7280"
+-}}
+
+<span class="pgver" style="display: inline-flex; gap: 0.25rem; font-family: monospace; font-size: 0.875em; font-weight: 600;">
+{{- range $index, $version := $versions -}}
+  {{- $version = trim $version " " -}}
+  {{- $colorCode := trim (index $colors $index) " " -}}
+  {{- $color := index $colorMap $colorCode | default "#6b7280" -}}
+  <span style="color: {{ $color }};">{{ $version }} </span>
+{{- end -}}
+</span>

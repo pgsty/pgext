@@ -1,0 +1,36 @@
+{{- $langName := trim (.Get 0) " " -}}
+
+{{- /* Map languages using uppercase keys with display names and properties */ -}}
+{{- $languages := dict
+  "C" (dict "name" "C" "anchor" "c" "icon" "code" "color" "blue" "desc" "C Programming Language")
+  "C++" (dict "name" "C++" "anchor" "c-1" "icon" "code" "color" "indigo" "desc" "C++ Programming Language")
+  "CPP" (dict "name" "C++" "anchor" "c-1" "icon" "code" "color" "indigo" "desc" "C++ Programming Language")
+  "RUST" (dict "name" "Rust" "anchor" "rust" "icon" "cog" "color" "orange" "desc" "Rust Programming Language")
+  "JAVA" (dict "name" "Java" "anchor" "java" "icon" "cog" "color" "red" "desc" "Java Programming Language")
+  "PYTHON" (dict "name" "Python" "anchor" "python" "icon" "terminal" "color" "yellow" "desc" "Python Programming Language")
+  "SQL" (dict "name" "SQL" "anchor" "sql" "icon" "database" "color" "green" "desc" "Structured Query Language")
+  "DATA" (dict "name" "Data" "anchor" "data" "icon" "table" "color" "purple" "desc" "Data Files and Resources")
+-}}
+
+{{- /* Look up language using uppercase key */ -}}
+{{- $language := index $languages (upper $langName) -}}
+{{- if $language -}}
+  {{- $href := (printf "/list/lang#%s" $language.anchor) | relLangURL -}}
+  <a href="{{ $href }}" title="{{ $language.name }}: {{ $language.desc }}">
+    {{- partial "shortcodes/badge.html" (dict
+      "content" $language.name
+      "color" $language.color
+      "border" true
+      "icon" $language.icon
+      )
+    -}}
+  </a>
+{{- else -}}
+  {{- partial "shortcodes/badge.html" (dict
+    "content" $langName
+    "color" "gray"
+    "border" true
+    "icon" "code"
+    )
+  -}}
+{{- end -}}
