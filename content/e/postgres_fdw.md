@@ -3,22 +3,23 @@ title: "postgres_fdw"
 linkTitle: "postgres_fdw"
 description: "foreign-data wrapper for remote PostgreSQL servers"
 weight: 8990
-categories: ["Fdw"]
+categories: ["FDW"]
 width: full
 ---
 
 foreign-data wrapper for remote PostgreSQL servers
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8990** | {{< badge content="postgres_fdw" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< ext "postgres_fdw" "postgres_fdw" >}} | `1.1` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8990** | {{< badge content="postgres_fdw" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< ext "postgres_fdw" >}} | `1.1` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,7 +31,7 @@ foreign-data wrapper for remote PostgreSQL servers
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} | {{< badge content="1.1" color="green" >}} |
+| {{< bg "1.1" "PostgreSQL 18: version 1.1" "green" >}} | {{< bg "1.1" "PostgreSQL 17: version 1.1" "green" >}} | {{< bg "1.1" "PostgreSQL 16: version 1.1" "green" >}} | {{< bg "1.1" "PostgreSQL 15: version 1.1" "green" >}} | {{< bg "1.1" "PostgreSQL 14: version 1.1" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

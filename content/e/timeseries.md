@@ -3,11 +3,12 @@ title: "timeseries"
 linkTitle: "timeseries"
 description: "Convenience API for time series stack"
 weight: 1020
-categories: ["Time"]
+categories: ["TIME"]
 width: full
 ---
 
 Convenience API for time series stack
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ Convenience API for time series stack
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="-----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -33,35 +34,33 @@ Convenience API for time series stack
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.6` | {{< badge content="18" color="red" alt="pg_timeseries_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_timeseries_$v` | `hydra_$v`, `pg_cron_$v`, `pg_ivm_$v`, `pg_partman_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.6` | {{< badge content="18" color="red" alt="postgresql-18-pg-timeseries" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-timeseries` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.6` | {{< bg "18" "pg_timeseries_18" "red" >}} {{< bg "17" "pg_timeseries_17" "green" >}} {{< bg "16" "pg_timeseries_16" "green" >}} {{< bg "15" "pg_timeseries_15" "green" >}} {{< bg "14" "pg_timeseries_14" "green" >}} | `pg_timeseries_$v` | `hydra_$v`, `pg_cron_$v`, `pg_ivm_$v`, `pg_partman_$v` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.6` | {{< bg "18" "postgresql-18-pg-timeseries" "red" >}} {{< bg "17" "postgresql-17-pg-timeseries" "green" >}} {{< bg "16" "postgresql-16-pg-timeseries" "green" >}} {{< bg "15" "postgresql-15-pg-timeseries" "green" >}} {{< bg "14" "postgresql-14-pg-timeseries" "green" >}} | `postgresql-$v-pg-timeseries` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pg_timeseries_18" >}}     | {{< pkg "pg_timeseries_17" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_17-0.1.6-2PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_timeseries_16" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_16-0.1.6-2PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_timeseries_15" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_15-0.1.6-2PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_timeseries_14" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_14-0.1.6-2PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pg_timeseries_18" >}}     | {{< pkg "pg_timeseries_17" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_17-0.1.6-2PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_timeseries_16" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_16-0.1.6-2PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_timeseries_15" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_15-0.1.6-2PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_timeseries_14" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_14-0.1.6-2PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pg_timeseries_18" >}}     | {{< pkg "pg_timeseries_17" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_17-0.1.6-2PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_timeseries_16" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_16-0.1.6-2PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_timeseries_15" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_15-0.1.6-2PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_timeseries_14" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_14-0.1.6-2PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pg_timeseries_18" >}}     | {{< pkg "pg_timeseries_17" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_17-0.1.6-2PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_timeseries_16" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_16-0.1.6-2PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_timeseries_15" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_15-0.1.6-2PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_timeseries_14" "0.1.6" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_14-0.1.6-2PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-timeseries" >}}     | {{< pkg "postgresql-17-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-timeseries" "0.1.6" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |  {{< bg "MISS" "pg_timeseries_18 : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_17 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_16 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_15 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_14 : HIDE 1" >}}   |
+|    `el8.aarch64`    |  {{< bg "MISS" "pg_timeseries_18 : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_17 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_16 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_15 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_14 : HIDE 1" >}}   |
+|    `el9.x86_64`    |  {{< bg "MISS" "pg_timeseries_18 : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_17 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_16 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_15 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_14 : HIDE 1" >}}   |
+|    `el9.aarch64`    |  {{< bg "MISS" "pg_timeseries_18 : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_17 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_16 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_15 : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "pg_timeseries_14 : HIDE 1" >}}   |
+|    `d12.x86_64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
+|    `d12.aarch64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
+|    `u22.x86_64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
+|    `u22.aarch64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
+|    `u24.x86_64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
+|    `u24.aarch64`    |  {{< bg "MISS" "postgresql-18-pg-timeseries : HIDE 0" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-17-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-16-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-15-pg-timeseries : HIDE 1" >}}   |  {{< bg "PIGSTY 0.1.6" "postgresql-14-pg-timeseries : HIDE 1" >}}   |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_timeseries_17` | 0.1.6 | `el8.x86_64` | pigsty | 26.2 KiB | [pg_timeseries_17-0.1.6-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_17-0.1.6-2PIGSTY.el8.x86_64.rpm) |
 | `pg_timeseries_17` | 0.1.6 | `el8.aarch64` | pigsty | 26.1 KiB | [pg_timeseries_17-0.1.6-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_17-0.1.6-2PIGSTY.el8.aarch64.rpm) |
-| `pg_timeseries_17` | 0.1.6 | `el9.aarch64` | pigsty | 25.8 KiB | [pg_timeseries_17-0.1.6-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_17-0.1.6-2PIGSTY.el9.aarch64.rpm) |
 | `pg_timeseries_17` | 0.1.6 | `el9.x86_64` | pigsty | 25.8 KiB | [pg_timeseries_17-0.1.6-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_17-0.1.6-2PIGSTY.el9.x86_64.rpm) |
+| `pg_timeseries_17` | 0.1.6 | `el9.aarch64` | pigsty | 25.8 KiB | [pg_timeseries_17-0.1.6-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_17-0.1.6-2PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pg-timeseries` | 0.1.6 | `d12.x86_64` | pigsty | 22.4 KiB | [postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-timeseries` | 0.1.6 | `d12.aarch64` | pigsty | 22.4 KiB | [postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-timeseries` | 0.1.6 | `u22.x86_64` | pigsty | 22.8 KiB | [postgresql-17-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb) |
@@ -70,45 +69,42 @@ Convenience API for time series stack
 | `postgresql-17-pg-timeseries` | 0.1.6 | `u24.aarch64` | pigsty | 22.8 KiB | [postgresql-17-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-17-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_timeseries_16` | 0.1.6 | `el8.x86_64` | pigsty | 26.2 KiB | [pg_timeseries_16-0.1.6-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_16-0.1.6-2PIGSTY.el8.x86_64.rpm) |
 | `pg_timeseries_16` | 0.1.6 | `el8.aarch64` | pigsty | 26.1 KiB | [pg_timeseries_16-0.1.6-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_16-0.1.6-2PIGSTY.el8.aarch64.rpm) |
 | `pg_timeseries_16` | 0.1.6 | `el9.x86_64` | pigsty | 25.8 KiB | [pg_timeseries_16-0.1.6-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_16-0.1.6-2PIGSTY.el9.x86_64.rpm) |
 | `pg_timeseries_16` | 0.1.6 | `el9.aarch64` | pigsty | 25.8 KiB | [pg_timeseries_16-0.1.6-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_16-0.1.6-2PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-pg-timeseries` | 0.1.6 | `d12.x86_64` | pigsty | 22.4 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-timeseries` | 0.1.6 | `d12.aarch64` | pigsty | 22.4 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-timeseries` | 0.1.6 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-timeseries` | 0.1.6 | `u22.x86_64` | pigsty | 22.8 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-timeseries` | 0.1.6 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-timeseries` | 0.1.6 | `u24.x86_64` | pigsty | 22.8 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-timeseries` | 0.1.6 | `u24.aarch64` | pigsty | 22.8 KiB | [postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-16-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_timeseries_15` | 0.1.6 | `el8.x86_64` | pigsty | 26.2 KiB | [pg_timeseries_15-0.1.6-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_15-0.1.6-2PIGSTY.el8.x86_64.rpm) |
 | `pg_timeseries_15` | 0.1.6 | `el8.aarch64` | pigsty | 26.1 KiB | [pg_timeseries_15-0.1.6-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_15-0.1.6-2PIGSTY.el8.aarch64.rpm) |
 | `pg_timeseries_15` | 0.1.6 | `el9.x86_64` | pigsty | 25.8 KiB | [pg_timeseries_15-0.1.6-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_15-0.1.6-2PIGSTY.el9.x86_64.rpm) |
 | `pg_timeseries_15` | 0.1.6 | `el9.aarch64` | pigsty | 25.8 KiB | [pg_timeseries_15-0.1.6-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_15-0.1.6-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-pg-timeseries` | 0.1.6 | `d12.aarch64` | pigsty | 22.4 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-timeseries` | 0.1.6 | `d12.x86_64` | pigsty | 22.4 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-timeseries` | 0.1.6 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-timeseries` | 0.1.6 | `d12.aarch64` | pigsty | 22.4 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-timeseries` | 0.1.6 | `u22.x86_64` | pigsty | 22.8 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-timeseries` | 0.1.6 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-timeseries` | 0.1.6 | `u24.x86_64` | pigsty | 22.8 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-timeseries` | 0.1.6 | `u24.aarch64` | pigsty | 22.8 KiB | [postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-15-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_timeseries_14` | 0.1.6 | `el8.x86_64` | pigsty | 26.2 KiB | [pg_timeseries_14-0.1.6-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_14-0.1.6-2PIGSTY.el8.x86_64.rpm) |
 | `pg_timeseries_14` | 0.1.6 | `el8.aarch64` | pigsty | 26.1 KiB | [pg_timeseries_14-0.1.6-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_14-0.1.6-2PIGSTY.el8.aarch64.rpm) |
 | `pg_timeseries_14` | 0.1.6 | `el9.x86_64` | pigsty | 25.8 KiB | [pg_timeseries_14-0.1.6-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_14-0.1.6-2PIGSTY.el9.x86_64.rpm) |
@@ -120,32 +116,13 @@ Convenience API for time series stack
 | `postgresql-14-pg-timeseries` | 0.1.6 | `u24.x86_64` | pigsty | 22.8 KiB | [postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-timeseries` | 0.1.6 | `u24.aarch64` | pigsty | 22.8 KiB | [postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-14-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_timeseries_13` | 0.1.6 | `el8.aarch64` | pigsty | 26.1 KiB | [pg_timeseries_13-0.1.6-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_timeseries_13-0.1.6-2PIGSTY.el8.aarch64.rpm) |
-| `pg_timeseries_13` | 0.1.6 | `el8.x86_64` | pigsty | 26.2 KiB | [pg_timeseries_13-0.1.6-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_timeseries_13-0.1.6-2PIGSTY.el8.x86_64.rpm) |
-| `pg_timeseries_13` | 0.1.6 | `el9.aarch64` | pigsty | 25.8 KiB | [pg_timeseries_13-0.1.6-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_timeseries_13-0.1.6-2PIGSTY.el9.aarch64.rpm) |
-| `pg_timeseries_13` | 0.1.6 | `el9.x86_64` | pigsty | 25.8 KiB | [pg_timeseries_13-0.1.6-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_timeseries_13-0.1.6-2PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `d12.aarch64` | pigsty | 22.4 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `d12.x86_64` | pigsty | 22.4 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `u22.x86_64` | pigsty | 22.8 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `u24.aarch64` | pigsty | 22.8 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~noble_arm64.deb) |
-| `postgresql-13-pg-timeseries` | 0.1.6 | `u24.x86_64` | pigsty | 22.8 KiB | [postgresql-13-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-timeseries/postgresql-13-pg-timeseries_0.1.6-2PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ChuckHend/pg_timeseries" title="Repository" icon="github" subtitle="github.com/ChuckHend/pg_timeseries" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_timeseries-0.1.6.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_timeseries-0.1.6.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -3,22 +3,23 @@ title: "pgcozy"
 linkTitle: "pgcozy"
 description: "Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL."
 weight: 5190
-categories: ["Admin"]
+categories: ["ADMIN"]
 width: full
 ---
 
 Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL.
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5190** | {{< badge content="pgcozy" link="https://github.com/vventirozos/pgcozy" >}} | {{< ext "pgcozy" "pgcozy" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **5190** | {{< badge content="pgcozy" link="https://github.com/vventirozos/pgcozy" >}} | {{< ext "pgcozy" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="-----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ Pre-warming shared buffers according to previous pg_buffercache snapshots for Po
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgcozy" >}} | `1.0` | {{< badge content="18" color="red" alt="pgcozy_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pgcozy_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgcozy" >}} | `1.0` | {{< badge content="18" color="red" alt="postgresql-18-pgcozy" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pgcozy` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pgcozy" >}} | `1.0` | {{< bg "18" "pgcozy_18" "red" >}} {{< bg "17" "pgcozy_17" "green" >}} {{< bg "16" "pgcozy_16" "green" >}} {{< bg "15" "pgcozy_15" "green" >}} {{< bg "14" "pgcozy_14" "green" >}} | `pgcozy_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pgcozy" >}} | `1.0` | {{< bg "18" "postgresql-18-pgcozy" "red" >}} {{< bg "17" "postgresql-17-pgcozy" "green" >}} {{< bg "16" "postgresql-16-pgcozy" "green" >}} {{< bg "15" "postgresql-15-pgcozy" "green" >}} {{< bg "14" "postgresql-14-pgcozy" "green" >}} | `postgresql-$v-pgcozy` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pgcozy_18" >}}     | {{< pkg "pgcozy_17" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_17-1.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pgcozy_16" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_16-1.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pgcozy_15" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_15-1.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pgcozy_14" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_14-1.0-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pgcozy_18" >}}     | {{< pkg "pgcozy_17" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_17-1.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pgcozy_16" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_16-1.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pgcozy_15" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_15-1.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pgcozy_14" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_14-1.0-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pgcozy_18" >}}     | {{< pkg "pgcozy_17" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_17-1.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pgcozy_16" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_16-1.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pgcozy_15" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_15-1.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pgcozy_14" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_14-1.0-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pgcozy_18" >}}     | {{< pkg "pgcozy_17" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_17-1.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pgcozy_16" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_16-1.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pgcozy_15" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_15-1.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pgcozy_14" "1.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_14-1.0-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pgcozy" >}}     | {{< pkg "postgresql-17-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pgcozy" "1.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "pgcozy_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pgcozy_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pgcozy_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pgcozy_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgcozy_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgcozy_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgcozy : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgcozy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgcozy : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgcozy_17` | 1.0 | `el8.x86_64` | pigsty | 10.7 KiB | [pgcozy_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_17-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcozy_17` | 1.0 | `el8.aarch64` | pigsty | 10.7 KiB | [pgcozy_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgcozy_17` | 1.0 | `el9.aarch64` | pigsty | 10.7 KiB | [pgcozy_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_17-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgcozy_17` | 1.0 | `el9.x86_64` | pigsty | 10.7 KiB | [pgcozy_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcozy_17` | 1.0 | `el9.aarch64` | pigsty | 10.7 KiB | [pgcozy_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_17-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pgcozy` | 1.0 | `d12.x86_64` | pigsty | 8.2 KiB | [postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgcozy` | 1.0 | `d12.aarch64` | pigsty | 8.2 KiB | [postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgcozy` | 1.0 | `u22.x86_64` | pigsty | 8.2 KiB | [postgresql-17-pgcozy_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ Pre-warming shared buffers according to previous pg_buffercache snapshots for Po
 | `postgresql-17-pgcozy` | 1.0 | `u24.aarch64` | pigsty | 8.2 KiB | [postgresql-17-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-17-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgcozy_16` | 1.0 | `el8.x86_64` | pigsty | 10.7 KiB | [pgcozy_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_16-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcozy_16` | 1.0 | `el8.aarch64` | pigsty | 10.7 KiB | [pgcozy_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_16-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcozy_16` | 1.0 | `el9.x86_64` | pigsty | 10.7 KiB | [pgcozy_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_16-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcozy_16` | 1.0 | `el9.aarch64` | pigsty | 10.7 KiB | [pgcozy_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_16-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-pgcozy` | 1.0 | `d12.x86_64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgcozy` | 1.0 | `d12.aarch64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pgcozy` | 1.0 | `u22.aarch64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pgcozy` | 1.0 | `u22.x86_64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pgcozy` | 1.0 | `u22.aarch64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pgcozy` | 1.0 | `u24.x86_64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pgcozy` | 1.0 | `u24.aarch64` | pigsty | 8.2 KiB | [postgresql-16-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-16-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgcozy_15` | 1.0 | `el8.x86_64` | pigsty | 10.7 KiB | [pgcozy_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_15-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcozy_15` | 1.0 | `el8.aarch64` | pigsty | 10.7 KiB | [pgcozy_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_15-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcozy_15` | 1.0 | `el9.x86_64` | pigsty | 10.7 KiB | [pgcozy_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_15-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcozy_15` | 1.0 | `el9.aarch64` | pigsty | 10.7 KiB | [pgcozy_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_15-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-pgcozy` | 1.0 | `d12.aarch64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgcozy` | 1.0 | `d12.x86_64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pgcozy` | 1.0 | `u22.aarch64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pgcozy` | 1.0 | `d12.aarch64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgcozy` | 1.0 | `u22.x86_64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pgcozy` | 1.0 | `u22.aarch64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pgcozy` | 1.0 | `u24.x86_64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pgcozy` | 1.0 | `u24.aarch64` | pigsty | 8.2 KiB | [postgresql-15-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-15-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgcozy_14` | 1.0 | `el8.x86_64` | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_14-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcozy_14` | 1.0 | `el8.aarch64` | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_14-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcozy_14` | 1.0 | `el9.x86_64` | pigsty | 10.7 KiB | [pgcozy_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_14-1.0-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ Pre-warming shared buffers according to previous pg_buffercache snapshots for Po
 | `postgresql-14-pgcozy` | 1.0 | `u24.x86_64` | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pgcozy` | 1.0 | `u24.aarch64` | pigsty | 8.2 KiB | [postgresql-14-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-14-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pgcozy_13` | 1.0 | `el8.aarch64` | pigsty | 10.7 KiB | [pgcozy_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcozy_13-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgcozy_13` | 1.0 | `el8.x86_64` | pigsty | 10.7 KiB | [pgcozy_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcozy_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgcozy_13` | 1.0 | `el9.aarch64` | pigsty | 10.7 KiB | [pgcozy_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcozy_13-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgcozy_13` | 1.0 | `el9.x86_64` | pigsty | 10.7 KiB | [pgcozy_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcozy_13-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-pgcozy` | 1.0 | `d12.aarch64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pgcozy` | 1.0 | `d12.x86_64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pgcozy` | 1.0 | `u22.aarch64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pgcozy` | 1.0 | `u22.x86_64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pgcozy` | 1.0 | `u24.aarch64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-pgcozy` | 1.0 | `u24.x86_64` | pigsty | 8.2 KiB | [postgresql-13-pgcozy_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcozy/postgresql-13-pgcozy_1.0-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/vventirozos/pgcozy" title="Repository" icon="github" subtitle="github.com/vventirozos/pgcozy" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pgcozy-1.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcozy-1.0.tar.gz" >}}
 {{< /cards >}}
 
 

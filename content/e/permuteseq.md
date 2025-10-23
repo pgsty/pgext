@@ -3,22 +3,23 @@ title: "permuteseq"
 linkTitle: "permuteseq"
 description: "Pseudo-randomly permute sequences with a format-preserving encryption on elements"
 weight: 4550
-categories: ["Func"]
+categories: ["FUNC"]
 width: full
 ---
 
 Pseudo-randomly permute sequences with a format-preserving encryption on elements
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4550** | {{< badge content="permuteseq" link="https://github.com/dverite/permuteseq" >}} | {{< ext "permuteseq" "permuteseq" >}} | `1.2.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4550** | {{< badge content="permuteseq" link="https://github.com/dverite/permuteseq" >}} | {{< ext "permuteseq" >}} | `1.2.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ Pseudo-randomly permute sequences with a format-preserving encryption on element
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/permuteseq" >}} | `1.2.2` | {{< badge content="18" color="red" alt="permuteseq_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `permuteseq_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/permuteseq" >}} | `1.2.2` | {{< badge content="18" color="red" alt="postgresql-18-permuteseq" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-permuteseq` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/permuteseq" >}} | `1.2.2` | {{< bg "18" "permuteseq_18*" "red" >}} {{< bg "17" "permuteseq_17*" "green" >}} {{< bg "16" "permuteseq_16*" "green" >}} {{< bg "15" "permuteseq_15*" "green" >}} {{< bg "14" "permuteseq_14*" "green" >}} | `permuteseq_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/permuteseq" >}} | `1.2.2` | {{< bg "18" "postgresql-18-permuteseq" "red" >}} {{< bg "17" "postgresql-17-permuteseq" "green" >}} {{< bg "16" "postgresql-16-permuteseq" "green" >}} {{< bg "15" "postgresql-15-permuteseq" "green" >}} {{< bg "14" "postgresql-14-permuteseq" "green" >}} | `postgresql-$v-permuteseq` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "permuteseq_18" >}}     | {{< pkg "permuteseq_17" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_17-1.2.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "permuteseq_16" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_16-1.2.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "permuteseq_15" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_15-1.2.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "permuteseq_14" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_14-1.2.2-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "permuteseq_18" >}}     | {{< pkg "permuteseq_17" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_17-1.2.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "permuteseq_16" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_16-1.2.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "permuteseq_15" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_15-1.2.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "permuteseq_14" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_14-1.2.2-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "permuteseq_18" >}}     | {{< pkg "permuteseq_17" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_17-1.2.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "permuteseq_16" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_16-1.2.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "permuteseq_15" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_15-1.2.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "permuteseq_14" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_14-1.2.2-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "permuteseq_18" >}}     | {{< pkg "permuteseq_17" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_17-1.2.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "permuteseq_16" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_16-1.2.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "permuteseq_15" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_15-1.2.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "permuteseq_14" "1.2.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_14-1.2.2-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-permuteseq" >}}     | {{< pkg "postgresql-17-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-permuteseq" "1.2.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "permuteseq_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "permuteseq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "permuteseq_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "permuteseq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "permuteseq_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "permuteseq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "permuteseq_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "permuteseq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "permuteseq_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-permuteseq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.2.2" "postgresql-17-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-permuteseq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-permuteseq : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `permuteseq_17` | 1.2.2 | `el8.x86_64` | pigsty | 13.2 KiB | [permuteseq_17-1.2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_17-1.2.2-1PIGSTY.el8.x86_64.rpm) |
 | `permuteseq_17` | 1.2.2 | `el8.aarch64` | pigsty | 13.4 KiB | [permuteseq_17-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_17-1.2.2-1PIGSTY.el8.aarch64.rpm) |
-| `permuteseq_17` | 1.2.2 | `el9.aarch64` | pigsty | 13.1 KiB | [permuteseq_17-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_17-1.2.2-1PIGSTY.el9.aarch64.rpm) |
 | `permuteseq_17` | 1.2.2 | `el9.x86_64` | pigsty | 13.1 KiB | [permuteseq_17-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_17-1.2.2-1PIGSTY.el9.x86_64.rpm) |
+| `permuteseq_17` | 1.2.2 | `el9.aarch64` | pigsty | 13.1 KiB | [permuteseq_17-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_17-1.2.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-permuteseq` | 1.2.2 | `d12.x86_64` | pigsty | 15.9 KiB | [postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-permuteseq` | 1.2.2 | `d12.aarch64` | pigsty | 15.8 KiB | [postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-permuteseq` | 1.2.2 | `u22.x86_64` | pigsty | 16.3 KiB | [postgresql-17-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ Pseudo-randomly permute sequences with a format-preserving encryption on element
 | `postgresql-17-permuteseq` | 1.2.2 | `u24.aarch64` | pigsty | 15.8 KiB | [postgresql-17-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-17-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `permuteseq_16` | 1.2.2 | `el8.x86_64` | pigsty | 13.2 KiB | [permuteseq_16-1.2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_16-1.2.2-1PIGSTY.el8.x86_64.rpm) |
 | `permuteseq_16` | 1.2.2 | `el8.aarch64` | pigsty | 13.4 KiB | [permuteseq_16-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_16-1.2.2-1PIGSTY.el8.aarch64.rpm) |
 | `permuteseq_16` | 1.2.2 | `el9.x86_64` | pigsty | 13.1 KiB | [permuteseq_16-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_16-1.2.2-1PIGSTY.el9.x86_64.rpm) |
 | `permuteseq_16` | 1.2.2 | `el9.aarch64` | pigsty | 13.1 KiB | [permuteseq_16-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_16-1.2.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-permuteseq` | 1.2.2 | `d12.x86_64` | pigsty | 15.8 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-permuteseq` | 1.2.2 | `d12.aarch64` | pigsty | 15.8 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-permuteseq` | 1.2.2 | `u22.aarch64` | pigsty | 16.1 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-permuteseq` | 1.2.2 | `u22.x86_64` | pigsty | 16.3 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-permuteseq` | 1.2.2 | `u22.aarch64` | pigsty | 16.1 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-permuteseq` | 1.2.2 | `u24.x86_64` | pigsty | 15.9 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-permuteseq` | 1.2.2 | `u24.aarch64` | pigsty | 15.8 KiB | [postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-16-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `permuteseq_15` | 1.2.2 | `el8.x86_64` | pigsty | 13.0 KiB | [permuteseq_15-1.2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_15-1.2.2-1PIGSTY.el8.x86_64.rpm) |
 | `permuteseq_15` | 1.2.2 | `el8.aarch64` | pigsty | 13.2 KiB | [permuteseq_15-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_15-1.2.2-1PIGSTY.el8.aarch64.rpm) |
 | `permuteseq_15` | 1.2.2 | `el9.x86_64` | pigsty | 12.8 KiB | [permuteseq_15-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_15-1.2.2-1PIGSTY.el9.x86_64.rpm) |
 | `permuteseq_15` | 1.2.2 | `el9.aarch64` | pigsty | 12.8 KiB | [permuteseq_15-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_15-1.2.2-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-permuteseq` | 1.2.2 | `d12.aarch64` | pigsty | 14.9 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-permuteseq` | 1.2.2 | `d12.x86_64` | pigsty | 15.0 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-permuteseq` | 1.2.2 | `u22.aarch64` | pigsty | 15.2 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-permuteseq` | 1.2.2 | `d12.aarch64` | pigsty | 14.9 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-permuteseq` | 1.2.2 | `u22.x86_64` | pigsty | 15.2 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-permuteseq` | 1.2.2 | `u22.aarch64` | pigsty | 15.2 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-permuteseq` | 1.2.2 | `u24.x86_64` | pigsty | 15.0 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-permuteseq` | 1.2.2 | `u24.aarch64` | pigsty | 14.8 KiB | [postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-15-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `permuteseq_14` | 1.2.2 | `el8.x86_64` | pigsty | 12.9 KiB | [permuteseq_14-1.2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_14-1.2.2-1PIGSTY.el8.x86_64.rpm) |
 | `permuteseq_14` | 1.2.2 | `el8.aarch64` | pigsty | 13.2 KiB | [permuteseq_14-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_14-1.2.2-1PIGSTY.el8.aarch64.rpm) |
 | `permuteseq_14` | 1.2.2 | `el9.x86_64` | pigsty | 12.8 KiB | [permuteseq_14-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_14-1.2.2-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ Pseudo-randomly permute sequences with a format-preserving encryption on element
 | `postgresql-14-permuteseq` | 1.2.2 | `u24.x86_64` | pigsty | 15.0 KiB | [postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-permuteseq` | 1.2.2 | `u24.aarch64` | pigsty | 14.8 KiB | [postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-14-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `permuteseq_13` | 1.2.2 | `el8.aarch64` | pigsty | 13.2 KiB | [permuteseq_13-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/permuteseq_13-1.2.2-1PIGSTY.el8.aarch64.rpm) |
-| `permuteseq_13` | 1.2.2 | `el8.x86_64` | pigsty | 12.9 KiB | [permuteseq_13-1.2.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/permuteseq_13-1.2.2-1PIGSTY.el8.x86_64.rpm) |
-| `permuteseq_13` | 1.2.2 | `el9.aarch64` | pigsty | 12.8 KiB | [permuteseq_13-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/permuteseq_13-1.2.2-1PIGSTY.el9.aarch64.rpm) |
-| `permuteseq_13` | 1.2.2 | `el9.x86_64` | pigsty | 12.7 KiB | [permuteseq_13-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/permuteseq_13-1.2.2-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-permuteseq` | 1.2.2 | `d12.aarch64` | pigsty | 14.9 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-permuteseq` | 1.2.2 | `d12.x86_64` | pigsty | 14.9 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-permuteseq` | 1.2.2 | `u22.aarch64` | pigsty | 15.1 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-permuteseq` | 1.2.2 | `u22.x86_64` | pigsty | 15.1 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-permuteseq` | 1.2.2 | `u24.aarch64` | pigsty | 14.8 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-permuteseq` | 1.2.2 | `u24.x86_64` | pigsty | 14.8 KiB | [postgresql-13-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/permuteseq/postgresql-13-permuteseq_1.2.2-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/dverite/permuteseq" title="Repository" icon="github" subtitle="github.com/dverite/permuteseq" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="permuteseq-1.2.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="permuteseq-1.2.2.tar.gz" >}}
 {{< /cards >}}
 
 

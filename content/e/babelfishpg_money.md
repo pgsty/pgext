@@ -3,22 +3,23 @@ title: "babelfishpg_money"
 linkTitle: "babelfishpg_money"
 description: "SQL Server Money Data Type"
 weight: 9330
-categories: ["Sim"]
+categories: ["SIM"]
 width: full
 ---
 
 SQL Server Money Data Type
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9330** | {{< badge content="babelfishpg_money" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_money" "babelfishpg_money" >}} | `1.1.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9330** | {{< badge content="babelfishpg_money" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_money" >}} | `1.1.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -32,22 +33,22 @@ SQL Server Money Data Type
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< badge content="18" color="red" alt="babelfishpg-money*" >}} {{< badge content="17" color="red" alt="babelfishpg-money*" >}} {{< badge content="16" color="red" alt="babelfishpg-money*" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-money*" >}} | `babelfishpg-money*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< badge content="18" color="red" alt="babelfishpg-money" >}} {{< badge content="17" color="red" alt="babelfishpg-money" >}} {{< badge content="16" color="red" alt="babelfishpg-money" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-money" >}} | `babelfishpg-money` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money*" "red" >}} {{< bg "17" "babelfishpg-money*" "red" >}} {{< bg "16" "babelfishpg-money*" "red" >}} {{< bg "15" "babelfishpg-money*" "green" >}} {{< bg "14" "babelfishpg-money*" "red" >}} | `babelfishpg-money*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money" "red" >}} {{< bg "17" "babelfishpg-money" "red" >}} {{< bg "16" "babelfishpg-money" "red" >}} {{< bg "15" "babelfishpg-money" "green" >}} {{< bg "14" "babelfishpg-money" "red" >}} | `babelfishpg-money` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `el8.aarch64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `el9.x86_64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `el9.aarch64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `d12.x86_64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `d12.aarch64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `u22.x86_64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `u22.aarch64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `u24.x86_64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
-|    `u24.aarch64`    |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |    {{< pkg "babelfishpg-money" >}}     |
+|    `el8.x86_64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-money : MISS 0" "red" >}}      |
 
 
 ## Source

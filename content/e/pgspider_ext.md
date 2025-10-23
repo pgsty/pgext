@@ -3,22 +3,23 @@ title: "pgspider_ext"
 linkTitle: "pgspider_ext"
 description: "foreign-data wrapper for remote PGSpider servers"
 weight: 8540
-categories: ["Fdw"]
+categories: ["FDW"]
 width: full
 ---
 
 foreign-data wrapper for remote PGSpider servers
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8540** | {{< badge content="pgspider_ext" link="https://github.com/pgspider/pgspider_ext" >}} | {{< ext "pgspider_ext" "pgspider_ext" >}} | `1.3.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8540** | {{< badge content="pgspider_ext" link="https://github.com/pgspider/pgspider_ext" >}} | {{< ext "pgspider_ext" >}} | `1.3.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,33 +31,31 @@ foreign-data wrapper for remote PGSpider servers
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgspider_ext" >}} | `1.3.0` | {{< badge content="18" color="red" alt="pgspider_ext_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="pgspider_ext_14*" >}} | `pgspider_ext_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgspider_ext" >}} | `1.3.0` | {{< badge content="18" color="red" alt="postgresql-18-pgspider-ext" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="postgresql-14-pgspider-ext" >}} | `postgresql-$v-pgspider-ext` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pgspider_ext" >}} | `1.3.0` | {{< bg "18" "pgspider_ext_18*" "red" >}} {{< bg "17" "pgspider_ext_17*" "green" >}} {{< bg "16" "pgspider_ext_16*" "green" >}} {{< bg "15" "pgspider_ext_15*" "green" >}} {{< bg "14" "pgspider_ext_14*" "red" >}} | `pgspider_ext_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pgspider_ext" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgspider-ext" "red" >}} {{< bg "17" "postgresql-17-pgspider-ext" "green" >}} {{< bg "16" "postgresql-16-pgspider-ext" "green" >}} {{< bg "15" "postgresql-15-pgspider-ext" "green" >}} {{< bg "14" "postgresql-14-pgspider-ext" "red" >}} | `postgresql-$v-pgspider-ext` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pgspider_ext_18" >}}     | {{< pkg "pgspider_ext_17" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgspider_ext_17-1.3.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgspider_ext_16" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgspider_ext_16-1.3.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgspider_ext_15" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgspider_ext_15-1.3.0-1PGDG.rhel8.x86_64.rpm" >}} |    {{< pkg "pgspider_ext_14" >}}     |
-|    `el8.aarch64`    |    {{< pkg "pgspider_ext_18" >}}     | {{< pkg "pgspider_ext_17" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgspider_ext_17-1.3.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgspider_ext_16" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgspider_ext_16-1.3.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgspider_ext_15" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgspider_ext_15-1.3.0-1PGDG.rhel8.aarch64.rpm" >}} |    {{< pkg "pgspider_ext_14" >}}     |
-|    `el9.x86_64`    |    {{< pkg "pgspider_ext_18" >}}     | {{< pkg "pgspider_ext_17" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgspider_ext_17-1.3.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgspider_ext_16" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgspider_ext_16-1.3.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgspider_ext_15" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgspider_ext_15-1.3.0-1PGDG.rhel9.x86_64.rpm" >}} |    {{< pkg "pgspider_ext_14" >}}     |
-|    `el9.aarch64`    |    {{< pkg "pgspider_ext_18" >}}     | {{< pkg "pgspider_ext_17" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgspider_ext_17-1.3.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgspider_ext_16" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgspider_ext_16-1.3.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgspider_ext_15" "1.3.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgspider_ext_15-1.3.0-1PGDG.rhel9.aarch64.rpm" >}} |    {{< pkg "pgspider_ext_14" >}}     |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pgspider-ext" >}}     | {{< pkg "postgresql-17-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pgspider-ext" "1.3.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb" >}} |    {{< pkg "postgresql-14-pgspider-ext" >}}     |
+|    `el8.x86_64`    |      {{< bg "MISS" "pgspider_ext_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.0" "pgspider_ext_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgspider_ext_14 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "pgspider_ext_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.0" "pgspider_ext_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgspider_ext_14 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "pgspider_ext_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.0" "pgspider_ext_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgspider_ext_14 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "pgspider_ext_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.0" "pgspider_ext_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.0" "pgspider_ext_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgspider_ext_14 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgspider-ext : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.0" "postgresql-17-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-16-pgspider-ext : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "postgresql-15-pgspider-ext : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-pgspider-ext : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG17,PG16,PG15" >}}
-
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pgspider_ext_17` | 1.3.0 | `el8.aarch64` | pgdg | 27.7 KiB | [pgspider_ext_17-1.3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgspider_ext_17-1.3.0-1PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgspider_ext_17` | 1.3.0 | `el8.x86_64` | pgdg | 28.6 KiB | [pgspider_ext_17-1.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgspider_ext_17-1.3.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgspider_ext_17` | 1.3.0 | `el8.aarch64` | pgdg | 27.7 KiB | [pgspider_ext_17-1.3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgspider_ext_17-1.3.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgspider_ext_17` | 1.3.0 | `el9.x86_64` | pgdg | 29.1 KiB | [pgspider_ext_17-1.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgspider_ext_17-1.3.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgspider_ext_17` | 1.3.0 | `el9.aarch64` | pgdg | 28.4 KiB | [pgspider_ext_17-1.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgspider_ext_17-1.3.0-1PGDG.rhel9.aarch64.rpm) |
 | `postgresql-17-pgspider-ext` | 1.3.0 | `d12.x86_64` | pigsty | 48.8 KiB | [postgresql-17-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb) |
@@ -67,48 +66,44 @@ foreign-data wrapper for remote PGSpider servers
 | `postgresql-17-pgspider-ext` | 1.3.0 | `u24.aarch64` | pigsty | 49.6 KiB | [postgresql-17-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-17-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgspider_ext_16` | 1.3.0 | `el8.x86_64` | pgdg | 28.6 KiB | [pgspider_ext_16-1.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgspider_ext_16-1.3.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgspider_ext_16` | 1.3.0 | `el8.aarch64` | pgdg | 27.8 KiB | [pgspider_ext_16-1.3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgspider_ext_16-1.3.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgspider_ext_16` | 1.3.0 | `el9.aarch64` | pgdg | 28.5 KiB | [pgspider_ext_16-1.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgspider_ext_16-1.3.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgspider_ext_16` | 1.3.0 | `el9.x86_64` | pgdg | 29.2 KiB | [pgspider_ext_16-1.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgspider_ext_16-1.3.0-1PGDG.rhel9.x86_64.rpm) |
-| `postgresql-16-pgspider-ext` | 1.3.0 | `d12.aarch64` | pigsty | 47.0 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb) |
+| `pgspider_ext_16` | 1.3.0 | `el9.aarch64` | pgdg | 28.5 KiB | [pgspider_ext_16-1.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgspider_ext_16-1.3.0-1PGDG.rhel9.aarch64.rpm) |
 | `postgresql-16-pgspider-ext` | 1.3.0 | `d12.x86_64` | pigsty | 48.7 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pgspider-ext` | 1.3.0 | `d12.aarch64` | pigsty | 47.0 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgspider-ext` | 1.3.0 | `u22.x86_64` | pigsty | 61.3 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pgspider-ext` | 1.3.0 | `u22.aarch64` | pigsty | 60.3 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pgspider-ext` | 1.3.0 | `u24.aarch64` | pigsty | 49.6 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgspider-ext` | 1.3.0 | `u24.x86_64` | pigsty | 50.8 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pgspider-ext` | 1.3.0 | `u24.aarch64` | pigsty | 49.6 KiB | [postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-16-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgspider_ext_15` | 1.3.0 | `el8.x86_64` | pgdg | 29.0 KiB | [pgspider_ext_15-1.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgspider_ext_15-1.3.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgspider_ext_15` | 1.3.0 | `el8.aarch64` | pgdg | 28.0 KiB | [pgspider_ext_15-1.3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgspider_ext_15-1.3.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgspider_ext_15` | 1.3.0 | `el9.x86_64` | pgdg | 29.6 KiB | [pgspider_ext_15-1.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgspider_ext_15-1.3.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgspider_ext_15` | 1.3.0 | `el9.aarch64` | pgdg | 28.8 KiB | [pgspider_ext_15-1.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgspider_ext_15-1.3.0-1PGDG.rhel9.aarch64.rpm) |
-| `postgresql-15-pgspider-ext` | 1.3.0 | `d12.aarch64` | pigsty | 47.0 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgspider-ext` | 1.3.0 | `d12.x86_64` | pigsty | 48.9 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pgspider-ext` | 1.3.0 | `d12.aarch64` | pigsty | 47.0 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgspider-ext` | 1.3.0 | `u22.x86_64` | pigsty | 61.3 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-pgspider-ext` | 1.3.0 | `u22.aarch64` | pigsty | 60.3 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pgspider-ext` | 1.3.0 | `u24.aarch64` | pigsty | 49.7 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgspider-ext` | 1.3.0 | `u24.x86_64` | pigsty | 51.0 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pgspider-ext` | 1.3.0 | `u24.aarch64` | pigsty | 49.7 KiB | [postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgspider-ext/postgresql-15-pgspider-ext_1.3.0-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgspider/pgspider_ext" title="Repository" icon="github" subtitle="github.com/pgspider/pgspider_ext" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pgspider_ext-1.3.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgspider_ext-1.3.0.tar.gz" >}}
 {{< /cards >}}
 
 

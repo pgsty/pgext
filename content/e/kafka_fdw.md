@@ -3,22 +3,23 @@ title: "kafka_fdw"
 linkTitle: "kafka_fdw"
 description: "kafka Foreign Data Wrapper for CSV formatted messages"
 weight: 8730
-categories: ["Fdw"]
+categories: ["FDW"]
 width: full
 ---
 
 kafka Foreign Data Wrapper for CSV formatted messages
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8730** | {{< badge content="kafka_fdw" link="https://github.com/adjust/kafka_fdw" >}} | {{< ext "kafka_fdw" "kafka_fdw" >}} | `0.0.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8730** | {{< badge content="kafka_fdw" link="https://github.com/adjust/kafka_fdw" >}} | {{< ext "kafka_fdw" >}} | `0.0.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -32,102 +33,79 @@ kafka Foreign Data Wrapper for CSV formatted messages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/kafka_fdw" >}} | `0.0.3` | {{< badge content="18" color="red" alt="kafka_fdw_18" >}} {{< badge content="17" color="red" alt="kafka_fdw_17" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `kafka_fdw_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/kafka_fdw" >}} | `0.0.3` | {{< badge content="18" color="red" alt="postgresql-18-kafka-fdw" >}} {{< badge content="17" color="red" alt="postgresql-17-kafka-fdw" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-kafka-fdw` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/kafka_fdw" >}} | `0.0.3` | {{< bg "18" "kafka_fdw_18" "red" >}} {{< bg "17" "kafka_fdw_17" "red" >}} {{< bg "16" "kafka_fdw_16" "green" >}} {{< bg "15" "kafka_fdw_15" "green" >}} {{< bg "14" "kafka_fdw_14" "green" >}} | `kafka_fdw_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/kafka_fdw" >}} | `0.0.3` | {{< bg "18" "postgresql-18-kafka-fdw" "red" >}} {{< bg "17" "postgresql-17-kafka-fdw" "red" >}} {{< bg "16" "postgresql-16-kafka-fdw" "green" >}} {{< bg "15" "postgresql-15-kafka-fdw" "green" >}} {{< bg "14" "postgresql-14-kafka-fdw" "green" >}} | `postgresql-$v-kafka-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "kafka_fdw_18" >}}     |    {{< pkg "kafka_fdw_17" >}}     | {{< pkg "kafka_fdw_16" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "kafka_fdw_15" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "kafka_fdw_14" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "kafka_fdw_18" >}}     |    {{< pkg "kafka_fdw_17" >}}     | {{< pkg "kafka_fdw_16" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "kafka_fdw_15" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "kafka_fdw_14" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "kafka_fdw_18" >}}     |    {{< pkg "kafka_fdw_17" >}}     | {{< pkg "kafka_fdw_16" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "kafka_fdw_15" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "kafka_fdw_14" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "kafka_fdw_18" >}}     |    {{< pkg "kafka_fdw_17" >}}     | {{< pkg "kafka_fdw_16" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "kafka_fdw_15" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "kafka_fdw_14" "0.0.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-kafka-fdw" >}}     |    {{< pkg "postgresql-17-kafka-fdw" >}}     | {{< pkg "postgresql-16-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-kafka-fdw" "0.0.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "kafka_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "kafka_fdw_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "kafka_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "kafka_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "kafka_fdw_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "kafka_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "kafka_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "kafka_fdw_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "kafka_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "kafka_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "kafka_fdw_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "kafka_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "kafka_fdw_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-kafka-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-kafka-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-16-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-kafka-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-kafka-fdw : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `kafka_fdw_16` | 0.0.3 | `el8.aarch64` | pigsty | 33.2 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `kafka_fdw_16` | 0.0.3 | `el8.x86_64` | pigsty | 35.1 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el8.x86_64.rpm) |
-| `kafka_fdw_16` | 0.0.3 | `el9.aarch64` | pigsty | 34.4 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `kafka_fdw_16` | 0.0.3 | `el8.aarch64` | pigsty | 33.2 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_16` | 0.0.3 | `el9.x86_64` | pigsty | 35.3 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `kafka_fdw_16` | 0.0.3 | `el9.aarch64` | pigsty | 34.4 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-kafka-fdw` | 0.0.3 | `d12.x86_64` | pigsty | 107.8 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-kafka-fdw` | 0.0.3 | `d12.aarch64` | pigsty | 105.4 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 110.1 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-kafka-fdw` | 0.0.3 | `u22.x86_64` | pigsty | 112.0 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 110.1 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-kafka-fdw` | 0.0.3 | `u24.x86_64` | pigsty | 91.1 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 89.9 KiB | [postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-16-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `kafka_fdw_15` | 0.0.3 | `el8.x86_64` | pigsty | 35.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_15` | 0.0.3 | `el8.aarch64` | pigsty | 33.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `kafka_fdw_15` | 0.0.3 | `el9.aarch64` | pigsty | 35.1 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_15` | 0.0.3 | `el9.x86_64` | pigsty | 36.1 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-15-kafka-fdw` | 0.0.3 | `d12.aarch64` | pigsty | 104.7 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb) |
+| `kafka_fdw_15` | 0.0.3 | `el9.aarch64` | pigsty | 35.1 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-kafka-fdw` | 0.0.3 | `d12.x86_64` | pigsty | 107.0 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-kafka-fdw` | 0.0.3 | `d12.aarch64` | pigsty | 104.7 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-kafka-fdw` | 0.0.3 | `u22.x86_64` | pigsty | 111.6 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 109.7 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 89.9 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-kafka-fdw` | 0.0.3 | `u24.x86_64` | pigsty | 91.0 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 89.9 KiB | [postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-15-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `kafka_fdw_14` | 0.0.3 | `el8.x86_64` | pigsty | 35.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el8.aarch64` | pigsty | 33.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el9.x86_64` | pigsty | 36.1 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el9.aarch64` | pigsty | 35.0 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-14-kafka-fdw` | 0.0.3 | `d12.x86_64` | pigsty | 107.0 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-kafka-fdw` | 0.0.3 | `d12.aarch64` | pigsty | 104.8 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 109.8 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-kafka-fdw` | 0.0.3 | `u22.x86_64` | pigsty | 111.7 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 90.0 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 109.8 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-kafka-fdw` | 0.0.3 | `u24.x86_64` | pigsty | 91.1 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 90.0 KiB | [postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `kafka_fdw_13` | 0.0.3 | `el8.aarch64` | pigsty | 33.3 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `kafka_fdw_13` | 0.0.3 | `el8.x86_64` | pigsty | 35.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm) |
-| `kafka_fdw_13` | 0.0.3 | `el9.x86_64` | pigsty | 36.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `kafka_fdw_13` | 0.0.3 | `el9.aarch64` | pigsty | 35.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_13-0.0.3-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `d12.aarch64` | pigsty | 104.0 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `d12.x86_64` | pigsty | 106.0 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `u22.x86_64` | pigsty | 110.4 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `u22.aarch64` | pigsty | 108.9 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `u24.aarch64` | pigsty | 89.8 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-kafka-fdw` | 0.0.3 | `u24.x86_64` | pigsty | 90.7 KiB | [postgresql-13-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/k/kafka-fdw/postgresql-13-kafka-fdw_0.0.3-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/adjust/kafka_fdw" title="Repository" icon="github" subtitle="github.com/adjust/kafka_fdw" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="kafka_fdw-0.0.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="kafka_fdw-0.0.3.tar.gz" >}}
 {{< /cards >}}
 
 

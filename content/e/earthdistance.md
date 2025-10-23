@@ -3,22 +3,23 @@ title: "earthdistance"
 linkTitle: "earthdistance"
 description: "calculate great-circle distances on the surface of the Earth"
 weight: 1690
-categories: ["Gis"]
+categories: ["GIS"]
 width: full
 ---
 
 calculate great-circle distances on the surface of the Earth
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1690** | {{< badge content="earthdistance" link="https://www.postgresql.org/docs/current/earthdistance.html" >}} | {{< ext "earthdistance" "earthdistance" >}} | `1.2` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **1690** | {{< badge content="earthdistance" link="https://www.postgresql.org/docs/current/earthdistance.html" >}} | {{< ext "earthdistance" >}} | `1.2` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -31,7 +32,7 @@ calculate great-circle distances on the surface of the Earth
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} | {{< badge content="1.2" color="green" >}} |
+| {{< bg "1.2" "PostgreSQL 18: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 17: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 16: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 15: version 1.2" "green" >}} | {{< bg "1.2" "PostgreSQL 14: version 1.2" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

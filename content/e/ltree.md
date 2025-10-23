@@ -3,22 +3,23 @@ title: "ltree"
 linkTitle: "ltree"
 description: "data type for hierarchical tree-like structures"
 weight: 3960
-categories: ["Type"]
+categories: ["TYPE"]
 width: full
 ---
 
 data type for hierarchical tree-like structures
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3960** | {{< badge content="ltree" link="https://www.postgresql.org/docs/current/ltree.html" >}} | {{< ext "ltree" "ltree" >}} | `1.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3960** | {{< badge content="ltree" link="https://www.postgresql.org/docs/current/ltree.html" >}} | {{< ext "ltree" >}} | `1.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -31,7 +32,7 @@ data type for hierarchical tree-like structures
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< badge content="1.3" color="green" >}} | {{< badge content="1.3" color="green" >}} | {{< badge content="1.3" color="green" >}} | {{< badge content="1.3" color="green" >}} | {{< badge content="1.3" color="green" >}} |
+| {{< bg "1.3" "PostgreSQL 18: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 17: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 16: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 15: version 1.3" "green" >}} | {{< bg "1.3" "PostgreSQL 14: version 1.3" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

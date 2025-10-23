@@ -3,22 +3,23 @@ title: "aggs_for_arrays"
 linkTitle: "aggs_for_arrays"
 description: "Various functions for computing statistics on arrays of numbers"
 weight: 4750
-categories: ["Func"]
+categories: ["FUNC"]
 width: full
 ---
 
 Various functions for computing statistics on arrays of numbers
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4750** | {{< badge content="aggs_for_arrays" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< ext "aggs_for_arrays" "aggs_for_arrays" >}} | `1.3.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4750** | {{< badge content="aggs_for_arrays" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ Various functions for computing statistics on arrays of numbers
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/aggs_for_arrays" >}} | `1.3.3` | {{< badge content="18" color="red" alt="aggs_for_arrays_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `aggs_for_arrays_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/aggs_for_arrays" >}} | `1.3.3` | {{< badge content="18" color="red" alt="postgresql-18-aggs-for-arrays" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-aggs-for-arrays` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/aggs_for_arrays" >}} | `1.3.3` | {{< bg "18" "aggs_for_arrays_18*" "red" >}} {{< bg "17" "aggs_for_arrays_17*" "green" >}} {{< bg "16" "aggs_for_arrays_16*" "green" >}} {{< bg "15" "aggs_for_arrays_15*" "green" >}} {{< bg "14" "aggs_for_arrays_14*" "green" >}} | `aggs_for_arrays_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/aggs_for_arrays" >}} | `1.3.3` | {{< bg "18" "postgresql-18-aggs-for-arrays" "red" >}} {{< bg "17" "postgresql-17-aggs-for-arrays" "green" >}} {{< bg "16" "postgresql-16-aggs-for-arrays" "green" >}} {{< bg "15" "postgresql-15-aggs-for-arrays" "green" >}} {{< bg "14" "postgresql-14-aggs-for-arrays" "green" >}} | `postgresql-$v-aggs-for-arrays` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "aggs_for_arrays_18" >}}     | {{< pkg "aggs_for_arrays_17" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_17-1.3.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_16" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_16-1.3.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_15" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_15-1.3.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_14" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_14-1.3.3-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "aggs_for_arrays_18" >}}     | {{< pkg "aggs_for_arrays_17" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_17-1.3.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_16" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_16-1.3.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_15" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_15-1.3.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_14" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_14-1.3.3-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "aggs_for_arrays_18" >}}     | {{< pkg "aggs_for_arrays_17" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_17-1.3.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_16" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_16-1.3.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_15" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_15-1.3.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "aggs_for_arrays_14" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_14-1.3.3-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "aggs_for_arrays_18" >}}     | {{< pkg "aggs_for_arrays_17" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_17-1.3.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_16" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_16-1.3.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_15" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_15-1.3.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "aggs_for_arrays_14" "1.3.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_14-1.3.3-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-aggs-for-arrays" >}}     | {{< pkg "postgresql-17-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-aggs-for-arrays" "1.3.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "aggs_for_arrays_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "aggs_for_arrays_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "aggs_for_arrays_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "aggs_for_arrays_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "aggs_for_arrays_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-aggs-for-arrays : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.3" "postgresql-17-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-16-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-15-aggs-for-arrays : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.3" "postgresql-14-aggs-for-arrays : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `aggs_for_arrays_17` | 1.3.3 | `el8.x86_64` | pigsty | 27.0 KiB | [aggs_for_arrays_17-1.3.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_17-1.3.3-1PIGSTY.el8.x86_64.rpm) |
 | `aggs_for_arrays_17` | 1.3.3 | `el8.aarch64` | pigsty | 30.1 KiB | [aggs_for_arrays_17-1.3.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_17-1.3.3-1PIGSTY.el8.aarch64.rpm) |
-| `aggs_for_arrays_17` | 1.3.3 | `el9.aarch64` | pigsty | 31.0 KiB | [aggs_for_arrays_17-1.3.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_17-1.3.3-1PIGSTY.el9.aarch64.rpm) |
 | `aggs_for_arrays_17` | 1.3.3 | `el9.x86_64` | pigsty | 26.8 KiB | [aggs_for_arrays_17-1.3.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_17-1.3.3-1PIGSTY.el9.x86_64.rpm) |
+| `aggs_for_arrays_17` | 1.3.3 | `el9.aarch64` | pigsty | 31.0 KiB | [aggs_for_arrays_17-1.3.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_17-1.3.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-aggs-for-arrays` | 1.3.3 | `d12.x86_64` | pigsty | 43.6 KiB | [postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-aggs-for-arrays` | 1.3.3 | `d12.aarch64` | pigsty | 48.5 KiB | [postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-aggs-for-arrays` | 1.3.3 | `u22.x86_64` | pigsty | 45.6 KiB | [postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ Various functions for computing statistics on arrays of numbers
 | `postgresql-17-aggs-for-arrays` | 1.3.3 | `u24.aarch64` | pigsty | 49.9 KiB | [postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-17-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `aggs_for_arrays_16` | 1.3.3 | `el8.x86_64` | pigsty | 27.0 KiB | [aggs_for_arrays_16-1.3.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_16-1.3.3-1PIGSTY.el8.x86_64.rpm) |
 | `aggs_for_arrays_16` | 1.3.3 | `el8.aarch64` | pigsty | 30.1 KiB | [aggs_for_arrays_16-1.3.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_16-1.3.3-1PIGSTY.el8.aarch64.rpm) |
 | `aggs_for_arrays_16` | 1.3.3 | `el9.x86_64` | pigsty | 26.8 KiB | [aggs_for_arrays_16-1.3.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_16-1.3.3-1PIGSTY.el9.x86_64.rpm) |
 | `aggs_for_arrays_16` | 1.3.3 | `el9.aarch64` | pigsty | 31.0 KiB | [aggs_for_arrays_16-1.3.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_16-1.3.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-aggs-for-arrays` | 1.3.3 | `d12.x86_64` | pigsty | 43.6 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-aggs-for-arrays` | 1.3.3 | `d12.aarch64` | pigsty | 48.4 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-aggs-for-arrays` | 1.3.3 | `u22.aarch64` | pigsty | 49.9 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-aggs-for-arrays` | 1.3.3 | `u22.x86_64` | pigsty | 45.6 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-aggs-for-arrays` | 1.3.3 | `u22.aarch64` | pigsty | 49.9 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-aggs-for-arrays` | 1.3.3 | `u24.x86_64` | pigsty | 43.7 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-aggs-for-arrays` | 1.3.3 | `u24.aarch64` | pigsty | 49.9 KiB | [postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-16-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `aggs_for_arrays_15` | 1.3.3 | `el8.x86_64` | pigsty | 27.1 KiB | [aggs_for_arrays_15-1.3.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_15-1.3.3-1PIGSTY.el8.x86_64.rpm) |
 | `aggs_for_arrays_15` | 1.3.3 | `el8.aarch64` | pigsty | 30.3 KiB | [aggs_for_arrays_15-1.3.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_15-1.3.3-1PIGSTY.el8.aarch64.rpm) |
 | `aggs_for_arrays_15` | 1.3.3 | `el9.x86_64` | pigsty | 26.9 KiB | [aggs_for_arrays_15-1.3.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_15-1.3.3-1PIGSTY.el9.x86_64.rpm) |
 | `aggs_for_arrays_15` | 1.3.3 | `el9.aarch64` | pigsty | 31.2 KiB | [aggs_for_arrays_15-1.3.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_15-1.3.3-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-aggs-for-arrays` | 1.3.3 | `d12.aarch64` | pigsty | 48.6 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-aggs-for-arrays` | 1.3.3 | `d12.x86_64` | pigsty | 43.8 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-aggs-for-arrays` | 1.3.3 | `u22.aarch64` | pigsty | 50.2 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-aggs-for-arrays` | 1.3.3 | `d12.aarch64` | pigsty | 48.6 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-aggs-for-arrays` | 1.3.3 | `u22.x86_64` | pigsty | 45.7 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-aggs-for-arrays` | 1.3.3 | `u22.aarch64` | pigsty | 50.2 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-aggs-for-arrays` | 1.3.3 | `u24.x86_64` | pigsty | 44.1 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-aggs-for-arrays` | 1.3.3 | `u24.aarch64` | pigsty | 50.2 KiB | [postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-15-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `aggs_for_arrays_14` | 1.3.3 | `el8.x86_64` | pigsty | 27.1 KiB | [aggs_for_arrays_14-1.3.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_14-1.3.3-1PIGSTY.el8.x86_64.rpm) |
 | `aggs_for_arrays_14` | 1.3.3 | `el8.aarch64` | pigsty | 30.3 KiB | [aggs_for_arrays_14-1.3.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_14-1.3.3-1PIGSTY.el8.aarch64.rpm) |
 | `aggs_for_arrays_14` | 1.3.3 | `el9.x86_64` | pigsty | 26.9 KiB | [aggs_for_arrays_14-1.3.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_14-1.3.3-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ Various functions for computing statistics on arrays of numbers
 | `postgresql-14-aggs-for-arrays` | 1.3.3 | `u24.x86_64` | pigsty | 44.1 KiB | [postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-aggs-for-arrays` | 1.3.3 | `u24.aarch64` | pigsty | 50.2 KiB | [postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-14-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `aggs_for_arrays_13` | 1.3.3 | `el8.aarch64` | pigsty | 30.3 KiB | [aggs_for_arrays_13-1.3.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aggs_for_arrays_13-1.3.3-1PIGSTY.el8.aarch64.rpm) |
-| `aggs_for_arrays_13` | 1.3.3 | `el8.x86_64` | pigsty | 26.8 KiB | [aggs_for_arrays_13-1.3.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aggs_for_arrays_13-1.3.3-1PIGSTY.el8.x86_64.rpm) |
-| `aggs_for_arrays_13` | 1.3.3 | `el9.aarch64` | pigsty | 31.1 KiB | [aggs_for_arrays_13-1.3.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aggs_for_arrays_13-1.3.3-1PIGSTY.el9.aarch64.rpm) |
-| `aggs_for_arrays_13` | 1.3.3 | `el9.x86_64` | pigsty | 26.7 KiB | [aggs_for_arrays_13-1.3.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aggs_for_arrays_13-1.3.3-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `d12.aarch64` | pigsty | 48.5 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `d12.x86_64` | pigsty | 43.5 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `u22.aarch64` | pigsty | 50.0 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `u22.x86_64` | pigsty | 45.6 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `u24.aarch64` | pigsty | 49.9 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-aggs-for-arrays` | 1.3.3 | `u24.x86_64` | pigsty | 43.9 KiB | [postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aggs-for-arrays/postgresql-13-aggs-for-arrays_1.3.3-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pjungwir/aggs_for_arrays" title="Repository" icon="github" subtitle="github.com/pjungwir/aggs_for_arrays" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="aggs_for_arrays-1.3.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="aggs_for_arrays-1.3.3.tar.gz" >}}
 {{< /cards >}}
 
 

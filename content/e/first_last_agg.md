@@ -3,22 +3,23 @@ title: "first_last_agg"
 linkTitle: "first_last_agg"
 description: "first() and last() aggregate functions"
 weight: 4710
-categories: ["Func"]
+categories: ["FUNC"]
 width: full
 ---
 
 first() and last() aggregate functions
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4710** | {{< badge content="first_last_agg" link="https://github.com/wulczer/first_last_agg" >}} | {{< ext "first_last_agg" "first_last_agg" >}} | `0.1.4` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4710** | {{< badge content="first_last_agg" link="https://github.com/wulczer/first_last_agg" >}} | {{< ext "first_last_agg" >}} | `0.1.4` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,99 +31,93 @@ first() and last() aggregate functions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/first_last_agg" >}} | `0.1.4` | {{< badge content="18" color="red" alt="first_last_agg_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `first_last_agg_$v` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/first_last_agg" >}} | `0.1.4` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-first-last-agg` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/first_last_agg" >}} | `0.1.4` | {{< bg "18" "first_last_agg_18" "red" >}} {{< bg "17" "first_last_agg_17" "green" >}} {{< bg "16" "first_last_agg_16" "green" >}} {{< bg "15" "first_last_agg_15" "green" >}} {{< bg "14" "first_last_agg_14" "green" >}} | `first_last_agg_$v` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/first_last_agg" >}} | `0.1.4` | {{< bg "18" "postgresql-18-first-last-agg" "green" >}} {{< bg "17" "postgresql-17-first-last-agg" "green" >}} {{< bg "16" "postgresql-16-first-last-agg" "green" >}} {{< bg "15" "postgresql-15-first-last-agg" "green" >}} {{< bg "14" "postgresql-14-first-last-agg" "green" >}} | `postgresql-$v-first-last-agg` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "first_last_agg_18" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_18-0.1.4-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "first_last_agg_17" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_17-0.1.4-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "first_last_agg_16" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_16-0.1.4-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "first_last_agg_15" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_15-0.1.4-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "first_last_agg_14" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_14-0.1.4-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "first_last_agg_18" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "first_last_agg_17" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_17-0.1.4-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "first_last_agg_16" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_16-0.1.4-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "first_last_agg_15" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_15-0.1.4-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "first_last_agg_14" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_14-0.1.4-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "first_last_agg_18" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_18-0.1.4-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "first_last_agg_17" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_17-0.1.4-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "first_last_agg_16" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_16-0.1.4-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "first_last_agg_15" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_15-0.1.4-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "first_last_agg_14" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_14-0.1.4-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "first_last_agg_18" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "first_last_agg_17" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_17-0.1.4-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "first_last_agg_16" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_16-0.1.4-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "first_last_agg_15" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_15-0.1.4-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "first_last_agg_14" "0.1.4" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_14-0.1.4-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb" >}} |
-|    `d12.aarch64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb" >}} |
-|    `u22.x86_64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb" >}} |
-|    `u22.aarch64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb" >}} |
-|    `u24.x86_64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb" >}} |
-|    `u24.aarch64`    | {{< pkg "postgresql-18-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-first-last-agg" "0.1.4" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.1.4" "first_last_agg_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.1.4" "first_last_agg_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.1.4" "first_last_agg_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.1.4" "first_last_agg_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.4" "first_last_agg_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
+|    `d12.aarch64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
+|    `u22.x86_64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
+|    `u22.aarch64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
+|    `u24.x86_64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
+|    `u24.aarch64`    | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `first_last_agg_18` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `first_last_agg_18` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_18-0.1.4-1PIGSTY.el8.x86_64.rpm) |
-| `first_last_agg_18` | 0.1.4 | `el9.aarch64` | pigsty | 11.6 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el9.aarch64.rpm) |
+| `first_last_agg_18` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el8.aarch64.rpm) |
 | `first_last_agg_18` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_18-0.1.4-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-18-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
+| `first_last_agg_18` | 0.1.4 | `el9.aarch64` | pigsty | 11.6 KiB | [first_last_agg_18-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_18-0.1.4-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-18-first-last-agg` | 0.1.4 | `d12.x86_64` | pgdg | 8.6 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb) |
+| `postgresql-18-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
 | `postgresql-18-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
 | `postgresql-18-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.5 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `first_last_agg_17` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_17-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_17-0.1.4-1PIGSTY.el8.x86_64.rpm) |
 | `first_last_agg_17` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_17-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_17-0.1.4-1PIGSTY.el8.aarch64.rpm) |
-| `first_last_agg_17` | 0.1.4 | `el9.aarch64` | pigsty | 11.7 KiB | [first_last_agg_17-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_17-0.1.4-1PIGSTY.el9.aarch64.rpm) |
 | `first_last_agg_17` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_17-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_17-0.1.4-1PIGSTY.el9.x86_64.rpm) |
+| `first_last_agg_17` | 0.1.4 | `el9.aarch64` | pigsty | 11.7 KiB | [first_last_agg_17-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_17-0.1.4-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-first-last-agg` | 0.1.4 | `d12.x86_64` | pgdg | 8.6 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb) |
 | `postgresql-17-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
-| `postgresql-17-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `first_last_agg_16` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_16-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_16-0.1.4-1PIGSTY.el8.x86_64.rpm) |
 | `first_last_agg_16` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_16-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_16-0.1.4-1PIGSTY.el8.aarch64.rpm) |
 | `first_last_agg_16` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_16-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_16-0.1.4-1PIGSTY.el9.x86_64.rpm) |
 | `first_last_agg_16` | 0.1.4 | `el9.aarch64` | pigsty | 11.7 KiB | [first_last_agg_16-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_16-0.1.4-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-16-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
 | `postgresql-16-first-last-agg` | 0.1.4 | `d12.x86_64` | pgdg | 8.6 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb) |
-| `postgresql-16-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
 | `postgresql-16-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `first_last_agg_15` | 0.1.4 | `el8.aarch64` | pigsty | 12.0 KiB | [first_last_agg_15-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_15-0.1.4-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `first_last_agg_15` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_15-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_15-0.1.4-1PIGSTY.el8.x86_64.rpm) |
+| `first_last_agg_15` | 0.1.4 | `el8.aarch64` | pigsty | 12.0 KiB | [first_last_agg_15-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_15-0.1.4-1PIGSTY.el8.aarch64.rpm) |
 | `first_last_agg_15` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_15-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_15-0.1.4-1PIGSTY.el9.x86_64.rpm) |
 | `first_last_agg_15` | 0.1.4 | `el9.aarch64` | pigsty | 11.7 KiB | [first_last_agg_15-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_15-0.1.4-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-first-last-agg` | 0.1.4 | `d12.x86_64` | pgdg | 8.6 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb) |
 | `postgresql-15-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
-| `postgresql-15-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `first_last_agg_14` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_14-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_14-0.1.4-1PIGSTY.el8.x86_64.rpm) |
 | `first_last_agg_14` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_14-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_14-0.1.4-1PIGSTY.el8.aarch64.rpm) |
 | `first_last_agg_14` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_14-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_14-0.1.4-1PIGSTY.el9.x86_64.rpm) |
@@ -131,35 +126,16 @@ first() and last() aggregate functions
 | `postgresql-14-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.4 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
 | `postgresql-14-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
 | `postgresql-14-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-14-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `first_last_agg_13` | 0.1.4 | `el8.aarch64` | pigsty | 12.1 KiB | [first_last_agg_13-0.1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/first_last_agg_13-0.1.4-1PIGSTY.el8.aarch64.rpm) |
-| `first_last_agg_13` | 0.1.4 | `el8.x86_64` | pigsty | 12.0 KiB | [first_last_agg_13-0.1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/first_last_agg_13-0.1.4-1PIGSTY.el8.x86_64.rpm) |
-| `first_last_agg_13` | 0.1.4 | `el9.aarch64` | pigsty | 11.7 KiB | [first_last_agg_13-0.1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/first_last_agg_13-0.1.4-1PIGSTY.el9.aarch64.rpm) |
-| `first_last_agg_13` | 0.1.4 | `el9.x86_64` | pigsty | 11.8 KiB | [first_last_agg_13-0.1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/first_last_agg_13-0.1.4-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `d12.aarch64` | pgdg | 8.5 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_arm64.deb) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `d12.x86_64` | pgdg | 8.5 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg12+1_amd64.deb) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `u22.aarch64` | pgdg | 8.6 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `u22.x86_64` | pgdg | 8.4 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `u24.x86_64` | pgdg | 8.6 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-first-last-agg` | 0.1.4 | `u24.aarch64` | pgdg | 8.5 KiB | [postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-13-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/wulczer/first_last_agg" title="Repository" icon="github" subtitle="github.com/wulczer/first_last_agg" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="first_last_agg-0.1.4.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="first_last_agg-0.1.4.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -3,22 +3,23 @@ title: "icu_ext"
 linkTitle: "icu_ext"
 description: "Access ICU functions"
 weight: 4240
-categories: ["Util"]
+categories: ["UTIL"]
 width: full
 ---
 
 Access ICU functions
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4240** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" "icu_ext" >}} | `1.10.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4240** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" >}} | `1.10.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,85 +31,81 @@ Access ICU functions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/icu_ext" >}} | `1.10.0` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `icu_ext_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/icu_ext" >}} | `1.10.0` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-icu-ext` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/icu_ext" >}} | `1.10.0` | {{< bg "18" "icu_ext_18*" "green" >}} {{< bg "17" "icu_ext_17*" "green" >}} {{< bg "16" "icu_ext_16*" "green" >}} {{< bg "15" "icu_ext_15*" "green" >}} {{< bg "14" "icu_ext_14*" "green" >}} | `icu_ext_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/icu_ext" >}} | `1.10.0` | {{< bg "18" "postgresql-18-icu-ext" "green" >}} {{< bg "17" "postgresql-17-icu-ext" "green" >}} {{< bg "16" "postgresql-16-icu-ext" "green" >}} {{< bg "15" "postgresql-15-icu-ext" "green" >}} {{< bg "14" "postgresql-14-icu-ext" "green" >}} | `postgresql-$v-icu-ext` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "icu_ext_18" "1.10.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/icu_ext_18-1.10.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "icu_ext_17" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/icu_ext_17-1.9.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "icu_ext_16" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "icu_ext_15" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "icu_ext_14" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/icu_ext_14-1.9.0-1PGDG.rhel8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "icu_ext_18" "1.10.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/icu_ext_18-1.10.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "icu_ext_17" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "icu_ext_16" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "icu_ext_15" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/icu_ext_15-1.9.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "icu_ext_14" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "icu_ext_18" "1.10.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/icu_ext_18-1.10.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "icu_ext_17" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "icu_ext_16" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "icu_ext_15" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "icu_ext_14" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/icu_ext_14-1.9.0-1PGDG.rhel9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "icu_ext_18" "1.10.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/icu_ext_18-1.10.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "icu_ext_17" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "icu_ext_16" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "icu_ext_15" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/icu_ext_15-1.9.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "icu_ext_14" "1.9.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm" >}} |
-|    `d12.x86_64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg12+1_amd64.deb" >}} |
-|    `d12.aarch64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg12+1_arm64.deb" >}} |
-|    `u22.x86_64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb" >}} |
-|    `u22.aarch64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb" >}} |
-|    `u24.x86_64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb" >}} |
-|    `u24.aarch64`    | {{< pkg "postgresql-18-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-icu-ext" "1.10.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb" >}} |
+|    `el8.x86_64`    | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} |
+|    `d12.x86_64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
+|    `d12.aarch64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
+|    `u22.x86_64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
+|    `u22.aarch64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
+|    `u24.x86_64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
+|    `u24.aarch64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_18` | 1.10.0 | `el8.aarch64` | pgdg | 46.1 KiB | [icu_ext_18-1.10.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/icu_ext_18-1.10.0-1PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `icu_ext_18` | 1.10.0 | `el8.x86_64` | pgdg | 47.4 KiB | [icu_ext_18-1.10.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/icu_ext_18-1.10.0-1PGDG.rhel8.x86_64.rpm) |
-| `icu_ext_18` | 1.10.0 | `el9.aarch64` | pgdg | 46.7 KiB | [icu_ext_18-1.10.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/icu_ext_18-1.10.0-1PGDG.rhel9.aarch64.rpm) |
+| `icu_ext_18` | 1.10.0 | `el8.aarch64` | pgdg | 46.1 KiB | [icu_ext_18-1.10.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/icu_ext_18-1.10.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_18` | 1.10.0 | `el9.x86_64` | pgdg | 48.6 KiB | [icu_ext_18-1.10.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/icu_ext_18-1.10.0-1PGDG.rhel9.x86_64.rpm) |
-| `postgresql-18-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.0 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
+| `icu_ext_18` | 1.10.0 | `el9.aarch64` | pgdg | 46.7 KiB | [icu_ext_18-1.10.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/icu_ext_18-1.10.0-1PGDG.rhel9.aarch64.rpm) |
 | `postgresql-18-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.5 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
+| `postgresql-18-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.0 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-18-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 95.4 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
 | `postgresql-18-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 92.8 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-icu-ext` | 1.10.0 | `u24.x86_64` | pgdg | 94.5 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.7 KiB | [postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_17` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `icu_ext_17` | 1.9.0 | `el8.x86_64` | pigsty | 45.8 KiB | [icu_ext_17-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_17-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el8.x86_64` | pgdg | 46.4 KiB | [icu_ext_17-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/icu_ext_17-1.9.0-1PGDG.rhel8.x86_64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el8.x86_64` | pigsty | 46.8 KiB | [icu_ext_17-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_17-1.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `icu_ext_17` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm) |
+| `icu_ext_17` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el8.aarch64` | pigsty | 45.4 KiB | [icu_ext_17-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_17-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el9.aarch64` | pgdg | 46.0 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el9.x86_64` | pigsty | 47.2 KiB | [icu_ext_17-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_17-1.9.0-1PIGSTY.el9.x86_64.rpm) |
+| `icu_ext_17` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el9.x86_64` | pigsty | 47.9 KiB | [icu_ext_17-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_17-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `icu_ext_17` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm) |
+| `icu_ext_17` | 1.9.0 | `el9.aarch64` | pgdg | 46.0 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el9.aarch64` | pigsty | 46.1 KiB | [icu_ext_17-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_17-1.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-17-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.3 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-17-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.3 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
+| `postgresql-17-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.3 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-17-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 106.1 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
 | `postgresql-17-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 103.4 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-icu-ext` | 1.10.0 | `u24.x86_64` | pgdg | 94.4 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.7 KiB | [postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_16` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el8.x86_64` | pgdg | 46.4 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `icu_ext_16` | 1.9.0 | `el8.x86_64` | pigsty | 45.8 KiB | [icu_ext_16-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_16-1.9.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_16` | 1.10.0 | `el8.aarch64` | pigsty | 45.4 KiB | [icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el8.x86_64` | pgdg | 46.4 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el8.x86_64` | pigsty | 46.7 KiB | [icu_ext_16-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_16-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el9.aarch64` | pgdg | 45.9 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm) |
+| `icu_ext_16` | 1.10.0 | `el8.aarch64` | pigsty | 45.4 KiB | [icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el9.x86_64` | pigsty | 47.2 KiB | [icu_ext_16-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_16-1.9.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm) |
-| `icu_ext_16` | 1.10.0 | `el9.aarch64` | pigsty | 46.0 KiB | [icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el9.x86_64` | pigsty | 47.9 KiB | [icu_ext_16-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_16-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm) |
+| `icu_ext_16` | 1.9.0 | `el9.aarch64` | pgdg | 45.9 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `icu_ext_16` | 1.10.0 | `el9.aarch64` | pigsty | 46.0 KiB | [icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.2 KiB | [postgresql-16-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
 | `postgresql-16-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.2 KiB | [postgresql-16-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-16-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 106.6 KiB | [postgresql-16-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
@@ -117,89 +114,60 @@ Access ICU functions
 | `postgresql-16-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.6 KiB | [postgresql-16-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_15` | 1.9.0 | `el8.x86_64` | pgdg | 46.5 KiB | [icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `icu_ext_15` | 1.9.0 | `el8.x86_64` | pigsty | 46.0 KiB | [icu_ext_15-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_15-1.9.0-1PIGSTY.el8.x86_64.rpm) |
+| `icu_ext_15` | 1.9.0 | `el8.x86_64` | pgdg | 46.5 KiB | [icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm) |
+| `icu_ext_15` | 1.10.0 | `el8.x86_64` | pigsty | 46.8 KiB | [icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el8.aarch64` | pigsty | 44.7 KiB | [icu_ext_15-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_15-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_15-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/icu_ext_15-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el8.aarch64` | pigsty | 45.4 KiB | [icu_ext_15-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_15-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_15` | 1.10.0 | `el8.x86_64` | pigsty | 46.8 KiB | [icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `icu_ext_15` | 1.9.0 | `el9.x86_64` | pigsty | 47.3 KiB | [icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm) |
+| `icu_ext_15` | 1.9.0 | `el9.x86_64` | pgdg | 47.8 KiB | [icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm) |
+| `icu_ext_15` | 1.10.0 | `el9.x86_64` | pigsty | 48.2 KiB | [icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el9.aarch64` | pigsty | 45.6 KiB | [icu_ext_15-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_15-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el9.aarch64` | pgdg | 46.2 KiB | [icu_ext_15-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/icu_ext_15-1.9.0-1PGDG.rhel9.aarch64.rpm) |
-| `icu_ext_15` | 1.9.0 | `el9.x86_64` | pgdg | 47.8 KiB | [icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm) |
-| `icu_ext_15` | 1.9.0 | `el9.x86_64` | pigsty | 47.3 KiB | [icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_15` | 1.10.0 | `el9.x86_64` | pigsty | 48.2 KiB | [icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el9.aarch64` | pigsty | 46.3 KiB | [icu_ext_15-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_15-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.3 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
 | `postgresql-15-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.2 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
-| `postgresql-15-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 103.4 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 106.2 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.3 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 103.4 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-icu-ext` | 1.10.0 | `u24.x86_64` | pgdg | 94.3 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.3 KiB | [postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_14` | 1.9.0 | `el8.aarch64` | pgdg | 45.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `icu_ext_14` | 1.9.0 | `el8.x86_64` | pigsty | 46.1 KiB | [icu_ext_14-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_14-1.9.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el8.aarch64` | pigsty | 44.8 KiB | [icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el8.x86_64` | pgdg | 46.6 KiB | [icu_ext_14-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/icu_ext_14-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el8.x86_64` | pigsty | 47.0 KiB | [icu_ext_14-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_14-1.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `icu_ext_14` | 1.9.0 | `el8.aarch64` | pigsty | 44.8 KiB | [icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm) |
+| `icu_ext_14` | 1.9.0 | `el8.aarch64` | pgdg | 45.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el8.aarch64` | pigsty | 45.6 KiB | [icu_ext_14-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_14-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el9.aarch64` | pgdg | 46.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el9.aarch64` | pigsty | 45.7 KiB | [icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el9.x86_64` | pigsty | 47.4 KiB | [icu_ext_14-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_14-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el9.x86_64` | pgdg | 48.0 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/icu_ext_14-1.9.0-1PGDG.rhel9.x86_64.rpm) |
-| `icu_ext_14` | 1.10.0 | `el9.aarch64` | pigsty | 46.4 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el9.x86_64` | pigsty | 48.3 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-14-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.3 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
+| `icu_ext_14` | 1.9.0 | `el9.aarch64` | pigsty | 45.7 KiB | [icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm) |
+| `icu_ext_14` | 1.9.0 | `el9.aarch64` | pgdg | 46.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm) |
+| `icu_ext_14` | 1.10.0 | `el9.aarch64` | pigsty | 46.4 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-14-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.8 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
+| `postgresql-14-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.3 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-14-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 107.1 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
 | `postgresql-14-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 104.1 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-icu-ext` | 1.10.0 | `u24.x86_64` | pgdg | 95.0 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.6 KiB | [postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-14-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `icu_ext_13` | 1.9.0 | `el8.x86_64` | pgdg | 45.8 KiB | [icu_ext_13-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/icu_ext_13-1.9.0-1PGDG.rhel8.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el8.x86_64` | pigsty | 45.2 KiB | [icu_ext_13-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_13-1.9.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el8.aarch64` | pigsty | 44.7 KiB | [icu_ext_13-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_13-1.9.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el8.aarch64` | pgdg | 45.3 KiB | [icu_ext_13-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/icu_ext_13-1.9.0-1PGDG.rhel8.aarch64.rpm) |
-| `icu_ext_13` | 1.10.0 | `el8.aarch64` | pigsty | 45.5 KiB | [icu_ext_13-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_13-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_13` | 1.10.0 | `el8.x86_64` | pigsty | 46.1 KiB | [icu_ext_13-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_13-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.aarch64` | pigsty | 45.7 KiB | [icu_ext_13-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_13-1.9.0-1PIGSTY.el9.aarch64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.x86_64` | pigsty | 47.4 KiB | [icu_ext_13-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_13-1.9.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.x86_64` | pgdg | 48.0 KiB | [icu_ext_13-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/icu_ext_13-1.9.0-1PGDG.rhel9.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.aarch64` | pgdg | 46.3 KiB | [icu_ext_13-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/icu_ext_13-1.9.0-1PGDG.rhel9.aarch64.rpm) |
-| `icu_ext_13` | 1.10.0 | `el9.x86_64` | pigsty | 48.4 KiB | [icu_ext_13-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_13-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_13` | 1.10.0 | `el9.aarch64` | pigsty | 46.4 KiB | [icu_ext_13-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_13-1.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-13-icu-ext` | 1.10.0 | `d12.aarch64` | pgdg | 92.3 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg12+1_arm64.deb) |
-| `postgresql-13-icu-ext` | 1.10.0 | `d12.x86_64` | pgdg | 94.4 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg12+1_amd64.deb) |
-| `postgresql-13-icu-ext` | 1.10.0 | `u22.x86_64` | pgdg | 106.7 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-icu-ext` | 1.10.0 | `u22.aarch64` | pgdg | 103.8 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-icu-ext` | 1.10.0 | `u24.x86_64` | pgdg | 94.6 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-icu-ext` | 1.10.0 | `u24.aarch64` | pgdg | 92.7 KiB | [postgresql-13-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-13-icu-ext_1.10.0-2.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/dverite/icu_ext" title="Repository" icon="github" subtitle="github.com/dverite/icu_ext" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="icu_ext-1.10.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="icu_ext-1.10.0.tar.gz" >}}
 {{< /cards >}}
 
 

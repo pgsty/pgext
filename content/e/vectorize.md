@@ -3,11 +3,12 @@ title: "vectorize"
 linkTitle: "vectorize"
 description: "The simplest way to do vector search on Postgres"
 weight: 1830
-categories: ["Rag"]
+categories: ["RAG"]
 width: full
 ---
 
 The simplest way to do vector search on Postgres
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ The simplest way to do vector search on Postgres
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -33,102 +34,95 @@ The simplest way to do vector search on Postgres
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/vectorize" >}} | `0.22.2` | {{< badge content="18" color="red" alt="pg_vectorize_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_vectorize_$v` | `pgmq_$v`, `pg_cron_$v`, `pgvector_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/vectorize" >}} | `0.22.2` | {{< badge content="18" color="red" alt="postgresql-18-pg-vectorize" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-vectorize` | `postgresql-$v-pgmq`, `postgresql-$v-pg-cron`, `postgresql-$v-pgvector` |
+| **EL** | {{< badge content="PIGSTY" link="/e/vectorize" >}} | `0.22.2` | {{< bg "18" "pg_vectorize_18" "red" >}} {{< bg "17" "pg_vectorize_17" "green" >}} {{< bg "16" "pg_vectorize_16" "green" >}} {{< bg "15" "pg_vectorize_15" "green" >}} {{< bg "14" "pg_vectorize_14" "green" >}} | `pg_vectorize_$v` | `pgmq_$v`, `pg_cron_$v`, `pgvector_$v` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/vectorize" >}} | `0.22.2` | {{< bg "18" "postgresql-18-pg-vectorize" "red" >}} {{< bg "17" "postgresql-17-pg-vectorize" "green" >}} {{< bg "16" "postgresql-16-pg-vectorize" "green" >}} {{< bg "15" "postgresql-15-pg-vectorize" "green" >}} {{< bg "14" "postgresql-14-pg-vectorize" "green" >}} | `postgresql-$v-pg-vectorize` | `postgresql-$v-pgmq`, `postgresql-$v-pg-cron`, `postgresql-$v-pgvector` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pg_vectorize_18" >}}     | {{< pkg "pg_vectorize_17" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_17-0.22.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_vectorize_16" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_16-0.22.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_vectorize_15" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_15-0.22.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_vectorize_14" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_14-0.22.2-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pg_vectorize_18" >}}     | {{< pkg "pg_vectorize_17" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_vectorize_16" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_16-0.22.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_vectorize_15" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_15-0.22.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_vectorize_14" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_14-0.22.2-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pg_vectorize_18" >}}     | {{< pkg "pg_vectorize_17" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_17-0.22.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_vectorize_16" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_16-0.22.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_vectorize_15" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_15-0.22.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_vectorize_14" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_14-0.22.2-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pg_vectorize_18" >}}     | {{< pkg "pg_vectorize_17" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_vectorize_16" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_16-0.22.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_vectorize_15" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_15-0.22.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_vectorize_14" "0.22.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_14-0.22.2-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-vectorize" >}}     | {{< pkg "postgresql-17-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-vectorize" "0.22.2" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_vectorize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "pg_vectorize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_vectorize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "pg_vectorize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_vectorize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "pg_vectorize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_vectorize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "pg_vectorize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "pg_vectorize_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.22.2" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.22.2" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
-
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_vectorize_17` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_vectorize_17` | 0.22.2 | `el8.x86_64` | pigsty | 7.2 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_17-0.22.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_vectorize_17` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_vectorize_17` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_vectorize_17` | 0.22.2 | `el9.x86_64` | pigsty | 7.0 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_17-0.22.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_vectorize_17` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_17-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_17-0.22.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pg-vectorize` | 0.22.2 | `d12.x86_64` | pigsty | 6.0 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-vectorize` | 0.22.2 | `u22.x86_64` | pigsty | 6.7 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-vectorize` | 0.22.2 | `u24.x86_64` | pigsty | 6.7 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_vectorize_16` | 0.22.2 | `el8.x86_64` | pigsty | 7.2 MiB | [pg_vectorize_16-0.22.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_16-0.22.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_vectorize_16` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_16-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_16-0.22.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_vectorize_16` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_16-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_16-0.22.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_vectorize_16` | 0.22.2 | `el9.x86_64` | pigsty | 7.0 MiB | [pg_vectorize_16-0.22.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_16-0.22.2-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-16-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
+| `pg_vectorize_16` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_16-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_16-0.22.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-pg-vectorize` | 0.22.2 | `d12.x86_64` | pigsty | 6.0 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-vectorize` | 0.22.2 | `u22.x86_64` | pigsty | 6.7 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-vectorize` | 0.22.2 | `u24.x86_64` | pigsty | 6.7 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_vectorize_15` | 0.22.2 | `el8.x86_64` | pigsty | 7.2 MiB | [pg_vectorize_15-0.22.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_15-0.22.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_vectorize_15` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_15-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_15-0.22.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_vectorize_15` | 0.22.2 | `el9.x86_64` | pigsty | 7.0 MiB | [pg_vectorize_15-0.22.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_15-0.22.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_vectorize_15` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_15-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_15-0.22.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-pg-vectorize` | 0.22.2 | `d12.x86_64` | pigsty | 6.0 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-vectorize` | 0.22.2 | `u22.x86_64` | pigsty | 6.7 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-vectorize` | 0.22.2 | `u24.x86_64` | pigsty | 6.7 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_vectorize_14` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_14-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_14-0.22.2-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_vectorize_14` | 0.22.2 | `el8.x86_64` | pigsty | 7.2 MiB | [pg_vectorize_14-0.22.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_vectorize_14-0.22.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_vectorize_14` | 0.22.2 | `el8.aarch64` | pigsty | 7.0 MiB | [pg_vectorize_14-0.22.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_vectorize_14-0.22.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_vectorize_14` | 0.22.2 | `el9.x86_64` | pigsty | 7.0 MiB | [pg_vectorize_14-0.22.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_vectorize_14-0.22.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_vectorize_14` | 0.22.2 | `el9.aarch64` | pigsty | 6.9 MiB | [pg_vectorize_14-0.22.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_vectorize_14-0.22.2-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-14-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-vectorize` | 0.22.2 | `d12.x86_64` | pigsty | 6.0 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-vectorize` | 0.22.2 | `d12.aarch64` | pigsty | 5.7 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-vectorize` | 0.22.2 | `u22.x86_64` | pigsty | 6.7 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pg-vectorize` | 0.22.2 | `u22.aarch64` | pigsty | 6.6 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-vectorize` | 0.22.2 | `u24.x86_64` | pigsty | 6.7 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-vectorize` | 0.22.2 | `u24.aarch64` | pigsty | 6.6 MiB | [postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.22.2-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ChuckHend/pg_vectorize" title="Repository" icon="github" subtitle="github.com/ChuckHend/pg_vectorize" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_vectorize-0.22.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_vectorize-0.22.2.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -3,11 +3,12 @@ title: "omni_seq"
 linkTitle: "omni_seq"
 description: "Distributed integer sequences"
 weight: 2974
-categories: ["Feat"]
+categories: ["FEAT"]
 width: full
 ---
 
 Distributed integer sequences
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ Distributed integer sequences
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -31,129 +32,29 @@ Distributed integer sequences
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.1` | {{< badge content="18" color="red" alt="omnigres_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `omnigres_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.1` | {{< badge content="18" color="red" alt="postgresql-18-omnigres" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-omnigres` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.1` | {{< bg "18" "omnigres_18" "red" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} | `omnigres_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.1` | {{< bg "18" "postgresql-18-omnigres" "red" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "omnigres_18" >}}     | {{< pkg "omnigres_17" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_17-20250120-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "omnigres_16" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_16-20250120-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "omnigres_15" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_15-20250120-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "omnigres_14" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_14-20250120-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "omnigres_18" >}}     | {{< pkg "omnigres_17" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_17-20250120-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "omnigres_16" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_16-20250120-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "omnigres_15" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_15-20250120-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "omnigres_14" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_14-20250120-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "omnigres_18" >}}     | {{< pkg "omnigres_17" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_17-20250120-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "omnigres_16" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_16-20250120-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "omnigres_15" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_15-20250120-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "omnigres_14" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_14-20250120-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "omnigres_18" >}}     | {{< pkg "omnigres_17" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_17-20250120-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "omnigres_16" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_16-20250120-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "omnigres_15" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_15-20250120-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "omnigres_14" "20250120" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_14-20250120-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250120" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-17-omnigres_20250507-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-16-omnigres_20250507-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-15-omnigres_20250507-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-14-omnigres_20250507-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-omnigres" >}}     | {{< pkg "postgresql-17-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-17-omnigres_20250507-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-16-omnigres_20250507-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-15-omnigres_20250507-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-omnigres" "20250507" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-14-omnigres_20250507-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "omnigres_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "omnigres_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "omnigres_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "omnigres_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "omnigres_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250507" "omnigres_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_14 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "omnigres_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250507" "omnigres_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 20250507" "omnigres_14 : AVAIL 2" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250120" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250120" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250507" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-omnigres : MISS 0" "red" >}}      | {{< bg "PIGSTY 20250507" "postgresql-17-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-16-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-15-omnigres : AVAIL 1" "green" >}} | {{< bg "PIGSTY 20250507" "postgresql-14-omnigres : AVAIL 1" "green" >}} |
 
-
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `omnigres_17` | 20250120 | `el8.aarch64` | pigsty | 1.3 MiB | [omnigres_17-20250120-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_17-20250120-1PIGSTY.el8.aarch64.rpm) |
-| `omnigres_17` | 20250120 | `el8.x86_64` | pigsty | 1.4 MiB | [omnigres_17-20250120-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_17-20250120-1PIGSTY.el8.x86_64.rpm) |
-| `omnigres_17` | 20250507 | `el9.aarch64` | pigsty | 2.5 MiB | [omnigres_17-20250507-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_17-20250507-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_17` | 20250507 | `el9.x86_64` | pigsty | 2.7 MiB | [omnigres_17-20250507-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_17-20250507-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_17` | 20250120 | `el9.aarch64` | pigsty | 1.4 MiB | [omnigres_17-20250120-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_17-20250120-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_17` | 20250120 | `el9.x86_64` | pigsty | 1.4 MiB | [omnigres_17-20250120-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_17-20250120-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-17-omnigres` | 20250120 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-17-omnigres_20250120-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-omnigres` | 20250120 | `d12.x86_64` | pigsty | 1.6 MiB | [postgresql-17-omnigres_20250120-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-omnigres` | 20250120 | `u22.x86_64` | pigsty | 1.7 MiB | [postgresql-17-omnigres_20250120-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-omnigres` | 20250120 | `u22.aarch64` | pigsty | 1.7 MiB | [postgresql-17-omnigres_20250120-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-17-omnigres_20250120-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-omnigres` | 20250507 | `u24.aarch64` | pigsty | 2.7 MiB | [postgresql-17-omnigres_20250507-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-17-omnigres_20250507-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-omnigres` | 20250507 | `u24.x86_64` | pigsty | 2.8 MiB | [postgresql-17-omnigres_20250507-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-17-omnigres_20250507-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `omnigres_16` | 20250120 | `el8.aarch64` | pigsty | 1.3 MiB | [omnigres_16-20250120-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_16-20250120-1PIGSTY.el8.aarch64.rpm) |
-| `omnigres_16` | 20250120 | `el8.x86_64` | pigsty | 1.4 MiB | [omnigres_16-20250120-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_16-20250120-1PIGSTY.el8.x86_64.rpm) |
-| `omnigres_16` | 20250507 | `el9.x86_64` | pigsty | 2.7 MiB | [omnigres_16-20250507-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_16-20250507-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_16` | 20250507 | `el9.aarch64` | pigsty | 2.5 MiB | [omnigres_16-20250507-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_16-20250507-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_16` | 20250120 | `el9.x86_64` | pigsty | 1.4 MiB | [omnigres_16-20250120-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_16-20250120-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_16` | 20250120 | `el9.aarch64` | pigsty | 1.4 MiB | [omnigres_16-20250120-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_16-20250120-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-16-omnigres` | 20250120 | `d12.x86_64` | pigsty | 1.6 MiB | [postgresql-16-omnigres_20250120-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-omnigres` | 20250120 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-16-omnigres_20250120-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-omnigres` | 20250120 | `u22.x86_64` | pigsty | 1.7 MiB | [postgresql-16-omnigres_20250120-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-omnigres` | 20250120 | `u22.aarch64` | pigsty | 1.7 MiB | [postgresql-16-omnigres_20250120-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-16-omnigres_20250120-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-omnigres` | 20250507 | `u24.x86_64` | pigsty | 2.8 MiB | [postgresql-16-omnigres_20250507-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-16-omnigres_20250507-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-omnigres` | 20250507 | `u24.aarch64` | pigsty | 2.7 MiB | [postgresql-16-omnigres_20250507-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-16-omnigres_20250507-1PIGSTY~noble_arm64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `omnigres_15` | 20250120 | `el8.x86_64` | pigsty | 1.4 MiB | [omnigres_15-20250120-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_15-20250120-1PIGSTY.el8.x86_64.rpm) |
-| `omnigres_15` | 20250120 | `el8.aarch64` | pigsty | 1.3 MiB | [omnigres_15-20250120-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_15-20250120-1PIGSTY.el8.aarch64.rpm) |
-| `omnigres_15` | 20250507 | `el9.x86_64` | pigsty | 2.6 MiB | [omnigres_15-20250507-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_15-20250507-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_15` | 20250507 | `el9.aarch64` | pigsty | 2.5 MiB | [omnigres_15-20250507-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_15-20250507-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_15` | 20250120 | `el9.aarch64` | pigsty | 1.4 MiB | [omnigres_15-20250120-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_15-20250120-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_15` | 20250120 | `el9.x86_64` | pigsty | 1.4 MiB | [omnigres_15-20250120-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_15-20250120-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-15-omnigres` | 20250120 | `d12.x86_64` | pigsty | 1.6 MiB | [postgresql-15-omnigres_20250120-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-omnigres` | 20250120 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-15-omnigres_20250120-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-omnigres` | 20250120 | `u22.aarch64` | pigsty | 1.7 MiB | [postgresql-15-omnigres_20250120-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-omnigres` | 20250120 | `u22.x86_64` | pigsty | 1.7 MiB | [postgresql-15-omnigres_20250120-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-15-omnigres_20250120-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-omnigres` | 20250507 | `u24.aarch64` | pigsty | 2.7 MiB | [postgresql-15-omnigres_20250507-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-15-omnigres_20250507-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-omnigres` | 20250507 | `u24.x86_64` | pigsty | 2.8 MiB | [postgresql-15-omnigres_20250507-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-15-omnigres_20250507-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `omnigres_14` | 20250120 | `el8.x86_64` | pigsty | 1.4 MiB | [omnigres_14-20250120-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_14-20250120-1PIGSTY.el8.x86_64.rpm) |
-| `omnigres_14` | 20250120 | `el8.aarch64` | pigsty | 1.3 MiB | [omnigres_14-20250120-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_14-20250120-1PIGSTY.el8.aarch64.rpm) |
-| `omnigres_14` | 20250507 | `el9.aarch64` | pigsty | 2.5 MiB | [omnigres_14-20250507-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_14-20250507-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_14` | 20250507 | `el9.x86_64` | pigsty | 2.6 MiB | [omnigres_14-20250507-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_14-20250507-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_14` | 20250120 | `el9.x86_64` | pigsty | 1.4 MiB | [omnigres_14-20250120-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_14-20250120-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_14` | 20250120 | `el9.aarch64` | pigsty | 1.4 MiB | [omnigres_14-20250120-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_14-20250120-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-14-omnigres` | 20250120 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-14-omnigres_20250120-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-omnigres` | 20250120 | `d12.x86_64` | pigsty | 1.6 MiB | [postgresql-14-omnigres_20250120-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-omnigres` | 20250120 | `u22.x86_64` | pigsty | 1.7 MiB | [postgresql-14-omnigres_20250120-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-omnigres` | 20250120 | `u22.aarch64` | pigsty | 1.7 MiB | [postgresql-14-omnigres_20250120-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-14-omnigres_20250120-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-omnigres` | 20250507 | `u24.aarch64` | pigsty | 2.7 MiB | [postgresql-14-omnigres_20250507-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-14-omnigres_20250507-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-omnigres` | 20250507 | `u24.x86_64` | pigsty | 2.8 MiB | [postgresql-14-omnigres_20250507-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-14-omnigres_20250507-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `omnigres_13` | 20250120 | `el8.x86_64` | pigsty | 1.4 MiB | [omnigres_13-20250120-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnigres_13-20250120-1PIGSTY.el8.x86_64.rpm) |
-| `omnigres_13` | 20250120 | `el8.aarch64` | pigsty | 1.3 MiB | [omnigres_13-20250120-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnigres_13-20250120-1PIGSTY.el8.aarch64.rpm) |
-| `omnigres_13` | 20250507 | `el9.aarch64` | pigsty | 2.5 MiB | [omnigres_13-20250507-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_13-20250507-1PIGSTY.el9.aarch64.rpm) |
-| `omnigres_13` | 20250507 | `el9.x86_64` | pigsty | 2.6 MiB | [omnigres_13-20250507-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_13-20250507-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_13` | 20250120 | `el9.x86_64` | pigsty | 1.4 MiB | [omnigres_13-20250120-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnigres_13-20250120-1PIGSTY.el9.x86_64.rpm) |
-| `omnigres_13` | 20250120 | `el9.aarch64` | pigsty | 1.4 MiB | [omnigres_13-20250120-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnigres_13-20250120-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-13-omnigres` | 20250120 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-13-omnigres_20250120-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-13-omnigres_20250120-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-omnigres` | 20250120 | `d12.x86_64` | pigsty | 1.6 MiB | [postgresql-13-omnigres_20250120-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnigres/postgresql-13-omnigres_20250120-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-omnigres` | 20250120 | `u22.x86_64` | pigsty | 1.7 MiB | [postgresql-13-omnigres_20250120-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-13-omnigres_20250120-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-omnigres` | 20250120 | `u22.aarch64` | pigsty | 1.7 MiB | [postgresql-13-omnigres_20250120-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnigres/postgresql-13-omnigres_20250120-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-omnigres` | 20250507 | `u24.aarch64` | pigsty | 2.7 MiB | [postgresql-13-omnigres_20250507-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-13-omnigres_20250507-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-omnigres` | 20250507 | `u24.x86_64` | pigsty | 2.8 MiB | [postgresql-13-omnigres_20250507-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnigres/postgresql-13-omnigres_20250507-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://docs.omnigres.org/omni_seq/id/" title="Repository" icon="link" subtitle="docs.omnigres.org/omni_seq/id/" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="omnigres-20250507.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="omnigres-20250507.tar.gz" >}}
 {{< /cards >}}
 
 

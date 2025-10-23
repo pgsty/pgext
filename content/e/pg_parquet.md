@@ -3,22 +3,23 @@ title: "pg_parquet"
 linkTitle: "pg_parquet"
 description: "copy data between Postgres and Parquet"
 weight: 2460
-categories: ["Olap"]
+categories: ["OLAP"]
 width: full
 ---
 
 copy data between Postgres and Parquet
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2460** | {{< badge content="pg_parquet" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< ext "pg_parquet" "pg_parquet" >}} | `0.4.3` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+| **2460** | {{< badge content="pg_parquet" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< ext "pg_parquet" >}} | `0.4.3` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---sLdt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--sLdt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -32,102 +33,95 @@ copy data between Postgres and Parquet
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_parquet" >}} | `0.4.3` | {{< badge content="18" color="red" alt="pg_parquet_18" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_parquet_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_parquet" >}} | `0.4.3` | {{< badge content="18" color="red" alt="postgresql-18-pg-parquet" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-parquet` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_parquet" >}} | `0.4.3` | {{< bg "18" "pg_parquet_18" "red" >}} {{< bg "17" "pg_parquet_17" "green" >}} {{< bg "16" "pg_parquet_16" "green" >}} {{< bg "15" "pg_parquet_15" "green" >}} {{< bg "14" "pg_parquet_14" "green" >}} | `pg_parquet_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_parquet" >}} | `0.4.3` | {{< bg "18" "postgresql-18-pg-parquet" "red" >}} {{< bg "17" "postgresql-17-pg-parquet" "green" >}} {{< bg "16" "postgresql-16-pg-parquet" "green" >}} {{< bg "15" "postgresql-15-pg-parquet" "green" >}} {{< bg "14" "postgresql-14-pg-parquet" "green" >}} | `postgresql-$v-pg-parquet` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pg_parquet_18" >}}     | {{< pkg "pg_parquet_17" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_17-0.4.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_parquet_16" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_16-0.4.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_parquet_15" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_15-0.4.3-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_parquet_14" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_14-0.4.3-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pg_parquet_18" >}}     | {{< pkg "pg_parquet_17" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_parquet_16" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_16-0.4.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_parquet_15" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_15-0.4.3-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_parquet_14" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_14-0.4.3-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pg_parquet_18" >}}     | {{< pkg "pg_parquet_17" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_17-0.4.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_parquet_16" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_16-0.4.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_parquet_15" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_15-0.4.3-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_parquet_14" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_14-0.4.3-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pg_parquet_18" >}}     | {{< pkg "pg_parquet_17" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_parquet_16" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_16-0.4.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_parquet_15" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_15-0.4.3-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_parquet_14" "0.4.3" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_14-0.4.3-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-parquet" >}}     | {{< pkg "postgresql-17-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-parquet" "0.4.3" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_parquet_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "pg_parquet_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_parquet_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "pg_parquet_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_parquet_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "pg_parquet_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_parquet_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "pg_parquet_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "pg_parquet_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-parquet : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.4.3" "postgresql-17-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-16-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-15-pg-parquet : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.4.3" "postgresql-14-pg-parquet : AVAIL 1" "green" >}} |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
-
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_parquet_17` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_parquet_17` | 0.4.3 | `el8.x86_64` | pigsty | 7.3 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_17-0.4.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_parquet_17` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_parquet_17` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el8.aarch64.rpm) |
 | `pg_parquet_17` | 0.4.3 | `el9.x86_64` | pigsty | 7.1 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_17-0.4.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_parquet_17` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_17-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_17-0.4.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pg-parquet` | 0.4.3 | `d12.x86_64` | pigsty | 5.9 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.1 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-parquet` | 0.4.3 | `u22.x86_64` | pigsty | 6.5 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.1 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-parquet` | 0.4.3 | `u24.x86_64` | pigsty | 6.5 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-17-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_parquet_16` | 0.4.3 | `el8.x86_64` | pigsty | 7.3 MiB | [pg_parquet_16-0.4.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_16-0.4.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_parquet_16` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_16-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_16-0.4.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_parquet_16` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_16-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_16-0.4.3-1PIGSTY.el9.aarch64.rpm) |
 | `pg_parquet_16` | 0.4.3 | `el9.x86_64` | pigsty | 7.1 MiB | [pg_parquet_16-0.4.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_16-0.4.3-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-16-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
+| `pg_parquet_16` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_16-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_16-0.4.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-pg-parquet` | 0.4.3 | `d12.x86_64` | pigsty | 5.9 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-parquet` | 0.4.3 | `u22.x86_64` | pigsty | 6.5 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.1 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-parquet` | 0.4.3 | `u24.x86_64` | pigsty | 6.5 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-16-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_parquet_15` | 0.4.3 | `el8.x86_64` | pigsty | 7.3 MiB | [pg_parquet_15-0.4.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_15-0.4.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_parquet_15` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_15-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_15-0.4.3-1PIGSTY.el8.aarch64.rpm) |
 | `pg_parquet_15` | 0.4.3 | `el9.x86_64` | pigsty | 7.1 MiB | [pg_parquet_15-0.4.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_15-0.4.3-1PIGSTY.el9.x86_64.rpm) |
 | `pg_parquet_15` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_15-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_15-0.4.3-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-pg-parquet` | 0.4.3 | `d12.x86_64` | pigsty | 5.9 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.0 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-parquet` | 0.4.3 | `u22.x86_64` | pigsty | 6.5 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.0 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-parquet` | 0.4.3 | `u24.x86_64` | pigsty | 6.5 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-15-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_parquet_14` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_14-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_14-0.4.3-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_parquet_14` | 0.4.3 | `el8.x86_64` | pigsty | 7.3 MiB | [pg_parquet_14-0.4.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_parquet_14-0.4.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_parquet_14` | 0.4.3 | `el8.aarch64` | pigsty | 6.5 MiB | [pg_parquet_14-0.4.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_parquet_14-0.4.3-1PIGSTY.el8.aarch64.rpm) |
 | `pg_parquet_14` | 0.4.3 | `el9.x86_64` | pigsty | 7.1 MiB | [pg_parquet_14-0.4.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_parquet_14-0.4.3-1PIGSTY.el9.x86_64.rpm) |
 | `pg_parquet_14` | 0.4.3 | `el9.aarch64` | pigsty | 6.7 MiB | [pg_parquet_14-0.4.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_parquet_14-0.4.3-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-14-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-parquet` | 0.4.3 | `d12.x86_64` | pigsty | 5.9 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-parquet` | 0.4.3 | `d12.aarch64` | pigsty | 5.1 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-parquet` | 0.4.3 | `u22.x86_64` | pigsty | 6.5 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pg-parquet` | 0.4.3 | `u22.aarch64` | pigsty | 6.0 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-parquet` | 0.4.3 | `u24.x86_64` | pigsty | 6.5 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-parquet` | 0.4.3 | `u24.aarch64` | pigsty | 6.0 MiB | [postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-parquet/postgresql-14-pg-parquet_0.4.3-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/CrunchyData/pg_parquet/" title="Repository" icon="github" subtitle="github.com/CrunchyData/pg_parquet/" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_parquet-0.4.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_parquet-0.4.3.tar.gz" >}}
 {{< /cards >}}
 
 

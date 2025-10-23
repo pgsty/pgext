@@ -3,22 +3,23 @@ title: "pg_rational"
 linkTitle: "pg_rational"
 description: "bigint fractions"
 weight: 3720
-categories: ["Type"]
+categories: ["TYPE"]
 width: full
 ---
 
 bigint fractions
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3720** | {{< badge content="pg_rational" link="https://github.com/begriffs/pg_rational" >}} | {{< ext "pg_rational" "pg_rational" >}} | `0.0.2` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3720** | {{< badge content="pg_rational" link="https://github.com/begriffs/pg_rational" >}} | {{< ext "pg_rational" >}} | `0.0.2` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,99 +31,93 @@ bigint fractions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_rational" >}} | `0.0.2` | {{< badge content="18" color="red" alt="pg_rational_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_rational_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_rational" >}} | `0.0.2` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-rational` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_rational" >}} | `0.0.2` | {{< bg "18" "pg_rational_18*" "red" >}} {{< bg "17" "pg_rational_17*" "green" >}} {{< bg "16" "pg_rational_16*" "green" >}} {{< bg "15" "pg_rational_15*" "green" >}} {{< bg "14" "pg_rational_14*" "green" >}} | `pg_rational_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pg_rational" >}} | `0.0.2` | {{< bg "18" "postgresql-18-rational" "green" >}} {{< bg "17" "postgresql-17-rational" "green" >}} {{< bg "16" "postgresql-16-rational" "green" >}} {{< bg "15" "postgresql-15-rational" "green" >}} {{< bg "14" "postgresql-14-rational" "green" >}} | `postgresql-$v-rational` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "pg_rational_18" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_18-0.0.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_rational_17" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_17-0.0.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_rational_16" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_16-0.0.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_rational_15" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_15-0.0.2-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_rational_14" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_14-0.0.2-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "pg_rational_18" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_18-0.0.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_rational_17" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_17-0.0.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_rational_16" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_16-0.0.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_rational_15" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_15-0.0.2-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_rational_14" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_14-0.0.2-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "pg_rational_18" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_18-0.0.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_rational_17" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_17-0.0.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_rational_16" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_16-0.0.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_rational_15" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_15-0.0.2-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_rational_14" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_14-0.0.2-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "pg_rational_18" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_18-0.0.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_rational_17" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_17-0.0.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_rational_16" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_16-0.0.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_rational_15" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_15-0.0.2-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_rational_14" "0.0.2" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_14-0.0.2-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg12+1_amd64.deb" >}} |
-|    `d12.aarch64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg12+1_arm64.deb" >}} |
-|    `u22.x86_64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg22.04+1_amd64.deb" >}} |
-|    `u22.aarch64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg22.04+1_arm64.deb" >}} |
-|    `u24.x86_64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg24.04+1_amd64.deb" >}} |
-|    `u24.aarch64`    | {{< pkg "postgresql-18-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-rational" "0.0.2" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg24.04+1_arm64.deb" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.2" "pg_rational_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.2" "pg_rational_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.0.2" "pg_rational_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.2" "pg_rational_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "pg_rational_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
+|    `d12.aarch64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
+|    `u22.x86_64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
+|    `u22.aarch64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
+|    `u24.x86_64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
+|    `u24.aarch64`    | {{< bg "PGDG 0.0.2" "postgresql-18-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-17-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-16-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-15-rational : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.0.2" "postgresql-14-rational : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_rational_18` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_18-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_18-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_rational_18` | 0.0.2 | `el8.x86_64` | pigsty | 18.6 KiB | [pg_rational_18-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_18-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_rational_18` | 0.0.2 | `el9.aarch64` | pigsty | 18.2 KiB | [pg_rational_18-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_18-0.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_rational_18` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_18-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_18-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rational_18` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_18-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_18-0.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-18-rational` | 0.0.2 | `d12.aarch64` | pgdg | 24.0 KiB | [postgresql-18-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg12+1_arm64.deb) |
+| `pg_rational_18` | 0.0.2 | `el9.aarch64` | pigsty | 18.2 KiB | [pg_rational_18-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_18-0.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-18-rational` | 0.0.2 | `d12.x86_64` | pgdg | 24.2 KiB | [postgresql-18-rational_0.0.2-8.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg12+1_amd64.deb) |
+| `postgresql-18-rational` | 0.0.2 | `d12.aarch64` | pgdg | 24.0 KiB | [postgresql-18-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg12+1_arm64.deb) |
 | `postgresql-18-rational` | 0.0.2 | `u22.x86_64` | pgdg | 24.2 KiB | [postgresql-18-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
 | `postgresql-18-rational` | 0.0.2 | `u22.aarch64` | pgdg | 23.8 KiB | [postgresql-18-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.2 KiB | [postgresql-18-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.3 KiB | [postgresql-18-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-18-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_rational_17` | 0.0.2 | `el8.x86_64` | pigsty | 18.6 KiB | [pg_rational_17-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_17-0.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rational_17` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_17-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_17-0.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_rational_17` | 0.0.2 | `el9.aarch64` | pigsty | 18.3 KiB | [pg_rational_17-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_17-0.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_rational_17` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_17-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_17-0.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_rational_17` | 0.0.2 | `el9.aarch64` | pigsty | 18.3 KiB | [pg_rational_17-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_17-0.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-rational` | 0.0.2 | `d12.x86_64` | pgdg | 24.1 KiB | [postgresql-17-rational_0.0.2-8.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg12+1_amd64.deb) |
 | `postgresql-17-rational` | 0.0.2 | `d12.aarch64` | pgdg | 23.9 KiB | [postgresql-17-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg12+1_arm64.deb) |
-| `postgresql-17-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-17-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-rational` | 0.0.2 | `u22.x86_64` | pgdg | 25.1 KiB | [postgresql-17-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.2 KiB | [postgresql-17-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-17-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.1 KiB | [postgresql-17-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.2 KiB | [postgresql-17-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-17-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_rational_16` | 0.0.2 | `el8.x86_64` | pigsty | 18.6 KiB | [pg_rational_16-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_16-0.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rational_16` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_16-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_16-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rational_16` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_16-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_16-0.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rational_16` | 0.0.2 | `el9.aarch64` | pigsty | 18.3 KiB | [pg_rational_16-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_16-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-16-rational` | 0.0.2 | `d12.aarch64` | pgdg | 23.9 KiB | [postgresql-16-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg12+1_arm64.deb) |
 | `postgresql-16-rational` | 0.0.2 | `d12.x86_64` | pgdg | 24.1 KiB | [postgresql-16-rational_0.0.2-8.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg12+1_amd64.deb) |
-| `postgresql-16-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-16-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-rational` | 0.0.2 | `d12.aarch64` | pgdg | 23.9 KiB | [postgresql-16-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg12+1_arm64.deb) |
 | `postgresql-16-rational` | 0.0.2 | `u22.x86_64` | pgdg | 25.1 KiB | [postgresql-16-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-16-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.1 KiB | [postgresql-16-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.2 KiB | [postgresql-16-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-16-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_rational_15` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_15-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_15-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_rational_15` | 0.0.2 | `el8.x86_64` | pigsty | 18.6 KiB | [pg_rational_15-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_15-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_rational_15` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_15-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_15-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rational_15` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_15-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_15-0.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_rational_15` | 0.0.2 | `el9.aarch64` | pigsty | 18.3 KiB | [pg_rational_15-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_15-0.0.2-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-rational` | 0.0.2 | `d12.x86_64` | pgdg | 24.2 KiB | [postgresql-15-rational_0.0.2-8.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg12+1_amd64.deb) |
 | `postgresql-15-rational` | 0.0.2 | `d12.aarch64` | pgdg | 23.9 KiB | [postgresql-15-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg12+1_arm64.deb) |
-| `postgresql-15-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-15-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-rational` | 0.0.2 | `u22.x86_64` | pgdg | 25.1 KiB | [postgresql-15-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-15-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.2 KiB | [postgresql-15-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.3 KiB | [postgresql-15-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-15-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_rational_14` | 0.0.2 | `el8.x86_64` | pigsty | 18.6 KiB | [pg_rational_14-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_14-0.0.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_rational_14` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_14-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_14-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_rational_14` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_14-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_14-0.0.2-1PIGSTY.el9.x86_64.rpm) |
@@ -131,35 +126,16 @@ bigint fractions
 | `postgresql-14-rational` | 0.0.2 | `d12.aarch64` | pgdg | 23.9 KiB | [postgresql-14-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg12+1_arm64.deb) |
 | `postgresql-14-rational` | 0.0.2 | `u22.x86_64` | pgdg | 25.0 KiB | [postgresql-14-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
 | `postgresql-14-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.6 KiB | [postgresql-14-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.2 KiB | [postgresql-14-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.1 KiB | [postgresql-14-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.2 KiB | [postgresql-14-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-14-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_rational_13` | 0.0.2 | `el8.aarch64` | pigsty | 18.0 KiB | [pg_rational_13-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_rational_13-0.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_rational_13` | 0.0.2 | `el8.x86_64` | pigsty | 18.4 KiB | [pg_rational_13-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_rational_13-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_rational_13` | 0.0.2 | `el9.aarch64` | pigsty | 18.4 KiB | [pg_rational_13-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_rational_13-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_rational_13` | 0.0.2 | `el9.x86_64` | pigsty | 18.7 KiB | [pg_rational_13-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_rational_13-0.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-rational` | 0.0.2 | `d12.aarch64` | pgdg | 24.0 KiB | [postgresql-13-rational_0.0.2-8.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg12+1_arm64.deb) |
-| `postgresql-13-rational` | 0.0.2 | `d12.x86_64` | pgdg | 23.9 KiB | [postgresql-13-rational_0.0.2-8.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg12+1_amd64.deb) |
-| `postgresql-13-rational` | 0.0.2 | `u22.aarch64` | pgdg | 24.5 KiB | [postgresql-13-rational_0.0.2-8.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-rational` | 0.0.2 | `u22.x86_64` | pgdg | 24.7 KiB | [postgresql-13-rational_0.0.2-8.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-rational` | 0.0.2 | `u24.x86_64` | pgdg | 24.0 KiB | [postgresql-13-rational_0.0.2-8.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-rational` | 0.0.2 | `u24.aarch64` | pgdg | 24.1 KiB | [postgresql-13-rational_0.0.2-8.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rational/postgresql-13-rational_0.0.2-8.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/begriffs/pg_rational" title="Repository" icon="github" subtitle="github.com/begriffs/pg_rational" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pg_rational-0.0.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_rational-0.0.2.tar.gz" >}}
 {{< /cards >}}
 
 

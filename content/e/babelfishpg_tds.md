@@ -3,22 +3,23 @@ title: "babelfishpg_tds"
 linkTitle: "babelfishpg_tds"
 description: "SQL Server TDS protocol extension"
 weight: 9320
-categories: ["Sim"]
+categories: ["SIM"]
 width: full
 ---
 
 SQL Server TDS protocol extension
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9320** | {{< badge content="babelfishpg_tds" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_tds" "babelfishpg_tds" >}} | `1.0.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9320** | {{< badge content="babelfishpg_tds" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_tds" >}} | `1.0.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -33,22 +34,22 @@ SQL Server TDS protocol extension
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< badge content="18" color="red" alt="babelfishpg-tds*" >}} {{< badge content="17" color="red" alt="babelfishpg-tds*" >}} {{< badge content="16" color="red" alt="babelfishpg-tds*" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-tds*" >}} | `babelfishpg-tds*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< badge content="18" color="red" alt="babelfishpg-tds" >}} {{< badge content="17" color="red" alt="babelfishpg-tds" >}} {{< badge content="16" color="red" alt="babelfishpg-tds" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-tds" >}} | `babelfishpg-tds` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds*" "red" >}} {{< bg "17" "babelfishpg-tds*" "red" >}} {{< bg "16" "babelfishpg-tds*" "red" >}} {{< bg "15" "babelfishpg-tds*" "green" >}} {{< bg "14" "babelfishpg-tds*" "red" >}} | `babelfishpg-tds*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "red" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "green" >}} {{< bg "14" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `el8.aarch64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `el9.x86_64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `el9.aarch64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `d12.x86_64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `d12.aarch64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `u22.x86_64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `u22.aarch64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `u24.x86_64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
-|    `u24.aarch64`    |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |    {{< pkg "babelfishpg-tds" >}}     |
+|    `el8.x86_64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tds : MISS 0" "red" >}}      |
 
 
 ## Source

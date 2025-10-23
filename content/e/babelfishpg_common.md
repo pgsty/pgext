@@ -3,22 +3,23 @@ title: "babelfishpg_common"
 linkTitle: "babelfishpg_common"
 description: "SQL Server Transact SQL Datatype Support"
 weight: 9300
-categories: ["Sim"]
+categories: ["SIM"]
 width: full
 ---
 
 SQL Server Transact SQL Datatype Support
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9300** | {{< badge content="babelfishpg_common" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_common" "babelfishpg_common" >}} | `3.3.3` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9300** | {{< badge content="babelfishpg_common" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_common" >}} | `3.3.3` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -33,22 +34,22 @@ SQL Server Transact SQL Datatype Support
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_common" >}} | `3.3.3` | {{< badge content="18" color="red" alt="babelfishpg-common*" >}} {{< badge content="17" color="red" alt="babelfishpg-common*" >}} {{< badge content="16" color="red" alt="babelfishpg-common*" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-common*" >}} | `babelfishpg-common*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_common" >}} | `3.3.3` | {{< badge content="18" color="red" alt="babelfishpg-common" >}} {{< badge content="17" color="red" alt="babelfishpg-common" >}} {{< badge content="16" color="red" alt="babelfishpg-common" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-common" >}} | `babelfishpg-common` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_common" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common*" "red" >}} {{< bg "17" "babelfishpg-common*" "red" >}} {{< bg "16" "babelfishpg-common*" "red" >}} {{< bg "15" "babelfishpg-common*" "green" >}} {{< bg "14" "babelfishpg-common*" "red" >}} | `babelfishpg-common*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_common" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "red" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "green" >}} {{< bg "14" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `el8.aarch64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `el9.x86_64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `el9.aarch64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `d12.x86_64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `d12.aarch64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `u22.x86_64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `u22.aarch64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `u24.x86_64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
-|    `u24.aarch64`    |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |    {{< pkg "babelfishpg-common" >}}     |
+|    `el8.x86_64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-common : MISS 0" "red" >}}      |
 
 
 ## Source

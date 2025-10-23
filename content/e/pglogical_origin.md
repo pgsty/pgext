@@ -3,11 +3,12 @@ title: "pglogical_origin"
 linkTitle: "pglogical_origin"
 description: "Dummy extension for compatibility when upgrading from Postgres 9.4"
 weight: 9501
-categories: ["Etl"]
+categories: ["ETL"]
 width: full
 ---
 
 Dummy extension for compatibility when upgrading from Postgres 9.4
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ Dummy extension for compatibility when upgrading from Postgres 9.4
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -31,155 +32,29 @@ Dummy extension for compatibility when upgrading from Postgres 9.4
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< badge content="18" color="red" alt="pglogical_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pglogical_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< badge content="18" color="red" alt="postgresql-18-pglogical" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pglogical` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< bg "18" "pglogical_18*" "red" >}} {{< bg "17" "pglogical_17*" "green" >}} {{< bg "16" "pglogical_16*" "green" >}} {{< bg "15" "pglogical_15*" "green" >}} {{< bg "14" "pglogical_14*" "green" >}} | `pglogical_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< bg "18" "postgresql-18-pglogical" "red" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "pglogical_18" "2.4.6" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pglogical_18-2.4.6-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pglogical_17" "2.4.5" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pglogical_17-2.4.5-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pglogical_16" "2.4.4" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pglogical_16-2.4.4-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pglogical_15" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pglogical_15-2.4.3-1.rhel8.x86_64.rpm" >}} | {{< pkg "pglogical_14" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pglogical_14-2.4.3-1.rhel8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "pglogical_18" "2.4.6" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pglogical_18-2.4.6-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pglogical_17" "2.4.5" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pglogical_17-2.4.5-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pglogical_16" "2.4.4" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pglogical_16-2.4.4-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pglogical_15" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pglogical_15-2.4.3-1.rhel8.aarch64.rpm" >}} | {{< pkg "pglogical_14" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pglogical_14-2.4.3-1.rhel8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "pglogical_18" "2.4.6" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pglogical_18-2.4.6-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pglogical_17" "2.4.5" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pglogical_17-2.4.5-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pglogical_16" "2.4.4" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pglogical_16-2.4.4-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pglogical_15" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pglogical_15-2.4.3-1.rhel9.x86_64.rpm" >}} | {{< pkg "pglogical_14" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pglogical_14-2.4.3-1.rhel9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "pglogical_18" "2.4.6" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pglogical_18-2.4.6-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pglogical_17" "2.4.5" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pglogical_17-2.4.5-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pglogical_16" "2.4.4" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pglogical_16-2.4.4-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pglogical_15" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pglogical_15-2.4.3-1.rhel9.aarch64.rpm" >}} | {{< pkg "pglogical_14" "2.4.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pglogical_14-2.4.3-1.rhel9.aarch64.rpm" >}} |
-|    `d12.x86_64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg12+1_amd64.deb" >}} |
-|    `d12.aarch64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg12+1_arm64.deb" >}} |
-|    `u22.x86_64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb" >}} |
-|    `u22.aarch64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb" >}} |
-|    `u24.x86_64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb" >}} |
-|    `u24.aarch64`    | {{< pkg "postgresql-18-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-pglogical" "2.4.6" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb" >}} |
+|    `el8.x86_64`    | {{< bg "PGDG 2.4.6" "pglogical_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.5" "pglogical_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.4" "pglogical_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_14 : AVAIL 4" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PGDG 2.4.6" "pglogical_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.5" "pglogical_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.4" "pglogical_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_14 : AVAIL 2" "blue" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 2.4.6" "pglogical_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.5" "pglogical_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.4" "pglogical_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_14 : AVAIL 3" "blue" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 2.4.6" "pglogical_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.5" "pglogical_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.4" "pglogical_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.4.3" "pglogical_14 : AVAIL 2" "blue" >}} |
+|    `d12.x86_64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
+|    `d12.aarch64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
+|    `u22.x86_64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
+|    `u22.aarch64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
+|    `u24.x86_64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
+|    `u24.aarch64`    | {{< bg "PGDG 2.4.6" "postgresql-18-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-17-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-16-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-15-pglogical : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.6" "postgresql-14-pglogical : AVAIL 1" "blue" >}} |
 
-
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_18` | 2.4.6 | `el8.x86_64` | pgdg | 154.6 KiB | [pglogical_18-2.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pglogical_18-2.4.6-1PGDG.rhel8.x86_64.rpm) |
-| `pglogical_18` | 2.4.6 | `el8.aarch64` | pgdg | 148.0 KiB | [pglogical_18-2.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pglogical_18-2.4.6-1PGDG.rhel8.aarch64.rpm) |
-| `pglogical_18` | 2.4.6 | `el9.aarch64` | pgdg | 143.1 KiB | [pglogical_18-2.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pglogical_18-2.4.6-1PGDG.rhel9.aarch64.rpm) |
-| `pglogical_18` | 2.4.6 | `el9.x86_64` | pgdg | 146.3 KiB | [pglogical_18-2.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pglogical_18-2.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `postgresql-18-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 344.8 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-18-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 335.8 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-18-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 344.9 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 355.8 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 343.4 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 334.2 KiB | [postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-18-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_17` | 2.4.5 | `el8.x86_64` | pgdg | 153.8 KiB | [pglogical_17-2.4.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pglogical_17-2.4.5-1PGDG.rhel8.x86_64.rpm) |
-| `pglogical_17` | 2.4.5 | `el8.aarch64` | pgdg | 147.2 KiB | [pglogical_17-2.4.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pglogical_17-2.4.5-1PGDG.rhel8.aarch64.rpm) |
-| `pglogical_17` | 2.4.5 | `el9.x86_64` | pgdg | 146.5 KiB | [pglogical_17-2.4.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pglogical_17-2.4.5-1PGDG.rhel9.x86_64.rpm) |
-| `pglogical_17` | 2.4.5 | `el9.aarch64` | pgdg | 143.5 KiB | [pglogical_17-2.4.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pglogical_17-2.4.5-1PGDG.rhel9.aarch64.rpm) |
-| `postgresql-17-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 334.8 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-17-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 344.7 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-17-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 432.4 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 420.8 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 333.7 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-| `postgresql-17-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 343.6 KiB | [postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-17-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_16` | 2.4.4 | `el8.x86_64` | pgdg | 152.1 KiB | [pglogical_16-2.4.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pglogical_16-2.4.4-1PGDG.rhel8.x86_64.rpm) |
-| `pglogical_16` | 2.4.4 | `el8.aarch64` | pgdg | 145.6 KiB | [pglogical_16-2.4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pglogical_16-2.4.4-1PGDG.rhel8.aarch64.rpm) |
-| `pglogical_16` | 2.4.4 | `el9.aarch64` | pgdg | 143.0 KiB | [pglogical_16-2.4.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pglogical_16-2.4.4-1PGDG.rhel9.aarch64.rpm) |
-| `pglogical_16` | 2.4.4 | `el9.x86_64` | pgdg | 146.1 KiB | [pglogical_16-2.4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pglogical_16-2.4.4-1PGDG.rhel9.x86_64.rpm) |
-| `postgresql-16-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 343.5 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-16-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 333.7 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-16-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 429.9 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 417.9 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 332.8 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-| `postgresql-16-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 342.4 KiB | [postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-16-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_15` | 2.4.3 | `el8.x86_64` | pgdg | 153.2 KiB | [pglogical_15-2.4.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pglogical_15-2.4.3-1.rhel8.x86_64.rpm) |
-| `pglogical_15` | 2.4.3 | `el8.aarch64` | pgdg | 146.4 KiB | [pglogical_15-2.4.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pglogical_15-2.4.3-1.rhel8.aarch64.rpm) |
-| `pglogical_15` | 2.4.2 | `el8.x86_64` | pgdg | 152.5 KiB | [pglogical_15-2.4.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pglogical_15-2.4.2-1.rhel8.x86_64.rpm) |
-| `pglogical_15` | 2.4.2 | `el8.aarch64` | pgdg | 145.6 KiB | [pglogical_15-2.4.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pglogical_15-2.4.2-1.rhel8.aarch64.rpm) |
-| `pglogical_15` | 2.4.3 | `el9.aarch64` | pgdg | 146.0 KiB | [pglogical_15-2.4.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pglogical_15-2.4.3-1.rhel9.aarch64.rpm) |
-| `pglogical_15` | 2.4.3 | `el9.x86_64` | pgdg | 150.6 KiB | [pglogical_15-2.4.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pglogical_15-2.4.3-1.rhel9.x86_64.rpm) |
-| `pglogical_15` | 2.4.2 | `el9.x86_64` | pgdg | 150.1 KiB | [pglogical_15-2.4.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pglogical_15-2.4.2-1.rhel9.x86_64.rpm) |
-| `pglogical_15` | 2.4.2 | `el9.aarch64` | pgdg | 146.1 KiB | [pglogical_15-2.4.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pglogical_15-2.4.2-1.rhel9.aarch64.rpm) |
-| `postgresql-15-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 335.2 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-15-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 346.2 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-15-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 435.7 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 423.9 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 346.3 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 335.3 KiB | [postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-15-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_14` | 2.4.3 | `el8.x86_64` | pgdg | 151.7 KiB | [pglogical_14-2.4.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pglogical_14-2.4.3-1.rhel8.x86_64.rpm) |
-| `pglogical_14` | 2.4.3 | `el8.aarch64` | pgdg | 145.3 KiB | [pglogical_14-2.4.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pglogical_14-2.4.3-1.rhel8.aarch64.rpm) |
-| `pglogical_14` | 2.4.2 | `el8.x86_64` | pgdg | 150.9 KiB | [pglogical_14-2.4.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pglogical_14-2.4.2-1.rhel8.x86_64.rpm) |
-| `pglogical_14` | 2.4.2 | `el8.aarch64` | pgdg | 144.6 KiB | [pglogical_14-2.4.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pglogical_14-2.4.2-1.rhel8.aarch64.rpm) |
-| `pglogical_14` | 2.4.1 | `el8.x86_64` | pgdg | 150.4 KiB | [pglogical_14-2.4.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pglogical_14-2.4.1-1.rhel8.x86_64.rpm) |
-| `pglogical_14` | 2.4.0 | `el8.x86_64` | pgdg | 149.9 KiB | [pglogical_14-2.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pglogical_14-2.4.0-1.rhel8.x86_64.rpm) |
-| `pglogical_14` | 2.4.3 | `el9.x86_64` | pgdg | 150.1 KiB | [pglogical_14-2.4.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pglogical_14-2.4.3-1.rhel9.x86_64.rpm) |
-| `pglogical_14` | 2.4.3 | `el9.aarch64` | pgdg | 145.6 KiB | [pglogical_14-2.4.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pglogical_14-2.4.3-1.rhel9.aarch64.rpm) |
-| `pglogical_14` | 2.4.2 | `el9.aarch64` | pgdg | 145.6 KiB | [pglogical_14-2.4.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pglogical_14-2.4.2-1.rhel9.aarch64.rpm) |
-| `pglogical_14` | 2.4.2 | `el9.x86_64` | pgdg | 150.1 KiB | [pglogical_14-2.4.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pglogical_14-2.4.2-1.rhel9.x86_64.rpm) |
-| `pglogical_14` | 2.4.1 | `el9.x86_64` | pgdg | 149.7 KiB | [pglogical_14-2.4.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pglogical_14-2.4.1-1.rhel9.x86_64.rpm) |
-| `postgresql-14-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 334.7 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-14-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 346.6 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-14-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 433.6 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 422.4 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 335.1 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-| `postgresql-14-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 345.9 KiB | [postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-14-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pglogical_13` | 2.4.3 | `el8.x86_64` | pgdg | 149.9 KiB | [pglogical_13-2.4.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pglogical_13-2.4.3-1.rhel8.x86_64.rpm) |
-| `pglogical_13` | 2.4.3 | `el8.aarch64` | pgdg | 145.2 KiB | [pglogical_13-2.4.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pglogical_13-2.4.3-1.rhel8.aarch64.rpm) |
-| `pglogical_13` | 2.4.2 | `el8.aarch64` | pgdg | 144.4 KiB | [pglogical_13-2.4.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pglogical_13-2.4.2-1.rhel8.aarch64.rpm) |
-| `pglogical_13` | 2.4.2 | `el8.x86_64` | pgdg | 149.1 KiB | [pglogical_13-2.4.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pglogical_13-2.4.2-1.rhel8.x86_64.rpm) |
-| `pglogical_13` | 2.4.1 | `el8.x86_64` | pgdg | 148.6 KiB | [pglogical_13-2.4.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pglogical_13-2.4.1-1.rhel8.x86_64.rpm) |
-| `pglogical_13` | 2.4.0 | `el8.x86_64` | pgdg | 147.9 KiB | [pglogical_13-2.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pglogical_13-2.4.0-1.rhel8.x86_64.rpm) |
-| `pglogical_13` | 2.3.4 | `el8.x86_64` | pgdg | 460.2 KiB | [pglogical_13-2.3.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pglogical_13-2.3.4-1.rhel8.x86_64.rpm) |
-| `pglogical_13` | 2.4.3 | `el9.aarch64` | pgdg | 145.6 KiB | [pglogical_13-2.4.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pglogical_13-2.4.3-1.rhel9.aarch64.rpm) |
-| `pglogical_13` | 2.4.3 | `el9.x86_64` | pgdg | 149.3 KiB | [pglogical_13-2.4.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pglogical_13-2.4.3-1.rhel9.x86_64.rpm) |
-| `pglogical_13` | 2.4.2 | `el9.aarch64` | pgdg | 145.5 KiB | [pglogical_13-2.4.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pglogical_13-2.4.2-1.rhel9.aarch64.rpm) |
-| `pglogical_13` | 2.4.2 | `el9.x86_64` | pgdg | 149.0 KiB | [pglogical_13-2.4.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pglogical_13-2.4.2-1.rhel9.x86_64.rpm) |
-| `pglogical_13` | 2.4.1 | `el9.x86_64` | pgdg | 149.0 KiB | [pglogical_13-2.4.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pglogical_13-2.4.1-1.rhel9.x86_64.rpm) |
-| `postgresql-13-pglogical` | 2.4.6 | `d12.aarch64` | pgdg | 334.0 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg12+1_arm64.deb) |
-| `postgresql-13-pglogical` | 2.4.6 | `d12.x86_64` | pgdg | 345.3 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg12+1_amd64.deb) |
-| `postgresql-13-pglogical` | 2.4.6 | `u22.aarch64` | pgdg | 419.2 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pglogical` | 2.4.6 | `u22.x86_64` | pgdg | 430.1 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pglogical` | 2.4.6 | `u24.x86_64` | pgdg | 345.1 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pglogical` | 2.4.6 | `u24.aarch64` | pgdg | 334.9 KiB | [postgresql-13-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pglogical/postgresql-13-pglogical_2.4.6-1.pgdg24.04+1_arm64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/2ndQuadrant/pglogical" title="Repository" icon="github" subtitle="github.com/2ndQuadrant/pglogical" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pglogical_ticker-1.4.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical_ticker-1.4.1.tar.gz" >}}
 {{< /cards >}}
 
 

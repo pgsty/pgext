@@ -1,0 +1,26 @@
+{{- /*
+A simplified badge shortcode wrapper with positional parameters only.
+
+Positional parameters:
+@param {string} 0 Text - the badge display text (required)
+@param {string} 1 Alt - the hover tooltip text (optional)
+@param {string} 2 Color - the badge color (optional, defaults to blue)
+
+@example {{< bg "PASS" >}}
+@example {{< bg "v1.2.3" "Version 1.2.3" >}}
+@example {{< bg "SUCCESS" "Operation completed successfully" "green" >}}
+*/ -}}
+
+{{- $text := .Get 0 | default "" -}}
+{{- $alt := .Get 1 | default $text -}}
+{{- $color := .Get 2 | default "blue" -}}
+
+{{- /* Render the badge using the badge partial */ -}}
+<span title="{{ $alt | plainify }}">
+  {{- partial "shortcodes/badge.html" (dict
+    "content" $text
+    "color" $color
+    "border" true
+    )
+  -}}
+</span>

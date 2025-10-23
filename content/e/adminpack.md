@@ -3,22 +3,23 @@ title: "adminpack"
 linkTitle: "adminpack"
 description: "administrative functions for PostgreSQL"
 weight: 5970
-categories: ["Admin"]
+categories: ["ADMIN"]
 width: full
 ---
 
 administrative functions for PostgreSQL
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5970** | {{< badge content="adminpack" link="https://www.postgresql.org/docs/current/adminpack.html" >}} | {{< ext "adminpack" "adminpack" >}} | `2.1` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5970** | {{< badge content="adminpack" link="https://www.postgresql.org/docs/16/adminpack.html" >}} | {{< ext "adminpack" >}} | `2.1` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,7 +31,7 @@ administrative functions for PostgreSQL
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< badge content="N/A" color="red" >}} | {{< badge content="N/A" color="red" >}} | {{< badge content="2.1" color="green" >}} | {{< badge content="2.1" color="green" >}} | {{< badge content="2.1" color="green" >}} |
+| {{< bg "N/A" "PostgreSQL 18: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "2.1" "PostgreSQL 16: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 15: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 14: version 2.1" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

@@ -3,11 +3,12 @@ title: "random"
 linkTitle: "random"
 description: "random data generator"
 weight: 4780
-categories: ["Func"]
+categories: ["FUNC"]
 width: full
 ---
 
 random data generator
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ random data generator
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ random data generator
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/random" >}} | `2.0.0` | {{< badge content="18" color="red" alt="pg_random_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_random_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/random" >}} | `2.0.0` | {{< badge content="18" color="red" alt="postgresql-18-random" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-random` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/random" >}} | `2.0.0` | {{< bg "18" "pg_random_18*" "red" >}} {{< bg "17" "pg_random_17*" "green" >}} {{< bg "16" "pg_random_16*" "green" >}} {{< bg "15" "pg_random_15*" "green" >}} {{< bg "14" "pg_random_14*" "green" >}} | `pg_random_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/random" >}} | `2.0.0` | {{< bg "18" "postgresql-18-random" "red" >}} {{< bg "17" "postgresql-17-random" "green" >}} {{< bg "16" "postgresql-16-random" "green" >}} {{< bg "15" "postgresql-15-random" "green" >}} {{< bg "14" "postgresql-14-random" "green" >}} | `postgresql-$v-random` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pg_random_18" >}}     | {{< pkg "pg_random_17" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_17-2.0.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_random_16" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_16-2.0.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_random_15" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_15-2.0.0-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_random_14" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_14-2.0.0-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pg_random_18" >}}     | {{< pkg "pg_random_17" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_17-2.0.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_random_16" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_16-2.0.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_random_15" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_15-2.0.0-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_random_14" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_14-2.0.0-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pg_random_18" >}}     | {{< pkg "pg_random_17" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_17-2.0.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_random_16" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_16-2.0.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_random_15" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_15-2.0.0-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_random_14" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_14-2.0.0-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pg_random_18" >}}     | {{< pkg "pg_random_17" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_17-2.0.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_random_16" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_16-2.0.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_random_15" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_15-2.0.0-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_random_14" "2.0.0" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_14-2.0.0-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-random" >}}     | {{< pkg "postgresql-17-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-random" "2.0.0" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_random_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "pg_random_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_random_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "pg_random_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_random_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "pg_random_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_random_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "pg_random_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "pg_random_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-random : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0.0" "postgresql-17-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-16-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-15-random : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.0" "postgresql-14-random : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_random_17` | 2.0.0 | `el8.x86_64` | pigsty | 16.7 KiB | [pg_random_17-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_17-2.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_random_17` | 2.0.0 | `el8.aarch64` | pigsty | 16.4 KiB | [pg_random_17-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_17-2.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_random_17` | 2.0.0 | `el9.aarch64` | pigsty | 16.8 KiB | [pg_random_17-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_17-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_random_17` | 2.0.0 | `el9.x86_64` | pigsty | 17.3 KiB | [pg_random_17-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_17-2.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_random_17` | 2.0.0 | `el9.aarch64` | pigsty | 16.8 KiB | [pg_random_17-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_17-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-random` | 2.0.0 | `d12.x86_64` | pigsty | 20.3 KiB | [postgresql-17-random_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-random` | 2.0.0 | `d12.aarch64` | pigsty | 20.0 KiB | [postgresql-17-random_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-random` | 2.0.0 | `u22.x86_64` | pigsty | 21.9 KiB | [postgresql-17-random_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ random data generator
 | `postgresql-17-random` | 2.0.0 | `u24.aarch64` | pigsty | 21.1 KiB | [postgresql-17-random_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-17-random_2.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_random_16` | 2.0.0 | `el8.x86_64` | pigsty | 16.7 KiB | [pg_random_16-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_16-2.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_random_16` | 2.0.0 | `el8.aarch64` | pigsty | 16.4 KiB | [pg_random_16-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_16-2.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_random_16` | 2.0.0 | `el9.x86_64` | pigsty | 17.3 KiB | [pg_random_16-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_16-2.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_random_16` | 2.0.0 | `el9.aarch64` | pigsty | 16.8 KiB | [pg_random_16-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_16-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-random` | 2.0.0 | `d12.x86_64` | pigsty | 20.3 KiB | [postgresql-16-random_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-random` | 2.0.0 | `d12.aarch64` | pigsty | 20.0 KiB | [postgresql-16-random_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-random` | 2.0.0 | `u22.aarch64` | pigsty | 21.4 KiB | [postgresql-16-random_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-random` | 2.0.0 | `u22.x86_64` | pigsty | 21.9 KiB | [postgresql-16-random_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-random` | 2.0.0 | `u22.aarch64` | pigsty | 21.4 KiB | [postgresql-16-random_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-random` | 2.0.0 | `u24.x86_64` | pigsty | 21.4 KiB | [postgresql-16-random_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-random` | 2.0.0 | `u24.aarch64` | pigsty | 21.1 KiB | [postgresql-16-random_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-16-random_2.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_random_15` | 2.0.0 | `el8.x86_64` | pigsty | 16.8 KiB | [pg_random_15-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_15-2.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_random_15` | 2.0.0 | `el8.aarch64` | pigsty | 16.5 KiB | [pg_random_15-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_15-2.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_random_15` | 2.0.0 | `el9.x86_64` | pigsty | 17.3 KiB | [pg_random_15-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_15-2.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_random_15` | 2.0.0 | `el9.aarch64` | pigsty | 16.9 KiB | [pg_random_15-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_15-2.0.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-random` | 2.0.0 | `d12.aarch64` | pigsty | 20.1 KiB | [postgresql-15-random_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-random` | 2.0.0 | `d12.x86_64` | pigsty | 20.3 KiB | [postgresql-15-random_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-random` | 2.0.0 | `u22.aarch64` | pigsty | 21.5 KiB | [postgresql-15-random_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-random` | 2.0.0 | `d12.aarch64` | pigsty | 20.1 KiB | [postgresql-15-random_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-random` | 2.0.0 | `u22.x86_64` | pigsty | 21.7 KiB | [postgresql-15-random_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-random` | 2.0.0 | `u22.aarch64` | pigsty | 21.5 KiB | [postgresql-15-random_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-random` | 2.0.0 | `u24.x86_64` | pigsty | 21.2 KiB | [postgresql-15-random_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-random` | 2.0.0 | `u24.aarch64` | pigsty | 21.1 KiB | [postgresql-15-random_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-15-random_2.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_random_14` | 2.0.0 | `el8.x86_64` | pigsty | 16.8 KiB | [pg_random_14-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_14-2.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_random_14` | 2.0.0 | `el8.aarch64` | pigsty | 16.5 KiB | [pg_random_14-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_14-2.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_random_14` | 2.0.0 | `el9.x86_64` | pigsty | 17.3 KiB | [pg_random_14-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_14-2.0.0-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ random data generator
 | `postgresql-14-random` | 2.0.0 | `u24.x86_64` | pigsty | 21.2 KiB | [postgresql-14-random_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-random` | 2.0.0 | `u24.aarch64` | pigsty | 21.0 KiB | [postgresql-14-random_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-14-random_2.0.0-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_random_13` | 2.0.0 | `el8.aarch64` | pigsty | 16.5 KiB | [pg_random_13-2.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_random_13-2.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_random_13` | 2.0.0 | `el8.x86_64` | pigsty | 16.6 KiB | [pg_random_13-2.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_random_13-2.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_random_13` | 2.0.0 | `el9.aarch64` | pigsty | 16.9 KiB | [pg_random_13-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_random_13-2.0.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_random_13` | 2.0.0 | `el9.x86_64` | pigsty | 17.3 KiB | [pg_random_13-2.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_random_13-2.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-random` | 2.0.0 | `d12.aarch64` | pigsty | 19.9 KiB | [postgresql-13-random_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-random` | 2.0.0 | `d12.x86_64` | pigsty | 20.3 KiB | [postgresql-13-random_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-random` | 2.0.0 | `u22.aarch64` | pigsty | 21.4 KiB | [postgresql-13-random_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-random` | 2.0.0 | `u22.x86_64` | pigsty | 21.7 KiB | [postgresql-13-random_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-random` | 2.0.0 | `u24.aarch64` | pigsty | 20.8 KiB | [postgresql-13-random_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-random` | 2.0.0 | `u24.x86_64` | pigsty | 21.3 KiB | [postgresql-13-random_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/random/postgresql-13-random_2.0.0-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tvondra/random" title="Repository" icon="github" subtitle="github.com/tvondra/random" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="random-2.0.0-dev.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="random-2.0.0-dev.tar.gz" >}}
 {{< /cards >}}
 
 

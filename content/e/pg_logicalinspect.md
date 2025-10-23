@@ -3,22 +3,23 @@ title: "pg_logicalinspect"
 linkTitle: "pg_logicalinspect"
 description: "Logical decoding components inspection"
 weight: 6890
-categories: ["Stat"]
+categories: ["STAT"]
 width: full
 ---
 
 Logical decoding components inspection
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6890** | {{< badge content="pg_logicalinspect" link="https://www.postgresql.org/docs/devel/pglogicalinspect.html" >}} | {{< ext "pg_logicalinspect" "pg_logicalinspect" >}} | `1.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6890** | {{< badge content="pg_logicalinspect" link="https://www.postgresql.org/docs/devel/pglogicalinspect.html" >}} | {{< ext "pg_logicalinspect" >}} | `1.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,7 +31,7 @@ Logical decoding components inspection
 
 | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< badge content="1.0" color="green" >}} | {{< badge content="N/A" color="red" >}} | {{< badge content="N/A" color="red" >}} | {{< badge content="N/A" color="red" >}} | {{< badge content="N/A" color="red" >}} |
+| {{< bg "1.0" "PostgreSQL 18: version 1.0" "green" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 16: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 15: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 14: not available" "red" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

@@ -3,11 +3,12 @@ title: "http"
 linkTitle: "http"
 description: "HTTP client for PostgreSQL, allows web page retrieval inside the database."
 weight: 4070
-categories: ["Util"]
+categories: ["UTIL"]
 width: full
 ---
 
 HTTP client for PostgreSQL, allows web page retrieval inside the database.
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ HTTP client for PostgreSQL, allows web page retrieval inside the database.
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,33 +31,31 @@ HTTP client for PostgreSQL, allows web page retrieval inside the database.
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pgsql_http_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-http` | - |
+| **EL** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< bg "18" "pgsql_http_18*" "green" >}} {{< bg "17" "pgsql_http_17*" "green" >}} {{< bg "16" "pgsql_http_16*" "green" >}} {{< bg "15" "pgsql_http_15*" "green" >}} {{< bg "14" "pgsql_http_14*" "green" >}} | `pgsql_http_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} | `postgresql-$v-http` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "pgsql_http_18" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgsql_http_18-1.7.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgsql_http_17" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.7.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgsql_http_16" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.7.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgsql_http_15" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.7.0-1PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "pgsql_http_14" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.7.0-1PGDG.rhel8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "pgsql_http_18" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgsql_http_18-1.7.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgsql_http_17" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgsql_http_16" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgsql_http_15" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "pgsql_http_14" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "pgsql_http_18" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgsql_http_18-1.7.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgsql_http_17" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsql_http_17-1.7.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgsql_http_16" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.7.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgsql_http_15" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.7.0-1PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "pgsql_http_14" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.7.0-1PGDG.rhel9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "pgsql_http_18" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgsql_http_18-1.7.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgsql_http_17" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgsql_http_16" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgsql_http_15" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "pgsql_http_14" "1.7.0" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel9.aarch64.rpm" >}} |
-|    `d12.x86_64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb" >}} |
-|    `d12.aarch64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb" >}} |
-|    `u22.x86_64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb" >}} |
-|    `u22.aarch64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb" >}} |
-|    `u24.x86_64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb" >}} |
-|    `u24.aarch64`    | {{< pkg "postgresql-18-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-17-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-16-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-15-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb" >}} | {{< pkg "postgresql-14-http" "1.7.0" "pgdg" "https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb" >}} |
+|    `el8.x86_64`    | {{< bg "PGDG 1.7.0" "pgsql_http_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_14 : AVAIL 5" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PGDG 1.7.0" "pgsql_http_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_14 : AVAIL 5" "blue" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 1.7.0" "pgsql_http_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_14 : AVAIL 5" "blue" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 1.7.0" "pgsql_http_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_16 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.7.0" "pgsql_http_14 : AVAIL 5" "blue" >}} |
+|    `d12.x86_64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
+|    `d12.aarch64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
+|    `u22.x86_64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
+|    `u22.aarch64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
+|    `u24.x86_64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
+|    `u24.aarch64`    | {{< bg "PGDG 1.7.0" "postgresql-18-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-16-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-15-http : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-14-http : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pgsql_http_18` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_18-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgsql_http_18-1.7.0-1PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgsql_http_18` | 1.7.0 | `el8.x86_64` | pgdg | 24.1 KiB | [pgsql_http_18-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgsql_http_18-1.7.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_18` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_18-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgsql_http_18-1.7.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_18` | 1.7.0 | `el9.x86_64` | pgdg | 25.1 KiB | [pgsql_http_18-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgsql_http_18-1.7.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgsql_http_18` | 1.7.0 | `el9.aarch64` | pgdg | 23.6 KiB | [pgsql_http_18-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgsql_http_18-1.7.0-1PGDG.rhel9.aarch64.rpm) |
 | `postgresql-18-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.5 KiB | [postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb) |
@@ -67,175 +66,136 @@ HTTP client for PostgreSQL, allows web page retrieval inside the database.
 | `postgresql-18-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.0 KiB | [postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgsql_http_17` | 1.7.0 | `el8.x86_64` | pgdg | 24.1 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.7.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_17` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.3 | `el8.x86_64` | pgdg | 23.2 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.6.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_17` | 1.6.3 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.6.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.2 | `el8.x86_64` | pgdg | 23.2 KiB | [pgsql_http_17-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.6.2-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_17` | 1.6.0 | `el8.x86_64` | pgdg | 22.8 KiB | [pgsql_http_17-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.6.0-2PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_17` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_17` | 1.6.3 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.6.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.2 | `el8.aarch64` | pgdg | 22.5 KiB | [pgsql_http_17-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.0 | `el8.aarch64` | pgdg | 22.1 KiB | [pgsql_http_17-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsql_http_17-1.6.0-2PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_17` | 1.6.0 | `el8.x86_64` | pgdg | 22.8 KiB | [pgsql_http_17-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsql_http_17-1.6.0-2PGDG.rhel8.x86_64.rpm) |
 | `pgsql_http_17` | 1.7.0 | `el9.x86_64` | pgdg | 25.2 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsql_http_17-1.7.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_17` | 1.7.0 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.3 | `el9.x86_64` | pgdg | 24.2 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsql_http_17-1.6.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_17` | 1.6.3 | `el9.aarch64` | pgdg | 22.9 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.2 | `el9.x86_64` | pgdg | 24.3 KiB | [pgsql_http_17-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsql_http_17-1.6.2-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_17` | 1.6.2 | `el9.aarch64` | pgdg | 23.0 KiB | [pgsql_http_17-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.0 | `el9.x86_64` | pgdg | 23.8 KiB | [pgsql_http_17-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsql_http_17-1.6.0-2PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_17` | 1.7.0 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_17-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_17` | 1.6.3 | `el9.aarch64` | pgdg | 22.9 KiB | [pgsql_http_17-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.6.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_17` | 1.6.2 | `el9.aarch64` | pgdg | 23.0 KiB | [pgsql_http_17-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_17` | 1.6.0 | `el9.aarch64` | pgdg | 22.4 KiB | [pgsql_http_17-1.6.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsql_http_17-1.6.0-2PGDG.rhel9.aarch64.rpm) |
 | `postgresql-17-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb) |
 | `postgresql-17-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.1 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u22.aarch64` | pgdg | 47.4 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-http` | 1.7.0 | `u22.x86_64` | pgdg | 48.9 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-http` | 1.7.0 | `u22.aarch64` | pgdg | 47.4 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-http` | 1.7.0 | `u24.x86_64` | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgsql_http_16` | 1.7.0 | `el8.x86_64` | pgdg | 24.1 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.7.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_16` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_16` | 1.6.3 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.3 | `el8.x86_64` | pgdg | 23.2 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.6.3-1PGDG.rhel8.x86_64.rpm) |
 | `pgsql_http_16` | 1.6.2 | `el8.x86_64` | pgdg | 23.2 KiB | [pgsql_http_16-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.6.2-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_16` | 1.6.2 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_16-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.2-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_16` | 1.6.0 | `el8.x86_64` | pgdg | 22.7 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.6.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_16` | 1.6.0 | `el8.aarch64` | pgdg | 21.9 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_16` | 1.6.0 | `el8.aarch64` | pgdg | 22.1 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.0-2PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.0 | `el8.x86_64` | pgdg | 22.8 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.6.0-2PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_16` | 1.6.0 | `el8.x86_64` | pgdg | 22.7 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsql_http_16-1.6.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_16` | 1.7.0 | `el8.aarch64` | pgdg | 23.2 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_16` | 1.6.3 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.3-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_16` | 1.6.2 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_16-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.2-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_16` | 1.6.0 | `el8.aarch64` | pgdg | 22.1 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.0-2PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_16` | 1.6.0 | `el8.aarch64` | pgdg | 21.9 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsql_http_16-1.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_16` | 1.7.0 | `el9.x86_64` | pgdg | 25.2 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.7.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_16` | 1.7.0 | `el9.aarch64` | pgdg | 23.6 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_16` | 1.6.3 | `el9.aarch64` | pgdg | 22.9 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.3 | `el9.x86_64` | pgdg | 24.2 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgsql_http_16` | 1.6.2 | `el9.x86_64` | pgdg | 24.3 KiB | [pgsql_http_16-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.2-1PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_16` | 1.6.0 | `el9.x86_64` | pgdg | 23.5 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_16` | 1.6.0 | `el9.x86_64` | pgdg | 23.7 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.0-2PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_16` | 1.7.0 | `el9.aarch64` | pgdg | 23.6 KiB | [pgsql_http_16-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_16` | 1.6.3 | `el9.aarch64` | pgdg | 22.9 KiB | [pgsql_http_16-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.2 | `el9.aarch64` | pgdg | 23.0 KiB | [pgsql_http_16-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.0 | `el9.aarch64` | pgdg | 22.2 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.6.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_16` | 1.6.0 | `el9.aarch64` | pgdg | 22.4 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsql_http_16-1.6.0-2PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_16` | 1.6.0 | `el9.x86_64` | pgdg | 23.5 KiB | [pgsql_http_16-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_16` | 1.6.0 | `el9.x86_64` | pgdg | 23.7 KiB | [pgsql_http_16-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsql_http_16-1.6.0-2PGDG.rhel9.x86_64.rpm) |
 | `postgresql-16-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.5 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb) |
 | `postgresql-16-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.1 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb) |
 | `postgresql-16-http` | 1.7.0 | `u22.x86_64` | pgdg | 48.9 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
 | `postgresql-16-http` | 1.7.0 | `u22.aarch64` | pgdg | 47.3 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-http` | 1.7.0 | `u24.x86_64` | pgdg | 44.6 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgsql_http_15` | 1.7.0 | `el8.x86_64` | pgdg | 24.4 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.7.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_15` | 1.7.0 | `el8.aarch64` | pgdg | 23.5 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.3 | `el8.x86_64` | pgdg | 23.3 KiB | [pgsql_http_15-1.6.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.3-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_15` | 1.6.2 | `el8.x86_64` | pgdg | 23.5 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.2-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_15` | 1.6.0 | `el8.x86_64` | pgdg | 22.9 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_15` | 1.6.0 | `el8.x86_64` | pgdg | 23.1 KiB | [pgsql_http_15-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.0-2PGDG.rhel8.x86_64.rpm) |
+| `pgsql_http_15` | 1.7.0 | `el8.aarch64` | pgdg | 23.5 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.3 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_15-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.6.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.2 | `el8.aarch64` | pgdg | 22.7 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.6.2-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_15` | 1.6.2 | `el8.x86_64` | pgdg | 23.5 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.2-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_15` | 1.6.0 | `el8.aarch64` | pgdg | 22.2 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.0 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_15-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.6.0-2PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_15` | 1.6.0 | `el8.x86_64` | pgdg | 23.1 KiB | [pgsql_http_15-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.0-2PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_15` | 1.6.0 | `el8.x86_64` | pgdg | 22.9 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsql_http_15-1.6.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_15` | 1.7.0 | `el9.aarch64` | pgdg | 23.8 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_15` | 1.6.0 | `el8.aarch64` | pgdg | 22.2 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsql_http_15-1.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_15` | 1.7.0 | `el9.x86_64` | pgdg | 25.5 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.7.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgsql_http_15` | 1.6.3 | `el9.x86_64` | pgdg | 24.4 KiB | [pgsql_http_15-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.6.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_15` | 1.6.3 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_15-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.2 | `el9.x86_64` | pgdg | 24.7 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.6.2-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_15` | 1.6.2 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.0 | `el9.x86_64` | pgdg | 24.1 KiB | [pgsql_http_15-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.6.0-2PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_15` | 1.6.0 | `el9.x86_64` | pgdg | 23.9 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.6.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_15` | 1.7.0 | `el9.aarch64` | pgdg | 23.8 KiB | [pgsql_http_15-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_15` | 1.6.3 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_15-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_15` | 1.6.2 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_15-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.0 | `el9.aarch64` | pgdg | 22.8 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_15` | 1.6.0 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_15-1.6.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsql_http_15-1.6.0-2PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_15` | 1.6.0 | `el9.x86_64` | pgdg | 23.9 KiB | [pgsql_http_15-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsql_http_15-1.6.0-1PGDG.rhel9.x86_64.rpm) |
 | `postgresql-15-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.4 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb) |
 | `postgresql-15-http` | 1.7.0 | `d12.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb) |
 | `postgresql-15-http` | 1.7.0 | `u22.x86_64` | pgdg | 50.0 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
 | `postgresql-15-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.1 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-http` | 1.7.0 | `u24.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.5 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-http` | 1.7.0 | `u24.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pgsql_http_14` | 1.7.0 | `el8.aarch64` | pgdg | 23.5 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgsql_http_14` | 1.7.0 | `el8.x86_64` | pgdg | 24.4 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.7.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgsql_http_14` | 1.6.3 | `el8.x86_64` | pgdg | 23.3 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.6.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.3 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.2 | `el8.x86_64` | pgdg | 23.5 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.6.2-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.2 | `el8.aarch64` | pgdg | 22.7 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.0 | `el8.x86_64` | pgdg | 22.9 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.6.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgsql_http_14` | 1.6.0 | `el8.x86_64` | pgdg | 23.0 KiB | [pgsql_http_14-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsql_http_14-1.6.0-2PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.0 | `el8.aarch64` | pgdg | 22.2 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_14` | 1.7.0 | `el8.aarch64` | pgdg | 23.5 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.3 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.3-1PGDG.rhel8.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.2 | `el8.aarch64` | pgdg | 22.7 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.0 | `el8.aarch64` | pgdg | 22.3 KiB | [pgsql_http_14-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.0-2PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_14` | 1.7.0 | `el9.aarch64` | pgdg | 23.8 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.0 | `el8.aarch64` | pgdg | 22.2 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsql_http_14-1.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgsql_http_14` | 1.7.0 | `el9.x86_64` | pgdg | 25.5 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.7.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.3 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.3 | `el9.x86_64` | pgdg | 24.4 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.6.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.2 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.2-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.2 | `el9.x86_64` | pgdg | 24.7 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.6.2-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_14` | 1.6.0 | `el9.aarch64` | pgdg | 22.8 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_14` | 1.6.0 | `el9.x86_64` | pgdg | 23.9 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.6.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgsql_http_14` | 1.6.0 | `el9.x86_64` | pgdg | 24.1 KiB | [pgsql_http_14-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.6.0-2PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_14` | 1.6.0 | `el9.x86_64` | pgdg | 23.9 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsql_http_14-1.6.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgsql_http_14` | 1.7.0 | `el9.aarch64` | pgdg | 23.8 KiB | [pgsql_http_14-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.3 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_14-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.2 | `el9.aarch64` | pgdg | 23.7 KiB | [pgsql_http_14-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.2-1PGDG.rhel9.aarch64.rpm) |
+| `pgsql_http_14` | 1.6.0 | `el9.aarch64` | pgdg | 22.8 KiB | [pgsql_http_14-1.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgsql_http_14` | 1.6.0 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_14-1.6.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsql_http_14-1.6.0-2PGDG.rhel9.aarch64.rpm) |
 | `postgresql-14-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb) |
 | `postgresql-14-http` | 1.7.0 | `d12.aarch64` | pgdg | 44.0 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-14-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.1 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-http` | 1.7.0 | `u22.x86_64` | pgdg | 50.0 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.1 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.6 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-http` | 1.7.0 | `u24.aarch64` | pgdg | 44.1 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pgsql_http_13` | 1.7.0 | `el8.aarch64` | pgdg | 23.4 KiB | [pgsql_http_13-1.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsql_http_13-1.7.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_13` | 1.7.0 | `el8.x86_64` | pgdg | 24.0 KiB | [pgsql_http_13-1.7.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsql_http_13-1.7.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.3 | `el8.x86_64` | pgdg | 23.0 KiB | [pgsql_http_13-1.6.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsql_http_13-1.6.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.3 | `el8.aarch64` | pgdg | 22.4 KiB | [pgsql_http_13-1.6.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsql_http_13-1.6.3-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.2 | `el8.x86_64` | pgdg | 23.1 KiB | [pgsql_http_13-1.6.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsql_http_13-1.6.2-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.2 | `el8.aarch64` | pgdg | 22.6 KiB | [pgsql_http_13-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsql_http_13-1.6.2-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el8.aarch64` | pgdg | 22.1 KiB | [pgsql_http_13-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsql_http_13-1.6.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el8.x86_64` | pgdg | 22.5 KiB | [pgsql_http_13-1.6.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsql_http_13-1.6.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el8.aarch64` | pgdg | 22.2 KiB | [pgsql_http_13-1.6.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsql_http_13-1.6.0-2PGDG.rhel8.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el8.x86_64` | pgdg | 22.6 KiB | [pgsql_http_13-1.6.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsql_http_13-1.6.0-2PGDG.rhel8.x86_64.rpm) |
-| `pgsql_http_13` | 1.7.0 | `el9.aarch64` | pgdg | 24.3 KiB | [pgsql_http_13-1.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsql_http_13-1.7.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_13` | 1.7.0 | `el9.x86_64` | pgdg | 25.4 KiB | [pgsql_http_13-1.7.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsql_http_13-1.7.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.3 | `el9.aarch64` | pgdg | 23.3 KiB | [pgsql_http_13-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsql_http_13-1.6.3-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.3 | `el9.x86_64` | pgdg | 24.3 KiB | [pgsql_http_13-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsql_http_13-1.6.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.2 | `el9.aarch64` | pgdg | 23.6 KiB | [pgsql_http_13-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsql_http_13-1.6.2-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.2 | `el9.x86_64` | pgdg | 24.5 KiB | [pgsql_http_13-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsql_http_13-1.6.2-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el9.x86_64` | pgdg | 23.7 KiB | [pgsql_http_13-1.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsql_http_13-1.6.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el9.aarch64` | pgdg | 23.1 KiB | [pgsql_http_13-1.6.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsql_http_13-1.6.0-2PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el9.aarch64` | pgdg | 22.7 KiB | [pgsql_http_13-1.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsql_http_13-1.6.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsql_http_13` | 1.6.0 | `el9.x86_64` | pgdg | 23.9 KiB | [pgsql_http_13-1.6.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsql_http_13-1.6.0-2PGDG.rhel9.x86_64.rpm) |
-| `postgresql-13-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.9 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.3 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u22.x86_64` | pgdg | 49.6 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.7 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.4 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pramsey/pgsql-http" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-http" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pgsql-http-1.6.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-http-1.6.3.tar.gz" >}}
 {{< /cards >}}
 
 

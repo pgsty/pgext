@@ -3,22 +3,23 @@ title: "babelfishpg_tsql"
 linkTitle: "babelfishpg_tsql"
 description: "SQL Server Transact SQL compatibility"
 weight: 9310
-categories: ["Sim"]
+categories: ["SIM"]
 width: full
 ---
 
 SQL Server Transact SQL compatibility
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9310** | {{< badge content="babelfishpg_tsql" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_tsql" "babelfishpg_tsql" >}} | `3.3.1` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9310** | {{< badge content="babelfishpg_tsql" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_tsql" >}} | `3.3.1` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -34,22 +35,22 @@ SQL Server Transact SQL compatibility
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_tsql" >}} | `3.3.1` | {{< badge content="18" color="red" alt="babelfishpg-tsql*" >}} {{< badge content="17" color="red" alt="babelfishpg-tsql*" >}} {{< badge content="16" color="red" alt="babelfishpg-tsql*" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-tsql*" >}} | `babelfishpg-tsql*` | `babelfishpg-common`, `libantlr4-runtime` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_tsql" >}} | `3.3.1` | {{< badge content="18" color="red" alt="babelfishpg-tsql" >}} {{< badge content="17" color="red" alt="babelfishpg-tsql" >}} {{< badge content="16" color="red" alt="babelfishpg-tsql" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="red" alt="babelfishpg-tsql" >}} | `babelfishpg-tsql` | `babelfishpg-common`, `libantlr4-runtime4.9.3` |
+| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_tsql" >}} | `3.3.1` | {{< bg "18" "babelfishpg-tsql*" "red" >}} {{< bg "17" "babelfishpg-tsql*" "red" >}} {{< bg "16" "babelfishpg-tsql*" "red" >}} {{< bg "15" "babelfishpg-tsql*" "green" >}} {{< bg "14" "babelfishpg-tsql*" "red" >}} | `babelfishpg-tsql*` | `babelfishpg-common`, `libantlr4-runtime` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_tsql" >}} | `3.3.1` | {{< bg "18" "babelfishpg-tsql" "red" >}} {{< bg "17" "babelfishpg-tsql" "red" >}} {{< bg "16" "babelfishpg-tsql" "red" >}} {{< bg "15" "babelfishpg-tsql" "green" >}} {{< bg "14" "babelfishpg-tsql" "red" >}} | `babelfishpg-tsql` | `babelfishpg-common`, `libantlr4-runtime4.9.3` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `el8.aarch64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `el9.x86_64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `el9.aarch64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `d12.x86_64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `d12.aarch64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `u22.x86_64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `u22.aarch64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `u24.x86_64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
-|    `u24.aarch64`    |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |    {{< pkg "babelfishpg-tsql" >}}     |
+|    `el8.x86_64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |      {{< bg "MISS" "babelfishpg-tsql : MISS 0" "red" >}}      |
 
 
 ## Source

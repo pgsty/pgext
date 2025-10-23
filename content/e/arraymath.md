@@ -3,11 +3,12 @@ title: "arraymath"
 linkTitle: "arraymath"
 description: "Array math and operators that work element by element on the contents of arrays"
 weight: 4760
-categories: ["Func"]
+categories: ["FUNC"]
 width: full
 ---
 
 Array math and operators that work element by element on the contents of arrays
+
 
 ## Overview
 
@@ -18,7 +19,7 @@ Array math and operators that work element by element on the contents of arrays
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ Array math and operators that work element by element on the contents of arrays
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/arraymath" >}} | `1.1` | {{< badge content="18" color="red" alt="pg_arraymath_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `pg_arraymath_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/arraymath" >}} | `1.1` | {{< badge content="18" color="red" alt="postgresql-18-pg-arraymath" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-pg-arraymath` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/arraymath" >}} | `1.1` | {{< bg "18" "pg_arraymath_18*" "red" >}} {{< bg "17" "pg_arraymath_17*" "green" >}} {{< bg "16" "pg_arraymath_16*" "green" >}} {{< bg "15" "pg_arraymath_15*" "green" >}} {{< bg "14" "pg_arraymath_14*" "green" >}} | `pg_arraymath_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/arraymath" >}} | `1.1` | {{< bg "18" "postgresql-18-pg-arraymath" "red" >}} {{< bg "17" "postgresql-17-pg-arraymath" "green" >}} {{< bg "16" "postgresql-16-pg-arraymath" "green" >}} {{< bg "15" "postgresql-15-pg-arraymath" "green" >}} {{< bg "14" "postgresql-14-pg-arraymath" "green" >}} | `postgresql-$v-pg-arraymath` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "pg_arraymath_18" >}}     | {{< pkg "pg_arraymath_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_17-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_arraymath_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_16-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_arraymath_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_15-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "pg_arraymath_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_14-1.1-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "pg_arraymath_18" >}}     | {{< pkg "pg_arraymath_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_17-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_arraymath_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_16-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_arraymath_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_15-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "pg_arraymath_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_14-1.1-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "pg_arraymath_18" >}}     | {{< pkg "pg_arraymath_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_17-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_arraymath_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_16-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_arraymath_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_15-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "pg_arraymath_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_14-1.1-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "pg_arraymath_18" >}}     | {{< pkg "pg_arraymath_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_17-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_arraymath_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_16-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_arraymath_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_15-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "pg_arraymath_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_14-1.1-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-pg-arraymath" >}}     | {{< pkg "postgresql-17-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-pg-arraymath" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_arraymath_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "pg_arraymath_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_arraymath_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "pg_arraymath_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_arraymath_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "pg_arraymath_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_arraymath_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "pg_arraymath_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "pg_arraymath_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-arraymath : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-pg-arraymath : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-pg-arraymath : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_arraymath_17` | 1.1 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_arraymath_17-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_17-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_arraymath_17` | 1.1 | `el8.aarch64` | pigsty | 18.7 KiB | [pg_arraymath_17-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_17-1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_arraymath_17` | 1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_arraymath_17-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_17-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_arraymath_17` | 1.1 | `el9.x86_64` | pigsty | 19.5 KiB | [pg_arraymath_17-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_17-1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_arraymath_17` | 1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_arraymath_17-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_17-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pg-arraymath` | 1.1 | `d12.x86_64` | pigsty | 26.3 KiB | [postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-arraymath` | 1.1 | `d12.aarch64` | pigsty | 26.3 KiB | [postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-arraymath` | 1.1 | `u22.x86_64` | pigsty | 27.9 KiB | [postgresql-17-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ Array math and operators that work element by element on the contents of arrays
 | `postgresql-17-pg-arraymath` | 1.1 | `u24.aarch64` | pigsty | 26.4 KiB | [postgresql-17-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-17-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_arraymath_16` | 1.1 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_arraymath_16-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_16-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_arraymath_16` | 1.1 | `el8.aarch64` | pigsty | 18.7 KiB | [pg_arraymath_16-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_16-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_arraymath_16` | 1.1 | `el9.x86_64` | pigsty | 19.5 KiB | [pg_arraymath_16-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_16-1.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_arraymath_16` | 1.1 | `el9.aarch64` | pigsty | 18.9 KiB | [pg_arraymath_16-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_16-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-pg-arraymath` | 1.1 | `d12.x86_64` | pigsty | 26.3 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-arraymath` | 1.1 | `d12.aarch64` | pigsty | 26.3 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-arraymath` | 1.1 | `u22.aarch64` | pigsty | 27.6 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-arraymath` | 1.1 | `u22.x86_64` | pigsty | 27.9 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-arraymath` | 1.1 | `u22.aarch64` | pigsty | 27.6 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-arraymath` | 1.1 | `u24.x86_64` | pigsty | 26.5 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-arraymath` | 1.1 | `u24.aarch64` | pigsty | 26.4 KiB | [postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-16-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_arraymath_15` | 1.1 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_arraymath_15-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_15-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_arraymath_15` | 1.1 | `el8.aarch64` | pigsty | 18.6 KiB | [pg_arraymath_15-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_15-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_arraymath_15` | 1.1 | `el9.x86_64` | pigsty | 19.5 KiB | [pg_arraymath_15-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_15-1.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_arraymath_15` | 1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_arraymath_15-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_15-1.1-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-pg-arraymath` | 1.1 | `d12.aarch64` | pigsty | 25.9 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-arraymath` | 1.1 | `d12.x86_64` | pigsty | 26.1 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-arraymath` | 1.1 | `u22.aarch64` | pigsty | 27.3 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-arraymath` | 1.1 | `d12.aarch64` | pigsty | 25.9 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-arraymath` | 1.1 | `u22.x86_64` | pigsty | 27.5 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-arraymath` | 1.1 | `u22.aarch64` | pigsty | 27.3 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-arraymath` | 1.1 | `u24.x86_64` | pigsty | 26.2 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-arraymath` | 1.1 | `u24.aarch64` | pigsty | 26.1 KiB | [postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-15-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_arraymath_14` | 1.1 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_arraymath_14-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_14-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_arraymath_14` | 1.1 | `el8.aarch64` | pigsty | 18.6 KiB | [pg_arraymath_14-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_14-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_arraymath_14` | 1.1 | `el9.x86_64` | pigsty | 19.4 KiB | [pg_arraymath_14-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_14-1.1-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ Array math and operators that work element by element on the contents of arrays
 | `postgresql-14-pg-arraymath` | 1.1 | `u24.x86_64` | pigsty | 26.1 KiB | [postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-arraymath` | 1.1 | `u24.aarch64` | pigsty | 26.1 KiB | [postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-14-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `pg_arraymath_13` | 1.1 | `el8.aarch64` | pigsty | 18.5 KiB | [pg_arraymath_13-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_arraymath_13-1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_arraymath_13` | 1.1 | `el8.x86_64` | pigsty | 18.7 KiB | [pg_arraymath_13-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_arraymath_13-1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_arraymath_13` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [pg_arraymath_13-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_arraymath_13-1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_arraymath_13` | 1.1 | `el9.x86_64` | pigsty | 19.4 KiB | [pg_arraymath_13-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_arraymath_13-1.1-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-pg-arraymath` | 1.1 | `d12.aarch64` | pigsty | 25.3 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pg-arraymath` | 1.1 | `d12.x86_64` | pigsty | 25.8 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pg-arraymath` | 1.1 | `u22.aarch64` | pigsty | 26.6 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pg-arraymath` | 1.1 | `u22.x86_64` | pigsty | 27.2 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pg-arraymath` | 1.1 | `u24.aarch64` | pigsty | 25.4 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-pg-arraymath` | 1.1 | `u24.x86_64` | pigsty | 26.0 KiB | [postgresql-13-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-arraymath/postgresql-13-pg-arraymath_1.1-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pramsey/pgsql-arraymath" title="Repository" icon="github" subtitle="github.com/pramsey/pgsql-arraymath" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="pgsql-arraymath-1.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsql-arraymath-1.1.tar.gz" >}}
 {{< /cards >}}
 
 

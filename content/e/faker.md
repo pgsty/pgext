@@ -3,22 +3,23 @@ title: "faker"
 linkTitle: "faker"
 description: "Wrapper for the Faker Python library"
 weight: 3210
-categories: ["Lang"]
+categories: ["LANG"]
 width: full
 ---
 
 Wrapper for the Faker Python library
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3210** | {{< badge content="faker" link="https://github.com/anpandu/postgresql_faker" >}} | {{< ext "faker" "faker" >}} | `0.5.3` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **3210** | {{< badge content="faker" link="https://github.com/anpandu/postgresql_faker" >}} | {{< ext "faker" >}} | `0.5.3` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,98 +31,76 @@ Wrapper for the Faker Python library
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/faker" >}} | `0.5.3` | {{< badge content="18" color="red" alt="postgresql_faker_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql_faker_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/faker" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18*" "red" >}} {{< bg "17" "postgresql_faker_17*" "green" >}} {{< bg "16" "postgresql_faker_16*" "green" >}} {{< bg "15" "postgresql_faker_15*" "green" >}} {{< bg "14" "postgresql_faker_14*" "green" >}} | `postgresql_faker_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< pkg "postgresql_faker_18" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/postgresql_faker_18-0.5.3-7PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "postgresql_faker_17" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/postgresql_faker_17-0.5.3-6PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "postgresql_faker_16" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/postgresql_faker_16-0.5.3-3PGDG.rhel8.x86_64.rpm" >}} | {{< pkg "postgresql_faker_15" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/postgresql_faker_15-0.5.3-1.rhel8.x86_64.rpm" >}} | {{< pkg "postgresql_faker_14" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/postgresql_faker_14-0.5.3-1.rhel8.x86_64.rpm" >}} |
-|    `el8.aarch64`    | {{< pkg "postgresql_faker_18" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "postgresql_faker_17" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/postgresql_faker_17-0.5.3-6PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "postgresql_faker_16" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/postgresql_faker_16-0.5.3-3PGDG.rhel8.aarch64.rpm" >}} | {{< pkg "postgresql_faker_15" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/postgresql_faker_15-0.5.3-1.rhel8.aarch64.rpm" >}} | {{< pkg "postgresql_faker_14" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/postgresql_faker_14-0.5.3-1.rhel8.aarch64.rpm" >}} |
-|    `el9.x86_64`    | {{< pkg "postgresql_faker_18" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgresql_faker_18-0.5.3-7PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "postgresql_faker_17" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgresql_faker_17-0.5.3-6PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "postgresql_faker_16" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgresql_faker_16-0.5.3-3PGDG.rhel9.x86_64.rpm" >}} | {{< pkg "postgresql_faker_15" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/postgresql_faker_15-0.5.3-1.rhel9.x86_64.rpm" >}} | {{< pkg "postgresql_faker_14" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgresql_faker_14-0.5.3-1.rhel9.x86_64.rpm" >}} |
-|    `el9.aarch64`    | {{< pkg "postgresql_faker_18" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "postgresql_faker_17" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/postgresql_faker_17-0.5.3-6PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "postgresql_faker_16" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/postgresql_faker_16-0.5.3-3PGDG.rhel9.aarch64.rpm" >}} | {{< pkg "postgresql_faker_15" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/postgresql_faker_15-0.5.3-1.rhel9.aarch64.rpm" >}} | {{< pkg "postgresql_faker_14" "0.5.3" "pgdg" "https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/postgresql_faker_14-0.5.3-1.rhel9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
-|    `d12.aarch64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
-|    `u22.x86_64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
-|    `u22.aarch64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
-|    `u24.x86_64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
-|    `u24.aarch64`    |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |    {{< pkg "None" >}}     |
+|    `el8.x86_64`    |  {{< bg "PGDG 0.5.3" "postgresql_faker_18 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_17 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_16 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_15 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_14 : HIDE 2" >}}   |
+|    `el8.aarch64`    |  {{< bg "PGDG 0.5.3" "postgresql_faker_18 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_17 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_16 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_15 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_14 : HIDE 1" >}}   |
+|    `el9.x86_64`    |  {{< bg "PGDG 0.5.3" "postgresql_faker_18 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_17 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_16 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_15 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_14 : HIDE 2" >}}   |
+|    `el9.aarch64`    |  {{< bg "PGDG 0.5.3" "postgresql_faker_18 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_17 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_16 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_15 : HIDE 1" >}}   |  {{< bg "PGDG 0.5.3" "postgresql_faker_14 : HIDE 1" >}}   |
+|    `d12.x86_64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
+|    `d12.aarch64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
+|    `u22.x86_64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
+|    `u22.aarch64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
+|    `u24.x86_64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
+|    `u24.aarch64`    |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |  {{< bg "MISS" "faker : HIDE 0" >}}   |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `postgresql_faker_18` | 0.5.3 | `el8.aarch64` | pgdg | 46.1 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgresql_faker_18` | 0.5.3 | `el8.x86_64` | pgdg | 46.0 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/postgresql_faker_18-0.5.3-7PGDG.rhel8.x86_64.rpm) |
+| `postgresql_faker_18` | 0.5.3 | `el8.aarch64` | pgdg | 46.1 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel8.aarch64.rpm) |
 | `postgresql_faker_18` | 0.5.3 | `el9.x86_64` | pgdg | 44.0 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/postgresql_faker_18-0.5.3-7PGDG.rhel9.x86_64.rpm) |
 | `postgresql_faker_18` | 0.5.3 | `el9.aarch64` | pgdg | 43.8 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel9.aarch64.rpm) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgresql_faker_17` | 0.5.3 | `el8.x86_64` | pgdg | 45.9 KiB | [postgresql_faker_17-0.5.3-6PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/postgresql_faker_17-0.5.3-6PGDG.rhel8.x86_64.rpm) |
 | `postgresql_faker_17` | 0.5.3 | `el8.aarch64` | pgdg | 46.0 KiB | [postgresql_faker_17-0.5.3-6PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/postgresql_faker_17-0.5.3-6PGDG.rhel8.aarch64.rpm) |
 | `postgresql_faker_17` | 0.5.3 | `el9.x86_64` | pgdg | 44.2 KiB | [postgresql_faker_17-0.5.3-6PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/postgresql_faker_17-0.5.3-6PGDG.rhel9.x86_64.rpm) |
 | `postgresql_faker_17` | 0.5.3 | `el9.aarch64` | pgdg | 44.1 KiB | [postgresql_faker_17-0.5.3-6PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/postgresql_faker_17-0.5.3-6PGDG.rhel9.aarch64.rpm) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `postgresql_faker_16` | 0.5.3 | `el8.aarch64` | pgdg | 45.6 KiB | [postgresql_faker_16-0.5.3-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/postgresql_faker_16-0.5.3-3PGDG.rhel8.aarch64.rpm) |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgresql_faker_16` | 0.5.3 | `el8.x86_64` | pgdg | 45.4 KiB | [postgresql_faker_16-0.5.3-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/postgresql_faker_16-0.5.3-3PGDG.rhel8.x86_64.rpm) |
+| `postgresql_faker_16` | 0.5.3 | `el8.aarch64` | pgdg | 45.6 KiB | [postgresql_faker_16-0.5.3-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/postgresql_faker_16-0.5.3-3PGDG.rhel8.aarch64.rpm) |
 | `postgresql_faker_16` | 0.5.3 | `el9.x86_64` | pgdg | 44.1 KiB | [postgresql_faker_16-0.5.3-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/postgresql_faker_16-0.5.3-3PGDG.rhel9.x86_64.rpm) |
 | `postgresql_faker_16` | 0.5.3 | `el9.aarch64` | pgdg | 44.1 KiB | [postgresql_faker_16-0.5.3-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/postgresql_faker_16-0.5.3-3PGDG.rhel9.aarch64.rpm) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgresql_faker_15` | 0.5.3 | `el8.x86_64` | pgdg | 49.6 KiB | [postgresql_faker_15-0.5.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/postgresql_faker_15-0.5.3-1.rhel8.x86_64.rpm) |
 | `postgresql_faker_15` | 0.5.3 | `el8.aarch64` | pgdg | 49.8 KiB | [postgresql_faker_15-0.5.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/postgresql_faker_15-0.5.3-1.rhel8.aarch64.rpm) |
-| `postgresql_faker_15` | 0.5.3 | `el9.aarch64` | pgdg | 48.5 KiB | [postgresql_faker_15-0.5.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/postgresql_faker_15-0.5.3-1.rhel9.aarch64.rpm) |
 | `postgresql_faker_15` | 0.5.3 | `el9.x86_64` | pgdg | 48.6 KiB | [postgresql_faker_15-0.5.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/postgresql_faker_15-0.5.3-1.rhel9.x86_64.rpm) |
+| `postgresql_faker_15` | 0.5.3 | `el9.aarch64` | pgdg | 48.5 KiB | [postgresql_faker_15-0.5.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/postgresql_faker_15-0.5.3-1.rhel9.aarch64.rpm) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgresql_faker_14` | 0.5.3 | `el8.x86_64` | pgdg | 49.9 KiB | [postgresql_faker_14-0.5.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/postgresql_faker_14-0.5.3-1.rhel8.x86_64.rpm) |
-| `postgresql_faker_14` | 0.5.3 | `el8.aarch64` | pgdg | 49.8 KiB | [postgresql_faker_14-0.5.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/postgresql_faker_14-0.5.3-1.rhel8.aarch64.rpm) |
 | `postgresql_faker_14` | 0.4.0 | `el8.x86_64` | pgdg | 37.7 KiB | [postgresql_faker_14-0.4.0-1.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/postgresql_faker_14-0.4.0-1.rhel8.noarch.rpm) |
+| `postgresql_faker_14` | 0.5.3 | `el8.aarch64` | pgdg | 49.8 KiB | [postgresql_faker_14-0.5.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/postgresql_faker_14-0.5.3-1.rhel8.aarch64.rpm) |
 | `postgresql_faker_14` | 0.5.3 | `el9.x86_64` | pgdg | 48.6 KiB | [postgresql_faker_14-0.5.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgresql_faker_14-0.5.3-1.rhel9.x86_64.rpm) |
-| `postgresql_faker_14` | 0.5.3 | `el9.aarch64` | pgdg | 48.5 KiB | [postgresql_faker_14-0.5.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/postgresql_faker_14-0.5.3-1.rhel9.aarch64.rpm) |
 | `postgresql_faker_14` | 0.5.3 | `el9.x86_64` | pgdg | 47.9 KiB | [postgresql_faker_14-0.5.3-1.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/postgresql_faker_14-0.5.3-1.rhel9.noarch.rpm) |
+| `postgresql_faker_14` | 0.5.3 | `el9.aarch64` | pgdg | 48.5 KiB | [postgresql_faker_14-0.5.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/postgresql_faker_14-0.5.3-1.rhel9.aarch64.rpm) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `postgresql_faker_13` | 0.5.3 | `el8.aarch64` | pgdg | 49.8 KiB | [postgresql_faker_13-0.5.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/postgresql_faker_13-0.5.3-1.rhel8.aarch64.rpm) |
-| `postgresql_faker_13` | 0.5.3 | `el8.x86_64` | pgdg | 49.9 KiB | [postgresql_faker_13-0.5.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/postgresql_faker_13-0.5.3-1.rhel8.x86_64.rpm) |
-| `postgresql_faker_13` | 0.4.0 | `el8.x86_64` | pgdg | 37.6 KiB | [postgresql_faker_13-0.4.0-1.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/postgresql_faker_13-0.4.0-1.rhel8.noarch.rpm) |
-| `postgresql_faker_13` | 0.3.0 | `el8.x86_64` | pgdg | 14.0 KiB | [postgresql_faker_13-0.3.0-1.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/postgresql_faker_13-0.3.0-1.rhel8.noarch.rpm) |
-| `postgresql_faker_13` | 0.5.3 | `el9.x86_64` | pgdg | 48.6 KiB | [postgresql_faker_13-0.5.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/postgresql_faker_13-0.5.3-1.rhel9.x86_64.rpm) |
-| `postgresql_faker_13` | 0.5.3 | `el9.aarch64` | pgdg | 48.5 KiB | [postgresql_faker_13-0.5.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/postgresql_faker_13-0.5.3-1.rhel9.aarch64.rpm) |
-| `postgresql_faker_13` | 0.5.3 | `el9.x86_64` | pgdg | 47.9 KiB | [postgresql_faker_13-0.5.3-1.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/postgresql_faker_13-0.5.3-1.rhel9.noarch.rpm) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 

@@ -3,22 +3,23 @@ title: "shacrypt"
 linkTitle: "shacrypt"
 description: "Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes"
 weight: 4440
-categories: ["Util"]
+categories: ["UTIL"]
 width: full
 ---
 
 Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
+
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4440** | {{< badge content="shacrypt" link="https://github.com/dverite/postgres-shacrypt" >}} | {{< ext "shacrypt" "shacrypt" >}} | `1.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4440** | {{< badge content="shacrypt" link="https://github.com/dverite/postgres-shacrypt" >}} | {{< ext "shacrypt" >}} | `1.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="---s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -30,35 +31,33 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/shacrypt" >}} | `1.1` | {{< badge content="18" color="red" alt="postgres_shacrypt_18*" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgres_shacrypt_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/shacrypt" >}} | `1.1` | {{< badge content="18" color="red" alt="postgresql-18-shacrypt" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | `postgresql-$v-shacrypt` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/shacrypt" >}} | `1.1` | {{< bg "18" "postgres_shacrypt_18*" "red" >}} {{< bg "17" "postgres_shacrypt_17*" "green" >}} {{< bg "16" "postgres_shacrypt_16*" "green" >}} {{< bg "15" "postgres_shacrypt_15*" "green" >}} {{< bg "14" "postgres_shacrypt_14*" "green" >}} | `postgres_shacrypt_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/shacrypt" >}} | `1.1` | {{< bg "18" "postgresql-18-shacrypt" "red" >}} {{< bg "17" "postgresql-17-shacrypt" "green" >}} {{< bg "16" "postgresql-16-shacrypt" "green" >}} {{< bg "15" "postgresql-15-shacrypt" "green" >}} {{< bg "14" "postgresql-14-shacrypt" "green" >}} | `postgresql-$v-shacrypt` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |    {{< pkg "postgres_shacrypt_18" >}}     | {{< pkg "postgres_shacrypt_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_17-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_16-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_15-1.1-1PIGSTY.el8.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_14-1.1-1PIGSTY.el8.x86_64.rpm" >}} |
-|    `el8.aarch64`    |    {{< pkg "postgres_shacrypt_18" >}}     | {{< pkg "postgres_shacrypt_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_17-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_16-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_15-1.1-1PIGSTY.el8.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_14-1.1-1PIGSTY.el8.aarch64.rpm" >}} |
-|    `el9.x86_64`    |    {{< pkg "postgres_shacrypt_18" >}}     | {{< pkg "postgres_shacrypt_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_17-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_16-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_15-1.1-1PIGSTY.el9.x86_64.rpm" >}} | {{< pkg "postgres_shacrypt_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_14-1.1-1PIGSTY.el9.x86_64.rpm" >}} |
-|    `el9.aarch64`    |    {{< pkg "postgres_shacrypt_18" >}}     | {{< pkg "postgres_shacrypt_17" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_17-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_16" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_16-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_15" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_15-1.1-1PIGSTY.el9.aarch64.rpm" >}} | {{< pkg "postgres_shacrypt_14" "1.1" "pigsty" "https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_14-1.1-1PIGSTY.el9.aarch64.rpm" >}} |
-|    `d12.x86_64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb" >}} |
-|    `d12.aarch64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb" >}} |
-|    `u22.x86_64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_amd64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~jammy_amd64.deb" >}} |
-|    `u22.aarch64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~jammy_arm64.deb" >}} |
-|    `u24.x86_64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_amd64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_amd64.deb" >}} |
-|    `u24.aarch64`    |    {{< pkg "postgresql-18-shacrypt" >}}     | {{< pkg "postgresql-17-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-16-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-15-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_arm64.deb" >}} | {{< pkg "postgresql-14-shacrypt" "1.1" "pigsty" "https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_arm64.deb" >}} |
+|    `el8.x86_64`    |      {{< bg "MISS" "postgres_shacrypt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgres_shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_14 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "postgres_shacrypt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgres_shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_14 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "postgres_shacrypt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgres_shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_14 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "postgres_shacrypt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgres_shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgres_shacrypt_14 : AVAIL 1" "green" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
-
-
+{{< tabs items="PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgres_shacrypt_17` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [postgres_shacrypt_17-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_17-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `postgres_shacrypt_17` | 1.1 | `el8.aarch64` | pigsty | 19.3 KiB | [postgres_shacrypt_17-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_17-1.1-1PIGSTY.el8.aarch64.rpm) |
-| `postgres_shacrypt_17` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [postgres_shacrypt_17-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_17-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `postgres_shacrypt_17` | 1.1 | `el9.x86_64` | pigsty | 18.9 KiB | [postgres_shacrypt_17-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_17-1.1-1PIGSTY.el9.x86_64.rpm) |
+| `postgres_shacrypt_17` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [postgres_shacrypt_17-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_17-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -67,45 +66,42 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 | `postgresql-17-shacrypt` | 1.1 | `u24.aarch64` | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgres_shacrypt_16` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [postgres_shacrypt_16-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_16-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `postgres_shacrypt_16` | 1.1 | `el8.aarch64` | pigsty | 19.3 KiB | [postgres_shacrypt_16-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_16-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `postgres_shacrypt_16` | 1.1 | `el9.x86_64` | pigsty | 18.9 KiB | [postgres_shacrypt_16-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_16-1.1-1PIGSTY.el9.x86_64.rpm) |
 | `postgres_shacrypt_16` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [postgres_shacrypt_16-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_16-1.1-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-shacrypt` | 1.1 | `u22.aarch64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-shacrypt` | 1.1 | `u22.aarch64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `u24.x86_64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `u24.aarch64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgres_shacrypt_15` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [postgres_shacrypt_15-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_15-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `postgres_shacrypt_15` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [postgres_shacrypt_15-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_15-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `postgres_shacrypt_15` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [postgres_shacrypt_15-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_15-1.1-1PIGSTY.el9.x86_64.rpm) |
 | `postgres_shacrypt_15` | 1.1 | `el9.aarch64` | pigsty | 19.1 KiB | [postgres_shacrypt_15-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_15-1.1-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-shacrypt` | 1.1 | `u22.aarch64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-shacrypt` | 1.1 | `u22.aarch64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `u24.x86_64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `u24.aarch64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `postgres_shacrypt_14` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [postgres_shacrypt_14-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_14-1.1-1PIGSTY.el8.x86_64.rpm) |
 | `postgres_shacrypt_14` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [postgres_shacrypt_14-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_14-1.1-1PIGSTY.el8.aarch64.rpm) |
 | `postgres_shacrypt_14` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [postgres_shacrypt_14-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_14-1.1-1PIGSTY.el9.x86_64.rpm) |
@@ -117,32 +113,13 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 | `postgresql-14-shacrypt` | 1.1 | `u24.x86_64` | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-shacrypt` | 1.1 | `u24.aarch64` | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
 
-{{< /tab >}}
-
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:-------------|
-| `postgres_shacrypt_13` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [postgres_shacrypt_13-1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/postgres_shacrypt_13-1.1-1PIGSTY.el8.aarch64.rpm) |
-| `postgres_shacrypt_13` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [postgres_shacrypt_13-1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/postgres_shacrypt_13-1.1-1PIGSTY.el8.x86_64.rpm) |
-| `postgres_shacrypt_13` | 1.1 | `el9.aarch64` | pigsty | 19.0 KiB | [postgres_shacrypt_13-1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/postgres_shacrypt_13-1.1-1PIGSTY.el9.aarch64.rpm) |
-| `postgres_shacrypt_13` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [postgres_shacrypt_13-1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/postgres_shacrypt_13-1.1-1PIGSTY.el9.x86_64.rpm) |
-| `postgresql-13-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-shacrypt` | 1.1 | `u22.aarch64` | pigsty | 2.4 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-shacrypt` | 1.1 | `u24.aarch64` | pigsty | 2.4 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
-| `postgresql-13-shacrypt` | 1.1 | `u24.x86_64` | pigsty | 2.4 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
-
-{{< /tab >}}
-
-{{< /tabs >}}
+{{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/dverite/postgres-shacrypt" title="Repository" icon="github" subtitle="github.com/dverite/postgres-shacrypt" >}}
-{{< card link="/list" icon="clipboard-list"  title="Source Tarball" subtitle="postgres_shacrypt-1.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgres_shacrypt-1.1.tar.gz" >}}
 {{< /cards >}}
 
 
