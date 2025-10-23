@@ -217,10 +217,10 @@ def render_page(
     counts = {language: len(grouped[language]) for language in languages}
     nav = build_navigation(languages)
     front_matter = (
-        ["---", "title: 按语言", "description: 按实现语言组织的 PostgreSQL 扩展", "excludeSearch: true", "weight: 1",
+        ["---", "title: 按语言", "description: 按实现语言组织的 PostgreSQL 扩展", "excludeSearch: true", "weight: 200",
          "---", ] if is_zh
         else ["---", "title: By Language", "description: PostgreSQL extensions organized by implementation language",
-              "excludeSearch: true", "weight: 1", "---", ]
+              "excludeSearch: true", "weight: 200", "---", ]
     )
     heading = "## 概览" if is_zh else "## Summary"
     lines: List[str] = []

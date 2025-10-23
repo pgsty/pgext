@@ -113,29 +113,6 @@ class PackageDetail:
     pg: int
 
 
-@dataclass
-class CategoryInfo:
-    """Category metadata"""
-    id: int
-    name: str
-    en_desc: Optional[str]
-    zh_desc: Optional[str]
-
-
-@dataclass
-class ExtensionSummary:
-    """Extension summary information used by index pages"""
-    id: int
-    name: str
-    pkg: str
-    version: Optional[str]
-    en_desc: Optional[str]
-    zh_desc: Optional[str]
-    category: Optional[str]
-    lead_ext: Optional[str]
-    category_id: Optional[int]
-
-
 class ExtensionGenerator:
     """Generates Hugo content for PostgreSQL extensions"""
 
@@ -404,36 +381,6 @@ class ExtensionGenerator:
         with self.conn.cursor() as cur:
             cur.execute("SELECT name FROM pgext.extension ORDER BY name")
             return [row[0] for row in cur.fetchall()]
-
-    def get_categories(self) -> List[CategoryInfo]:
-        """Fetch all categories ordered by ID"""
-        with self.conn.cursor() as cur:
-            cur.execute("""
-                        SELECT id, name, en_desc, zh_desc
-                        FROM pgext.category
-                        ORDER BY id
-                        """)
-            return [CategoryInfo(*row) for row in cur.fetchall()]
-
-    def get_extension_summaries(self) -> List[ExtensionSummary]:
-        """Fetch extension summaries grouped by category"""
-        with self.conn.cursor() as cur:
-            cur.execute("""
-                        SELECT e.id,
-                               e.name,
-                               e.pkg,
-                               e.version,
-                               e.en_desc,
-                               e.zh_desc,
-                               e.category,
-                               e.lead_ext,
-                               c.id AS category_id
-                        FROM pgext.extension e
-                                 LEFT JOIN pgext.category c
-                                           ON upper(e.category) = upper(c.name)
-                        ORDER BY c.id NULLS LAST, e.id
-                        """)
-            return [ExtensionSummary(*row) for row in cur.fetchall()]
 
     def get_sibling_extensions(self, pkg_name: str, current: str) -> List[str]:
         """Fetch other extensions that share the same package"""
@@ -940,175 +887,6 @@ CREATE EXTENSION {ext.name}{cascade_schema};
 
         return ''.join(sections)
 
-    def build_index_intro(self, category_count: int, extension_count: int,
-                          package_count: int, locale: str) -> str:
-        """Build localized summary counts for index pages"""
-        if locale == "en":
-            return
-            labels = [
-                ("Categories (category)", category_count),
-                ("Extensions (ext)", extension_count),
-                ("Packages (pkg)", package_count),
-            ]
-        else:
-            labels = [
-                ("分类 (category)", category_count),
-                ("扩展 (ext)", extension_count),
-                ("包 (pkg)", package_count),
-            ]
-
-        lines = [f"- {label}: {count}" for label, count in labels]
-        return '\n'.join(lines) + '\n\n'
-
-    def build_index_content(self, categories: List[CategoryInfo],
-                            ext_by_category: Dict[str, List[ExtensionSummary]],
-                            locale: str) -> str:
-        """Build localized index markdown body"""
-        lines: List[str] = []
-        header = "| ID | Extension | Package | Version | Description |"
-        header_align = "|:---:|:---|:---|:---|:---|"
-        if locale == "zh":
-            header = "| ID | 扩展 | 包 | 版本 | 描述 |"
-            header_align = "|:---:|:---|:---|:---|:---|"
-
-        for cat in categories:
-            cat_name = cat.name or "Unknown"
-            lines.append(f"## {cat_name}")
-            lines.append("")
-
-            if locale == "en":
-                desc = cat.en_desc or cat.zh_desc
-            else:
-                desc = cat.zh_desc or cat.en_desc
-            desc_text = self.sanitize_table_text(desc)
-            if desc_text:
-                prefix = f"{cat_name}:"
-                if desc_text.lower().startswith(prefix.lower()):
-                    desc_text = desc_text[len(prefix):].lstrip()
-                lines.append(desc_text)
-                lines.append("")
-
-            lines.append(header)
-            lines.append(header_align)
-
-            cat_key = (cat_name or "").upper()
-            entries = ext_by_category.get(cat_key, [])
-            if entries:
-                for ext in entries:
-                    version = ext.version or "-"
-                    if locale == "en":
-                        ext_desc = ext.en_desc or ext.zh_desc
-                    else:
-                        ext_desc = ext.zh_desc or ext.en_desc
-                    ext_desc = self.sanitize_table_text(ext_desc) or "-"
-                    lead_target = ext.lead_ext or ext.name
-                    ext_cell = self.ext_shortcode(ext.name)
-                    pkg_cell = self.ext_shortcode(lead_target, ext.pkg)
-                    lines.append(f"| {ext.id} | {ext_cell} | {pkg_cell} | {version} | {ext_desc} |")
-            else:
-                empty_msg = "No extensions available in this category" if locale == "en" else "此分类暂无扩展"
-                lines.append(f"| - | - | - | - | {empty_msg} |")
-
-            lines.append("")
-
-        return '\n'.join(lines).rstrip() + '\n'
-
-    def generate_index_pages(self):
-        """Generate extension index pages in English and Chinese"""
-        categories = self.get_categories()
-        if not categories:
-            logger.warning("No categories found; skipping index generation")
-            return
-
-        summaries = self.get_extension_summaries()
-        ext_by_category: Dict[str, List[ExtensionSummary]] = {}
-        uncategorized: List[ExtensionSummary] = []
-        category_count = len(categories)
-        extension_count = len(summaries)
-        package_count = len({summary.pkg for summary in summaries})
-
-        for summary in summaries:
-            key = (summary.category or "").upper()
-            if key:
-                ext_by_category.setdefault(key, []).append(summary)
-            else:
-                uncategorized.append(summary)
-
-        for entries in ext_by_category.values():
-            entries.sort(key=lambda item: item.id)
-
-        if uncategorized:
-            missing = ', '.join(ext.name for ext in uncategorized)
-            logger.warning(f"Extensions without category assignment: {missing}")
-
-        frontmatter_en = """---
-title: "Extensions"
-breadcrumbs: false
-excludeSearch: true
-weight: 1
----
-
-Available PostgreSQL Extensions (%d ext in %d pkg) categorized into %d categories:
-
-{{< category "time" >}}
-{{< category "gis" >}}
-{{< category "rag" >}}
-{{< category "fts" >}}
-{{< category "olap" >}}
-{{< category "feat" >}}
-{{< category "lang" >}}
-{{< category "type" >}}
-{{< category "util" >}}
-{{< category "func" >}}
-{{< category "admin" >}}
-{{< category "stat" >}}
-{{< category "sec" >}}
-{{< category "fdw" >}}
-{{< category "sim" >}}
-{{< category "etl" >}}
-
-
-""" % (extension_count, package_count, category_count)
-
-        frontmatter_zh = """---
-title: "扩展"
-breadcrumbs: false
-excludeSearch: true
-weight: 1
----
-
-以下列出了归属 %d 个分类的可用 PostgreSQL 扩展（%d ext / %d pkg）:
-
-{{< category "time" >}}
-{{< category "gis" >}}
-{{< category "rag" >}}
-{{< category "fts" >}}
-{{< category "olap" >}}
-{{< category "feat" >}}
-{{< category "lang" >}}
-{{< category "type" >}}
-{{< category "util" >}}
-{{< category "func" >}}
-{{< category "admin" >}}
-{{< category "stat" >}}
-{{< category "sec" >}}
-{{< category "fdw" >}}
-{{< category "sim" >}}
-{{< category "etl" >}}
-
-
-""" % (category_count, extension_count, package_count)
-
-        english_body = self.build_index_content(categories, ext_by_category, locale="en")
-        chinese_body = self.build_index_content(categories, ext_by_category, locale="zh")
-
-        index_en_path = self.output_dir / "_index.md"
-        index_zh_path = self.output_dir / "_index.zh.md"
-
-        index_en_path.write_text(frontmatter_en + english_body, encoding='utf-8')
-        index_zh_path.write_text(frontmatter_zh + chinese_body, encoding='utf-8')
-
-        logger.info(f"Generated index pages: {index_en_path}, {index_zh_path}")
 
     def generate_content(self, ext_name: str) -> Optional[str]:
         """Generate complete Markdown content for an extension"""
@@ -1179,12 +957,8 @@ weight: 1
             except Exception as e:
                 logger.error(f"Error generating {ext_name}: {e}", exc_info=True)
 
-        try:
-            self.generate_index_pages()
-        except Exception as e:
-            logger.error(f"Failed to generate extension index pages: {e}", exc_info=True)
-
         logger.info(f"Successfully generated {success_count}/{len(extensions)} extension pages")
+        logger.info(f"Note: Run bin/gen-ext-index.py to generate index pages")
 
 
 def main():

@@ -189,9 +189,9 @@ def generate_content(extensions_by_license: Dict[str, List[Extension]], is_zh: b
 
     # Front matter
     if is_zh:
-        lines.extend(["---", "title: 按许可证", "description: 按开源许可证组织的 PostgreSQL 扩展", "---", ""])
+        lines.extend(["---", "title: 按许可证", "description: 按开源许可证组织的 PostgreSQL 扩展", "weight: 300","---", ""])
     else:
-        lines.extend(["---", "title: By License", "description: PostgreSQL extensions organized by open source license", "---", ""])
+        lines.extend(["---", "title: By License", "description: PostgreSQL extensions organized by open source license", "weight: 300", "---", ""])
 
     # License badges
     permissive = [lic for lic in PERMISSIVE_LICENSES if lic in extensions_by_license]
