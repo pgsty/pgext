@@ -10,8 +10,8 @@ import (
 
 // Markdown shortcode generators for Hugo/Hextra theme
 
-// Badge generates badge shortcode
-func Badge(content, color, alt, link string) string {
+// Badge generates badge shortcode with optional icon
+func Badge(content, color, alt, link, icon string) string {
 	parts := []string{fmt.Sprintf(`{{< badge content="%s"`, content)}
 
 	if color != "" && color != "default" {
@@ -22,6 +22,9 @@ func Badge(content, color, alt, link string) string {
 	}
 	if link != "" {
 		parts = append(parts, fmt.Sprintf(`link="%s"`, link))
+	}
+	if icon != "" {
+		parts = append(parts, fmt.Sprintf(`icon="%s"`, icon))
 	}
 
 	return strings.Join(parts, " ") + " >}}"
@@ -137,7 +140,7 @@ func LanguageShortcode(lang string) string {
 // PGVerShortcode generates PostgreSQL version badges
 func PGVerShortcode(versions []int, supported []int) string {
 	if len(versions) == 0 {
-		return Badge("N/A", "gray", "", "")
+		return Badge("N/A", "gray", "", "", "")
 	}
 
 	// Build comma-separated version list

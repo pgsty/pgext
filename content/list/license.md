@@ -1,17 +1,17 @@
 ---
-title: By License
-description: PostgreSQL extensions organized by open source license
+title: "By License"
+description: "PostgreSQL extensions organized by open source license"
 weight: 300
 ---
 
-{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
+{{< license "PostgreSQL" >}} {{< license "Apache-2.0" >}} {{< license "MIT" >}} {{< license "BSD 3-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "ISC" >}} {{< license "Artistic" >}} {{< license "BSD 0-Clause" >}} {{< license "MPL-2.0" >}}
 
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
+{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}} {{< license "LGPL-3.0" >}} {{< license "LGPL-2.1" >}}
 
 ## Summary
 
 | License | Count | Reference | Description |
-|:--------|:-----:|:-------:|:----------|
+|:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 200 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 69 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 59 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
@@ -588,3 +588,4 @@ weight: 300
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
+

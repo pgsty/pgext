@@ -10,25 +10,19 @@ comments: false
 weight: 100
 ---
 
-<div class="hx-mt-6 hx-mb-6">
-{{< hextra/hero-headline >}}
-  The Missing Package Manager &nbsp;<br class="sm:hx-block hx-hidden" />For PostgreSQL & Extensions
-{{< /hextra/hero-headline >}}
-</div>
-
 —— ***Postgres Install Genius, the missing extension package manager for PostgreSQL ecosystem***
 
 {{< cards >}}
-{{< card link="/intro"   title="Introduction" subtitle="Why we need a package manager" icon="sparkles" >}}
-{{< card link="/start"   title="Get Started"  subtitle="Tutorial and examples"         icon="play" >}}
-{{< card link="/install" title="Installation" subtitle="Install in different ways" icon="save" >}}
+{{< card link="/pig/intro"   title="Introduction" subtitle="Why we need a package manager" icon="sparkles" >}}
+{{< card link="/pig/start"   title="Get Started"  subtitle="Tutorial and examples"         icon="play" >}}
+{{< card link="/pig/install" title="Installation" subtitle="Install in different ways" icon="save" >}}
 {{< /cards >}}
 
 
 
 ## Quick Start
 
-[Install](/install) `pig` with a single command
+[Install](/pig/install) `pig` with a single command
 
 ```bash tab="Global"
 curl -fsSL https://repo.pigsty.io/pig | bash
@@ -46,7 +40,7 @@ $ pig ext install pg_duckdb    # install the pg_duckdb extension (for current pg
 
 ## CLI Usage
 
-Check sub-commands [documentation](/cmd) with `pig help <command>`
+Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
 
 {{< cards cols="5" >}}
 {{< card link="/cmd/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}

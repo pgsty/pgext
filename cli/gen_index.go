@@ -13,7 +13,7 @@ import (
 func (g *ExtensionGenerator) GenerateIndexPage(locale, outputPath string) error {
 	// Filter out extensions that are not ready
 	var extensions []*Extension
-	for _, ext := range g.cache.Extensions {
+	for _, ext := range g.Cache.Extensions {
 		if !ext.State.Valid || ext.State.String != "not-ready" {
 			extensions = append(extensions, ext)
 		}
@@ -48,11 +48,9 @@ comments: false
 weight: 900
 ---
 
-PostgreSQL 扩展通过额外的功能增强数据库。
-
 ## 包
 
-共有 %d 个可用的 PostgreSQL 包：
+共有 %d 个可用的 PostgreSQL 扩展软件包：
 
 `, pkgCount))
 	} else {
@@ -63,8 +61,6 @@ excludeSearch: true
 comments: false
 weight: 900
 ---
-
-PostgreSQL extensions enhance the database with additional functionality.
 
 ## Packages
 
@@ -118,13 +114,10 @@ func (g *ExtensionGenerator) generatePackagesIndexTable(packages []*Extension, i
 		}
 
 		// URL badge
-		urlBadge := Badge("N/A", "gray", "", "")
+		urlBadge := Badge("N/A", "gray", "", "", "")
 		if pkg.URL.Valid && pkg.URL.String != "" {
 			linkText := "Link"
-			if isZh {
-				linkText = "链接"
-			}
-			urlBadge = Badge(linkText, "", "", pkg.URL.String)
+			urlBadge = Badge(linkText, "", "", pkg.URL.String, "")
 		}
 
 		// Category badge
@@ -169,10 +162,10 @@ func (g *ExtensionGenerator) generateExtensionsIndexTable(extensions []*Extensio
 
 		// Parse PG versions
 		pgVersions := ParsePGVersions(ext.PgVer)
-		pgBadges := PGVerShortcode(g.cache.PGVersions, pgVersions)
+		pgBadges := PGVerShortcode(g.Cache.PGVersions, pgVersions)
 
 		// Attribute badge
-		attrBadge := Badge(ext.GetAttributeBadge(), "blue", "", "")
+		attrBadge := Badge(ext.GetAttributeBadge(), "blue", "", "", "")
 
 		// Description
 		desc := ""

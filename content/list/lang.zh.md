@@ -1,16 +1,16 @@
 ---
-title: 按语言
-description: 按实现语言组织的 PostgreSQL 扩展
+title: "按语言"
+description: "按实现语言组织的 PostgreSQL 扩展"
 excludeSearch: true
 weight: 200
 ---
 
-{{< language "C" >}} {{< language "C++" >}} {{< language "Rust" >}} {{< language "Java" >}} {{< language "Python" >}} {{< language "SQL" >}} {{< language "Data" >}}
+{{< language "C" >}} {{< language "SQL" >}} {{< language "Rust" >}} {{< language "Data" >}} {{< language "C++" >}} {{< language "Python" >}} {{< language "Java" >}}
 
 ## 概览
 
 | 语言 | 数量 | 描述 |
-|:-------:|:-----:|:------------|
+|:-------:|:-----:|:--------------|
 | {{< language "C" >}} | 335 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 37 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 33 | 使用 pgrx 框架用 Rust 编写的扩展 |
@@ -22,8 +22,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="335 个扩展" color="gray" >}}
-
+{{< language "C" >}} {{< badge content="335 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -367,8 +366,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="37 个扩展" color="gray" >}}
-
+{{< language "SQL" >}} {{< badge content="37 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -414,8 +412,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="33 个扩展" color="gray" >}}
-
+{{< language "Rust" >}} {{< badge content="33 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -457,8 +454,7 @@ weight: 200
 
 ## Data
 
-{{< language "Data" >}} {{< badge content="10 个扩展" color="gray" >}}
-
+{{< language "Data" >}} {{< badge content="10 个扩展" color="gray" icon="cube" >}}
 
 仅包含数据的扩展
 
@@ -477,8 +473,7 @@ weight: 200
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="6 个扩展" color="gray" >}}
-
+{{< language "C++" >}} {{< badge content="6 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -493,8 +488,7 @@ weight: 200
 
 ## Python
 
-{{< language "Python" >}} {{< badge content="2 个扩展" color="gray" >}}
-
+{{< language "Python" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
 
 使用 Python 编写的扩展
 
@@ -505,11 +499,11 @@ weight: 200
 
 ## Java
 
-{{< language "Java" >}} {{< badge content="1 个扩展" color="gray" >}}
-
+{{< language "Java" >}} {{< badge content="1 个扩展" color="gray" icon="cube" >}}
 
 在 JVM 上运行的扩展
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 3090 | {{< alias "pljava" >}} | Java 程序语言 |
+

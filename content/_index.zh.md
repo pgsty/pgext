@@ -1,9 +1,12 @@
 ---
 title: Postgres扩展
 description: PostgreSQL 扩展目录，扩展仓库，包管理器
+cascade:
+  type: docs
+breadcrumbs: false
 excludeSearch: true
-icon: Blocks
-full: true
+width: full
+toc: false
 ---
 
 

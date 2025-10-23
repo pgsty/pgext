@@ -273,13 +273,62 @@ var genLicenseCmd = &cobra.Command{
 	},
 }
 
+var genCatalogCmd = &cobra.Command{
+	Use:   "catalog",
+	Short: "Generate catalog list pages",
+	Long:  `Generate catalog list pages (_index.md and _index.zh.md) with statistics and categories`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		// Initialize database connection
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		// Load extension cache
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		// Prepare output directory
+		listDir := filepath.Join(outputDir, "list")
+		if err := os.MkdirAll(listDir, 0755); err != nil {
+			return fmt.Errorf("failed to create output directory: %w", err)
+		}
+
+		// Initialize generator with database from cli package
+		generator := &cli.ExtensionGenerator{
+			DB:    cli.DB,
+			Cache: cache,
+		}
+
+		// Generate English version
+		enPath := filepath.Join(listDir, "_index.md")
+		if err := generator.GenerateCatalogPage("en", enPath); err != nil {
+			return fmt.Errorf("failed to generate English catalog: %w", err)
+		}
+		logrus.Info("Generated English catalog", "path", enPath)
+
+		// Generate Chinese version
+		zhPath := filepath.Join(listDir, "_index.zh.md")
+		if err := generator.GenerateCatalogPage("zh", zhPath); err != nil {
+			return fmt.Errorf("failed to generate Chinese catalog: %w", err)
+		}
+		logrus.Info("Generated Chinese catalog", "path", zhPath)
+
+		logrus.Info("Catalog generation completed", "output", outputDir)
+		return nil
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	// Add subcommands
-	genCmd.AddCommand(genExtCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd)
+	genCmd.AddCommand(genExtCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd)
 
-	// Add flags
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
 }

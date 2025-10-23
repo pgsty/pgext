@@ -12,15 +12,15 @@ import (
 
 // ListGenerator generates list pages for categories, languages, and licenses
 type ListGenerator struct {
-	cache     *ExtensionCache
-	outputDir string
+	Cache     *ExtensionCache
+	OutputDir string
 }
 
 // NewListGenerator creates a new list generator
 func NewListGenerator(cache *ExtensionCache, outputDir string) *ListGenerator {
 	return &ListGenerator{
-		cache:     cache,
-		outputDir: outputDir,
+		Cache:     cache,
+		OutputDir: outputDir,
 	}
 }
 
@@ -30,7 +30,7 @@ func (g *ListGenerator) GenerateCategoryList(locale, outputPath string) error {
 
 	// Count unique packages
 	pkgMap := make(map[string]bool)
-	for _, ext := range g.cache.Extensions {
+	for _, ext := range g.Cache.Extensions {
 		pkgMap[ext.Pkg] = true
 	}
 	pkgCount := len(pkgMap)
@@ -46,7 +46,7 @@ weight: 100
 
 PostgreSQL 扩展（%d ext / %d pkg）归属 %d 个分类。
 
-`, len(g.cache.Extensions), pkgCount, len(g.cache.Categories)))
+`, len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	} else {
 		b.WriteString(fmt.Sprintf(`---
 title: "By Category"
@@ -55,13 +55,13 @@ weight: 100
 
 PostgreSQL Extensions (%d ext in %d pkg) categorized into %d categories.
 
-`, len(g.cache.Extensions), pkgCount, len(g.cache.Categories)))
+`, len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	}
 
 	// Generate sections for each category
-	for _, cat := range g.cache.Categories {
+	for _, cat := range g.Cache.Categories {
 		catKey := strings.ToUpper(cat.Name)
-		exts := g.cache.CateExtMap[catKey]
+		exts := g.Cache.CateExtMap[catKey]
 		b.WriteString(g.generateCategorySection(cat, exts, isZh))
 	}
 
@@ -145,7 +145,7 @@ func (g *ListGenerator) GenerateLanguageList(locale, outputPath string) error {
 
 	// Group extensions by language
 	langMap := make(map[string][]*Extension)
-	for _, ext := range g.cache.Extensions {
+	for _, ext := range g.Cache.Extensions {
 		if ext.Lang.Valid && ext.Lang.String != "" {
 			lang := ext.Lang.String
 			langMap[lang] = append(langMap[lang], ext)
@@ -243,7 +243,7 @@ func (g *ListGenerator) generateLanguageSection(lang string, extensions []*Exten
 	if isZh {
 		countText = fmt.Sprintf("%d 个扩展", len(extensions))
 	}
-	b.WriteString(fmt.Sprintf("%s %s\n\n", LanguageShortcode(lang), Badge(countText, "gray", "", "")))
+	b.WriteString(fmt.Sprintf("%s %s\n\n", LanguageShortcode(lang), Badge(countText, "gray", "", "", "cube")))
 
 	// Description
 	langDesc := getLanguageDescriptions(isZh)[lang]
@@ -306,7 +306,7 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 
 	// Group extensions by license
 	licenseMap := make(map[string][]*Extension)
-	for _, ext := range g.cache.Extensions {
+	for _, ext := range g.Cache.Extensions {
 		if ext.License.Valid && ext.License.String != "" {
 			license := ext.License.String
 			licenseMap[license] = append(licenseMap[license], ext)
@@ -411,7 +411,7 @@ func (g *ListGenerator) generateLicenseSection(license string, extensions []*Ext
 	if isZh {
 		countText = fmt.Sprintf("%d 个扩展", len(extensions))
 	}
-	b.WriteString(fmt.Sprintf("%s %s\n\n", LicenseShortcode(license), Badge(countText, "gray", "cube", "")))
+	b.WriteString(fmt.Sprintf("%s %s\n\n", LicenseShortcode(license), Badge(countText, "gray", "", "", "cube")))
 
 	// License info
 	info := getLicenseInfo(license)

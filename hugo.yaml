@@ -22,6 +22,7 @@ module:
     - path: github.com/imfing/hextra
 
 defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
 languages:
   en:
     languageName: English

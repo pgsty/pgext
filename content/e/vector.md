@@ -1,7 +1,7 @@
 ---
 title: "vector"
 linkTitle: "vector"
-description: "vector data type and ivfflat and hnsw access methods"
+description: "pgvector: vector data type and ivfflat and hnsw access methods"
 weight: 1800
 categories: ["RAG"]
 width: full

@@ -1,16 +1,16 @@
 ---
-title: By Language
-description: PostgreSQL extensions organized by implementation language
+title: "By Language"
+description: "PostgreSQL extensions organized by implementation language"
 excludeSearch: true
 weight: 200
 ---
 
-{{< language "C" >}} {{< language "C++" >}} {{< language "Rust" >}} {{< language "Java" >}} {{< language "Python" >}} {{< language "SQL" >}} {{< language "Data" >}}
+{{< language "C" >}} {{< language "SQL" >}} {{< language "Rust" >}} {{< language "Data" >}} {{< language "C++" >}} {{< language "Python" >}} {{< language "Java" >}}
 
 ## Summary
 
 | Language | Count | Description |
-|:-------:|:-----:|:------------|
+|:-------:|:-----:|:--------------|
 | {{< language "C" >}} | 335 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 37 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 33 | Extensions written in Rust with the pgrx framework |
@@ -23,7 +23,6 @@ weight: 200
 ## C
 
 {{< language "C" >}} {{< badge content="335 Extensions" color="gray" icon="cube" >}}
-
 
 The traditional PostgreSQL extension language
 
@@ -367,8 +366,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="37 Extensions" color="gray" >}}
-
+{{< language "SQL" >}} {{< badge content="37 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -414,8 +412,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="33 Extensions" color="gray" >}}
-
+{{< language "Rust" >}} {{< badge content="33 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -457,8 +454,7 @@ Extensions written in Rust with the pgrx framework
 
 ## Data
 
-{{< language "Data" >}} {{< badge content="10 Extensions" color="gray" >}}
-
+{{< language "Data" >}} {{< badge content="10 Extensions" color="gray" icon="cube" >}}
 
 Data-only extensions
 
@@ -477,8 +473,7 @@ Data-only extensions
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="6 Extensions" color="gray" >}}
-
+{{< language "C++" >}} {{< badge content="6 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -493,8 +488,7 @@ Extensions leveraging C++ features and libraries
 
 ## Python
 
-{{< language "Python" >}} {{< badge content="2 Extensions" color="gray" >}}
-
+{{< language "Python" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Python
 
@@ -505,11 +499,11 @@ Extensions written in Python
 
 ## Java
 
-{{< language "Java" >}} {{< badge content="1 Extensions" color="gray" >}}
-
+{{< language "Java" >}} {{< badge content="1 Extensions" color="gray" icon="cube" >}}
 
 Extensions running on JVM
 
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 3090 | {{< alias "pljava" >}} | PL/Java procedural language |
+

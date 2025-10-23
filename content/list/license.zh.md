@@ -1,17 +1,17 @@
 ---
-title: 按许可证
-description: 按开源许可证组织的 PostgreSQL 扩展
+title: "按许可证"
+description: "按开源许可证组织的 PostgreSQL 扩展"
 weight: 300
 ---
 
-{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
+{{< license "PostgreSQL" >}} {{< license "Apache-2.0" >}} {{< license "MIT" >}} {{< license "BSD 3-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "ISC" >}} {{< license "Artistic" >}} {{< license "BSD 0-Clause" >}} {{< license "MPL-2.0" >}}
 
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
+{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}} {{< license "LGPL-3.0" >}} {{< license "LGPL-2.1" >}}
 
 ## 概览
 
 | 许可证 | 数量 | 参考 | 描述 |
-|:--------|:-----:|:-------:|:----------|
+|:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 200 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 69 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 59 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
@@ -588,3 +588,4 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
+

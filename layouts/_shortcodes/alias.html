@@ -7,7 +7,7 @@
 {{- end -}}
 
 {{- if $ext -}}
-  <span style="white-space: nowrap;"><a href="{{ (printf "/e/%s" $ext) | relLangURL }}" title="Extension: {{ $ext }}{{- if and $pkg (ne $pkg $ext) }} (Package: {{ $pkg }}){{- end }}">
+  <span style="white-space: nowrap;"><a href="{{ printf "/e/%s" $ext }}" title="Extension: {{ $ext }}{{- if and $pkg (ne $pkg $ext) }} (Package: {{ $pkg }}){{- end }}">
     {{- partial "shortcodes/badge.html" (dict
       "content" $displayName
       "color" "gray"

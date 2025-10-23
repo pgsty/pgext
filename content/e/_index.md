@@ -8,7 +8,6 @@ weight: 900
 
 PostgreSQL extensions enhance the database with additional functionality.
 
-
 ## Packages
 
 There are 357 available PostgreSQL packages:
@@ -378,7 +377,7 @@ There are 357 available PostgreSQL packages:
 There are 424 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
-|:----------|:------------|:---------:|:------------|
+|:----------|:------------|:---------:|:--------------|
 | {{< ext "timescaledb" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Enables scalable inserts and complex queries for time-series data |
 | {{< ext "timescaledb_toolkit" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | {{< ext "timeseries" "pg_timeseries" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Convenience API for time series stack |

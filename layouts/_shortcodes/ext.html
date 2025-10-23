@@ -2,7 +2,7 @@
 {{- $pkg := cond (ge (len .Params) 2) (trim (.Get 1) " ") $ext -}}
 
 {{- if $ext -}}
-  <a href="{{ (printf "/e/%s" $ext) | relLangURL }}" title="Extension: {{ $ext }}">
+  <a href="{{ printf "/e/%s" $ext }}" title="Extension: {{ $ext }}">
     {{- partial "shortcodes/badge.html" (dict
       "content" $pkg
       "color" "gray"

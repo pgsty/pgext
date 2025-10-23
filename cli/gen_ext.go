@@ -11,20 +11,23 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/sirupsen/logrus"
 )
 
 // ExtensionGenerator generates Hugo content for PostgreSQL extensions
 type ExtensionGenerator struct {
-	cache     *ExtensionCache
-	outputDir string
+	Cache     *ExtensionCache
+	OutputDir string
+	DB        *pgxpool.Pool
 }
 
 // NewExtensionGenerator creates a new extension generator
 func NewExtensionGenerator(cache *ExtensionCache, outputDir string) *ExtensionGenerator {
 	return &ExtensionGenerator{
-		cache:     cache,
-		outputDir: outputDir,
+		Cache:     cache,
+		OutputDir: outputDir,
+		DB:        DB, // Use the global DB connection
 	}
 }
 
@@ -41,20 +44,20 @@ func (g *ExtensionGenerator) GenerateExtensionPage(ctx context.Context, ext *Ext
 		return fmt.Errorf("failed to load binaries: %w", err)
 	}
 
-	siblings := g.cache.GetSiblingExtensions(ext.Pkg, ext.Name)
+	siblings := g.Cache.GetSiblingExtensions(ext.Pkg, ext.Name)
 
 	// Generate content
 	content := g.generateExtensionContent(ext, packages, binaries, siblings)
 
 	// Append stub content if exists
-	stubPath := filepath.Join(filepath.Dir(g.outputDir), "..", "stub", fmt.Sprintf("%s.md", ext.Name))
+	stubPath := filepath.Join(filepath.Dir(g.OutputDir), "..", "stub", fmt.Sprintf("%s.md", ext.Name))
 	if stubContent, err := os.ReadFile(stubPath); err == nil && len(stubContent) > 0 {
 		content += "\n" + string(stubContent)
 		logrus.Debugf("Appended stub content for %s", ext.Name)
 	}
 
 	// Write to file
-	outputPath := filepath.Join(g.outputDir, fmt.Sprintf("%s.md", ext.Name))
+	outputPath := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", ext.Name))
 	return os.WriteFile(outputPath, []byte(content), 0644)
 }
 
@@ -147,7 +150,7 @@ func (g *ExtensionGenerator) generateOverview(ext *Extension) string {
 	if ext.URL.Valid {
 		url = ext.URL.String
 	}
-	extBadge := Badge(ext.Name, "", "", url)
+	extBadge := Badge(ext.Name, "", "", url, "")
 
 	pkgShortcode := ExtShortcode(ext.Name, ext.Pkg)
 
@@ -169,38 +172,38 @@ func (g *ExtensionGenerator) generateOverview(ext *Extension) string {
 func (g *ExtensionGenerator) generateAttributes(ext *Extension) string {
 	attrs := ext.GetAttributeBadge()
 
-	hasBin := Badge("No", "green", "", "")
+	hasBin := Badge("No", "green", "", "", "")
 	if ext.HasBin {
-		hasBin = Badge("Yes", "green", "", "")
+		hasBin = Badge("Yes", "green", "", "", "")
 	}
 
-	hasLib := Badge("No", "green", "", "")
+	hasLib := Badge("No", "green", "", "", "")
 	if ext.HasLib {
-		hasLib = Badge("Yes", "green", "", "")
+		hasLib = Badge("Yes", "green", "", "", "")
 	}
 
-	needLoad := Badge("No", "green", "", "")
+	needLoad := Badge("No", "green", "", "", "")
 	if ext.NeedLoad {
-		needLoad = Badge("Yes", "red", "", "")
+		needLoad = Badge("Yes", "red", "", "", "")
 	}
 
-	needDDL := Badge("No", "green", "", "")
+	needDDL := Badge("No", "green", "", "", "")
 	if ext.NeedDDL {
-		needDDL = Badge("Yes", "green", "", "")
+		needDDL = Badge("Yes", "green", "", "", "")
 	}
 
-	relocatable := Badge("no", "red", "", "")
+	relocatable := Badge("no", "red", "", "", "")
 	if ext.Relocatable.Valid && ext.Relocatable.Bool {
-		relocatable = Badge("yes", "green", "", "")
+		relocatable = Badge("yes", "green", "", "", "")
 	}
 
-	trusted := Badge("no", "red", "", "")
+	trusted := Badge("no", "red", "", "", "")
 	if ext.Trusted.Valid && ext.Trusted.Bool {
-		trusted = Badge("yes", "green", "", "")
+		trusted = Badge("yes", "green", "", "", "")
 	}
 
 	// Skip first two characters (c and l flags)
-	attrBadge := Badge("--"+attrs[2:], "blue", "", "")
+	attrBadge := Badge("--"+attrs[2:], "blue", "", "", "")
 
 	return fmt.Sprintf(`
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -331,7 +334,7 @@ func (g *ExtensionGenerator) buildPackageSummaryRow(label, repo, version, patter
 	if ext.LeadExt.Valid {
 		leadExt = ext.LeadExt.String
 	}
-	repoBadge := Badge(repoLabel, "", "", fmt.Sprintf("/e/%s", leadExt))
+	repoBadge := Badge(repoLabel, "", "", fmt.Sprintf("/e/%s", leadExt), "")
 
 	versionDisplay := "-"
 	if version != "" {
@@ -350,7 +353,7 @@ func (g *ExtensionGenerator) buildPackageSummaryRow(label, repo, version, patter
 	}
 
 	var pgBadges []string
-	for _, pg := range g.cache.PGVersions {
+	for _, pg := range g.Cache.PGVersions {
 		text := fmt.Sprintf("%d", pg)
 		color := "red"
 
@@ -397,14 +400,14 @@ func (g *ExtensionGenerator) generateContribPackagesTable(ext *Extension) string
 
 	// Build table header
 	b.WriteString("|")
-	for _, pg := range g.cache.PGVersions {
+	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
 	b.WriteString("\n")
 
 	// Separator
 	b.WriteString("|")
-	for range g.cache.PGVersions {
+	for range g.Cache.PGVersions {
 		b.WriteString(":--------:|")
 	}
 	b.WriteString("\n")
@@ -416,7 +419,7 @@ func (g *ExtensionGenerator) generateContribPackagesTable(ext *Extension) string
 		version = ext.Version.String
 	}
 
-	for _, pg := range g.cache.PGVersions {
+	for _, pg := range g.Cache.PGVersions {
 		if availablePgs[pg] {
 			alt := fmt.Sprintf("PostgreSQL %d: version %s", pg, version)
 			b.WriteString(fmt.Sprintf(" %s |", BgShortcode(version, alt, "green")))
@@ -467,22 +470,22 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 
 	var b strings.Builder
 	b.WriteString("\n| **Linux** / **PG** |")
-	for _, pg := range g.cache.PGVersions {
+	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf("                  **PG%d**                   |", pg))
 	}
 	b.WriteString("\n")
 
 	b.WriteString("|:------------------:|")
-	for range g.cache.PGVersions {
+	for range g.Cache.PGVersions {
 		b.WriteString(":-------------------------------------------:|")
 	}
 	b.WriteString("\n")
 
 	// Generate rows for each OS (already sorted by os_major, os_arch DESC in cache)
-	for _, os := range g.cache.OSVersions {
+	for _, os := range g.Cache.OSVersions {
 		b.WriteString(fmt.Sprintf("|    `%s`    |", os.OS))
 
-		for _, pg := range g.cache.PGVersions {
+		for _, pg := range g.Cache.PGVersions {
 			key := fmt.Sprintf("%d-%s", pg, os.OS)
 
 			if pkg, ok := pkgMap[key]; ok {
