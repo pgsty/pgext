@@ -12,13 +12,15 @@ weight: 800
 
 
 {{< cards >}}
-{{< card link="/release/rpm"   title="RPM Release"   subtitle="Changelog of EL RPM Packages" icon="sparkles" >}}
-{{< card link="/release/deb"   title="DEB Release"   subtitle="Changelog of Debian Packages" icon="play" >}}
-{{< card link="/release/infra" title="Infra Release" subtitle="Changelog of OS-Generic Packages"  icon="save" >}}
+{{< card link="/release/rpm"   title="RPM Chanagelog"   subtitle="Changelog of EL RPM Packages" icon="sparkles" >}}
+{{< card link="/release/deb"   title="DEB Chanagelog"   subtitle="Changelog of Debian Packages" icon="play" >}}
+{{< card link="/release/infra" title="Infra Chanagelog" subtitle="Changelog of OS-Generic Packages"  icon="save" >}}
 {{< /cards >}}
 
 
 ## PIG Releases
+
+The latest stable version of `pig` is [v0.6.2](https://github.com/pgsty/pig/releases/tag/v0.6.2)
 
 |           Version           |    Date    | Summary                                  |                           GitHub                           |
 |:---------------------------:|:----------:|------------------------------------------|:----------------------------------------------------------:|

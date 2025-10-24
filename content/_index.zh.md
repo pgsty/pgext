@@ -1,5 +1,5 @@
 ---
-title: Postgres扩展
+title: PGEXT - PG扩展目录与包管理器
 description: PostgreSQL 扩展目录，扩展仓库，包管理器
 cascade:
   type: docs
@@ -7,6 +7,7 @@ breadcrumbs: false
 excludeSearch: true
 width: full
 toc: false
+comment: false
 ---
 
 
@@ -20,7 +21,6 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
   {{< card link="/zh/list" title="扩展目录" icon="clipboard-list" subtitle="420+ 个可用 PostgreSQL 扩展的完整列表" >}}
   {{< card link="/zh/repo" title="软件仓库" icon="cube" subtitle="包含扩展二进制包的 APT/YUM 软件仓库" >}}
   {{< card link="/zh/pig" title="包管理器" icon="cash" subtitle="PostgreSQL 与扩展生态中缺失的包管理器" >}}
-  {{< card link="/zh/usage" title="使用说明" icon="question-mark-circle" subtitle="如何下载，安装，配置，启用你的扩展？" >}}
 {{< /cards >}}
 
 
@@ -29,7 +29,7 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
 
 请参阅我们的博客文章：[PostgreSQL 正在吞噬数据库世界](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
-[![ecosystem](/img/pigsty/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+[![ecosystem](/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
 <CategoryBadges locale="zh" />
 
@@ -43,7 +43,11 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
 
 ## 扩展分类
 
-{{< cards >}}
+{{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
+
+{{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
+
+{{< cards cols=5 >}}
   {{< card link="/zh/cate/time" title="TIME" icon="clock" subtitle="时间时态扩展：时序数据库 TimescaleDB，时态数据库，版本控制表，定时任务，异步后台任务调度扩展。" >}}
   {{< card link="/zh/cate/gis" title="GIS" icon="globe" subtitle="地理空间扩展：PostGIS，地理空间数据类型、函数与索引，天空索引 Q3C，OGR FDW， 寻路算法，地理正/逆查询。" >}}
   {{< card link="/zh/cate/rag" title="RAG" icon="light-bulb" subtitle="AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量函数集，库内机器学习与推理 pgml，等等。" >}}
@@ -62,6 +66,10 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
   {{< card link="/zh/cate/etl" title="ETL" icon="truck" subtitle="数据复制扩展：逻辑复制，逻辑解码，DDL复制，JSON/BSON/Protobuf 变更抽取，数据迁移，数据导入，数据比对等。" >}}
 {{< /cards >}}
 
+{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
+
+{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
+{{< language "c" >}} {{< language "c++" >}} {{< language "rust" >}} {{< language "java" >}} {{< language "python" >}} {{< language "sql" >}} {{< language "data" >}}
 
 --------
 

@@ -119,35 +119,6 @@ The [`pgsql`](/repo/pgsql) repo contains packages that are ad hoc to specific Po
 
 
 
-The file hierarchy of the repository may look like this:
-
-<Files>
-    <Folder name="https://repo.pigsty.io" defaultOpen>
-        <Folder name="apt" defaultOpen>
-            <Folder name="infra">
-                <Folder name="amd64"></Folder>
-                <Folder name="arm64"></Folder>
-            </Folder>
-            <Folder name="pgsql">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-        </Folder>
-        <Folder name="yum" defaultOpen>
-            <Folder name="infra">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-            <Folder name="pgsql">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-        </Folder>
-        <a href={"https://repo.pigsty.io/pig"}><File name="pig" icon={<FileTerminal className="text-orange-500" />} /></a>
-        <a href={"https://repo.pigsty.io/key"}><File name="key" icon={<KeyRound className="text-blue-500" />} /></a>
-    </Folder>
-</Files>
-
 
 ------
 

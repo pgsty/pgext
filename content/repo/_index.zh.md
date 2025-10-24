@@ -8,7 +8,8 @@ breadcrumbs: false
 
 
 Pigsty 为主流 [Linux 发行版](https://pgsty.com/docs/prepare/linux) 提供了一个 PostgreSQL 扩展仓库，其中包含 200+ 额外的 PostgreSQL 扩展。
-Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 官方仓库配合使用，共同使用时可以安装多达 [423 个 PostgreSQL 扩展](/zh/list)。
+
+Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 官方仓库配合使用，共同使用时可以安装多达 [424 个 PostgreSQL 扩展](/zh/list)。
 
 
 --------
@@ -94,34 +95,28 @@ Pigsty 仓库由两个主要部分组成：[`INFRA`](/zh/repo/infra) 和 [`PGSQL
 | Ubuntu 22.04 | u22 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
 | Ubuntu 24.04 | u24 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
 
-Pigsty 仓库的文件的大致目录结构如下所示：
 
-<Files>
-    <Folder name="https://repo.pigsty.io" defaultOpen>
-        <Folder name="apt" defaultOpen>
-            <Folder name="infra">
-                <Folder name="amd64"></Folder>
-                <Folder name="arm64"></Folder>
-            </Folder>
-            <Folder name="pgsql">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-        </Folder>
-        <Folder name="yum" defaultOpen>
-            <Folder name="infra">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-            <Folder name="pgsql">
-                <Folder name="x86_64"></Folder>
-                <Folder name="aarch64"></Folder>
-            </Folder>
-        </Folder>
-        <a href={"https://repo.pigsty.io/pig"}><File name="pig" icon={<FileTerminal className="text-orange-500" />} /></a>
-        <a href={"https://repo.pigsty.io/key"}><File name="key" icon={<KeyRound className="text-blue-500" />} /></a>
-    </Folder>
-</Files>
+|                        系统代码                         | 厂商     | 大版本 |   小版本   | 全名                |                                                                                                      PG 大版本                                                                                                       | 备注       |
+|:---------------------------------------------------:|:-------|:---:|:-------:|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------|
+|  {{< badge content="el7.x86_64"   color="red" >}}   | EL     |  7  |   7.9   | CentOS 7 x86      |      {{< badge content="18" color="red" >}} {{< badge content="17" color="red" >}} {{< badge content="16" color="red" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}       | EOL      |
+| {{< badge content="el8.x86_64"   color="green" >}}  | EL     |  8  |  8.10   | RockyLinux 8 x86  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | Near EOL |
+| {{< badge content="el8.aarch64"  color="green" >}}  | EL     |  8  |  8.10   | RockyLinux 8 ARM  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | Near EOL |
+| {{< badge content="el9.x86_64"   color="green" >}}  | EL     |  9  |   9.6   | RockyLinux 9 x86  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="el9.aarch64"  color="green" >}}  | EL     |  9  |   9.6   | RockyLinux 9 ARM  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="el10.x86_64"  color="yellow" >}} | EL     | 10  |  10.0   | RockyLinux 10 x86 |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | TBD      |
+| {{< badge content="el10.aarch64" color="yellow" >}} | EL     | 10  |  10.0   | RockyLinux 10 ARM |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | TBD      |
+|  {{< badge content="d11.x86_64"   color="red" >}}   | Debian | 11  |  11.11  | Debian 11 x86     | {{< badge content="18" color="yellow" >}} {{< badge content="17" color="yellow" >}} {{< badge content="16" color="yellow" >}} {{< badge content="15" color="yellow" >}} {{< badge content="14" color="yellow" >}} | EOL      |
+|  {{< badge content="d11.aarch64"  color="red" >}}   | Debian | 11  |  11.11  | Debian 11 ARM     | {{< badge content="18" color="yellow" >}} {{< badge content="17" color="yellow" >}} {{< badge content="16" color="yellow" >}} {{< badge content="15" color="yellow" >}} {{< badge content="14" color="yellow" >}} | EOL      |
+| {{< badge content="d12.x86_64"   color="green" >}}  | Debian | 12  |  12.11  | Debian 12 x86     |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="d12.aarch64"  color="green" >}}  | Debian | 12  |  12.11  | Debian 12 ARM     |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="d13.x86_64"   color="yellow" >}} | Debian | 13  |  13.1   | Debian 13 x86     |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | TBD      |
+| {{< badge content="d13.aarch64"  color="yellow" >}} | Debian | 13  |  13.1   | Debian 13 ARM     |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | TBD      |
+|  {{< badge content="u20.x86_64"   color="red" >}}   | Ubuntu | 20  | 20.04.6 | Ubuntu 20.04 x86  | {{< badge content="18" color="yellow" >}} {{< badge content="17" color="yellow" >}} {{< badge content="16" color="yellow" >}} {{< badge content="15" color="yellow" >}} {{< badge content="14" color="yellow" >}} | EOL      |
+|  {{< badge content="u20.aarch64"  color="red" >}}   | Ubuntu | 20  | 20.04.6 | Ubuntu 20.04 ARM  | {{< badge content="18" color="yellow" >}} {{< badge content="17" color="yellow" >}} {{< badge content="16" color="yellow" >}} {{< badge content="15" color="yellow" >}} {{< badge content="14" color="yellow" >}} | EOL      |
+| {{< badge content="u22.x86_64"   color="green" >}}  | Ubuntu | 22  | 22.04.5 | Ubuntu 22.04 x86  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="u22.aarch64"  color="green" >}}  | Ubuntu | 22  | 22.04.5 | Ubuntu 22.04 ARM  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="u24.x86_64"   color="green" >}}  | Ubuntu | 24  | 24.04.3 | Ubuntu 24.04 x86  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
+| {{< badge content="u24.aarch64"  color="green" >}}  | Ubuntu | 24  | 24.04.3 | Ubuntu 24.04 ARM  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
 
 
 ------

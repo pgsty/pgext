@@ -1,4 +1,4 @@
-baseURL: 'https://pgext.pgsty.com/'
+baseURL: 'https://pig.pgsty.com/'
 languageCode: 'en'
 title: 'PG Extensions'
 
@@ -9,8 +9,8 @@ enableGitInfo: true
 hasCJKLanguage: true
 
 services:
-  #googleAnalytics:
-  #  ID: G-SGY2FPH1EG
+  googleAnalytics:
+    ID: G-5HDLR6CMB4
 
 outputs:
   home: [HTML]
@@ -28,34 +28,108 @@ languages:
     languageName: English
     languageCode: en
     weight: 1
-    title: PGEXT Catalog
+    title: PIG - PGEXT
+    menu:
+      main:
+
+        - name: Pigsty
+          weight: 2
+          url: "https://pgsty.com"
+
+        - name: GitHub
+          weight: 3
+          url: "https://github.com/pgsty/pig"
+          params:
+            icon: github
+
+        - name: Search
+          weight: 4
+          params:
+            type: search
+
+      sidebar:
+        - identifier: more
+          name: Links
+          params:
+            type: separator
+          weight: 6
+        - identifier: chinese
+          name: "PIG 中文文档 ↗"
+          url: "/zh"
+          weight: 7
+        - identifier: pigsty
+          name: "Pigsty, PG RDS ↗"
+          url: "https://pgsty.com"
+          weight: 8
+        - identifier: pigsty-doc
+          name: "Pigsty v3.6 Doc ↗"
+          url: "https://doc.pgsty.com"
+          weight: 9
+        - identifier: pgext
+          name: "PG Extension ↗"
+          url: "https://ext.pgsty.com"
+          weight: 10
+        - identifier: pgexp
+          name: "PG Exporter ↗"
+          url: "https://exp.pgsty.com"
+          weight: 11
+        - identifier: vonng
+          name: "Author: Vonng ↗"
+          url: "https://vonng.com/en/"
+          weight: 12
+
+
   zh:
     languageName: 简体中文
     languageCode: zh
     weight: 2
-    title: PGEXT 扩展目录
+    title: PIG - PG包管理器
 
-sidebar:
-  - identifier: pig
-    name: "PIG Doc"
-    url: "https://pig.pgsty.com"
-    weight: 7
-  - identifier: pigsty
-    name: "Pigsty, PG RDS ↗"
-    url: "https://pgsty.com"
-    weight: 8
-  - identifier: pigsty-doc
-    name: "Pigsty Doc ↗"
-    url: "https://doc.pgsty.com"
-    weight: 9
-  - identifier: pgexp
-    name: "PG Exporter ↗"
-    url: "https://exp.pgsty.com"
-    weight: 11
-  - identifier: vonng
-    name: "Author: Vonng ↗"
-    url: "https://vonng.com"
-    weight: 12
+    menu:
+      main:
+        - name: Pigsty
+          weight: 2
+          url: "https://pgsty.com"
+        - name: GitHub
+          weight: 3
+          url: "https://github.com/pgsty/pig"
+          params:
+            icon: github
+        - name: Search
+          weight: 4
+          params:
+            type: search
+      sidebar:
+        - identifier: more
+          name: Links
+          params:
+            type: separator
+          weight: 6
+
+        - identifier: english
+          name: "PIG English Doc"
+          url: "/"
+          weight: 7
+        - identifier: pigsty
+          name: "Pigsty, PG RDS ↗"
+          url: "https://pgsty.com"
+          weight: 8
+        - identifier: pigsty-doc
+          name: "Pigsty v3.6文档 ↗"
+          url: "https://doc.pgsty.com/zh/"
+          weight: 9
+        - identifier: pgext
+          name: "PG 扩展目录 ↗"
+          url: "https://ext.pgsty.com/zh/"
+          weight: 10
+        - identifier: pgexp
+          name: "PG Exporter ↗"
+          url: "https://exp.pgsty.com"
+          weight: 11
+        - identifier: vonng
+          name: "作者：Vonng ↗"
+          url: "https://vonng.com"
+          weight: 12
 
 
 
@@ -91,7 +165,7 @@ menu:
 
 
 params:
-  description: PGEXT Catalog
+  description: PG Extension Catalog and pig the package maanger
 
   navbar:
     displayTitle: true

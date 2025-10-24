@@ -109,69 +109,50 @@ func (g *ExtensionGenerator) getActivePGVersions(ctx context.Context) ([]int, er
 func (g *ExtensionGenerator) buildPGColumnSQL(pgVersions []int) string {
 	var columns []string
 	for _, pg := range pgVersions {
-		columns = append(columns, fmt.Sprintf(`COUNT(DISTINCT CASE WHEN p.pg = %d AND p.state = 'AVAIL' THEN e.name END) AS pg%d`, pg, pg))
+		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE pg_ver @> '{%d}') AS pg%d`, pg, pg))
 	}
 	if len(columns) == 0 {
 		return ""
 	}
-	return ", " + strings.Join(columns, ", ")
+	return ",\n       " + strings.Join(columns, ",\n       ")
 }
 
 func (g *ExtensionGenerator) fetchExtensionStats(ctx context.Context, pgVersions []int, pgColumns string) ([]StatsRow, error) {
-	// Query for ALL extensions
-	allQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT e.name) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN e.name END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN e.name END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN e.name END) AS contrib,
-			COUNT(DISTINCT CASE WHEN NOT EXISTS (
-				SELECT 1 FROM pgext.pkg p2 WHERE p2.ext = e.name AND p2.state = 'AVAIL'
-			) THEN e.name END) AS miss%s
-		FROM pgext.extension e
-		LEFT JOIN pgext.pkg p ON e.name = p.ext
-		WHERE e.lead = true
-	`, pgColumns)
+	// SQL 1: ALL extensions
+	allQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       0 AS miss%s
+FROM pgext.extension`, pgColumns)
 
 	allRow, err := g.queryStatsRow(ctx, allQuery, "ALL", pgVersions)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query ALL extension stats: %w", err)
 	}
 
-	// Query for EL extensions
-	elQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT e.name) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN e.name END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN e.name END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN e.name END) AS contrib,
-			COUNT(DISTINCT CASE WHEN NOT EXISTS (
-				SELECT 1 FROM pgext.pkg p2 WHERE p2.ext = e.name AND p2.os LIKE 'el%%' AND p2.state = 'AVAIL'
-			) THEN e.name END) AS miss%s
-		FROM pgext.extension e
-		LEFT JOIN pgext.pkg p ON e.name = p.ext AND p.os LIKE 'el%%'
-		WHERE e.lead = true
-	`, g.buildPGColumnSQL(pgVersions))
+	// SQL 2: EL extensions
+	elPGColumns := g.buildPGColumnsForEL(pgVersions)
+	elQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       (SELECT count(*) FROM pgext.extension) - count(*) AS miss%s
+FROM pgext.extension WHERE rpm_repo IS NOT NULL`, elPGColumns)
 
 	elRow, err := g.queryStatsRow(ctx, elQuery, "EL", pgVersions)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query EL extension stats: %w", err)
 	}
 
-	// Query for Debian extensions
-	debianQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT e.name) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN e.name END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN e.name END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN e.name END) AS contrib,
-			COUNT(DISTINCT CASE WHEN NOT EXISTS (
-				SELECT 1 FROM pgext.pkg p2 WHERE p2.ext = e.name AND (p2.os LIKE 'u%%' OR p2.os LIKE 'd%%') AND p2.state = 'AVAIL'
-			) THEN e.name END) AS miss%s
-		FROM pgext.extension e
-		LEFT JOIN pgext.pkg p ON e.name = p.ext AND (p.os LIKE 'u%%' OR p.os LIKE 'd%%')
-		WHERE e.lead = true
-	`, g.buildPGColumnSQL(pgVersions))
+	// SQL 3: Debian extensions
+	debPGColumns := g.buildPGColumnsForDeb(pgVersions)
+	debianQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       (SELECT count(*) FROM pgext.extension) - count(*) AS miss%s
+FROM pgext.extension WHERE deb_repo IS NOT NULL`, debPGColumns)
 
 	debianRow, err := g.queryStatsRow(ctx, debianQuery, "Debian", pgVersions)
 	if err != nil {
@@ -181,54 +162,64 @@ func (g *ExtensionGenerator) fetchExtensionStats(ctx context.Context, pgVersions
 	return []StatsRow{allRow, elRow, debianRow}, nil
 }
 
+func (g *ExtensionGenerator) buildPGColumnsForEL(pgVersions []int) string {
+	var columns []string
+	for _, pg := range pgVersions {
+		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE rpm_pg @> '{%d}') AS pg%d`, pg, pg))
+	}
+	if len(columns) == 0 {
+		return ""
+	}
+	return ",\n       " + strings.Join(columns, ",\n       ")
+}
+
+func (g *ExtensionGenerator) buildPGColumnsForDeb(pgVersions []int) string {
+	var columns []string
+	for _, pg := range pgVersions {
+		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE deb_pg @> '{%d}') AS pg%d`, pg, pg))
+	}
+	if len(columns) == 0 {
+		return ""
+	}
+	return ",\n       " + strings.Join(columns, ",\n       ")
+}
+
 func (g *ExtensionGenerator) fetchPackageStats(ctx context.Context, pgVersions []int, pgColumns string) ([]StatsRow, error) {
-	// Query for ALL packages
-	allQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT p.pkg) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN p.pkg END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN p.pkg END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN p.pkg END) AS contrib,
-			COUNT(DISTINCT CASE WHEN p.state != 'AVAIL' THEN p.pkg END) AS miss%s
-		FROM pgext.pkg p
-		LEFT JOIN pgext.extension e ON p.ext = e.name
-	`, g.buildPGColumnsForPackages(pgVersions))
+	// SQL 4: ALL packages (lead extensions only)
+	allQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       0 AS miss%s
+FROM pgext.extension WHERE lead`, pgColumns)
 
 	allRow, err := g.queryStatsRow(ctx, allQuery, "ALL", pgVersions)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query ALL package stats: %w", err)
 	}
 
-	// Query for EL packages
-	elQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT p.pkg) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN p.pkg END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN p.pkg END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN p.pkg END) AS contrib,
-			COUNT(DISTINCT CASE WHEN p.state != 'AVAIL' THEN p.pkg END) AS miss%s
-		FROM pgext.pkg p
-		LEFT JOIN pgext.extension e ON p.ext = e.name
-		WHERE p.os LIKE 'el%%'
-	`, g.buildPGColumnsForPackages(pgVersions))
+	// SQL 5: EL packages (lead extensions only)
+	elPGColumns := g.buildPGColumnsForEL(pgVersions)
+	elQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss%s
+FROM pgext.extension WHERE lead AND rpm_repo IS NOT NULL`, elPGColumns)
 
 	elRow, err := g.queryStatsRow(ctx, elQuery, "EL", pgVersions)
 	if err != nil {
 		return nil, fmt.Errorf("failed to query EL package stats: %w", err)
 	}
 
-	// Query for Debian packages
-	debianQuery := fmt.Sprintf(`
-		SELECT
-			COUNT(DISTINCT p.pkg) AS all_cnt,
-			COUNT(DISTINCT CASE WHEN p.org = 'pgdg' AND p.state = 'AVAIL' THEN p.pkg END) AS pgdg,
-			COUNT(DISTINCT CASE WHEN p.org = 'pigsty' AND p.state = 'AVAIL' THEN p.pkg END) AS pigsty,
-			COUNT(DISTINCT CASE WHEN e.contrib = true THEN p.pkg END) AS contrib,
-			COUNT(DISTINCT CASE WHEN p.state != 'AVAIL' THEN p.pkg END) AS miss%s
-		FROM pgext.pkg p
-		LEFT JOIN pgext.extension e ON p.ext = e.name
-		WHERE p.os LIKE 'u%%' OR p.os LIKE 'd%%'
-	`, g.buildPGColumnsForPackages(pgVersions))
+	// SQL 6: Debian packages (lead extensions only)
+	debPGColumns := g.buildPGColumnsForDeb(pgVersions)
+	debianQuery := fmt.Sprintf(`SELECT count(*) AS total,
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg,
+       count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty,
+       count(*) FILTER ( WHERE contrib ) AS contrib,
+       (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss%s
+FROM pgext.extension WHERE lead AND deb_repo IS NOT NULL`, debPGColumns)
 
 	debianRow, err := g.queryStatsRow(ctx, debianQuery, "Debian", pgVersions)
 	if err != nil {
@@ -236,17 +227,6 @@ func (g *ExtensionGenerator) fetchPackageStats(ctx context.Context, pgVersions [
 	}
 
 	return []StatsRow{allRow, elRow, debianRow}, nil
-}
-
-func (g *ExtensionGenerator) buildPGColumnsForPackages(pgVersions []int) string {
-	var columns []string
-	for _, pg := range pgVersions {
-		columns = append(columns, fmt.Sprintf(`COUNT(DISTINCT CASE WHEN p.pg = %d AND p.state = 'AVAIL' THEN p.pkg END) AS pg%d`, pg, pg))
-	}
-	if len(columns) == 0 {
-		return ""
-	}
-	return ", " + strings.Join(columns, ", ")
 }
 
 func (g *ExtensionGenerator) queryStatsRow(ctx context.Context, query, label string, pgVersions []int) (StatsRow, error) {
@@ -357,7 +337,7 @@ comments: false
 ---
 
 `)
-		b.WriteString(fmt.Sprintf("PostgreSQL 扩展目录包含了 %d 个扩展和 %d 个包。\n\n",
+		b.WriteString(fmt.Sprintf("PostgreSQL 扩展目录包含了 **%d** 个扩展和 **%d** 个包。\n\n",
 			totalExts, totalPkgs))
 	} else {
 		b.WriteString(`---
@@ -368,7 +348,7 @@ comments: false
 ---
 
 `)
-		b.WriteString(fmt.Sprintf("The PostgreSQL Extension Catalog contains %d extensions and %d packages.\n\n",
+		b.WriteString(fmt.Sprintf("The PostgreSQL Extension Catalog contains **%d** extensions and **%d** packages.\n\n",
 			totalExts, totalPkgs))
 	}
 

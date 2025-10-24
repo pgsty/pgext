@@ -6,6 +6,7 @@ breadcrumbs: false
 excludeSearch: true
 width: full
 toc: false
+comment: false
 ---
 
 
@@ -24,7 +25,7 @@ Harness the synergistic superpower of the PostgreSQL extensions ecosystem with t
 
 **Just use PostgreSQL for everything!** Also check our blog post: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
-[![ecosystem](ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+[![ecosystem](/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
 ## Catalog
 

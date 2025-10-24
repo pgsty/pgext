@@ -1,42 +1,53 @@
 ---
 title: PGSQL 仓库
-description: The repo for PostgreSQL Extensions & Kernel Forks
+description: PostgreSQL 扩展和内核分支仓库
 icon: Database
 weight: 100
 ---
 
-
-import { File, Folder, Files } from 'fumadocs-ui/components/files';
-import { Badge } from "@/components/ui/badge";
-import { KeyRound, FileTerminal } from "lucide-react";
-
-The `pigsty-pgsql` repo contains packages that are ad hoc to specific PostgreSQL Major Versions.
-(Often ad hoc to a specific Linux distro major version, too) Including extensions, and some kernel forks.
+`pigsty-pgsql` 仓库包含特定于 PostgreSQL 主版本的软件包。
+（通常也特定于特定的 Linux 发行版主版本）包括扩展和一些内核分支。
 
 ## 快速上手
 
+### PIG
+
+您可以安装 [pig](/pig) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
+
 ```bash tab="pig"
-curl https://repo.pigsty.io/pig | bash      # download and install the pig CLI tool
-pig repo add all pigsty -u                  # add pigsty-pgsql repo and update cache
+curl https://repo.pigsty.io/pig | bash      # 下载并安装 pig CLI 工具
+pig repo add pigsty                         # 添加 pigsty-pgsql 仓库
+pig repo add pgdg                           # 添加 pgdg 仓库
+pig repo add pgsql -u                       # 添加 pgdg + pigsty-pgsql 仓库并更新缓存（推荐）
 ```
+
+### APT
+
+您也可以直接在 Debian / Ubuntu 上使用 `apt` 启用此仓库：
+
 ```bash tab="apt"
-# Add Pigsty's GPG public key to your system keychain to verify package signatures
+# 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
 
-# Get Debian distribution codename (distro_codename=jammy, focal, bullseye, bookworm), and write the corresponding upstream repository address to the APT List file
+# 获取 Debian 发行版代号（distro_codename=jammy, focal, bullseye, bookworm），并将相应的上游仓库地址写入 APT List 文件
 distro_codename=$(lsb_release -cs)
 sudo tee /etc/apt/sources.list.d/pigsty-io.list > /dev/null <<EOF
 deb [signed-by=/etc/apt/keyrings/pigsty.gpg] https://repo.pigsty.io/apt/pgsql/${distro_codename} ${distro_codename} main
 EOF
 
-# Refresh APT repository cache
+# 刷新 APT 仓库缓存
 sudo apt update
 ```
-```bash tab="yum"
-# Add Pigsty's GPG public key to your system keychain to verify package signatures
+
+### DNF
+
+您也可以直接在兼容 EL 的系统上使用 `dnf`/`yum` 启用此仓库：
+
+```bash tab="dnf"
+# 将 Pigsty 的 GPG 公钥添加到您的系统密钥链以验证包签名
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
 
-# Add Pigsty Repo definition files to /etc/yum.repos.d/ directory, including two repositories
+# 将 Pigsty 仓库定义文件添加到 /etc/yum.repos.d/ 目录，包括两个仓库
 sudo tee /etc/yum.repos.d/pigsty-pgsql.repo > /dev/null <<-'EOF'
 [pigsty-pgsql]
 name=Pigsty PGSQL For el$releasever.$basearch
@@ -49,9 +60,10 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty
 module_hotfixes=1
 EOF
 
-# Refresh YUM/DNF repository cache
+# 刷新 YUM/DNF 仓库缓存
 sudo yum makecache;
 ```
+
 
 
 --------
@@ -77,12 +89,12 @@ sudo yum makecache;
 
 ## 源代码
 
-Building specs of this repo is open-sourced on GitHub:
+此仓库的构建规格在 GitHub 上开源：
 
 - https://github.com/pgsty/rpm
 - https://github.com/pgsty/deb
 
-If the platform is not supported, you can also build the packages from source code by yourself.
+如果平台不受支持，您也可以自行从源代码构建软件包。
 
 
 ------
@@ -90,7 +102,7 @@ If the platform is not supported, you can also build the packages from source co
 ## 变更日志
 
 
-|      Date      |        Name         |  Old  |                                               New                                                | RPM | DEB |
+|       日期       |         名称          |  旧版本  |                                               新版本                                                | RPM | DEB |
 |:--------------:|:-------------------:|:-----:|:------------------------------------------------------------------------------------------------:|:---:|:---:|
 | **2025-05-26** |        pgdd         |   -   |                          [0.6.0](https://github.com/rustprooflabs/pgdd)                          |  ✓  |  ✓  |
 |                |       convert       |   -   |                        [0.0.4](https://github.com/rustprooflabs/convert)                         |  ✓  |  ✓  |
@@ -158,15 +170,15 @@ If the platform is not supported, you can also build the packages from source co
 |                |        pgmq         |   -   |                                              1.4.4                                               |  ✓  |  ✓  |
 |                |     pg_protobuf     |   -   |                                              16 17                                               |  ✓  |  ✓  |
 |                |      pg_uuidv7      |   -   |                                               1.6                                                |  ✓  |  ✓  |
-|                |     pg_readonly     |   -   |                                              latest                                              |  ✓  |  ✓  |
+|                |     pg_readonly     |   -   |                                               最新版                                                |  ✓  |  ✓  |
 |                |        pgddl        |   -   |                                               0.28                                               |  ✓  |  ✓  |
-|                |    pg_safeupdate    |   -   |                                              latest                                              |  ✓  |  ✓  |
+|                |    pg_safeupdate    |   -   |                                               最新版                                                |  ✓  |  ✓  |
 |                |   pg_stat_monitor   |   -   |                                               2.1                                                |  ✓  |  ✓  |
 |                |     pg_profile      |   -   |                                               4.7                                                |  ✓  |  ✓  |
 |                |    system_stats     |   -   |                                               3.2                                                |  ✓  |  ✓  |
 |                |     pg_auth_mon     |   -   |                                               3.0                                                |  ✓  |  ✓  |
 |                |     login_hook      |   -   |                                               1.6                                                |  ✓  |  ✓  |
 |                |      logerrors      |   -   |                                              2.1.3                                               |  ✓  |  ✓  |
-|                |     pg-orphaned     |   -   |                                              latest                                              |  ✓  |  ✓  |
+|                |     pg-orphaned     |   -   |                                               最新版                                                |  ✓  |  ✓  |
 |                |      pgnodemx       |   -   |                                               1.7                                                |  ✓  |  ✓  |
 |                |      sslutils       |   -   |                                           1.4 (+16,17)                                           |  ✓  |  ✓  |

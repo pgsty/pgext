@@ -5,11 +5,6 @@ icon: Database
 weight: 100
 ---
 
-
-import { File, Folder, Files } from 'fumadocs-ui/components/files';
-import { Badge } from "@/components/ui/badge";
-import { KeyRound, FileTerminal } from "lucide-react";
-
 The `pigsty-pgsql` repo contains packages that are ad hoc to specific PostgreSQL Major Versions.
 (Often ad hoc to a specific Linux distro major version, too) Including extensions, and some kernel forks.
 

@@ -20,9 +20,9 @@ weight: 100
 —— **Postgres Install Genius，PostgreSQL 生态中缺失的扩展包管理器**
 
 {{< cards >}}
-{{< card link="/intro"   title="Introduction" subtitle="为什么我们需要一个PG专用包管理器？" icon="sparkles" >}}
-{{< card link="/start"   title="Get Started"  subtitle="快速上手与样例"  icon="play" >}}
-{{< card link="/install" title="Installation" subtitle="下载、安装、更新 pig" icon="save" >}}
+{{< card link="/intro"   title="简介" subtitle="为什么需要专用的PG包管理器？" icon="sparkles" >}}
+{{< card link="/start"   title="上手" subtitle="快速上手与样例"  icon="play" >}}
+{{< card link="/install" title="安装" subtitle="下载、安装、更新 pig" icon="save" >}}
 {{< /cards >}}
 
 ## 快速上手
