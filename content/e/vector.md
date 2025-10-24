@@ -1,7 +1,7 @@
 ---
 title: "vector"
 linkTitle: "vector"
-description: "pgvector: vector data type and ivfflat and hnsw access methods"
+description: "vector data type and ivfflat and hnsw access methods"
 weight: 1800
 categories: ["RAG"]
 width: full
@@ -118,8 +118,8 @@ vector data type and ivfflat and hnsw access methods
 | `pgvector_16` | 0.7.2 | `el8.aarch64` | pgdg | 90.7 KiB | [pgvector_16-0.7.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.7.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.7.1 | `el8.aarch64` | pgdg | 90.3 KiB | [pgvector_16-0.7.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.7.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.7.0 | `el8.aarch64` | pgdg | 89.7 KiB | [pgvector_16-0.7.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.7.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgvector_16` | 0.6.2 | `el8.aarch64` | pgdg | 70.2 KiB | [pgvector_16-0.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.6.2 | `el8.aarch64` | pgdg | 70.4 KiB | [pgvector_16-0.6.2-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.6.2-2PGDG.rhel8.aarch64.rpm) |
+| `pgvector_16` | 0.6.2 | `el8.aarch64` | pgdg | 70.2 KiB | [pgvector_16-0.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.6.1 | `el8.aarch64` | pgdg | 69.1 KiB | [pgvector_16-0.6.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.6.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.6.0 | `el8.aarch64` | pgdg | 68.3 KiB | [pgvector_16-0.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | 0.5.1 | `el8.aarch64` | pgdg | 58.6 KiB | [pgvector_16-0.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.5.1-1PGDG.rhel8.aarch64.rpm) |

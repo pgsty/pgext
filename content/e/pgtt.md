@@ -106,8 +106,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgtt_16` | 4.4 | `el8.x86_64` | pgdg | 38.7 KiB | [pgtt_16-4.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-4.4-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_16` | 4.3 | `el8.x86_64` | pgdg | 38.2 KiB | [pgtt_16-4.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-4.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgtt_16` | 4.0 | `el8.x86_64` | pgdg | 36.9 KiB | [pgtt_16-4.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-4.0-3PGDG.rhel8.x86_64.rpm) |
 | `pgtt_16` | 4.0 | `el8.x86_64` | pgdg | 36.7 KiB | [pgtt_16-4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-4.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgtt_16` | 4.0 | `el8.x86_64` | pgdg | 36.9 KiB | [pgtt_16-4.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-4.0-3PGDG.rhel8.x86_64.rpm) |
 | `pgtt_16` | 3.1 | `el8.x86_64` | pgdg | 33.7 KiB | [pgtt_16-3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-3.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_16` | 3.0 | `el8.x86_64` | pgdg | 33.5 KiB | [pgtt_16-3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgtt_16-3.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_16` | 4.4 | `el8.aarch64` | pgdg | 37.2 KiB | [pgtt_16-4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgtt_16-4.4-1PGDG.rhel8.aarch64.rpm) |
@@ -118,14 +118,14 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_16` | 3.0 | `el8.aarch64` | pgdg | 32.1 KiB | [pgtt_16-3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgtt_16-3.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_16` | 4.4 | `el9.x86_64` | pgdg | 37.8 KiB | [pgtt_16-4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_16` | 4.3 | `el9.x86_64` | pgdg | 37.3 KiB | [pgtt_16-4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-4.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgtt_16` | 4.0 | `el9.x86_64` | pgdg | 36.2 KiB | [pgtt_16-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_16` | 4.0 | `el9.x86_64` | pgdg | 36.2 KiB | [pgtt_16-4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-4.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgtt_16` | 4.0 | `el9.x86_64` | pgdg | 36.2 KiB | [pgtt_16-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_16` | 3.1 | `el9.x86_64` | pgdg | 33.2 KiB | [pgtt_16-3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-3.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_16` | 3.0 | `el9.x86_64` | pgdg | 33.1 KiB | [pgtt_16-3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgtt_16-3.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_16` | 4.4 | `el9.aarch64` | pgdg | 36.4 KiB | [pgtt_16-4.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-4.4-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_16` | 4.3 | `el9.aarch64` | pgdg | 35.9 KiB | [pgtt_16-4.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-4.3-1PGDG.rhel9.aarch64.rpm) |
-| `pgtt_16` | 4.0 | `el9.aarch64` | pgdg | 34.9 KiB | [pgtt_16-4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-4.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_16` | 4.0 | `el9.aarch64` | pgdg | 34.9 KiB | [pgtt_16-4.0-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-4.0-3PGDG.rhel9.aarch64.rpm) |
+| `pgtt_16` | 4.0 | `el9.aarch64` | pgdg | 34.9 KiB | [pgtt_16-4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-4.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_16` | 3.1 | `el9.aarch64` | pgdg | 31.9 KiB | [pgtt_16-3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-3.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_16` | 3.0 | `el9.aarch64` | pgdg | 31.7 KiB | [pgtt_16-3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgtt_16-3.0-1PGDG.rhel9.aarch64.rpm) |
 | `postgresql-16-pgtt` | 4.4 | `d12.x86_64` | pgdg | 58.4 KiB | [postgresql-16-pgtt_4.4-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.4-2.pgdg12+1_amd64.deb) |
@@ -148,8 +148,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgtt_15` | 4.4 | `el8.x86_64` | pgdg | 38.9 KiB | [pgtt_15-4.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-4.4-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_15` | 4.3 | `el8.x86_64` | pgdg | 38.5 KiB | [pgtt_15-4.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-4.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgtt_15` | 4.0 | `el8.x86_64` | pgdg | 37.2 KiB | [pgtt_15-4.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-4.0-3PGDG.rhel8.x86_64.rpm) |
 | `pgtt_15` | 4.0 | `el8.x86_64` | pgdg | 37.0 KiB | [pgtt_15-4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-4.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgtt_15` | 4.0 | `el8.x86_64` | pgdg | 37.2 KiB | [pgtt_15-4.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-4.0-3PGDG.rhel8.x86_64.rpm) |
 | `pgtt_15` | 3.1 | `el8.x86_64` | pgdg | 34.0 KiB | [pgtt_15-3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-3.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_15` | 3.0 | `el8.x86_64` | pgdg | 33.7 KiB | [pgtt_15-3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-3.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_15` | 2.9 | `el8.x86_64` | pgdg | 69.3 KiB | [pgtt_15-2.9-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgtt_15-2.9-1.rhel8.x86_64.rpm) |
@@ -164,8 +164,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_15` | 2.10 | `el8.aarch64` | pgdg | 31.7 KiB | [pgtt_15-2.10-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgtt_15-2.10-1.rhel8.aarch64.rpm) |
 | `pgtt_15` | 4.4 | `el9.x86_64` | pgdg | 38.7 KiB | [pgtt_15-4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | 4.3 | `el9.x86_64` | pgdg | 38.2 KiB | [pgtt_15-4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgtt_15` | 4.0 | `el9.x86_64` | pgdg | 37.1 KiB | [pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | 4.0 | `el9.x86_64` | pgdg | 37.1 KiB | [pgtt_15-4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgtt_15` | 4.0 | `el9.x86_64` | pgdg | 37.1 KiB | [pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | 3.1 | `el9.x86_64` | pgdg | 34.1 KiB | [pgtt_15-3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-3.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | 3.0 | `el9.x86_64` | pgdg | 34.0 KiB | [pgtt_15-3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-3.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | 2.9 | `el9.x86_64` | pgdg | 70.9 KiB | [pgtt_15-2.9-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-2.9-1.rhel9.x86_64.rpm) |
@@ -198,8 +198,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgtt_14` | 4.4 | `el8.x86_64` | pgdg | 38.9 KiB | [pgtt_14-4.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-4.4-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_14` | 4.3 | `el8.x86_64` | pgdg | 38.5 KiB | [pgtt_14-4.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-4.3-1PGDG.rhel8.x86_64.rpm) |
-| `pgtt_14` | 4.0 | `el8.x86_64` | pgdg | 37.0 KiB | [pgtt_14-4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-4.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_14` | 4.0 | `el8.x86_64` | pgdg | 37.2 KiB | [pgtt_14-4.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-4.0-3PGDG.rhel8.x86_64.rpm) |
+| `pgtt_14` | 4.0 | `el8.x86_64` | pgdg | 37.0 KiB | [pgtt_14-4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-4.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_14` | 3.1 | `el8.x86_64` | pgdg | 34.0 KiB | [pgtt_14-3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-3.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_14` | 3.0 | `el8.x86_64` | pgdg | 33.7 KiB | [pgtt_14-3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-3.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgtt_14` | 2.9 | `el8.x86_64` | pgdg | 69.1 KiB | [pgtt_14-2.9-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-2.9-1.rhel8.x86_64.rpm) |
@@ -208,8 +208,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_14` | 2.10 | `el8.x86_64` | pgdg | 33.0 KiB | [pgtt_14-2.10-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-2.10-1.rhel8.x86_64.rpm) |
 | `pgtt_14` | 4.4 | `el8.aarch64` | pgdg | 37.5 KiB | [pgtt_14-4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 4.3 | `el8.aarch64` | pgdg | 37.0 KiB | [pgtt_14-4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.3-1PGDG.rhel8.aarch64.rpm) |
-| `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.5 KiB | [pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.7 KiB | [pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm) |
+| `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.5 KiB | [pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 3.1 | `el8.aarch64` | pgdg | 32.5 KiB | [pgtt_14-3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-3.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 3.0 | `el8.aarch64` | pgdg | 32.3 KiB | [pgtt_14-3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-3.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 2.9 | `el8.aarch64` | pgdg | 67.5 KiB | [pgtt_14-2.9-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-2.9-1.rhel8.aarch64.rpm) |
@@ -225,8 +225,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_14` | 2.10 | `el9.x86_64` | pgdg | 33.4 KiB | [pgtt_14-2.10-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgtt_14-2.10-1.rhel9.x86_64.rpm) |
 | `pgtt_14` | 4.4 | `el9.aarch64` | pgdg | 37.2 KiB | [pgtt_14-4.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-4.4-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_14` | 4.3 | `el9.aarch64` | pgdg | 36.8 KiB | [pgtt_14-4.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-4.3-1PGDG.rhel9.aarch64.rpm) |
-| `pgtt_14` | 4.0 | `el9.aarch64` | pgdg | 35.8 KiB | [pgtt_14-4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-4.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_14` | 4.0 | `el9.aarch64` | pgdg | 35.8 KiB | [pgtt_14-4.0-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-4.0-3PGDG.rhel9.aarch64.rpm) |
+| `pgtt_14` | 4.0 | `el9.aarch64` | pgdg | 35.8 KiB | [pgtt_14-4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-4.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_14` | 3.1 | `el9.aarch64` | pgdg | 32.7 KiB | [pgtt_14-3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-3.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_14` | 3.0 | `el9.aarch64` | pgdg | 32.5 KiB | [pgtt_14-3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-3.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_14` | 2.9 | `el9.aarch64` | pgdg | 69.2 KiB | [pgtt_14-2.9-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgtt_14-2.9-1.rhel9.aarch64.rpm) |

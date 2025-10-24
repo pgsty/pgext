@@ -121,8 +121,8 @@ Fetch foreign data in Python in your PostgreSQL server.
 | `multicorn2_15` | 3.2 | `el9.aarch64` | pgdg | 136.7 KiB | [multicorn2_15-3.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-3.2-1PGDG.rhel9.aarch64.rpm) |
 | `multicorn2_15` | 3.1 | `el9.aarch64` | pgdg | 113.4 KiB | [multicorn2_15-3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-3.1-1PGDG.rhel9.aarch64.rpm) |
 | `multicorn2_15` | 3.0 | `el9.aarch64` | pgdg | 112.9 KiB | [multicorn2_15-3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-3.0-1PGDG.rhel9.aarch64.rpm) |
-| `multicorn2_15` | 2.4 | `el9.aarch64` | pgdg | 108.2 KiB | [multicorn2_15-2.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-2.4-2.rhel9.aarch64.rpm) |
 | `multicorn2_15` | 2.4 | `el9.aarch64` | pgdg | 35.8 KiB | [multicorn2_15-2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-2.4-1.rhel9.aarch64.rpm) |
+| `multicorn2_15` | 2.4 | `el9.aarch64` | pgdg | 108.2 KiB | [multicorn2_15-2.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/multicorn2_15-2.4-2.rhel9.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}

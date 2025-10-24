@@ -113,8 +113,8 @@ Function for collecting statistics about messages in logfile
 | `logerrors_15` | 2.1.2 | `el8.x86_64` | pgdg | 22.3 KiB | [logerrors_15-2.1.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1.2-1.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1 | `el8.x86_64` | pgdg | 21.1 KiB | [logerrors_15-2.1-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1-2.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1 | `el8.x86_64` | pgdg | 20.7 KiB | [logerrors_15-2.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1-1.rhel8.x86_64.rpm) |
-| `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 19.9 KiB | [logerrors_15-2.0-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-2.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 41.9 KiB | [logerrors_15-2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-1.rhel8.x86_64.rpm) |
+| `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 19.9 KiB | [logerrors_15-2.0-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-2.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1.5 | `el8.aarch64` | pgdg | 23.6 KiB | [logerrors_15-2.1.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.5-1PGDG.rhel8.aarch64.rpm) |
 | `logerrors_15` | 2.1.3 | `el8.aarch64` | pgdg | 23.2 KiB | [logerrors_15-2.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.3-1PGDG.rhel8.aarch64.rpm) |
 | `logerrors_15` | 2.1.2 | `el8.aarch64` | pgdg | 22.4 KiB | [logerrors_15-2.1.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.2-1.rhel8.aarch64.rpm) |
