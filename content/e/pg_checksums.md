@@ -107,8 +107,8 @@ Activate/deactivate/verify checksums in offline Postgres clusters
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_checksums_15` | 1.3 | `el8.x86_64` | pgdg | 44.8 KiB | [pg_checksums_15-1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_checksums_15-1.3-1PGDG.rhel8.x86_64.rpm) |
-| `pg_checksums_15` | 1.1 | `el8.x86_64` | pgdg | 45.1 KiB | [pg_checksums_15-1.1-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_checksums_15-1.1-3PGDG.rhel8.x86_64.rpm) |
 | `pg_checksums_15` | 1.1 | `el8.x86_64` | pgdg | 45.0 KiB | [pg_checksums_15-1.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_checksums_15-1.1-1.rhel8.x86_64.rpm) |
+| `pg_checksums_15` | 1.1 | `el8.x86_64` | pgdg | 45.1 KiB | [pg_checksums_15-1.1-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_checksums_15-1.1-3PGDG.rhel8.x86_64.rpm) |
 | `pg_checksums_15` | 1.3 | `el8.aarch64` | pgdg | 44.3 KiB | [pg_checksums_15-1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_checksums_15-1.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_checksums_15` | 1.1 | `el8.aarch64` | pgdg | 44.7 KiB | [pg_checksums_15-1.1-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_checksums_15-1.1-3PGDG.rhel8.aarch64.rpm) |
 | `pg_checksums_15` | 1.1 | `el8.aarch64` | pgdg | 44.5 KiB | [pg_checksums_15-1.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_checksums_15-1.1-1.rhel8.aarch64.rpm) |

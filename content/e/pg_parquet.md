@@ -26,7 +26,7 @@ copy data between Postgres and Parquet
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_mooncake" >}} {{< ext "aws_s3" >}} {{< ext "citus" >}} |
 
-> [!Note] pgrx=0.16.0
+> [!Note] pgrx=0.16.1, manual update from 0.16.0
 
 
 ## Packages

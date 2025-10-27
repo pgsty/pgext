@@ -14,7 +14,7 @@ incremental view maintenance on PostgreSQL
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2870** | {{< badge content="pg_ivm" link="https://github.com/sraoss/pg_ivm" >}} | {{< ext "pg_ivm" >}} | `1.12` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2870** | {{< badge content="pg_ivm" link="https://github.com/sraoss/pg_ivm" >}} | {{< ext "pg_ivm" >}} | `1.13` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,7 +32,7 @@ incremental view maintenance on PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_ivm" >}} | `1.11` | {{< bg "18" "pg_ivm_18*" "green" >}} {{< bg "17" "pg_ivm_17*" "green" >}} {{< bg "16" "pg_ivm_16*" "green" >}} {{< bg "15" "pg_ivm_15*" "green" >}} {{< bg "14" "pg_ivm_14*" "green" >}} | `pg_ivm_$v*` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_ivm" >}} | `1.13` | {{< bg "18" "pg_ivm_18*" "green" >}} {{< bg "17" "pg_ivm_17*" "green" >}} {{< bg "16" "pg_ivm_16*" "green" >}} {{< bg "15" "pg_ivm_15*" "green" >}} {{< bg "14" "pg_ivm_14*" "green" >}} | `pg_ivm_$v*` | - |
 | **Debian** | {{< badge content="PIGSTY" link="/e/pg_ivm" >}} | `1.12` | {{< bg "18" "postgresql-18-pg-ivm" "green" >}} {{< bg "17" "postgresql-17-pg-ivm" "green" >}} {{< bg "16" "postgresql-16-pg-ivm" "green" >}} {{< bg "15" "postgresql-15-pg-ivm" "green" >}} {{< bg "14" "postgresql-14-pg-ivm" "green" >}} | `postgresql-$v-pg-ivm` | - |
 
 
@@ -193,8 +193,8 @@ incremental view maintenance on PostgreSQL
 | `pg_ivm_14` | 1.11 | `el8.x86_64` | pgdg | 71.8 KiB | [pg_ivm_14-1.11-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.11-1PGDG.rhel8.x86_64.rpm) |
 | `pg_ivm_14` | 1.10 | `el8.x86_64` | pgdg | 71.5 KiB | [pg_ivm_14-1.10-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.10-1PGDG.rhel8.x86_64.rpm) |
 | `pg_ivm_14` | 1.1 | `el8.x86_64` | pgdg | 32.4 KiB | [pg_ivm_14-1.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.1-1.rhel8.x86_64.rpm) |
-| `pg_ivm_14` | 1.0 | `el8.x86_64` | pgdg | 74.8 KiB | [pg_ivm_14-1.0-.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.0-.rhel8.x86_64.rpm) |
 | `pg_ivm_14` | 1.0 | `el8.x86_64` | pgdg | 62.9 KiB | [pg_ivm_14-1.0-alpha1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.0-alpha1.rhel8.x86_64.rpm) |
+| `pg_ivm_14` | 1.0 | `el8.x86_64` | pgdg | 74.8 KiB | [pg_ivm_14-1.0-.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_ivm_14-1.0-.rhel8.x86_64.rpm) |
 | `pg_ivm_14` | 1.8 | `el8.aarch64` | pgdg | 64.0 KiB | [pg_ivm_14-1.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_ivm_14-1.8-1PGDG.rhel8.aarch64.rpm) |
 | `pg_ivm_14` | 1.7 | `el8.aarch64` | pgdg | 67.0 KiB | [pg_ivm_14-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_ivm_14-1.7-1PGDG.rhel8.aarch64.rpm) |
 | `pg_ivm_14` | 1.6 | `el8.aarch64` | pgdg | 66.8 KiB | [pg_ivm_14-1.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_ivm_14-1.6-1PGDG.rhel8.aarch64.rpm) |
@@ -241,7 +241,7 @@ incremental view maintenance on PostgreSQL
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/sraoss/pg_ivm" title="Repository" icon="github" subtitle="github.com/sraoss/pg_ivm" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ivm-1.12.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_ivm-1.13.tar.gz" >}}
 {{< /cards >}}
 
 

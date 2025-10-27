@@ -14,7 +14,7 @@ OSDL-DBT-2 test kit
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3220** | {{< badge content="dbt2" link="https://github.com/osdldbt/dbt2" >}} | {{< ext "dbt2" >}} | `0.45.0` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
+| **3220** | {{< badge content="dbt2" link="https://github.com/osdldbt/dbt2" >}} | {{< ext "dbt2" >}} | `0.61.7` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,7 +31,7 @@ OSDL-DBT-2 test kit
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/dbt2" >}} | `0.61.7` | {{< bg "18" "dbt2-pg18-extensions*" "red" >}} {{< bg "17" "dbt2-pg17-extensions*" "green" >}} {{< bg "16" "dbt2-pg16-extensions*" "green" >}} {{< bg "15" "dbt2-pg15-extensions*" "green" >}} {{< bg "14" "dbt2-pg14-extensions*" "green" >}} | `dbt2-pg$v-extensions*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/dbt2" >}} | `0.61.7` | {{< bg "18" "dbt2-pg18-extensions*" "green" >}} {{< bg "17" "dbt2-pg17-extensions*" "green" >}} {{< bg "16" "dbt2-pg16-extensions*" "green" >}} {{< bg "15" "dbt2-pg15-extensions*" "green" >}} {{< bg "14" "dbt2-pg14-extensions*" "green" >}} | `dbt2-pg$v-extensions*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

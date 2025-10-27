@@ -31,7 +31,7 @@ Wrapper for the Faker Python library
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/faker" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18*" "red" >}} {{< bg "17" "postgresql_faker_17*" "green" >}} {{< bg "16" "postgresql_faker_16*" "green" >}} {{< bg "15" "postgresql_faker_15*" "green" >}} {{< bg "14" "postgresql_faker_14*" "green" >}} | `postgresql_faker_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/faker" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18*" "green" >}} {{< bg "17" "postgresql_faker_17*" "green" >}} {{< bg "16" "postgresql_faker_16*" "green" >}} {{< bg "15" "postgresql_faker_15*" "green" >}} {{< bg "14" "postgresql_faker_14*" "green" >}} | `postgresql_faker_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

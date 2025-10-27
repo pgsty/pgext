@@ -31,7 +31,7 @@ bigint fractions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_rational" >}} | `0.0.2` | {{< bg "18" "pg_rational_18*" "red" >}} {{< bg "17" "pg_rational_17*" "green" >}} {{< bg "16" "pg_rational_16*" "green" >}} {{< bg "15" "pg_rational_15*" "green" >}} {{< bg "14" "pg_rational_14*" "green" >}} | `pg_rational_$v*` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_rational" >}} | `0.0.2` | {{< bg "18" "pg_rational_18*" "green" >}} {{< bg "17" "pg_rational_17*" "green" >}} {{< bg "16" "pg_rational_16*" "green" >}} {{< bg "15" "pg_rational_15*" "green" >}} {{< bg "14" "pg_rational_14*" "green" >}} | `pg_rational_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pg_rational" >}} | `0.0.2` | {{< bg "18" "postgresql-18-rational" "green" >}} {{< bg "17" "postgresql-17-rational" "green" >}} {{< bg "16" "postgresql-16-rational" "green" >}} {{< bg "15" "postgresql-15-rational" "green" >}} {{< bg "14" "postgresql-14-rational" "green" >}} | `postgresql-$v-rational` | - |
 
 

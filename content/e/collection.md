@@ -14,7 +14,7 @@ Memory optimized data type to be used inside of plpglsql func
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3630** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pg_collection" >}} | `1.0.0` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **3630** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pg_collection" >}} | `1.1.0` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ Memory optimized data type to be used inside of plpglsql func
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/collection" >}} | `1.0.0` | {{< bg "18" "pgcollection_18*" "red" >}} {{< bg "17" "pgcollection_17*" "green" >}} {{< bg "16" "pgcollection_16*" "green" >}} {{< bg "15" "pgcollection_15*" "green" >}} {{< bg "14" "pgcollection_14*" "green" >}} | `pgcollection_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/collection" >}} | `1.0.0` | {{< bg "18" "postgresql-18-collection" "red" >}} {{< bg "17" "postgresql-17-collection" "green" >}} {{< bg "16" "postgresql-16-collection" "green" >}} {{< bg "15" "postgresql-15-collection" "green" >}} {{< bg "14" "postgresql-14-collection" "green" >}} | `postgresql-$v-collection` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/collection" >}} | `1.1.0` | {{< bg "18" "pgcollection_18*" "green" >}} {{< bg "17" "pgcollection_17*" "green" >}} {{< bg "16" "pgcollection_16*" "green" >}} {{< bg "15" "pgcollection_15*" "green" >}} {{< bg "14" "pgcollection_14*" "green" >}} | `pgcollection_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/collection" >}} | `1.1.0` | {{< bg "18" "postgresql-18-collection" "green" >}} {{< bg "17" "postgresql-17-collection" "green" >}} {{< bg "16" "postgresql-16-collection" "green" >}} {{< bg "15" "postgresql-15-collection" "green" >}} {{< bg "14" "postgresql-14-collection" "green" >}} | `postgresql-$v-collection` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -119,7 +119,7 @@ Memory optimized data type to be used inside of plpglsql func
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aws/pgcollection" title="Repository" icon="github" subtitle="github.com/aws/pgcollection" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcollection-1.0.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcollection-1.1.0.tar.gz" >}}
 {{< /cards >}}
 
 

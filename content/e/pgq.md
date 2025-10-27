@@ -31,7 +31,7 @@ Generic queue for PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgq" >}} | `3.5.1` | {{< bg "18" "pgq_18*" "red" >}} {{< bg "17" "pgq_17*" "green" >}} {{< bg "16" "pgq_16*" "green" >}} {{< bg "15" "pgq_15*" "green" >}} {{< bg "14" "pgq_14*" "green" >}} | `pgq_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pgq" >}} | `3.5.1` | {{< bg "18" "pgq_18*" "green" >}} {{< bg "17" "pgq_17*" "green" >}} {{< bg "16" "pgq_16*" "green" >}} {{< bg "15" "pgq_15*" "green" >}} {{< bg "14" "pgq_14*" "green" >}} | `pgq_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pgq" >}} | `3.5.1` | {{< bg "18" "postgresql-18-pgq3" "green" >}} {{< bg "17" "postgresql-17-pgq3" "green" >}} {{< bg "16" "postgresql-16-pgq3" "green" >}} {{< bg "15" "postgresql-15-pgq3" "green" >}} {{< bg "14" "postgresql-14-pgq3" "green" >}} | `postgresql-$v-pgq3` | - |
 
 

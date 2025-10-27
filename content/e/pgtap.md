@@ -33,7 +33,7 @@ Unit testing for PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgtap" >}} | `1.3.3` | {{< bg "18" "pgtap_18*" "red" >}} {{< bg "17" "pgtap_17*" "green" >}} {{< bg "16" "pgtap_16*" "green" >}} {{< bg "15" "pgtap_15*" "green" >}} {{< bg "14" "pgtap_14*" "green" >}} | `pgtap_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pgtap" >}} | `1.3.3` | {{< bg "18" "pgtap_18*" "green" >}} {{< bg "17" "pgtap_17*" "green" >}} {{< bg "16" "pgtap_16*" "green" >}} {{< bg "15" "pgtap_15*" "green" >}} {{< bg "14" "pgtap_14*" "green" >}} | `pgtap_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pgtap" >}} | `1.3.3` | {{< bg "18" "postgresql-18-pgtap" "green" >}} {{< bg "17" "postgresql-17-pgtap" "green" >}} {{< bg "16" "postgresql-16-pgtap" "green" >}} {{< bg "15" "postgresql-15-pgtap" "green" >}} {{< bg "14" "postgresql-14-pgtap" "green" >}} | `postgresql-$v-pgtap` | - |
 
 

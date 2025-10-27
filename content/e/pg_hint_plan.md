@@ -14,7 +14,7 @@ Give PostgreSQL ability to manually force some decisions in execution plans.
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2820** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.7.1` | {{< category "FEAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **2820** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< category "FEAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ Give PostgreSQL ability to manually force some decisions in execution plans.
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_hint_plan" >}} | `1.7.1` | {{< bg "18" "pg_hint_plan_18*" "green" >}} {{< bg "17" "pg_hint_plan_17*" "green" >}} {{< bg "16" "pg_hint_plan_16*" "green" >}} {{< bg "15" "pg_hint_plan_15*" "green" >}} {{< bg "14" "pg_hint_plan_14*" "green" >}} | `pg_hint_plan_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_hint_plan" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-hint-plan" "green" >}} {{< bg "17" "postgresql-17-pg-hint-plan" "green" >}} {{< bg "16" "postgresql-16-pg-hint-plan" "green" >}} {{< bg "15" "postgresql-15-pg-hint-plan" "green" >}} {{< bg "14" "postgresql-14-pg-hint-plan" "green" >}} | `postgresql-$v-pg-hint-plan` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_hint_plan" >}} | `1.8.0` | {{< bg "18" "pg_hint_plan_18*" "green" >}} {{< bg "17" "pg_hint_plan_17*" "green" >}} {{< bg "16" "pg_hint_plan_16*" "green" >}} {{< bg "15" "pg_hint_plan_15*" "green" >}} {{< bg "14" "pg_hint_plan_14*" "green" >}} | `pg_hint_plan_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pg_hint_plan" >}} | `1.8.0` | {{< bg "18" "postgresql-18-pg-hint-plan" "green" >}} {{< bg "17" "postgresql-17-pg-hint-plan" "green" >}} {{< bg "16" "postgresql-16-pg-hint-plan" "green" >}} {{< bg "15" "postgresql-15-pg-hint-plan" "green" >}} {{< bg "14" "postgresql-14-pg-hint-plan" "green" >}} | `postgresql-$v-pg-hint-plan` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

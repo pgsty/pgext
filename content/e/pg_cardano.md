@@ -14,7 +14,7 @@ A suite of Cardano-related tools
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2930** | {{< badge content="pg_cardano" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< ext "pg_cardano" >}} | `1.0.5` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2930** | {{< badge content="pg_cardano" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< ext "pg_cardano" >}} | `1.1.1` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ A suite of Cardano-related tools
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
 
-> [!Note] pgrx=0.14.1 (0.12)
+> [!Note] pgrx=0.16.1, manual update from 0.16.0
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_cardano" >}} | `1.0.5` | {{< bg "18" "pg_cardano_18" "red" >}} {{< bg "17" "pg_cardano_17" "green" >}} {{< bg "16" "pg_cardano_16" "green" >}} {{< bg "15" "pg_cardano_15" "green" >}} {{< bg "14" "pg_cardano_14" "green" >}} | `pg_cardano_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_cardano" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pg-cardano" "red" >}} {{< bg "17" "postgresql-17-pg-cardano" "green" >}} {{< bg "16" "postgresql-16-pg-cardano" "green" >}} {{< bg "15" "postgresql-15-pg-cardano" "green" >}} {{< bg "14" "postgresql-14-pg-cardano" "green" >}} | `postgresql-$v-pg-cardano` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_cardano" >}} | `1.1.1` | {{< bg "18" "pg_cardano_18" "green" >}} {{< bg "17" "pg_cardano_17" "green" >}} {{< bg "16" "pg_cardano_16" "green" >}} {{< bg "15" "pg_cardano_15" "green" >}} {{< bg "14" "pg_cardano_14" "green" >}} | `pg_cardano_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_cardano" >}} | `1.1.1` | {{< bg "18" "postgresql-18-pg-cardano" "green" >}} {{< bg "17" "postgresql-17-pg-cardano" "green" >}} {{< bg "16" "postgresql-16-pg-cardano" "green" >}} {{< bg "15" "postgresql-15-pg-cardano" "green" >}} {{< bg "14" "postgresql-14-pg-cardano" "green" >}} | `postgresql-$v-pg-cardano` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -121,7 +121,7 @@ A suite of Cardano-related tools
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Fell-x27/pg_cardano" title="Repository" icon="github" subtitle="github.com/Fell-x27/pg_cardano" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_cardano-1.0.5.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_cardano-1.1.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +146,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_cardano; # install by extension name, for the current active PG version
 pig ext install pg_cardano; # install via package alias, for the active PG version
+pig ext install pg_cardano -v 18;   # install for PG 18
 pig ext install pg_cardano -v 17;   # install for PG 17
 pig ext install pg_cardano -v 16;   # install for PG 16
 pig ext install pg_cardano -v 15;   # install for PG 15

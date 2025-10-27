@@ -14,7 +14,7 @@ extended check for plpgsql functions
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3060** | {{< badge content="plpgsql_check" link="https://github.com/okbob/plpgsql_check" >}} | {{< ext "plpgsql_check" >}} | `2.8.2` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3060** | {{< badge content="plpgsql_check" link="https://github.com/okbob/plpgsql_check" >}} | {{< ext "plpgsql_check" >}} | `2.8.3` | {{< category "LANG" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,8 +32,8 @@ extended check for plpgsql functions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/plpgsql_check" >}} | `2.8.2` | {{< bg "18" "plpgsql_check_18*" "green" >}} {{< bg "17" "plpgsql_check_17*" "green" >}} {{< bg "16" "plpgsql_check_16*" "green" >}} {{< bg "15" "plpgsql_check_15*" "green" >}} {{< bg "14" "plpgsql_check_14*" "green" >}} | `plpgsql_check_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/plpgsql_check" >}} | `2.8.2` | {{< bg "18" "postgresql-18-plpgsql-check" "green" >}} {{< bg "17" "postgresql-17-plpgsql-check" "green" >}} {{< bg "16" "postgresql-16-plpgsql-check" "green" >}} {{< bg "15" "postgresql-15-plpgsql-check" "green" >}} {{< bg "14" "postgresql-14-plpgsql-check" "green" >}} | `postgresql-$v-plpgsql-check` | - |
+| **EL** | {{< badge content="PGDG" link="/e/plpgsql_check" >}} | `2.8.3` | {{< bg "18" "plpgsql_check_18*" "green" >}} {{< bg "17" "plpgsql_check_17*" "green" >}} {{< bg "16" "plpgsql_check_16*" "green" >}} {{< bg "15" "plpgsql_check_15*" "green" >}} {{< bg "14" "plpgsql_check_14*" "green" >}} | `plpgsql_check_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/plpgsql_check" >}} | `2.8.3` | {{< bg "18" "postgresql-18-plpgsql-check" "green" >}} {{< bg "17" "postgresql-17-plpgsql-check" "green" >}} {{< bg "16" "postgresql-16-plpgsql-check" "green" >}} {{< bg "15" "postgresql-15-plpgsql-check" "green" >}} {{< bg "14" "postgresql-14-plpgsql-check" "green" >}} | `postgresql-$v-plpgsql-check` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -481,7 +481,7 @@ extended check for plpgsql functions
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/okbob/plpgsql_check" title="Repository" icon="github" subtitle="github.com/okbob/plpgsql_check" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plpgsql_check-2.8.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plpgsql_check-2.8.2.tar.gz" >}}
 {{< /cards >}}
 
 

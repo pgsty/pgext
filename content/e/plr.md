@@ -31,7 +31,7 @@ load R interpreter and execute R script from within a database
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/plr" >}} | `8.4.8` | {{< bg "18" "plr_18*" "red" >}} {{< bg "17" "plr_17*" "green" >}} {{< bg "16" "plr_16*" "green" >}} {{< bg "15" "plr_15*" "green" >}} {{< bg "14" "plr_14*" "green" >}} | `plr_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/plr" >}} | `8.4.8` | {{< bg "18" "plr_18*" "green" >}} {{< bg "17" "plr_17*" "green" >}} {{< bg "16" "plr_16*" "green" >}} {{< bg "15" "plr_15*" "green" >}} {{< bg "14" "plr_14*" "green" >}} | `plr_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/plr" >}} | `8.4.8` | {{< bg "18" "postgresql-18-plr" "green" >}} {{< bg "17" "postgresql-17-plr" "green" >}} {{< bg "16" "postgresql-16-plr" "green" >}} {{< bg "15" "postgresql-15-plr" "green" >}} {{< bg "14" "postgresql-14-plr" "green" >}} | `postgresql-$v-plr` | - |
 
 
@@ -99,9 +99,9 @@ load R interpreter and execute R script from within a database
 | `plr_16` | 8.4.8 | `el9.x86_64` | pgdg | 73.8 KiB | [plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm) |
 | `plr_16` | 8.4.7 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm) |
 | `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.4 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
 | `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 72.8 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
 | `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.4 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
 | `plr_16` | 8.4.8 | `el9.aarch64` | pgdg | 72.2 KiB | [plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm) |
 | `plr_16` | 8.4.7 | `el9.aarch64` | pgdg | 72.0 KiB | [plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm) |
 | `plr_16` | 8.4.6 | `el9.aarch64` | pgdg | 71.1 KiB | [plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm) |

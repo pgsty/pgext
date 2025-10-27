@@ -14,7 +14,7 @@ server-side support for debugging PL/pgSQL functions
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3050** | {{< badge content="pldbgapi" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< ext "pldbgapi" "pldebugger" >}} | `1.8` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
+| **3050** | {{< badge content="pldbgapi" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< ext "pldbgapi" "pldebugger" >}} | `1.9` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ server-side support for debugging PL/pgSQL functions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pldbgapi" >}} | `1.8` | {{< bg "18" "pldebugger_18*" "red" >}} {{< bg "17" "pldebugger_17*" "green" >}} {{< bg "16" "pldebugger_16*" "green" >}} {{< bg "15" "pldebugger_15*" "green" >}} {{< bg "14" "pldebugger_14*" "green" >}} | `pldebugger_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pldbgapi" >}} | `1.8` | {{< bg "18" "postgresql-18-pldebugger" "red" >}} {{< bg "17" "postgresql-17-pldebugger" "green" >}} {{< bg "16" "postgresql-16-pldebugger" "green" >}} {{< bg "15" "postgresql-15-pldebugger" "green" >}} {{< bg "14" "postgresql-14-pldebugger" "green" >}} | `postgresql-$v-pldebugger` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pldbgapi" >}} | `1.9` | {{< bg "18" "pldebugger_18*" "green" >}} {{< bg "17" "pldebugger_17*" "green" >}} {{< bg "16" "pldebugger_16*" "green" >}} {{< bg "15" "pldebugger_15*" "green" >}} {{< bg "14" "pldebugger_14*" "green" >}} | `pldebugger_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pldbgapi" >}} | `1.9` | {{< bg "18" "postgresql-18-pldebugger" "green" >}} {{< bg "17" "postgresql-17-pldebugger" "green" >}} {{< bg "16" "postgresql-16-pldebugger" "green" >}} {{< bg "15" "postgresql-15-pldebugger" "green" >}} {{< bg "14" "postgresql-14-pldebugger" "green" >}} | `postgresql-$v-pldebugger` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -164,6 +164,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pldbgapi; # install by extension name, for the current active PG version
 pig ext install pldebugger; # install via package alias, for the active PG version
+pig ext install pldbgapi -v 18;   # install for PG 18
 pig ext install pldbgapi -v 17;   # install for PG 17
 pig ext install pldbgapi -v 16;   # install for PG 16
 pig ext install pldbgapi -v 15;   # install for PG 15

@@ -14,7 +14,7 @@ Fast lookup timezone name by GPS coordinates
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1680** | {{< badge content="tzf" link="https://github.com/ringsaturn/pg-tzf" >}} | {{< ext "tzf" "pg_tzf" >}} | `0.2.2` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **1680** | {{< badge content="tzf" link="https://github.com/ringsaturn/pg-tzf" >}} | {{< ext "tzf" "pg_tzf" >}} | `0.2.3` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Fast lookup timezone name by GPS coordinates
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "geoip" >}} {{< ext "pg_cron" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
-> [!Note] pgrx=0.14.1
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/tzf" >}} | `0.2.2` | {{< bg "18" "pg_tzf_18" "red" >}} {{< bg "17" "pg_tzf_17" "green" >}} {{< bg "16" "pg_tzf_16" "green" >}} {{< bg "15" "pg_tzf_15" "green" >}} {{< bg "14" "pg_tzf_14" "green" >}} | `pg_tzf_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/tzf" >}} | `0.2.2` | {{< bg "18" "postgresql-18-tzf" "red" >}} {{< bg "17" "postgresql-17-tzf" "green" >}} {{< bg "16" "postgresql-16-tzf" "green" >}} {{< bg "15" "postgresql-15-tzf" "green" >}} {{< bg "14" "postgresql-14-tzf" "green" >}} | `postgresql-$v-tzf` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/tzf" >}} | `0.2.3` | {{< bg "18" "pg_tzf_18" "green" >}} {{< bg "17" "pg_tzf_17" "green" >}} {{< bg "16" "pg_tzf_16" "green" >}} {{< bg "15" "pg_tzf_15" "green" >}} {{< bg "14" "pg_tzf_14" "green" >}} | `pg_tzf_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/tzf" >}} | `0.2.3` | {{< bg "18" "postgresql-18-tzf" "green" >}} {{< bg "17" "postgresql-17-tzf" "green" >}} {{< bg "16" "postgresql-16-tzf" "green" >}} {{< bg "15" "postgresql-15-tzf" "green" >}} {{< bg "14" "postgresql-14-tzf" "green" >}} | `postgresql-$v-tzf` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -121,7 +121,7 @@ Fast lookup timezone name by GPS coordinates
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ringsaturn/pg-tzf" title="Repository" icon="github" subtitle="github.com/ringsaturn/pg-tzf" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="tzf-pg-0.2.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="tzf-pg-0.2.3.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,11 +146,11 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install tzf; # install by extension name, for the current active PG version
 pig ext install pg_tzf; # install via package alias, for the active PG version
+pig ext install tzf -v 18;   # install for PG 18
 pig ext install tzf -v 17;   # install for PG 17
 pig ext install tzf -v 16;   # install for PG 16
 pig ext install tzf -v 15;   # install for PG 15
 pig ext install tzf -v 14;   # install for PG 14
-pig ext install tzf -v 13;   # install for PG 13
 
 ```
 

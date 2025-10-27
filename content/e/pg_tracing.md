@@ -56,12 +56,12 @@ Distributed Tracing for PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tracing_17` | 0.1.3 | `el8.x86_64` | pigsty | 42.4 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_17-0.1.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el8.x86_64` | pigsty | 42.6 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 40.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 40.7 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 40.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el9.x86_64` | pigsty | 42.6 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el9.x86_64` | pigsty | 42.5 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_17-0.1.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `d12.x86_64` | pigsty | 105.4 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `d12.aarch64` | pigsty | 103.0 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `u22.x86_64` | pigsty | 129.3 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb) |

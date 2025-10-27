@@ -31,7 +31,7 @@ Hypothetical indexes for PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/hypopg" >}} | `1.4.1` | {{< bg "18" "hypopg_18*" "green" >}} {{< bg "17" "hypopg_17*" "green" >}} {{< bg "16" "hypopg_16*" "green" >}} {{< bg "15" "hypopg_15*" "green" >}} {{< bg "14" "hypopg_14*" "green" >}} | `hypopg_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/hypopg" >}} | `1.4.2` | {{< bg "18" "hypopg_18*" "green" >}} {{< bg "17" "hypopg_17*" "green" >}} {{< bg "16" "hypopg_16*" "green" >}} {{< bg "15" "hypopg_15*" "green" >}} {{< bg "14" "hypopg_14*" "green" >}} | `hypopg_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/hypopg" >}} | `1.4.2` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
 
 

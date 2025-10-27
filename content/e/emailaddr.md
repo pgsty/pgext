@@ -14,7 +14,7 @@ Email address type for PostgreSQL
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3850** | {{< badge content="emailaddr" link="https://github.com/petere/pgemailaddr" >}} | {{< ext "emailaddr" "pgemailaddr" >}} | `0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3850** | {{< badge content="emailaddr" link="https://github.com/petere/pgemailaddr" >}} | {{< ext "emailaddr" "pg_emailaddr" >}} | `0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -145,7 +145,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 
 ```bash
 pig ext install emailaddr; # install by extension name, for the current active PG version
-pig ext install pgemailaddr; # install via package alias, for the active PG version
+pig ext install pg_emailaddr; # install via package alias, for the active PG version
 pig ext install emailaddr -v 17;   # install for PG 17
 pig ext install emailaddr -v 16;   # install for PG 16
 pig ext install emailaddr -v 15;   # install for PG 15

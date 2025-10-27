@@ -34,8 +34,8 @@ Job scheduler for PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_cron" >}} | `1.6.7` | {{< bg "18" "pg_cron_18*" "red" >}} {{< bg "17" "pg_cron_17*" "green" >}} {{< bg "16" "pg_cron_16*" "green" >}} {{< bg "15" "pg_cron_15*" "green" >}} {{< bg "14" "pg_cron_14*" "green" >}} | `pg_cron_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_cron" >}} | `1.6.5` | {{< bg "18" "postgresql-18-cron" "red" >}} {{< bg "17" "postgresql-17-cron" "green" >}} {{< bg "16" "postgresql-16-cron" "green" >}} {{< bg "15" "postgresql-15-cron" "green" >}} {{< bg "14" "postgresql-14-cron" "green" >}} | `postgresql-$v-cron` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_cron" >}} | `1.6.7` | {{< bg "18" "pg_cron_18*" "green" >}} {{< bg "17" "pg_cron_17*" "green" >}} {{< bg "16" "pg_cron_16*" "green" >}} {{< bg "15" "pg_cron_15*" "green" >}} {{< bg "14" "pg_cron_14*" "green" >}} | `pg_cron_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pg_cron" >}} | `1.6.7` | {{< bg "18" "postgresql-18-cron" "green" >}} {{< bg "17" "postgresql-17-cron" "green" >}} {{< bg "16" "postgresql-16-cron" "green" >}} {{< bg "15" "postgresql-15-cron" "green" >}} {{< bg "14" "postgresql-14-cron" "green" >}} | `postgresql-$v-cron` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -260,6 +260,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_cron; # install by extension name, for the current active PG version
 pig ext install pg_cron; # install via package alias, for the active PG version
+pig ext install pg_cron -v 18;   # install for PG 18
 pig ext install pg_cron -v 17;   # install for PG 17
 pig ext install pg_cron -v 16;   # install for PG 16
 pig ext install pg_cron -v 15;   # install for PG 15

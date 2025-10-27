@@ -32,8 +32,8 @@ Incremental Processing by Crunchy Data
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_incremental" >}} | `1.2.0` | {{< bg "18" "pg_incremental_18*" "red" >}} {{< bg "17" "pg_incremental_17*" "green" >}} {{< bg "16" "pg_incremental_16*" "green" >}} {{< bg "15" "pg_incremental_15*" "red" >}} {{< bg "14" "pg_incremental_14*" "red" >}} | `pg_incremental_$v*` | `pg_cron_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_incremental" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-incremental" "red" >}} {{< bg "17" "postgresql-17-pg-incremental" "green" >}} {{< bg "16" "postgresql-16-pg-incremental" "green" >}} {{< bg "15" "postgresql-15-pg-incremental" "red" >}} {{< bg "14" "postgresql-14-pg-incremental" "red" >}} | `postgresql-$v-pg-incremental` | `postgresql-$v-cron` |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_incremental" >}} | `1.2.0` | {{< bg "18" "pg_incremental_18*" "green" >}} {{< bg "17" "pg_incremental_17*" "green" >}} {{< bg "16" "pg_incremental_16*" "green" >}} {{< bg "15" "pg_incremental_15*" "red" >}} {{< bg "14" "pg_incremental_14*" "red" >}} | `pg_incremental_$v*` | `pg_cron_$v` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_incremental" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-incremental" "green" >}} {{< bg "17" "postgresql-17-pg-incremental" "green" >}} {{< bg "16" "postgresql-16-pg-incremental" "green" >}} {{< bg "15" "postgresql-15-pg-incremental" "red" >}} {{< bg "14" "postgresql-14-pg-incremental" "red" >}} | `postgresql-$v-pg-incremental` | `postgresql-$v-cron` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

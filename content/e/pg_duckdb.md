@@ -14,7 +14,7 @@ DuckDB Embedded in Postgres
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `0.3.1` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.0.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ DuckDB Embedded in Postgres
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `0.3.1` | {{< bg "18" "pg_duckdb_18*" "red" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} | `pg_duckdb_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-duckdb" "red" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} | `postgresql-$v-pg-duckdb` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.0.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} | `pg_duckdb_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} | `postgresql-$v-pg-duckdb` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -113,7 +113,7 @@ DuckDB Embedded in Postgres
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-0.3.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.0.0.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -138,6 +138,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_duckdb; # install by extension name, for the current active PG version
 pig ext install pg_duckdb; # install via package alias, for the active PG version
+pig ext install pg_duckdb -v 18;   # install for PG 18
 pig ext install pg_duckdb -v 17;   # install for PG 17
 pig ext install pg_duckdb -v 16;   # install for PG 16
 pig ext install pg_duckdb -v 15;   # install for PG 15

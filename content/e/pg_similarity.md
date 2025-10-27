@@ -31,7 +31,7 @@ support similarity queries
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_similarity" >}} | `1.0` | {{< bg "18" "pg_similarity_18*" "red" >}} {{< bg "17" "pg_similarity_17*" "green" >}} {{< bg "16" "pg_similarity_16*" "green" >}} {{< bg "15" "pg_similarity_15*" "green" >}} {{< bg "14" "pg_similarity_14*" "green" >}} | `pg_similarity_$v*` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_similarity" >}} | `1.0` | {{< bg "18" "pg_similarity_18*" "green" >}} {{< bg "17" "pg_similarity_17*" "green" >}} {{< bg "16" "pg_similarity_16*" "green" >}} {{< bg "15" "pg_similarity_15*" "green" >}} {{< bg "14" "pg_similarity_14*" "green" >}} | `pg_similarity_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pg_similarity" >}} | `1.0` | {{< bg "18" "postgresql-18-similarity" "green" >}} {{< bg "17" "postgresql-17-similarity" "green" >}} {{< bg "16" "postgresql-16-similarity" "green" >}} {{< bg "15" "postgresql-15-similarity" "green" >}} {{< bg "14" "postgresql-14-similarity" "green" >}} | `postgresql-$v-similarity` | - |
 
 

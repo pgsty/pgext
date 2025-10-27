@@ -14,7 +14,7 @@ Add in-database GraphQL support
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2790** | {{< badge content="pg_graphql" link="https://github.com/supabase/pg_graphql" >}} | {{< ext "pg_graphql" >}} | `1.5.11` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2790** | {{< badge content="pg_graphql" link="https://github.com/supabase/pg_graphql" >}} | {{< ext "pg_graphql" >}} | `1.5.12` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Add in-database GraphQL support
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "wrappers" >}} |
 
-> [!Note] pgrx=0.12.9
+> [!Note] pgrx=0.16.1, not an official release
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_graphql" >}} | `1.5.11` | {{< bg "18" "pg_graphql_18" "red" >}} {{< bg "17" "pg_graphql_17" "green" >}} {{< bg "16" "pg_graphql_16" "green" >}} {{< bg "15" "pg_graphql_15" "green" >}} {{< bg "14" "pg_graphql_14" "green" >}} | `pg_graphql_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_graphql" >}} | `1.5.11` | {{< bg "18" "postgresql-18-pg-graphql" "red" >}} {{< bg "17" "postgresql-17-pg-graphql" "green" >}} {{< bg "16" "postgresql-16-pg-graphql" "green" >}} {{< bg "15" "postgresql-15-pg-graphql" "green" >}} {{< bg "14" "postgresql-14-pg-graphql" "green" >}} | `postgresql-$v-pg-graphql` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_graphql" >}} | `1.5.12` | {{< bg "18" "pg_graphql_18" "green" >}} {{< bg "17" "pg_graphql_17" "green" >}} {{< bg "16" "pg_graphql_16" "green" >}} {{< bg "15" "pg_graphql_15" "green" >}} {{< bg "14" "pg_graphql_14" "green" >}} | `pg_graphql_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_graphql" >}} | `1.5.12` | {{< bg "18" "postgresql-18-pg-graphql" "green" >}} {{< bg "17" "postgresql-17-pg-graphql" "green" >}} {{< bg "16" "postgresql-16-pg-graphql" "green" >}} {{< bg "15" "postgresql-15-pg-graphql" "green" >}} {{< bg "14" "postgresql-14-pg-graphql" "green" >}} | `postgresql-$v-pg-graphql` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -121,7 +121,7 @@ Add in-database GraphQL support
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/pg_graphql" title="Repository" icon="github" subtitle="github.com/supabase/pg_graphql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_graphql-1.5.11.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_graphql-1.5.12.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +146,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_graphql; # install by extension name, for the current active PG version
 pig ext install pg_graphql; # install via package alias, for the active PG version
+pig ext install pg_graphql -v 18;   # install for PG 18
 pig ext install pg_graphql -v 17;   # install for PG 17
 pig ext install pg_graphql -v 16;   # install for PG 16
 pig ext install pg_graphql -v 15;   # install for PG 15

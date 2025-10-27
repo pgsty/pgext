@@ -31,7 +31,7 @@ numeral datatypes extension
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/numeral" >}} | `1.3` | {{< bg "18" "numeral_18*" "red" >}} {{< bg "17" "numeral_17*" "green" >}} {{< bg "16" "numeral_16*" "green" >}} {{< bg "15" "numeral_15*" "green" >}} {{< bg "14" "numeral_14*" "green" >}} | `numeral_$v*` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/numeral" >}} | `1.3` | {{< bg "18" "numeral_18*" "green" >}} {{< bg "17" "numeral_17*" "green" >}} {{< bg "16" "numeral_16*" "green" >}} {{< bg "15" "numeral_15*" "green" >}} {{< bg "14" "numeral_14*" "green" >}} | `numeral_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/numeral" >}} | `1.3` | {{< bg "18" "postgresql-18-numeral" "green" >}} {{< bg "17" "postgresql-17-numeral" "green" >}} {{< bg "16" "postgresql-16-numeral" "green" >}} {{< bg "15" "postgresql-15-numeral" "green" >}} {{< bg "14" "postgresql-14-numeral" "green" >}} | `postgresql-$v-numeral` | - |
 
 

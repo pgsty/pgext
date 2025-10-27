@@ -14,7 +14,7 @@ unsigned integer types
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3730** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20231206` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3730** | {{< badge content="uint" link="https://github.com/petere/pguint" >}} | {{< ext "uint" "pguint" >}} | `1.20250815` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ unsigned integer types
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20231206` | {{< bg "18" "pguint_18*" "green" >}} {{< bg "17" "pguint_17*" "green" >}} {{< bg "16" "pguint_16*" "green" >}} {{< bg "15" "pguint_15*" "green" >}} {{< bg "14" "pguint_14*" "green" >}} | `pguint_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20231206` | {{< bg "18" "postgresql-18-pguint" "red" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} | `postgresql-$v-pguint` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20250815` | {{< bg "18" "pguint_18*" "green" >}} {{< bg "17" "pguint_17*" "green" >}} {{< bg "16" "pguint_16*" "green" >}} {{< bg "15" "pguint_15*" "green" >}} {{< bg "14" "pguint_14*" "green" >}} | `pguint_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "red" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} | `postgresql-$v-pguint` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

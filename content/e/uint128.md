@@ -14,7 +14,7 @@ Native uint128 type
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3740** | {{< badge content="uint128" link="https://github.com/pg-uint/pg-uint128" >}} | {{< ext "uint128" "pg_uint128" >}} | `1.1.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3740** | {{< badge content="uint128" link="https://github.com/pg-uint/pg-uint128" >}} | {{< ext "uint128" "pg_uint128" >}} | `1.1.1` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ Native uint128 type
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/uint128" >}} | `1.1.0` | {{< bg "18" "pg_uint128_18*" "green" >}} {{< bg "17" "pg_uint128_17*" "green" >}} {{< bg "16" "pg_uint128_16*" "green" >}} {{< bg "15" "pg_uint128_15*" "green" >}} {{< bg "14" "pg_uint128_14*" "green" >}} | `pg_uint128_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/uint128" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-uint128" "green" >}} {{< bg "17" "postgresql-17-pg-uint128" "green" >}} {{< bg "16" "postgresql-16-pg-uint128" "green" >}} {{< bg "15" "postgresql-15-pg-uint128" "green" >}} {{< bg "14" "postgresql-14-pg-uint128" "green" >}} | `postgresql-$v-pg-uint128` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/uint128" >}} | `1.1.1` | {{< bg "18" "pg_uint128_18*" "green" >}} {{< bg "17" "pg_uint128_17*" "green" >}} {{< bg "16" "pg_uint128_16*" "green" >}} {{< bg "15" "pg_uint128_15*" "green" >}} {{< bg "14" "pg_uint128_14*" "green" >}} | `pg_uint128_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/uint128" >}} | `1.1.1` | {{< bg "18" "postgresql-18-pg-uint128" "green" >}} {{< bg "17" "postgresql-17-pg-uint128" "green" >}} {{< bg "16" "postgresql-16-pg-uint128" "green" >}} {{< bg "15" "postgresql-15-pg-uint128" "green" >}} {{< bg "14" "postgresql-14-pg-uint128" "green" >}} | `postgresql-$v-pg-uint128` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

@@ -8,7 +8,42 @@ weight: 700
 
 ## Version Bump
 
+- timescaledb 2.22.1
+- pg_timeseries 0.1.7 
+- periods 1.2.3 (fix el missing 18)
+- temporal_tables +pg18
+- emaj 4.7.1 (+deb )
+- geoip + (+deb)
+ 
+- smlar (+rpm/deb)
+- pg4ml (+rpm/deb)
+- pgroonga 4.0.4 (+rpm/deb)
+ 
+- hunspell (+pg18)
+- index_advisor
+- 
+
+**deb only**
+
+- pg_fkpart
+- plan_filter
+- geohash (deb+pg18)
+- pg_bigm 1.2 (deb+pg18)
+- zhparser 2.3 (deb+pg18)
+- pg_background 1.3 (+ deb.pg18)
+
+**rust**
+
 - pg_search 0.19.1
+- tzf 0.2.3 (+pg18) pgrx 0.16.1 (4/5/6/7/8)
+- vchord 0.5.3 (+pg18) pgrx 0.16.1
+- vchord_bm25 0.2.2 (+pg18) pgrx 0.16.1
+- pg_tokenizer.rs 0.1.1 (+pg18) pgrx 0.16.1
+- pg_tiktoken 0.0.1 (+pg18) pgrx 0.16.1
+- pg_jsonschema 0.3.3 pgrx 0.16.0
+- pg_graphql 0.15.12 pgrx 0.16.1
+
+
 - pg_uuidv7 1.7.0
 - orafce 4.16.1
 - plpgsql_check 2.8.3
@@ -44,6 +79,15 @@ weight: 700
 - weighted_statistics 1.0.0
 - rdf_fdw 2.1.0
 - pg_ttl_index 1.0.2
+
+## Waiting for PG18
+
+- timescaledb_toolkit
+- pg_later
+- hydra
+- pg_timeseries
+
+
 
 ## Icebox
 

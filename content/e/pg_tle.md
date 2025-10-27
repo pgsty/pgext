@@ -14,7 +14,7 @@ Trusted Language Extensions for PostgreSQL
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3000** | {{< badge content="pg_tle" link="https://github.com/aws/pg_tle" >}} | {{< ext "pg_tle" >}} | `1.5.1` | {{< category "LANG" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **3000** | {{< badge content="pg_tle" link="https://github.com/aws/pg_tle" >}} | {{< ext "pg_tle" >}} | `1.5.2` | {{< category "LANG" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Trusted Language Extensions for PostgreSQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "pllua" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "plprql" >}} {{< ext "plsh" >}} |
 
-> [!Note] pg18rc1 support with 3c99c51086ae2d1ec7aeb0ecf186a1a29f465d2c
+> [!Note] require bison flex to build
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_tle" >}} | `1.5.1` | {{< bg "18" "pg_tle_18*" "red" >}} {{< bg "17" "pg_tle_17*" "green" >}} {{< bg "16" "pg_tle_16*" "green" >}} {{< bg "15" "pg_tle_15*" "green" >}} {{< bg "14" "pg_tle_14*" "green" >}} | `pg_tle_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tle" >}} | `1.5.1` | {{< bg "18" "postgresql-18-pg-tle" "red" >}} {{< bg "17" "postgresql-17-pg-tle" "green" >}} {{< bg "16" "postgresql-16-pg-tle" "green" >}} {{< bg "15" "postgresql-15-pg-tle" "green" >}} {{< bg "14" "postgresql-14-pg-tle" "green" >}} | `postgresql-$v-pg-tle` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_tle" >}} | `1.5.2` | {{< bg "18" "pg_tle_18*" "green" >}} {{< bg "17" "pg_tle_17*" "green" >}} {{< bg "16" "pg_tle_16*" "green" >}} {{< bg "15" "pg_tle_15*" "green" >}} {{< bg "14" "pg_tle_14*" "green" >}} | `pg_tle_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tle" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pg-tle" "green" >}} {{< bg "17" "postgresql-17-pg-tle" "green" >}} {{< bg "16" "postgresql-16-pg-tle" "green" >}} {{< bg "15" "postgresql-15-pg-tle" "green" >}} {{< bg "14" "postgresql-14-pg-tle" "green" >}} | `postgresql-$v-pg-tle` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -199,7 +199,7 @@ Trusted Language Extensions for PostgreSQL
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aws/pg_tle" title="Repository" icon="github" subtitle="github.com/aws/pg_tle" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tle-1.5.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tle-1.5.2.tar.gz" >}}
 {{< /cards >}}
 
 

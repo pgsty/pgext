@@ -31,8 +31,8 @@ PL/JavaScript (v8) trusted procedural language
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/plv8" >}} | `3.2.4` | {{< bg "18" "plv8_18*" "red" >}} {{< bg "17" "plv8_17*" "green" >}} {{< bg "16" "plv8_16*" "green" >}} {{< bg "15" "plv8_15*" "green" >}} {{< bg "14" "plv8_14*" "green" >}} | `plv8_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/plv8" >}} | `3.2.4` | {{< bg "18" "postgresql-18-plv8" "red" >}} {{< bg "17" "postgresql-17-plv8" "green" >}} {{< bg "16" "postgresql-16-plv8" "green" >}} {{< bg "15" "postgresql-15-plv8" "green" >}} {{< bg "14" "postgresql-14-plv8" "green" >}} | `postgresql-$v-plv8` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/plv8" >}} | `3.2.4` | {{< bg "18" "plv8_18*" "green" >}} {{< bg "17" "plv8_17*" "green" >}} {{< bg "16" "plv8_16*" "green" >}} {{< bg "15" "plv8_15*" "green" >}} {{< bg "14" "plv8_14*" "green" >}} | `plv8_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/plv8" >}} | `3.2.4` | {{< bg "18" "postgresql-18-plv8" "green" >}} {{< bg "17" "postgresql-17-plv8" "green" >}} {{< bg "16" "postgresql-16-plv8" "green" >}} {{< bg "15" "postgresql-15-plv8" "green" >}} {{< bg "14" "postgresql-14-plv8" "green" >}} | `postgresql-$v-plv8` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

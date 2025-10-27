@@ -14,7 +14,7 @@ MobilityDB geospatial trajectory data management & analysis platform
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1650** | {{< badge content="mobilitydb" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb" >}} | `1.2.0` | {{< category "GIS" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **1650** | {{< badge content="mobilitydb" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb" >}} | `1.3.0` | {{< category "GIS" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,7 +34,7 @@ MobilityDB geospatial trajectory data management & analysis platform
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **Debian** | {{< badge content="PGDG" link="/e/mobilitydb" >}} | `1.2.0` | {{< bg "18" "postgresql-18-mobilitydb" "red" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/mobilitydb" >}} | `1.3.0` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -131,6 +131,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install mobilitydb; # install by extension name, for the current active PG version
 pig ext install mobilitydb; # install via package alias, for the active PG version
+pig ext install mobilitydb -v 18;   # install for PG 18
 pig ext install mobilitydb -v 17;   # install for PG 17
 pig ext install mobilitydb -v 16;   # install for PG 16
 pig ext install mobilitydb -v 15;   # install for PG 15

@@ -31,8 +31,8 @@ server-side support for profiling PL/pgSQL functions
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/plprofiler" >}} | `4.2.5` | {{< bg "18" "plprofiler_18*" "red" >}} {{< bg "17" "plprofiler_17*" "green" >}} {{< bg "16" "plprofiler_16*" "green" >}} {{< bg "15" "plprofiler_15*" "green" >}} {{< bg "14" "plprofiler_14*" "green" >}} | `plprofiler_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/plprofiler" >}} | `4.2.5` | {{< bg "18" "postgresql-18-plprofiler" "red" >}} {{< bg "17" "postgresql-17-plprofiler" "green" >}} {{< bg "16" "postgresql-16-plprofiler" "green" >}} {{< bg "15" "postgresql-15-plprofiler" "green" >}} {{< bg "14" "postgresql-14-plprofiler" "green" >}} | `postgresql-$v-plprofiler` | - |
+| **EL** | {{< badge content="PGDG" link="/e/plprofiler" >}} | `4.2.5` | {{< bg "18" "plprofiler_18*" "green" >}} {{< bg "17" "plprofiler_17*" "green" >}} {{< bg "16" "plprofiler_16*" "green" >}} {{< bg "15" "plprofiler_15*" "green" >}} {{< bg "14" "plprofiler_14*" "green" >}} | `plprofiler_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/plprofiler" >}} | `4.2.5` | {{< bg "18" "postgresql-18-plprofiler" "green" >}} {{< bg "17" "postgresql-17-plprofiler" "green" >}} {{< bg "16" "postgresql-16-plprofiler" "green" >}} {{< bg "15" "postgresql-15-plprofiler" "green" >}} {{< bg "14" "postgresql-14-plprofiler" "green" >}} | `postgresql-$v-plprofiler` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -165,6 +165,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install plprofiler; # install by extension name, for the current active PG version
 pig ext install plprofiler; # install via package alias, for the active PG version
+pig ext install plprofiler -v 18;   # install for PG 18
 pig ext install plprofiler -v 17;   # install for PG 17
 pig ext install plprofiler -v 16;   # install for PG 16
 pig ext install plprofiler -v 15;   # install for PG 15

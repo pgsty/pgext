@@ -84,8 +84,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_17` | 4.0 | `el9.x86_64` | pgdg | 36.3 KiB | [pgtt_17-4.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgtt_17-4.0-2PGDG.rhel9.x86_64.rpm) |
 | `pgtt_17` | 4.4 | `el9.aarch64` | pgdg | 36.3 KiB | [pgtt_17-4.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgtt_17-4.4-1PGDG.rhel9.aarch64.rpm) |
 | `pgtt_17` | 4.3 | `el9.aarch64` | pgdg | 35.9 KiB | [pgtt_17-4.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgtt_17-4.3-1PGDG.rhel9.aarch64.rpm) |
-| `pgtt_17` | 4.0 | `el9.aarch64` | pgdg | 34.9 KiB | [pgtt_17-4.0-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgtt_17-4.0-3PGDG.rhel9.aarch64.rpm) |
 | `pgtt_17` | 4.0 | `el9.aarch64` | pgdg | 35.0 KiB | [pgtt_17-4.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgtt_17-4.0-2PGDG.rhel9.aarch64.rpm) |
+| `pgtt_17` | 4.0 | `el9.aarch64` | pgdg | 34.9 KiB | [pgtt_17-4.0-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgtt_17-4.0-3PGDG.rhel9.aarch64.rpm) |
 | `postgresql-17-pgtt` | 4.4 | `d12.x86_64` | pgdg | 58.2 KiB | [postgresql-17-pgtt_4.4-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.4-2.pgdg12+1_amd64.deb) |
 | `postgresql-17-pgtt` | 4.0 | `d12.x86_64` | pigsty | 57.8 KiB | [postgresql-17-pgtt_4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgtt/postgresql-17-pgtt_4.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgtt` | 4.4 | `d12.aarch64` | pgdg | 56.6 KiB | [postgresql-17-pgtt_4.4-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.4-2.pgdg12+1_arm64.deb) |
@@ -208,8 +208,8 @@ Extension to add Global Temporary Tables feature to PostgreSQL
 | `pgtt_14` | 2.10 | `el8.x86_64` | pgdg | 33.0 KiB | [pgtt_14-2.10-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgtt_14-2.10-1.rhel8.x86_64.rpm) |
 | `pgtt_14` | 4.4 | `el8.aarch64` | pgdg | 37.5 KiB | [pgtt_14-4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 4.3 | `el8.aarch64` | pgdg | 37.0 KiB | [pgtt_14-4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.3-1PGDG.rhel8.aarch64.rpm) |
-| `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.7 KiB | [pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.5 KiB | [pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgtt_14` | 4.0 | `el8.aarch64` | pgdg | 35.7 KiB | [pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-4.0-3PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 3.1 | `el8.aarch64` | pgdg | 32.5 KiB | [pgtt_14-3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-3.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 3.0 | `el8.aarch64` | pgdg | 32.3 KiB | [pgtt_14-3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-3.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgtt_14` | 2.9 | `el8.aarch64` | pgdg | 67.5 KiB | [pgtt_14-2.9-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgtt_14-2.9-1.rhel8.aarch64.rpm) |

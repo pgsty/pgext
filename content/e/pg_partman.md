@@ -14,7 +14,7 @@ Extension to manage partitioned tables by time or ID
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2510** | {{< badge content="pg_partman" link="https://github.com/pgpartman/pg_partman" >}} | {{< ext "pg_partman" >}} | `5.2.4` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2510** | {{< badge content="pg_partman" link="https://github.com/pgpartman/pg_partman" >}} | {{< ext "pg_partman" >}} | `5.3.1` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,8 +34,8 @@ Extension to manage partitioned tables by time or ID
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_partman" >}} | `5.2.4` | {{< bg "18" "pg_partman_18*" "green" >}} {{< bg "17" "pg_partman_17*" "green" >}} {{< bg "16" "pg_partman_16*" "green" >}} {{< bg "15" "pg_partman_15*" "green" >}} {{< bg "14" "pg_partman_14*" "green" >}} | `pg_partman_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_partman" >}} | `5.2.4` | {{< bg "18" "postgresql-18-partman" "red" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} | `postgresql-$v-partman` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_partman" >}} | `5.3.1` | {{< bg "18" "pg_partman_18*" "green" >}} {{< bg "17" "pg_partman_17*" "green" >}} {{< bg "16" "pg_partman_16*" "green" >}} {{< bg "15" "pg_partman_15*" "green" >}} {{< bg "14" "pg_partman_14*" "green" >}} | `pg_partman_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pg_partman" >}} | `5.3.0` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} | `postgresql-$v-partman` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -212,8 +212,8 @@ Extension to manage partitioned tables by time or ID
 | `pg_partman_15` | 5.0.1 | `el8.aarch64` | pgdg | 249.3 KiB | [pg_partman_15-5.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-5.0.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 5.0.0 | `el8.aarch64` | pgdg | 248.4 KiB | [pg_partman_15-5.0.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-5.0.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 4.7.4 | `el8.aarch64` | pgdg | 246.8 KiB | [pg_partman_15-4.7.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.4-1PGDG.rhel8.aarch64.rpm) |
-| `pg_partman_15` | 4.7.3 | `el8.aarch64` | pgdg | 246.4 KiB | [pg_partman_15-4.7.3-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.3-3.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 4.7.3 | `el8.aarch64` | pgdg | 246.1 KiB | [pg_partman_15-4.7.3-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.3-1.rhel8.aarch64.rpm) |
+| `pg_partman_15` | 4.7.3 | `el8.aarch64` | pgdg | 246.4 KiB | [pg_partman_15-4.7.3-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.3-3.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 4.7.2 | `el8.aarch64` | pgdg | 245.6 KiB | [pg_partman_15-4.7.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.2-1.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 4.7.1 | `el8.aarch64` | pgdg | 260.0 KiB | [pg_partman_15-4.7.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_partman_15-4.7.1-1.rhel8.aarch64.rpm) |
 | `pg_partman_15` | 5.3.1 | `el9.x86_64` | pgdg | 213.6 KiB | [pg_partman_15-5.3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_partman_15-5.3.1-1PGDG.rhel9.x86_64.rpm) |
@@ -243,8 +243,8 @@ Extension to manage partitioned tables by time or ID
 | `pg_partman_15` | 5.0.1 | `el9.aarch64` | pgdg | 197.8 KiB | [pg_partman_15-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pg_partman_15` | 5.0.0 | `el9.aarch64` | pgdg | 197.1 KiB | [pg_partman_15-5.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-5.0.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_partman_15` | 4.7.4 | `el9.aarch64` | pgdg | 198.4 KiB | [pg_partman_15-4.7.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.4-1PGDG.rhel9.aarch64.rpm) |
-| `pg_partman_15` | 4.7.3 | `el9.aarch64` | pgdg | 198.1 KiB | [pg_partman_15-4.7.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.3-1.rhel9.aarch64.rpm) |
 | `pg_partman_15` | 4.7.3 | `el9.aarch64` | pgdg | 198.1 KiB | [pg_partman_15-4.7.3-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.3-3.rhel9.aarch64.rpm) |
+| `pg_partman_15` | 4.7.3 | `el9.aarch64` | pgdg | 198.1 KiB | [pg_partman_15-4.7.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.3-1.rhel9.aarch64.rpm) |
 | `pg_partman_15` | 4.7.2 | `el9.aarch64` | pgdg | 197.8 KiB | [pg_partman_15-4.7.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.2-1.rhel9.aarch64.rpm) |
 | `pg_partman_15` | 4.7.1 | `el9.aarch64` | pgdg | 212.8 KiB | [pg_partman_15-4.7.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_partman_15-4.7.1-1.rhel9.aarch64.rpm) |
 | `postgresql-15-partman` | 5.3.0 | `d12.x86_64` | pgdg | 231.8 KiB | [postgresql-15-partman_5.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.3.0-1.pgdg12+1_amd64.deb) |
@@ -323,8 +323,8 @@ Extension to manage partitioned tables by time or ID
 | `pg_partman_14` | 5.0.1 | `el9.aarch64` | pgdg | 197.9 KiB | [pg_partman_14-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pg_partman_14` | 5.0.0 | `el9.aarch64` | pgdg | 197.2 KiB | [pg_partman_14-5.0.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-5.0.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_partman_14` | 4.7.4 | `el9.aarch64` | pgdg | 198.3 KiB | [pg_partman_14-4.7.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.4-1PGDG.rhel9.aarch64.rpm) |
-| `pg_partman_14` | 4.7.3 | `el9.aarch64` | pgdg | 198.0 KiB | [pg_partman_14-4.7.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.3-1.rhel9.aarch64.rpm) |
 | `pg_partman_14` | 4.7.3 | `el9.aarch64` | pgdg | 198.1 KiB | [pg_partman_14-4.7.3-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.3-3.rhel9.aarch64.rpm) |
+| `pg_partman_14` | 4.7.3 | `el9.aarch64` | pgdg | 198.0 KiB | [pg_partman_14-4.7.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.3-1.rhel9.aarch64.rpm) |
 | `pg_partman_14` | 4.7.2 | `el9.aarch64` | pgdg | 197.7 KiB | [pg_partman_14-4.7.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.2-1.rhel9.aarch64.rpm) |
 | `pg_partman_14` | 4.7.1 | `el9.aarch64` | pgdg | 212.8 KiB | [pg_partman_14-4.7.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_partman_14-4.7.1-1.rhel9.aarch64.rpm) |
 | `postgresql-14-partman` | 5.3.0 | `d12.x86_64` | pgdg | 231.9 KiB | [postgresql-14-partman_5.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.3.0-1.pgdg12+1_amd64.deb) |

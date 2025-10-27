@@ -14,7 +14,7 @@ PL/Java procedural language
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3090** | {{< badge content="pljava" link="https://github.com/tada/pljava" >}} | {{< ext "pljava" >}} | `1.6.9` | {{< category "LANG" >}} | {{< license "BSD 3-Clause" >}} | {{< language "Java" >}} |
+| **3090** | {{< badge content="pljava" link="https://github.com/tada/pljava" >}} | {{< ext "pljava" >}} | `1.6.10` | {{< category "LANG" >}} | {{< license "BSD 3-Clause" >}} | {{< language "Java" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,12 +26,14 @@ PL/Java procedural language
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "pllua" >}} {{< ext "plluau" >}} {{< ext "pltclu" >}} |
 
+> [!Note] missing debian/ubuntu pg18
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pljava" >}} | `1.6.8` | {{< bg "18" "pljava_18*" "red" >}} {{< bg "17" "pljava_17*" "green" >}} {{< bg "16" "pljava_16*" "green" >}} {{< bg "15" "pljava_15*" "green" >}} {{< bg "14" "pljava_14*" "green" >}} | `pljava_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pljava" >}} | `1.6.10` | {{< bg "18" "pljava_18*" "green" >}} {{< bg "17" "pljava_17*" "green" >}} {{< bg "16" "pljava_16*" "green" >}} {{< bg "15" "pljava_15*" "green" >}} {{< bg "14" "pljava_14*" "green" >}} | `pljava_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pljava" >}} | `1.6.9` | {{< bg "18" "postgresql-18-pljava" "red" >}} {{< bg "17" "postgresql-17-pljava" "green" >}} {{< bg "16" "postgresql-16-pljava" "green" >}} {{< bg "15" "postgresql-15-pljava" "green" >}} {{< bg "14" "postgresql-14-pljava" "green" >}} | `postgresql-$v-pljava` | - |
 
 
@@ -167,6 +169,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pljava; # install by extension name, for the current active PG version
 pig ext install pljava; # install via package alias, for the active PG version
+pig ext install pljava -v 18;   # install for PG 18
 pig ext install pljava -v 17;   # install for PG 17
 pig ext install pljava -v 16;   # install for PG 16
 pig ext install pljava -v 15;   # install for PG 15

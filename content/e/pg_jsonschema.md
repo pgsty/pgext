@@ -26,15 +26,15 @@ PostgreSQL extension providing JSON Schema validation
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "jsquery" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
 
-> [!Note] pgrx=0.12.9
+> [!Note] pgrx=0.16.1, manual update from 0.16.0
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "pg_jsonschema_18" "red" >}} {{< bg "17" "pg_jsonschema_17" "green" >}} {{< bg "16" "pg_jsonschema_16" "green" >}} {{< bg "15" "pg_jsonschema_15" "green" >}} {{< bg "14" "pg_jsonschema_14" "green" >}} | `pg_jsonschema_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "postgresql-18-pg-jsonschema" "red" >}} {{< bg "17" "postgresql-17-pg-jsonschema" "green" >}} {{< bg "16" "postgresql-16-pg-jsonschema" "green" >}} {{< bg "15" "postgresql-15-pg-jsonschema" "green" >}} {{< bg "14" "postgresql-14-pg-jsonschema" "green" >}} | `postgresql-$v-pg-jsonschema` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "pg_jsonschema_18" "green" >}} {{< bg "17" "pg_jsonschema_17" "green" >}} {{< bg "16" "pg_jsonschema_16" "green" >}} {{< bg "15" "pg_jsonschema_15" "green" >}} {{< bg "14" "pg_jsonschema_14" "green" >}} | `pg_jsonschema_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "postgresql-18-pg-jsonschema" "green" >}} {{< bg "17" "postgresql-17-pg-jsonschema" "green" >}} {{< bg "16" "postgresql-16-pg-jsonschema" "green" >}} {{< bg "15" "postgresql-15-pg-jsonschema" "green" >}} {{< bg "14" "postgresql-14-pg-jsonschema" "green" >}} | `postgresql-$v-pg-jsonschema` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -146,6 +146,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_jsonschema; # install by extension name, for the current active PG version
 pig ext install pg_jsonschema; # install via package alias, for the active PG version
+pig ext install pg_jsonschema -v 18;   # install for PG 18
 pig ext install pg_jsonschema -v 17;   # install for PG 17
 pig ext install pg_jsonschema -v 16;   # install for PG 16
 pig ext install pg_jsonschema -v 15;   # install for PG 15

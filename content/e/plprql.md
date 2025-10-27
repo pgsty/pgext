@@ -26,7 +26,7 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_tle" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} |
 
-> [!Note] pgrx=0.11.4
+> [!Note] pgrx=0.11.4, no longer maintained for a while
 
 
 ## Packages

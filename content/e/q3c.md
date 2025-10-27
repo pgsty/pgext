@@ -31,7 +31,7 @@ q3c sky indexing plugin
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/q3c" >}} | `2.0.1` | {{< bg "18" "q3c_18*" "red" >}} {{< bg "17" "q3c_17*" "green" >}} {{< bg "16" "q3c_16*" "green" >}} {{< bg "15" "q3c_15*" "green" >}} {{< bg "14" "q3c_14*" "green" >}} | `q3c_$v*` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/q3c" >}} | `2.0.1` | {{< bg "18" "q3c_18*" "green" >}} {{< bg "17" "q3c_17*" "green" >}} {{< bg "16" "q3c_16*" "green" >}} {{< bg "15" "q3c_15*" "green" >}} {{< bg "14" "q3c_14*" "green" >}} | `q3c_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/q3c" >}} | `2.0.1` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} | `postgresql-$v-q3c` | - |
 
 

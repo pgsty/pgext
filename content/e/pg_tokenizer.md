@@ -14,7 +14,7 @@ Tokenizers for full-text search
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2160** | {{< badge content="pg_tokenizer" link="https://github.com/tensorchord/pg_tokenizer.rs" >}} | {{< ext "pg_tokenizer" >}} | `0.1.0` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2160** | {{< badge content="pg_tokenizer" link="https://github.com/tensorchord/pg_tokenizer.rs" >}} | {{< ext "pg_tokenizer" >}} | `0.1.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Tokenizers for full-text search
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] pgrx=0.13.1
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_tokenizer" >}} | `0.1.0` | {{< bg "18" "pg_tokenizer_18" "red" >}} {{< bg "17" "pg_tokenizer_17" "green" >}} {{< bg "16" "pg_tokenizer_16" "green" >}} {{< bg "15" "pg_tokenizer_15" "green" >}} {{< bg "14" "pg_tokenizer_14" "green" >}} | `pg_tokenizer_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tokenizer" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-tokenizer" "red" >}} {{< bg "17" "postgresql-17-pg-tokenizer" "green" >}} {{< bg "16" "postgresql-16-pg-tokenizer" "green" >}} {{< bg "15" "postgresql-15-pg-tokenizer" "green" >}} {{< bg "14" "postgresql-14-pg-tokenizer" "green" >}} | `postgresql-$v-pg-tokenizer` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_tokenizer" >}} | `0.1.1` | {{< bg "18" "pg_tokenizer_18" "green" >}} {{< bg "17" "pg_tokenizer_17" "green" >}} {{< bg "16" "pg_tokenizer_16" "green" >}} {{< bg "15" "pg_tokenizer_15" "green" >}} {{< bg "14" "pg_tokenizer_14" "green" >}} | `pg_tokenizer_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tokenizer" >}} | `0.1.1` | {{< bg "18" "postgresql-18-pg-tokenizer" "green" >}} {{< bg "17" "postgresql-17-pg-tokenizer" "green" >}} {{< bg "16" "postgresql-16-pg-tokenizer" "green" >}} {{< bg "15" "postgresql-15-pg-tokenizer" "green" >}} {{< bg "14" "postgresql-14-pg-tokenizer" "green" >}} | `postgresql-$v-pg-tokenizer` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -121,7 +121,7 @@ Tokenizers for full-text search
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tensorchord/pg_tokenizer.rs" title="Repository" icon="github" subtitle="github.com/tensorchord/pg_tokenizer.rs" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tokenizer.rs-0.1.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tokenizer.rs-0.1.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,10 +146,12 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_tokenizer; # install by extension name, for the current active PG version
 pig ext install pg_tokenizer; # install via package alias, for the active PG version
+pig ext install pg_tokenizer -v 18;   # install for PG 18
 pig ext install pg_tokenizer -v 17;   # install for PG 17
 pig ext install pg_tokenizer -v 16;   # install for PG 16
 pig ext install pg_tokenizer -v 15;   # install for PG 15
 pig ext install pg_tokenizer -v 14;   # install for PG 14
+pig ext install pg_tokenizer -v 13;   # install for PG 13
 
 ```
 

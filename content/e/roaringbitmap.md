@@ -14,7 +14,7 @@ support for Roaring Bitmaps
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3570** | {{< badge content="roaringbitmap" link="https://github.com/ChenHuajun/pg_roaringbitmap" >}} | {{< ext "roaringbitmap" >}} | `0.5.4` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **3570** | {{< badge content="roaringbitmap" link="https://github.com/ChenHuajun/pg_roaringbitmap" >}} | {{< ext "roaringbitmap" "pg_roaringbitmap" >}} | `0.5.4` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -196,7 +196,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 
 ```bash
 pig ext install roaringbitmap; # install by extension name, for the current active PG version
-pig ext install roaringbitmap; # install via package alias, for the active PG version
+pig ext install pg_roaringbitmap; # install via package alias, for the active PG version
 pig ext install roaringbitmap -v 18;   # install for PG 18
 pig ext install roaringbitmap -v 17;   # install for PG 17
 pig ext install roaringbitmap -v 16;   # install for PG 16

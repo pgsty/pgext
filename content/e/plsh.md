@@ -31,7 +31,7 @@ PL/sh procedural language
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/plsh" >}} | `1.20220917` | {{< bg "18" "plsh_18*" "red" >}} {{< bg "17" "plsh_17*" "green" >}} {{< bg "16" "plsh_16*" "green" >}} {{< bg "15" "plsh_15*" "green" >}} {{< bg "14" "plsh_14*" "green" >}} | `plsh_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/plsh" >}} | `1.20220917` | {{< bg "18" "plsh_18*" "green" >}} {{< bg "17" "plsh_17*" "green" >}} {{< bg "16" "plsh_16*" "green" >}} {{< bg "15" "plsh_15*" "green" >}} {{< bg "14" "plsh_14*" "green" >}} | `plsh_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/plsh" >}} | `1.20220917` | {{< bg "18" "postgresql-18-plsh" "green" >}} {{< bg "17" "postgresql-17-plsh" "green" >}} {{< bg "16" "postgresql-16-plsh" "green" >}} {{< bg "15" "postgresql-15-plsh" "green" >}} {{< bg "14" "postgresql-14-plsh" "green" >}} | `postgresql-$v-plsh` | - |
 
 

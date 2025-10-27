@@ -31,8 +31,8 @@ filter statements by their execution plans.
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18*" "red" >}} {{< bg "17" "pg_plan_filter_17*" "green" >}} {{< bg "16" "pg_plan_filter_16*" "green" >}} {{< bg "15" "pg_plan_filter_15*" "green" >}} {{< bg "14" "pg_plan_filter_14*" "green" >}} | `pg_plan_filter_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "red" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18*" "green" >}} {{< bg "17" "pg_plan_filter_17*" "green" >}} {{< bg "16" "pg_plan_filter_16*" "green" >}} {{< bg "15" "pg_plan_filter_15*" "green" >}} {{< bg "14" "pg_plan_filter_14*" "green" >}} | `pg_plan_filter_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

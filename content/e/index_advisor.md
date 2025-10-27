@@ -31,8 +31,8 @@ Query index advisor
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "index_advisor_18" "red" >}} {{< bg "17" "index_advisor_17" "green" >}} {{< bg "16" "index_advisor_16" "green" >}} {{< bg "15" "index_advisor_15" "green" >}} {{< bg "14" "index_advisor_14" "green" >}} | `index_advisor_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "postgresql-18-index-advisor" "red" >}} {{< bg "17" "postgresql-17-index-advisor" "green" >}} {{< bg "16" "postgresql-16-index-advisor" "green" >}} {{< bg "15" "postgresql-15-index-advisor" "green" >}} {{< bg "14" "postgresql-14-index-advisor" "green" >}} | `postgresql-$v-index-advisor` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "index_advisor_18" "green" >}} {{< bg "17" "index_advisor_17" "green" >}} {{< bg "16" "index_advisor_16" "green" >}} {{< bg "15" "index_advisor_15" "green" >}} {{< bg "14" "index_advisor_14" "green" >}} | `index_advisor_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "postgresql-18-index-advisor" "green" >}} {{< bg "17" "postgresql-17-index-advisor" "green" >}} {{< bg "16" "postgresql-16-index-advisor" "green" >}} {{< bg "15" "postgresql-15-index-advisor" "green" >}} {{< bg "14" "postgresql-14-index-advisor" "green" >}} | `postgresql-$v-index-advisor` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

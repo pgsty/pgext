@@ -32,8 +32,8 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgmq" >}} | `1.5.1` | {{< bg "18" "pgmq_18" "red" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} {{< bg "14" "pgmq_14" "green" >}} | `pgmq_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgmq" >}} | `1.5.1` | {{< bg "18" "postgresql-18-pgmq" "red" >}} {{< bg "17" "postgresql-17-pgmq" "green" >}} {{< bg "16" "postgresql-16-pgmq" "green" >}} {{< bg "15" "postgresql-15-pgmq" "green" >}} {{< bg "14" "postgresql-14-pgmq" "green" >}} | `postgresql-$v-pgmq` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pgmq" >}} | `1.5.1` | {{< bg "18" "pgmq_18" "green" >}} {{< bg "17" "pgmq_17" "green" >}} {{< bg "16" "pgmq_16" "green" >}} {{< bg "15" "pgmq_15" "green" >}} {{< bg "14" "pgmq_14" "green" >}} | `pgmq_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pgmq" >}} | `1.5.1` | {{< bg "18" "postgresql-18-pgmq" "green" >}} {{< bg "17" "postgresql-17-pgmq" "green" >}} {{< bg "16" "postgresql-16-pgmq" "green" >}} {{< bg "15" "postgresql-15-pgmq" "green" >}} {{< bg "14" "postgresql-14-pgmq" "green" >}} | `postgresql-$v-pgmq` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -138,7 +138,7 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgmq/pgmq" title="Repository" icon="github" subtitle="github.com/pgmq/pgmq" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmq-1.5.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmq-1.7.0.tar.gz" >}}
 {{< /cards >}}
 
 

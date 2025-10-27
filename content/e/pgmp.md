@@ -34,7 +34,7 @@ Multiple Precision Arithmetic extension
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EL** | {{< badge content="PGDG" link="/e/pgmp" >}} | `1.0.5` | {{< bg "18" "pgmp_18*" "green" >}} {{< bg "17" "pgmp_17*" "green" >}} {{< bg "16" "pgmp_16*" "green" >}} {{< bg "15" "pgmp_15*" "green" >}} {{< bg "14" "pgmp_14*" "red" >}} | `pgmp_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pgmp" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pgmp" "red" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pgmp" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

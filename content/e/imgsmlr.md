@@ -31,8 +31,8 @@ Image similarity with haar
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/imgsmlr" >}} | `1.0` | {{< bg "18" "imgsmlr_18*" "red" >}} {{< bg "17" "imgsmlr_17*" "green" >}} {{< bg "16" "imgsmlr_16*" "green" >}} {{< bg "15" "imgsmlr_15*" "green" >}} {{< bg "14" "imgsmlr_14*" "green" >}} | `imgsmlr_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/imgsmlr" >}} | `1.0` | {{< bg "18" "postgresql-18-imgsmlr" "red" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/imgsmlr" >}} | `1.0` | {{< bg "18" "imgsmlr_18*" "green" >}} {{< bg "17" "imgsmlr_17*" "green" >}} {{< bg "16" "imgsmlr_16*" "green" >}} {{< bg "15" "imgsmlr_15*" "green" >}} {{< bg "14" "imgsmlr_14*" "green" >}} | `imgsmlr_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/imgsmlr" >}} | `1.0` | {{< bg "18" "postgresql-18-imgsmlr" "green" >}} {{< bg "17" "postgresql-17-imgsmlr" "green" >}} {{< bg "16" "postgresql-16-imgsmlr" "green" >}} {{< bg "15" "postgresql-15-imgsmlr" "green" >}} {{< bg "14" "postgresql-14-imgsmlr" "green" >}} | `postgresql-$v-imgsmlr` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |

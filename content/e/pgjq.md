@@ -26,6 +26,8 @@ Use jq in Postgres
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgjwt" >}} {{< ext "pg_protobuf" >}} {{< ext "jsquery" >}} {{< ext "sparql" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} |
 
+> [!Note] build with jq-devel
+
 
 ## Packages
 

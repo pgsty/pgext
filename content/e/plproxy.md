@@ -31,7 +31,7 @@ Database partitioning implemented as procedural language
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/plproxy" >}} | `2.11.0` | {{< bg "18" "plproxy_18*" "red" >}} {{< bg "17" "plproxy_17*" "green" >}} {{< bg "16" "plproxy_16*" "green" >}} {{< bg "15" "plproxy_15*" "green" >}} {{< bg "14" "plproxy_14*" "green" >}} | `plproxy_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/plproxy" >}} | `2.11.0` | {{< bg "18" "plproxy_18*" "green" >}} {{< bg "17" "plproxy_17*" "green" >}} {{< bg "16" "plproxy_16*" "green" >}} {{< bg "15" "plproxy_15*" "green" >}} {{< bg "14" "plproxy_14*" "green" >}} | `plproxy_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/plproxy" >}} | `2.11.0` | {{< bg "18" "postgresql-18-plproxy" "green" >}} {{< bg "17" "postgresql-17-plproxy" "green" >}} {{< bg "16" "postgresql-16-plproxy" "green" >}} {{< bg "15" "postgresql-15-plproxy" "green" >}} {{< bg "14" "postgresql-14-plproxy" "green" >}} | `postgresql-$v-plproxy` | - |
 
 
