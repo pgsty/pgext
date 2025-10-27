@@ -14,6 +14,7 @@ FROM (SELECT * FROM pgext.extension WHERE lead AND NOT contrib) ext,
 -- special case handling
 UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (13,14,15) AND os ~ 'el\d';
 UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'postgis' AND position(' ' in name) > 0;
+UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'pgrouting' AND position(' ' in name) > 0;
 
 -- 'step 3/5: update pgext.pkg package count';
 UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.pg AND b.os = pkg.os AND b.name = pkg.name);
