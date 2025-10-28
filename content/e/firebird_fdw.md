@@ -14,7 +14,7 @@ Foreign data wrapper for Firebird
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8750** | {{< badge content="firebird_fdw" link="https://github.com/ibarwick/firebird_fdw" >}} | {{< ext "firebird_fdw" >}} | `1.4.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8750** | {{< badge content="firebird_fdw" link="https://github.com/ibarwick/firebird_fdw" >}} | {{< ext "firebird_fdw" >}} | `1.4.1` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,25 +33,29 @@ Foreign data wrapper for Firebird
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.0` | {{< bg "18" "firebird_fdw_18" "red" >}} {{< bg "17" "firebird_fdw_17" "green" >}} {{< bg "16" "firebird_fdw_16" "green" >}} {{< bg "15" "firebird_fdw_15" "green" >}} {{< bg "14" "firebird_fdw_14" "green" >}} | `firebird_fdw_$v` | `libfq` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.0` | {{< bg "18" "postgresql-18-firebird-fdw" "red" >}} {{< bg "17" "postgresql-17-firebird-fdw" "green" >}} {{< bg "16" "postgresql-16-firebird-fdw" "green" >}} {{< bg "15" "postgresql-15-firebird-fdw" "green" >}} {{< bg "14" "postgresql-14-firebird-fdw" "green" >}} | `postgresql-$v-firebird-fdw` | `libfq` |
+| **EL** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.1` | {{< bg "18" "firebird_fdw_18" "green" >}} {{< bg "17" "firebird_fdw_17" "green" >}} {{< bg "16" "firebird_fdw_16" "green" >}} {{< bg "15" "firebird_fdw_15" "green" >}} {{< bg "14" "firebird_fdw_14" "green" >}} {{< bg "13" "firebird_fdw_13" "green" >}} | `firebird_fdw_$v` | `libfq` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.1` | {{< bg "18" "postgresql-18-firebird-fdw" "green" >}} {{< bg "17" "postgresql-17-firebird-fdw" "green" >}} {{< bg "16" "postgresql-16-firebird-fdw" "green" >}} {{< bg "15" "postgresql-15-firebird-fdw" "green" >}} {{< bg "14" "postgresql-14-firebird-fdw" "green" >}} {{< bg "13" "postgresql-13-firebird-fdw" "green" >}} | `postgresql-$v-firebird-fdw` | `libfq` |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "firebird_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "firebird_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PGDG 1.4.1" "firebird_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.0" "firebird_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PGDG 1.4.1" "firebird_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.0" "firebird_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "firebird_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_13 : AVAIL 5" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "firebird_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 1.4.1" "firebird_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.0" "firebird_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_13 : AVAIL 4" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 1.4.1" "firebird_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.0" "firebird_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.4.0" "firebird_fdw_13 : AVAIL 4" "green" >}} |
+|    `el10.x86_64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "firebird_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "firebird_fdw_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-firebird-fdw : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-firebird-fdw : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.4.0" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-13-firebird-fdw : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -142,13 +146,40 @@ Foreign data wrapper for Firebird
 | `postgresql-14-firebird-fdw` | 1.4.0 | `u24.x86_64` | pigsty | 147.6 KiB | [postgresql-14-firebird-fdw_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-firebird-fdw` | 1.4.0 | `u24.aarch64` | pigsty | 146.1 KiB | [postgresql-14-firebird-fdw_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.0-1PIGSTY~noble_arm64.deb) |
 
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `firebird_fdw_13` | 1.4.0 | `el8.x86_64` | pigsty | 49.4 KiB | [firebird_fdw_13-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/firebird_fdw_13-1.4.0-1PIGSTY.el8.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.3 | `el8.x86_64` | pgdg | 150.7 KiB | [firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.3 | `el8.x86_64` | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.2 | `el8.x86_64` | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.1 | `el8.x86_64` | pgdg | 150.5 KiB | [firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | 1.4.0 | `el8.aarch64` | pigsty | 47.7 KiB | [firebird_fdw_13-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/firebird_fdw_13-1.4.0-1PIGSTY.el8.aarch64.rpm) |
+| `firebird_fdw_13` | 1.3.0 | `el8.aarch64` | pgdg | 46.9 KiB | [firebird_fdw_13-1.3.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/firebird_fdw_13-1.3.0-1.rhel8.aarch64.rpm) |
+| `firebird_fdw_13` | 1.4.0 | `el9.x86_64` | pigsty | 51.2 KiB | [firebird_fdw_13-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/firebird_fdw_13-1.4.0-1PIGSTY.el9.x86_64.rpm) |
+| `firebird_fdw_13` | 1.3.0 | `el9.x86_64` | pgdg | 49.8 KiB | [firebird_fdw_13-1.3.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/firebird_fdw_13-1.3.0-1.rhel9.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.3 | `el9.x86_64` | pgdg | 153.4 KiB | [firebird_fdw_13-1.2.3-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/firebird_fdw_13-1.2.3-2.rhel9.x86_64.rpm) |
+| `firebird_fdw_13` | 1.2.3 | `el9.x86_64` | pgdg | 153.3 KiB | [firebird_fdw_13-1.2.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/firebird_fdw_13-1.2.3-1.rhel9.x86_64.rpm) |
+| `firebird_fdw_13` | 1.4.0 | `el9.aarch64` | pigsty | 50.4 KiB | [firebird_fdw_13-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/firebird_fdw_13-1.4.0-1PIGSTY.el9.aarch64.rpm) |
+| `firebird_fdw_13` | 1.4.0 | `el9.aarch64` | pgdg | 50.6 KiB | [firebird_fdw_13-1.4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/firebird_fdw_13-1.4.0-1PGDG.rhel9.aarch64.rpm) |
+| `firebird_fdw_13` | 1.3.0 | `el9.aarch64` | pgdg | 49.0 KiB | [firebird_fdw_13-1.3.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/firebird_fdw_13-1.3.0-1.rhel9.aarch64.rpm) |
+| `firebird_fdw_13` | 1.2.3 | `el9.aarch64` | pgdg | 151.7 KiB | [firebird_fdw_13-1.2.3-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/firebird_fdw_13-1.2.3-3.rhel9.aarch64.rpm) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `d12.x86_64` | pigsty | 153.8 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `d12.aarch64` | pigsty | 150.4 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `u22.x86_64` | pigsty | 160.4 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `u22.aarch64` | pigsty | 159.0 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `u24.x86_64` | pigsty | 139.9 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-firebird-fdw` | 1.4.0 | `u24.aarch64` | pigsty | 138.8 KiB | [postgresql-13-firebird-fdw_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-13-firebird-fdw_1.4.0-1PIGSTY~noble_arm64.deb) |
+
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ibarwick/firebird_fdw" title="Repository" icon="github" subtitle="github.com/ibarwick/firebird_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="firebird_fdw-1.4.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="firebird_fdw-1.4.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -173,6 +204,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install firebird_fdw; # install by extension name, for the current active PG version
 pig ext install firebird_fdw; # install via package alias, for the active PG version
+pig ext install firebird_fdw -v 18;   # install for PG 18
 pig ext install firebird_fdw -v 17;   # install for PG 17
 pig ext install firebird_fdw -v 16;   # install for PG 16
 pig ext install firebird_fdw -v 15;   # install for PG 15

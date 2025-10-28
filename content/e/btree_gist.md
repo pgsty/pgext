@@ -30,9 +30,9 @@ support for indexing common datatypes in GiST
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "1.7" "PostgreSQL 18: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 17: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 16: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 15: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 14: version 1.7" "green" >}} |
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< bg "1.7" "PostgreSQL 18: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 17: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 16: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 15: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 14: version 1.7" "green" >}} | {{< bg "1.7" "PostgreSQL 13: version 1.7" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

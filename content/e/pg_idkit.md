@@ -26,32 +26,36 @@ multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, 
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "permuteseq" >}} {{< ext "pg_cardano" >}} {{< ext "pg_base58" >}} |
 
-> [!Note] pgrx=0.15.0
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "pg_idkit_18" "red" >}} {{< bg "17" "pg_idkit_17" "green" >}} {{< bg "16" "pg_idkit_16" "green" >}} {{< bg "15" "pg_idkit_15" "green" >}} {{< bg "14" "pg_idkit_14" "green" >}} | `pg_idkit_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-idkit" "red" >}} {{< bg "17" "postgresql-17-pg-idkit" "green" >}} {{< bg "16" "postgresql-16-pg-idkit" "green" >}} {{< bg "15" "postgresql-15-pg-idkit" "green" >}} {{< bg "14" "postgresql-14-pg-idkit" "green" >}} | `postgresql-$v-pg-idkit` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "pg_idkit_18" "green" >}} {{< bg "17" "pg_idkit_17" "green" >}} {{< bg "16" "pg_idkit_16" "green" >}} {{< bg "15" "pg_idkit_15" "green" >}} {{< bg "14" "pg_idkit_14" "green" >}} {{< bg "13" "pg_idkit_13" "green" >}} | `pg_idkit_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-idkit" "green" >}} {{< bg "17" "postgresql-17-pg-idkit" "green" >}} {{< bg "16" "postgresql-16-pg-idkit" "green" >}} {{< bg "15" "postgresql-15-pg-idkit" "green" >}} {{< bg "14" "postgresql-14-pg-idkit" "green" >}} {{< bg "13" "postgresql-13-pg-idkit" "green" >}} | `postgresql-$v-pg-idkit` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "pg_idkit_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "pg_idkit_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "pg_idkit_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_idkit_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-idkit : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-idkit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-idkit : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-idkit : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-idkit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-pg-idkit : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -115,6 +119,22 @@ multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, 
 | `postgresql-14-pg-idkit` | 0.3.1 | `u24.x86_64` | pigsty | 336.1 KiB | [postgresql-14-pg-idkit_0.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-idkit/postgresql-14-pg-idkit_0.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-idkit` | 0.3.1 | `u24.aarch64` | pigsty | 330.2 KiB | [postgresql-14-pg-idkit_0.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-idkit/postgresql-14-pg-idkit_0.3.1-1PIGSTY~noble_arm64.deb) |
 
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_idkit_13` | 0.3.1 | `el8.x86_64` | pigsty | 374.8 KiB | [pg_idkit_13-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_idkit_13-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_idkit_13` | 0.3.1 | `el8.aarch64` | pigsty | 356.7 KiB | [pg_idkit_13-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_idkit_13-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_idkit_13` | 0.3.1 | `el9.x86_64` | pigsty | 380.0 KiB | [pg_idkit_13-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_idkit_13-0.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_idkit_13` | 0.3.1 | `el9.aarch64` | pigsty | 379.4 KiB | [pg_idkit_13-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_idkit_13-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `d12.x86_64` | pigsty | 312.1 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `d12.aarch64` | pigsty | 289.6 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `u22.x86_64` | pigsty | 340.4 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `u22.aarch64` | pigsty | 334.9 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `u24.x86_64` | pigsty | 336.2 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pg-idkit` | 0.3.1 | `u24.aarch64` | pigsty | 330.2 KiB | [postgresql-13-pg-idkit_0.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-idkit/postgresql-13-pg-idkit_0.3.1-1PIGSTY~noble_arm64.deb) |
+
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -146,6 +166,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_idkit; # install by extension name, for the current active PG version
 pig ext install pg_idkit; # install via package alias, for the active PG version
+pig ext install pg_idkit -v 18;   # install for PG 18
 pig ext install pg_idkit -v 17;   # install for PG 17
 pig ext install pg_idkit -v 16;   # install for PG 16
 pig ext install pg_idkit -v 15;   # install for PG 15

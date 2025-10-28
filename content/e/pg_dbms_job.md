@@ -31,24 +31,28 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_dbms_job" >}} | `1.5` | {{< bg "18" "pg_dbms_job_18" "green" >}} {{< bg "17" "pg_dbms_job_17" "green" >}} {{< bg "16" "pg_dbms_job_16" "green" >}} {{< bg "15" "pg_dbms_job_15" "green" >}} {{< bg "14" "pg_dbms_job_14" "green" >}} | `pg_dbms_job_$v` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_dbms_job" >}} | `1.5` | {{< bg "18" "pg_dbms_job_18" "green" >}} {{< bg "17" "pg_dbms_job_17" "green" >}} {{< bg "16" "pg_dbms_job_16" "green" >}} {{< bg "15" "pg_dbms_job_15" "green" >}} {{< bg "14" "pg_dbms_job_14" "green" >}} {{< bg "13" "pg_dbms_job_13" "green" >}} | `pg_dbms_job_$v` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 3" "orange" >}}      |
-|    `el8.aarch64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |
-|    `el9.x86_64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 3" "orange" >}}      |
-|    `el9.aarch64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |
-|    `d12.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-|    `d12.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-|    `u22.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-|    `u22.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-|    `u24.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-|    `u24.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 3" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 3" "orange" >}}      |
+|    `el8.aarch64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 1" "orange" >}}      |
+|    `el9.x86_64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 3" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 3" "orange" >}}      |
+|    `el9.aarch64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 1" "orange" >}}      |
+|    `el10.x86_64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 1" "orange" >}}      |
+|    `el10.aarch64`    |      {{< bg "PGDG 1.5" "pg_dbms_job_18 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_17 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_16 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_15 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_14 : BREAK 1" "orange" >}}      |      {{< bg "PGDG 1.5" "pg_dbms_job_13 : BREAK 1" "orange" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -57,6 +61,8 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 | `pg_dbms_job_18` | 1.5 | `el8.aarch64` | pgdg | 26.7 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel8.aarch64.rpm) |
 | `pg_dbms_job_18` | 1.5 | `el9.x86_64` | pgdg | 26.0 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_job_18-1.5-5PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_18` | 1.5 | `el9.aarch64` | pgdg | 26.0 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_job_18` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_job_18-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_18` | 1.5 | `el10.aarch64` | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -67,6 +73,8 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 | `pg_dbms_job_17` | 1.5 | `el8.aarch64` | pgdg | 26.5 KiB | [pg_dbms_job_17-1.5-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_job_17-1.5-3PGDG.rhel8.aarch64.rpm) |
 | `pg_dbms_job_17` | 1.5 | `el9.x86_64` | pgdg | 26.1 KiB | [pg_dbms_job_17-1.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_job_17-1.5-3PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_17` | 1.5 | `el9.aarch64` | pgdg | 26.1 KiB | [pg_dbms_job_17-1.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_job_17-1.5-3PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_job_17` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_job_17-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_17` | 1.5 | `el10.aarch64` | pgdg | 26.5 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -77,6 +85,8 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 | `pg_dbms_job_16` | 1.5 | `el8.aarch64` | pgdg | 26.5 KiB | [pg_dbms_job_16-1.5-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_job_16-1.5-3PGDG.rhel8.aarch64.rpm) |
 | `pg_dbms_job_16` | 1.5 | `el9.x86_64` | pgdg | 26.1 KiB | [pg_dbms_job_16-1.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_job_16-1.5-3PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_16` | 1.5 | `el9.aarch64` | pgdg | 26.0 KiB | [pg_dbms_job_16-1.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_job_16-1.5-3PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_job_16` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_job_16-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_16` | 1.5 | `el10.aarch64` | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -87,6 +97,8 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 | `pg_dbms_job_15` | 1.5 | `el8.aarch64` | pgdg | 26.2 KiB | [pg_dbms_job_15-1.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_dbms_job_15-1.5-1.rhel8.aarch64.rpm) |
 | `pg_dbms_job_15` | 1.5 | `el9.x86_64` | pgdg | 25.8 KiB | [pg_dbms_job_15-1.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_job_15-1.5-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_15` | 1.5 | `el9.aarch64` | pgdg | 25.7 KiB | [pg_dbms_job_15-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_job_15-1.5-1.rhel9.aarch64.rpm) |
+| `pg_dbms_job_15` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_job_15-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_15` | 1.5 | `el10.aarch64` | pgdg | 26.5 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -101,6 +113,24 @@ Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 | `pg_dbms_job_14` | 1.4.0 | `el9.x86_64` | pgdg | 25.6 KiB | [pg_dbms_job_14-1.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_job_14-1.4.0-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_14` | 1.2.0 | `el9.x86_64` | pgdg | 24.8 KiB | [pg_dbms_job_14-1.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_job_14-1.2.0-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_14` | 1.5 | `el9.aarch64` | pgdg | 25.7 KiB | [pg_dbms_job_14-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_job_14-1.5-1.rhel9.aarch64.rpm) |
+| `pg_dbms_job_14` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_job_14-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_14` | 1.5 | `el10.aarch64` | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_dbms_job_13` | 1.5 | `el8.x86_64` | pgdg | 26.3 KiB | [pg_dbms_job_13-1.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_dbms_job_13-1.5-1.rhel8.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.4.0 | `el8.x86_64` | pgdg | 26.0 KiB | [pg_dbms_job_13-1.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_dbms_job_13-1.4.0-1.rhel8.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.2.0 | `el8.x86_64` | pgdg | 25.2 KiB | [pg_dbms_job_13-1.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_dbms_job_13-1.2.0-1.rhel8.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.5 | `el8.aarch64` | pgdg | 26.2 KiB | [pg_dbms_job_13-1.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_dbms_job_13-1.5-1.rhel8.aarch64.rpm) |
+| `pg_dbms_job_13` | 1.5 | `el9.x86_64` | pgdg | 25.8 KiB | [pg_dbms_job_13-1.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_dbms_job_13-1.5-1.rhel9.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.4.0 | `el9.x86_64` | pgdg | 25.6 KiB | [pg_dbms_job_13-1.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_dbms_job_13-1.4.0-1.rhel9.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.2.0 | `el9.x86_64` | pgdg | 24.8 KiB | [pg_dbms_job_13-1.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_dbms_job_13-1.2.0-1.rhel9.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.5 | `el9.aarch64` | pgdg | 25.7 KiB | [pg_dbms_job_13-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_dbms_job_13-1.5-1.rhel9.aarch64.rpm) |
+| `pg_dbms_job_13` | 1.5 | `el10.x86_64` | pgdg | 26.6 KiB | [pg_dbms_job_13-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_dbms_job_13-1.5-5PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_job_13` | 1.5 | `el10.aarch64` | pgdg | 26.6 KiB | [pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

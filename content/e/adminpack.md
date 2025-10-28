@@ -29,9 +29,9 @@ administrative functions for PostgreSQL
 
 ## Packages
 
-| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
-|:--------:|:--------:|:--------:|:--------:|:--------:|
-| {{< bg "N/A" "PostgreSQL 18: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "2.1" "PostgreSQL 16: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 15: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 14: version 2.1" "green" >}} |
+| **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
+|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| {{< bg "N/A" "PostgreSQL 18: not available" "red" >}} | {{< bg "N/A" "PostgreSQL 17: not available" "red" >}} | {{< bg "2.1" "PostgreSQL 16: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 15: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 14: version 2.1" "green" >}} | {{< bg "2.1" "PostgreSQL 13: version 2.1" "green" >}} |
 
 > [!Tip] This is a built-in contrib extension ship with the PostgreSQL kernel
 

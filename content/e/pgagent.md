@@ -31,25 +31,29 @@ A PostgreSQL job scheduler
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent_18*" "red" >}} {{< bg "17" "pgagent_17*" "green" >}} {{< bg "16" "pgagent_16*" "green" >}} {{< bg "15" "pgagent_15*" "green" >}} {{< bg "14" "pgagent_14*" "green" >}} | `pgagent_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent" "red" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} {{< bg "14" "pgagent" "green" >}} | `pgagent` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent_18*" "red" >}} {{< bg "17" "pgagent_17*" "green" >}} {{< bg "16" "pgagent_16*" "green" >}} {{< bg "15" "pgagent_15*" "green" >}} {{< bg "14" "pgagent_14*" "green" >}} {{< bg "13" "pgagent_13*" "green" >}} | `pgagent_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent" "red" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} {{< bg "14" "pgagent" "green" >}} {{< bg "13" "pgagent" "green" >}} | `pgagent` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 3" >}}   |
-|    `el8.aarch64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 2" >}}   |
-|    `el9.x86_64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 3" >}}   |
-|    `el9.aarch64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 2" >}}   |
-|    `d12.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
-|    `d12.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
-|    `u22.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
-|    `u22.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
-|    `u24.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
-|    `u24.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 3" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 4" >}}   |
+|    `el8.aarch64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 2" >}}   |
+|    `el9.x86_64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 3" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 3" >}}   |
+|    `el9.aarch64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 2" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 2" >}}   |
+|    `el10.x86_64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 1" >}}   |
+|    `el10.aarch64`    |  {{< bg "PGDG 4.2.3" "pgagent_18 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_17 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_16 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_15 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_14 : HIDE 1" >}}   |  {{< bg "PGDG 4.2.3" "pgagent_13 : HIDE 1" >}}   |
+|    `d12.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `d12.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `d13.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `d13.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `u22.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `u22.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `u24.x86_64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
+|    `u24.aarch64`    |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |  {{< bg "MISS" "pgagent : HIDE 0" >}}   |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -58,6 +62,8 @@ A PostgreSQL job scheduler
 | `pgagent_18` | 4.2.3 | `el8.aarch64` | pgdg | 129.6 KiB | [pgagent_18-4.2.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgagent_18-4.2.3-1PGDG.rhel8.aarch64.rpm) |
 | `pgagent_18` | 4.2.3 | `el9.x86_64` | pgdg | 121.5 KiB | [pgagent_18-4.2.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgagent_18-4.2.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgagent_18` | 4.2.3 | `el9.aarch64` | pgdg | 117.8 KiB | [pgagent_18-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgagent_18-4.2.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgagent_18` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_18` | 4.2.3 | `el10.aarch64` | pgdg | 116.6 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -72,6 +78,8 @@ A PostgreSQL job scheduler
 | `pgagent_17` | 4.2.2 | `el9.x86_64` | pgdg | 120.3 KiB | [pgagent_17-4.2.2-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgagent_17-4.2.2-5PGDG.rhel9.x86_64.rpm) |
 | `pgagent_17` | 4.2.3 | `el9.aarch64` | pgdg | 118.0 KiB | [pgagent_17-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgagent_17-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_17` | 4.2.2 | `el9.aarch64` | pgdg | 116.7 KiB | [pgagent_17-4.2.2-5PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgagent_17-4.2.2-5PGDG.rhel9.aarch64.rpm) |
+| `pgagent_17` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_17` | 4.2.3 | `el10.aarch64` | pgdg | 116.6 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -86,6 +94,8 @@ A PostgreSQL job scheduler
 | `pgagent_16` | 4.2.2 | `el9.x86_64` | pgdg | 120.0 KiB | [pgagent_16-4.2.2-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgagent_16-4.2.2-3.rhel9.x86_64.rpm) |
 | `pgagent_16` | 4.2.3 | `el9.aarch64` | pgdg | 118.0 KiB | [pgagent_16-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgagent_16-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_16` | 4.2.2 | `el9.aarch64` | pgdg | 116.4 KiB | [pgagent_16-4.2.2-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgagent_16-4.2.2-3.rhel9.aarch64.rpm) |
+| `pgagent_16` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_16` | 4.2.3 | `el10.aarch64` | pgdg | 116.6 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -100,6 +110,8 @@ A PostgreSQL job scheduler
 | `pgagent_15` | 4.2.2 | `el9.x86_64` | pgdg | 119.1 KiB | [pgagent_15-4.2.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgagent_15-4.2.2-1.rhel9.x86_64.rpm) |
 | `pgagent_15` | 4.2.3 | `el9.aarch64` | pgdg | 118.1 KiB | [pgagent_15-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgagent_15-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_15` | 4.2.2 | `el9.aarch64` | pgdg | 114.4 KiB | [pgagent_15-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgagent_15-4.2.2-1.rhel9.aarch64.rpm) |
+| `pgagent_15` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_15` | 4.2.3 | `el10.aarch64` | pgdg | 116.6 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -116,6 +128,27 @@ A PostgreSQL job scheduler
 | `pgagent_14` | 4.2.1 | `el9.x86_64` | pgdg | 138.6 KiB | [pgagent_14-4.2.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgagent_14-4.2.1-1.rhel9.x86_64.rpm) |
 | `pgagent_14` | 4.2.3 | `el9.aarch64` | pgdg | 118.0 KiB | [pgagent_14-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgagent_14-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_14` | 4.2.2 | `el9.aarch64` | pgdg | 114.4 KiB | [pgagent_14-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgagent_14-4.2.2-1.rhel9.aarch64.rpm) |
+| `pgagent_14` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_14` | 4.2.3 | `el10.aarch64` | pgdg | 116.7 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgagent_13` | 4.2.3 | `el8.x86_64` | pgdg | 135.5 KiB | [pgagent_13-4.2.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgagent_13-4.2.3-1PGDG.rhel8.x86_64.rpm) |
+| `pgagent_13` | 4.2.2 | `el8.x86_64` | pgdg | 133.4 KiB | [pgagent_13-4.2.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgagent_13-4.2.2-1.rhel8.x86_64.rpm) |
+| `pgagent_13` | 4.2.1 | `el8.x86_64` | pgdg | 153.1 KiB | [pgagent_13-4.2.1-0.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgagent_13-4.2.1-0.rhel8.x86_64.rpm) |
+| `pgagent_13` | 4.0.0 | `el8.x86_64` | pgdg | 151.1 KiB | [pgagent_13-4.0.0-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgagent_13-4.0.0-4.rhel8.x86_64.rpm) |
+| `pgagent_13` | 4.2.3 | `el8.aarch64` | pgdg | 129.6 KiB | [pgagent_13-4.2.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgagent_13-4.2.3-1PGDG.rhel8.aarch64.rpm) |
+| `pgagent_13` | 4.2.2 | `el8.aarch64` | pgdg | 127.6 KiB | [pgagent_13-4.2.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgagent_13-4.2.2-1.rhel8.aarch64.rpm) |
+| `pgagent_13` | 4.2.3 | `el9.x86_64` | pgdg | 121.9 KiB | [pgagent_13-4.2.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgagent_13-4.2.3-1PGDG.rhel9.x86_64.rpm) |
+| `pgagent_13` | 4.2.2 | `el9.x86_64` | pgdg | 119.1 KiB | [pgagent_13-4.2.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgagent_13-4.2.2-1.rhel9.x86_64.rpm) |
+| `pgagent_13` | 4.2.1 | `el9.x86_64` | pgdg | 138.6 KiB | [pgagent_13-4.2.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgagent_13-4.2.1-1.rhel9.x86_64.rpm) |
+| `pgagent_13` | 4.2.3 | `el9.aarch64` | pgdg | 118.1 KiB | [pgagent_13-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgagent_13-4.2.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgagent_13` | 4.2.2 | `el9.aarch64` | pgdg | 114.4 KiB | [pgagent_13-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgagent_13-4.2.2-1.rhel9.aarch64.rpm) |
+| `pgagent_13` | 4.2.3 | `el10.x86_64` | pgdg | 126.9 KiB | [pgagent_13-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgagent_13-4.2.3-1PGDG.rhel10.x86_64.rpm) |
+| `pgagent_13` | 4.2.3 | `el10.aarch64` | pgdg | 116.6 KiB | [pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

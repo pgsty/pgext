@@ -14,7 +14,7 @@ Render HTML in SQL
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4290** | {{< badge content="pg_render" link="https://github.com/mkaski/pg_render" >}} | {{< ext "pg_render" >}} | `0.1.2` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **4290** | {{< badge content="pg_render" link="https://github.com/mkaski/pg_render" >}} | {{< ext "pg_render" >}} | `0.1.3` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,29 +26,33 @@ Render HTML in SQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
 
-> [!Note] pgrx=0.12.8
+> [!Note] pgrx=0.16.1, forked by vonng
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.2` | {{< bg "18" "pg_render_18" "red" >}} {{< bg "17" "pg_render_17" "green" >}} {{< bg "16" "pg_render_16" "green" >}} {{< bg "15" "pg_render_15" "green" >}} {{< bg "14" "pg_render_14" "green" >}} | `pg_render_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.2` | {{< bg "18" "postgresql-18-pg-render" "red" >}} {{< bg "17" "postgresql-17-pg-render" "green" >}} {{< bg "16" "postgresql-16-pg-render" "green" >}} {{< bg "15" "postgresql-15-pg-render" "green" >}} {{< bg "14" "postgresql-14-pg-render" "green" >}} | `postgresql-$v-pg-render` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.3` | {{< bg "18" "pg_render_18" "green" >}} {{< bg "17" "pg_render_17" "green" >}} {{< bg "16" "pg_render_16" "green" >}} {{< bg "15" "pg_render_15" "green" >}} {{< bg "14" "pg_render_14" "green" >}} {{< bg "13" "pg_render_13" "red" >}} | `pg_render_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_render" >}} | `0.1.3` | {{< bg "18" "postgresql-18-pg-render" "green" >}} {{< bg "17" "postgresql-17-pg-render" "green" >}} {{< bg "16" "postgresql-16-pg-render" "green" >}} {{< bg "15" "postgresql-15-pg-render" "green" >}} {{< bg "14" "postgresql-14-pg-render" "green" >}} {{< bg "13" "postgresql-13-pg-render" "red" >}} | `postgresql-$v-pg-render` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "pg_render_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "pg_render_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "pg_render_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_render_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.2" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.2" "postgresql-14-pg-render : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-render : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
@@ -121,7 +125,7 @@ Render HTML in SQL
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/mkaski/pg_render" title="Repository" icon="github" subtitle="github.com/mkaski/pg_render" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_render-0.1.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_render-0.1.3.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +150,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_render; # install by extension name, for the current active PG version
 pig ext install pg_render; # install via package alias, for the active PG version
+pig ext install pg_render -v 18;   # install for PG 18
 pig ext install pg_render -v 17;   # install for PG 17
 pig ext install pg_render -v 16;   # install for PG 16
 pig ext install pg_render -v 15;   # install for PG 15

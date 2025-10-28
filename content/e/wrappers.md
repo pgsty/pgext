@@ -14,7 +14,7 @@ Foreign data wrappers developed by Supabase
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.5.4` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.5.5` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,29 +26,33 @@ Foreign data wrappers developed by Supabase
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "mongo_fdw" >}} |
 
-> [!Note] pgrx=0.14.3
+> [!Note] pgrx=0.16.1, manual update from 0.16.0
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.4` | {{< bg "18" "wrappers_18" "red" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} | `wrappers_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.4` | {{< bg "18" "postgresql-18-wrappers" "red" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} | `postgresql-$v-wrappers` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.5` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} {{< bg "13" "wrappers_13" "red" >}} | `wrappers_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.5` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} {{< bg "13" "postgresql-13-wrappers" "red" >}} | `postgresql-$v-wrappers` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "wrappers_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "wrappers_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "wrappers_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "wrappers_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.4" "postgresql-17-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-16-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-15-wrappers : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.4" "postgresql-14-wrappers : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-wrappers : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
@@ -121,7 +125,7 @@ Foreign data wrappers developed by Supabase
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/wrappers" title="Repository" icon="github" subtitle="github.com/supabase/wrappers" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.5.4.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.5.5.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +150,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install wrappers; # install by extension name, for the current active PG version
 pig ext install wrappers; # install via package alias, for the active PG version
+pig ext install wrappers -v 18;   # install for PG 18
 pig ext install wrappers -v 17;   # install for PG 17
 pig ext install wrappers -v 16;   # install for PG 16
 pig ext install wrappers -v 15;   # install for PG 15

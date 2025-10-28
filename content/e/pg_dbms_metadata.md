@@ -31,24 +31,28 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_dbms_metadata" >}} | `1.0.0` | {{< bg "18" "pg_dbms_metadata_18" "green" >}} {{< bg "17" "pg_dbms_metadata_17" "green" >}} {{< bg "16" "pg_dbms_metadata_16" "green" >}} {{< bg "15" "pg_dbms_metadata_15" "green" >}} {{< bg "14" "pg_dbms_metadata_14" "green" >}} | `pg_dbms_metadata_$v` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_dbms_metadata" >}} | `1.0.0` | {{< bg "18" "pg_dbms_metadata_18" "green" >}} {{< bg "17" "pg_dbms_metadata_17" "green" >}} {{< bg "16" "pg_dbms_metadata_16" "green" >}} {{< bg "15" "pg_dbms_metadata_15" "green" >}} {{< bg "14" "pg_dbms_metadata_14" "green" >}} {{< bg "13" "pg_dbms_metadata_13" "green" >}} | `pg_dbms_metadata_$v` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} |
-|    `el8.aarch64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_dbms_metadata_15 : MISS 0" "red" >}}      | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} |
-|    `el9.x86_64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} |
-|    `el9.aarch64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
-|    `d12.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
-|    `u22.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
-|    `u22.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
-|    `u24.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
-|    `u24.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_dbms_metadata_15 : MISS 0" "red" >}}      | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `el10.x86_64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `el10.aarch64`    | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.0" "pg_dbms_metadata_13 : AVAIL 1" "blue" >}} |
+|    `d12.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_metadata : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -57,6 +61,8 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 | `pg_dbms_metadata_18` | 1.0.0 | `el8.aarch64` | pgdg | 17.7 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_18` | 1.0.0 | `el9.x86_64` | pgdg | 17.4 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm) |
 | `pg_dbms_metadata_18` | 1.0.0 | `el9.aarch64` | pgdg | 17.3 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_18` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_18` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -67,6 +73,8 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 | `pg_dbms_metadata_17` | 1.0.0 | `el8.aarch64` | pgdg | 17.6 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_17` | 1.0.0 | `el9.x86_64` | pgdg | 17.3 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm) |
 | `pg_dbms_metadata_17` | 1.0.0 | `el9.aarch64` | pgdg | 17.2 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_17` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_17` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -77,6 +85,8 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 | `pg_dbms_metadata_16` | 1.0.0 | `el8.aarch64` | pgdg | 17.6 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_16` | 1.0.0 | `el9.x86_64` | pgdg | 17.3 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm) |
 | `pg_dbms_metadata_16` | 1.0.0 | `el9.aarch64` | pgdg | 17.2 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_16` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_16` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -86,6 +96,8 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 | `pg_dbms_metadata_15` | 1.0.0 | `el8.x86_64` | pgdg | 17.7 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_15` | 1.0.0 | `el9.x86_64` | pgdg | 17.3 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm) |
 | `pg_dbms_metadata_15` | 1.0.0 | `el9.aarch64` | pgdg | 17.2 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_15` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_15` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -96,6 +108,20 @@ Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 | `pg_dbms_metadata_14` | 1.0.0 | `el8.aarch64` | pgdg | 17.6 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_14` | 1.0.0 | `el9.x86_64` | pgdg | 17.3 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm) |
 | `pg_dbms_metadata_14` | 1.0.0 | `el9.aarch64` | pgdg | 17.2 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_14` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_14` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_dbms_metadata_13` | 1.0.0 | `el8.x86_64` | pgdg | 17.7 KiB | [pg_dbms_metadata_13-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_dbms_metadata_13-1.0.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_dbms_metadata_13` | 1.0.0 | `el8.aarch64` | pgdg | 17.6 KiB | [pg_dbms_metadata_13-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_dbms_metadata_13-1.0.0-1PGDG.rhel8.noarch.rpm) |
+| `pg_dbms_metadata_13` | 1.0.0 | `el9.x86_64` | pgdg | 17.3 KiB | [pg_dbms_metadata_13-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_dbms_metadata_13-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_13` | 1.0.0 | `el9.aarch64` | pgdg | 17.2 KiB | [pg_dbms_metadata_13-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_dbms_metadata_13-1.0.0-1PGDG.rhel9.noarch.rpm) |
+| `pg_dbms_metadata_13` | 1.0.0 | `el10.x86_64` | pgdg | 17.9 KiB | [pg_dbms_metadata_13-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_dbms_metadata_13-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_13` | 1.0.0 | `el10.aarch64` | pgdg | 17.8 KiB | [pg_dbms_metadata_13-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pg_dbms_metadata_13-1.0.0-2PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

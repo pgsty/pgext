@@ -31,30 +31,35 @@ foreign data wrapper for DB2 access
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/db2_fdw" >}} | `7.0.0` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} | `db2_fdw_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/db2_fdw" >}} | `7.0.0` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} {{< bg "13" "db2_fdw_13*" "green" >}} | `db2_fdw_$v*` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_17 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_16 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_15 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_14 : HIDE 3" >}}   |
-|    `el8.aarch64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_17 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_16 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_15 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_14 : HIDE 0" >}}   |
-|    `el9.x86_64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_17 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_16 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_15 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_14 : HIDE 3" >}}   |
-|    `el9.aarch64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_17 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_16 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_15 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_14 : HIDE 0" >}}   |
-|    `d12.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
-|    `d12.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
-|    `u22.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
-|    `u22.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
-|    `u24.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
-|    `u24.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_17 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_16 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_15 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_14 : HIDE 3" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_13 : HIDE 3" >}}   |
+|    `el8.aarch64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_17 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_16 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_15 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_14 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_13 : HIDE 0" >}}   |
+|    `el9.x86_64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_17 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_16 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_15 : HIDE 2" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_14 : HIDE 3" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_13 : HIDE 4" >}}   |
+|    `el9.aarch64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_17 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_16 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_15 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_14 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_13 : HIDE 0" >}}   |
+|    `el10.x86_64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_17 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_16 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_15 : HIDE 1" >}}   |  {{< bg "PGDG 7.0.0" "db2_fdw_14 : HIDE 1" >}}   |  {{< bg "MISS" "db2_fdw_13 : HIDE 0" >}}   |
+|    `el10.aarch64`    |  {{< bg "MISS" "db2_fdw_18 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_17 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_16 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_15 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_14 : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw_13 : HIDE 0" >}}   |
+|    `d12.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `d12.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `d13.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `d13.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `u22.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `u22.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `u24.x86_64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
+|    `u24.aarch64`    |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |  {{< bg "MISS" "db2_fdw : HIDE 0" >}}   |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `db2_fdw_17` | 7.0.0 | `el8.x86_64` | pgdg | 59.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm) |
 | `db2_fdw_17` | 7.0.0 | `el9.x86_64` | pgdg | 56.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_17` | 7.0.0 | `el10.x86_64` | pgdg | 57.8 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -65,6 +70,7 @@ foreign data wrapper for DB2 access
 | `db2_fdw_16` | 6.0.1 | `el8.x86_64` | pgdg | 59.4 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm) |
 | `db2_fdw_16` | 7.0.0 | `el9.x86_64` | pgdg | 56.6 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `db2_fdw_16` | 6.0.1 | `el9.x86_64` | pgdg | 58.0 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_16` | 7.0.0 | `el10.x86_64` | pgdg | 57.9 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -75,6 +81,7 @@ foreign data wrapper for DB2 access
 | `db2_fdw_15` | 6.0.1 | `el8.x86_64` | pgdg | 60.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm) |
 | `db2_fdw_15` | 7.0.0 | `el9.x86_64` | pgdg | 60.2 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `db2_fdw_15` | 6.0.1 | `el9.x86_64` | pgdg | 62.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_15` | 7.0.0 | `el10.x86_64` | pgdg | 60.9 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -87,6 +94,20 @@ foreign data wrapper for DB2 access
 | `db2_fdw_14` | 7.0.0 | `el9.x86_64` | pgdg | 60.2 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm) |
 | `db2_fdw_14` | 6.0.1 | `el9.x86_64` | pgdg | 62.5 KiB | [db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm) |
 | `db2_fdw_14` | 5.0.0 | `el9.x86_64` | pgdg | 364.1 KiB | [db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | 7.0.0 | `el10.x86_64` | pgdg | 61.0 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `db2_fdw_13` | 7.0.0 | `el8.x86_64` | pgdg | 60.5 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | 6.0.1 | `el8.x86_64` | pgdg | 60.3 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | 5.0.0 | `el8.x86_64` | pgdg | 355.2 KiB | [db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | 7.0.0 | `el9.x86_64` | pgdg | 60.4 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | 6.0.1 | `el9.x86_64` | pgdg | 62.5 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | 5.0.0 | `el9.x86_64` | pgdg | 362.2 KiB | [db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | 4.0.0 | `el9.x86_64` | pgdg | 362.2 KiB | [db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

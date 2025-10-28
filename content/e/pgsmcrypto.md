@@ -14,7 +14,7 @@ PostgreSQL SM Algorithm Extension
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7070** | {{< badge content="pgsmcrypto" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< ext "pgsmcrypto" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **7070** | {{< badge content="pgsmcrypto" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,32 +26,36 @@ PostgreSQL SM Algorithm Extension
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} {{< ext "uuid-ossp" >}} {{< ext "lo" >}} |
 
-> [!Note] pgrx=0.12.6
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgsmcrypto" >}} | `0.1.0` | {{< bg "18" "pgsmcrypto_18" "red" >}} {{< bg "17" "pgsmcrypto_17" "green" >}} {{< bg "16" "pgsmcrypto_16" "green" >}} {{< bg "15" "pgsmcrypto_15" "green" >}} {{< bg "14" "pgsmcrypto_14" "green" >}} | `pgsmcrypto_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgsmcrypto" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgsmcrypto" "red" >}} {{< bg "17" "postgresql-17-pgsmcrypto" "green" >}} {{< bg "16" "postgresql-16-pgsmcrypto" "green" >}} {{< bg "15" "postgresql-15-pgsmcrypto" "green" >}} {{< bg "14" "postgresql-14-pgsmcrypto" "green" >}} | `postgresql-$v-pgsmcrypto` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pgsmcrypto" >}} | `0.1.1` | {{< bg "18" "pgsmcrypto_18" "green" >}} {{< bg "17" "pgsmcrypto_17" "green" >}} {{< bg "16" "pgsmcrypto_16" "green" >}} {{< bg "15" "pgsmcrypto_15" "green" >}} {{< bg "14" "pgsmcrypto_14" "green" >}} {{< bg "13" "pgsmcrypto_13" "green" >}} | `pgsmcrypto_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pgsmcrypto" >}} | `0.1.1` | {{< bg "18" "postgresql-18-pgsmcrypto" "green" >}} {{< bg "17" "postgresql-17-pgsmcrypto" "green" >}} {{< bg "16" "postgresql-16-pgsmcrypto" "green" >}} {{< bg "15" "postgresql-15-pgsmcrypto" "green" >}} {{< bg "14" "postgresql-14-pgsmcrypto" "green" >}} {{< bg "13" "postgresql-13-pgsmcrypto" "green" >}} | `postgresql-$v-pgsmcrypto` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgsmcrypto_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "pgsmcrypto_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgsmcrypto_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgsmcrypto : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgsmcrypto : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgsmcrypto : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsmcrypto : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgsmcrypto : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgsmcrypto : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -115,13 +119,29 @@ PostgreSQL SM Algorithm Extension
 | `postgresql-14-pgsmcrypto` | 0.1.0 | `u24.x86_64` | pigsty | 716.2 KiB | [postgresql-14-pgsmcrypto_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pgsmcrypto` | 0.1.0 | `u24.aarch64` | pigsty | 646.7 KiB | [postgresql-14-pgsmcrypto_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.0-1PIGSTY~noble_arm64.deb) |
 
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsmcrypto_13` | 0.1.0 | `el8.x86_64` | pigsty | 765.0 KiB | [pgsmcrypto_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_13` | 0.1.0 | `el8.aarch64` | pigsty | 670.6 KiB | [pgsmcrypto_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_13` | 0.1.0 | `el9.x86_64` | pigsty | 785.4 KiB | [pgsmcrypto_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_13` | 0.1.0 | `el9.aarch64` | pigsty | 733.7 KiB | [pgsmcrypto_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `d12.x86_64` | pigsty | 639.9 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `d12.aarch64` | pigsty | 540.2 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `u22.x86_64` | pigsty | 721.3 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `u22.aarch64` | pigsty | 655.9 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `u24.x86_64` | pigsty | 716.0 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | 0.1.0 | `u24.aarch64` | pigsty | 646.6 KiB | [postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.0-1PIGSTY~noble_arm64.deb) |
+
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/zhuobie/pgsmcrypto" title="Repository" icon="github" subtitle="github.com/zhuobie/pgsmcrypto" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsmcrypto-0.1.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsmcrypto-0.1.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +166,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pgsmcrypto; # install by extension name, for the current active PG version
 pig ext install pgsmcrypto; # install via package alias, for the active PG version
+pig ext install pgsmcrypto -v 18;   # install for PG 18
 pig ext install pgsmcrypto -v 17;   # install for PG 17
 pig ext install pgsmcrypto -v 16;   # install for PG 16
 pig ext install pgsmcrypto -v 15;   # install for PG 15

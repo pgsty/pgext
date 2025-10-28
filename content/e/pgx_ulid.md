@@ -14,7 +14,7 @@ ulid type and methods
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4510** | {{< badge content="pgx_ulid" link="https://github.com/pksunkara/pgx_ulid" >}} | {{< ext "pgx_ulid" >}} | `0.2.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **4510** | {{< badge content="pgx_ulid" link="https://github.com/pksunkara/pgx_ulid" >}} | {{< ext "pgx_ulid" >}} | `0.2.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,29 +26,33 @@ ulid type and methods
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "pg_hashids" >}} {{< ext "permuteseq" >}} |
 
-> [!Note] pgrx=0.12.7
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.0` | {{< bg "18" "pgx_ulid_18" "red" >}} {{< bg "17" "pgx_ulid_17" "green" >}} {{< bg "16" "pgx_ulid_16" "green" >}} {{< bg "15" "pgx_ulid_15" "green" >}} {{< bg "14" "pgx_ulid_14" "green" >}} | `pgx_ulid_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgx-ulid" "red" >}} {{< bg "17" "postgresql-17-pgx-ulid" "green" >}} {{< bg "16" "postgresql-16-pgx-ulid" "green" >}} {{< bg "15" "postgresql-15-pgx-ulid" "green" >}} {{< bg "14" "postgresql-14-pgx-ulid" "green" >}} | `postgresql-$v-pgx-ulid` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.1` | {{< bg "18" "pgx_ulid_18" "green" >}} {{< bg "17" "pgx_ulid_17" "green" >}} {{< bg "16" "pgx_ulid_16" "green" >}} {{< bg "15" "pgx_ulid_15" "green" >}} {{< bg "14" "pgx_ulid_14" "green" >}} {{< bg "13" "pgx_ulid_13" "red" >}} | `pgx_ulid_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.1` | {{< bg "18" "postgresql-18-pgx-ulid" "green" >}} {{< bg "17" "postgresql-17-pgx-ulid" "green" >}} {{< bg "16" "postgresql-16-pgx-ulid" "green" >}} {{< bg "15" "postgresql-15-pgx-ulid" "green" >}} {{< bg "14" "postgresql-14-pgx-ulid" "green" >}} {{< bg "13" "postgresql-13-pgx-ulid" "red" >}} | `postgresql-$v-pgx-ulid` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgx_ulid_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgx_ulid_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "pgx_ulid_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgx_ulid_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgx-ulid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgx-ulid : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgx-ulid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgx-ulid : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pgx-ulid : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
@@ -121,7 +125,7 @@ ulid type and methods
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pksunkara/pgx_ulid" title="Repository" icon="github" subtitle="github.com/pksunkara/pgx_ulid" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgx_ulid-0.2.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgx_ulid-0.2.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -146,6 +150,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pgx_ulid; # install by extension name, for the current active PG version
 pig ext install pgx_ulid; # install via package alias, for the active PG version
+pig ext install pgx_ulid -v 18;   # install for PG 18
 pig ext install pgx_ulid -v 17;   # install for PG 17
 pig ext install pgx_ulid -v 16;   # install for PG 16
 pig ext install pgx_ulid -v 15;   # install for PG 15

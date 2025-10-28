@@ -26,32 +26,36 @@ conversion functions for spatial, routing and other specialized uses
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
 
-> [!Note] pgrx=0.14.1
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/convert" >}} | `0.0.4` | {{< bg "18" "pg_convert_18" "red" >}} {{< bg "17" "pg_convert_17" "green" >}} {{< bg "16" "pg_convert_16" "green" >}} {{< bg "15" "pg_convert_15" "green" >}} {{< bg "14" "pg_convert_14" "green" >}} | `pg_convert_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/convert" >}} | `0.0.4` | {{< bg "18" "postgresql-18-convert" "red" >}} {{< bg "17" "postgresql-17-convert" "green" >}} {{< bg "16" "postgresql-16-convert" "green" >}} {{< bg "15" "postgresql-15-convert" "green" >}} {{< bg "14" "postgresql-14-convert" "green" >}} | `postgresql-$v-convert` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/convert" >}} | `0.0.4` | {{< bg "18" "pg_convert_18" "green" >}} {{< bg "17" "pg_convert_17" "green" >}} {{< bg "16" "pg_convert_16" "green" >}} {{< bg "15" "pg_convert_15" "green" >}} {{< bg "14" "pg_convert_14" "green" >}} {{< bg "13" "pg_convert_13" "green" >}} | `pg_convert_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/convert" >}} | `0.0.4` | {{< bg "18" "postgresql-18-convert" "green" >}} {{< bg "17" "postgresql-17-convert" "green" >}} {{< bg "16" "postgresql-16-convert" "green" >}} {{< bg "15" "postgresql-15-convert" "green" >}} {{< bg "14" "postgresql-14-convert" "green" >}} {{< bg "13" "postgresql-13-convert" "green" >}} | `postgresql-$v-convert` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "pg_convert_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "pg_convert_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "pg_convert_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_convert_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-convert : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-convert : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.4" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-13-convert : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -115,6 +119,22 @@ conversion functions for spatial, routing and other specialized uses
 | `postgresql-14-convert` | 0.0.4 | `u24.x86_64` | pigsty | 179.6 KiB | [postgresql-14-convert_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-14-convert_0.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-convert` | 0.0.4 | `u24.aarch64` | pigsty | 171.4 KiB | [postgresql-14-convert_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-14-convert_0.0.4-1PIGSTY~noble_arm64.deb) |
 
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_convert_13` | 0.0.4 | `el8.x86_64` | pigsty | 203.4 KiB | [pg_convert_13-0.0.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_convert_13-0.0.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_convert_13` | 0.0.4 | `el8.aarch64` | pigsty | 191.7 KiB | [pg_convert_13-0.0.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_convert_13-0.0.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_convert_13` | 0.0.4 | `el9.x86_64` | pigsty | 208.6 KiB | [pg_convert_13-0.0.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_convert_13-0.0.4-1PIGSTY.el9.x86_64.rpm) |
+| `pg_convert_13` | 0.0.4 | `el9.aarch64` | pigsty | 205.5 KiB | [pg_convert_13-0.0.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_convert_13-0.0.4-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-13-convert` | 0.0.4 | `d12.x86_64` | pigsty | 164.1 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-convert` | 0.0.4 | `d12.aarch64` | pigsty | 148.4 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-convert` | 0.0.4 | `u22.x86_64` | pigsty | 181.1 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-convert` | 0.0.4 | `u22.aarch64` | pigsty | 172.2 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-convert` | 0.0.4 | `u24.x86_64` | pigsty | 179.6 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-convert` | 0.0.4 | `u24.aarch64` | pigsty | 171.5 KiB | [postgresql-13-convert_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-13-convert_0.0.4-1PIGSTY~noble_arm64.deb) |
+
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -146,6 +166,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install convert; # install by extension name, for the current active PG version
 pig ext install pg_convert; # install via package alias, for the active PG version
+pig ext install convert -v 18;   # install for PG 18
 pig ext install convert -v 17;   # install for PG 17
 pig ext install convert -v 16;   # install for PG 16
 pig ext install convert -v 15;   # install for PG 15

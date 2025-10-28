@@ -14,7 +14,7 @@ Vector database plugin for Postgres, written in Rust
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1810** | {{< badge content="vchord" link="https://github.com/tensorchord/VectorChord" >}} | {{< ext "vchord" >}} | `0.5.1` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **1810** | {{< badge content="vchord" link="https://github.com/tensorchord/VectorChord" >}} | {{< ext "vchord" >}} | `0.5.3` | {{< category "RAG" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,29 +27,33 @@ Vector database plugin for Postgres, written in Rust
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tiktoken" >}} {{< ext "pgml" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} |
 
-> [!Note] pgrx=0.16.0
+> [!Note] pgrx=0.16.1
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/vchord" >}} | `0.5.1` | {{< bg "18" "vchord_18" "red" >}} {{< bg "17" "vchord_17" "green" >}} {{< bg "16" "vchord_16" "green" >}} {{< bg "15" "vchord_15" "green" >}} {{< bg "14" "vchord_14" "green" >}} | `vchord_$v` | `pgvector_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/vchord" >}} | `0.5.1` | {{< bg "18" "postgresql-18-vchord" "red" >}} {{< bg "17" "postgresql-17-vchord" "green" >}} {{< bg "16" "postgresql-16-vchord" "green" >}} {{< bg "15" "postgresql-15-vchord" "green" >}} {{< bg "14" "postgresql-14-vchord" "green" >}} | `postgresql-$v-vchord` | `postgresql-$v-pgvector` |
+| **EL** | {{< badge content="PIGSTY" link="/e/vchord" >}} | `0.5.3` | {{< bg "18" "vchord_18" "green" >}} {{< bg "17" "vchord_17" "green" >}} {{< bg "16" "vchord_16" "green" >}} {{< bg "15" "vchord_15" "green" >}} {{< bg "14" "vchord_14" "green" >}} {{< bg "13" "vchord_13" "red" >}} | `vchord_$v` | `pgvector_$v` |
+| **Debian** | {{< badge content="PIGSTY" link="/e/vchord" >}} | `0.5.3` | {{< bg "18" "postgresql-18-vchord" "green" >}} {{< bg "17" "postgresql-17-vchord" "green" >}} {{< bg "16" "postgresql-16-vchord" "green" >}} {{< bg "15" "postgresql-15-vchord" "green" >}} {{< bg "14" "postgresql-14-vchord" "green" >}} {{< bg "13" "postgresql-13-vchord" "red" >}} | `postgresql-$v-vchord` | `postgresql-$v-pgvector` |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |
-|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
-|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+|    `el8.x86_64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "vchord_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "vchord_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    |      {{< bg "MISS" "vchord_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vchord_13 : MISS 0" "red" >}}      |
+|    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `d13.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vchord : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `u22.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `u22.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `u24.x86_64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
+|    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-vchord : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.5.1" "postgresql-17-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-16-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-15-vchord : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.1" "postgresql-14-vchord : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-vchord : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG17,PG16,PG15,PG14" >}}
@@ -122,7 +126,7 @@ Vector database plugin for Postgres, written in Rust
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tensorchord/VectorChord" title="Repository" icon="github" subtitle="github.com/tensorchord/VectorChord" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="VectorChord-0.5.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="VectorChord-0.5.3.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -147,6 +151,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install vchord; # install by extension name, for the current active PG version
 pig ext install vchord; # install via package alias, for the active PG version
+pig ext install vchord -v 18;   # install for PG 18
 pig ext install vchord -v 17;   # install for PG 17
 pig ext install vchord -v 16;   # install for PG 16
 pig ext install vchord -v 15;   # install for PG 15
