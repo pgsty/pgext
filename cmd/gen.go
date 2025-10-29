@@ -27,7 +27,8 @@ var genCmd = &cobra.Command{
   pgext gen index    # Generate extension index pages
   pgext gen cate     # Generate category list pages
   pgext gen lang     # Generate language list pages
-  pgext gen license  # Generate license list pages`,
+  pgext gen license  # Generate license list pages
+  pgext gen os el9.x86_64  # Generate OS-specific availability page`,
 }
 
 // genExtCmd generates extension detail pages
@@ -324,10 +325,53 @@ var genCatalogCmd = &cobra.Command{
 	},
 }
 
+// genOSCmd generates OS-specific availability pages
+var genOSCmd = &cobra.Command{
+	Use:   "os <os-name>",
+	Short: "Generate OS-specific availability page",
+	Long:  `Generate a markdown page showing extension availability for a specific OS distribution`,
+	Example: `  pgext gen os el9.x86_64    # Generate page for RHEL 9 x86_64
+  pgext gen os u24.x86_64    # Generate page for Ubuntu 24.04 x86_64
+  pgext gen os el10.aarch64  # Generate page for RHEL 10 ARM64`,
+	Args: cobra.ExactArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+		osName := args[0]
+
+		// Initialize database connection
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		// Load extension cache
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		// Prepare output directory
+		listDir := filepath.Join(outputDir, "list")
+		if err := os.MkdirAll(listDir, 0755); err != nil {
+			return fmt.Errorf("failed to create output directory: %w", err)
+		}
+
+		// Generate OS page
+		generator := cli.NewOSGenerator(cache, listDir)
+		if err := generator.GenerateOSPage(ctx, osName); err != nil {
+			return fmt.Errorf("failed to generate OS page for %s: %w", osName, err)
+		}
+
+		logrus.Infof("Successfully generated OS page: %s.md", osName)
+		return nil
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	genCmd.AddCommand(genExtCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd)
+	genCmd.AddCommand(genExtCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
