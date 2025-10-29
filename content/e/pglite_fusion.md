@@ -26,15 +26,15 @@ Embed an SQLite database in your PostgreSQL table
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "duckdb_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "pglite_fusion_18" "red" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} {{< bg "13" "pglite_fusion_13" "green" >}} | `pglite_fusion_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "postgresql-18-pglite-fusion" "red" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} {{< bg "13" "postgresql-13-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} {{< bg "13" "pglite_fusion_13" "green" >}} | `pglite_fusion_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} {{< bg "13" "postgresql-13-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -166,6 +166,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pglite_fusion; # install by extension name, for the current active PG version
 pig ext install pglite_fusion; # install via package alias, for the active PG version
+pig ext install pglite_fusion -v 18;   # install for PG 18
 pig ext install pglite_fusion -v 17;   # install for PG 17
 pig ext install pglite_fusion -v 16;   # install for PG 16
 pig ext install pglite_fusion -v 15;   # install for PG 15

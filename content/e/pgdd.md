@@ -26,7 +26,7 @@ Introspect pg data dictionary via standard SQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "ddlx" >}} {{< ext "pg_catcheck" >}} {{< ext "pageinspect" >}} {{< ext "pg_permissions" >}} {{< ext "adminpack" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} {{< ext "pg_squeeze" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

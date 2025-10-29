@@ -26,7 +26,7 @@ conversion functions for spatial, routing and other specialized uses
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "topn" >}} {{< ext "quantile" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

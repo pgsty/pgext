@@ -26,7 +26,7 @@ ulid type and methods
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "pg_hashids" >}} {{< ext "permuteseq" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

@@ -32,7 +32,7 @@ Used to parse an address into constituent elements. Generally used to support ge
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/postgis" >}} | `3.6.0` | {{< bg "18" "postgis35_18*" "green" >}} {{< bg "17" "postgis35_17*" "green" >}} {{< bg "16" "postgis35_16*" "green" >}} {{< bg "15" "postgis35_15*" "green" >}} {{< bg "14" "postgis35_14*" "green" >}} {{< bg "13" "postgis35_13*" "green" >}} | `postgis35_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/postgis" >}} | `3.6.0` | {{< bg "18" "postgis36_18*" "green" >}} {{< bg "17" "postgis36_17*" "green" >}} {{< bg "16" "postgis36_16*" "green" >}} {{< bg "15" "postgis36_15*" "green" >}} {{< bg "14" "postgis36_14*" "green" >}} {{< bg "13" "postgis36_13*" "green" >}} | `postgis36_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/postgis" >}} | `3.6.0` | {{< bg "18" "postgresql-18-postgis-3 postgresql-18-postgis-3-scripts" "green" >}} {{< bg "17" "postgresql-17-postgis-3 postgresql-17-postgis-3-scripts" "green" >}} {{< bg "16" "postgresql-16-postgis-3 postgresql-16-postgis-3-scripts" "green" >}} {{< bg "15" "postgresql-15-postgis-3 postgresql-15-postgis-3-scripts" "green" >}} {{< bg "14" "postgresql-14-postgis-3 postgresql-14-postgis-3-scripts" "green" >}} {{< bg "13" "postgresql-13-postgis-3 postgresql-13-postgis-3-scripts" "green" >}} | `postgresql-$v-postgis-3 postgresql-$v-postgis-3-scripts` | - |
 
 

@@ -26,7 +26,7 @@ Add in-database GraphQL support
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "wrappers" >}} |
 
-> [!Note] pgrx=0.16.1, not an official release
+> [!Note] pgrx=0.16.1, not an official release by Vonng
 
 
 ## Packages

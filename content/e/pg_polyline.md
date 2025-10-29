@@ -26,8 +26,6 @@ Fast Google Encoded Polyline encoding & decoding for postgres
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
-> [!Note] pgrx=0.12.7
-
 
 ## Packages
 

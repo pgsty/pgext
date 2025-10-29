@@ -26,7 +26,7 @@ Postgres for analytics, powered by DuckDB
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "orioledb" >}} {{< ext "citus" >}} |
 
-> [!Note] pgrx=0.13.0, archived, no longer maintained
+> [!Note] archived, no longer maintained
 
 
 ## Packages

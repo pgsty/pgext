@@ -14,7 +14,7 @@ multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, 
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4500** | {{< badge content="pg_idkit" link="https://github.com/VADOSWARE/pg_idkit" >}} | {{< ext "pg_idkit" >}} | `0.3.1` | {{< category "FUNC" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **4500** | {{< badge content="pg_idkit" link="https://github.com/VADOSWARE/pg_idkit" >}} | {{< ext "pg_idkit" >}} | `0.4.0` | {{< category "FUNC" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,13 @@ multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, 
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_hashids" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "permuteseq" >}} {{< ext "pg_cardano" >}} {{< ext "pg_base58" >}} |
 
-> [!Note] pgrx=0.16.1
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "pg_idkit_18" "green" >}} {{< bg "17" "pg_idkit_17" "green" >}} {{< bg "16" "pg_idkit_16" "green" >}} {{< bg "15" "pg_idkit_15" "green" >}} {{< bg "14" "pg_idkit_14" "green" >}} {{< bg "13" "pg_idkit_13" "green" >}} | `pg_idkit_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-idkit" "green" >}} {{< bg "17" "postgresql-17-pg-idkit" "green" >}} {{< bg "16" "postgresql-16-pg-idkit" "green" >}} {{< bg "15" "postgresql-15-pg-idkit" "green" >}} {{< bg "14" "postgresql-14-pg-idkit" "green" >}} {{< bg "13" "postgresql-13-pg-idkit" "green" >}} | `postgresql-$v-pg-idkit` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.4.0` | {{< bg "18" "pg_idkit_18" "green" >}} {{< bg "17" "pg_idkit_17" "green" >}} {{< bg "16" "pg_idkit_16" "green" >}} {{< bg "15" "pg_idkit_15" "green" >}} {{< bg "14" "pg_idkit_14" "green" >}} {{< bg "13" "pg_idkit_13" "green" >}} | `pg_idkit_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_idkit" >}} | `0.4.0` | {{< bg "18" "postgresql-18-pg-idkit" "green" >}} {{< bg "17" "postgresql-17-pg-idkit" "green" >}} {{< bg "16" "postgresql-16-pg-idkit" "green" >}} {{< bg "15" "postgresql-15-pg-idkit" "green" >}} {{< bg "14" "postgresql-14-pg-idkit" "green" >}} {{< bg "13" "postgresql-13-pg-idkit" "green" >}} | `postgresql-$v-pg-idkit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -141,7 +139,7 @@ multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, 
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/VADOSWARE/pg_idkit" title="Repository" icon="github" subtitle="github.com/VADOSWARE/pg_idkit" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_idkit-0.3.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_idkit-0.4.0.tar.gz" >}}
 {{< /cards >}}
 
 

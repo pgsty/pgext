@@ -14,7 +14,7 @@ Foreign data wrappers developed by Supabase
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.5.5` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.5.6` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Foreign data wrappers developed by Supabase
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "mongo_fdw" >}} |
 
-> [!Note] pgrx=0.16.1, manual update from 0.16.0
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.5` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} {{< bg "13" "wrappers_13" "red" >}} | `wrappers_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.5` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} {{< bg "13" "postgresql-13-wrappers" "red" >}} | `postgresql-$v-wrappers` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.6` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} {{< bg "13" "wrappers_13" "red" >}} | `wrappers_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/wrappers" >}} | `0.5.6` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} {{< bg "13" "postgresql-13-wrappers" "red" >}} | `postgresql-$v-wrappers` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -125,7 +125,7 @@ Foreign data wrappers developed by Supabase
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/wrappers" title="Repository" icon="github" subtitle="github.com/supabase/wrappers" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.5.5.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.5.6.tar.gz" >}}
 {{< /cards >}}
 
 

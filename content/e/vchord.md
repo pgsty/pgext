@@ -27,8 +27,6 @@ Vector database plugin for Postgres, written in Rust
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tiktoken" >}} {{< ext "pgml" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} |
 
-> [!Note] pgrx=0.16.1
-
 
 ## Packages
 

@@ -26,7 +26,7 @@ PostgreSQL extension providing JSON Schema validation
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "jsquery" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
 
-> [!Note] pgrx=0.16.1, manual update from 0.16.0
+> [!Note] pgrx=0.16.1, manual update from 0.16.0 by Vonng
 
 
 ## Packages

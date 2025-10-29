@@ -26,7 +26,7 @@ Tokenizers for full-text search
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] PG18 fix by Vonng
 
 
 ## Packages

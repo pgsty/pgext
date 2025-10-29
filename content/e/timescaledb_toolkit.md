@@ -26,8 +26,6 @@ Library of analytical hyperfunctions, time-series pipelining, and other SQL util
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "table_version" >}} |
 
-> [!Note] pgrx=0.16.1
-
 
 ## Packages
 

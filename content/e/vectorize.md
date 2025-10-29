@@ -27,7 +27,7 @@ The simplest way to do vector search on Postgres
 |   **Requires**    | {{< ext "pg_cron" >}} {{< ext "pgmq" >}} {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pg_later" >}} {{< ext "pg_similarity" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] PG18 fix by https://github.com/Vonng/pg_vectorize
 
 
 ## Packages

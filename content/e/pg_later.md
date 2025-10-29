@@ -27,7 +27,7 @@ Run queries now and get results later
 |   **Requires**    | {{< ext "pgmq" >}} |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] PG18 fix by https://github.com/Vonng/pg_later
 
 
 ## Packages

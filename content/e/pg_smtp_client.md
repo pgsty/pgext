@@ -26,7 +26,7 @@ PostgreSQL extension to send email using SMTP
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_html5_email_address" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
 
-> [!Note] pgrx=0.16.1, forked by vonng
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

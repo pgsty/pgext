@@ -14,7 +14,7 @@ Generate BM25 sparse vector inside PostgreSQL
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2140** | {{< badge content="pg_bestmatch" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< ext "pg_bestmatch" >}} | `0.0.1` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2140** | {{< badge content="pg_bestmatch" link="https://github.com/tensorchord/pg_bestmatch.rs" >}} | {{< ext "pg_bestmatch" >}} | `0.0.2` | {{< category "FTS" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,15 +26,15 @@ Generate BM25 sparse vector inside PostgreSQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "vector" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "vectorize" >}} |
 
-> [!Note] pgrx=0.12.7
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_bestmatch" >}} | `0.0.1` | {{< bg "18" "pg_bestmatch_18" "red" >}} {{< bg "17" "pg_bestmatch_17" "green" >}} {{< bg "16" "pg_bestmatch_16" "green" >}} {{< bg "15" "pg_bestmatch_15" "green" >}} {{< bg "14" "pg_bestmatch_14" "green" >}} {{< bg "13" "pg_bestmatch_13" "green" >}} | `pg_bestmatch_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_bestmatch" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-bestmatch" "red" >}} {{< bg "17" "postgresql-17-pg-bestmatch" "green" >}} {{< bg "16" "postgresql-16-pg-bestmatch" "green" >}} {{< bg "15" "postgresql-15-pg-bestmatch" "green" >}} {{< bg "14" "postgresql-14-pg-bestmatch" "green" >}} {{< bg "13" "postgresql-13-pg-bestmatch" "green" >}} | `postgresql-$v-pg-bestmatch` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_bestmatch" >}} | `0.0.2` | {{< bg "18" "pg_bestmatch_18" "green" >}} {{< bg "17" "pg_bestmatch_17" "green" >}} {{< bg "16" "pg_bestmatch_16" "green" >}} {{< bg "15" "pg_bestmatch_15" "green" >}} {{< bg "14" "pg_bestmatch_14" "green" >}} {{< bg "13" "pg_bestmatch_13" "green" >}} | `pg_bestmatch_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_bestmatch" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pg-bestmatch" "red" >}} {{< bg "17" "postgresql-17-pg-bestmatch" "green" >}} {{< bg "16" "postgresql-16-pg-bestmatch" "green" >}} {{< bg "15" "postgresql-15-pg-bestmatch" "green" >}} {{< bg "14" "postgresql-14-pg-bestmatch" "green" >}} {{< bg "13" "postgresql-13-pg-bestmatch" "green" >}} | `postgresql-$v-pg-bestmatch` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -141,7 +141,7 @@ Generate BM25 sparse vector inside PostgreSQL
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tensorchord/pg_bestmatch.rs" title="Repository" icon="github" subtitle="github.com/tensorchord/pg_bestmatch.rs" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_bestmatch-0.0.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_bestmatch-0.0.2.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -166,6 +166,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_bestmatch; # install by extension name, for the current active PG version
 pig ext install pg_bestmatch; # install via package alias, for the active PG version
+pig ext install pg_bestmatch -v 18;   # install for PG 18
 pig ext install pg_bestmatch -v 17;   # install for PG 17
 pig ext install pg_bestmatch -v 16;   # install for PG 16
 pig ext install pg_bestmatch -v 15;   # install for PG 15

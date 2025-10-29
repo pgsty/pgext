@@ -527,7 +527,13 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 				alt := fmt.Sprintf("%s : %s %s", name, state, count)
 
 				// Get color based on state and org
-				color := getBadgeColor(state, org)
+				// If text shows "MISS", always use red color
+				var color string
+				if text == "MISS" {
+					color = "red"
+				} else {
+					color = getBadgeColor(state, org)
+				}
 
 				// Generate bg shortcode
 				cellContent := BgShortcode(text, alt, color)

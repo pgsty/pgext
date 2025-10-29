@@ -27,7 +27,7 @@ Advanced indexing for vector data with DiskANN
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_similarity" >}} |
 
-> [!Note] pgrx=0.12.9
+> [!Note] PG18 and pgrx0.16.1 TBD
 
 
 ## Packages

@@ -26,7 +26,7 @@ A suite of Cardano-related tools
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
 
-> [!Note] pgrx=0.16.1, manual update from 0.16.0
+> [!Note] PG18 fix by https://github.com/Vonng/pg_cardano
 
 
 ## Packages

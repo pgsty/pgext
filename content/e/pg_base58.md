@@ -26,7 +26,7 @@ Base58 Encoder/Decoder Extension for PostgreSQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "url_encode" >}} {{< ext "pg_cardano" >}} {{< ext "base36" >}} {{< ext "base62" >}} {{< ext "pg_polyline" >}} {{< ext "uri" >}} {{< ext "pg_curl" >}} {{< ext "pg_rewrite" >}} |
 
-> [!Note] pgrx=0.16.1
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

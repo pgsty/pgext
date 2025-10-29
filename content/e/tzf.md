@@ -26,8 +26,6 @@ Fast lookup timezone name by GPS coordinates
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "geoip" >}} {{< ext "pg_cron" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
-> [!Note] pgrx=0.16.1
-
 
 ## Packages
 
@@ -141,7 +139,7 @@ Fast lookup timezone name by GPS coordinates
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/ringsaturn/pg-tzf" title="Repository" icon="github" subtitle="github.com/ringsaturn/pg-tzf" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="tzf-pg-0.2.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg-tzf-0.2.3.tar.gz" >}}
 {{< /cards >}}
 
 

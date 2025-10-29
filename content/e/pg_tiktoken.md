@@ -26,8 +26,6 @@ tiktoken tokenizer for use with OpenAI models in postgres
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_graphql" >}} |
 
-> [!Note] pgrx=0.16.1
-
 
 ## Packages
 

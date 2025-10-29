@@ -26,7 +26,7 @@ PostgreSQL Anonymizer (anon) extension
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "faker" >}} {{< ext "pgsodium" >}} {{< ext "pg_tde" >}} {{< ext "pgcrypto" >}} {{< ext "pg_permissions" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_drop_events" >}} |
 
-> [!Note] pgrx=0.16.1, manual update from 0.16.0
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

@@ -26,7 +26,7 @@ easily jump into a visual plan UI for any SQL query
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_profile" >}} {{< ext "powa" >}} |
 
-> [!Note] pgrx=0.16.1, forked by vonng
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages

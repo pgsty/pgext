@@ -14,7 +14,7 @@ Full text search for PostgreSQL using BM25
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< ext "pg_search" >}} | `0.18.1` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2100** | {{< badge content="pg_search" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< ext "pg_search" >}} | `0.19.2` | {{< category "FTS" >}} | {{< license "AGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ Full text search for PostgreSQL using BM25
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_search" >}} | `0.18.1` | {{< bg "18" "pg_search_18" "red" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "green" >}} {{< bg "13" "pg_search_13" "red" >}} | `pg_search_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_search" >}} | `0.18.1` | {{< bg "18" "postgresql-18-pg-search" "red" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "green" >}} {{< bg "13" "postgresql-13-pg-search" "red" >}} | `postgresql-$v-pg-search` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_search" >}} | `0.19.2` | {{< bg "18" "pg_search_18" "red" >}} {{< bg "17" "pg_search_17" "green" >}} {{< bg "16" "pg_search_16" "green" >}} {{< bg "15" "pg_search_15" "green" >}} {{< bg "14" "pg_search_14" "green" >}} {{< bg "13" "pg_search_13" "red" >}} | `pg_search_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_search" >}} | `0.19.2` | {{< bg "18" "postgresql-18-pg-search" "red" >}} {{< bg "17" "postgresql-17-pg-search" "green" >}} {{< bg "16" "postgresql-16-pg-search" "green" >}} {{< bg "15" "postgresql-15-pg-search" "green" >}} {{< bg "14" "postgresql-14-pg-search" "green" >}} {{< bg "13" "postgresql-13-pg-search" "red" >}} | `postgresql-$v-pg-search` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

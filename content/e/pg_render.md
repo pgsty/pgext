@@ -26,7 +26,7 @@ Render HTML in SQL
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
 
-> [!Note] pgrx=0.16.1, forked by vonng
+> [!Note] pgrx=0.16.1, manual updated pgrx by Vonng
 
 
 ## Packages
