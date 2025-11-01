@@ -1,0 +1,12 @@
+{{- $osName := trim (.Get 0) " " -}}
+{{- $href := (printf "/list/%s" $osName) | relLangURL -}}
+{{- $hasBorder := not (strings.HasSuffix $osName "aarch64") -}}
+
+<a href="{{ $href }}" title="OS: {{ $osName }}">
+  {{- partial "shortcodes/badge.html" (dict
+    "content" $osName
+    "color" "gray"
+    "border" $hasBorder
+    )
+  -}}
+</a>

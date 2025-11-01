@@ -221,23 +221,20 @@ func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
 	}
 
 	return fmt.Sprintf(`---
-title: "%s"
-linkTitle: "%s"
+title: "OS: %s"
 description: "PostgreSQL Extension Availability for %s"
 weight: %d
 width: full
 ---
 
-# %s
+## %s
 
-`, osInfo.OS, osInfo.OS, osInfo.Desc, weight, osInfo.Desc)
+`, osInfo.OS, osInfo.Desc, weight, osInfo.Desc)
 }
 
 // generateOSOverview generates the overview section
 func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageInfo) string {
 	var b strings.Builder
-
-	b.WriteString("## Overview\n\n")
 	b.WriteString(fmt.Sprintf("This page shows the availability of PostgreSQL extensions for **%s**.\n\n", osInfo.Desc))
 	b.WriteString(fmt.Sprintf("- **OS Code**: `%s`\n", osInfo.OS))
 	b.WriteString(fmt.Sprintf("- **Architecture**: `%s`\n", osInfo.Arch))
@@ -268,8 +265,8 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo) st
 
 	// Generate rows for each package
 	for _, ospkg := range packages {
-		// Extension link
-		extLink := fmt.Sprintf("[%s](/e/%s)", ospkg.Lead, ospkg.Lead)
+		// Extension link using Hugo hextra alias shortcode
+		extLink := fmt.Sprintf(`{{< ext "%s" "%s" >}}`, ospkg.Lead, ospkg.Pkg)
 		b.WriteString(fmt.Sprintf("| %s |", extLink))
 
 		// Generate cells for each PG version
