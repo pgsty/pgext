@@ -74,8 +74,8 @@ Introspect pg data dictionary via standard SQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgdd_17` | 0.6.0 | `el8.x86_64` | pigsty | 195.8 KiB | [pgdd_17-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_17-0.6.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el8.x86_64` | pigsty | 286.6 KiB | [pgdd_17-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_17-0.6.0-2PIGSTY.el8.x86_64.rpm) |
-| `pgdd_17` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_17` | 0.6.0 | `el8.aarch64` | pigsty | 183.7 KiB | [pgdd_17-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_17-0.6.0-2PIGSTY.el8.aarch64.rpm) |
+| `pgdd_17` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_17` | 0.6.0 | `el9.x86_64` | pigsty | 200.4 KiB | [pgdd_17-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_17-0.6.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el9.x86_64` | pigsty | 300.5 KiB | [pgdd_17-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_17-0.6.0-2PIGSTY.el9.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el9.aarch64` | pigsty | 198.2 KiB | [pgdd_17-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_17-0.6.0-1PIGSTY.el9.aarch64.rpm) |

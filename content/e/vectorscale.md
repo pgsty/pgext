@@ -119,8 +119,8 @@ Advanced indexing for vector data with DiskANN
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvectorscale_15` | 0.8.0 | `el8.x86_64` | pigsty | 403.3 KiB | [pgvectorscale_15-0.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvectorscale_15-0.8.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgvectorscale_15` | 0.8.0 | `el8.x86_64` | pigsty | 503.9 KiB | [pgvectorscale_15-0.8.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvectorscale_15-0.8.0-2PIGSTY.el8.x86_64.rpm) |
-| `pgvectorscale_15` | 0.8.0 | `el8.aarch64` | pigsty | 371.2 KiB | [pgvectorscale_15-0.8.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvectorscale_15-0.8.0-2PIGSTY.el8.aarch64.rpm) |
 | `pgvectorscale_15` | 0.8.0 | `el8.aarch64` | pigsty | 364.2 KiB | [pgvectorscale_15-0.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvectorscale_15-0.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgvectorscale_15` | 0.8.0 | `el8.aarch64` | pigsty | 371.2 KiB | [pgvectorscale_15-0.8.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvectorscale_15-0.8.0-2PIGSTY.el8.aarch64.rpm) |
 | `pgvectorscale_15` | 0.8.0 | `el9.x86_64` | pigsty | 520.4 KiB | [pgvectorscale_15-0.8.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvectorscale_15-0.8.0-2PIGSTY.el9.x86_64.rpm) |
 | `pgvectorscale_15` | 0.8.0 | `el9.x86_64` | pigsty | 411.4 KiB | [pgvectorscale_15-0.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvectorscale_15-0.8.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgvectorscale_15` | 0.8.0 | `el9.aarch64` | pigsty | 388.5 KiB | [pgvectorscale_15-0.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvectorscale_15-0.8.0-1PIGSTY.el9.aarch64.rpm) |

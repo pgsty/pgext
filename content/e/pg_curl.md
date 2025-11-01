@@ -86,8 +86,8 @@ Run curl actions for data transfer in URL syntax
 | `pg_curl_17` | 2.4.4 | `el8.aarch64` | pgdg | 42.1 KiB | [pg_curl_17-2.4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_curl_17-2.4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_17` | 2.4.3 | `el8.aarch64` | pgdg | 41.9 KiB | [pg_curl_17-2.4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_curl_17-2.4.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_17` | 2.4 | `el8.aarch64` | pigsty | 45.9 KiB | [pg_curl_17-2.4-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_curl_17-2.4-2PIGSTY.el8.aarch64.rpm) |
-| `pg_curl_17` | 2.4.5 | `el9.x86_64` | pigsty | 54.2 KiB | [pg_curl_17-2.4.5-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_17-2.4.5-2PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_17` | 2.4.5 | `el9.x86_64` | pigsty | 47.5 KiB | [pg_curl_17-2.4.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_17-2.4.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_curl_17` | 2.4.5 | `el9.x86_64` | pigsty | 54.2 KiB | [pg_curl_17-2.4.5-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_17-2.4.5-2PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_17` | 2.4.4 | `el9.x86_64` | pgdg | 45.6 KiB | [pg_curl_17-2.4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_curl_17-2.4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_17` | 2.4.3 | `el9.x86_64` | pgdg | 45.6 KiB | [pg_curl_17-2.4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_curl_17-2.4.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_17` | 2.4 | `el9.x86_64` | pigsty | 49.0 KiB | [pg_curl_17-2.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_17-2.4-2PIGSTY.el9.x86_64.rpm) |
@@ -162,13 +162,13 @@ Run curl actions for data transfer in URL syntax
 | `pg_curl_15` | 2.4.4 | `el8.aarch64` | pgdg | 42.1 KiB | [pg_curl_15-2.4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_curl_15-2.4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_15` | 2.4.3 | `el8.aarch64` | pgdg | 41.9 KiB | [pg_curl_15-2.4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_curl_15-2.4.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_15` | 2.4 | `el8.aarch64` | pigsty | 45.9 KiB | [pg_curl_15-2.4-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_curl_15-2.4-2PIGSTY.el8.aarch64.rpm) |
-| `pg_curl_15` | 2.4.5 | `el9.x86_64` | pigsty | 54.3 KiB | [pg_curl_15-2.4.5-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_15-2.4.5-2PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_15` | 2.4.5 | `el9.x86_64` | pigsty | 47.4 KiB | [pg_curl_15-2.4.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_15-2.4.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_curl_15` | 2.4.5 | `el9.x86_64` | pigsty | 54.3 KiB | [pg_curl_15-2.4.5-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_15-2.4.5-2PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_15` | 2.4.4 | `el9.x86_64` | pgdg | 45.6 KiB | [pg_curl_15-2.4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_curl_15-2.4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_15` | 2.4.3 | `el9.x86_64` | pgdg | 45.6 KiB | [pg_curl_15-2.4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_curl_15-2.4.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_15` | 2.4 | `el9.x86_64` | pigsty | 49.1 KiB | [pg_curl_15-2.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_15-2.4-2PIGSTY.el9.x86_64.rpm) |
-| `pg_curl_15` | 2.4.5 | `el9.aarch64` | pigsty | 53.1 KiB | [pg_curl_15-2.4.5-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_curl_15-2.4.5-2PIGSTY.el9.aarch64.rpm) |
 | `pg_curl_15` | 2.4.5 | `el9.aarch64` | pigsty | 45.6 KiB | [pg_curl_15-2.4.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_curl_15-2.4.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_curl_15` | 2.4.5 | `el9.aarch64` | pigsty | 53.1 KiB | [pg_curl_15-2.4.5-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_curl_15-2.4.5-2PIGSTY.el9.aarch64.rpm) |
 | `pg_curl_15` | 2.4.4 | `el9.aarch64` | pgdg | 44.0 KiB | [pg_curl_15-2.4.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_curl_15-2.4.4-1PGDG.rhel9.aarch64.rpm) |
 | `pg_curl_15` | 2.4.3 | `el9.aarch64` | pgdg | 44.0 KiB | [pg_curl_15-2.4.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_curl_15-2.4.3-1PGDG.rhel9.aarch64.rpm) |
 | `pg_curl_15` | 2.4 | `el9.aarch64` | pigsty | 47.7 KiB | [pg_curl_15-2.4-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_curl_15-2.4-2PIGSTY.el9.aarch64.rpm) |
@@ -200,8 +200,8 @@ Run curl actions for data transfer in URL syntax
 | `pg_curl_14` | 2.4.4 | `el8.aarch64` | pgdg | 42.1 KiB | [pg_curl_14-2.4.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_curl_14-2.4.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_14` | 2.4.3 | `el8.aarch64` | pgdg | 41.9 KiB | [pg_curl_14-2.4.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_curl_14-2.4.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_curl_14` | 2.4 | `el8.aarch64` | pigsty | 45.9 KiB | [pg_curl_14-2.4-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_curl_14-2.4-2PIGSTY.el8.aarch64.rpm) |
-| `pg_curl_14` | 2.4.5 | `el9.x86_64` | pigsty | 47.7 KiB | [pg_curl_14-2.4.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_14-2.4.5-1PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_14` | 2.4.5 | `el9.x86_64` | pigsty | 54.6 KiB | [pg_curl_14-2.4.5-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_14-2.4.5-2PIGSTY.el9.x86_64.rpm) |
+| `pg_curl_14` | 2.4.5 | `el9.x86_64` | pigsty | 47.7 KiB | [pg_curl_14-2.4.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_14-2.4.5-1PIGSTY.el9.x86_64.rpm) |
 | `pg_curl_14` | 2.4.4 | `el9.x86_64` | pgdg | 45.5 KiB | [pg_curl_14-2.4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_curl_14-2.4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_14` | 2.4.3 | `el9.x86_64` | pgdg | 45.5 KiB | [pg_curl_14-2.4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_curl_14-2.4.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_curl_14` | 2.4 | `el9.x86_64` | pigsty | 49.0 KiB | [pg_curl_14-2.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_curl_14-2.4-2PIGSTY.el9.x86_64.rpm) |

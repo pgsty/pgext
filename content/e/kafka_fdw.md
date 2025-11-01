@@ -126,8 +126,8 @@ kafka Foreign Data Wrapper for CSV formatted messages
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `kafka_fdw_14` | 0.0.3 | `el8.x86_64` | pigsty | 35.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el8.x86_64` | pigsty | 37.3 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-2PIGSTY.el8.x86_64.rpm) |
+| `kafka_fdw_14` | 0.0.3 | `el8.x86_64` | pigsty | 35.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el8.aarch64` | pigsty | 33.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el8.aarch64` | pigsty | 35.6 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-2PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_14` | 0.0.3 | `el9.x86_64` | pigsty | 36.1 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
