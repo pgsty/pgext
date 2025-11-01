@@ -37,12 +37,12 @@ discover hidden correlations in your data with MIC
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "vasco_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vasco_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.1.0" "vasco_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "vasco_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-vasco : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-vasco : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-vasco : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ discover hidden correlations in your data with MIC
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-vasco : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_17` | 0.1.0 | `el8.x86_64` | pigsty | 40.1 KiB | [vasco_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_17` | 0.1.0 | `el8.aarch64` | pigsty | 38.7 KiB | [vasco_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_17` | 0.1.0 | `el9.x86_64` | pigsty | 38.2 KiB | [vasco_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_18` | 0.1.0 | `el8.x86_64` | pigsty | 40.6 KiB | [vasco_18-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_18-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_18` | 0.1.0 | `el8.aarch64` | pigsty | 39.4 KiB | [vasco_18-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_18-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_18` | 0.1.0 | `el9.x86_64` | pigsty | 37.9 KiB | [vasco_18-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_18-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_18` | 0.1.0 | `el9.aarch64` | pigsty | 37.0 KiB | [vasco_18-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_18-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_18` | 0.1.0 | `el10.x86_64` | pigsty | 38.1 KiB | [vasco_18-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_18-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_18` | 0.1.0 | `el10.aarch64` | pigsty | 37.1 KiB | [vasco_18-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_18-0.1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `vasco_17` | 0.1.0 | `el8.x86_64` | pigsty | 40.6 KiB | [vasco_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_17` | 0.1.0 | `el8.aarch64` | pigsty | 39.4 KiB | [vasco_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_17` | 0.1.0 | `el9.x86_64` | pigsty | 38.1 KiB | [vasco_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `vasco_17` | 0.1.0 | `el9.aarch64` | pigsty | 37.1 KiB | [vasco_17-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_17-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_17` | 0.1.0 | `el10.x86_64` | pigsty | 38.3 KiB | [vasco_17-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_17-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_17` | 0.1.0 | `el10.aarch64` | pigsty | 37.2 KiB | [vasco_17-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_17-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-vasco` | 0.1.0 | `d12.x86_64` | pigsty | 56.0 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-vasco` | 0.1.0 | `d12.aarch64` | pigsty | 54.9 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-vasco` | 0.1.0 | `u22.x86_64` | pigsty | 57.8 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ discover hidden correlations in your data with MIC
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_16` | 0.1.0 | `el8.x86_64` | pigsty | 40.1 KiB | [vasco_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_16` | 0.1.0 | `el8.aarch64` | pigsty | 38.7 KiB | [vasco_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_16` | 0.1.0 | `el9.x86_64` | pigsty | 38.2 KiB | [vasco_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_16` | 0.1.0 | `el8.x86_64` | pigsty | 40.6 KiB | [vasco_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_16` | 0.1.0 | `el8.aarch64` | pigsty | 39.4 KiB | [vasco_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_16` | 0.1.0 | `el9.x86_64` | pigsty | 38.1 KiB | [vasco_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `vasco_16` | 0.1.0 | `el9.aarch64` | pigsty | 37.1 KiB | [vasco_16-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_16-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_16` | 0.1.0 | `el10.x86_64` | pigsty | 38.3 KiB | [vasco_16-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_16-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_16` | 0.1.0 | `el10.aarch64` | pigsty | 37.2 KiB | [vasco_16-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_16-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-vasco` | 0.1.0 | `d12.x86_64` | pigsty | 55.9 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-vasco` | 0.1.0 | `d12.aarch64` | pigsty | 54.8 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-vasco` | 0.1.0 | `u22.x86_64` | pigsty | 57.8 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ discover hidden correlations in your data with MIC
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_15` | 0.1.0 | `el8.x86_64` | pigsty | 40.6 KiB | [vasco_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_15` | 0.1.0 | `el8.aarch64` | pigsty | 39.3 KiB | [vasco_15-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_15-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_15` | 0.1.0 | `el9.x86_64` | pigsty | 40.4 KiB | [vasco_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `vasco_15` | 0.1.0 | `el9.aarch64` | pigsty | 39.8 KiB | [vasco_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_15` | 0.1.0 | `el8.x86_64` | pigsty | 41.0 KiB | [vasco_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_15` | 0.1.0 | `el8.aarch64` | pigsty | 39.9 KiB | [vasco_15-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_15-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_15` | 0.1.0 | `el9.x86_64` | pigsty | 40.2 KiB | [vasco_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_15` | 0.1.0 | `el9.aarch64` | pigsty | 39.7 KiB | [vasco_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_15` | 0.1.0 | `el10.x86_64` | pigsty | 40.5 KiB | [vasco_15-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_15-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_15` | 0.1.0 | `el10.aarch64` | pigsty | 40.1 KiB | [vasco_15-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_15-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-vasco` | 0.1.0 | `d12.x86_64` | pigsty | 56.6 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-vasco` | 0.1.0 | `d12.aarch64` | pigsty | 55.6 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-vasco` | 0.1.0 | `u22.x86_64` | pigsty | 59.4 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ discover hidden correlations in your data with MIC
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_14` | 0.1.0 | `el8.x86_64` | pigsty | 40.6 KiB | [vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_14` | 0.1.0 | `el8.aarch64` | pigsty | 39.3 KiB | [vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_14` | 0.1.0 | `el9.x86_64` | pigsty | 40.4 KiB | [vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_14` | 0.1.0 | `el8.x86_64` | pigsty | 41.0 KiB | [vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_14` | 0.1.0 | `el8.aarch64` | pigsty | 39.9 KiB | [vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_14` | 0.1.0 | `el9.x86_64` | pigsty | 40.1 KiB | [vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `vasco_14` | 0.1.0 | `el9.aarch64` | pigsty | 39.7 KiB | [vasco_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_14` | 0.1.0 | `el10.x86_64` | pigsty | 40.5 KiB | [vasco_14-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_14-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_14` | 0.1.0 | `el10.aarch64` | pigsty | 40.1 KiB | [vasco_14-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_14-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-vasco` | 0.1.0 | `d12.x86_64` | pigsty | 56.6 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-vasco` | 0.1.0 | `d12.aarch64` | pigsty | 55.5 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-vasco` | 0.1.0 | `u22.x86_64` | pigsty | 59.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ discover hidden correlations in your data with MIC
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vasco_13` | 0.1.0 | `el8.x86_64` | pigsty | 40.5 KiB | [vasco_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `vasco_13` | 0.1.0 | `el8.aarch64` | pigsty | 39.2 KiB | [vasco_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `vasco_13` | 0.1.0 | `el9.x86_64` | pigsty | 40.4 KiB | [vasco_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `vasco_13` | 0.1.0 | `el8.x86_64` | pigsty | 40.9 KiB | [vasco_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vasco_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `vasco_13` | 0.1.0 | `el8.aarch64` | pigsty | 39.8 KiB | [vasco_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vasco_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `vasco_13` | 0.1.0 | `el9.x86_64` | pigsty | 40.1 KiB | [vasco_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vasco_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `vasco_13` | 0.1.0 | `el9.aarch64` | pigsty | 39.7 KiB | [vasco_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vasco_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `vasco_13` | 0.1.0 | `el10.x86_64` | pigsty | 40.5 KiB | [vasco_13-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vasco_13-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `vasco_13` | 0.1.0 | `el10.aarch64` | pigsty | 40.1 KiB | [vasco_13-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vasco_13-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-vasco` | 0.1.0 | `d12.x86_64` | pigsty | 56.4 KiB | [postgresql-13-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-13-vasco_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-vasco` | 0.1.0 | `d12.aarch64` | pigsty | 55.5 KiB | [postgresql-13-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vasco/postgresql-13-vasco_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-vasco` | 0.1.0 | `u22.x86_64` | pigsty | 59.3 KiB | [postgresql-13-vasco_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-13-vasco_0.1.0-1PIGSTY~jammy_amd64.deb) |

@@ -14,7 +14,7 @@ Fetch foreign data in Python in your PostgreSQL server.
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8510** | {{< badge content="multicorn" link="https://github.com/pgsql-io/multicorn2" >}} | {{< ext "multicorn" >}} | `3.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8510** | {{< badge content="multicorn" link="https://github.com/pgsql-io/multicorn2" >}} | {{< ext "multicorn" >}} | `3.2` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,7 +31,7 @@ Fetch foreign data in Python in your PostgreSQL server.
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/multicorn" >}} | `3.0` | {{< bg "18" "multicorn2_18*" "red" >}} {{< bg "17" "multicorn2_17*" "green" >}} {{< bg "16" "multicorn2_16*" "green" >}} {{< bg "15" "multicorn2_15*" "green" >}} {{< bg "14" "multicorn2_14*" "green" >}} {{< bg "13" "multicorn2_13*" "green" >}} | `multicorn2_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/multicorn" >}} | `3.2` | {{< bg "18" "multicorn2_18*" "green" >}} {{< bg "17" "multicorn2_17*" "green" >}} {{< bg "16" "multicorn2_16*" "green" >}} {{< bg "15" "multicorn2_15*" "green" >}} {{< bg "14" "multicorn2_14*" "green" >}} {{< bg "13" "multicorn2_13*" "green" >}} | `multicorn2_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -244,6 +244,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install multicorn; # install by extension name, for the current active PG version
 pig ext install multicorn; # install via package alias, for the active PG version
+pig ext install multicorn -v 18;   # install for PG 18
 pig ext install multicorn -v 17;   # install for PG 17
 pig ext install multicorn -v 16;   # install for PG 16
 pig ext install multicorn -v 15;   # install for PG 15

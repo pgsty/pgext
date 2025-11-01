@@ -33,7 +33,7 @@ PostgreSQL table versioning extension
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EL** | {{< badge content="PIGSTY" link="/e/table_version" >}} | `1.11.1` | {{< bg "18" "table_version_18" "green" >}} {{< bg "17" "table_version_17" "green" >}} {{< bg "16" "table_version_16" "green" >}} {{< bg "15" "table_version_15" "green" >}} {{< bg "14" "table_version_14" "green" >}} {{< bg "13" "table_version_13" "green" >}} | `table_version_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/table_version" >}} | `1.11.0` | {{< bg "18" "postgresql-18-table-version" "green" >}} {{< bg "17" "postgresql-17-table-version" "green" >}} {{< bg "16" "postgresql-16-table-version" "green" >}} {{< bg "15" "postgresql-15-table-version" "green" >}} {{< bg "14" "postgresql-14-table-version" "green" >}} {{< bg "13" "postgresql-13-table-version" "green" >}} | `postgresql-$v-table-version` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/table_version" >}} | `1.11.1` | {{< bg "18" "postgresql-18-table-version" "green" >}} {{< bg "17" "postgresql-17-table-version" "green" >}} {{< bg "16" "postgresql-16-table-version" "green" >}} {{< bg "15" "postgresql-15-table-version" "green" >}} {{< bg "14" "postgresql-14-table-version" "green" >}} {{< bg "13" "postgresql-13-table-version" "green" >}} | `postgresql-$v-table-version` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

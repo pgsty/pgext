@@ -156,6 +156,42 @@ the data processing pipeline.`,
 	PostRun: closeDatabase,
 }
 
+// scanCmd scans local Pigsty repository metadata
+var scanCmd = &cobra.Command{
+	Use:   "scan",
+	Short: "scan local Pigsty repository metadata",
+	Long: `Scan Pigsty repository metadata from local filesystem.
+
+Reads repository metadata files from a local Pigsty repository directory
+instead of downloading from the network. Only processes repositories with
+org = 'pigsty'. Converts repository URLs like:
+  https://repo.pigsty.io/apt/pgsql/bookworm/dists/bookworm/main/binary-arm64/Packages
+to local paths:
+  ~/pgsty/repo/apt/pgsql/bookworm/dists/bookworm/main/binary-arm64/Packages`,
+	Example: `
+  pgext scan                        # scan from default ~/pgsty/repo
+  pgext scan --dir /path/to/repo    # scan from custom directory
+  pgext scan -p 16                  # use 16 parallel workers
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		scanner, err := cli.NewScanner(cli.ScanOptions{
+			RepoDir:  scanDir,
+			Parallel: workers,
+		})
+		if err != nil {
+			return fmt.Errorf("failed to create scanner: %w", err)
+		}
+
+		if err := scanner.ScanAll(cmd.Context()); err != nil {
+			return fmt.Errorf("failed to scan: %w", err)
+		}
+
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
 func init() {
 	// fetch command flags
 	fetchCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-fetch all repositories")
@@ -166,6 +202,10 @@ func init() {
 	// parse command flags
 	parseCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	parseCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
+
+	// scan command flags
+	scanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
+	scanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 }
 
 // loadCmd loads CSV data into tables

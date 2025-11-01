@@ -32,7 +32,7 @@ PostgreSQL Workload Analyser-core
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/powa" >}} | `5.0.1` | {{< bg "18" "powa_18*" "red" >}} {{< bg "17" "powa_17*" "green" >}} {{< bg "16" "powa_16*" "green" >}} {{< bg "15" "powa_15*" "green" >}} {{< bg "14" "powa_14*" "green" >}} {{< bg "13" "powa_13*" "green" >}} | `powa_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/powa" >}} | `5.0.1` | {{< bg "18" "powa_18*" "green" >}} {{< bg "17" "powa_17*" "green" >}} {{< bg "16" "powa_16*" "green" >}} {{< bg "15" "powa_15*" "green" >}} {{< bg "14" "powa_14*" "green" >}} {{< bg "13" "powa_13*" "green" >}} | `powa_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/powa" >}} | `5.0.1` | {{< bg "18" "postgresql-18-powa" "red" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} {{< bg "13" "postgresql-13-powa" "green" >}} | `postgresql-$v-powa` | - |
 
 
@@ -254,6 +254,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install powa; # install by extension name, for the current active PG version
 pig ext install powa; # install via package alias, for the active PG version
+pig ext install powa -v 18;   # install for PG 18
 pig ext install powa -v 17;   # install for PG 17
 pig ext install powa -v 16;   # install for PG 16
 pig ext install powa -v 15;   # install for PG 15

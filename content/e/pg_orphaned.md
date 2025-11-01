@@ -37,12 +37,12 @@ Deal with orphaned files
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_orphaned_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_orphaned_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0" "pg_orphaned_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_orphaned_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-orphaned : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-orphaned : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-orphaned : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-orphaned : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-orphaned : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-orphaned : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-orphaned : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-orphaned : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-orphaned : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-orphaned : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Deal with orphaned files
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-orphaned : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-orphaned : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-orphaned : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_orphaned_17` | 1.0 | `el8.x86_64` | pigsty | 20.7 KiB | [pg_orphaned_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_orphaned_17` | 1.0 | `el8.aarch64` | pigsty | 20.5 KiB | [pg_orphaned_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_orphaned_17` | 1.0 | `el9.x86_64` | pigsty | 20.9 KiB | [pg_orphaned_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_17-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_orphaned_17` | 1.0 | `el9.aarch64` | pigsty | 21.0 KiB | [pg_orphaned_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el8.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_18-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el8.aarch64` | pigsty | 21.1 KiB | [pg_orphaned_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_18-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el9.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_18-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el9.aarch64` | pigsty | 21.4 KiB | [pg_orphaned_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el10.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_18` | 1.0 | `el10.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_18-1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_orphaned_17` | 1.0 | `el8.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_17-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_17` | 1.0 | `el8.aarch64` | pigsty | 21.1 KiB | [pg_orphaned_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_17` | 1.0 | `el9.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_17` | 1.0 | `el9.aarch64` | pigsty | 21.4 KiB | [pg_orphaned_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_17` | 1.0 | `el10.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_17` | 1.0 | `el10.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_17-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-orphaned` | 1.0 | `d12.x86_64` | pigsty | 33.4 KiB | [postgresql-17-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-17-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-orphaned` | 1.0 | `d12.aarch64` | pigsty | 33.4 KiB | [postgresql-17-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-17-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-orphaned` | 1.0 | `u22.x86_64` | pigsty | 34.8 KiB | [postgresql-17-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-orphaned/postgresql-17-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Deal with orphaned files
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_orphaned_16` | 1.0 | `el8.x86_64` | pigsty | 20.7 KiB | [pg_orphaned_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_orphaned_16` | 1.0 | `el8.aarch64` | pigsty | 20.5 KiB | [pg_orphaned_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_16-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_orphaned_16` | 1.0 | `el9.x86_64` | pigsty | 20.9 KiB | [pg_orphaned_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_orphaned_16` | 1.0 | `el9.aarch64` | pigsty | 21.0 KiB | [pg_orphaned_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el8.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_16-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el8.aarch64` | pigsty | 21.1 KiB | [pg_orphaned_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_16-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el9.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_16-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el9.aarch64` | pigsty | 21.4 KiB | [pg_orphaned_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el10.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_16-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_16` | 1.0 | `el10.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_16-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-orphaned` | 1.0 | `d12.x86_64` | pigsty | 33.0 KiB | [postgresql-16-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-16-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-orphaned` | 1.0 | `d12.aarch64` | pigsty | 33.1 KiB | [postgresql-16-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-16-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-orphaned` | 1.0 | `u22.x86_64` | pigsty | 34.4 KiB | [postgresql-16-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-orphaned/postgresql-16-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Deal with orphaned files
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_orphaned_15` | 1.0 | `el8.x86_64` | pigsty | 20.8 KiB | [pg_orphaned_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_orphaned_15` | 1.0 | `el8.aarch64` | pigsty | 20.6 KiB | [pg_orphaned_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_15-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_orphaned_15` | 1.0 | `el9.x86_64` | pigsty | 21.1 KiB | [pg_orphaned_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_15-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_orphaned_15` | 1.0 | `el9.aarch64` | pigsty | 21.1 KiB | [pg_orphaned_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el8.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_15-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [pg_orphaned_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el9.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_15-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el9.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el10.x86_64` | pigsty | 21.5 KiB | [pg_orphaned_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_15-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_15` | 1.0 | `el10.aarch64` | pigsty | 21.6 KiB | [pg_orphaned_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_15-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-orphaned` | 1.0 | `d12.x86_64` | pigsty | 33.1 KiB | [postgresql-15-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-15-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-orphaned` | 1.0 | `d12.aarch64` | pigsty | 33.1 KiB | [postgresql-15-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-15-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-orphaned` | 1.0 | `u22.x86_64` | pigsty | 34.5 KiB | [postgresql-15-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-orphaned/postgresql-15-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Deal with orphaned files
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_orphaned_14` | 1.0 | `el8.x86_64` | pigsty | 20.8 KiB | [pg_orphaned_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_orphaned_14` | 1.0 | `el8.aarch64` | pigsty | 20.6 KiB | [pg_orphaned_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_orphaned_14` | 1.0 | `el9.x86_64` | pigsty | 21.0 KiB | [pg_orphaned_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_orphaned_14` | 1.0 | `el9.aarch64` | pigsty | 21.1 KiB | [pg_orphaned_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el8.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_14-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [pg_orphaned_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el9.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_14-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el9.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el10.x86_64` | pigsty | 21.5 KiB | [pg_orphaned_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_14-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_14` | 1.0 | `el10.aarch64` | pigsty | 21.6 KiB | [pg_orphaned_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_14-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-orphaned` | 1.0 | `d12.x86_64` | pigsty | 33.0 KiB | [postgresql-14-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-14-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-orphaned` | 1.0 | `d12.aarch64` | pigsty | 32.9 KiB | [postgresql-14-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-14-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-orphaned` | 1.0 | `u22.x86_64` | pigsty | 34.4 KiB | [postgresql-14-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-orphaned/postgresql-14-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ Deal with orphaned files
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_orphaned_13` | 1.0 | `el8.x86_64` | pigsty | 20.5 KiB | [pg_orphaned_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_orphaned_13` | 1.0 | `el8.aarch64` | pigsty | 20.5 KiB | [pg_orphaned_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_13-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_orphaned_13` | 1.0 | `el9.x86_64` | pigsty | 21.0 KiB | [pg_orphaned_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_13-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_orphaned_13` | 1.0 | `el9.aarch64` | pigsty | 21.0 KiB | [pg_orphaned_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el8.x86_64` | pigsty | 21.0 KiB | [pg_orphaned_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_orphaned_13-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [pg_orphaned_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_orphaned_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el9.x86_64` | pigsty | 21.3 KiB | [pg_orphaned_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_orphaned_13-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el9.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_orphaned_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el10.x86_64` | pigsty | 21.4 KiB | [pg_orphaned_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_orphaned_13-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_orphaned_13` | 1.0 | `el10.aarch64` | pigsty | 21.5 KiB | [pg_orphaned_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_orphaned_13-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-orphaned` | 1.0 | `d12.x86_64` | pigsty | 32.9 KiB | [postgresql-13-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-13-pg-orphaned_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-orphaned` | 1.0 | `d12.aarch64` | pigsty | 32.8 KiB | [postgresql-13-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-orphaned/postgresql-13-pg-orphaned_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-orphaned` | 1.0 | `u22.x86_64` | pigsty | 34.4 KiB | [postgresql-13-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-orphaned/postgresql-13-pg-orphaned_1.0-1PIGSTY~jammy_amd64.deb) |

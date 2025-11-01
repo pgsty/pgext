@@ -44,8 +44,8 @@ cryptographic key management
 |    `el8.aarch64`    | {{< bg "PIGSTY 0.85" "pgcryptokey_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 2" "blue" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 0.85" "pgcryptokey_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 0.85" "pgcryptokey_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "pgcryptokey_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 0.85" "pgcryptokey_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 2" "blue" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pgcryptokey_18 : MISS 0" "red" >}}      | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    |      {{< bg "MISS" "pgcryptokey_18 : MISS 0" "red" >}}      | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 1" "blue" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.85" "pgcryptokey_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 2" "blue" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.85" "pgcryptokey_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 0.85" "pgcryptokey_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.85" "pgcryptokey_13 : AVAIL 2" "blue" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgcryptokey : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.85" "postgresql-17-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-16-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-15-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-14-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-13-pgcryptokey : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgcryptokey : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.85" "postgresql-17-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-16-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-15-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-14-pgcryptokey : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.85" "postgresql-13-pgcryptokey : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgcryptokey : MISS 0" "red" >}}      |
@@ -61,25 +61,29 @@ cryptographic key management
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_18` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_18-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_18-0.85-1PIGSTY.el8.x86_64.rpm) |
-| `pgcryptokey_18` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_18-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_18-0.85-1PIGSTY.el8.aarch64.rpm) |
-| `pgcryptokey_18` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_18-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_18-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_18` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_18-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_18-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_18` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_18-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_18-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_18` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_18-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_18-0.85-1PIGSTY.el9.x86_64.rpm) |
 | `pgcryptokey_18` | 0.85 | `el9.aarch64` | pigsty | 16.9 KiB | [pgcryptokey_18-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_18-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_18` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_18-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_18-0.85-1PIGSTY.el10.x86_64.rpm) |
+| `pgcryptokey_18` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_18-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_18-0.85-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_17` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_17-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_17-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_17-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_17-0.85-1PIGSTY.el8.x86_64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el8.x86_64` | pgdg | 18.1 KiB | [pgcryptokey_17-0.85-6PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgcryptokey_17-0.85-6PGDG.rhel8.x86_64.rpm) |
-| `pgcryptokey_17` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_17-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_17-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_17-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_17-0.85-1PIGSTY.el8.aarch64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el8.aarch64` | pgdg | 18.2 KiB | [pgcryptokey_17-0.85-6PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgcryptokey_17-0.85-6PGDG.rhel8.aarch64.rpm) |
-| `pgcryptokey_17` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_17-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_17-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_17-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_17-0.85-1PIGSTY.el9.x86_64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el9.x86_64` | pgdg | 17.5 KiB | [pgcryptokey_17-0.85-6PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgcryptokey_17-0.85-6PGDG.rhel9.x86_64.rpm) |
-| `pgcryptokey_17` | 0.85 | `el9.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_17-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_17-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el9.aarch64` | pigsty | 16.9 KiB | [pgcryptokey_17-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_17-0.85-1PIGSTY.el9.aarch64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el9.aarch64` | pgdg | 17.4 KiB | [pgcryptokey_17-0.85-6PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgcryptokey_17-0.85-6PGDG.rhel9.aarch64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_17-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_17-0.85-1PIGSTY.el10.x86_64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el10.x86_64` | pgdg | 17.9 KiB | [pgcryptokey_17-0.85-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgcryptokey_17-0.85-8PGDG.rhel10.x86_64.rpm) |
+| `pgcryptokey_17` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_17-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_17-0.85-1PIGSTY.el10.aarch64.rpm) |
 | `pgcryptokey_17` | 0.85 | `el10.aarch64` | pgdg | 17.9 KiB | [pgcryptokey_17-0.85-8PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgcryptokey_17-0.85-8PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgcryptokey` | 0.85 | `d12.x86_64` | pigsty | 11.6 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgcryptokey` | 0.85 | `d12.aarch64` | pigsty | 11.7 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb) |
@@ -93,15 +97,17 @@ cryptographic key management
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_16` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_16-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_16-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_16-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_16-0.85-1PIGSTY.el8.x86_64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el8.x86_64` | pgdg | 18.0 KiB | [pgcryptokey_16-0.85-5PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgcryptokey_16-0.85-5PGDG.rhel8.x86_64.rpm) |
-| `pgcryptokey_16` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_16-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_16-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_16-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_16-0.85-1PIGSTY.el8.aarch64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el8.aarch64` | pgdg | 18.1 KiB | [pgcryptokey_16-0.85-5PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgcryptokey_16-0.85-5PGDG.rhel8.aarch64.rpm) |
-| `pgcryptokey_16` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_16-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_16-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_16-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_16-0.85-1PIGSTY.el9.x86_64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el9.x86_64` | pgdg | 17.3 KiB | [pgcryptokey_16-0.85-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgcryptokey_16-0.85-5PGDG.rhel9.x86_64.rpm) |
-| `pgcryptokey_16` | 0.85 | `el9.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_16-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_16-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el9.aarch64` | pigsty | 16.8 KiB | [pgcryptokey_16-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_16-0.85-1PIGSTY.el9.aarch64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el9.aarch64` | pgdg | 17.0 KiB | [pgcryptokey_16-0.85-5PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgcryptokey_16-0.85-5PGDG.rhel9.aarch64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_16-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_16-0.85-1PIGSTY.el10.x86_64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el10.x86_64` | pgdg | 17.9 KiB | [pgcryptokey_16-0.85-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgcryptokey_16-0.85-8PGDG.rhel10.x86_64.rpm) |
+| `pgcryptokey_16` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_16-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_16-0.85-1PIGSTY.el10.aarch64.rpm) |
 | `pgcryptokey_16` | 0.85 | `el10.aarch64` | pgdg | 17.9 KiB | [pgcryptokey_16-0.85-8PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgcryptokey_16-0.85-8PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgcryptokey` | 0.85 | `d12.x86_64` | pigsty | 11.6 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgcryptokey` | 0.85 | `d12.aarch64` | pigsty | 11.7 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb) |
@@ -115,15 +121,17 @@ cryptographic key management
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_15` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_15-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_15-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_15-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_15-0.85-1PIGSTY.el8.x86_64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el8.x86_64` | pgdg | 22.4 KiB | [pgcryptokey_15-0.85-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgcryptokey_15-0.85-3.rhel8.x86_64.rpm) |
-| `pgcryptokey_15` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_15-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_15-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_15-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_15-0.85-1PIGSTY.el8.aarch64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el8.aarch64` | pgdg | 22.4 KiB | [pgcryptokey_15-0.85-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgcryptokey_15-0.85-3.rhel8.aarch64.rpm) |
-| `pgcryptokey_15` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_15-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_15-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_15-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_15-0.85-1PIGSTY.el9.x86_64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el9.x86_64` | pgdg | 22.7 KiB | [pgcryptokey_15-0.85-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgcryptokey_15-0.85-3.rhel9.x86_64.rpm) |
-| `pgcryptokey_15` | 0.85 | `el9.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_15-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_15-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el9.aarch64` | pigsty | 16.9 KiB | [pgcryptokey_15-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_15-0.85-1PIGSTY.el9.aarch64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el9.aarch64` | pgdg | 22.4 KiB | [pgcryptokey_15-0.85-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgcryptokey_15-0.85-3.rhel9.aarch64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_15-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_15-0.85-1PIGSTY.el10.x86_64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el10.x86_64` | pgdg | 17.9 KiB | [pgcryptokey_15-0.85-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgcryptokey_15-0.85-8PGDG.rhel10.x86_64.rpm) |
+| `pgcryptokey_15` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_15-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_15-0.85-1PIGSTY.el10.aarch64.rpm) |
 | `pgcryptokey_15` | 0.85 | `el10.aarch64` | pgdg | 17.9 KiB | [pgcryptokey_15-0.85-8PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgcryptokey_15-0.85-8PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgcryptokey` | 0.85 | `d12.x86_64` | pigsty | 11.6 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgcryptokey` | 0.85 | `d12.aarch64` | pigsty | 11.7 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb) |
@@ -137,14 +145,16 @@ cryptographic key management
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_14` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_14-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_14-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_14-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_14-0.85-1PIGSTY.el8.x86_64.rpm) |
 | `pgcryptokey_14` | 0.85 | `el8.x86_64` | pgdg | 22.6 KiB | [pgcryptokey_14-0.85-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgcryptokey_14-0.85-3.rhel8.x86_64.rpm) |
-| `pgcryptokey_14` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_14-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_14-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_14-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_14-0.85-1PIGSTY.el8.aarch64.rpm) |
 | `pgcryptokey_14` | 0.85 | `el8.aarch64` | pgdg | 22.4 KiB | [pgcryptokey_14-0.85-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgcryptokey_14-0.85-3.rhel8.aarch64.rpm) |
-| `pgcryptokey_14` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_14-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_14-0.85-1PIGSTY.el9.x86_64.rpm) |
-| `pgcryptokey_14` | 0.85 | `el9.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_14-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_14-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_14-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_14-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el9.aarch64` | pigsty | 16.8 KiB | [pgcryptokey_14-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_14-0.85-1PIGSTY.el9.aarch64.rpm) |
 | `pgcryptokey_14` | 0.85 | `el9.aarch64` | pgdg | 22.3 KiB | [pgcryptokey_14-0.85-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgcryptokey_14-0.85-3.rhel9.aarch64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_14-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_14-0.85-1PIGSTY.el10.x86_64.rpm) |
 | `pgcryptokey_14` | 0.85 | `el10.x86_64` | pgdg | 17.9 KiB | [pgcryptokey_14-0.85-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgcryptokey_14-0.85-8PGDG.rhel10.x86_64.rpm) |
+| `pgcryptokey_14` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_14-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_14-0.85-1PIGSTY.el10.aarch64.rpm) |
 | `pgcryptokey_14` | 0.85 | `el10.aarch64` | pgdg | 17.9 KiB | [pgcryptokey_14-0.85-8PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgcryptokey_14-0.85-8PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgcryptokey` | 0.85 | `d12.x86_64` | pigsty | 11.5 KiB | [postgresql-14-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-14-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgcryptokey` | 0.85 | `d12.aarch64` | pigsty | 11.7 KiB | [postgresql-14-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-14-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb) |
@@ -158,13 +168,15 @@ cryptographic key management
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgcryptokey_13` | 0.85 | `el8.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_13-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_13-0.85-1PIGSTY.el8.x86_64.rpm) |
-| `pgcryptokey_13` | 0.85 | `el8.aarch64` | pigsty | 17.2 KiB | [pgcryptokey_13-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_13-0.85-1PIGSTY.el8.aarch64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el8.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_13-0.85-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcryptokey_13-0.85-1PIGSTY.el8.x86_64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el8.aarch64` | pigsty | 17.1 KiB | [pgcryptokey_13-0.85-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcryptokey_13-0.85-1PIGSTY.el8.aarch64.rpm) |
 | `pgcryptokey_13` | 0.85 | `el8.aarch64` | pgdg | 22.4 KiB | [pgcryptokey_13-0.85-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgcryptokey_13-0.85-3.rhel8.aarch64.rpm) |
-| `pgcryptokey_13` | 0.85 | `el9.x86_64` | pigsty | 17.1 KiB | [pgcryptokey_13-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_13-0.85-1PIGSTY.el9.x86_64.rpm) |
-| `pgcryptokey_13` | 0.85 | `el9.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_13-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_13-0.85-1PIGSTY.el9.aarch64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el9.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_13-0.85-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcryptokey_13-0.85-1PIGSTY.el9.x86_64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el9.aarch64` | pigsty | 16.8 KiB | [pgcryptokey_13-0.85-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcryptokey_13-0.85-1PIGSTY.el9.aarch64.rpm) |
 | `pgcryptokey_13` | 0.85 | `el9.aarch64` | pgdg | 22.3 KiB | [pgcryptokey_13-0.85-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgcryptokey_13-0.85-3.rhel9.aarch64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el10.x86_64` | pigsty | 16.8 KiB | [pgcryptokey_13-0.85-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcryptokey_13-0.85-1PIGSTY.el10.x86_64.rpm) |
 | `pgcryptokey_13` | 0.85 | `el10.x86_64` | pgdg | 17.9 KiB | [pgcryptokey_13-0.85-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgcryptokey_13-0.85-8PGDG.rhel10.x86_64.rpm) |
+| `pgcryptokey_13` | 0.85 | `el10.aarch64` | pigsty | 17.0 KiB | [pgcryptokey_13-0.85-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcryptokey_13-0.85-1PIGSTY.el10.aarch64.rpm) |
 | `pgcryptokey_13` | 0.85 | `el10.aarch64` | pgdg | 17.9 KiB | [pgcryptokey_13-0.85-8PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgcryptokey_13-0.85-8PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-pgcryptokey` | 0.85 | `d12.x86_64` | pigsty | 11.5 KiB | [postgresql-13-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-13-pgcryptokey_0.85-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgcryptokey` | 0.85 | `d12.aarch64` | pigsty | 11.7 KiB | [postgresql-13-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgcryptokey/postgresql-13-pgcryptokey_0.85-1PIGSTY~bookworm_arm64.deb) |

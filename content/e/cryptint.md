@@ -37,12 +37,12 @@ Encryption functions for int and bigint values
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "cryptint_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "cryptint_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0.0" "cryptint_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "cryptint_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-cryptint : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-cryptint : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-cryptint : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-cryptint : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-cryptint : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-cryptint : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-cryptint : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-cryptint : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-cryptint : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-cryptint : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Encryption functions for int and bigint values
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-cryptint : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-cryptint : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-cryptint : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `cryptint_17` | 1.0.0 | `el8.x86_64` | pigsty | 13.9 KiB | [cryptint_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `cryptint_17` | 1.0.0 | `el8.aarch64` | pigsty | 14.0 KiB | [cryptint_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `cryptint_17` | 1.0.0 | `el9.x86_64` | pigsty | 13.9 KiB | [cryptint_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `cryptint_17` | 1.0.0 | `el9.aarch64` | pigsty | 13.7 KiB | [cryptint_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_18` | 1.0.0 | `el8.x86_64` | pigsty | 14.0 KiB | [cryptint_18-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_18-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `cryptint_18` | 1.0.0 | `el8.aarch64` | pigsty | 14.2 KiB | [cryptint_18-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_18-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_18` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [cryptint_18-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_18-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_18` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [cryptint_18-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_18-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_18` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [cryptint_18-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_18-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_18` | 1.0.0 | `el10.aarch64` | pigsty | 13.7 KiB | [cryptint_18-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_18-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `cryptint_17` | 1.0.0 | `el8.x86_64` | pigsty | 14.0 KiB | [cryptint_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `cryptint_17` | 1.0.0 | `el8.aarch64` | pigsty | 14.2 KiB | [cryptint_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_17` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [cryptint_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_17` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [cryptint_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_17` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [cryptint_17-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_17-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_17` | 1.0.0 | `el10.aarch64` | pigsty | 13.7 KiB | [cryptint_17-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_17-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-cryptint` | 1.0.0 | `d12.x86_64` | pigsty | 13.4 KiB | [postgresql-17-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-17-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-cryptint` | 1.0.0 | `d12.aarch64` | pigsty | 13.5 KiB | [postgresql-17-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-17-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-cryptint` | 1.0.0 | `u22.x86_64` | pigsty | 13.8 KiB | [postgresql-17-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/cryptint/postgresql-17-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Encryption functions for int and bigint values
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `cryptint_16` | 1.0.0 | `el8.x86_64` | pigsty | 13.9 KiB | [cryptint_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `cryptint_16` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [cryptint_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `cryptint_16` | 1.0.0 | `el9.x86_64` | pigsty | 13.9 KiB | [cryptint_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `cryptint_16` | 1.0.0 | `el9.aarch64` | pigsty | 13.7 KiB | [cryptint_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_16` | 1.0.0 | `el8.x86_64` | pigsty | 14.0 KiB | [cryptint_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `cryptint_16` | 1.0.0 | `el8.aarch64` | pigsty | 14.2 KiB | [cryptint_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_16` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [cryptint_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_16` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [cryptint_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_16` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [cryptint_16-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_16-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_16` | 1.0.0 | `el10.aarch64` | pigsty | 13.7 KiB | [cryptint_16-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_16-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-cryptint` | 1.0.0 | `d12.x86_64` | pigsty | 13.4 KiB | [postgresql-16-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-16-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-cryptint` | 1.0.0 | `d12.aarch64` | pigsty | 13.5 KiB | [postgresql-16-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-16-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-cryptint` | 1.0.0 | `u22.x86_64` | pigsty | 13.8 KiB | [postgresql-16-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/cryptint/postgresql-16-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -91,9 +107,11 @@ Encryption functions for int and bigint values
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `cryptint_15` | 1.0.0 | `el8.x86_64` | pigsty | 14.0 KiB | [cryptint_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `cryptint_15` | 1.0.0 | `el8.aarch64` | pigsty | 14.0 KiB | [cryptint_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `cryptint_15` | 1.0.0 | `el9.x86_64` | pigsty | 14.1 KiB | [cryptint_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `cryptint_15` | 1.0.0 | `el9.aarch64` | pigsty | 14.0 KiB | [cryptint_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_15` | 1.0.0 | `el8.aarch64` | pigsty | 14.3 KiB | [cryptint_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_15` | 1.0.0 | `el9.x86_64` | pigsty | 13.8 KiB | [cryptint_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_15` | 1.0.0 | `el9.aarch64` | pigsty | 13.9 KiB | [cryptint_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_15` | 1.0.0 | `el10.x86_64` | pigsty | 13.8 KiB | [cryptint_15-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_15-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_15` | 1.0.0 | `el10.aarch64` | pigsty | 14.0 KiB | [cryptint_15-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_15-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-cryptint` | 1.0.0 | `d12.x86_64` | pigsty | 13.5 KiB | [postgresql-15-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-15-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-cryptint` | 1.0.0 | `d12.aarch64` | pigsty | 13.6 KiB | [postgresql-15-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-15-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-cryptint` | 1.0.0 | `u22.x86_64` | pigsty | 13.9 KiB | [postgresql-15-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/cryptint/postgresql-15-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Encryption functions for int and bigint values
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `cryptint_14` | 1.0.0 | `el8.x86_64` | pigsty | 13.9 KiB | [cryptint_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `cryptint_14` | 1.0.0 | `el8.aarch64` | pigsty | 14.0 KiB | [cryptint_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `cryptint_14` | 1.0.0 | `el9.x86_64` | pigsty | 14.1 KiB | [cryptint_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `cryptint_14` | 1.0.0 | `el9.aarch64` | pigsty | 14.0 KiB | [cryptint_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_14` | 1.0.0 | `el8.x86_64` | pigsty | 14.0 KiB | [cryptint_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `cryptint_14` | 1.0.0 | `el8.aarch64` | pigsty | 14.3 KiB | [cryptint_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_14` | 1.0.0 | `el9.x86_64` | pigsty | 13.8 KiB | [cryptint_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_14` | 1.0.0 | `el9.aarch64` | pigsty | 13.9 KiB | [cryptint_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_14` | 1.0.0 | `el10.x86_64` | pigsty | 13.8 KiB | [cryptint_14-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_14-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_14` | 1.0.0 | `el10.aarch64` | pigsty | 14.0 KiB | [cryptint_14-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_14-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-cryptint` | 1.0.0 | `d12.x86_64` | pigsty | 13.5 KiB | [postgresql-14-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-14-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-cryptint` | 1.0.0 | `d12.aarch64` | pigsty | 13.6 KiB | [postgresql-14-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-14-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-cryptint` | 1.0.0 | `u22.x86_64` | pigsty | 13.9 KiB | [postgresql-14-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/cryptint/postgresql-14-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -123,9 +143,11 @@ Encryption functions for int and bigint values
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `cryptint_13` | 1.0.0 | `el8.x86_64` | pigsty | 13.9 KiB | [cryptint_13-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/cryptint_13-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `cryptint_13` | 1.0.0 | `el8.aarch64` | pigsty | 14.0 KiB | [cryptint_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `cryptint_13` | 1.0.0 | `el9.x86_64` | pigsty | 14.1 KiB | [cryptint_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `cryptint_13` | 1.0.0 | `el9.aarch64` | pigsty | 14.0 KiB | [cryptint_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_13` | 1.0.0 | `el8.aarch64` | pigsty | 14.3 KiB | [cryptint_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/cryptint_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `cryptint_13` | 1.0.0 | `el9.x86_64` | pigsty | 13.9 KiB | [cryptint_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/cryptint_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `cryptint_13` | 1.0.0 | `el9.aarch64` | pigsty | 13.9 KiB | [cryptint_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/cryptint_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `cryptint_13` | 1.0.0 | `el10.x86_64` | pigsty | 13.8 KiB | [cryptint_13-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/cryptint_13-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `cryptint_13` | 1.0.0 | `el10.aarch64` | pigsty | 14.0 KiB | [cryptint_13-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/cryptint_13-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-cryptint` | 1.0.0 | `d12.x86_64` | pigsty | 13.5 KiB | [postgresql-13-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-13-cryptint_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-cryptint` | 1.0.0 | `d12.aarch64` | pigsty | 13.4 KiB | [postgresql-13-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/cryptint/postgresql-13-cryptint_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-cryptint` | 1.0.0 | `u22.x86_64` | pigsty | 13.9 KiB | [postgresql-13-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/cryptint/postgresql-13-cryptint_1.0.0-1PIGSTY~jammy_amd64.deb) |

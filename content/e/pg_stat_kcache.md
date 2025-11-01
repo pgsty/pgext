@@ -32,8 +32,8 @@ Kernel statistics gathering
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_stat_kcache" >}} | `2.3.0` | {{< bg "18" "pg_stat_kcache_18*" "red" >}} {{< bg "17" "pg_stat_kcache_17*" "green" >}} {{< bg "16" "pg_stat_kcache_16*" "green" >}} {{< bg "15" "pg_stat_kcache_15*" "green" >}} {{< bg "14" "pg_stat_kcache_14*" "green" >}} {{< bg "13" "pg_stat_kcache_13*" "green" >}} | `pg_stat_kcache_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_stat_kcache" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-stat-kcache" "red" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} {{< bg "13" "postgresql-13-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_stat_kcache" >}} | `2.3.0` | {{< bg "18" "pg_stat_kcache_18*" "green" >}} {{< bg "17" "pg_stat_kcache_17*" "green" >}} {{< bg "16" "pg_stat_kcache_16*" "green" >}} {{< bg "15" "pg_stat_kcache_15*" "green" >}} {{< bg "14" "pg_stat_kcache_14*" "green" >}} {{< bg "13" "pg_stat_kcache_13*" "green" >}} | `pg_stat_kcache_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pg_stat_kcache" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-stat-kcache" "green" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} {{< bg "13" "postgresql-13-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -272,6 +272,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_stat_kcache; # install by extension name, for the current active PG version
 pig ext install pg_stat_kcache; # install via package alias, for the active PG version
+pig ext install pg_stat_kcache -v 18;   # install for PG 18
 pig ext install pg_stat_kcache -v 17;   # install for PG 17
 pig ext install pg_stat_kcache -v 16;   # install for PG 16
 pig ext install pg_stat_kcache -v 15;   # install for PG 15

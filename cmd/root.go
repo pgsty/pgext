@@ -29,6 +29,7 @@ var (
 	workers int
 	retry   int
 	keep    bool
+	scanDir string
 
 	// Query filter flags
 	pgVer    int
@@ -45,6 +46,7 @@ var rootCmd = &cobra.Command{
   pgext schema [-f]             # initialize pgext schema
   pgext reload                  # reload data: fetch + parse + recap
   pgext fetch                   # get repo metadata from upstream
+  pgext scan                    # scan local Pigsty repo metadata
   pgext parse                   # populate apt, dnf, bin tables
   pgext recap                   # generate pkg table from bin info
   pgext status                  # show metadata status
@@ -130,6 +132,7 @@ func init() {
 	rootCmd.AddCommand(reloadCmd)
 
 	rootCmd.AddCommand(fetchCmd)
+	rootCmd.AddCommand(scanCmd)
 	rootCmd.AddCommand(parseCmd)
 	rootCmd.AddCommand(recapCmd)
 

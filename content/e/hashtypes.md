@@ -41,8 +41,8 @@ sha1, md5 and other data types for PostgreSQL
 |    `el8.aarch64`    | {{< bg "PIGSTY 0.1.5" "hashtypes_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 0.1.5" "hashtypes_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 0.1.5" "hashtypes_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "hashtypes_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "hashtypes_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "hashtypes_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.1.5" "hashtypes_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "hashtypes_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.1.5" "hashtypes_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "hashtypes_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "hashtypes_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-hashtypes : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.5" "postgresql-17-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-16-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-15-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-14-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-13-hashtypes : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-hashtypes : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.5" "postgresql-17-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-16-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-15-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-14-hashtypes : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.5" "postgresql-13-hashtypes : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-hashtypes : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hashtypes : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hashtypes : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hashtypes : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hashtypes : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-hashtypes : MISS 0" "red" >}}      |
@@ -58,20 +58,24 @@ sha1, md5 and other data types for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hashtypes_18` | 0.1.5 | `el8.x86_64` | pigsty | 23.4 KiB | [hashtypes_18-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_18-0.1.5-1PIGSTY.el8.x86_64.rpm) |
-| `hashtypes_18` | 0.1.5 | `el8.aarch64` | pigsty | 23.2 KiB | [hashtypes_18-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_18-0.1.5-1PIGSTY.el8.aarch64.rpm) |
-| `hashtypes_18` | 0.1.5 | `el9.x86_64` | pigsty | 23.6 KiB | [hashtypes_18-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_18-0.1.5-1PIGSTY.el9.x86_64.rpm) |
-| `hashtypes_18` | 0.1.5 | `el9.aarch64` | pigsty | 23.2 KiB | [hashtypes_18-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_18-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el8.x86_64` | pigsty | 26.0 KiB | [hashtypes_18-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_18-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el8.aarch64` | pigsty | 25.9 KiB | [hashtypes_18-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_18-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el9.x86_64` | pigsty | 24.2 KiB | [hashtypes_18-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_18-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el9.aarch64` | pigsty | 23.7 KiB | [hashtypes_18-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_18-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el10.x86_64` | pigsty | 24.0 KiB | [hashtypes_18-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hashtypes_18-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `hashtypes_18` | 0.1.5 | `el10.aarch64` | pigsty | 24.0 KiB | [hashtypes_18-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hashtypes_18-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hashtypes_17` | 0.1.5 | `el8.x86_64` | pigsty | 23.4 KiB | [hashtypes_17-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_17-0.1.5-1PIGSTY.el8.x86_64.rpm) |
-| `hashtypes_17` | 0.1.5 | `el8.aarch64` | pigsty | 23.2 KiB | [hashtypes_17-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_17-0.1.5-1PIGSTY.el8.aarch64.rpm) |
-| `hashtypes_17` | 0.1.5 | `el9.x86_64` | pigsty | 23.7 KiB | [hashtypes_17-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_17-0.1.5-1PIGSTY.el9.x86_64.rpm) |
-| `hashtypes_17` | 0.1.5 | `el9.aarch64` | pigsty | 23.2 KiB | [hashtypes_17-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_17-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el8.x86_64` | pigsty | 26.0 KiB | [hashtypes_17-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_17-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el8.aarch64` | pigsty | 25.9 KiB | [hashtypes_17-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_17-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el9.x86_64` | pigsty | 24.2 KiB | [hashtypes_17-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_17-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el9.aarch64` | pigsty | 23.7 KiB | [hashtypes_17-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_17-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el10.x86_64` | pigsty | 24.0 KiB | [hashtypes_17-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hashtypes_17-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `hashtypes_17` | 0.1.5 | `el10.aarch64` | pigsty | 24.0 KiB | [hashtypes_17-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hashtypes_17-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-hashtypes` | 0.1.5 | `d12.x86_64` | pigsty | 34.3 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-hashtypes` | 0.1.5 | `d12.aarch64` | pigsty | 34.0 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-hashtypes` | 0.1.5 | `u22.x86_64` | pigsty | 36.4 KiB | [postgresql-17-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hashtypes/postgresql-17-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb) |
@@ -84,10 +88,12 @@ sha1, md5 and other data types for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hashtypes_16` | 0.1.5 | `el8.x86_64` | pigsty | 23.4 KiB | [hashtypes_16-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_16-0.1.5-1PIGSTY.el8.x86_64.rpm) |
-| `hashtypes_16` | 0.1.5 | `el8.aarch64` | pigsty | 23.1 KiB | [hashtypes_16-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_16-0.1.5-1PIGSTY.el8.aarch64.rpm) |
-| `hashtypes_16` | 0.1.5 | `el9.x86_64` | pigsty | 23.7 KiB | [hashtypes_16-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_16-0.1.5-1PIGSTY.el9.x86_64.rpm) |
-| `hashtypes_16` | 0.1.5 | `el9.aarch64` | pigsty | 23.2 KiB | [hashtypes_16-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_16-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el8.x86_64` | pigsty | 26.0 KiB | [hashtypes_16-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_16-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el8.aarch64` | pigsty | 25.9 KiB | [hashtypes_16-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_16-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el9.x86_64` | pigsty | 24.2 KiB | [hashtypes_16-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_16-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el9.aarch64` | pigsty | 23.7 KiB | [hashtypes_16-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_16-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el10.x86_64` | pigsty | 24.0 KiB | [hashtypes_16-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hashtypes_16-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `hashtypes_16` | 0.1.5 | `el10.aarch64` | pigsty | 24.0 KiB | [hashtypes_16-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hashtypes_16-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-hashtypes` | 0.1.5 | `d12.x86_64` | pigsty | 34.3 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-hashtypes` | 0.1.5 | `d12.aarch64` | pigsty | 34.0 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-hashtypes` | 0.1.5 | `u22.x86_64` | pigsty | 36.4 KiB | [postgresql-16-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hashtypes/postgresql-16-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb) |
@@ -100,10 +106,12 @@ sha1, md5 and other data types for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hashtypes_15` | 0.1.5 | `el8.x86_64` | pigsty | 23.5 KiB | [hashtypes_15-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_15-0.1.5-1PIGSTY.el8.x86_64.rpm) |
-| `hashtypes_15` | 0.1.5 | `el8.aarch64` | pigsty | 23.2 KiB | [hashtypes_15-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_15-0.1.5-1PIGSTY.el8.aarch64.rpm) |
-| `hashtypes_15` | 0.1.5 | `el9.x86_64` | pigsty | 23.7 KiB | [hashtypes_15-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_15-0.1.5-1PIGSTY.el9.x86_64.rpm) |
-| `hashtypes_15` | 0.1.5 | `el9.aarch64` | pigsty | 23.5 KiB | [hashtypes_15-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_15-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el8.x86_64` | pigsty | 26.0 KiB | [hashtypes_15-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_15-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el8.aarch64` | pigsty | 25.9 KiB | [hashtypes_15-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_15-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el9.x86_64` | pigsty | 24.3 KiB | [hashtypes_15-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_15-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el9.aarch64` | pigsty | 24.0 KiB | [hashtypes_15-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_15-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el10.x86_64` | pigsty | 24.2 KiB | [hashtypes_15-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hashtypes_15-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `hashtypes_15` | 0.1.5 | `el10.aarch64` | pigsty | 24.2 KiB | [hashtypes_15-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hashtypes_15-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-hashtypes` | 0.1.5 | `d12.x86_64` | pigsty | 34.5 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-hashtypes` | 0.1.5 | `d12.aarch64` | pigsty | 34.3 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-hashtypes` | 0.1.5 | `u22.x86_64` | pigsty | 36.7 KiB | [postgresql-15-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hashtypes/postgresql-15-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb) |
@@ -116,10 +124,12 @@ sha1, md5 and other data types for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `hashtypes_14` | 0.1.5 | `el8.x86_64` | pigsty | 23.5 KiB | [hashtypes_14-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_14-0.1.5-1PIGSTY.el8.x86_64.rpm) |
-| `hashtypes_14` | 0.1.5 | `el8.aarch64` | pigsty | 23.2 KiB | [hashtypes_14-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_14-0.1.5-1PIGSTY.el8.aarch64.rpm) |
-| `hashtypes_14` | 0.1.5 | `el9.x86_64` | pigsty | 23.7 KiB | [hashtypes_14-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_14-0.1.5-1PIGSTY.el9.x86_64.rpm) |
-| `hashtypes_14` | 0.1.5 | `el9.aarch64` | pigsty | 23.4 KiB | [hashtypes_14-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_14-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el8.x86_64` | pigsty | 26.0 KiB | [hashtypes_14-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/hashtypes_14-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el8.aarch64` | pigsty | 25.9 KiB | [hashtypes_14-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/hashtypes_14-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el9.x86_64` | pigsty | 24.2 KiB | [hashtypes_14-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/hashtypes_14-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el9.aarch64` | pigsty | 24.0 KiB | [hashtypes_14-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/hashtypes_14-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el10.x86_64` | pigsty | 24.2 KiB | [hashtypes_14-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/hashtypes_14-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `hashtypes_14` | 0.1.5 | `el10.aarch64` | pigsty | 24.2 KiB | [hashtypes_14-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/hashtypes_14-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-hashtypes` | 0.1.5 | `d12.x86_64` | pigsty | 34.4 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-hashtypes` | 0.1.5 | `d12.aarch64` | pigsty | 34.2 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-hashtypes` | 0.1.5 | `u22.x86_64` | pigsty | 36.7 KiB | [postgresql-14-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hashtypes/postgresql-14-hashtypes_0.1.5-1PIGSTY~jammy_amd64.deb) |

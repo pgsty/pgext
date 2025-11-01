@@ -14,7 +14,7 @@ Memory optimized data type to be used inside of plpglsql func
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3630** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pg_collection" >}} | `1.1.0` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **3630** | {{< badge content="collection" link="https://github.com/aws/pgcollection" >}} | {{< ext "collection" "pgcollection" >}} | `1.1.0` | {{< category "TYPE" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -37,12 +37,12 @@ Memory optimized data type to be used inside of plpglsql func
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
-|    `el10.x86_64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pgcollection_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.1.0" "pgcollection_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pgcollection_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pgcollection_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-collection : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-collection : MISS 0" "red" >}}      |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-collection : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-collection : MISS 0" "red" >}}      |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-collection : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-collection : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-collection : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-collection : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-collection : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-collection : MISS 0" "red" >}}      |
@@ -53,15 +53,33 @@ Memory optimized data type to be used inside of plpglsql func
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-collection : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-collection : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-collection : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-collection : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgcollection_18` | 1.1.0 | `el8.x86_64` | pigsty | 41.4 KiB | [pgcollection_18-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_18-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgcollection_18` | 1.1.0 | `el8.aarch64` | pigsty | 40.5 KiB | [pgcollection_18-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_18-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgcollection_18` | 1.1.0 | `el9.x86_64` | pigsty | 41.0 KiB | [pgcollection_18-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_18-1.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcollection_18` | 1.1.0 | `el9.aarch64` | pigsty | 40.5 KiB | [pgcollection_18-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_18-1.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgcollection_18` | 1.1.0 | `el10.x86_64` | pigsty | 41.4 KiB | [pgcollection_18-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcollection_18-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgcollection_18` | 1.1.0 | `el10.aarch64` | pigsty | 39.4 KiB | [pgcollection_18-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcollection_18-1.1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgcollection_17` | 1.1.0 | `el8.x86_64` | pigsty | 41.4 KiB | [pgcollection_17-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_17-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcollection_17` | 1.0.0 | `el8.x86_64` | pigsty | 35.4 KiB | [pgcollection_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgcollection_17` | 1.1.0 | `el8.aarch64` | pigsty | 40.5 KiB | [pgcollection_17-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_17-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcollection_17` | 1.0.0 | `el8.aarch64` | pigsty | 34.3 KiB | [pgcollection_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgcollection_17` | 1.1.0 | `el9.x86_64` | pigsty | 40.9 KiB | [pgcollection_17-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_17-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcollection_17` | 1.0.0 | `el9.x86_64` | pigsty | 36.8 KiB | [pgcollection_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcollection_17` | 1.1.0 | `el9.aarch64` | pigsty | 40.4 KiB | [pgcollection_17-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_17-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgcollection_17` | 1.0.0 | `el9.aarch64` | pigsty | 36.1 KiB | [pgcollection_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgcollection_17` | 1.1.0 | `el10.x86_64` | pigsty | 41.4 KiB | [pgcollection_17-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcollection_17-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgcollection_17` | 1.1.0 | `el10.aarch64` | pigsty | 39.3 KiB | [pgcollection_17-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcollection_17-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-collection` | 1.0.0 | `d12.x86_64` | pigsty | 70.1 KiB | [postgresql-17-collection_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-17-collection_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-collection` | 1.0.0 | `d12.aarch64` | pigsty | 68.8 KiB | [postgresql-17-collection_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-17-collection_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-collection` | 1.0.0 | `u22.x86_64` | pigsty | 86.1 KiB | [postgresql-17-collection_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/collection/postgresql-17-collection_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +92,16 @@ Memory optimized data type to be used inside of plpglsql func
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgcollection_16` | 1.1.0 | `el8.x86_64` | pigsty | 41.2 KiB | [pgcollection_16-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_16-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcollection_16` | 1.0.0 | `el8.x86_64` | pigsty | 35.3 KiB | [pgcollection_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgcollection_16` | 1.1.0 | `el8.aarch64` | pigsty | 40.3 KiB | [pgcollection_16-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_16-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcollection_16` | 1.0.0 | `el8.aarch64` | pigsty | 34.2 KiB | [pgcollection_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgcollection_16` | 1.1.0 | `el9.x86_64` | pigsty | 40.8 KiB | [pgcollection_16-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_16-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcollection_16` | 1.0.0 | `el9.x86_64` | pigsty | 36.5 KiB | [pgcollection_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcollection_16` | 1.1.0 | `el9.aarch64` | pigsty | 40.2 KiB | [pgcollection_16-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_16-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgcollection_16` | 1.0.0 | `el9.aarch64` | pigsty | 35.8 KiB | [pgcollection_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgcollection_16` | 1.1.0 | `el10.x86_64` | pigsty | 41.3 KiB | [pgcollection_16-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcollection_16-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgcollection_16` | 1.1.0 | `el10.aarch64` | pigsty | 39.1 KiB | [pgcollection_16-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcollection_16-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-collection` | 1.0.0 | `d12.x86_64` | pigsty | 68.8 KiB | [postgresql-16-collection_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-16-collection_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-collection` | 1.0.0 | `d12.aarch64` | pigsty | 67.6 KiB | [postgresql-16-collection_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-16-collection_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-collection` | 1.0.0 | `u22.x86_64` | pigsty | 84.7 KiB | [postgresql-16-collection_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/collection/postgresql-16-collection_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +114,16 @@ Memory optimized data type to be used inside of plpglsql func
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgcollection_15` | 1.1.0 | `el8.x86_64` | pigsty | 41.7 KiB | [pgcollection_15-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_15-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcollection_15` | 1.0.0 | `el8.x86_64` | pigsty | 35.7 KiB | [pgcollection_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgcollection_15` | 1.1.0 | `el8.aarch64` | pigsty | 40.6 KiB | [pgcollection_15-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_15-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcollection_15` | 1.0.0 | `el8.aarch64` | pigsty | 34.4 KiB | [pgcollection_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgcollection_15` | 1.1.0 | `el9.x86_64` | pigsty | 41.1 KiB | [pgcollection_15-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_15-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcollection_15` | 1.0.0 | `el9.x86_64` | pigsty | 36.9 KiB | [pgcollection_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcollection_15` | 1.1.0 | `el9.aarch64` | pigsty | 40.5 KiB | [pgcollection_15-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_15-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgcollection_15` | 1.0.0 | `el9.aarch64` | pigsty | 35.7 KiB | [pgcollection_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgcollection_15` | 1.1.0 | `el10.x86_64` | pigsty | 42.2 KiB | [pgcollection_15-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcollection_15-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgcollection_15` | 1.1.0 | `el10.aarch64` | pigsty | 39.4 KiB | [pgcollection_15-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcollection_15-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-collection` | 1.0.0 | `d12.x86_64` | pigsty | 69.3 KiB | [postgresql-15-collection_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-15-collection_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-collection` | 1.0.0 | `d12.aarch64` | pigsty | 67.9 KiB | [postgresql-15-collection_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-15-collection_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-collection` | 1.0.0 | `u22.x86_64` | pigsty | 85.4 KiB | [postgresql-15-collection_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/collection/postgresql-15-collection_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +136,16 @@ Memory optimized data type to be used inside of plpglsql func
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgcollection_14` | 1.1.0 | `el8.x86_64` | pigsty | 41.7 KiB | [pgcollection_14-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_14-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgcollection_14` | 1.0.0 | `el8.x86_64` | pigsty | 35.6 KiB | [pgcollection_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgcollection_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgcollection_14` | 1.1.0 | `el8.aarch64` | pigsty | 40.6 KiB | [pgcollection_14-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_14-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgcollection_14` | 1.0.0 | `el8.aarch64` | pigsty | 34.4 KiB | [pgcollection_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgcollection_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgcollection_14` | 1.1.0 | `el9.x86_64` | pigsty | 41.0 KiB | [pgcollection_14-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_14-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgcollection_14` | 1.0.0 | `el9.x86_64` | pigsty | 36.9 KiB | [pgcollection_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgcollection_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgcollection_14` | 1.1.0 | `el9.aarch64` | pigsty | 40.5 KiB | [pgcollection_14-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_14-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgcollection_14` | 1.0.0 | `el9.aarch64` | pigsty | 35.7 KiB | [pgcollection_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgcollection_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgcollection_14` | 1.1.0 | `el10.x86_64` | pigsty | 41.6 KiB | [pgcollection_14-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgcollection_14-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgcollection_14` | 1.1.0 | `el10.aarch64` | pigsty | 39.4 KiB | [pgcollection_14-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgcollection_14-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-collection` | 1.0.0 | `d12.x86_64` | pigsty | 69.4 KiB | [postgresql-14-collection_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-14-collection_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-collection` | 1.0.0 | `d12.aarch64` | pigsty | 67.8 KiB | [postgresql-14-collection_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/c/collection/postgresql-14-collection_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-collection` | 1.0.0 | `u22.x86_64` | pigsty | 85.2 KiB | [postgresql-14-collection_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/collection/postgresql-14-collection_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -147,7 +183,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 
 ```bash
 pig ext install collection; # install by extension name, for the current active PG version
-pig ext install pg_collection; # install via package alias, for the active PG version
+pig ext install pgcollection; # install via package alias, for the active PG version
 pig ext install collection -v 18;   # install for PG 18
 pig ext install collection -v 17;   # install for PG 17
 pig ext install collection -v 16;   # install for PG 16

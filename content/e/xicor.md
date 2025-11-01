@@ -37,12 +37,12 @@ XI Correlation Coefficient in Postgres
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pgxicor_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgxicor_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgxicor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgxicor_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgxicor : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgxicor : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgxicor : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgxicor : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgxicor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgxicor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgxicor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgxicor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgxicor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgxicor : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ XI Correlation Coefficient in Postgres
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgxicor : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgxicor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgxicor : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgxicor_17` | 0.1.0 | `el8.x86_64` | pigsty | 26.0 KiB | [pgxicor_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgxicor_17` | 0.1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [pgxicor_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgxicor_17` | 0.1.0 | `el9.x86_64` | pigsty | 25.8 KiB | [pgxicor_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgxicor_17` | 0.1.0 | `el9.aarch64` | pigsty | 25.5 KiB | [pgxicor_17-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_17-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el8.x86_64` | pigsty | 25.9 KiB | [pgxicor_18-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_18-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_18-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_18-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el9.x86_64` | pigsty | 25.4 KiB | [pgxicor_18-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_18-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el9.aarch64` | pigsty | 25.4 KiB | [pgxicor_18-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_18-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el10.x86_64` | pigsty | 25.5 KiB | [pgxicor_18-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_18-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_18` | 0.1.0 | `el10.aarch64` | pigsty | 25.6 KiB | [pgxicor_18-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_18-0.1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgxicor_17` | 0.1.0 | `el8.x86_64` | pigsty | 25.9 KiB | [pgxicor_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_17` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgxicor_17` | 0.1.0 | `el9.x86_64` | pigsty | 25.4 KiB | [pgxicor_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_17` | 0.1.0 | `el9.aarch64` | pigsty | 25.4 KiB | [pgxicor_17-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_17-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_17` | 0.1.0 | `el10.x86_64` | pigsty | 25.5 KiB | [pgxicor_17-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_17-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_17` | 0.1.0 | `el10.aarch64` | pigsty | 25.5 KiB | [pgxicor_17-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_17-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgxicor` | 0.1.0 | `d12.x86_64` | pigsty | 25.3 KiB | [postgresql-17-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgxicor` | 0.1.0 | `d12.aarch64` | pigsty | 25.4 KiB | [postgresql-17-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgxicor` | 0.1.0 | `u22.x86_64` | pigsty | 26.9 KiB | [postgresql-17-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgxicor/postgresql-17-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ XI Correlation Coefficient in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgxicor_16` | 0.1.0 | `el8.x86_64` | pigsty | 26.0 KiB | [pgxicor_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgxicor_16` | 0.1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [pgxicor_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgxicor_16` | 0.1.0 | `el9.x86_64` | pigsty | 25.8 KiB | [pgxicor_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgxicor_16` | 0.1.0 | `el9.aarch64` | pigsty | 25.5 KiB | [pgxicor_16-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_16-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el8.x86_64` | pigsty | 25.9 KiB | [pgxicor_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el9.x86_64` | pigsty | 25.4 KiB | [pgxicor_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el9.aarch64` | pigsty | 25.3 KiB | [pgxicor_16-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_16-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el10.x86_64` | pigsty | 25.5 KiB | [pgxicor_16-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_16-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_16` | 0.1.0 | `el10.aarch64` | pigsty | 25.5 KiB | [pgxicor_16-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_16-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgxicor` | 0.1.0 | `d12.x86_64` | pigsty | 25.3 KiB | [postgresql-16-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgxicor` | 0.1.0 | `d12.aarch64` | pigsty | 25.4 KiB | [postgresql-16-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgxicor` | 0.1.0 | `u22.x86_64` | pigsty | 26.9 KiB | [postgresql-16-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgxicor/postgresql-16-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ XI Correlation Coefficient in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgxicor_15` | 0.1.0 | `el8.x86_64` | pigsty | 26.1 KiB | [pgxicor_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_15` | 0.1.0 | `el8.x86_64` | pigsty | 26.0 KiB | [pgxicor_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgxicor_15` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_15-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_15-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgxicor_15` | 0.1.0 | `el9.x86_64` | pigsty | 26.0 KiB | [pgxicor_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgxicor_15` | 0.1.0 | `el9.aarch64` | pigsty | 25.9 KiB | [pgxicor_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_15` | 0.1.0 | `el9.x86_64` | pigsty | 25.7 KiB | [pgxicor_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_15` | 0.1.0 | `el9.aarch64` | pigsty | 25.8 KiB | [pgxicor_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_15` | 0.1.0 | `el10.x86_64` | pigsty | 25.8 KiB | [pgxicor_15-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_15-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_15` | 0.1.0 | `el10.aarch64` | pigsty | 26.0 KiB | [pgxicor_15-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_15-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgxicor` | 0.1.0 | `d12.x86_64` | pigsty | 25.4 KiB | [postgresql-15-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgxicor` | 0.1.0 | `d12.aarch64` | pigsty | 25.5 KiB | [postgresql-15-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgxicor` | 0.1.0 | `u22.x86_64` | pigsty | 27.0 KiB | [postgresql-15-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgxicor/postgresql-15-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ XI Correlation Coefficient in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgxicor_14` | 0.1.0 | `el8.x86_64` | pigsty | 26.1 KiB | [pgxicor_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_14` | 0.1.0 | `el8.x86_64` | pigsty | 25.9 KiB | [pgxicor_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgxicor_14` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgxicor_14` | 0.1.0 | `el9.x86_64` | pigsty | 26.0 KiB | [pgxicor_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgxicor_14` | 0.1.0 | `el9.aarch64` | pigsty | 25.9 KiB | [pgxicor_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_14` | 0.1.0 | `el9.x86_64` | pigsty | 25.7 KiB | [pgxicor_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_14` | 0.1.0 | `el9.aarch64` | pigsty | 25.7 KiB | [pgxicor_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_14` | 0.1.0 | `el10.x86_64` | pigsty | 25.8 KiB | [pgxicor_14-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_14-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_14` | 0.1.0 | `el10.aarch64` | pigsty | 26.0 KiB | [pgxicor_14-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_14-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgxicor` | 0.1.0 | `d12.x86_64` | pigsty | 25.4 KiB | [postgresql-14-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgxicor` | 0.1.0 | `d12.aarch64` | pigsty | 25.4 KiB | [postgresql-14-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pgxicor` | 0.1.0 | `u22.x86_64` | pigsty | 27.0 KiB | [postgresql-14-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgxicor/postgresql-14-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ XI Correlation Coefficient in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgxicor_13` | 0.1.0 | `el8.x86_64` | pigsty | 26.1 KiB | [pgxicor_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgxicor_13` | 0.1.0 | `el8.x86_64` | pigsty | 26.0 KiB | [pgxicor_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgxicor_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgxicor_13` | 0.1.0 | `el8.aarch64` | pigsty | 26.1 KiB | [pgxicor_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgxicor_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgxicor_13` | 0.1.0 | `el9.x86_64` | pigsty | 26.0 KiB | [pgxicor_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgxicor_13` | 0.1.0 | `el9.aarch64` | pigsty | 25.9 KiB | [pgxicor_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_13` | 0.1.0 | `el9.x86_64` | pigsty | 25.7 KiB | [pgxicor_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgxicor_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgxicor_13` | 0.1.0 | `el9.aarch64` | pigsty | 25.8 KiB | [pgxicor_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgxicor_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgxicor_13` | 0.1.0 | `el10.x86_64` | pigsty | 25.8 KiB | [pgxicor_13-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgxicor_13-0.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgxicor_13` | 0.1.0 | `el10.aarch64` | pigsty | 26.0 KiB | [pgxicor_13-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgxicor_13-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pgxicor` | 0.1.0 | `d12.x86_64` | pigsty | 25.4 KiB | [postgresql-13-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-13-pgxicor_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgxicor` | 0.1.0 | `d12.aarch64` | pigsty | 25.4 KiB | [postgresql-13-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgxicor/postgresql-13-pgxicor_0.1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pgxicor` | 0.1.0 | `u22.x86_64` | pigsty | 27.0 KiB | [postgresql-13-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgxicor/postgresql-13-pgxicor_0.1.0-1PIGSTY~jammy_amd64.deb) |

@@ -37,12 +37,12 @@ Simple file storage for arrays of floats
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "floatfile_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "floatfile_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.3.1" "floatfile_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "floatfile_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-13-floatfile : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-13-floatfile : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-floatfile : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Simple file storage for arrays of floats
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-13-floatfile : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatfile_17` | 1.3.1 | `el8.x86_64` | pigsty | 26.3 KiB | [floatfile_17-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_17-1.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatfile_17` | 1.3.1 | `el8.aarch64` | pigsty | 25.8 KiB | [floatfile_17-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_17-1.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatfile_17` | 1.3.1 | `el9.x86_64` | pigsty | 27.5 KiB | [floatfile_17-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_17-1.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatfile_17` | 1.3.1 | `el9.aarch64` | pigsty | 26.3 KiB | [floatfile_17-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_17-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_18` | 1.3.1 | `el8.x86_64` | pigsty | 27.4 KiB | [floatfile_18-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_18-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_18` | 1.3.1 | `el8.aarch64` | pigsty | 27.0 KiB | [floatfile_18-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_18-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_18` | 1.3.1 | `el9.x86_64` | pigsty | 27.9 KiB | [floatfile_18-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_18-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_18` | 1.3.1 | `el9.aarch64` | pigsty | 26.8 KiB | [floatfile_18-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_18-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_18` | 1.3.1 | `el10.x86_64` | pigsty | 28.6 KiB | [floatfile_18-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_18-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_18` | 1.3.1 | `el10.aarch64` | pigsty | 27.0 KiB | [floatfile_18-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_18-1.3.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `floatfile_17` | 1.3.1 | `el8.x86_64` | pigsty | 27.4 KiB | [floatfile_17-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_17-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_17` | 1.3.1 | `el8.aarch64` | pigsty | 27.0 KiB | [floatfile_17-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_17-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_17` | 1.3.1 | `el9.x86_64` | pigsty | 27.9 KiB | [floatfile_17-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_17-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_17` | 1.3.1 | `el9.aarch64` | pigsty | 26.8 KiB | [floatfile_17-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_17-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_17` | 1.3.1 | `el10.x86_64` | pigsty | 28.6 KiB | [floatfile_17-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_17-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_17` | 1.3.1 | `el10.aarch64` | pigsty | 27.0 KiB | [floatfile_17-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_17-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-floatfile` | 1.3.1 | `d12.x86_64` | pigsty | 45.7 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-floatfile` | 1.3.1 | `d12.aarch64` | pigsty | 44.6 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-floatfile` | 1.3.1 | `u22.x86_64` | pigsty | 48.0 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Simple file storage for arrays of floats
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatfile_16` | 1.3.1 | `el8.x86_64` | pigsty | 26.3 KiB | [floatfile_16-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_16-1.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatfile_16` | 1.3.1 | `el8.aarch64` | pigsty | 25.8 KiB | [floatfile_16-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_16-1.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatfile_16` | 1.3.1 | `el9.x86_64` | pigsty | 27.5 KiB | [floatfile_16-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_16-1.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatfile_16` | 1.3.1 | `el9.aarch64` | pigsty | 26.4 KiB | [floatfile_16-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_16-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_16` | 1.3.1 | `el8.x86_64` | pigsty | 27.4 KiB | [floatfile_16-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_16-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_16` | 1.3.1 | `el8.aarch64` | pigsty | 27.0 KiB | [floatfile_16-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_16-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_16` | 1.3.1 | `el9.x86_64` | pigsty | 27.9 KiB | [floatfile_16-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_16-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_16` | 1.3.1 | `el9.aarch64` | pigsty | 26.8 KiB | [floatfile_16-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_16-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_16` | 1.3.1 | `el10.x86_64` | pigsty | 28.6 KiB | [floatfile_16-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_16-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_16` | 1.3.1 | `el10.aarch64` | pigsty | 27.0 KiB | [floatfile_16-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_16-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-floatfile` | 1.3.1 | `d12.x86_64` | pigsty | 45.7 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-floatfile` | 1.3.1 | `d12.aarch64` | pigsty | 44.5 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-floatfile` | 1.3.1 | `u22.x86_64` | pigsty | 48.0 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Simple file storage for arrays of floats
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatfile_15` | 1.3.1 | `el8.x86_64` | pigsty | 26.5 KiB | [floatfile_15-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_15-1.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatfile_15` | 1.3.1 | `el8.aarch64` | pigsty | 25.9 KiB | [floatfile_15-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_15-1.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatfile_15` | 1.3.1 | `el9.x86_64` | pigsty | 27.6 KiB | [floatfile_15-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_15-1.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatfile_15` | 1.3.1 | `el9.aarch64` | pigsty | 26.5 KiB | [floatfile_15-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_15-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_15` | 1.3.1 | `el8.x86_64` | pigsty | 27.5 KiB | [floatfile_15-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_15-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_15` | 1.3.1 | `el8.aarch64` | pigsty | 27.0 KiB | [floatfile_15-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_15-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_15` | 1.3.1 | `el9.x86_64` | pigsty | 28.1 KiB | [floatfile_15-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_15-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_15` | 1.3.1 | `el9.aarch64` | pigsty | 27.0 KiB | [floatfile_15-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_15-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_15` | 1.3.1 | `el10.x86_64` | pigsty | 28.4 KiB | [floatfile_15-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_15-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_15` | 1.3.1 | `el10.aarch64` | pigsty | 26.9 KiB | [floatfile_15-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_15-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-floatfile` | 1.3.1 | `d12.x86_64` | pigsty | 45.8 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-floatfile` | 1.3.1 | `d12.aarch64` | pigsty | 44.7 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-floatfile` | 1.3.1 | `u22.x86_64` | pigsty | 48.1 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Simple file storage for arrays of floats
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatfile_14` | 1.3.1 | `el8.x86_64` | pigsty | 26.4 KiB | [floatfile_14-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_14-1.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatfile_14` | 1.3.1 | `el8.aarch64` | pigsty | 25.9 KiB | [floatfile_14-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_14-1.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatfile_14` | 1.3.1 | `el9.x86_64` | pigsty | 27.6 KiB | [floatfile_14-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_14-1.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatfile_14` | 1.3.1 | `el9.aarch64` | pigsty | 26.5 KiB | [floatfile_14-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_14-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_14` | 1.3.1 | `el8.x86_64` | pigsty | 27.5 KiB | [floatfile_14-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_14-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_14` | 1.3.1 | `el8.aarch64` | pigsty | 27.1 KiB | [floatfile_14-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_14-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_14` | 1.3.1 | `el9.x86_64` | pigsty | 28.0 KiB | [floatfile_14-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_14-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_14` | 1.3.1 | `el9.aarch64` | pigsty | 26.9 KiB | [floatfile_14-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_14-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_14` | 1.3.1 | `el10.x86_64` | pigsty | 28.4 KiB | [floatfile_14-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_14-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_14` | 1.3.1 | `el10.aarch64` | pigsty | 26.9 KiB | [floatfile_14-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_14-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-floatfile` | 1.3.1 | `d12.x86_64` | pigsty | 45.7 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-floatfile` | 1.3.1 | `d12.aarch64` | pigsty | 44.6 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-floatfile` | 1.3.1 | `u22.x86_64` | pigsty | 48.1 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ Simple file storage for arrays of floats
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatfile_13` | 1.3.1 | `el8.x86_64` | pigsty | 26.1 KiB | [floatfile_13-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_13-1.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatfile_13` | 1.3.1 | `el8.aarch64` | pigsty | 25.9 KiB | [floatfile_13-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_13-1.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatfile_13` | 1.3.1 | `el9.x86_64` | pigsty | 27.5 KiB | [floatfile_13-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_13-1.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatfile_13` | 1.3.1 | `el9.aarch64` | pigsty | 26.5 KiB | [floatfile_13-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_13-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_13` | 1.3.1 | `el8.x86_64` | pigsty | 27.2 KiB | [floatfile_13-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatfile_13-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatfile_13` | 1.3.1 | `el8.aarch64` | pigsty | 27.0 KiB | [floatfile_13-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatfile_13-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatfile_13` | 1.3.1 | `el9.x86_64` | pigsty | 28.0 KiB | [floatfile_13-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatfile_13-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatfile_13` | 1.3.1 | `el9.aarch64` | pigsty | 26.9 KiB | [floatfile_13-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatfile_13-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatfile_13` | 1.3.1 | `el10.x86_64` | pigsty | 28.2 KiB | [floatfile_13-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatfile_13-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatfile_13` | 1.3.1 | `el10.aarch64` | pigsty | 26.9 KiB | [floatfile_13-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatfile_13-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-floatfile` | 1.3.1 | `d12.x86_64` | pigsty | 45.6 KiB | [postgresql-13-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-13-floatfile_1.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-floatfile` | 1.3.1 | `d12.aarch64` | pigsty | 44.7 KiB | [postgresql-13-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatfile/postgresql-13-floatfile_1.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-floatfile` | 1.3.1 | `u22.x86_64` | pigsty | 47.9 KiB | [postgresql-13-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-13-floatfile_1.3.1-1PIGSTY~jammy_amd64.deb) |

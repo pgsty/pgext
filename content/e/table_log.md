@@ -41,8 +41,8 @@ record table modification logs and PITR for table/row
 |    `el8.aarch64`    | {{< bg "PIGSTY 0.6.4" "table_log_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 0.6.4" "table_log_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 0.6.4" "table_log_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "table_log_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "table_log_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "table_log_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.6.4" "table_log_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.6.4" "table_log_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.4" "table_log_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-13-tablelog : AVAIL 1" "blue" >}} |
 |    `d12.aarch64`    | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-13-tablelog : AVAIL 1" "blue" >}} |
 |    `d13.x86_64`    | {{< bg "PGDG 0.6.4" "postgresql-18-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-17-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-16-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-15-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-14-tablelog : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.6.4" "postgresql-13-tablelog : AVAIL 1" "blue" >}} |
@@ -58,10 +58,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_18` | 0.6.4 | `el8.x86_64` | pigsty | 29.3 KiB | [table_log_18-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_18-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_18` | 0.6.4 | `el8.aarch64` | pigsty | 28.4 KiB | [table_log_18-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_18-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_18` | 0.6.4 | `el9.x86_64` | pigsty | 29.8 KiB | [table_log_18-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_18-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_18` | 0.6.4 | `el9.aarch64` | pigsty | 28.3 KiB | [table_log_18-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_18-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_18` | 0.6.4 | `el8.x86_64` | pigsty | 29.6 KiB | [table_log_18-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_18-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_18` | 0.6.4 | `el8.aarch64` | pigsty | 28.8 KiB | [table_log_18-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_18-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_18` | 0.6.4 | `el9.x86_64` | pigsty | 29.9 KiB | [table_log_18-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_18-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_18` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_18-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_18-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_18` | 0.6.4 | `el10.x86_64` | pigsty | 29.8 KiB | [table_log_18-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_18-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_18` | 0.6.4 | `el10.aarch64` | pigsty | 29.0 KiB | [table_log_18-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_18-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-18-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.6 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-18-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 45.2 KiB | [postgresql-18-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-18-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |
@@ -76,10 +78,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_17` | 0.6.4 | `el8.x86_64` | pigsty | 29.3 KiB | [table_log_17-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_17-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_17` | 0.6.4 | `el8.aarch64` | pigsty | 28.4 KiB | [table_log_17-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_17-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_17` | 0.6.4 | `el9.x86_64` | pigsty | 29.7 KiB | [table_log_17-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_17-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_17` | 0.6.4 | `el9.aarch64` | pigsty | 28.5 KiB | [table_log_17-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_17-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_17` | 0.6.4 | `el8.x86_64` | pigsty | 29.5 KiB | [table_log_17-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_17-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_17` | 0.6.4 | `el8.aarch64` | pigsty | 28.7 KiB | [table_log_17-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_17-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_17` | 0.6.4 | `el9.x86_64` | pigsty | 29.8 KiB | [table_log_17-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_17-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_17` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_17-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_17-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_17` | 0.6.4 | `el10.x86_64` | pigsty | 29.8 KiB | [table_log_17-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_17-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_17` | 0.6.4 | `el10.aarch64` | pigsty | 29.0 KiB | [table_log_17-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_17-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 45.2 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-17-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.6 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-17-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 45.1 KiB | [postgresql-17-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-17-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |
@@ -94,10 +98,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_16` | 0.6.4 | `el8.x86_64` | pigsty | 29.3 KiB | [table_log_16-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_16-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_16` | 0.6.4 | `el8.aarch64` | pigsty | 28.4 KiB | [table_log_16-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_16-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_16` | 0.6.4 | `el9.x86_64` | pigsty | 29.7 KiB | [table_log_16-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_16-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_16` | 0.6.4 | `el9.aarch64` | pigsty | 28.5 KiB | [table_log_16-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_16-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_16` | 0.6.4 | `el8.x86_64` | pigsty | 29.5 KiB | [table_log_16-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_16-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_16` | 0.6.4 | `el8.aarch64` | pigsty | 28.8 KiB | [table_log_16-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_16-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_16` | 0.6.4 | `el9.x86_64` | pigsty | 29.8 KiB | [table_log_16-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_16-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_16` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_16-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_16-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_16` | 0.6.4 | `el10.x86_64` | pigsty | 29.8 KiB | [table_log_16-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_16-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_16` | 0.6.4 | `el10.aarch64` | pigsty | 29.0 KiB | [table_log_16-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_16-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 45.2 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-16-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.6 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-16-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 45.1 KiB | [postgresql-16-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-16-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |
@@ -112,10 +118,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_15` | 0.6.4 | `el8.x86_64` | pigsty | 29.3 KiB | [table_log_15-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_15-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_15` | 0.6.4 | `el8.aarch64` | pigsty | 28.5 KiB | [table_log_15-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_15-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_15` | 0.6.4 | `el9.x86_64` | pigsty | 29.8 KiB | [table_log_15-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_15-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_15` | 0.6.4 | `el9.aarch64` | pigsty | 28.5 KiB | [table_log_15-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_15-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_15` | 0.6.4 | `el8.x86_64` | pigsty | 29.6 KiB | [table_log_15-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_15-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_15` | 0.6.4 | `el8.aarch64` | pigsty | 28.8 KiB | [table_log_15-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_15-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_15` | 0.6.4 | `el9.x86_64` | pigsty | 29.9 KiB | [table_log_15-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_15-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_15` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_15-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_15-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_15` | 0.6.4 | `el10.x86_64` | pigsty | 29.8 KiB | [table_log_15-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_15-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_15` | 0.6.4 | `el10.aarch64` | pigsty | 29.1 KiB | [table_log_15-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_15-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 45.2 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-15-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.6 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-15-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 45.2 KiB | [postgresql-15-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-15-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |
@@ -130,10 +138,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_14` | 0.6.4 | `el8.x86_64` | pigsty | 29.3 KiB | [table_log_14-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_14-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_14` | 0.6.4 | `el8.aarch64` | pigsty | 28.5 KiB | [table_log_14-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_14-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_14` | 0.6.4 | `el9.x86_64` | pigsty | 29.8 KiB | [table_log_14-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_14-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_14` | 0.6.4 | `el9.aarch64` | pigsty | 28.5 KiB | [table_log_14-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_14-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_14` | 0.6.4 | `el8.x86_64` | pigsty | 29.6 KiB | [table_log_14-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_14-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_14` | 0.6.4 | `el8.aarch64` | pigsty | 28.8 KiB | [table_log_14-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_14-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_14` | 0.6.4 | `el9.x86_64` | pigsty | 29.9 KiB | [table_log_14-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_14-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_14` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_14-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_14-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_14` | 0.6.4 | `el10.x86_64` | pigsty | 29.8 KiB | [table_log_14-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_14-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_14` | 0.6.4 | `el10.aarch64` | pigsty | 29.1 KiB | [table_log_14-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_14-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 45.2 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-14-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.6 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-14-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 45.1 KiB | [postgresql-14-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-14-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |
@@ -148,10 +158,12 @@ record table modification logs and PITR for table/row
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `table_log_13` | 0.6.4 | `el8.x86_64` | pigsty | 29.0 KiB | [table_log_13-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_13-0.6.4-1PIGSTY.el8.x86_64.rpm) |
-| `table_log_13` | 0.6.4 | `el8.aarch64` | pigsty | 28.3 KiB | [table_log_13-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_13-0.6.4-1PIGSTY.el8.aarch64.rpm) |
-| `table_log_13` | 0.6.4 | `el9.x86_64` | pigsty | 29.6 KiB | [table_log_13-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_13-0.6.4-1PIGSTY.el9.x86_64.rpm) |
-| `table_log_13` | 0.6.4 | `el9.aarch64` | pigsty | 28.5 KiB | [table_log_13-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_13-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_13` | 0.6.4 | `el8.x86_64` | pigsty | 29.2 KiB | [table_log_13-0.6.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/table_log_13-0.6.4-1PIGSTY.el8.x86_64.rpm) |
+| `table_log_13` | 0.6.4 | `el8.aarch64` | pigsty | 28.6 KiB | [table_log_13-0.6.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/table_log_13-0.6.4-1PIGSTY.el8.aarch64.rpm) |
+| `table_log_13` | 0.6.4 | `el9.x86_64` | pigsty | 29.7 KiB | [table_log_13-0.6.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/table_log_13-0.6.4-1PIGSTY.el9.x86_64.rpm) |
+| `table_log_13` | 0.6.4 | `el9.aarch64` | pigsty | 28.6 KiB | [table_log_13-0.6.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/table_log_13-0.6.4-1PIGSTY.el9.aarch64.rpm) |
+| `table_log_13` | 0.6.4 | `el10.x86_64` | pigsty | 29.7 KiB | [table_log_13-0.6.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/table_log_13-0.6.4-1PIGSTY.el10.x86_64.rpm) |
+| `table_log_13` | 0.6.4 | `el10.aarch64` | pigsty | 29.0 KiB | [table_log_13-0.6.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/table_log_13-0.6.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-tablelog` | 0.6.4 | `d12.x86_64` | pgdg | 44.9 KiB | [postgresql-13-tablelog_0.6.4-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-13-tablelog_0.6.4-4.pgdg12+1_amd64.deb) |
 | `postgresql-13-tablelog` | 0.6.4 | `d12.aarch64` | pgdg | 43.4 KiB | [postgresql-13-tablelog_0.6.4-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-13-tablelog_0.6.4-4.pgdg12+1_arm64.deb) |
 | `postgresql-13-tablelog` | 0.6.4 | `d13.x86_64` | pgdg | 44.7 KiB | [postgresql-13-tablelog_0.6.4-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tablelog/postgresql-13-tablelog_0.6.4-4.pgdg13+1_amd64.deb) |

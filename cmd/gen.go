@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"pgext/cli"
+	"sync"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -327,16 +328,17 @@ var genCatalogCmd = &cobra.Command{
 
 // genOSCmd generates OS-specific availability pages
 var genOSCmd = &cobra.Command{
-	Use:   "os <os-name>",
-	Short: "Generate OS-specific availability page",
-	Long:  `Generate a markdown page showing extension availability for a specific OS distribution`,
-	Example: `  pgext gen os el9.x86_64    # Generate page for RHEL 9 x86_64
+	Use:   "os [os-name]",
+	Short: "Generate OS-specific availability page(s)",
+	Long:  `Generate markdown page(s) showing extension availability for specific OS distribution(s).
+If no argument is provided, generates pages for all active OS distributions.`,
+	Example: `  pgext gen os               # Generate pages for all active OS distributions
+  pgext gen os el9.x86_64    # Generate page for RHEL 9 x86_64
   pgext gen os u24.x86_64    # Generate page for Ubuntu 24.04 x86_64
   pgext gen os el10.aarch64  # Generate page for RHEL 10 ARM64`,
-	Args: cobra.ExactArgs(1),
+	Args: cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := context.Background()
-		osName := args[0]
 
 		// Initialize database connection
 		if err := cli.InitDB(dbURL); err != nil {
@@ -357,13 +359,98 @@ var genOSCmd = &cobra.Command{
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
 
-		// Generate OS page
 		generator := cli.NewOSGenerator(cache, listDir)
-		if err := generator.GenerateOSPage(ctx, osName); err != nil {
-			return fmt.Errorf("failed to generate OS page for %s: %w", osName, err)
+
+		// Determine which OS pages to generate
+		var osList []string
+		if len(args) == 0 {
+			// No argument provided, get all active OS
+			logrus.Info("Getting all active OS distributions...")
+			osList, err = cli.GetActiveOS(ctx)
+			if err != nil {
+				return fmt.Errorf("failed to get active OS list: %w", err)
+			}
+			if len(osList) == 0 {
+				return fmt.Errorf("no active OS distributions found")
+			}
+			logrus.Infof("Found %d active OS distributions to generate", len(osList))
+		} else {
+			// Single OS specified
+			osList = []string{args[0]}
 		}
 
-		logrus.Infof("Successfully generated OS page: %s.md", osName)
+		// Generate pages (in parallel for multiple OS)
+		if len(osList) == 1 {
+			// Single OS, generate directly
+			osName := osList[0]
+			logrus.Infof("Generating OS page for %s...", osName)
+			if err := generator.GenerateOSPage(ctx, osName); err != nil {
+				return fmt.Errorf("failed to generate OS page for %s: %w", osName, err)
+			}
+			logrus.Infof("Successfully generated OS page: %s.md", osName)
+			return nil
+		}
+
+		// Multiple OS, use parallel generation
+		type result struct {
+			os      string
+			success bool
+			err     error
+		}
+
+		// Create channels for coordination
+		results := make(chan result, len(osList))
+		// Use 8 parallel workers by default for generation
+		const maxParallel = 8
+		semaphore := make(chan struct{}, maxParallel)
+		var wg sync.WaitGroup
+
+		// Launch goroutines to generate pages
+		for _, osName := range osList {
+			wg.Add(1)
+			go func(os string) {
+				defer wg.Done()
+				semaphore <- struct{}{}        // Acquire semaphore
+				defer func() { <-semaphore }() // Release semaphore
+
+				logrus.Infof("Generating OS page for %s...", os)
+				err := generator.GenerateOSPage(ctx, os)
+				if err != nil {
+					logrus.Errorf("Failed to generate OS page for %s: %v", os, err)
+					results <- result{os: os, success: false, err: err}
+				} else {
+					logrus.Infof("Successfully generated OS page: %s.md", os)
+					results <- result{os: os, success: true, err: nil}
+				}
+			}(osName)
+		}
+
+		// Wait for all goroutines to complete
+		go func() {
+			wg.Wait()
+			close(results)
+		}()
+
+		// Collect results
+		successCount := 0
+		failedOS := []string{}
+		for res := range results {
+			if res.success {
+				successCount++
+			} else {
+				failedOS = append(failedOS, res.os)
+			}
+		}
+
+		logrus.Infof("Successfully generated %d/%d OS pages", successCount, len(osList))
+
+		if len(failedOS) > 0 {
+			logrus.Warnf("Failed to generate pages for: %v", failedOS)
+		}
+
+		if successCount == 0 {
+			return fmt.Errorf("failed to generate any OS pages")
+		}
 		return nil
 	},
 }

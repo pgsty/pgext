@@ -27,7 +27,7 @@ func ShowPackage(pkgName string) error {
 	ctx := context.Background()
 
 	// Get active OS and PG versions
-	osList, err := getActiveOS(ctx)
+	osList, err := GetActiveOS(ctx)
 	if err != nil {
 		return fmt.Errorf("get active OS: %w", err)
 	}
@@ -57,8 +57,8 @@ func ShowPackage(pkgName string) error {
 	return nil
 }
 
-// getActiveOS retrieves active OS list from database.
-func getActiveOS(ctx context.Context) ([]string, error) {
+// GetActiveOS retrieves active OS list from database.
+func GetActiveOS(ctx context.Context) ([]string, error) {
 	query := "SELECT os FROM pgext.active_os ORDER BY os"
 
 	rows, err := QueryContext(ctx, query)

@@ -37,12 +37,12 @@ QR Code generator from PostgreSQL
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pgqr_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgqr_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0" "pgqr_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pgqr_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgqr : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pgqr : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgqr : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pgqr : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgqr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgqr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgqr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgqr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgqr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgqr : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ QR Code generator from PostgreSQL
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgqr : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgqr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pgqr : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgqr_17` | 1.0 | `el8.x86_64` | pigsty | 23.9 KiB | [pgqr_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgqr_17` | 1.0 | `el8.aarch64` | pigsty | 23.0 KiB | [pgqr_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgqr_17` | 1.0 | `el9.x86_64` | pigsty | 23.7 KiB | [pgqr_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_17-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgqr_17` | 1.0 | `el9.aarch64` | pigsty | 23.1 KiB | [pgqr_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_18` | 1.0 | `el8.x86_64` | pigsty | 24.5 KiB | [pgqr_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_18-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_18` | 1.0 | `el8.aarch64` | pigsty | 23.8 KiB | [pgqr_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_18-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_18` | 1.0 | `el9.x86_64` | pigsty | 24.0 KiB | [pgqr_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_18-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgqr_18` | 1.0 | `el9.aarch64` | pigsty | 23.6 KiB | [pgqr_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_18` | 1.0 | `el10.x86_64` | pigsty | 24.8 KiB | [pgqr_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_18` | 1.0 | `el10.aarch64` | pigsty | 23.9 KiB | [pgqr_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_18-1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgqr_17` | 1.0 | `el8.x86_64` | pigsty | 24.5 KiB | [pgqr_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_17-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_17` | 1.0 | `el8.aarch64` | pigsty | 23.8 KiB | [pgqr_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_17` | 1.0 | `el9.x86_64` | pigsty | 24.0 KiB | [pgqr_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgqr_17` | 1.0 | `el9.aarch64` | pigsty | 23.6 KiB | [pgqr_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_17` | 1.0 | `el10.x86_64` | pigsty | 24.8 KiB | [pgqr_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_17` | 1.0 | `el10.aarch64` | pigsty | 23.9 KiB | [pgqr_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_17-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgqr` | 1.0 | `d12.x86_64` | pigsty | 48.9 KiB | [postgresql-17-pgqr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-17-pgqr_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgqr` | 1.0 | `d12.aarch64` | pigsty | 47.3 KiB | [postgresql-17-pgqr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-17-pgqr_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgqr` | 1.0 | `u22.x86_64` | pigsty | 50.9 KiB | [postgresql-17-pgqr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgqr/postgresql-17-pgqr_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ QR Code generator from PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgqr_16` | 1.0 | `el8.x86_64` | pigsty | 23.8 KiB | [pgqr_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgqr_16` | 1.0 | `el8.aarch64` | pigsty | 23.0 KiB | [pgqr_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_16-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_16` | 1.0 | `el8.x86_64` | pigsty | 24.5 KiB | [pgqr_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_16-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_16` | 1.0 | `el8.aarch64` | pigsty | 23.8 KiB | [pgqr_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_16-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgqr_16` | 1.0 | `el9.x86_64` | pigsty | 23.8 KiB | [pgqr_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgqr_16` | 1.0 | `el9.aarch64` | pigsty | 23.3 KiB | [pgqr_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_16` | 1.0 | `el9.aarch64` | pigsty | 23.6 KiB | [pgqr_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_16` | 1.0 | `el10.x86_64` | pigsty | 24.8 KiB | [pgqr_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_16-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_16` | 1.0 | `el10.aarch64` | pigsty | 23.9 KiB | [pgqr_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_16-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgqr` | 1.0 | `d12.x86_64` | pigsty | 48.9 KiB | [postgresql-16-pgqr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-16-pgqr_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgqr` | 1.0 | `d12.aarch64` | pigsty | 47.3 KiB | [postgresql-16-pgqr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-16-pgqr_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgqr` | 1.0 | `u22.x86_64` | pigsty | 50.9 KiB | [postgresql-16-pgqr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgqr/postgresql-16-pgqr_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ QR Code generator from PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgqr_15` | 1.0 | `el8.x86_64` | pigsty | 24.4 KiB | [pgqr_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgqr_15` | 1.0 | `el8.aarch64` | pigsty | 23.6 KiB | [pgqr_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_15` | 1.0 | `el8.x86_64` | pigsty | 24.8 KiB | [pgqr_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_15-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_15` | 1.0 | `el8.aarch64` | pigsty | 24.2 KiB | [pgqr_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_15-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgqr_15` | 1.0 | `el9.x86_64` | pigsty | 24.8 KiB | [pgqr_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_15-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgqr_15` | 1.0 | `el9.aarch64` | pigsty | 24.2 KiB | [pgqr_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_15` | 1.0 | `el9.aarch64` | pigsty | 24.5 KiB | [pgqr_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_15` | 1.0 | `el10.x86_64` | pigsty | 25.7 KiB | [pgqr_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_15-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_15` | 1.0 | `el10.aarch64` | pigsty | 25.0 KiB | [pgqr_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_15-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgqr` | 1.0 | `d12.x86_64` | pigsty | 48.7 KiB | [postgresql-15-pgqr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-15-pgqr_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgqr` | 1.0 | `d12.aarch64` | pigsty | 47.3 KiB | [postgresql-15-pgqr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-15-pgqr_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgqr` | 1.0 | `u22.x86_64` | pigsty | 51.3 KiB | [postgresql-15-pgqr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgqr/postgresql-15-pgqr_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ QR Code generator from PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgqr_14` | 1.0 | `el8.x86_64` | pigsty | 24.3 KiB | [pgqr_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgqr_14` | 1.0 | `el8.aarch64` | pigsty | 23.6 KiB | [pgqr_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_14` | 1.0 | `el8.x86_64` | pigsty | 24.8 KiB | [pgqr_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_14-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_14` | 1.0 | `el8.aarch64` | pigsty | 24.2 KiB | [pgqr_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_14-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgqr_14` | 1.0 | `el9.x86_64` | pigsty | 24.8 KiB | [pgqr_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgqr_14` | 1.0 | `el9.aarch64` | pigsty | 24.2 KiB | [pgqr_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_14` | 1.0 | `el9.aarch64` | pigsty | 24.5 KiB | [pgqr_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_14` | 1.0 | `el10.x86_64` | pigsty | 25.7 KiB | [pgqr_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_14-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_14` | 1.0 | `el10.aarch64` | pigsty | 24.9 KiB | [pgqr_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_14-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgqr` | 1.0 | `d12.x86_64` | pigsty | 48.7 KiB | [postgresql-14-pgqr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-14-pgqr_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgqr` | 1.0 | `d12.aarch64` | pigsty | 47.2 KiB | [postgresql-14-pgqr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-14-pgqr_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pgqr` | 1.0 | `u22.x86_64` | pigsty | 51.3 KiB | [postgresql-14-pgqr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgqr/postgresql-14-pgqr_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ QR Code generator from PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgqr_13` | 1.0 | `el8.x86_64` | pigsty | 24.3 KiB | [pgqr_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgqr_13` | 1.0 | `el8.aarch64` | pigsty | 23.6 KiB | [pgqr_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgqr_13` | 1.0 | `el8.x86_64` | pigsty | 24.7 KiB | [pgqr_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgqr_13-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgqr_13` | 1.0 | `el8.aarch64` | pigsty | 24.2 KiB | [pgqr_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgqr_13-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgqr_13` | 1.0 | `el9.x86_64` | pigsty | 24.8 KiB | [pgqr_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgqr_13-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgqr_13` | 1.0 | `el9.aarch64` | pigsty | 24.2 KiB | [pgqr_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_13` | 1.0 | `el9.aarch64` | pigsty | 24.5 KiB | [pgqr_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgqr_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgqr_13` | 1.0 | `el10.x86_64` | pigsty | 25.7 KiB | [pgqr_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgqr_13-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgqr_13` | 1.0 | `el10.aarch64` | pigsty | 24.9 KiB | [pgqr_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgqr_13-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pgqr` | 1.0 | `d12.x86_64` | pigsty | 48.6 KiB | [postgresql-13-pgqr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-13-pgqr_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgqr` | 1.0 | `d12.aarch64` | pigsty | 47.2 KiB | [postgresql-13-pgqr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgqr/postgresql-13-pgqr_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pgqr` | 1.0 | `u22.x86_64` | pigsty | 51.2 KiB | [postgresql-13-pgqr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgqr/postgresql-13-pgqr_1.0-1PIGSTY~jammy_amd64.deb) |

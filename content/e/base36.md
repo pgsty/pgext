@@ -37,12 +37,12 @@ Integer Base36 types
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_base36_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_base36_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0.0" "pg_base36_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_base36_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-base36 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-base36 : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-base36 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-base36 : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-base36 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-base36 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-base36 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-base36 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-base36 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-base36 : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Integer Base36 types
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-base36 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-base36 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-base36 : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_base36_17` | 1.0.0 | `el8.x86_64` | pigsty | 15.0 KiB | [pg_base36_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_base36_17` | 1.0.0 | `el8.aarch64` | pigsty | 14.7 KiB | [pg_base36_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_base36_17` | 1.0.0 | `el9.x86_64` | pigsty | 14.5 KiB | [pg_base36_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_base36_17` | 1.0.0 | `el9.aarch64` | pigsty | 14.5 KiB | [pg_base36_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el8.x86_64` | pigsty | 15.1 KiB | [pg_base36_18-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_18-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el8.aarch64` | pigsty | 15.1 KiB | [pg_base36_18-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_18-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pg_base36_18-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_18-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_18-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_18-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el10.x86_64` | pigsty | 14.5 KiB | [pg_base36_18-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_18-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_18` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_18-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_18-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_base36_17` | 1.0.0 | `el8.x86_64` | pigsty | 15.1 KiB | [pg_base36_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_17` | 1.0.0 | `el8.aarch64` | pigsty | 15.1 KiB | [pg_base36_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_17` | 1.0.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pg_base36_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_17` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_17` | 1.0.0 | `el10.x86_64` | pigsty | 14.6 KiB | [pg_base36_17-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_17-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_17` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_17-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_17-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-base36` | 1.0.0 | `d12.x86_64` | pigsty | 15.2 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-base36` | 1.0.0 | `d12.aarch64` | pigsty | 15.2 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-base36` | 1.0.0 | `u22.x86_64` | pigsty | 16.0 KiB | [postgresql-17-base36_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/b/base36/postgresql-17-base36_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Integer Base36 types
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_base36_16` | 1.0.0 | `el8.x86_64` | pigsty | 15.0 KiB | [pg_base36_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_base36_16` | 1.0.0 | `el8.aarch64` | pigsty | 14.7 KiB | [pg_base36_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_base36_16` | 1.0.0 | `el9.x86_64` | pigsty | 14.6 KiB | [pg_base36_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_base36_16` | 1.0.0 | `el9.aarch64` | pigsty | 14.5 KiB | [pg_base36_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el8.x86_64` | pigsty | 15.1 KiB | [pg_base36_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el8.aarch64` | pigsty | 15.1 KiB | [pg_base36_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pg_base36_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el10.x86_64` | pigsty | 14.6 KiB | [pg_base36_16-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_16-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_16` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_16-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_16-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-base36` | 1.0.0 | `d12.x86_64` | pigsty | 15.2 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-base36` | 1.0.0 | `d12.aarch64` | pigsty | 15.2 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-base36` | 1.0.0 | `u22.x86_64` | pigsty | 16.0 KiB | [postgresql-16-base36_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/b/base36/postgresql-16-base36_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Integer Base36 types
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_base36_15` | 1.0.0 | `el8.x86_64` | pigsty | 15.0 KiB | [pg_base36_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_base36_15` | 1.0.0 | `el8.aarch64` | pigsty | 14.7 KiB | [pg_base36_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_base36_15` | 1.0.0 | `el9.x86_64` | pigsty | 14.6 KiB | [pg_base36_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_base36_15` | 1.0.0 | `el9.aarch64` | pigsty | 14.5 KiB | [pg_base36_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el8.x86_64` | pigsty | 15.1 KiB | [pg_base36_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el8.aarch64` | pigsty | 15.1 KiB | [pg_base36_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pg_base36_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el10.x86_64` | pigsty | 14.5 KiB | [pg_base36_15-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_15-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_15` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_15-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_15-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-base36` | 1.0.0 | `d12.x86_64` | pigsty | 15.1 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-base36` | 1.0.0 | `d12.aarch64` | pigsty | 15.2 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-base36` | 1.0.0 | `u22.x86_64` | pigsty | 16.0 KiB | [postgresql-15-base36_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/b/base36/postgresql-15-base36_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Integer Base36 types
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_base36_14` | 1.0.0 | `el8.x86_64` | pigsty | 14.9 KiB | [pg_base36_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_base36_14` | 1.0.0 | `el8.aarch64` | pigsty | 14.7 KiB | [pg_base36_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_base36_14` | 1.0.0 | `el9.x86_64` | pigsty | 14.5 KiB | [pg_base36_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_base36_14` | 1.0.0 | `el9.aarch64` | pigsty | 14.5 KiB | [pg_base36_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el8.x86_64` | pigsty | 15.1 KiB | [pg_base36_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el8.aarch64` | pigsty | 15.1 KiB | [pg_base36_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el9.x86_64` | pigsty | 14.3 KiB | [pg_base36_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el10.x86_64` | pigsty | 14.5 KiB | [pg_base36_14-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_14-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_14` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_14-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_14-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-base36` | 1.0.0 | `d12.x86_64` | pigsty | 15.1 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-base36` | 1.0.0 | `d12.aarch64` | pigsty | 15.2 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-base36` | 1.0.0 | `u22.x86_64` | pigsty | 15.9 KiB | [postgresql-14-base36_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/b/base36/postgresql-14-base36_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ Integer Base36 types
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_base36_13` | 1.0.0 | `el8.x86_64` | pigsty | 14.8 KiB | [pg_base36_13-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_13-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_base36_13` | 1.0.0 | `el8.aarch64` | pigsty | 14.7 KiB | [pg_base36_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_base36_13` | 1.0.0 | `el9.x86_64` | pigsty | 14.5 KiB | [pg_base36_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_base36_13` | 1.0.0 | `el9.aarch64` | pigsty | 14.5 KiB | [pg_base36_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el8.x86_64` | pigsty | 15.0 KiB | [pg_base36_13-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_base36_13-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el8.aarch64` | pigsty | 15.0 KiB | [pg_base36_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_base36_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el9.x86_64` | pigsty | 14.3 KiB | [pg_base36_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_base36_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pg_base36_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_base36_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el10.x86_64` | pigsty | 14.5 KiB | [pg_base36_13-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_base36_13-1.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_base36_13` | 1.0.0 | `el10.aarch64` | pigsty | 14.7 KiB | [pg_base36_13-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_base36_13-1.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-base36` | 1.0.0 | `d12.x86_64` | pigsty | 14.8 KiB | [postgresql-13-base36_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-13-base36_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-base36` | 1.0.0 | `d12.aarch64` | pigsty | 14.9 KiB | [postgresql-13-base36_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/b/base36/postgresql-13-base36_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-base36` | 1.0.0 | `u22.x86_64` | pigsty | 15.7 KiB | [postgresql-13-base36_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/b/base36/postgresql-13-base36_1.0.0-1PIGSTY~jammy_amd64.deb) |

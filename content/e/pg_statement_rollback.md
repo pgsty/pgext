@@ -31,8 +31,8 @@ Server side rollback at statement level for PostgreSQL like Oracle or DB2
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_statement_rollback" >}} | `1.4` | {{< bg "18" "pg_statement_rollback_18*" "red" >}} {{< bg "17" "pg_statement_rollback_17*" "green" >}} {{< bg "16" "pg_statement_rollback_16*" "green" >}} {{< bg "15" "pg_statement_rollback_15*" "green" >}} {{< bg "14" "pg_statement_rollback_14*" "green" >}} {{< bg "13" "pg_statement_rollback_13*" "green" >}} | `pg_statement_rollback_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_statement_rollback" >}} | `1.4` | {{< bg "18" "postgresql-18-pg-statement-rollback" "red" >}} {{< bg "17" "postgresql-17-pg-statement-rollback" "green" >}} {{< bg "16" "postgresql-16-pg-statement-rollback" "green" >}} {{< bg "15" "postgresql-15-pg-statement-rollback" "green" >}} {{< bg "14" "postgresql-14-pg-statement-rollback" "green" >}} {{< bg "13" "postgresql-13-pg-statement-rollback" "green" >}} | `postgresql-$v-pg-statement-rollback` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_statement_rollback" >}} | `1.5` | {{< bg "18" "pg_statement_rollback_18*" "green" >}} {{< bg "17" "pg_statement_rollback_17*" "green" >}} {{< bg "16" "pg_statement_rollback_16*" "green" >}} {{< bg "15" "pg_statement_rollback_15*" "green" >}} {{< bg "14" "pg_statement_rollback_14*" "green" >}} {{< bg "13" "pg_statement_rollback_13*" "green" >}} | `pg_statement_rollback_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_statement_rollback" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-statement-rollback" "green" >}} {{< bg "17" "postgresql-17-pg-statement-rollback" "green" >}} {{< bg "16" "postgresql-16-pg-statement-rollback" "green" >}} {{< bg "15" "postgresql-15-pg-statement-rollback" "green" >}} {{< bg "14" "postgresql-14-pg-statement-rollback" "green" >}} {{< bg "13" "postgresql-13-pg-statement-rollback" "green" >}} | `postgresql-$v-pg-statement-rollback` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -197,6 +197,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_statement_rollback; # install by extension name, for the current active PG version
 pig ext install pg_statement_rollback; # install via package alias, for the active PG version
+pig ext install pg_statement_rollback -v 18;   # install for PG 18
 pig ext install pg_statement_rollback -v 17;   # install for PG 17
 pig ext install pg_statement_rollback -v 16;   # install for PG 16
 pig ext install pg_statement_rollback -v 15;   # install for PG 15

@@ -14,7 +14,7 @@ Functions and operators that emulate a subset of functions and packages from the
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.14.4` | {{< category "SIM" >}} | {{< license "BSD 0-Clause" >}} | {{< language "C" >}} |
+| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.14.6` | {{< category "SIM" >}} | {{< license "BSD 0-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ Functions and operators that emulate a subset of functions and packages from the
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/orafce" >}} | `4.14.4` | {{< bg "18" "orafce_18" "green" >}} {{< bg "17" "orafce_17" "green" >}} {{< bg "16" "orafce_16" "green" >}} {{< bg "15" "orafce_15" "green" >}} {{< bg "14" "orafce_14" "green" >}} {{< bg "13" "orafce_13" "green" >}} | `orafce_$v` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/orafce" >}} | `4.14.4` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} {{< bg "13" "postgresql-13-orafce" "green" >}} | `postgresql-$v-orafce` | - |
+| **EL** | {{< badge content="PGDG" link="/e/orafce" >}} | `4.14.6` | {{< bg "18" "orafce_18" "green" >}} {{< bg "17" "orafce_17" "green" >}} {{< bg "16" "orafce_16" "green" >}} {{< bg "15" "orafce_15" "green" >}} {{< bg "14" "orafce_14" "green" >}} {{< bg "13" "orafce_13" "green" >}} | `orafce_$v` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/orafce" >}} | `4.14.6` | {{< bg "18" "postgresql-18-orafce" "green" >}} {{< bg "17" "postgresql-17-orafce" "green" >}} {{< bg "16" "postgresql-16-orafce" "green" >}} {{< bg "15" "postgresql-15-orafce" "green" >}} {{< bg "14" "postgresql-14-orafce" "green" >}} {{< bg "13" "postgresql-13-orafce" "green" >}} | `postgresql-$v-orafce` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -200,8 +200,8 @@ Functions and operators that emulate a subset of functions and packages from the
 | `orafce_16` | 4.16.1 | `el9.x86_64` | pgdg | 149.7 KiB | [orafce_16-4.16.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.16.1-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.14.6 | `el9.x86_64` | pgdg | 148.7 KiB | [orafce_16-4.14.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.6-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.14.4 | `el9.x86_64` | pgdg | 148.5 KiB | [orafce_16-4.14.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.4-1PGDG.rhel9.x86_64.rpm) |
-| `orafce_16` | 4.14.3 | `el9.x86_64` | pgdg | 148.4 KiB | [orafce_16-4.14.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.3-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.14.3 | `el9.x86_64` | pgdg | 148.4 KiB | [orafce_16-4.14.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.3-2PGDG.rhel9.x86_64.rpm) |
+| `orafce_16` | 4.14.3 | `el9.x86_64` | pgdg | 148.4 KiB | [orafce_16-4.14.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.3-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.14.2 | `el9.x86_64` | pgdg | 148.3 KiB | [orafce_16-4.14.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.2-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.14.0 | `el9.x86_64` | pgdg | 143.7 KiB | [orafce_16-4.14.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.14.0-1PGDG.rhel9.x86_64.rpm) |
 | `orafce_16` | 4.13.5 | `el9.x86_64` | pgdg | 143.5 KiB | [orafce_16-4.13.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/orafce_16-4.13.5-1PGDG.rhel9.x86_64.rpm) |
@@ -220,8 +220,8 @@ Functions and operators that emulate a subset of functions and packages from the
 | `orafce_16` | 4.16.1 | `el9.aarch64` | pgdg | 147.6 KiB | [orafce_16-4.16.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.16.1-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.14.6 | `el9.aarch64` | pgdg | 146.6 KiB | [orafce_16-4.14.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.6-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.14.4 | `el9.aarch64` | pgdg | 146.7 KiB | [orafce_16-4.14.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.4-1PGDG.rhel9.aarch64.rpm) |
-| `orafce_16` | 4.14.3 | `el9.aarch64` | pgdg | 146.7 KiB | [orafce_16-4.14.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.3-2PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.14.3 | `el9.aarch64` | pgdg | 146.5 KiB | [orafce_16-4.14.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.3-1PGDG.rhel9.aarch64.rpm) |
+| `orafce_16` | 4.14.3 | `el9.aarch64` | pgdg | 146.7 KiB | [orafce_16-4.14.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.3-2PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.14.2 | `el9.aarch64` | pgdg | 146.4 KiB | [orafce_16-4.14.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.2-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.14.0 | `el9.aarch64` | pgdg | 141.4 KiB | [orafce_16-4.14.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.14.0-1PGDG.rhel9.aarch64.rpm) |
 | `orafce_16` | 4.13.5 | `el9.aarch64` | pgdg | 141.5 KiB | [orafce_16-4.13.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/orafce_16-4.13.5-1PGDG.rhel9.aarch64.rpm) |
@@ -261,8 +261,8 @@ Functions and operators that emulate a subset of functions and packages from the
 | `orafce_15` | 4.9.0 | `el8.x86_64` | pgdg | 144.9 KiB | [orafce_15-4.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.14.6 | `el8.x86_64` | pgdg | 151.5 KiB | [orafce_15-4.14.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.6-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.14.4 | `el8.x86_64` | pgdg | 150.9 KiB | [orafce_15-4.14.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.4-1PGDG.rhel8.x86_64.rpm) |
-| `orafce_15` | 4.14.3 | `el8.x86_64` | pgdg | 150.5 KiB | [orafce_15-4.14.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.3-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.14.3 | `el8.x86_64` | pgdg | 150.8 KiB | [orafce_15-4.14.3-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.3-2PGDG.rhel8.x86_64.rpm) |
+| `orafce_15` | 4.14.3 | `el8.x86_64` | pgdg | 150.5 KiB | [orafce_15-4.14.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.3-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.14.2 | `el8.x86_64` | pgdg | 150.3 KiB | [orafce_15-4.14.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.14.0 | `el8.x86_64` | pgdg | 149.8 KiB | [orafce_15-4.14.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.14.0-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_15` | 4.13.5 | `el8.x86_64` | pgdg | 149.3 KiB | [orafce_15-4.13.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/orafce_15-4.13.5-1PGDG.rhel8.x86_64.rpm) |
@@ -361,8 +361,8 @@ Functions and operators that emulate a subset of functions and packages from the
 | `orafce_14` | 4.9.0 | `el8.x86_64` | pgdg | 146.0 KiB | [orafce_14-4.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.14.6 | `el8.x86_64` | pgdg | 152.5 KiB | [orafce_14-4.14.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.6-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.14.4 | `el8.x86_64` | pgdg | 152.0 KiB | [orafce_14-4.14.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.4-1PGDG.rhel8.x86_64.rpm) |
-| `orafce_14` | 4.14.3 | `el8.x86_64` | pgdg | 151.5 KiB | [orafce_14-4.14.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.3-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.14.3 | `el8.x86_64` | pgdg | 151.8 KiB | [orafce_14-4.14.3-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.3-2PGDG.rhel8.x86_64.rpm) |
+| `orafce_14` | 4.14.3 | `el8.x86_64` | pgdg | 151.5 KiB | [orafce_14-4.14.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.3-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.14.2 | `el8.x86_64` | pgdg | 151.4 KiB | [orafce_14-4.14.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.2-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.14.0 | `el8.x86_64` | pgdg | 150.8 KiB | [orafce_14-4.14.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.14.0-1PGDG.rhel8.x86_64.rpm) |
 | `orafce_14` | 4.13.5 | `el8.x86_64` | pgdg | 150.4 KiB | [orafce_14-4.13.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/orafce_14-4.13.5-1PGDG.rhel8.x86_64.rpm) |
@@ -380,8 +380,8 @@ Functions and operators that emulate a subset of functions and packages from the
 | `orafce_14` | 4.9.0 | `el8.aarch64` | pgdg | 140.8 KiB | [orafce_14-4.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.14.6 | `el8.aarch64` | pgdg | 147.9 KiB | [orafce_14-4.14.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.6-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.14.4 | `el8.aarch64` | pgdg | 147.5 KiB | [orafce_14-4.14.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.4-1PGDG.rhel8.aarch64.rpm) |
-| `orafce_14` | 4.14.3 | `el8.aarch64` | pgdg | 147.3 KiB | [orafce_14-4.14.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.3-2PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.14.3 | `el8.aarch64` | pgdg | 147.0 KiB | [orafce_14-4.14.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.3-1PGDG.rhel8.aarch64.rpm) |
+| `orafce_14` | 4.14.3 | `el8.aarch64` | pgdg | 147.3 KiB | [orafce_14-4.14.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.3-2PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.14.2 | `el8.aarch64` | pgdg | 146.9 KiB | [orafce_14-4.14.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.2-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.14.0 | `el8.aarch64` | pgdg | 145.8 KiB | [orafce_14-4.14.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.14.0-1PGDG.rhel8.aarch64.rpm) |
 | `orafce_14` | 4.13.5 | `el8.aarch64` | pgdg | 145.4 KiB | [orafce_14-4.13.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/orafce_14-4.13.5-1PGDG.rhel8.aarch64.rpm) |

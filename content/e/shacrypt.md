@@ -37,12 +37,12 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
-|    `el8.aarch64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
-|    `el9.x86_64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
-|    `el9.aarch64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
-|    `el10.x86_64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "shacrypt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "shacrypt_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.1" "shacrypt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "shacrypt_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-13-shacrypt : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-13-shacrypt : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-shacrypt : MISS 0" "red" >}}      |
@@ -53,11 +53,29 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-13-shacrypt : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_18` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [shacrypt_18-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_18-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_18` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_18-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_18-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_18` | 1.1 | `el9.x86_64` | pigsty | 18.9 KiB | [shacrypt_18-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_18-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_18` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [shacrypt_18-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_18-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_18` | 1.1 | `el10.x86_64` | pigsty | 18.6 KiB | [shacrypt_18-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_18-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_18` | 1.1 | `el10.aarch64` | pigsty | 18.6 KiB | [shacrypt_18-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_18-1.1-2PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_17` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [shacrypt_17-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_17-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_17` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_17-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_17-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_17` | 1.1 | `el9.x86_64` | pigsty | 18.9 KiB | [shacrypt_17-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_17-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_17` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [shacrypt_17-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_17-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_17` | 1.1 | `el10.x86_64` | pigsty | 18.6 KiB | [shacrypt_17-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_17-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_17` | 1.1 | `el10.aarch64` | pigsty | 18.5 KiB | [shacrypt_17-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_17-1.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -70,6 +88,12 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_16` | 1.1 | `el8.x86_64` | pigsty | 19.7 KiB | [shacrypt_16-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_16-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_16` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_16-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_16-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_16` | 1.1 | `el9.x86_64` | pigsty | 18.9 KiB | [shacrypt_16-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_16-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_16` | 1.1 | `el9.aarch64` | pigsty | 18.7 KiB | [shacrypt_16-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_16-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_16` | 1.1 | `el10.x86_64` | pigsty | 18.6 KiB | [shacrypt_16-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_16-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_16` | 1.1 | `el10.aarch64` | pigsty | 18.6 KiB | [shacrypt_16-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_16-1.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -82,6 +106,12 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_15` | 1.1 | `el8.x86_64` | pigsty | 19.8 KiB | [shacrypt_15-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_15-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_15` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_15-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_15-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_15` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [shacrypt_15-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_15-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_15` | 1.1 | `el9.aarch64` | pigsty | 19.1 KiB | [shacrypt_15-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_15-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_15` | 1.1 | `el10.x86_64` | pigsty | 18.9 KiB | [shacrypt_15-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_15-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_15` | 1.1 | `el10.aarch64` | pigsty | 18.9 KiB | [shacrypt_15-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_15-1.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -94,6 +124,12 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_14` | 1.1 | `el8.x86_64` | pigsty | 19.8 KiB | [shacrypt_14-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_14-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_14` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_14-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_14-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_14` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [shacrypt_14-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_14-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_14` | 1.1 | `el9.aarch64` | pigsty | 19.1 KiB | [shacrypt_14-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_14-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_14` | 1.1 | `el10.x86_64` | pigsty | 18.9 KiB | [shacrypt_14-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_14-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_14` | 1.1 | `el10.aarch64` | pigsty | 18.9 KiB | [shacrypt_14-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_14-1.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |
@@ -106,6 +142,12 @@ Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `shacrypt_13` | 1.1 | `el8.x86_64` | pigsty | 19.8 KiB | [shacrypt_13-1.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/shacrypt_13-1.1-2PIGSTY.el8.x86_64.rpm) |
+| `shacrypt_13` | 1.1 | `el8.aarch64` | pigsty | 19.4 KiB | [shacrypt_13-1.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/shacrypt_13-1.1-2PIGSTY.el8.aarch64.rpm) |
+| `shacrypt_13` | 1.1 | `el9.x86_64` | pigsty | 19.2 KiB | [shacrypt_13-1.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/shacrypt_13-1.1-2PIGSTY.el9.x86_64.rpm) |
+| `shacrypt_13` | 1.1 | `el9.aarch64` | pigsty | 19.1 KiB | [shacrypt_13-1.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/shacrypt_13-1.1-2PIGSTY.el9.aarch64.rpm) |
+| `shacrypt_13` | 1.1 | `el10.x86_64` | pigsty | 18.9 KiB | [shacrypt_13-1.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/shacrypt_13-1.1-2PIGSTY.el10.x86_64.rpm) |
+| `shacrypt_13` | 1.1 | `el10.aarch64` | pigsty | 18.9 KiB | [shacrypt_13-1.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/shacrypt_13-1.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-shacrypt` | 1.1 | `d12.x86_64` | pigsty | 2.5 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-shacrypt` | 1.1 | `d12.aarch64` | pigsty | 2.5 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-shacrypt` | 1.1 | `u22.x86_64` | pigsty | 2.4 KiB | [postgresql-13-shacrypt_1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-13-shacrypt_1.1-1PIGSTY~jammy_amd64.deb) |

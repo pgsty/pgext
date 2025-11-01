@@ -38,12 +38,12 @@ Capture node OS metrics via SQL queries
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
-|    `el10.x86_64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    | {{< bg "PGDG 1.7" "pgnodemx_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "pgnodemx_13 : AVAIL 1" "blue" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.7" "pgnodemx_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "pgnodemx_13 : AVAIL 2" "green" >}} |
 |    `d12.x86_64`    | {{< bg "PGDG 1.7" "postgresql-18-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-13-pgnodemx : AVAIL 2" "blue" >}} |
 |    `d12.aarch64`    | {{< bg "PGDG 1.7" "postgresql-18-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-13-pgnodemx : AVAIL 2" "blue" >}} |
 |    `d13.x86_64`    | {{< bg "PGDG 1.7" "postgresql-18-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-pgnodemx : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-13-pgnodemx : AVAIL 1" "blue" >}} |
@@ -59,11 +59,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgnodemx_18` | 1.7 | `el8.x86_64` | pigsty | 37.5 KiB | [pgnodemx_18-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_18-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_18` | 1.7 | `el8.x86_64` | pgdg | 41.8 KiB | [pgnodemx_18-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgnodemx_18-1.7-1PGDG.rhel8.x86_64.rpm) |
+| `pgnodemx_18` | 1.7 | `el8.aarch64` | pigsty | 37.0 KiB | [pgnodemx_18-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_18-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_18` | 1.7 | `el8.aarch64` | pgdg | 41.1 KiB | [pgnodemx_18-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgnodemx_18-1.7-1PGDG.rhel8.aarch64.rpm) |
+| `pgnodemx_18` | 1.7 | `el9.x86_64` | pigsty | 35.8 KiB | [pgnodemx_18-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_18-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_18` | 1.7 | `el9.x86_64` | pgdg | 41.6 KiB | [pgnodemx_18-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgnodemx_18-1.7-1PGDG.rhel9.x86_64.rpm) |
+| `pgnodemx_18` | 1.7 | `el9.aarch64` | pigsty | 35.5 KiB | [pgnodemx_18-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_18-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_18` | 1.7 | `el9.aarch64` | pgdg | 41.2 KiB | [pgnodemx_18-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgnodemx_18-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_18` | 1.7 | `el10.x86_64` | pigsty | 36.0 KiB | [pgnodemx_18-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_18-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_18` | 1.7 | `el10.x86_64` | pgdg | 42.2 KiB | [pgnodemx_18-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgnodemx_18-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_18` | 1.7 | `el10.aarch64` | pigsty | 35.6 KiB | [pgnodemx_18-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_18-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_18` | 1.7 | `el10.aarch64` | pgdg | 41.7 KiB | [pgnodemx_18-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgnodemx_18-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-18-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 82.3 KiB | [postgresql-18-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgnodemx` | 1.7 | `d12.aarch64` | pgdg | 81.4 KiB | [postgresql-18-pgnodemx_1.7-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-2.pgdg12+1_arm64.deb) |
@@ -79,15 +85,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgnodemx_17` | 1.7 | `el8.x86_64` | pigsty | 34.2 KiB | [pgnodemx_17-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_17-1.7-1PIGSTY.el8.x86_64.rpm) |
+| `pgnodemx_17` | 1.7 | `el8.x86_64` | pigsty | 37.5 KiB | [pgnodemx_17-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_17-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_17` | 1.7 | `el8.x86_64` | pgdg | 41.8 KiB | [pgnodemx_17-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgnodemx_17-1.7-1PGDG.rhel8.x86_64.rpm) |
-| `pgnodemx_17` | 1.7 | `el8.aarch64` | pigsty | 33.6 KiB | [pgnodemx_17-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_17-1.7-1PIGSTY.el8.aarch64.rpm) |
+| `pgnodemx_17` | 1.7 | `el8.aarch64` | pigsty | 37.0 KiB | [pgnodemx_17-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_17-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_17` | 1.7 | `el8.aarch64` | pgdg | 41.2 KiB | [pgnodemx_17-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgnodemx_17-1.7-1PGDG.rhel8.aarch64.rpm) |
-| `pgnodemx_17` | 1.7 | `el9.x86_64` | pigsty | 34.6 KiB | [pgnodemx_17-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_17-1.7-1PIGSTY.el9.x86_64.rpm) |
+| `pgnodemx_17` | 1.7 | `el9.x86_64` | pigsty | 35.8 KiB | [pgnodemx_17-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_17-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_17` | 1.7 | `el9.x86_64` | pgdg | 41.6 KiB | [pgnodemx_17-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgnodemx_17-1.7-1PGDG.rhel9.x86_64.rpm) |
-| `pgnodemx_17` | 1.7 | `el9.aarch64` | pigsty | 34.2 KiB | [pgnodemx_17-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_17-1.7-1PIGSTY.el9.aarch64.rpm) |
+| `pgnodemx_17` | 1.7 | `el9.aarch64` | pigsty | 35.5 KiB | [pgnodemx_17-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_17-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_17` | 1.7 | `el9.aarch64` | pgdg | 41.2 KiB | [pgnodemx_17-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgnodemx_17-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_17` | 1.7 | `el10.x86_64` | pigsty | 36.0 KiB | [pgnodemx_17-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_17-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_17` | 1.7 | `el10.x86_64` | pgdg | 42.3 KiB | [pgnodemx_17-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgnodemx_17-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_17` | 1.7 | `el10.aarch64` | pigsty | 35.6 KiB | [pgnodemx_17-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_17-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_17` | 1.7 | `el10.aarch64` | pgdg | 41.6 KiB | [pgnodemx_17-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgnodemx_17-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgnodemx` | 1.7 | `d12.x86_64` | pigsty | 91.0 KiB | [postgresql-17-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 82.2 KiB | [postgresql-17-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |
@@ -109,15 +117,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgnodemx_16` | 1.7 | `el8.x86_64` | pigsty | 34.3 KiB | [pgnodemx_16-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_16-1.7-1PIGSTY.el8.x86_64.rpm) |
+| `pgnodemx_16` | 1.7 | `el8.x86_64` | pigsty | 37.5 KiB | [pgnodemx_16-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_16-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_16` | 1.7 | `el8.x86_64` | pgdg | 41.8 KiB | [pgnodemx_16-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgnodemx_16-1.7-1PGDG.rhel8.x86_64.rpm) |
-| `pgnodemx_16` | 1.7 | `el8.aarch64` | pigsty | 33.6 KiB | [pgnodemx_16-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_16-1.7-1PIGSTY.el8.aarch64.rpm) |
+| `pgnodemx_16` | 1.7 | `el8.aarch64` | pigsty | 37.0 KiB | [pgnodemx_16-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_16-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_16` | 1.7 | `el8.aarch64` | pgdg | 41.1 KiB | [pgnodemx_16-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgnodemx_16-1.7-1PGDG.rhel8.aarch64.rpm) |
-| `pgnodemx_16` | 1.7 | `el9.x86_64` | pigsty | 34.6 KiB | [pgnodemx_16-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_16-1.7-1PIGSTY.el9.x86_64.rpm) |
+| `pgnodemx_16` | 1.7 | `el9.x86_64` | pigsty | 35.8 KiB | [pgnodemx_16-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_16-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_16` | 1.7 | `el9.x86_64` | pgdg | 41.6 KiB | [pgnodemx_16-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgnodemx_16-1.7-1PGDG.rhel9.x86_64.rpm) |
-| `pgnodemx_16` | 1.7 | `el9.aarch64` | pigsty | 34.2 KiB | [pgnodemx_16-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_16-1.7-1PIGSTY.el9.aarch64.rpm) |
+| `pgnodemx_16` | 1.7 | `el9.aarch64` | pigsty | 35.4 KiB | [pgnodemx_16-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_16-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_16` | 1.7 | `el9.aarch64` | pgdg | 41.1 KiB | [pgnodemx_16-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgnodemx_16-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_16` | 1.7 | `el10.x86_64` | pigsty | 36.0 KiB | [pgnodemx_16-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_16-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_16` | 1.7 | `el10.x86_64` | pgdg | 42.2 KiB | [pgnodemx_16-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgnodemx_16-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_16` | 1.7 | `el10.aarch64` | pigsty | 35.6 KiB | [pgnodemx_16-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_16-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_16` | 1.7 | `el10.aarch64` | pgdg | 41.7 KiB | [pgnodemx_16-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgnodemx_16-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgnodemx` | 1.7 | `d12.x86_64` | pigsty | 91.0 KiB | [postgresql-16-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 82.2 KiB | [postgresql-16-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |
@@ -139,15 +149,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgnodemx_15` | 1.7 | `el8.x86_64` | pigsty | 35.5 KiB | [pgnodemx_15-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_15-1.7-1PIGSTY.el8.x86_64.rpm) |
+| `pgnodemx_15` | 1.7 | `el8.x86_64` | pigsty | 38.7 KiB | [pgnodemx_15-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_15-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_15` | 1.7 | `el8.x86_64` | pgdg | 43.1 KiB | [pgnodemx_15-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgnodemx_15-1.7-1PGDG.rhel8.x86_64.rpm) |
-| `pgnodemx_15` | 1.7 | `el8.aarch64` | pigsty | 34.6 KiB | [pgnodemx_15-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_15-1.7-1PIGSTY.el8.aarch64.rpm) |
+| `pgnodemx_15` | 1.7 | `el8.aarch64` | pigsty | 38.1 KiB | [pgnodemx_15-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_15-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_15` | 1.7 | `el8.aarch64` | pgdg | 42.2 KiB | [pgnodemx_15-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgnodemx_15-1.7-1PGDG.rhel8.aarch64.rpm) |
-| `pgnodemx_15` | 1.7 | `el9.x86_64` | pigsty | 36.5 KiB | [pgnodemx_15-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_15-1.7-1PIGSTY.el9.x86_64.rpm) |
+| `pgnodemx_15` | 1.7 | `el9.x86_64` | pigsty | 38.0 KiB | [pgnodemx_15-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_15-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_15` | 1.7 | `el9.x86_64` | pgdg | 43.9 KiB | [pgnodemx_15-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgnodemx_15-1.7-1PGDG.rhel9.x86_64.rpm) |
-| `pgnodemx_15` | 1.7 | `el9.aarch64` | pigsty | 36.1 KiB | [pgnodemx_15-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_15-1.7-1PIGSTY.el9.aarch64.rpm) |
+| `pgnodemx_15` | 1.7 | `el9.aarch64` | pigsty | 37.5 KiB | [pgnodemx_15-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_15-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_15` | 1.7 | `el9.aarch64` | pgdg | 43.4 KiB | [pgnodemx_15-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgnodemx_15-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_15` | 1.7 | `el10.x86_64` | pigsty | 38.0 KiB | [pgnodemx_15-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_15-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_15` | 1.7 | `el10.x86_64` | pgdg | 44.1 KiB | [pgnodemx_15-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgnodemx_15-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_15` | 1.7 | `el10.aarch64` | pigsty | 37.7 KiB | [pgnodemx_15-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_15-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_15` | 1.7 | `el10.aarch64` | pgdg | 44.2 KiB | [pgnodemx_15-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgnodemx_15-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgnodemx` | 1.7 | `d12.x86_64` | pigsty | 92.4 KiB | [postgresql-15-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 83.5 KiB | [postgresql-15-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |
@@ -169,15 +181,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgnodemx_14` | 1.7 | `el8.x86_64` | pigsty | 35.4 KiB | [pgnodemx_14-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_14-1.7-1PIGSTY.el8.x86_64.rpm) |
+| `pgnodemx_14` | 1.7 | `el8.x86_64` | pigsty | 38.6 KiB | [pgnodemx_14-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_14-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_14` | 1.7 | `el8.x86_64` | pgdg | 43.0 KiB | [pgnodemx_14-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgnodemx_14-1.7-1PGDG.rhel8.x86_64.rpm) |
-| `pgnodemx_14` | 1.7 | `el8.aarch64` | pigsty | 34.6 KiB | [pgnodemx_14-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_14-1.7-1PIGSTY.el8.aarch64.rpm) |
+| `pgnodemx_14` | 1.7 | `el8.aarch64` | pigsty | 38.0 KiB | [pgnodemx_14-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_14-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_14` | 1.7 | `el8.aarch64` | pgdg | 42.2 KiB | [pgnodemx_14-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgnodemx_14-1.7-1PGDG.rhel8.aarch64.rpm) |
-| `pgnodemx_14` | 1.7 | `el9.x86_64` | pigsty | 36.3 KiB | [pgnodemx_14-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_14-1.7-1PIGSTY.el9.x86_64.rpm) |
+| `pgnodemx_14` | 1.7 | `el9.x86_64` | pigsty | 37.9 KiB | [pgnodemx_14-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_14-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_14` | 1.7 | `el9.x86_64` | pgdg | 43.8 KiB | [pgnodemx_14-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgnodemx_14-1.7-1PGDG.rhel9.x86_64.rpm) |
-| `pgnodemx_14` | 1.7 | `el9.aarch64` | pigsty | 36.1 KiB | [pgnodemx_14-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_14-1.7-1PIGSTY.el9.aarch64.rpm) |
+| `pgnodemx_14` | 1.7 | `el9.aarch64` | pigsty | 37.4 KiB | [pgnodemx_14-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_14-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_14` | 1.7 | `el9.aarch64` | pgdg | 43.4 KiB | [pgnodemx_14-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgnodemx_14-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_14` | 1.7 | `el10.x86_64` | pigsty | 37.9 KiB | [pgnodemx_14-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_14-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_14` | 1.7 | `el10.x86_64` | pgdg | 44.2 KiB | [pgnodemx_14-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgnodemx_14-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_14` | 1.7 | `el10.aarch64` | pigsty | 37.5 KiB | [pgnodemx_14-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_14-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_14` | 1.7 | `el10.aarch64` | pgdg | 44.0 KiB | [pgnodemx_14-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgnodemx_14-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgnodemx` | 1.7 | `d12.x86_64` | pigsty | 92.0 KiB | [postgresql-14-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 83.3 KiB | [postgresql-14-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |
@@ -199,15 +213,17 @@ Capture node OS metrics via SQL queries
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgnodemx_13` | 1.7 | `el8.x86_64` | pigsty | 35.1 KiB | [pgnodemx_13-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_13-1.7-1PIGSTY.el8.x86_64.rpm) |
+| `pgnodemx_13` | 1.7 | `el8.x86_64` | pigsty | 38.3 KiB | [pgnodemx_13-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgnodemx_13-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `pgnodemx_13` | 1.7 | `el8.x86_64` | pgdg | 42.7 KiB | [pgnodemx_13-1.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgnodemx_13-1.7-1PGDG.rhel8.x86_64.rpm) |
-| `pgnodemx_13` | 1.7 | `el8.aarch64` | pigsty | 34.6 KiB | [pgnodemx_13-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_13-1.7-1PIGSTY.el8.aarch64.rpm) |
+| `pgnodemx_13` | 1.7 | `el8.aarch64` | pigsty | 38.0 KiB | [pgnodemx_13-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgnodemx_13-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `pgnodemx_13` | 1.7 | `el8.aarch64` | pgdg | 42.2 KiB | [pgnodemx_13-1.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgnodemx_13-1.7-1PGDG.rhel8.aarch64.rpm) |
-| `pgnodemx_13` | 1.7 | `el9.x86_64` | pigsty | 36.7 KiB | [pgnodemx_13-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_13-1.7-1PIGSTY.el9.x86_64.rpm) |
+| `pgnodemx_13` | 1.7 | `el9.x86_64` | pigsty | 37.8 KiB | [pgnodemx_13-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgnodemx_13-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `pgnodemx_13` | 1.7 | `el9.x86_64` | pgdg | 44.1 KiB | [pgnodemx_13-1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgnodemx_13-1.7-1PGDG.rhel9.x86_64.rpm) |
-| `pgnodemx_13` | 1.7 | `el9.aarch64` | pigsty | 36.2 KiB | [pgnodemx_13-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_13-1.7-1PIGSTY.el9.aarch64.rpm) |
+| `pgnodemx_13` | 1.7 | `el9.aarch64` | pigsty | 37.4 KiB | [pgnodemx_13-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgnodemx_13-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `pgnodemx_13` | 1.7 | `el9.aarch64` | pgdg | 43.4 KiB | [pgnodemx_13-1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgnodemx_13-1.7-1PGDG.rhel9.aarch64.rpm) |
+| `pgnodemx_13` | 1.7 | `el10.x86_64` | pigsty | 37.9 KiB | [pgnodemx_13-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgnodemx_13-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `pgnodemx_13` | 1.7 | `el10.x86_64` | pgdg | 44.4 KiB | [pgnodemx_13-1.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgnodemx_13-1.7-1PGDG.rhel10.x86_64.rpm) |
+| `pgnodemx_13` | 1.7 | `el10.aarch64` | pigsty | 37.5 KiB | [pgnodemx_13-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgnodemx_13-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `pgnodemx_13` | 1.7 | `el10.aarch64` | pgdg | 44.0 KiB | [pgnodemx_13-1.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgnodemx_13-1.7-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-pgnodemx` | 1.7 | `d12.x86_64` | pigsty | 92.1 KiB | [postgresql-13-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgnodemx/postgresql-13-pgnodemx_1.7-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgnodemx` | 1.7 | `d12.x86_64` | pgdg | 83.7 KiB | [postgresql-13-pgnodemx_1.7-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-13-pgnodemx_1.7-2.pgdg12+1_amd64.deb) |

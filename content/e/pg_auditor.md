@@ -43,8 +43,8 @@ Audit data changes and provide flashback ability
 |    `el8.aarch64`    | {{< bg "PIGSTY 0.2" "pg_auditor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 0.2" "pg_auditor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 0.2" "pg_auditor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_auditor_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_auditor_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_auditor_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.2" "pg_auditor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.2" "pg_auditor_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "pg_auditor_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-auditor : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2" "postgresql-17-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-16-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-15-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-14-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-13-pg-auditor : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-auditor : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2" "postgresql-17-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-16-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-15-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-14-pg-auditor : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2" "postgresql-13-pg-auditor : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-auditor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-auditor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-auditor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-auditor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-auditor : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-auditor : MISS 0" "red" >}}      |
@@ -61,9 +61,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_18` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_18-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_18-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_18` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_18-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_18-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_18` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_18-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_18-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_18` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_18-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_18-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_18` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_18-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_18-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_18` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_18-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_18-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_18` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_18-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_18-0.2-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -71,9 +73,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_17` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_17-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_17-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_17` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_17-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_17-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_17` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_17-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_17-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_17` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_17-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_17-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_17` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_17-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_17-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_17` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_17-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_17-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_17` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_17-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_17-0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-auditor` | 0.2 | `d12.x86_64` | pigsty | 8.1 KiB | [postgresql-17-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-17-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-auditor` | 0.2 | `d12.aarch64` | pigsty | 8.1 KiB | [postgresql-17-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-17-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-auditor` | 0.2 | `u22.x86_64` | pigsty | 8.0 KiB | [postgresql-17-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-auditor/postgresql-17-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb) |
@@ -87,9 +91,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_16` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_16-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_16-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_16` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_16-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_16-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_16` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_16-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_16-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_16` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_16-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_16-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_16` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_16-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_16-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_16` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_16-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_16-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_16` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_16-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_16-0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-auditor` | 0.2 | `d12.x86_64` | pigsty | 8.1 KiB | [postgresql-16-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-16-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-auditor` | 0.2 | `d12.aarch64` | pigsty | 8.1 KiB | [postgresql-16-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-16-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-auditor` | 0.2 | `u22.x86_64` | pigsty | 8.0 KiB | [postgresql-16-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-auditor/postgresql-16-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb) |
@@ -103,9 +109,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_15` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_15-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_15-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_15` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_15-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_15-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_15` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_15-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_15-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_15` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_15-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_15-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_15` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_15-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_15-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_15` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_15-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_15-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_15` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_15-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_15-0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-auditor` | 0.2 | `d12.x86_64` | pigsty | 8.1 KiB | [postgresql-15-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-15-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-auditor` | 0.2 | `d12.aarch64` | pigsty | 8.1 KiB | [postgresql-15-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-15-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-auditor` | 0.2 | `u22.x86_64` | pigsty | 8.0 KiB | [postgresql-15-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-auditor/postgresql-15-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb) |
@@ -119,9 +127,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_14` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_14-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_14-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_14` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_14-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_14-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_14` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_14-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_14-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_14` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_14-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_14-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_14` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_14-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_14-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_14` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_14-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_14-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_14` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_14-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_14-0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-auditor` | 0.2 | `d12.x86_64` | pigsty | 8.1 KiB | [postgresql-14-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-14-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-auditor` | 0.2 | `d12.aarch64` | pigsty | 8.1 KiB | [postgresql-14-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-14-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-auditor` | 0.2 | `u22.x86_64` | pigsty | 8.0 KiB | [postgresql-14-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-auditor/postgresql-14-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb) |
@@ -135,9 +145,11 @@ Audit data changes and provide flashback ability
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_auditor_13` | 0.2 | `el8.x86_64` | pigsty | 11.0 KiB | [pg_auditor_13-0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_auditor_13-0.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_auditor_13` | 0.2 | `el8.aarch64` | pigsty | 10.9 KiB | [pg_auditor_13-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_13-0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_auditor_13` | 0.2 | `el8.aarch64` | pigsty | 11.0 KiB | [pg_auditor_13-0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_auditor_13-0.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_auditor_13` | 0.2 | `el9.x86_64` | pigsty | 10.9 KiB | [pg_auditor_13-0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_auditor_13-0.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_auditor_13` | 0.2 | `el9.aarch64` | pigsty | 10.9 KiB | [pg_auditor_13-0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_auditor_13-0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_auditor_13` | 0.2 | `el10.x86_64` | pigsty | 11.0 KiB | [pg_auditor_13-0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_auditor_13-0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_auditor_13` | 0.2 | `el10.aarch64` | pigsty | 10.9 KiB | [pg_auditor_13-0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_auditor_13-0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-auditor` | 0.2 | `d12.x86_64` | pigsty | 8.1 KiB | [postgresql-13-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-13-pg-auditor_0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-auditor` | 0.2 | `d12.aarch64` | pigsty | 8.1 KiB | [postgresql-13-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-auditor/postgresql-13-pg-auditor_0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-auditor` | 0.2 | `u22.x86_64` | pigsty | 8.0 KiB | [postgresql-13-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-auditor/postgresql-13-pg-auditor_0.2-1PIGSTY~jammy_amd64.deb) |

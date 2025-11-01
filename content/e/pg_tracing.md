@@ -37,12 +37,12 @@ Distributed Tracing for PostgreSQL
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_tracing_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.1.3" "pg_tracing_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "pg_tracing_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_tracing_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-tracing : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-tracing : MISS 0" "red" >}}      |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-tracing : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-tracing : MISS 0" "red" >}}      |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-tracing : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-tracing : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-tracing : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-tracing : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-tracing : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-tracing : MISS 0" "red" >}}      |
@@ -53,19 +53,33 @@ Distributed Tracing for PostgreSQL
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-tracing : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-tracing : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-tracing : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-tracing : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tracing_18` | 0.1.3 | `el8.x86_64` | pigsty | 46.2 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_18-0.1.3-2PIGSTY.el8.x86_64.rpm) |
+| `pg_tracing_18` | 0.1.3 | `el8.aarch64` | pigsty | 44.8 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_18-0.1.3-2PIGSTY.el8.aarch64.rpm) |
+| `pg_tracing_18` | 0.1.3 | `el9.x86_64` | pigsty | 43.9 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_18-0.1.3-2PIGSTY.el9.x86_64.rpm) |
+| `pg_tracing_18` | 0.1.3 | `el9.aarch64` | pigsty | 43.3 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_18-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_18` | 0.1.3 | `el10.x86_64` | pigsty | 44.4 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tracing_18-0.1.3-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tracing_18` | 0.1.3 | `el10.aarch64` | pigsty | 43.7 KiB | [pg_tracing_18-0.1.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tracing_18-0.1.3-2PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tracing_17` | 0.1.3 | `el8.x86_64` | pigsty | 46.2 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el8.x86_64` | pigsty | 42.4 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_17-0.1.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el8.x86_64` | pigsty | 42.6 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 40.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 40.7 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el9.x86_64` | pigsty | 42.6 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el8.aarch64` | pigsty | 44.9 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el9.x86_64` | pigsty | 42.5 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_17-0.1.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el9.x86_64` | pigsty | 43.9 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_17-0.1.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el9.aarch64` | pigsty | 43.4 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el10.x86_64` | pigsty | 44.4 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tracing_17-0.1.3-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tracing_17` | 0.1.3 | `el10.aarch64` | pigsty | 43.6 KiB | [pg_tracing_17-0.1.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tracing_17-0.1.3-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `d12.x86_64` | pigsty | 105.4 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `d12.aarch64` | pigsty | 103.0 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-tracing` | 0.1.3 | `u22.x86_64` | pigsty | 129.3 KiB | [postgresql-17-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tracing/postgresql-17-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb) |
@@ -78,14 +92,16 @@ Distributed Tracing for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_tracing_16` | 0.1.3 | `el8.x86_64` | pigsty | 42.6 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_16-0.1.3-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tracing_16` | 0.1.3 | `el8.x86_64` | pigsty | 42.5 KiB | [pg_tracing_16-0.1.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_16-0.1.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el8.x86_64` | pigsty | 46.2 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_16-0.1.3-2PIGSTY.el8.x86_64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el8.aarch64` | pigsty | 44.9 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_16-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_16` | 0.1.3 | `el8.aarch64` | pigsty | 40.6 KiB | [pg_tracing_16-0.1.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_16-0.1.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tracing_16` | 0.1.3 | `el8.aarch64` | pigsty | 40.8 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_16-0.1.3-2PIGSTY.el8.aarch64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el9.x86_64` | pigsty | 43.9 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_16-0.1.3-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tracing_16` | 0.1.3 | `el9.x86_64` | pigsty | 42.5 KiB | [pg_tracing_16-0.1.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_16-0.1.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tracing_16` | 0.1.3 | `el9.x86_64` | pigsty | 42.6 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_16-0.1.3-2PIGSTY.el9.x86_64.rpm) |
-| `pg_tracing_16` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_16-0.1.3-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tracing_16` | 0.1.3 | `el9.aarch64` | pigsty | 41.8 KiB | [pg_tracing_16-0.1.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_16-0.1.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el9.aarch64` | pigsty | 43.3 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_16-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el10.x86_64` | pigsty | 44.5 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tracing_16-0.1.3-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tracing_16` | 0.1.3 | `el10.aarch64` | pigsty | 43.5 KiB | [pg_tracing_16-0.1.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tracing_16-0.1.3-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-tracing` | 0.1.3 | `d12.x86_64` | pigsty | 105.4 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-tracing` | 0.1.3 | `d12.aarch64` | pigsty | 102.9 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-tracing` | 0.1.3 | `u22.x86_64` | pigsty | 128.8 KiB | [postgresql-16-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tracing/postgresql-16-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb) |
@@ -98,14 +114,16 @@ Distributed Tracing for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tracing_15` | 0.1.3 | `el8.x86_64` | pigsty | 47.9 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_15-0.1.3-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tracing_15` | 0.1.3 | `el8.x86_64` | pigsty | 44.0 KiB | [pg_tracing_15-0.1.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_15-0.1.3-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_15` | 0.1.3 | `el8.x86_64` | pigsty | 44.1 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_15-0.1.3-2PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_15` | 0.1.3 | `el8.aarch64` | pigsty | 42.2 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_15-0.1.3-2PIGSTY.el8.aarch64.rpm) |
+| `pg_tracing_15` | 0.1.3 | `el8.aarch64` | pigsty | 46.5 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_15-0.1.3-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tracing_15` | 0.1.3 | `el8.aarch64` | pigsty | 42.0 KiB | [pg_tracing_15-0.1.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_15-0.1.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tracing_15` | 0.1.3 | `el9.x86_64` | pigsty | 44.9 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_15-0.1.3-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tracing_15` | 0.1.3 | `el9.x86_64` | pigsty | 44.8 KiB | [pg_tracing_15-0.1.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_15-0.1.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tracing_15` | 0.1.3 | `el9.aarch64` | pigsty | 44.0 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_15-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_15` | 0.1.3 | `el9.x86_64` | pigsty | 46.4 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_15-0.1.3-2PIGSTY.el9.x86_64.rpm) |
+| `pg_tracing_15` | 0.1.3 | `el9.aarch64` | pigsty | 45.8 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_15-0.1.3-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tracing_15` | 0.1.3 | `el9.aarch64` | pigsty | 44.0 KiB | [pg_tracing_15-0.1.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_15-0.1.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_15` | 0.1.3 | `el10.x86_64` | pigsty | 46.8 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tracing_15-0.1.3-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tracing_15` | 0.1.3 | `el10.aarch64` | pigsty | 46.2 KiB | [pg_tracing_15-0.1.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tracing_15-0.1.3-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-tracing` | 0.1.3 | `d12.x86_64` | pigsty | 108.2 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-tracing` | 0.1.3 | `d12.aarch64` | pigsty | 105.3 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-tracing` | 0.1.3 | `u22.x86_64` | pigsty | 132.0 KiB | [postgresql-15-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tracing/postgresql-15-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb) |
@@ -118,10 +136,12 @@ Distributed Tracing for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_tracing_14` | 0.1.3 | `el8.x86_64` | pigsty | 44.3 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_14-0.1.3-2PIGSTY.el8.x86_64.rpm) |
-| `pg_tracing_14` | 0.1.3 | `el8.aarch64` | pigsty | 42.9 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_14-0.1.3-2PIGSTY.el8.aarch64.rpm) |
-| `pg_tracing_14` | 0.1.3 | `el9.x86_64` | pigsty | 45.2 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_14-0.1.3-2PIGSTY.el9.x86_64.rpm) |
-| `pg_tracing_14` | 0.1.3 | `el9.aarch64` | pigsty | 44.5 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_14-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el8.x86_64` | pigsty | 48.2 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tracing_14-0.1.3-2PIGSTY.el8.x86_64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el8.aarch64` | pigsty | 47.3 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tracing_14-0.1.3-2PIGSTY.el8.aarch64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el9.x86_64` | pigsty | 46.6 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tracing_14-0.1.3-2PIGSTY.el9.x86_64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el9.aarch64` | pigsty | 46.3 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tracing_14-0.1.3-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el10.x86_64` | pigsty | 47.3 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tracing_14-0.1.3-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tracing_14` | 0.1.3 | `el10.aarch64` | pigsty | 46.8 KiB | [pg_tracing_14-0.1.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tracing_14-0.1.3-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-tracing` | 0.1.3 | `d12.x86_64` | pigsty | 109.6 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-tracing` | 0.1.3 | `d12.aarch64` | pigsty | 107.0 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-tracing` | 0.1.3 | `u22.x86_64` | pigsty | 133.2 KiB | [postgresql-14-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tracing/postgresql-14-pg-tracing_0.1.3-2PIGSTY~jammy_amd64.deb) |

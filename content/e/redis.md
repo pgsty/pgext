@@ -31,18 +31,18 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/redis" >}} | `0.0.1` | {{< bg "18" "pg_redis_pubsub_18*" "red" >}} {{< bg "17" "pg_redis_pubsub_17*" "green" >}} {{< bg "16" "pg_redis_pubsub_16*" "green" >}} {{< bg "15" "pg_redis_pubsub_15*" "green" >}} {{< bg "14" "pg_redis_pubsub_14*" "green" >}} {{< bg "13" "pg_redis_pubsub_13*" "green" >}} | `pg_redis_pubsub_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/redis" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-redis-pubsub" "red" >}} {{< bg "17" "postgresql-17-pg-redis-pubsub" "green" >}} {{< bg "16" "postgresql-16-pg-redis-pubsub" "green" >}} {{< bg "15" "postgresql-15-pg-redis-pubsub" "green" >}} {{< bg "14" "postgresql-14-pg-redis-pubsub" "green" >}} {{< bg "13" "postgresql-13-pg-redis-pubsub" "green" >}} | `postgresql-$v-pg-redis-pubsub` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/redis" >}} | `0.0.1` | {{< bg "18" "pg_redis_pubsub_18*" "green" >}} {{< bg "17" "pg_redis_pubsub_17*" "green" >}} {{< bg "16" "pg_redis_pubsub_16*" "green" >}} {{< bg "15" "pg_redis_pubsub_15*" "green" >}} {{< bg "14" "pg_redis_pubsub_14*" "green" >}} {{< bg "13" "pg_redis_pubsub_13*" "green" >}} | `pg_redis_pubsub_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/redis" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-redis-pubsub" "green" >}} {{< bg "17" "postgresql-17-pg-redis-pubsub" "green" >}} {{< bg "16" "postgresql-16-pg-redis-pubsub" "green" >}} {{< bg "15" "postgresql-15-pg-redis-pubsub" "green" >}} {{< bg "14" "postgresql-14-pg-redis-pubsub" "green" >}} {{< bg "13" "postgresql-13-pg-redis-pubsub" "green" >}} | `postgresql-$v-pg-redis-pubsub` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_redis_pubsub_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_redis_pubsub_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_redis_pubsub_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-redis-pubsub : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-redis-pubsub : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-redis-pubsub : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-redis-pubsub : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-redis-pubsub : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-redis-pubsub : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-redis-pubsub : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-redis-pubsub : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-redis-pubsub : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-redis-pubsub : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-redis-pubsub : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-redis-pubsub : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-redis-pubsub : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_redis_pubsub_17` | 0.0.1 | `el8.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_redis_pubsub_17` | 0.0.1 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_redis_pubsub_17` | 0.0.1 | `el9.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_redis_pubsub_17` | 0.0.1 | `el9.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el8.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el9.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el9.aarch64` | pigsty | 13.7 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el10.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_18` | 0.0.1 | `el10.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_redis_pubsub_17` | 0.0.1 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_redis_pubsub_17` | 0.0.1 | `el8.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_17` | 0.0.1 | `el9.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_17` | 0.0.1 | `el9.aarch64` | pigsty | 13.7 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_17` | 0.0.1 | `el10.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_17` | 0.0.1 | `el10.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-redis-pubsub` | 0.0.1 | `d12.x86_64` | pigsty | 12.6 KiB | [postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-redis-pubsub` | 0.0.1 | `d12.aarch64` | pigsty | 12.7 KiB | [postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-redis-pubsub` | 0.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-redis-pubsub/postgresql-17-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_redis_pubsub_16` | 0.0.1 | `el8.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_redis_pubsub_16` | 0.0.1 | `el8.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_redis_pubsub_16` | 0.0.1 | `el9.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_redis_pubsub_16` | 0.0.1 | `el9.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el8.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el9.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el9.aarch64` | pigsty | 13.7 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el10.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_16` | 0.0.1 | `el10.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-redis-pubsub` | 0.0.1 | `d12.x86_64` | pigsty | 12.6 KiB | [postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-redis-pubsub` | 0.0.1 | `d12.aarch64` | pigsty | 12.7 KiB | [postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-redis-pubsub` | 0.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-redis-pubsub/postgresql-16-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_redis_pubsub_15` | 0.0.1 | `el8.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_redis_pubsub_15` | 0.0.1 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_redis_pubsub_15` | 0.0.1 | `el9.x86_64` | pigsty | 14.0 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_redis_pubsub_15` | 0.0.1 | `el9.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el8.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el8.aarch64` | pigsty | 14.1 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el9.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el9.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el10.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_15` | 0.0.1 | `el10.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-redis-pubsub` | 0.0.1 | `d12.x86_64` | pigsty | 12.7 KiB | [postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-redis-pubsub` | 0.0.1 | `d12.aarch64` | pigsty | 12.7 KiB | [postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-redis-pubsub` | 0.0.1 | `u22.x86_64` | pigsty | 13.2 KiB | [postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-redis-pubsub/postgresql-15-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -107,9 +125,11 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_redis_pubsub_14` | 0.0.1 | `el8.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_redis_pubsub_14` | 0.0.1 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_redis_pubsub_14` | 0.0.1 | `el9.x86_64` | pigsty | 14.0 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_redis_pubsub_14` | 0.0.1 | `el9.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_14` | 0.0.1 | `el8.aarch64` | pigsty | 14.1 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_14` | 0.0.1 | `el9.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_14` | 0.0.1 | `el9.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_14` | 0.0.1 | `el10.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_14` | 0.0.1 | `el10.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-redis-pubsub` | 0.0.1 | `d12.x86_64` | pigsty | 12.6 KiB | [postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-redis-pubsub` | 0.0.1 | `d12.aarch64` | pigsty | 12.7 KiB | [postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-redis-pubsub` | 0.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-redis-pubsub/postgresql-14-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -123,9 +143,11 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_redis_pubsub_13` | 0.0.1 | `el8.x86_64` | pigsty | 13.8 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_redis_pubsub_13` | 0.0.1 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_redis_pubsub_13` | 0.0.1 | `el9.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_redis_pubsub_13` | 0.0.1 | `el9.aarch64` | pigsty | 13.9 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_13` | 0.0.1 | `el8.aarch64` | pigsty | 14.1 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_redis_pubsub_13` | 0.0.1 | `el9.x86_64` | pigsty | 13.7 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_redis_pubsub_13` | 0.0.1 | `el9.aarch64` | pigsty | 13.8 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_redis_pubsub_13` | 0.0.1 | `el10.x86_64` | pigsty | 13.9 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_redis_pubsub_13` | 0.0.1 | `el10.aarch64` | pigsty | 14.0 KiB | [pg_redis_pubsub_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_redis_pubsub_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-redis-pubsub` | 0.0.1 | `d12.x86_64` | pigsty | 12.5 KiB | [postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-redis-pubsub` | 0.0.1 | `d12.aarch64` | pigsty | 12.6 KiB | [postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-redis-pubsub/postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-redis-pubsub` | 0.0.1 | `u22.x86_64` | pigsty | 12.9 KiB | [postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-redis-pubsub/postgresql-13-pg-redis-pubsub_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -139,7 +161,7 @@ Send redis pub/sub messages to Redis from PostgreSQL Directly
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/brettlaforge/pg_redis_pubsub" title="Repository" icon="github" subtitle="github.com/brettlaforge/pg_redis_pubsub" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="redis_fdw-1.0-17.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_redis_pubsub-0.0.1.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -164,6 +186,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install redis; # install by extension name, for the current active PG version
 pig ext install pg_redis_pubsub; # install via package alias, for the active PG version
+pig ext install redis -v 18;   # install for PG 18
 pig ext install redis -v 17;   # install for PG 17
 pig ext install redis -v 16;   # install for PG 16
 pig ext install redis -v 15;   # install for PG 15

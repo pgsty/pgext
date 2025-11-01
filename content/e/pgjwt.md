@@ -38,12 +38,12 @@ JSON Web Token API for Postgresql
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pgjwt_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgjwt_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.2.0" "pgjwt_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "pgjwt_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgjwt : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-13-pgjwt : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgjwt : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-13-pgjwt : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgjwt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgjwt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgjwt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgjwt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgjwt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgjwt : MISS 0" "red" >}}      |
@@ -54,7 +54,19 @@ JSON Web Token API for Postgresql
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pgjwt : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.2.0" "postgresql-17-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-16-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-15-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-14-pgjwt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.2.0" "postgresql-13-pgjwt : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgjwt_18` | 0.2.0 | `el8.x86_64` | pigsty | 9.4 KiB | [pgjwt_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgjwt_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgjwt_18` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgjwt_18` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgjwt_18` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_18` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_18-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_18-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_18` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_18-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_18-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -63,6 +75,8 @@ JSON Web Token API for Postgresql
 | `pgjwt_17` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgjwt_17` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgjwt_17` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_17` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_17-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_17-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_17` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_17-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_17-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgjwt` | 0.2.0 | `d12.x86_64` | pigsty | 4.1 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgjwt` | 0.2.0 | `d12.aarch64` | pigsty | 4.1 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgjwt` | 0.2.0 | `u22.x86_64` | pigsty | 4.0 KiB | [postgresql-17-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgjwt/postgresql-17-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb) |
@@ -79,6 +93,8 @@ JSON Web Token API for Postgresql
 | `pgjwt_16` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgjwt_16` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgjwt_16` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_16` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_16-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_16-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_16` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_16-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_16-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgjwt` | 0.2.0 | `d12.x86_64` | pigsty | 4.1 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgjwt` | 0.2.0 | `d12.aarch64` | pigsty | 4.1 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgjwt` | 0.2.0 | `u22.x86_64` | pigsty | 4.0 KiB | [postgresql-16-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgjwt/postgresql-16-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb) |
@@ -95,6 +111,8 @@ JSON Web Token API for Postgresql
 | `pgjwt_15` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgjwt_15` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgjwt_15` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_15` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_15-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_15-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_15` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_15-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_15-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgjwt` | 0.2.0 | `d12.x86_64` | pigsty | 4.1 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgjwt` | 0.2.0 | `d12.aarch64` | pigsty | 4.1 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgjwt` | 0.2.0 | `u22.x86_64` | pigsty | 4.0 KiB | [postgresql-15-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgjwt/postgresql-15-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb) |
@@ -111,6 +129,8 @@ JSON Web Token API for Postgresql
 | `pgjwt_14` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgjwt_14` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgjwt_14` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_14` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_14-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_14-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_14` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_14-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_14-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgjwt` | 0.2.0 | `d12.x86_64` | pigsty | 4.1 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgjwt` | 0.2.0 | `d12.aarch64` | pigsty | 4.1 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pgjwt` | 0.2.0 | `u22.x86_64` | pigsty | 4.0 KiB | [postgresql-14-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgjwt/postgresql-14-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb) |
@@ -127,6 +147,8 @@ JSON Web Token API for Postgresql
 | `pgjwt_13` | 0.2.0 | `el8.aarch64` | pigsty | 9.3 KiB | [pgjwt_13-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgjwt_13-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgjwt_13` | 0.2.0 | `el9.x86_64` | pigsty | 9.4 KiB | [pgjwt_13-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgjwt_13-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgjwt_13` | 0.2.0 | `el9.aarch64` | pigsty | 9.3 KiB | [pgjwt_13-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgjwt_13-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgjwt_13` | 0.2.0 | `el10.x86_64` | pigsty | 9.5 KiB | [pgjwt_13-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgjwt_13-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgjwt_13` | 0.2.0 | `el10.aarch64` | pigsty | 9.4 KiB | [pgjwt_13-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgjwt_13-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pgjwt` | 0.2.0 | `d12.x86_64` | pigsty | 4.1 KiB | [postgresql-13-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-13-pgjwt_0.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgjwt` | 0.2.0 | `d12.aarch64` | pigsty | 4.1 KiB | [postgresql-13-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgjwt/postgresql-13-pgjwt_0.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pgjwt` | 0.2.0 | `u22.x86_64` | pigsty | 4.0 KiB | [postgresql-13-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgjwt/postgresql-13-pgjwt_0.2.0-1PIGSTY~jammy_amd64.deb) |

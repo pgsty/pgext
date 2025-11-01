@@ -40,12 +40,12 @@ Postgres extension for libsodium functions
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 14" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_13 : AVAIL 14" "blue" >}} |
-|    `el8.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_13 : AVAIL 10" "blue" >}} |
-|    `el9.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_13 : AVAIL 11" "blue" >}} |
-|    `el9.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_13 : AVAIL 10" "blue" >}} |
-|    `el10.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgsodium_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgsodium_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_15 : AVAIL 12" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_14 : AVAIL 15" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 15" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_15 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_14 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 11" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_15 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_14 : AVAIL 12" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 12" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_15 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_14 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 11" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PGDG 3.1.9" "pgsodium_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.1.9" "pgsodium_14 : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 3.1.9" "pgsodium_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsodium : MISS 0" "red" >}}      | {{< bg "PIGSTY 3.1.9" "postgresql-17-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-16-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-15-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-14-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-13-pgsodium : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgsodium : MISS 0" "red" >}}      | {{< bg "PIGSTY 3.1.9" "postgresql-17-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-16-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-15-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-14-pgsodium : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.9" "postgresql-13-pgsodium : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgsodium : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgsodium : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgsodium : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgsodium : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgsodium : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgsodium : MISS 0" "red" >}}      |
@@ -61,15 +61,17 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsodium_18` | 3.1.9 | `el8.x86_64` | pigsty | 53.4 KiB | [pgsodium_18-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_18-3.1.9-1PIGSTY.el8.x86_64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el8.x86_64` | pigsty | 60.4 KiB | [pgsodium_18-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_18-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el8.x86_64` | pgdg | 71.4 KiB | [pgsodium_18-3.1.9-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgsodium_18-3.1.9-4PGDG.rhel8.x86_64.rpm) |
-| `pgsodium_18` | 3.1.9 | `el8.aarch64` | pigsty | 49.9 KiB | [pgsodium_18-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_18-3.1.9-1PIGSTY.el8.aarch64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el8.aarch64` | pigsty | 57.7 KiB | [pgsodium_18-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_18-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el8.aarch64` | pgdg | 67.9 KiB | [pgsodium_18-3.1.9-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgsodium_18-3.1.9-4PGDG.rhel8.aarch64.rpm) |
-| `pgsodium_18` | 3.1.9 | `el9.x86_64` | pigsty | 54.3 KiB | [pgsodium_18-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_18-3.1.9-1PIGSTY.el9.x86_64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el9.x86_64` | pigsty | 56.9 KiB | [pgsodium_18-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_18-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el9.x86_64` | pgdg | 70.8 KiB | [pgsodium_18-3.1.9-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgsodium_18-3.1.9-4PGDG.rhel9.x86_64.rpm) |
-| `pgsodium_18` | 3.1.9 | `el9.aarch64` | pigsty | 51.4 KiB | [pgsodium_18-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_18-3.1.9-1PIGSTY.el9.aarch64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el9.aarch64` | pigsty | 54.4 KiB | [pgsodium_18-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_18-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el9.aarch64` | pgdg | 67.5 KiB | [pgsodium_18-3.1.9-4PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgsodium_18-3.1.9-4PGDG.rhel9.aarch64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el10.x86_64` | pigsty | 56.8 KiB | [pgsodium_18-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_18-3.1.9-1PIGSTY.el10.x86_64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el10.x86_64` | pgdg | 70.8 KiB | [pgsodium_18-3.1.9-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgsodium_18-3.1.9-4PGDG.rhel10.x86_64.rpm) |
+| `pgsodium_18` | 3.1.9 | `el10.aarch64` | pigsty | 54.1 KiB | [pgsodium_18-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_18-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `pgsodium_18` | 3.1.9 | `el10.aarch64` | pgdg | 68.1 KiB | [pgsodium_18-3.1.9-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgsodium_18-3.1.9-4PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
@@ -77,15 +79,17 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsodium_17` | 3.1.9 | `el8.x86_64` | pigsty | 53.4 KiB | [pgsodium_17-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_17-3.1.9-1PIGSTY.el8.x86_64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el8.x86_64` | pigsty | 60.4 KiB | [pgsodium_17-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_17-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el8.x86_64` | pgdg | 71.3 KiB | [pgsodium_17-3.1.9-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsodium_17-3.1.9-3PGDG.rhel8.x86_64.rpm) |
-| `pgsodium_17` | 3.1.9 | `el8.aarch64` | pigsty | 49.9 KiB | [pgsodium_17-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_17-3.1.9-1PIGSTY.el8.aarch64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el8.aarch64` | pigsty | 57.7 KiB | [pgsodium_17-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_17-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el8.aarch64` | pgdg | 67.8 KiB | [pgsodium_17-3.1.9-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsodium_17-3.1.9-3PGDG.rhel8.aarch64.rpm) |
-| `pgsodium_17` | 3.1.9 | `el9.x86_64` | pigsty | 54.3 KiB | [pgsodium_17-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_17-3.1.9-1PIGSTY.el9.x86_64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el9.x86_64` | pigsty | 56.9 KiB | [pgsodium_17-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_17-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el9.x86_64` | pgdg | 71.5 KiB | [pgsodium_17-3.1.9-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsodium_17-3.1.9-3PGDG.rhel9.x86_64.rpm) |
-| `pgsodium_17` | 3.1.9 | `el9.aarch64` | pigsty | 51.4 KiB | [pgsodium_17-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_17-3.1.9-1PIGSTY.el9.aarch64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el9.aarch64` | pigsty | 54.4 KiB | [pgsodium_17-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_17-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el9.aarch64` | pgdg | 68.5 KiB | [pgsodium_17-3.1.9-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsodium_17-3.1.9-3PGDG.rhel9.aarch64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el10.x86_64` | pigsty | 56.8 KiB | [pgsodium_17-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_17-3.1.9-1PIGSTY.el10.x86_64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el10.x86_64` | pgdg | 70.8 KiB | [pgsodium_17-3.1.9-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgsodium_17-3.1.9-4PGDG.rhel10.x86_64.rpm) |
+| `pgsodium_17` | 3.1.9 | `el10.aarch64` | pigsty | 54.6 KiB | [pgsodium_17-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_17-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `pgsodium_17` | 3.1.9 | `el10.aarch64` | pgdg | 68.2 KiB | [pgsodium_17-3.1.9-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgsodium_17-3.1.9-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgsodium` | 3.1.9 | `d12.x86_64` | pigsty | 192.1 KiB | [postgresql-17-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-17-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgsodium` | 3.1.9 | `d12.aarch64` | pigsty | 188.5 KiB | [postgresql-17-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-17-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb) |
@@ -99,15 +103,21 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsodium_16` | 3.1.9 | `el8.x86_64` | pigsty | 60.4 KiB | [pgsodium_16-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_16-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el8.x86_64` | pgdg | 71.1 KiB | [pgsodium_16-3.1.9-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsodium_16-3.1.9-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_16` | 3.1.8 | `el8.x86_64` | pgdg | 69.1 KiB | [pgsodium_16-3.1.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsodium_16-3.1.8-1PGDG.rhel8.x86_64.rpm) |
+| `pgsodium_16` | 3.1.9 | `el8.aarch64` | pigsty | 57.7 KiB | [pgsodium_16-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_16-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el8.aarch64` | pgdg | 67.6 KiB | [pgsodium_16-3.1.9-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsodium_16-3.1.9-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_16` | 3.1.8 | `el8.aarch64` | pgdg | 65.5 KiB | [pgsodium_16-3.1.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsodium_16-3.1.8-1PGDG.rhel8.aarch64.rpm) |
+| `pgsodium_16` | 3.1.9 | `el9.x86_64` | pigsty | 56.8 KiB | [pgsodium_16-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_16-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el9.x86_64` | pgdg | 71.3 KiB | [pgsodium_16-3.1.9-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsodium_16-3.1.9-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_16` | 3.1.8 | `el9.x86_64` | pgdg | 69.1 KiB | [pgsodium_16-3.1.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsodium_16-3.1.8-1PGDG.rhel9.x86_64.rpm) |
+| `pgsodium_16` | 3.1.9 | `el9.aarch64` | pigsty | 54.4 KiB | [pgsodium_16-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_16-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el9.aarch64` | pgdg | 68.3 KiB | [pgsodium_16-3.1.9-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsodium_16-3.1.9-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_16` | 3.1.8 | `el9.aarch64` | pgdg | 66.0 KiB | [pgsodium_16-3.1.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsodium_16-3.1.8-1PGDG.rhel9.aarch64.rpm) |
+| `pgsodium_16` | 3.1.9 | `el10.x86_64` | pigsty | 56.8 KiB | [pgsodium_16-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_16-3.1.9-1PIGSTY.el10.x86_64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el10.x86_64` | pgdg | 70.8 KiB | [pgsodium_16-3.1.9-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgsodium_16-3.1.9-4PGDG.rhel10.x86_64.rpm) |
+| `pgsodium_16` | 3.1.9 | `el10.aarch64` | pigsty | 54.6 KiB | [pgsodium_16-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_16-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `pgsodium_16` | 3.1.9 | `el10.aarch64` | pgdg | 68.1 KiB | [pgsodium_16-3.1.9-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgsodium_16-3.1.9-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgsodium` | 3.1.9 | `d12.x86_64` | pigsty | 188.6 KiB | [postgresql-16-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-16-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgsodium` | 3.1.9 | `d12.aarch64` | pigsty | 184.6 KiB | [postgresql-16-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-16-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb) |
@@ -121,6 +131,7 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsodium_15` | 3.1.9 | `el8.x86_64` | pigsty | 58.9 KiB | [pgsodium_15-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_15-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el8.x86_64` | pgdg | 69.8 KiB | [pgsodium_15-3.1.9-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.1.9-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_15` | 3.1.8 | `el8.x86_64` | pgdg | 67.6 KiB | [pgsodium_15-3.1.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.1.8-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_15` | 3.1.7 | `el8.x86_64` | pgdg | 67.1 KiB | [pgsodium_15-3.1.7-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.1.7-1.rhel8.x86_64.rpm) |
@@ -132,6 +143,7 @@ Postgres extension for libsodium functions
 | `pgsodium_15` | 3.0.6 | `el8.x86_64` | pgdg | 57.0 KiB | [pgsodium_15-3.0.6-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.0.6-1.rhel8.x86_64.rpm) |
 | `pgsodium_15` | 3.0.5 | `el8.x86_64` | pgdg | 56.6 KiB | [pgsodium_15-3.0.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.0.5-1.rhel8.x86_64.rpm) |
 | `pgsodium_15` | 3.0.4 | `el8.x86_64` | pgdg | 53.3 KiB | [pgsodium_15-3.0.4-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsodium_15-3.0.4-2.rhel8.x86_64.rpm) |
+| `pgsodium_15` | 3.1.9 | `el8.aarch64` | pigsty | 56.0 KiB | [pgsodium_15-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_15-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el8.aarch64` | pgdg | 66.1 KiB | [pgsodium_15-3.1.9-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.1.9-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_15` | 3.1.8 | `el8.aarch64` | pgdg | 64.0 KiB | [pgsodium_15-3.1.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.1.8-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_15` | 3.1.7 | `el8.aarch64` | pgdg | 63.6 KiB | [pgsodium_15-3.1.7-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.1.7-1.rhel8.aarch64.rpm) |
@@ -142,6 +154,7 @@ Postgres extension for libsodium functions
 | `pgsodium_15` | 3.1.0 | `el8.aarch64` | pgdg | 61.2 KiB | [pgsodium_15-3.1.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.1.0-1.rhel8.aarch64.rpm) |
 | `pgsodium_15` | 3.0.6 | `el8.aarch64` | pgdg | 55.5 KiB | [pgsodium_15-3.0.6-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.0.6-1.rhel8.aarch64.rpm) |
 | `pgsodium_15` | 3.0.5 | `el8.aarch64` | pgdg | 55.2 KiB | [pgsodium_15-3.0.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsodium_15-3.0.5-1.rhel8.aarch64.rpm) |
+| `pgsodium_15` | 3.1.9 | `el9.x86_64` | pigsty | 55.1 KiB | [pgsodium_15-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_15-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el9.x86_64` | pgdg | 69.9 KiB | [pgsodium_15-3.1.9-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.1.9-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_15` | 3.1.8 | `el9.x86_64` | pgdg | 67.5 KiB | [pgsodium_15-3.1.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.1.8-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_15` | 3.1.7 | `el9.x86_64` | pgdg | 67.1 KiB | [pgsodium_15-3.1.7-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.1.7-1.rhel9.x86_64.rpm) |
@@ -152,6 +165,7 @@ Postgres extension for libsodium functions
 | `pgsodium_15` | 3.1.0 | `el9.x86_64` | pgdg | 64.8 KiB | [pgsodium_15-3.1.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.1.0-1.rhel9.x86_64.rpm) |
 | `pgsodium_15` | 3.0.6 | `el9.x86_64` | pgdg | 57.4 KiB | [pgsodium_15-3.0.6-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.0.6-1.rhel9.x86_64.rpm) |
 | `pgsodium_15` | 3.0.5 | `el9.x86_64` | pgdg | 57.0 KiB | [pgsodium_15-3.0.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsodium_15-3.0.5-1.rhel9.x86_64.rpm) |
+| `pgsodium_15` | 3.1.9 | `el9.aarch64` | pigsty | 52.9 KiB | [pgsodium_15-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_15-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el9.aarch64` | pgdg | 66.8 KiB | [pgsodium_15-3.1.9-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.1.9-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_15` | 3.1.8 | `el9.aarch64` | pgdg | 64.5 KiB | [pgsodium_15-3.1.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.1.8-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_15` | 3.1.7 | `el9.aarch64` | pgdg | 64.0 KiB | [pgsodium_15-3.1.7-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.1.7-1.rhel9.aarch64.rpm) |
@@ -162,7 +176,9 @@ Postgres extension for libsodium functions
 | `pgsodium_15` | 3.1.0 | `el9.aarch64` | pgdg | 61.8 KiB | [pgsodium_15-3.1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.1.0-1.rhel9.aarch64.rpm) |
 | `pgsodium_15` | 3.0.6 | `el9.aarch64` | pgdg | 56.3 KiB | [pgsodium_15-3.0.6-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.0.6-1.rhel9.aarch64.rpm) |
 | `pgsodium_15` | 3.0.5 | `el9.aarch64` | pgdg | 56.0 KiB | [pgsodium_15-3.0.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsodium_15-3.0.5-1.rhel9.aarch64.rpm) |
+| `pgsodium_15` | 3.1.9 | `el10.x86_64` | pigsty | 55.3 KiB | [pgsodium_15-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_15-3.1.9-1PIGSTY.el10.x86_64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el10.x86_64` | pgdg | 69.2 KiB | [pgsodium_15-3.1.9-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgsodium_15-3.1.9-4PGDG.rhel10.x86_64.rpm) |
+| `pgsodium_15` | 3.1.9 | `el10.aarch64` | pigsty | 52.9 KiB | [pgsodium_15-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_15-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `pgsodium_15` | 3.1.9 | `el10.aarch64` | pgdg | 66.7 KiB | [pgsodium_15-3.1.9-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgsodium_15-3.1.9-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgsodium` | 3.1.9 | `d12.x86_64` | pigsty | 183.8 KiB | [postgresql-15-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-15-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgsodium` | 3.1.9 | `d12.aarch64` | pigsty | 179.9 KiB | [postgresql-15-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-15-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb) |
@@ -176,6 +192,7 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsodium_14` | 3.1.9 | `el8.x86_64` | pigsty | 58.9 KiB | [pgsodium_14-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_14-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el8.x86_64` | pgdg | 69.8 KiB | [pgsodium_14-3.1.9-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-3.1.9-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_14` | 3.1.8 | `el8.x86_64` | pgdg | 67.6 KiB | [pgsodium_14-3.1.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-3.1.8-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_14` | 3.1.7 | `el8.x86_64` | pgdg | 67.2 KiB | [pgsodium_14-3.1.7-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-3.1.7-1.rhel8.x86_64.rpm) |
@@ -190,6 +207,7 @@ Postgres extension for libsodium functions
 | `pgsodium_14` | 3.0.2 | `el8.x86_64` | pgdg | 52.7 KiB | [pgsodium_14-3.0.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-3.0.2-1.rhel8.x86_64.rpm) |
 | `pgsodium_14` | 3.0.0 | `el8.x86_64` | pgdg | 52.5 KiB | [pgsodium_14-3.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-3.0.0-1.rhel8.x86_64.rpm) |
 | `pgsodium_14` | 2.0.2 | `el8.x86_64` | pgdg | 48.6 KiB | [pgsodium_14-2.0.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsodium_14-2.0.2-1.rhel8.x86_64.rpm) |
+| `pgsodium_14` | 3.1.9 | `el8.aarch64` | pigsty | 56.0 KiB | [pgsodium_14-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_14-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el8.aarch64` | pgdg | 66.1 KiB | [pgsodium_14-3.1.9-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.1.9-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_14` | 3.1.8 | `el8.aarch64` | pgdg | 64.0 KiB | [pgsodium_14-3.1.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.1.8-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_14` | 3.1.7 | `el8.aarch64` | pgdg | 63.5 KiB | [pgsodium_14-3.1.7-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.1.7-1.rhel8.aarch64.rpm) |
@@ -200,6 +218,7 @@ Postgres extension for libsodium functions
 | `pgsodium_14` | 3.1.0 | `el8.aarch64` | pgdg | 61.2 KiB | [pgsodium_14-3.1.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.1.0-1.rhel8.aarch64.rpm) |
 | `pgsodium_14` | 3.0.6 | `el8.aarch64` | pgdg | 55.6 KiB | [pgsodium_14-3.0.6-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.0.6-1.rhel8.aarch64.rpm) |
 | `pgsodium_14` | 3.0.5 | `el8.aarch64` | pgdg | 55.2 KiB | [pgsodium_14-3.0.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsodium_14-3.0.5-1.rhel8.aarch64.rpm) |
+| `pgsodium_14` | 3.1.9 | `el9.x86_64` | pigsty | 55.1 KiB | [pgsodium_14-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_14-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el9.x86_64` | pgdg | 69.5 KiB | [pgsodium_14-3.1.9-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-3.1.9-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_14` | 3.1.8 | `el9.x86_64` | pgdg | 67.6 KiB | [pgsodium_14-3.1.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-3.1.8-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_14` | 3.1.7 | `el9.x86_64` | pgdg | 67.1 KiB | [pgsodium_14-3.1.7-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-3.1.7-1.rhel9.x86_64.rpm) |
@@ -211,6 +230,7 @@ Postgres extension for libsodium functions
 | `pgsodium_14` | 3.0.6 | `el9.x86_64` | pgdg | 57.4 KiB | [pgsodium_14-3.0.6-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-3.0.6-1.rhel9.x86_64.rpm) |
 | `pgsodium_14` | 3.0.5 | `el9.x86_64` | pgdg | 57.1 KiB | [pgsodium_14-3.0.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-3.0.5-1.rhel9.x86_64.rpm) |
 | `pgsodium_14` | 2.0.2 | `el9.x86_64` | pgdg | 49.3 KiB | [pgsodium_14-2.0.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsodium_14-2.0.2-1.rhel9.x86_64.rpm) |
+| `pgsodium_14` | 3.1.9 | `el9.aarch64` | pigsty | 52.8 KiB | [pgsodium_14-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_14-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el9.aarch64` | pgdg | 66.8 KiB | [pgsodium_14-3.1.9-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.1.9-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_14` | 3.1.8 | `el9.aarch64` | pgdg | 64.7 KiB | [pgsodium_14-3.1.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.1.8-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_14` | 3.1.7 | `el9.aarch64` | pgdg | 64.2 KiB | [pgsodium_14-3.1.7-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.1.7-1.rhel9.aarch64.rpm) |
@@ -221,7 +241,9 @@ Postgres extension for libsodium functions
 | `pgsodium_14` | 3.1.0 | `el9.aarch64` | pgdg | 61.8 KiB | [pgsodium_14-3.1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.1.0-1.rhel9.aarch64.rpm) |
 | `pgsodium_14` | 3.0.6 | `el9.aarch64` | pgdg | 56.3 KiB | [pgsodium_14-3.0.6-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.0.6-1.rhel9.aarch64.rpm) |
 | `pgsodium_14` | 3.0.5 | `el9.aarch64` | pgdg | 56.0 KiB | [pgsodium_14-3.0.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsodium_14-3.0.5-1.rhel9.aarch64.rpm) |
+| `pgsodium_14` | 3.1.9 | `el10.x86_64` | pigsty | 55.2 KiB | [pgsodium_14-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_14-3.1.9-1PIGSTY.el10.x86_64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el10.x86_64` | pgdg | 69.1 KiB | [pgsodium_14-3.1.9-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgsodium_14-3.1.9-4PGDG.rhel10.x86_64.rpm) |
+| `pgsodium_14` | 3.1.9 | `el10.aarch64` | pigsty | 52.9 KiB | [pgsodium_14-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_14-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `pgsodium_14` | 3.1.9 | `el10.aarch64` | pgdg | 66.6 KiB | [pgsodium_14-3.1.9-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgsodium_14-3.1.9-4PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgsodium` | 3.1.9 | `d12.x86_64` | pigsty | 183.6 KiB | [postgresql-14-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-14-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgsodium` | 3.1.9 | `d12.aarch64` | pigsty | 179.8 KiB | [postgresql-14-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-14-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb) |
@@ -235,6 +257,7 @@ Postgres extension for libsodium functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgsodium_13` | 3.1.9 | `el8.x86_64` | pigsty | 58.9 KiB | [pgsodium_13-3.1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsodium_13-3.1.9-1PIGSTY.el8.x86_64.rpm) |
 | `pgsodium_13` | 3.1.9 | `el8.x86_64` | pgdg | 69.8 KiB | [pgsodium_13-3.1.9-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-3.1.9-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_13` | 3.1.8 | `el8.x86_64` | pgdg | 67.7 KiB | [pgsodium_13-3.1.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-3.1.8-1PGDG.rhel8.x86_64.rpm) |
 | `pgsodium_13` | 3.1.7 | `el8.x86_64` | pgdg | 67.2 KiB | [pgsodium_13-3.1.7-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-3.1.7-1.rhel8.x86_64.rpm) |
@@ -249,6 +272,7 @@ Postgres extension for libsodium functions
 | `pgsodium_13` | 3.0.2 | `el8.x86_64` | pgdg | 52.7 KiB | [pgsodium_13-3.0.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-3.0.2-1.rhel8.x86_64.rpm) |
 | `pgsodium_13` | 3.0.0 | `el8.x86_64` | pgdg | 52.4 KiB | [pgsodium_13-3.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-3.0.0-1.rhel8.x86_64.rpm) |
 | `pgsodium_13` | 2.0.2 | `el8.x86_64` | pgdg | 48.5 KiB | [pgsodium_13-2.0.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsodium_13-2.0.2-1.rhel8.x86_64.rpm) |
+| `pgsodium_13` | 3.1.9 | `el8.aarch64` | pigsty | 56.0 KiB | [pgsodium_13-3.1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsodium_13-3.1.9-1PIGSTY.el8.aarch64.rpm) |
 | `pgsodium_13` | 3.1.9 | `el8.aarch64` | pgdg | 66.1 KiB | [pgsodium_13-3.1.9-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.1.9-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_13` | 3.1.8 | `el8.aarch64` | pgdg | 64.1 KiB | [pgsodium_13-3.1.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.1.8-1PGDG.rhel8.aarch64.rpm) |
 | `pgsodium_13` | 3.1.7 | `el8.aarch64` | pgdg | 63.6 KiB | [pgsodium_13-3.1.7-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.1.7-1.rhel8.aarch64.rpm) |
@@ -259,6 +283,7 @@ Postgres extension for libsodium functions
 | `pgsodium_13` | 3.1.0 | `el8.aarch64` | pgdg | 61.2 KiB | [pgsodium_13-3.1.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.1.0-1.rhel8.aarch64.rpm) |
 | `pgsodium_13` | 3.0.6 | `el8.aarch64` | pgdg | 55.6 KiB | [pgsodium_13-3.0.6-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.0.6-1.rhel8.aarch64.rpm) |
 | `pgsodium_13` | 3.0.5 | `el8.aarch64` | pgdg | 55.2 KiB | [pgsodium_13-3.0.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsodium_13-3.0.5-1.rhel8.aarch64.rpm) |
+| `pgsodium_13` | 3.1.9 | `el9.x86_64` | pigsty | 55.1 KiB | [pgsodium_13-3.1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsodium_13-3.1.9-1PIGSTY.el9.x86_64.rpm) |
 | `pgsodium_13` | 3.1.9 | `el9.x86_64` | pgdg | 69.4 KiB | [pgsodium_13-3.1.9-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-3.1.9-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_13` | 3.1.8 | `el9.x86_64` | pgdg | 67.5 KiB | [pgsodium_13-3.1.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-3.1.8-1PGDG.rhel9.x86_64.rpm) |
 | `pgsodium_13` | 3.1.7 | `el9.x86_64` | pgdg | 67.1 KiB | [pgsodium_13-3.1.7-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-3.1.7-1.rhel9.x86_64.rpm) |
@@ -270,6 +295,7 @@ Postgres extension for libsodium functions
 | `pgsodium_13` | 3.0.6 | `el9.x86_64` | pgdg | 57.4 KiB | [pgsodium_13-3.0.6-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-3.0.6-1.rhel9.x86_64.rpm) |
 | `pgsodium_13` | 3.0.5 | `el9.x86_64` | pgdg | 57.2 KiB | [pgsodium_13-3.0.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-3.0.5-1.rhel9.x86_64.rpm) |
 | `pgsodium_13` | 2.0.2 | `el9.x86_64` | pgdg | 49.3 KiB | [pgsodium_13-2.0.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsodium_13-2.0.2-1.rhel9.x86_64.rpm) |
+| `pgsodium_13` | 3.1.9 | `el9.aarch64` | pigsty | 52.9 KiB | [pgsodium_13-3.1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsodium_13-3.1.9-1PIGSTY.el9.aarch64.rpm) |
 | `pgsodium_13` | 3.1.9 | `el9.aarch64` | pgdg | 66.8 KiB | [pgsodium_13-3.1.9-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.1.9-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_13` | 3.1.8 | `el9.aarch64` | pgdg | 64.6 KiB | [pgsodium_13-3.1.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.1.8-1PGDG.rhel9.aarch64.rpm) |
 | `pgsodium_13` | 3.1.7 | `el9.aarch64` | pgdg | 64.2 KiB | [pgsodium_13-3.1.7-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.1.7-1.rhel9.aarch64.rpm) |
@@ -280,6 +306,8 @@ Postgres extension for libsodium functions
 | `pgsodium_13` | 3.1.0 | `el9.aarch64` | pgdg | 61.8 KiB | [pgsodium_13-3.1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.1.0-1.rhel9.aarch64.rpm) |
 | `pgsodium_13` | 3.0.6 | `el9.aarch64` | pgdg | 56.3 KiB | [pgsodium_13-3.0.6-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.0.6-1.rhel9.aarch64.rpm) |
 | `pgsodium_13` | 3.0.5 | `el9.aarch64` | pgdg | 56.0 KiB | [pgsodium_13-3.0.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsodium_13-3.0.5-1.rhel9.aarch64.rpm) |
+| `pgsodium_13` | 3.1.9 | `el10.x86_64` | pigsty | 55.1 KiB | [pgsodium_13-3.1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsodium_13-3.1.9-1PIGSTY.el10.x86_64.rpm) |
+| `pgsodium_13` | 3.1.9 | `el10.aarch64` | pigsty | 52.9 KiB | [pgsodium_13-3.1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsodium_13-3.1.9-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pgsodium` | 3.1.9 | `d12.x86_64` | pigsty | 179.7 KiB | [postgresql-13-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-13-pgsodium_3.1.9-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgsodium` | 3.1.9 | `d12.aarch64` | pigsty | 175.6 KiB | [postgresql-13-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsodium/postgresql-13-pgsodium_3.1.9-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pgsodium` | 3.1.9 | `u22.x86_64` | pigsty | 191.4 KiB | [postgresql-13-pgsodium_3.1.9-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsodium/postgresql-13-pgsodium_3.1.9-1PIGSTY~jammy_amd64.deb) |

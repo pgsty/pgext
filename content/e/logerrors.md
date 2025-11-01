@@ -14,7 +14,7 @@ Function for collecting statistics about messages in logfile
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.3` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.5` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ Function for collecting statistics about messages in logfile
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/logerrors" >}} | `2.1.3` | {{< bg "18" "logerrors_18*" "red" >}} {{< bg "17" "logerrors_17*" "green" >}} {{< bg "16" "logerrors_16*" "green" >}} {{< bg "15" "logerrors_15*" "green" >}} {{< bg "14" "logerrors_14*" "green" >}} {{< bg "13" "logerrors_13*" "green" >}} | `logerrors_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/logerrors" >}} | `2.1.3` | {{< bg "18" "postgresql-18-logerrors" "red" >}} {{< bg "17" "postgresql-17-logerrors" "green" >}} {{< bg "16" "postgresql-16-logerrors" "green" >}} {{< bg "15" "postgresql-15-logerrors" "green" >}} {{< bg "14" "postgresql-14-logerrors" "green" >}} {{< bg "13" "postgresql-13-logerrors" "green" >}} | `postgresql-$v-logerrors` | - |
+| **EL** | {{< badge content="PGDG" link="/e/logerrors" >}} | `2.1.5` | {{< bg "18" "logerrors_18*" "green" >}} {{< bg "17" "logerrors_17*" "green" >}} {{< bg "16" "logerrors_16*" "green" >}} {{< bg "15" "logerrors_15*" "green" >}} {{< bg "14" "logerrors_14*" "green" >}} {{< bg "13" "logerrors_13*" "green" >}} | `logerrors_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/logerrors" >}} | `2.1.5` | {{< bg "18" "postgresql-18-logerrors" "green" >}} {{< bg "17" "postgresql-17-logerrors" "green" >}} {{< bg "16" "postgresql-16-logerrors" "green" >}} {{< bg "15" "postgresql-15-logerrors" "green" >}} {{< bg "14" "postgresql-14-logerrors" "green" >}} {{< bg "13" "postgresql-13-logerrors" "green" >}} | `postgresql-$v-logerrors` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -127,8 +127,8 @@ Function for collecting statistics about messages in logfile
 | `logerrors_15` | 2.1.2 | `el8.x86_64` | pgdg | 22.3 KiB | [logerrors_15-2.1.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1.2-1.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1 | `el8.x86_64` | pgdg | 20.7 KiB | [logerrors_15-2.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1-1.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1 | `el8.x86_64` | pgdg | 21.1 KiB | [logerrors_15-2.1-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.1-2.rhel8.x86_64.rpm) |
-| `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 41.9 KiB | [logerrors_15-2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-1.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 19.9 KiB | [logerrors_15-2.0-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-2.rhel8.x86_64.rpm) |
+| `logerrors_15` | 2.0 | `el8.x86_64` | pgdg | 41.9 KiB | [logerrors_15-2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/logerrors_15-2.0-1.rhel8.x86_64.rpm) |
 | `logerrors_15` | 2.1.5 | `el8.aarch64` | pgdg | 23.6 KiB | [logerrors_15-2.1.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.5-1PGDG.rhel8.aarch64.rpm) |
 | `logerrors_15` | 2.1.3 | `el8.aarch64` | pgdg | 23.2 KiB | [logerrors_15-2.1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.3-1PGDG.rhel8.aarch64.rpm) |
 | `logerrors_15` | 2.1.2 | `el8.aarch64` | pgdg | 22.4 KiB | [logerrors_15-2.1.2-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/logerrors_15-2.1.2-1.rhel8.aarch64.rpm) |
@@ -139,15 +139,15 @@ Function for collecting statistics about messages in logfile
 | `logerrors_15` | 2.1.5 | `el9.x86_64` | pgdg | 22.9 KiB | [logerrors_15-2.1.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1.5-1PGDG.rhel9.x86_64.rpm) |
 | `logerrors_15` | 2.1.3 | `el9.x86_64` | pgdg | 23.5 KiB | [logerrors_15-2.1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1.3-1PGDG.rhel9.x86_64.rpm) |
 | `logerrors_15` | 2.1.2 | `el9.x86_64` | pgdg | 22.7 KiB | [logerrors_15-2.1.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1.2-1.rhel9.x86_64.rpm) |
-| `logerrors_15` | 2.1 | `el9.x86_64` | pgdg | 21.2 KiB | [logerrors_15-2.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1-1.rhel9.x86_64.rpm) |
 | `logerrors_15` | 2.1 | `el9.x86_64` | pgdg | 21.6 KiB | [logerrors_15-2.1-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1-2.rhel9.x86_64.rpm) |
-| `logerrors_15` | 2.0 | `el9.x86_64` | pgdg | 20.1 KiB | [logerrors_15-2.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.0-2.rhel9.x86_64.rpm) |
+| `logerrors_15` | 2.1 | `el9.x86_64` | pgdg | 21.2 KiB | [logerrors_15-2.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.1-1.rhel9.x86_64.rpm) |
 | `logerrors_15` | 2.0 | `el9.x86_64` | pgdg | 42.8 KiB | [logerrors_15-2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.0-1.rhel9.x86_64.rpm) |
+| `logerrors_15` | 2.0 | `el9.x86_64` | pgdg | 20.1 KiB | [logerrors_15-2.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/logerrors_15-2.0-2.rhel9.x86_64.rpm) |
 | `logerrors_15` | 2.1.5 | `el9.aarch64` | pgdg | 23.0 KiB | [logerrors_15-2.1.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1.5-1PGDG.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.1.3 | `el9.aarch64` | pgdg | 23.8 KiB | [logerrors_15-2.1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1.3-1PGDG.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.1.2 | `el9.aarch64` | pgdg | 22.6 KiB | [logerrors_15-2.1.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1.2-1.rhel9.aarch64.rpm) |
-| `logerrors_15` | 2.1 | `el9.aarch64` | pgdg | 20.9 KiB | [logerrors_15-2.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1-1.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.1 | `el9.aarch64` | pgdg | 21.5 KiB | [logerrors_15-2.1-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1-2.rhel9.aarch64.rpm) |
+| `logerrors_15` | 2.1 | `el9.aarch64` | pgdg | 20.9 KiB | [logerrors_15-2.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.1-1.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.0 | `el9.aarch64` | pgdg | 20.0 KiB | [logerrors_15-2.0-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.0-2.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.0 | `el9.aarch64` | pgdg | 42.4 KiB | [logerrors_15-2.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/logerrors_15-2.0-1.rhel9.aarch64.rpm) |
 | `logerrors_15` | 2.1.5 | `el10.x86_64` | pgdg | 23.4 KiB | [logerrors_15-2.1.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/logerrors_15-2.1.5-1PGDG.rhel10.x86_64.rpm) |
@@ -253,7 +253,7 @@ Function for collecting statistics about messages in logfile
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/munakoiso/logerrors" title="Repository" icon="github" subtitle="github.com/munakoiso/logerrors" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="logerrors-2.1.3.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="logerrors-2.1.5.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -278,6 +278,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install logerrors; # install by extension name, for the current active PG version
 pig ext install logerrors; # install via package alias, for the active PG version
+pig ext install logerrors -v 18;   # install for PG 18
 pig ext install logerrors -v 17;   # install for PG 17
 pig ext install logerrors -v 16;   # install for PG 16
 pig ext install logerrors -v 15;   # install for PG 15

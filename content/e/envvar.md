@@ -14,7 +14,7 @@ Fetch the value of an environment variable
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4270** | {{< badge content="envvar" link="https://github.com/theory/pg-envvar" >}} | {{< ext "envvar" >}} | `1.0.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4270** | {{< badge content="envvar" link="https://github.com/theory/pg-envvar" >}} | {{< ext "envvar" "pg_envvar" >}} | `1.0.1` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -37,12 +37,12 @@ Fetch the value of an environment variable
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_envvar_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_envvar_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0.1" "pg_envvar_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "pg_envvar_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-envvar : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-pg-envvar : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-envvar : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-pg-envvar : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-envvar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-envvar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-envvar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-envvar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-envvar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-envvar : MISS 0" "red" >}}      |
@@ -53,19 +53,33 @@ Fetch the value of an environment variable
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-envvar : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-pg-envvar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-pg-envvar : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_envvar_17` | 1.0.1 | `el8.x86_64` | pigsty | 12.8 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_17-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_18-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_18-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_18-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_18-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_18-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_18` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_18-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_18-1.0.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_envvar_17` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_17-1.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_envvar_17` | 1.0.0 | `el8.x86_64` | pigsty | 12.6 KiB | [pg_envvar_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_envvar_17` | 1.0.1 | `el8.aarch64` | pigsty | 12.8 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_17-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_17` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_17-1.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_envvar_17` | 1.0.0 | `el8.aarch64` | pigsty | 12.6 KiB | [pg_envvar_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_envvar_17` | 1.0.1 | `el9.x86_64` | pigsty | 12.8 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_17-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_17` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_17-1.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_envvar_17` | 1.0.0 | `el9.x86_64` | pigsty | 12.6 KiB | [pg_envvar_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_envvar_17` | 1.0.1 | `el9.aarch64` | pigsty | 12.7 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_17-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_17` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_17-1.0.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_envvar_17` | 1.0.0 | `el9.aarch64` | pigsty | 12.4 KiB | [pg_envvar_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_17` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_17-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_17` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_17-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_17-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-envvar` | 1.0.1 | `d12.x86_64` | pigsty | 9.3 KiB | [postgresql-17-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-17-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-envvar` | 1.0.1 | `d12.aarch64` | pigsty | 9.5 KiB | [postgresql-17-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-17-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-envvar` | 1.0.1 | `u22.x86_64` | pigsty | 9.0 KiB | [postgresql-17-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-envvar/postgresql-17-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -78,14 +92,16 @@ Fetch the value of an environment variable
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_envvar_16` | 1.0.1 | `el8.x86_64` | pigsty | 12.8 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_16-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_16-1.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_envvar_16` | 1.0.0 | `el8.x86_64` | pigsty | 12.6 KiB | [pg_envvar_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_envvar_16` | 1.0.1 | `el8.aarch64` | pigsty | 12.8 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_16-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_16-1.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_envvar_16` | 1.0.0 | `el8.aarch64` | pigsty | 12.6 KiB | [pg_envvar_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_envvar_16` | 1.0.1 | `el9.x86_64` | pigsty | 12.8 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_16-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_16-1.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_envvar_16` | 1.0.0 | `el9.x86_64` | pigsty | 12.6 KiB | [pg_envvar_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_envvar_16` | 1.0.1 | `el9.aarch64` | pigsty | 12.6 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_16-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_16-1.0.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_envvar_16` | 1.0.0 | `el9.aarch64` | pigsty | 12.4 KiB | [pg_envvar_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_16-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_16` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_16-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_16-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-envvar` | 1.0.1 | `d12.x86_64` | pigsty | 9.3 KiB | [postgresql-16-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-16-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-envvar` | 1.0.1 | `d12.aarch64` | pigsty | 9.6 KiB | [postgresql-16-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-16-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-envvar` | 1.0.1 | `u22.x86_64` | pigsty | 9.0 KiB | [postgresql-16-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-envvar/postgresql-16-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -98,14 +114,16 @@ Fetch the value of an environment variable
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_envvar_15` | 1.0.1 | `el8.x86_64` | pigsty | 12.8 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_15-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_15-1.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_envvar_15` | 1.0.0 | `el8.x86_64` | pigsty | 12.6 KiB | [pg_envvar_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_envvar_15` | 1.0.1 | `el8.aarch64` | pigsty | 12.8 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_15-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_15-1.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_envvar_15` | 1.0.0 | `el8.aarch64` | pigsty | 12.6 KiB | [pg_envvar_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_envvar_15` | 1.0.1 | `el9.x86_64` | pigsty | 12.8 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_15-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_15-1.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_envvar_15` | 1.0.0 | `el9.x86_64` | pigsty | 12.6 KiB | [pg_envvar_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_envvar_15` | 1.0.1 | `el9.aarch64` | pigsty | 12.7 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_15-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_15-1.0.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_envvar_15` | 1.0.0 | `el9.aarch64` | pigsty | 12.4 KiB | [pg_envvar_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_15-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_15` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_15-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_15-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-envvar` | 1.0.1 | `d12.x86_64` | pigsty | 9.3 KiB | [postgresql-15-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-15-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-envvar` | 1.0.1 | `d12.aarch64` | pigsty | 9.6 KiB | [postgresql-15-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-15-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-envvar` | 1.0.1 | `u22.x86_64` | pigsty | 9.0 KiB | [postgresql-15-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-envvar/postgresql-15-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -118,14 +136,16 @@ Fetch the value of an environment variable
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_envvar_14` | 1.0.1 | `el8.x86_64` | pigsty | 12.8 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_14-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_14-1.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_envvar_14` | 1.0.0 | `el8.x86_64` | pigsty | 12.6 KiB | [pg_envvar_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_envvar_14` | 1.0.1 | `el8.aarch64` | pigsty | 12.8 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_14-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_14-1.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_envvar_14` | 1.0.0 | `el8.aarch64` | pigsty | 12.6 KiB | [pg_envvar_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_envvar_14` | 1.0.1 | `el9.x86_64` | pigsty | 12.8 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_14-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_14-1.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_envvar_14` | 1.0.0 | `el9.x86_64` | pigsty | 12.6 KiB | [pg_envvar_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_envvar_14` | 1.0.1 | `el9.aarch64` | pigsty | 12.6 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_14-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_14-1.0.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_envvar_14` | 1.0.0 | `el9.aarch64` | pigsty | 12.4 KiB | [pg_envvar_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_14-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_14` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_14-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_14-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-envvar` | 1.0.1 | `d12.x86_64` | pigsty | 9.3 KiB | [postgresql-14-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-14-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-envvar` | 1.0.1 | `d12.aarch64` | pigsty | 9.5 KiB | [postgresql-14-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-14-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-envvar` | 1.0.1 | `u22.x86_64` | pigsty | 9.0 KiB | [postgresql-14-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-envvar/postgresql-14-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -138,14 +158,16 @@ Fetch the value of an environment variable
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_envvar_13` | 1.0.1 | `el8.x86_64` | pigsty | 12.8 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_13-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el8.x86_64` | pigsty | 12.5 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_13-1.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_envvar_13` | 1.0.0 | `el8.x86_64` | pigsty | 12.6 KiB | [pg_envvar_13-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_envvar_13-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_envvar_13` | 1.0.1 | `el8.aarch64` | pigsty | 12.8 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_13-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el8.aarch64` | pigsty | 12.7 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_13-1.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_envvar_13` | 1.0.0 | `el8.aarch64` | pigsty | 12.6 KiB | [pg_envvar_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_envvar_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_envvar_13` | 1.0.1 | `el9.x86_64` | pigsty | 12.8 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_13-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el9.x86_64` | pigsty | 12.5 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_13-1.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_envvar_13` | 1.0.0 | `el9.x86_64` | pigsty | 12.6 KiB | [pg_envvar_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_envvar_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_envvar_13` | 1.0.1 | `el9.aarch64` | pigsty | 12.6 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_13-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el9.aarch64` | pigsty | 12.5 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_13-1.0.1-1PIGSTY.el9.aarch64.rpm) |
 | `pg_envvar_13` | 1.0.0 | `el9.aarch64` | pigsty | 12.4 KiB | [pg_envvar_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_envvar_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el10.x86_64` | pigsty | 12.7 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_envvar_13-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_envvar_13` | 1.0.1 | `el10.aarch64` | pigsty | 12.7 KiB | [pg_envvar_13-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_envvar_13-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-envvar` | 1.0.1 | `d12.x86_64` | pigsty | 9.3 KiB | [postgresql-13-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-13-pg-envvar_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-envvar` | 1.0.1 | `d12.aarch64` | pigsty | 9.5 KiB | [postgresql-13-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-envvar/postgresql-13-pg-envvar_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-envvar` | 1.0.1 | `u22.x86_64` | pigsty | 9.0 KiB | [postgresql-13-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-envvar/postgresql-13-pg-envvar_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -183,7 +205,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 
 ```bash
 pig ext install envvar; # install by extension name, for the current active PG version
-pig ext install envvar; # install via package alias, for the active PG version
+pig ext install pg_envvar; # install via package alias, for the active PG version
 pig ext install envvar -v 18;   # install for PG 18
 pig ext install envvar -v 17;   # install for PG 17
 pig ext install envvar -v 16;   # install for PG 16

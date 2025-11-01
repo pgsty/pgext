@@ -37,12 +37,12 @@ PDF type with meta admin & Full-Text Search
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
-|    `el10.x86_64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    | {{< bg "PGDG 0.1.0" "pgpdf_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.0" "pgpdf_13 : AVAIL 1" "blue" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.1.0" "pgpdf_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.1.0" "pgpdf_13 : AVAIL 2" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgpdf : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgpdf : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pgpdf : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-pgpdf : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-13-pgpdf : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pgpdf : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgpdf : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgpdf : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgpdf : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgpdf : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pgpdf : MISS 0" "red" >}}      |
@@ -58,11 +58,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgpdf_18` | 0.1.0 | `el8.x86_64` | pigsty | 18.4 KiB | [pgpdf_18-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_18-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el8.x86_64` | pgdg | 15.4 KiB | [pgpdf_18-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgpdf_18-0.1.0-1PGDG.rhel8.x86_64.rpm) |
+| `pgpdf_18` | 0.1.0 | `el8.aarch64` | pigsty | 18.0 KiB | [pgpdf_18-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_18-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_18-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgpdf_18-0.1.0-1PGDG.rhel8.aarch64.rpm) |
+| `pgpdf_18` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_18-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_18-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_18-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgpdf_18-0.1.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgpdf_18` | 0.1.0 | `el9.aarch64` | pigsty | 17.7 KiB | [pgpdf_18-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_18-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el9.aarch64` | pgdg | 14.9 KiB | [pgpdf_18-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgpdf_18-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_18` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_18-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_18-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el10.x86_64` | pgdg | 16.0 KiB | [pgpdf_18-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgpdf_18-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_18` | 0.1.0 | `el10.aarch64` | pigsty | 17.9 KiB | [pgpdf_18-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_18-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_18` | 0.1.0 | `el10.aarch64` | pgdg | 15.5 KiB | [pgpdf_18-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgpdf_18-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
@@ -70,15 +76,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpdf_17` | 0.1.0 | `el8.x86_64` | pigsty | 17.9 KiB | [pgpdf_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el8.x86_64` | pigsty | 18.4 KiB | [pgpdf_17-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_17-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el8.x86_64` | pgdg | 15.4 KiB | [pgpdf_17-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgpdf_17-0.1.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgpdf_17` | 0.1.0 | `el8.aarch64` | pigsty | 17.4 KiB | [pgpdf_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el8.aarch64` | pigsty | 18.0 KiB | [pgpdf_17-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_17-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_17-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgpdf_17-0.1.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgpdf_17` | 0.1.0 | `el9.x86_64` | pigsty | 18.3 KiB | [pgpdf_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_17-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_17-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_17-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgpdf_17-0.1.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgpdf_17` | 0.1.0 | `el9.aarch64` | pigsty | 17.6 KiB | [pgpdf_17-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_17-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el9.aarch64` | pigsty | 17.8 KiB | [pgpdf_17-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_17-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el9.aarch64` | pgdg | 15.0 KiB | [pgpdf_17-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgpdf_17-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_17-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_17-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el10.x86_64` | pgdg | 16.0 KiB | [pgpdf_17-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgpdf_17-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_17` | 0.1.0 | `el10.aarch64` | pigsty | 17.9 KiB | [pgpdf_17-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_17-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_17` | 0.1.0 | `el10.aarch64` | pgdg | 15.5 KiB | [pgpdf_17-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgpdf_17-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgpdf` | 0.1.0 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-17-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-17-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgpdf` | 0.1.0 | `d12.aarch64` | pigsty | 25.6 KiB | [postgresql-17-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-17-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -92,15 +100,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpdf_16` | 0.1.0 | `el8.x86_64` | pigsty | 17.9 KiB | [pgpdf_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el8.x86_64` | pigsty | 18.4 KiB | [pgpdf_16-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_16-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el8.x86_64` | pgdg | 15.4 KiB | [pgpdf_16-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgpdf_16-0.1.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgpdf_16` | 0.1.0 | `el8.aarch64` | pigsty | 17.4 KiB | [pgpdf_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el8.aarch64` | pigsty | 18.0 KiB | [pgpdf_16-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_16-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_16-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgpdf_16-0.1.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgpdf_16` | 0.1.0 | `el9.x86_64` | pigsty | 18.3 KiB | [pgpdf_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_16-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_16-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_16-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgpdf_16-0.1.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgpdf_16` | 0.1.0 | `el9.aarch64` | pigsty | 17.6 KiB | [pgpdf_16-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_16-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el9.aarch64` | pigsty | 17.8 KiB | [pgpdf_16-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_16-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el9.aarch64` | pgdg | 15.0 KiB | [pgpdf_16-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgpdf_16-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_16-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_16-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el10.x86_64` | pgdg | 16.0 KiB | [pgpdf_16-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgpdf_16-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_16` | 0.1.0 | `el10.aarch64` | pigsty | 17.9 KiB | [pgpdf_16-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_16-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_16` | 0.1.0 | `el10.aarch64` | pgdg | 15.5 KiB | [pgpdf_16-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgpdf_16-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgpdf` | 0.1.0 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-16-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-16-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgpdf` | 0.1.0 | `d12.aarch64` | pigsty | 25.6 KiB | [postgresql-16-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-16-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -114,15 +124,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpdf_15` | 0.1.0 | `el8.x86_64` | pigsty | 17.9 KiB | [pgpdf_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el8.x86_64` | pigsty | 18.4 KiB | [pgpdf_15-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_15-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el8.x86_64` | pgdg | 15.4 KiB | [pgpdf_15-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgpdf_15-0.1.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgpdf_15` | 0.1.0 | `el8.aarch64` | pigsty | 17.3 KiB | [pgpdf_15-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_15-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el8.aarch64` | pigsty | 17.9 KiB | [pgpdf_15-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_15-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_15-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgpdf_15-0.1.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgpdf_15` | 0.1.0 | `el9.x86_64` | pigsty | 18.3 KiB | [pgpdf_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_15-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_15-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_15-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgpdf_15-0.1.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgpdf_15` | 0.1.0 | `el9.aarch64` | pigsty | 17.6 KiB | [pgpdf_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el9.aarch64` | pigsty | 17.7 KiB | [pgpdf_15-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_15-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el9.aarch64` | pgdg | 15.0 KiB | [pgpdf_15-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgpdf_15-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_15-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_15-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el10.x86_64` | pgdg | 16.0 KiB | [pgpdf_15-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgpdf_15-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_15` | 0.1.0 | `el10.aarch64` | pigsty | 17.9 KiB | [pgpdf_15-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_15-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_15` | 0.1.0 | `el10.aarch64` | pgdg | 15.5 KiB | [pgpdf_15-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgpdf_15-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgpdf` | 0.1.0 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-15-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-15-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgpdf` | 0.1.0 | `d12.aarch64` | pigsty | 25.7 KiB | [postgresql-15-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-15-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -136,15 +148,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpdf_14` | 0.1.0 | `el8.x86_64` | pigsty | 17.9 KiB | [pgpdf_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el8.x86_64` | pigsty | 18.4 KiB | [pgpdf_14-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_14-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el8.x86_64` | pgdg | 15.4 KiB | [pgpdf_14-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgpdf_14-0.1.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgpdf_14` | 0.1.0 | `el8.aarch64` | pigsty | 17.3 KiB | [pgpdf_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el8.aarch64` | pigsty | 17.9 KiB | [pgpdf_14-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_14-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_14-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgpdf_14-0.1.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgpdf_14` | 0.1.0 | `el9.x86_64` | pigsty | 18.3 KiB | [pgpdf_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_14-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_14-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_14-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgpdf_14-0.1.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgpdf_14` | 0.1.0 | `el9.aarch64` | pigsty | 17.6 KiB | [pgpdf_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el9.aarch64` | pigsty | 17.7 KiB | [pgpdf_14-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_14-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el9.aarch64` | pgdg | 15.0 KiB | [pgpdf_14-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgpdf_14-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_14-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_14-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el10.x86_64` | pgdg | 16.0 KiB | [pgpdf_14-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgpdf_14-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_14` | 0.1.0 | `el10.aarch64` | pigsty | 17.9 KiB | [pgpdf_14-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_14-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_14` | 0.1.0 | `el10.aarch64` | pgdg | 15.5 KiB | [pgpdf_14-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgpdf_14-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgpdf` | 0.1.0 | `d12.x86_64` | pigsty | 25.9 KiB | [postgresql-14-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-14-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgpdf` | 0.1.0 | `d12.aarch64` | pigsty | 25.6 KiB | [postgresql-14-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-14-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -158,15 +172,17 @@ PDF type with meta admin & Full-Text Search
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgpdf_13` | 0.1.0 | `el8.x86_64` | pigsty | 17.6 KiB | [pgpdf_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgpdf_13` | 0.1.0 | `el8.x86_64` | pigsty | 18.1 KiB | [pgpdf_13-0.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgpdf_13-0.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el8.x86_64` | pgdg | 15.1 KiB | [pgpdf_13-0.1.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgpdf_13-0.1.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgpdf_13` | 0.1.0 | `el8.aarch64` | pigsty | 17.3 KiB | [pgpdf_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgpdf_13` | 0.1.0 | `el8.aarch64` | pigsty | 17.9 KiB | [pgpdf_13-0.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgpdf_13-0.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el8.aarch64` | pgdg | 14.8 KiB | [pgpdf_13-0.1.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgpdf_13-0.1.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el9.x86_64` | pigsty | 18.2 KiB | [pgpdf_13-0.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgpdf_13-0.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el9.x86_64` | pgdg | 15.6 KiB | [pgpdf_13-0.1.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgpdf_13-0.1.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgpdf_13` | 0.1.0 | `el9.aarch64` | pigsty | 17.5 KiB | [pgpdf_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgpdf_13` | 0.1.0 | `el9.aarch64` | pigsty | 17.7 KiB | [pgpdf_13-0.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgpdf_13-0.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el9.aarch64` | pgdg | 14.9 KiB | [pgpdf_13-0.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgpdf_13-0.1.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgpdf_13` | 0.1.0 | `el10.x86_64` | pigsty | 18.2 KiB | [pgpdf_13-0.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgpdf_13-0.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el10.x86_64` | pgdg | 15.9 KiB | [pgpdf_13-0.1.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgpdf_13-0.1.0-1PGDG.rhel10.x86_64.rpm) |
+| `pgpdf_13` | 0.1.0 | `el10.aarch64` | pigsty | 17.8 KiB | [pgpdf_13-0.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgpdf_13-0.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `pgpdf_13` | 0.1.0 | `el10.aarch64` | pgdg | 15.4 KiB | [pgpdf_13-0.1.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgpdf_13-0.1.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-pgpdf` | 0.1.0 | `d12.x86_64` | pigsty | 25.7 KiB | [postgresql-13-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-13-pgpdf_0.1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgpdf` | 0.1.0 | `d12.aarch64` | pigsty | 25.5 KiB | [postgresql-13-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgpdf/postgresql-13-pgpdf_0.1.0-1PIGSTY~bookworm_arm64.deb) |

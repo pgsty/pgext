@@ -14,7 +14,7 @@ Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8620** | {{< badge content="tds_fdw" link="https://github.com/tds-fdw/tds_fdw" >}} | {{< ext "tds_fdw" >}} | `2.0.4` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8620** | {{< badge content="tds_fdw" link="https://github.com/tds-fdw/tds_fdw" >}} | {{< ext "tds_fdw" >}} | `2.0.5` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/tds_fdw" >}} | `2.0.4` | {{< bg "18" "tds_fdw_18*" "red" >}} {{< bg "17" "tds_fdw_17*" "green" >}} {{< bg "16" "tds_fdw_16*" "green" >}} {{< bg "15" "tds_fdw_15*" "green" >}} {{< bg "14" "tds_fdw_14*" "green" >}} {{< bg "13" "tds_fdw_13*" "green" >}} | `tds_fdw_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/tds_fdw" >}} | `2.0.4` | {{< bg "18" "postgresql-18-tds-fdw" "red" >}} {{< bg "17" "postgresql-17-tds-fdw" "green" >}} {{< bg "16" "postgresql-16-tds-fdw" "green" >}} {{< bg "15" "postgresql-15-tds-fdw" "green" >}} {{< bg "14" "postgresql-14-tds-fdw" "green" >}} {{< bg "13" "postgresql-13-tds-fdw" "green" >}} | `postgresql-$v-tds-fdw` | - |
+| **EL** | {{< badge content="PGDG" link="/e/tds_fdw" >}} | `2.0.5` | {{< bg "18" "tds_fdw_18*" "green" >}} {{< bg "17" "tds_fdw_17*" "green" >}} {{< bg "16" "tds_fdw_16*" "green" >}} {{< bg "15" "tds_fdw_15*" "green" >}} {{< bg "14" "tds_fdw_14*" "green" >}} {{< bg "13" "tds_fdw_13*" "green" >}} | `tds_fdw_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/tds_fdw" >}} | `2.0.5` | {{< bg "18" "postgresql-18-tds-fdw" "green" >}} {{< bg "17" "postgresql-17-tds-fdw" "green" >}} {{< bg "16" "postgresql-16-tds-fdw" "green" >}} {{< bg "15" "postgresql-15-tds-fdw" "green" >}} {{< bg "14" "postgresql-14-tds-fdw" "green" >}} {{< bg "13" "postgresql-13-tds-fdw" "green" >}} | `postgresql-$v-tds-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -109,8 +109,8 @@ Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server
 | `tds_fdw_16` | 2.0.3 | `el8.x86_64` | pgdg | 47.4 KiB | [tds_fdw_16-2.0.3-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/tds_fdw_16-2.0.3-4PGDG.rhel8.x86_64.rpm) |
 | `tds_fdw_16` | 2.0.5 | `el8.aarch64` | pgdg | 47.2 KiB | [tds_fdw_16-2.0.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/tds_fdw_16-2.0.5-1PGDG.rhel8.aarch64.rpm) |
 | `tds_fdw_16` | 2.0.4 | `el8.aarch64` | pgdg | 46.7 KiB | [tds_fdw_16-2.0.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/tds_fdw_16-2.0.4-1PGDG.rhel8.aarch64.rpm) |
-| `tds_fdw_16` | 2.0.3 | `el8.aarch64` | pgdg | 44.8 KiB | [tds_fdw_16-2.0.3-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/tds_fdw_16-2.0.3-4PGDG.rhel8.aarch64.rpm) |
 | `tds_fdw_16` | 2.0.3 | `el8.aarch64` | pgdg | 44.7 KiB | [tds_fdw_16-2.0.3-3.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/tds_fdw_16-2.0.3-3.rhel8.aarch64.rpm) |
+| `tds_fdw_16` | 2.0.3 | `el8.aarch64` | pgdg | 44.8 KiB | [tds_fdw_16-2.0.3-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/tds_fdw_16-2.0.3-4PGDG.rhel8.aarch64.rpm) |
 | `tds_fdw_16` | 2.0.5 | `el9.x86_64` | pgdg | 47.8 KiB | [tds_fdw_16-2.0.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/tds_fdw_16-2.0.5-1PGDG.rhel9.x86_64.rpm) |
 | `tds_fdw_16` | 2.0.4 | `el9.x86_64` | pgdg | 47.8 KiB | [tds_fdw_16-2.0.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/tds_fdw_16-2.0.4-1PGDG.rhel9.x86_64.rpm) |
 | `tds_fdw_16` | 2.0.3 | `el9.x86_64` | pgdg | 45.7 KiB | [tds_fdw_16-2.0.3-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/tds_fdw_16-2.0.3-4PGDG.rhel9.x86_64.rpm) |
@@ -228,16 +228,7 @@ Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/tds-fdw/tds_fdw" title="Repository" icon="github" subtitle="github.com/tds-fdw/tds_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="tds_fdw-2.0.4.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build get tds_fdw; # get tds_fdw source code
-pig build dep tds_fdw; # install build dependencies
-pig build pkg tds_fdw; # build extension rpm or deb
-pig build ext tds_fdw; # build extension rpms
-```
 
 
 ## Install
@@ -253,6 +244,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install tds_fdw; # install by extension name, for the current active PG version
 pig ext install tds_fdw; # install via package alias, for the active PG version
+pig ext install tds_fdw -v 18;   # install for PG 18
 pig ext install tds_fdw -v 17;   # install for PG 17
 pig ext install tds_fdw -v 16;   # install for PG 16
 pig ext install tds_fdw -v 15;   # install for PG 15

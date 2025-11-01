@@ -42,8 +42,8 @@ Supabase Vault Extension
 |    `el8.aarch64`    | {{< bg "PIGSTY 0.3.1" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 0.3.1" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 0.3.1" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "vault_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "vault_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "vault_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.3.1" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.3.1" "vault_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "vault_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-vault : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-vault : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-vault : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-vault : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-13-vault : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-vault : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vault : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vault : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vault : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vault : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-vault : MISS 0" "red" >}}      |
@@ -59,20 +59,24 @@ Supabase Vault Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_18` | 0.3.1 | `el8.x86_64` | pigsty | 25.8 KiB | [vault_18-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_18-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_18` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_18-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_18-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_18` | 0.3.1 | `el8.x86_64` | pigsty | 26.2 KiB | [vault_18-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_18-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_18` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_18-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_18-0.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `vault_18` | 0.3.1 | `el9.x86_64` | pigsty | 25.5 KiB | [vault_18-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_18-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_18` | 0.3.1 | `el9.aarch64` | pigsty | 25.0 KiB | [vault_18-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_18-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_18` | 0.3.1 | `el9.aarch64` | pigsty | 25.3 KiB | [vault_18-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_18-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_18` | 0.3.1 | `el10.x86_64` | pigsty | 25.4 KiB | [vault_18-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_18-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_18` | 0.3.1 | `el10.aarch64` | pigsty | 25.4 KiB | [vault_18-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_18-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_17` | 0.3.1 | `el8.x86_64` | pigsty | 25.8 KiB | [vault_17-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_17-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_17` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_17-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_17-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_17` | 0.3.1 | `el8.x86_64` | pigsty | 26.2 KiB | [vault_17-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_17-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_17` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_17-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_17-0.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `vault_17` | 0.3.1 | `el9.x86_64` | pigsty | 25.5 KiB | [vault_17-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_17-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_17` | 0.3.1 | `el9.aarch64` | pigsty | 25.2 KiB | [vault_17-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_17-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_17` | 0.3.1 | `el9.aarch64` | pigsty | 25.3 KiB | [vault_17-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_17-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_17` | 0.3.1 | `el10.x86_64` | pigsty | 25.4 KiB | [vault_17-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_17-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_17` | 0.3.1 | `el10.aarch64` | pigsty | 25.4 KiB | [vault_17-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_17-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-vault` | 0.3.1 | `d12.x86_64` | pigsty | 29.7 KiB | [postgresql-17-vault_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-17-vault_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-vault` | 0.3.1 | `d12.aarch64` | pigsty | 29.7 KiB | [postgresql-17-vault_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-17-vault_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-vault` | 0.3.1 | `u22.x86_64` | pigsty | 32.5 KiB | [postgresql-17-vault_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-17-vault_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -85,10 +89,12 @@ Supabase Vault Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_16` | 0.3.1 | `el8.x86_64` | pigsty | 25.8 KiB | [vault_16-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_16-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_16` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_16-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_16-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_16` | 0.3.1 | `el8.x86_64` | pigsty | 26.2 KiB | [vault_16-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_16-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_16` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_16-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_16-0.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `vault_16` | 0.3.1 | `el9.x86_64` | pigsty | 25.5 KiB | [vault_16-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_16-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_16` | 0.3.1 | `el9.aarch64` | pigsty | 25.2 KiB | [vault_16-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_16-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_16` | 0.3.1 | `el9.aarch64` | pigsty | 25.3 KiB | [vault_16-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_16-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_16` | 0.3.1 | `el10.x86_64` | pigsty | 25.4 KiB | [vault_16-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_16-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_16` | 0.3.1 | `el10.aarch64` | pigsty | 25.4 KiB | [vault_16-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_16-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-vault` | 0.3.1 | `d12.x86_64` | pigsty | 29.7 KiB | [postgresql-16-vault_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-16-vault_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-vault` | 0.3.1 | `d12.aarch64` | pigsty | 29.7 KiB | [postgresql-16-vault_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-16-vault_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-vault` | 0.3.1 | `u22.x86_64` | pigsty | 32.5 KiB | [postgresql-16-vault_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-16-vault_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -101,10 +107,12 @@ Supabase Vault Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_15` | 0.3.1 | `el8.x86_64` | pigsty | 26.0 KiB | [vault_15-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_15-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_15` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_15-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_15-0.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `vault_15` | 0.3.1 | `el9.x86_64` | pigsty | 26.0 KiB | [vault_15-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_15-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_15` | 0.3.1 | `el9.aarch64` | pigsty | 25.5 KiB | [vault_15-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_15-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_15` | 0.3.1 | `el8.x86_64` | pigsty | 26.4 KiB | [vault_15-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_15-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_15` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_15-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_15-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_15` | 0.3.1 | `el9.x86_64` | pigsty | 25.9 KiB | [vault_15-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_15-0.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `vault_15` | 0.3.1 | `el9.aarch64` | pigsty | 25.7 KiB | [vault_15-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_15-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_15` | 0.3.1 | `el10.x86_64` | pigsty | 25.8 KiB | [vault_15-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_15-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_15` | 0.3.1 | `el10.aarch64` | pigsty | 25.8 KiB | [vault_15-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_15-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-vault` | 0.3.1 | `d12.x86_64` | pigsty | 29.8 KiB | [postgresql-15-vault_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-15-vault_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-vault` | 0.3.1 | `d12.aarch64` | pigsty | 29.8 KiB | [postgresql-15-vault_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-15-vault_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-vault` | 0.3.1 | `u22.x86_64` | pigsty | 32.8 KiB | [postgresql-15-vault_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-15-vault_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -117,10 +125,12 @@ Supabase Vault Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_14` | 0.3.1 | `el8.x86_64` | pigsty | 25.9 KiB | [vault_14-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_14-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_14` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_14-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_14-0.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `vault_14` | 0.3.1 | `el9.x86_64` | pigsty | 26.0 KiB | [vault_14-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_14-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_14` | 0.3.1 | `el9.aarch64` | pigsty | 25.5 KiB | [vault_14-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_14-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_14` | 0.3.1 | `el8.x86_64` | pigsty | 26.4 KiB | [vault_14-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_14-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_14` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_14-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_14-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_14` | 0.3.1 | `el9.x86_64` | pigsty | 25.9 KiB | [vault_14-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_14-0.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `vault_14` | 0.3.1 | `el9.aarch64` | pigsty | 25.7 KiB | [vault_14-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_14-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_14` | 0.3.1 | `el10.x86_64` | pigsty | 25.8 KiB | [vault_14-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_14-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_14` | 0.3.1 | `el10.aarch64` | pigsty | 25.8 KiB | [vault_14-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_14-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-vault` | 0.3.1 | `d12.x86_64` | pigsty | 29.7 KiB | [postgresql-14-vault_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-14-vault_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-vault` | 0.3.1 | `d12.aarch64` | pigsty | 29.7 KiB | [postgresql-14-vault_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-14-vault_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-vault` | 0.3.1 | `u22.x86_64` | pigsty | 32.7 KiB | [postgresql-14-vault_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-14-vault_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -133,10 +143,12 @@ Supabase Vault Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `vault_13` | 0.3.1 | `el8.x86_64` | pigsty | 25.8 KiB | [vault_13-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_13-0.3.1-1PIGSTY.el8.x86_64.rpm) |
-| `vault_13` | 0.3.1 | `el8.aarch64` | pigsty | 25.5 KiB | [vault_13-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_13-0.3.1-1PIGSTY.el8.aarch64.rpm) |
-| `vault_13` | 0.3.1 | `el9.x86_64` | pigsty | 26.0 KiB | [vault_13-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_13-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `vault_13` | 0.3.1 | `el9.aarch64` | pigsty | 25.5 KiB | [vault_13-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_13-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_13` | 0.3.1 | `el8.x86_64` | pigsty | 26.2 KiB | [vault_13-0.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/vault_13-0.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `vault_13` | 0.3.1 | `el8.aarch64` | pigsty | 26.1 KiB | [vault_13-0.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/vault_13-0.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `vault_13` | 0.3.1 | `el9.x86_64` | pigsty | 25.9 KiB | [vault_13-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/vault_13-0.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `vault_13` | 0.3.1 | `el9.aarch64` | pigsty | 25.6 KiB | [vault_13-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/vault_13-0.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `vault_13` | 0.3.1 | `el10.x86_64` | pigsty | 25.7 KiB | [vault_13-0.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/vault_13-0.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `vault_13` | 0.3.1 | `el10.aarch64` | pigsty | 25.7 KiB | [vault_13-0.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/vault_13-0.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-vault` | 0.3.1 | `d12.x86_64` | pigsty | 29.5 KiB | [postgresql-13-vault_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-13-vault_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-vault` | 0.3.1 | `d12.aarch64` | pigsty | 29.6 KiB | [postgresql-13-vault_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/v/vault/postgresql-13-vault_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-vault` | 0.3.1 | `u22.x86_64` | pigsty | 32.5 KiB | [postgresql-13-vault_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vault/postgresql-13-vault_0.3.1-1PIGSTY~jammy_amd64.deb) |

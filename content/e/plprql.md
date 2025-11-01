@@ -37,12 +37,12 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "plprql_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "plprql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "plprql_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 2" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 18.0.0" "plprql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 18.0.0" "plprql_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-plprql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-plprql : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-plprql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-plprql : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-plprql : MISS 0" "red" >}}      |
@@ -53,15 +53,45 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-plprql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-plprql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-16-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-plprql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-plprql : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_18` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_18-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_18-18.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_18` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_18-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_18-18.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_18` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_18-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_18-18.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_18` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_18-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_18-18.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_18` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_18-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_18-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_18` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_18-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_18-18.0.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_17` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_17-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_17-18.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_17` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_17-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_17-18.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_17` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_17-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_17-18.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_17` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_17-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_17-18.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_17` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_17-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_17-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_17` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_17-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_17-18.0.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_16` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_16-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_16-18.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `plprql_16` | 1.0.0 | `el8.x86_64` | pigsty | 2.1 MiB | [plprql_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_16` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_16-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_16-18.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `plprql_16` | 1.0.0 | `el8.aarch64` | pigsty | 1.9 MiB | [plprql_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_16` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_16-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_16-18.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `plprql_16` | 1.0.0 | `el9.x86_64` | pigsty | 2.0 MiB | [plprql_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_16` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_16-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_16-18.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `plprql_16` | 1.0.0 | `el9.aarch64` | pigsty | 1.9 MiB | [plprql_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_16` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_16-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_16-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_16` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_16-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_16-18.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-plprql` | 1.0.0 | `d12.x86_64` | pigsty | 1.7 MiB | [postgresql-16-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-16-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-plprql` | 1.0.0 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-16-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-16-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-plprql` | 1.0.0 | `u22.x86_64` | pigsty | 1.9 MiB | [postgresql-16-plprql_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plprql/postgresql-16-plprql_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +104,16 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_15` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_15-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_15-18.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `plprql_15` | 1.0.0 | `el8.x86_64` | pigsty | 2.1 MiB | [plprql_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_15` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_15-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_15-18.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `plprql_15` | 1.0.0 | `el8.aarch64` | pigsty | 1.9 MiB | [plprql_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_15` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_15-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_15-18.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `plprql_15` | 1.0.0 | `el9.x86_64` | pigsty | 2.0 MiB | [plprql_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_15` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_15-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_15-18.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `plprql_15` | 1.0.0 | `el9.aarch64` | pigsty | 1.9 MiB | [plprql_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_15` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_15-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_15-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_15` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_15-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_15-18.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-plprql` | 1.0.0 | `d12.x86_64` | pigsty | 1.7 MiB | [postgresql-15-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-15-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-plprql` | 1.0.0 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-15-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-15-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-plprql` | 1.0.0 | `u22.x86_64` | pigsty | 1.9 MiB | [postgresql-15-plprql_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plprql/postgresql-15-plprql_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +126,16 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_14` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_14-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_14-18.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `plprql_14` | 1.0.0 | `el8.x86_64` | pigsty | 2.1 MiB | [plprql_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_14` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_14-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_14-18.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `plprql_14` | 1.0.0 | `el8.aarch64` | pigsty | 1.9 MiB | [plprql_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_14` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_14-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_14-18.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `plprql_14` | 1.0.0 | `el9.x86_64` | pigsty | 2.0 MiB | [plprql_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_14` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_14-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_14-18.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `plprql_14` | 1.0.0 | `el9.aarch64` | pigsty | 1.9 MiB | [plprql_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_14` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_14-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_14-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_14` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_14-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_14-18.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-plprql` | 1.0.0 | `d12.x86_64` | pigsty | 1.7 MiB | [postgresql-14-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-14-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-plprql` | 1.0.0 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-14-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-14-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-plprql` | 1.0.0 | `u22.x86_64` | pigsty | 1.9 MiB | [postgresql-14-plprql_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plprql/postgresql-14-plprql_1.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +148,16 @@ Use PRQL in PostgreSQL - Pipelined Relational Query Language
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `plprql_13` | 18.0.0 | `el8.x86_64` | pigsty | 2.8 MiB | [plprql_13-18.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_13-18.0.0-1PIGSTY.el8.x86_64.rpm) |
 | `plprql_13` | 1.0.0 | `el8.x86_64` | pigsty | 2.1 MiB | [plprql_13-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/plprql_13-1.0.0-1PIGSTY.el8.x86_64.rpm) |
+| `plprql_13` | 18.0.0 | `el8.aarch64` | pigsty | 2.4 MiB | [plprql_13-18.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_13-18.0.0-1PIGSTY.el8.aarch64.rpm) |
 | `plprql_13` | 1.0.0 | `el8.aarch64` | pigsty | 1.9 MiB | [plprql_13-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/plprql_13-1.0.0-1PIGSTY.el8.aarch64.rpm) |
+| `plprql_13` | 18.0.0 | `el9.x86_64` | pigsty | 2.7 MiB | [plprql_13-18.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_13-18.0.0-1PIGSTY.el9.x86_64.rpm) |
 | `plprql_13` | 1.0.0 | `el9.x86_64` | pigsty | 2.0 MiB | [plprql_13-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/plprql_13-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `plprql_13` | 18.0.0 | `el9.aarch64` | pigsty | 2.5 MiB | [plprql_13-18.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_13-18.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `plprql_13` | 1.0.0 | `el9.aarch64` | pigsty | 1.9 MiB | [plprql_13-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/plprql_13-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `plprql_13` | 18.0.0 | `el10.x86_64` | pigsty | 2.7 MiB | [plprql_13-18.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/plprql_13-18.0.0-1PIGSTY.el10.x86_64.rpm) |
+| `plprql_13` | 18.0.0 | `el10.aarch64` | pigsty | 2.5 MiB | [plprql_13-18.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/plprql_13-18.0.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-plprql` | 1.0.0 | `d12.x86_64` | pigsty | 1.7 MiB | [postgresql-13-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-13-plprql_1.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-plprql` | 1.0.0 | `d12.aarch64` | pigsty | 1.5 MiB | [postgresql-13-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plprql/postgresql-13-plprql_1.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-plprql` | 1.0.0 | `u22.x86_64` | pigsty | 1.9 MiB | [postgresql-13-plprql_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/plprql/postgresql-13-plprql_1.0.0-1PIGSTY~jammy_amd64.deb) |

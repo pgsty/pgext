@@ -43,8 +43,8 @@ The PostgreSQL Antivirus
 |    `el8.aarch64`    |      {{< bg "PIGSTY 1.4" "pg_snakeoil_18 : BREAK 2" "orange" >}}      |      {{< bg "PIGSTY 1.4" "pg_snakeoil_17 : BREAK 2" "orange" >}}      |      {{< bg "PIGSTY 1.4" "pg_snakeoil_16 : BREAK 2" "orange" >}}      |      {{< bg "PIGSTY 1.4" "pg_snakeoil_15 : BREAK 2" "orange" >}}      |      {{< bg "PIGSTY 1.4" "pg_snakeoil_14 : BREAK 2" "orange" >}}      |      {{< bg "PIGSTY 1.4" "pg_snakeoil_13 : BREAK 2" "orange" >}}      |
 |    `el9.x86_64`    | {{< bg "PIGSTY 1.4" "pg_snakeoil_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_13 : AVAIL 2" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 1.4" "pg_snakeoil_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_13 : AVAIL 2" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_snakeoil_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.4" "pg_snakeoil_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_snakeoil_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.4" "pg_snakeoil_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "pg_snakeoil_13 : AVAIL 1" "blue" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.4" "pg_snakeoil_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_13 : AVAIL 2" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.4" "pg_snakeoil_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.4" "pg_snakeoil_13 : AVAIL 2" "green" >}} |
 |    `d12.x86_64`    | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-13-snakeoil : AVAIL 1" "blue" >}} |
 |    `d12.aarch64`    | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-13-snakeoil : AVAIL 1" "blue" >}} |
 |    `d13.x86_64`    | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-13-snakeoil : AVAIL 1" "blue" >}} |
@@ -60,14 +60,16 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_18` | 1.4 | `el8.x86_64` | pigsty | 16.0 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_18-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el8.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_18-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_18` | 1.4 | `el8.x86_64` | pgdg | 15.3 KiB | [pg_snakeoil_18-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_snakeoil_18-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_18` | 1.4 | `el8.aarch64` | pigsty | 15.9 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_18-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el8.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_18-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_18` | 1.4 | `el8.aarch64` | pgdg | 15.2 KiB | [pg_snakeoil_18-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_snakeoil_18-1.4-1PGDG.rhel8.aarch64.rpm) |
-| `pg_snakeoil_18` | 1.4 | `el9.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_18-1.4-1PIGSTY.el9.x86_64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el9.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_18-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_18` | 1.4 | `el9.x86_64` | pgdg | 15.5 KiB | [pg_snakeoil_18-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_snakeoil_18-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_18` | 1.4 | `el9.aarch64` | pigsty | 15.8 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_18-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el9.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_18-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_18` | 1.4 | `el9.aarch64` | pgdg | 15.1 KiB | [pg_snakeoil_18-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_snakeoil_18-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el10.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_18-1.4-1PIGSTY.el10.x86_64.rpm) |
+| `pg_snakeoil_18` | 1.4 | `el10.aarch64` | pigsty | 16.1 KiB | [pg_snakeoil_18-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_18-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 16.8 KiB | [postgresql-18-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-18-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.4 KiB | [postgresql-18-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg12+1_arm64.deb) |
 | `postgresql-18-snakeoil` | 1.4 | `d13.x86_64` | pgdg | 16.8 KiB | [postgresql-18-snakeoil_1.4-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg13+1_amd64.deb) |
@@ -82,15 +84,17 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_17` | 1.4 | `el8.x86_64` | pigsty | 15.9 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_17-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_17` | 1.4 | `el8.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_17-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el8.x86_64` | pgdg | 15.4 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_snakeoil_17-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_17` | 1.4 | `el8.aarch64` | pigsty | 15.9 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_17-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_17` | 1.4 | `el8.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_17-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el8.aarch64` | pgdg | 15.3 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_snakeoil_17-1.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el9.x86_64` | pigsty | 16.2 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_17-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el9.x86_64` | pgdg | 15.6 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_snakeoil_17-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_17` | 1.4 | `el9.aarch64` | pigsty | 15.9 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_17-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_17` | 1.4 | `el9.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_17-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el9.aarch64` | pgdg | 15.1 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_snakeoil_17-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_17` | 1.4 | `el10.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_17-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el10.x86_64` | pgdg | 15.9 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_snakeoil_17-1.4-1PGDG.rhel10.x86_64.rpm) |
+| `pg_snakeoil_17` | 1.4 | `el10.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_17-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_17-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `pg_snakeoil_17` | 1.4 | `el10.aarch64` | pgdg | 15.8 KiB | [pg_snakeoil_17-1.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_snakeoil_17-1.4-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 16.8 KiB | [postgresql-17-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-17-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.4 KiB | [postgresql-17-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg12+1_arm64.deb) |
@@ -106,15 +110,17 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_16` | 1.4 | `el8.x86_64` | pigsty | 15.9 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_16-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_16` | 1.4 | `el8.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_16-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el8.x86_64` | pgdg | 15.4 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_snakeoil_16-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_16` | 1.4 | `el8.aarch64` | pigsty | 15.9 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_16-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_16` | 1.4 | `el8.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_16-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el8.aarch64` | pgdg | 15.2 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_snakeoil_16-1.4-1PGDG.rhel8.aarch64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el9.x86_64` | pigsty | 16.2 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_16-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el9.x86_64` | pgdg | 15.6 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_snakeoil_16-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_16` | 1.4 | `el9.aarch64` | pigsty | 15.9 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_16-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_16` | 1.4 | `el9.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_16-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el9.aarch64` | pgdg | 15.1 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_snakeoil_16-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_16` | 1.4 | `el10.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_16-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el10.x86_64` | pgdg | 15.9 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_snakeoil_16-1.4-1PGDG.rhel10.x86_64.rpm) |
+| `pg_snakeoil_16` | 1.4 | `el10.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_16-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_16-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `pg_snakeoil_16` | 1.4 | `el10.aarch64` | pgdg | 15.8 KiB | [pg_snakeoil_16-1.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_snakeoil_16-1.4-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 16.8 KiB | [postgresql-16-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-16-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.4 KiB | [postgresql-16-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg12+1_arm64.deb) |
@@ -130,15 +136,17 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_15` | 1.4 | `el8.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_15-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el8.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_15-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el8.x86_64` | pgdg | 15.5 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_snakeoil_15-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_15` | 1.4 | `el8.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_15-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el8.aarch64` | pigsty | 16.3 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_15-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el8.aarch64` | pgdg | 15.4 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_snakeoil_15-1.4-1PGDG.rhel8.aarch64.rpm) |
-| `pg_snakeoil_15` | 1.4 | `el9.x86_64` | pigsty | 16.4 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_15-1.4-1PIGSTY.el9.x86_64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el9.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_15-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el9.x86_64` | pgdg | 15.8 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_snakeoil_15-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_15` | 1.4 | `el9.aarch64` | pigsty | 16.1 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_15-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el9.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_15-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el9.aarch64` | pgdg | 15.3 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_snakeoil_15-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el10.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_15-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el10.x86_64` | pgdg | 16.1 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_snakeoil_15-1.4-1PGDG.rhel10.x86_64.rpm) |
+| `pg_snakeoil_15` | 1.4 | `el10.aarch64` | pigsty | 16.4 KiB | [pg_snakeoil_15-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_15-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `pg_snakeoil_15` | 1.4 | `el10.aarch64` | pgdg | 16.0 KiB | [pg_snakeoil_15-1.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_snakeoil_15-1.4-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 17.0 KiB | [postgresql-15-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-15-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.5 KiB | [postgresql-15-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg12+1_arm64.deb) |
@@ -154,15 +162,17 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_14` | 1.4 | `el8.x86_64` | pigsty | 16.1 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_14-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el8.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_14-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el8.x86_64` | pgdg | 15.5 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_snakeoil_14-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_14` | 1.4 | `el8.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_14-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el8.aarch64` | pigsty | 16.3 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_14-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el8.aarch64` | pgdg | 15.4 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_snakeoil_14-1.4-1PGDG.rhel8.aarch64.rpm) |
-| `pg_snakeoil_14` | 1.4 | `el9.x86_64` | pigsty | 16.4 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_14-1.4-1PIGSTY.el9.x86_64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el9.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_14-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el9.x86_64` | pgdg | 15.8 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_snakeoil_14-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_14` | 1.4 | `el9.aarch64` | pigsty | 16.1 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_14-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el9.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_14-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el9.aarch64` | pgdg | 15.3 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_snakeoil_14-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el10.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_14-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el10.x86_64` | pgdg | 16.1 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_snakeoil_14-1.4-1PGDG.rhel10.x86_64.rpm) |
+| `pg_snakeoil_14` | 1.4 | `el10.aarch64` | pigsty | 16.4 KiB | [pg_snakeoil_14-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_14-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `pg_snakeoil_14` | 1.4 | `el10.aarch64` | pgdg | 16.0 KiB | [pg_snakeoil_14-1.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_snakeoil_14-1.4-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 17.0 KiB | [postgresql-14-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-14-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.5 KiB | [postgresql-14-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg12+1_arm64.deb) |
@@ -178,15 +188,17 @@ The PostgreSQL Antivirus
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_snakeoil_13` | 1.4 | `el8.x86_64` | pigsty | 16.0 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_13-1.4-1PIGSTY.el8.x86_64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el8.x86_64` | pigsty | 16.2 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_snakeoil_13-1.4-1PIGSTY.el8.x86_64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el8.x86_64` | pgdg | 15.4 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_snakeoil_13-1.4-1PGDG.rhel8.x86_64.rpm) |
-| `pg_snakeoil_13` | 1.4 | `el8.aarch64` | pigsty | 16.0 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_13-1.4-1PIGSTY.el8.aarch64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el8.aarch64` | pigsty | 16.3 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_snakeoil_13-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el8.aarch64` | pgdg | 15.3 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_snakeoil_13-1.4-1PGDG.rhel8.aarch64.rpm) |
-| `pg_snakeoil_13` | 1.4 | `el9.x86_64` | pigsty | 16.3 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_13-1.4-1PIGSTY.el9.x86_64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el9.x86_64` | pigsty | 16.2 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_snakeoil_13-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el9.x86_64` | pgdg | 15.7 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_snakeoil_13-1.4-1PGDG.rhel9.x86_64.rpm) |
-| `pg_snakeoil_13` | 1.4 | `el9.aarch64` | pigsty | 16.1 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_13-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el9.aarch64` | pigsty | 16.2 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_snakeoil_13-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el9.aarch64` | pgdg | 15.3 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_snakeoil_13-1.4-1PGDG.rhel9.aarch64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el10.x86_64` | pigsty | 16.2 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_snakeoil_13-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el10.x86_64` | pgdg | 16.0 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_snakeoil_13-1.4-1PGDG.rhel10.x86_64.rpm) |
+| `pg_snakeoil_13` | 1.4 | `el10.aarch64` | pigsty | 16.3 KiB | [pg_snakeoil_13-1.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_snakeoil_13-1.4-1PIGSTY.el10.aarch64.rpm) |
 | `pg_snakeoil_13` | 1.4 | `el10.aarch64` | pgdg | 15.9 KiB | [pg_snakeoil_13-1.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pg_snakeoil_13-1.4-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-snakeoil` | 1.4 | `d12.x86_64` | pgdg | 16.6 KiB | [postgresql-13-snakeoil_1.4-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-13-snakeoil_1.4-3.pgdg12+1_amd64.deb) |
 | `postgresql-13-snakeoil` | 1.4 | `d12.aarch64` | pgdg | 16.5 KiB | [postgresql-13-snakeoil_1.4-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-13-snakeoil_1.4-3.pgdg12+1_arm64.deb) |

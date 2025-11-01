@@ -31,8 +31,8 @@ monitor connection attempts per user
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_auth_mon" >}} | `3.0` | {{< bg "18" "pg_auth_mon_18*" "red" >}} {{< bg "17" "pg_auth_mon_17*" "green" >}} {{< bg "16" "pg_auth_mon_16*" "green" >}} {{< bg "15" "pg_auth_mon_15*" "green" >}} {{< bg "14" "pg_auth_mon_14*" "green" >}} {{< bg "13" "pg_auth_mon_13*" "green" >}} | `pg_auth_mon_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_auth_mon" >}} | `3.0` | {{< bg "18" "postgresql-18-pg-auth-mon" "red" >}} {{< bg "17" "postgresql-17-pg-auth-mon" "green" >}} {{< bg "16" "postgresql-16-pg-auth-mon" "green" >}} {{< bg "15" "postgresql-15-pg-auth-mon" "green" >}} {{< bg "14" "postgresql-14-pg-auth-mon" "green" >}} {{< bg "13" "postgresql-13-pg-auth-mon" "green" >}} | `postgresql-$v-pg-auth-mon` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_auth_mon" >}} | `3.0` | {{< bg "18" "pg_auth_mon_18*" "green" >}} {{< bg "17" "pg_auth_mon_17*" "green" >}} {{< bg "16" "pg_auth_mon_16*" "green" >}} {{< bg "15" "pg_auth_mon_15*" "green" >}} {{< bg "14" "pg_auth_mon_14*" "green" >}} {{< bg "13" "pg_auth_mon_13*" "green" >}} | `pg_auth_mon_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_auth_mon" >}} | `3.0` | {{< bg "18" "postgresql-18-pg-auth-mon" "green" >}} {{< bg "17" "postgresql-17-pg-auth-mon" "green" >}} {{< bg "16" "postgresql-16-pg-auth-mon" "green" >}} {{< bg "15" "postgresql-15-pg-auth-mon" "green" >}} {{< bg "14" "postgresql-14-pg-auth-mon" "green" >}} {{< bg "13" "postgresql-13-pg-auth-mon" "green" >}} | `postgresql-$v-pg-auth-mon` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -196,6 +196,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_auth_mon; # install by extension name, for the current active PG version
 pig ext install pg_auth_mon; # install via package alias, for the active PG version
+pig ext install pg_auth_mon -v 18;   # install for PG 18
 pig ext install pg_auth_mon -v 17;   # install for PG 17
 pig ext install pg_auth_mon -v 16;   # install for PG 16
 pig ext install pg_auth_mon -v 15;   # install for PG 15

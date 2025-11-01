@@ -44,8 +44,8 @@ Machine learning framework for PostgreSQL
 |    `el8.aarch64`    | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg4ml_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg4ml_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg4ml_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 2.0" "pg4ml_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "pg4ml_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg4ml : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-13-pg4ml : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg4ml : MISS 0" "red" >}}      | {{< bg "PIGSTY 2.0" "postgresql-17-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg4ml : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-13-pg4ml : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg4ml : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg4ml : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg4ml : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg4ml : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg4ml : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg4ml : MISS 0" "red" >}}      |
@@ -62,9 +62,11 @@ Machine learning framework for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_18` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_18-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_18-2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg4ml_18` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_18-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_18-2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg4ml_18` | 2.0 | `el8.aarch64` | pigsty | 341.2 KiB | [pg4ml_18-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_18-2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg4ml_18` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_18-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_18-2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg4ml_18` | 2.0 | `el9.aarch64` | pigsty | 294.7 KiB | [pg4ml_18-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_18-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_18` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_18-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_18-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_18` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_18-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_18-2.0-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -73,8 +75,10 @@ Machine learning framework for PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_17` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_17-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_17-2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg4ml_17` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_17-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_17-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_17` | 2.0 | `el9.x86_64` | pigsty | 294.9 KiB | [pg4ml_17-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_17-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_17` | 2.0 | `el9.aarch64` | pigsty | 294.9 KiB | [pg4ml_17-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_17-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_17` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_17-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_17-2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg4ml_17` | 2.0 | `el9.aarch64` | pigsty | 294.7 KiB | [pg4ml_17-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_17-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_17` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_17-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_17-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_17` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_17-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_17-2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg4ml` | 2.0 | `d12.x86_64` | pigsty | 316.2 KiB | [postgresql-17-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-17-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg4ml` | 2.0 | `d12.aarch64` | pigsty | 316.2 KiB | [postgresql-17-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-17-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg4ml` | 2.0 | `u22.x86_64` | pigsty | 317.1 KiB | [postgresql-17-pg4ml_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-17-pg4ml_2.0-1PIGSTY~jammy_amd64.deb) |
@@ -88,9 +92,11 @@ Machine learning framework for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_16` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_16-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_16-2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg4ml_16` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_16-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_16-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_16` | 2.0 | `el9.x86_64` | pigsty | 294.9 KiB | [pg4ml_16-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_16-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_16` | 2.0 | `el9.aarch64` | pigsty | 294.9 KiB | [pg4ml_16-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_16-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_16` | 2.0 | `el8.aarch64` | pigsty | 341.2 KiB | [pg4ml_16-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_16-2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg4ml_16` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_16-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_16-2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg4ml_16` | 2.0 | `el9.aarch64` | pigsty | 294.7 KiB | [pg4ml_16-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_16-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_16` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_16-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_16-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_16` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_16-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_16-2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg4ml` | 2.0 | `d12.x86_64` | pigsty | 316.2 KiB | [postgresql-16-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-16-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg4ml` | 2.0 | `d12.aarch64` | pigsty | 316.2 KiB | [postgresql-16-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-16-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg4ml` | 2.0 | `u22.x86_64` | pigsty | 317.2 KiB | [postgresql-16-pg4ml_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-16-pg4ml_2.0-1PIGSTY~jammy_amd64.deb) |
@@ -105,8 +111,10 @@ Machine learning framework for PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_15` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_15-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_15-2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg4ml_15` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_15-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_15-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_15` | 2.0 | `el9.x86_64` | pigsty | 294.9 KiB | [pg4ml_15-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_15-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_15` | 2.0 | `el9.aarch64` | pigsty | 294.9 KiB | [pg4ml_15-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_15-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_15` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_15-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_15-2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg4ml_15` | 2.0 | `el9.aarch64` | pigsty | 294.7 KiB | [pg4ml_15-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_15-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_15` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_15-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_15-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_15` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_15-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_15-2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg4ml` | 2.0 | `d12.x86_64` | pigsty | 316.2 KiB | [postgresql-15-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-15-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg4ml` | 2.0 | `d12.aarch64` | pigsty | 316.2 KiB | [postgresql-15-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-15-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg4ml` | 2.0 | `u22.x86_64` | pigsty | 317.1 KiB | [postgresql-15-pg4ml_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-15-pg4ml_2.0-1PIGSTY~jammy_amd64.deb) |
@@ -121,8 +129,10 @@ Machine learning framework for PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_14` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_14-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_14-2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg4ml_14` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_14-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_14-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_14` | 2.0 | `el9.x86_64` | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_14` | 2.0 | `el9.aarch64` | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_14` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_14-2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg4ml_14` | 2.0 | `el9.aarch64` | pigsty | 294.8 KiB | [pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_14-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_14` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_14-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_14` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_14-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_14-2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg4ml` | 2.0 | `d12.x86_64` | pigsty | 316.2 KiB | [postgresql-14-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg4ml` | 2.0 | `d12.aarch64` | pigsty | 316.2 KiB | [postgresql-14-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg4ml` | 2.0 | `u22.x86_64` | pigsty | 317.1 KiB | [postgresql-14-pg4ml_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-14-pg4ml_2.0-1PIGSTY~jammy_amd64.deb) |
@@ -136,9 +146,11 @@ Machine learning framework for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg4ml_13` | 2.0 | `el8.x86_64` | pigsty | 341.2 KiB | [pg4ml_13-2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg4ml_13-2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg4ml_13` | 2.0 | `el8.aarch64` | pigsty | 341.1 KiB | [pg4ml_13-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_13-2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg4ml_13` | 2.0 | `el9.x86_64` | pigsty | 294.9 KiB | [pg4ml_13-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_13-2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg4ml_13` | 2.0 | `el9.aarch64` | pigsty | 294.8 KiB | [pg4ml_13-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_13-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_13` | 2.0 | `el8.aarch64` | pigsty | 341.2 KiB | [pg4ml_13-2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg4ml_13-2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg4ml_13` | 2.0 | `el9.x86_64` | pigsty | 294.8 KiB | [pg4ml_13-2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg4ml_13-2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg4ml_13` | 2.0 | `el9.aarch64` | pigsty | 294.7 KiB | [pg4ml_13-2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg4ml_13-2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg4ml_13` | 2.0 | `el10.x86_64` | pigsty | 294.9 KiB | [pg4ml_13-2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg4ml_13-2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg4ml_13` | 2.0 | `el10.aarch64` | pigsty | 294.9 KiB | [pg4ml_13-2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg4ml_13-2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg4ml` | 2.0 | `d12.x86_64` | pigsty | 316.2 KiB | [postgresql-13-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-13-pg4ml_2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg4ml` | 2.0 | `d12.aarch64` | pigsty | 316.2 KiB | [postgresql-13-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg4ml/postgresql-13-pg4ml_2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg4ml` | 2.0 | `u22.x86_64` | pigsty | 317.1 KiB | [postgresql-13-pg4ml_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg4ml/postgresql-13-pg4ml_2.0-1PIGSTY~jammy_amd64.deb) |

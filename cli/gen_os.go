@@ -32,10 +32,10 @@ func NewOSGenerator(cache *ExtensionCache, outputDir string) *OSGenerator {
 
 // OSPackageInfo represents package availability for a specific OS
 type OSPackageInfo struct {
-	ID      int    // Extension ID for sorting
-	Pkg     string // Extension package name
-	Lead    string // Lead extension name
-	PGData  map[int]*PkgInfo // Package info by PG version
+	ID     int              // Extension ID for sorting
+	Pkg    string           // Extension package name
+	Lead   string           // Lead extension name
+	PGData map[int]*PkgInfo // Package info by PG version
 }
 
 // GenerateOSPage generates a single OS-specific availability page
@@ -67,11 +67,7 @@ func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
 
 // getOSInfo retrieves OS information from database
 func (g *OSGenerator) getOSInfo(ctx context.Context, osName string) (*OSInfo, error) {
-	query := `
-		SELECT os, os_full, os_major, os_arch, active
-		FROM pgext.os
-		WHERE os = $1 AND active = true
-	`
+	query := `SELECT os, os_full, os_major, os_arch, active FROM pgext.os WHERE os = $1 AND active = true`
 
 	var info OSInfo
 	err := QueryRowContext(ctx, query, osName).Scan(
@@ -182,23 +178,46 @@ func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
 	weight := 100 // Default weight, can be adjusted based on OS priority
 
 	// Adjust weight based on OS (newer/popular OSes get lower weight = higher priority)
-	switch {
-	case strings.HasPrefix(osInfo.OS, "el10"):
-		weight = 10
-	case strings.HasPrefix(osInfo.OS, "el9"):
-		weight = 20
-	case strings.HasPrefix(osInfo.OS, "u24"):
-		weight = 30
-	case strings.HasPrefix(osInfo.OS, "u22"):
-		weight = 40
-	case strings.HasPrefix(osInfo.OS, "el8"):
-		weight = 50
-	case strings.HasPrefix(osInfo.OS, "u20"):
-		weight = 60
-	case strings.HasPrefix(osInfo.OS, "d12"):
-		weight = 70
-	case strings.HasPrefix(osInfo.OS, "d11"):
-		weight = 80
+	switch osInfo.OS {
+
+	case "el7.x86_64":
+		weight = 710
+	case "el8.x86_64":
+		weight = 720
+	case "el8.aarch64":
+		weight = 721
+	case "el9.x86_64":
+		weight = 730
+	case "el9.aarch64":
+		weight = 731
+	case "el10.x86_64":
+		weight = 740
+	case "el10.aarch64":
+		weight = 741
+	case "d11.x86_64":
+		weight = 810
+	case "d11.aarch64":
+		weight = 811
+	case "d12.x86_64":
+		weight = 820
+	case "d12.aarch64":
+		weight = 821
+	case "d13.x86_64":
+		weight = 830
+	case "d13.aarch64":
+		weight = 831
+	case "u20.x86_64":
+		weight = 910
+	case "u20.aarch64":
+		weight = 911
+	case "u22.x86_64":
+		weight = 920
+	case "u22.aarch64":
+		weight = 921
+	case "u24.x86_64":
+		weight = 930
+	case "u24.aarch64":
+		weight = 931
 	}
 
 	return fmt.Sprintf(`---

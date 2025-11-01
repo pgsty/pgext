@@ -31,8 +31,8 @@ EnterpriseDB system statistics for PostgreSQL
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/system_stats" >}} | `3.2` | {{< bg "18" "system_stats_18*" "red" >}} {{< bg "17" "system_stats_17*" "green" >}} {{< bg "16" "system_stats_16*" "green" >}} {{< bg "15" "system_stats_15*" "green" >}} {{< bg "14" "system_stats_14*" "green" >}} {{< bg "13" "system_stats_13*" "green" >}} | `system_stats_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/system_stats" >}} | `3.2` | {{< bg "18" "postgresql-18-system-stats" "red" >}} {{< bg "17" "postgresql-17-system-stats" "green" >}} {{< bg "16" "postgresql-16-system-stats" "green" >}} {{< bg "15" "postgresql-15-system-stats" "green" >}} {{< bg "14" "postgresql-14-system-stats" "green" >}} {{< bg "13" "postgresql-13-system-stats" "green" >}} | `postgresql-$v-system-stats` | - |
+| **EL** | {{< badge content="PGDG" link="/e/system_stats" >}} | `3.2` | {{< bg "18" "system_stats_18*" "green" >}} {{< bg "17" "system_stats_17*" "green" >}} {{< bg "16" "system_stats_16*" "green" >}} {{< bg "15" "system_stats_15*" "green" >}} {{< bg "14" "system_stats_14*" "green" >}} {{< bg "13" "system_stats_13*" "green" >}} | `system_stats_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/system_stats" >}} | `3.2` | {{< bg "18" "postgresql-18-system-stats" "green" >}} {{< bg "17" "postgresql-17-system-stats" "green" >}} {{< bg "16" "postgresql-16-system-stats" "green" >}} {{< bg "15" "postgresql-15-system-stats" "green" >}} {{< bg "14" "postgresql-14-system-stats" "green" >}} {{< bg "13" "postgresql-13-system-stats" "green" >}} | `postgresql-$v-system-stats` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -212,6 +212,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install system_stats; # install by extension name, for the current active PG version
 pig ext install system_stats; # install via package alias, for the active PG version
+pig ext install system_stats -v 18;   # install for PG 18
 pig ext install system_stats -v 17;   # install for PG 17
 pig ext install system_stats -v 16;   # install for PG 16
 pig ext install system_stats -v 15;   # install for PG 15

@@ -19,7 +19,7 @@ Foreign data wrapper for querying a Redis server
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
 
 
 | **Relationships** |   |
@@ -34,17 +34,17 @@ Foreign data wrapper for querying a Redis server
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EL** | {{< badge content="PIGSTY" link="/e/redis_fdw" >}} | `1.0` | {{< bg "18" "redis_fdw_18*" "green" >}} {{< bg "17" "redis_fdw_17*" "green" >}} {{< bg "16" "redis_fdw_16*" "green" >}} {{< bg "15" "redis_fdw_15*" "green" >}} {{< bg "14" "redis_fdw_14*" "green" >}} {{< bg "13" "redis_fdw_13*" "green" >}} | `redis_fdw_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/redis_fdw" >}} | `1.0` | {{< bg "18" "postgresql-18-redis-fdw" "red" >}} {{< bg "17" "postgresql-17-redis-fdw" "green" >}} {{< bg "16" "postgresql-16-redis-fdw" "green" >}} {{< bg "15" "postgresql-15-redis-fdw" "green" >}} {{< bg "14" "postgresql-14-redis-fdw" "green" >}} {{< bg "13" "postgresql-13-redis-fdw" "green" >}} | `postgresql-$v-redis-fdw` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/redis_fdw" >}} | `1.0` | {{< bg "18" "postgresql-18-redis-fdw" "green" >}} {{< bg "17" "postgresql-17-redis-fdw" "green" >}} {{< bg "16" "postgresql-16-redis-fdw" "green" >}} {{< bg "15" "postgresql-15-redis-fdw" "green" >}} {{< bg "14" "postgresql-14-redis-fdw" "green" >}} {{< bg "13" "postgresql-13-redis-fdw" "green" >}} | `postgresql-$v-redis-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 2" "blue" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_14 : MISS 0" "red" >}}      | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    |      {{< bg "MISS" "redis_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "redis_fdw_14 : MISS 0" "red" >}}      | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 1" "blue" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 3" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 2" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 2" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 3" "blue" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0" "redis_fdw_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0" "redis_fdw_14 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.1" "redis_fdw_13 : AVAIL 3" "blue" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-redis-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-redis-fdw : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-redis-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-redis-fdw : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-redis-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-redis-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-redis-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-redis-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-redis-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-redis-fdw : MISS 0" "red" >}}      |
@@ -55,15 +55,37 @@ Foreign data wrapper for querying a Redis server
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-redis-fdw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-redis-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-redis-fdw : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `redis_fdw_18` | 1.0 | `el8.x86_64` | pigsty | 29.6 KiB | [redis_fdw_18-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_18-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `redis_fdw_18` | 1.0 | `el8.aarch64` | pigsty | 28.9 KiB | [redis_fdw_18-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_18-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_18` | 1.0 | `el9.x86_64` | pigsty | 29.4 KiB | [redis_fdw_18-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_18-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `redis_fdw_18` | 1.0 | `el9.aarch64` | pigsty | 28.9 KiB | [redis_fdw_18-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_18-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_18` | 1.0 | `el10.x86_64` | pigsty | 29.7 KiB | [redis_fdw_18-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_18-1.0-2PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_18` | 1.0 | `el10.x86_64` | pigsty | 29.6 KiB | [redis_fdw_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_18` | 1.0 | `el10.aarch64` | pigsty | 28.9 KiB | [redis_fdw_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_18-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_18` | 1.0 | `el10.aarch64` | pigsty | 29.1 KiB | [redis_fdw_18-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_18-1.0-2PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `redis_fdw_17` | 1.0 | `el8.x86_64` | pigsty | 27.3 KiB | [redis_fdw_17-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_17-1.0-2PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_17` | 1.0 | `el8.x86_64` | pigsty | 26.9 KiB | [redis_fdw_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_17-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_17` | 1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [redis_fdw_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_17` | 1.0 | `el8.aarch64` | pigsty | 26.6 KiB | [redis_fdw_17-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_17-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_17` | 1.0 | `el9.x86_64` | pigsty | 27.4 KiB | [redis_fdw_17-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_17-1.0-2PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_17` | 1.0 | `el9.x86_64` | pigsty | 27.1 KiB | [redis_fdw_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_17-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_17` | 1.0 | `el9.aarch64` | pigsty | 26.3 KiB | [redis_fdw_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_17` | 1.0 | `el9.aarch64` | pigsty | 26.7 KiB | [redis_fdw_17-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_17-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_17` | 1.0 | `el10.x86_64` | pigsty | 27.7 KiB | [redis_fdw_17-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_17-1.0-2PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_17` | 1.0 | `el10.x86_64` | pigsty | 27.4 KiB | [redis_fdw_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_17` | 1.0 | `el10.aarch64` | pigsty | 26.9 KiB | [redis_fdw_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_17-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_17` | 1.0 | `el10.aarch64` | pigsty | 27.1 KiB | [redis_fdw_17-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_17-1.0-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-redis-fdw` | 1.0 | `d12.x86_64` | pigsty | 57.1 KiB | [postgresql-17-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-17-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-redis-fdw` | 1.0 | `d12.aarch64` | pigsty | 55.5 KiB | [postgresql-17-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-17-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-redis-fdw` | 1.0 | `u22.x86_64` | pigsty | 59.8 KiB | [postgresql-17-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/redis-fdw/postgresql-17-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -77,9 +99,17 @@ Foreign data wrapper for querying a Redis server
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `redis_fdw_16` | 1.0 | `el8.x86_64` | pigsty | 26.9 KiB | [redis_fdw_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_16-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `redis_fdw_16` | 1.0 | `el8.x86_64` | pigsty | 27.3 KiB | [redis_fdw_16-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_16-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `redis_fdw_16` | 1.0 | `el8.aarch64` | pigsty | 26.7 KiB | [redis_fdw_16-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_16-1.0-2PIGSTY.el8.aarch64.rpm) |
 | `redis_fdw_16` | 1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [redis_fdw_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_16-1.0-1PIGSTY.el8.aarch64.rpm) |
 | `redis_fdw_16` | 1.0 | `el9.x86_64` | pigsty | 27.2 KiB | [redis_fdw_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_16-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `redis_fdw_16` | 1.0 | `el9.x86_64` | pigsty | 27.4 KiB | [redis_fdw_16-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_16-1.0-2PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_16` | 1.0 | `el9.aarch64` | pigsty | 26.5 KiB | [redis_fdw_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_16` | 1.0 | `el9.aarch64` | pigsty | 26.8 KiB | [redis_fdw_16-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_16-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_16` | 1.0 | `el10.x86_64` | pigsty | 27.4 KiB | [redis_fdw_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_16-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_16` | 1.0 | `el10.x86_64` | pigsty | 27.7 KiB | [redis_fdw_16-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_16-1.0-2PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_16` | 1.0 | `el10.aarch64` | pigsty | 26.9 KiB | [redis_fdw_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_16-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_16` | 1.0 | `el10.aarch64` | pigsty | 27.2 KiB | [redis_fdw_16-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_16-1.0-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-redis-fdw` | 1.0 | `d12.x86_64` | pigsty | 56.7 KiB | [postgresql-16-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-16-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-redis-fdw` | 1.0 | `d12.aarch64` | pigsty | 55.2 KiB | [postgresql-16-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-16-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-redis-fdw` | 1.0 | `u22.x86_64` | pigsty | 59.5 KiB | [postgresql-16-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/redis-fdw/postgresql-16-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -92,10 +122,18 @@ Foreign data wrapper for querying a Redis server
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `redis_fdw_15` | 1.0 | `el8.x86_64` | pigsty | 27.3 KiB | [redis_fdw_15-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_15-1.0-2PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_15` | 1.0 | `el8.x86_64` | pigsty | 26.8 KiB | [redis_fdw_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_15-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_15` | 1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [redis_fdw_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_15` | 1.0 | `el8.aarch64` | pigsty | 26.6 KiB | [redis_fdw_15-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_15-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_15` | 1.0 | `el9.x86_64` | pigsty | 27.4 KiB | [redis_fdw_15-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_15-1.0-2PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_15` | 1.0 | `el9.x86_64` | pigsty | 27.1 KiB | [redis_fdw_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_15-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_15` | 1.0 | `el9.aarch64` | pigsty | 26.4 KiB | [redis_fdw_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_15` | 1.0 | `el9.aarch64` | pigsty | 26.7 KiB | [redis_fdw_15-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_15-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_15` | 1.0 | `el10.x86_64` | pigsty | 27.7 KiB | [redis_fdw_15-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_15-1.0-2PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_15` | 1.0 | `el10.x86_64` | pigsty | 27.4 KiB | [redis_fdw_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_15-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_15` | 1.0 | `el10.aarch64` | pigsty | 27.1 KiB | [redis_fdw_15-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_15-1.0-2PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_15` | 1.0 | `el10.aarch64` | pigsty | 26.8 KiB | [redis_fdw_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_15-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-redis-fdw` | 1.0 | `d12.x86_64` | pigsty | 56.3 KiB | [postgresql-15-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-15-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-redis-fdw` | 1.0 | `d12.aarch64` | pigsty | 54.9 KiB | [postgresql-15-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-15-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-redis-fdw` | 1.0 | `u22.x86_64` | pigsty | 59.2 KiB | [postgresql-15-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/redis-fdw/postgresql-15-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -108,10 +146,18 @@ Foreign data wrapper for querying a Redis server
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `redis_fdw_14` | 1.0 | `el8.x86_64` | pigsty | 27.3 KiB | [redis_fdw_14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_14-1.0-2PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_14` | 1.0 | `el8.x86_64` | pigsty | 26.8 KiB | [redis_fdw_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_14-1.0-1PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_14` | 1.0 | `el8.aarch64` | pigsty | 26.0 KiB | [redis_fdw_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_14` | 1.0 | `el8.aarch64` | pigsty | 26.6 KiB | [redis_fdw_14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_14-1.0-2PIGSTY.el8.aarch64.rpm) |
 | `redis_fdw_14` | 1.0 | `el9.x86_64` | pigsty | 27.1 KiB | [redis_fdw_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_14-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `redis_fdw_14` | 1.0 | `el9.x86_64` | pigsty | 27.4 KiB | [redis_fdw_14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_14-1.0-2PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_14` | 1.0 | `el9.aarch64` | pigsty | 26.4 KiB | [redis_fdw_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_14` | 1.0 | `el9.aarch64` | pigsty | 26.7 KiB | [redis_fdw_14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_14-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `redis_fdw_14` | 1.0 | `el10.x86_64` | pigsty | 27.4 KiB | [redis_fdw_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_14-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_14` | 1.0 | `el10.x86_64` | pigsty | 27.6 KiB | [redis_fdw_14-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_14-1.0-2PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_14` | 1.0 | `el10.aarch64` | pigsty | 27.1 KiB | [redis_fdw_14-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_14-1.0-2PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_14` | 1.0 | `el10.aarch64` | pigsty | 26.8 KiB | [redis_fdw_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_14-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-redis-fdw` | 1.0 | `d12.x86_64` | pigsty | 56.4 KiB | [postgresql-14-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-14-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-redis-fdw` | 1.0 | `d12.aarch64` | pigsty | 54.9 KiB | [postgresql-14-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-14-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-redis-fdw` | 1.0 | `u22.x86_64` | pigsty | 59.3 KiB | [postgresql-14-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/redis-fdw/postgresql-14-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -126,11 +172,19 @@ Foreign data wrapper for querying a Redis server
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `redis_fdw_13` | 1.1 | `el8.x86_64` | pgdg | 198.5 KiB | [redis_fdw_13-1.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/redis_fdw_13-1.1-1.rhel8.x86_64.rpm) |
 | `redis_fdw_13` | 1.0 | `el8.x86_64` | pigsty | 26.6 KiB | [redis_fdw_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_13-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `redis_fdw_13` | 1.0 | `el8.x86_64` | pigsty | 27.0 KiB | [redis_fdw_13-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/redis_fdw_13-1.0-2PIGSTY.el8.x86_64.rpm) |
 | `redis_fdw_13` | 1.0 | `el8.aarch64` | pigsty | 25.9 KiB | [redis_fdw_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_13` | 1.0 | `el8.aarch64` | pigsty | 26.5 KiB | [redis_fdw_13-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/redis_fdw_13-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `redis_fdw_13` | 1.0 | `el9.x86_64` | pigsty | 27.4 KiB | [redis_fdw_13-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_13-1.0-2PIGSTY.el9.x86_64.rpm) |
 | `redis_fdw_13` | 1.0 | `el9.x86_64` | pigsty | 27.2 KiB | [redis_fdw_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/redis_fdw_13-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `redis_fdw_13` | 1.0 | `el9.aarch64` | pigsty | 26.8 KiB | [redis_fdw_13-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_13-1.0-2PIGSTY.el9.aarch64.rpm) |
 | `redis_fdw_13` | 1.0 | `el9.aarch64` | pigsty | 26.5 KiB | [redis_fdw_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/redis_fdw_13-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `redis_fdw_13` | 1.1 | `el10.x86_64` | pgdg | 39.0 KiB | [redis_fdw_13-1.1-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/redis_fdw_13-1.1-5PGDG.rhel10.x86_64.rpm) |
+| `redis_fdw_13` | 1.0 | `el10.x86_64` | pigsty | 27.5 KiB | [redis_fdw_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_13-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `redis_fdw_13` | 1.0 | `el10.x86_64` | pigsty | 27.7 KiB | [redis_fdw_13-1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/redis_fdw_13-1.0-2PIGSTY.el10.x86_64.rpm) |
 | `redis_fdw_13` | 1.1 | `el10.aarch64` | pgdg | 37.4 KiB | [redis_fdw_13-1.1-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/redis_fdw_13-1.1-5PGDG.rhel10.aarch64.rpm) |
+| `redis_fdw_13` | 1.0 | `el10.aarch64` | pigsty | 27.0 KiB | [redis_fdw_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_13-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `redis_fdw_13` | 1.0 | `el10.aarch64` | pigsty | 27.3 KiB | [redis_fdw_13-1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/redis_fdw_13-1.0-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-redis-fdw` | 1.0 | `d12.x86_64` | pigsty | 56.4 KiB | [postgresql-13-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-13-redis-fdw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-redis-fdw` | 1.0 | `d12.aarch64` | pigsty | 54.8 KiB | [postgresql-13-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/r/redis-fdw/postgresql-13-redis-fdw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-redis-fdw` | 1.0 | `u22.x86_64` | pigsty | 59.0 KiB | [postgresql-13-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/redis-fdw/postgresql-13-redis-fdw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -144,7 +198,7 @@ Foreign data wrapper for querying a Redis server
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pg-redis-fdw/redis_fdw" title="Repository" icon="github" subtitle="github.com/pg-redis-fdw/redis_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="redis_fdw-1.0-18.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="redis_fdw-1.0.tar.gz" >}}
 {{< /cards >}}
 
 

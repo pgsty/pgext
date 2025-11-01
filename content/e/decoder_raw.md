@@ -41,8 +41,8 @@ Output plugin for logical replication in Raw SQL format
 |    `el8.aarch64`    | {{< bg "PIGSTY 1.0" "decoder_raw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    | {{< bg "PIGSTY 1.0" "decoder_raw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_13 : AVAIL 1" "green" >}} |
 |    `el9.aarch64`    | {{< bg "PIGSTY 1.0" "decoder_raw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "decoder_raw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "decoder_raw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0" "decoder_raw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "decoder_raw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0" "decoder_raw_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "decoder_raw_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "decoder_raw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "decoder_raw_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-decoder-raw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-decoder-raw : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-decoder-raw : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-decoder-raw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-decoder-raw : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-decoder-raw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-decoder-raw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-decoder-raw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-decoder-raw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-decoder-raw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-decoder-raw : MISS 0" "red" >}}      |
@@ -59,9 +59,11 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_18` | 1.0 | `el8.x86_64` | pigsty | 15.2 KiB | [decoder_raw_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_18-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_18` | 1.0 | `el8.aarch64` | pigsty | 15.0 KiB | [decoder_raw_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_18-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_18` | 1.0 | `el9.x86_64` | pigsty | 15.0 KiB | [decoder_raw_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_18-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `decoder_raw_18` | 1.0 | `el9.aarch64` | pigsty | 14.6 KiB | [decoder_raw_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `decoder_raw_18` | 1.0 | `el8.aarch64` | pigsty | 15.2 KiB | [decoder_raw_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_18-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_18` | 1.0 | `el9.x86_64` | pigsty | 14.9 KiB | [decoder_raw_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_18-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_18` | 1.0 | `el9.aarch64` | pigsty | 14.7 KiB | [decoder_raw_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `decoder_raw_18` | 1.0 | `el10.x86_64` | pigsty | 15.0 KiB | [decoder_raw_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/decoder_raw_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `decoder_raw_18` | 1.0 | `el10.aarch64` | pigsty | 14.9 KiB | [decoder_raw_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/decoder_raw_18-1.0-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -69,9 +71,11 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_17` | 1.0 | `el8.x86_64` | pigsty | 15.2 KiB | [decoder_raw_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_17` | 1.0 | `el8.aarch64` | pigsty | 15.0 KiB | [decoder_raw_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_17` | 1.0 | `el9.x86_64` | pigsty | 15.0 KiB | [decoder_raw_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_17` | 1.0 | `el8.aarch64` | pigsty | 15.3 KiB | [decoder_raw_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_17` | 1.0 | `el9.x86_64` | pigsty | 14.9 KiB | [decoder_raw_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_17-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `decoder_raw_17` | 1.0 | `el9.aarch64` | pigsty | 14.7 KiB | [decoder_raw_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `decoder_raw_17` | 1.0 | `el10.x86_64` | pigsty | 15.0 KiB | [decoder_raw_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/decoder_raw_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `decoder_raw_17` | 1.0 | `el10.aarch64` | pigsty | 15.0 KiB | [decoder_raw_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/decoder_raw_17-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-decoder-raw` | 1.0 | `d12.x86_64` | pigsty | 19.2 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-decoder-raw` | 1.0 | `d12.aarch64` | pigsty | 19.3 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-decoder-raw` | 1.0 | `u22.x86_64` | pigsty | 20.1 KiB | [postgresql-17-decoder-raw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/decoder-raw/postgresql-17-decoder-raw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -85,9 +89,9 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_16` | 1.0 | `el8.x86_64` | pigsty | 15.2 KiB | [decoder_raw_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_16` | 1.0 | `el8.aarch64` | pigsty | 15.1 KiB | [decoder_raw_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_16-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_16` | 1.0 | `el9.x86_64` | pigsty | 15.0 KiB | [decoder_raw_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `decoder_raw_16` | 1.0 | `el9.aarch64` | pigsty | 14.8 KiB | [decoder_raw_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `decoder_raw_16` | 1.0 | `el8.aarch64` | pigsty | 15.3 KiB | [decoder_raw_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_16-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_16` | 1.0 | `el9.x86_64` | pigsty | 14.8 KiB | [decoder_raw_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_16-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_16` | 1.0 | `el9.aarch64` | pigsty | 14.7 KiB | [decoder_raw_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_16-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-16-decoder-raw` | 1.0 | `d12.x86_64` | pigsty | 19.2 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-decoder-raw` | 1.0 | `d12.aarch64` | pigsty | 19.3 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-decoder-raw` | 1.0 | `u22.x86_64` | pigsty | 20.1 KiB | [postgresql-16-decoder-raw_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/decoder-raw/postgresql-16-decoder-raw_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -101,8 +105,8 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_15` | 1.0 | `el8.x86_64` | pigsty | 15.0 KiB | [decoder_raw_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_15` | 1.0 | `el8.aarch64` | pigsty | 14.9 KiB | [decoder_raw_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_15-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_15` | 1.0 | `el9.x86_64` | pigsty | 14.9 KiB | [decoder_raw_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_15-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_15` | 1.0 | `el8.aarch64` | pigsty | 15.1 KiB | [decoder_raw_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_15` | 1.0 | `el9.x86_64` | pigsty | 14.7 KiB | [decoder_raw_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_15-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `decoder_raw_15` | 1.0 | `el9.aarch64` | pigsty | 14.6 KiB | [decoder_raw_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_15-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-15-decoder-raw` | 1.0 | `d12.x86_64` | pigsty | 18.8 KiB | [postgresql-15-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-15-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-decoder-raw` | 1.0 | `d12.aarch64` | pigsty | 18.9 KiB | [postgresql-15-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-15-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -117,8 +121,8 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_14` | 1.0 | `el8.x86_64` | pigsty | 15.0 KiB | [decoder_raw_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_14` | 1.0 | `el8.aarch64` | pigsty | 14.9 KiB | [decoder_raw_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_14` | 1.0 | `el9.x86_64` | pigsty | 15.2 KiB | [decoder_raw_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_14-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_14` | 1.0 | `el8.aarch64` | pigsty | 15.1 KiB | [decoder_raw_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_14` | 1.0 | `el9.x86_64` | pigsty | 15.0 KiB | [decoder_raw_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_14-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `decoder_raw_14` | 1.0 | `el9.aarch64` | pigsty | 14.9 KiB | [decoder_raw_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_14-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-14-decoder-raw` | 1.0 | `d12.x86_64` | pigsty | 19.5 KiB | [postgresql-14-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-14-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-decoder-raw` | 1.0 | `d12.aarch64` | pigsty | 19.4 KiB | [postgresql-14-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-14-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb) |
@@ -133,8 +137,8 @@ Output plugin for logical replication in Raw SQL format
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `decoder_raw_13` | 1.0 | `el8.x86_64` | pigsty | 15.0 KiB | [decoder_raw_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/decoder_raw_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `decoder_raw_13` | 1.0 | `el8.aarch64` | pigsty | 14.9 KiB | [decoder_raw_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_13-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `decoder_raw_13` | 1.0 | `el9.x86_64` | pigsty | 15.2 KiB | [decoder_raw_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_13-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `decoder_raw_13` | 1.0 | `el8.aarch64` | pigsty | 15.1 KiB | [decoder_raw_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/decoder_raw_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `decoder_raw_13` | 1.0 | `el9.x86_64` | pigsty | 15.0 KiB | [decoder_raw_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/decoder_raw_13-1.0-1PIGSTY.el9.x86_64.rpm) |
 | `decoder_raw_13` | 1.0 | `el9.aarch64` | pigsty | 14.9 KiB | [decoder_raw_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/decoder_raw_13-1.0-1PIGSTY.el9.aarch64.rpm) |
 | `postgresql-13-decoder-raw` | 1.0 | `d12.x86_64` | pigsty | 19.2 KiB | [postgresql-13-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-13-decoder-raw_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-decoder-raw` | 1.0 | `d12.aarch64` | pigsty | 19.1 KiB | [postgresql-13-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/decoder-raw/postgresql-13-decoder-raw_1.0-1PIGSTY~bookworm_arm64.deb) |

@@ -37,12 +37,12 @@ Provides ddsketch aggregate function
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "ddsketch_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "ddsketch_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0.1" "ddsketch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "ddsketch_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-ddsketch : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-ddsketch : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-ddsketch : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-ddsketch : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-ddsketch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-ddsketch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-ddsketch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-ddsketch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-ddsketch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-ddsketch : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Provides ddsketch aggregate function
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-ddsketch : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.1" "postgresql-17-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-16-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-15-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-14-ddsketch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.1" "postgresql-13-ddsketch : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ddsketch_17` | 1.0.1 | `el8.x86_64` | pigsty | 32.5 KiB | [ddsketch_17-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_17-1.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `ddsketch_17` | 1.0.1 | `el8.aarch64` | pigsty | 31.0 KiB | [ddsketch_17-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_17-1.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `ddsketch_17` | 1.0.1 | `el9.x86_64` | pigsty | 33.2 KiB | [ddsketch_17-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_17-1.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `ddsketch_17` | 1.0.1 | `el9.aarch64` | pigsty | 32.0 KiB | [ddsketch_17-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_17-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el8.x86_64` | pigsty | 34.7 KiB | [ddsketch_18-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_18-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_18-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_18-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_18-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_18-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el9.aarch64` | pigsty | 32.9 KiB | [ddsketch_18-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_18-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el10.x86_64` | pigsty | 34.2 KiB | [ddsketch_18-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_18-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_18` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_18-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_18-1.0.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `ddsketch_17` | 1.0.1 | `el8.x86_64` | pigsty | 34.7 KiB | [ddsketch_17-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_17-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_17` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_17-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_17-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_17` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_17-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_17-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_17` | 1.0.1 | `el9.aarch64` | pigsty | 32.9 KiB | [ddsketch_17-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_17-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_17` | 1.0.1 | `el10.x86_64` | pigsty | 34.2 KiB | [ddsketch_17-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_17-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_17` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_17-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_17-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-ddsketch` | 1.0.1 | `d12.x86_64` | pigsty | 66.0 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-ddsketch` | 1.0.1 | `d12.aarch64` | pigsty | 65.1 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-ddsketch` | 1.0.1 | `u22.x86_64` | pigsty | 69.7 KiB | [postgresql-17-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddsketch/postgresql-17-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Provides ddsketch aggregate function
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ddsketch_16` | 1.0.1 | `el8.x86_64` | pigsty | 32.5 KiB | [ddsketch_16-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_16-1.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `ddsketch_16` | 1.0.1 | `el8.aarch64` | pigsty | 31.0 KiB | [ddsketch_16-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_16-1.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `ddsketch_16` | 1.0.1 | `el9.x86_64` | pigsty | 33.2 KiB | [ddsketch_16-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_16-1.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `ddsketch_16` | 1.0.1 | `el9.aarch64` | pigsty | 31.9 KiB | [ddsketch_16-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_16-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el8.x86_64` | pigsty | 34.7 KiB | [ddsketch_16-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_16-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_16-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_16-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_16-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_16-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el9.aarch64` | pigsty | 32.9 KiB | [ddsketch_16-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_16-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el10.x86_64` | pigsty | 34.2 KiB | [ddsketch_16-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_16-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_16` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_16-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_16-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-ddsketch` | 1.0.1 | `d12.x86_64` | pigsty | 66.0 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-ddsketch` | 1.0.1 | `d12.aarch64` | pigsty | 65.1 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-ddsketch` | 1.0.1 | `u22.x86_64` | pigsty | 69.7 KiB | [postgresql-16-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddsketch/postgresql-16-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Provides ddsketch aggregate function
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ddsketch_15` | 1.0.1 | `el8.x86_64` | pigsty | 32.5 KiB | [ddsketch_15-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_15-1.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `ddsketch_15` | 1.0.1 | `el8.aarch64` | pigsty | 31.0 KiB | [ddsketch_15-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_15-1.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `ddsketch_15` | 1.0.1 | `el9.x86_64` | pigsty | 33.2 KiB | [ddsketch_15-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_15-1.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `ddsketch_15` | 1.0.1 | `el9.aarch64` | pigsty | 32.0 KiB | [ddsketch_15-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_15-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el8.x86_64` | pigsty | 34.7 KiB | [ddsketch_15-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_15-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_15-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_15-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_15-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_15-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el9.aarch64` | pigsty | 32.8 KiB | [ddsketch_15-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_15-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el10.x86_64` | pigsty | 34.2 KiB | [ddsketch_15-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_15-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_15` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_15-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_15-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-ddsketch` | 1.0.1 | `d12.x86_64` | pigsty | 66.0 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-ddsketch` | 1.0.1 | `d12.aarch64` | pigsty | 65.3 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-ddsketch` | 1.0.1 | `u22.x86_64` | pigsty | 69.7 KiB | [postgresql-15-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddsketch/postgresql-15-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Provides ddsketch aggregate function
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ddsketch_14` | 1.0.1 | `el8.x86_64` | pigsty | 32.5 KiB | [ddsketch_14-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_14-1.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `ddsketch_14` | 1.0.1 | `el8.aarch64` | pigsty | 31.0 KiB | [ddsketch_14-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_14-1.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `ddsketch_14` | 1.0.1 | `el9.x86_64` | pigsty | 33.2 KiB | [ddsketch_14-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_14-1.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `ddsketch_14` | 1.0.1 | `el9.aarch64` | pigsty | 32.0 KiB | [ddsketch_14-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_14-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el8.x86_64` | pigsty | 34.7 KiB | [ddsketch_14-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_14-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_14-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_14-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_14-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_14-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el9.aarch64` | pigsty | 32.8 KiB | [ddsketch_14-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_14-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el10.x86_64` | pigsty | 34.2 KiB | [ddsketch_14-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_14-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_14` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_14-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_14-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-ddsketch` | 1.0.1 | `d12.x86_64` | pigsty | 65.9 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-ddsketch` | 1.0.1 | `d12.aarch64` | pigsty | 65.3 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-ddsketch` | 1.0.1 | `u22.x86_64` | pigsty | 69.7 KiB | [postgresql-14-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddsketch/postgresql-14-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ Provides ddsketch aggregate function
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ddsketch_13` | 1.0.1 | `el8.x86_64` | pigsty | 32.0 KiB | [ddsketch_13-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_13-1.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `ddsketch_13` | 1.0.1 | `el8.aarch64` | pigsty | 31.0 KiB | [ddsketch_13-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_13-1.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `ddsketch_13` | 1.0.1 | `el9.x86_64` | pigsty | 33.1 KiB | [ddsketch_13-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_13-1.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `ddsketch_13` | 1.0.1 | `el9.aarch64` | pigsty | 31.9 KiB | [ddsketch_13-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_13-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el8.x86_64` | pigsty | 34.1 KiB | [ddsketch_13-1.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ddsketch_13-1.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el8.aarch64` | pigsty | 33.0 KiB | [ddsketch_13-1.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ddsketch_13-1.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el9.x86_64` | pigsty | 34.0 KiB | [ddsketch_13-1.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ddsketch_13-1.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el9.aarch64` | pigsty | 32.8 KiB | [ddsketch_13-1.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ddsketch_13-1.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el10.x86_64` | pigsty | 34.1 KiB | [ddsketch_13-1.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ddsketch_13-1.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `ddsketch_13` | 1.0.1 | `el10.aarch64` | pigsty | 33.3 KiB | [ddsketch_13-1.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ddsketch_13-1.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-ddsketch` | 1.0.1 | `d12.x86_64` | pigsty | 65.8 KiB | [postgresql-13-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-13-ddsketch_1.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-ddsketch` | 1.0.1 | `d12.aarch64` | pigsty | 65.5 KiB | [postgresql-13-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/d/ddsketch/postgresql-13-ddsketch_1.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-ddsketch` | 1.0.1 | `u22.x86_64` | pigsty | 69.4 KiB | [postgresql-13-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddsketch/postgresql-13-ddsketch_1.0.1-1PIGSTY~jammy_amd64.deb) |

@@ -37,12 +37,12 @@ xxhash functions for PostgreSQL
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_xxhash_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_xxhash_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_xxhash_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_xxhash_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-xxhash : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-xxhash : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-xxhash : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-xxhash : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-xxhash : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-xxhash : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-xxhash : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-xxhash : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-xxhash : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-xxhash : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ xxhash functions for PostgreSQL
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-xxhash : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-xxhash : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-xxhash : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_xxhash_17` | 0.0.1 | `el8.x86_64` | pigsty | 30.0 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_xxhash_17` | 0.0.1 | `el8.aarch64` | pigsty | 29.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_xxhash_17` | 0.0.1 | `el9.x86_64` | pigsty | 18.5 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el8.x86_64` | pigsty | 30.8 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el8.aarch64` | pigsty | 30.8 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el9.x86_64` | pigsty | 18.2 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el10.x86_64` | pigsty | 17.8 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_18` | 0.0.1 | `el10.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_xxhash_17` | 0.0.1 | `el8.x86_64` | pigsty | 30.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_17` | 0.0.1 | `el8.aarch64` | pigsty | 30.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_17` | 0.0.1 | `el9.x86_64` | pigsty | 18.2 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_xxhash_17` | 0.0.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_17` | 0.0.1 | `el10.x86_64` | pigsty | 17.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_17` | 0.0.1 | `el10.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-xxhash` | 0.0.1 | `d12.x86_64` | pigsty | 79.8 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-xxhash` | 0.0.1 | `d12.aarch64` | pigsty | 82.2 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-xxhash` | 0.0.1 | `u22.x86_64` | pigsty | 77.0 KiB | [postgresql-17-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-xxhash/postgresql-17-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ xxhash functions for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_xxhash_16` | 0.0.1 | `el8.x86_64` | pigsty | 30.0 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_xxhash_16` | 0.0.1 | `el8.aarch64` | pigsty | 29.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_xxhash_16` | 0.0.1 | `el9.x86_64` | pigsty | 18.5 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_16` | 0.0.1 | `el8.x86_64` | pigsty | 30.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_16` | 0.0.1 | `el8.aarch64` | pigsty | 30.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_16` | 0.0.1 | `el9.x86_64` | pigsty | 18.2 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_xxhash_16` | 0.0.1 | `el9.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_16` | 0.0.1 | `el10.x86_64` | pigsty | 17.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_16` | 0.0.1 | `el10.aarch64` | pigsty | 18.8 KiB | [pg_xxhash_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-xxhash` | 0.0.1 | `d12.x86_64` | pigsty | 79.8 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-xxhash` | 0.0.1 | `d12.aarch64` | pigsty | 82.1 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-xxhash` | 0.0.1 | `u22.x86_64` | pigsty | 77.0 KiB | [postgresql-16-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-xxhash/postgresql-16-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ xxhash functions for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_xxhash_15` | 0.0.1 | `el8.x86_64` | pigsty | 30.7 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_xxhash_15` | 0.0.1 | `el8.aarch64` | pigsty | 30.4 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_xxhash_15` | 0.0.1 | `el9.x86_64` | pigsty | 29.2 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_xxhash_15` | 0.0.1 | `el9.aarch64` | pigsty | 30.6 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el8.x86_64` | pigsty | 31.7 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el8.aarch64` | pigsty | 31.6 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el9.x86_64` | pigsty | 29.1 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el9.aarch64` | pigsty | 30.5 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el10.x86_64` | pigsty | 29.9 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_15` | 0.0.1 | `el10.aarch64` | pigsty | 30.9 KiB | [pg_xxhash_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-xxhash` | 0.0.1 | `d12.x86_64` | pigsty | 80.5 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-xxhash` | 0.0.1 | `d12.aarch64` | pigsty | 83.0 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-xxhash` | 0.0.1 | `u22.x86_64` | pigsty | 87.0 KiB | [postgresql-15-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-xxhash/postgresql-15-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ xxhash functions for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_xxhash_14` | 0.0.1 | `el8.x86_64` | pigsty | 30.7 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_xxhash_14` | 0.0.1 | `el8.aarch64` | pigsty | 30.4 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_xxhash_14` | 0.0.1 | `el9.x86_64` | pigsty | 29.2 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_xxhash_14` | 0.0.1 | `el9.aarch64` | pigsty | 30.6 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el8.x86_64` | pigsty | 31.7 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el8.aarch64` | pigsty | 31.6 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el9.x86_64` | pigsty | 29.1 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el9.aarch64` | pigsty | 30.5 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el10.x86_64` | pigsty | 29.9 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_14` | 0.0.1 | `el10.aarch64` | pigsty | 30.9 KiB | [pg_xxhash_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-xxhash` | 0.0.1 | `d12.x86_64` | pigsty | 80.7 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-xxhash` | 0.0.1 | `d12.aarch64` | pigsty | 82.9 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-xxhash` | 0.0.1 | `u22.x86_64` | pigsty | 87.2 KiB | [postgresql-14-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-xxhash/postgresql-14-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ xxhash functions for PostgreSQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_xxhash_13` | 0.0.1 | `el8.x86_64` | pigsty | 30.7 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_xxhash_13` | 0.0.1 | `el8.aarch64` | pigsty | 30.4 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_xxhash_13` | 0.0.1 | `el9.x86_64` | pigsty | 29.2 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_xxhash_13` | 0.0.1 | `el8.x86_64` | pigsty | 31.7 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_xxhash_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_xxhash_13` | 0.0.1 | `el8.aarch64` | pigsty | 31.6 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_xxhash_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_xxhash_13` | 0.0.1 | `el9.x86_64` | pigsty | 29.0 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_xxhash_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_xxhash_13` | 0.0.1 | `el9.aarch64` | pigsty | 30.5 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_xxhash_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_xxhash_13` | 0.0.1 | `el10.x86_64` | pigsty | 29.9 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_xxhash_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_xxhash_13` | 0.0.1 | `el10.aarch64` | pigsty | 30.9 KiB | [pg_xxhash_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_xxhash_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-xxhash` | 0.0.1 | `d12.x86_64` | pigsty | 80.8 KiB | [postgresql-13-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-13-pg-xxhash_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-xxhash` | 0.0.1 | `d12.aarch64` | pigsty | 82.9 KiB | [postgresql-13-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-xxhash/postgresql-13-pg-xxhash_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-xxhash` | 0.0.1 | `u22.x86_64` | pigsty | 87.2 KiB | [postgresql-13-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-xxhash/postgresql-13-pg-xxhash_0.0.1-1PIGSTY~jammy_amd64.deb) |

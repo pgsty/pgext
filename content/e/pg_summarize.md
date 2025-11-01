@@ -33,18 +33,18 @@ Text Summarization using LLMs. Built using pgrx
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_summarize" >}} | `0.0.1` | {{< bg "18" "pg_summarize_18" "red" >}} {{< bg "17" "pg_summarize_17" "green" >}} {{< bg "16" "pg_summarize_16" "green" >}} {{< bg "15" "pg_summarize_15" "green" >}} {{< bg "14" "pg_summarize_14" "green" >}} {{< bg "13" "pg_summarize_13" "green" >}} | `pg_summarize_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_summarize" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-summarize" "red" >}} {{< bg "17" "postgresql-17-pg-summarize" "green" >}} {{< bg "16" "postgresql-16-pg-summarize" "green" >}} {{< bg "15" "postgresql-15-pg-summarize" "green" >}} {{< bg "14" "postgresql-14-pg-summarize" "green" >}} {{< bg "13" "postgresql-13-pg-summarize" "green" >}} | `postgresql-$v-pg-summarize` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_summarize" >}} | `0.0.1` | {{< bg "18" "pg_summarize_18" "green" >}} {{< bg "17" "pg_summarize_17" "green" >}} {{< bg "16" "pg_summarize_16" "green" >}} {{< bg "15" "pg_summarize_15" "green" >}} {{< bg "14" "pg_summarize_14" "green" >}} {{< bg "13" "pg_summarize_13" "green" >}} | `pg_summarize_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_summarize" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-summarize" "green" >}} {{< bg "17" "postgresql-17-pg-summarize" "green" >}} {{< bg "16" "postgresql-16-pg-summarize" "green" >}} {{< bg "15" "postgresql-15-pg-summarize" "green" >}} {{< bg "14" "postgresql-14-pg-summarize" "green" >}} {{< bg "13" "postgresql-13-pg-summarize" "green" >}} | `postgresql-$v-pg-summarize` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_summarize_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_summarize_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
 |    `el9.x86_64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_summarize_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_summarize_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_summarize_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_summarize_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_summarize_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_summarize_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-summarize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-summarize : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-summarize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-summarize : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-summarize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-summarize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-summarize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-summarize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-summarize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-summarize : MISS 0" "red" >}}      |
@@ -55,15 +55,28 @@ Text Summarization using LLMs. Built using pgrx
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-summarize : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-summarize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-summarize : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_summarize_17` | 0.0.1 | `el8.x86_64` | pigsty | 964.2 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_summarize_17` | 0.0.1 | `el8.aarch64` | pigsty | 899.7 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_18` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_18` | 0.0.1 | `el8.aarch64` | pigsty | 948.5 KiB | [pg_summarize_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_18` | 0.0.1 | `el9.aarch64` | pigsty | 1001.3 KiB | [pg_summarize_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_18` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_18` | 0.0.1 | `el10.aarch64` | pigsty | 1001.1 KiB | [pg_summarize_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_summarize_17` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_17` | 0.0.1 | `el8.aarch64` | pigsty | 948.4 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_summarize_17` | 0.0.1 | `el9.x86_64` | pigsty | 963.8 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_summarize_17` | 0.0.1 | `el9.aarch64` | pigsty | 951.5 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_17` | 0.0.1 | `el9.aarch64` | pigsty | 1001.2 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_17` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_17` | 0.0.1 | `el10.aarch64` | pigsty | 1002.2 KiB | [pg_summarize_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-summarize` | 0.0.1 | `d12.x86_64` | pigsty | 773.4 KiB | [postgresql-17-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-17-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-summarize` | 0.0.1 | `d12.aarch64` | pigsty | 690.3 KiB | [postgresql-17-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-17-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-summarize` | 0.0.1 | `u22.x86_64` | pigsty | 852.1 KiB | [postgresql-17-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-summarize/postgresql-17-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -76,10 +89,12 @@ Text Summarization using LLMs. Built using pgrx
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_summarize_16` | 0.0.1 | `el8.x86_64` | pigsty | 964.1 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_summarize_16` | 0.0.1 | `el8.aarch64` | pigsty | 899.6 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_16` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_16` | 0.0.1 | `el8.aarch64` | pigsty | 948.5 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_summarize_16` | 0.0.1 | `el9.x86_64` | pigsty | 963.6 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_summarize_16` | 0.0.1 | `el9.aarch64` | pigsty | 951.3 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_16` | 0.0.1 | `el9.aarch64` | pigsty | 1001.2 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_16` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_16` | 0.0.1 | `el10.aarch64` | pigsty | 1001.3 KiB | [pg_summarize_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-summarize` | 0.0.1 | `d12.x86_64` | pigsty | 773.5 KiB | [postgresql-16-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-16-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-summarize` | 0.0.1 | `d12.aarch64` | pigsty | 690.2 KiB | [postgresql-16-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-16-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-summarize` | 0.0.1 | `u22.x86_64` | pigsty | 853.0 KiB | [postgresql-16-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-summarize/postgresql-16-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -92,10 +107,12 @@ Text Summarization using LLMs. Built using pgrx
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_summarize_15` | 0.0.1 | `el8.x86_64` | pigsty | 964.1 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_summarize_15` | 0.0.1 | `el8.aarch64` | pigsty | 899.5 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_15` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_15` | 0.0.1 | `el8.aarch64` | pigsty | 948.6 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_summarize_15` | 0.0.1 | `el9.x86_64` | pigsty | 963.8 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_summarize_15` | 0.0.1 | `el9.aarch64` | pigsty | 951.2 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_15` | 0.0.1 | `el9.aarch64` | pigsty | 1002.8 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_15` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_15` | 0.0.1 | `el10.aarch64` | pigsty | 1001.1 KiB | [pg_summarize_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-summarize` | 0.0.1 | `d12.x86_64` | pigsty | 774.0 KiB | [postgresql-15-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-15-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-summarize` | 0.0.1 | `d12.aarch64` | pigsty | 690.3 KiB | [postgresql-15-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-15-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-summarize` | 0.0.1 | `u22.x86_64` | pigsty | 851.8 KiB | [postgresql-15-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-summarize/postgresql-15-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -108,10 +125,12 @@ Text Summarization using LLMs. Built using pgrx
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_summarize_14` | 0.0.1 | `el8.x86_64` | pigsty | 964.1 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_summarize_14` | 0.0.1 | `el8.aarch64` | pigsty | 899.6 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_14` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_14` | 0.0.1 | `el8.aarch64` | pigsty | 948.5 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_summarize_14` | 0.0.1 | `el9.x86_64` | pigsty | 963.8 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_summarize_14` | 0.0.1 | `el9.aarch64` | pigsty | 951.2 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_14` | 0.0.1 | `el9.aarch64` | pigsty | 1001.7 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_14` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_14` | 0.0.1 | `el10.aarch64` | pigsty | 1001.2 KiB | [pg_summarize_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-summarize` | 0.0.1 | `d12.x86_64` | pigsty | 773.4 KiB | [postgresql-14-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-14-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-summarize` | 0.0.1 | `d12.aarch64` | pigsty | 690.9 KiB | [postgresql-14-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-14-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-summarize` | 0.0.1 | `u22.x86_64` | pigsty | 853.1 KiB | [postgresql-14-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-summarize/postgresql-14-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -124,10 +143,12 @@ Text Summarization using LLMs. Built using pgrx
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_summarize_13` | 0.0.1 | `el8.x86_64` | pigsty | 964.2 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_summarize_13` | 0.0.1 | `el8.aarch64` | pigsty | 899.4 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_summarize_13` | 0.0.1 | `el9.x86_64` | pigsty | 963.8 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_summarize_13` | 0.0.1 | `el9.aarch64` | pigsty | 951.0 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el8.x86_64` | pigsty | 1.1 MiB | [pg_summarize_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_summarize_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el8.aarch64` | pigsty | 948.6 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_summarize_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el9.x86_64` | pigsty | 1.1 MiB | [pg_summarize_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_summarize_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el9.aarch64` | pigsty | 1001.2 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_summarize_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el10.x86_64` | pigsty | 1.1 MiB | [pg_summarize_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_summarize_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_summarize_13` | 0.0.1 | `el10.aarch64` | pigsty | 1000.9 KiB | [pg_summarize_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_summarize_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-summarize` | 0.0.1 | `d12.x86_64` | pigsty | 773.8 KiB | [postgresql-13-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-13-pg-summarize_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-summarize` | 0.0.1 | `d12.aarch64` | pigsty | 690.3 KiB | [postgresql-13-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-summarize/postgresql-13-pg-summarize_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-summarize` | 0.0.1 | `u22.x86_64` | pigsty | 853.0 KiB | [postgresql-13-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-summarize/postgresql-13-pg-summarize_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -166,6 +187,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_summarize; # install by extension name, for the current active PG version
 pig ext install pg_summarize; # install via package alias, for the active PG version
+pig ext install pg_summarize -v 18;   # install for PG 18
 pig ext install pg_summarize -v 17;   # install for PG 17
 pig ext install pg_summarize -v 16;   # install for PG 16
 pig ext install pg_summarize -v 15;   # install for PG 15

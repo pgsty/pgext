@@ -31,18 +31,18 @@ tiktoken tokenizer for use with OpenAI models in postgres
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_tiktoken" >}} | `0.0.1` | {{< bg "18" "pg_tiktoken_18" "red" >}} {{< bg "17" "pg_tiktoken_17" "green" >}} {{< bg "16" "pg_tiktoken_16" "green" >}} {{< bg "15" "pg_tiktoken_15" "green" >}} {{< bg "14" "pg_tiktoken_14" "green" >}} {{< bg "13" "pg_tiktoken_13" "green" >}} | `pg_tiktoken_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tiktoken" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-tiktoken" "red" >}} {{< bg "17" "postgresql-17-pg-tiktoken" "green" >}} {{< bg "16" "postgresql-16-pg-tiktoken" "green" >}} {{< bg "15" "postgresql-15-pg-tiktoken" "green" >}} {{< bg "14" "postgresql-14-pg-tiktoken" "green" >}} {{< bg "13" "postgresql-13-pg-tiktoken" "green" >}} | `postgresql-$v-pg-tiktoken` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_tiktoken" >}} | `0.0.1` | {{< bg "18" "pg_tiktoken_18" "green" >}} {{< bg "17" "pg_tiktoken_17" "green" >}} {{< bg "16" "pg_tiktoken_16" "green" >}} {{< bg "15" "pg_tiktoken_15" "green" >}} {{< bg "14" "pg_tiktoken_14" "green" >}} {{< bg "13" "pg_tiktoken_13" "green" >}} | `pg_tiktoken_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tiktoken" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-tiktoken" "green" >}} {{< bg "17" "postgresql-17-pg-tiktoken" "green" >}} {{< bg "16" "postgresql-16-pg-tiktoken" "green" >}} {{< bg "15" "postgresql-15-pg-tiktoken" "green" >}} {{< bg "14" "postgresql-14-pg-tiktoken" "green" >}} {{< bg "13" "postgresql-13-pg-tiktoken" "green" >}} | `postgresql-$v-pg-tiktoken` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 2" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 2" "green" >}} |
 |    `el9.x86_64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_tiktoken_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_tiktoken_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 2" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "pg_tiktoken_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-tiktoken : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-tiktoken : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-tiktoken : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-tiktoken : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-tiktoken : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-tiktoken : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-tiktoken : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-tiktoken : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-tiktoken : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-tiktoken : MISS 0" "red" >}}      |
@@ -53,15 +53,31 @@ tiktoken tokenizer for use with OpenAI models in postgres
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-tiktoken : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-tiktoken : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-13-pg-tiktoken : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tiktoken_18` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_18-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_18-0.0.1-2PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_18` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_18-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_18-0.0.1-2PIGSTY.el8.aarch64.rpm) |
+| `pg_tiktoken_18` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_18-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_18-0.0.1-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_18` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_18-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_18-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_18` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_18-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_18-0.0.1-2PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tiktoken_17` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_17-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_17-0.0.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tiktoken_17` | 0.0.1 | `el8.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_17` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_17-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_17-0.0.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_17` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_17` | 0.0.1 | `el9.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tiktoken_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tiktoken_17` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_17` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_17-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_17-0.0.1-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_17` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_17-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_17-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_17` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_17-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_17-0.0.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-tiktoken` | 0.0.1 | `d12.x86_64` | pigsty | 4.9 KiB | [postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-tiktoken` | 0.0.1 | `d12.aarch64` | pigsty | 4.9 KiB | [postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-tiktoken` | 0.0.1 | `u22.x86_64` | pigsty | 4.9 KiB | [postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tiktoken/postgresql-17-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +90,15 @@ tiktoken tokenizer for use with OpenAI models in postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_tiktoken_16` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_16-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_16-0.0.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tiktoken_16` | 0.0.1 | `el8.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tiktoken_16` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_tiktoken_16` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_16-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_16-0.0.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_16` | 0.0.1 | `el9.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tiktoken_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tiktoken_16` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_16` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_16-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_16-0.0.1-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_16` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_16-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_16-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_16` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_16-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_16-0.0.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-tiktoken` | 0.0.1 | `d12.x86_64` | pigsty | 1.3 MiB | [postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-tiktoken` | 0.0.1 | `d12.aarch64` | pigsty | 1.2 MiB | [postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-tiktoken` | 0.0.1 | `u22.x86_64` | pigsty | 1.5 MiB | [postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tiktoken/postgresql-16-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -91,9 +112,14 @@ tiktoken tokenizer for use with OpenAI models in postgres
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tiktoken_15` | 0.0.1 | `el8.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_15` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_15-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_15-0.0.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tiktoken_15` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_tiktoken_15` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_15-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_15-0.0.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_15` | 0.0.1 | `el9.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tiktoken_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_tiktoken_15` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_15-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_15-0.0.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tiktoken_15` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_15` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_15-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_15-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_15` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_15-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_15-0.0.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-tiktoken` | 0.0.1 | `d12.x86_64` | pigsty | 1.3 MiB | [postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-tiktoken` | 0.0.1 | `d12.aarch64` | pigsty | 1.2 MiB | [postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-tiktoken` | 0.0.1 | `u22.x86_64` | pigsty | 1.5 MiB | [postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tiktoken/postgresql-15-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -107,9 +133,14 @@ tiktoken tokenizer for use with OpenAI models in postgres
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tiktoken_14` | 0.0.1 | `el8.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_14` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_14-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_14-0.0.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tiktoken_14` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_tiktoken_14` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_14-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_14-0.0.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_14` | 0.0.1 | `el9.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tiktoken_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tiktoken_14` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_14` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_14-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_14-0.0.1-2PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_14` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_14-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_14-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_14` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_14-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_14-0.0.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-tiktoken` | 0.0.1 | `d12.x86_64` | pigsty | 1.3 MiB | [postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-tiktoken` | 0.0.1 | `d12.aarch64` | pigsty | 1.2 MiB | [postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-tiktoken` | 0.0.1 | `u22.x86_64` | pigsty | 1.5 MiB | [postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tiktoken/postgresql-14-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -123,9 +154,14 @@ tiktoken tokenizer for use with OpenAI models in postgres
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tiktoken_13` | 0.0.1 | `el8.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_13` | 0.0.1 | `el8.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_13-0.0.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tiktoken_13-0.0.1-2PIGSTY.el8.x86_64.rpm) |
+| `pg_tiktoken_13` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_13-0.0.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_13-0.0.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_13` | 0.0.1 | `el8.aarch64` | pigsty | 1.6 MiB | [pg_tiktoken_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tiktoken_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tiktoken_13` | 0.0.1 | `el9.x86_64` | pigsty | 1.6 MiB | [pg_tiktoken_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tiktoken_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_tiktoken_13` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_13-0.0.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_13-0.0.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tiktoken_13` | 0.0.1 | `el9.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tiktoken_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_tiktoken_13` | 0.0.1 | `el10.x86_64` | pigsty | 1.7 MiB | [pg_tiktoken_13-0.0.1-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tiktoken_13-0.0.1-2PIGSTY.el10.x86_64.rpm) |
+| `pg_tiktoken_13` | 0.0.1 | `el10.aarch64` | pigsty | 1.5 MiB | [pg_tiktoken_13-0.0.1-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tiktoken_13-0.0.1-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-tiktoken` | 0.0.1 | `d12.x86_64` | pigsty | 1.3 MiB | [postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-tiktoken` | 0.0.1 | `d12.aarch64` | pigsty | 1.2 MiB | [postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-tiktoken/postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-tiktoken` | 0.0.1 | `u22.x86_64` | pigsty | 1.5 MiB | [postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-tiktoken/postgresql-13-pg-tiktoken_0.0.1-1PIGSTY~jammy_amd64.deb) |
@@ -164,6 +200,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_tiktoken; # install by extension name, for the current active PG version
 pig ext install pg_tiktoken; # install via package alias, for the active PG version
+pig ext install pg_tiktoken -v 18;   # install for PG 18
 pig ext install pg_tiktoken -v 17;   # install for PG 17
 pig ext install pg_tiktoken -v 16;   # install for PG 16
 pig ext install pg_tiktoken -v 15;   # install for PG 15

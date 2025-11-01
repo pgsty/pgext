@@ -37,12 +37,12 @@ GSL statistical functions for postgresql
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_math_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_math_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.0" "pg_math_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "pg_math_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-math : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-math : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-math : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-math : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-math : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-math : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-math : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-math : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-math : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-math : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ GSL statistical functions for postgresql
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-math : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0" "postgresql-17-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pg-math : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-13-pg-math : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_17` | 1.0 | `el8.x86_64` | pigsty | 28.0 KiB | [pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_17` | 1.0 | `el8.aarch64` | pigsty | 26.5 KiB | [pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_17` | 1.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_17` | 1.0 | `el9.aarch64` | pigsty | 27.4 KiB | [pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_18` | 1.0 | `el8.x86_64` | pigsty | 33.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_18` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_18` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_18` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_18` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_18` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_math_17` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_17` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_17` | 1.0 | `el9.x86_64` | pigsty | 31.5 KiB | [pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_17` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_17` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_17` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-math` | 1.0 | `d12.x86_64` | pigsty | 61.1 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-math` | 1.0 | `d12.aarch64` | pigsty | 60.1 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ GSL statistical functions for postgresql
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_16` | 1.0 | `el8.x86_64` | pigsty | 28.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_16` | 1.0 | `el8.aarch64` | pigsty | 26.5 KiB | [pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_16` | 1.0 | `el9.x86_64` | pigsty | 29.0 KiB | [pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_16` | 1.0 | `el9.aarch64` | pigsty | 27.4 KiB | [pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_16` | 1.0 | `el8.x86_64` | pigsty | 33.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_16` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_16` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_16` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_16` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_16` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-math` | 1.0 | `d12.x86_64` | pigsty | 61.1 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-math` | 1.0 | `d12.aarch64` | pigsty | 60.1 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ GSL statistical functions for postgresql
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_15` | 1.0 | `el8.x86_64` | pigsty | 28.0 KiB | [pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_15` | 1.0 | `el8.aarch64` | pigsty | 26.5 KiB | [pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_15` | 1.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_15` | 1.0 | `el9.aarch64` | pigsty | 27.4 KiB | [pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_15` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_15` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_15` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_15` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_15` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_15` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-math` | 1.0 | `d12.x86_64` | pigsty | 61.0 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-math` | 1.0 | `d12.aarch64` | pigsty | 60.2 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ GSL statistical functions for postgresql
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_14` | 1.0 | `el8.x86_64` | pigsty | 28.0 KiB | [pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_14` | 1.0 | `el8.aarch64` | pigsty | 26.4 KiB | [pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_14` | 1.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_14` | 1.0 | `el9.aarch64` | pigsty | 27.4 KiB | [pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_14` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_14` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_14` | 1.0 | `el9.x86_64` | pigsty | 31.3 KiB | [pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_14` | 1.0 | `el9.aarch64` | pigsty | 29.7 KiB | [pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_14` | 1.0 | `el10.x86_64` | pigsty | 31.6 KiB | [pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_14` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.9 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.9 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-math` | 1.0 | `u22.x86_64` | pigsty | 68.9 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ GSL statistical functions for postgresql
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_13` | 1.0 | `el8.x86_64` | pigsty | 27.0 KiB | [pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_13` | 1.0 | `el8.aarch64` | pigsty | 26.4 KiB | [pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_13` | 1.0 | `el9.x86_64` | pigsty | 28.9 KiB | [pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_13` | 1.0 | `el9.aarch64` | pigsty | 27.4 KiB | [pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_13` | 1.0 | `el8.x86_64` | pigsty | 32.0 KiB | [pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_13` | 1.0 | `el8.aarch64` | pigsty | 30.9 KiB | [pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_13` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_13` | 1.0 | `el9.aarch64` | pigsty | 29.7 KiB | [pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_13` | 1.0 | `el10.x86_64` | pigsty | 31.6 KiB | [pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_13` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-math` | 1.0 | `d12.x86_64` | pigsty | 61.0 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.8 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-math` | 1.0 | `u22.x86_64` | pigsty | 68.7 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |

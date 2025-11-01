@@ -39,12 +39,12 @@ Add in-database GraphQL support
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.5.12" "pg_graphql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.5.12" "pg_graphql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
 |    `el9.x86_64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_graphql_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.5.12" "pg_graphql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.5.12" "pg_graphql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.5.12" "pg_graphql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.12" "pg_graphql_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_graphql_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-graphql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "postgresql-17-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-16-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-15-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-14-pg-graphql : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-graphql : MISS 0" "red" >}}      |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-graphql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "postgresql-17-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-16-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-15-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-14-pg-graphql : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-graphql : MISS 0" "red" >}}      |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-graphql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-graphql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-graphql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-graphql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-graphql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-graphql : MISS 0" "red" >}}      |
@@ -55,15 +55,31 @@ Add in-database GraphQL support
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-graphql : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.11" "postgresql-17-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-16-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-15-pg-graphql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.11" "postgresql-14-pg-graphql : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-graphql : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_graphql_18` | 1.5.12 | `el8.x86_64` | pigsty | 878.2 KiB | [pg_graphql_18-1.5.12-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_18-1.5.12-1PIGSTY.el8.x86_64.rpm) |
+| `pg_graphql_18` | 1.5.12 | `el8.aarch64` | pigsty | 704.9 KiB | [pg_graphql_18-1.5.12-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_18-1.5.12-1PIGSTY.el8.aarch64.rpm) |
+| `pg_graphql_18` | 1.5.12 | `el9.aarch64` | pigsty | 752.4 KiB | [pg_graphql_18-1.5.12-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_18-1.5.12-1PIGSTY.el9.aarch64.rpm) |
+| `pg_graphql_18` | 1.5.12 | `el10.x86_64` | pigsty | 882.0 KiB | [pg_graphql_18-1.5.12-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_graphql_18-1.5.12-1PIGSTY.el10.x86_64.rpm) |
+| `pg_graphql_18` | 1.5.12 | `el10.aarch64` | pigsty | 753.5 KiB | [pg_graphql_18-1.5.12-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_graphql_18-1.5.12-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_graphql_17` | 1.5.12 | `el8.x86_64` | pigsty | 878.0 KiB | [pg_graphql_17-1.5.12-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_17-1.5.12-1PIGSTY.el8.x86_64.rpm) |
 | `pg_graphql_17` | 1.5.11 | `el8.x86_64` | pigsty | 782.2 KiB | [pg_graphql_17-1.5.11-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_17-1.5.11-1PIGSTY.el8.x86_64.rpm) |
+| `pg_graphql_17` | 1.5.12 | `el8.aarch64` | pigsty | 704.0 KiB | [pg_graphql_17-1.5.12-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_17-1.5.12-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_17` | 1.5.11 | `el8.aarch64` | pigsty | 694.2 KiB | [pg_graphql_17-1.5.11-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_17-1.5.11-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_17` | 1.5.11 | `el9.x86_64` | pigsty | 780.6 KiB | [pg_graphql_17-1.5.11-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_graphql_17-1.5.11-1PIGSTY.el9.x86_64.rpm) |
+| `pg_graphql_17` | 1.5.12 | `el9.aarch64` | pigsty | 751.7 KiB | [pg_graphql_17-1.5.12-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_17-1.5.12-1PIGSTY.el9.aarch64.rpm) |
 | `pg_graphql_17` | 1.5.11 | `el9.aarch64` | pigsty | 741.0 KiB | [pg_graphql_17-1.5.11-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_17-1.5.11-1PIGSTY.el9.aarch64.rpm) |
+| `pg_graphql_17` | 1.5.12 | `el10.x86_64` | pigsty | 881.8 KiB | [pg_graphql_17-1.5.12-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_graphql_17-1.5.12-1PIGSTY.el10.x86_64.rpm) |
+| `pg_graphql_17` | 1.5.12 | `el10.aarch64` | pigsty | 753.1 KiB | [pg_graphql_17-1.5.12-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_graphql_17-1.5.12-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-graphql` | 1.5.11 | `d12.x86_64` | pigsty | 664.1 KiB | [postgresql-17-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-17-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-graphql` | 1.5.11 | `d12.aarch64` | pigsty | 572.7 KiB | [postgresql-17-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-17-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-graphql` | 1.5.11 | `u22.x86_64` | pigsty | 726.2 KiB | [postgresql-17-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-graphql/postgresql-17-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb) |
@@ -76,10 +92,15 @@ Add in-database GraphQL support
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_graphql_16` | 1.5.12 | `el8.x86_64` | pigsty | 877.9 KiB | [pg_graphql_16-1.5.12-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_16-1.5.12-1PIGSTY.el8.x86_64.rpm) |
 | `pg_graphql_16` | 1.5.11 | `el8.x86_64` | pigsty | 782.1 KiB | [pg_graphql_16-1.5.11-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_16-1.5.11-1PIGSTY.el8.x86_64.rpm) |
+| `pg_graphql_16` | 1.5.12 | `el8.aarch64` | pigsty | 704.2 KiB | [pg_graphql_16-1.5.12-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_16-1.5.12-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_16` | 1.5.11 | `el8.aarch64` | pigsty | 694.1 KiB | [pg_graphql_16-1.5.11-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_16-1.5.11-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_16` | 1.5.11 | `el9.x86_64` | pigsty | 781.3 KiB | [pg_graphql_16-1.5.11-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_graphql_16-1.5.11-1PIGSTY.el9.x86_64.rpm) |
+| `pg_graphql_16` | 1.5.12 | `el9.aarch64` | pigsty | 751.9 KiB | [pg_graphql_16-1.5.12-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_16-1.5.12-1PIGSTY.el9.aarch64.rpm) |
 | `pg_graphql_16` | 1.5.11 | `el9.aarch64` | pigsty | 740.8 KiB | [pg_graphql_16-1.5.11-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_16-1.5.11-1PIGSTY.el9.aarch64.rpm) |
+| `pg_graphql_16` | 1.5.12 | `el10.x86_64` | pigsty | 881.6 KiB | [pg_graphql_16-1.5.12-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_graphql_16-1.5.12-1PIGSTY.el10.x86_64.rpm) |
+| `pg_graphql_16` | 1.5.12 | `el10.aarch64` | pigsty | 753.7 KiB | [pg_graphql_16-1.5.12-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_graphql_16-1.5.12-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-graphql` | 1.5.11 | `d12.x86_64` | pigsty | 663.9 KiB | [postgresql-16-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-16-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-graphql` | 1.5.11 | `d12.aarch64` | pigsty | 573.2 KiB | [postgresql-16-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-16-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-graphql` | 1.5.11 | `u22.x86_64` | pigsty | 726.0 KiB | [postgresql-16-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-graphql/postgresql-16-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb) |
@@ -92,10 +113,15 @@ Add in-database GraphQL support
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_graphql_15` | 1.5.12 | `el8.x86_64` | pigsty | 878.0 KiB | [pg_graphql_15-1.5.12-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_15-1.5.12-1PIGSTY.el8.x86_64.rpm) |
 | `pg_graphql_15` | 1.5.11 | `el8.x86_64` | pigsty | 782.2 KiB | [pg_graphql_15-1.5.11-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_15-1.5.11-1PIGSTY.el8.x86_64.rpm) |
+| `pg_graphql_15` | 1.5.12 | `el8.aarch64` | pigsty | 704.0 KiB | [pg_graphql_15-1.5.12-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_15-1.5.12-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_15` | 1.5.11 | `el8.aarch64` | pigsty | 694.4 KiB | [pg_graphql_15-1.5.11-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_15-1.5.11-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_15` | 1.5.11 | `el9.x86_64` | pigsty | 780.3 KiB | [pg_graphql_15-1.5.11-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_graphql_15-1.5.11-1PIGSTY.el9.x86_64.rpm) |
+| `pg_graphql_15` | 1.5.12 | `el9.aarch64` | pigsty | 751.8 KiB | [pg_graphql_15-1.5.12-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_15-1.5.12-1PIGSTY.el9.aarch64.rpm) |
 | `pg_graphql_15` | 1.5.11 | `el9.aarch64` | pigsty | 741.0 KiB | [pg_graphql_15-1.5.11-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_15-1.5.11-1PIGSTY.el9.aarch64.rpm) |
+| `pg_graphql_15` | 1.5.12 | `el10.x86_64` | pigsty | 880.9 KiB | [pg_graphql_15-1.5.12-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_graphql_15-1.5.12-1PIGSTY.el10.x86_64.rpm) |
+| `pg_graphql_15` | 1.5.12 | `el10.aarch64` | pigsty | 753.5 KiB | [pg_graphql_15-1.5.12-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_graphql_15-1.5.12-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-graphql` | 1.5.11 | `d12.x86_64` | pigsty | 664.0 KiB | [postgresql-15-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-15-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-graphql` | 1.5.11 | `d12.aarch64` | pigsty | 573.0 KiB | [postgresql-15-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-15-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-graphql` | 1.5.11 | `u22.x86_64` | pigsty | 726.2 KiB | [postgresql-15-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-graphql/postgresql-15-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb) |
@@ -108,10 +134,15 @@ Add in-database GraphQL support
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_graphql_14` | 1.5.12 | `el8.x86_64` | pigsty | 877.8 KiB | [pg_graphql_14-1.5.12-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_14-1.5.12-1PIGSTY.el8.x86_64.rpm) |
 | `pg_graphql_14` | 1.5.11 | `el8.x86_64` | pigsty | 782.3 KiB | [pg_graphql_14-1.5.11-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_graphql_14-1.5.11-1PIGSTY.el8.x86_64.rpm) |
+| `pg_graphql_14` | 1.5.12 | `el8.aarch64` | pigsty | 705.0 KiB | [pg_graphql_14-1.5.12-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_14-1.5.12-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_14` | 1.5.11 | `el8.aarch64` | pigsty | 694.2 KiB | [pg_graphql_14-1.5.11-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_graphql_14-1.5.11-1PIGSTY.el8.aarch64.rpm) |
 | `pg_graphql_14` | 1.5.11 | `el9.x86_64` | pigsty | 780.7 KiB | [pg_graphql_14-1.5.11-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_graphql_14-1.5.11-1PIGSTY.el9.x86_64.rpm) |
+| `pg_graphql_14` | 1.5.12 | `el9.aarch64` | pigsty | 751.5 KiB | [pg_graphql_14-1.5.12-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_14-1.5.12-1PIGSTY.el9.aarch64.rpm) |
 | `pg_graphql_14` | 1.5.11 | `el9.aarch64` | pigsty | 740.7 KiB | [pg_graphql_14-1.5.11-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_graphql_14-1.5.11-1PIGSTY.el9.aarch64.rpm) |
+| `pg_graphql_14` | 1.5.12 | `el10.x86_64` | pigsty | 881.1 KiB | [pg_graphql_14-1.5.12-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_graphql_14-1.5.12-1PIGSTY.el10.x86_64.rpm) |
+| `pg_graphql_14` | 1.5.12 | `el10.aarch64` | pigsty | 753.3 KiB | [pg_graphql_14-1.5.12-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_graphql_14-1.5.12-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-graphql` | 1.5.11 | `d12.x86_64` | pigsty | 663.8 KiB | [postgresql-14-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-14-pg-graphql_1.5.11-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-graphql` | 1.5.11 | `d12.aarch64` | pigsty | 573.0 KiB | [postgresql-14-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-graphql/postgresql-14-pg-graphql_1.5.11-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-graphql` | 1.5.11 | `u22.x86_64` | pigsty | 725.9 KiB | [postgresql-14-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-graphql/postgresql-14-pg-graphql_1.5.11-1PIGSTY~jammy_amd64.deb) |

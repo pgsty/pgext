@@ -37,12 +37,12 @@ Country data type, ISO 3166-1
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_country_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_country_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 0.0.3" "pg_country_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "pg_country_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-country : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-13-pg-country : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-country : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-13-pg-country : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-country : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-country : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-country : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-country : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-country : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-country : MISS 0" "red" >}}      |
@@ -53,15 +53,29 @@ Country data type, ISO 3166-1
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-country : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.0.3" "postgresql-17-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-16-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-15-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-14-pg-country : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.3" "postgresql-13-pg-country : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_country_17` | 0.0.3 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_country_17-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_17-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_18` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_18-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_18-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_18` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_18-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_18-0.0.3-1PIGSTY.el8.aarch64.rpm) |
+| `pg_country_18` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_18-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_18-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_18` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_18-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_18-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_18` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_18-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_18-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_18` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_18-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_18-0.0.3-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_country_17` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_17-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_17-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_country_17` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_17-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_17-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_country_17` | 0.0.3 | `el9.x86_64` | pigsty | 17.2 KiB | [pg_country_17-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_17-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_country_17` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_17-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_17-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_17` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_17-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_17-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_17` | 0.0.3 | `el9.aarch64` | pigsty | 17.6 KiB | [pg_country_17-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_17-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_17` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_17-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_17-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_17` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_17-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_17-0.0.3-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-country` | 0.0.3 | `d12.x86_64` | pigsty | 28.4 KiB | [postgresql-17-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-17-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-country` | 0.0.3 | `d12.aarch64` | pigsty | 28.8 KiB | [postgresql-17-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-17-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-country` | 0.0.3 | `u22.x86_64` | pigsty | 32.3 KiB | [postgresql-17-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-country/postgresql-17-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb) |
@@ -74,10 +88,12 @@ Country data type, ISO 3166-1
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_country_16` | 0.0.3 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_country_16-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_16-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_16` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_16-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_16-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_country_16` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_16-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_16-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_country_16` | 0.0.3 | `el9.x86_64` | pigsty | 17.4 KiB | [pg_country_16-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_16-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_16` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_16-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_16-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `pg_country_16` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_16-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_16-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_16` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_16-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_16-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_16` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_16-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_16-0.0.3-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-country` | 0.0.3 | `d12.x86_64` | pigsty | 28.3 KiB | [postgresql-16-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-16-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-country` | 0.0.3 | `d12.aarch64` | pigsty | 28.9 KiB | [postgresql-16-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-16-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-country` | 0.0.3 | `u22.x86_64` | pigsty | 32.3 KiB | [postgresql-16-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-country/postgresql-16-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb) |
@@ -90,10 +106,12 @@ Country data type, ISO 3166-1
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_country_15` | 0.0.3 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_country_15-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_15-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_15` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_15-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_15-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_country_15` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_15-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_15-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_country_15` | 0.0.3 | `el9.x86_64` | pigsty | 17.4 KiB | [pg_country_15-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_15-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_country_15` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_15-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_15-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_15` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_15-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_15-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_15` | 0.0.3 | `el9.aarch64` | pigsty | 17.6 KiB | [pg_country_15-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_15-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_15` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_15-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_15-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_15` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_15-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_15-0.0.3-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-country` | 0.0.3 | `d12.x86_64` | pigsty | 28.3 KiB | [postgresql-15-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-15-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-country` | 0.0.3 | `d12.aarch64` | pigsty | 28.9 KiB | [postgresql-15-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-15-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-country` | 0.0.3 | `u22.x86_64` | pigsty | 32.3 KiB | [postgresql-15-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-country/postgresql-15-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb) |
@@ -106,10 +124,12 @@ Country data type, ISO 3166-1
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_country_14` | 0.0.3 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_country_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_14` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_country_14` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_14-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_14-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_country_14` | 0.0.3 | `el9.x86_64` | pigsty | 17.2 KiB | [pg_country_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_country_14` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_14-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_14-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_14` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_14` | 0.0.3 | `el9.aarch64` | pigsty | 17.6 KiB | [pg_country_14-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_14-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_14` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_14-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_14-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_14` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_14-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_14-0.0.3-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-country` | 0.0.3 | `d12.x86_64` | pigsty | 28.2 KiB | [postgresql-14-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-14-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-country` | 0.0.3 | `d12.aarch64` | pigsty | 28.8 KiB | [postgresql-14-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-14-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-country` | 0.0.3 | `u22.x86_64` | pigsty | 32.3 KiB | [postgresql-14-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-country/postgresql-14-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb) |
@@ -122,10 +142,12 @@ Country data type, ISO 3166-1
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_country_13` | 0.0.3 | `el8.x86_64` | pigsty | 19.2 KiB | [pg_country_13-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_13-0.0.3-1PIGSTY.el8.x86_64.rpm) |
+| `pg_country_13` | 0.0.3 | `el8.x86_64` | pigsty | 19.1 KiB | [pg_country_13-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_country_13-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `pg_country_13` | 0.0.3 | `el8.aarch64` | pigsty | 18.2 KiB | [pg_country_13-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_country_13-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `pg_country_13` | 0.0.3 | `el9.x86_64` | pigsty | 17.2 KiB | [pg_country_13-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_13-0.0.3-1PIGSTY.el9.x86_64.rpm) |
-| `pg_country_13` | 0.0.3 | `el9.aarch64` | pigsty | 17.7 KiB | [pg_country_13-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_13-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_13` | 0.0.3 | `el9.x86_64` | pigsty | 17.0 KiB | [pg_country_13-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_country_13-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `pg_country_13` | 0.0.3 | `el9.aarch64` | pigsty | 17.5 KiB | [pg_country_13-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_country_13-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `pg_country_13` | 0.0.3 | `el10.x86_64` | pigsty | 17.0 KiB | [pg_country_13-0.0.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_country_13-0.0.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_country_13` | 0.0.3 | `el10.aarch64` | pigsty | 17.9 KiB | [pg_country_13-0.0.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_country_13-0.0.3-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pg-country` | 0.0.3 | `d12.x86_64` | pigsty | 28.4 KiB | [postgresql-13-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-13-pg-country_0.0.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-country` | 0.0.3 | `d12.aarch64` | pigsty | 28.4 KiB | [postgresql-13-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-country/postgresql-13-pg-country_0.0.3-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pg-country` | 0.0.3 | `u22.x86_64` | pigsty | 32.2 KiB | [postgresql-13-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-country/postgresql-13-pg-country_0.0.3-1PIGSTY~jammy_amd64.deb) |
