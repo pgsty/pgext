@@ -38,10 +38,10 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 3" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 2" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 3" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
 |    `el10.x86_64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
 |    `el10.aarch64`    | {{< bg "PIGSTY 1.7.0" "pgmq_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "pgmq_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgmq : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.1" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-14-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-13-pgmq : AVAIL 1" "green" >}} |
@@ -60,13 +60,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_18` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_18-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_18-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_18` | 1.5.1 | `el8.x86_64` | pigsty | 27.6 KiB | [pgmq_18-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_18-1.5.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_18` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_18-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_18-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_18` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_18-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_18-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_18` | 1.7.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pgmq_18-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_18` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_18-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_18` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_18-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_18-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_18` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_18-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_18-1.5.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_18` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_18-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_18-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_18` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_18-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_18-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 
@@ -76,15 +72,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_17` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_17-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_17-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_17` | 1.5.1 | `el8.x86_64` | pigsty | 27.7 KiB | [pgmq_17-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_17-1.5.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_17` | 1.4.4 | `el8.x86_64` | pigsty | 29.6 KiB | [pgmq_17-1.4.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_17-1.4.4-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_17` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_17-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_17-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_17` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_17-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_17-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_17` | 1.7.0 | `el9.x86_64` | pigsty | 28.5 KiB | [pgmq_17-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_17` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_17-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_17` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_17-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_17` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_17-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.5.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_17` | 1.4.4 | `el9.aarch64` | pigsty | 28.9 KiB | [pgmq_17-1.4.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.4.4-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_17` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_17-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_17-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_17` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_17-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_17-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgmq` | 1.5.1 | `d12.x86_64` | pigsty | 18.3 KiB | [postgresql-17-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-17-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb) |
@@ -100,15 +90,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_16` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_16-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_16-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_16` | 1.5.1 | `el8.x86_64` | pigsty | 27.7 KiB | [pgmq_16-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_16-1.5.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_16` | 1.4.4 | `el8.x86_64` | pigsty | 29.6 KiB | [pgmq_16-1.4.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_16-1.4.4-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_16` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_16-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_16-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_16` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_16-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_16-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_16` | 1.7.0 | `el9.x86_64` | pigsty | 28.5 KiB | [pgmq_16-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_16` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_16-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_16` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_16-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_16` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_16-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.5.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_16` | 1.4.4 | `el9.aarch64` | pigsty | 28.9 KiB | [pgmq_16-1.4.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.4.4-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_16` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_16-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_16-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_16` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_16-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_16-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgmq` | 1.5.1 | `d12.x86_64` | pigsty | 18.3 KiB | [postgresql-16-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-16-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb) |
@@ -124,15 +108,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_15` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_15-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_15-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_15` | 1.5.1 | `el8.x86_64` | pigsty | 27.7 KiB | [pgmq_15-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_15-1.5.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_15` | 1.4.4 | `el8.x86_64` | pigsty | 29.6 KiB | [pgmq_15-1.4.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_15-1.4.4-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_15` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_15-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_15-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_15` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_15-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_15-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_15` | 1.7.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pgmq_15-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_15` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_15-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_15` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_15-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_15` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_15-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.5.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_15` | 1.4.4 | `el9.aarch64` | pigsty | 28.9 KiB | [pgmq_15-1.4.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.4.4-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_15` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_15-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_15-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_15` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_15-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_15-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgmq` | 1.5.1 | `d12.x86_64` | pigsty | 18.3 KiB | [postgresql-15-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-15-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb) |
@@ -148,15 +126,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_14` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_14-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_14` | 1.5.1 | `el8.x86_64` | pigsty | 27.7 KiB | [pgmq_14-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.5.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_14` | 1.4.4 | `el8.x86_64` | pigsty | 29.6 KiB | [pgmq_14-1.4.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.4.4-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_14` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_14-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_14-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_14` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_14-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_14-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_14` | 1.7.0 | `el9.x86_64` | pigsty | 28.5 KiB | [pgmq_14-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_14` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_14-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_14` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_14-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_14` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_14-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.5.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_14` | 1.4.4 | `el9.aarch64` | pigsty | 28.9 KiB | [pgmq_14-1.4.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.4.4-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_14` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_14-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_14-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_14` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_14-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_14-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgmq` | 1.5.1 | `d12.x86_64` | pigsty | 18.3 KiB | [postgresql-14-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-14-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb) |
@@ -172,15 +144,9 @@ A lightweight message queue. Like AWS SQS and RSMQ but on Postgres.
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_13` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pgmq_13-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_13-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_13` | 1.5.1 | `el8.x86_64` | pigsty | 27.7 KiB | [pgmq_13-1.5.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_13-1.5.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgmq_13` | 1.4.4 | `el8.x86_64` | pigsty | 29.6 KiB | [pgmq_13-1.4.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_13-1.4.4-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_13` | 1.7.0 | `el8.aarch64` | pigsty | 29.4 KiB | [pgmq_13-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_13-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_13` | 1.5.1 | `el8.aarch64` | pigsty | 27.6 KiB | [pgmq_13-1.5.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_13-1.5.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgmq_13` | 1.7.0 | `el9.x86_64` | pigsty | 28.6 KiB | [pgmq_13-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_13-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgmq_13` | 1.5.1 | `el9.x86_64` | pigsty | 26.8 KiB | [pgmq_13-1.5.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_13-1.5.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_13` | 1.7.0 | `el9.aarch64` | pigsty | 28.5 KiB | [pgmq_13-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_13-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_13` | 1.5.1 | `el9.aarch64` | pigsty | 26.8 KiB | [pgmq_13-1.5.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_13-1.5.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgmq_13` | 1.4.4 | `el9.aarch64` | pigsty | 28.9 KiB | [pgmq_13-1.4.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_13-1.4.4-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_13` | 1.7.0 | `el10.x86_64` | pigsty | 28.6 KiB | [pgmq_13-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_13-1.7.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_13` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pgmq_13-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_13-1.7.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-pgmq` | 1.5.1 | `d12.x86_64` | pigsty | 18.3 KiB | [postgresql-13-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgmq/postgresql-13-pgmq_1.5.1-1PIGSTY~bookworm_amd64.deb) |

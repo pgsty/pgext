@@ -11,18 +11,18 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 335 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 339 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 37 | 纯 SQL 扩展和函数 |
-| {{< language "Rust" >}} | 33 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "Rust" >}} | 34 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
-| {{< language "C++" >}} | 6 | 使用 C++ 特性和库的扩展 |
+| {{< language "C++" >}} | 5 | 使用 C++ 特性和库的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="335 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="339 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -118,6 +118,7 @@ weight: 200
 | 2989 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3000 | {{< alias "pg_tle" >}} | AWS 可信语言扩展 |
+| 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |
 | 3020 | {{< alias "pllua" >}} | Lua 程序语言 |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | Lua 程序语言的Hstore适配扩展 |
 | 3030 | {{< alias "plluau" "pllua" >}} | Lua 程序语言（不受信任的） |
@@ -127,6 +128,7 @@ weight: 200
 | 3070 | {{< alias "plprofiler" >}} | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | PL/sh 程序语言 |
 | 3100 | {{< alias "plr" >}} | 从数据库中加载R语言解释器并执行R脚本 |
+| 3110 | {{< alias "plxslt" >}} | XSLT 存储过程语言 |
 | 3200 | {{< alias "pgtap" >}} | PostgreSQL单元测试框架 |
 | 3220 | {{< alias "dbt2" >}} | OSDL-DBT-2 测试组件 |
 | 3240 | {{< alias "pltcl" >}} | PL/TCL 存储过程语言 |
@@ -150,11 +152,11 @@ weight: 200
 | 3530 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
 | 3550 | {{< alias "md5hash" >}} | 提供128位MD5的原生数据类型 |
 | 3560 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
-| 3570 | {{< alias "roaringbitmap" >}} | 支持RoaringBitmap数据类型 |
+| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 支持RoaringBitmap数据类型 |
 | 3590 | {{< alias "pg_sphere" "pgsphere" >}} | 球面对象函数、运算符与索引支持 |
 | 3600 | {{< alias "country" "pg_country" >}} | 国家代码数据类型，遵循ISO 3166-1标准 |
 | 3620 | {{< alias "currency" "pg_currency" >}} | 使用1字节表示的货币数据类型 |
-| 3630 | {{< alias "collection" "pg_collection" >}} | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
+| 3630 | {{< alias "collection" "pgcollection" >}} | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
 | 3700 | {{< alias "pgmp" >}} | 多精度算术扩展 |
 | 3710 | {{< alias "numeral" >}} | 数值类型扩展 |
 | 3720 | {{< alias "pg_rational" >}} | 使用BIGINT表示的有理数数据类型 |
@@ -164,7 +166,7 @@ weight: 200
 | 3820 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3830 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
 | 3840 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
-| 3850 | {{< alias "emailaddr" "pgemailaddr" >}} | Email地址数据类型 |
+| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
 | 3860 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
 | 3880 | {{< alias "pg_rrule" >}} | 日历重复规则RRULE数据类型 |
 | 3890 | {{< alias "timestamp9" >}} | 纳秒分辨率时间戳 |
@@ -188,7 +190,7 @@ weight: 200
 | 4240 | {{< alias "icu_ext" >}} | 访问ICU库提供的函数 |
 | 4250 | {{< alias "pgqr" >}} | 从数据库中直接生成QR二维码 |
 | 4260 | {{< alias "pg_protobuf" >}} | 提供Protobuf函数支持 |
-| 4270 | {{< alias "envvar" >}} | 获取环境变量的函数 |
+| 4270 | {{< alias "envvar" "pg_envvar" >}} | 获取环境变量的函数 |
 | 4280 | {{< alias "floatfile" >}} | 将浮点数组存储到文件中而不是堆表中 |
 | 4300 | {{< alias "pg_readme" >}} | 为模式与扩展生成Markdown文档 |
 | 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | 为模式与扩展生成Markdown文档 |
@@ -215,9 +217,10 @@ weight: 200
 | 4730 | {{< alias "floatvec" >}} | 数组类型数学运算扩展 |
 | 4740 | {{< alias "aggs_for_vecs" >}} | 针对数组类型的聚合函数集合扩展 |
 | 4750 | {{< alias "aggs_for_arrays" >}} | 计算数组聚合统计值的函数包 |
-| 4760 | {{< alias "arraymath" "pg_arraymath" >}} | 数组逐元素数学运算符包 |
-| 4770 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
-| 4780 | {{< alias "random" "pg_random" >}} | 随机数生成器 |
+| 4760 | {{< alias "pg_csv" >}} | 灵活的CSV聚合处理函数 |
+| 4770 | {{< alias "arraymath" "pg_arraymath" >}} | 数组逐元素数学运算符包 |
+| 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
+| 4790 | {{< alias "random" "pg_random" >}} | 随机数生成器 |
 | 4800 | {{< alias "base36" "pg_base36" >}} | Base36编码解码扩展 |
 | 4810 | {{< alias "base62" "pg_base62" >}} | Base62编码解码扩展 |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 金融领域聚合函数 |
@@ -342,6 +345,7 @@ weight: 200
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
+| 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | 9300 | {{< alias "babelfishpg_common" >}} | SQL Server 数据类型兼容扩展 |
 | 9310 | {{< alias "babelfishpg_tsql" >}} | SQL Server SQL语法兼容性扩展 |
 | 9320 | {{< alias "babelfishpg_tds" >}} | SQL Server TDS线缆协议兼容扩展 |
@@ -412,7 +416,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="33 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="34 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -433,6 +437,7 @@ weight: 200
 | 2150 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2420 | {{< alias "pg_analytics" >}} | 由 DuckDB 驱动的数据分析引擎 |
+| 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2460 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2790 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
@@ -473,7 +478,7 @@ weight: 200
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="6 个扩展" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="5 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -481,7 +486,6 @@ weight: 200
 |:---:|:---|:---|
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2770 | {{< alias "hll" >}} | hyperloglog 数据类型 |
 | 2940 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |

@@ -11,18 +11,18 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 335 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 339 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 37 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 33 | Extensions written in Rust with the pgrx framework |
+| {{< language "Rust" >}} | 34 | Extensions written in Rust with the pgrx framework |
 | {{< language "Data" >}} | 10 | Data-only extensions |
-| {{< language "C++" >}} | 6 | Extensions leveraging C++ features and libraries |
+| {{< language "C++" >}} | 5 | Extensions leveraging C++ features and libraries |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="335 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="339 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -118,6 +118,7 @@ The traditional PostgreSQL extension language
 | 2989 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
+| 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | Hstore transform for Lua |
 | 3030 | {{< alias "plluau" "pllua" >}} | Lua as an untrusted procedural language |
@@ -127,6 +128,7 @@ The traditional PostgreSQL extension language
 | 3070 | {{< alias "plprofiler" >}} | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | PL/sh procedural language |
 | 3100 | {{< alias "plr" >}} | load R interpreter and execute R script from within a database |
+| 3110 | {{< alias "plxslt" >}} | XSLT procedural language for PostgreSQL |
 | 3200 | {{< alias "pgtap" >}} | Unit testing for PostgreSQL |
 | 3220 | {{< alias "dbt2" >}} | OSDL-DBT-2 test kit |
 | 3240 | {{< alias "pltcl" >}} | PL/Tcl procedural language |
@@ -150,11 +152,11 @@ The traditional PostgreSQL extension language
 | 3530 | {{< alias "pgpdf" >}} | PDF type with meta admin & Full-Text Search |
 | 3550 | {{< alias "md5hash" >}} | type for storing 128-bit binary data inline |
 | 3560 | {{< alias "asn1oid" >}} | asn1oid extension |
-| 3570 | {{< alias "roaringbitmap" >}} | support for Roaring Bitmaps |
+| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | support for Roaring Bitmaps |
 | 3590 | {{< alias "pg_sphere" "pgsphere" >}} | spherical objects with useful functions, operators and index support |
 | 3600 | {{< alias "country" "pg_country" >}} | Country data type, ISO 3166-1 |
 | 3620 | {{< alias "currency" "pg_currency" >}} | Custom PostgreSQL currency type in 1Byte |
-| 3630 | {{< alias "collection" "pg_collection" >}} | Memory optimized data type to be used inside of plpglsql func |
+| 3630 | {{< alias "collection" "pgcollection" >}} | Memory optimized data type to be used inside of plpglsql func |
 | 3700 | {{< alias "pgmp" >}} | Multiple Precision Arithmetic extension |
 | 3710 | {{< alias "numeral" >}} | numeral datatypes extension |
 | 3720 | {{< alias "pg_rational" >}} | bigint fractions |
@@ -164,7 +166,7 @@ The traditional PostgreSQL extension language
 | 3820 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3830 | {{< alias "pg_duration" >}} | data type for representing durations |
 | 3840 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
-| 3850 | {{< alias "emailaddr" "pgemailaddr" >}} | Email address type for PostgreSQL |
+| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
 | 3860 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
 | 3880 | {{< alias "pg_rrule" >}} | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "timestamp9" >}} | timestamp nanosecond resolution |
@@ -188,7 +190,7 @@ The traditional PostgreSQL extension language
 | 4240 | {{< alias "icu_ext" >}} | Access ICU functions |
 | 4250 | {{< alias "pgqr" >}} | QR Code generator from PostgreSQL |
 | 4260 | {{< alias "pg_protobuf" >}} | Protobuf support for PostgreSQL |
-| 4270 | {{< alias "envvar" >}} | Fetch the value of an environment variable |
+| 4270 | {{< alias "envvar" "pg_envvar" >}} | Fetch the value of an environment variable |
 | 4280 | {{< alias "floatfile" >}} | Simple file storage for arrays of floats |
 | 4300 | {{< alias "pg_readme" >}} | Generate a README.md document for a database extension or schema |
 | 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | Test generating a README.md document for extension or schema |
@@ -215,9 +217,10 @@ The traditional PostgreSQL extension language
 | 4730 | {{< alias "floatvec" >}} | Math for vectors (arrays) of numbers |
 | 4740 | {{< alias "aggs_for_vecs" >}} | Aggregate functions for array inputs |
 | 4750 | {{< alias "aggs_for_arrays" >}} | Various functions for computing statistics on arrays of numbers |
-| 4760 | {{< alias "arraymath" "pg_arraymath" >}} | Array math and operators that work element by element on the contents of arrays |
-| 4770 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
-| 4780 | {{< alias "random" "pg_random" >}} | random data generator |
+| 4760 | {{< alias "pg_csv" >}} | Flexible CSV processing for Postgres |
+| 4770 | {{< alias "arraymath" "pg_arraymath" >}} | Array math and operators that work element by element on the contents of arrays |
+| 4780 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
+| 4790 | {{< alias "random" "pg_random" >}} | random data generator |
 | 4800 | {{< alias "base36" "pg_base36" >}} | Integer Base36 types |
 | 4810 | {{< alias "base62" "pg_base62" >}} | Base62 extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | Financial aggregate functions |
@@ -342,6 +345,7 @@ The traditional PostgreSQL extension language
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9300 | {{< alias "babelfishpg_common" >}} | SQL Server Transact SQL Datatype Support |
 | 9310 | {{< alias "babelfishpg_tsql" >}} | SQL Server Transact SQL compatibility |
 | 9320 | {{< alias "babelfishpg_tds" >}} | SQL Server TDS protocol extension |
@@ -412,7 +416,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="33 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="34 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -433,6 +437,7 @@ Extensions written in Rust with the pgrx framework
 | 2150 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
+| 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2460 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
 | 2790 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
@@ -473,7 +478,7 @@ Data-only extensions
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="6 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="5 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -481,7 +486,6 @@ Extensions leveraging C++ features and libraries
 |:---:|:---|:---|
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
-| 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2770 | {{< alias "hll" >}} | type for storing hyperloglog data |
 | 2940 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |

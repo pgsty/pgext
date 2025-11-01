@@ -2,7 +2,7 @@
 title: "random"
 linkTitle: "random"
 description: "random data generator"
-weight: 4780
+weight: 4790
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ random data generator
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4780** | {{< badge content="random" link="https://github.com/tvondra/random" >}} | {{< ext "random" "pg_random" >}} | `2.0.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4790** | {{< badge content="random" link="https://github.com/tvondra/random" >}} | {{< ext "random" "pg_random" >}} | `2.0.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

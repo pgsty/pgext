@@ -31,18 +31,18 @@ login_hook - hook to execute login_hook.login() at login time
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/login_hook" >}} | `1.7` | {{< bg "18" "login_hook_18*" "red" >}} {{< bg "17" "login_hook_17*" "green" >}} {{< bg "16" "login_hook_16*" "green" >}} {{< bg "15" "login_hook_15*" "green" >}} {{< bg "14" "login_hook_14*" "green" >}} {{< bg "13" "login_hook_13*" "green" >}} | `login_hook_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/login_hook" >}} | `1.6` | {{< bg "18" "postgresql-18-login-hook" "red" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} {{< bg "13" "postgresql-13-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
+| **EL** | {{< badge content="PGDG" link="/e/login_hook" >}} | `1.7` | {{< bg "18" "login_hook_18*" "green" >}} {{< bg "17" "login_hook_17*" "green" >}} {{< bg "16" "login_hook_16*" "green" >}} {{< bg "15" "login_hook_15*" "green" >}} {{< bg "14" "login_hook_14*" "green" >}} {{< bg "13" "login_hook_13*" "green" >}} | `login_hook_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/login_hook" >}} | `1.7` | {{< bg "18" "postgresql-18-login-hook" "green" >}} {{< bg "17" "postgresql-17-login-hook" "green" >}} {{< bg "16" "postgresql-16-login-hook" "green" >}} {{< bg "15" "postgresql-15-login-hook" "green" >}} {{< bg "14" "postgresql-14-login-hook" "green" >}} {{< bg "13" "postgresql-13-login-hook" "green" >}} | `postgresql-$v-login-hook` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 1" "blue" >}} |
-|    `el10.aarch64`    |      {{< bg "MISS" "login_hook_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 1" "blue" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 3" "blue" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 1" "blue" >}} |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.7" "login_hook_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.7" "login_hook_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7" "login_hook_13 : AVAIL 1" "blue" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-login-hook : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.6" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-14-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-13-login-hook : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-login-hook : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.6" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-14-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-13-login-hook : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-login-hook : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-login-hook : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-login-hook : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-login-hook : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-login-hook : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-login-hook : MISS 0" "red" >}}      |
@@ -53,7 +53,19 @@ login_hook - hook to execute login_hook.login() at login time
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-login-hook : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.6" "postgresql-17-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-16-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-15-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-14-login-hook : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6" "postgresql-13-login-hook : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `login_hook_18` | 1.7 | `el8.x86_64` | pigsty | 17.7 KiB | [login_hook_18-1.7-3PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/login_hook_18-1.7-3PIGSTY.el8.x86_64.rpm) |
+| `login_hook_18` | 1.7 | `el8.aarch64` | pigsty | 17.9 KiB | [login_hook_18-1.7-3PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/login_hook_18-1.7-3PIGSTY.el8.aarch64.rpm) |
+| `login_hook_18` | 1.7 | `el9.x86_64` | pigsty | 17.7 KiB | [login_hook_18-1.7-3PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/login_hook_18-1.7-3PIGSTY.el9.x86_64.rpm) |
+| `login_hook_18` | 1.7 | `el9.aarch64` | pigsty | 17.7 KiB | [login_hook_18-1.7-3PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/login_hook_18-1.7-3PIGSTY.el9.aarch64.rpm) |
+| `login_hook_18` | 1.7 | `el10.x86_64` | pigsty | 17.7 KiB | [login_hook_18-1.7-3PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/login_hook_18-1.7-3PIGSTY.el10.x86_64.rpm) |
+| `login_hook_18` | 1.7 | `el10.aarch64` | pigsty | 17.8 KiB | [login_hook_18-1.7-3PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/login_hook_18-1.7-3PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -185,7 +197,7 @@ login_hook - hook to execute login_hook.login() at login time
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/splendiddata/login_hook" title="Repository" icon="github" subtitle="github.com/splendiddata/login_hook" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="login_hook-1.6.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="login_hook-1.7.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -210,6 +222,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install login_hook; # install by extension name, for the current active PG version
 pig ext install login_hook; # install via package alias, for the active PG version
+pig ext install login_hook -v 18;   # install for PG 18
 pig ext install login_hook -v 17;   # install for PG 17
 pig ext install login_hook -v 16;   # install for PG 16
 pig ext install login_hook -v 15;   # install for PG 15

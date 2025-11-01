@@ -12,15 +12,15 @@ weight: 300
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 200 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 202 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 69 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 59 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 60 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "GPL-3.0" >}} | 12 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 10 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
-| {{< license "ISC" >}} | 5 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
+| {{< license "ISC" >}} | 6 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "Artistic" >}} | 3 | [License Text](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
 | {{< license "Timescale" >}} | 2 | [License Text](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "BSD 0-Clause" >}} | 2 | [License Text](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
@@ -32,7 +32,7 @@ weight: 300
 
 ## PostgreSQL
 
-{{< license "PostgreSQL" >}} {{< badge content="200 Extensions" color="gray" icon="cube" >}}
+{{< license "PostgreSQL" >}} {{< badge content="202 Extensions" color="gray" icon="cube" >}}
 
 [PostgreSQL License Text](https://opensource.org/licenses/postgresql) : Very liberal license based on the BSD license, allowing almost unlimited freedom.
 
@@ -81,6 +81,8 @@ weight: 300
 | 2920 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
+| 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |
+| 3110 | {{< alias "plxslt" >}} | XSLT procedural language for PostgreSQL |
 | 3200 | {{< alias "pgtap" >}} | Unit testing for PostgreSQL |
 | 3210 | {{< alias "faker" >}} | Wrapper for the Faker Python library |
 | 3240 | {{< alias "pltcl" >}} | PL/Tcl procedural language |
@@ -108,7 +110,7 @@ weight: 300
 | 3750 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
 | 3820 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3840 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
-| 3850 | {{< alias "emailaddr" "pgemailaddr" >}} | Email address type for PostgreSQL |
+| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
 | 3870 | {{< alias "debversion" >}} | Debian version number data type |
 | 3920 | {{< alias "chkpass" >}} | data type for auto-encrypted passwords |
 | 3930 | {{< alias "isn" >}} | data types for international product numbering standards |
@@ -124,7 +126,7 @@ weight: 300
 | 4220 | {{< alias "pg_extra_time" >}} | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | Perl Compatible Regular Expression functions |
 | 4240 | {{< alias "icu_ext" >}} | Access ICU functions |
-| 4270 | {{< alias "envvar" >}} | Fetch the value of an environment variable |
+| 4270 | {{< alias "envvar" "pg_envvar" >}} | Fetch the value of an environment variable |
 | 4300 | {{< alias "pg_readme" >}} | Generate a README.md document for a database extension or schema |
 | 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | Test generating a README.md document for extension or schema |
 | 4320 | {{< alias "data_historization" >}} | PLPGSQL Script to historize data in partitionned table |
@@ -136,7 +138,7 @@ weight: 300
 | 4650 | {{< alias "ddsketch" >}} | Provides ddsketch aggregate function |
 | 4710 | {{< alias "first_last_agg" >}} | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | Extra Window Functions for PostgreSQL |
-| 4780 | {{< alias "random" "pg_random" >}} | random data generator |
+| 4790 | {{< alias "random" "pg_random" >}} | random data generator |
 | 4840 | {{< alias "financial" "pg_financial" >}} | Financial aggregate functions |
 | 4880 | {{< alias "refint" >}} | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | functions for autoincrementing fields |
@@ -295,8 +297,8 @@ weight: 300
 | 2989 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
-| 3570 | {{< alias "roaringbitmap" >}} | support for Roaring Bitmaps |
-| 3630 | {{< alias "collection" "pg_collection" >}} | Memory optimized data type to be used inside of plpglsql func |
+| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | support for Roaring Bitmaps |
+| 3630 | {{< alias "collection" "pgcollection" >}} | Memory optimized data type to be used inside of plpglsql func |
 | 4080 | {{< alias "pg_net" >}} | Async HTTP Requests |
 | 4470 | {{< alias "sparql" "pgsparql" >}} | Query SPARQL datasource with SQL |
 | 4500 | {{< alias "pg_idkit" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
@@ -319,7 +321,7 @@ weight: 300
 
 ## MIT
 
-{{< license "MIT" >}} {{< badge content="59 Extensions" color="gray" icon="cube" >}}
+{{< license "MIT" >}} {{< badge content="60 Extensions" color="gray" icon="cube" >}}
 
 [MIT License Text](https://opensource.org/licenses/MIT) : A permissive license that allows commercial use, modification, and private use.
 
@@ -363,7 +365,8 @@ weight: 300
 | 4730 | {{< alias "floatvec" >}} | Math for vectors (arrays) of numbers |
 | 4740 | {{< alias "aggs_for_vecs" >}} | Aggregate functions for array inputs |
 | 4750 | {{< alias "aggs_for_arrays" >}} | Various functions for computing statistics on arrays of numbers |
-| 4760 | {{< alias "arraymath" "pg_arraymath" >}} | Array math and operators that work element by element on the contents of arrays |
+| 4760 | {{< alias "pg_csv" >}} | Flexible CSV processing for Postgres |
+| 4770 | {{< alias "arraymath" "pg_arraymath" >}} | Array math and operators that work element by element on the contents of arrays |
 | 4800 | {{< alias "base36" "pg_base36" >}} | Integer Base36 types |
 | 4810 | {{< alias "base62" "pg_base62" >}} | Base62 extension for PostgreSQL |
 | 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
@@ -486,7 +489,7 @@ weight: 300
 | 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
 | 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
-| 4770 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
+| 4780 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
 | 7150 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
 | 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
@@ -512,7 +515,7 @@ weight: 300
 
 ## ISC
 
-{{< license "ISC" >}} {{< badge content="5 Extensions" color="gray" icon="cube" >}}
+{{< license "ISC" >}} {{< badge content="6 Extensions" color="gray" icon="cube" >}}
 
 [ISC License Text](https://opensource.org/licenses/ISC) : A permissive license similar to MIT, allowing commercial use and modification.
 
@@ -523,6 +526,7 @@ weight: 300
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 
 ## Artistic
 

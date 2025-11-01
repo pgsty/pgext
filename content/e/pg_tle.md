@@ -39,10 +39,10 @@ Trusted Language Extensions for PostgreSQL
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 6" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 6" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 6" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 6" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 4" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 4" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 4" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 4" "green" >}} |
 |    `el10.x86_64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 2" "green" >}} |
 |    `el10.aarch64`    | {{< bg "PIGSTY 1.5.2" "pg_tle_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.5.2" "pg_tle_13 : AVAIL 2" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-tle : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.1" "postgresql-17-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-16-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-15-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-14-pg-tle : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.1" "postgresql-13-pg-tle : AVAIL 1" "green" >}} |
@@ -62,16 +62,12 @@ Trusted Language Extensions for PostgreSQL
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_18` | 1.5.2 | `el8.x86_64` | pigsty | 68.8 KiB | [pg_tle_18-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_18-1.5.2-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el8.x86_64` | pgdg | 68.7 KiB | [pg_tle_18-1.5.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_tle_18-1.5.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_18` | 1.5.1 | `el8.x86_64` | pigsty | 64.1 KiB | [pg_tle_18-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_18-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el8.aarch64` | pigsty | 65.4 KiB | [pg_tle_18-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_18-1.5.2-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el8.aarch64` | pgdg | 65.3 KiB | [pg_tle_18-1.5.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_tle_18-1.5.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_18` | 1.5.1 | `el8.aarch64` | pigsty | 60.7 KiB | [pg_tle_18-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_18-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el9.x86_64` | pigsty | 63.0 KiB | [pg_tle_18-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_18-1.5.2-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el9.x86_64` | pgdg | 65.1 KiB | [pg_tle_18-1.5.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_tle_18-1.5.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_18` | 1.5.1 | `el9.x86_64` | pigsty | 60.8 KiB | [pg_tle_18-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_18-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el9.aarch64` | pigsty | 59.9 KiB | [pg_tle_18-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_18-1.5.2-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el9.aarch64` | pgdg | 62.1 KiB | [pg_tle_18-1.5.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_tle_18-1.5.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_18` | 1.5.1 | `el9.aarch64` | pigsty | 57.5 KiB | [pg_tle_18-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_18-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el10.x86_64` | pigsty | 63.3 KiB | [pg_tle_18-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_18-1.5.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el10.x86_64` | pgdg | 65.8 KiB | [pg_tle_18-1.5.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_tle_18-1.5.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_tle_18` | 1.5.2 | `el10.aarch64` | pigsty | 60.6 KiB | [pg_tle_18-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_tle_18-1.5.2-1PIGSTY.el10.aarch64.rpm) |
@@ -83,27 +79,19 @@ Trusted Language Extensions for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_17` | 1.5.2 | `el8.x86_64` | pigsty | 68.8 KiB | [pg_tle_17-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_17-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tle_17` | 1.5.1 | `el8.x86_64` | pigsty | 64.1 KiB | [pg_tle_17-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_17-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_17` | 1.5.1 | `el8.x86_64` | pgdg | 68.2 KiB | [pg_tle_17-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_tle_17-1.5.1-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_17` | 1.5.0 | `el8.x86_64` | pigsty | 64.0 KiB | [pg_tle_17-1.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_17-1.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_17` | 1.5.0 | `el8.x86_64` | pgdg | 68.1 KiB | [pg_tle_17-1.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_tle_17-1.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_17` | 1.2.0 | `el8.x86_64` | pgdg | 63.1 KiB | [pg_tle_17-1.2.0-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_tle_17-1.2.0-2PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_17` | 1.5.2 | `el8.aarch64` | pigsty | 65.4 KiB | [pg_tle_17-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_17-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tle_17` | 1.5.1 | `el8.aarch64` | pigsty | 60.7 KiB | [pg_tle_17-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_17-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_17` | 1.5.1 | `el8.aarch64` | pgdg | 64.8 KiB | [pg_tle_17-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_tle_17-1.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_17` | 1.5.0 | `el8.aarch64` | pigsty | 60.6 KiB | [pg_tle_17-1.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_17-1.5.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_17` | 1.5.0 | `el8.aarch64` | pgdg | 64.7 KiB | [pg_tle_17-1.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_tle_17-1.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_17` | 1.2.0 | `el8.aarch64` | pgdg | 59.4 KiB | [pg_tle_17-1.2.0-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_tle_17-1.2.0-2PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_17` | 1.5.2 | `el9.x86_64` | pigsty | 63.1 KiB | [pg_tle_17-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_17-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tle_17` | 1.5.1 | `el9.x86_64` | pigsty | 60.9 KiB | [pg_tle_17-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_17-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_17` | 1.5.1 | `el9.x86_64` | pgdg | 64.7 KiB | [pg_tle_17-1.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_tle_17-1.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_17` | 1.5.0 | `el9.x86_64` | pigsty | 60.8 KiB | [pg_tle_17-1.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_17-1.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_17` | 1.5.0 | `el9.x86_64` | pgdg | 64.5 KiB | [pg_tle_17-1.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_tle_17-1.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_17` | 1.2.0 | `el9.x86_64` | pgdg | 59.4 KiB | [pg_tle_17-1.2.0-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_tle_17-1.2.0-2PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_17` | 1.5.2 | `el9.aarch64` | pigsty | 60.0 KiB | [pg_tle_17-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_17-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tle_17` | 1.5.1 | `el9.aarch64` | pigsty | 57.5 KiB | [pg_tle_17-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_17-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_17` | 1.5.1 | `el9.aarch64` | pgdg | 61.8 KiB | [pg_tle_17-1.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_tle_17-1.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_17` | 1.5.0 | `el9.aarch64` | pigsty | 57.7 KiB | [pg_tle_17-1.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_17-1.5.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_17` | 1.5.0 | `el9.aarch64` | pgdg | 61.7 KiB | [pg_tle_17-1.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_tle_17-1.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_17` | 1.2.0 | `el9.aarch64` | pgdg | 56.2 KiB | [pg_tle_17-1.2.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_tle_17-1.2.0-2PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_17` | 1.5.2 | `el10.x86_64` | pigsty | 63.2 KiB | [pg_tle_17-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_17-1.5.2-1PIGSTY.el10.x86_64.rpm) |
@@ -123,27 +111,19 @@ Trusted Language Extensions for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_16` | 1.5.2 | `el8.x86_64` | pigsty | 68.8 KiB | [pg_tle_16-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_16-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tle_16` | 1.5.1 | `el8.x86_64` | pigsty | 64.1 KiB | [pg_tle_16-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_16-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_16` | 1.5.1 | `el8.x86_64` | pgdg | 68.2 KiB | [pg_tle_16-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_tle_16-1.5.1-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_16` | 1.5.0 | `el8.x86_64` | pigsty | 64.0 KiB | [pg_tle_16-1.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_16-1.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_16` | 1.5.0 | `el8.x86_64` | pgdg | 68.1 KiB | [pg_tle_16-1.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_tle_16-1.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_16` | 1.2.0 | `el8.x86_64` | pgdg | 63.0 KiB | [pg_tle_16-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_tle_16-1.2.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_16` | 1.5.2 | `el8.aarch64` | pigsty | 65.4 KiB | [pg_tle_16-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_16-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tle_16` | 1.5.1 | `el8.aarch64` | pigsty | 60.7 KiB | [pg_tle_16-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_16-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_16` | 1.5.1 | `el8.aarch64` | pgdg | 64.8 KiB | [pg_tle_16-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_tle_16-1.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_16` | 1.5.0 | `el8.aarch64` | pigsty | 60.6 KiB | [pg_tle_16-1.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_16-1.5.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_16` | 1.5.0 | `el8.aarch64` | pgdg | 64.7 KiB | [pg_tle_16-1.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_tle_16-1.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_16` | 1.2.0 | `el8.aarch64` | pgdg | 59.3 KiB | [pg_tle_16-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_tle_16-1.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_16` | 1.5.2 | `el9.x86_64` | pigsty | 63.1 KiB | [pg_tle_16-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_16-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tle_16` | 1.5.1 | `el9.x86_64` | pigsty | 60.9 KiB | [pg_tle_16-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_16-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_16` | 1.5.1 | `el9.x86_64` | pgdg | 64.7 KiB | [pg_tle_16-1.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_tle_16-1.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_16` | 1.5.0 | `el9.x86_64` | pigsty | 60.8 KiB | [pg_tle_16-1.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_16-1.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_16` | 1.5.0 | `el9.x86_64` | pgdg | 64.6 KiB | [pg_tle_16-1.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_tle_16-1.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_16` | 1.2.0 | `el9.x86_64` | pgdg | 59.2 KiB | [pg_tle_16-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_tle_16-1.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_16` | 1.5.2 | `el9.aarch64` | pigsty | 60.0 KiB | [pg_tle_16-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_16-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tle_16` | 1.5.1 | `el9.aarch64` | pigsty | 57.6 KiB | [pg_tle_16-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_16-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_16` | 1.5.1 | `el9.aarch64` | pgdg | 61.9 KiB | [pg_tle_16-1.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_tle_16-1.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_16` | 1.5.0 | `el9.aarch64` | pigsty | 57.7 KiB | [pg_tle_16-1.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_16-1.5.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_16` | 1.5.0 | `el9.aarch64` | pgdg | 61.7 KiB | [pg_tle_16-1.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_tle_16-1.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_16` | 1.2.0 | `el9.aarch64` | pgdg | 56.2 KiB | [pg_tle_16-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_tle_16-1.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_16` | 1.5.2 | `el10.x86_64` | pigsty | 63.7 KiB | [pg_tle_16-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_16-1.5.2-1PIGSTY.el10.x86_64.rpm) |
@@ -163,27 +143,19 @@ Trusted Language Extensions for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_15` | 1.5.2 | `el8.x86_64` | pigsty | 69.9 KiB | [pg_tle_15-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_15-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tle_15` | 1.5.1 | `el8.x86_64` | pigsty | 65.0 KiB | [pg_tle_15-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_15-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_15` | 1.5.1 | `el8.x86_64` | pgdg | 69.1 KiB | [pg_tle_15-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_tle_15-1.5.1-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_15` | 1.5.0 | `el8.x86_64` | pigsty | 64.9 KiB | [pg_tle_15-1.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_15-1.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_15` | 1.5.0 | `el8.x86_64` | pgdg | 69.0 KiB | [pg_tle_15-1.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_tle_15-1.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_15` | 1.2.0 | `el8.x86_64` | pgdg | 63.9 KiB | [pg_tle_15-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_tle_15-1.2.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_15` | 1.5.2 | `el8.aarch64` | pigsty | 66.4 KiB | [pg_tle_15-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_15-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tle_15` | 1.5.1 | `el8.aarch64` | pigsty | 61.5 KiB | [pg_tle_15-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_15-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_15` | 1.5.1 | `el8.aarch64` | pgdg | 65.5 KiB | [pg_tle_15-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_tle_15-1.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_15` | 1.5.0 | `el8.aarch64` | pigsty | 61.3 KiB | [pg_tle_15-1.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_15-1.5.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_15` | 1.5.0 | `el8.aarch64` | pgdg | 65.4 KiB | [pg_tle_15-1.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_tle_15-1.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_15` | 1.2.0 | `el8.aarch64` | pgdg | 60.2 KiB | [pg_tle_15-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_tle_15-1.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_15` | 1.5.2 | `el9.x86_64` | pigsty | 69.1 KiB | [pg_tle_15-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_15-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tle_15` | 1.5.1 | `el9.x86_64` | pigsty | 66.5 KiB | [pg_tle_15-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_15-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_15` | 1.5.1 | `el9.x86_64` | pgdg | 70.5 KiB | [pg_tle_15-1.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_tle_15-1.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_15` | 1.5.0 | `el9.x86_64` | pigsty | 66.4 KiB | [pg_tle_15-1.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_15-1.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_15` | 1.5.0 | `el9.x86_64` | pgdg | 70.8 KiB | [pg_tle_15-1.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_tle_15-1.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_15` | 1.2.0 | `el9.x86_64` | pgdg | 65.5 KiB | [pg_tle_15-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_tle_15-1.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_15` | 1.5.2 | `el9.aarch64` | pigsty | 66.5 KiB | [pg_tle_15-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_15-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tle_15` | 1.5.1 | `el9.aarch64` | pigsty | 63.8 KiB | [pg_tle_15-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_15-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_15` | 1.5.1 | `el9.aarch64` | pgdg | 68.1 KiB | [pg_tle_15-1.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_tle_15-1.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_15` | 1.5.0 | `el9.aarch64` | pigsty | 63.8 KiB | [pg_tle_15-1.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_15-1.5.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_15` | 1.5.0 | `el9.aarch64` | pgdg | 67.9 KiB | [pg_tle_15-1.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_tle_15-1.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_15` | 1.2.0 | `el9.aarch64` | pgdg | 62.3 KiB | [pg_tle_15-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_tle_15-1.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_15` | 1.5.2 | `el10.x86_64` | pigsty | 69.8 KiB | [pg_tle_15-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_15-1.5.2-1PIGSTY.el10.x86_64.rpm) |
@@ -203,27 +175,19 @@ Trusted Language Extensions for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_14` | 1.5.2 | `el8.x86_64` | pigsty | 70.0 KiB | [pg_tle_14-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_14-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tle_14` | 1.5.1 | `el8.x86_64` | pigsty | 65.2 KiB | [pg_tle_14-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_14-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_14` | 1.5.1 | `el8.x86_64` | pgdg | 69.3 KiB | [pg_tle_14-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_tle_14-1.5.1-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_14` | 1.5.0 | `el8.x86_64` | pigsty | 65.0 KiB | [pg_tle_14-1.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_14-1.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_14` | 1.5.0 | `el8.x86_64` | pgdg | 69.1 KiB | [pg_tle_14-1.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_tle_14-1.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_14` | 1.2.0 | `el8.x86_64` | pgdg | 64.1 KiB | [pg_tle_14-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_tle_14-1.2.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_14` | 1.5.2 | `el8.aarch64` | pigsty | 66.5 KiB | [pg_tle_14-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_14-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tle_14` | 1.5.1 | `el8.aarch64` | pigsty | 61.6 KiB | [pg_tle_14-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_14-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_14` | 1.5.1 | `el8.aarch64` | pgdg | 65.7 KiB | [pg_tle_14-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_tle_14-1.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_14` | 1.5.0 | `el8.aarch64` | pigsty | 61.5 KiB | [pg_tle_14-1.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_14-1.5.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_14` | 1.5.0 | `el8.aarch64` | pgdg | 65.5 KiB | [pg_tle_14-1.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_tle_14-1.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_14` | 1.2.0 | `el8.aarch64` | pgdg | 60.3 KiB | [pg_tle_14-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_tle_14-1.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_14` | 1.5.2 | `el9.x86_64` | pigsty | 69.9 KiB | [pg_tle_14-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_14-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tle_14` | 1.5.1 | `el9.x86_64` | pigsty | 66.6 KiB | [pg_tle_14-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_14-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_14` | 1.5.1 | `el9.x86_64` | pgdg | 70.7 KiB | [pg_tle_14-1.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_tle_14-1.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_14` | 1.5.0 | `el9.x86_64` | pigsty | 66.7 KiB | [pg_tle_14-1.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_14-1.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_14` | 1.5.0 | `el9.x86_64` | pgdg | 70.6 KiB | [pg_tle_14-1.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_tle_14-1.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_14` | 1.2.0 | `el9.x86_64` | pgdg | 65.6 KiB | [pg_tle_14-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_tle_14-1.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_14` | 1.5.2 | `el9.aarch64` | pigsty | 66.5 KiB | [pg_tle_14-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_14-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tle_14` | 1.5.1 | `el9.aarch64` | pigsty | 63.9 KiB | [pg_tle_14-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_14-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_14` | 1.5.1 | `el9.aarch64` | pgdg | 68.3 KiB | [pg_tle_14-1.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_tle_14-1.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_14` | 1.5.0 | `el9.aarch64` | pigsty | 64.1 KiB | [pg_tle_14-1.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_14-1.5.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_14` | 1.5.0 | `el9.aarch64` | pgdg | 68.1 KiB | [pg_tle_14-1.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_tle_14-1.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_14` | 1.2.0 | `el9.aarch64` | pgdg | 62.5 KiB | [pg_tle_14-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_tle_14-1.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_14` | 1.5.2 | `el10.x86_64` | pigsty | 70.2 KiB | [pg_tle_14-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_14-1.5.2-1PIGSTY.el10.x86_64.rpm) |
@@ -243,27 +207,19 @@ Trusted Language Extensions for PostgreSQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_tle_13` | 1.5.2 | `el8.x86_64` | pigsty | 69.0 KiB | [pg_tle_13-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_13-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pg_tle_13` | 1.5.1 | `el8.x86_64` | pigsty | 64.3 KiB | [pg_tle_13-1.5.1-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_13-1.5.1-2PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_13` | 1.5.1 | `el8.x86_64` | pgdg | 68.4 KiB | [pg_tle_13-1.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_tle_13-1.5.1-1PGDG.rhel8.x86_64.rpm) |
-| `pg_tle_13` | 1.5.0 | `el8.x86_64` | pigsty | 64.1 KiB | [pg_tle_13-1.5.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_tle_13-1.5.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_tle_13` | 1.5.0 | `el8.x86_64` | pgdg | 68.2 KiB | [pg_tle_13-1.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_tle_13-1.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_13` | 1.2.0 | `el8.x86_64` | pgdg | 63.2 KiB | [pg_tle_13-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_tle_13-1.2.0-1PGDG.rhel8.x86_64.rpm) |
 | `pg_tle_13` | 1.5.2 | `el8.aarch64` | pigsty | 66.6 KiB | [pg_tle_13-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_13-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pg_tle_13` | 1.5.1 | `el8.aarch64` | pigsty | 61.6 KiB | [pg_tle_13-1.5.1-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_13-1.5.1-2PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_13` | 1.5.1 | `el8.aarch64` | pgdg | 65.7 KiB | [pg_tle_13-1.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_tle_13-1.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `pg_tle_13` | 1.5.0 | `el8.aarch64` | pigsty | 61.5 KiB | [pg_tle_13-1.5.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_tle_13-1.5.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_tle_13` | 1.5.0 | `el8.aarch64` | pgdg | 65.6 KiB | [pg_tle_13-1.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_tle_13-1.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_13` | 1.2.0 | `el8.aarch64` | pgdg | 60.4 KiB | [pg_tle_13-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_tle_13-1.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_tle_13` | 1.5.2 | `el9.x86_64` | pigsty | 69.5 KiB | [pg_tle_13-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_13-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pg_tle_13` | 1.5.1 | `el9.x86_64` | pigsty | 67.0 KiB | [pg_tle_13-1.5.1-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_13-1.5.1-2PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_13` | 1.5.1 | `el9.x86_64` | pgdg | 71.3 KiB | [pg_tle_13-1.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_tle_13-1.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `pg_tle_13` | 1.5.0 | `el9.x86_64` | pigsty | 66.6 KiB | [pg_tle_13-1.5.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_tle_13-1.5.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_tle_13` | 1.5.0 | `el9.x86_64` | pgdg | 71.2 KiB | [pg_tle_13-1.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_tle_13-1.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_13` | 1.2.0 | `el9.x86_64` | pgdg | 65.8 KiB | [pg_tle_13-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_tle_13-1.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_tle_13` | 1.5.2 | `el9.aarch64` | pigsty | 66.8 KiB | [pg_tle_13-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_13-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pg_tle_13` | 1.5.1 | `el9.aarch64` | pigsty | 64.2 KiB | [pg_tle_13-1.5.1-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_13-1.5.1-2PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_13` | 1.5.1 | `el9.aarch64` | pgdg | 68.5 KiB | [pg_tle_13-1.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_tle_13-1.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_tle_13` | 1.5.0 | `el9.aarch64` | pigsty | 64.2 KiB | [pg_tle_13-1.5.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_tle_13-1.5.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_tle_13` | 1.5.0 | `el9.aarch64` | pgdg | 68.4 KiB | [pg_tle_13-1.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_tle_13-1.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_13` | 1.2.0 | `el9.aarch64` | pgdg | 62.9 KiB | [pg_tle_13-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_tle_13-1.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_tle_13` | 1.5.2 | `el10.x86_64` | pigsty | 70.1 KiB | [pg_tle_13-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_tle_13-1.5.2-1PIGSTY.el10.x86_64.rpm) |

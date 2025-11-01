@@ -26,25 +26,25 @@ track plan statistics of all SQL statements executed
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_hint_plan" >}} {{< ext "pre_prepare" >}} {{< ext "pg_stat_monitor" >}} {{< ext "explain_ui" >}} {{< ext "plprofiler" >}} |
 
-> [!Note] pg18 breaks
+> [!Note] pg18 breaks, fixed by Vonng
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "pg_store_plans_18*" "red" >}} {{< bg "17" "pg_store_plans_17*" "green" >}} {{< bg "16" "pg_store_plans_16*" "green" >}} {{< bg "15" "pg_store_plans_15*" "green" >}} {{< bg "14" "pg_store_plans_14*" "green" >}} {{< bg "13" "pg_store_plans_13*" "green" >}} | `pg_store_plans_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "postgresql-18-pg-store-plan" "red" >}} {{< bg "17" "postgresql-17-pg-store-plan" "green" >}} {{< bg "16" "postgresql-16-pg-store-plan" "green" >}} {{< bg "15" "postgresql-15-pg-store-plan" "green" >}} {{< bg "14" "postgresql-14-pg-store-plan" "green" >}} {{< bg "13" "postgresql-13-pg-store-plan" "green" >}} | `postgresql-$v-pg-store-plan` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "pg_store_plans_18*" "green" >}} {{< bg "17" "pg_store_plans_17*" "green" >}} {{< bg "16" "pg_store_plans_16*" "green" >}} {{< bg "15" "pg_store_plans_15*" "green" >}} {{< bg "14" "pg_store_plans_14*" "green" >}} {{< bg "13" "pg_store_plans_13*" "green" >}} | `pg_store_plans_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "postgresql-18-pg-store-plan" "green" >}} {{< bg "17" "postgresql-17-pg-store-plan" "green" >}} {{< bg "16" "postgresql-16-pg-store-plan" "green" >}} {{< bg "15" "postgresql-15-pg-store-plan" "green" >}} {{< bg "14" "postgresql-14-pg-store-plan" "green" >}} {{< bg "13" "postgresql-13-pg-store-plan" "green" >}} | `postgresql-$v-pg-store-plan` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
-|    `el10.x86_64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.9" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.8" "pg_store_plans_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.8" "pg_store_plans_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_store_plans_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_store_plans_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    |      {{< bg "MISS" "pg_store_plans_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.9" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.8" "pg_store_plans_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.8" "pg_store_plans_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_store_plans_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_store_plans_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "pg_store_plans_13 : AVAIL 1" "green" >}} |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.9" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.8" "pg_store_plans_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.8" "pg_store_plans_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_store_plans_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_store_plans_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.9" "pg_store_plans_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.9" "pg_store_plans_17 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.8" "pg_store_plans_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.8" "pg_store_plans_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_store_plans_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_store_plans_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-store-plan : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "postgresql-17-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-16-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-15-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-14-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-13-pg-store-plan : AVAIL 1" "green" >}} |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-store-plan : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "postgresql-17-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-16-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-15-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-14-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-13-pg-store-plan : AVAIL 1" "green" >}} |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-store-plan : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-store-plan : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-store-plan : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-store-plan : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-store-plan : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-store-plan : MISS 0" "red" >}}      |
@@ -55,7 +55,19 @@ track plan statistics of all SQL statements executed
 |    `u24.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-store-plan : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.8" "postgresql-17-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-16-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-15-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-14-pg-store-plan : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8" "postgresql-13-pg-store-plan : AVAIL 1" "green" >}} |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_store_plans_18` | 1.9 | `el8.x86_64` | pigsty | 44.5 KiB | [pg_store_plans_18-1.9-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_store_plans_18-1.9-1PIGSTY.el8.x86_64.rpm) |
+| `pg_store_plans_18` | 1.9 | `el8.aarch64` | pigsty | 43.2 KiB | [pg_store_plans_18-1.9-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_store_plans_18-1.9-1PIGSTY.el8.aarch64.rpm) |
+| `pg_store_plans_18` | 1.9 | `el9.x86_64` | pigsty | 43.5 KiB | [pg_store_plans_18-1.9-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_store_plans_18-1.9-1PIGSTY.el9.x86_64.rpm) |
+| `pg_store_plans_18` | 1.9 | `el9.aarch64` | pigsty | 42.9 KiB | [pg_store_plans_18-1.9-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_store_plans_18-1.9-1PIGSTY.el9.aarch64.rpm) |
+| `pg_store_plans_18` | 1.9 | `el10.x86_64` | pigsty | 44.7 KiB | [pg_store_plans_18-1.9-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_store_plans_18-1.9-1PIGSTY.el10.x86_64.rpm) |
+| `pg_store_plans_18` | 1.9 | `el10.aarch64` | pigsty | 43.6 KiB | [pg_store_plans_18-1.9-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_store_plans_18-1.9-1PIGSTY.el10.aarch64.rpm) |
+
+{{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -184,6 +196,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_store_plans; # install by extension name, for the current active PG version
 pig ext install pg_store_plans; # install via package alias, for the active PG version
+pig ext install pg_store_plans -v 18;   # install for PG 18
 pig ext install pg_store_plans -v 17;   # install for PG 17
 pig ext install pg_store_plans -v 16;   # install for PG 16
 pig ext install pg_store_plans -v 15;   # install for PG 15

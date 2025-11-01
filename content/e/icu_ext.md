@@ -37,10 +37,10 @@ Access ICU functions
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_13 : AVAIL 3" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_13 : AVAIL 3" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_13 : AVAIL 3" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.9.0" "icu_ext_13 : AVAIL 3" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
 |    `el10.x86_64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
 |    `el10.aarch64`    | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.9.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.0" "icu_ext_13 : AVAIL 2" "blue" >}} |
 |    `d12.x86_64`    | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-13-icu-ext : AVAIL 1" "blue" >}} |
@@ -84,16 +84,12 @@ Access ICU functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `icu_ext_17` | 1.9.0 | `el8.x86_64` | pigsty | 45.8 KiB | [icu_ext_17-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_17-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el8.x86_64` | pgdg | 46.4 KiB | [icu_ext_17-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/icu_ext_17-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el8.x86_64` | pigsty | 51.0 KiB | [icu_ext_17-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_17-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_17-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/icu_ext_17-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el8.aarch64` | pigsty | 49.8 KiB | [icu_ext_17-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_17-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el9.x86_64` | pigsty | 47.2 KiB | [icu_ext_17-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_17-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/icu_ext_17-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el9.x86_64` | pigsty | 49.6 KiB | [icu_ext_17-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_17-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_17` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_17-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el9.aarch64` | pgdg | 46.0 KiB | [icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/icu_ext_17-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_17` | 1.10.0 | `el9.aarch64` | pigsty | 47.9 KiB | [icu_ext_17-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_17-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_17` | 1.9.0 | `el10.x86_64` | pgdg | 48.0 KiB | [icu_ext_17-1.9.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/icu_ext_17-1.9.0-1PGDG.rhel10.x86_64.rpm) |
@@ -114,16 +110,12 @@ Access ICU functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `icu_ext_16` | 1.9.0 | `el8.x86_64` | pigsty | 45.8 KiB | [icu_ext_16-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_16-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el8.x86_64` | pgdg | 46.4 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/icu_ext_16-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el8.x86_64` | pigsty | 50.9 KiB | [icu_ext_16-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_16-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el8.aarch64` | pigsty | 44.6 KiB | [icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/icu_ext_16-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el8.aarch64` | pigsty | 49.8 KiB | [icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_16-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el9.x86_64` | pigsty | 47.2 KiB | [icu_ext_16-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_16-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el9.x86_64` | pgdg | 47.7 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/icu_ext_16-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el9.x86_64` | pigsty | 49.6 KiB | [icu_ext_16-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_16-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_16` | 1.9.0 | `el9.aarch64` | pigsty | 45.4 KiB | [icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el9.aarch64` | pgdg | 45.9 KiB | [icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/icu_ext_16-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_16` | 1.10.0 | `el9.aarch64` | pigsty | 47.9 KiB | [icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_16-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_16` | 1.9.0 | `el10.x86_64` | pgdg | 48.0 KiB | [icu_ext_16-1.9.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/icu_ext_16-1.9.0-1PGDG.rhel10.x86_64.rpm) |
@@ -144,16 +136,12 @@ Access ICU functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `icu_ext_15` | 1.9.0 | `el8.x86_64` | pigsty | 46.0 KiB | [icu_ext_15-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_15-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el8.x86_64` | pgdg | 46.5 KiB | [icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/icu_ext_15-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el8.x86_64` | pigsty | 51.0 KiB | [icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_15-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_15` | 1.9.0 | `el8.aarch64` | pigsty | 44.7 KiB | [icu_ext_15-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_15-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el8.aarch64` | pgdg | 45.2 KiB | [icu_ext_15-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/icu_ext_15-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el8.aarch64` | pigsty | 49.7 KiB | [icu_ext_15-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_15-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_15` | 1.9.0 | `el9.x86_64` | pigsty | 47.3 KiB | [icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el9.x86_64` | pgdg | 47.8 KiB | [icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/icu_ext_15-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el9.x86_64` | pigsty | 50.0 KiB | [icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_15-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_15` | 1.9.0 | `el9.aarch64` | pigsty | 45.6 KiB | [icu_ext_15-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_15-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el9.aarch64` | pgdg | 46.2 KiB | [icu_ext_15-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/icu_ext_15-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_15` | 1.10.0 | `el9.aarch64` | pigsty | 48.0 KiB | [icu_ext_15-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_15-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_15` | 1.9.0 | `el10.x86_64` | pgdg | 48.1 KiB | [icu_ext_15-1.9.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/icu_ext_15-1.9.0-1PGDG.rhel10.x86_64.rpm) |
@@ -174,16 +162,12 @@ Access ICU functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `icu_ext_14` | 1.9.0 | `el8.x86_64` | pigsty | 46.1 KiB | [icu_ext_14-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_14-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el8.x86_64` | pgdg | 46.6 KiB | [icu_ext_14-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/icu_ext_14-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el8.x86_64` | pigsty | 51.2 KiB | [icu_ext_14-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_14-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el8.aarch64` | pigsty | 44.8 KiB | [icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_14-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el8.aarch64` | pgdg | 45.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/icu_ext_14-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el8.aarch64` | pigsty | 49.9 KiB | [icu_ext_14-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_14-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el9.x86_64` | pigsty | 47.4 KiB | [icu_ext_14-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_14-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el9.x86_64` | pgdg | 48.0 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/icu_ext_14-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el9.x86_64` | pigsty | 50.0 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_14` | 1.9.0 | `el9.aarch64` | pigsty | 45.7 KiB | [icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el9.aarch64` | pgdg | 46.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_14` | 1.10.0 | `el9.aarch64` | pigsty | 48.2 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_14` | 1.9.0 | `el10.x86_64` | pgdg | 48.2 KiB | [icu_ext_14-1.9.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/icu_ext_14-1.9.0-1PGDG.rhel10.x86_64.rpm) |
@@ -204,16 +188,12 @@ Access ICU functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `icu_ext_13` | 1.9.0 | `el8.x86_64` | pigsty | 45.2 KiB | [icu_ext_13-1.9.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_13-1.9.0-1PIGSTY.el8.x86_64.rpm) |
 | `icu_ext_13` | 1.9.0 | `el8.x86_64` | pgdg | 45.8 KiB | [icu_ext_13-1.9.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/icu_ext_13-1.9.0-1PGDG.rhel8.x86_64.rpm) |
 | `icu_ext_13` | 1.10.0 | `el8.x86_64` | pigsty | 50.1 KiB | [icu_ext_13-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/icu_ext_13-1.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el8.aarch64` | pigsty | 44.7 KiB | [icu_ext_13-1.9.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_13-1.9.0-1PIGSTY.el8.aarch64.rpm) |
 | `icu_ext_13` | 1.9.0 | `el8.aarch64` | pgdg | 45.3 KiB | [icu_ext_13-1.9.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/icu_ext_13-1.9.0-1PGDG.rhel8.aarch64.rpm) |
 | `icu_ext_13` | 1.10.0 | `el8.aarch64` | pigsty | 49.8 KiB | [icu_ext_13-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/icu_ext_13-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.x86_64` | pigsty | 47.4 KiB | [icu_ext_13-1.9.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_13-1.9.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_13` | 1.9.0 | `el9.x86_64` | pgdg | 48.0 KiB | [icu_ext_13-1.9.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/icu_ext_13-1.9.0-1PGDG.rhel9.x86_64.rpm) |
 | `icu_ext_13` | 1.10.0 | `el9.x86_64` | pigsty | 49.9 KiB | [icu_ext_13-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_13-1.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `icu_ext_13` | 1.9.0 | `el9.aarch64` | pigsty | 45.7 KiB | [icu_ext_13-1.9.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_13-1.9.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_13` | 1.9.0 | `el9.aarch64` | pgdg | 46.3 KiB | [icu_ext_13-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/icu_ext_13-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_13` | 1.10.0 | `el9.aarch64` | pigsty | 48.2 KiB | [icu_ext_13-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_13-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `icu_ext_13` | 1.9.0 | `el10.x86_64` | pgdg | 48.2 KiB | [icu_ext_13-1.9.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/icu_ext_13-1.9.0-1PGDG.rhel10.x86_64.rpm) |

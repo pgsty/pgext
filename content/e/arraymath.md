@@ -2,7 +2,7 @@
 title: "arraymath"
 linkTitle: "arraymath"
 description: "Array math and operators that work element by element on the contents of arrays"
-weight: 4760
+weight: 4770
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ Array math and operators that work element by element on the contents of arrays
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4760** | {{< badge content="arraymath" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4770** | {{< badge content="arraymath" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

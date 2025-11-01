@@ -40,10 +40,10 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "MISS" "pgroonga_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 4.0.0" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_13 : AVAIL 1" "green" >}} |
-|    `el8.aarch64`    |      {{< bg "MISS" "pgroonga_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 4.0.0" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_13 : AVAIL 1" "green" >}} |
-|    `el9.x86_64`    |      {{< bg "MISS" "pgroonga_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 4.0.0" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_13 : AVAIL 1" "green" >}} |
-|    `el9.aarch64`    |      {{< bg "MISS" "pgroonga_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 4.0.0" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "pgroonga_13 : AVAIL 1" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
 |    `el10.x86_64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
 |    `el10.aarch64`    | {{< bg "PIGSTY 4.0.4" "pgroonga_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "pgroonga_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgroonga : MISS 0" "red" >}}      | {{< bg "PIGSTY 4.0.0" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-14-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.0" "postgresql-13-pgroonga : AVAIL 1" "green" >}} |
@@ -61,20 +61,24 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_18` | 4.0.4 | `el10.x86_64` | pigsty | 347.3 KiB | [pgroonga_18-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_18-4.0.4-1.el10.x86_64.rpm) |
-| `pgroonga_18` | 4.0.4 | `el10.aarch64` | pigsty | 339.3 KiB | [pgroonga_18-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_18-4.0.4-1.el10.aarch64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el8.x86_64` | pigsty | 360.6 KiB | [pgroonga_18-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_18-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el8.aarch64` | pigsty | 348.8 KiB | [pgroonga_18-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_18-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el9.x86_64` | pigsty | 345.3 KiB | [pgroonga_18-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_18-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el9.aarch64` | pigsty | 337.0 KiB | [pgroonga_18-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_18-4.0.4-1.el9.aarch64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el10.x86_64` | pigsty | 347.4 KiB | [pgroonga_18-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_18-4.0.4-1.el10.x86_64.rpm) |
+| `pgroonga_18` | 4.0.4 | `el10.aarch64` | pigsty | 339.4 KiB | [pgroonga_18-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_18-4.0.4-1.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_17` | 4.0.0 | `el8.x86_64` | pigsty | 342.0 KiB | [pgroonga_17-4.0.0-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_17-4.0.0-1.el8.x86_64.rpm) |
-| `pgroonga_17` | 4.0.0 | `el8.aarch64` | pigsty | 330.5 KiB | [pgroonga_17-4.0.0-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_17-4.0.0-1.el8.aarch64.rpm) |
-| `pgroonga_17` | 4.0.0 | `el9.x86_64` | pigsty | 328.0 KiB | [pgroonga_17-4.0.0-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_17-4.0.0-1.el9.x86_64.rpm) |
-| `pgroonga_17` | 4.0.0 | `el9.aarch64` | pigsty | 320.1 KiB | [pgroonga_17-4.0.0-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_17-4.0.0-1.el9.aarch64.rpm) |
-| `pgroonga_17` | 4.0.4 | `el10.x86_64` | pigsty | 347.0 KiB | [pgroonga_17-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_17-4.0.4-1.el10.x86_64.rpm) |
-| `pgroonga_17` | 4.0.4 | `el10.aarch64` | pigsty | 339.2 KiB | [pgroonga_17-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_17-4.0.4-1.el10.aarch64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el8.x86_64` | pigsty | 360.3 KiB | [pgroonga_17-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_17-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el8.aarch64` | pigsty | 348.4 KiB | [pgroonga_17-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_17-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el9.x86_64` | pigsty | 345.3 KiB | [pgroonga_17-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_17-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el9.aarch64` | pigsty | 337.3 KiB | [pgroonga_17-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_17-4.0.4-1.el9.aarch64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el10.x86_64` | pigsty | 347.1 KiB | [pgroonga_17-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_17-4.0.4-1.el10.x86_64.rpm) |
+| `pgroonga_17` | 4.0.4 | `el10.aarch64` | pigsty | 339.3 KiB | [pgroonga_17-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_17-4.0.4-1.el10.aarch64.rpm) |
 | `postgresql-17-pgroonga` | 4.0.0 | `d12.x86_64` | pigsty | 697.4 KiB | [postgresql-17-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgroonga` | 4.0.0 | `d12.aarch64` | pigsty | 693.0 KiB | [postgresql-17-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgroonga` | 4.0.0 | `u22.x86_64` | pigsty | 736.2 KiB | [postgresql-17-pgroonga_4.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.0-1PIGSTY~jammy_amd64.deb) |
@@ -87,11 +91,11 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_16` | 4.0.0 | `el8.x86_64` | pigsty | 339.7 KiB | [pgroonga_16-4.0.0-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_16-4.0.0-1.el8.x86_64.rpm) |
-| `pgroonga_16` | 4.0.0 | `el8.aarch64` | pigsty | 328.3 KiB | [pgroonga_16-4.0.0-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_16-4.0.0-1.el8.aarch64.rpm) |
-| `pgroonga_16` | 4.0.0 | `el9.x86_64` | pigsty | 325.9 KiB | [pgroonga_16-4.0.0-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_16-4.0.0-1.el9.x86_64.rpm) |
-| `pgroonga_16` | 4.0.0 | `el9.aarch64` | pigsty | 317.5 KiB | [pgroonga_16-4.0.0-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_16-4.0.0-1.el9.aarch64.rpm) |
-| `pgroonga_16` | 4.0.4 | `el10.x86_64` | pigsty | 344.8 KiB | [pgroonga_16-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_16-4.0.4-1.el10.x86_64.rpm) |
+| `pgroonga_16` | 4.0.4 | `el8.x86_64` | pigsty | 357.8 KiB | [pgroonga_16-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_16-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_16` | 4.0.4 | `el8.aarch64` | pigsty | 346.3 KiB | [pgroonga_16-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_16-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_16` | 4.0.4 | `el9.x86_64` | pigsty | 342.6 KiB | [pgroonga_16-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_16-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_16` | 4.0.4 | `el9.aarch64` | pigsty | 335.5 KiB | [pgroonga_16-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_16-4.0.4-1.el9.aarch64.rpm) |
+| `pgroonga_16` | 4.0.4 | `el10.x86_64` | pigsty | 344.9 KiB | [pgroonga_16-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_16-4.0.4-1.el10.x86_64.rpm) |
 | `pgroonga_16` | 4.0.4 | `el10.aarch64` | pigsty | 337.1 KiB | [pgroonga_16-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_16-4.0.4-1.el10.aarch64.rpm) |
 | `postgresql-16-pgroonga` | 4.0.0 | `d12.x86_64` | pigsty | 684.9 KiB | [postgresql-16-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgroonga` | 4.0.0 | `d12.aarch64` | pigsty | 681.1 KiB | [postgresql-16-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb) |
@@ -105,10 +109,10 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_15` | 4.0.0 | `el8.x86_64` | pigsty | 341.9 KiB | [pgroonga_15-4.0.0-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_15-4.0.0-1.el8.x86_64.rpm) |
-| `pgroonga_15` | 4.0.0 | `el8.aarch64` | pigsty | 330.8 KiB | [pgroonga_15-4.0.0-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_15-4.0.0-1.el8.aarch64.rpm) |
-| `pgroonga_15` | 4.0.0 | `el9.x86_64` | pigsty | 327.9 KiB | [pgroonga_15-4.0.0-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_15-4.0.0-1.el9.x86_64.rpm) |
-| `pgroonga_15` | 4.0.0 | `el9.aarch64` | pigsty | 321.7 KiB | [pgroonga_15-4.0.0-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_15-4.0.0-1.el9.aarch64.rpm) |
+| `pgroonga_15` | 4.0.4 | `el8.x86_64` | pigsty | 360.6 KiB | [pgroonga_15-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_15-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_15` | 4.0.4 | `el8.aarch64` | pigsty | 349.2 KiB | [pgroonga_15-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_15-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_15` | 4.0.4 | `el9.x86_64` | pigsty | 346.6 KiB | [pgroonga_15-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_15-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_15` | 4.0.4 | `el9.aarch64` | pigsty | 339.9 KiB | [pgroonga_15-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_15-4.0.4-1.el9.aarch64.rpm) |
 | `pgroonga_15` | 4.0.4 | `el10.x86_64` | pigsty | 349.2 KiB | [pgroonga_15-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_15-4.0.4-1.el10.x86_64.rpm) |
 | `pgroonga_15` | 4.0.4 | `el10.aarch64` | pigsty | 339.4 KiB | [pgroonga_15-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_15-4.0.4-1.el10.aarch64.rpm) |
 | `postgresql-15-pgroonga` | 4.0.0 | `d12.x86_64` | pigsty | 687.5 KiB | [postgresql-15-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb) |
@@ -123,11 +127,11 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_14` | 4.0.0 | `el8.x86_64` | pigsty | 322.8 KiB | [pgroonga_14-4.0.0-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_14-4.0.0-1.el8.x86_64.rpm) |
-| `pgroonga_14` | 4.0.0 | `el8.aarch64` | pigsty | 314.4 KiB | [pgroonga_14-4.0.0-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_14-4.0.0-1.el8.aarch64.rpm) |
-| `pgroonga_14` | 4.0.0 | `el9.x86_64` | pigsty | 310.4 KiB | [pgroonga_14-4.0.0-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_14-4.0.0-1.el9.x86_64.rpm) |
-| `pgroonga_14` | 4.0.0 | `el9.aarch64` | pigsty | 305.4 KiB | [pgroonga_14-4.0.0-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_14-4.0.0-1.el9.aarch64.rpm) |
-| `pgroonga_14` | 4.0.4 | `el10.x86_64` | pigsty | 330.9 KiB | [pgroonga_14-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_14-4.0.4-1.el10.x86_64.rpm) |
+| `pgroonga_14` | 4.0.4 | `el8.x86_64` | pigsty | 341.1 KiB | [pgroonga_14-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_14-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_14` | 4.0.4 | `el8.aarch64` | pigsty | 332.6 KiB | [pgroonga_14-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_14-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_14` | 4.0.4 | `el9.x86_64` | pigsty | 328.2 KiB | [pgroonga_14-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_14-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_14` | 4.0.4 | `el9.aarch64` | pigsty | 322.9 KiB | [pgroonga_14-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_14-4.0.4-1.el9.aarch64.rpm) |
+| `pgroonga_14` | 4.0.4 | `el10.x86_64` | pigsty | 331.0 KiB | [pgroonga_14-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_14-4.0.4-1.el10.x86_64.rpm) |
 | `pgroonga_14` | 4.0.4 | `el10.aarch64` | pigsty | 322.9 KiB | [pgroonga_14-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_14-4.0.4-1.el10.aarch64.rpm) |
 | `postgresql-14-pgroonga` | 4.0.0 | `d12.x86_64` | pigsty | 630.7 KiB | [postgresql-14-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgroonga` | 4.0.0 | `d12.aarch64` | pigsty | 627.3 KiB | [postgresql-14-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb) |
@@ -141,12 +145,12 @@ Use Groonga as index, fast full text search platform for all languages!
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgroonga_13` | 4.0.0 | `el8.x86_64` | pigsty | 321.9 KiB | [pgroonga_13-4.0.0-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_13-4.0.0-1.el8.x86_64.rpm) |
-| `pgroonga_13` | 4.0.0 | `el8.aarch64` | pigsty | 314.3 KiB | [pgroonga_13-4.0.0-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_13-4.0.0-1.el8.aarch64.rpm) |
-| `pgroonga_13` | 4.0.0 | `el9.x86_64` | pigsty | 310.4 KiB | [pgroonga_13-4.0.0-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_13-4.0.0-1.el9.x86_64.rpm) |
-| `pgroonga_13` | 4.0.0 | `el9.aarch64` | pigsty | 305.2 KiB | [pgroonga_13-4.0.0-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_13-4.0.0-1.el9.aarch64.rpm) |
-| `pgroonga_13` | 4.0.4 | `el10.x86_64` | pigsty | 330.2 KiB | [pgroonga_13-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_13-4.0.4-1.el10.x86_64.rpm) |
-| `pgroonga_13` | 4.0.4 | `el10.aarch64` | pigsty | 323.0 KiB | [pgroonga_13-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_13-4.0.4-1.el10.aarch64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el8.x86_64` | pigsty | 340.2 KiB | [pgroonga_13-4.0.4-1.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgroonga_13-4.0.4-1.el8.x86_64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el8.aarch64` | pigsty | 332.6 KiB | [pgroonga_13-4.0.4-1.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgroonga_13-4.0.4-1.el8.aarch64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el9.x86_64` | pigsty | 327.8 KiB | [pgroonga_13-4.0.4-1.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgroonga_13-4.0.4-1.el9.x86_64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el9.aarch64` | pigsty | 323.1 KiB | [pgroonga_13-4.0.4-1.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgroonga_13-4.0.4-1.el9.aarch64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el10.x86_64` | pigsty | 330.4 KiB | [pgroonga_13-4.0.4-1.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgroonga_13-4.0.4-1.el10.x86_64.rpm) |
+| `pgroonga_13` | 4.0.4 | `el10.aarch64` | pigsty | 322.9 KiB | [pgroonga_13-4.0.4-1.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgroonga_13-4.0.4-1.el10.aarch64.rpm) |
 | `postgresql-13-pgroonga` | 4.0.0 | `d12.x86_64` | pigsty | 738.3 KiB | [postgresql-13-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-13-pgroonga_4.0.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgroonga` | 4.0.0 | `d12.aarch64` | pigsty | 730.7 KiB | [postgresql-13-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgroonga/postgresql-13-pgroonga_4.0.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-pgroonga` | 4.0.0 | `u22.x86_64` | pigsty | 786.0 KiB | [postgresql-13-pgroonga_4.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-13-pgroonga_4.0.0-1PIGSTY~jammy_amd64.deb) |

@@ -14,7 +14,7 @@ Dummy extension for compatibility when upgrading from Postgres 9.4
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9501** | {{< badge content="pglogical_origin" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical_origin" "pglogical" >}} | `2.4.5` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **9501** | {{< badge content="pglogical_origin" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< ext "pglogical_origin" "pglogical" >}} | `2.4.6` | {{< category "ETL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,8 +32,8 @@ Dummy extension for compatibility when upgrading from Postgres 9.4
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< bg "18" "pglogical_18*" "red" >}} {{< bg "17" "pglogical_17*" "green" >}} {{< bg "16" "pglogical_16*" "green" >}} {{< bg "15" "pglogical_15*" "green" >}} {{< bg "14" "pglogical_14*" "green" >}} {{< bg "13" "pglogical_13*" "green" >}} | `pglogical_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.5` | {{< bg "18" "postgresql-18-pglogical" "red" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} {{< bg "13" "postgresql-13-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.6` | {{< bg "18" "pglogical_18*" "green" >}} {{< bg "17" "pglogical_17*" "green" >}} {{< bg "16" "pglogical_16*" "green" >}} {{< bg "15" "pglogical_15*" "green" >}} {{< bg "14" "pglogical_14*" "green" >}} {{< bg "13" "pglogical_13*" "green" >}} | `pglogical_$v*` | - |
+| **Debian** | {{< badge content="PGDG" link="/e/pglogical" >}} | `2.4.6` | {{< bg "18" "postgresql-18-pglogical" "green" >}} {{< bg "17" "postgresql-17-pglogical" "green" >}} {{< bg "16" "postgresql-16-pglogical" "green" >}} {{< bg "15" "postgresql-15-pglogical" "green" >}} {{< bg "14" "postgresql-14-pglogical" "green" >}} {{< bg "13" "postgresql-13-pglogical" "green" >}} | `postgresql-$v-pglogical` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -83,6 +83,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pglogical_origin; # install by extension name, for the current active PG version
 pig ext install pglogical; # install via package alias, for the active PG version
+pig ext install pglogical_origin -v 18;   # install for PG 18
 pig ext install pglogical_origin -v 17;   # install for PG 17
 pig ext install pglogical_origin -v 16;   # install for PG 16
 pig ext install pglogical_origin -v 15;   # install for PG 15

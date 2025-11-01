@@ -14,7 +14,7 @@ DuckDB Embedded in Postgres
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.0.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.1.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,27 +24,28 @@ DuckDB Embedded in Postgres
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "pg_mooncake" >}} |
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "orioledb" >}} |
 
-> [!Note] invalidate duckdb_fdw, broken on el8 due to c++ too low
+> [!Note] conflict with duckdb_fdw
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.0.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.1.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : BREAK 1" "orange" >}}      |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
-|    `el8.aarch64`    |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : BREAK 1" "orange" >}}      |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
-|    `el9.x86_64`    | {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
-|    `el9.aarch64`    | {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
-|    `el10.x86_64`    | {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
-|    `el10.aarch64`    | {{< bg "PIGSTY 1.0.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el8.x86_64`    |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : BREAK 1" "orange" >}}      |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el8.aarch64`    |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : BREAK 1" "orange" >}}      |      {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : BREAK 1" "orange" >}}      |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el9.x86_64`    | {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el9.aarch64`    | {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el10.x86_64`    | {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
+|    `el10.aarch64`    | {{< bg "PIGSTY 1.1.0" "pg_duckdb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.0" "pg_duckdb_14 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_duckdb_13 : MISS 0" "red" >}}      |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-duckdb : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-duckdb : MISS 0" "red" >}}      |
 |    `d12.aarch64`    |      {{< bg "MISS" "postgresql-18-pg-duckdb : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.3.1" "postgresql-17-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-16-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-15-pg-duckdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.1" "postgresql-14-pg-duckdb : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-13-pg-duckdb : MISS 0" "red" >}}      |
 |    `d13.x86_64`    |      {{< bg "MISS" "postgresql-18-pg-duckdb : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-duckdb : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-duckdb : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-duckdb : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-duckdb : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-duckdb : MISS 0" "red" >}}      |
@@ -60,26 +61,26 @@ DuckDB Embedded in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_18` | 1.0.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_18-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_18` | 1.0.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_18-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_18` | 1.0.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_18-1.0.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_18` | 1.0.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_18-1.0.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_18` | 1.0.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_18-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_18` | 1.0.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_18-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_18-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_18-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_18-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_18-1.1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_18-1.1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_18-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_duckdb_18` | 1.1.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_18-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_18-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_17` | 1.0.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_17-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_17` | 1.0.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_17-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_17` | 1.0.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_17-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_17-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_17-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_17-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_duckdb_17` | 0.3.1 | `el9.x86_64` | pigsty | 14.2 MiB | [pg_duckdb_17-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_17-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_17` | 1.0.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_17-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_17-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_duckdb_17` | 0.3.1 | `el9.aarch64` | pigsty | 12.9 MiB | [pg_duckdb_17-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_17-0.3.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_17` | 1.0.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_17-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_17` | 1.0.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_17-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_17-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_17-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_duckdb_17` | 1.1.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_17-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_17-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-duckdb` | 0.3.1 | `d12.x86_64` | pigsty | 12.3 MiB | [postgresql-17-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-duckdb` | 0.3.1 | `d12.aarch64` | pigsty | 10.7 MiB | [postgresql-17-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-duckdb` | 0.3.1 | `u22.x86_64` | pigsty | 14.2 MiB | [postgresql-17-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-17-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -92,14 +93,14 @@ DuckDB Embedded in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_16` | 1.0.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_16-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_16` | 1.0.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_16-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_16` | 1.0.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_16-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_16-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_16-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_16-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_duckdb_16` | 0.3.1 | `el9.x86_64` | pigsty | 14.2 MiB | [pg_duckdb_16-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_16-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_16` | 1.0.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_16-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_16-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_duckdb_16` | 0.3.1 | `el9.aarch64` | pigsty | 12.9 MiB | [pg_duckdb_16-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_16-0.3.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_16` | 1.0.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_16-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_16` | 1.0.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_16-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_16-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el10.x86_64` | pigsty | 15.0 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_16-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_duckdb_16` | 1.1.0 | `el10.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_16-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_16-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-duckdb` | 0.3.1 | `d12.x86_64` | pigsty | 12.3 MiB | [postgresql-16-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-duckdb` | 0.3.1 | `d12.aarch64` | pigsty | 10.7 MiB | [postgresql-16-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-duckdb` | 0.3.1 | `u22.x86_64` | pigsty | 14.1 MiB | [postgresql-16-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-16-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -112,14 +113,14 @@ DuckDB Embedded in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_15` | 1.0.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_15-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_15` | 1.0.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_15-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_15` | 1.0.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_15-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_15-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_15-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_15-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_duckdb_15` | 0.3.1 | `el9.x86_64` | pigsty | 14.2 MiB | [pg_duckdb_15-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_15-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_15` | 1.0.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_15-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_15-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_duckdb_15` | 0.3.1 | `el9.aarch64` | pigsty | 12.9 MiB | [pg_duckdb_15-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_15-0.3.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_15` | 1.0.0 | `el10.x86_64` | pigsty | 15.1 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_15-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_15` | 1.0.0 | `el10.aarch64` | pigsty | 13.4 MiB | [pg_duckdb_15-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_15-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el10.x86_64` | pigsty | 15.1 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_15-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_duckdb_15` | 1.1.0 | `el10.aarch64` | pigsty | 13.4 MiB | [pg_duckdb_15-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_15-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-duckdb` | 0.3.1 | `d12.x86_64` | pigsty | 12.4 MiB | [postgresql-15-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-duckdb` | 0.3.1 | `d12.aarch64` | pigsty | 10.7 MiB | [postgresql-15-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-duckdb` | 0.3.1 | `u22.x86_64` | pigsty | 14.2 MiB | [postgresql-15-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-15-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -132,14 +133,14 @@ DuckDB Embedded in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_duckdb_14` | 1.0.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_14-1.0.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_duckdb_14` | 1.0.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_14-1.0.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_duckdb_14` | 1.0.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_14-1.0.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el8.x86_64` | pigsty | 15.4 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_duckdb_14-1.1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el8.aarch64` | pigsty | 13.3 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_duckdb_14-1.1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el9.x86_64` | pigsty | 15.8 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_14-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_duckdb_14` | 0.3.1 | `el9.x86_64` | pigsty | 14.2 MiB | [pg_duckdb_14-0.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_duckdb_14-0.3.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_duckdb_14` | 1.0.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_14-1.0.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el9.aarch64` | pigsty | 14.2 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_14-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_duckdb_14` | 0.3.1 | `el9.aarch64` | pigsty | 12.9 MiB | [pg_duckdb_14-0.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_duckdb_14-0.3.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_duckdb_14` | 1.0.0 | `el10.x86_64` | pigsty | 15.1 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_14-1.0.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_duckdb_14` | 1.0.0 | `el10.aarch64` | pigsty | 13.4 MiB | [pg_duckdb_14-1.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_14-1.0.0-1PIGSTY.el10.aarch64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el10.x86_64` | pigsty | 15.1 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_14-1.1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_duckdb_14` | 1.1.0 | `el10.aarch64` | pigsty | 13.4 MiB | [pg_duckdb_14-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_14-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-duckdb` | 0.3.1 | `d12.x86_64` | pigsty | 12.4 MiB | [postgresql-14-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_0.3.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-duckdb` | 0.3.1 | `d12.aarch64` | pigsty | 10.7 MiB | [postgresql-14-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_0.3.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-duckdb` | 0.3.1 | `u22.x86_64` | pigsty | 14.1 MiB | [postgresql-14-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-14-pg-duckdb_0.3.1-1PIGSTY~jammy_amd64.deb) |
@@ -153,7 +154,7 @@ DuckDB Embedded in Postgres
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.0.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.1.0.tar.gz" >}}
 {{< /cards >}}
 
 

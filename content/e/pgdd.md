@@ -39,10 +39,10 @@ Introspect pg data dictionary via standard SQL
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-|    `el8.x86_64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 2" "green" >}} |
-|    `el8.aarch64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 2" "green" >}} |
-|    `el9.x86_64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 2" "green" >}} |
-|    `el9.aarch64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 2" "green" >}} |
+|    `el8.x86_64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
+|    `el8.aarch64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
+|    `el9.x86_64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
+|    `el9.aarch64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
 |    `el10.x86_64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
 |    `el10.aarch64`    | {{< bg "PIGSTY 0.6.0" "pgdd_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "pgdd_13 : AVAIL 1" "green" >}} |
 |    `d12.x86_64`    |      {{< bg "MISS" "postgresql-18-pgdd : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.6.0" "postgresql-17-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "postgresql-16-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "postgresql-15-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "postgresql-14-pgdd : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.6.0" "postgresql-13-pgdd : AVAIL 1" "green" >}} |
@@ -72,13 +72,9 @@ Introspect pg data dictionary via standard SQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgdd_17` | 0.6.0 | `el8.x86_64` | pigsty | 195.8 KiB | [pgdd_17-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_17-0.6.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el8.x86_64` | pigsty | 286.6 KiB | [pgdd_17-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_17-0.6.0-2PIGSTY.el8.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el8.aarch64` | pigsty | 183.7 KiB | [pgdd_17-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_17-0.6.0-2PIGSTY.el8.aarch64.rpm) |
-| `pgdd_17` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_17-0.6.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgdd_17` | 0.6.0 | `el9.x86_64` | pigsty | 200.4 KiB | [pgdd_17-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_17-0.6.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el9.x86_64` | pigsty | 300.5 KiB | [pgdd_17-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_17-0.6.0-2PIGSTY.el9.x86_64.rpm) |
-| `pgdd_17` | 0.6.0 | `el9.aarch64` | pigsty | 198.2 KiB | [pgdd_17-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_17-0.6.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgdd_17` | 0.6.0 | `el9.aarch64` | pigsty | 195.5 KiB | [pgdd_17-0.6.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_17-0.6.0-2PIGSTY.el9.aarch64.rpm) |
 | `pgdd_17` | 0.6.0 | `el10.x86_64` | pigsty | 300.8 KiB | [pgdd_17-0.6.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgdd_17-0.6.0-2PIGSTY.el10.x86_64.rpm) |
 | `pgdd_17` | 0.6.0 | `el10.aarch64` | pigsty | 194.9 KiB | [pgdd_17-0.6.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgdd_17-0.6.0-2PIGSTY.el10.aarch64.rpm) |
@@ -95,12 +91,8 @@ Introspect pg data dictionary via standard SQL
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgdd_16` | 0.6.0 | `el8.x86_64` | pigsty | 286.6 KiB | [pgdd_16-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_16-0.6.0-2PIGSTY.el8.x86_64.rpm) |
-| `pgdd_16` | 0.6.0 | `el8.x86_64` | pigsty | 195.8 KiB | [pgdd_16-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_16-0.6.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgdd_16` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_16-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_16-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_16` | 0.6.0 | `el8.aarch64` | pigsty | 183.7 KiB | [pgdd_16-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_16-0.6.0-2PIGSTY.el8.aarch64.rpm) |
 | `pgdd_16` | 0.6.0 | `el9.x86_64` | pigsty | 300.4 KiB | [pgdd_16-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_16-0.6.0-2PIGSTY.el9.x86_64.rpm) |
-| `pgdd_16` | 0.6.0 | `el9.x86_64` | pigsty | 200.3 KiB | [pgdd_16-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_16-0.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgdd_16` | 0.6.0 | `el9.aarch64` | pigsty | 198.2 KiB | [pgdd_16-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_16-0.6.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgdd_16` | 0.6.0 | `el9.aarch64` | pigsty | 195.6 KiB | [pgdd_16-0.6.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_16-0.6.0-2PIGSTY.el9.aarch64.rpm) |
 | `pgdd_16` | 0.6.0 | `el10.x86_64` | pigsty | 300.7 KiB | [pgdd_16-0.6.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgdd_16-0.6.0-2PIGSTY.el10.x86_64.rpm) |
 | `pgdd_16` | 0.6.0 | `el10.aarch64` | pigsty | 194.8 KiB | [pgdd_16-0.6.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgdd_16-0.6.0-2PIGSTY.el10.aarch64.rpm) |
@@ -116,13 +108,9 @@ Introspect pg data dictionary via standard SQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgdd_15` | 0.6.0 | `el8.x86_64` | pigsty | 195.7 KiB | [pgdd_15-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_15-0.6.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgdd_15` | 0.6.0 | `el8.x86_64` | pigsty | 286.2 KiB | [pgdd_15-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_15-0.6.0-2PIGSTY.el8.x86_64.rpm) |
 | `pgdd_15` | 0.6.0 | `el8.aarch64` | pigsty | 183.6 KiB | [pgdd_15-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_15-0.6.0-2PIGSTY.el8.aarch64.rpm) |
-| `pgdd_15` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_15-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_15-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_15` | 0.6.0 | `el9.x86_64` | pigsty | 300.4 KiB | [pgdd_15-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_15-0.6.0-2PIGSTY.el9.x86_64.rpm) |
-| `pgdd_15` | 0.6.0 | `el9.x86_64` | pigsty | 200.3 KiB | [pgdd_15-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_15-0.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgdd_15` | 0.6.0 | `el9.aarch64` | pigsty | 198.1 KiB | [pgdd_15-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_15-0.6.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgdd_15` | 0.6.0 | `el9.aarch64` | pigsty | 195.7 KiB | [pgdd_15-0.6.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_15-0.6.0-2PIGSTY.el9.aarch64.rpm) |
 | `pgdd_15` | 0.6.0 | `el10.x86_64` | pigsty | 300.4 KiB | [pgdd_15-0.6.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgdd_15-0.6.0-2PIGSTY.el10.x86_64.rpm) |
 | `pgdd_15` | 0.6.0 | `el10.aarch64` | pigsty | 194.7 KiB | [pgdd_15-0.6.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgdd_15-0.6.0-2PIGSTY.el10.aarch64.rpm) |
@@ -138,14 +126,10 @@ Introspect pg data dictionary via standard SQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgdd_14` | 0.6.0 | `el8.x86_64` | pigsty | 195.8 KiB | [pgdd_14-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_14-0.6.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgdd_14` | 0.6.0 | `el8.x86_64` | pigsty | 286.2 KiB | [pgdd_14-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_14-0.6.0-2PIGSTY.el8.x86_64.rpm) |
 | `pgdd_14` | 0.6.0 | `el8.aarch64` | pigsty | 183.7 KiB | [pgdd_14-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_14-0.6.0-2PIGSTY.el8.aarch64.rpm) |
-| `pgdd_14` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_14-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_14-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_14` | 0.6.0 | `el9.x86_64` | pigsty | 300.4 KiB | [pgdd_14-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_14-0.6.0-2PIGSTY.el9.x86_64.rpm) |
-| `pgdd_14` | 0.6.0 | `el9.x86_64` | pigsty | 199.9 KiB | [pgdd_14-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_14-0.6.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgdd_14` | 0.6.0 | `el9.aarch64` | pigsty | 195.7 KiB | [pgdd_14-0.6.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_14-0.6.0-2PIGSTY.el9.aarch64.rpm) |
-| `pgdd_14` | 0.6.0 | `el9.aarch64` | pigsty | 198.1 KiB | [pgdd_14-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_14-0.6.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgdd_14` | 0.6.0 | `el10.x86_64` | pigsty | 300.0 KiB | [pgdd_14-0.6.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgdd_14-0.6.0-2PIGSTY.el10.x86_64.rpm) |
 | `pgdd_14` | 0.6.0 | `el10.aarch64` | pigsty | 194.8 KiB | [pgdd_14-0.6.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgdd_14-0.6.0-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgdd` | 0.6.0 | `d12.x86_64` | pigsty | 159.0 KiB | [postgresql-14-pgdd_0.6.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdd/postgresql-14-pgdd_0.6.0-1PIGSTY~bookworm_amd64.deb) |
@@ -160,13 +144,9 @@ Introspect pg data dictionary via standard SQL
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgdd_13` | 0.6.0 | `el8.x86_64` | pigsty | 195.8 KiB | [pgdd_13-0.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_13-0.6.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgdd_13` | 0.6.0 | `el8.x86_64` | pigsty | 286.8 KiB | [pgdd_13-0.6.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgdd_13-0.6.0-2PIGSTY.el8.x86_64.rpm) |
 | `pgdd_13` | 0.6.0 | `el8.aarch64` | pigsty | 183.7 KiB | [pgdd_13-0.6.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_13-0.6.0-2PIGSTY.el8.aarch64.rpm) |
-| `pgdd_13` | 0.6.0 | `el8.aarch64` | pigsty | 185.7 KiB | [pgdd_13-0.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgdd_13-0.6.0-1PIGSTY.el8.aarch64.rpm) |
 | `pgdd_13` | 0.6.0 | `el9.x86_64` | pigsty | 300.9 KiB | [pgdd_13-0.6.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_13-0.6.0-2PIGSTY.el9.x86_64.rpm) |
-| `pgdd_13` | 0.6.0 | `el9.x86_64` | pigsty | 200.0 KiB | [pgdd_13-0.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgdd_13-0.6.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgdd_13` | 0.6.0 | `el9.aarch64` | pigsty | 198.2 KiB | [pgdd_13-0.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_13-0.6.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgdd_13` | 0.6.0 | `el9.aarch64` | pigsty | 195.8 KiB | [pgdd_13-0.6.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgdd_13-0.6.0-2PIGSTY.el9.aarch64.rpm) |
 | `pgdd_13` | 0.6.0 | `el10.x86_64` | pigsty | 300.8 KiB | [pgdd_13-0.6.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgdd_13-0.6.0-2PIGSTY.el10.x86_64.rpm) |
 | `pgdd_13` | 0.6.0 | `el10.aarch64` | pigsty | 194.8 KiB | [pgdd_13-0.6.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgdd_13-0.6.0-2PIGSTY.el10.aarch64.rpm) |
