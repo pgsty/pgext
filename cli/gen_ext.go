@@ -483,7 +483,7 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 
 	// Generate rows for each OS (already sorted by os_major, os_arch DESC in cache)
 	for _, os := range g.Cache.OSVersions {
-		b.WriteString(fmt.Sprintf("|    `%s`    |", os.OS))
+		b.WriteString(fmt.Sprintf("| %s |", OsShortcode(os.OS)))
 
 		for _, pg := range g.Cache.PGVersions {
 			key := fmt.Sprintf("%d-%s", pg, os.OS)

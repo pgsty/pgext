@@ -137,6 +137,14 @@ func LanguageShortcode(lang string) string {
 	return fmt.Sprintf(`{{< language "%s" >}}`, lang)
 }
 
+// OsShortcode generates OS badge shortcode
+func OsShortcode(os string) string {
+	if os == "" {
+		return ""
+	}
+	return fmt.Sprintf(`{{< os "%s" >}}`, os)
+}
+
 // PGVerShortcode generates PostgreSQL version badges
 func PGVerShortcode(versions []int, supported []int) string {
 	if len(versions) == 0 {

@@ -625,3 +625,37 @@ CREATE OPERATOR CLASS pgext.version_ops DEFAULT FOR TYPE pgext.version USING btr
     OPERATOR 1 pgext.<, OPERATOR 2 pgext.<=, OPERATOR 3 pgext.=, OPERATOR 4 pgext.>=, OPERATOR 5 pgext.>,
     FUNCTION 1 pgext.version_cmp(pgext.version, pgext.version);
 
+
+-----------------------------------
+-- View: Extension Summary
+-----------------------------------
+CREATE OR REPLACE VIEW pgext.summary AS
+SELECT 1::INTEGER AS id, 'ALL Extensions' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
+       count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14, count(*) FILTER ( WHERE pg_ver @> '{13}') AS pg13
+FROM pgext.extension
+UNION ALL
+SELECT 2::INTEGER AS id, 'EL Extensions' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
+       count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14, count(*) FILTER ( WHERE rpm_pg @> '{13}') AS pg13
+FROM pgext.extension WHERE rpm_repo IS NOT NULL
+UNION ALL
+SELECT 3::INTEGER AS id, 'Debian Extensions' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension) - count(*) AS miss,
+       count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14, count(*) FILTER ( WHERE deb_pg @> '{13}') AS pg13
+FROM pgext.extension WHERE deb_repo IS NOT NULL
+UNION ALL
+SELECT 4::INTEGER AS id, 'ALL Packages' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, 0 AS miss,
+       count(*) FILTER ( WHERE pg_ver @> '{18}') AS pg18,count(*) FILTER ( WHERE pg_ver @> '{17}') AS pg17,count(*) FILTER ( WHERE pg_ver @> '{16}') AS pg16,count(*) FILTER ( WHERE pg_ver @> '{15}') AS pg15,count(*) FILTER ( WHERE pg_ver @> '{14}') AS pg14, count(*) FILTER ( WHERE pg_ver @> '{13}') AS pg13
+FROM pgext.extension WHERE lead AND NOT contrib
+UNION ALL
+SELECT 5::INTEGER AS id, 'EL Packages' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
+       count(*) FILTER ( WHERE rpm_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE rpm_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE rpm_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE rpm_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE rpm_pg @> '{14}') AS pg14, count(*) FILTER ( WHERE rpm_pg @> '{13}') AS pg13
+FROM pgext.extension WHERE rpm_repo IS NOT NULL AND lead AND NOT contrib
+UNION ALL
+SELECT 5::INTEGER AS id, 'Debian Packages' AS title, count(*) AS total,
+       count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
+       count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14, count(*) FILTER ( WHERE deb_pg @> '{13}') AS pg13
+FROM pgext.extension WHERE deb_repo IS NOT NULL AND lead AND NOT contrib;
