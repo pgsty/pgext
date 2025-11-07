@@ -154,8 +154,8 @@ Changing data capture in JSON format
 | `wal2json_14` | 2.5 | `el8.x86_64` | pgdg | 32.4 KiB | [wal2json_14-2.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.5-1.rhel8.x86_64.rpm) |
 | `wal2json_14` | 2.4 | `el8.x86_64` | pgdg | 76.4 KiB | [wal2json_14-2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/wal2json_14-2.4-1.rhel8.x86_64.rpm) |
 | `wal2json_14` | 2.6 | `el8.aarch64` | pgdg | 31.2 KiB | [wal2json_14-2.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.6-1PGDG.rhel8.aarch64.rpm) |
-| `wal2json_14` | 2.5 | `el8.aarch64` | pgdg | 30.6 KiB | [wal2json_14-2.5-2.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.5-2.rhel8.aarch64.rpm) |
 | `wal2json_14` | 2.5 | `el8.aarch64` | pgdg | 30.5 KiB | [wal2json_14-2.5-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.5-1.rhel8.aarch64.rpm) |
+| `wal2json_14` | 2.5 | `el8.aarch64` | pgdg | 30.6 KiB | [wal2json_14-2.5-2.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/wal2json_14-2.5-2.rhel8.aarch64.rpm) |
 | `wal2json_14` | 2.5 | `el9.x86_64` | pgdg | 32.1 KiB | [wal2json_14-2.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/wal2json_14-2.5-1.rhel9.x86_64.rpm) |
 | `wal2json_14` | 2.6 | `el9.aarch64` | pgdg | 30.7 KiB | [wal2json_14-2.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.6-1PGDG.rhel9.aarch64.rpm) |
 | `wal2json_14` | 2.5 | `el9.aarch64` | pgdg | 30.6 KiB | [wal2json_14-2.5-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/wal2json_14-2.5-2.rhel9.aarch64.rpm) |

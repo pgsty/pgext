@@ -89,7 +89,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v*` | `postgresql-$v-imgsmlr` |
 | {{< ext "pg_ivm" >}} | `1.13` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v*` | `postgresql-$v-pg-ivm` |
 | {{< ext "pg_incremental" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v*` | `postgresql-$v-pg-incremental` |
-| {{< ext "pgmq" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
+| {{< ext "pgmq" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
 | {{< ext "pgq" >}} | `3.5.1` | {{< badge content="Link" link="https://github.com/pgq/pgq" >}} | {{< category "FEAT" >}} | `pgq_$v*` | `postgresql-$v-pgq3` |
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v*` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
@@ -107,7 +107,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "plsh" >}} | `1.20220917` | {{< badge content="Link" link="https://github.com/petere/plsh" >}} | {{< category "LANG" >}} | `plsh_$v*` | `postgresql-$v-plsh` |
 | {{< ext "pljava" >}} | `1.6.10` | {{< badge content="Link" link="https://github.com/tada/pljava" >}} | {{< category "LANG" >}} | `pljava_$v*` | `postgresql-$v-pljava` |
 | {{< ext "plr" >}} | `8.4.8` | {{< badge content="Link" link="https://github.com/postgres-plr/plr" >}} | {{< category "LANG" >}} | `plr_$v*` | `postgresql-$v-plr` |
-| {{< ext "plxslt" >}} | `0.20140221` | {{< badge content="Link" link="https://github.com/petere/plxslt" >}} | {{< category "LANG" >}} | `plxslt_$v*` | - |
+| {{< ext "plxslt" >}} | `0.20140221` | {{< badge content="Link" link="https://github.com/petere/plxslt" >}} | {{< category "LANG" >}} | `plxslt_$v*` | `postgresql-$v-plxslt` |
 | {{< ext "pgtap" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/theory/pgtap" >}} | {{< category "LANG" >}} | `pgtap_$v*` | `postgresql-$v-pgtap` |
 | {{< ext "faker" >}} | `0.5.3` | {{< badge content="Link" link="https://github.com/anpandu/postgresql_faker" >}} | {{< category "LANG" >}} | `postgresql_faker_$v*` | - |
 | {{< ext "dbt2" >}} | `0.61.7` | {{< badge content="Link" link="https://github.com/osdldbt/dbt2" >}} | {{< category "LANG" >}} | `dbt2-pg$v-extensions*` | - |
@@ -163,7 +163,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "pg_smtp_client" >}} | `0.2.1` | {{< badge content="Link" link="https://github.com/brianpursley/pg_smtp_client" >}} | {{< category "UTIL" >}} | `pg_smtp_client_$v` | `postgresql-$v-pg-smtp-client` |
 | {{< ext "pg_html5_email_address" >}} | `1.2.3` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_html5_email_address" >}} | {{< category "UTIL" >}} | `pg_html5_email_address_$v` | `postgresql-$v-pg-html5-email-address` |
 | {{< ext "url_encode" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/okbob/url_encode" >}} | {{< category "UTIL" >}} | `url_encode_$v*` | `postgresql-$v-url-encode` |
-| {{< ext "pgsql_tweaks" >}} | `0.11.3` | {{< badge content="Link" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< category "UTIL" >}} | `pgsql_tweaks_$v` | `postgresql-$v-pgsql-tweaks` |
+| {{< ext "pgsql_tweaks" >}} | `1.0.2` | {{< badge content="Link" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< category "UTIL" >}} | `pgsql_tweaks_$v` | `postgresql-$v-pgsql-tweaks` |
 | {{< ext "pg_extra_time" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_extra_time" >}} | {{< category "UTIL" >}} | `pg_extra_time_$v` | `postgresql-$v-pg-extra-time` |
 | {{< ext "pgpcre" >}} | `0.20190509` | {{< badge content="Link" link="https://github.com/petere/pgpcre" >}} | {{< category "UTIL" >}} | `pgpcre_$v` | `postgresql-$v-pgpcre` |
 | {{< ext "icu_ext" >}} | `1.10.0` | {{< badge content="Link" link="https://github.com/dverite/icu_ext" >}} | {{< category "UTIL" >}} | `icu_ext_$v*` | `postgresql-$v-icu-ext` |
@@ -202,7 +202,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "floatvec" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/pjungwir/floatvec" >}} | {{< category "FUNC" >}} | `floatvec_$v*` | `postgresql-$v-floatvec` |
 | {{< ext "aggs_for_vecs" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< category "FUNC" >}} | `aggs_for_vecs_$v*` | `postgresql-$v-aggs-for-vecs` |
 | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< category "FUNC" >}} | `aggs_for_arrays_$v*` | `postgresql-$v-aggs-for-arrays` |
-| {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v*` | - |
+| {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v*` | `postgresql-$v-pg-csv` |
 | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< category "FUNC" >}} | `pg_arraymath_$v*` | `postgresql-$v-pg-arraymath` |
 | {{< ext "pg_math" >}} | `1.0` | {{< badge content="Link" link="https://github.com/chanukyasds/pg_math" >}} | {{< category "FUNC" >}} | `pg_math_$v*` | `postgresql-$v-pg-math` |
 | {{< ext "random" "pg_random" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/tvondra/random" >}} | {{< category "FUNC" >}} | `pg_random_$v*` | `postgresql-$v-random` |
@@ -388,7 +388,7 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "emaj" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
 | {{< ext "table_version" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL table versioning extension |
 | {{< ext "pg_cron" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Job scheduler for PostgreSQL |
-| {{< ext "pg_task" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | execute any sql command at any specific time at background |
+| {{< ext "pg_task" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | execute any sql command at any specific time at background |
 | {{< ext "pg_later" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Run queries now and get results later |
 | {{< ext "pg_background" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Run SQL queries in the background |
 | {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS geometry and geography spatial types and functions |
@@ -524,7 +524,7 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PL/sh procedural language |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PL/Java procedural language |
 | {{< ext "plr" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | load R interpreter and execute R script from within a database |
-| {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | XSLT procedural language for PostgreSQL |
+| {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | XSLT procedural language for PostgreSQL |
 | {{< ext "pgtap" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Unit testing for PostgreSQL |
 | {{< ext "faker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Wrapper for the Faker Python library |
 | {{< ext "dbt2" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | OSDL-DBT-2 test kit |
@@ -677,7 +677,7 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Provides cheat (but useful) functions |
 | {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostgreSQL File I/O Functions |
 | {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Postgres extension to save OOPS mistakes |
-| {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | Require criteria for UPDATE and DELETE |
+| {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sL---" color="blue" >}} | Require criteria for UPDATE and DELETE |
 | {{< ext "pg_drop_events" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
 | {{< ext "table_log" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | record table modification logs and PITR for table/row |
 | {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A PostgreSQL job scheduler |
@@ -696,7 +696,7 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "pg_tracing" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | Distributed Tracing for PostgreSQL |
 | {{< ext "pg_show_plans" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | show query plans of all currently running SQL statements |
 | {{< ext "pg_stat_kcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Kernel statistics gathering |
-| {{< ext "pg_stat_monitor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib m |
+| {{< ext "pg_stat_monitor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib m |
 | {{< ext "pg_qualstats" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | An extension collecting statistics about quals |
 | {{< ext "pg_store_plans" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | track plan statistics of all SQL statements executed |
 | {{< ext "pg_track_settings" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | Track settings changes |

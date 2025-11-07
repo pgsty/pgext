@@ -73,7 +73,7 @@ SQLite Foreign Data Wrapper
 | `sqlite_fdw_17` | 2.5.0 | `el10.aarch64` | pigsty | 65.1 KiB | [sqlite_fdw_17-2.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sqlite_fdw_17-2.5.0-2PIGSTY.el10.aarch64.rpm) |
 | `sqlite_fdw_17` | 2.5.0 | `el10.aarch64` | pgdg | 64.6 KiB | [sqlite_fdw_17-2.5.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/sqlite_fdw_17-2.5.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 153.7 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 149.1 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 148.9 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-sqlite-fdw` | 2.5.0 | `u22.x86_64` | pigsty | 188.4 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-17-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 185.7 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 159.5 KiB | [postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-17-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
@@ -96,11 +96,11 @@ SQLite Foreign Data Wrapper
 | `sqlite_fdw_16` | 2.5.0 | `el10.x86_64` | pgdg | 65.8 KiB | [sqlite_fdw_16-2.5.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/sqlite_fdw_16-2.5.0-2PGDG.rhel10.x86_64.rpm) |
 | `sqlite_fdw_16` | 2.5.0 | `el10.aarch64` | pigsty | 64.2 KiB | [sqlite_fdw_16-2.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sqlite_fdw_16-2.5.0-2PIGSTY.el10.aarch64.rpm) |
 | `sqlite_fdw_16` | 2.5.0 | `el10.aarch64` | pgdg | 63.8 KiB | [sqlite_fdw_16-2.5.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/sqlite_fdw_16-2.5.0-2PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 151.6 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 147.5 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 151.7 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 147.4 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-sqlite-fdw` | 2.5.0 | `u22.x86_64` | pigsty | 183.5 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 181.0 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 157.1 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 157.0 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 155.1 KiB | [postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-16-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
@@ -129,11 +129,11 @@ SQLite Foreign Data Wrapper
 | `sqlite_fdw_15` | 2.5.0 | `el10.aarch64` | pigsty | 66.7 KiB | [sqlite_fdw_15-2.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sqlite_fdw_15-2.5.0-2PIGSTY.el10.aarch64.rpm) |
 | `sqlite_fdw_15` | 2.5.0 | `el10.aarch64` | pgdg | 66.0 KiB | [sqlite_fdw_15-2.5.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/sqlite_fdw_15-2.5.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 152.6 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 148.3 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 148.2 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-sqlite-fdw` | 2.5.0 | `u22.x86_64` | pigsty | 185.2 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 183.0 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 158.7 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 157.3 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 158.6 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 157.2 KiB | [postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-15-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -162,11 +162,11 @@ SQLite Foreign Data Wrapper
 | `sqlite_fdw_14` | 2.5.0 | `el10.aarch64` | pigsty | 66.7 KiB | [sqlite_fdw_14-2.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sqlite_fdw_14-2.5.0-2PIGSTY.el10.aarch64.rpm) |
 | `sqlite_fdw_14` | 2.5.0 | `el10.aarch64` | pgdg | 66.0 KiB | [sqlite_fdw_14-2.5.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/sqlite_fdw_14-2.5.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 152.8 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 148.6 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 148.5 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-sqlite-fdw` | 2.5.0 | `u22.x86_64` | pigsty | 185.4 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 183.2 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 159.2 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 157.5 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 183.4 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 159.1 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 157.4 KiB | [postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-14-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -196,12 +196,12 @@ SQLite Foreign Data Wrapper
 | `sqlite_fdw_13` | 2.5.0 | `el10.x86_64` | pgdg | 65.1 KiB | [sqlite_fdw_13-2.5.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/sqlite_fdw_13-2.5.0-2PGDG.rhel10.x86_64.rpm) |
 | `sqlite_fdw_13` | 2.5.0 | `el10.aarch64` | pigsty | 63.9 KiB | [sqlite_fdw_13-2.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/sqlite_fdw_13-2.5.0-2PIGSTY.el10.aarch64.rpm) |
 | `sqlite_fdw_13` | 2.5.0 | `el10.aarch64` | pgdg | 63.3 KiB | [sqlite_fdw_13-2.5.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/sqlite_fdw_13-2.5.0-2PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 145.7 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 141.8 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-sqlite-fdw` | 2.5.0 | `d12.x86_64` | pigsty | 145.9 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-sqlite-fdw` | 2.5.0 | `d12.aarch64` | pigsty | 141.7 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-13-sqlite-fdw` | 2.5.0 | `u22.x86_64` | pigsty | 174.7 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-13-sqlite-fdw` | 2.5.0 | `u22.aarch64` | pigsty | 172.8 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 152.1 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 150.6 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-13-sqlite-fdw` | 2.5.0 | `u24.x86_64` | pigsty | 151.7 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-sqlite-fdw` | 2.5.0 | `u24.aarch64` | pigsty | 150.5 KiB | [postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/sqlite-fdw/postgresql-13-sqlite-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

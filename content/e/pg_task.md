@@ -31,8 +31,8 @@ execute any sql command at any specific time at background
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_task" >}} | `2.1.7` | {{< bg "18" "pg_task_18*" "red" >}} {{< bg "17" "pg_task_17*" "green" >}} {{< bg "16" "pg_task_16*" "green" >}} {{< bg "15" "pg_task_15*" "green" >}} {{< bg "14" "pg_task_14*" "green" >}} {{< bg "13" "pg_task_13*" "green" >}} | `pg_task_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_task" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pg-task" "red" >}} {{< bg "17" "postgresql-17-pg-task" "green" >}} {{< bg "16" "postgresql-16-pg-task" "green" >}} {{< bg "15" "postgresql-15-pg-task" "green" >}} {{< bg "14" "postgresql-14-pg-task" "green" >}} {{< bg "13" "postgresql-13-pg-task" "green" >}} | `postgresql-$v-pg-task` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pg_task" >}} | `2.1.7` | {{< bg "18" "pg_task_18*" "green" >}} {{< bg "17" "pg_task_17*" "green" >}} {{< bg "16" "pg_task_16*" "green" >}} {{< bg "15" "pg_task_15*" "green" >}} {{< bg "14" "pg_task_14*" "green" >}} {{< bg "13" "pg_task_13*" "green" >}} | `pg_task_$v*` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/pg_task" >}} | `2.1.27` | {{< bg "18" "postgresql-18-pg-task" "green" >}} {{< bg "17" "postgresql-17-pg-task" "green" >}} {{< bg "16" "postgresql-16-pg-task" "green" >}} {{< bg "15" "postgresql-15-pg-task" "green" >}} {{< bg "14" "postgresql-14-pg-task" "green" >}} {{< bg "13" "postgresql-13-pg-task" "green" >}} | `postgresql-$v-pg-task` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -47,8 +47,8 @@ execute any sql command at any specific time at background
 | {{< os "d12.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-task : MISS 0" "red" >}}      |
 | {{< os "d13.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-13-pg-task : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.27" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.0" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-14-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.0" "postgresql-13-pg-task : AVAIL 1" "green" >}} |
 
@@ -64,6 +64,8 @@ execute any sql command at any specific time at background
 | `pg_task_18` | 2.1.7 | `el9.aarch64` | pgdg | 54.5 KiB | [pg_task_18-2.1.7-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_task_18-2.1.7-3PGDG.rhel9.aarch64.rpm) |
 | `pg_task_18` | 2.1.7 | `el10.x86_64` | pgdg | 59.7 KiB | [pg_task_18-2.1.7-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_task_18-2.1.7-3PGDG.rhel10.x86_64.rpm) |
 | `pg_task_18` | 2.1.7 | `el10.aarch64` | pgdg | 56.3 KiB | [pg_task_18-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_task_18-2.1.7-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 147.8 KiB | [postgresql-18-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-18-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 145.5 KiB | [postgresql-18-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-18-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -78,8 +80,8 @@ execute any sql command at any specific time at background
 | `pg_task_17` | 2.1.7 | `el10.aarch64` | pgdg | 56.2 KiB | [pg_task_17-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_task_17-2.1.7-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pg-task` | 1.0.0 | `d12.x86_64` | pigsty | 192.7 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-task` | 1.0.0 | `d12.aarch64` | pigsty | 183.9 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-task` | 1.0.0 | `u22.x86_64` | pigsty | 229.7 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-task` | 1.0.0 | `u22.aarch64` | pigsty | 219.6 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 173.4 KiB | [postgresql-17-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-17-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 170.3 KiB | [postgresql-17-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-17-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-task` | 1.0.0 | `u24.x86_64` | pigsty | 193.9 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-task` | 1.0.0 | `u24.aarch64` | pigsty | 184.0 KiB | [postgresql-17-pg-task_1.0.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-17-pg-task_1.0.0-3PIGSTY~noble_arm64.deb) |
 
@@ -100,8 +102,8 @@ execute any sql command at any specific time at background
 | `pg_task_16` | 2.1.7 | `el10.aarch64` | pgdg | 55.0 KiB | [pg_task_16-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_task_16-2.1.7-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pg-task` | 1.0.0 | `d12.x86_64` | pigsty | 192.3 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-task` | 1.0.0 | `d12.aarch64` | pigsty | 183.3 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-task` | 1.0.0 | `u22.x86_64` | pigsty | 226.9 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-task` | 1.0.0 | `u22.aarch64` | pigsty | 216.6 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 171.4 KiB | [postgresql-16-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-16-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 168.4 KiB | [postgresql-16-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-16-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-task` | 1.0.0 | `u24.x86_64` | pigsty | 193.0 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-task` | 1.0.0 | `u24.aarch64` | pigsty | 183.1 KiB | [postgresql-16-pg-task_1.0.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-16-pg-task_1.0.0-3PIGSTY~noble_arm64.deb) |
 
@@ -122,8 +124,8 @@ execute any sql command at any specific time at background
 | `pg_task_15` | 2.1.7 | `el10.aarch64` | pgdg | 69.5 KiB | [pg_task_15-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_task_15-2.1.7-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pg-task` | 1.0.0 | `d12.x86_64` | pigsty | 193.0 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-task` | 1.0.0 | `d12.aarch64` | pigsty | 183.5 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-task` | 1.0.0 | `u22.x86_64` | pigsty | 236.4 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-task` | 1.0.0 | `u22.aarch64` | pigsty | 229.3 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 173.2 KiB | [postgresql-15-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-15-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 170.2 KiB | [postgresql-15-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-15-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-task` | 1.0.0 | `u24.x86_64` | pigsty | 202.5 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-task` | 1.0.0 | `u24.aarch64` | pigsty | 195.6 KiB | [postgresql-15-pg-task_1.0.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-15-pg-task_1.0.0-3PIGSTY~noble_arm64.deb) |
 
@@ -144,8 +146,8 @@ execute any sql command at any specific time at background
 | `pg_task_14` | 2.1.7 | `el10.aarch64` | pgdg | 69.4 KiB | [pg_task_14-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_task_14-2.1.7-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pg-task` | 1.0.0 | `d12.x86_64` | pigsty | 192.5 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-task` | 1.0.0 | `d12.aarch64` | pigsty | 182.8 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-task` | 1.0.0 | `u22.x86_64` | pigsty | 232.1 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-task` | 1.0.0 | `u22.aarch64` | pigsty | 224.8 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 168.2 KiB | [postgresql-14-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-14-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 165.2 KiB | [postgresql-14-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-14-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-task` | 1.0.0 | `u24.x86_64` | pigsty | 201.7 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-task` | 1.0.0 | `u24.aarch64` | pigsty | 195.2 KiB | [postgresql-14-pg-task_1.0.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-14-pg-task_1.0.0-3PIGSTY~noble_arm64.deb) |
 
@@ -166,8 +168,8 @@ execute any sql command at any specific time at background
 | `pg_task_13` | 2.1.7 | `el10.aarch64` | pgdg | 69.0 KiB | [pg_task_13-2.1.7-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pg_task_13-2.1.7-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-pg-task` | 1.0.0 | `d12.x86_64` | pigsty | 191.0 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pg-task` | 1.0.0 | `d12.aarch64` | pigsty | 181.0 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pg-task` | 1.0.0 | `u22.x86_64` | pigsty | 229.1 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pg-task` | 1.0.0 | `u22.aarch64` | pigsty | 221.6 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-task` | 2.1.27 | `u22.x86_64` | pigsty | 167.8 KiB | [postgresql-13-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-13-pg-task_2.1.27-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-task` | 2.1.27 | `u22.aarch64` | pigsty | 164.9 KiB | [postgresql-13-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-13-pg-task_2.1.27-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-13-pg-task` | 1.0.0 | `u24.x86_64` | pigsty | 200.1 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~noble_amd64.deb) |
 | `postgresql-13-pg-task` | 1.0.0 | `u24.aarch64` | pigsty | 193.0 KiB | [postgresql-13-pg-task_1.0.0-3PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-13-pg-task_1.0.0-3PIGSTY~noble_arm64.deb) |
 
@@ -177,7 +179,7 @@ execute any sql command at any specific time at background
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/RekGRpth/pg_task" title="Repository" icon="github" subtitle="github.com/RekGRpth/pg_task" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_task-1.0.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_task-2.1.27.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -202,6 +204,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pg_task; # install by extension name, for the current active PG version
 pig ext install pg_task; # install via package alias, for the active PG version
+pig ext install pg_task -v 18;   # install for PG 18
 pig ext install pg_task -v 17;   # install for PG 17
 pig ext install pg_task -v 16;   # install for PG 16
 pig ext install pg_task -v 15;   # install for PG 15

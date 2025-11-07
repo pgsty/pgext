@@ -133,7 +133,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | 增量处理流式事件 |
-| 2900 | {{< alias "pgmq" >}} | 1.5.1 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2900 | {{< alias "pgmq" >}} | 1.7.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2910 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2920 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
 | 2930 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -278,7 +278,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4170 | {{< alias "pg_smtp_client" >}} | 0.2.1 | 使用SMTP从PostgreSQL内发送邮件的客户端扩展 |
 | 4180 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | 验证Email是否符合HTML5规范的扩展 |
 | 4190 | {{< alias "url_encode" >}} | 1.2.5 | 提供URL编码解码函数 |
-| 4200 | {{< alias "pgsql_tweaks" >}} | 0.11.3 | 一些日常会用到的便利函数与视图 |
+| 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.2 | 一些日常会用到的便利函数与视图 |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.0.0 | 一些关于日期与时间的扩展函数 |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | PCRE/Perl风格的正则表达式支持 |
 | 4240 | {{< alias "icu_ext" >}} | 1.10.0 | 访问ICU库提供的函数 |

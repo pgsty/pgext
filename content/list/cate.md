@@ -133,7 +133,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | Incremental Processing by Crunchy Data |
-| 2900 | {{< alias "pgmq" >}} | 1.5.1 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2900 | {{< alias "pgmq" >}} | 1.7.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2910 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2920 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
 | 2930 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
@@ -278,7 +278,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4170 | {{< alias "pg_smtp_client" >}} | 0.2.1 | PostgreSQL extension to send email using SMTP |
 | 4180 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4190 | {{< alias "url_encode" >}} | 1.2.5 | url_encode, url_decode functions |
-| 4200 | {{< alias "pgsql_tweaks" >}} | 0.11.3 | Some functions and views for daily usage |
+| 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.2 | Some functions and views for daily usage |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.0.0 | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
 | 4240 | {{< alias "icu_ext" >}} | 1.10.0 | Access ICU functions |

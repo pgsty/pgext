@@ -168,7 +168,7 @@ func (g *OSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageInf
 	b.WriteString(g.generateOSOverview(osInfo, packages))
 
 	// Availability Matrix
-	b.WriteString(g.generateOSAvailabilityMatrix(packages))
+	b.WriteString(g.generateOSAvailabilityMatrix(packages, osInfo.OS))
 
 	return b.String()
 }
@@ -244,7 +244,7 @@ func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageIn
 }
 
 // generateOSAvailabilityMatrix generates the availability matrix table
-func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo) string {
+func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, osName string) string {
 	var b strings.Builder
 
 	b.WriteString("## Extension Availability Matrix\n\n")
@@ -271,7 +271,7 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo) st
 
 		// Generate cells for each PG version
 		for _, pg := range g.Cache.PGVersions {
-			cell := g.generateOSMatrixCell(ospkg, pg)
+			cell := g.generateOSMatrixCell(ospkg, pg, osName)
 			b.WriteString(fmt.Sprintf(" %s |", cell))
 		}
 		b.WriteString("\n")
@@ -281,10 +281,48 @@ func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo) st
 }
 
 // generateOSMatrixCell generates a single cell in the availability matrix
-func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string {
+func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osName string) string {
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
-		// Not available - MISS state
+		// Not available - MISS state, but check the reason
+		// Get the extension from cache to check pg_ver and repos
+		ext, hasExt := g.Cache.PkgMap[ospkg.Pkg]
+		if hasExt {
+			// Check if the extension supports this PG version
+			pgSupported := false
+			pgStr := fmt.Sprintf("%d", pg)
+			for _, ver := range ext.PgVer {
+				if ver == pgStr {
+					pgSupported = true
+					break
+				}
+			}
+
+			// If extension doesn't support this PG version, use gray (no color)
+			if !pgSupported {
+				return Badge("✗", "", "", "", "")
+			}
+
+			// Check if the platform provides this extension
+			// Determine if this OS is RPM or DEB based
+			osPrefix := strings.Split(osName, ".")[0]
+			isRPMBased := strings.HasPrefix(osPrefix, "el")
+			isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
+
+			platformUnsupported := false
+			if isRPMBased && (!ext.RpmRepo.Valid || ext.RpmRepo.String == "") {
+				platformUnsupported = true
+			} else if isDEBBased && (!ext.DebRepo.Valid || ext.DebRepo.String == "") {
+				platformUnsupported = true
+			}
+
+			// If platform doesn't provide this extension, use amber
+			if platformUnsupported {
+				return Badge("✗", "amber", "", "", "")
+			}
+		}
+
+		// Otherwise, it's a genuine MISS - use red
 		return Badge("✗", "red", "", "", "")
 	}
 
@@ -317,6 +355,42 @@ func (g *OSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string 
 		}
 		return Badge("✓", "green", "", "", "")
 	case "MISS":
+		// Apply same logic as above for MISS state
+		ext, hasExt := g.Cache.PkgMap[ospkg.Pkg]
+		if hasExt {
+			// Check if the extension supports this PG version
+			pgSupported := false
+			pgStr := fmt.Sprintf("%d", pg)
+			for _, ver := range ext.PgVer {
+				if ver == pgStr {
+					pgSupported = true
+					break
+				}
+			}
+
+			// If extension doesn't support this PG version, use gray (no color)
+			if !pgSupported {
+				return Badge("✗", "", "", "", "")
+			}
+
+			// Check if the platform provides this extension
+			// Determine if this OS is RPM or DEB based
+			osPrefix := strings.Split(osName, ".")[0]
+			isRPMBased := strings.HasPrefix(osPrefix, "el")
+			isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
+
+			platformUnsupported := false
+			if isRPMBased && (!ext.RpmRepo.Valid || ext.RpmRepo.String == "") {
+				platformUnsupported = true
+			} else if isDEBBased && (!ext.DebRepo.Valid || ext.DebRepo.String == "") {
+				platformUnsupported = true
+			}
+
+			// If platform doesn't provide this extension, use amber
+			if platformUnsupported {
+				return Badge("✗", "amber", "", "", "")
+			}
+		}
 		return Badge("✗", "red", "", "", "")
 	case "HIDE":
 		if version != "" && org != "" {

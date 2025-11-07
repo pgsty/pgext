@@ -202,8 +202,8 @@ PostgreSQL Workload Analyser-core
 | `powa_13` | 4.2.0 | `el8.x86_64` | pgdg | 6.4 KiB | [powa_13-4.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.2.0-1PGDG.rhel8.x86_64.rpm) |
 | `powa_13` | 4.1.4 | `el8.x86_64` | pgdg | 67.7 KiB | [powa_13-4.1.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.4-1.rhel8.x86_64.rpm) |
 | `powa_13` | 4.1.3 | `el8.x86_64` | pgdg | 67.9 KiB | [powa_13-4.1.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.3-1.rhel8.x86_64.rpm) |
-| `powa_13` | 4.1.2 | `el8.x86_64` | pgdg | 65.6 KiB | [powa_13-4.1.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.2-1.rhel8.x86_64.rpm) |
 | `powa_13` | 4.1.2 | `el8.x86_64` | pgdg | 65.9 KiB | [powa_13-4.1.2-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.2-3.rhel8.x86_64.rpm) |
+| `powa_13` | 4.1.2 | `el8.x86_64` | pgdg | 65.6 KiB | [powa_13-4.1.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.2-1.rhel8.x86_64.rpm) |
 | `powa_13` | 4.1.1 | `el8.x86_64` | pgdg | 64.6 KiB | [powa_13-4.1.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/powa_13-4.1.1-1.rhel8.x86_64.rpm) |
 | `powa_13` | 5.0.1 | `el8.aarch64` | pgdg | 6.6 KiB | [powa_13-5.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/powa_13-5.0.1-1PGDG.rhel8.aarch64.rpm) |
 | `powa_13` | 4.2.2 | `el8.aarch64` | pgdg | 6.5 KiB | [powa_13-4.2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/powa_13-4.2.2-1PGDG.rhel8.aarch64.rpm) |

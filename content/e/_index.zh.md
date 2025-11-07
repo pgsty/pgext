@@ -89,7 +89,7 @@ weight: 900
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v*` | `postgresql-$v-imgsmlr` |
 | {{< ext "pg_ivm" >}} | `1.13` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v*` | `postgresql-$v-pg-ivm` |
 | {{< ext "pg_incremental" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v*` | `postgresql-$v-pg-incremental` |
-| {{< ext "pgmq" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
+| {{< ext "pgmq" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
 | {{< ext "pgq" >}} | `3.5.1` | {{< badge content="Link" link="https://github.com/pgq/pgq" >}} | {{< category "FEAT" >}} | `pgq_$v*` | `postgresql-$v-pgq3` |
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v*` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
@@ -107,7 +107,7 @@ weight: 900
 | {{< ext "plsh" >}} | `1.20220917` | {{< badge content="Link" link="https://github.com/petere/plsh" >}} | {{< category "LANG" >}} | `plsh_$v*` | `postgresql-$v-plsh` |
 | {{< ext "pljava" >}} | `1.6.10` | {{< badge content="Link" link="https://github.com/tada/pljava" >}} | {{< category "LANG" >}} | `pljava_$v*` | `postgresql-$v-pljava` |
 | {{< ext "plr" >}} | `8.4.8` | {{< badge content="Link" link="https://github.com/postgres-plr/plr" >}} | {{< category "LANG" >}} | `plr_$v*` | `postgresql-$v-plr` |
-| {{< ext "plxslt" >}} | `0.20140221` | {{< badge content="Link" link="https://github.com/petere/plxslt" >}} | {{< category "LANG" >}} | `plxslt_$v*` | - |
+| {{< ext "plxslt" >}} | `0.20140221` | {{< badge content="Link" link="https://github.com/petere/plxslt" >}} | {{< category "LANG" >}} | `plxslt_$v*` | `postgresql-$v-plxslt` |
 | {{< ext "pgtap" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/theory/pgtap" >}} | {{< category "LANG" >}} | `pgtap_$v*` | `postgresql-$v-pgtap` |
 | {{< ext "faker" >}} | `0.5.3` | {{< badge content="Link" link="https://github.com/anpandu/postgresql_faker" >}} | {{< category "LANG" >}} | `postgresql_faker_$v*` | - |
 | {{< ext "dbt2" >}} | `0.61.7` | {{< badge content="Link" link="https://github.com/osdldbt/dbt2" >}} | {{< category "LANG" >}} | `dbt2-pg$v-extensions*` | - |
@@ -163,7 +163,7 @@ weight: 900
 | {{< ext "pg_smtp_client" >}} | `0.2.1` | {{< badge content="Link" link="https://github.com/brianpursley/pg_smtp_client" >}} | {{< category "UTIL" >}} | `pg_smtp_client_$v` | `postgresql-$v-pg-smtp-client` |
 | {{< ext "pg_html5_email_address" >}} | `1.2.3` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_html5_email_address" >}} | {{< category "UTIL" >}} | `pg_html5_email_address_$v` | `postgresql-$v-pg-html5-email-address` |
 | {{< ext "url_encode" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/okbob/url_encode" >}} | {{< category "UTIL" >}} | `url_encode_$v*` | `postgresql-$v-url-encode` |
-| {{< ext "pgsql_tweaks" >}} | `0.11.3` | {{< badge content="Link" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< category "UTIL" >}} | `pgsql_tweaks_$v` | `postgresql-$v-pgsql-tweaks` |
+| {{< ext "pgsql_tweaks" >}} | `1.0.2` | {{< badge content="Link" link="https://codeberg.org/pgsql_tweaks/pgsql_tweaks" >}} | {{< category "UTIL" >}} | `pgsql_tweaks_$v` | `postgresql-$v-pgsql-tweaks` |
 | {{< ext "pg_extra_time" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_extra_time" >}} | {{< category "UTIL" >}} | `pg_extra_time_$v` | `postgresql-$v-pg-extra-time` |
 | {{< ext "pgpcre" >}} | `0.20190509` | {{< badge content="Link" link="https://github.com/petere/pgpcre" >}} | {{< category "UTIL" >}} | `pgpcre_$v` | `postgresql-$v-pgpcre` |
 | {{< ext "icu_ext" >}} | `1.10.0` | {{< badge content="Link" link="https://github.com/dverite/icu_ext" >}} | {{< category "UTIL" >}} | `icu_ext_$v*` | `postgresql-$v-icu-ext` |
@@ -202,7 +202,7 @@ weight: 900
 | {{< ext "floatvec" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/pjungwir/floatvec" >}} | {{< category "FUNC" >}} | `floatvec_$v*` | `postgresql-$v-floatvec` |
 | {{< ext "aggs_for_vecs" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< category "FUNC" >}} | `aggs_for_vecs_$v*` | `postgresql-$v-aggs-for-vecs` |
 | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< category "FUNC" >}} | `aggs_for_arrays_$v*` | `postgresql-$v-aggs-for-arrays` |
-| {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v*` | - |
+| {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v*` | `postgresql-$v-pg-csv` |
 | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< category "FUNC" >}} | `pg_arraymath_$v*` | `postgresql-$v-pg-arraymath` |
 | {{< ext "pg_math" >}} | `1.0` | {{< badge content="Link" link="https://github.com/chanukyasds/pg_math" >}} | {{< category "FUNC" >}} | `pg_math_$v*` | `postgresql-$v-pg-math` |
 | {{< ext "random" "pg_random" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/tvondra/random" >}} | {{< category "FUNC" >}} | `pg_random_$v*` | `postgresql-$v-random` |
@@ -388,7 +388,7 @@ weight: 900
 | {{< ext "emaj" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
 | {{< ext "table_version" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 版本控制表扩展 |
 | {{< ext "pg_cron" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 定时任务调度器 |
-| {{< ext "pg_task" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | 在特定时间点在后台执行SQL命令 |
+| {{< ext "pg_task" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | 在特定时间点在后台执行SQL命令 |
 | {{< ext "pg_later" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 执行查询，并在稍后异步获取查询结果 |
 | {{< ext "pg_background" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在后台运行 SQL 查询 |
 | {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostGIS 几何和地理空间扩展 |
@@ -524,7 +524,7 @@ weight: 900
 | {{< ext "plsh" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PL/sh 程序语言 |
 | {{< ext "pljava" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Java 程序语言 |
 | {{< ext "plr" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 从数据库中加载R语言解释器并执行R脚本 |
-| {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | XSLT 存储过程语言 |
+| {{< ext "plxslt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | XSLT 存储过程语言 |
 | {{< ext "pgtap" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL单元测试框架 |
 | {{< ext "faker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 插入生成的测试伪造数据，Python库的包装 |
 | {{< ext "dbt2" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | OSDL-DBT-2 测试组件 |
@@ -677,7 +677,7 @@ weight: 900
 | {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 一些超级实用的作弊函数 |
 | {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostgreSQL文件IO函数包 |
 | {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 阻止不带条件的全表更新以避免意外事故 |
-| {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
+| {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sL---" color="blue" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | {{< ext "pg_drop_events" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | {{< ext "table_log" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
 | {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
@@ -696,7 +696,7 @@ weight: 900
 | {{< ext "pg_tracing" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | PostgreSQL分布式Tracing |
 | {{< ext "pg_show_plans" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 打印所有当前正在运行查询的执行计划 |
 | {{< ext "pg_stat_kcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 内核统计信息收集 |
-| {{< ext "pg_stat_monitor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
+| {{< ext "pg_stat_monitor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
 | {{< ext "pg_qualstats" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 收集有关 quals 的统计信息的扩展 |
 | {{< ext "pg_store_plans" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | {{< ext "pg_track_settings" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | 跟踪设置更改 |
