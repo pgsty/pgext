@@ -119,8 +119,8 @@ foreign-data wrapper for GIS data access
 | `ogr_fdw_16` | 1.1.4 | `el8.aarch64` | pgdg | 47.5 KiB | [ogr_fdw_16-1.1.4-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/ogr_fdw_16-1.1.4-2PGDG.rhel8.aarch64.rpm) |
 | `ogr_fdw_16` | 1.1.7 | `el9.x86_64` | pgdg | 49.3 KiB | [ogr_fdw_16-1.1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.7-1PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_16` | 1.1.6 | `el9.x86_64` | pgdg | 49.6 KiB | [ogr_fdw_16-1.1.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.6-1PGDG.rhel9.x86_64.rpm) |
-| `ogr_fdw_16` | 1.1.5 | `el9.x86_64` | pgdg | 49.4 KiB | [ogr_fdw_16-1.1.5-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.5-4PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_16` | 1.1.5 | `el9.x86_64` | pgdg | 49.5 KiB | [ogr_fdw_16-1.1.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.5-1PGDG.rhel9.x86_64.rpm) |
+| `ogr_fdw_16` | 1.1.5 | `el9.x86_64` | pgdg | 49.4 KiB | [ogr_fdw_16-1.1.5-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.5-4PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_16` | 1.1.4 | `el9.x86_64` | pgdg | 48.1 KiB | [ogr_fdw_16-1.1.4-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/ogr_fdw_16-1.1.4-2PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_16` | 1.1.7 | `el9.aarch64` | pgdg | 48.7 KiB | [ogr_fdw_16-1.1.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/ogr_fdw_16-1.1.7-1PGDG.rhel9.aarch64.rpm) |
 | `ogr_fdw_16` | 1.1.6 | `el9.aarch64` | pgdg | 48.8 KiB | [ogr_fdw_16-1.1.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/ogr_fdw_16-1.1.6-1PGDG.rhel9.aarch64.rpm) |
@@ -157,8 +157,8 @@ foreign-data wrapper for GIS data access
 | `ogr_fdw_15` | 1.1.4 | `el8.aarch64` | pgdg | 48.0 KiB | [ogr_fdw_15-1.1.4-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/ogr_fdw_15-1.1.4-2PGDG.rhel8.aarch64.rpm) |
 | `ogr_fdw_15` | 1.1.7 | `el9.x86_64` | pgdg | 50.9 KiB | [ogr_fdw_15-1.1.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.7-1PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_15` | 1.1.6 | `el9.x86_64` | pgdg | 51.3 KiB | [ogr_fdw_15-1.1.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.6-1PGDG.rhel9.x86_64.rpm) |
-| `ogr_fdw_15` | 1.1.5 | `el9.x86_64` | pgdg | 50.7 KiB | [ogr_fdw_15-1.1.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.5-1PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_15` | 1.1.5 | `el9.x86_64` | pgdg | 50.5 KiB | [ogr_fdw_15-1.1.5-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.5-4PGDG.rhel9.x86_64.rpm) |
+| `ogr_fdw_15` | 1.1.5 | `el9.x86_64` | pgdg | 50.7 KiB | [ogr_fdw_15-1.1.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.5-1PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_15` | 1.1.4 | `el9.x86_64` | pgdg | 49.1 KiB | [ogr_fdw_15-1.1.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.4-1PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_15` | 1.1.4 | `el9.x86_64` | pgdg | 49.2 KiB | [ogr_fdw_15-1.1.4-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.4-2PGDG.rhel9.x86_64.rpm) |
 | `ogr_fdw_15` | 1.1.3 | `el9.x86_64` | pgdg | 49.8 KiB | [ogr_fdw_15-1.1.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/ogr_fdw_15-1.1.3-1.rhel9.x86_64.rpm) |

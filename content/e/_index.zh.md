@@ -680,7 +680,7 @@ weight: 900
 | {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sL---" color="blue" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | {{< ext "pg_drop_events" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | {{< ext "table_log" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
-| {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
+| {{< ext "pgagent" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | {{< ext "pg_prewarm" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sLd--" color="blue" >}} | 预热关系数据 |
 | {{< ext "pgpool_adm" "pgpool" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | PGPool 管理函数 |
 | {{< ext "pgpool_recovery" "pgpool" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | PGPool辅助扩展，从v4.3提供的恢复函数 |

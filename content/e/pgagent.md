@@ -31,7 +31,7 @@ A PostgreSQL job scheduler
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent_18*" "red" >}} {{< bg "17" "pgagent_17*" "green" >}} {{< bg "16" "pgagent_16*" "green" >}} {{< bg "15" "pgagent_15*" "green" >}} {{< bg "14" "pgagent_14*" "green" >}} {{< bg "13" "pgagent_13*" "green" >}} | `pgagent_$v*` | - |
+| **EL** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent_18*" "green" >}} {{< bg "17" "pgagent_17*" "green" >}} {{< bg "16" "pgagent_16*" "green" >}} {{< bg "15" "pgagent_15*" "green" >}} {{< bg "14" "pgagent_14*" "green" >}} {{< bg "13" "pgagent_13*" "green" >}} | `pgagent_$v*` | - |
 | **Debian** | {{< badge content="PGDG" link="/e/pgagent" >}} | `4.2.3` | {{< bg "18" "pgagent" "red" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} {{< bg "14" "pgagent" "green" >}} {{< bg "13" "pgagent" "green" >}} | `pgagent` | - |
 
 
@@ -172,6 +172,7 @@ pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existin
 ```bash
 pig ext install pgagent; # install by extension name, for the current active PG version
 pig ext install pgagent; # install via package alias, for the active PG version
+pig ext install pgagent -v 18;   # install for PG 18
 pig ext install pgagent -v 17;   # install for PG 17
 pig ext install pgagent -v 16;   # install for PG 16
 pig ext install pgagent -v 15;   # install for PG 15
