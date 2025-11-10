@@ -23,19 +23,16 @@ weight: 100
 使用以下命令即可在您的系统上 [**安装**](/zh/pig/install) PIG 包管理器：
 
 {{< tabs items="默认,镜像" defaultIndex="1" >}}
-
 {{< tab >}}
 ```bash
 curl -fsSL https://repo.pigsty.io/pig | bash     # 从 Cloudflare 安装
 ```
 {{< /tab >}}
-
 {{< tab >}}
 ```bash
 curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
 ```
 {{< /tab >}}
-
 {{< /tabs >}}
 
 安装完成后，几行命令即可 [**快速开始**](/zh/pig/start) 。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/zh/e/pg_duckdb/) 扩展：
@@ -50,15 +47,15 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 
 
 
-## 命令
+## 命令参考
 
 你可以执行 `pig help <command>` 获取子命令的详细帮助。
 
 {{< cards cols="5" >}}
-{{< card link="/cmd/repo"  title="pig repo"  subtitle="管理软件仓库"  icon="library" >}}
-{{< card link="/cmd/ext"   title="pig ext"   subtitle="管理PG扩展"   icon="cube" >}}
-{{< card link="/cmd/build" title="pig build" subtitle="设置构建环境"  icon="view-grid" >}}
-{{< card link="/cmd/sty"   title="pig sty"   subtitle="管理 Pigsty"  icon="cloud-download" >}}
+{{< card link="/zh/pig/cmd/repo"  title="pig repo"  subtitle="管理软件仓库"  icon="library" >}}
+{{< card link="/zh/pig/cmd/ext"   title="pig ext"   subtitle="管理PG扩展"   icon="cube" >}}
+{{< card link="/zh/pig/cmd/build" title="pig build" subtitle="设置构建环境"  icon="view-grid" >}}
+{{< card link="/zh/pig/cmd/sty"   title="pig sty"   subtitle="管理 Pigsty"  icon="cloud-download" >}}
 {{< /cards >}}
 
 

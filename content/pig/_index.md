@@ -25,19 +25,16 @@ weight: 100
 [Install](/pig/install) `pig` with a single command
 
 {{< tabs items="Default,Mirror" >}}
-
 {{< tab >}}
 ```bash tab="Default"
 curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
 ```
 {{< /tab >}}
-
 {{< tab >}}
 ```bash tab="Mirror"
 curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
 ```
 {{< /tab >}}
-
 {{< /tabs >}}
 
 
@@ -57,10 +54,10 @@ $ pig install -y vector         # use both pkg and ext name to install extension
 Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
 
 {{< cards cols="5" >}}
-{{< card link="/cmd/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}
-{{< card link="/cmd/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" >}}
-{{< card link="/cmd/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" >}}
-{{< card link="/cmd/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" >}}
+{{< card link="/pig/cmd/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}
+{{< card link="/pig/cmd/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" >}}
+{{< card link="/pig/cmd/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" >}}
+{{< card link="/pig/cmd/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" >}}
 {{< /cards >}}
 
 

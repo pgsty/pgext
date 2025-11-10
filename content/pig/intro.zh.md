@@ -25,8 +25,6 @@ Pig 并非重复造轮子，而是充分利用系统原生包管理器（APT、Y
 > 《[ANNOUNCE pig: The Postgres Extension Wizard](https://www.postgresql.org/about/news/announce-pig-the-postgres-extension-wizard-2988/)》
 
 
---------
-
 ## Linux兼容性
 
 | OS 系统代码                                                                                 | 厂商     | 大版本 |   小版本   | 全名                | PG 大版本                                                                                                                                                                                                                                                      |                       备注                        |

@@ -1,6 +1,6 @@
 ---
 title: 安装
-description: 如何下载与安装 Pigsty CLI 工具 `pig`
+description: 如何下载与安装 pig 包管理器
 icon: Download
 weight: 300
 breadcrumbs: false
@@ -114,7 +114,6 @@ EOF
 sudo apt update;
 sudo apt install -y pig
 ```
-
 
 
 

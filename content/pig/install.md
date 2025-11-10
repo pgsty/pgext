@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: How to download and install the Pigsty CLI tool `pig`
+description: How to download and install the pig Package Manager
 icon: Download
 weight: 300
 breadcrumbs: false

@@ -1,89 +1,237 @@
 ---
-title: Get Started
-description: Get Started with pig, the PostgreSQL extension manager.
+title: Getting Started
+description: Quick start guide for PIG, the PostgreSQL package manager
 icon: Play
 weight: 200
 breadcrumbs: false
 ---
 
+Here's a simple tutorial to experience the core capabilities of PIG package manager.
 
-[**Install**](/pig/install/) the `pig` package via the install script (or [other approaches](/pig/install/)):
-
-```bash tab="default"
-curl -fsSL https://repo.pigsty.io/pig | bash
-```
-```bash tab="mirror"
-curl -fsSL https://repo.pigsty.cc/pig | bash
-```
-
-Then it’s ready to use, assume you want to install the [**`pg_duckdb`**](/e/pg_duckdb/) extension:
+## Quick Start
 
 ```bash
-$ pig repo add pigsty pgdg -u  # add pgdg & pigsty repo, then update repo cache
-$ pig ext install pg17         # install PostgreSQL 17 kernels with native PGDG packages
-$ pig ext install pg_duckdb    # install the pg_duckdb extension (for current pg17)
+curl -fsSL https://repo.pigsty.io/pig | bash   # Install PIG from Cloudflare
+pig repo set                                   # Configure Linux, Pigsty + PGDG repos (overwrite mode!)
+pig install -v 18 -y pg18 pg_duckdb vector     # Install PG 18 core, pg_duckdb, pgvector extensions...
 ```
 
-Check details about [**repo**](/pig/repo/) and [**ext**](/pig/ext/) sub command.
 
+## Installation
 
+[**Install**](/pig/install/) `pig` with a single command:
 
+{{< tabs items="Default,Mirror" defaultIndex="1" >}}
+{{< tab >}}
+```bash
+curl -fsSL https://repo.pigsty.io/pig | bash     # Install from Cloudflare
+```
+{{< /tab >}}
+{{< tab >}}
+```bash
+curl -fsSL https://repo.pigsty.cc/pig | bash     # Install from China CDN mirror
+```
+{{< /tab >}}
+{{< /tabs >}}
 
-
-------
-
-## Examples
-
-Now let's get started with some real examples.
-
-
-### Overwrite Repo
-
-The default `pig repo add pigsty pgdg` will add the [`PGDG`](https://www.postgresql.org/download/linux/) repo and [`PIGSTY`](/repo/) repo to your system.
-While the following command will backup & wipe your existing repo and add all require repo to your system.
+The PIG binary is approximately 4 MB and will automatically install the latest available version using `rpm` or `dpkg` on Linux:
 
 ```bash
-pig repo add all --ru        # This will OVERWRITE all existing repo with node,pgdg,pigsty repo
+[INFO] kernel = Linux
+[INFO] machine = x86_64
+[INFO] package = rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm
+[INFO] download = /tmp/pig-0.7.1-1.x86_64.rpm
+[INFO] downloading pig v0.7.1
+curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm -o /tmp/pig-0.7.1-1.x86_64.rpm
+######################################################################## 100.0%
+[INFO] md5sum = 85d75c16dfd3ce935d9d889fae345430
+[INFO] installing: rpm -ivh /tmp/pig-0.7.1-1.x86_64.rpm
+Verifying...                          ################################# [100%]
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:pig-0.7.1-1                      ################################# [100%]
+[INFO] pig v0.7.1 installed successfully
+check https://pgext.cloud for details
 ```
 
-<Callout title="Where are my existing repo files?" type="warn">
-
-There’s a brutal version of [`repo add`](/pig/repo#repo-add): `repo set`, which will overwrite you existing repo (`-r`) by default.
-And you can recover you old repos at `/etc/apt/backup` or `/etc/yum.repos.d/backup`.
-
-</Callout>
 
 
---------
+## Environment Check
 
-### Install PG Kernel
-
-You can also install PostgreSQL kernel packages with:
+PIG is a Go binary, installed by default at `/usr/bin/pig`. Use `pig version` to display version information:
 
 ```bash
-pig ext install pg17          # install PostgreSQL 17 kernels (all but devel)
-pig ext install pg16-simple   # install PostgreSQL 16 kernels with minimal packages
-pig ext install pg15 -y       # install PostgreSQL 15 kernels with auto-confirm
-pig ext install pg14=14.3     # install PostgreSQL 14 kernels with an specific minor version
-pig ext install pg13=13.10    # install PostgreSQL 13 kernels
+$ pig version
+
+pig version 0.7.1 linux/amd64
+build: HEAD 9cdb57a 2025-11-10T11:14:17Z
 ```
 
-To activate certain postgres kernel binaries in your `PATH`, use the `pig ext link` command:
+Use `pig status` to display the current environment status, OS code, PostgreSQL installation, repository accessibility and latency.
 
 ```bash
-pig ext link pg17             # create /usr/pgsql soft links, and write it to /etc/profile.d/pgsql.sh
-. /etc/profile.d/pgsql.sh     # reload the path and take effect immediately
+$ pig status
+
+# [Configuration] ================================
+Pig Version      : 0.7.1
+Pig Config       : /root/.pig/config.yml
+Log Level        : info
+Log Path         : stderr
+
+# [OS Environment] ===============================
+OS Distro Code   : el10
+OS OSArch        : amd64
+OS Package Type  : rpm
+OS Vendor ID     : rocky
+OS Version       : 10
+OS Version Full  : 10.0
+OS Version Code  : el10
+
+# [PG Environment] ===============================
+No PostgreSQL installation found
+
+No active PostgreSQL found in PATH:
+- /root/.local/bin
+- /root/bin
+- /usr/local/sbin
+- /usr/local/bin
+- /usr/sbin
+- /usr/bin
+
+# [Pigsty Environment] ===========================
+Inventory Path   : Not Found
+Pigsty Home      : Not Found
+
+# [Network Conditions] ===========================
+pigsty.cc  ping ok: 612 ms
+pigsty.io  ping ok: 1222 ms
+google.com request error
+Internet Access   :  true
+Pigsty Repo       :  pigsty.io
+Inferred Region   :  china
+Latest Pigsty Ver :  v3.6.1
 ```
 
 
---------
+## List Extensions
 
-### Using Alias
+Use `pig ext list` to display the built-in PostgreSQL extension catalog.
 
-You can also use other package aliases, it will translate to corresponding package on your OS distro
-and the `$v` will be replaced with the active or given pg version number, such as `17`, `16`, etc… ([**All Aliases**](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L149)):
+```bash
+[root@pg-meta ~]# pig ext list
 
-```yaml tab="EL"
+Name                            Version     Cate   Flags   License       RPM      DEB      PG Ver  Description
+----                            -------     ----   ------  -------       ------   ------   ------  ---------------------
+timescaledb                     2.23.0      TIME   -dsl--  Timescale     PIGSTY   PIGSTY   15-18   Enables scalable inserts and complex queries for time-series dat...
+timescaledb_toolkit             1.22.0      TIME   -ds-t-  Timescale     PIGSTY   PIGSTY   15-18   Library of analytical hyperfunctions, time-series pipelining, an...
+timeseries                      0.1.7       TIME   -d----  PostgreSQL    PIGSTY   PIGSTY   13-18   Convenience API for time series stack
+periods                         1.2.3       TIME   -ds---  PostgreSQL    PGDG     PGDG     13-18   Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO...
+temporal_tables                 1.2.2       TIME   -ds--r  BSD 2-Clause  PIGSTY   PIGSTY   13-18   temporal tables
+.........
+pg_fact_loader                  2.0.1       ETL    -ds--x  MIT           PGDG     PGDG     13-18   build fact tables with Postgres
+pg_bulkload                     3.1.22      ETL    bds---  BSD 3-Clause  PGDG     PIGSTY   13-17   pg_bulkload is a high speed data loading utility for PostgreSQL
+test_decoding                   -           ETL    --s--x  PostgreSQL    CONTRIB  CONTRIB  13-18   SQL-based test/example module for WAL logical decoding
+pgoutput                        -           ETL    --s---  PostgreSQL    CONTRIB  CONTRIB  13-18   Logical Replication output plugin
+
+(431 Rows) (Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
+```
+
+All extension metadata is defined in a file called [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv),
+which is continuously updated with pig releases. You can update this data file directly using [`pig ext reload`](/pig/cmd/ext#pig-ext-reload).
+The updated file is placed at `~/.pig/extension.csv` by default, where you can review and modify it. The [**authoritative version**](https://github.com/pgsty/pgext/blob/main/db/extension.csv) of this data file can be found in this project.
+
+
+
+
+## Add Repositories
+
+To install extensions, you first need to add upstream repositories. [`pig repo`](/pig/cmd/repo) manages Linux APT/YUM/DNF repository configurations.
+
+You can use the straightforward [`pig repo set`](/pig/cmd/repo#repo-set) to overwrite existing repository configurations, ensuring only necessary repositories exist:
+
+```bash
+pig repo set                # Configure all repos at once: Linux, PGDG, PIGSTY (PGSQL+INFRA) repositories
+```
+
+> [!WARNING] `pig repo set` will backup and clean existing repository configurations, then add required repositories with overwrite semantics. Use with caution!
+
+Or choose the gentler [`pig repo add`](/pig/cmd/repo#repo-add) to add required repositories:
+
+```bash
+pig repo add pgdg pigsty     # Add official PGDG and PIGSTY supplementary repositories
+pig repo add pgsql           # [Optional] Add PGDG and PIGSTY combined as a single "pgsql" module
+pig repo update              # Update cache: apt update / yum makecache
+```
+
+PIG detects your network environment and chooses between Cloudflare global CDN or China mainland CDN, but you can force a region using the `--region` parameter.
+
+```bash
+pig repo set      --region=china              # Use China region mirror for faster downloads
+pig repo add pgdg --region=default --update   # Force using upstream PGDG repository
+```
+
+PIG doesn't support offline installation. You can download RPM/DEB packages yourself and copy them to network-isolated production servers.
+The related PIGSTY project provides local repositories, supporting extension installation from local repositories using pig.
+
+
+
+## Install PostgreSQL
+
+After adding repositories, use [`pig ext add`](/pig/cmd/ext#ext-add) to install extensions (and related packages):
+
+```bash
+pig ext add -v 18 -y pgsql timescaledb postgis vector pg_duckdb pg_mooncake # Install PG 18 core and extensions with auto-confirm
+
+# The command automatically performs translation, mapping packages to:
+INFO[20:34:44] translate alias 'pgsql' to package: postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit
+INFO[20:34:44] translate extension 'timescaledb' to package: timescaledb-tsl_18*
+INFO[20:34:44] translate extension 'postgis' to package: postgis36_18*
+INFO[20:34:44] translate extension 'vector' to package: pgvector_18*
+INFO[20:34:44] translate extension 'pg_duckdb' to package: pg_duckdb_18*
+INFO[20:34:44] translate extension 'pg_mooncake' to package: pg_mooncake_18*
+INFO[20:34:44] installing packages: dnf install -y postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl postgresql18-llvmjit timescaledb-tsl_18* postgis36_18* pgvector_18* pg_duckdb_18* pg_mooncake_18*
+```
+
+This uses an "alias translation" mechanism, translating clean PostgreSQL core/extension logical names to actual RPM/DEB packages. To install without alias translation, use `apt/dnf` directly,
+or use the `pig install` variant with `-n|--no-translation`:
+
+```bash
+pig install vector     # With translation, installs pgvector_18 or postgresql-18-pgvector for PG 18
+pig install vector -n  # Without translation, installs a logging component named vector (from pigsty-infra repo)
+```
+
+
+
+
+## Alias Translation
+
+PostgreSQL core and extensions correspond to various RPM/DEB packages. Remembering these packages is cumbersome, so pig provides many useful aliases to simplify installation:
+
+For example on EL systems, the following aliases translate to the corresponding RPM packages on the right:
+
+```yaml
+pgsql:        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit"
+pg18:         "postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl postgresql18-llvmjit"
+pg17-client:  "postgresql17"
+pg17-server:  "postgresql17-server postgresql17-libs postgresql17-contrib"
+pg17-devel:   "postgresql17-devel"
+pg17-basic:   "pg_repack_17* wal2json_17* pgvector_17*"
+pg16-mini:    "postgresql16 postgresql16-server postgresql16-libs postgresql16-contrib"
+pg15-full:    "postgresql15 postgresql15-server postgresql15-libs postgresql15-contrib postgresql15-plperl postgresql15-plpython3 postgresql15-pltcl postgresql15-llvmjit postgresql15-test postgresql15-devel"
+pg14-main:    "postgresql14 postgresql14-server postgresql14-libs postgresql14-contrib postgresql14-plperl postgresql14-plpython3 postgresql14-pltcl postgresql14-llvmjit pg_repack_14* wal2json_14* pgvector_14*"
+pg13-core:    "postgresql13 postgresql13-server postgresql13-libs postgresql13-contrib postgresql13-plperl postgresql13-plpython3 postgresql13-pltcl postgresql13-llvmjit"
+```
+
+Note the `$v` placeholder is replaced with the PostgreSQL major version. When using the `pgsql` alias, `$v` is substituted with actual major versions like 18, 17.
+So when you install the `pg17-server` alias, on EL you're actually installing `postgresql17-server`, `postgresql17-libs`, `postgresql17-contrib`, and on Debian/Ubuntu you're installing `postgresql-17`. PIG handles all the details.
+
+<br>
+<details><summary> Common PostgreSQL Aliases</summary>
+
+[Alias translation list for EL](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L154)
+
+```bash {base_url="https://github.com/pgsty/pig/blob/main/",filename="cli/ext/catalog.go"}
 "pgsql":        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit",
 "pgsql-mini":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib",
 "pgsql-core":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit",
@@ -94,7 +242,10 @@ and the `$v` will be replaced with the active or given pg version number, such a
 "pgsql-devel":  "postgresql$v-devel",
 "pgsql-basic":  "pg_repack_$v* wal2json_$v* pgvector_$v*",
 ```
-```yaml tab="Debian"
+
+[Alias translation for Debian/Ubuntu](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L260)
+
+```bash {base_url="https://github.com/pgsty/pig/blob/main/",filename="cli/ext/catalog.go"}
 "pgsql":        "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v",
 "pgsql-mini":   "postgresql-$v postgresql-client-$v",
 "pgsql-core":   "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v",
@@ -106,190 +257,145 @@ and the `$v` will be replaced with the active or given pg version number, such a
 "pgsql-basic":  "postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector",
 ```
 
---------
+These aliases can be used directly and instantiated with parameters for major versions, or you can use variants with specific major version numbers: replace `pgsql` with `pg18`, `pg17`, `pgxx`, etc.
+For example, for PostgreSQL 18, you can use these aliases directly:
 
-### Install Extensions
+| `pgsql`        | `pg18`        | `pg17`        | `pg16`        | `pg15`        | `pg14`        | `pg13`        |
+|:---------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| `pgsql`        | **`pg18`**    | `pg17`        | `pg16`        | `pg15`        | `pg14`        | `pg13`        |
+| `pgsql-mini`   | `pg18-mini`   | `pg17-mini`   | `pg16-mini`   | `pg15-mini`   | `pg14-mini`   | `pg13-mini`   |
+| `pgsql-core`   | `pg18-core`   | `pg17-core`   | `pg16-core`   | `pg15-core`   | `pg14-core`   | `pg13-core`   |
+| `pgsql-full`   | `pg18-full`   | `pg17-full`   | `pg16-full`   | `pg15-full`   | `pg14-full`   | `pg13-full`   |
+| `pgsql-main`   | `pg18-main`   | `pg17-main`   | `pg16-main`   | `pg15-main`   | `pg14-main`   | `pg13-main`   |
+| `pgsql-client` | `pg18-client` | `pg17-client` | `pg16-client` | `pg15-client` | `pg14-client` | `pg13-client` |
+| `pgsql-server` | `pg18-server` | `pg17-server` | `pg16-server` | `pg15-server` | `pg14-server` | `pg13-server` |
+| `pgsql-devel`  | `pg18-devel`  | `pg17-devel`  | `pg16-devel`  | `pg15-devel`  | `pg14-devel`  | `pg13-devel`  |
+| `pgsql-basic`  | `pg18-basic`  | `pg17-basic`  | `pg16-basic`  | `pg15-basic`  | `pg14-basic`  | `pg13-basic`  |
+
+</details>
 
 
 
+## Install Extensions
 
-
-### **Install for another PG**
-
-`pig` will use the default postgres installation in your active `PATH`, but you can install extension for a specific installation with `-v` (when using the PGDG convention), or passing any `pg_config` path for custom installation.
+PIG detects PostgreSQL installations in your system environment. If an active PG installation is detected (based on `pg_config` in `PATH`), pig automatically installs extensions for that PostgreSQL major version without explicit version specification.
 
 ```bash
-pig ext install pg_duckdb -v 16     # install the extension for pg16
-pig ext install pg_duckdb -p /usr/lib/postgresql/17/bin/pg_config    # specify a pg17 pg_config
+pig install pg_smtp_client          # Simpler
+pig install pg_smtp_client -v 18    # Explicitly specify major version, more reliable
+pig install pg_smtp_client -p /usr/lib/postgresql/16/bin/pg_config   # Another way to specify PG version
+dnf install pg_smtp_client_18       # Most direct... but not all extensions are this simple...
+```
+
+Tip: To add a specific PostgreSQL major version binaries to `PATH`, use `pig ext link`:
+
+```bash
+pig ext link pg17             # Create /usr/pgsql symlink and write to /etc/profile.d/pgsql.sh
+. /etc/profile.d/pgsql.sh     # Take effect immediately, update PATH environment variable
+```
+
+To install a specific software version, use `name=ver` syntax:
+
+```bash
+pig ext add -v 17 pgvector=0.7.1 # install pgvector 0.7.1 for PG 17
+pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
+```
+
+> [!WARNING] Note that currently only PGDG YUM repository provides historical extension versions. PIGSTY repository and PGDG APT repository only provide the **latest version** of extensions.
+
+
+
+## Display Extensions
+
+[`pig ext status`](/pig/cmd/ext#ext-status) displays currently installed extensions.
+
+```bash
+$ pig ext status -v 18
+
+Installed:
+- PostgreSQL 18.0  80  Extensions
+
+No active PostgreSQL found in PATH:
+- /root/.local/bin
+- /root/bin
+- /usr/local/sbin
+- /usr/local/bin
+- /usr/sbin
+- /usr/bin
+Extension Stat  :  11 Installed (PIGSTY 3, PGDG 8) + 69 CONTRIB = 80 Total
+
+Name                          Version  Cate  Flags   License     Repo    Package              Description
+----                          -------  ----  ------  -------     ------  ------------         ---------------------
+timescaledb                   2.23.0   TIME  -dsl--  Timescale   PIGSTY  timescaledb-tsl_18*  Enables scalable inserts and complex queries for time-series dat
+postgis                       3.6.0    GIS   -ds---  GPL-2.0     PGDG    postgis36_18*        PostGIS geometry and geography spatial types and functions
+postgis_topology              3.6.0    GIS   -ds---  GPL-2.0     PGDG    postgis36_18*        PostGIS topology spatial types and functions
+postgis_raster                3.6.0    GIS   -ds---  GPL-2.0     PGDG    postgis36_18*        PostGIS raster types and functions
+postgis_sfcgal                3.6.0    GIS   -ds--r  GPL-2.0     PGDG    postgis36_18*        PostGIS SFCGAL functions
+postgis_tiger_geocoder        3.6.0    GIS   -ds-t-  GPL-2.0     PGDG    postgis36_18*        PostGIS tiger geocoder and reverse geocoder
+address_standardizer          3.6.0    GIS   -ds--r  GPL-2.0     PGDG    postgis36_18*        Used to parse an address into constituent elements. Generally us
+address_standardizer_data_us  3.6.0    GIS   -ds--r  GPL-2.0     PGDG    postgis36_18*        Address Standardizer US dataset example
+vector                        0.8.1    RAG   -ds--r  PostgreSQL  PGDG    pgvector_18*         vector data type and ivfflat and hnsw access methods
+pg_duckdb                     1.1.0    OLAP  -dsl--  MIT         PIGSTY  pg_duckdb_18*        DuckDB Embedded in Postgres
+pg_mooncake                   0.2.0    OLAP  -d----  MIT         PIGSTY  pg_mooncake_18*      Columnstore Table in Postgres
+```
+
+If PostgreSQL cannot be found in your current system PATH (based on `pg_config` in `PATH`), make sure to specify the PG major version or `pg_config` path via `-v|-p`.
+
+
+
+## Scan Extensions
+
+[`pig ext scan`](/pig/cmd/ext#ext-scan) provides lower-level extension scanning, scanning shared libraries in specified PostgreSQL directories to discover installed extensions:
+
+```bash
+root@s37451:~# pig ext scan
+Installed:
+* PostgreSQL 17.6 (Debian 17.6-2.pgdg13+1)    70  Extensions
+- PostgreSQL 15.14 (Debian 15.14-1.pgdg13+1)  69  Extensions
+- PostgreSQL 14.19 (Debian 14.19-1.pgdg13+1)  66  Extensions
+- PostgreSQL 13.22 (Debian 13.22-1.pgdg13+1)  64  Extensions
+- PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3)    70  Extensions
+- PostgreSQL 16.10 (Debian 16.10-1.pgdg13+1)  70  Extensions
+
+Active:
+PG Version      :  PostgreSQL 17.6 (Debian 17.6-2.pgdg13+1)
+Config Path     :  /usr/lib/postgresql/17/bin/pg_config
+Binary Path     :  /usr/lib/postgresql/17/bin
+Library Path    :  /usr/lib/postgresql/17/lib
+Extension Path  :  /usr/share/postgresql/17/extension
+Name                 Version  SharedLibs                                       Description            Meta
+----                 -------  ----------                                       ---------------------  ------
+amcheck              1.4      functions for verifying relation integrity       relocatable=true module_pathname=$libdir/amcheck lib=amcheck.so
+...
+pg_duckdb            1.1.0    DuckDB Embedded in Postgres                      module_pathname=$libdir/pg_duckdb relocatable=false schema=public lib=libduckdb.so, pg_duckdb.so
+pg_mooncake          0.2.0    Real-time analytics on Postgres tables           module_pathname=pg_mooncake relocatable=false requires=pg_duckdb superuser=true lib=pg_mooncake.so
+pg_prewarm           1.2      prewarm relation data                            module_pathname=$libdir/pg_prewarm relocatable=true lib=pg_prewarm.so
+pg_smtp_client       0.2.1    PostgreSQL extension to send email using SMTP    relocatable=false superuser=false schema=smtp_client module_pathname=$libdir/pg_smtp_client lib=pg_smtp_client.so
+...
+Encoding Libs: cyrillic_and_mic, euc2004_sjis2004, euc_cn_and_mic, euc_jp_and_sjis, euc_kr_and_mic, euc_tw_and_big5, latin2_and_win1250, latin_and_mic, utf8_and_big5, utf8_and_cyrillic, utf8_and_euc2004, utf8_and_euc_cn, utf8_and_euc_jp, utf8_and_euc_kr, utf8_and_euc_tw, utf8_and_gb18030, utf8_and_gbk, utf8_and_iso8859, utf8_and_iso8859_1, utf8_and_johab, utf8_and_sjis, utf8_and_sjis2004, utf8_and_uhc, utf8_and_win
+Built-in Libs: dict_snowball, libpqwalreceiver, llvmjit
 ```
 
 
-------
 
-### Install a specific Version
+## Container Practice
 
-You can also install PostgreSQL kernel packages with:
+You can create a fresh virtual machine or use the following Docker container for testing. Create a `d13` directory with a `Dockerfile`:
 
-```bash
-pig ext install pgvector=0.7.0 # install pgvector 0.7.0
-pig ext install pg16=16.5      # install PostgreSQL 16 with a specific minor version
+```dockerfile {filename="d13/Dockerfile"}
+FROM debian:13
+USER root
+WORKDIR /root/
+CMD ["/bin/bash"]
+
+RUN apt update && apt install -y ca-certificates curl && curl https://repo.pigsty.io/pig | bash
 ```
 
-> Beware the **APT** repo may only have the latest minor version for its software (and require the full version string)
-
-
-------
-
-### Install PG Forks
-
-Pig also supports installs other [Postgres kernel forks](https://pgsty.com/docs/feat/kernel)
-
-
-
-
-------
-
-### Search Extension
-
-You can perform fuzzy search on extension name, description, and category.
-
 ```bash
-$ pig ext ls olap
+docker build -t d13:latest .
+docker run -it d13:latest /bin/bash
 
-INFO[14:48:13] found 13 extensions matching 'olap':
-Name            State  Version  Cate  Flags   License       Repo     PGVer  Package               Description
-----            -----  -------  ----  ------  -------       ------   -----  ------------          ---------------------
-citus           avail  13.0.1   OLAP  -dsl--  AGPL-3.0      PIGSTY   14-17  citus_17*             Distributed PostgreSQL as an extension
-citus_columnar  avail  11.3-1   OLAP  -ds---  AGPL-3.0      PIGSTY   14-17  citus_17*             Citus columnar storage engine
-columnar        n/a    11.1-11  OLAP  -ds---  AGPL-3.0      PIGSTY   13-16  hydra_17*             Hydra Columnar extension
-pg_analytics    avail  0.3.4    OLAP  -ds-t-  PostgreSQL    PIGSTY   14-17  pg_analytics_17       Postgres for analytics, powered by DuckDB
-pg_duckdb       avail  0.2.0    OLAP  -dsl--  MIT           PIGSTY   14-17  pg_duckdb_17*         DuckDB Embedded in Postgres
-pg_mooncake     avail  0.1.2    OLAP  ------  MIT           PIGSTY   14-17  pg_mooncake_17*       Columnstore Table in Postgres
-duckdb_fdw      avail  1.0.0    OLAP  -ds--r  MIT           PIGSTY   13-17  duckdb_fdw_17*        DuckDB Foreign Data Wrapper
-pg_parquet      avail  0.2.0    OLAP  -dslt-  PostgreSQL    PIGSTY   14-17  pg_parquet_17         copy data between Postgres and Parquet
-pg_fkpart       avail  1.7      OLAP  -d----  GPL-2.0       PIGSTY   13-17  pg_fkpart_17          Table partitioning by foreign key utility
-pg_partman      avail  5.2.4    OLAP  -ds---  PostgreSQL    PGDG     13-17  pg_partman_17*        Extension to manage partitioned tables by time or ID
-plproxy         avail  2.11.0   OLAP  -ds---  BSD 0-Clause  PIGSTY   13-17  plproxy_17*           Database partitioning implemented as procedural language
-pg_strom        avail  5.2.2    OLAP  -ds--x  PostgreSQL    PGDG     13-17  pg_strom_17*          PG-Strom - big-data processing acceleration using GPU and NVME
-tablefunc       added  1.0      OLAP  -ds-tx  PostgreSQL    CONTRIB  13-17  postgresql17-contrib  functions that manipulate whole tables, including crosstab
-
-(13 Rows) (State: added|avail|n/a,Flags: b = HasBin, d = HasDDL, s = HasSolib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
+pig repo set --region=china    # Add China region repositories
+pig install -y pg18            # Install PostgreSQL 18 core packages
+pig install -y postgis timescaledb pgvector pg_duckdb
 ```
-
-You can use the `-v 16` or `-p /path/to/pg_config` to find extension availability for other PostgreSQL installation.
-
-### **Print Extension Summary**
-
-You can get extension metadata with `pig ext info` subcommand:
-
-```bash
-$ pig ext info pg_duckdb
-╭────────────────────────────────────────────────────────────────────────────╮
-│ pg_duckdb                                                                  │
-├────────────────────────────────────────────────────────────────────────────┤
-│ DuckDB Embedded in Postgres                                                │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Extension : pg_duckdb                                                      │
-│ Alias     : pg_duckdb                                                      │
-│ Category  : OLAP                                                           │
-│ Version   : 0.3.1                                                          │
-│ License   : MIT                                                            │
-│ Website   : https://github.com/duckdb/pg_duckdb                            │
-│ Details   : /ext/pg_duckdb                                                 │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Extension Properties                                                       │
-├────────────────────────────────────────────────────────────────────────────┤
-│ PostgreSQL Ver │  Available on: 17, 16, 15, 14                             │
-│ CREATE  :  Yes │  CREATE EXTENSION pg_duckdb;                              │
-│ DYLOAD  :  Yes │  SET shared_preload_libraries = 'pg_duckdb'               │
-│ TRUST   :  No  │  require database superuser to install                    │
-│ Reloc   :  No  │  Schemas: []                                              │
-│ Depend  :  No  │                                                           │
-├────────────────────────────────────────────────────────────────────────────┤
-│ RPM Package                                                                │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Repository     │  PIGSTY                                                   │
-│ Package        │  pg_duckdb_$v*                                            │
-│ Version        │  0.3.1                                                    │
-│ Availability   │  17, 16, 15, 14                                           │
-├────────────────────────────────────────────────────────────────────────────┤
-│ DEB Package                                                                │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Repository     │  PIGSTY                                                   │
-│ Package        │  postgresql-$v-pg-duckdb                                  │
-│ Version        │  0.3.1                                                    │
-│ Availability   │  17, 16, 15, 14                                           │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Known Issues                                                               │
-├────────────────────────────────────────────────────────────────────────────┤
-│ el8                                                                        │
-├────────────────────────────────────────────────────────────────────────────┤
-│ Additional Comments                                                        │
-├────────────────────────────────────────────────────────────────────────────┤
-│ broken on el8 (libstdc++ too low), conflict with duckdb_fdw                │
-╰────────────────────────────────────────────────────────────────────────────╯
-```
-
-### **List Repo**
-
-You can list all available repo / module (repo collection) with `pig repo list`:
-
-```bash
-$ pig repo list
-
-os_environment: {code: el8, arch: amd64, type: rpm, major: 8}
-repo_upstream:  # Available Repo: 32
-  - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'file:///www/pigsty' }
-  - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://repo.pigsty.io/yum/infra/$basearch' }
-  - { name: pigsty-pgsql   ,description: 'Pigsty PGSQL'       ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch' }
-  - { name: nginx          ,description: 'Nginx Repo'         ,module: infra    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://nginx.org/packages/rhel/$releasever/$basearch/' }
-  - { name: baseos         ,description: 'EL 8+ BaseOS'       ,module: node     ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'https://dl.rockylinux.org/pub/rocky/$releasever/BaseOS/$basearch/os/' }
-  - { name: appstream      ,description: 'EL 8+ AppStream'    ,module: node     ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'https://dl.rockylinux.org/pub/rocky/$releasever/AppStream/$basearch/os/' }
-  - { name: extras         ,description: 'EL 8+ Extras'       ,module: node     ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'https://dl.rockylinux.org/pub/rocky/$releasever/extras/$basearch/os/' }
-  - { name: powertools     ,description: 'EL 8 PowerTools'    ,module: node     ,releases: [8]              ,arch: [x86_64, aarch64]  ,baseurl: 'https://dl.rockylinux.org/pub/rocky/$releasever/PowerTools/$basearch/os/' }
-  - { name: epel           ,description: 'EL 8+ EPEL'         ,module: node     ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'http://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch/' }
-  - { name: pgdg-common    ,description: 'PostgreSQL Common'  ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg-el8fix    ,description: 'PostgreSQL EL8FIX'  ,module: pgsql    ,releases: [8]              ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-x86_64/' }
-  - { name: pgdg13         ,description: 'PostgreSQL 13'      ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg16         ,description: 'PostgreSQL 16'      ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg17         ,description: 'PostgreSQL 17'      ,module: pgsql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg-extras    ,description: 'PostgreSQL Extra'   ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-rhel$releasever-extras/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg13-nonfree ,description: 'PostgreSQL 13+'     ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg14-nonfree ,description: 'PostgreSQL 14+'     ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg15-nonfree ,description: 'PostgreSQL 15+'     ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg16-nonfree ,description: 'PostgreSQL 16+'     ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' }
-  - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' }
-  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch' }
-  - { name: wiltondb       ,description: 'WiltonDB'           ,module: mssql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.copr.fedorainfracloud.org/results/wiltondb/wiltondb/epel-$releasever-$basearch/' }
-  - { name: ivorysql       ,description: 'IvorySQL'           ,module: ivory    ,releases: [7,8,9]          ,arch: [x86_64]           ,baseurl: 'https://repo.pigsty.io/yum/ivory/el$releasever.$basearch' }
-  - { name: groonga        ,description: 'Groonga'            ,module: groonga  ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }
-  - { name: mysql          ,description: 'MySQL'              ,module: mysql    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://repo.mysql.com/yum/mysql-8.0-community/el/$releasever/$basearch/' }
-  - { name: mongo          ,description: 'MongoDB'            ,module: mongo    ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' }
-  - { name: redis          ,description: 'Redis'              ,module: redis    ,releases: [8,9]            ,arch: [x86_64, aarch64]  ,baseurl: 'https://rpmfind.net/linux/remi/enterprise/$releasever/redis72/$basearch/' }
-  - { name: grafana        ,description: 'Grafana'            ,module: grafana  ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://rpm.grafana.com' }
-  - { name: docker-ce      ,description: 'Docker CE'          ,module: docker   ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable' }
-  - { name: kubernetes     ,description: 'Kubernetes'         ,module: kube     ,releases: [7,8,9]          ,arch: [x86_64, aarch64]  ,baseurl: 'https://pkgs.k8s.io/core:/stable:/v1.31/rpm/' }
-repo_modules:   # Available Modules: 19
-  - all       : pigsty-infra, pigsty-pgsql, pgdg-common, pgdg-el8fix, pgdg-el9fix, pgdg17, pgdg16, pgdg15, pgdg14, pgdg13, baseos, appstream, extras, powertools, crb, epel, base, updates, security, backports
-  - pigsty    : pigsty-infra, pigsty-pgsql
-  - pgdg      : pgdg-common, pgdg-el8fix, pgdg-el9fix, pgdg17, pgdg16, pgdg15, pgdg14, pgdg13
-  - node      : baseos, appstream, extras, powertools, crb, epel, base, updates, security, backports
-  - infra     : pigsty-infra, nginx
-  - pgsql     : pigsty-pgsql, pgdg-common, pgdg-el8fix, pgdg-el9fix, pgdg13, pgdg14, pgdg15, pgdg16, pgdg17, pgdg
-  - extra     : pgdg-extras, pgdg13-nonfree, pgdg14-nonfree, pgdg15-nonfree, pgdg16-nonfree, pgdg17-nonfree, timescaledb, citus
-  - mssql     : wiltondb
-  - mysql     : mysql
-  - docker    : docker-ce
-  - kube      : kubernetes
-  - grafana   : grafana
-  - pgml      : pgml
-  - groonga   : groonga
-  - haproxy   : haproxyd, haproxyu
-  - ivory     : ivorysql
-  - local     : pigsty-local
-  - mongo     : mongo
-  - redis     : redis
-```
-
