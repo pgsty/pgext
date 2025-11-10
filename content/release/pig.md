@@ -6,11 +6,75 @@ breadcrumbs: false
 ---
 
 
+## v0.7.1
+
+- remove unnecessary sudo usage, now can be used inside docker
+- allow using `pg18`, `pg17` arg format in pig ext link command
+- add environment var `PIG_NO_SUDO` to force not using sudo
+- [RPM Changelog](/release/rpm#2025-11-10): Add PG 18 support to almost all extensions
+- [DEB Changelog](/release/deb#2025-11-10): Add PG 18 support to almost all extensions
+- [Infra Changelog](/release/infra#2025-11-08): Routine update to the latest version
+
+**Checksums**
+
+```bash
+3ad910e7704cdc40ed848e7a81422953  pig_0.7.1-1_amd64.deb
+5dcae42bf1786c4a05eab9b9d5ce520e  pig_0.7.1-1_arm64.deb
+27589725439bf603b5537b281e61de57  pig-0.7.1-1.aarch64.rpm
+23b331a62e57443c5e3a0e34f6990389  pig-0.7.1-1.x86_64.rpm
+536613aeedfbf08e6fda4dbd1400db1b  pig-v0.7.1.darwin-amd64.tar.gz
+c3994434f972a63c2fde67be7c7bcb57  pig-v0.7.1.darwin-arm64.tar.gz
+9cb32a2a1755f1b8ffe5203fbdaa85b5  pig-v0.7.1.linux-amd64.tar.gz
+9249b554256dd06de3bcc77df2010a2d  pig-v0.7.1.linux-arm64.tar.gz
+```
+
+
+## v0.7.0
+
+- Bump tons of extension to the latest version, with pg 18 support.
+- Most rust extension are bump to the latest pgrx 0.16.1
+- `pig build` overhaul
+    - `pig build pkg <pkg>` will download source, prepare deps, and build rpm/deb
+    - `pig build pgrx` is separated from `pig build rust` with its own subcommand
+    - `pig build pgrx [-v pgrx_version]` now can scan existing pg and init with them
+    - `pig build dep` will now process EL rpm spec dependencies directly
+    - `pig build ext` will now build EL rpm spec directly without the `build` script
+    - `pig build spec` now support downloading spec files directly from pigsty repo
+    - `pig build repo` / `pig repo add` / `pig repo set` will now using `node,pgsql,infra` as default repo modules instead of previous `node,pgdg,pigsty`
+- Optimized error logging
+- Reworked catalog website based on hugo and hextra
+
+**Checksums**
+
+```bash
+ad60f9abcde954769e46eb23de61965e  pig_0.7.0-1_amd64.deb
+aa15d7088d561528e38b2778fe8f7cf9  pig_0.7.0-1_arm64.deb
+05549fe01008e04f8d5a59d4f2a5f0b8  pig-0.7.0-1.aarch64.rpm
+0cc9e46c7c72d43c127a6ad115873b67  pig-0.7.0-1.x86_64.rpm
+ddacfb052f3f3e5567a02e92fdb31cdd  pig-v0.7.0.darwin-amd64.tar.gz
+17d25b565308d3d35513e4b0d824946b  pig-v0.7.0.darwin-arm64.tar.gz
+ee7e055ceff638039956765fb747f80b  pig-v0.7.0.linux-amd64.tar.gz
+284e674807b87447d4b33691fd7a420d  pig-v0.7.0.linux-arm64.tar.gz
+```
+
 ## v0.6.2
 
 - Use official PG 18 repo instead of testing repo
 - Add `v` prefix when specify pigsty version string
 - Improved network connectivity check
+
+**Checksums**
+
+```bash
+01f5b7dc20644226c762dbb229768347  pig_0.6.2-1_amd64.deb
+ce4f00256adc12cbea91467b7f2241cd  pig_0.6.2-1_arm64.deb
+cefc36ae8f348aede533b30836fba720  pig-0.6.2-1.aarch64.rpm
+d04a287c6eb92b11ecbf99542c2db602  pig-0.6.2-1.x86_64.rpm
+e637ca86a7f38866c67686b060223d9a  pig-v0.6.2.darwin-amd64.tar.gz
+79749bc69c683586bd8d761bdf6af98e  pig-v0.6.2.darwin-arm64.tar.gz
+ad4f02993c7d7d8eec142f0224551bb4  pig-v0.6.2.linux-amd64.tar.gz
+9793affa4a0cb60e9753e65b7cba3dca  pig-v0.6.2.linux-arm64.tar.gz
+```
 
 ## v0.6.1
 
@@ -22,6 +86,19 @@ breadcrumbs: false
 - Use pigsty mirror for WiltonDB
 - Add EL 10 dedicate epel repo (with minor suffix)
 - pig version output with go build environment
+
+**Checksums**
+
+```bash
+871d2f3abb90afd77e943a126e917997  pig_0.6.1-1_amd64.deb
+0ffbe364c9a64e997e87a7dd1937d37f  pig_0.6.1-1_arm64.deb
+8410713cb946be5a0cfde078d375c5b5  pig-0.6.1-1.aarch64.rpm
+1a28b44dc53c3e5052f2227a7d76b860  pig-0.6.1-1.x86_64.rpm
+d02239f82c1bcf1674ec16a25d62d3fe  pig-v0.6.1.darwin-amd64.tar.gz
+72e850ce163476ddbf9c6404a624086f  pig-v0.6.1.darwin-arm64.tar.gz
+2b2fdbf00b610dea648d2212452316da  pig-v0.6.1.linux-amd64.tar.gz
+060ab4314b873832cce8c3602a95579b  pig-v0.6.1.linux-arm64.tar.gz
+```
 
 
 ## v0.6.0

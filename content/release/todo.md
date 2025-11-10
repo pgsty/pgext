@@ -8,68 +8,7 @@ weight: 700
 
 ## Version Bump
 
-- timescaledb 2.22.1
-- pg_timeseries 0.1.7 
-- periods 1.2.3 (fix el missing 18)
-- temporal_tables +pg18
-- emaj 4.7.1 (+deb )
-- geoip + (+deb)
- 
-- smlar (+rpm/deb)
-- pg4ml (+rpm/deb)
-- pgroonga 4.0.4 (+rpm/deb)
- 
-- hunspell (+pg18)
-- index_advisor
-- 
-
-**deb only**
-
-- pg_fkpart
-- plan_filter
-- geohash (deb+pg18)
-- pg_bigm 1.2 (deb+pg18)
-- zhparser 2.3 (deb+pg18)
-- pg_background 1.3 (+ deb.pg18)
-
-**rust**
-
-- pg_search 0.19.1
-- tzf 0.2.3 (+pg18) pgrx 0.16.1 (4/5/6/7/8)
-- vchord 0.5.3 (+pg18) pgrx 0.16.1
-- vchord_bm25 0.2.2 (+pg18) pgrx 0.16.1
-- pg_tokenizer.rs 0.1.1 (+pg18) pgrx 0.16.1
-- pg_tiktoken 0.0.1 (+pg18) pgrx 0.16.1
-- pg_jsonschema 0.3.3 pgrx 0.16.0
-- pg_graphql 0.15.12 pgrx 0.16.1
-
-
-- pg_uuidv7 1.7.0
-- orafce 4.16.1
-- plpgsql_check 2.8.3
-- pgTAP 1.3.4
-- pglinter 0.0.17
-- vchord 0.5.3
-- pg_partman 5.3.0
-- icu_ext 1.10.0
-- pgsql_tweaks 1.0.2
-- pg_roaringbitmap 0.5.5
-- pgmq 1.7.0
-- uint128 1.1.1
-- pg_task 2.1.27
-- emaj 4.7.1
-- ddlx 0.30.0
-- hdfs_fdw_13 2.3.3
-- logerrors 2.1.5
-- mysql_fdw 2.9.3
-- pg_snakeoil 1.4
-- pg_squeeze 1.9.1
-- pg_stat_kcache 2.3.1
-- pljava 1.6.10
-- tds_fdw 2.0.5
-- postgres-decoderbufs 3.3.0
-- pg_partman 5.3.0
-- pgauditlogtofile 1.7.3
+- Nil
 
 ## To Be Added
 
@@ -86,7 +25,6 @@ weight: 700
 - pg_later
 - hydra
 - pg_timeseries
-
 
 
 ## Icebox

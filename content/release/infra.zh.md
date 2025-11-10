@@ -4,6 +4,34 @@ description: pigsty-infra 仓库软件变更日志
 weight: 400
 ---
 
+参阅 [Infra 仓库](/zh/repo/infra)，了解如何使用 Infra 仓库。
+
+## 2025-11-08
+
+MinIO 不再提供二进制发行版，后续 MinIO 打包将由 Pigsty 维护
+
+| 名称                         |   旧版本   |   新版本   | 备注 |
+|:---------------------------|:-------:|:-------:|:---|
+| prometheus                 |  3.6.0  |  3.7.3  |    |
+| pushgateway                | 1.11.1  | 1.11.2  |    |
+| alertmanager               | 0.28.1  | 0.29.0  |    |
+| nginx_exporter             |  1.5.0  |  1.5.1  |    |
+| node_exporter              |  1.9.1  | 1.10.2  |    |
+| pgbackrest_exporter        | 0.20.0  | 0.21.0  |    |
+| redis_exporter             | 1.77.0  | 1.80.0  |    |
+| duckdb                     |  1.4.0  |  1.4.1  |    |
+| dblab                      | 0.33.0  | 0.34.2  |    |
+| pg_timetable               | 5.13.0  |  6.1.0  |    |
+| vector                     | 0.50.0  | 0.51.0  |    |
+| rclone                     | 1.71.1  | 1.71.2  |    |
+| victoria-metrics           | 1.126.0 | 1.129.1 |    |
+| victoria-logs              | 1.35.0  | 1.37.2  |    |
+| grafana-victorialogs-ds    | 0.21.0  | 0.21.4  |    |
+| grafana-victoriametrics-ds | 0.19.4  | 0.19.6  |    |
+| grafana-infinity-ds        |  3.5.0  |  3.6.0  |    |
+| pev2                       | 1.16.0  | 1.17.0  |    |
+| pig                        |  0.6.2  |  0.7.1  |    |
+
 
 ## 2025-10-18
 

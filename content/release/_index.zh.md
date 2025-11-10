@@ -20,10 +20,12 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v0.6.2](https://github.com/pgsty/pig/releases/tag/v0.6.2)。
+当前 `pig` 最新稳定版本为：[v0.7.1](https://github.com/pgsty/pig/releases/tag/v0.7.1)。
 
 |       版本        |     日期     | 摘要                             |                           GitHub                           |
 |:---------------:|:----------:|--------------------------------|:----------------------------------------------------------:|
+| [v0.7.1](#v071) | 2025-11-10 | 改进容器内的使用体验                     | [v0.7.1](https://github.com/pgsty/pig/releases/tag/v0.7.1) |
+| [v0.7.0](#v070) | 2025-11-05 | 强化 build 能力，大批量包更新             | [v0.7.0](https://github.com/pgsty/pig/releases/tag/v0.7.0) |
 | [v0.6.2](#v062) | 2025-10-03 | 正式提供 PG 18 支持                  | [v0.6.2](https://github.com/pgsty/pig/releases/tag/v0.6.2) |
 | [v0.6.1](#v061) | 2025-08-13 | 添加 CI/CD 管道，使用 PIGSTY PGDG 仓库  | [v0.6.1](https://github.com/pgsty/pig/releases/tag/v0.6.1) |
 | [v0.6.0](#v060) | 2025-07-17 | 423 个扩展，percona pg_tde，mcp 工具箱 | [v0.6.0](https://github.com/pgsty/pig/releases/tag/v0.6.0) |

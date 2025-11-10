@@ -4,6 +4,171 @@ description: RPM 扩展包变更日志
 weight: 200
 ---
 
+参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
+
+## 2025-11-10
+
+为几乎所有扩展添加 PostgreSQL 18 支持
+
+|          名称           |    旧版本     |    新版本     |  备注   |
+|:---------------------:|:----------:|:----------:|:-----:|
+|       omni_csv        |     -      |   0.1.1    |  new  |
+|     omni_datasets     |     -      |   0.1.0    |  new  |
+|      omni_shmem       |     -      |   0.1.0    |  new  |
+|        pg_csv         |     -      |   1.0.1    |  new  |
+|    pg_dbms_errlog     |     -      |    2.2     |  new  |
+|       pg_rrule        |     -      |   0.2.0    |  new  |
+|        plxslt         |     -      | 0.20140221 |  new  |
+|         anon          |   2.3.0    |   2.4.1    | +pg18 |
+|      collection       |   1.0.0    |   1.1.0    | +pg18 |
+|       credcheck       |    3.0     |    4.2     | +pg18 |
+|         emaj          |   4.7.0    |   4.7.1    | +pg18 |
+|      explain_ui       |   0.0.1    |   0.0.2    | +pg18 |
+|     firebird_fdw      |   1.4.0    |   1.4.1    | +pg18 |
+|       logerrors       |   2.1.3    |   2.1.5    | +pg18 |
+|       multicorn       |    3.0     |    3.2     | +pg18 |
+|         omni          |   0.2.9    |   0.2.14   | +pg18 |
+|      omni_email       |     0      |   0.1.0    | +pg18 |
+|      omni_httpc       |   0.1.5    |   0.1.10   | +pg18 |
+|      omni_httpd       |   0.4.6    |   0.4.11   | +pg18 |
+|        omni_id        |   0.4.2    |   0.4.3    | +pg18 |
+|       omni_kube       |   0.1.1    |   0.4.2    | +pg18 |
+|      omni_ledger      |   0.1.2    |   0.1.3    | +pg18 |
+|       omni_sql        |   0.5.1    |   0.5.3    | +pg18 |
+|      omni_sqlite      |   0.1.2    |   0.2.2    | +pg18 |
+|      omni_types       |   0.3.4    |   0.3.6    | +pg18 |
+|       omni_vfs        |   0.2.1    |   0.2.2    | +pg18 |
+|      omni_worker      |   0.1.0    |   0.2.1    | +pg18 |
+|        periods        |   1.2.2    |   1.2.3    | +pg18 |
+|     pg_bestmatch      |   0.0.1    |   0.0.2    | +pg18 |
+|      pg_cardano       |   1.0.5    |   1.1.1    | +pg18 |
+|     pg_checksums      |    1.1     |    1.3     | +pg18 |
+|       pg_duckdb       |   0.3.1    |   1.1.0    | +pg18 |
+|   pg_failover_slots   |   1.1.0    |   1.2.0    | +pg18 |
+|      pg_graphql       |   1.5.11   |   1.5.12   | +pg18 |
+|       pg_idkit        |   0.3.1    |   0.4.0    | +pg18 |
+|       pg_later        |   0.3.0    |   0.3.1    | +pg18 |
+|      pg_mooncake      |   0.1.2    |   0.2.0    | +pg18 |
+|        pg_net         |   0.9.2    |   0.20.0   | +pg18 |
+|      pg_parquet       |   0.4.3    |   0.5.1    | +pg18 |
+|       pg_render       |   0.1.2    |   0.1.3    | +pg18 |
+|    pg_session_jwt     |   0.3.1    |   0.3.3    | +pg18 |
+|    pg_smtp_client     |   0.2.0    |   0.2.1    | +pg18 |
+|       pg_sphere       |   1.5.1    |   1.5.2    | +pg18 |
+| pg_statement_rollback |    1.4     |    1.5     | +pg18 |
+|    pg_store_plans     |    1.8     |    1.9     | +pg18 |
+|        pg_tle         |   1.5.1    |   1.5.2    | +pg18 |
+|     pg_tokenizer      |   0.1.0    |   0.1.1    | +pg18 |
+|       pg_uuidv7       |   1.6.0    |   1.7.0    | +pg18 |
+|       pgactive        |   2.1.6    |   2.1.7    | +pg18 |
+|       pglogical       |   2.4.5    |   2.4.6    | +pg18 |
+|   pglogical_origin    |   2.4.5    |   2.4.6    | +pg18 |
+|         pgmq          |   1.5.1    |   1.7.0    | +pg18 |
+|      pgsmcrypto       |   0.1.0    |   0.1.1    | +pg18 |
+|       pgx_ulid        |   0.2.0    |   0.2.1    | +pg18 |
+|       pldbgapi        |    1.8     |    1.9     | +pg18 |
+|        pljava         |   1.6.8    |   1.6.10   | +pg18 |
+|        plprql         |   1.0.0    |   18.0.0   | +pg18 |
+|     roaringbitmap     |   0.5.4    |   0.5.5    | +pg18 |
+|        semver         |   0.32.1   |   0.40.0   | +pg18 |
+|       supautils       |   2.10.0   |   3.0.2    | +pg18 |
+|        tds_fdw        |   2.0.4    |   2.0.5    | +pg18 |
+|      timescaledb      |   2.22.0   |   2.23.0   | +pg18 |
+|  timescaledb_toolkit  |   1.21.0   |   1.22.0   | +pg18 |
+|      timeseries       |   0.1.6    |   0.1.7    | +pg18 |
+|          tzf          |   0.2.2    |   0.2.3    | +pg18 |
+|        vchord         |   0.5.1    |   0.5.3    | +pg18 |
+|      vchord_bm25      |   0.2.1    |   0.2.2    | +pg18 |
+|       vectorize       |   0.22.2   |   0.25.0   | +pg18 |
+|       wrappers        |   0.5.4    |   0.5.6    | +pg18 |
+|         gzip          |   1.0.1    |   1.0.0    | +pg18 |
+|        hypopg         |   1.4.1    |   1.4.2    | +pg18 |
+|      mobilitydb       |   1.2.0    |   1.3.0    | +pg18 |
+|       mongo_fdw       |   5.5.1    |   5.5.3    | +pg18 |
+|        orafce         |   4.14.4   |   4.14.6   | +pg18 |
+|     pg_hint_plan      |   1.7.1    |   1.8.0    | +pg18 |
+|        pg_ivm         |    1.11    |    1.13    | +pg18 |
+|      pg_partman       |   5.2.4    |   5.3.1    | +pg18 |
+|       pg_search       |   0.18.1   |   0.19.2   | +pg18 |
+|     pg_show_plans     |   2.1.6    |   2.1.7    | +pg18 |
+|        pgpcre         |     1      | 0.20190509 | +pg18 |
+|       pgroonga        |   4.0.0    |   4.0.4    | +pg18 |
+|   pgroonga_database   |   4.0.0    |   4.0.4    | +pg18 |
+|     plpgsql_check     |   2.8.2    |   2.8.3    | +pg18 |
+|         uint          | 1.20231206 | 1.20250815 | +pg18 |
+|        uint128        |   1.1.0    |   1.1.1    | +pg18 |
+|        omni_*         |  20250525  |  20251108  | +pg18 |
+|          acl          |   1.0.4    |            | +pg18 |
+|    aggs_for_arrays    |   1.3.3    |            | +pg18 |
+|     aggs_for_vecs     |   1.4.0    |            | +pg18 |
+|       arraymath       |    1.1     |            | +pg18 |
+|        asn1oid        |    1.6     |            | +pg18 |
+|        aws_s3         |   0.0.1    |            | +pg18 |
+|        base36         |   1.0.0    |            | +pg18 |
+|        base62         |   0.0.1    |            | +pg18 |
+|         bzip          |   1.0.0    |            | +pg18 |
+|        chkpass        |    1.0     |            | +pg18 |
+|        convert        |   0.0.4    |            | +pg18 |
+|    count_distinct     |   3.0.2    |            | +pg18 |
+|        country        |   0.0.3    |            | +pg18 |
+|       cryptint        |   1.0.0    |            | +pg18 |
+|       currency        |   0.0.3    |            | +pg18 |
+|  data_historization   |   1.1.0    |            | +pg18 |
+|      db_migrator      |   1.0.0    |            | +pg18 |
+|         dbt2          |   0.61.7   |            | +pg18 |
+|   ddl_historization   |   0.0.7    |            | +pg18 |
+|       ddsketch        |   1.0.1    |            | +pg18 |
+|      decoder_raw      |    1.0     |            | +pg18 |
+|      decoderbufs      |   3.2.0    |            | +pg18 |
+|       emailaddr       |     0      |            | +pg18 |
+|        envvar         |   1.0.1    |            | +pg18 |
+|         faker         |   0.5.3    |            | +pg18 |
+|       financial       |   1.0.1    |            | +pg18 |
+|          fio          |    1.0     |            | +pg18 |
+|    first_last_agg     |   0.1.4    |            | +pg18 |
+|       floatfile       |   1.3.1    |            | +pg18 |
+|       floatvec        |   1.1.1    |            | +pg18 |
+|         geoip         |   0.3.0    |            | +pg18 |
+|        hashlib        |    1.1     |            | +pg18 |
+|       hashtypes       |   0.1.5    |            | +pg18 |
+|          hll          |    2.18    |            | +pg18 |
+|      hunspell_*       |    1.0     |            | +pg18 |
+|        imgsmlr        |    1.0     |            | +pg18 |
+|     index_advisor     |   0.2.0    |            | +pg18 |
+|       kafka_fdw       |   0.0.3    |            | +pg18 |
+|      login_hook       |    1.7     |            | +pg18 |
+|      oracle_fdw       |   2.8.0    |            | +pg18 |
+|      pg_auth_mon      |    3.0     |            | +pg18 |
+|     pg_background     |    1.3     |            | +pg18 |
+|        pg_bigm        |    1.2     |            | +pg18 |
+|        pg_cron        |   1.6.7    |            | +pg18 |
+|      pg_profile       |    4.10    |            | +pg18 |
+|    pg_stat_kcache     |   2.3.0    |            | +pg18 |
+|         pgdd          |   0.6.0    |            | +pg18 |
+|         pgjwt         |   0.2.0    |            | +pg18 |
+|       pgnodemx        |    1.7     |            | +pg18 |
+|       pgsodium        |   3.1.9    |            | +pg18 |
+|         pgtap         |   1.3.3    |            | +pg18 |
+|      plprofiler       |   4.2.5    |            | +pg18 |
+|        plproxy        |   2.11.0   |            | +pg18 |
+|          plr          |   8.4.8    |            | +pg18 |
+|         plv8          |   3.2.4    |            | +pg18 |
+|      pointcloud       |   1.2.5    |            | +pg18 |
+|         powa          |   5.0.1    |            | +pg18 |
+|        prefix         |   1.2.10   |            | +pg18 |
+|          q3c          |   2.0.1    |            | +pg18 |
+|       redis_fdw       |    1.0     |            | +pg18 |
+|   session_variable    |    3.4     |            | +pg18 |
+|       set_user        |   4.1.0    |            | +pg18 |
+|     system_stats      |    3.2     |            | +pg18 |
+|    temporal_tables    |   1.2.2    |            | +pg18 |
+|         topn          |   2.7.0    |            | +pg18 |
+|         unit          |    7.10    |            | +pg18 |
+|       zhparser        |    2.3     |            | +pg18 |
+|         zstd          |   1.1.2    |            | +pg18 |
+
+
+
 
 ## 2025-09-04
 

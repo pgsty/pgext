@@ -7,33 +7,7 @@ weight: 700
 
 ## 版本更新
 
-- pg_search 0.19.1
-- pg_uuidv7 1.7.0
-- orafce 4.16.1
-- plpgsql_check 2.8.3
-- pgTAP 1.3.4
-- pglinter 0.0.17
-- vchord 0.5.3
-- pg_partman 5.3.0
-- icu_ext 1.10.0
-- pgsql_tweaks 1.0.2
-- pg_roaringbitmap 0.5.5
-- pgmq 1.7.0
-- uint128 1.1.1
-- pg_task 2.1.27
-- emaj 4.7.1
-- ddlx 0.30.0
-- hdfs_fdw_13 2.3.3
-- logerrors 2.1.5
-- mysql_fdw 2.9.3
-- pg_snakeoil 1.4
-- pg_squeeze 1.9.1
-- pg_stat_kcache 2.3.1
-- pljava 1.6.10
-- tds_fdw 2.0.5
-- postgres-decoderbufs 3.3.0
-- pg_partman 5.3.0
-- pgauditlogtofile 1.7.3
+- 全部完成
 
 ## 需要新增
 
