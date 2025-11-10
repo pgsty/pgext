@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**pg_jsonschema**](https://github.com/supabase/pg_jsonschema)
+[**pg_jsonschema**](https://github.com/supabase/pg_jsonschema) : PostgreSQL extension providing JSON Schema validation
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "pg_jsonschema_18" "green" >}} {{< bg "17" "pg_jsonschema_17" "green" >}} {{< bg "16" "pg_jsonschema_16" "green" >}} {{< bg "15" "pg_jsonschema_15" "green" >}} {{< bg "14" "pg_jsonschema_14" "green" >}} {{< bg "13" "pg_jsonschema_13" "green" >}} | `pg_jsonschema_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_jsonschema" >}} | `0.3.3` | {{< bg "18" "postgresql-18-pg-jsonschema" "green" >}} {{< bg "17" "postgresql-17-pg-jsonschema" "green" >}} {{< bg "16" "postgresql-16-pg-jsonschema" "green" >}} {{< bg "15" "postgresql-15-pg-jsonschema" "green" >}} {{< bg "14" "postgresql-14-pg-jsonschema" "green" >}} {{< bg "13" "postgresql-13-pg-jsonschema" "green" >}} | `postgresql-$v-pg-jsonschema` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_jsonschema` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "pg_jsonschema_18" "green" >}} {{< bg "17" "pg_jsonschema_17" "green" >}} {{< bg "16" "pg_jsonschema_16" "green" >}} {{< bg "15" "pg_jsonschema_15" "green" >}} {{< bg "14" "pg_jsonschema_14" "green" >}} {{< bg "13" "pg_jsonschema_13" "green" >}} | `pg_jsonschema_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "postgresql-18-pg-jsonschema" "green" >}} {{< bg "17" "postgresql-17-pg-jsonschema" "green" >}} {{< bg "16" "postgresql-16-pg-jsonschema" "green" >}} {{< bg "15" "postgresql-15-pg-jsonschema" "green" >}} {{< bg "14" "postgresql-14-pg-jsonschema" "green" >}} {{< bg "13" "postgresql-13-pg-jsonschema" "green" >}} | `postgresql-$v-pg-jsonschema` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,38 +187,35 @@ width: full
 
 
 ```bash
-pig build get pg_jsonschema; # get pg_jsonschema source code
-pig build dep pg_jsonschema; # install build dependencies
-pig build pkg pg_jsonschema; # build extension rpm or deb
-pig build ext pg_jsonschema; # build extension rpms
+pig build pkg pg_jsonschema;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_jsonschema; # install by extension name, for the current active PG version
-pig ext install pg_jsonschema; # install via package alias, for the active PG version
-pig ext install pg_jsonschema -v 18;   # install for PG 18
-pig ext install pg_jsonschema -v 17;   # install for PG 17
-pig ext install pg_jsonschema -v 16;   # install for PG 16
-pig ext install pg_jsonschema -v 15;   # install for PG 15
-pig ext install pg_jsonschema -v 14;   # install for PG 14
-pig ext install pg_jsonschema -v 13;   # install for PG 13
+pig install pg_jsonschema;		# install via package name, for the active PG version
+
+pig install pg_jsonschema -v 18;   # install for PG 18
+pig install pg_jsonschema -v 17;   # install for PG 17
+pig install pg_jsonschema -v 16;   # install for PG 16
+pig install pg_jsonschema -v 15;   # install for PG 15
+pig install pg_jsonschema -v 14;   # install for PG 14
+pig install pg_jsonschema -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_jsonschema;
 ```
-

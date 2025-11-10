@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pg_http**](https://github.com/pramsey/pgsql-http)
+[**pg_http**](https://github.com/pramsey/pgsql-http) : HTTP client for PostgreSQL, allows web page retrieval inside the database.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< bg "18" "pg_http_18*" "green" >}} {{< bg "17" "pg_http_17*" "green" >}} {{< bg "16" "pg_http_16*" "green" >}} {{< bg "15" "pg_http_15*" "green" >}} {{< bg "14" "pg_http_14*" "green" >}} {{< bg "13" "pg_http_13*" "green" >}} | `pg_http_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/http" >}} | `1.7.0` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} {{< bg "13" "postgresql-13-http" "green" >}} | `postgresql-$v-http` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_http` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "pg_http_18*" "green" >}} {{< bg "17" "pg_http_17*" "green" >}} {{< bg "16" "pg_http_16*" "green" >}} {{< bg "15" "pg_http_15*" "green" >}} {{< bg "14" "pg_http_14*" "green" >}} {{< bg "13" "pg_http_13*" "green" >}} | `pg_http_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "postgresql-18-http" "green" >}} {{< bg "17" "postgresql-17-http" "green" >}} {{< bg "16" "postgresql-16-http" "green" >}} {{< bg "15" "postgresql-15-http" "green" >}} {{< bg "14" "postgresql-14-http" "green" >}} {{< bg "13" "postgresql-13-http" "green" >}} | `postgresql-$v-http` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,45 +185,40 @@ width: full
 
 
 ```bash
-pig build get http; # get http source code
-pig build dep http; # install build dependencies
-pig build pkg http; # build extension rpm or deb
-pig build ext http; # build extension rpms
+pig build pkg pg_http;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install http; # install by extension name, for the current active PG version
-pig ext install pg_http; # install via package alias, for the active PG version
-pig ext install http -v 18;   # install for PG 18
-pig ext install http -v 17;   # install for PG 17
-pig ext install http -v 16;   # install for PG 16
-pig ext install http -v 15;   # install for PG 15
-pig ext install http -v 14;   # install for PG 14
-pig ext install http -v 13;   # install for PG 13
+pig install pg_http;		# install via package name, for the active PG version
+pig install http;		# install by extension name, for the current active PG version
+
+pig install http -v 18;   # install for PG 18
+pig install http -v 17;   # install for PG 17
+pig install http -v 16;   # install for PG 16
+pig install http -v 15;   # install for PG 15
+pig install http -v 14;   # install for PG 14
+pig install http -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION http;
 ```
 
-
-
-
---------
 
 ## Usage
 

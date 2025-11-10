@@ -1,8 +1,5 @@
 
---------
-
 ## Usage
-
 
 ```sql
 CREATE EXTENSION vectorscale CASCADE;

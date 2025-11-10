@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-[**plpython3u**](https://www.postgresql.org/docs/current/plpython.html)
+[**plpython3u**](https://www.postgresql.org/docs/current/plpython.html) : transform between jsonb and plpython3u
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -40,8 +40,9 @@ width: full
 
 ## Install
 
+
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION jsonb_plpython3u;
+CREATE EXTENSION jsonb_plpython3u CASCADE; -- requires plpython3u
 ```

@@ -1,6 +1,4 @@
 
---------
-
 ## Usage
 
 The actual PDF parsing is done by [poppler](https://poppler.freedesktop.org).

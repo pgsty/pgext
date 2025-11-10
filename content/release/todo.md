@@ -8,7 +8,7 @@ weight: 700
 
 ## Version Bump
 
-- Nil
+- citus 13.2.0 official release
 
 ## To Be Added
 

@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**orioledb**](https://github.com/orioledb/orioledb)
+[**orioledb**](https://github.com/orioledb/orioledb) : OrioleDB, the next generation transactional engine
 
 
 ## Overview
@@ -19,22 +19,23 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "columnar" >}} {{< ext "pg_mooncake" >}} {{< ext "citus_columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "pg_strom" >}} |
 
-> [!Note] only works on orioledb patched postgres kernel
+> [!Note] special case: this extension only works on patched postgres kernel: oriolepg
 
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/orioledb" >}} | `1.5` | {{< bg "18" "orioledb_18*" "red" >}} {{< bg "17" "orioledb_17*" "green" >}} {{< bg "16" "orioledb_16*" "red" >}} {{< bg "15" "orioledb_15*" "red" >}} {{< bg "14" "orioledb_14*" "red" >}} {{< bg "13" "orioledb_13*" "red" >}} | `orioledb_$v*` | `oriolepg_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/orioledb" >}} | `1.5` | {{< bg "18" "oriolepg-18-orioledb" "red" >}} {{< bg "17" "oriolepg-17-orioledb" "green" >}} {{< bg "16" "oriolepg-16-orioledb" "red" >}} {{< bg "15" "oriolepg-15-orioledb" "red" >}} {{< bg "14" "oriolepg-14-orioledb" "red" >}} {{< bg "13" "oriolepg-13-orioledb" "red" >}} | `oriolepg-$v-orioledb` | `oriolepg-$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `orioledb` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "orioledb_18*" "red" >}} {{< bg "17" "orioledb_17*" "green" >}} {{< bg "16" "orioledb_16*" "red" >}} {{< bg "15" "orioledb_15*" "red" >}} {{< bg "14" "orioledb_14*" "red" >}} {{< bg "13" "orioledb_13*" "red" >}} | `orioledb_$v*` | `oriolepg_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "oriolepg-18-orioledb" "red" >}} {{< bg "17" "oriolepg-17-orioledb" "green" >}} {{< bg "16" "oriolepg-16-orioledb" "red" >}} {{< bg "15" "oriolepg-15-orioledb" "red" >}} {{< bg "14" "oriolepg-14-orioledb" "red" >}} {{< bg "13" "oriolepg-13-orioledb" "red" >}} | `oriolepg-$v-orioledb` | `oriolepg-$v` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -84,33 +85,37 @@ width: full
 
 
 ```bash
-pig build get orioledb; # get orioledb source code
-pig build dep orioledb; # install build dependencies
-pig build pkg orioledb; # build extension rpm or deb
-pig build ext orioledb; # build extension rpms
+pig build pkg orioledb;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install orioledb; # install by extension name, for the current active PG version
-pig ext install orioledb; # install via package alias, for the active PG version
-pig ext install orioledb -v 17;   # install for PG 17
+pig install orioledb;		# install via package name, for the active PG version
+
+pig install orioledb -v 17;   # install for PG 17
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'orioledb';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION orioledb;
 ```
-

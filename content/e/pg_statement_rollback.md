@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-[**pg_statement_rollback**](https://github.com/lzlabs/pg_statement_rollback)
+[**pg_statement_rollback**](https://github.com/lzlabs/pg_statement_rollback) : Server side rollback at statement level for PostgreSQL like Oracle or DB2
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_statement_rollback" >}} | `1.5` | {{< bg "18" "pg_statement_rollback_18*" "green" >}} {{< bg "17" "pg_statement_rollback_17*" "green" >}} {{< bg "16" "pg_statement_rollback_16*" "green" >}} {{< bg "15" "pg_statement_rollback_15*" "green" >}} {{< bg "14" "pg_statement_rollback_14*" "green" >}} {{< bg "13" "pg_statement_rollback_13*" "green" >}} | `pg_statement_rollback_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_statement_rollback" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-statement-rollback" "green" >}} {{< bg "17" "postgresql-17-pg-statement-rollback" "green" >}} {{< bg "16" "postgresql-16-pg-statement-rollback" "green" >}} {{< bg "15" "postgresql-15-pg-statement-rollback" "green" >}} {{< bg "14" "postgresql-14-pg-statement-rollback" "green" >}} {{< bg "13" "postgresql-13-pg-statement-rollback" "green" >}} | `postgresql-$v-pg-statement-rollback` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_statement_rollback` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "pg_statement_rollback_18*" "green" >}} {{< bg "17" "pg_statement_rollback_17*" "green" >}} {{< bg "16" "pg_statement_rollback_16*" "green" >}} {{< bg "15" "pg_statement_rollback_15*" "green" >}} {{< bg "14" "pg_statement_rollback_14*" "green" >}} {{< bg "13" "pg_statement_rollback_13*" "green" >}} | `pg_statement_rollback_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-statement-rollback" "green" >}} {{< bg "17" "postgresql-17-pg-statement-rollback" "green" >}} {{< bg "16" "postgresql-16-pg-statement-rollback" "green" >}} {{< bg "15" "postgresql-15-pg-statement-rollback" "green" >}} {{< bg "14" "postgresql-14-pg-statement-rollback" "green" >}} {{< bg "13" "postgresql-13-pg-statement-rollback" "green" >}} | `postgresql-$v-pg-statement-rollback` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -195,38 +196,40 @@ width: full
 
 
 ```bash
-pig build get pg_statement_rollback; # get pg_statement_rollback source code
-pig build dep pg_statement_rollback; # install build dependencies
-pig build pkg pg_statement_rollback; # build extension rpm or deb
-pig build ext pg_statement_rollback; # build extension rpms
+pig build pkg pg_statement_rollback;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_statement_rollback; # install by extension name, for the current active PG version
-pig ext install pg_statement_rollback; # install via package alias, for the active PG version
-pig ext install pg_statement_rollback -v 18;   # install for PG 18
-pig ext install pg_statement_rollback -v 17;   # install for PG 17
-pig ext install pg_statement_rollback -v 16;   # install for PG 16
-pig ext install pg_statement_rollback -v 15;   # install for PG 15
-pig ext install pg_statement_rollback -v 14;   # install for PG 14
-pig ext install pg_statement_rollback -v 13;   # install for PG 13
+pig install pg_statement_rollback;		# install via package name, for the active PG version
+
+pig install pg_statement_rollback -v 18;   # install for PG 18
+pig install pg_statement_rollback -v 17;   # install for PG 17
+pig install pg_statement_rollback -v 16;   # install for PG 16
+pig install pg_statement_rollback -v 15;   # install for PG 15
+pig install pg_statement_rollback -v 14;   # install for PG 14
+pig install pg_statement_rollback -v 13;   # install for PG 13
 
 ```
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pg_statement_rollback;
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_statement_rollback';
 ```
+
+
+This extension does not need `CREATE EXTENSION` DDL command
+
 

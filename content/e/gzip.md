@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pg_gzip**](https://github.com/pramsey/pgsql-gzip)
+[**pg_gzip**](https://github.com/pramsey/pgsql-gzip) : gzip and gunzip functions.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/gzip" >}} | `1.0.0` | {{< bg "18" "pg_gzip_18*" "green" >}} {{< bg "17" "pg_gzip_17*" "green" >}} {{< bg "16" "pg_gzip_16*" "green" >}} {{< bg "15" "pg_gzip_15*" "green" >}} {{< bg "14" "pg_gzip_14*" "green" >}} {{< bg "13" "pg_gzip_13*" "green" >}} | `pg_gzip_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/gzip" >}} | `1.0.0` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} {{< bg "13" "postgresql-13-gzip" "green" >}} | `postgresql-$v-gzip` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_gzip` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "pg_gzip_18*" "green" >}} {{< bg "17" "pg_gzip_17*" "green" >}} {{< bg "16" "pg_gzip_16*" "green" >}} {{< bg "15" "pg_gzip_15*" "green" >}} {{< bg "14" "pg_gzip_14*" "green" >}} {{< bg "13" "pg_gzip_13*" "green" >}} | `pg_gzip_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} {{< bg "13" "postgresql-13-gzip" "green" >}} | `postgresql-$v-gzip` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,45 +185,40 @@ width: full
 
 
 ```bash
-pig build get gzip; # get gzip source code
-pig build dep gzip; # install build dependencies
-pig build pkg gzip; # build extension rpm or deb
-pig build ext gzip; # build extension rpms
+pig build pkg pg_gzip;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install gzip; # install by extension name, for the current active PG version
-pig ext install pg_gzip; # install via package alias, for the active PG version
-pig ext install gzip -v 18;   # install for PG 18
-pig ext install gzip -v 17;   # install for PG 17
-pig ext install gzip -v 16;   # install for PG 16
-pig ext install gzip -v 15;   # install for PG 15
-pig ext install gzip -v 14;   # install for PG 14
-pig ext install gzip -v 13;   # install for PG 13
+pig install pg_gzip;		# install via package name, for the active PG version
+pig install gzip;		# install by extension name, for the current active PG version
+
+pig install gzip -v 18;   # install for PG 18
+pig install gzip -v 17;   # install for PG 17
+pig install gzip -v 16;   # install for PG 16
+pig install gzip -v 15;   # install for PG 15
+pig install gzip -v 14;   # install for PG 14
+pig install gzip -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION gzip;
 ```
 
-
-
-
---------
 
 ## Usage
 

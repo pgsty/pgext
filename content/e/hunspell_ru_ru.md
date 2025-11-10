@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-[**hunspell_ru_ru**](https://github.com/postgrespro/hunspell_dicts)
+[**hunspell_ru_ru**](https://github.com/postgrespro/hunspell_dicts) : Russian Hunspell Dictionary
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/hunspell_ru_ru" >}} | `1.0` | {{< bg "18" "hunspell_ru_ru_18" "green" >}} {{< bg "17" "hunspell_ru_ru_17" "green" >}} {{< bg "16" "hunspell_ru_ru_16" "green" >}} {{< bg "15" "hunspell_ru_ru_15" "green" >}} {{< bg "14" "hunspell_ru_ru_14" "green" >}} {{< bg "13" "hunspell_ru_ru_13" "green" >}} | `hunspell_ru_ru_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/hunspell_ru_ru" >}} | `1.0` | {{< bg "18" "postgresql-18-hunspell-ru-ru" "green" >}} {{< bg "17" "postgresql-17-hunspell-ru-ru" "green" >}} {{< bg "16" "postgresql-16-hunspell-ru-ru" "green" >}} {{< bg "15" "postgresql-15-hunspell-ru-ru" "green" >}} {{< bg "14" "postgresql-14-hunspell-ru-ru" "green" >}} {{< bg "13" "postgresql-13-hunspell-ru-ru" "green" >}} | `postgresql-$v-hunspell-ru-ru` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hunspell_ru_ru` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "hunspell_ru_ru_18" "green" >}} {{< bg "17" "hunspell_ru_ru_17" "green" >}} {{< bg "16" "hunspell_ru_ru_16" "green" >}} {{< bg "15" "hunspell_ru_ru_15" "green" >}} {{< bg "14" "hunspell_ru_ru_14" "green" >}} {{< bg "13" "hunspell_ru_ru_13" "green" >}} | `hunspell_ru_ru_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-hunspell-ru-ru" "green" >}} {{< bg "17" "postgresql-17-hunspell-ru-ru" "green" >}} {{< bg "16" "postgresql-16-hunspell-ru-ru" "green" >}} {{< bg "15" "postgresql-15-hunspell-ru-ru" "green" >}} {{< bg "14" "postgresql-14-hunspell-ru-ru" "green" >}} {{< bg "13" "postgresql-13-hunspell-ru-ru" "green" >}} | `postgresql-$v-hunspell-ru-ru` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get hunspell_ru_ru; # get hunspell_ru_ru source code
-pig build dep hunspell_ru_ru; # install build dependencies
-pig build pkg hunspell_ru_ru; # build extension rpm or deb
-pig build ext hunspell_ru_ru; # build extension rpms
+pig build pkg hunspell_ru_ru;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install hunspell_ru_ru; # install by extension name, for the current active PG version
-pig ext install hunspell_ru_ru; # install via package alias, for the active PG version
-pig ext install hunspell_ru_ru -v 18;   # install for PG 18
-pig ext install hunspell_ru_ru -v 17;   # install for PG 17
-pig ext install hunspell_ru_ru -v 16;   # install for PG 16
-pig ext install hunspell_ru_ru -v 15;   # install for PG 15
-pig ext install hunspell_ru_ru -v 14;   # install for PG 14
-pig ext install hunspell_ru_ru -v 13;   # install for PG 13
+pig install hunspell_ru_ru;		# install via package name, for the active PG version
+
+pig install hunspell_ru_ru -v 18;   # install for PG 18
+pig install hunspell_ru_ru -v 17;   # install for PG 17
+pig install hunspell_ru_ru -v 16;   # install for PG 16
+pig install hunspell_ru_ru -v 15;   # install for PG 15
+pig install hunspell_ru_ru -v 14;   # install for PG 14
+pig install hunspell_ru_ru -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION hunspell_ru_ru;
 ```
-

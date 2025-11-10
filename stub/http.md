@@ -1,7 +1,4 @@
 
-
---------
-
 ## Usage
 
 https://github.com/pramsey/pgsql-http

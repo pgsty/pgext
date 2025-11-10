@@ -180,32 +180,32 @@ func (g *ExtensionGenerator) generateOverview(ext *Extension) string {
 func (g *ExtensionGenerator) generateAttributes(ext *Extension) string {
 	attrs := ext.GetAttributeBadge()
 
-	hasBin := Badge("No", "green", "", "", "")
+	hasBin := Badge("No", "blue", "", "", "")
 	if ext.HasBin {
 		hasBin = Badge("Yes", "green", "", "", "")
 	}
 
-	hasLib := Badge("No", "green", "", "", "")
+	hasLib := Badge("No", "blue", "", "", "")
 	if ext.HasLib {
 		hasLib = Badge("Yes", "green", "", "", "")
 	}
 
-	needLoad := Badge("No", "green", "", "", "")
+	needLoad := Badge("No", "blue", "", "", "")
 	if ext.NeedLoad {
-		needLoad = Badge("Yes", "red", "", "", "")
+		needLoad = Badge("Yes", "orange", "", "", "")
 	}
 
-	needDDL := Badge("No", "green", "", "", "")
+	needDDL := Badge("No", "orange", "", "", "")
 	if ext.NeedDDL {
 		needDDL = Badge("Yes", "green", "", "", "")
 	}
 
-	relocatable := Badge("no", "red", "", "", "")
+	relocatable := Badge("no", "orange", "", "", "")
 	if ext.Relocatable.Valid && ext.Relocatable.Bool {
 		relocatable = Badge("yes", "green", "", "", "")
 	}
 
-	trusted := Badge("no", "red", "", "", "")
+	trusted := Badge("no", "orange", "", "", "")
 	if ext.Trusted.Valid && ext.Trusted.Bool {
 		trusted = Badge("yes", "green", "", "", "")
 	}
@@ -291,8 +291,8 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 	// SRC row - add source package row first
 	if ext.Repo.Valid || ext.Version.Valid || len(ext.PgVer) > 0 {
 		srcPgVersions := ParsePGVersions(ext.PgVer)
-		srcRow := g.buildPackageSummaryRow("SRC", ext.Repo.String, ext.Version.String,
-			ext.Pkg, srcPgVersions, nil, ext, true) // true indicates this is a SRC row
+		srcRow := g.buildPackageSummaryRow("EXT", ext.Repo.String, ext.Version.String,
+			ext.Pkg, srcPgVersions, nil, ext, true) // true indicates this is a EXT row
 		if srcRow != "" {
 			rows = append(rows, srcRow)
 		}
@@ -733,9 +733,15 @@ func (g *ExtensionGenerator) generateSourceSection(ext *Extension) string {
 }
 
 func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
+
+	// Build the "Install" section with better formatting
+	var b strings.Builder
+	b.WriteString("\n## Install\n\n")
+
+	loadCreate := g.generateLoadCreate(ext)
 	// Special handling for contrib extensions
 	if ext.Contrib {
-		return g.generateContribInstallSection(ext)
+		return b.String() + loadCreate
 	}
 
 	// Parse PG versions
@@ -748,23 +754,18 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 		installCmds = append(installCmds, fmt.Sprintf("pig install %s -v %d;   # install for PG %d", ext.Name, pg, pg))
 	}
 
-	// Determine CASCADE SCHEMA clause
-	cascadeSchema := ""
-	if len(ext.Schemas) > 0 && (!ext.Relocatable.Valid || !ext.Relocatable.Bool) {
-		cascadeSchema = fmt.Sprintf(" CASCADE SCHEMA %s", ext.Schemas[0])
+	// Build the Repo Section based on extension repo
+	if ext.Repo.Valid && ext.Repo.String == "PGDG" {
+		b.WriteString("Make sure [**PGDG**](/repo/pgdg) repo available:\n\n")
+		b.WriteString(TripleQuoteBash("pig repo add pgdg -u    # add pgdg repo and update cache"))
+	} else {
+		b.WriteString("Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:\n\n")
+		b.WriteString(TripleQuoteBash("pig repo add pgdg pigsty -u   # add both repo and update cache"))
 	}
-
-	// Build the install section with better formatting
-	var b strings.Builder
-	b.WriteString("\n## Install\n\n")
-
-	// Build the Repo Section
-	b.WriteString("To add the required [PGDG](/repo/pgdg) / [PIGSTY](/repo/pgsql) upstream repository, use:\n\n")
-	b.WriteString(TripleQuoteBash("pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)"))
 	b.WriteString("\n\n")
-	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with:\n\n")
 
 	// Build install commands
+	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):\n\n")
 	installScript := fmt.Sprintf("pig install %s;\t\t# install via package name, for the active PG version\n", ext.Pkg)
 	if ext.Name != ext.Pkg {
 		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name, for the current active PG version\n", ext.Name)
@@ -775,36 +776,67 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	b.WriteString(TripleQuoteBash(installScript))
 	b.WriteString("\n\n")
 
-	// Build load command
-
-	// Build the Create Section
-	b.WriteString("[**Create**](https://ext.pgsty.com/usage/create) this extension with:\n\n")
-	b.WriteString(TripleQuoteBash(fmt.Sprintf("CREATE EXTENSION %s%s;", ext.Name, cascadeSchema)))
-	b.WriteString("\n\n")
-
+	// load + create
+	b.WriteString(loadCreate)
 	return b.String()
 }
 
-func (g *ExtensionGenerator) generateContribInstallSection(ext *Extension) string {
+func (g *ExtensionGenerator) generateLoadCreate(ext *Extension) string {
 	var b strings.Builder
-	b.WriteString("\n## Install\n")
-
 	// Add shared_preload_libraries section if needed
 	if ext.NeedLoad {
-		b.WriteString("\nAdd this extension to [`shared_preload_libraries`](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):\n\n")
-		b.WriteString(TripleQuoteSQL(fmt.Sprintf("shared_preload_libraries = '%s';  -- comma-separated list", ext.Name)))
+		b.WriteString("\n[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):\n\n")
+
+		// Build the list of libraries to load
+		libSet := make(map[string]bool)
+		var libsToLoad []string
+
+		// Check if extension has dependencies that also need loading
+		if len(ext.Requires) > 0 {
+			for _, depName := range ext.Requires {
+				if depExt, exists := g.Cache.ExtMap[depName]; exists && depExt.NeedLoad {
+					// Get library name(s) for the dependency
+					depLibName := depExt.GetLibName()
+					// Handle case where lib name might contain multiple libraries separated by comma
+					for _, lib := range strings.Split(depLibName, ",") {
+						lib = strings.TrimSpace(lib)
+						if lib != "" && !libSet[lib] {
+							libSet[lib] = true
+							libsToLoad = append(libsToLoad, lib)
+						}
+					}
+				}
+			}
+		}
+
+		// Add current extension's library name(s)
+		extLibName := ext.GetLibName()
+		for _, lib := range strings.Split(extLibName, ",") {
+			lib = strings.TrimSpace(lib)
+			if lib != "" && !libSet[lib] {
+				libSet[lib] = true
+				libsToLoad = append(libsToLoad, lib)
+			}
+		}
+
+		// Generate the shared_preload_libraries config
+		libConfig := strings.Join(libsToLoad, ", ")
+		b.WriteString(TripleQuoteSQL(fmt.Sprintf("shared_preload_libraries = '%s';", libConfig)))
 		b.WriteString("\n\n")
 	}
 
-	// Determine CASCADE SCHEMA clause
-	cascadeSchema := ""
-	if len(ext.Schemas) > 0 && (!ext.Relocatable.Valid || !ext.Relocatable.Bool) {
-		cascadeSchema = fmt.Sprintf(" CASCADE SCHEMA %s", ext.Schemas[0])
-	}
-
 	// Add CREATE section
-	b.WriteString("\n[**Create**](https://ext.pgsty.com/usage/create) this extension with:\n\n")
-	b.WriteString(TripleQuoteSQL(fmt.Sprintf("CREATE EXTENSION %s%s;", ext.Name, cascadeSchema)))
+	if ext.NeedDDL {
+		b.WriteString("\n[**Create**](https://ext.pgsty.com/usage/create) this extension with:\n\n")
+		if len(ext.Requires) > 0 {
+			b.WriteString(TripleQuoteSQL(fmt.Sprintf("CREATE EXTENSION %s CASCADE; -- requires %s", ext.Name, strings.Join(ext.Requires, ", "))))
+		} else {
+			b.WriteString(TripleQuoteSQL(fmt.Sprintf("CREATE EXTENSION %s;", ext.Name)))
+		}
+
+	} else {
+		b.WriteString("\nThis extension does not need `CREATE EXTENSION` DDL command\n\n")
+	}
 	b.WriteString("\n")
 
 	return b.String()

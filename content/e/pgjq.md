@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pgjq**](https://github.com/Florents-Tselai/pgJQ)
+[**pgjq**](https://github.com/Florents-Tselai/pgJQ) : Use jq in Postgres
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgjq" >}} | `0.1.0` | {{< bg "18" "pgjq_18*" "green" >}} {{< bg "17" "pgjq_17*" "green" >}} {{< bg "16" "pgjq_16*" "green" >}} {{< bg "15" "pgjq_15*" "green" >}} {{< bg "14" "pgjq_14*" "green" >}} {{< bg "13" "pgjq_13*" "red" >}} | `pgjq_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgjq" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgjq" "green" >}} {{< bg "17" "postgresql-17-pgjq" "green" >}} {{< bg "16" "postgresql-16-pgjq" "green" >}} {{< bg "15" "postgresql-15-pgjq" "green" >}} {{< bg "14" "postgresql-14-pgjq" "green" >}} {{< bg "13" "postgresql-13-pgjq" "red" >}} | `postgresql-$v-pgjq` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pgjq` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgjq_18*" "green" >}} {{< bg "17" "pgjq_17*" "green" >}} {{< bg "16" "pgjq_16*" "green" >}} {{< bg "15" "pgjq_15*" "green" >}} {{< bg "14" "pgjq_14*" "green" >}} {{< bg "13" "pgjq_13*" "red" >}} | `pgjq_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgjq" "green" >}} {{< bg "17" "postgresql-17-pgjq" "green" >}} {{< bg "16" "postgresql-16-pgjq" "green" >}} {{< bg "15" "postgresql-15-pgjq" "green" >}} {{< bg "14" "postgresql-14-pgjq" "green" >}} {{< bg "13" "postgresql-13-pgjq" "red" >}} | `postgresql-$v-pgjq` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -166,37 +167,34 @@ width: full
 
 
 ```bash
-pig build get pgjq; # get pgjq source code
-pig build dep pgjq; # install build dependencies
-pig build pkg pgjq; # build extension rpm or deb
-pig build ext pgjq; # build extension rpms
+pig build pkg pgjq;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgjq; # install by extension name, for the current active PG version
-pig ext install pgjq; # install via package alias, for the active PG version
-pig ext install pgjq -v 18;   # install for PG 18
-pig ext install pgjq -v 17;   # install for PG 17
-pig ext install pgjq -v 16;   # install for PG 16
-pig ext install pgjq -v 15;   # install for PG 15
-pig ext install pgjq -v 14;   # install for PG 14
+pig install pgjq;		# install via package name, for the active PG version
+
+pig install pgjq -v 18;   # install for PG 18
+pig install pgjq -v 17;   # install for PG 17
+pig install pgjq -v 16;   # install for PG 16
+pig install pgjq -v 15;   # install for PG 15
+pig install pgjq -v 14;   # install for PG 14
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pgjq;
 ```
-

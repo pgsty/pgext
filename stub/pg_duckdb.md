@@ -1,12 +1,10 @@
 
---------
-
 ## Usage
 
-- [pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
+[pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
 
 | Topic                                                                                                  | Description                                                |
-|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
 | [**Functions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/functions.md)                       | Complete reference for all available functions             |
 | [**Syntax Guide & Gotchas**](https://github.com/duckdb/pg_duckdb/blob/main/docs/gotchas_and_syntax.md) | Quick reference for common SQL patterns and things to know |
 | [**Types**](https://github.com/duckdb/pg_duckdb/blob/main/docs/types.md)                               | Supported data types and type mappings                     |
@@ -21,16 +19,15 @@
 Install pg_duckdb with pig:
 
 ```bash
-pig repo add pigsty -u
+pig repo set
 pig install pg_duckdb
 ```
 
 Edit `postgresql.conf`, then restart to take effect
 
 ```ini
-shared_preload_libraries = 'pg_duckdb,pg_mooncake'
+shared_preload_libraries = 'pg_duckdb'
 duckdb.allow_community_extensions = true
-wal_level = logical
 ```
 
 

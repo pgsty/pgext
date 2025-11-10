@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-[**passwordcheck**](https://www.postgresql.org/docs/current/passwordcheck.html)
+[**passwordcheck**](https://www.postgresql.org/docs/current/passwordcheck.html) : checks user passwords and reject weak password
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -38,15 +38,14 @@ width: full
 
 ## Install
 
-Add this extension to [`shared_preload_libraries`](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```sql
-shared_preload_libraries = 'passwordcheck';  -- comma-separated list
+shared_preload_libraries = '$libdir/passwordcheck';
 ```
 
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
+This extension does not need `CREATE EXTENSION` DDL command
 
-```sql
-CREATE EXTENSION passwordcheck;
-```
+

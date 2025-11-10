@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**pgsphere**](https://github.com/postgrespro/pgsphere)
+[**pgsphere**](https://github.com/postgrespro/pgsphere) : spherical objects with useful functions, operators and index support
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_sphere" >}} | `1.5.2` | {{< bg "18" "pgsphere_18*" "green" >}} {{< bg "17" "pgsphere_17*" "green" >}} {{< bg "16" "pgsphere_16*" "green" >}} {{< bg "15" "pgsphere_15*" "green" >}} {{< bg "14" "pgsphere_14*" "green" >}} {{< bg "13" "pgsphere_13*" "green" >}} | `pgsphere_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_sphere" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsphere" "green" >}} {{< bg "17" "postgresql-17-pgsphere" "green" >}} {{< bg "16" "postgresql-16-pgsphere" "green" >}} {{< bg "15" "postgresql-15-pgsphere" "green" >}} {{< bg "14" "postgresql-14-pgsphere" "green" >}} {{< bg "13" "postgresql-13-pgsphere" "green" >}} | `postgresql-$v-pgsphere` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsphere` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.2` | {{< bg "18" "pgsphere_18*" "green" >}} {{< bg "17" "pgsphere_17*" "green" >}} {{< bg "16" "pgsphere_16*" "green" >}} {{< bg "15" "pgsphere_15*" "green" >}} {{< bg "14" "pgsphere_14*" "green" >}} {{< bg "13" "pgsphere_13*" "green" >}} | `pgsphere_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-pgsphere" "green" >}} {{< bg "17" "postgresql-17-pgsphere" "green" >}} {{< bg "16" "postgresql-16-pgsphere" "green" >}} {{< bg "15" "postgresql-15-pgsphere" "green" >}} {{< bg "14" "postgresql-14-pgsphere" "green" >}} {{< bg "13" "postgresql-13-pgsphere" "green" >}} | `postgresql-$v-pgsphere` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,36 @@ width: full
 
 
 ```bash
-pig build get pg_sphere; # get pg_sphere source code
-pig build dep pg_sphere; # install build dependencies
-pig build pkg pg_sphere; # build extension rpm or deb
-pig build ext pg_sphere; # build extension rpms
+pig build pkg pgsphere;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_sphere; # install by extension name, for the current active PG version
-pig ext install pgsphere; # install via package alias, for the active PG version
-pig ext install pg_sphere -v 18;   # install for PG 18
-pig ext install pg_sphere -v 17;   # install for PG 17
-pig ext install pg_sphere -v 16;   # install for PG 16
-pig ext install pg_sphere -v 15;   # install for PG 15
-pig ext install pg_sphere -v 14;   # install for PG 14
-pig ext install pg_sphere -v 13;   # install for PG 13
+pig install pgsphere;		# install via package name, for the active PG version
+pig install pg_sphere;		# install by extension name, for the current active PG version
+
+pig install pg_sphere -v 18;   # install for PG 18
+pig install pg_sphere -v 17;   # install for PG 17
+pig install pg_sphere -v 16;   # install for PG 16
+pig install pg_sphere -v 15;   # install for PG 15
+pig install pg_sphere -v 14;   # install for PG 14
+pig install pg_sphere -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_sphere;
 ```
-

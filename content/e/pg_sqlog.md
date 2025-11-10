@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_sqlog**](https://github.com/kouber/pg_sqlog)
+[**pg_sqlog**](https://github.com/kouber/pg_sqlog) : Provide SQL interface to logs
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_sqlog" >}} | `1.6` | {{< bg "18" "pg_sqlog_18" "green" >}} {{< bg "17" "pg_sqlog_17" "green" >}} {{< bg "16" "pg_sqlog_16" "green" >}} {{< bg "15" "pg_sqlog_15" "green" >}} {{< bg "14" "pg_sqlog_14" "green" >}} {{< bg "13" "pg_sqlog_13" "green" >}} | `pg_sqlog_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_sqlog" >}} | `1.6` | {{< bg "18" "postgresql-18-pg-sqlog" "green" >}} {{< bg "17" "postgresql-17-pg-sqlog" "green" >}} {{< bg "16" "postgresql-16-pg-sqlog" "green" >}} {{< bg "15" "postgresql-15-pg-sqlog" "green" >}} {{< bg "14" "postgresql-14-pg-sqlog" "green" >}} {{< bg "13" "postgresql-13-pg-sqlog" "green" >}} | `postgresql-$v-pg-sqlog` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_sqlog` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "pg_sqlog_18" "green" >}} {{< bg "17" "pg_sqlog_17" "green" >}} {{< bg "16" "pg_sqlog_16" "green" >}} {{< bg "15" "pg_sqlog_15" "green" >}} {{< bg "14" "pg_sqlog_14" "green" >}} {{< bg "13" "pg_sqlog_13" "green" >}} | `pg_sqlog_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "postgresql-18-pg-sqlog" "green" >}} {{< bg "17" "postgresql-17-pg-sqlog" "green" >}} {{< bg "16" "postgresql-16-pg-sqlog" "green" >}} {{< bg "15" "postgresql-15-pg-sqlog" "green" >}} {{< bg "14" "postgresql-14-pg-sqlog" "green" >}} {{< bg "13" "postgresql-13-pg-sqlog" "green" >}} | `postgresql-$v-pg-sqlog` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -187,38 +188,35 @@ width: full
 
 
 ```bash
-pig build get pg_sqlog; # get pg_sqlog source code
-pig build dep pg_sqlog; # install build dependencies
-pig build pkg pg_sqlog; # build extension rpm or deb
-pig build ext pg_sqlog; # build extension rpms
+pig build pkg pg_sqlog;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_sqlog; # install by extension name, for the current active PG version
-pig ext install pg_sqlog; # install via package alias, for the active PG version
-pig ext install pg_sqlog -v 18;   # install for PG 18
-pig ext install pg_sqlog -v 17;   # install for PG 17
-pig ext install pg_sqlog -v 16;   # install for PG 16
-pig ext install pg_sqlog -v 15;   # install for PG 15
-pig ext install pg_sqlog -v 14;   # install for PG 14
-pig ext install pg_sqlog -v 13;   # install for PG 13
+pig install pg_sqlog;		# install via package name, for the active PG version
+
+pig install pg_sqlog -v 18;   # install for PG 18
+pig install pg_sqlog -v 17;   # install for PG 17
+pig install pg_sqlog -v 16;   # install for PG 16
+pig install pg_sqlog -v 15;   # install for PG 15
+pig install pg_sqlog -v 14;   # install for PG 14
+pig install pg_sqlog -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pg_sqlog CASCADE SCHEMA sqlog;
+```sql
+CREATE EXTENSION pg_sqlog CASCADE; -- requires file_fdw
 ```
-

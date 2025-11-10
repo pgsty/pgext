@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-[**pgfincore**](https://github.com/klando/pgfincore)
+[**pgfincore**](https://github.com/klando/pgfincore) : examine and manage the os buffer cache
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgfincore" >}} | `1.3.1` | {{< bg "18" "pgfincore_18*" "red" >}} {{< bg "17" "pgfincore_17*" "green" >}} {{< bg "16" "pgfincore_16*" "green" >}} {{< bg "15" "pgfincore_15*" "green" >}} {{< bg "14" "pgfincore_14*" "green" >}} {{< bg "13" "pgfincore_13*" "green" >}} | `pgfincore_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pgfincore" >}} | `1.3.1` | {{< bg "18" "postgresql-18-pgfincore" "red" >}} {{< bg "17" "postgresql-17-pgfincore" "green" >}} {{< bg "16" "postgresql-16-pgfincore" "green" >}} {{< bg "15" "postgresql-15-pgfincore" "green" >}} {{< bg "14" "postgresql-14-pgfincore" "green" >}} {{< bg "13" "postgresql-13-pgfincore" "green" >}} | `postgresql-$v-pgfincore` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfincore` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "pgfincore_18*" "red" >}} {{< bg "17" "pgfincore_17*" "green" >}} {{< bg "16" "pgfincore_16*" "green" >}} {{< bg "15" "pgfincore_15*" "green" >}} {{< bg "14" "pgfincore_14*" "green" >}} {{< bg "13" "pgfincore_13*" "green" >}} | `pgfincore_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "postgresql-18-pgfincore" "red" >}} {{< bg "17" "postgresql-17-pgfincore" "green" >}} {{< bg "16" "postgresql-16-pgfincore" "green" >}} {{< bg "15" "postgresql-15-pgfincore" "green" >}} {{< bg "14" "postgresql-14-pgfincore" "green" >}} {{< bg "13" "postgresql-13-pgfincore" "green" >}} | `postgresql-$v-pgfincore` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -171,28 +172,28 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgfincore; # install by extension name, for the current active PG version
-pig ext install pgfincore; # install via package alias, for the active PG version
-pig ext install pgfincore -v 17;   # install for PG 17
-pig ext install pgfincore -v 16;   # install for PG 16
-pig ext install pgfincore -v 15;   # install for PG 15
-pig ext install pgfincore -v 14;   # install for PG 14
-pig ext install pgfincore -v 13;   # install for PG 13
+pig install pgfincore;		# install via package name, for the active PG version
+
+pig install pgfincore -v 17;   # install for PG 17
+pig install pgfincore -v 16;   # install for PG 16
+pig install pgfincore -v 15;   # install for PG 15
+pig install pgfincore -v 14;   # install for PG 14
+pig install pgfincore -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pgfincore;
 ```
-

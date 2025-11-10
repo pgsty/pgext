@@ -1,8 +1,7 @@
 
---------
+> [!WARNING] This extension is currently broken and conflict with pg_duckdb & pg_mooncake
 
 ## Usage
-
 
 ### Create Extension
 

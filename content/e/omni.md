@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**omnigres**](https://github.com/omnigres/omnigres)
+[**omnigres**](https://github.com/omnigres/omnigres) : Advanced adapter for Postgres extensions
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.2.14` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} {{< bg "13" "omnigres_13" "green" >}} | `omnigres_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.2.14` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} {{< bg "13" "postgresql-13-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.14` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `omnigres` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.14` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} {{< bg "13" "omnigres_13" "green" >}} | `omnigres_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.14` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} {{< bg "13" "postgresql-13-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -176,38 +177,56 @@ width: full
 
 
 ```bash
-pig build get omni; # get omni source code
-pig build dep omni; # install build dependencies
-pig build pkg omni; # build extension rpm or deb
-pig build ext omni; # build extension rpms
+pig build pkg omnigres;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install omni; # install by extension name, for the current active PG version
-pig ext install omnigres; # install via package alias, for the active PG version
-pig ext install omni -v 18;   # install for PG 18
-pig ext install omni -v 17;   # install for PG 17
-pig ext install omni -v 16;   # install for PG 16
-pig ext install omni -v 15;   # install for PG 15
-pig ext install omni -v 14;   # install for PG 14
-pig ext install omni -v 13;   # install for PG 13
+pig install omnigres;		# install via package name, for the active PG version
+pig install omni;		# install by extension name, for the current active PG version
+
+pig install omni -v 18;   # install for PG 18
+pig install omni -v 17;   # install for PG 17
+pig install omni -v 16;   # install for PG 16
+pig install omni -v 15;   # install for PG 15
+pig install omni -v 14;   # install for PG 14
+pig install omni -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'omni--0.2.14.so';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION omni CASCADE SCHEMA omni;
+```sql
+CREATE EXTENSION omni;
 ```
 
+
+## Usage
+
+Check https://docs.omnigres.org/ for details
+
+
+
+## Build
+
+This extension require gcc >= 14 and CMake > 3.25 to build
+
+So actually it is only available on Debian 13, Ubuntu 24.0

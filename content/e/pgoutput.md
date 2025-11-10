@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**pgoutput**](https://www.postgresql.org/docs/current/protocol-logical-replication.html)
+[**pgoutput**](https://www.postgresql.org/docs/current/protocol-logical-replication.html) : Logical Replication output plugin
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -38,8 +38,7 @@ width: full
 
 ## Install
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```sql
-CREATE EXTENSION pgoutput;
-```
+This extension does not need `CREATE EXTENSION` DDL command
+
+

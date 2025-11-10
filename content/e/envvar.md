@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pg_envvar**](https://github.com/theory/pg-envvar)
+[**pg_envvar**](https://github.com/theory/pg-envvar) : Fetch the value of an environment variable
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/envvar" >}} | `1.0.1` | {{< bg "18" "pg_envvar_18*" "green" >}} {{< bg "17" "pg_envvar_17*" "green" >}} {{< bg "16" "pg_envvar_16*" "green" >}} {{< bg "15" "pg_envvar_15*" "green" >}} {{< bg "14" "pg_envvar_14*" "green" >}} {{< bg "13" "pg_envvar_13*" "green" >}} | `pg_envvar_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/envvar" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-envvar" "green" >}} {{< bg "17" "postgresql-17-pg-envvar" "green" >}} {{< bg "16" "postgresql-16-pg-envvar" "green" >}} {{< bg "15" "postgresql-15-pg-envvar" "green" >}} {{< bg "14" "postgresql-14-pg-envvar" "green" >}} {{< bg "13" "postgresql-13-pg-envvar" "green" >}} | `postgresql-$v-pg-envvar` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_envvar` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "pg_envvar_18*" "green" >}} {{< bg "17" "pg_envvar_17*" "green" >}} {{< bg "16" "pg_envvar_16*" "green" >}} {{< bg "15" "pg_envvar_15*" "green" >}} {{< bg "14" "pg_envvar_14*" "green" >}} {{< bg "13" "pg_envvar_13*" "green" >}} | `pg_envvar_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-envvar" "green" >}} {{< bg "17" "postgresql-17-pg-envvar" "green" >}} {{< bg "16" "postgresql-16-pg-envvar" "green" >}} {{< bg "15" "postgresql-15-pg-envvar" "green" >}} {{< bg "14" "postgresql-14-pg-envvar" "green" >}} {{< bg "13" "postgresql-13-pg-envvar" "green" >}} | `postgresql-$v-pg-envvar` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -204,38 +205,36 @@ width: full
 
 
 ```bash
-pig build get envvar; # get envvar source code
-pig build dep envvar; # install build dependencies
-pig build pkg envvar; # build extension rpm or deb
-pig build ext envvar; # build extension rpms
+pig build pkg pg_envvar;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install envvar; # install by extension name, for the current active PG version
-pig ext install pg_envvar; # install via package alias, for the active PG version
-pig ext install envvar -v 18;   # install for PG 18
-pig ext install envvar -v 17;   # install for PG 17
-pig ext install envvar -v 16;   # install for PG 16
-pig ext install envvar -v 15;   # install for PG 15
-pig ext install envvar -v 14;   # install for PG 14
-pig ext install envvar -v 13;   # install for PG 13
+pig install pg_envvar;		# install via package name, for the active PG version
+pig install envvar;		# install by extension name, for the current active PG version
+
+pig install envvar -v 18;   # install for PG 18
+pig install envvar -v 17;   # install for PG 17
+pig install envvar -v 16;   # install for PG 16
+pig install envvar -v 15;   # install for PG 15
+pig install envvar -v 14;   # install for PG 14
+pig install envvar -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION envvar;
 ```
-

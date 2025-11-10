@@ -1,6 +1,4 @@
 
---------
-
 ## Usage
 
 Install `go-sqlcmd`:

@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**db2_fdw**](https://github.com/wolfgangbrandl/db2_fdw)
+[**db2_fdw**](https://github.com/wolfgangbrandl/db2_fdw) : foreign data wrapper for DB2 access
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,9 +29,10 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/db2_fdw" >}} | `7.0.0` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} {{< bg "13" "db2_fdw_13*" "green" >}} | `db2_fdw_$v*` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.0.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `db2_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.0.0` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} {{< bg "13" "db2_fdw_13*" "green" >}} | `db2_fdw_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -154,36 +155,33 @@ width: full
 
 
 ```bash
-pig build get db2_fdw; # get db2_fdw source code
-pig build dep db2_fdw; # install build dependencies
-pig build pkg db2_fdw; # build extension rpm or deb
-pig build ext db2_fdw; # build extension rpms
+pig build pkg db2_fdw;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install db2_fdw; # install by extension name, for the current active PG version
-pig ext install db2_fdw; # install via package alias, for the active PG version
-pig ext install db2_fdw -v 16;   # install for PG 16
-pig ext install db2_fdw -v 15;   # install for PG 15
-pig ext install db2_fdw -v 14;   # install for PG 14
-pig ext install db2_fdw -v 13;   # install for PG 13
+pig install db2_fdw;		# install via package name, for the active PG version
+
+pig install db2_fdw -v 16;   # install for PG 16
+pig install db2_fdw -v 15;   # install for PG 15
+pig install db2_fdw -v 14;   # install for PG 14
+pig install db2_fdw -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION db2_fdw;
 ```
-

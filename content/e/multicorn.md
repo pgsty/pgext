@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**multicorn**](https://github.com/pgsql-io/multicorn2)
+[**multicorn**](https://github.com/pgsql-io/multicorn2) : Fetch foreign data in Python in your PostgreSQL server.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,9 +29,10 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/multicorn" >}} | `3.2` | {{< bg "18" "multicorn2_18*" "green" >}} {{< bg "17" "multicorn2_17*" "green" >}} {{< bg "16" "multicorn2_16*" "green" >}} {{< bg "15" "multicorn2_15*" "green" >}} {{< bg "14" "multicorn2_14*" "green" >}} {{< bg "13" "multicorn2_13*" "green" >}} | `multicorn2_$v*` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `multicorn` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "multicorn2_18*" "green" >}} {{< bg "17" "multicorn2_17*" "green" >}} {{< bg "16" "multicorn2_16*" "green" >}} {{< bg "15" "multicorn2_15*" "green" >}} {{< bg "14" "multicorn2_14*" "green" >}} {{< bg "13" "multicorn2_13*" "green" >}} | `multicorn2_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -206,14 +207,14 @@ width: full
 | `multicorn2_13` | `3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 137.8 KiB | [multicorn2_13-3.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-3.2-1PGDG.rhel9.x86_64.rpm) |
 | `multicorn2_13` | `3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 114.2 KiB | [multicorn2_13-3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-3.1-1PGDG.rhel9.x86_64.rpm) |
 | `multicorn2_13` | `3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.7 KiB | [multicorn2_13-3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-3.0-1PGDG.rhel9.x86_64.rpm) |
-| `multicorn2_13` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.8 KiB | [multicorn2_13-2.4-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-2.4-2.rhel9.x86_64.rpm) |
 | `multicorn2_13` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.4 KiB | [multicorn2_13-2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-2.4-1.rhel9.x86_64.rpm) |
+| `multicorn2_13` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.8 KiB | [multicorn2_13-2.4-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-2.4-2.rhel9.x86_64.rpm) |
 | `multicorn2_13` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 114.0 KiB | [multicorn2_13-2.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/multicorn2_13-2.3-1.rhel9.x86_64.rpm) |
 | `multicorn2_13` | `3.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 136.2 KiB | [multicorn2_13-3.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-3.2-1PGDG.rhel9.aarch64.rpm) |
 | `multicorn2_13` | `3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 112.9 KiB | [multicorn2_13-3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-3.1-1PGDG.rhel9.aarch64.rpm) |
 | `multicorn2_13` | `3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 112.5 KiB | [multicorn2_13-3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-3.0-1PGDG.rhel9.aarch64.rpm) |
-| `multicorn2_13` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 35.8 KiB | [multicorn2_13-2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-2.4-1.rhel9.aarch64.rpm) |
 | `multicorn2_13` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 108.3 KiB | [multicorn2_13-2.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-2.4-2.rhel9.aarch64.rpm) |
+| `multicorn2_13` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 35.8 KiB | [multicorn2_13-2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-2.4-1.rhel9.aarch64.rpm) |
 | `multicorn2_13` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 113.0 KiB | [multicorn2_13-2.3-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/multicorn2_13-2.3-1.rhel9.aarch64.rpm) |
 | `multicorn2_13` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 138.6 KiB | [multicorn2_13-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/multicorn2_13-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_13` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 136.0 KiB | [multicorn2_13-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/multicorn2_13-3.1-1PGDG.rhel10.x86_64.rpm) |
@@ -233,29 +234,29 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install multicorn; # install by extension name, for the current active PG version
-pig ext install multicorn; # install via package alias, for the active PG version
-pig ext install multicorn -v 18;   # install for PG 18
-pig ext install multicorn -v 17;   # install for PG 17
-pig ext install multicorn -v 16;   # install for PG 16
-pig ext install multicorn -v 15;   # install for PG 15
-pig ext install multicorn -v 14;   # install for PG 14
-pig ext install multicorn -v 13;   # install for PG 13
+pig install multicorn;		# install via package name, for the active PG version
+
+pig install multicorn -v 18;   # install for PG 18
+pig install multicorn -v 17;   # install for PG 17
+pig install multicorn -v 16;   # install for PG 16
+pig install multicorn -v 15;   # install for PG 15
+pig install multicorn -v 14;   # install for PG 14
+pig install multicorn -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION multicorn;
 ```
-

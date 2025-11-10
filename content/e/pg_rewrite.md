@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-[**pg_rewrite**](https://github.com/cybertec-postgresql/pg_rewrite)
+[**pg_rewrite**](https://github.com/cybertec-postgresql/pg_rewrite) : Tool allows read write to the table during the rewriting
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_rewrite" >}} | `2.0.0` | {{< bg "18" "pg_rewrite_18*" "green" >}} {{< bg "17" "pg_rewrite_17*" "green" >}} {{< bg "16" "pg_rewrite_16*" "green" >}} {{< bg "15" "pg_rewrite_15*" "green" >}} {{< bg "14" "pg_rewrite_14*" "green" >}} {{< bg "13" "pg_rewrite_13*" "green" >}} | `pg_rewrite_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_rewrite" >}} | `2.0.0` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} {{< bg "13" "postgresql-13-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_rewrite` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.0` | {{< bg "18" "pg_rewrite_18*" "green" >}} {{< bg "17" "pg_rewrite_17*" "green" >}} {{< bg "16" "pg_rewrite_16*" "green" >}} {{< bg "15" "pg_rewrite_15*" "green" >}} {{< bg "14" "pg_rewrite_14*" "green" >}} {{< bg "13" "pg_rewrite_13*" "green" >}} | `pg_rewrite_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.0` | {{< bg "18" "postgresql-18-pg-rewrite" "green" >}} {{< bg "17" "postgresql-17-pg-rewrite" "green" >}} {{< bg "16" "postgresql-16-pg-rewrite" "green" >}} {{< bg "15" "postgresql-15-pg-rewrite" "green" >}} {{< bg "14" "postgresql-14-pg-rewrite" "green" >}} {{< bg "13" "postgresql-13-pg-rewrite" "green" >}} | `postgresql-$v-pg-rewrite` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -212,38 +213,42 @@ width: full
 
 
 ```bash
-pig build get pg_rewrite; # get pg_rewrite source code
-pig build dep pg_rewrite; # install build dependencies
-pig build pkg pg_rewrite; # build extension rpm or deb
-pig build ext pg_rewrite; # build extension rpms
+pig build pkg pg_rewrite;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_rewrite; # install by extension name, for the current active PG version
-pig ext install pg_rewrite; # install via package alias, for the active PG version
-pig ext install pg_rewrite -v 18;   # install for PG 18
-pig ext install pg_rewrite -v 17;   # install for PG 17
-pig ext install pg_rewrite -v 16;   # install for PG 16
-pig ext install pg_rewrite -v 15;   # install for PG 15
-pig ext install pg_rewrite -v 14;   # install for PG 14
-pig ext install pg_rewrite -v 13;   # install for PG 13
+pig install pg_rewrite;		# install via package name, for the active PG version
+
+pig install pg_rewrite -v 18;   # install for PG 18
+pig install pg_rewrite -v 17;   # install for PG 17
+pig install pg_rewrite -v 16;   # install for PG 16
+pig install pg_rewrite -v 15;   # install for PG 15
+pig install pg_rewrite -v 14;   # install for PG 14
+pig install pg_rewrite -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_rewrite';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_rewrite;
 ```
-

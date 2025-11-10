@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**first_last_agg**](https://github.com/wulczer/first_last_agg)
+[**first_last_agg**](https://github.com/wulczer/first_last_agg) : first() and last() aggregate functions
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/first_last_agg" >}} | `0.1.4` | {{< bg "18" "first_last_agg_18" "green" >}} {{< bg "17" "first_last_agg_17" "green" >}} {{< bg "16" "first_last_agg_16" "green" >}} {{< bg "15" "first_last_agg_15" "green" >}} {{< bg "14" "first_last_agg_14" "green" >}} {{< bg "13" "first_last_agg_13" "green" >}} | `first_last_agg_$v` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/first_last_agg" >}} | `0.1.4` | {{< bg "18" "postgresql-18-first-last-agg" "green" >}} {{< bg "17" "postgresql-17-first-last-agg" "green" >}} {{< bg "16" "postgresql-16-first-last-agg" "green" >}} {{< bg "15" "postgresql-15-first-last-agg" "green" >}} {{< bg "14" "postgresql-14-first-last-agg" "green" >}} {{< bg "13" "postgresql-13-first-last-agg" "green" >}} | `postgresql-$v-first-last-agg` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `first_last_agg` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.4` | {{< bg "18" "first_last_agg_18" "green" >}} {{< bg "17" "first_last_agg_17" "green" >}} {{< bg "16" "first_last_agg_16" "green" >}} {{< bg "15" "first_last_agg_15" "green" >}} {{< bg "14" "first_last_agg_14" "green" >}} {{< bg "13" "first_last_agg_13" "green" >}} | `first_last_agg_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.4` | {{< bg "18" "postgresql-18-first-last-agg" "green" >}} {{< bg "17" "postgresql-17-first-last-agg" "green" >}} {{< bg "16" "postgresql-16-first-last-agg" "green" >}} {{< bg "15" "postgresql-15-first-last-agg" "green" >}} {{< bg "14" "postgresql-14-first-last-agg" "green" >}} {{< bg "13" "postgresql-13-first-last-agg" "green" >}} | `postgresql-$v-first-last-agg` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get first_last_agg; # get first_last_agg source code
-pig build dep first_last_agg; # install build dependencies
-pig build pkg first_last_agg; # build extension rpm or deb
-pig build ext first_last_agg; # build extension rpms
+pig build pkg first_last_agg;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install first_last_agg; # install by extension name, for the current active PG version
-pig ext install first_last_agg; # install via package alias, for the active PG version
-pig ext install first_last_agg -v 18;   # install for PG 18
-pig ext install first_last_agg -v 17;   # install for PG 17
-pig ext install first_last_agg -v 16;   # install for PG 16
-pig ext install first_last_agg -v 15;   # install for PG 15
-pig ext install first_last_agg -v 14;   # install for PG 14
-pig ext install first_last_agg -v 13;   # install for PG 13
+pig install first_last_agg;		# install via package name, for the active PG version
+
+pig install first_last_agg -v 18;   # install for PG 18
+pig install first_last_agg -v 17;   # install for PG 17
+pig install first_last_agg -v 16;   # install for PG 16
+pig install first_last_agg -v 15;   # install for PG 15
+pig install first_last_agg -v 14;   # install for PG 14
+pig install first_last_agg -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION first_last_agg;
 ```
-

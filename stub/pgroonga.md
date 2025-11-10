@@ -1,7 +1,4 @@
 
-
---------
-
 ## Usage
 
 - https://pgroonga.github.io/
@@ -60,3 +57,4 @@ SELECT * FROM memos WHERE content LIKE '%engine%';
 --   2 | Groonga is a fast full text search engine that supports all languages.
 -- (1 row)
 ```
+

@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**log_fdw**](https://github.com/aws/postgresql-logfdw)
+[**log_fdw**](https://github.com/aws/postgresql-logfdw) : foreign-data wrapper for Postgres log file access
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/log_fdw" >}} | `1.4` | {{< bg "18" "log_fdw_18*" "green" >}} {{< bg "17" "log_fdw_17*" "green" >}} {{< bg "16" "log_fdw_16*" "green" >}} {{< bg "15" "log_fdw_15*" "green" >}} {{< bg "14" "log_fdw_14*" "green" >}} {{< bg "13" "log_fdw_13*" "red" >}} | `log_fdw_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/log_fdw" >}} | `1.4` | {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} {{< bg "14" "postgresql-14-log-fdw" "green" >}} {{< bg "13" "postgresql-13-log-fdw" "red" >}} | `postgresql-$v-log-fdw` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `log_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "log_fdw_18*" "green" >}} {{< bg "17" "log_fdw_17*" "green" >}} {{< bg "16" "log_fdw_16*" "green" >}} {{< bg "15" "log_fdw_15*" "green" >}} {{< bg "14" "log_fdw_14*" "green" >}} {{< bg "13" "log_fdw_13*" "red" >}} | `log_fdw_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} {{< bg "14" "postgresql-14-log-fdw" "green" >}} {{< bg "13" "postgresql-13-log-fdw" "red" >}} | `postgresql-$v-log-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -161,8 +162,8 @@ width: full
 | `log_fdw_14` | `1.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.2 KiB | [log_fdw_14-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/log_fdw_14-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 19.7 KiB | [log_fdw_14-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/log_fdw_14-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.2 KiB | [log_fdw_14-1.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/log_fdw_14-1.4-2PIGSTY.el9.x86_64.rpm) |
-| `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.4 KiB | [log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.1 KiB | [log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm) |
+| `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.4 KiB | [log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 19.8 KiB | [log_fdw_14-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/log_fdw_14-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.3 KiB | [log_fdw_14-1.4-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/log_fdw_14-1.4-2PIGSTY.el10.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.3 KiB | [log_fdw_14-1.4-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/log_fdw_14-1.4-2PIGSTY.el10.aarch64.rpm) |
@@ -186,37 +187,34 @@ width: full
 
 
 ```bash
-pig build get log_fdw; # get log_fdw source code
-pig build dep log_fdw; # install build dependencies
-pig build pkg log_fdw; # build extension rpm or deb
-pig build ext log_fdw; # build extension rpms
+pig build pkg log_fdw;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install log_fdw; # install by extension name, for the current active PG version
-pig ext install log_fdw; # install via package alias, for the active PG version
-pig ext install log_fdw -v 18;   # install for PG 18
-pig ext install log_fdw -v 17;   # install for PG 17
-pig ext install log_fdw -v 16;   # install for PG 16
-pig ext install log_fdw -v 15;   # install for PG 15
-pig ext install log_fdw -v 14;   # install for PG 14
+pig install log_fdw;		# install via package name, for the active PG version
+
+pig install log_fdw -v 18;   # install for PG 18
+pig install log_fdw -v 17;   # install for PG 17
+pig install log_fdw -v 16;   # install for PG 16
+pig install log_fdw -v 15;   # install for PG 15
+pig install log_fdw -v 14;   # install for PG 14
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION log_fdw;
 ```
-

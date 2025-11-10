@@ -1,5 +1,5 @@
 ---
-title: 变更
+title: 发布记录
 description: PIG CLI 发布历史与仓库软件包的变更记录
 weight: 800
 ---

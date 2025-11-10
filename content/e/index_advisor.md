@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**index_advisor**](https://github.com/supabase/index_advisor)
+[**index_advisor**](https://github.com/supabase/index_advisor) : Query index advisor
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "index_advisor_18" "green" >}} {{< bg "17" "index_advisor_17" "green" >}} {{< bg "16" "index_advisor_16" "green" >}} {{< bg "15" "index_advisor_15" "green" >}} {{< bg "14" "index_advisor_14" "green" >}} {{< bg "13" "index_advisor_13" "green" >}} | `index_advisor_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/index_advisor" >}} | `0.2.0` | {{< bg "18" "postgresql-18-index-advisor" "green" >}} {{< bg "17" "postgresql-17-index-advisor" "green" >}} {{< bg "16" "postgresql-16-index-advisor" "green" >}} {{< bg "15" "postgresql-15-index-advisor" "green" >}} {{< bg "14" "postgresql-14-index-advisor" "green" >}} {{< bg "13" "postgresql-13-index-advisor" "green" >}} | `postgresql-$v-index-advisor` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `index_advisor` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "index_advisor_18" "green" >}} {{< bg "17" "index_advisor_17" "green" >}} {{< bg "16" "index_advisor_16" "green" >}} {{< bg "15" "index_advisor_15" "green" >}} {{< bg "14" "index_advisor_14" "green" >}} {{< bg "13" "index_advisor_13" "green" >}} | `index_advisor_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-index-advisor" "green" >}} {{< bg "17" "postgresql-17-index-advisor" "green" >}} {{< bg "16" "postgresql-16-index-advisor" "green" >}} {{< bg "15" "postgresql-15-index-advisor" "green" >}} {{< bg "14" "postgresql-14-index-advisor" "green" >}} {{< bg "13" "postgresql-13-index-advisor" "green" >}} | `postgresql-$v-index-advisor` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get index_advisor; # get index_advisor source code
-pig build dep index_advisor; # install build dependencies
-pig build pkg index_advisor; # build extension rpm or deb
-pig build ext index_advisor; # build extension rpms
+pig build pkg index_advisor;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install index_advisor; # install by extension name, for the current active PG version
-pig ext install index_advisor; # install via package alias, for the active PG version
-pig ext install index_advisor -v 18;   # install for PG 18
-pig ext install index_advisor -v 17;   # install for PG 17
-pig ext install index_advisor -v 16;   # install for PG 16
-pig ext install index_advisor -v 15;   # install for PG 15
-pig ext install index_advisor -v 14;   # install for PG 14
-pig ext install index_advisor -v 13;   # install for PG 13
+pig install index_advisor;		# install via package name, for the active PG version
+
+pig install index_advisor -v 18;   # install for PG 18
+pig install index_advisor -v 17;   # install for PG 17
+pig install index_advisor -v 16;   # install for PG 16
+pig install index_advisor -v 15;   # install for PG 15
+pig install index_advisor -v 14;   # install for PG 14
+pig install index_advisor -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION index_advisor;
 ```
-

@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-[**pg_repack**](https://github.com/reorg/pg_repack)
+[**pg_repack**](https://github.com/reorg/pg_repack) : Reorganize tables in PostgreSQL databases with minimal locks
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_repack" >}} | `1.5.2` | {{< bg "18" "pg_repack_18*" "green" >}} {{< bg "17" "pg_repack_17*" "green" >}} {{< bg "16" "pg_repack_16*" "green" >}} {{< bg "15" "pg_repack_15*" "green" >}} {{< bg "14" "pg_repack_14*" "green" >}} {{< bg "13" "pg_repack_13*" "green" >}} | `pg_repack_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_repack" >}} | `1.5.2` | {{< bg "18" "postgresql-18-repack" "green" >}} {{< bg "17" "postgresql-17-repack" "green" >}} {{< bg "16" "postgresql-16-repack" "green" >}} {{< bg "15" "postgresql-15-repack" "green" >}} {{< bg "14" "postgresql-14-repack" "green" >}} {{< bg "13" "postgresql-13-repack" "green" >}} | `postgresql-$v-repack` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_repack` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "pg_repack_18*" "green" >}} {{< bg "17" "pg_repack_17*" "green" >}} {{< bg "16" "pg_repack_16*" "green" >}} {{< bg "15" "pg_repack_15*" "green" >}} {{< bg "14" "pg_repack_14*" "green" >}} {{< bg "13" "pg_repack_13*" "green" >}} | `pg_repack_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-repack" "green" >}} {{< bg "17" "postgresql-17-repack" "green" >}} {{< bg "16" "postgresql-16-repack" "green" >}} {{< bg "15" "postgresql-15-repack" "green" >}} {{< bg "14" "postgresql-14-repack" "green" >}} {{< bg "13" "postgresql-13-repack" "green" >}} | `postgresql-$v-repack` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -256,29 +257,29 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_repack; # install by extension name, for the current active PG version
-pig ext install pg_repack; # install via package alias, for the active PG version
-pig ext install pg_repack -v 18;   # install for PG 18
-pig ext install pg_repack -v 17;   # install for PG 17
-pig ext install pg_repack -v 16;   # install for PG 16
-pig ext install pg_repack -v 15;   # install for PG 15
-pig ext install pg_repack -v 14;   # install for PG 14
-pig ext install pg_repack -v 13;   # install for PG 13
+pig install pg_repack;		# install via package name, for the active PG version
+
+pig install pg_repack -v 18;   # install for PG 18
+pig install pg_repack -v 17;   # install for PG 17
+pig install pg_repack -v 16;   # install for PG 16
+pig install pg_repack -v 15;   # install for PG 15
+pig install pg_repack -v 14;   # install for PG 14
+pig install pg_repack -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_repack;
 ```
-

@@ -28,7 +28,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | Job scheduler for PostgreSQL |
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | execute any sql command at any specific time at background |
 | 1090 | {{< alias "pg_later" >}} | 0.3.1 | Run queries now and get results later |
-| 1100 | {{< alias "pg_background" >}} | 1.3 | Run SQL queries in the background |
+| 1100 | {{< alias "pg_background" >}} | 1.5 | Run SQL queries in the background |
 
 ## GIS
 
@@ -489,7 +489,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | Foreign data wrapper for accessing remote databases using ODBC |
 | 8530 | {{< alias "jdbc_fdw" >}} | 1.2 | foreign-data wrapper for remote servers available over JDBC |
 | 8540 | {{< alias "pgspider_ext" >}} | 1.3.0 | foreign-data wrapper for remote PGSpider servers |
-| 8600 | {{< alias "mysql_fdw" >}} | 2.9.2 | Foreign data wrapper for querying a MySQL server |
+| 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | Foreign data wrapper for querying a MySQL server |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.8.0 | foreign data wrapper for Oracle access |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
 | 8630 | {{< alias "db2_fdw" >}} | 7.0.0 | foreign data wrapper for DB2 access |

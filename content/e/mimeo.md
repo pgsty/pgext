@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**mimeo**](https://github.com/omniti-labs/mimeo)
+[**mimeo**](https://github.com/omniti-labs/mimeo) : Extension for specialized, per-table replication between PostgreSQL instances
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/mimeo" >}} | `1.5.1` | {{< bg "18" "mimeo_18" "green" >}} {{< bg "17" "mimeo_17" "green" >}} {{< bg "16" "mimeo_16" "green" >}} {{< bg "15" "mimeo_15" "green" >}} {{< bg "14" "mimeo_14" "green" >}} {{< bg "13" "mimeo_13" "green" >}} | `mimeo_$v` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/mimeo" >}} | `1.5.1` | {{< bg "18" "postgresql-18-mimeo" "green" >}} {{< bg "17" "postgresql-17-mimeo" "green" >}} {{< bg "16" "postgresql-16-mimeo" "green" >}} {{< bg "15" "postgresql-15-mimeo" "green" >}} {{< bg "14" "postgresql-14-mimeo" "green" >}} {{< bg "13" "postgresql-13-mimeo" "green" >}} | `postgresql-$v-mimeo` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `mimeo` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "mimeo_18" "green" >}} {{< bg "17" "mimeo_17" "green" >}} {{< bg "16" "mimeo_16" "green" >}} {{< bg "15" "mimeo_15" "green" >}} {{< bg "14" "mimeo_14" "green" >}} {{< bg "13" "mimeo_13" "green" >}} | `mimeo_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "postgresql-18-mimeo" "green" >}} {{< bg "17" "postgresql-17-mimeo" "green" >}} {{< bg "16" "postgresql-16-mimeo" "green" >}} {{< bg "15" "postgresql-15-mimeo" "green" >}} {{< bg "14" "postgresql-14-mimeo" "green" >}} {{< bg "13" "postgresql-13-mimeo" "green" >}} | `postgresql-$v-mimeo` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -187,38 +188,35 @@ width: full
 
 
 ```bash
-pig build get mimeo; # get mimeo source code
-pig build dep mimeo; # install build dependencies
-pig build pkg mimeo; # build extension rpm or deb
-pig build ext mimeo; # build extension rpms
+pig build pkg mimeo;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install mimeo; # install by extension name, for the current active PG version
-pig ext install mimeo; # install via package alias, for the active PG version
-pig ext install mimeo -v 18;   # install for PG 18
-pig ext install mimeo -v 17;   # install for PG 17
-pig ext install mimeo -v 16;   # install for PG 16
-pig ext install mimeo -v 15;   # install for PG 15
-pig ext install mimeo -v 14;   # install for PG 14
-pig ext install mimeo -v 13;   # install for PG 13
+pig install mimeo;		# install via package name, for the active PG version
+
+pig install mimeo -v 18;   # install for PG 18
+pig install mimeo -v 17;   # install for PG 17
+pig install mimeo -v 16;   # install for PG 16
+pig install mimeo -v 15;   # install for PG 15
+pig install mimeo -v 14;   # install for PG 14
+pig install mimeo -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION mimeo;
+```sql
+CREATE EXTENSION mimeo CASCADE; -- requires dblink
 ```
-

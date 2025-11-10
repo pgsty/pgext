@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**md5hash**](https://github.com/tvondra/md5hash)
+[**md5hash**](https://github.com/tvondra/md5hash) : type for storing 128-bit binary data inline
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/md5hash" >}} | `1.0.1` | {{< bg "18" "md5hash_18*" "green" >}} {{< bg "17" "md5hash_17*" "green" >}} {{< bg "16" "md5hash_16*" "green" >}} {{< bg "15" "md5hash_15*" "green" >}} {{< bg "14" "md5hash_14*" "green" >}} {{< bg "13" "md5hash_13*" "green" >}} | `md5hash_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/md5hash" >}} | `1.0.1` | {{< bg "18" "postgresql-18-md5hash" "green" >}} {{< bg "17" "postgresql-17-md5hash" "green" >}} {{< bg "16" "postgresql-16-md5hash" "green" >}} {{< bg "15" "postgresql-15-md5hash" "green" >}} {{< bg "14" "postgresql-14-md5hash" "green" >}} {{< bg "13" "postgresql-13-md5hash" "green" >}} | `postgresql-$v-md5hash` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `md5hash` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "md5hash_18*" "green" >}} {{< bg "17" "md5hash_17*" "green" >}} {{< bg "16" "md5hash_16*" "green" >}} {{< bg "15" "md5hash_15*" "green" >}} {{< bg "14" "md5hash_14*" "green" >}} {{< bg "13" "md5hash_13*" "green" >}} | `md5hash_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-md5hash" "green" >}} {{< bg "17" "postgresql-17-md5hash" "green" >}} {{< bg "16" "postgresql-16-md5hash" "green" >}} {{< bg "15" "postgresql-15-md5hash" "green" >}} {{< bg "14" "postgresql-14-md5hash" "green" >}} {{< bg "13" "postgresql-13-md5hash" "green" >}} | `postgresql-$v-md5hash` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get md5hash; # get md5hash source code
-pig build dep md5hash; # install build dependencies
-pig build pkg md5hash; # build extension rpm or deb
-pig build ext md5hash; # build extension rpms
+pig build pkg md5hash;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install md5hash; # install by extension name, for the current active PG version
-pig ext install md5hash; # install via package alias, for the active PG version
-pig ext install md5hash -v 18;   # install for PG 18
-pig ext install md5hash -v 17;   # install for PG 17
-pig ext install md5hash -v 16;   # install for PG 16
-pig ext install md5hash -v 15;   # install for PG 15
-pig ext install md5hash -v 14;   # install for PG 14
-pig ext install md5hash -v 13;   # install for PG 13
+pig install md5hash;		# install via package name, for the active PG version
+
+pig install md5hash -v 18;   # install for PG 18
+pig install md5hash -v 17;   # install for PG 17
+pig install md5hash -v 16;   # install for PG 16
+pig install md5hash -v 15;   # install for PG 15
+pig install md5hash -v 14;   # install for PG 14
+pig install md5hash -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION md5hash;
 ```
-

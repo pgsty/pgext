@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-[**pgsodium**](https://github.com/michelp/pgsodium)
+[**pgsodium**](https://github.com/michelp/pgsodium) : Postgres extension for libsodium functions
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgsodium" >}} | `3.1.9` | {{< bg "18" "pgsodium_18*" "green" >}} {{< bg "17" "pgsodium_17*" "green" >}} {{< bg "16" "pgsodium_16*" "green" >}} {{< bg "15" "pgsodium_15*" "green" >}} {{< bg "14" "pgsodium_14*" "green" >}} {{< bg "13" "pgsodium_13*" "green" >}} | `pgsodium_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgsodium" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "red" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} {{< bg "13" "postgresql-13-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsodium` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "pgsodium_18*" "green" >}} {{< bg "17" "pgsodium_17*" "green" >}} {{< bg "16" "pgsodium_16*" "green" >}} {{< bg "15" "pgsodium_15*" "green" >}} {{< bg "14" "pgsodium_14*" "green" >}} {{< bg "13" "pgsodium_13*" "green" >}} | `pgsodium_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} {{< bg "13" "postgresql-13-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -344,38 +345,42 @@ width: full
 
 
 ```bash
-pig build get pgsodium; # get pgsodium source code
-pig build dep pgsodium; # install build dependencies
-pig build pkg pgsodium; # build extension rpm or deb
-pig build ext pgsodium; # build extension rpms
+pig build pkg pgsodium;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgsodium; # install by extension name, for the current active PG version
-pig ext install pgsodium; # install via package alias, for the active PG version
-pig ext install pgsodium -v 18;   # install for PG 18
-pig ext install pgsodium -v 17;   # install for PG 17
-pig ext install pgsodium -v 16;   # install for PG 16
-pig ext install pgsodium -v 15;   # install for PG 15
-pig ext install pgsodium -v 14;   # install for PG 14
-pig ext install pgsodium -v 13;   # install for PG 13
+pig install pgsodium;		# install via package name, for the active PG version
+
+pig install pgsodium -v 18;   # install for PG 18
+pig install pgsodium -v 17;   # install for PG 17
+pig install pgsodium -v 16;   # install for PG 16
+pig install pgsodium -v 15;   # install for PG 15
+pig install pgsodium -v 14;   # install for PG 14
+pig install pgsodium -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pgsodium';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pgsodium CASCADE SCHEMA pgsodium;
+```sql
+CREATE EXTENSION pgsodium;
 ```
-

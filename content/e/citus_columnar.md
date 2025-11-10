@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-[**citus**](https://github.com/citusdata/citus)
+[**citus**](https://github.com/citusdata/citus) : Citus columnar storage engine
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/citus" >}} | `13.2.0` | {{< bg "18" "citus_18*" "red" >}} {{< bg "17" "citus_17*" "green" >}} {{< bg "16" "citus_16*" "green" >}} {{< bg "15" "citus_15*" "green" >}} {{< bg "14" "citus_14*" "green" >}} {{< bg "13" "citus_13*" "red" >}} | `citus_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/citus" >}} | `13.2.0` | {{< bg "18" "postgresql-18-citus" "red" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "green" >}} {{< bg "14" "postgresql-14-citus" "green" >}} {{< bg "13" "postgresql-13-citus" "red" >}} | `postgresql-$v-citus` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `13.2.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `citus` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `13.2.0` | {{< bg "18" "citus_18*" "red" >}} {{< bg "17" "citus_17*" "green" >}} {{< bg "16" "citus_16*" "green" >}} {{< bg "15" "citus_15*" "green" >}} {{< bg "14" "citus_14*" "green" >}} {{< bg "13" "citus_13*" "red" >}} | `citus_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `13.2.0` | {{< bg "18" "postgresql-18-citus" "red" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "green" >}} {{< bg "14" "postgresql-14-citus" "green" >}} {{< bg "13" "postgresql-13-citus" "red" >}} | `postgresql-$v-citus` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -65,35 +66,33 @@ width: full
 
 
 ```bash
-pig build get citus_columnar; # get citus_columnar source code
-pig build dep citus_columnar; # install build dependencies
-pig build pkg citus_columnar; # build extension rpm or deb
-pig build ext citus_columnar; # build extension rpms
+pig build pkg citus;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install citus_columnar; # install by extension name, for the current active PG version
-pig ext install citus; # install via package alias, for the active PG version
-pig ext install citus_columnar -v 17;   # install for PG 17
-pig ext install citus_columnar -v 16;   # install for PG 16
-pig ext install citus_columnar -v 15;   # install for PG 15
+pig install citus;		# install via package name, for the active PG version
+pig install citus_columnar;		# install by extension name, for the current active PG version
+
+pig install citus_columnar -v 17;   # install for PG 17
+pig install citus_columnar -v 16;   # install for PG 16
+pig install citus_columnar -v 15;   # install for PG 15
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION citus_columnar CASCADE SCHEMA pg_catalog;
+```sql
+CREATE EXTENSION citus_columnar;
 ```
-

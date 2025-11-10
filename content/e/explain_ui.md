@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_explain_ui**](https://github.com/davidgomes/pg-explain-ui)
+[**pg_explain_ui**](https://github.com/davidgomes/pg-explain-ui) : easily jump into a visual plan UI for any SQL query
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/explain_ui" >}} | `0.0.2` | {{< bg "18" "pg_explain_ui_18" "green" >}} {{< bg "17" "pg_explain_ui_17" "green" >}} {{< bg "16" "pg_explain_ui_16" "green" >}} {{< bg "15" "pg_explain_ui_15" "green" >}} {{< bg "14" "pg_explain_ui_14" "green" >}} {{< bg "13" "pg_explain_ui_13" "green" >}} | `pg_explain_ui_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/explain_ui" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pg-explain-ui" "green" >}} {{< bg "17" "postgresql-17-pg-explain-ui" "green" >}} {{< bg "16" "postgresql-16-pg-explain-ui" "green" >}} {{< bg "15" "postgresql-15-pg-explain-ui" "green" >}} {{< bg "14" "postgresql-14-pg-explain-ui" "green" >}} {{< bg "13" "postgresql-13-pg-explain-ui" "green" >}} | `postgresql-$v-pg-explain-ui` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_explain_ui` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_explain_ui_18" "green" >}} {{< bg "17" "pg_explain_ui_17" "green" >}} {{< bg "16" "pg_explain_ui_16" "green" >}} {{< bg "15" "pg_explain_ui_15" "green" >}} {{< bg "14" "pg_explain_ui_14" "green" >}} {{< bg "13" "pg_explain_ui_13" "green" >}} | `pg_explain_ui_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pg-explain-ui" "green" >}} {{< bg "17" "postgresql-17-pg-explain-ui" "green" >}} {{< bg "16" "postgresql-16-pg-explain-ui" "green" >}} {{< bg "15" "postgresql-15-pg-explain-ui" "green" >}} {{< bg "14" "postgresql-14-pg-explain-ui" "green" >}} {{< bg "13" "postgresql-13-pg-explain-ui" "green" >}} | `postgresql-$v-pg-explain-ui` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,38 +187,36 @@ width: full
 
 
 ```bash
-pig build get explain_ui; # get explain_ui source code
-pig build dep explain_ui; # install build dependencies
-pig build pkg explain_ui; # build extension rpm or deb
-pig build ext explain_ui; # build extension rpms
+pig build pkg pg_explain_ui;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install explain_ui; # install by extension name, for the current active PG version
-pig ext install pg_explain_ui; # install via package alias, for the active PG version
-pig ext install explain_ui -v 18;   # install for PG 18
-pig ext install explain_ui -v 17;   # install for PG 17
-pig ext install explain_ui -v 16;   # install for PG 16
-pig ext install explain_ui -v 15;   # install for PG 15
-pig ext install explain_ui -v 14;   # install for PG 14
-pig ext install explain_ui -v 13;   # install for PG 13
+pig install pg_explain_ui;		# install via package name, for the active PG version
+pig install explain_ui;		# install by extension name, for the current active PG version
+
+pig install explain_ui -v 18;   # install for PG 18
+pig install explain_ui -v 17;   # install for PG 17
+pig install explain_ui -v 16;   # install for PG 16
+pig install explain_ui -v 15;   # install for PG 15
+pig install explain_ui -v 14;   # install for PG 14
+pig install explain_ui -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION explain_ui;
 ```
-

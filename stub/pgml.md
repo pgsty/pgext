@@ -1,13 +1,7 @@
 
---------
-
 ## Usage
 
-<Callout title="This extension is lack of maintenance" type="warn">
-
-The PGML team seems not maintaining this extension for a while.
-
-</Callout>
+> [!WARNING] This extension is lack of maintenance
 
 After installing the `pgml` extension and python dependencies on all cluster nodes, you can enable `pgml` on the PostgreSQL cluster.
 

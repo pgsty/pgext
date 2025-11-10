@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**pgactive**](https://github.com/aws/pgactive)
+[**pgactive**](https://github.com/aws/pgactive) : Active-Active Replication Extension for PostgreSQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgactive" >}} | `2.1.7` | {{< bg "18" "pgactive_18*" "green" >}} {{< bg "17" "pgactive_17*" "green" >}} {{< bg "16" "pgactive_16*" "green" >}} {{< bg "15" "pgactive_15*" "green" >}} {{< bg "14" "pgactive_14*" "green" >}} {{< bg "13" "pgactive_13*" "green" >}} | `pgactive_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgactive" >}} | `2.1.7` | {{< bg "18" "postgresql-18-pgactive" "red" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} {{< bg "14" "postgresql-14-pgactive" "green" >}} {{< bg "13" "postgresql-13-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgactive` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "pgactive_18*" "green" >}} {{< bg "17" "pgactive_17*" "green" >}} {{< bg "16" "pgactive_16*" "green" >}} {{< bg "15" "pgactive_15*" "green" >}} {{< bg "14" "pgactive_14*" "green" >}} {{< bg "13" "pgactive_13*" "green" >}} | `pgactive_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.7` | {{< bg "18" "postgresql-18-pgactive" "green" >}} {{< bg "17" "postgresql-17-pgactive" "green" >}} {{< bg "16" "postgresql-16-pgactive" "green" >}} {{< bg "15" "postgresql-15-pgactive" "green" >}} {{< bg "14" "postgresql-14-pgactive" "green" >}} {{< bg "13" "postgresql-13-pgactive" "green" >}} | `postgresql-$v-pgactive` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,38 +187,42 @@ width: full
 
 
 ```bash
-pig build get pgactive; # get pgactive source code
-pig build dep pgactive; # install build dependencies
-pig build pkg pgactive; # build extension rpm or deb
-pig build ext pgactive; # build extension rpms
+pig build pkg pgactive;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgactive; # install by extension name, for the current active PG version
-pig ext install pgactive; # install via package alias, for the active PG version
-pig ext install pgactive -v 18;   # install for PG 18
-pig ext install pgactive -v 17;   # install for PG 17
-pig ext install pgactive -v 16;   # install for PG 16
-pig ext install pgactive -v 15;   # install for PG 15
-pig ext install pgactive -v 14;   # install for PG 14
-pig ext install pgactive -v 13;   # install for PG 13
+pig install pgactive;		# install via package name, for the active PG version
+
+pig install pgactive -v 18;   # install for PG 18
+pig install pgactive -v 17;   # install for PG 17
+pig install pgactive -v 16;   # install for PG 16
+pig install pgactive -v 15;   # install for PG 15
+pig install pgactive -v 14;   # install for PG 14
+pig install pgactive -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pgactive';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pgactive CASCADE SCHEMA pg_catalog;
+```sql
+CREATE EXTENSION pgactive;
 ```
-

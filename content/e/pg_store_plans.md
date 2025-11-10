@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_store_plans**](https://github.com/ossc-db/pg_store_plans)
+[**pg_store_plans**](https://github.com/ossc-db/pg_store_plans) : track plan statistics of all SQL statements executed
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "pg_store_plans_18*" "green" >}} {{< bg "17" "pg_store_plans_17*" "green" >}} {{< bg "16" "pg_store_plans_16*" "green" >}} {{< bg "15" "pg_store_plans_15*" "green" >}} {{< bg "14" "pg_store_plans_14*" "green" >}} {{< bg "13" "pg_store_plans_13*" "green" >}} | `pg_store_plans_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_store_plans" >}} | `1.9` | {{< bg "18" "postgresql-18-pg-store-plan" "green" >}} {{< bg "17" "postgresql-17-pg-store-plan" "green" >}} {{< bg "16" "postgresql-16-pg-store-plan" "green" >}} {{< bg "15" "postgresql-15-pg-store-plan" "green" >}} {{< bg "14" "postgresql-14-pg-store-plan" "green" >}} {{< bg "13" "postgresql-13-pg-store-plan" "green" >}} | `postgresql-$v-pg-store-plan` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_store_plans` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.9` | {{< bg "18" "pg_store_plans_18*" "green" >}} {{< bg "17" "pg_store_plans_17*" "green" >}} {{< bg "16" "pg_store_plans_16*" "green" >}} {{< bg "15" "pg_store_plans_15*" "green" >}} {{< bg "14" "pg_store_plans_14*" "green" >}} {{< bg "13" "pg_store_plans_13*" "green" >}} | `pg_store_plans_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.9` | {{< bg "18" "postgresql-18-pg-store-plan" "green" >}} {{< bg "17" "postgresql-17-pg-store-plan" "green" >}} {{< bg "16" "postgresql-16-pg-store-plan" "green" >}} {{< bg "15" "postgresql-15-pg-store-plan" "green" >}} {{< bg "14" "postgresql-14-pg-store-plan" "green" >}} {{< bg "13" "postgresql-13-pg-store-plan" "green" >}} | `postgresql-$v-pg-store-plan` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -194,38 +195,42 @@ width: full
 
 
 ```bash
-pig build get pg_store_plans; # get pg_store_plans source code
-pig build dep pg_store_plans; # install build dependencies
-pig build pkg pg_store_plans; # build extension rpm or deb
-pig build ext pg_store_plans; # build extension rpms
+pig build pkg pg_store_plans;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_store_plans; # install by extension name, for the current active PG version
-pig ext install pg_store_plans; # install via package alias, for the active PG version
-pig ext install pg_store_plans -v 18;   # install for PG 18
-pig ext install pg_store_plans -v 17;   # install for PG 17
-pig ext install pg_store_plans -v 16;   # install for PG 16
-pig ext install pg_store_plans -v 15;   # install for PG 15
-pig ext install pg_store_plans -v 14;   # install for PG 14
-pig ext install pg_store_plans -v 13;   # install for PG 13
+pig install pg_store_plans;		# install via package name, for the active PG version
+
+pig install pg_store_plans -v 18;   # install for PG 18
+pig install pg_store_plans -v 17;   # install for PG 17
+pig install pg_store_plans -v 16;   # install for PG 16
+pig install pg_store_plans -v 15;   # install for PG 15
+pig install pg_store_plans -v 14;   # install for PG 14
+pig install pg_store_plans -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_store_plans';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_store_plans;
 ```
-

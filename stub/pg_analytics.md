@@ -1,15 +1,7 @@
 
-
---------
+> [!WARNING] This extension is archived and no longer maintained. It is recommended to use other duckdb related extensions instead.
 
 ## Usage
-
-<Callout title="Archived!" type="warning">
-
-This extension is archived and no longer maintained. It is recommended to use other duckdb related extensions instead.
-
-</Callout>
-
 
 https://github.com/paradedb/pg_analytics
 

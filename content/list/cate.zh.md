@@ -28,7 +28,7 @@ PostgreSQL 扩展（431 ext / 364 pkg）归属 16 个分类。
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | 定时任务调度器 |
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | 在特定时间点在后台执行SQL命令 |
 | 1090 | {{< alias "pg_later" >}} | 0.3.1 | 执行查询，并在稍后异步获取查询结果 |
-| 1100 | {{< alias "pg_background" >}} | 1.3 | 在后台运行 SQL 查询 |
+| 1100 | {{< alias "pg_background" >}} | 1.5 | 在后台运行 SQL 查询 |
 
 ## GIS
 
@@ -489,7 +489,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | 访问ODBC可访问的任何外部数据源 |
 | 8530 | {{< alias "jdbc_fdw" >}} | 1.2 | 访问JDBC可访问的任何外部数据源 |
 | 8540 | {{< alias "pgspider_ext" >}} | 1.3.0 | 使用多种FDW访问远程数据库服务器 |
-| 8600 | {{< alias "mysql_fdw" >}} | 2.9.2 | MySQL外部数据包装器 |
+| 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | MySQL外部数据包装器 |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.8.0 | 提供对Oracle的外部数据源包装器 |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
 | 8630 | {{< alias "db2_fdw" >}} | 7.0.0 | 提供对DB2的外部数据源包装器 |

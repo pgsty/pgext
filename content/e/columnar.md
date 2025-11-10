@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-[**hydra**](https://github.com/hydradatabase/hydra)
+[**hydra**](https://github.com/hydradatabase/hydra) : Hydra Columnar extension
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/columnar" >}} | `1.1.2` | {{< bg "18" "hydra_18*" "red" >}} {{< bg "17" "hydra_17*" "red" >}} {{< bg "16" "hydra_16*" "green" >}} {{< bg "15" "hydra_15*" "green" >}} {{< bg "14" "hydra_14*" "green" >}} {{< bg "13" "hydra_13*" "green" >}} | `hydra_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/columnar" >}} | `1.1.2` | {{< bg "18" "postgresql-18-hydra" "red" >}} {{< bg "17" "postgresql-17-hydra" "red" >}} {{< bg "16" "postgresql-16-hydra" "green" >}} {{< bg "15" "postgresql-15-hydra" "green" >}} {{< bg "14" "postgresql-14-hydra" "green" >}} {{< bg "13" "postgresql-13-hydra" "green" >}} | `postgresql-$v-hydra` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hydra` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "hydra_18*" "red" >}} {{< bg "17" "hydra_17*" "red" >}} {{< bg "16" "hydra_16*" "green" >}} {{< bg "15" "hydra_15*" "green" >}} {{< bg "14" "hydra_14*" "green" >}} {{< bg "13" "hydra_13*" "green" >}} | `hydra_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "postgresql-18-hydra" "red" >}} {{< bg "17" "postgresql-17-hydra" "red" >}} {{< bg "16" "postgresql-16-hydra" "green" >}} {{< bg "15" "postgresql-15-hydra" "green" >}} {{< bg "14" "postgresql-14-hydra" "green" >}} {{< bg "13" "postgresql-13-hydra" "green" >}} | `postgresql-$v-hydra` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -147,36 +148,37 @@ width: full
 
 
 ```bash
-pig build get columnar; # get columnar source code
-pig build dep columnar; # install build dependencies
-pig build pkg columnar; # build extension rpm or deb
-pig build ext columnar; # build extension rpms
+pig build pkg hydra;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install columnar; # install by extension name, for the current active PG version
-pig ext install hydra; # install via package alias, for the active PG version
-pig ext install columnar -v 16;   # install for PG 16
-pig ext install columnar -v 15;   # install for PG 15
-pig ext install columnar -v 14;   # install for PG 14
-pig ext install columnar -v 13;   # install for PG 13
+pig install hydra;		# install via package name, for the active PG version
+pig install columnar;		# install by extension name, for the current active PG version
+
+pig install columnar -v 16;   # install for PG 16
+pig install columnar -v 15;   # install for PG 15
+pig install columnar -v 14;   # install for PG 14
+pig install columnar -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION columnar;
 ```
 
+
+> [!WARNING] This extension is archived and no longer maintained.

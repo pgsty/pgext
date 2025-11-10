@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_meta**](https://github.com/aquameta/meta)
+[**pg_meta**](https://github.com/aquameta/meta) : Normalized, friendlier system catalog for PostgreSQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/meta" >}} | `0.4.0` | {{< bg "18" "pg_meta_18" "green" >}} {{< bg "17" "pg_meta_17" "green" >}} {{< bg "16" "pg_meta_16" "green" >}} {{< bg "15" "pg_meta_15" "green" >}} {{< bg "14" "pg_meta_14" "green" >}} {{< bg "13" "pg_meta_13" "green" >}} | `pg_meta_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/meta" >}} | `0.4.0` | {{< bg "18" "postgresql-18-pg-meta" "green" >}} {{< bg "17" "postgresql-17-pg-meta" "green" >}} {{< bg "16" "postgresql-16-pg-meta" "green" >}} {{< bg "15" "postgresql-15-pg-meta" "green" >}} {{< bg "14" "postgresql-14-pg-meta" "green" >}} {{< bg "13" "postgresql-13-pg-meta" "green" >}} | `postgresql-$v-pg-meta` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_meta` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "pg_meta_18" "green" >}} {{< bg "17" "pg_meta_17" "green" >}} {{< bg "16" "pg_meta_16" "green" >}} {{< bg "15" "pg_meta_15" "green" >}} {{< bg "14" "pg_meta_14" "green" >}} {{< bg "13" "pg_meta_13" "green" >}} | `pg_meta_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "postgresql-18-pg-meta" "green" >}} {{< bg "17" "postgresql-17-pg-meta" "green" >}} {{< bg "16" "postgresql-16-pg-meta" "green" >}} {{< bg "15" "postgresql-15-pg-meta" "green" >}} {{< bg "14" "postgresql-14-pg-meta" "green" >}} {{< bg "13" "postgresql-13-pg-meta" "green" >}} | `postgresql-$v-pg-meta` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,36 @@ width: full
 
 
 ```bash
-pig build get meta; # get meta source code
-pig build dep meta; # install build dependencies
-pig build pkg meta; # build extension rpm or deb
-pig build ext meta; # build extension rpms
+pig build pkg pg_meta;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install meta; # install by extension name, for the current active PG version
-pig ext install pg_meta; # install via package alias, for the active PG version
-pig ext install meta -v 18;   # install for PG 18
-pig ext install meta -v 17;   # install for PG 17
-pig ext install meta -v 16;   # install for PG 16
-pig ext install meta -v 15;   # install for PG 15
-pig ext install meta -v 14;   # install for PG 14
-pig ext install meta -v 13;   # install for PG 13
+pig install pg_meta;		# install via package name, for the active PG version
+pig install meta;		# install by extension name, for the current active PG version
+
+pig install meta -v 18;   # install for PG 18
+pig install meta -v 17;   # install for PG 17
+pig install meta -v 16;   # install for PG 16
+pig install meta -v 15;   # install for PG 15
+pig install meta -v 14;   # install for PG 14
+pig install meta -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION meta;
 ```
-

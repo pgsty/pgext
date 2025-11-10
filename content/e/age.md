@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**age**](https://github.com/apache/age)
+[**age**](https://github.com/apache/age) : AGE graph database extension
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/age" >}} | `1.5.0` | {{< bg "18" "apache-age_18*" "red" >}} {{< bg "17" "apache-age_17*" "green" >}} {{< bg "16" "apache-age_16*" "green" >}} {{< bg "15" "apache-age_15*" "green" >}} {{< bg "14" "apache-age_14*" "green" >}} {{< bg "13" "apache-age_13*" "green" >}} | `apache-age_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/age" >}} | `1.5.0` | {{< bg "18" "postgresql-18-age" "red" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "green" >}} {{< bg "15" "postgresql-15-age" "green" >}} {{< bg "14" "postgresql-14-age" "green" >}} {{< bg "13" "postgresql-13-age" "green" >}} | `postgresql-$v-age` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `age` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "apache-age_18*" "red" >}} {{< bg "17" "apache-age_17*" "green" >}} {{< bg "16" "apache-age_16*" "green" >}} {{< bg "15" "apache-age_15*" "green" >}} {{< bg "14" "apache-age_14*" "green" >}} {{< bg "13" "apache-age_13*" "green" >}} | `apache-age_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.0` | {{< bg "18" "postgresql-18-age" "red" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "green" >}} {{< bg "15" "postgresql-15-age" "green" >}} {{< bg "14" "postgresql-14-age" "green" >}} {{< bg "13" "postgresql-13-age" "green" >}} | `postgresql-$v-age` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -166,37 +167,34 @@ width: full
 
 
 ```bash
-pig build get age; # get age source code
-pig build dep age; # install build dependencies
-pig build pkg age; # build extension rpm or deb
-pig build ext age; # build extension rpms
+pig build pkg age;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install age; # install by extension name, for the current active PG version
-pig ext install age; # install via package alias, for the active PG version
-pig ext install age -v 17;   # install for PG 17
-pig ext install age -v 16;   # install for PG 16
-pig ext install age -v 15;   # install for PG 15
-pig ext install age -v 14;   # install for PG 14
-pig ext install age -v 13;   # install for PG 13
+pig install age;		# install via package name, for the active PG version
+
+pig install age -v 17;   # install for PG 17
+pig install age -v 16;   # install for PG 16
+pig install age -v 15;   # install for PG 15
+pig install age -v 14;   # install for PG 14
+pig install age -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION age CASCADE SCHEMA ag_catalog;
+```sql
+CREATE EXTENSION age;
 ```
-

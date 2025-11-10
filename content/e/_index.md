@@ -24,7 +24,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "pg_cron" >}} | `1.6.7` | {{< badge content="Link" link="https://github.com/citusdata/pg_cron" >}} | {{< category "TIME" >}} | `pg_cron_$v*` | `postgresql-$v-cron` |
 | {{< ext "pg_task" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_task" >}} | {{< category "TIME" >}} | `pg_task_$v*` | `postgresql-$v-pg-task` |
 | {{< ext "pg_later" >}} | `0.3.1` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_later" >}} | {{< category "TIME" >}} | `pg_later_$v` | `postgresql-$v-pg-later` |
-| {{< ext "pg_background" >}} | `1.3` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v*` | `postgresql-$v-pg-background` |
+| {{< ext "pg_background" >}} | `1.5` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v*` | `postgresql-$v-pg-background` |
 | {{< ext "postgis" >}} | `3.6.0` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v*` | `postgresql-$v-postgis-3 postgresql-$v-postgis-3-scripts` |
 | {{< ext "pgrouting" >}} | `3.8.0` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v*` | `postgresql-$v-pgrouting postgresql-$v-pgrouting-scripts` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v*` | `postgresql-$v-pointcloud` |
@@ -327,7 +327,7 @@ There are 361 available PostgreSQL packages:
 | {{< ext "odbc_fdw" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CartoDB/odbc_fdw" >}} | {{< category "FDW" >}} | `odbc_fdw_$v*` | - |
 | {{< ext "jdbc_fdw" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgspider/jdbc_fdw" >}} | {{< category "FDW" >}} | `jdbc_fdw_$v*` | - |
 | {{< ext "pgspider_ext" >}} | `1.3.0` | {{< badge content="Link" link="https://github.com/pgspider/pgspider_ext" >}} | {{< category "FDW" >}} | `pgspider_ext_$v*` | `postgresql-$v-pgspider-ext` |
-| {{< ext "mysql_fdw" >}} | `2.9.2` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< category "FDW" >}} | `mysql_fdw_$v*` | `postgresql-$v-mysql-fdw` |
+| {{< ext "mysql_fdw" >}} | `2.9.3` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< category "FDW" >}} | `mysql_fdw_$v*` | `postgresql-$v-mysql-fdw` |
 | {{< ext "oracle_fdw" >}} | `2.8.0` | {{< badge content="Link" link="https://github.com/laurenz/oracle_fdw" >}} | {{< category "FDW" >}} | `oracle_fdw_$v*` | `postgresql-$v-oracle-fdw` |
 | {{< ext "tds_fdw" >}} | `2.0.5` | {{< badge content="Link" link="https://github.com/tds-fdw/tds_fdw" >}} | {{< category "FDW" >}} | `tds_fdw_$v*` | `postgresql-$v-tds-fdw` |
 | {{< ext "db2_fdw" >}} | `7.0.0` | {{< badge content="Link" link="https://github.com/wolfgangbrandl/db2_fdw" >}} | {{< category "FDW" >}} | `db2_fdw_$v*` | - |
@@ -448,7 +448,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "columnar" "hydra" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Hydra Columnar extension |
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Postgres for analytics, powered by DuckDB |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | DuckDB Embedded in Postgres |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | Columnstore Table in Postgres |
+| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="---Ld--" color="blue" >}} | Columnstore Table in Postgres |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | DuckDB Foreign Data Wrapper |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | copy data between Postgres and Parquet |
 | {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Table partitioning by foreign key utility |
@@ -569,7 +569,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "pg_rational" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | bigint fractions |
 | {{< ext "uint" "pguint" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | unsigned integer types |
 | {{< ext "uint128" "pg_uint128" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Native uint128 type |
-| {{< ext "hashtypes" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | sha1, md5 and other data types for PostgreSQL |
+| {{< ext "hashtypes" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | sha1, md5 and other data types for PostgreSQL |
 | {{< ext "ip4r" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | {{< ext "pg_duration" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | data type for representing durations |
 | {{< ext "uri" "pg_uri" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | URI Data type for PostgreSQL |
@@ -762,7 +762,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for accessing remote databases using ODBC |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote servers available over JDBC |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote PGSpider servers |
-| {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a MySQL server |
+| {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a MySQL server |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | foreign data wrapper for Oracle access |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
 | {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | foreign data wrapper for DB2 access |
@@ -796,7 +796,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server Money Data Type |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | memcached interface |
-| {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL Logical Replication |
+| {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Logical Replication |
 | {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Have an accurate view on pglogical replication delay |
 | {{< ext "pgl_ddl_deploy" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | automated ddl deployment using pglogical |

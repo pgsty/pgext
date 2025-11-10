@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**pg_acl**](https://github.com/arkhipov/acl)
+[**pg_acl**](https://github.com/arkhipov/acl) : ACL Data type
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/acl" >}} | `1.0.4` | {{< bg "18" "acl_18*" "green" >}} {{< bg "17" "acl_17*" "green" >}} {{< bg "16" "acl_16*" "green" >}} {{< bg "15" "acl_15*" "green" >}} {{< bg "14" "acl_14*" "green" >}} {{< bg "13" "acl_13*" "green" >}} | `acl_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/acl" >}} | `1.0.4` | {{< bg "18" "postgresql-18-acl" "green" >}} {{< bg "17" "postgresql-17-acl" "green" >}} {{< bg "16" "postgresql-16-acl" "green" >}} {{< bg "15" "postgresql-15-acl" "green" >}} {{< bg "14" "postgresql-14-acl" "green" >}} {{< bg "13" "postgresql-13-acl" "green" >}} | `postgresql-$v-acl` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_acl` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "acl_18*" "green" >}} {{< bg "17" "acl_17*" "green" >}} {{< bg "16" "acl_16*" "green" >}} {{< bg "15" "acl_15*" "green" >}} {{< bg "14" "acl_14*" "green" >}} {{< bg "13" "acl_13*" "green" >}} | `acl_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "postgresql-18-acl" "green" >}} {{< bg "17" "postgresql-17-acl" "green" >}} {{< bg "16" "postgresql-16-acl" "green" >}} {{< bg "15" "postgresql-15-acl" "green" >}} {{< bg "14" "postgresql-14-acl" "green" >}} {{< bg "13" "postgresql-13-acl" "green" >}} | `postgresql-$v-acl` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,38 +187,36 @@ width: full
 
 
 ```bash
-pig build get acl; # get acl source code
-pig build dep acl; # install build dependencies
-pig build pkg acl; # build extension rpm or deb
-pig build ext acl; # build extension rpms
+pig build pkg pg_acl;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install acl; # install by extension name, for the current active PG version
-pig ext install pg_acl; # install via package alias, for the active PG version
-pig ext install acl -v 18;   # install for PG 18
-pig ext install acl -v 17;   # install for PG 17
-pig ext install acl -v 16;   # install for PG 16
-pig ext install acl -v 15;   # install for PG 15
-pig ext install acl -v 14;   # install for PG 14
-pig ext install acl -v 13;   # install for PG 13
+pig install pg_acl;		# install via package name, for the active PG version
+pig install acl;		# install by extension name, for the current active PG version
+
+pig install acl -v 18;   # install for PG 18
+pig install acl -v 17;   # install for PG 17
+pig install acl -v 16;   # install for PG 16
+pig install acl -v 15;   # install for PG 15
+pig install acl -v 14;   # install for PG 14
+pig install acl -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION acl;
 ```
-

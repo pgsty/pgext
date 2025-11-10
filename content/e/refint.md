@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**refint**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-REFINT)
+[**refint**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-REFINT) : functions for implementing referential integrity (obsolete)
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -37,6 +37,7 @@ width: full
 
 
 ## Install
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 

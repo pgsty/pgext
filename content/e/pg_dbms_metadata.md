@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-[**pg_dbms_metadata**](https://github.com/HexaCluster/pg_dbms_metadata)
+[**pg_dbms_metadata**](https://github.com/HexaCluster/pg_dbms_metadata) : Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL
 
 
 ## Overview
@@ -19,19 +19,22 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "oracle_fdw" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ddlx" >}} |
 
+> [!Note] pgdg missing el8.aarch64.pg15
+
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_dbms_metadata" >}} | `1.0.0` | {{< bg "18" "pg_dbms_metadata_18" "green" >}} {{< bg "17" "pg_dbms_metadata_17" "green" >}} {{< bg "16" "pg_dbms_metadata_16" "green" >}} {{< bg "15" "pg_dbms_metadata_15" "green" >}} {{< bg "14" "pg_dbms_metadata_14" "green" >}} {{< bg "13" "pg_dbms_metadata_13" "green" >}} | `pg_dbms_metadata_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_dbms_metadata` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "pg_dbms_metadata_18" "green" >}} {{< bg "17" "pg_dbms_metadata_17" "green" >}} {{< bg "16" "pg_dbms_metadata_16" "green" >}} {{< bg "15" "pg_dbms_metadata_15" "green" >}} {{< bg "14" "pg_dbms_metadata_14" "green" >}} {{< bg "13" "pg_dbms_metadata_13" "green" >}} | `pg_dbms_metadata_$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -134,29 +137,29 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_dbms_metadata; # install by extension name, for the current active PG version
-pig ext install pg_dbms_metadata; # install via package alias, for the active PG version
-pig ext install pg_dbms_metadata -v 18;   # install for PG 18
-pig ext install pg_dbms_metadata -v 17;   # install for PG 17
-pig ext install pg_dbms_metadata -v 16;   # install for PG 16
-pig ext install pg_dbms_metadata -v 15;   # install for PG 15
-pig ext install pg_dbms_metadata -v 14;   # install for PG 14
-pig ext install pg_dbms_metadata -v 13;   # install for PG 13
+pig install pg_dbms_metadata;		# install via package name, for the active PG version
+
+pig install pg_dbms_metadata -v 18;   # install for PG 18
+pig install pg_dbms_metadata -v 17;   # install for PG 17
+pig install pg_dbms_metadata -v 16;   # install for PG 16
+pig install pg_dbms_metadata -v 15;   # install for PG 15
+pig install pg_dbms_metadata -v 14;   # install for PG 14
+pig install pg_dbms_metadata -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_dbms_metadata;
 ```
-

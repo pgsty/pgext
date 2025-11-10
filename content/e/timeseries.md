@@ -7,7 +7,7 @@ categories: ["TIME"]
 width: full
 ---
 
-[**pg_timeseries**](https://github.com/ChuckHend/pg_timeseries)
+[**pg_timeseries**](https://github.com/ChuckHend/pg_timeseries) : Convenience API for time series stack
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.7` | {{< bg "18" "pg_timeseries_18" "green" >}} {{< bg "17" "pg_timeseries_17" "green" >}} {{< bg "16" "pg_timeseries_16" "green" >}} {{< bg "15" "pg_timeseries_15" "green" >}} {{< bg "14" "pg_timeseries_14" "green" >}} {{< bg "13" "pg_timeseries_13" "green" >}} | `pg_timeseries_$v` | `hydra_$v`, `pg_cron_$v`, `pg_ivm_$v`, `pg_partman_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/timeseries" >}} | `0.1.7` | {{< bg "18" "postgresql-18-pg-timeseries" "green" >}} {{< bg "17" "postgresql-17-pg-timeseries" "green" >}} {{< bg "16" "postgresql-16-pg-timeseries" "green" >}} {{< bg "15" "postgresql-15-pg-timeseries" "green" >}} {{< bg "14" "postgresql-14-pg-timeseries" "green" >}} {{< bg "13" "postgresql-13-pg-timeseries" "green" >}} | `postgresql-$v-pg-timeseries` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_timeseries` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "pg_timeseries_18" "green" >}} {{< bg "17" "pg_timeseries_17" "green" >}} {{< bg "16" "pg_timeseries_16" "green" >}} {{< bg "15" "pg_timeseries_15" "green" >}} {{< bg "14" "pg_timeseries_14" "green" >}} {{< bg "13" "pg_timeseries_13" "green" >}} | `pg_timeseries_$v` | `hydra_$v`, `pg_cron_$v`, `pg_ivm_$v`, `pg_partman_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "postgresql-18-pg-timeseries" "green" >}} {{< bg "17" "postgresql-17-pg-timeseries" "green" >}} {{< bg "16" "postgresql-16-pg-timeseries" "green" >}} {{< bg "15" "postgresql-15-pg-timeseries" "green" >}} {{< bg "14" "postgresql-14-pg-timeseries" "green" >}} {{< bg "13" "postgresql-13-pg-timeseries" "green" >}} | `postgresql-$v-pg-timeseries` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -187,38 +188,36 @@ width: full
 
 
 ```bash
-pig build get timeseries; # get timeseries source code
-pig build dep timeseries; # install build dependencies
-pig build pkg timeseries; # build extension rpm or deb
-pig build ext timeseries; # build extension rpms
+pig build pkg pg_timeseries;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install timeseries; # install by extension name, for the current active PG version
-pig ext install pg_timeseries; # install via package alias, for the active PG version
-pig ext install timeseries -v 18;   # install for PG 18
-pig ext install timeseries -v 17;   # install for PG 17
-pig ext install timeseries -v 16;   # install for PG 16
-pig ext install timeseries -v 15;   # install for PG 15
-pig ext install timeseries -v 14;   # install for PG 14
-pig ext install timeseries -v 13;   # install for PG 13
+pig install pg_timeseries;		# install via package name, for the active PG version
+pig install timeseries;		# install by extension name, for the current active PG version
+
+pig install timeseries -v 18;   # install for PG 18
+pig install timeseries -v 17;   # install for PG 17
+pig install timeseries -v 16;   # install for PG 16
+pig install timeseries -v 15;   # install for PG 15
+pig install timeseries -v 14;   # install for PG 14
+pig install timeseries -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION timeseries;
+```sql
+CREATE EXTENSION timeseries CASCADE; -- requires columnar, pg_cron, pg_ivm, pg_partman
 ```
-

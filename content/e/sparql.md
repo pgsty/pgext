@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pgsparql**](https://github.com/lacanoid/pgsparql)
+[**pgsparql**](https://github.com/lacanoid/pgsparql) : Query SPARQL datasource with SQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,10 +30,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/sparql" >}} | `1.0` | {{< bg "18" "pgsparql_18" "green" >}} {{< bg "17" "pgsparql_17" "green" >}} {{< bg "16" "pgsparql_16" "green" >}} {{< bg "15" "pgsparql_15" "green" >}} {{< bg "14" "pgsparql_14" "green" >}} {{< bg "13" "pgsparql_13" "green" >}} | `pgsparql_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/sparql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgsparql" "green" >}} {{< bg "17" "postgresql-17-pgsparql" "green" >}} {{< bg "16" "postgresql-16-pgsparql" "green" >}} {{< bg "15" "postgresql-15-pgsparql" "green" >}} {{< bg "14" "postgresql-14-pgsparql" "green" >}} {{< bg "13" "postgresql-13-pgsparql" "green" >}} | `postgresql-$v-pgsparql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsparql` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgsparql_18" "green" >}} {{< bg "17" "pgsparql_17" "green" >}} {{< bg "16" "pgsparql_16" "green" >}} {{< bg "15" "pgsparql_15" "green" >}} {{< bg "14" "pgsparql_14" "green" >}} {{< bg "13" "pgsparql_13" "green" >}} | `pgsparql_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgsparql" "green" >}} {{< bg "17" "postgresql-17-pgsparql" "green" >}} {{< bg "16" "postgresql-16-pgsparql" "green" >}} {{< bg "15" "postgresql-15-pgsparql" "green" >}} {{< bg "14" "postgresql-14-pgsparql" "green" >}} {{< bg "13" "postgresql-13-pgsparql" "green" >}} | `postgresql-$v-pgsparql` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -185,38 +186,36 @@ width: full
 
 
 ```bash
-pig build get sparql; # get sparql source code
-pig build dep sparql; # install build dependencies
-pig build pkg sparql; # build extension rpm or deb
-pig build ext sparql; # build extension rpms
+pig build pkg pgsparql;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install sparql; # install by extension name, for the current active PG version
-pig ext install pgsparql; # install via package alias, for the active PG version
-pig ext install sparql -v 18;   # install for PG 18
-pig ext install sparql -v 17;   # install for PG 17
-pig ext install sparql -v 16;   # install for PG 16
-pig ext install sparql -v 15;   # install for PG 15
-pig ext install sparql -v 14;   # install for PG 14
-pig ext install sparql -v 13;   # install for PG 13
+pig install pgsparql;		# install via package name, for the active PG version
+pig install sparql;		# install by extension name, for the current active PG version
+
+pig install sparql -v 18;   # install for PG 18
+pig install sparql -v 17;   # install for PG 17
+pig install sparql -v 16;   # install for PG 16
+pig install sparql -v 15;   # install for PG 15
+pig install sparql -v 14;   # install for PG 14
+pig install sparql -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION sparql CASCADE SCHEMA sparql;
+```sql
+CREATE EXTENSION sparql CASCADE; -- requires plperl, plperlu
 ```
-

@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**pg_plan_filter**](https://github.com/pgexperts/pg_plan_filter)
+[**pg_plan_filter**](https://github.com/pgexperts/pg_plan_filter) : filter statements by their execution plans.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18*" "green" >}} {{< bg "17" "pg_plan_filter_17*" "green" >}} {{< bg "16" "pg_plan_filter_16*" "green" >}} {{< bg "15" "pg_plan_filter_15*" "green" >}} {{< bg "14" "pg_plan_filter_14*" "green" >}} {{< bg "13" "pg_plan_filter_13*" "green" >}} | `pg_plan_filter_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/plan_filter" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} {{< bg "13" "postgresql-13-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_plan_filter` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_plan_filter_18*" "green" >}} {{< bg "17" "pg_plan_filter_17*" "green" >}} {{< bg "16" "pg_plan_filter_16*" "green" >}} {{< bg "15" "pg_plan_filter_15*" "green" >}} {{< bg "14" "pg_plan_filter_14*" "green" >}} {{< bg "13" "pg_plan_filter_13*" "green" >}} | `pg_plan_filter_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-plan-filter" "green" >}} {{< bg "17" "postgresql-17-pg-plan-filter" "green" >}} {{< bg "16" "postgresql-16-pg-plan-filter" "green" >}} {{< bg "15" "postgresql-15-pg-plan-filter" "green" >}} {{< bg "14" "postgresql-14-pg-plan-filter" "green" >}} {{< bg "13" "postgresql-13-pg-plan-filter" "green" >}} | `postgresql-$v-pg-plan-filter` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,41 @@ width: full
 
 
 ```bash
-pig build get plan_filter; # get plan_filter source code
-pig build dep plan_filter; # install build dependencies
-pig build pkg plan_filter; # build extension rpm or deb
-pig build ext plan_filter; # build extension rpms
+pig build pkg pg_plan_filter;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install plan_filter; # install by extension name, for the current active PG version
-pig ext install pg_plan_filter; # install via package alias, for the active PG version
-pig ext install plan_filter -v 18;   # install for PG 18
-pig ext install plan_filter -v 17;   # install for PG 17
-pig ext install plan_filter -v 16;   # install for PG 16
-pig ext install plan_filter -v 15;   # install for PG 15
-pig ext install plan_filter -v 14;   # install for PG 14
-pig ext install plan_filter -v 13;   # install for PG 13
+pig install pg_plan_filter;		# install via package name, for the active PG version
+pig install plan_filter;		# install by extension name, for the current active PG version
+
+pig install plan_filter -v 18;   # install for PG 18
+pig install plan_filter -v 17;   # install for PG 17
+pig install plan_filter -v 16;   # install for PG 16
+pig install plan_filter -v 15;   # install for PG 15
+pig install plan_filter -v 14;   # install for PG 14
+pig install plan_filter -v 13;   # install for PG 13
 
 ```
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION plan_filter;
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'plan_filter';
 ```
+
+
+This extension does not need `CREATE EXTENSION` DDL command
+
 

@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-[**pg_h3**](https://github.com/zachasme/h3-pg)
+[**pg_h3**](https://github.com/zachasme/h3-pg) : H3 PostGIS integration
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -28,15 +28,16 @@ width: full
 |   **See Also**    | {{< ext "mobilitydb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} |
 |    **Siblings**   | {{< ext "h3" >}} |
 
-> [!Note] no el8.pg17.x86
+> [!Note] pgdg missing el8.x86.pg17 and el8.x86.pg18
 
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/h3" >}} | `4.2.3` | {{< bg "18" "h3-pg_18*" "green" >}} {{< bg "17" "h3-pg_17*" "green" >}} {{< bg "16" "h3-pg_16*" "green" >}} {{< bg "15" "h3-pg_15*" "green" >}} {{< bg "14" "h3-pg_14*" "green" >}} {{< bg "13" "h3-pg_13*" "green" >}} | `h3-pg_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/h3" >}} | `4.2.3` | {{< bg "18" "postgresql-18-h3" "green" >}} {{< bg "17" "postgresql-17-h3" "green" >}} {{< bg "16" "postgresql-16-h3" "green" >}} {{< bg "15" "postgresql-15-h3" "green" >}} {{< bg "14" "postgresql-14-h3" "green" >}} {{< bg "13" "postgresql-13-h3" "green" >}} | `postgresql-$v-h3` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_h3` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "h3-pg_18*" "green" >}} {{< bg "17" "h3-pg_17*" "green" >}} {{< bg "16" "h3-pg_16*" "green" >}} {{< bg "15" "h3-pg_15*" "green" >}} {{< bg "14" "h3-pg_14*" "green" >}} {{< bg "13" "h3-pg_13*" "green" >}} | `h3-pg_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "postgresql-18-h3" "green" >}} {{< bg "17" "postgresql-17-h3" "green" >}} {{< bg "16" "postgresql-16-h3" "green" >}} {{< bg "15" "postgresql-15-h3" "green" >}} {{< bg "14" "postgresql-14-h3" "green" >}} {{< bg "13" "postgresql-13-h3" "green" >}} | `postgresql-$v-h3` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -66,29 +67,30 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install h3_postgis; # install by extension name, for the current active PG version
-pig ext install pg_h3; # install via package alias, for the active PG version
-pig ext install h3_postgis -v 18;   # install for PG 18
-pig ext install h3_postgis -v 17;   # install for PG 17
-pig ext install h3_postgis -v 16;   # install for PG 16
-pig ext install h3_postgis -v 15;   # install for PG 15
-pig ext install h3_postgis -v 14;   # install for PG 14
-pig ext install h3_postgis -v 13;   # install for PG 13
+pig install pg_h3;		# install via package name, for the active PG version
+pig install h3_postgis;		# install by extension name, for the current active PG version
+
+pig install h3_postgis -v 18;   # install for PG 18
+pig install h3_postgis -v 17;   # install for PG 17
+pig install h3_postgis -v 16;   # install for PG 16
+pig install h3_postgis -v 15;   # install for PG 15
+pig install h3_postgis -v 14;   # install for PG 14
+pig install h3_postgis -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION h3_postgis;
+```sql
+CREATE EXTENSION h3_postgis CASCADE; -- requires h3, postgis, postgis_raster
 ```
-

@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**pg_csv**](https://github.com/PostgREST/pg_csv)
+[**pg_csv**](https://github.com/PostgREST/pg_csv) : Flexible CSV processing for Postgres
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dtr" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_csv" >}} | `1.0.1` | {{< bg "18" "pg_csv_18*" "green" >}} {{< bg "17" "pg_csv_17*" "green" >}} {{< bg "16" "pg_csv_16*" "green" >}} {{< bg "15" "pg_csv_15*" "green" >}} {{< bg "14" "pg_csv_14*" "green" >}} {{< bg "13" "pg_csv_13*" "red" >}} | `pg_csv_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_csv" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} {{< bg "13" "postgresql-13-pg-csv" "red" >}} | `postgresql-$v-pg-csv` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_csv` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "pg_csv_18*" "green" >}} {{< bg "17" "pg_csv_17*" "green" >}} {{< bg "16" "pg_csv_16*" "green" >}} {{< bg "15" "pg_csv_15*" "green" >}} {{< bg "14" "pg_csv_14*" "green" >}} {{< bg "13" "pg_csv_13*" "red" >}} | `pg_csv_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} {{< bg "13" "postgresql-13-pg-csv" "red" >}} | `postgresql-$v-pg-csv` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -164,37 +165,34 @@ width: full
 
 
 ```bash
-pig build get pg_csv; # get pg_csv source code
-pig build dep pg_csv; # install build dependencies
-pig build pkg pg_csv; # build extension rpm or deb
-pig build ext pg_csv; # build extension rpms
+pig build pkg pg_csv;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_csv; # install by extension name, for the current active PG version
-pig ext install pg_csv; # install via package alias, for the active PG version
-pig ext install pg_csv -v 18;   # install for PG 18
-pig ext install pg_csv -v 17;   # install for PG 17
-pig ext install pg_csv -v 16;   # install for PG 16
-pig ext install pg_csv -v 15;   # install for PG 15
-pig ext install pg_csv -v 14;   # install for PG 14
+pig install pg_csv;		# install via package name, for the active PG version
+
+pig install pg_csv -v 18;   # install for PG 18
+pig install pg_csv -v 17;   # install for PG 17
+pig install pg_csv -v 16;   # install for PG 16
+pig install pg_csv -v 15;   # install for PG 15
+pig install pg_csv -v 14;   # install for PG 14
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_csv;
 ```
-

@@ -157,7 +157,7 @@ func loadExtensions(ctx context.Context, cache *ExtensionCache) error {
 		       need_ddl, need_load, trusted, relocatable, schemas, pg_ver,
 		       requires, require_by, see_also, rpm_ver, rpm_repo, rpm_pkg,
 		       rpm_pg, rpm_deps, deb_ver, deb_repo, deb_pkg, deb_deps,
-		       deb_pg, source, en_desc, zh_desc, comment
+		       deb_pg, source, en_desc, zh_desc, comment, extra
 		FROM pgext.extension
 		ORDER BY id
 	`
@@ -174,6 +174,7 @@ func loadExtensions(ctx context.Context, cache *ExtensionCache) error {
 		// Temporary variables for arrays - use interface{} for pgx compatibility
 		var tags, schemas, pgVer, requires, requireBy, seeAlso interface{}
 		var rpmPg, rpmDeps, debPg, debDeps interface{}
+		var extra interface{}
 
 		err := rows.Scan(
 			&ext.ID, &ext.Name, &ext.Pkg, &ext.LeadExt, &ext.Category,
@@ -183,7 +184,7 @@ func loadExtensions(ctx context.Context, cache *ExtensionCache) error {
 			&ext.Relocatable, &schemas, &pgVer, &requires, &requireBy,
 			&seeAlso, &ext.RpmVer, &ext.RpmRepo, &ext.RpmPkg, &rpmPg,
 			&rpmDeps, &ext.DebVer, &ext.DebRepo, &ext.DebPkg, &debDeps,
-			&debPg, &ext.Source, &ext.EnDesc, &ext.ZhDesc, &ext.Comment,
+			&debPg, &ext.Source, &ext.EnDesc, &ext.ZhDesc, &ext.Comment, &extra,
 		)
 		if err != nil {
 			return err
@@ -200,6 +201,13 @@ func loadExtensions(ctx context.Context, cache *ExtensionCache) error {
 		ext.RpmDeps = parseArrayValue(rpmDeps)
 		ext.DebPg = parseArrayValue(debPg)
 		ext.DebDeps = parseArrayValue(debDeps)
+
+		// Parse extra JSONB field
+		if extra != nil {
+			if jsonMap, ok := extra.(map[string]interface{}); ok {
+				ext.Extra = JsonMap(jsonMap)
+			}
+		}
 
 		// Add to cache
 		cache.Extensions = append(cache.Extensions, ext)

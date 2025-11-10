@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-[**pg_fkpart**](https://github.com/lemoineat/pg_fkpart)
+[**pg_fkpart**](https://github.com/lemoineat/pg_fkpart) : Table partitioning by foreign key utility
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_fkpart" >}} | `1.7.0` | {{< bg "18" "pg_fkpart_18" "green" >}} {{< bg "17" "pg_fkpart_17" "green" >}} {{< bg "16" "pg_fkpart_16" "green" >}} {{< bg "15" "pg_fkpart_15" "green" >}} {{< bg "14" "pg_fkpart_14" "green" >}} {{< bg "13" "pg_fkpart_13" "green" >}} | `pg_fkpart_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_fkpart" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-fkpart" "red" >}} {{< bg "17" "postgresql-17-pg-fkpart" "green" >}} {{< bg "16" "postgresql-16-pg-fkpart" "green" >}} {{< bg "15" "postgresql-15-pg-fkpart" "green" >}} {{< bg "14" "postgresql-14-pg-fkpart" "green" >}} {{< bg "13" "postgresql-13-pg-fkpart" "green" >}} | `postgresql-$v-pg-fkpart` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_fkpart` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "pg_fkpart_18" "green" >}} {{< bg "17" "pg_fkpart_17" "green" >}} {{< bg "16" "pg_fkpart_16" "green" >}} {{< bg "15" "pg_fkpart_15" "green" >}} {{< bg "14" "pg_fkpart_14" "green" >}} {{< bg "13" "pg_fkpart_13" "green" >}} | `pg_fkpart_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-fkpart" "green" >}} {{< bg "17" "postgresql-17-pg-fkpart" "green" >}} {{< bg "16" "postgresql-16-pg-fkpart" "green" >}} {{< bg "15" "postgresql-15-pg-fkpart" "green" >}} {{< bg "14" "postgresql-14-pg-fkpart" "green" >}} {{< bg "13" "postgresql-13-pg-fkpart" "green" >}} | `postgresql-$v-pg-fkpart` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -205,38 +206,35 @@ width: full
 
 
 ```bash
-pig build get pg_fkpart; # get pg_fkpart source code
-pig build dep pg_fkpart; # install build dependencies
-pig build pkg pg_fkpart; # build extension rpm or deb
-pig build ext pg_fkpart; # build extension rpms
+pig build pkg pg_fkpart;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_fkpart; # install by extension name, for the current active PG version
-pig ext install pg_fkpart; # install via package alias, for the active PG version
-pig ext install pg_fkpart -v 18;   # install for PG 18
-pig ext install pg_fkpart -v 17;   # install for PG 17
-pig ext install pg_fkpart -v 16;   # install for PG 16
-pig ext install pg_fkpart -v 15;   # install for PG 15
-pig ext install pg_fkpart -v 14;   # install for PG 14
-pig ext install pg_fkpart -v 13;   # install for PG 13
+pig install pg_fkpart;		# install via package name, for the active PG version
+
+pig install pg_fkpart -v 18;   # install for PG 18
+pig install pg_fkpart -v 17;   # install for PG 17
+pig install pg_fkpart -v 16;   # install for PG 16
+pig install pg_fkpart -v 15;   # install for PG 15
+pig install pg_fkpart -v 14;   # install for PG 14
+pig install pg_fkpart -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pg_fkpart CASCADE SCHEMA pgfkpart;
+```sql
+CREATE EXTENSION pg_fkpart;
 ```
-

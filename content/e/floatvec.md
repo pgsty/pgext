@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**floatvec**](https://github.com/pjungwir/floatvec)
+[**floatvec**](https://github.com/pjungwir/floatvec) : Math for vectors (arrays) of numbers
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/floatvec" >}} | `1.1.1` | {{< bg "18" "floatvec_18*" "green" >}} {{< bg "17" "floatvec_17*" "green" >}} {{< bg "16" "floatvec_16*" "green" >}} {{< bg "15" "floatvec_15*" "green" >}} {{< bg "14" "floatvec_14*" "green" >}} {{< bg "13" "floatvec_13*" "green" >}} | `floatvec_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/floatvec" >}} | `1.1.1` | {{< bg "18" "postgresql-18-floatvec" "green" >}} {{< bg "17" "postgresql-17-floatvec" "green" >}} {{< bg "16" "postgresql-16-floatvec" "green" >}} {{< bg "15" "postgresql-15-floatvec" "green" >}} {{< bg "14" "postgresql-14-floatvec" "green" >}} {{< bg "13" "postgresql-13-floatvec" "green" >}} | `postgresql-$v-floatvec` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `floatvec` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "floatvec_18*" "green" >}} {{< bg "17" "floatvec_17*" "green" >}} {{< bg "16" "floatvec_16*" "green" >}} {{< bg "15" "floatvec_15*" "green" >}} {{< bg "14" "floatvec_14*" "green" >}} {{< bg "13" "floatvec_13*" "green" >}} | `floatvec_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-floatvec" "green" >}} {{< bg "17" "postgresql-17-floatvec" "green" >}} {{< bg "16" "postgresql-16-floatvec" "green" >}} {{< bg "15" "postgresql-15-floatvec" "green" >}} {{< bg "14" "postgresql-14-floatvec" "green" >}} {{< bg "13" "postgresql-13-floatvec" "green" >}} | `postgresql-$v-floatvec` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get floatvec; # get floatvec source code
-pig build dep floatvec; # install build dependencies
-pig build pkg floatvec; # build extension rpm or deb
-pig build ext floatvec; # build extension rpms
+pig build pkg floatvec;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install floatvec; # install by extension name, for the current active PG version
-pig ext install floatvec; # install via package alias, for the active PG version
-pig ext install floatvec -v 18;   # install for PG 18
-pig ext install floatvec -v 17;   # install for PG 17
-pig ext install floatvec -v 16;   # install for PG 16
-pig ext install floatvec -v 15;   # install for PG 15
-pig ext install floatvec -v 14;   # install for PG 14
-pig ext install floatvec -v 13;   # install for PG 13
+pig install floatvec;		# install via package name, for the active PG version
+
+pig install floatvec -v 18;   # install for PG 18
+pig install floatvec -v 17;   # install for PG 17
+pig install floatvec -v 16;   # install for PG 16
+pig install floatvec -v 15;   # install for PG 15
+pig install floatvec -v 14;   # install for PG 14
+pig install floatvec -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION floatvec;
 ```
-

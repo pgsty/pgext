@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**sqlite_fdw**](https://github.com/pgspider/sqlite_fdw)
+[**sqlite_fdw**](https://github.com/pgspider/sqlite_fdw) : SQLite Foreign Data Wrapper
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/sqlite_fdw" >}} | `2.4.0` | {{< bg "18" "sqlite_fdw_18*" "red" >}} {{< bg "17" "sqlite_fdw_17*" "green" >}} {{< bg "16" "sqlite_fdw_16*" "green" >}} {{< bg "15" "sqlite_fdw_15*" "green" >}} {{< bg "14" "sqlite_fdw_14*" "green" >}} {{< bg "13" "sqlite_fdw_13*" "green" >}} | `sqlite_fdw_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/sqlite_fdw" >}} | `2.5.0` | {{< bg "18" "postgresql-18-sqlite-fdw" "red" >}} {{< bg "17" "postgresql-17-sqlite-fdw" "green" >}} {{< bg "16" "postgresql-16-sqlite-fdw" "green" >}} {{< bg "15" "postgresql-15-sqlite-fdw" "green" >}} {{< bg "14" "postgresql-14-sqlite-fdw" "green" >}} {{< bg "13" "postgresql-13-sqlite-fdw" "green" >}} | `postgresql-$v-sqlite-fdw` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `sqlite_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "sqlite_fdw_18*" "red" >}} {{< bg "17" "sqlite_fdw_17*" "green" >}} {{< bg "16" "sqlite_fdw_16*" "green" >}} {{< bg "15" "sqlite_fdw_15*" "green" >}} {{< bg "14" "sqlite_fdw_14*" "green" >}} {{< bg "13" "sqlite_fdw_13*" "green" >}} | `sqlite_fdw_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "postgresql-18-sqlite-fdw" "red" >}} {{< bg "17" "postgresql-17-sqlite-fdw" "green" >}} {{< bg "16" "postgresql-16-sqlite-fdw" "green" >}} {{< bg "15" "postgresql-15-sqlite-fdw" "green" >}} {{< bg "14" "postgresql-14-sqlite-fdw" "green" >}} {{< bg "13" "postgresql-13-sqlite-fdw" "green" >}} | `postgresql-$v-sqlite-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -224,37 +225,34 @@ width: full
 
 
 ```bash
-pig build get sqlite_fdw; # get sqlite_fdw source code
-pig build dep sqlite_fdw; # install build dependencies
-pig build pkg sqlite_fdw; # build extension rpm or deb
-pig build ext sqlite_fdw; # build extension rpms
+pig build pkg sqlite_fdw;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install sqlite_fdw; # install by extension name, for the current active PG version
-pig ext install sqlite_fdw; # install via package alias, for the active PG version
-pig ext install sqlite_fdw -v 17;   # install for PG 17
-pig ext install sqlite_fdw -v 16;   # install for PG 16
-pig ext install sqlite_fdw -v 15;   # install for PG 15
-pig ext install sqlite_fdw -v 14;   # install for PG 14
-pig ext install sqlite_fdw -v 13;   # install for PG 13
+pig install sqlite_fdw;		# install via package name, for the active PG version
+
+pig install sqlite_fdw -v 17;   # install for PG 17
+pig install sqlite_fdw -v 16;   # install for PG 16
+pig install sqlite_fdw -v 15;   # install for PG 15
+pig install sqlite_fdw -v 14;   # install for PG 14
+pig install sqlite_fdw -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION sqlite_fdw;
 ```
-

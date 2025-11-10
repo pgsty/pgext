@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-[**pg_bigm**](https://github.com/pgbigm/pg_bigm)
+[**pg_bigm**](https://github.com/pgbigm/pg_bigm) : create 2-gram (bigram) index for faster full text search.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_bigm" >}} | `1.2` | {{< bg "18" "pg_bigm_18*" "green" >}} {{< bg "17" "pg_bigm_17*" "green" >}} {{< bg "16" "pg_bigm_16*" "green" >}} {{< bg "15" "pg_bigm_15*" "green" >}} {{< bg "14" "pg_bigm_14*" "green" >}} {{< bg "13" "pg_bigm_13*" "green" >}} | `pg_bigm_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_bigm" >}} | `1.2` | {{< bg "18" "postgresql-18-pg-bigm" "green" >}} {{< bg "17" "postgresql-17-pg-bigm" "green" >}} {{< bg "16" "postgresql-16-pg-bigm" "green" >}} {{< bg "15" "postgresql-15-pg-bigm" "green" >}} {{< bg "14" "postgresql-14-pg-bigm" "green" >}} {{< bg "13" "postgresql-13-pg-bigm" "green" >}} | `postgresql-$v-pg-bigm` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_bigm` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "pg_bigm_18*" "green" >}} {{< bg "17" "pg_bigm_17*" "green" >}} {{< bg "16" "pg_bigm_16*" "green" >}} {{< bg "15" "pg_bigm_15*" "green" >}} {{< bg "14" "pg_bigm_14*" "green" >}} {{< bg "13" "pg_bigm_13*" "green" >}} | `pg_bigm_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "postgresql-18-pg-bigm" "green" >}} {{< bg "17" "postgresql-17-pg-bigm" "green" >}} {{< bg "16" "postgresql-16-pg-bigm" "green" >}} {{< bg "15" "postgresql-15-pg-bigm" "green" >}} {{< bg "14" "postgresql-14-pg-bigm" "green" >}} {{< bg "13" "postgresql-13-pg-bigm" "green" >}} | `postgresql-$v-pg-bigm` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -90,8 +91,8 @@ width: full
 | `pg_bigm_17` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.4 KiB | [pg_bigm_17-1.2_20250903-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_bigm_17-1.2_20250903-1PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_17` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.2 KiB | [pg_bigm_17-1.2_20240606-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_bigm_17-1.2_20240606-3PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_17` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.7 KiB | [pg_bigm_17-1.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_bigm_17-1.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_bigm_17` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.1 KiB | [pg_bigm_17-1.2_20250903-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_bigm_17-1.2_20250903-1PGDG.rhel10.aarch64.rpm) |
 | `pg_bigm_17` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 20.9 KiB | [pg_bigm_17-1.2_20240606-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_bigm_17-1.2_20240606-3PGDG.rhel10.aarch64.rpm) |
+| `pg_bigm_17` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.1 KiB | [pg_bigm_17-1.2_20250903-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_bigm_17-1.2_20250903-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pg-bigm` | `1.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 27.0 KiB | [postgresql-17-pg-bigm_1.2-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-bigm/postgresql-17-pg-bigm_1.2-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-bigm` | `1.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.8 KiB | [postgresql-17-pg-bigm_1.2-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-bigm/postgresql-17-pg-bigm_1.2-3PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-bigm` | `1.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 27.1 KiB | [postgresql-17-pg-bigm_1.2-3PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-bigm/postgresql-17-pg-bigm_1.2-3PIGSTY~trixie_amd64.deb) |
@@ -119,8 +120,8 @@ width: full
 | `pg_bigm_16` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.1 KiB | [pg_bigm_16-1.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_bigm_16-1.2-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_16` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.5 KiB | [pg_bigm_16-1.2_20240606-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_bigm_16-1.2_20240606-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_16` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 19.5 KiB | [pg_bigm_16-1.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_bigm_16-1.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_bigm_16` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.4 KiB | [pg_bigm_16-1.2_20250903-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_bigm_16-1.2_20250903-1PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_16` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.2 KiB | [pg_bigm_16-1.2_20240606-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_bigm_16-1.2_20240606-3PGDG.rhel10.x86_64.rpm) |
+| `pg_bigm_16` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.4 KiB | [pg_bigm_16-1.2_20250903-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_bigm_16-1.2_20250903-1PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_16` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.7 KiB | [pg_bigm_16-1.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_bigm_16-1.2-1PIGSTY.el10.aarch64.rpm) |
 | `pg_bigm_16` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.0 KiB | [pg_bigm_16-1.2_20240606-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_bigm_16-1.2_20240606-3PGDG.rhel10.aarch64.rpm) |
 | `pg_bigm_16` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.2 KiB | [pg_bigm_16-1.2_20250903-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_bigm_16-1.2_20250903-1PGDG.rhel10.aarch64.rpm) |
@@ -138,15 +139,15 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_bigm_15` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.4 KiB | [pg_bigm_15-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_bigm_15-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_bigm_15` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 20.5 KiB | [pg_bigm_15-1.2_20250903-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_bigm_15-1.2_20250903-1PGDG.rhel8.x86_64.rpm) |
+| `pg_bigm_15` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.4 KiB | [pg_bigm_15-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_bigm_15-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_bigm_15` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.6 KiB | [pg_bigm_15-1.2_20240606-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_bigm_15-1.2_20240606-1PGDG.rhel8.x86_64.rpm) |
-| `pg_bigm_15` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 18.1 KiB | [pg_bigm_15-1.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_bigm_15-1.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_bigm_15` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 18.3 KiB | [pg_bigm_15-1.2_20240606-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_bigm_15-1.2_20240606-1PGDG.rhel8.aarch64.rpm) |
+| `pg_bigm_15` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 18.1 KiB | [pg_bigm_15-1.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_bigm_15-1.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_bigm_15` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 20.3 KiB | [pg_bigm_15-1.2_20250903-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_bigm_15-1.2_20250903-1PGDG.rhel8.aarch64.rpm) |
-| `pg_bigm_15` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 20.9 KiB | [pg_bigm_15-1.2_20250903-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_bigm_15-1.2_20250903-1PGDG.rhel9.x86_64.rpm) |
 | `pg_bigm_15` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 18.8 KiB | [pg_bigm_15-1.2_20240606-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_bigm_15-1.2_20240606-1PGDG.rhel9.x86_64.rpm) |
 | `pg_bigm_15` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 18.5 KiB | [pg_bigm_15-1.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_bigm_15-1.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_bigm_15` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 20.9 KiB | [pg_bigm_15-1.2_20250903-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_bigm_15-1.2_20250903-1PGDG.rhel9.x86_64.rpm) |
 | `pg_bigm_15` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.1 KiB | [pg_bigm_15-1.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_bigm_15-1.2-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_15` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.5 KiB | [pg_bigm_15-1.2_20240606-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_bigm_15-1.2_20240606-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_15` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.5 KiB | [pg_bigm_15-1.2_20250903-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_bigm_15-1.2_20250903-1PGDG.rhel9.aarch64.rpm) |
@@ -170,9 +171,9 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_bigm_14` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.4 KiB | [pg_bigm_14-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_bigm_14-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_bigm_14` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.6 KiB | [pg_bigm_14-1.2_20240606-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_bigm_14-1.2_20240606-1PGDG.rhel8.x86_64.rpm) |
 | `pg_bigm_14` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 20.5 KiB | [pg_bigm_14-1.2_20250903-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_bigm_14-1.2_20250903-1PGDG.rhel8.x86_64.rpm) |
-| `pg_bigm_14` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.4 KiB | [pg_bigm_14-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_bigm_14-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_bigm_14` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 18.3 KiB | [pg_bigm_14-1.2_20240606-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_bigm_14-1.2_20240606-1PGDG.rhel8.aarch64.rpm) |
 | `pg_bigm_14` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 18.1 KiB | [pg_bigm_14-1.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_bigm_14-1.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_bigm_14` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 20.3 KiB | [pg_bigm_14-1.2_20250903-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_bigm_14-1.2_20250903-1PGDG.rhel8.aarch64.rpm) |
@@ -186,8 +187,8 @@ width: full
 | `pg_bigm_14` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.7 KiB | [pg_bigm_14-1.2_20250903-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_bigm_14-1.2_20250903-1PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_14` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.4 KiB | [pg_bigm_14-1.2_20240606-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_bigm_14-1.2_20240606-3PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_14` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.8 KiB | [pg_bigm_14-1.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_bigm_14-1.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_bigm_14` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.1 KiB | [pg_bigm_14-1.2_20240606-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_bigm_14-1.2_20240606-3PGDG.rhel10.aarch64.rpm) |
 | `pg_bigm_14` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.4 KiB | [pg_bigm_14-1.2_20250903-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_bigm_14-1.2_20250903-1PGDG.rhel10.aarch64.rpm) |
+| `pg_bigm_14` | `1.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 21.1 KiB | [pg_bigm_14-1.2_20240606-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_bigm_14-1.2_20240606-3PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pg-bigm` | `1.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 27.2 KiB | [postgresql-14-pg-bigm_1.2-3PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-bigm/postgresql-14-pg-bigm_1.2-3PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-bigm` | `1.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.8 KiB | [postgresql-14-pg-bigm_1.2-3PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-bigm/postgresql-14-pg-bigm_1.2-3PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-bigm` | `1.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 27.4 KiB | [postgresql-14-pg-bigm_1.2-3PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-bigm/postgresql-14-pg-bigm_1.2-3PIGSTY~trixie_amd64.deb) |
@@ -212,8 +213,8 @@ width: full
 | `pg_bigm_13` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 18.8 KiB | [pg_bigm_13-1.2_20240606-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_bigm_13-1.2_20240606-1PGDG.rhel9.x86_64.rpm) |
 | `pg_bigm_13` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 20.9 KiB | [pg_bigm_13-1.2_20250903-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_bigm_13-1.2_20250903-1PGDG.rhel9.x86_64.rpm) |
 | `pg_bigm_13` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.6 KiB | [pg_bigm_13-1.2_20240606-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_bigm_13-1.2_20240606-1PGDG.rhel9.aarch64.rpm) |
-| `pg_bigm_13` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.5 KiB | [pg_bigm_13-1.2_20250903-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_bigm_13-1.2_20250903-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_13` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.1 KiB | [pg_bigm_13-1.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_bigm_13-1.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_bigm_13` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.5 KiB | [pg_bigm_13-1.2_20250903-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_bigm_13-1.2_20250903-1PGDG.rhel9.aarch64.rpm) |
 | `pg_bigm_13` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 19.8 KiB | [pg_bigm_13-1.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_bigm_13-1.2-1PIGSTY.el10.x86_64.rpm) |
 | `pg_bigm_13` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.4 KiB | [pg_bigm_13-1.2_20240606-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_bigm_13-1.2_20240606-3PGDG.rhel10.x86_64.rpm) |
 | `pg_bigm_13` | `1.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 21.7 KiB | [pg_bigm_13-1.2_20250903-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_bigm_13-1.2_20250903-1PGDG.rhel10.x86_64.rpm) |
@@ -240,38 +241,35 @@ width: full
 
 
 ```bash
-pig build get pg_bigm; # get pg_bigm source code
-pig build dep pg_bigm; # install build dependencies
-pig build pkg pg_bigm; # build extension rpm or deb
-pig build ext pg_bigm; # build extension rpms
+pig build pkg pg_bigm;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_bigm; # install by extension name, for the current active PG version
-pig ext install pg_bigm; # install via package alias, for the active PG version
-pig ext install pg_bigm -v 18;   # install for PG 18
-pig ext install pg_bigm -v 17;   # install for PG 17
-pig ext install pg_bigm -v 16;   # install for PG 16
-pig ext install pg_bigm -v 15;   # install for PG 15
-pig ext install pg_bigm -v 14;   # install for PG 14
-pig ext install pg_bigm -v 13;   # install for PG 13
+pig install pg_bigm;		# install via package name, for the active PG version
+
+pig install pg_bigm -v 18;   # install for PG 18
+pig install pg_bigm -v 17;   # install for PG 17
+pig install pg_bigm -v 16;   # install for PG 16
+pig install pg_bigm -v 15;   # install for PG 15
+pig install pg_bigm -v 14;   # install for PG 14
+pig install pg_bigm -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_bigm;
 ```
-

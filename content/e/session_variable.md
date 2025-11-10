@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-[**session_variable**](https://github.com/splendiddata/session_variable)
+[**session_variable**](https://github.com/splendiddata/session_variable) : Registration and manipulation of session variables and constants
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/session_variable" >}} | `3.4` | {{< bg "18" "session_variable_18*" "green" >}} {{< bg "17" "session_variable_17*" "green" >}} {{< bg "16" "session_variable_16*" "green" >}} {{< bg "15" "session_variable_15*" "green" >}} {{< bg "14" "session_variable_14*" "green" >}} {{< bg "13" "session_variable_13*" "green" >}} | `session_variable_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/session_variable" >}} | `3.4` | {{< bg "18" "postgresql-18-session-variable" "red" >}} {{< bg "17" "postgresql-17-session-variable" "green" >}} {{< bg "16" "postgresql-16-session-variable" "green" >}} {{< bg "15" "postgresql-15-session-variable" "green" >}} {{< bg "14" "postgresql-14-session-variable" "green" >}} {{< bg "13" "postgresql-13-session-variable" "green" >}} | `postgresql-$v-session-variable` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `session_variable` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "session_variable_18*" "green" >}} {{< bg "17" "session_variable_17*" "green" >}} {{< bg "16" "session_variable_16*" "green" >}} {{< bg "15" "session_variable_15*" "green" >}} {{< bg "14" "session_variable_14*" "green" >}} {{< bg "13" "session_variable_13*" "green" >}} | `session_variable_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "postgresql-18-session-variable" "green" >}} {{< bg "17" "postgresql-17-session-variable" "green" >}} {{< bg "16" "postgresql-16-session-variable" "green" >}} {{< bg "15" "postgresql-15-session-variable" "green" >}} {{< bg "14" "postgresql-14-session-variable" "green" >}} {{< bg "13" "postgresql-13-session-variable" "green" >}} | `postgresql-$v-session-variable` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get session_variable; # get session_variable source code
-pig build dep session_variable; # install build dependencies
-pig build pkg session_variable; # build extension rpm or deb
-pig build ext session_variable; # build extension rpms
+pig build pkg session_variable;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install session_variable; # install by extension name, for the current active PG version
-pig ext install session_variable; # install via package alias, for the active PG version
-pig ext install session_variable -v 18;   # install for PG 18
-pig ext install session_variable -v 17;   # install for PG 17
-pig ext install session_variable -v 16;   # install for PG 16
-pig ext install session_variable -v 15;   # install for PG 15
-pig ext install session_variable -v 14;   # install for PG 14
-pig ext install session_variable -v 13;   # install for PG 13
+pig install session_variable;		# install via package name, for the active PG version
+
+pig install session_variable -v 18;   # install for PG 18
+pig install session_variable -v 17;   # install for PG 17
+pig install session_variable -v 16;   # install for PG 16
+pig install session_variable -v 15;   # install for PG 15
+pig install session_variable -v 14;   # install for PG 14
+pig install session_variable -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION session_variable;
 ```
-

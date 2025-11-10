@@ -7,7 +7,7 @@ categories: ["TIME"]
 width: full
 ---
 
-[**pg_later**](https://github.com/ChuckHend/pg_later)
+[**pg_later**](https://github.com/ChuckHend/pg_later) : Run queries now and get results later
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_later" >}} | `0.3.1` | {{< bg "18" "pg_later_18" "green" >}} {{< bg "17" "pg_later_17" "green" >}} {{< bg "16" "pg_later_16" "green" >}} {{< bg "15" "pg_later_15" "green" >}} {{< bg "14" "pg_later_14" "green" >}} {{< bg "13" "pg_later_13" "green" >}} | `pg_later_$v` | `pgmq_$v` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_later" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-later" "green" >}} {{< bg "17" "postgresql-17-pg-later" "green" >}} {{< bg "16" "postgresql-16-pg-later" "green" >}} {{< bg "15" "postgresql-15-pg-later" "green" >}} {{< bg "14" "postgresql-14-pg-later" "green" >}} {{< bg "13" "postgresql-13-pg-later" "green" >}} | `postgresql-$v-pg-later` | `postgresql-$v-pgmq` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_later` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "pg_later_18" "green" >}} {{< bg "17" "pg_later_17" "green" >}} {{< bg "16" "pg_later_16" "green" >}} {{< bg "15" "pg_later_15" "green" >}} {{< bg "14" "pg_later_14" "green" >}} {{< bg "13" "pg_later_13" "green" >}} | `pg_later_$v` | `pgmq_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "postgresql-18-pg-later" "green" >}} {{< bg "17" "postgresql-17-pg-later" "green" >}} {{< bg "16" "postgresql-16-pg-later" "green" >}} {{< bg "15" "postgresql-15-pg-later" "green" >}} {{< bg "14" "postgresql-14-pg-later" "green" >}} {{< bg "13" "postgresql-13-pg-later" "green" >}} | `postgresql-$v-pg-later` | `postgresql-$v-pgmq` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -192,38 +193,35 @@ width: full
 
 
 ```bash
-pig build get pg_later; # get pg_later source code
-pig build dep pg_later; # install build dependencies
-pig build pkg pg_later; # build extension rpm or deb
-pig build ext pg_later; # build extension rpms
+pig build pkg pg_later;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_later; # install by extension name, for the current active PG version
-pig ext install pg_later; # install via package alias, for the active PG version
-pig ext install pg_later -v 18;   # install for PG 18
-pig ext install pg_later -v 17;   # install for PG 17
-pig ext install pg_later -v 16;   # install for PG 16
-pig ext install pg_later -v 15;   # install for PG 15
-pig ext install pg_later -v 14;   # install for PG 14
-pig ext install pg_later -v 13;   # install for PG 13
+pig install pg_later;		# install via package name, for the active PG version
+
+pig install pg_later -v 18;   # install for PG 18
+pig install pg_later -v 17;   # install for PG 17
+pig install pg_later -v 16;   # install for PG 16
+pig install pg_later -v 15;   # install for PG 15
+pig install pg_later -v 14;   # install for PG 14
+pig install pg_later -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pg_later CASCADE SCHEMA pglater;
+```sql
+CREATE EXTENSION pg_later CASCADE; -- requires pgmq
 ```
-

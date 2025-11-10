@@ -1,14 +1,5 @@
 
---------
-
-## Caveat
-
-pg_search 0.15.19+ RPMs are [broken due to libicu version issue](https://github.com/paradedb/paradedb/issues/2722)
-
-The version is locked to 0.15.18 on EL platforms until the issue is resolved.
-
-
---------
+> [!NOTE] THIS EXTENSION is built by ParadeDB team and delivered by the PIGSTY repo
 
 ## Usage
 

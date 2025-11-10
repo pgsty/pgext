@@ -1,13 +1,9 @@
 
-
---------
-
 ## Usage
 
 [`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake) 0.2.0 (unpublished yet) is rewritten in Rust and designed as a sub-extension of `pg_duckdb`.
 
-- pg_mooncake docs: https://docs.mooncake.dev/
-
+pg_mooncake docs: https://docs.mooncake.dev/
 
 
 ### Quick Setup
@@ -15,7 +11,7 @@
 Install pg_duckdb and pg_mooncake with pig:
 
 ```bash
-pig repo add pigsty -u
+pig repo set
 pig install pg_duckdb pg_mooncake
 ```
 

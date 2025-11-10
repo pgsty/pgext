@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-[**babelfishpg_money**](https://babelfishpg.org/)
+[**babelfishpg_money**](https://babelfishpg.org/) : SQL Server Money Data Type
 
 
 ## Overview
@@ -19,22 +19,23 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "financial" >}} {{< ext "tds_fdw" >}} {{< ext "numeral" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} |
 
-> [!Note] works on wiltondb kernel fork
+> [!Note] special case: this extension only works on wiltondb kernel fork
 
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money*" "red" >}} {{< bg "17" "babelfishpg-money*" "red" >}} {{< bg "16" "babelfishpg-money*" "red" >}} {{< bg "15" "babelfishpg-money*" "green" >}} {{< bg "14" "babelfishpg-money*" "red" >}} {{< bg "13" "babelfishpg-money*" "red" >}} | `babelfishpg-money*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_money" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money" "red" >}} {{< bg "17" "babelfishpg-money" "red" >}} {{< bg "16" "babelfishpg-money" "red" >}} {{< bg "15" "babelfishpg-money" "green" >}} {{< bg "14" "babelfishpg-money" "red" >}} {{< bg "13" "babelfishpg-money" "red" >}} | `babelfishpg-money` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_money` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money*" "red" >}} {{< bg "17" "babelfishpg-money*" "red" >}} {{< bg "16" "babelfishpg-money*" "red" >}} {{< bg "15" "babelfishpg-money*" "green" >}} {{< bg "14" "babelfishpg-money*" "red" >}} {{< bg "13" "babelfishpg-money*" "red" >}} | `babelfishpg-money*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money" "red" >}} {{< bg "17" "babelfishpg-money" "red" >}} {{< bg "16" "babelfishpg-money" "red" >}} {{< bg "15" "babelfishpg-money" "green" >}} {{< bg "14" "babelfishpg-money" "red" >}} {{< bg "13" "babelfishpg-money" "red" >}} | `babelfishpg-money` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -64,24 +65,24 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install babelfishpg_money; # install by extension name, for the current active PG version
-pig ext install babelfishpg_money; # install via package alias, for the active PG version
-pig ext install babelfishpg_money -v 15;   # install for PG 15
+pig install babelfishpg_money;		# install via package name, for the active PG version
+
+pig install babelfishpg_money -v 15;   # install for PG 15
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION babelfishpg_money;
 ```
-

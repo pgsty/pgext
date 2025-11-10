@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_tracing**](https://github.com/DataDog/pg_tracing)
+[**pg_tracing**](https://github.com/DataDog/pg_tracing) : Distributed Tracing for PostgreSQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_tracing" >}} | `0.1.3` | {{< bg "18" "pg_tracing_18*" "green" >}} {{< bg "17" "pg_tracing_17*" "green" >}} {{< bg "16" "pg_tracing_16*" "green" >}} {{< bg "15" "pg_tracing_15*" "green" >}} {{< bg "14" "pg_tracing_14*" "green" >}} {{< bg "13" "pg_tracing_13*" "red" >}} | `pg_tracing_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_tracing" >}} | `0.1.3` | {{< bg "18" "postgresql-18-pg-tracing" "green" >}} {{< bg "17" "postgresql-17-pg-tracing" "green" >}} {{< bg "16" "postgresql-16-pg-tracing" "green" >}} {{< bg "15" "postgresql-15-pg-tracing" "green" >}} {{< bg "14" "postgresql-14-pg-tracing" "green" >}} {{< bg "13" "postgresql-13-pg-tracing" "red" >}} | `postgresql-$v-pg-tracing` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_tracing` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "pg_tracing_18*" "green" >}} {{< bg "17" "pg_tracing_17*" "green" >}} {{< bg "16" "pg_tracing_16*" "green" >}} {{< bg "15" "pg_tracing_15*" "green" >}} {{< bg "14" "pg_tracing_14*" "green" >}} {{< bg "13" "pg_tracing_13*" "red" >}} | `pg_tracing_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.3` | {{< bg "18" "postgresql-18-pg-tracing" "green" >}} {{< bg "17" "postgresql-17-pg-tracing" "green" >}} {{< bg "16" "postgresql-16-pg-tracing" "green" >}} {{< bg "15" "postgresql-15-pg-tracing" "green" >}} {{< bg "14" "postgresql-14-pg-tracing" "green" >}} {{< bg "13" "postgresql-13-pg-tracing" "red" >}} | `postgresql-$v-pg-tracing` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -164,37 +165,41 @@ width: full
 
 
 ```bash
-pig build get pg_tracing; # get pg_tracing source code
-pig build dep pg_tracing; # install build dependencies
-pig build pkg pg_tracing; # build extension rpm or deb
-pig build ext pg_tracing; # build extension rpms
+pig build pkg pg_tracing;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_tracing; # install by extension name, for the current active PG version
-pig ext install pg_tracing; # install via package alias, for the active PG version
-pig ext install pg_tracing -v 18;   # install for PG 18
-pig ext install pg_tracing -v 17;   # install for PG 17
-pig ext install pg_tracing -v 16;   # install for PG 16
-pig ext install pg_tracing -v 15;   # install for PG 15
-pig ext install pg_tracing -v 14;   # install for PG 14
+pig install pg_tracing;		# install via package name, for the active PG version
+
+pig install pg_tracing -v 18;   # install for PG 18
+pig install pg_tracing -v 17;   # install for PG 17
+pig install pg_tracing -v 16;   # install for PG 16
+pig install pg_tracing -v 15;   # install for PG 15
+pig install pg_tracing -v 14;   # install for PG 14
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_tracing';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_tracing;
 ```
-

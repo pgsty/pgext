@@ -1,7 +1,4 @@
 
-
---------
-
 ## Usage
 
 | Function                                                                             | Return Type |

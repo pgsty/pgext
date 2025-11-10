@@ -1,12 +1,12 @@
 ---
-title: "扩展"
+title: "扩展列表"
 breadcrumbs: false
 excludeSearch: true
 comments: false
 weight: 900
 ---
 
-在 PIGSTY 与 PGDG 仓库中，总共有 431 个可用的 PostgreSQL 扩展，与 %!类(int= 361)软件包：
+在 PIGSTY 与 PGDG 仓库中，总共有 431 个可用的 PostgreSQL 扩展，与 361 类软件包：
 
 ## 扩展包
 
@@ -24,7 +24,7 @@ weight: 900
 | {{< ext "pg_cron" >}} | `1.6.7` | {{< badge content="Link" link="https://github.com/citusdata/pg_cron" >}} | {{< category "TIME" >}} | `pg_cron_$v*` | `postgresql-$v-cron` |
 | {{< ext "pg_task" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_task" >}} | {{< category "TIME" >}} | `pg_task_$v*` | `postgresql-$v-pg-task` |
 | {{< ext "pg_later" >}} | `0.3.1` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_later" >}} | {{< category "TIME" >}} | `pg_later_$v` | `postgresql-$v-pg-later` |
-| {{< ext "pg_background" >}} | `1.3` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v*` | `postgresql-$v-pg-background` |
+| {{< ext "pg_background" >}} | `1.5` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v*` | `postgresql-$v-pg-background` |
 | {{< ext "postgis" >}} | `3.6.0` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v*` | `postgresql-$v-postgis-3 postgresql-$v-postgis-3-scripts` |
 | {{< ext "pgrouting" >}} | `3.8.0` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v*` | `postgresql-$v-pgrouting postgresql-$v-pgrouting-scripts` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v*` | `postgresql-$v-pointcloud` |
@@ -327,7 +327,7 @@ weight: 900
 | {{< ext "odbc_fdw" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CartoDB/odbc_fdw" >}} | {{< category "FDW" >}} | `odbc_fdw_$v*` | - |
 | {{< ext "jdbc_fdw" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgspider/jdbc_fdw" >}} | {{< category "FDW" >}} | `jdbc_fdw_$v*` | - |
 | {{< ext "pgspider_ext" >}} | `1.3.0` | {{< badge content="Link" link="https://github.com/pgspider/pgspider_ext" >}} | {{< category "FDW" >}} | `pgspider_ext_$v*` | `postgresql-$v-pgspider-ext` |
-| {{< ext "mysql_fdw" >}} | `2.9.2` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< category "FDW" >}} | `mysql_fdw_$v*` | `postgresql-$v-mysql-fdw` |
+| {{< ext "mysql_fdw" >}} | `2.9.3` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mysql_fdw" >}} | {{< category "FDW" >}} | `mysql_fdw_$v*` | `postgresql-$v-mysql-fdw` |
 | {{< ext "oracle_fdw" >}} | `2.8.0` | {{< badge content="Link" link="https://github.com/laurenz/oracle_fdw" >}} | {{< category "FDW" >}} | `oracle_fdw_$v*` | `postgresql-$v-oracle-fdw` |
 | {{< ext "tds_fdw" >}} | `2.0.5` | {{< badge content="Link" link="https://github.com/tds-fdw/tds_fdw" >}} | {{< category "FDW" >}} | `tds_fdw_$v*` | `postgresql-$v-tds-fdw` |
 | {{< ext "db2_fdw" >}} | `7.0.0` | {{< badge content="Link" link="https://github.com/wolfgangbrandl/db2_fdw" >}} | {{< category "FDW" >}} | `db2_fdw_$v*` | - |
@@ -448,7 +448,7 @@ weight: 900
 | {{< ext "columnar" "hydra" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 开源列式存储扩展 |
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | PostgreSQL列式存储表 |
+| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="---Ld--" color="blue" >}} | PostgreSQL列式存储表 |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | DuckDB 外部数据源包装器 |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLdt-" color="blue" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | {{< ext "pg_fkpart" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 按外键实用程序进行表分区的扩展 |
@@ -569,7 +569,7 @@ weight: 900
 | {{< ext "pg_rational" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用BIGINT表示的有理数数据类型 |
 | {{< ext "uint" "pguint" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 无符号整型数据类型 |
 | {{< ext "uint128" "pg_uint128" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 原生128位无符号整型数据类型 |
-| {{< ext "hashtypes" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
+| {{< ext "hashtypes" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
 | {{< ext "ip4r" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | {{< ext "pg_duration" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 用于表示时间段的强化数据类型 |
 | {{< ext "uri" "pg_uri" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | URI数据类型 |
@@ -762,7 +762,7 @@ weight: 900
 | {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问ODBC可访问的任何外部数据源 |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问JDBC可访问的任何外部数据源 |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用多种FDW访问远程数据库服务器 |
-| {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | MySQL外部数据包装器 |
+| {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | MySQL外部数据包装器 |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提供对Oracle的外部数据源包装器 |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
 | {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提供对DB2的外部数据源包装器 |
@@ -796,7 +796,7 @@ weight: 900
 | {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server 货币数据类型兼容扩展 |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在PG中嵌入Redis风格的内存数据库 |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 为PG提供memcached兼容接口 |
-| {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |
+| {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | pglogical复制延迟以秒计的精确视图 |
 | {{< ext "pgl_ddl_deploy" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 使用 pglogical 执行自动 DDL 部署 |

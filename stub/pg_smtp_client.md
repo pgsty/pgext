@@ -1,9 +1,7 @@
 
---------
-
 ## Usage
 
-> https://github.com/frectonz/pglite-fusion/blob/main/README.md
+Docs: https://github.com/frectonz/pglite-fusion/blob/main/README.md
 
 ### Enabling the extension
 

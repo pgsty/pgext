@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**pgx_ulid**](https://github.com/pksunkara/pgx_ulid)
+[**pgx_ulid**](https://github.com/pksunkara/pgx_ulid) : ulid type and methods
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.1` | {{< bg "18" "pgx_ulid_18" "green" >}} {{< bg "17" "pgx_ulid_17" "green" >}} {{< bg "16" "pgx_ulid_16" "green" >}} {{< bg "15" "pgx_ulid_15" "green" >}} {{< bg "14" "pgx_ulid_14" "green" >}} {{< bg "13" "pgx_ulid_13" "red" >}} | `pgx_ulid_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgx_ulid" >}} | `0.2.1` | {{< bg "18" "postgresql-18-pgx-ulid" "green" >}} {{< bg "17" "postgresql-17-pgx-ulid" "green" >}} {{< bg "16" "postgresql-16-pgx-ulid" "green" >}} {{< bg "15" "postgresql-15-pgx-ulid" "green" >}} {{< bg "14" "postgresql-14-pgx-ulid" "green" >}} {{< bg "13" "postgresql-13-pgx-ulid" "red" >}} | `postgresql-$v-pgx-ulid` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pgx_ulid` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "pgx_ulid_18" "green" >}} {{< bg "17" "pgx_ulid_17" "green" >}} {{< bg "16" "pgx_ulid_16" "green" >}} {{< bg "15" "pgx_ulid_15" "green" >}} {{< bg "14" "pgx_ulid_14" "green" >}} {{< bg "13" "pgx_ulid_13" "red" >}} | `pgx_ulid_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.1` | {{< bg "18" "postgresql-18-pgx-ulid" "green" >}} {{< bg "17" "postgresql-17-pgx-ulid" "green" >}} {{< bg "16" "postgresql-16-pgx-ulid" "green" >}} {{< bg "15" "postgresql-15-pgx-ulid" "green" >}} {{< bg "14" "postgresql-14-pgx-ulid" "green" >}} {{< bg "13" "postgresql-13-pgx-ulid" "red" >}} | `postgresql-$v-pgx-ulid` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -166,37 +167,41 @@ width: full
 
 
 ```bash
-pig build get pgx_ulid; # get pgx_ulid source code
-pig build dep pgx_ulid; # install build dependencies
-pig build pkg pgx_ulid; # build extension rpm or deb
-pig build ext pgx_ulid; # build extension rpms
+pig build pkg pgx_ulid;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgx_ulid; # install by extension name, for the current active PG version
-pig ext install pgx_ulid; # install via package alias, for the active PG version
-pig ext install pgx_ulid -v 18;   # install for PG 18
-pig ext install pgx_ulid -v 17;   # install for PG 17
-pig ext install pgx_ulid -v 16;   # install for PG 16
-pig ext install pgx_ulid -v 15;   # install for PG 15
-pig ext install pgx_ulid -v 14;   # install for PG 14
+pig install pgx_ulid;		# install via package name, for the active PG version
+
+pig install pgx_ulid -v 18;   # install for PG 18
+pig install pgx_ulid -v 17;   # install for PG 17
+pig install pgx_ulid -v 16;   # install for PG 16
+pig install pgx_ulid -v 15;   # install for PG 15
+pig install pgx_ulid -v 14;   # install for PG 14
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pgx_ulid';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pgx_ulid;
 ```
-

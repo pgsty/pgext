@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**pgspider_ext**](https://github.com/pgspider/pgspider_ext)
+[**pgspider_ext**](https://github.com/pgspider/pgspider_ext) : foreign-data wrapper for remote PGSpider servers
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgspider_ext" >}} | `1.3.0` | {{< bg "18" "pgspider_ext_18*" "red" >}} {{< bg "17" "pgspider_ext_17*" "green" >}} {{< bg "16" "pgspider_ext_16*" "green" >}} {{< bg "15" "pgspider_ext_15*" "green" >}} {{< bg "14" "pgspider_ext_14*" "red" >}} {{< bg "13" "pgspider_ext_13*" "red" >}} | `pgspider_ext_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pgspider_ext" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgspider-ext" "red" >}} {{< bg "17" "postgresql-17-pgspider-ext" "green" >}} {{< bg "16" "postgresql-16-pgspider-ext" "green" >}} {{< bg "15" "postgresql-15-pgspider-ext" "green" >}} {{< bg "14" "postgresql-14-pgspider-ext" "red" >}} {{< bg "13" "postgresql-13-pgspider-ext" "red" >}} | `postgresql-$v-pgspider-ext` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pgspider_ext` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "pgspider_ext_18*" "red" >}} {{< bg "17" "pgspider_ext_17*" "green" >}} {{< bg "16" "pgspider_ext_16*" "green" >}} {{< bg "15" "pgspider_ext_15*" "green" >}} {{< bg "14" "pgspider_ext_14*" "red" >}} {{< bg "13" "pgspider_ext_13*" "red" >}} | `pgspider_ext_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgspider-ext" "red" >}} {{< bg "17" "postgresql-17-pgspider-ext" "green" >}} {{< bg "16" "postgresql-16-pgspider-ext" "green" >}} {{< bg "15" "postgresql-15-pgspider-ext" "green" >}} {{< bg "14" "postgresql-14-pgspider-ext" "red" >}} {{< bg "13" "postgresql-13-pgspider-ext" "red" >}} | `postgresql-$v-pgspider-ext` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -124,35 +125,32 @@ width: full
 
 
 ```bash
-pig build get pgspider_ext; # get pgspider_ext source code
-pig build dep pgspider_ext; # install build dependencies
-pig build pkg pgspider_ext; # build extension rpm or deb
-pig build ext pgspider_ext; # build extension rpms
+pig build pkg pgspider_ext;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgspider_ext; # install by extension name, for the current active PG version
-pig ext install pgspider_ext; # install via package alias, for the active PG version
-pig ext install pgspider_ext -v 17;   # install for PG 17
-pig ext install pgspider_ext -v 16;   # install for PG 16
-pig ext install pgspider_ext -v 15;   # install for PG 15
+pig install pgspider_ext;		# install via package name, for the active PG version
+
+pig install pgspider_ext -v 17;   # install for PG 17
+pig install pgspider_ext -v 16;   # install for PG 16
+pig install pgspider_ext -v 15;   # install for PG 15
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pgspider_ext;
 ```
-

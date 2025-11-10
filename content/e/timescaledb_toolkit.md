@@ -7,7 +7,7 @@ categories: ["TIME"]
 width: full
 ---
 
-[**timescaledb_toolkit**](https://github.com/timescale/timescaledb-toolkit)
+[**timescaledb_toolkit**](https://github.com/timescale/timescaledb-toolkit) : Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/timescaledb_toolkit" >}} | `1.22.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "green" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} {{< bg "13" "timescaledb-toolkit_13" "red" >}} | `timescaledb-toolkit_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/timescaledb_toolkit" >}} | `1.22.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "green" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "red" >}} {{< bg "13" "postgresql-13-timescaledb-toolkit" "red" >}} | `postgresql-$v-timescaledb-toolkit` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.22.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `timescaledb_toolkit` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.22.0` | {{< bg "18" "timescaledb-toolkit_18" "green" >}} {{< bg "17" "timescaledb-toolkit_17" "green" >}} {{< bg "16" "timescaledb-toolkit_16" "green" >}} {{< bg "15" "timescaledb-toolkit_15" "green" >}} {{< bg "14" "timescaledb-toolkit_14" "red" >}} {{< bg "13" "timescaledb-toolkit_13" "red" >}} | `timescaledb-toolkit_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.22.0` | {{< bg "18" "postgresql-18-timescaledb-toolkit" "green" >}} {{< bg "17" "postgresql-17-timescaledb-toolkit" "green" >}} {{< bg "16" "postgresql-16-timescaledb-toolkit" "green" >}} {{< bg "15" "postgresql-15-timescaledb-toolkit" "green" >}} {{< bg "14" "postgresql-14-timescaledb-toolkit" "red" >}} {{< bg "13" "postgresql-13-timescaledb-toolkit" "red" >}} | `postgresql-$v-timescaledb-toolkit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -178,42 +179,37 @@ width: full
 
 
 ```bash
-pig build get timescaledb_toolkit; # get timescaledb_toolkit source code
-pig build dep timescaledb_toolkit; # install build dependencies
-pig build pkg timescaledb_toolkit; # build extension rpm or deb
-pig build ext timescaledb_toolkit; # build extension rpms
+pig build pkg timescaledb_toolkit;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install timescaledb_toolkit; # install by extension name, for the current active PG version
-pig ext install timescaledb_toolkit; # install via package alias, for the active PG version
-pig ext install timescaledb_toolkit -v 18;   # install for PG 18
-pig ext install timescaledb_toolkit -v 17;   # install for PG 17
-pig ext install timescaledb_toolkit -v 16;   # install for PG 16
-pig ext install timescaledb_toolkit -v 15;   # install for PG 15
+pig install timescaledb_toolkit;		# install via package name, for the active PG version
+
+pig install timescaledb_toolkit -v 18;   # install for PG 18
+pig install timescaledb_toolkit -v 17;   # install for PG 17
+pig install timescaledb_toolkit -v 16;   # install for PG 16
+pig install timescaledb_toolkit -v 15;   # install for PG 15
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION timescaledb_toolkit;
 ```
 
-
-
---------
 
 ## Usage
 

@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**chkpass**](https://github.com/lacanoid/chkpass)
+[**chkpass**](https://github.com/lacanoid/chkpass) : data type for auto-encrypted passwords
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/chkpass" >}} | `1.0` | {{< bg "18" "chkpass_18*" "green" >}} {{< bg "17" "chkpass_17*" "green" >}} {{< bg "16" "chkpass_16*" "green" >}} {{< bg "15" "chkpass_15*" "green" >}} {{< bg "14" "chkpass_14*" "green" >}} {{< bg "13" "chkpass_13*" "green" >}} | `chkpass_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/chkpass" >}} | `1.0` | {{< bg "18" "postgresql-18-chkpass" "green" >}} {{< bg "17" "postgresql-17-chkpass" "green" >}} {{< bg "16" "postgresql-16-chkpass" "green" >}} {{< bg "15" "postgresql-15-chkpass" "green" >}} {{< bg "14" "postgresql-14-chkpass" "green" >}} {{< bg "13" "postgresql-13-chkpass" "green" >}} | `postgresql-$v-chkpass` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `chkpass` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "chkpass_18*" "green" >}} {{< bg "17" "chkpass_17*" "green" >}} {{< bg "16" "chkpass_16*" "green" >}} {{< bg "15" "chkpass_15*" "green" >}} {{< bg "14" "chkpass_14*" "green" >}} {{< bg "13" "chkpass_13*" "green" >}} | `chkpass_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-chkpass" "green" >}} {{< bg "17" "postgresql-17-chkpass" "green" >}} {{< bg "16" "postgresql-16-chkpass" "green" >}} {{< bg "15" "postgresql-15-chkpass" "green" >}} {{< bg "14" "postgresql-14-chkpass" "green" >}} {{< bg "13" "postgresql-13-chkpass" "green" >}} | `postgresql-$v-chkpass` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get chkpass; # get chkpass source code
-pig build dep chkpass; # install build dependencies
-pig build pkg chkpass; # build extension rpm or deb
-pig build ext chkpass; # build extension rpms
+pig build pkg chkpass;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install chkpass; # install by extension name, for the current active PG version
-pig ext install chkpass; # install via package alias, for the active PG version
-pig ext install chkpass -v 18;   # install for PG 18
-pig ext install chkpass -v 17;   # install for PG 17
-pig ext install chkpass -v 16;   # install for PG 16
-pig ext install chkpass -v 15;   # install for PG 15
-pig ext install chkpass -v 14;   # install for PG 14
-pig ext install chkpass -v 13;   # install for PG 13
+pig install chkpass;		# install via package name, for the active PG version
+
+pig install chkpass -v 18;   # install for PG 18
+pig install chkpass -v 17;   # install for PG 17
+pig install chkpass -v 16;   # install for PG 16
+pig install chkpass -v 15;   # install for PG 15
+pig install chkpass -v 14;   # install for PG 14
+pig install chkpass -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION chkpass;
 ```
-

@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**pguint**](https://github.com/petere/pguint)
+[**pguint**](https://github.com/petere/pguint) : unsigned integer types
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20250815` | {{< bg "18" "pguint_18*" "green" >}} {{< bg "17" "pguint_17*" "green" >}} {{< bg "16" "pguint_16*" "green" >}} {{< bg "15" "pguint_15*" "green" >}} {{< bg "14" "pguint_14*" "green" >}} {{< bg "13" "pguint_13*" "green" >}} | `pguint_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/uint" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "red" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} {{< bg "13" "postgresql-13-pguint" "green" >}} | `postgresql-$v-pguint` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pguint` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "pguint_18*" "green" >}} {{< bg "17" "pguint_17*" "green" >}} {{< bg "16" "pguint_16*" "green" >}} {{< bg "15" "pguint_15*" "green" >}} {{< bg "14" "pguint_14*" "green" >}} {{< bg "13" "pguint_13*" "green" >}} | `pguint_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "green" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} {{< bg "13" "postgresql-13-pguint" "green" >}} | `postgresql-$v-pguint` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -268,38 +269,36 @@ width: full
 
 
 ```bash
-pig build get uint; # get uint source code
-pig build dep uint; # install build dependencies
-pig build pkg uint; # build extension rpm or deb
-pig build ext uint; # build extension rpms
+pig build pkg pguint;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install uint; # install by extension name, for the current active PG version
-pig ext install pguint; # install via package alias, for the active PG version
-pig ext install uint -v 18;   # install for PG 18
-pig ext install uint -v 17;   # install for PG 17
-pig ext install uint -v 16;   # install for PG 16
-pig ext install uint -v 15;   # install for PG 15
-pig ext install uint -v 14;   # install for PG 14
-pig ext install uint -v 13;   # install for PG 13
+pig install pguint;		# install via package name, for the active PG version
+pig install uint;		# install by extension name, for the current active PG version
+
+pig install uint -v 18;   # install for PG 18
+pig install uint -v 17;   # install for PG 17
+pig install uint -v 16;   # install for PG 16
+pig install uint -v 15;   # install for PG 15
+pig install uint -v 14;   # install for PG 14
+pig install uint -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION uint;
 ```
-

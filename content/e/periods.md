@@ -7,7 +7,7 @@ categories: ["TIME"]
 width: full
 ---
 
-[**periods**](https://github.com/xocolatl/periods)
+[**periods**](https://github.com/xocolatl/periods) : Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,10 +30,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/periods" >}} | `1.2.3` | {{< bg "18" "periods_18*" "green" >}} {{< bg "17" "periods_17*" "green" >}} {{< bg "16" "periods_16*" "green" >}} {{< bg "15" "periods_15*" "green" >}} {{< bg "14" "periods_14*" "green" >}} {{< bg "13" "periods_13*" "green" >}} | `periods_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/periods" >}} | `1.2.3` | {{< bg "18" "postgresql-18-periods" "green" >}} {{< bg "17" "postgresql-17-periods" "green" >}} {{< bg "16" "postgresql-16-periods" "green" >}} {{< bg "15" "postgresql-15-periods" "green" >}} {{< bg "14" "postgresql-14-periods" "green" >}} {{< bg "13" "postgresql-13-periods" "green" >}} | `postgresql-$v-periods` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `periods` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.3` | {{< bg "18" "periods_18*" "green" >}} {{< bg "17" "periods_17*" "green" >}} {{< bg "16" "periods_16*" "green" >}} {{< bg "15" "periods_15*" "green" >}} {{< bg "14" "periods_14*" "green" >}} {{< bg "13" "periods_13*" "green" >}} | `periods_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.3` | {{< bg "18" "postgresql-18-periods" "green" >}} {{< bg "17" "postgresql-17-periods" "green" >}} {{< bg "16" "postgresql-16-periods" "green" >}} {{< bg "15" "postgresql-15-periods" "green" >}} {{< bg "14" "postgresql-14-periods" "green" >}} {{< bg "13" "postgresql-13-periods" "green" >}} | `postgresql-$v-periods` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -225,38 +226,35 @@ width: full
 
 
 ```bash
-pig build get periods; # get periods source code
-pig build dep periods; # install build dependencies
-pig build pkg periods; # build extension rpm or deb
-pig build ext periods; # build extension rpms
+pig build pkg periods;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install periods; # install by extension name, for the current active PG version
-pig ext install periods; # install via package alias, for the active PG version
-pig ext install periods -v 18;   # install for PG 18
-pig ext install periods -v 17;   # install for PG 17
-pig ext install periods -v 16;   # install for PG 16
-pig ext install periods -v 15;   # install for PG 15
-pig ext install periods -v 14;   # install for PG 14
-pig ext install periods -v 13;   # install for PG 13
+pig install periods;		# install via package name, for the active PG version
+
+pig install periods -v 18;   # install for PG 18
+pig install periods -v 17;   # install for PG 17
+pig install periods -v 16;   # install for PG 16
+pig install periods -v 15;   # install for PG 15
+pig install periods -v 14;   # install for PG 14
+pig install periods -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION periods;
+```sql
+CREATE EXTENSION periods CASCADE; -- requires btree_gist
 ```
-

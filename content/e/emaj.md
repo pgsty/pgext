@@ -7,7 +7,7 @@ categories: ["TIME"]
 width: full
 ---
 
-[**emaj**](https://github.com/dalibo/emaj)
+[**emaj**](https://github.com/dalibo/emaj) : Enables fine-grained write logging and time travel on subsets of the database.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/emaj" >}} | `4.7.1` | {{< bg "18" "e-maj_18" "green" >}} {{< bg "17" "e-maj_17" "green" >}} {{< bg "16" "e-maj_16" "green" >}} {{< bg "15" "e-maj_15" "green" >}} {{< bg "14" "e-maj_14" "green" >}} {{< bg "13" "e-maj_13" "green" >}} | `e-maj_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/emaj" >}} | `4.7.1` | {{< bg "18" "postgresql-18-emaj" "green" >}} {{< bg "17" "postgresql-17-emaj" "green" >}} {{< bg "16" "postgresql-16-emaj" "green" >}} {{< bg "15" "postgresql-15-emaj" "green" >}} {{< bg "14" "postgresql-14-emaj" "green" >}} {{< bg "13" "postgresql-13-emaj" "green" >}} | `postgresql-$v-emaj` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `4.7.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `emaj` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.1` | {{< bg "18" "e-maj_18" "green" >}} {{< bg "17" "e-maj_17" "green" >}} {{< bg "16" "e-maj_16" "green" >}} {{< bg "15" "e-maj_15" "green" >}} {{< bg "14" "e-maj_14" "green" >}} {{< bg "13" "e-maj_13" "green" >}} | `e-maj_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.7.1` | {{< bg "18" "postgresql-18-emaj" "green" >}} {{< bg "17" "postgresql-17-emaj" "green" >}} {{< bg "16" "postgresql-16-emaj" "green" >}} {{< bg "15" "postgresql-15-emaj" "green" >}} {{< bg "14" "postgresql-14-emaj" "green" >}} {{< bg "13" "postgresql-13-emaj" "green" >}} | `postgresql-$v-emaj` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -123,8 +124,8 @@ width: full
 | `e-maj_16` | `4.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.2 MiB | [e-maj_16-4.5.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.5.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.3 MiB | [e-maj_16-4.4.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.4.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_16-4.3.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.3.1-1PGDG.rhel8.noarch.rpm) |
-| `e-maj_16` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.3.0-1PGDG.rhel8.x86_64.rpm) |
 | `e-maj_16` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm) |
+| `e-maj_16` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.3.0-1PGDG.rhel8.x86_64.rpm) |
 | `e-maj_16` | `4.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.5 MiB | [e-maj_16-4.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/e-maj_16-4.2.0-1.rhel8.x86_64.rpm) |
 | `e-maj_16` | `4.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.3 MiB | [e-maj_16-4.7.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.7.1-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.7.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.3 MiB | [e-maj_16-4.7.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.7.0-1PGDG.rhel8.noarch.rpm) |
@@ -132,8 +133,8 @@ width: full
 | `e-maj_16` | `4.5.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.2 MiB | [e-maj_16-4.5.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.5.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.3 MiB | [e-maj_16-4.4.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.4.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 4.6 MiB | [e-maj_16-4.3.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.3.1-1PGDG.rhel8.noarch.rpm) |
-| `e-maj_16` | `4.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.3.0-1PGDG.rhel8.aarch64.rpm) |
+| `e-maj_16` | `4.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 4.6 MiB | [e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_16` | `4.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 4.5 MiB | [e-maj_16-4.2.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/e-maj_16-4.2.0-1.rhel8.aarch64.rpm) |
 | `e-maj_16` | `4.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 5.1 MiB | [e-maj_16-4.7.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.7.1-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 5.1 MiB | [e-maj_16-4.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.7.0-1PGDG.rhel9.noarch.rpm) |
@@ -141,8 +142,8 @@ width: full
 | `e-maj_16` | `4.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_16-4.5.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.5.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_16-4.4.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.4.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_16-4.3.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.3.1-1PGDG.rhel9.noarch.rpm) |
-| `e-maj_16` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_16-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_16-4.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.3.0-1PGDG.rhel9.x86_64.rpm) |
+| `e-maj_16` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_16-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.1 MiB | [e-maj_16-4.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/e-maj_16-4.2.0-1.rhel9.x86_64.rpm) |
 | `e-maj_16` | `4.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 5.1 MiB | [e-maj_16-4.7.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/e-maj_16-4.7.1-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_16` | `4.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 5.1 MiB | [e-maj_16-4.7.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/e-maj_16-4.7.0-1PGDG.rhel9.noarch.rpm) |
@@ -179,8 +180,8 @@ width: full
 | `e-maj_15` | `4.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.2 MiB | [e-maj_15-4.5.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.5.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_15` | `4.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.3 MiB | [e-maj_15-4.4.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.4.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_15` | `4.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_15-4.3.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.3.1-1PGDG.rhel8.noarch.rpm) |
-| `e-maj_15` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_15-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_15` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_15-4.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.3.0-1PGDG.rhel8.x86_64.rpm) |
+| `e-maj_15` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_15-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_15` | `4.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.5 MiB | [e-maj_15-4.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.2.0-1.rhel8.x86_64.rpm) |
 | `e-maj_15` | `4.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_15-4.1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/e-maj_15-4.1.0-1.rhel8.x86_64.rpm) |
 | `e-maj_15` | `4.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.3 MiB | [e-maj_15-4.7.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/e-maj_15-4.7.1-1PGDG.rhel8.noarch.rpm) |
@@ -209,8 +210,8 @@ width: full
 | `e-maj_15` | `4.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.7 MiB | [e-maj_15-4.5.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.5.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_15` | `4.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.7 MiB | [e-maj_15-4.4.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.4.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_15` | `4.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_15-4.3.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.3.1-1PGDG.rhel9.noarch.rpm) |
-| `e-maj_15` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_15-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_15` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_15-4.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.3.0-1PGDG.rhel9.aarch64.rpm) |
+| `e-maj_15` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_15-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_15` | `4.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.1 MiB | [e-maj_15-4.2.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.2.0-1.rhel9.aarch64.rpm) |
 | `e-maj_15` | `4.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_15-4.1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/e-maj_15-4.1.0-1.rhel9.aarch64.rpm) |
 | `e-maj_15` | `4.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 5.1 MiB | [e-maj_15-4.7.1-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/e-maj_15-4.7.1-1PGDG.rhel10.noarch.rpm) |
@@ -259,8 +260,8 @@ width: full
 | `e-maj_14` | `4.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_14-4.5.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.5.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_14` | `4.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_14-4.4.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.4.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_14` | `4.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_14-4.3.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.3.1-1PGDG.rhel9.noarch.rpm) |
-| `e-maj_14` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_14-4.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.3.0-1PGDG.rhel9.x86_64.rpm) |
 | `e-maj_14` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_14-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.3.0-1PGDG.rhel9.noarch.rpm) |
+| `e-maj_14` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_14-4.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.3.0-1PGDG.rhel9.x86_64.rpm) |
 | `e-maj_14` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.1 MiB | [e-maj_14-4.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.2.0-1.rhel9.x86_64.rpm) |
 | `e-maj_14` | `4.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_14-4.1.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/e-maj_14-4.1.0-1.rhel9.x86_64.rpm) |
 | `e-maj_14` | `4.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 5.1 MiB | [e-maj_14-4.7.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/e-maj_14-4.7.1-1PGDG.rhel9.noarch.rpm) |
@@ -299,8 +300,8 @@ width: full
 | `e-maj_13` | `4.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.2 MiB | [e-maj_13-4.5.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.5.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_13` | `4.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 5.3 MiB | [e-maj_13-4.4.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.4.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_13` | `4.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_13-4.3.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.3.1-1PGDG.rhel8.noarch.rpm) |
-| `e-maj_13` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_13-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_13` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_13-4.3.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.3.0-1PGDG.rhel8.x86_64.rpm) |
+| `e-maj_13` | `4.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_13-4.3.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.3.0-1PGDG.rhel8.noarch.rpm) |
 | `e-maj_13` | `4.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.5 MiB | [e-maj_13-4.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.2.0-1.rhel8.x86_64.rpm) |
 | `e-maj_13` | `4.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 4.6 MiB | [e-maj_13-4.1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/e-maj_13-4.1.0-1.rhel8.x86_64.rpm) |
 | `e-maj_13` | `4.7.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 5.3 MiB | [e-maj_13-4.7.1-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/e-maj_13-4.7.1-1PGDG.rhel8.noarch.rpm) |
@@ -319,8 +320,8 @@ width: full
 | `e-maj_13` | `4.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_13-4.5.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.5.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.7 MiB | [e-maj_13-4.4.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.4.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_13-4.3.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.3.1-1PGDG.rhel9.noarch.rpm) |
-| `e-maj_13` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.3.0-1PGDG.rhel9.x86_64.rpm) |
+| `e-maj_13` | `4.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.1 MiB | [e-maj_13-4.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.2.0-1.rhel9.x86_64.rpm) |
 | `e-maj_13` | `4.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 4.2 MiB | [e-maj_13-4.1.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/e-maj_13-4.1.0-1.rhel9.x86_64.rpm) |
 | `e-maj_13` | `4.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 5.1 MiB | [e-maj_13-4.7.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.7.1-1PGDG.rhel9.noarch.rpm) |
@@ -329,8 +330,8 @@ width: full
 | `e-maj_13` | `4.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.7 MiB | [e-maj_13-4.5.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.5.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.7 MiB | [e-maj_13-4.4.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.4.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_13-4.3.1-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.3.1-1PGDG.rhel9.noarch.rpm) |
-| `e-maj_13` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.3.0-1PGDG.rhel9.aarch64.rpm) |
+| `e-maj_13` | `4.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.3.0-1PGDG.rhel9.noarch.rpm) |
 | `e-maj_13` | `4.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.1 MiB | [e-maj_13-4.2.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.2.0-1.rhel9.aarch64.rpm) |
 | `e-maj_13` | `4.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 4.2 MiB | [e-maj_13-4.1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/e-maj_13-4.1.0-1.rhel9.aarch64.rpm) |
 | `e-maj_13` | `4.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 5.1 MiB | [e-maj_13-4.7.1-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/e-maj_13-4.7.1-1PGDG.rhel10.noarch.rpm) |
@@ -359,38 +360,35 @@ width: full
 
 
 ```bash
-pig build get emaj; # get emaj source code
-pig build dep emaj; # install build dependencies
-pig build pkg emaj; # build extension rpm or deb
-pig build ext emaj; # build extension rpms
+pig build pkg emaj;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install emaj; # install by extension name, for the current active PG version
-pig ext install emaj; # install via package alias, for the active PG version
-pig ext install emaj -v 18;   # install for PG 18
-pig ext install emaj -v 17;   # install for PG 17
-pig ext install emaj -v 16;   # install for PG 16
-pig ext install emaj -v 15;   # install for PG 15
-pig ext install emaj -v 14;   # install for PG 14
-pig ext install emaj -v 13;   # install for PG 13
+pig install emaj;		# install via package name, for the active PG version
+
+pig install emaj -v 18;   # install for PG 18
+pig install emaj -v 17;   # install for PG 17
+pig install emaj -v 16;   # install for PG 16
+pig install emaj -v 15;   # install for PG 15
+pig install emaj -v 14;   # install for PG 14
+pig install emaj -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION emaj CASCADE SCHEMA emaj;
+```sql
+CREATE EXTENSION emaj CASCADE; -- requires dblink, btree_gist
 ```
-

@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**oracle_fdw**](https://github.com/laurenz/oracle_fdw)
+[**oracle_fdw**](https://github.com/laurenz/oracle_fdw) : foreign data wrapper for Oracle access
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/oracle_fdw" >}} | `2.8.0` | {{< bg "18" "oracle_fdw_18*" "green" >}} {{< bg "17" "oracle_fdw_17*" "green" >}} {{< bg "16" "oracle_fdw_16*" "green" >}} {{< bg "15" "oracle_fdw_15*" "green" >}} {{< bg "14" "oracle_fdw_14*" "green" >}} {{< bg "13" "oracle_fdw_13*" "green" >}} | `oracle_fdw_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/oracle_fdw" >}} | `2.8.0` | {{< bg "18" "postgresql-18-oracle-fdw" "green" >}} {{< bg "17" "postgresql-17-oracle-fdw" "green" >}} {{< bg "16" "postgresql-16-oracle-fdw" "green" >}} {{< bg "15" "postgresql-15-oracle-fdw" "green" >}} {{< bg "14" "postgresql-14-oracle-fdw" "green" >}} {{< bg "13" "postgresql-13-oracle-fdw" "green" >}} | `postgresql-$v-oracle-fdw` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `oracle_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "oracle_fdw_18*" "green" >}} {{< bg "17" "oracle_fdw_17*" "green" >}} {{< bg "16" "oracle_fdw_16*" "green" >}} {{< bg "15" "oracle_fdw_15*" "green" >}} {{< bg "14" "oracle_fdw_14*" "green" >}} {{< bg "13" "oracle_fdw_13*" "green" >}} | `oracle_fdw_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "postgresql-18-oracle-fdw" "green" >}} {{< bg "17" "postgresql-17-oracle-fdw" "green" >}} {{< bg "16" "postgresql-16-oracle-fdw" "green" >}} {{< bg "15" "postgresql-15-oracle-fdw" "green" >}} {{< bg "14" "postgresql-14-oracle-fdw" "green" >}} {{< bg "13" "postgresql-13-oracle-fdw" "green" >}} | `postgresql-$v-oracle-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -155,10 +156,10 @@ width: full
 | `oracle_fdw_15` | `2.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 84.0 KiB | [oracle_fdw_15-2.5.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/oracle_fdw_15-2.5.0-1.rhel8.x86_64.rpm) |
 | `oracle_fdw_15` | `2.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 84.1 KiB | [oracle_fdw_15-2.5.0-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/oracle_fdw_15-2.5.0-2.rhel8.x86_64.rpm) |
 | `oracle_fdw_15` | `2.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 84.2 KiB | [oracle_fdw_15-2.5.0-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/oracle_fdw_15-2.5.0-3.rhel8.x86_64.rpm) |
-| `oracle_fdw_15` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.4 KiB | [oracle_fdw_15-2.8.0-8PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.8.0-8PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.4 KiB | [oracle_fdw_15-2.8.0-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.8.0-5PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.5 KiB | [oracle_fdw_15-2.8.0-6PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.8.0-6PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.3 KiB | [oracle_fdw_15-2.8.0-7PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.8.0-7PGDG.rhel9.x86_64.rpm) |
+| `oracle_fdw_15` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.4 KiB | [oracle_fdw_15-2.8.0-8PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.8.0-8PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 86.7 KiB | [oracle_fdw_15-2.7.0-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.7.0-5PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 86.7 KiB | [oracle_fdw_15-2.7.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.7.0-3PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 86.5 KiB | [oracle_fdw_15-2.7.0-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.7.0-4PGDG.rhel9.x86_64.rpm) |
@@ -167,9 +168,9 @@ width: full
 | `oracle_fdw_15` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.6 KiB | [oracle_fdw_15-2.5.0-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.5.0-3.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.8 KiB | [oracle_fdw_15-2.5.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.5.0-1.rhel9.x86_64.rpm) |
 | `oracle_fdw_15` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.5 KiB | [oracle_fdw_15-2.5.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/oracle_fdw_15-2.5.0-2.rhel9.x86_64.rpm) |
-| `oracle_fdw_15` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.5 KiB | [oracle_fdw_15-2.8.0-6PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/oracle_fdw_15-2.8.0-6PGDG.rhel10.x86_64.rpm) |
-| `oracle_fdw_15` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.4 KiB | [oracle_fdw_15-2.8.0-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/oracle_fdw_15-2.8.0-8PGDG.rhel10.x86_64.rpm) |
 | `oracle_fdw_15` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.4 KiB | [oracle_fdw_15-2.8.0-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/oracle_fdw_15-2.8.0-7PGDG.rhel10.x86_64.rpm) |
+| `oracle_fdw_15` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.4 KiB | [oracle_fdw_15-2.8.0-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/oracle_fdw_15-2.8.0-8PGDG.rhel10.x86_64.rpm) |
+| `oracle_fdw_15` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.5 KiB | [oracle_fdw_15-2.8.0-6PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/oracle_fdw_15-2.8.0-6PGDG.rhel10.x86_64.rpm) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 86.2 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg12+1_amd64.deb) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 79.8 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 86.3 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg13+1_amd64.deb) |
@@ -200,17 +201,17 @@ width: full
 | `oracle_fdw_14` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.7 KiB | [oracle_fdw_14-2.8.0-7PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.8.0-7PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.8 KiB | [oracle_fdw_14-2.8.0-6PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.8.0-6PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.7 KiB | [oracle_fdw_14-2.8.0-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.8.0-5PGDG.rhel9.x86_64.rpm) |
-| `oracle_fdw_14` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.0 KiB | [oracle_fdw_14-2.7.0-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.7.0-5PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 86.8 KiB | [oracle_fdw_14-2.7.0-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.7.0-4PGDG.rhel9.x86_64.rpm) |
+| `oracle_fdw_14` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 87.0 KiB | [oracle_fdw_14-2.7.0-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.7.0-5PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.7.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 86.9 KiB | [oracle_fdw_14-2.7.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.7.0-3PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 85.8 KiB | [oracle_fdw_14-2.6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.6.0-1PGDG.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.6.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 85.8 KiB | [oracle_fdw_14-2.6.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.6.0-3PGDG.rhel9.x86_64.rpm) |
+| `oracle_fdw_14` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.8 KiB | [oracle_fdw_14-2.5.0-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.5.0-3.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.9 KiB | [oracle_fdw_14-2.5.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.5.0-1.rhel9.x86_64.rpm) |
 | `oracle_fdw_14` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.7 KiB | [oracle_fdw_14-2.5.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.5.0-2.rhel9.x86_64.rpm) |
-| `oracle_fdw_14` | `2.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 83.8 KiB | [oracle_fdw_14-2.5.0-3.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/oracle_fdw_14-2.5.0-3.rhel9.x86_64.rpm) |
-| `oracle_fdw_14` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.8 KiB | [oracle_fdw_14-2.8.0-6PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/oracle_fdw_14-2.8.0-6PGDG.rhel10.x86_64.rpm) |
 | `oracle_fdw_14` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.7 KiB | [oracle_fdw_14-2.8.0-8PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/oracle_fdw_14-2.8.0-8PGDG.rhel10.x86_64.rpm) |
 | `oracle_fdw_14` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.7 KiB | [oracle_fdw_14-2.8.0-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/oracle_fdw_14-2.8.0-7PGDG.rhel10.x86_64.rpm) |
+| `oracle_fdw_14` | `2.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 88.8 KiB | [oracle_fdw_14-2.8.0-6PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/oracle_fdw_14-2.8.0-6PGDG.rhel10.x86_64.rpm) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 86.5 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg12+1_amd64.deb) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 80.1 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg12+1_arm64.deb) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 86.8 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg13+1_amd64.deb) |
@@ -225,9 +226,9 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `oracle_fdw_13` | `2.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 88.2 KiB | [oracle_fdw_13-2.8.0-5PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.8.0-5PGDG.rhel8.x86_64.rpm) |
 | `oracle_fdw_13` | `2.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 88.3 KiB | [oracle_fdw_13-2.8.0-6PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.8.0-6PGDG.rhel8.x86_64.rpm) |
 | `oracle_fdw_13` | `2.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 88.3 KiB | [oracle_fdw_13-2.8.0-7PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.8.0-7PGDG.rhel8.x86_64.rpm) |
+| `oracle_fdw_13` | `2.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 88.2 KiB | [oracle_fdw_13-2.8.0-5PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.8.0-5PGDG.rhel8.x86_64.rpm) |
 | `oracle_fdw_13` | `2.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 88.4 KiB | [oracle_fdw_13-2.8.0-8PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.8.0-8PGDG.rhel8.x86_64.rpm) |
 | `oracle_fdw_13` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 87.4 KiB | [oracle_fdw_13-2.7.0-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.7.0-4PGDG.rhel8.x86_64.rpm) |
 | `oracle_fdw_13` | `2.7.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 87.3 KiB | [oracle_fdw_13-2.7.0-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/oracle_fdw_13-2.7.0-3PGDG.rhel8.x86_64.rpm) |
@@ -272,38 +273,35 @@ width: full
 
 
 ```bash
-pig build get oracle_fdw; # get oracle_fdw source code
-pig build dep oracle_fdw; # install build dependencies
-pig build pkg oracle_fdw; # build extension rpm or deb
-pig build ext oracle_fdw; # build extension rpms
+pig build pkg oracle_fdw;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install oracle_fdw; # install by extension name, for the current active PG version
-pig ext install oracle_fdw; # install via package alias, for the active PG version
-pig ext install oracle_fdw -v 18;   # install for PG 18
-pig ext install oracle_fdw -v 17;   # install for PG 17
-pig ext install oracle_fdw -v 16;   # install for PG 16
-pig ext install oracle_fdw -v 15;   # install for PG 15
-pig ext install oracle_fdw -v 14;   # install for PG 14
-pig ext install oracle_fdw -v 13;   # install for PG 13
+pig install oracle_fdw;		# install via package name, for the active PG version
+
+pig install oracle_fdw -v 18;   # install for PG 18
+pig install oracle_fdw -v 17;   # install for PG 17
+pig install oracle_fdw -v 16;   # install for PG 16
+pig install oracle_fdw -v 15;   # install for PG 15
+pig install oracle_fdw -v 14;   # install for PG 14
+pig install oracle_fdw -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION oracle_fdw;
 ```
-

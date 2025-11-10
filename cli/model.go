@@ -50,6 +50,23 @@ type Extension struct {
 	EnDesc      sql.NullString `db:"en_desc"`
 	ZhDesc      sql.NullString `db:"zh_desc"`
 	Comment     sql.NullString `db:"comment"`
+	Extra       JsonMap        `db:"extra"`
+}
+
+// JsonMap is a type alias for map[string]interface{} to handle JSONB fields
+type JsonMap map[string]interface{}
+
+// GetLibName returns the library name for shared_preload_libraries
+// It checks the Extra field for a "lib" key, otherwise returns the extension Name
+func (ext *Extension) GetLibName() string {
+	if ext.Extra != nil {
+		if lib, ok := ext.Extra["lib"]; ok {
+			if libStr, ok := lib.(string); ok && libStr != "" {
+				return libStr
+			}
+		}
+	}
+	return ext.Name
 }
 
 // Category represents a PostgreSQL extension category

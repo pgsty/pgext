@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**btree_gist**](https://www.postgresql.org/docs/current/btree-gist.html)
+[**btree_gist**](https://www.postgresql.org/docs/current/btree-gist.html) : support for indexing common datatypes in GiST
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -38,6 +38,7 @@ width: full
 
 
 ## Install
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 

@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-[**plxslt**](https://github.com/petere/plxslt)
+[**plxslt**](https://github.com/petere/plxslt) : XSLT procedural language for PostgreSQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/plxslt" >}} | `0.20140221` | {{< bg "18" "plxslt_18*" "green" >}} {{< bg "17" "plxslt_17*" "green" >}} {{< bg "16" "plxslt_16*" "green" >}} {{< bg "15" "plxslt_15*" "green" >}} {{< bg "14" "plxslt_14*" "green" >}} {{< bg "13" "plxslt_13*" "green" >}} | `plxslt_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/plxslt" >}} | `0.20140221` | {{< bg "18" "postgresql-18-plxslt" "green" >}} {{< bg "17" "postgresql-17-plxslt" "green" >}} {{< bg "16" "postgresql-16-plxslt" "green" >}} {{< bg "15" "postgresql-15-plxslt" "green" >}} {{< bg "14" "postgresql-14-plxslt" "green" >}} {{< bg "13" "postgresql-13-plxslt" "green" >}} | `postgresql-$v-plxslt` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20140221` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plxslt` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20140221` | {{< bg "18" "plxslt_18*" "green" >}} {{< bg "17" "plxslt_17*" "green" >}} {{< bg "16" "plxslt_16*" "green" >}} {{< bg "15" "plxslt_15*" "green" >}} {{< bg "14" "plxslt_14*" "green" >}} {{< bg "13" "plxslt_13*" "green" >}} | `plxslt_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20140221` | {{< bg "18" "postgresql-18-plxslt" "green" >}} {{< bg "17" "postgresql-17-plxslt" "green" >}} {{< bg "16" "postgresql-16-plxslt" "green" >}} {{< bg "15" "postgresql-15-plxslt" "green" >}} {{< bg "14" "postgresql-14-plxslt" "green" >}} {{< bg "13" "postgresql-13-plxslt" "green" >}} | `postgresql-$v-plxslt` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,35 @@ width: full
 
 
 ```bash
-pig build get plxslt; # get plxslt source code
-pig build dep plxslt; # install build dependencies
-pig build pkg plxslt; # build extension rpm or deb
-pig build ext plxslt; # build extension rpms
+pig build pkg plxslt;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install plxslt; # install by extension name, for the current active PG version
-pig ext install plxslt; # install via package alias, for the active PG version
-pig ext install plxslt -v 18;   # install for PG 18
-pig ext install plxslt -v 17;   # install for PG 17
-pig ext install plxslt -v 16;   # install for PG 16
-pig ext install plxslt -v 15;   # install for PG 15
-pig ext install plxslt -v 14;   # install for PG 14
-pig ext install plxslt -v 13;   # install for PG 13
+pig install plxslt;		# install via package name, for the active PG version
+
+pig install plxslt -v 18;   # install for PG 18
+pig install plxslt -v 17;   # install for PG 17
+pig install plxslt -v 16;   # install for PG 16
+pig install plxslt -v 15;   # install for PG 15
+pig install plxslt -v 14;   # install for PG 14
+pig install plxslt -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION plxslt;
 ```
-

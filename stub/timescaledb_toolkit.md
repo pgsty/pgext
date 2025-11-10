@@ -1,6 +1,4 @@
 
---------
-
 ## Usage
 
 TimescaleDB Toolkit provides specialized functions for time-series analytics using a **two-step aggregation pattern**. Most functions create intermediate representations that accessor functions then query, enabling efficient reuse and multiple analyses.

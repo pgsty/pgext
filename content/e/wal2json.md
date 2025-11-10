@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**wal2json**](https://github.com/eulerto/wal2json)
+[**wal2json**](https://github.com/eulerto/wal2json) : Changing data capture in JSON format
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/wal2json" >}} | `2.6` | {{< bg "18" "wal2json_18*" "green" >}} {{< bg "17" "wal2json_17*" "green" >}} {{< bg "16" "wal2json_16*" "green" >}} {{< bg "15" "wal2json_15*" "green" >}} {{< bg "14" "wal2json_14*" "green" >}} {{< bg "13" "wal2json_13*" "green" >}} | `wal2json_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/wal2json" >}} | `2.6` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} {{< bg "13" "postgresql-13-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `wal2json` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "wal2json_18*" "green" >}} {{< bg "17" "wal2json_17*" "green" >}} {{< bg "16" "wal2json_16*" "green" >}} {{< bg "15" "wal2json_15*" "green" >}} {{< bg "14" "wal2json_14*" "green" >}} {{< bg "13" "wal2json_13*" "green" >}} | `wal2json_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} {{< bg "13" "postgresql-13-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -208,38 +209,33 @@ width: full
 
 
 ```bash
-pig build get wal2json; # get wal2json source code
-pig build dep wal2json; # install build dependencies
-pig build pkg wal2json; # build extension rpm or deb
-pig build ext wal2json; # build extension rpms
+pig build pkg wal2json;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install wal2json; # install by extension name, for the current active PG version
-pig ext install wal2json; # install via package alias, for the active PG version
-pig ext install wal2json -v 18;   # install for PG 18
-pig ext install wal2json -v 17;   # install for PG 17
-pig ext install wal2json -v 16;   # install for PG 16
-pig ext install wal2json -v 15;   # install for PG 15
-pig ext install wal2json -v 14;   # install for PG 14
-pig ext install wal2json -v 13;   # install for PG 13
+pig install wal2json;		# install via package name, for the active PG version
+
+pig install wal2json -v 18;   # install for PG 18
+pig install wal2json -v 17;   # install for PG 17
+pig install wal2json -v 16;   # install for PG 16
+pig install wal2json -v 15;   # install for PG 15
+pig install wal2json -v 14;   # install for PG 14
+pig install wal2json -v 13;   # install for PG 13
 
 ```
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION wal2json;
-```
+This extension does not need `CREATE EXTENSION` DDL command
+
 

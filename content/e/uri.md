@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**pg_uri**](https://github.com/petere/pguri)
+[**pg_uri**](https://github.com/petere/pguri) : URI Data type for PostgreSQL
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/uri" >}} | `1.20151224` | {{< bg "18" "pg_uri_18*" "green" >}} {{< bg "17" "pg_uri_17*" "green" >}} {{< bg "16" "pg_uri_16*" "green" >}} {{< bg "15" "pg_uri_15*" "green" >}} {{< bg "14" "pg_uri_14*" "green" >}} {{< bg "13" "pg_uri_13*" "green" >}} | `pg_uri_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/uri" >}} | `1.20151224` | {{< bg "18" "postgresql-18-pg-uri" "green" >}} {{< bg "17" "postgresql-17-pg-uri" "green" >}} {{< bg "16" "postgresql-16-pg-uri" "green" >}} {{< bg "15" "postgresql-15-pg-uri" "green" >}} {{< bg "14" "postgresql-14-pg-uri" "green" >}} {{< bg "13" "postgresql-13-pg-uri" "green" >}} | `postgresql-$v-pg-uri` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20151224` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_uri` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20151224` | {{< bg "18" "pg_uri_18*" "green" >}} {{< bg "17" "pg_uri_17*" "green" >}} {{< bg "16" "pg_uri_16*" "green" >}} {{< bg "15" "pg_uri_15*" "green" >}} {{< bg "14" "pg_uri_14*" "green" >}} {{< bg "13" "pg_uri_13*" "green" >}} | `pg_uri_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20151224` | {{< bg "18" "postgresql-18-pg-uri" "green" >}} {{< bg "17" "postgresql-17-pg-uri" "green" >}} {{< bg "16" "postgresql-16-pg-uri" "green" >}} {{< bg "15" "postgresql-15-pg-uri" "green" >}} {{< bg "14" "postgresql-14-pg-uri" "green" >}} {{< bg "13" "postgresql-13-pg-uri" "green" >}} | `postgresql-$v-pg-uri` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,38 +187,36 @@ width: full
 
 
 ```bash
-pig build get uri; # get uri source code
-pig build dep uri; # install build dependencies
-pig build pkg uri; # build extension rpm or deb
-pig build ext uri; # build extension rpms
+pig build pkg pg_uri;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install uri; # install by extension name, for the current active PG version
-pig ext install pg_uri; # install via package alias, for the active PG version
-pig ext install uri -v 18;   # install for PG 18
-pig ext install uri -v 17;   # install for PG 17
-pig ext install uri -v 16;   # install for PG 16
-pig ext install uri -v 15;   # install for PG 15
-pig ext install uri -v 14;   # install for PG 14
-pig ext install uri -v 13;   # install for PG 13
+pig install pg_uri;		# install via package name, for the active PG version
+pig install uri;		# install by extension name, for the current active PG version
+
+pig install uri -v 18;   # install for PG 18
+pig install uri -v 17;   # install for PG 17
+pig install uri -v 16;   # install for PG 16
+pig install uri -v 15;   # install for PG 15
+pig install uri -v 14;   # install for PG 14
+pig install uri -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION uri;
 ```
-

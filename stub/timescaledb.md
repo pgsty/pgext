@@ -1,6 +1,4 @@
 
---------
-
 ## Usage
 
 Create a table and turn it into hypertable

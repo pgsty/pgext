@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-[**babelfishpg_tds**](https://babelfishpg.org/)
+[**babelfishpg_tds**](https://babelfishpg.org/) : SQL Server TDS protocol extension
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -27,15 +27,16 @@ width: full
 |   **Requires**    | {{< ext "babelfishpg_tsql" >}} |
 |   **See Also**    | {{< ext "tds_fdw" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_money" >}} {{< ext "pg_hint_plan" >}} {{< ext "uuid-ossp" >}} {{< ext "session_variable" >}} {{< ext "jdbc_fdw" >}} {{< ext "db_migrator" >}} |
 
-> [!Note] works on wiltondb kernel fork
+> [!Note] special case: this extension only works on wiltondb kernel fork
 
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds*" "red" >}} {{< bg "17" "babelfishpg-tds*" "red" >}} {{< bg "16" "babelfishpg-tds*" "red" >}} {{< bg "15" "babelfishpg-tds*" "green" >}} {{< bg "14" "babelfishpg-tds*" "red" >}} {{< bg "13" "babelfishpg-tds*" "red" >}} | `babelfishpg-tds*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/babelfishpg_tds" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "red" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "green" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_tds` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds*" "red" >}} {{< bg "17" "babelfishpg-tds*" "red" >}} {{< bg "16" "babelfishpg-tds*" "red" >}} {{< bg "15" "babelfishpg-tds*" "green" >}} {{< bg "14" "babelfishpg-tds*" "red" >}} {{< bg "13" "babelfishpg-tds*" "red" >}} | `babelfishpg-tds*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "red" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "green" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -65,30 +66,35 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install babelfishpg_tds; # install by extension name, for the current active PG version
-pig ext install babelfishpg_tds; # install via package alias, for the active PG version
-pig ext install babelfishpg_tds -v 15;   # install for PG 15
+pig install babelfishpg_tds;		# install via package name, for the active PG version
+
+pig install babelfishpg_tds -v 15;   # install for PG 15
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'babelfishpg_tds';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION babelfishpg_tds;
+```sql
+CREATE EXTENSION babelfishpg_tds CASCADE; -- requires babelfishpg_tsql
 ```
 
-
-
---------
 
 ## Usage
 

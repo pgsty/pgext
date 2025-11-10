@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**tsm_system_rows**](https://www.postgresql.org/docs/current/tsm-system-rows.html)
+[**tsm_system_rows**](https://www.postgresql.org/docs/current/tsm-system-rows.html) : TABLESAMPLE method which accepts number of rows as a limit
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -38,6 +38,7 @@ width: full
 
 
 ## Install
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 

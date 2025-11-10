@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pgsentinel**](https://github.com/pgsentinel/pgsentinel)
+[**pgsentinel**](https://github.com/pgsentinel/pgsentinel) : active session history
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgsentinel" >}} | `1.2.0` | {{< bg "18" "pgsentinel_18*" "green" >}} {{< bg "17" "pgsentinel_17*" "green" >}} {{< bg "16" "pgsentinel_16*" "green" >}} {{< bg "15" "pgsentinel_15*" "green" >}} {{< bg "14" "pgsentinel_14*" "green" >}} {{< bg "13" "pgsentinel_13*" "green" >}} | `pgsentinel_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pgsentinel" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsentinel` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "pgsentinel_18*" "green" >}} {{< bg "17" "pgsentinel_17*" "green" >}} {{< bg "16" "pgsentinel_16*" "green" >}} {{< bg "15" "pgsentinel_15*" "green" >}} {{< bg "14" "pgsentinel_14*" "green" >}} {{< bg "13" "pgsentinel_13*" "green" >}} | `pgsentinel_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -238,38 +239,42 @@ width: full
 
 
 ```bash
-pig build get pgsentinel; # get pgsentinel source code
-pig build dep pgsentinel; # install build dependencies
-pig build pkg pgsentinel; # build extension rpm or deb
-pig build ext pgsentinel; # build extension rpms
+pig build pkg pgsentinel;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgsentinel; # install by extension name, for the current active PG version
-pig ext install pgsentinel; # install via package alias, for the active PG version
-pig ext install pgsentinel -v 18;   # install for PG 18
-pig ext install pgsentinel -v 17;   # install for PG 17
-pig ext install pgsentinel -v 16;   # install for PG 16
-pig ext install pgsentinel -v 15;   # install for PG 15
-pig ext install pgsentinel -v 14;   # install for PG 14
-pig ext install pgsentinel -v 13;   # install for PG 13
+pig install pgsentinel;		# install via package name, for the active PG version
+
+pig install pgsentinel -v 18;   # install for PG 18
+pig install pgsentinel -v 17;   # install for PG 17
+pig install pgsentinel -v 16;   # install for PG 16
+pig install pgsentinel -v 15;   # install for PG 15
+pig install pgsentinel -v 14;   # install for PG 14
+pig install pgsentinel -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pgsentinel';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pgsentinel;
 ```
-

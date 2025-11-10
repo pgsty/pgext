@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**pglite_fusion**](https://github.com/frectonz/pglite-fusion)
+[**pglite_fusion**](https://github.com/frectonz/pglite-fusion) : Embed an SQLite database in your PostgreSQL table
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} {{< bg "13" "pglite_fusion_13" "green" >}} | `pglite_fusion_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pglite_fusion" >}} | `0.0.5` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} {{< bg "13" "postgresql-13-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pglite_fusion` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "pglite_fusion_18" "green" >}} {{< bg "17" "pglite_fusion_17" "green" >}} {{< bg "16" "pglite_fusion_16" "green" >}} {{< bg "15" "pglite_fusion_15" "green" >}} {{< bg "14" "pglite_fusion_14" "green" >}} {{< bg "13" "pglite_fusion_13" "green" >}} | `pglite_fusion_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "postgresql-18-pglite-fusion" "green" >}} {{< bg "17" "postgresql-17-pglite-fusion" "green" >}} {{< bg "16" "postgresql-16-pglite-fusion" "green" >}} {{< bg "15" "postgresql-15-pglite-fusion" "green" >}} {{< bg "14" "postgresql-14-pglite-fusion" "green" >}} {{< bg "13" "postgresql-13-pglite-fusion" "green" >}} | `postgresql-$v-pglite-fusion` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -186,44 +187,46 @@ width: full
 
 
 ```bash
-pig build get pglite_fusion; # get pglite_fusion source code
-pig build dep pglite_fusion; # install build dependencies
-pig build pkg pglite_fusion; # build extension rpm or deb
-pig build ext pglite_fusion; # build extension rpms
+pig build pkg pglite_fusion;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pglite_fusion; # install by extension name, for the current active PG version
-pig ext install pglite_fusion; # install via package alias, for the active PG version
-pig ext install pglite_fusion -v 18;   # install for PG 18
-pig ext install pglite_fusion -v 17;   # install for PG 17
-pig ext install pglite_fusion -v 16;   # install for PG 16
-pig ext install pglite_fusion -v 15;   # install for PG 15
-pig ext install pglite_fusion -v 14;   # install for PG 14
-pig ext install pglite_fusion -v 13;   # install for PG 13
+pig install pglite_fusion;		# install via package name, for the active PG version
+
+pig install pglite_fusion -v 18;   # install for PG 18
+pig install pglite_fusion -v 17;   # install for PG 17
+pig install pglite_fusion -v 16;   # install for PG 16
+pig install pglite_fusion -v 15;   # install for PG 15
+pig install pglite_fusion -v 14;   # install for PG 14
+pig install pglite_fusion -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pglite_fusion';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pglite_fusion;
 ```
 
-
-
---------
 
 ## Usage
 

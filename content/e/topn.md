@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**topn**](https://github.com/citusdata/postgresql-topn)
+[**topn**](https://github.com/citusdata/postgresql-topn) : type for top-n JSONB
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/topn" >}} | `2.7.0` | {{< bg "18" "topn_18*" "green" >}} {{< bg "17" "topn_17*" "green" >}} {{< bg "16" "topn_16*" "green" >}} {{< bg "15" "topn_15*" "green" >}} {{< bg "14" "topn_14*" "green" >}} {{< bg "13" "topn_13*" "green" >}} | `topn_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/topn" >}} | `2.7.0` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} {{< bg "13" "postgresql-13-topn" "green" >}} | `postgresql-$v-topn` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `topn` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "topn_18*" "green" >}} {{< bg "17" "topn_17*" "green" >}} {{< bg "16" "topn_16*" "green" >}} {{< bg "15" "topn_15*" "green" >}} {{< bg "14" "topn_14*" "green" >}} {{< bg "13" "topn_13*" "green" >}} | `topn_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} {{< bg "13" "postgresql-13-topn" "green" >}} | `postgresql-$v-topn` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -198,38 +199,35 @@ width: full
 
 
 ```bash
-pig build get topn; # get topn source code
-pig build dep topn; # install build dependencies
-pig build pkg topn; # build extension rpm or deb
-pig build ext topn; # build extension rpms
+pig build pkg topn;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install topn; # install by extension name, for the current active PG version
-pig ext install topn; # install via package alias, for the active PG version
-pig ext install topn -v 18;   # install for PG 18
-pig ext install topn -v 17;   # install for PG 17
-pig ext install topn -v 16;   # install for PG 16
-pig ext install topn -v 15;   # install for PG 15
-pig ext install topn -v 14;   # install for PG 14
-pig ext install topn -v 13;   # install for PG 13
+pig install topn;		# install via package name, for the active PG version
+
+pig install topn -v 18;   # install for PG 18
+pig install topn -v 17;   # install for PG 17
+pig install topn -v 16;   # install for PG 16
+pig install topn -v 15;   # install for PG 15
+pig install topn -v 14;   # install for PG 14
+pig install topn -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION topn;
 ```
-

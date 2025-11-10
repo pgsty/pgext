@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-[**pg_duckdb**](https://github.com/duckdb/pg_duckdb)
+[**pg_duckdb**](https://github.com/duckdb/pg_duckdb) : DuckDB Embedded in Postgres
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.1.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_duckdb" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_duckdb` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -175,50 +176,52 @@ width: full
 
 
 ```bash
-pig build get pg_duckdb; # get pg_duckdb source code
-pig build dep pg_duckdb; # install build dependencies
-pig build pkg pg_duckdb; # build extension rpm or deb
-pig build ext pg_duckdb; # build extension rpms
+pig build pkg pg_duckdb;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_duckdb; # install by extension name, for the current active PG version
-pig ext install pg_duckdb; # install via package alias, for the active PG version
-pig ext install pg_duckdb -v 18;   # install for PG 18
-pig ext install pg_duckdb -v 17;   # install for PG 17
-pig ext install pg_duckdb -v 16;   # install for PG 16
-pig ext install pg_duckdb -v 15;   # install for PG 15
-pig ext install pg_duckdb -v 14;   # install for PG 14
+pig install pg_duckdb;		# install via package name, for the active PG version
+
+pig install pg_duckdb -v 18;   # install for PG 18
+pig install pg_duckdb -v 17;   # install for PG 17
+pig install pg_duckdb -v 16;   # install for PG 16
+pig install pg_duckdb -v 15;   # install for PG 15
+pig install pg_duckdb -v 14;   # install for PG 14
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_duckdb';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_duckdb;
 ```
 
 
-
---------
-
 ## Usage
 
-- [pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
+[pg_duckdb docs](https://github.com/duckdb/pg_duckdb/tree/main/docs)
 
 | Topic                                                                                                  | Description                                                |
-|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
 | [**Functions**](https://github.com/duckdb/pg_duckdb/blob/main/docs/functions.md)                       | Complete reference for all available functions             |
 | [**Syntax Guide & Gotchas**](https://github.com/duckdb/pg_duckdb/blob/main/docs/gotchas_and_syntax.md) | Quick reference for common SQL patterns and things to know |
 | [**Types**](https://github.com/duckdb/pg_duckdb/blob/main/docs/types.md)                               | Supported data types and type mappings                     |
@@ -233,16 +236,15 @@ CREATE EXTENSION pg_duckdb;
 Install pg_duckdb with pig:
 
 ```bash
-pig repo add pigsty -u
+pig repo set
 pig install pg_duckdb
 ```
 
 Edit `postgresql.conf`, then restart to take effect
 
 ```ini
-shared_preload_libraries = 'pg_duckdb,pg_mooncake'
+shared_preload_libraries = 'pg_duckdb'
 duckdb.allow_community_extensions = true
-wal_level = logical
 ```
 
 

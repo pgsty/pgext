@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**pg_bzip**](https://github.com/steve-chavez/pg_bzip)
+[**pg_bzip**](https://github.com/steve-chavez/pg_bzip) : Bzip compression and decompression
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/bzip" >}} | `1.0.0` | {{< bg "18" "pg_bzip_18*" "green" >}} {{< bg "17" "pg_bzip_17*" "green" >}} {{< bg "16" "pg_bzip_16*" "green" >}} {{< bg "15" "pg_bzip_15*" "green" >}} {{< bg "14" "pg_bzip_14*" "green" >}} {{< bg "13" "pg_bzip_13*" "green" >}} | `pg_bzip_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/bzip" >}} | `1.0.0` | {{< bg "18" "postgresql-18-bzip" "green" >}} {{< bg "17" "postgresql-17-bzip" "green" >}} {{< bg "16" "postgresql-16-bzip" "green" >}} {{< bg "15" "postgresql-15-bzip" "green" >}} {{< bg "14" "postgresql-14-bzip" "green" >}} {{< bg "13" "postgresql-13-bzip" "green" >}} | `postgresql-$v-bzip` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_bzip` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_bzip_18*" "green" >}} {{< bg "17" "pg_bzip_17*" "green" >}} {{< bg "16" "pg_bzip_16*" "green" >}} {{< bg "15" "pg_bzip_15*" "green" >}} {{< bg "14" "pg_bzip_14*" "green" >}} {{< bg "13" "pg_bzip_13*" "green" >}} | `pg_bzip_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-bzip" "green" >}} {{< bg "17" "postgresql-17-bzip" "green" >}} {{< bg "16" "postgresql-16-bzip" "green" >}} {{< bg "15" "postgresql-15-bzip" "green" >}} {{< bg "14" "postgresql-14-bzip" "green" >}} {{< bg "13" "postgresql-13-bzip" "green" >}} | `postgresql-$v-bzip` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -184,38 +185,36 @@ width: full
 
 
 ```bash
-pig build get bzip; # get bzip source code
-pig build dep bzip; # install build dependencies
-pig build pkg bzip; # build extension rpm or deb
-pig build ext bzip; # build extension rpms
+pig build pkg pg_bzip;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install bzip; # install by extension name, for the current active PG version
-pig ext install pg_bzip; # install via package alias, for the active PG version
-pig ext install bzip -v 18;   # install for PG 18
-pig ext install bzip -v 17;   # install for PG 17
-pig ext install bzip -v 16;   # install for PG 16
-pig ext install bzip -v 15;   # install for PG 15
-pig ext install bzip -v 14;   # install for PG 14
-pig ext install bzip -v 13;   # install for PG 13
+pig install pg_bzip;		# install via package name, for the active PG version
+pig install bzip;		# install by extension name, for the current active PG version
+
+pig install bzip -v 18;   # install for PG 18
+pig install bzip -v 17;   # install for PG 17
+pig install bzip -v 16;   # install for PG 16
+pig install bzip -v 15;   # install for PG 15
+pig install bzip -v 14;   # install for PG 14
+pig install bzip -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION bzip;
 ```
-

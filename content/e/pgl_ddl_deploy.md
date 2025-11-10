@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**pgl_ddl_deploy**](https://github.com/enova/pgl_ddl_deploy)
+[**pgl_ddl_deploy**](https://github.com/enova/pgl_ddl_deploy) : automated ddl deployment using pglogical
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,10 +30,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pgl_ddl_deploy" >}} | `2.2.1` | {{< bg "18" "pgl_ddl_deploy_18*" "red" >}} {{< bg "17" "pgl_ddl_deploy_17*" "green" >}} {{< bg "16" "pgl_ddl_deploy_16*" "green" >}} {{< bg "15" "pgl_ddl_deploy_15*" "green" >}} {{< bg "14" "pgl_ddl_deploy_14*" "green" >}} {{< bg "13" "pgl_ddl_deploy_13*" "green" >}} | `pgl_ddl_deploy_$v*` | `pglogical_$v` |
-| **Debian** | {{< badge content="PGDG" link="/e/pgl_ddl_deploy" >}} | `2.2.1` | {{< bg "18" "postgresql-18-pgl-ddl-deploy" "red" >}} {{< bg "17" "postgresql-17-pgl-ddl-deploy" "green" >}} {{< bg "16" "postgresql-16-pgl-ddl-deploy" "green" >}} {{< bg "15" "postgresql-15-pgl-ddl-deploy" "green" >}} {{< bg "14" "postgresql-14-pgl-ddl-deploy" "green" >}} {{< bg "13" "postgresql-13-pgl-ddl-deploy" "green" >}} | `postgresql-$v-pgl-ddl-deploy` | `postgresql-$v-pglogical` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgl_ddl_deploy` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "pgl_ddl_deploy_18*" "red" >}} {{< bg "17" "pgl_ddl_deploy_17*" "green" >}} {{< bg "16" "pgl_ddl_deploy_16*" "green" >}} {{< bg "15" "pgl_ddl_deploy_15*" "green" >}} {{< bg "14" "pgl_ddl_deploy_14*" "green" >}} {{< bg "13" "pgl_ddl_deploy_13*" "green" >}} | `pgl_ddl_deploy_$v*` | `pglogical_$v` |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "postgresql-18-pgl-ddl-deploy" "red" >}} {{< bg "17" "postgresql-17-pgl-ddl-deploy" "green" >}} {{< bg "16" "postgresql-16-pgl-ddl-deploy" "green" >}} {{< bg "15" "postgresql-15-pgl-ddl-deploy" "green" >}} {{< bg "14" "postgresql-14-pgl-ddl-deploy" "green" >}} {{< bg "13" "postgresql-13-pgl-ddl-deploy" "green" >}} | `postgresql-$v-pgl-ddl-deploy` | `postgresql-$v-pglogical` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -178,28 +179,28 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pgl_ddl_deploy; # install by extension name, for the current active PG version
-pig ext install pgl_ddl_deploy; # install via package alias, for the active PG version
-pig ext install pgl_ddl_deploy -v 17;   # install for PG 17
-pig ext install pgl_ddl_deploy -v 16;   # install for PG 16
-pig ext install pgl_ddl_deploy -v 15;   # install for PG 15
-pig ext install pgl_ddl_deploy -v 14;   # install for PG 14
-pig ext install pgl_ddl_deploy -v 13;   # install for PG 13
+pig install pgl_ddl_deploy;		# install via package name, for the active PG version
+
+pig install pgl_ddl_deploy -v 17;   # install for PG 17
+pig install pgl_ddl_deploy -v 16;   # install for PG 16
+pig install pgl_ddl_deploy -v 15;   # install for PG 15
+pig install pgl_ddl_deploy -v 14;   # install for PG 14
+pig install pgl_ddl_deploy -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pgl_ddl_deploy CASCADE SCHEMA pgl_ddl_deploy;
+```sql
+CREATE EXTENSION pgl_ddl_deploy CASCADE; -- requires pglogical
 ```
-

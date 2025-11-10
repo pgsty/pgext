@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**odbc_fdw**](https://github.com/CartoDB/odbc_fdw)
+[**odbc_fdw**](https://github.com/CartoDB/odbc_fdw) : Foreign data wrapper for accessing remote databases using ODBC
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,9 +29,10 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/odbc_fdw" >}} | `0.5.1` | {{< bg "18" "odbc_fdw_18*" "red" >}} {{< bg "17" "odbc_fdw_17*" "green" >}} {{< bg "16" "odbc_fdw_16*" "green" >}} {{< bg "15" "odbc_fdw_15*" "green" >}} {{< bg "14" "odbc_fdw_14*" "green" >}} {{< bg "13" "odbc_fdw_13*" "green" >}} | `odbc_fdw_$v*` | `unixODBC` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `odbc_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.1` | {{< bg "18" "odbc_fdw_18*" "red" >}} {{< bg "17" "odbc_fdw_17*" "green" >}} {{< bg "16" "odbc_fdw_16*" "green" >}} {{< bg "15" "odbc_fdw_15*" "green" >}} {{< bg "14" "odbc_fdw_14*" "green" >}} {{< bg "13" "odbc_fdw_13*" "green" >}} | `odbc_fdw_$v*` | `unixODBC` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -123,28 +124,28 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install odbc_fdw; # install by extension name, for the current active PG version
-pig ext install odbc_fdw; # install via package alias, for the active PG version
-pig ext install odbc_fdw -v 17;   # install for PG 17
-pig ext install odbc_fdw -v 16;   # install for PG 16
-pig ext install odbc_fdw -v 15;   # install for PG 15
-pig ext install odbc_fdw -v 14;   # install for PG 14
-pig ext install odbc_fdw -v 13;   # install for PG 13
+pig install odbc_fdw;		# install via package name, for the active PG version
+
+pig install odbc_fdw -v 17;   # install for PG 17
+pig install odbc_fdw -v 16;   # install for PG 16
+pig install odbc_fdw -v 15;   # install for PG 15
+pig install odbc_fdw -v 14;   # install for PG 14
+pig install odbc_fdw -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION odbc_fdw;
 ```
-

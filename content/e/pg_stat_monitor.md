@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_stat_monitor**](https://github.com/percona/pg_stat_monitor)
+[**pg_stat_monitor**](https://github.com/percona/pg_stat_monitor) : The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information.
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_stat_monitor" >}} | `2.2.0` | {{< bg "18" "pg_stat_monitor_18*" "red" >}} {{< bg "17" "pg_stat_monitor_17*" "green" >}} {{< bg "16" "pg_stat_monitor_16*" "green" >}} {{< bg "15" "pg_stat_monitor_15*" "green" >}} {{< bg "14" "pg_stat_monitor_14*" "green" >}} {{< bg "13" "pg_stat_monitor_13*" "green" >}} | `pg_stat_monitor_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_stat_monitor" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-stat-monitor" "green" >}} {{< bg "17" "postgresql-17-pg-stat-monitor" "green" >}} {{< bg "16" "postgresql-16-pg-stat-monitor" "green" >}} {{< bg "15" "postgresql-15-pg-stat-monitor" "green" >}} {{< bg "14" "postgresql-14-pg-stat-monitor" "green" >}} {{< bg "13" "postgresql-13-pg-stat-monitor" "green" >}} | `postgresql-$v-pg-stat-monitor` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_stat_monitor` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.0` | {{< bg "18" "pg_stat_monitor_18*" "red" >}} {{< bg "17" "pg_stat_monitor_17*" "green" >}} {{< bg "16" "pg_stat_monitor_16*" "green" >}} {{< bg "15" "pg_stat_monitor_15*" "green" >}} {{< bg "14" "pg_stat_monitor_14*" "green" >}} {{< bg "13" "pg_stat_monitor_13*" "green" >}} | `pg_stat_monitor_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-stat-monitor" "green" >}} {{< bg "17" "postgresql-17-pg-stat-monitor" "green" >}} {{< bg "16" "postgresql-16-pg-stat-monitor" "green" >}} {{< bg "15" "postgresql-15-pg-stat-monitor" "green" >}} {{< bg "14" "postgresql-14-pg-stat-monitor" "green" >}} {{< bg "13" "postgresql-13-pg-stat-monitor" "green" >}} | `postgresql-$v-pg-stat-monitor` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -189,8 +190,8 @@ width: full
 | `pg_stat_monitor_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 39.4 KiB | [pg_stat_monitor_14-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-2.0.1-1PGDG.rhel8.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 87.0 KiB | [pg_stat_monitor_14-1.1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-1.1.0-1.rhel8.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.7 KiB | [pg_stat_monitor_14-1.0.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-1.0.1-1.rhel8.x86_64.rpm) |
-| `pg_stat_monitor_14` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.0 KiB | [pg_stat_monitor_14-1.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-1.0.0-1.rhel8.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 93.4 KiB | [pg_stat_monitor_14-1.0.0-rc.1_1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-1.0.0-rc.1_1.rhel8.x86_64.rpm) |
+| `pg_stat_monitor_14` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.0 KiB | [pg_stat_monitor_14-1.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-1.0.0-1.rhel8.x86_64.rpm) |
 | `pg_stat_monitor_14` | `0.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 86.9 KiB | [pg_stat_monitor_14-0.9.2-beta1_1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_stat_monitor_14-0.9.2-beta1_1.rhel8.x86_64.rpm) |
 | `pg_stat_monitor_14` | `2.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 41.4 KiB | [pg_stat_monitor_14-2.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_stat_monitor_14-2.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `pg_stat_monitor_14` | `2.1.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.9 KiB | [pg_stat_monitor_14-2.1.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_stat_monitor_14-2.1.1-1PGDG.rhel8.aarch64.rpm) |
@@ -205,8 +206,8 @@ width: full
 | `pg_stat_monitor_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 39.5 KiB | [pg_stat_monitor_14-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-2.0.1-1PGDG.rhel9.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 88.5 KiB | [pg_stat_monitor_14-1.1.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-1.1.0-1.rhel9.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.1 KiB | [pg_stat_monitor_14-1.0.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-1.0.1-1.rhel9.x86_64.rpm) |
-| `pg_stat_monitor_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 107.5 KiB | [pg_stat_monitor_14-1.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-1.0.0-1.rhel9.x86_64.rpm) |
 | `pg_stat_monitor_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 94.1 KiB | [pg_stat_monitor_14-1.0.0-rc.1_1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-1.0.0-rc.1_1.rhel9.x86_64.rpm) |
+| `pg_stat_monitor_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 107.5 KiB | [pg_stat_monitor_14-1.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_stat_monitor_14-1.0.0-1.rhel9.x86_64.rpm) |
 | `pg_stat_monitor_14` | `2.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 41.6 KiB | [pg_stat_monitor_14-2.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_stat_monitor_14-2.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pg_stat_monitor_14` | `2.1.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 41.2 KiB | [pg_stat_monitor_14-2.1.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_stat_monitor_14-2.1.1-1PGDG.rhel9.aarch64.rpm) |
 | `pg_stat_monitor_14` | `2.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.0 KiB | [pg_stat_monitor_14-2.1.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_stat_monitor_14-2.1.0-1PGDG.rhel9.aarch64.rpm) |
@@ -287,38 +288,42 @@ width: full
 
 
 ```bash
-pig build get pg_stat_monitor; # get pg_stat_monitor source code
-pig build dep pg_stat_monitor; # install build dependencies
-pig build pkg pg_stat_monitor; # build extension rpm or deb
-pig build ext pg_stat_monitor; # build extension rpms
+pig build pkg pg_stat_monitor;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_stat_monitor; # install by extension name, for the current active PG version
-pig ext install pg_stat_monitor; # install via package alias, for the active PG version
-pig ext install pg_stat_monitor -v 18;   # install for PG 18
-pig ext install pg_stat_monitor -v 17;   # install for PG 17
-pig ext install pg_stat_monitor -v 16;   # install for PG 16
-pig ext install pg_stat_monitor -v 15;   # install for PG 15
-pig ext install pg_stat_monitor -v 14;   # install for PG 14
-pig ext install pg_stat_monitor -v 13;   # install for PG 13
+pig install pg_stat_monitor;		# install via package name, for the active PG version
+
+pig install pg_stat_monitor -v 18;   # install for PG 18
+pig install pg_stat_monitor -v 17;   # install for PG 17
+pig install pg_stat_monitor -v 16;   # install for PG 16
+pig install pg_stat_monitor -v 15;   # install for PG 15
+pig install pg_stat_monitor -v 14;   # install for PG 14
+pig install pg_stat_monitor -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_stat_monitor';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_stat_monitor;
 ```
-

@@ -1,7 +1,4 @@
 
-
---------
-
 ## Usage
 
 This function will explain query and post it to the [`explain.dalibo.com`](https://explain.dalibo.com/) to visualize the plan

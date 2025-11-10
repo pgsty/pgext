@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-[**pg_wait_sampling**](https://github.com/postgrespro/pg_wait_sampling)
+[**pg_wait_sampling**](https://github.com/postgrespro/pg_wait_sampling) : sampling based statistics of wait events
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_wait_sampling" >}} | `1.1.9` | {{< bg "18" "pg_wait_sampling_18*" "green" >}} {{< bg "17" "pg_wait_sampling_17*" "green" >}} {{< bg "16" "pg_wait_sampling_16*" "green" >}} {{< bg "15" "pg_wait_sampling_15*" "green" >}} {{< bg "14" "pg_wait_sampling_14*" "green" >}} {{< bg "13" "pg_wait_sampling_13*" "green" >}} | `pg_wait_sampling_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_wait_sampling" >}} | `1.1.9` | {{< bg "18" "postgresql-18-pg-wait-sampling" "green" >}} {{< bg "17" "postgresql-17-pg-wait-sampling" "green" >}} {{< bg "16" "postgresql-16-pg-wait-sampling" "green" >}} {{< bg "15" "postgresql-15-pg-wait-sampling" "green" >}} {{< bg "14" "postgresql-14-pg-wait-sampling" "green" >}} {{< bg "13" "postgresql-13-pg-wait-sampling" "green" >}} | `postgresql-$v-pg-wait-sampling` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_wait_sampling` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "pg_wait_sampling_18*" "green" >}} {{< bg "17" "pg_wait_sampling_17*" "green" >}} {{< bg "16" "pg_wait_sampling_16*" "green" >}} {{< bg "15" "pg_wait_sampling_15*" "green" >}} {{< bg "14" "pg_wait_sampling_14*" "green" >}} {{< bg "13" "pg_wait_sampling_13*" "green" >}} | `pg_wait_sampling_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.1.9` | {{< bg "18" "postgresql-18-pg-wait-sampling" "green" >}} {{< bg "17" "postgresql-17-pg-wait-sampling" "green" >}} {{< bg "16" "postgresql-16-pg-wait-sampling" "green" >}} {{< bg "15" "postgresql-15-pg-wait-sampling" "green" >}} {{< bg "14" "postgresql-14-pg-wait-sampling" "green" >}} {{< bg "13" "postgresql-13-pg-wait-sampling" "green" >}} | `postgresql-$v-pg-wait-sampling` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -273,29 +274,36 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_wait_sampling; # install by extension name, for the current active PG version
-pig ext install pg_wait_sampling; # install via package alias, for the active PG version
-pig ext install pg_wait_sampling -v 18;   # install for PG 18
-pig ext install pg_wait_sampling -v 17;   # install for PG 17
-pig ext install pg_wait_sampling -v 16;   # install for PG 16
-pig ext install pg_wait_sampling -v 15;   # install for PG 15
-pig ext install pg_wait_sampling -v 14;   # install for PG 14
-pig ext install pg_wait_sampling -v 13;   # install for PG 13
+pig install pg_wait_sampling;		# install via package name, for the active PG version
+
+pig install pg_wait_sampling -v 18;   # install for PG 18
+pig install pg_wait_sampling -v 17;   # install for PG 17
+pig install pg_wait_sampling -v 16;   # install for PG 16
+pig install pg_wait_sampling -v 15;   # install for PG 15
+pig install pg_wait_sampling -v 14;   # install for PG 14
+pig install pg_wait_sampling -v 13;   # install for PG 13
 
 ```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'pg_wait_sampling';
+```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_wait_sampling;
 ```
-

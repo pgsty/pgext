@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**firebird_fdw**](https://github.com/ibarwick/firebird_fdw)
+[**firebird_fdw**](https://github.com/ibarwick/firebird_fdw) : Foreign data wrapper for Firebird
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.1` | {{< bg "18" "firebird_fdw_18" "green" >}} {{< bg "17" "firebird_fdw_17" "green" >}} {{< bg "16" "firebird_fdw_16" "green" >}} {{< bg "15" "firebird_fdw_15" "green" >}} {{< bg "14" "firebird_fdw_14" "green" >}} {{< bg "13" "firebird_fdw_13" "green" >}} | `firebird_fdw_$v` | `libfq` |
-| **Debian** | {{< badge content="PIGSTY" link="/e/firebird_fdw" >}} | `1.4.1` | {{< bg "18" "postgresql-18-firebird-fdw" "green" >}} {{< bg "17" "postgresql-17-firebird-fdw" "green" >}} {{< bg "16" "postgresql-16-firebird-fdw" "green" >}} {{< bg "15" "postgresql-15-firebird-fdw" "green" >}} {{< bg "14" "postgresql-14-firebird-fdw" "green" >}} {{< bg "13" "postgresql-13-firebird-fdw" "green" >}} | `postgresql-$v-firebird-fdw` | `libfq` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `firebird_fdw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "firebird_fdw_18" "green" >}} {{< bg "17" "firebird_fdw_17" "green" >}} {{< bg "16" "firebird_fdw_16" "green" >}} {{< bg "15" "firebird_fdw_15" "green" >}} {{< bg "14" "firebird_fdw_14" "green" >}} {{< bg "13" "firebird_fdw_13" "green" >}} | `firebird_fdw_$v` | `libfq` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "postgresql-18-firebird-fdw" "green" >}} {{< bg "17" "postgresql-17-firebird-fdw" "green" >}} {{< bg "16" "postgresql-16-firebird-fdw" "green" >}} {{< bg "15" "postgresql-15-firebird-fdw" "green" >}} {{< bg "14" "postgresql-14-firebird-fdw" "green" >}} {{< bg "13" "postgresql-13-firebird-fdw" "green" >}} | `postgresql-$v-firebird-fdw` | `libfq` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -144,15 +145,15 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `firebird_fdw_14` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 54.5 KiB | [firebird_fdw_14-1.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/firebird_fdw_14-1.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `firebird_fdw_14` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.6 KiB | [firebird_fdw_14-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/firebird_fdw_14-1.2.3-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_14` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.7 KiB | [firebird_fdw_14-1.2.3-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/firebird_fdw_14-1.2.3-2.rhel8.x86_64.rpm) |
+| `firebird_fdw_14` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.6 KiB | [firebird_fdw_14-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/firebird_fdw_14-1.2.3-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_14` | `1.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 151.4 KiB | [firebird_fdw_14-1.2.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/firebird_fdw_14-1.2.2-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_14` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 52.5 KiB | [firebird_fdw_14-1.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/firebird_fdw_14-1.4.1-1PIGSTY.el8.aarch64.rpm) |
 | `firebird_fdw_14` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 49.1 KiB | [firebird_fdw_14-1.3.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/firebird_fdw_14-1.3.0-1.rhel8.aarch64.rpm) |
 | `firebird_fdw_14` | `1.4.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.3 KiB | [firebird_fdw_14-1.4.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/firebird_fdw_14-1.4.1-1PIGSTY.el9.x86_64.rpm) |
 | `firebird_fdw_14` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.1 KiB | [firebird_fdw_14-1.3.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/firebird_fdw_14-1.3.0-1.rhel9.x86_64.rpm) |
-| `firebird_fdw_14` | `1.2.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 153.8 KiB | [firebird_fdw_14-1.2.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/firebird_fdw_14-1.2.3-1.rhel9.x86_64.rpm) |
 | `firebird_fdw_14` | `1.2.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 153.9 KiB | [firebird_fdw_14-1.2.3-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/firebird_fdw_14-1.2.3-2.rhel9.x86_64.rpm) |
+| `firebird_fdw_14` | `1.2.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 153.8 KiB | [firebird_fdw_14-1.2.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/firebird_fdw_14-1.2.3-1.rhel9.x86_64.rpm) |
 | `firebird_fdw_14` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.0 KiB | [firebird_fdw_14-1.4.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/firebird_fdw_14-1.4.1-1PIGSTY.el9.aarch64.rpm) |
 | `firebird_fdw_14` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 52.7 KiB | [firebird_fdw_14-1.4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/firebird_fdw_14-1.4.0-1PGDG.rhel9.aarch64.rpm) |
 | `firebird_fdw_14` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 51.0 KiB | [firebird_fdw_14-1.3.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/firebird_fdw_14-1.3.0-1.rhel9.aarch64.rpm) |
@@ -172,8 +173,8 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `firebird_fdw_13` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.8 KiB | [firebird_fdw_13-1.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/firebird_fdw_13-1.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.7 KiB | [firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.7 KiB | [firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.5 KiB | [firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 50.2 KiB | [firebird_fdw_13-1.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/firebird_fdw_13-1.4.1-1PIGSTY.el8.aarch64.rpm) |
@@ -206,38 +207,35 @@ width: full
 
 
 ```bash
-pig build get firebird_fdw; # get firebird_fdw source code
-pig build dep firebird_fdw; # install build dependencies
-pig build pkg firebird_fdw; # build extension rpm or deb
-pig build ext firebird_fdw; # build extension rpms
+pig build pkg firebird_fdw;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install firebird_fdw; # install by extension name, for the current active PG version
-pig ext install firebird_fdw; # install via package alias, for the active PG version
-pig ext install firebird_fdw -v 18;   # install for PG 18
-pig ext install firebird_fdw -v 17;   # install for PG 17
-pig ext install firebird_fdw -v 16;   # install for PG 16
-pig ext install firebird_fdw -v 15;   # install for PG 15
-pig ext install firebird_fdw -v 14;   # install for PG 14
-pig ext install firebird_fdw -v 13;   # install for PG 13
+pig install firebird_fdw;		# install via package name, for the active PG version
+
+pig install firebird_fdw -v 18;   # install for PG 18
+pig install firebird_fdw -v 17;   # install for PG 17
+pig install firebird_fdw -v 16;   # install for PG 16
+pig install firebird_fdw -v 15;   # install for PG 15
+pig install firebird_fdw -v 14;   # install for PG 14
+pig install firebird_fdw -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION firebird_fdw;
 ```
-

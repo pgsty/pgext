@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-[**data_historization**](https://github.com/rodo/postgresql-data-historization)
+[**data_historization**](https://github.com/rodo/postgresql-data-historization) : PLPGSQL Script to historize data in partitionned table
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="----dt-" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="yes" color="green" >}} |
+| {{< badge content="----dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
@@ -30,10 +30,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/data_historization" >}} | `1.1.0` | {{< bg "18" "data_historization_18" "green" >}} {{< bg "17" "data_historization_17" "green" >}} {{< bg "16" "data_historization_16" "green" >}} {{< bg "15" "data_historization_15" "green" >}} {{< bg "14" "data_historization_14" "green" >}} {{< bg "13" "data_historization_13" "green" >}} | `data_historization_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/data_historization" >}} | `1.1.0` | {{< bg "18" "postgresql-18-data-historization" "green" >}} {{< bg "17" "postgresql-17-data-historization" "green" >}} {{< bg "16" "postgresql-16-data-historization" "green" >}} {{< bg "15" "postgresql-15-data-historization" "green" >}} {{< bg "14" "postgresql-14-data-historization" "green" >}} {{< bg "13" "postgresql-13-data-historization" "green" >}} | `postgresql-$v-data-historization` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `data_historization` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "data_historization_18" "green" >}} {{< bg "17" "data_historization_17" "green" >}} {{< bg "16" "data_historization_16" "green" >}} {{< bg "15" "data_historization_15" "green" >}} {{< bg "14" "data_historization_14" "green" >}} {{< bg "13" "data_historization_13" "green" >}} | `data_historization_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-data-historization" "green" >}} {{< bg "17" "postgresql-17-data-historization" "green" >}} {{< bg "16" "postgresql-16-data-historization" "green" >}} {{< bg "15" "postgresql-15-data-historization" "green" >}} {{< bg "14" "postgresql-14-data-historization" "green" >}} {{< bg "13" "postgresql-13-data-historization" "green" >}} | `postgresql-$v-data-historization` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -185,38 +186,35 @@ width: full
 
 
 ```bash
-pig build get data_historization; # get data_historization source code
-pig build dep data_historization; # install build dependencies
-pig build pkg data_historization; # build extension rpm or deb
-pig build ext data_historization; # build extension rpms
+pig build pkg data_historization;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install data_historization; # install by extension name, for the current active PG version
-pig ext install data_historization; # install via package alias, for the active PG version
-pig ext install data_historization -v 18;   # install for PG 18
-pig ext install data_historization -v 17;   # install for PG 17
-pig ext install data_historization -v 16;   # install for PG 16
-pig ext install data_historization -v 15;   # install for PG 15
-pig ext install data_historization -v 14;   # install for PG 14
-pig ext install data_historization -v 13;   # install for PG 13
+pig install data_historization;		# install via package name, for the active PG version
+
+pig install data_historization -v 18;   # install for PG 18
+pig install data_historization -v 17;   # install for PG 17
+pig install data_historization -v 16;   # install for PG 16
+pig install data_historization -v 15;   # install for PG 15
+pig install data_historization -v 14;   # install for PG 14
+pig install data_historization -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION data_historization;
+```sql
+CREATE EXTENSION data_historization CASCADE; -- requires plpgsql
 ```
-

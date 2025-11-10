@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-[**dblink**](https://www.postgresql.org/docs/current/dblink.html)
+[**dblink**](https://www.postgresql.org/docs/current/dblink.html) : connect to other PostgreSQL databases from within a database
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -38,6 +38,7 @@ width: full
 
 
 ## Install
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 

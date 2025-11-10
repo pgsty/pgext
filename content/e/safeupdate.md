@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-[**safeupdate**](https://github.com/eradman/pg-safeupdate)
+[**safeupdate**](https://github.com/eradman/pg-safeupdate) : Require criteria for UPDATE and DELETE
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="red" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--sL---" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -31,10 +31,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/safeupdate" >}} | `1.5` | {{< bg "18" "safeupdate_18*" "green" >}} {{< bg "17" "safeupdate_17*" "green" >}} {{< bg "16" "safeupdate_16*" "green" >}} {{< bg "15" "safeupdate_15*" "green" >}} {{< bg "14" "safeupdate_14*" "green" >}} {{< bg "13" "safeupdate_13*" "red" >}} | `safeupdate_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/safeupdate" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} {{< bg "13" "postgresql-13-pg-safeupdate" "red" >}} | `postgresql-$v-pg-safeupdate` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `safeupdate` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "safeupdate_18*" "green" >}} {{< bg "17" "safeupdate_17*" "green" >}} {{< bg "16" "safeupdate_16*" "green" >}} {{< bg "15" "safeupdate_15*" "green" >}} {{< bg "14" "safeupdate_14*" "green" >}} {{< bg "13" "safeupdate_13*" "red" >}} | `safeupdate_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} {{< bg "13" "postgresql-13-pg-safeupdate" "red" >}} | `postgresql-$v-pg-safeupdate` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -196,37 +197,39 @@ width: full
 
 
 ```bash
-pig build get safeupdate; # get safeupdate source code
-pig build dep safeupdate; # install build dependencies
-pig build pkg safeupdate; # build extension rpm or deb
-pig build ext safeupdate; # build extension rpms
+pig build pkg safeupdate;		# build spec not ready
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install safeupdate; # install by extension name, for the current active PG version
-pig ext install safeupdate; # install via package alias, for the active PG version
-pig ext install safeupdate -v 18;   # install for PG 18
-pig ext install safeupdate -v 17;   # install for PG 17
-pig ext install safeupdate -v 16;   # install for PG 16
-pig ext install safeupdate -v 15;   # install for PG 15
-pig ext install safeupdate -v 14;   # install for PG 14
+pig install safeupdate;		# install via package name, for the active PG version
+
+pig install safeupdate -v 18;   # install for PG 18
+pig install safeupdate -v 17;   # install for PG 17
+pig install safeupdate -v 16;   # install for PG 16
+pig install safeupdate -v 15;   # install for PG 15
+pig install safeupdate -v 14;   # install for PG 14
 
 ```
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION safeupdate;
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```sql
+shared_preload_libraries = 'safeupdate';
 ```
+
+
+This extension does not need `CREATE EXTENSION` DDL command
+
 

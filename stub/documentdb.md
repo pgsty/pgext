@@ -1,7 +1,4 @@
 
-
---------
-
 ## Usage
 
 Add to shared_preload_libraries first:

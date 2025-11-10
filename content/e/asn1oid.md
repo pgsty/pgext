@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-[**asn1oid**](https://github.com/df7cb/pgsql-asn1oid)
+[**asn1oid**](https://github.com/df7cb/pgsql-asn1oid) : asn1oid extension
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/asn1oid" >}} | `1.6` | {{< bg "18" "asn1oid_18*" "green" >}} {{< bg "17" "asn1oid_17*" "green" >}} {{< bg "16" "asn1oid_16*" "green" >}} {{< bg "15" "asn1oid_15*" "green" >}} {{< bg "14" "asn1oid_14*" "green" >}} {{< bg "13" "asn1oid_13*" "green" >}} | `asn1oid_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/asn1oid" >}} | `1.6` | {{< bg "18" "postgresql-18-asn1oid" "green" >}} {{< bg "17" "postgresql-17-asn1oid" "green" >}} {{< bg "16" "postgresql-16-asn1oid" "green" >}} {{< bg "15" "postgresql-15-asn1oid" "green" >}} {{< bg "14" "postgresql-14-asn1oid" "green" >}} {{< bg "13" "postgresql-13-asn1oid" "green" >}} | `postgresql-$v-asn1oid` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `asn1oid` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "asn1oid_18*" "green" >}} {{< bg "17" "asn1oid_17*" "green" >}} {{< bg "16" "asn1oid_16*" "green" >}} {{< bg "15" "asn1oid_15*" "green" >}} {{< bg "14" "asn1oid_14*" "green" >}} {{< bg "13" "asn1oid_13*" "green" >}} | `asn1oid_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "18" "postgresql-18-asn1oid" "green" >}} {{< bg "17" "postgresql-17-asn1oid" "green" >}} {{< bg "16" "postgresql-16-asn1oid" "green" >}} {{< bg "15" "postgresql-15-asn1oid" "green" >}} {{< bg "14" "postgresql-14-asn1oid" "green" >}} {{< bg "13" "postgresql-13-asn1oid" "green" >}} | `postgresql-$v-asn1oid` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -204,38 +205,35 @@ width: full
 
 
 ```bash
-pig build get asn1oid; # get asn1oid source code
-pig build dep asn1oid; # install build dependencies
-pig build pkg asn1oid; # build extension rpm or deb
-pig build ext asn1oid; # build extension rpms
+pig build pkg asn1oid;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install asn1oid; # install by extension name, for the current active PG version
-pig ext install asn1oid; # install via package alias, for the active PG version
-pig ext install asn1oid -v 18;   # install for PG 18
-pig ext install asn1oid -v 17;   # install for PG 17
-pig ext install asn1oid -v 16;   # install for PG 16
-pig ext install asn1oid -v 15;   # install for PG 15
-pig ext install asn1oid -v 14;   # install for PG 14
-pig ext install asn1oid -v 13;   # install for PG 13
+pig install asn1oid;		# install via package name, for the active PG version
+
+pig install asn1oid -v 18;   # install for PG 18
+pig install asn1oid -v 17;   # install for PG 17
+pig install asn1oid -v 16;   # install for PG 16
+pig install asn1oid -v 15;   # install for PG 15
+pig install asn1oid -v 14;   # install for PG 14
+pig install asn1oid -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION asn1oid;
 ```
-

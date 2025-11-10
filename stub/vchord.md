@@ -1,6 +1,4 @@
 
---------
-
 ## Usage
 
 - https://github.com/tensorchord/VectorChord

@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-[**rum**](https://github.com/postgrespro/rum)
+[**rum**](https://github.com/postgrespro/rum) : RUM index access method
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -30,10 +30,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/rum" >}} | `1.3.14` | {{< bg "18" "rum_18" "red" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} {{< bg "13" "rum_13" "green" >}} | `rum_$v` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/rum" >}} | `1.3.14` | {{< bg "18" "postgresql-18-rum" "red" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `rum` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "rum_18" "red" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} {{< bg "13" "rum_13" "green" >}} | `rum_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "postgresql-18-rum" "red" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -198,28 +199,28 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install rum; # install by extension name, for the current active PG version
-pig ext install rum; # install via package alias, for the active PG version
-pig ext install rum -v 17;   # install for PG 17
-pig ext install rum -v 16;   # install for PG 16
-pig ext install rum -v 15;   # install for PG 15
-pig ext install rum -v 14;   # install for PG 14
-pig ext install rum -v 13;   # install for PG 13
+pig install rum;		# install via package name, for the active PG version
+
+pig install rum -v 17;   # install for PG 17
+pig install rum -v 16;   # install for PG 16
+pig install rum -v 15;   # install for PG 15
+pig install rum -v 14;   # install for PG 14
+pig install rum -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION rum;
 ```
-

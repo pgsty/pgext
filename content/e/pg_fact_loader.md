@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**pg_fact_loader**](https://github.com/enova/pg_fact_loader)
+[**pg_fact_loader**](https://github.com/enova/pg_fact_loader) : build fact tables with Postgres
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PGDG" link="/e/pg_fact_loader" >}} | `2.0.1` | {{< bg "18" "pg_fact_loader_18*" "green" >}} {{< bg "17" "pg_fact_loader_17*" "green" >}} {{< bg "16" "pg_fact_loader_16*" "green" >}} {{< bg "15" "pg_fact_loader_15*" "green" >}} {{< bg "14" "pg_fact_loader_14*" "green" >}} {{< bg "13" "pg_fact_loader_13*" "green" >}} | `pg_fact_loader_$v*` | - |
-| **Debian** | {{< badge content="PGDG" link="/e/pg_fact_loader" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pg-fact-loader" "red" >}} {{< bg "17" "postgresql-17-pg-fact-loader" "green" >}} {{< bg "16" "postgresql-16-pg-fact-loader" "green" >}} {{< bg "15" "postgresql-15-pg-fact-loader" "green" >}} {{< bg "14" "postgresql-14-pg-fact-loader" "green" >}} {{< bg "13" "postgresql-13-pg-fact-loader" "green" >}} | `postgresql-$v-pg-fact-loader` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_fact_loader` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "pg_fact_loader_18*" "green" >}} {{< bg "17" "pg_fact_loader_17*" "green" >}} {{< bg "16" "pg_fact_loader_16*" "green" >}} {{< bg "15" "pg_fact_loader_15*" "green" >}} {{< bg "14" "pg_fact_loader_14*" "green" >}} {{< bg "13" "pg_fact_loader_13*" "green" >}} | `pg_fact_loader_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pg-fact-loader" "red" >}} {{< bg "17" "postgresql-17-pg-fact-loader" "green" >}} {{< bg "16" "postgresql-16-pg-fact-loader" "green" >}} {{< bg "15" "postgresql-15-pg-fact-loader" "green" >}} {{< bg "14" "postgresql-14-pg-fact-loader" "green" >}} {{< bg "13" "postgresql-13-pg-fact-loader" "green" >}} | `postgresql-$v-pg-fact-loader` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -145,8 +146,8 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_fact_loader_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.2 KiB | [pg_fact_loader_14-2.0.1-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_fact_loader_14-2.0.1-3PGDG.rhel8.noarch.rpm) |
-| `pg_fact_loader_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_fact_loader_14-2.0.1-1PGDG.f42.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_fact_loader_14-2.0.1-1PGDG.f42.noarch.rpm) |
 | `pg_fact_loader_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_fact_loader_14-2.0.1-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_fact_loader_14-2.0.1-2PGDG.rhel8.noarch.rpm) |
+| `pg_fact_loader_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_fact_loader_14-2.0.1-1PGDG.f42.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_fact_loader_14-2.0.1-1PGDG.f42.noarch.rpm) |
 | `pg_fact_loader_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.1 KiB | [pg_fact_loader_14-2.0.1-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_fact_loader_14-2.0.1-3PGDG.rhel8.noarch.rpm) |
 | `pg_fact_loader_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.0 KiB | [pg_fact_loader_14-2.0.1-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_fact_loader_14-2.0.1-2PGDG.rhel8.noarch.rpm) |
 | `pg_fact_loader_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.5 KiB | [pg_fact_loader_14-2.0.1-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_fact_loader_14-2.0.1-2PGDG.rhel9.noarch.rpm) |
@@ -172,8 +173,8 @@ width: full
 | `pg_fact_loader_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_fact_loader_13-2.0.1-1PGDG.f42.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_fact_loader_13-2.0.1-1PGDG.f42.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.0 KiB | [pg_fact_loader_13-2.0.1-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_fact_loader_13-2.0.1-2PGDG.rhel8.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 36.2 KiB | [pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm) |
-| `pg_fact_loader_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.1 KiB | [pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.0 KiB | [pg_fact_loader_13-2.0.1-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_fact_loader_13-2.0.1-2PGDG.rhel8.noarch.rpm) |
+| `pg_fact_loader_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 36.1 KiB | [pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pg_fact_loader_13-2.0.1-3PGDG.rhel8.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.5 KiB | [pg_fact_loader_13-2.0.1-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_fact_loader_13-2.0.1-2PGDG.rhel9.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.6 KiB | [pg_fact_loader_13-2.0.1-3PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_fact_loader_13-2.0.1-3PGDG.rhel9.noarch.rpm) |
 | `pg_fact_loader_13` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 34.3 KiB | [pg_fact_loader_13-2.0.1-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_fact_loader_13-2.0.1-2PGDG.rhel9.noarch.rpm) |
@@ -200,29 +201,29 @@ width: full
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_fact_loader; # install by extension name, for the current active PG version
-pig ext install pg_fact_loader; # install via package alias, for the active PG version
-pig ext install pg_fact_loader -v 18;   # install for PG 18
-pig ext install pg_fact_loader -v 17;   # install for PG 17
-pig ext install pg_fact_loader -v 16;   # install for PG 16
-pig ext install pg_fact_loader -v 15;   # install for PG 15
-pig ext install pg_fact_loader -v 14;   # install for PG 14
-pig ext install pg_fact_loader -v 13;   # install for PG 13
+pig install pg_fact_loader;		# install via package name, for the active PG version
+
+pig install pg_fact_loader -v 18;   # install for PG 18
+pig install pg_fact_loader -v 17;   # install for PG 17
+pig install pg_fact_loader -v 16;   # install for PG 16
+pig install pg_fact_loader -v 15;   # install for PG 15
+pig install pg_fact_loader -v 14;   # install for PG 14
+pig install pg_fact_loader -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION pg_fact_loader CASCADE SCHEMA fact_loader;
+```sql
+CREATE EXTENSION pg_fact_loader;
 ```
-

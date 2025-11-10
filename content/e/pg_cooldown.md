@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-[**pg_cooldown**](https://github.com/rbergm/pg_cooldown)
+[**pg_cooldown**](https://github.com/rbergm/pg_cooldown) : remove buffered pages for specific relations
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/pg_cooldown" >}} | `0.1` | {{< bg "18" "pg_cooldown_18*" "green" >}} {{< bg "17" "pg_cooldown_17*" "green" >}} {{< bg "16" "pg_cooldown_16*" "green" >}} {{< bg "15" "pg_cooldown_15*" "green" >}} {{< bg "14" "pg_cooldown_14*" "green" >}} {{< bg "13" "pg_cooldown_13*" "red" >}} | `pg_cooldown_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/pg_cooldown" >}} | `0.1` | {{< bg "18" "postgresql-18-pg-cooldown" "green" >}} {{< bg "17" "postgresql-17-pg-cooldown" "green" >}} {{< bg "16" "postgresql-16-pg-cooldown" "green" >}} {{< bg "15" "postgresql-15-pg-cooldown" "green" >}} {{< bg "14" "postgresql-14-pg-cooldown" "green" >}} {{< bg "13" "postgresql-13-pg-cooldown" "red" >}} | `postgresql-$v-pg-cooldown` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_cooldown` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1` | {{< bg "18" "pg_cooldown_18*" "green" >}} {{< bg "17" "pg_cooldown_17*" "green" >}} {{< bg "16" "pg_cooldown_16*" "green" >}} {{< bg "15" "pg_cooldown_15*" "green" >}} {{< bg "14" "pg_cooldown_14*" "green" >}} {{< bg "13" "pg_cooldown_13*" "red" >}} | `pg_cooldown_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1` | {{< bg "18" "postgresql-18-pg-cooldown" "green" >}} {{< bg "17" "postgresql-17-pg-cooldown" "green" >}} {{< bg "16" "postgresql-16-pg-cooldown" "green" >}} {{< bg "15" "postgresql-15-pg-cooldown" "green" >}} {{< bg "14" "postgresql-14-pg-cooldown" "green" >}} {{< bg "13" "postgresql-13-pg-cooldown" "red" >}} | `postgresql-$v-pg-cooldown` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -180,37 +181,34 @@ width: full
 
 
 ```bash
-pig build get pg_cooldown; # get pg_cooldown source code
-pig build dep pg_cooldown; # install build dependencies
-pig build pkg pg_cooldown; # build extension rpm or deb
-pig build ext pg_cooldown; # build extension rpms
+pig build pkg pg_cooldown;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install pg_cooldown; # install by extension name, for the current active PG version
-pig ext install pg_cooldown; # install via package alias, for the active PG version
-pig ext install pg_cooldown -v 18;   # install for PG 18
-pig ext install pg_cooldown -v 17;   # install for PG 17
-pig ext install pg_cooldown -v 16;   # install for PG 16
-pig ext install pg_cooldown -v 15;   # install for PG 15
-pig ext install pg_cooldown -v 14;   # install for PG 14
+pig install pg_cooldown;		# install via package name, for the active PG version
+
+pig install pg_cooldown -v 18;   # install for PG 18
+pig install pg_cooldown -v 17;   # install for PG 17
+pig install pg_cooldown -v 16;   # install for PG 16
+pig install pg_cooldown -v 15;   # install for PG 15
+pig install pg_cooldown -v 14;   # install for PG 14
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
+```sql
 CREATE EXTENSION pg_cooldown;
 ```
-

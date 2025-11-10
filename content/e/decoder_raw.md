@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-[**decoder_raw**](https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/)
+[**decoder_raw**](https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/) : Output plugin for logical replication in Raw SQL format
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s----" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="orange" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,10 +29,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/decoder_raw" >}} | `1.0` | {{< bg "18" "decoder_raw_18*" "green" >}} {{< bg "17" "decoder_raw_17*" "green" >}} {{< bg "16" "decoder_raw_16*" "green" >}} {{< bg "15" "decoder_raw_15*" "green" >}} {{< bg "14" "decoder_raw_14*" "green" >}} {{< bg "13" "decoder_raw_13*" "green" >}} | `decoder_raw_$v*` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/decoder_raw" >}} | `1.0` | {{< bg "18" "postgresql-18-decoder-raw" "red" >}} {{< bg "17" "postgresql-17-decoder-raw" "green" >}} {{< bg "16" "postgresql-16-decoder-raw" "green" >}} {{< bg "15" "postgresql-15-decoder-raw" "green" >}} {{< bg "14" "postgresql-14-decoder-raw" "green" >}} {{< bg "13" "postgresql-13-decoder-raw" "green" >}} | `postgresql-$v-decoder-raw` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `decoder_raw` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "decoder_raw_18*" "green" >}} {{< bg "17" "decoder_raw_17*" "green" >}} {{< bg "16" "decoder_raw_16*" "green" >}} {{< bg "15" "decoder_raw_15*" "green" >}} {{< bg "14" "decoder_raw_14*" "green" >}} {{< bg "13" "decoder_raw_13*" "green" >}} | `decoder_raw_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-decoder-raw" "green" >}} {{< bg "17" "postgresql-17-decoder-raw" "green" >}} {{< bg "16" "postgresql-16-decoder-raw" "green" >}} {{< bg "15" "postgresql-15-decoder-raw" "green" >}} {{< bg "14" "postgresql-14-decoder-raw" "green" >}} {{< bg "13" "postgresql-13-decoder-raw" "green" >}} | `postgresql-$v-decoder-raw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -168,38 +169,33 @@ width: full
 
 
 ```bash
-pig build get decoder_raw; # get decoder_raw source code
-pig build dep decoder_raw; # install build dependencies
-pig build pkg decoder_raw; # build extension rpm or deb
-pig build ext decoder_raw; # build extension rpms
+pig build pkg decoder_raw;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install decoder_raw; # install by extension name, for the current active PG version
-pig ext install decoder_raw; # install via package alias, for the active PG version
-pig ext install decoder_raw -v 18;   # install for PG 18
-pig ext install decoder_raw -v 17;   # install for PG 17
-pig ext install decoder_raw -v 16;   # install for PG 16
-pig ext install decoder_raw -v 15;   # install for PG 15
-pig ext install decoder_raw -v 14;   # install for PG 14
-pig ext install decoder_raw -v 13;   # install for PG 13
+pig install decoder_raw;		# install via package name, for the active PG version
+
+pig install decoder_raw -v 18;   # install for PG 18
+pig install decoder_raw -v 17;   # install for PG 17
+pig install decoder_raw -v 16;   # install for PG 16
+pig install decoder_raw -v 15;   # install for PG 15
+pig install decoder_raw -v 14;   # install for PG 14
+pig install decoder_raw -v 13;   # install for PG 13
 
 ```
 
-[**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION decoder_raw;
-```
+This extension does not need `CREATE EXTENSION` DDL command
+
 

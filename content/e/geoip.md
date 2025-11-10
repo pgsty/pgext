@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-[**geoip**](https://github.com/tvondra/geoip)
+[**geoip**](https://github.com/tvondra/geoip) : IP-based geolocation query
 
 
 ## Overview
@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="green" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="red" >}} | {{< badge content="no" color="red" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -32,10 +32,11 @@ width: full
 
 ## Packages
 
-| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
+| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/geoip" >}} | `0.3.0` | {{< bg "18" "geoip_18" "green" >}} {{< bg "17" "geoip_17" "green" >}} {{< bg "16" "geoip_16" "green" >}} {{< bg "15" "geoip_15" "green" >}} {{< bg "14" "geoip_14" "green" >}} {{< bg "13" "geoip_13" "green" >}} | `geoip_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/geoip" >}} | `0.3.0` | {{< bg "18" "postgresql-18-geoip" "green" >}} {{< bg "17" "postgresql-17-geoip" "green" >}} {{< bg "16" "postgresql-16-geoip" "green" >}} {{< bg "15" "postgresql-15-geoip" "green" >}} {{< bg "14" "postgresql-14-geoip" "green" >}} {{< bg "13" "postgresql-13-geoip" "green" >}} | `postgresql-$v-geoip` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `geoip` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "geoip_18" "green" >}} {{< bg "17" "geoip_17" "green" >}} {{< bg "16" "geoip_16" "green" >}} {{< bg "15" "geoip_15" "green" >}} {{< bg "14" "geoip_14" "green" >}} {{< bg "13" "geoip_13" "green" >}} | `geoip_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-geoip" "green" >}} {{< bg "17" "postgresql-17-geoip" "green" >}} {{< bg "16" "postgresql-16-geoip" "green" >}} {{< bg "15" "postgresql-15-geoip" "green" >}} {{< bg "14" "postgresql-14-geoip" "green" >}} {{< bg "13" "postgresql-13-geoip" "green" >}} | `postgresql-$v-geoip` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -198,38 +199,35 @@ width: full
 
 
 ```bash
-pig build get geoip; # get geoip source code
-pig build dep geoip; # install build dependencies
-pig build pkg geoip; # build extension rpm or deb
-pig build ext geoip; # build extension rpms
+pig build pkg geoip;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-To add the required PGDG / PIGSTY upstream repository, use:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)
+pig repo add pgdg pigsty -u   # add both repo and update cache
 ```
 
-[**Install**](https://ext.pgsty.com/usage/install) this extension with:
+[**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
 
 ```bash
-pig ext install geoip; # install by extension name, for the current active PG version
-pig ext install geoip; # install via package alias, for the active PG version
-pig ext install geoip -v 18;   # install for PG 18
-pig ext install geoip -v 17;   # install for PG 17
-pig ext install geoip -v 16;   # install for PG 16
-pig ext install geoip -v 15;   # install for PG 15
-pig ext install geoip -v 14;   # install for PG 14
-pig ext install geoip -v 13;   # install for PG 13
+pig install geoip;		# install via package name, for the active PG version
+
+pig install geoip -v 18;   # install for PG 18
+pig install geoip -v 17;   # install for PG 17
+pig install geoip -v 16;   # install for PG 16
+pig install geoip -v 15;   # install for PG 15
+pig install geoip -v 14;   # install for PG 14
+pig install geoip -v 13;   # install for PG 13
 
 ```
+
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
-```bash
-CREATE EXTENSION geoip CASCADE SCHEMA geoip;
+```sql
+CREATE EXTENSION geoip CASCADE; -- requires ip4r
 ```
-
