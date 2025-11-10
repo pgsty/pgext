@@ -1,9 +1,10 @@
 ---
-title: "使用"
-description: pig 命令行工具使用说明
+title: "命令"
+description: pig 命令行工具使用说明与参考
 icon: SquareTerminal
 weight: 600
 ---
+
 
 ## 总览
 

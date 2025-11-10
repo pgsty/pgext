@@ -29,9 +29,9 @@ Harness the synergistic superpower of the PostgreSQL extensions ecosystem with t
 
 ## Catalog
 
-  {{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
-
-  {{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
+| {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
+|-------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+| {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
 
 {{< cards cols=5 >}}
   {{< card link="/cate/time" title="TIME" icon="clock" subtitle="TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Scheduler, ..." >}}
@@ -52,13 +52,15 @@ Harness the synergistic superpower of the PostgreSQL extensions ecosystem with t
   {{< card link="/cate/etl" title="ETL" icon="truck" subtitle="Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & Compare Postgres Databases,..." >}}
 {{< /cards >}}
 
-{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "BSD 0-Clause" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+|:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
+| {{< license "Artistic" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
 
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
-{{< language "c" >}} {{< language "c++" >}} {{< language "rust" >}} {{< language "java" >}} {{< language "python" >}} {{< language "sql" >}} {{< language "data" >}}
 
+| {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         | {{< language "data" >}} |
+|----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
 
---------
 
 ## Projects
 

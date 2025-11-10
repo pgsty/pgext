@@ -5,6 +5,13 @@ weight: 100
 
 PostgreSQL 扩展（431 ext / 364 pkg）归属 16 个分类。
 
+
+
+| {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
+|------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+| {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
+
+
 ## TIME
 
 时间时态扩展：时序数据库 TimescaleDB，时态数据库，版本控制表，定时任务，异步后台任务调度扩展。

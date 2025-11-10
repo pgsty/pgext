@@ -5,6 +5,13 @@ weight: 100
 
 PostgreSQL Extensions (431 ext in 364 pkg) categorized into 16 categories.
 
+
+
+| {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
+|------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+| {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
+
+
 ## TIME
 
 TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Scheduler, ...

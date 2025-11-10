@@ -1,5 +1,6 @@
 ---
-title: "操作系统: el8.aarch64"
+title: "OS: el8.aarch64"
+linkTitle: "el8.aarch64"
 description: "RockyLinux 8 ARM 的 PostgreSQL 扩展可用性"
 weight: 721
 width: full

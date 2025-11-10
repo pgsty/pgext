@@ -4,9 +4,14 @@ description: "PostgreSQL extensions organized by open source license"
 weight: 300
 ---
 
-{{< license "PostgreSQL" >}} {{< license "Apache-2.0" >}} {{< license "MIT" >}} {{< license "BSD 3-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "ISC" >}} {{< license "Artistic" >}} {{< license "BSD 0-Clause" >}} {{< license "MPL-2.0" >}}
+PostgreSQL extension categorized by license.
 
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}} {{< license "LGPL-3.0" >}} {{< license "LGPL-2.1" >}}
+
+
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "BSD 0-Clause" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+|:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
+| {{< license "Artistic" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
 
 ## Summary
 
@@ -32,9 +37,11 @@ weight: 300
 
 ## PostgreSQL
 
-{{< license "PostgreSQL" >}} {{< badge content="202 Extensions" color="gray" icon="cube" >}}
 
-[PostgreSQL License Text](https://opensource.org/licenses/postgresql) : Very liberal license based on the BSD license, allowing almost unlimited freedom.
+
+| {{< license "PostgreSQL" >}} | {{< badge content="202 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -243,9 +250,11 @@ weight: 300
 
 ## Apache-2.0
 
-{{< license "Apache-2.0" >}} {{< badge content="72 Extensions" color="gray" icon="cube" >}}
 
-[Apache-2.0 License Text](https://opensource.org/licenses/Apache-2.0) : Permissive license with patent protection and attribution requirements.
+
+| {{< license "Apache-2.0" >}} | {{< badge content="72 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -324,9 +333,11 @@ weight: 300
 
 ## MIT
 
-{{< license "MIT" >}} {{< badge content="60 Extensions" color="gray" icon="cube" >}}
 
-[MIT License Text](https://opensource.org/licenses/MIT) : A permissive license that allows commercial use, modification, and private use.
+
+| {{< license "MIT" >}} | {{< badge content="60 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -393,9 +404,11 @@ weight: 300
 
 ## BSD 3-Clause
 
-{{< license "BSD 3-Clause" >}} {{< badge content="30 Extensions" color="gray" icon="cube" >}}
 
-[BSD 3-Clause License Text](https://opensource.org/license/bsd-3-clause) : Permissive license with attribution and endorsement restriction clauses.
+
+| {{< license "BSD 3-Clause" >}} | {{< badge content="30 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/license/bsd-3-clause" icon="scale" >}} | Permissive license with attribution and endorsement restriction clauses. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -432,9 +445,11 @@ weight: 300
 
 ## BSD 2-Clause
 
-{{< license "BSD 2-Clause" >}} {{< badge content="14 Extensions" color="gray" icon="cube" >}}
 
-[BSD 2-Clause License Text](https://opensource.org/license/bsd-2-clause) : Permissive license requiring attribution but allowing commercial use.
+
+| {{< license "BSD 2-Clause" >}} | {{< badge content="14 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/license/bsd-2-clause" icon="scale" >}} | Permissive license requiring attribution but allowing commercial use. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -455,9 +470,11 @@ weight: 300
 
 ## GPL-2.0
 
-{{< license "GPL-2.0" >}} {{< badge content="14 Extensions" color="gray" icon="cube" >}}
 
-[GPL-2.0 License Text](https://opensource.org/licenses/GPL-2.0) : Strong copyleft license requiring derivative works to be open source.
+
+| {{< license "GPL-2.0" >}} | {{< badge content="14 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-2.0" icon="scale" >}} | Strong copyleft license requiring derivative works to be open source. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -478,9 +495,11 @@ weight: 300
 
 ## GPL-3.0
 
-{{< license "GPL-3.0" >}} {{< badge content="12 Extensions" color="gray" icon="cube" >}}
 
-[GPL-3.0 License Text](https://opensource.org/licenses/GPL-3.0) : Strong copyleft license with additional patent and hardware restrictions.
+
+| {{< license "GPL-3.0" >}} | {{< badge content="12 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -499,9 +518,11 @@ weight: 300
 
 ## AGPL-3.0
 
-{{< license "AGPL-3.0" >}} {{< badge content="10 Extensions" color="gray" icon="cube" >}}
 
-[AGPL-3.0 License Text](https://opensource.org/licenses/AGPL-3.0) : Network copyleft license extending GPL to cover network-distributed software.
+
+| {{< license "AGPL-3.0" >}} | {{< badge content="10 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -518,9 +539,11 @@ weight: 300
 
 ## ISC
 
-{{< license "ISC" >}} {{< badge content="6 Extensions" color="gray" icon="cube" >}}
 
-[ISC License Text](https://opensource.org/licenses/ISC) : A permissive license similar to MIT, allowing commercial use and modification.
+
+| {{< license "ISC" >}} | {{< badge content="6 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/ISC" icon="scale" >}} | A permissive license similar to MIT, allowing commercial use and modification. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -533,9 +556,11 @@ weight: 300
 
 ## Artistic
 
-{{< license "Artistic" >}} {{< badge content="3 Extensions" color="gray" icon="cube" >}}
 
-[Artistic License Text](https://opensource.org/license/artistic-2-0) : Copyleft license allowing modification with certain distribution requirements.
+
+| {{< license "Artistic" >}} | {{< badge content="3 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/license/artistic-2-0" icon="scale" >}} | Copyleft license allowing modification with certain distribution requirements. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -545,9 +570,11 @@ weight: 300
 
 ## Timescale
 
-{{< license "Timescale" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
 
-[Timescale License Text](https://www.timescale.com/legal/licenses) : Proprietary license with restrictions on commercial use and distribution.
+
+| {{< license "Timescale" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://www.timescale.com/legal/licenses" icon="scale" >}} | Proprietary license with restrictions on commercial use and distribution. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -556,9 +583,11 @@ weight: 300
 
 ## BSD 0-Clause
 
-{{< license "BSD 0-Clause" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
 
-[BSD 0-Clause License Text](https://opensource.org/license/0bsd) : Public domain equivalent license with no restrictions on use.
+
+| {{< license "BSD 0-Clause" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/license/0bsd" icon="scale" >}} | Public domain equivalent license with no restrictions on use. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -567,9 +596,11 @@ weight: 300
 
 ## LGPL-3.0
 
-{{< license "LGPL-3.0" >}} {{< badge content="2 Extensions" color="gray" icon="cube" >}}
 
-[LGPL-3.0 License Text](https://opensource.org/licenses/LGPL-3.0) : Weak copyleft license with additional patent and hardware provisions.
+
+| {{< license "LGPL-3.0" >}} | {{< badge content="2 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/LGPL-3.0" icon="scale" >}} | Weak copyleft license with additional patent and hardware provisions. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -578,9 +609,11 @@ weight: 300
 
 ## MPL-2.0
 
-{{< license "MPL-2.0" >}} {{< badge content="1 Extensions" color="gray" icon="cube" >}}
 
-[MPL-2.0 License Text](https://opensource.org/licenses/MPL-2.0) : Weak copyleft license allowing proprietary combinations with file-level copyleft.
+
+| {{< license "MPL-2.0" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
@@ -588,9 +621,11 @@ weight: 300
 
 ## LGPL-2.1
 
-{{< license "LGPL-2.1" >}} {{< badge content="1 Extensions" color="gray" icon="cube" >}}
 
-[LGPL-2.1 License Text](https://opensource.org/licenses/LGPL-2.1) : Weak copyleft license allowing proprietary applications to link dynamically.
+
+| {{< license "LGPL-2.1" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/LGPL-2.1" icon="scale" >}} | Weak copyleft license allowing proprietary applications to link dynamically. |
 
 | ID | Extension | Description |
 |:---:|:---|:---|

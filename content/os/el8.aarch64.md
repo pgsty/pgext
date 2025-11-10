@@ -1,5 +1,6 @@
 ---
 title: "OS: el8.aarch64"
+linkTitle: "el8.aarch64"
 description: "PostgreSQL Extension Availability for RockyLinux 8 ARM"
 weight: 721
 width: full

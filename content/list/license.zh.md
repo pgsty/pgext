@@ -4,9 +4,14 @@ description: "按开源许可证组织的 PostgreSQL 扩展"
 weight: 300
 ---
 
-{{< license "PostgreSQL" >}} {{< license "Apache-2.0" >}} {{< license "MIT" >}} {{< license "BSD 3-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "ISC" >}} {{< license "Artistic" >}} {{< license "BSD 0-Clause" >}} {{< license "MPL-2.0" >}}
+按照所使用开源许可证，对 PostgreSQL 扩展进行分类。
 
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}} {{< license "LGPL-3.0" >}} {{< license "LGPL-2.1" >}}
+
+
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "BSD 0-Clause" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+|:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
+| {{< license "Artistic" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
 
 ## 概览
 
@@ -32,9 +37,11 @@ weight: 300
 
 ## PostgreSQL
 
-{{< license "PostgreSQL" >}} {{< badge content="202 个扩展" color="gray" icon="cube" >}}
 
-[PostgreSQL 许可证文本](https://opensource.org/licenses/postgresql) : Very liberal license based on the BSD license, allowing almost unlimited freedom.
+
+| {{< license "PostgreSQL" >}} | {{< badge content="202 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -243,9 +250,11 @@ weight: 300
 
 ## Apache-2.0
 
-{{< license "Apache-2.0" >}} {{< badge content="72 个扩展" color="gray" icon="cube" >}}
 
-[Apache-2.0 许可证文本](https://opensource.org/licenses/Apache-2.0) : Permissive license with patent protection and attribution requirements.
+
+| {{< license "Apache-2.0" >}} | {{< badge content="72 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -324,9 +333,11 @@ weight: 300
 
 ## MIT
 
-{{< license "MIT" >}} {{< badge content="60 个扩展" color="gray" icon="cube" >}}
 
-[MIT 许可证文本](https://opensource.org/licenses/MIT) : A permissive license that allows commercial use, modification, and private use.
+
+| {{< license "MIT" >}} | {{< badge content="60 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -393,9 +404,11 @@ weight: 300
 
 ## BSD 3-Clause
 
-{{< license "BSD 3-Clause" >}} {{< badge content="30 个扩展" color="gray" icon="cube" >}}
 
-[BSD 3-Clause 许可证文本](https://opensource.org/license/bsd-3-clause) : Permissive license with attribution and endorsement restriction clauses.
+
+| {{< license "BSD 3-Clause" >}} | {{< badge content="30 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-3-clause" icon="scale" >}} | Permissive license with attribution and endorsement restriction clauses. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -432,9 +445,11 @@ weight: 300
 
 ## BSD 2-Clause
 
-{{< license "BSD 2-Clause" >}} {{< badge content="14 个扩展" color="gray" icon="cube" >}}
 
-[BSD 2-Clause 许可证文本](https://opensource.org/license/bsd-2-clause) : Permissive license requiring attribution but allowing commercial use.
+
+| {{< license "BSD 2-Clause" >}} | {{< badge content="14 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-2-clause" icon="scale" >}} | Permissive license requiring attribution but allowing commercial use. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -455,9 +470,11 @@ weight: 300
 
 ## GPL-2.0
 
-{{< license "GPL-2.0" >}} {{< badge content="14 个扩展" color="gray" icon="cube" >}}
 
-[GPL-2.0 许可证文本](https://opensource.org/licenses/GPL-2.0) : Strong copyleft license requiring derivative works to be open source.
+
+| {{< license "GPL-2.0" >}} | {{< badge content="14 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-2.0" icon="scale" >}} | Strong copyleft license requiring derivative works to be open source. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -478,9 +495,11 @@ weight: 300
 
 ## GPL-3.0
 
-{{< license "GPL-3.0" >}} {{< badge content="12 个扩展" color="gray" icon="cube" >}}
 
-[GPL-3.0 许可证文本](https://opensource.org/licenses/GPL-3.0) : Strong copyleft license with additional patent and hardware restrictions.
+
+| {{< license "GPL-3.0" >}} | {{< badge content="12 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -499,9 +518,11 @@ weight: 300
 
 ## AGPL-3.0
 
-{{< license "AGPL-3.0" >}} {{< badge content="10 个扩展" color="gray" icon="cube" >}}
 
-[AGPL-3.0 许可证文本](https://opensource.org/licenses/AGPL-3.0) : Network copyleft license extending GPL to cover network-distributed software.
+
+| {{< license "AGPL-3.0" >}} | {{< badge content="10 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/AGPL-3.0" icon="scale" >}} | Network copyleft license extending GPL to cover network-distributed software. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -518,9 +539,11 @@ weight: 300
 
 ## ISC
 
-{{< license "ISC" >}} {{< badge content="6 个扩展" color="gray" icon="cube" >}}
 
-[ISC 许可证文本](https://opensource.org/licenses/ISC) : A permissive license similar to MIT, allowing commercial use and modification.
+
+| {{< license "ISC" >}} | {{< badge content="6 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/ISC" icon="scale" >}} | A permissive license similar to MIT, allowing commercial use and modification. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -533,9 +556,11 @@ weight: 300
 
 ## Artistic
 
-{{< license "Artistic" >}} {{< badge content="3 个扩展" color="gray" icon="cube" >}}
 
-[Artistic 许可证文本](https://opensource.org/license/artistic-2-0) : Copyleft license allowing modification with certain distribution requirements.
+
+| {{< license "Artistic" >}} | {{< badge content="3 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/artistic-2-0" icon="scale" >}} | Copyleft license allowing modification with certain distribution requirements. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -545,9 +570,11 @@ weight: 300
 
 ## Timescale
 
-{{< license "Timescale" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
 
-[Timescale 许可证文本](https://www.timescale.com/legal/licenses) : Proprietary license with restrictions on commercial use and distribution.
+
+| {{< license "Timescale" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://www.timescale.com/legal/licenses" icon="scale" >}} | Proprietary license with restrictions on commercial use and distribution. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -556,9 +583,11 @@ weight: 300
 
 ## BSD 0-Clause
 
-{{< license "BSD 0-Clause" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
 
-[BSD 0-Clause 许可证文本](https://opensource.org/license/0bsd) : Public domain equivalent license with no restrictions on use.
+
+| {{< license "BSD 0-Clause" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/0bsd" icon="scale" >}} | Public domain equivalent license with no restrictions on use. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -567,9 +596,11 @@ weight: 300
 
 ## LGPL-3.0
 
-{{< license "LGPL-3.0" >}} {{< badge content="2 个扩展" color="gray" icon="cube" >}}
 
-[LGPL-3.0 许可证文本](https://opensource.org/licenses/LGPL-3.0) : Weak copyleft license with additional patent and hardware provisions.
+
+| {{< license "LGPL-3.0" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/LGPL-3.0" icon="scale" >}} | Weak copyleft license with additional patent and hardware provisions. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -578,9 +609,11 @@ weight: 300
 
 ## MPL-2.0
 
-{{< license "MPL-2.0" >}} {{< badge content="1 个扩展" color="gray" icon="cube" >}}
 
-[MPL-2.0 许可证文本](https://opensource.org/licenses/MPL-2.0) : Weak copyleft license allowing proprietary combinations with file-level copyleft.
+
+| {{< license "MPL-2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MPL-2.0" icon="scale" >}} | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -588,9 +621,11 @@ weight: 300
 
 ## LGPL-2.1
 
-{{< license "LGPL-2.1" >}} {{< badge content="1 个扩展" color="gray" icon="cube" >}}
 
-[LGPL-2.1 许可证文本](https://opensource.org/licenses/LGPL-2.1) : Weak copyleft license allowing proprietary applications to link dynamically.
+
+| {{< license "LGPL-2.1" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/LGPL-2.1" icon="scale" >}} | Weak copyleft license allowing proprietary applications to link dynamically. |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|

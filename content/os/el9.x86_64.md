@@ -1,5 +1,6 @@
 ---
 title: "OS: el9.x86_64"
+linkTitle: "el9.x86_64"
 description: "PostgreSQL Extension Availability for RockyLinux 9 x86"
 weight: 730
 width: full

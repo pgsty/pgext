@@ -58,6 +58,15 @@ PostgreSQL Extensions (%d ext in %d pkg) categorized into %d categories.
 `, len(g.Cache.Extensions), pkgCount, len(g.Cache.Categories)))
 	}
 
+	b.WriteString(`
+
+| {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
+|------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+| {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
+
+
+`)
+
 	// Generate sections for each category
 	for _, cat := range g.Cache.Categories {
 		catKey := strings.ToUpper(cat.Name)
@@ -191,13 +200,12 @@ weight: 200
 `)
 	}
 
-	// Navigation
-	var navItems []string
-	for _, lc := range langs {
-		navItems = append(navItems, LanguageShortcode(lc.lang))
-	}
-	b.WriteString(strings.Join(navItems, " "))
-	b.WriteString("\n\n")
+	b.WriteString(`
+
+| {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         | {{< language "data" >}} |
+|----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
+
+`)
 
 	// Summary section
 	if isZh {
@@ -338,6 +346,8 @@ description: "按开源许可证组织的 PostgreSQL 扩展"
 weight: 300
 ---
 
+按照所使用开源许可证，对 PostgreSQL 扩展进行分类。
+
 `)
 	} else {
 		b.WriteString(`---
@@ -346,29 +356,19 @@ description: "PostgreSQL extensions organized by open source license"
 weight: 300
 ---
 
+PostgreSQL extension categorized by license.
+
 `)
 	}
 
-	// License badges
-	permissive, copyleft := g.categorizeLicenses(licenses)
+	b.WriteString(`
 
-	if len(permissive) > 0 {
-		var badges []string
-		for _, lic := range permissive {
-			badges = append(badges, LicenseShortcode(lic))
-		}
-		b.WriteString(strings.Join(badges, " "))
-		b.WriteString("\n\n")
-	}
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "BSD 0-Clause" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+|:---------------------------|:-----------------------------|:-----------------------------|:-------------------------------|:-------------------------------|:-------------------------------|
+| {{< license "Artistic" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    |
 
-	if len(copyleft) > 0 {
-		var badges []string
-		for _, lic := range copyleft {
-			badges = append(badges, LicenseShortcode(lic))
-		}
-		b.WriteString(strings.Join(badges, " "))
-		b.WriteString("\n\n")
-	}
+`)
 
 	// Summary section
 	if isZh {
@@ -411,15 +411,18 @@ func (g *ListGenerator) generateLicenseSection(license string, extensions []*Ext
 	if isZh {
 		countText = fmt.Sprintf("%d 个扩展", len(extensions))
 	}
-	b.WriteString(fmt.Sprintf("%s %s\n\n", LicenseShortcode(license), Badge(countText, "gray", "", "", "cube")))
-
-	// License info
 	info := getLicenseInfo(license)
 	refText := "License Text"
 	if isZh {
 		refText = "许可证文本"
 	}
-	b.WriteString(fmt.Sprintf("[%s %s](%s) : %s\n\n", license, refText, info.URL, info.Description))
+	b.WriteString(fmt.Sprintf(`
+
+| %s | %s  |
+|:----|:---|
+| %s | %s |
+
+`, LicenseShortcode(license), Badge(countText, "gray", "", "", "cube"), Badge(refText, "gray", "", info.URL, "scale"), info.Description))
 
 	// Table
 	if isZh {
@@ -466,31 +469,6 @@ type licenseItem struct {
 	order int
 }
 
-func (g *ListGenerator) categorizeLicenses(licenses []licenseItem) ([]string, []string) {
-	permissiveLicenses := []string{"MIT", "ISC", "PostgreSQL", "BSD 0-Clause", "BSD 2-Clause",
-		"BSD 3-Clause", "Artistic", "Apache-2.0", "MPL-2.0"}
-	copyleftLicenses := []string{"GPL-2.0", "GPL-3.0", "LGPL-2.1", "LGPL-3.0", "AGPL-3.0", "Timescale"}
-
-	var permissive, copyleft []string
-
-	for _, lic := range licenses {
-		for _, p := range permissiveLicenses {
-			if lic.name == p {
-				permissive = append(permissive, p)
-				break
-			}
-		}
-		for _, c := range copyleftLicenses {
-			if lic.name == c {
-				copyleft = append(copyleft, c)
-				break
-			}
-		}
-	}
-
-	return permissive, copyleft
-}
-
 // Helper functions
 func getLanguageDescriptions(isZh bool) map[string]string {
 	if isZh {
@@ -523,21 +501,21 @@ type LicenseInfo struct {
 
 func getLicenseInfo(license string) LicenseInfo {
 	licenses := map[string]LicenseInfo{
-		"PostgreSQL":     {"https://opensource.org/licenses/postgresql", "Very liberal license based on the BSD license, allowing almost unlimited freedom.", 1},
-		"Apache-2.0":     {"https://opensource.org/licenses/Apache-2.0", "Permissive license with patent protection and attribution requirements.", 2},
-		"MIT":            {"https://opensource.org/licenses/MIT", "A permissive license that allows commercial use, modification, and private use.", 3},
-		"BSD 3-Clause":   {"https://opensource.org/license/bsd-3-clause", "Permissive license with attribution and endorsement restriction clauses.", 4},
-		"BSD 2-Clause":   {"https://opensource.org/license/bsd-2-clause", "Permissive license requiring attribution but allowing commercial use.", 5},
-		"GPL-2.0":        {"https://opensource.org/licenses/GPL-2.0", "Strong copyleft license requiring derivative works to be open source.", 6},
-		"GPL-3.0":        {"https://opensource.org/licenses/GPL-3.0", "Strong copyleft license with additional patent and hardware restrictions.", 7},
-		"AGPL-3.0":       {"https://opensource.org/licenses/AGPL-3.0", "Network copyleft license extending GPL to cover network-distributed software.", 8},
-		"ISC":            {"https://opensource.org/licenses/ISC", "A permissive license similar to MIT, allowing commercial use and modification.", 9},
-		"Artistic":       {"https://opensource.org/license/artistic-2-0", "Copyleft license allowing modification with certain distribution requirements.", 10},
-		"Timescale":      {"https://www.timescale.com/legal/licenses", "Proprietary license with restrictions on commercial use and distribution.", 11},
-		"BSD 0-Clause":   {"https://opensource.org/license/0bsd", "Public domain equivalent license with no restrictions on use.", 12},
-		"LGPL-3.0":       {"https://opensource.org/licenses/LGPL-3.0", "Weak copyleft license with additional patent and hardware provisions.", 13},
-		"MPL-2.0":        {"https://opensource.org/licenses/MPL-2.0", "Weak copyleft license allowing proprietary combinations with file-level copyleft.", 14},
-		"LGPL-2.1":       {"https://opensource.org/licenses/LGPL-2.1", "Weak copyleft license allowing proprietary applications to link dynamically.", 15},
+		"PostgreSQL":   {"https://opensource.org/licenses/postgresql", "Very liberal license based on the BSD license, allowing almost unlimited freedom.", 1},
+		"Apache-2.0":   {"https://opensource.org/licenses/Apache-2.0", "Permissive license with patent protection and attribution requirements.", 2},
+		"MIT":          {"https://opensource.org/licenses/MIT", "A permissive license that allows commercial use, modification, and private use.", 3},
+		"BSD 3-Clause": {"https://opensource.org/license/bsd-3-clause", "Permissive license with attribution and endorsement restriction clauses.", 4},
+		"BSD 2-Clause": {"https://opensource.org/license/bsd-2-clause", "Permissive license requiring attribution but allowing commercial use.", 5},
+		"GPL-2.0":      {"https://opensource.org/licenses/GPL-2.0", "Strong copyleft license requiring derivative works to be open source.", 6},
+		"GPL-3.0":      {"https://opensource.org/licenses/GPL-3.0", "Strong copyleft license with additional patent and hardware restrictions.", 7},
+		"AGPL-3.0":     {"https://opensource.org/licenses/AGPL-3.0", "Network copyleft license extending GPL to cover network-distributed software.", 8},
+		"ISC":          {"https://opensource.org/licenses/ISC", "A permissive license similar to MIT, allowing commercial use and modification.", 9},
+		"Artistic":     {"https://opensource.org/license/artistic-2-0", "Copyleft license allowing modification with certain distribution requirements.", 10},
+		"Timescale":    {"https://www.timescale.com/legal/licenses", "Proprietary license with restrictions on commercial use and distribution.", 11},
+		"BSD 0-Clause": {"https://opensource.org/license/0bsd", "Public domain equivalent license with no restrictions on use.", 12},
+		"LGPL-3.0":     {"https://opensource.org/licenses/LGPL-3.0", "Weak copyleft license with additional patent and hardware provisions.", 13},
+		"MPL-2.0":      {"https://opensource.org/licenses/MPL-2.0", "Weak copyleft license allowing proprietary combinations with file-level copyleft.", 14},
+		"LGPL-2.1":     {"https://opensource.org/licenses/LGPL-2.1", "Weak copyleft license allowing proprietary applications to link dynamically.", 15},
 	}
 
 	if info, ok := licenses[license]; ok {

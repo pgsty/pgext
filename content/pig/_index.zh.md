@@ -1,6 +1,6 @@
 ---
 title: PIG 包管理器
-description: PostgreSQL 与扩展生态包管理器
+description: PostgreSQL 扩展包管理器
 icon: PiggyBank
 full: true
 cascade:
@@ -10,19 +10,12 @@ comments: false
 weight: 100
 ---
 
-<div class="hx-mt-6 hx-mb-6">
-{{< hextra/hero-headline >}}
-  PostgreSQL & 扩展包管理器 &nbsp;<br class="sm:hx-block hx-hidden" />
-{{< /hextra/hero-headline >}}
-</div>
-
-
 —— **Postgres Install Genius，PostgreSQL 生态中缺失的扩展包管理器**
 
 {{< cards >}}
-{{< card link="/intro"   title="简介" subtitle="为什么需要专用的PG包管理器？" icon="sparkles" >}}
-{{< card link="/start"   title="上手" subtitle="快速上手与样例"  icon="play" >}}
-{{< card link="/install" title="安装" subtitle="下载、安装、更新 pig" icon="save" >}}
+{{< card link="/zh/pig/intro"   title="简介" subtitle="为什么需要专用的PG包管理器？" icon="sparkles" >}}
+{{< card link="/zh/pig/start"   title="上手" subtitle="快速上手与样例"  icon="play" >}}
+{{< card link="/zh/pig/install" title="安装" subtitle="下载、安装、更新 pig" icon="save" >}}
 {{< /cards >}}
 
 ## 快速上手

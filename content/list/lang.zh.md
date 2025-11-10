@@ -5,7 +5,10 @@ excludeSearch: true
 weight: 200
 ---
 
-{{< language "C" >}} {{< language "SQL" >}} {{< language "Rust" >}} {{< language "Data" >}} {{< language "C++" >}} {{< language "Python" >}} {{< language "Java" >}}
+
+
+| {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         | {{< language "data" >}} |
+|----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
 
 ## 概览
 

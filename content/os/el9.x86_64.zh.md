@@ -1,5 +1,6 @@
 ---
-title: "操作系统: el9.x86_64"
+title: "OS: el9.x86_64"
+linkTitle: "el9.x86_64"
 description: "RockyLinux 9 x86 的 PostgreSQL 扩展可用性"
 weight: 730
 width: full

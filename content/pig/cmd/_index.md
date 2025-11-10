@@ -1,6 +1,6 @@
 ---
-title: "CLI Usage"
-description: Overview of the pig cli tool
+title: "CMD"
+description: Overview of the pig cli tool command tools
 icon: SquareTerminal
 weight: 600
 ---

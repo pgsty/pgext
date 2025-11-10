@@ -43,9 +43,9 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
 
 ## 扩展分类
 
-{{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
-
-{{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
+| {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
+|-------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+| {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
 
 {{< cards cols=5 >}}
   {{< card link="/zh/cate/time" title="TIME" icon="clock" subtitle="时间时态扩展：时序数据库 TimescaleDB，时态数据库，版本控制表，定时任务，异步后台任务调度扩展。" >}}
@@ -66,10 +66,11 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
   {{< card link="/zh/cate/etl" title="ETL" icon="truck" subtitle="数据复制扩展：逻辑复制，逻辑解码，DDL复制，JSON/BSON/Protobuf 变更抽取，数据迁移，数据导入，数据比对等。" >}}
 {{< /cards >}}
 
-{{< license "MIT" >}} {{< license "ISC" >}} {{< license "PostgreSQL" >}} {{< license "BSD 0-Clause" >}} {{< license "BSD 2-Clause" >}} {{< license "BSD 3-Clause" >}} {{< license "Artistic" >}} {{< license "Apache-2.0" >}} {{< license "MPL-2.0" >}}
-
-{{< license "GPL-2.0" >}} {{< license "GPL-3.0" >}} {{< license "LGPL-2.1" >}} {{< license "LGPL-3.0" >}} {{< license "AGPL-3.0" >}} {{< license "Timescale" >}}
-{{< language "c" >}} {{< language "c++" >}} {{< language "rust" >}} {{< language "java" >}} {{< language "python" >}} {{< language "sql" >}} {{< language "data" >}}
+| {{< license "MIT" >}}      | {{< license "ISC" >}}        | {{< license "PostgreSQL" >}} | {{< license "BSD 0-Clause" >}} | {{< license "BSD 2-Clause" >}} | {{< license "BSD 3-Clause" >}} |
+|----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|
+| {{< license "Artistic" >}} | {{< license "Apache-2.0" >}} | {{< license "MPL-2.0" >}}    |                                |                                |                                |
+| {{< license "GPL-2.0" >}}  | {{< license "GPL-3.0" >}}    | {{< license "LGPL-2.1" >}}   | {{< license "LGPL-3.0" >}}     | {{< license "AGPL-3.0" >}}     | {{< license "Timescale" >}}    | 
+| {{< language "c" >}}       | {{< language "c++" >}}       | {{< language "rust" >}}      | {{< language "java" >}}        | {{< language "python" >}}      | {{< language "sql" >}}         |{{< language "data" >}}|
 
 --------
 
