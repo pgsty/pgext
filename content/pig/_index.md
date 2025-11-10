@@ -44,9 +44,11 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
 Then it’s ready to use, assume you want to install the [**`pg_duckdb`**](/e/pg_duckdb/) extension:
 
 ```bash
-$ pig repo add pigsty pgdg -u  # add pgdg & pigsty repo, then update repo cache
-$ pig ext install pg17         # install PostgreSQL 17 kernels with native PGDG packages
-$ pig ext install pg_duckdb    # install the pg_duckdb extension (for current pg17)
+$ pig repo set                  # overwrite Linux, Pigsty + PGDG repo in one-pass!
+$ pig install pg18              # install PostgreSQL 18 kernel package from official PGDG repo
+$ pig install pg_duckdb -v 18   # install pg_duckdb extension for PG 18 from pigsty repo
+$ pig install -y postgis timescaledb  # install some extension for active postgres installation
+$ pig install -y vector         # use both pkg and ext name to install extensions
 ```
 
 
@@ -63,13 +65,15 @@ Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
 
 
 
-## Source
+## About
 
 The `pig` CLI is developed by [Vonng](https://blog.vonng.com/en/), and open-sourced under the [Apache License 2.0](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme).
 
 You can also check the [pigsty](https://pgsty.com) project, which makes it even smoother to deliver all these [extensions](/usage) in an IaC way:
 
-- https://github.com/pgsty/pigsty
-- https://github.com/pgsty/pig
+{{< cards cols=4 >}}
+{{< card link="https://github.com/github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="This Website and Extension Catalog" >}}
+{{< card link="https://github.com/github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="The PostgreSQL Package Manager" >}}
+{{< card link="https://github.com/github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="The Battery-Included PostgreSQL Distribution" >}}
+{{< /cards >}}
 
-![](/logo.png)

@@ -41,11 +41,11 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
 安装完成后，几行命令即可 [**快速开始**](/zh/pig/start) 。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/zh/e/pg_duckdb/) 扩展：
 
 ```bash
-$ pig repo set                  # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
-$ pig install pg18              # 安装 PostgreSQL 17 内核（原生 PGDG 包）
-$ pig install pg_duckdb -v 18   # 安装 pg_duckdb 扩展（针对当前 pg17）
-$ pig install -y postgis timescaledb  # 针对当前活跃PG版本，安装多个扩展并自动确定
-$ pig install -y vector         # 您可以使用扩展名称（vector）或者扩展包名称（pgvector）来安装扩展！
+$ pig repo set                        # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
+$ pig install pg18                    # 安装 PostgreSQL 18 内核（原生 PGDG 包）
+$ pig install pg_duckdb -v 18         # 安装 pg_duckdb 扩展（针对当前 pg 18）
+$ pig install -y postgis timescaledb  # 针对当前活跃PG版本，安装多个扩展
+$ pig install -y vector               # 您可以使用扩展名称（vector）或者扩展包名称（pgvector）来安装扩展！
 ```
 
 
@@ -66,9 +66,11 @@ $ pig install -y vector         # 您可以使用扩展名称（vector）或者�
 
 `pig` 命令行工具由 [Vonng](https://vonng.com/en/)（冯若航 rh@vonng.com）开发，并以 [Apache 2.0](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme) 许可证开源。
 
-更多信息请参见 [pigsty](https://pgsty.com) 项目，可一键高效交付所有扩展：
+您还可以参考 [**PIGSTY**](https://pgsty.com) 项目，提供了包括扩展交付在内的完整 PostgreSQL RDS DBaaS 使用体验。
 
-- https://github.com/pgsty/pig
-- https://github.com/pgsty/pigsty
+{{< cards cols=4 >}}
+{{< card link="https://github.com/github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="本网站，扩展数据与管理工具" >}}
+{{< card link="https://github.com/github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="PostgreSQL 包管理器" >}}
+{{< card link="https://github.com/github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="开箱即用的 PostgreSQL 发行版" >}}
+{{< /cards >}}
 
-![](/logo.png)

@@ -1,5 +1,5 @@
 ---
-title: "PGEXT - the PostgreSQL Extension Catalog"
+title: "PostgreSQL Extension Cloud"
 cascade:
   type: docs
 breadcrumbs: false
@@ -12,16 +12,24 @@ comment: false
 
 Harness the synergistic superpower of the PostgreSQL extensions ecosystem with three things:
 
-- [**PIG CLI**](/pig/) : The PostgreSQL Extension Package Manager for Linux - `pig`
-- [**Catalog**](/list) : Find the extension you need, with unparalleled 431 extensions included
-- [**Repository**](/repo) : Get pre-made RPM/DEB packages for 14 mainstream [Linux OS](/os)
-
+- [**Catalog**](/list) : Find the extension you need, with unparalleled [**431**](/e/) extensions included
+- [**Repository**](/repo) : Get pre-built RPM/DEB packages on **14** mainstream [**Linux Distributions**](/os)
+- [**PIG Package Manager**](/pig/) : The Missing Package Manager for PostgreSQL & Extension Ecosystem
 
 {{< cards cols=4 >}}  
   {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 430+ available PostgreSQL extensions" >}}
   {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT / DNF repo that deliver PostgreSQL extensions in native Linux format" >}}
   {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}
 {{< /cards >}}
+
+
+```bash
+curl -fsSL https://repo.pigsty.io/pig | bash  # install pig cli
+pig repo set                  # setup upstream repository on your linux
+pig install pg18              # install PostgreSQL 18 kernel pkg from PGDG
+pig install pg_duckdb -v 18   # e.g. install pg_duckdb extension for PG 18
+```
+
 
 **Just use PostgreSQL for everything!** Also check our blog post: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
@@ -62,12 +70,49 @@ Harness the synergistic superpower of the PostgreSQL extensions ecosystem with t
 |----------------------------|------------------------------|------------------------------|--------------------------------|--------------------------------|--------------------------------|-------------------------|
 
 
-## Projects
+## Platform
 
-Related projects on GitHub: [**github.com/pgsty**](https://github.com/pgsty)
+Pigsty provides complete extension support on these [linux distributions](/os) major versions::
+
+| OS                                                                                     | Vendor | Major |  Minor  | Fullname          | PG Major Version                                                                                                                                                                                                                                            |                     Comment                     |
+|:---------------------------------------------------------------------------------------|:-------|:-----:|:-------:|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------:|
+| {{< badge content="el8.x86_64"   link="/os/el8.x86_64"  color="green" >}}              | EL     |   8   |  8.10   | RockyLinux 8 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       | {{< badge content="Near EOL" color="orange" >}} |
+| {{< badge content="el8.aarch64"  link="/os/el8.aarch64" color="green" border=false >}} | EL     |   8   |  8.10   | RockyLinux 8 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       | {{< badge content="Near EOL" color="orange" >}} |
+| {{< badge content="el9.x86_64"   link="/os/el9.x86_64"  color="green" >}}              | EL     |   9   |   9.6   | RockyLinux 9 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="el9.aarch64"  link="/os/el9.aarch64" color="green" border=false >}} | EL     |   9   |   9.6   | RockyLinux 9 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="el10.x86_64"  link="/os/el10.x86_64" color="green" >}}              | EL     |  10   |  10.0   | RockyLinux 10 x86 | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="el10.aarch64" link="/os/el10.aarch64"color="green" border=false >}} | EL     |  10   |  10.0   | RockyLinux 10 ARM | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="d12.x86_64"   link="/os/d12.x86_64"  color="green" >}}              | Debian |  12   |  12.12  | Debian 12 x86     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="d12.aarch64"  link="/os/d12.aarch64" color="green" border=false >}} | Debian |  12   |  12.12  | Debian 12 ARM     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="d13.x86_64"   link="/os/d13.x86_64"  color="green" >}}              | Debian |  13   |  13.1   | Debian 13 x86     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="d13.aarch64"  link="/os/d13.aarch64" color="green" border=false >}} | Debian |  13   |  13.1   | Debian 13 ARM     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="u22.x86_64"   link="/os/u22.x86_64"  color="green" >}}              | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="u22.aarch64"  link="/os/u22.aarch64" color="green" border=false >}} | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="u24.x86_64"   link="/os/u24.x86_64"  color="green" >}}              | Ubuntu |  24   | 24.04.3 | Ubuntu 24.04 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+| {{< badge content="u24.aarch64"  link="/os/u24.aarch64" color="green" border=false >}} | Ubuntu |  24   | 24.04.3 | Ubuntu 24.04 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} {{< badge content="13" color="green" >}}       |    {{< badge content="OK" color="green" >}}     |
+
+
+## Users
+
+The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors:
+
+{{< cards cols=2 >}}
+{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="The author and maintainer, Battery-Included PG RDS" >}}
+{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="The All-in-One PostgreSQL as a Platform" >}}
+{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="Self-hosted DBaaS / Postgres automation" >}}
+{{< /cards >}}
+
+The repository is hosted on Cloudflare CDN, It is a **free** service to the community.
+
+
+## About
+
+The PGEXT.CLOUD is maintained by [**PGSTY**](https://github.com/pgsty) / [**VONNG**](https://blog.vonng.com/en/) (rh@vonng.com), and open-sourced under the [**Apache License 2.0**](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme).
 
 | GitHub Repo                                                      | Description                                |
 |------------------------------------------------------------------|--------------------------------------------|
+| [github.com/pgsty](https://github.com/pgsty)                     | The **PGSTY** Organization                 |
+| [github.com/pgsty/pgext](https://github.com/pgsty/pgext)         | This website and extension Data            |
 | [github.com/pgsty/pigsty](https://github.com/pgsty/pigsty)       | PostgreSQL Database Distribution           |
 | [github.com/pgsty/pig](https://github.com/pgsty/pig)             | PostgreSQL Package Manager                 |
 | [github.com/pgsty/ext](https://github.com/pgsty/ext)             | This documentation site, Extension Catalog |
