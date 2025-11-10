@@ -224,7 +224,7 @@ func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categor
 	// Frontmatter
 	if isZh {
 		b.WriteString(`---
-title: "目录"
+title: "扩展目录"
 weight: 200
 excludeSearch: true
 comments: false

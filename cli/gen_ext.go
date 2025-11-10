@@ -118,10 +118,10 @@ func (g *ExtensionGenerator) generateFrontmatter(ext *Extension) string {
 
 	// Build the subtitle line with format: [**<pkg>**](**url**) : <zh_desc>
 	subtitle := ""
-	if ext.URL.Valid && ext.URL.String != "" {
-		subtitle = fmt.Sprintf("[**%s**](%s)", ext.Pkg, ext.URL.String)
+	if ext.URL.String != "" {
+		subtitle = fmt.Sprintf("[**%s**](%s) : %s", ext.Pkg, ext.URL.String, ext.EnDesc.String)
 	} else {
-		subtitle = fmt.Sprintf("**%s**", ext.Pkg)
+		subtitle = fmt.Sprintf("**%s** : %s", ext.Pkg, ext.EnDesc.String)
 	}
 
 	return fmt.Sprintf(`---
@@ -288,11 +288,21 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 
 	var rows []string
 
+	// SRC row - add source package row first
+	if ext.Repo.Valid || ext.Version.Valid || len(ext.PgVer) > 0 {
+		srcPgVersions := ParsePGVersions(ext.PgVer)
+		srcRow := g.buildPackageSummaryRow("SRC", ext.Repo.String, ext.Version.String,
+			ext.Pkg, srcPgVersions, nil, ext, true) // true indicates this is a SRC row
+		if srcRow != "" {
+			rows = append(rows, srcRow)
+		}
+	}
+
 	// RPM row
 	if ext.RpmRepo.Valid || ext.RpmVer.Valid || ext.RpmPkg.Valid || len(ext.RpmPg) > 0 {
 		rpmPgVersions := ParsePGVersions(ext.RpmPg)
-		rpmRow := g.buildPackageSummaryRow("EL", ext.RpmRepo.String, ext.RpmVer.String,
-			ext.RpmPkg.String, rpmPgVersions, ext.RpmDeps, ext)
+		rpmRow := g.buildPackageSummaryRow("RPM", ext.RpmRepo.String, ext.RpmVer.String,
+			ext.RpmPkg.String, rpmPgVersions, ext.RpmDeps, ext, false)
 		if rpmRow != "" {
 			rows = append(rows, rpmRow)
 		}
@@ -301,8 +311,8 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 	// DEB row
 	if ext.DebRepo.Valid || ext.DebVer.Valid || ext.DebPkg.Valid || len(ext.DebPg) > 0 {
 		debPgVersions := ParsePGVersions(ext.DebPg)
-		debRow := g.buildPackageSummaryRow("Debian", ext.DebRepo.String, ext.DebVer.String,
-			ext.DebPkg.String, debPgVersions, ext.DebDeps, ext)
+		debRow := g.buildPackageSummaryRow("DEB", ext.DebRepo.String, ext.DebVer.String,
+			ext.DebPkg.String, debPgVersions, ext.DebDeps, ext, false)
 		if debRow != "" {
 			rows = append(rows, debRow)
 		}
@@ -314,7 +324,7 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 
 	var b strings.Builder
 	b.WriteString("\n## Packages\n\n")
-	b.WriteString("| Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |\n")
+	b.WriteString("| Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |\n")
 	b.WriteString("|:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|\n")
 
 	for _, row := range rows {
@@ -327,22 +337,24 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 }
 
 func (g *ExtensionGenerator) buildPackageSummaryRow(label, repo, version, pattern string,
-	supportedPg []int, deps []string, ext *Extension) string {
+	supportedPg []int, deps []string, ext *Extension, isSrcRow bool) string {
 
 	if repo == "" && version == "" && pattern == "" && len(deps) == 0 && len(supportedPg) == 0 {
 		return ""
 	}
 
+	// Generate repo badge with correct link
 	repoLabel := repo
 	if repoLabel == "" {
 		repoLabel = "N/A"
 	}
 
-	leadExt := ext.Name
-	if ext.LeadExt.Valid {
-		leadExt = ext.LeadExt.String
+	// Determine the repo link based on repo name
+	repoLink := "/repo/pgsql" // Default to PIGSTY
+	if strings.ToUpper(repo) == "PGDG" {
+		repoLink = "/repo/pgdg"
 	}
-	repoBadge := Badge(repoLabel, "", "", fmt.Sprintf("/e/%s", leadExt), "")
+	repoBadge := Badge(repoLabel, "", "", repoLink, "")
 
 	versionDisplay := "-"
 	if version != "" {
@@ -365,9 +377,9 @@ func (g *ExtensionGenerator) buildPackageSummaryRow(label, repo, version, patter
 		text := fmt.Sprintf("%d", pg)
 		color := "red"
 
-		// Alt text always shows the package name pattern with version substituted
+		// For SRC row, don't include alt text; for RPM/DEB rows, include package name pattern
 		alt := ""
-		if pattern != "" {
+		if !isSrcRow && pattern != "" {
 			alt = strings.ReplaceAll(pattern, "$v", fmt.Sprintf("%d", pg))
 		}
 
@@ -694,13 +706,26 @@ func (g *ExtensionGenerator) generateSourceSection(ext *Extension) string {
 	section += CardsShortcode(3, strings.Join(cards, "\n"))
 	section += "\n\n"
 
+	var buildRPM, buildDEB bool
+	var buildHint string
+	if ext.RpmRepo.Valid && ext.RpmRepo.String == "PIGSTY" {
+		buildRPM = true
+	}
+	if ext.DebRepo.Valid && ext.RpmRepo.String == "PIGSTY" {
+		buildDEB = true
+	}
+	if buildRPM && buildDEB {
+		buildHint = "build rpm / deb with pig"
+	} else if buildRPM && !buildDEB {
+		buildHint = "build rpm with pig"
+	} else if !buildRPM && buildDEB {
+		buildHint = "build deb with pig"
+	} else {
+		buildHint = "build spec not ready"
+	}
+
 	if ext.Source.Valid && ext.Source.String != "" {
-		commands := fmt.Sprintf(
-			"pig build get %s; # get %s source code\n"+
-				"pig build dep %s; # install build dependencies\n"+
-				"pig build pkg %s; # build extension rpm or deb\n"+
-				"pig build ext %s; # build extension rpms",
-			ext.Name, ext.Name, ext.Name, ext.Name, ext.Name)
+		commands := fmt.Sprintf("pig build pkg %s;\t\t# %s", ext.Pkg, buildHint)
 		section += "\n" + TripleQuoteBash(commands) + "\n\n"
 	}
 
@@ -720,7 +745,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	// Generate install commands
 	var installCmds []string
 	for _, pg := range pgVersions {
-		installCmds = append(installCmds, fmt.Sprintf("pig ext install %s -v %d;   # install for PG %d", ext.Name, pg, pg))
+		installCmds = append(installCmds, fmt.Sprintf("pig install %s -v %d;   # install for PG %d", ext.Name, pg, pg))
 	}
 
 	// Determine CASCADE SCHEMA clause
@@ -732,22 +757,27 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	// Build the install section with better formatting
 	var b strings.Builder
 	b.WriteString("\n## Install\n\n")
-	b.WriteString("To add the required PGDG / PIGSTY upstream repository, use:\n\n")
+
+	// Build the Repo Section
+	b.WriteString("To add the required [PGDG](/repo/pgdg) / [PIGSTY](/repo/pgsql) upstream repository, use:\n\n")
 	b.WriteString(TripleQuoteBash("pig repo add pgsql -u   # add PGDG + Pigsty repo and update cache (leave existing repos)"))
 	b.WriteString("\n\n")
 	b.WriteString("[**Install**](https://ext.pgsty.com/usage/install) this extension with:\n\n")
 
 	// Build install commands
-	installScript := fmt.Sprintf(
-		"pig ext install %s; # install by extension name, for the current active PG version\n"+
-			"pig ext install %s; # install via package alias, for the active PG version",
-		ext.Name, ext.Pkg)
+	installScript := fmt.Sprintf("pig install %s;\t\t# install via package name, for the active PG version\n", ext.Pkg)
+	if ext.Name != ext.Pkg {
+		installScript = installScript + fmt.Sprintf("pig install %s;\t\t# install by extension name, for the current active PG version\n", ext.Name)
+	}
 	if len(installCmds) > 0 {
 		installScript += "\n" + strings.Join(installCmds, "\n") + "\n"
 	}
 	b.WriteString(TripleQuoteBash(installScript))
 	b.WriteString("\n\n")
 
+	// Build load command
+
+	// Build the Create Section
 	b.WriteString("[**Create**](https://ext.pgsty.com/usage/create) this extension with:\n\n")
 	b.WriteString(TripleQuoteBash(fmt.Sprintf("CREATE EXTENSION %s%s;", ext.Name, cascadeSchema)))
 	b.WriteString("\n\n")

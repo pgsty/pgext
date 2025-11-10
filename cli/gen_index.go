@@ -41,14 +41,14 @@ func (g *ExtensionGenerator) generateIndexContent(extensions, packages []*Extens
 	// Frontmatter
 	if isZh {
 		b.WriteString(fmt.Sprintf(`---
-title: "扩展"
+title: "扩展列表"
 breadcrumbs: false
 excludeSearch: true
 comments: false
 weight: 900
 ---
 
-在 PIGSTY 与 PGDG 仓库中，总共有 %d 个可用的 PostgreSQL 扩展，与 % 类软件包：
+在 PIGSTY 与 PGDG 仓库中，总共有 %d 个可用的 PostgreSQL 扩展，与 %d 类软件包：
 
 ## 扩展包
 
