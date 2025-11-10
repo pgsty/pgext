@@ -4,7 +4,7 @@ description: DEB Extension Changelog
 weight: 300
 ---
 
-Check [PGSQL repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
+Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 ## 2025-11-10
 

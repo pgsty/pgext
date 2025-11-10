@@ -4,7 +4,7 @@ description: RPM Extension Changelog
 weight: 200
 ---
 
-Check [PGSQL repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
+Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 ## 2025-11-10
 

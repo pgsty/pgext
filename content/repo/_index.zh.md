@@ -9,19 +9,52 @@ breadcrumbs: false
 
 Pigsty 为主流 [Linux 发行版](https://pgsty.com/docs/prepare/linux) 提供了一个 PostgreSQL 扩展仓库，其中包含 200+ 额外的 PostgreSQL 扩展。
 
-Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 官方仓库配合使用，共同使用时可以安装多达 [424 个 PostgreSQL 扩展](/zh/list)。
+Pigsty 扩展仓库旨在与 [PGDG](https://www.postgresql.org/download/linux/) 官方仓库配合使用，共同使用时可以安装多达 [431 个 PostgreSQL 扩展](/zh/list)。
+
+{{< cards cols=2 >}}
+{{< card link="/zh/repo/pgsql"  title="PGSQL Repo" subtitle="Pigsty PG 扩展仓库" icon="play"     >}}
+{{< card link="/zh/repo/infra"  title="INFRA Repo" subtitle="Pigsty 基础设施仓库" icon="sparkles" >}}
+{{< /cards >}}
+
+|  OS / Arch   |  OS  |                                                                                                    x86_64                                                                                                    |                                                                                                   aarch64                                                                                                    |
+|:------------:|:----:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|     EL8      | el8  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+|     EL9      | el9  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+|     EL10     | el10 | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+|  Debian 12   | d12  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+|  Debian 13   | d12  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+| Ubuntu 22.04 | u22  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
+| Ubuntu 24.04 | u24  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}} |
 
 
---------
+## 快速上手 
 
-## 快速上手
+你可以使用 [**`pig`**](/zh/pig/) 命令行工具来方便的启用 infra 和 pgsql 仓库，
 
-你可以使用 [pig](/pig/) CLI 工具启用 infra 和 pgsql 仓库，或者手动将它们添加到系统中：
+{{< tabs items="默认,镜像" defaultIndex="1" >}}
 
+{{< tab >}}
 ```bash tab="pig"
 curl https://repo.pigsty.io/pig | bash      # 下载安装最新版本的 pig 命令行工具
 pig repo add all -u                         # 添加 Linux / PGDG / Pigsty 仓库并更新缓存
 ```
+{{< /tab >}}
+
+{{< tab >}}
+```bash tab="pig"
+curl https://repo.pigsty.cc/pig | bash      # 从中国镜像站下载安装最新版本的 pig 命令行工具
+pig repo add -u                             # 添加 Linux / PGDG / Pigsty 仓库并更新缓存
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
+## 手工添加
+
+您也可以使用经典的 `apt` / `dnf` / `yum` 命令 ，将它们 [手工添加](#手工添加) 到系统中。
+
+{{< tabs items="APT,DNF/YUM" defaultIndex="0" >}}
+{{< tab >}}
 ```bash tab="apt"
 # 将 Pigsty 的 GPG 公钥添加到系统密钥链中，以验证软件包签名
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
@@ -36,6 +69,9 @@ EOF
 # 刷新 APT 仓库缓存
 sudo apt update
 ```
+{{< /tab >}}
+
+{{< tab >}}
 ```bash tab="yum"
 # 将 Pigsty 的 GPG 公钥添加到系统密钥链中，以验证软件包签名
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
@@ -66,11 +102,13 @@ EOF
 # 刷新 YUM 仓库缓存
 sudo yum makecache;
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 所有的 RPM / DEB 软件包都使用指纹为 (`B9BD8B20`) 的 [GPG 密钥](/zh/repo/gpg) 进行签名，以确保软件包的完整性。
 
 
----------
+
 
 ## 兼容性
 
@@ -79,22 +117,13 @@ Pigsty 仓库由两个主要部分组成：[`INFRA`](/zh/repo/infra) 和 [`PGSQL
 [`INFRA`](/repo/infra) 仓库中的软件包与 PostgreSQL / Linux 大版本无关，包括 Prometheus、Grafana、以及一些 PostgreSQL 管理工具，
 通常由 Go 等语言编写的，只有芯片架构（`x86_64` | `aarch64`）的区别。
 
-| Linux  |  软件包  | x86_64 | aarch64 |
-|:------:|:-----:|:------:|:-------:|
-|   EL   | `rpm` |   ✓    |    ✓    |
-| Debian | `deb` |   ✓    |    ✓    |
+| Linux  |  软件包  |                 x86_64                  |                 aarch64                 |
+|:------:|:-----:|:---------------------------------------:|:---------------------------------------:|
+|   EL   | `rpm` | {{< badge content="✓" color="green" >}} | {{< badge content="✓" color="green" >}} |
+| Debian | `deb` | {{< badge content="✓" color="green" >}} | {{< badge content="✓" color="green" >}} |
 
 [`PGSQL`](/repo/pgsql) 仓库中的软件包通常特定于 Linux 大版本（例如 el9, d12），也通常与 PostgreSQL 大版本相关（例如 pg17，pg16 ）
 这个仓库中包含 了 PostgreSQL 内核疯子、扩展插件与工具，通常由类 C 语言编写。
-
-|   系统 / 架构    | OS  |                                                                                               x86_64                                                                                                |                                                                                               aarch64                                                                                               |
-|:------------:|:---:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|     EL8      | el8 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
-|     EL9      | el9 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
-|  Debian 12   | d12 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
-| Ubuntu 22.04 | u22 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
-| Ubuntu 24.04 | u24 | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> | <Badge variant="blue-subtle">17</Badge><Badge variant="blue-subtle">16</Badge><Badge variant="blue-subtle">15</Badge><Badge variant="blue-subtle">14</Badge><Badge variant="blue-subtle">13</Badge> |
-
 
 |                        系统代码                         | 厂商     | 大版本 |   小版本   | 全名                |                                                                                                      PG 大版本                                                                                                       | 备注       |
 |:---------------------------------------------------:|:-------|:---:|:-------:|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------|
@@ -118,8 +147,6 @@ Pigsty 仓库由两个主要部分组成：[`INFRA`](/zh/repo/infra) 和 [`PGSQL
 | {{< badge content="u24.x86_64"   color="green" >}}  | Ubuntu | 24  | 24.04.3 | Ubuntu 24.04 x86  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
 | {{< badge content="u24.aarch64"  color="green" >}}  | Ubuntu | 24  | 24.04.3 | Ubuntu 24.04 ARM  |   {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}    | OK       |
 
-
-------
 
 ## 源代码
 
