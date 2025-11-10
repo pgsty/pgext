@@ -6,7 +6,9 @@ comments: false
 weight: 900
 ---
 
-## 包
+在 PIGSTY 与 PGDG 仓库中，总共有 431 个可用的 PostgreSQL 扩展，与 %!类(int= 361)软件包：
+
+## 扩展包
 
 共有 361 个可用的 PostgreSQL 扩展软件包：
 
@@ -94,7 +96,8 @@ weight: 900
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v*` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
 | {{< ext "rdkit" >}} | `202503.1` | {{< badge content="Link" link="https://github.com/rdkit/rdkit" >}} | {{< category "FEAT" >}} | - | `postgresql-$v-rdkit` |
-| {{< ext "omni" "omnigres" >}} | `0.2.9` | {{< badge content="Link" link="https://github.com/omnigres/omnigres" >}} | {{< category "FEAT" >}} | `omnigres_$v` | `postgresql-$v-omnigres` |
+| {{< ext "omni" "omnigres" >}} | `0.2.14` | {{< badge content="Link" link="https://github.com/omnigres/omnigres" >}} | {{< category "FEAT" >}} | `omnigres_$v` | `postgresql-$v-omnigres` |
+| {{< ext "omnisketch" >}} | `1.0.2` | {{< badge content="Link" link="https://github.com/tvondra/omnisketch" >}} | {{< category "FUNC" >}} | `omnisketch_$v*` | `postgresql-$v-omnisketch` |
 | {{< ext "bloom" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/bloom.html" >}} | {{< category "FEAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_tle" >}} | `1.5.2` | {{< badge content="Link" link="https://github.com/aws/pg_tle" >}} | {{< category "LANG" >}} | `pg_tle_$v*` | `postgresql-$v-pg-tle` |
 | {{< ext "plv8" >}} | `3.2.4` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v*` | `postgresql-$v-plv8` |
@@ -192,7 +195,6 @@ weight: 900
 | {{< ext "quantile" >}} | `1.1.8` | {{< badge content="Link" link="https://github.com/tvondra/quantile" >}} | {{< category "FUNC" >}} | `quantile_$v*` | `postgresql-$v-quantile` |
 | {{< ext "lower_quantile" >}} | `1.0.3` | {{< badge content="Link" link="https://github.com/tvondra/lower_quantile" >}} | {{< category "FUNC" >}} | `lower_quantile_$v*` | `postgresql-$v-lower-quantile` |
 | {{< ext "count_distinct" >}} | `3.0.2` | {{< badge content="Link" link="https://github.com/tvondra/count_distinct" >}} | {{< category "FUNC" >}} | `count_distinct_$v*` | `postgresql-$v-count-distinct` |
-| {{< ext "omnisketch" >}} | `1.0.2` | {{< badge content="Link" link="https://github.com/tvondra/omnisketch" >}} | {{< category "FUNC" >}} | `omnisketch_$v*` | `postgresql-$v-omnisketch` |
 | {{< ext "ddsketch" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/tvondra/ddsketch" >}} | {{< category "FUNC" >}} | `ddsketch_$v*` | `postgresql-$v-ddsketch` |
 | {{< ext "vasco" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Florents-Tselai/vasco" >}} | {{< category "FUNC" >}} | `vasco_$v*` | `postgresql-$v-vasco` |
 | {{< ext "xicor" "pgxicor" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Florents-Tselai/pgxicor" >}} | {{< category "FUNC" >}} | `pgxicor_$v*` | `postgresql-$v-pgxicor` |
@@ -376,7 +378,7 @@ weight: 900
 
 ## 扩展
 
-共有 428 个可用的 PostgreSQL 扩展：
+共有 431 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本列表          | 属性 | 描述 |
 |:-----|:-------------------|:----:|:-----|
@@ -472,43 +474,47 @@ weight: 900
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | OrioleDB，下一代事务处理引擎 |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | {{< ext "rdkit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在PostgreSQL化学领域数据管理功能 |
-| {{< ext "omni" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
-| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 基础会话认证管理模块 |
-| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres AWS S3 API封装 |
-| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres CloudEvents 支持 |
-| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Docker容器管理模块 |
-| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 应用密钥管理模块 |
-| {{< ext "omni_email" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres Email 框架 |
-| {{< ext "omni_http" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 基本HTTP类型 |
-| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres HTTP客户端 |
-| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres HTTP服务器 |
-| {{< ext "omni_id" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Omnigres ID身份数据类型 |
-| {{< ext "omni_json" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres JSON工具箱 |
-| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres Kubernetes集成模块 |
-| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 金融账本模块 |
-| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 包管理清单模块 |
-| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres MIME数据类型 |
-| {{< ext "omni_os" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 操作系统集成模块 |
-| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Postgres多态API |
-| {{< ext "omni_python" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 第一类Python支持模块 |
-| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Omnigres PCRE兼容正则表达式模块 |
-| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres REST API 工具包 |
-| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 高级模式管理组件 |
-| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 分布式整型序列号 |
-| {{< ext "omni_service" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 服务管理器 |
-| {{< ext "omni_session" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 会话管理器 |
-| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres SQL编程组件 |
-| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 嵌入的SQLite支持 |
-| {{< ext "omni_test" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 测试框架 |
-| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 事务管理器模块 |
-| {{< ext "omni_types" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 高级数据类型模块 |
-| {{< ext "omni_var" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 局部变量模块 |
-| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 虚拟文件系统 |
-| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 虚拟文件系统（v1） |
-| {{< ext "omni_web" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Web工具箱 |
-| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 通用Worker池 |
-| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres XML工具包 |
-| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres YAML工具包 |
+| {{< ext "omni" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
+| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 基础会话认证管理模块 |
+| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres AWS S3 API封装 |
+| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres CloudEvents 支持 |
+| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Docker容器管理模块 |
+| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 应用密钥管理模块 |
+| {{< ext "omni_csv" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres CSV 工具箱 |
+| {{< ext "omni_datasets" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 数据库置备工具 |
+| {{< ext "omni_email" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres Email 框架 |
+| {{< ext "omni_http" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 基本HTTP类型 |
+| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres HTTP客户端 |
+| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres HTTP服务器 |
+| {{< ext "omni_id" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Omnigres ID身份数据类型 |
+| {{< ext "omni_json" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Omnigres JSON工具箱 |
+| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Kubernetes集成模块 |
+| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 金融账本模块 |
+| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 包管理清单模块 |
+| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres MIME数据类型 |
+| {{< ext "omni_os" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 操作系统集成模块 |
+| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Postgres多态API |
+| {{< ext "omni_python" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 第一类Python支持模块 |
+| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Omnigres PCRE兼容正则表达式模块 |
+| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres REST API 工具包 |
+| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 高级模式管理组件 |
+| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 分布式整型序列号 |
+| {{< ext "omni_service" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 服务管理器 |
+| {{< ext "omni_session" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 会话管理器 |
+| {{< ext "omni_shmem" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 共享内存管理 |
+| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres SQL编程组件 |
+| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 嵌入的SQLite支持 |
+| {{< ext "omni_test" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 测试框架 |
+| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 事务管理器模块 |
+| {{< ext "omni_types" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 高级数据类型模块 |
+| {{< ext "omni_var" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 局部变量模块 |
+| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 虚拟文件系统 |
+| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Omnigres 虚拟文件系统（v1） |
+| {{< ext "omni_web" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres Web工具箱 |
+| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres 通用Worker池 |
+| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres XML工具包 |
+| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Omnigres YAML工具包 |
+| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | bloom 索引-基于指纹的索引 |
 | {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | AWS 可信语言扩展 |
 | {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PL/JavaScript (v8) 可信过程程序语言 |
@@ -621,7 +627,6 @@ weight: 900
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Quantile聚合函数 |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Lower Quantile 聚合函数 |
 | {{< ext "count_distinct" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | COUNT(DISTINCT …) 聚合的替代方案 |
-| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | {{< ext "ddsketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | {{< ext "vasco" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用MIC发现数据中隐含的关联 |
 | {{< ext "xicor" "pgxicor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | 在PG中计算XI相关系数 |

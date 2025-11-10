@@ -19,13 +19,14 @@ type CatalogStats struct {
 
 // StatsRow represents a single row in the statistics table
 type StatsRow struct {
-	Label    string
-	All      int
+	ID       int
+	Title    string
+	Total    int
 	PGDG     int
 	PIGSTY   int
 	CONTRIB  int
 	MISS     int
-	PGCounts map[int]int // Dynamic PG version counts
+	PGCounts map[int]int // Dynamic PG version counts (e.g., 18->395, 17->419, etc.)
 }
 
 // CategoryExtensions holds category and its extensions
@@ -60,29 +61,72 @@ func (g *ExtensionGenerator) fetchCatalogStats() (*CatalogStats, error) {
 	stats := &CatalogStats{}
 	ctx := context.Background()
 
-	// Get active PostgreSQL versions
+	// Get active PostgreSQL versions first
 	pgVersions, err := g.getActivePGVersions(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("failed to get active PG versions: %w", err)
 	}
 	stats.PGVersions = pgVersions
 
-	// Build dynamic SQL for PG version columns
-	pgColumns := g.buildPGColumnSQL(pgVersions)
-
-	// Fetch extension statistics (3 rows: ALL, EL, Debian)
-	extStats, err := g.fetchExtensionStats(ctx, pgVersions, pgColumns)
-	if err != nil {
-		return nil, fmt.Errorf("failed to fetch extension stats: %w", err)
+	// Build column list for dynamic PG versions
+	pgColumnList := make([]string, 0)
+	for _, pg := range pgVersions {
+		pgColumnList = append(pgColumnList, fmt.Sprintf("pg%d", pg))
 	}
-	stats.ExtensionStats = extStats
 
-	// Fetch package statistics (3 rows: ALL, EL, Debian)
-	pkgStats, err := g.fetchPackageStats(ctx, pgVersions, pgColumns)
+	// Query the summary view directly
+	query := fmt.Sprintf(`
+		SELECT id, title, total, pgdg, pigsty, contrib, miss, %s
+		FROM pgext.summary
+		ORDER BY id
+	`, strings.Join(pgColumnList, ", "))
+
+	rows, err := g.DB.Query(ctx, query)
 	if err != nil {
-		return nil, fmt.Errorf("failed to fetch package stats: %w", err)
+		return nil, fmt.Errorf("failed to query summary: %w", err)
 	}
-	stats.PackageStats = pkgStats
+	defer rows.Close()
+
+	allRows := make([]StatsRow, 0, 6)
+
+	for rows.Next() {
+		row := StatsRow{
+			PGCounts: make(map[int]int),
+		}
+
+		// Build scan destinations
+		scanDest := []interface{}{&row.ID, &row.Title, &row.Total, &row.PGDG, &row.PIGSTY, &row.CONTRIB, &row.MISS}
+
+		// Create variables to hold PG version counts
+		pgCounts := make([]int, len(pgVersions))
+		for i := range pgVersions {
+			scanDest = append(scanDest, &pgCounts[i])
+		}
+
+		// Scan the row
+		if err := rows.Scan(scanDest...); err != nil {
+			return nil, fmt.Errorf("failed to scan summary row: %w", err)
+		}
+
+		// Map PG counts to version numbers
+		for i, pg := range pgVersions {
+			row.PGCounts[pg] = pgCounts[i]
+		}
+
+		allRows = append(allRows, row)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, fmt.Errorf("error reading summary rows: %w", err)
+	}
+
+	// Split results into Extension Stats (rows 1-3) and Package Stats (rows 4-6)
+	if len(allRows) >= 6 {
+		stats.ExtensionStats = allRows[0:3]
+		stats.PackageStats = allRows[3:6]
+	} else {
+		return nil, fmt.Errorf("expected at least 6 rows from summary, got %d", len(allRows))
+	}
 
 	return stats, nil
 }
@@ -106,157 +150,7 @@ func (g *ExtensionGenerator) getActivePGVersions(ctx context.Context) ([]int, er
 	return versions, rows.Err()
 }
 
-func (g *ExtensionGenerator) buildPGColumnSQL(pgVersions []int) string {
-	var columns []string
-	for _, pg := range pgVersions {
-		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE pg_ver @> '{%d}') AS pg%d`, pg, pg))
-	}
-	if len(columns) == 0 {
-		return ""
-	}
-	return ",\n       " + strings.Join(columns, ",\n       ")
-}
-
-func (g *ExtensionGenerator) fetchExtensionStats(ctx context.Context, pgVersions []int, pgColumns string) ([]StatsRow, error) {
-	// SQL 1: ALL extensions
-	allQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       0 AS miss%s
-FROM pgext.extension`, pgColumns)
-
-	allRow, err := g.queryStatsRow(ctx, allQuery, "ALL", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query ALL extension stats: %w", err)
-	}
-
-	// SQL 2: EL extensions
-	elPGColumns := g.buildPGColumnsForEL(pgVersions)
-	elQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       (SELECT count(*) FROM pgext.extension) - count(*) AS miss%s
-FROM pgext.extension WHERE rpm_repo IS NOT NULL`, elPGColumns)
-
-	elRow, err := g.queryStatsRow(ctx, elQuery, "EL", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query EL extension stats: %w", err)
-	}
-
-	// SQL 3: Debian extensions
-	debPGColumns := g.buildPGColumnsForDeb(pgVersions)
-	debianQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       (SELECT count(*) FROM pgext.extension) - count(*) AS miss%s
-FROM pgext.extension WHERE deb_repo IS NOT NULL`, debPGColumns)
-
-	debianRow, err := g.queryStatsRow(ctx, debianQuery, "Debian", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query Debian extension stats: %w", err)
-	}
-
-	return []StatsRow{allRow, elRow, debianRow}, nil
-}
-
-func (g *ExtensionGenerator) buildPGColumnsForEL(pgVersions []int) string {
-	var columns []string
-	for _, pg := range pgVersions {
-		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE rpm_pg @> '{%d}') AS pg%d`, pg, pg))
-	}
-	if len(columns) == 0 {
-		return ""
-	}
-	return ",\n       " + strings.Join(columns, ",\n       ")
-}
-
-func (g *ExtensionGenerator) buildPGColumnsForDeb(pgVersions []int) string {
-	var columns []string
-	for _, pg := range pgVersions {
-		columns = append(columns, fmt.Sprintf(`count(*) FILTER ( WHERE deb_pg @> '{%d}') AS pg%d`, pg, pg))
-	}
-	if len(columns) == 0 {
-		return ""
-	}
-	return ",\n       " + strings.Join(columns, ",\n       ")
-}
-
-func (g *ExtensionGenerator) fetchPackageStats(ctx context.Context, pgVersions []int, pgColumns string) ([]StatsRow, error) {
-	// SQL 4: ALL packages (lead extensions only)
-	allQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       0 AS miss%s
-FROM pgext.extension WHERE lead`, pgColumns)
-
-	allRow, err := g.queryStatsRow(ctx, allQuery, "ALL", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query ALL package stats: %w", err)
-	}
-
-	// SQL 5: EL packages (lead extensions only)
-	elPGColumns := g.buildPGColumnsForEL(pgVersions)
-	elQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE rpm_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE rpm_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss%s
-FROM pgext.extension WHERE lead AND rpm_repo IS NOT NULL`, elPGColumns)
-
-	elRow, err := g.queryStatsRow(ctx, elQuery, "EL", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query EL package stats: %w", err)
-	}
-
-	// SQL 6: Debian packages (lead extensions only)
-	debPGColumns := g.buildPGColumnsForDeb(pgVersions)
-	debianQuery := fmt.Sprintf(`SELECT count(*) AS total,
-       count(*) FILTER ( WHERE deb_repo = 'PGDG' ) AS pgdg,
-       count(*) FILTER ( WHERE deb_repo = 'PIGSTY' ) AS pigsty,
-       count(*) FILTER ( WHERE contrib ) AS contrib,
-       (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss%s
-FROM pgext.extension WHERE lead AND deb_repo IS NOT NULL`, debPGColumns)
-
-	debianRow, err := g.queryStatsRow(ctx, debianQuery, "Debian", pgVersions)
-	if err != nil {
-		return nil, fmt.Errorf("failed to query Debian package stats: %w", err)
-	}
-
-	return []StatsRow{allRow, elRow, debianRow}, nil
-}
-
-func (g *ExtensionGenerator) queryStatsRow(ctx context.Context, query, label string, pgVersions []int) (StatsRow, error) {
-	row := StatsRow{
-		Label:    label,
-		PGCounts: make(map[int]int),
-	}
-
-	// Build scan destinations
-	scanDest := []interface{}{&row.All, &row.PGDG, &row.PIGSTY, &row.CONTRIB, &row.MISS}
-
-	// Create variables to hold PG version counts
-	pgCounts := make([]int, len(pgVersions))
-	for i := range pgVersions {
-		scanDest = append(scanDest, &pgCounts[i])
-	}
-
-	// Execute query and scan results
-	err := g.DB.QueryRow(ctx, query).Scan(scanDest...)
-	if err != nil {
-		return row, err
-	}
-
-	// Copy PG counts to map
-	for i, pg := range pgVersions {
-		row.PGCounts[pg] = pgCounts[i]
-	}
-
-	return row, nil
-}
+// Removed obsolete functions - now using pgext.summary view directly
 
 func (g *ExtensionGenerator) fetchCategoriesWithExtensions() ([]CategoryExtensions, error) {
 	ctx := context.Background()
@@ -321,10 +215,10 @@ func (g *ExtensionGenerator) generateCatalogContent(stats *CatalogStats, categor
 	totalExts := 0
 	totalPkgs := 0
 	if len(stats.ExtensionStats) > 0 {
-		totalExts = stats.ExtensionStats[0].All // ALL row
+		totalExts = stats.ExtensionStats[0].Total // ALL row
 	}
 	if len(stats.PackageStats) > 0 {
-		totalPkgs = stats.PackageStats[0].All // ALL row
+		totalPkgs = stats.PackageStats[0].Total // ALL row
 	}
 
 	// Frontmatter
@@ -376,8 +270,10 @@ func (g *ExtensionGenerator) generateStatisticsTables(stats *CatalogStats, isZh 
 	// Packages table
 	if isZh {
 		b.WriteString("## 扩展包统计\n\n")
+		b.WriteString("※ 一个扩展软件包可能同时包含多个 PG 扩展，因此按软件包统计的数量会少于扩展数量。\n\n")
 	} else {
 		b.WriteString("## Package Stat\n\n")
+		b.WriteString("※ One extension package may consist of multiple extension\n\n")
 	}
 	b.WriteString(g.generateStatsTable(stats.PackageStats, stats.PGVersions, isZh, false))
 	b.WriteString("\n")
@@ -418,8 +314,10 @@ func (g *ExtensionGenerator) generateStatsTable(rows []StatsRow, pgVersions []in
 
 	// Table rows
 	for _, row := range rows {
-		b.WriteString(fmt.Sprintf("| **%s** |", row.Label))
-		b.WriteString(fmt.Sprintf(" %d |", row.All))
+		// Get label from title - extract just the first word (ALL/EL/Debian)
+		label := strings.Split(row.Title, " ")[0]
+		b.WriteString(fmt.Sprintf("| **%s** |", label))
+		b.WriteString(fmt.Sprintf(" %d |", row.Total))
 		b.WriteString(fmt.Sprintf(" %d |", row.PGDG))
 		b.WriteString(fmt.Sprintf(" %d |", row.PIGSTY))
 		b.WriteString(fmt.Sprintf(" %d |", row.CONTRIB))
@@ -482,55 +380,4 @@ func (g *ExtensionGenerator) generateCategoriesSection(categories []CategoryExte
 	return b.String()
 }
 
-func getCategoryTitle(category string, isZh bool) string {
-	if isZh {
-		switch category {
-		case "TIME":
-			return "时间与日期"
-		case "GIS":
-			return "地理空间"
-		case "RAG":
-			return "RAG向量"
-		case "FTS":
-			return "全文搜索"
-		case "OLAP":
-			return "数据分析"
-		case "FEAT":
-			return "功能扩展"
-		case "LANG":
-			return "编程语言"
-		case "TYPE":
-			return "数据类型"
-		case "FUNC":
-			return "函数与操作符"
-		case "INDEX":
-			return "索引访问"
-		case "FDW":
-			return "外部数据源"
-		case "SIM":
-			return "仿真与兼容性"
-		case "ETL":
-			return "ETL与迁移"
-		case "TOOL":
-			return "工具与实用程序"
-		case "STAT":
-			return "统计与监控"
-		case "ADMIN":
-			return "管理与安全"
-		case "AUDIT":
-			return "审计与日志"
-		case "SEC":
-			return "安全与合规"
-		case "SHARD":
-			return "分片与MPP"
-		case "REP":
-			return "流式复制"
-		case "EXTRA":
-			return "其他扩展"
-		default:
-			return category
-		}
-	}
-	// English categories (already in proper case in database)
-	return category
-}
+// Removed unused getCategoryTitle function - categories are handled by shortcodes

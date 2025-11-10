@@ -48,11 +48,13 @@ comments: false
 weight: 900
 ---
 
-## 包
+在 PIGSTY 与 PGDG 仓库中，总共有 %d 个可用的 PostgreSQL 扩展，与 % 类软件包：
+
+## 扩展包
 
 共有 %d 个可用的 PostgreSQL 扩展软件包：
 
-`, pkgCount))
+`, extCount, pkgCount, pkgCount))
 	} else {
 		b.WriteString(fmt.Sprintf(`---
 title: "Extensions"
@@ -62,11 +64,13 @@ comments: false
 weight: 900
 ---
 
+There are %d available PG extensions and %d available ext package in PGDG + Pigsty repo.
+
 ## Packages
 
 There are %d available PostgreSQL packages:
 
-`, pkgCount))
+`, extCount, pkgCount, pkgCount))
 	}
 
 	// Generate packages table

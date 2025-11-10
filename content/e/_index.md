@@ -6,6 +6,8 @@ comments: false
 weight: 900
 ---
 
+There are 431 available PG extensions and 361 available ext package in PGDG + Pigsty repo.
+
 ## Packages
 
 There are 361 available PostgreSQL packages:
@@ -94,7 +96,8 @@ There are 361 available PostgreSQL packages:
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v*` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
 | {{< ext "rdkit" >}} | `202503.1` | {{< badge content="Link" link="https://github.com/rdkit/rdkit" >}} | {{< category "FEAT" >}} | - | `postgresql-$v-rdkit` |
-| {{< ext "omni" "omnigres" >}} | `0.2.9` | {{< badge content="Link" link="https://github.com/omnigres/omnigres" >}} | {{< category "FEAT" >}} | `omnigres_$v` | `postgresql-$v-omnigres` |
+| {{< ext "omni" "omnigres" >}} | `0.2.14` | {{< badge content="Link" link="https://github.com/omnigres/omnigres" >}} | {{< category "FEAT" >}} | `omnigres_$v` | `postgresql-$v-omnigres` |
+| {{< ext "omnisketch" >}} | `1.0.2` | {{< badge content="Link" link="https://github.com/tvondra/omnisketch" >}} | {{< category "FUNC" >}} | `omnisketch_$v*` | `postgresql-$v-omnisketch` |
 | {{< ext "bloom" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/bloom.html" >}} | {{< category "FEAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_tle" >}} | `1.5.2` | {{< badge content="Link" link="https://github.com/aws/pg_tle" >}} | {{< category "LANG" >}} | `pg_tle_$v*` | `postgresql-$v-pg-tle` |
 | {{< ext "plv8" >}} | `3.2.4` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v*` | `postgresql-$v-plv8` |
@@ -192,7 +195,6 @@ There are 361 available PostgreSQL packages:
 | {{< ext "quantile" >}} | `1.1.8` | {{< badge content="Link" link="https://github.com/tvondra/quantile" >}} | {{< category "FUNC" >}} | `quantile_$v*` | `postgresql-$v-quantile` |
 | {{< ext "lower_quantile" >}} | `1.0.3` | {{< badge content="Link" link="https://github.com/tvondra/lower_quantile" >}} | {{< category "FUNC" >}} | `lower_quantile_$v*` | `postgresql-$v-lower-quantile` |
 | {{< ext "count_distinct" >}} | `3.0.2` | {{< badge content="Link" link="https://github.com/tvondra/count_distinct" >}} | {{< category "FUNC" >}} | `count_distinct_$v*` | `postgresql-$v-count-distinct` |
-| {{< ext "omnisketch" >}} | `1.0.2` | {{< badge content="Link" link="https://github.com/tvondra/omnisketch" >}} | {{< category "FUNC" >}} | `omnisketch_$v*` | `postgresql-$v-omnisketch` |
 | {{< ext "ddsketch" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/tvondra/ddsketch" >}} | {{< category "FUNC" >}} | `ddsketch_$v*` | `postgresql-$v-ddsketch` |
 | {{< ext "vasco" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Florents-Tselai/vasco" >}} | {{< category "FUNC" >}} | `vasco_$v*` | `postgresql-$v-vasco` |
 | {{< ext "xicor" "pgxicor" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Florents-Tselai/pgxicor" >}} | {{< category "FUNC" >}} | `pgxicor_$v*` | `postgresql-$v-pgxicor` |
@@ -376,7 +378,7 @@ There are 361 available PostgreSQL packages:
 
 ## Extensions
 
-There are 428 available PostgreSQL extensions:
+There are 431 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
 |:----------|:------------|:---------:|:--------------|
@@ -472,43 +474,47 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | OrioleDB, the next generation transactional engine |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A suite of Cardano-related tools |
 | {{< ext "rdkit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Cheminformatics functionality for PostgreSQL. |
-| {{< ext "omni" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Advanced adapter for Postgres extensions |
-| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Basic session management |
-| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Amazon Web Services APIs (S3) |
-| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | CloudEvents support |
-| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Docker container management |
-| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Application credential management |
-| {{< ext "omni_email" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | E-mail framework |
-| {{< ext "omni_http" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Basic HTTP types |
-| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | HTTP client |
-| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | HTTP server |
-| {{< ext "omni_id" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Identity types |
-| {{< ext "omni_json" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | JSON toolkit |
-| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Kubernetes (k8s) integration |
-| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Financial ledger |
-| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Package installation manifests |
-| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | MIME types |
-| {{< ext "omni_os" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Operating system integration |
-| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Postgres API polyfills |
-| {{< ext "omni_python" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | First-class Python support |
-| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PCRE-compatible regular expressions |
-| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | REST API toolkit (with PostgREST support) |
-| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Advanced schema management tooling |
-| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Distributed integer sequences |
-| {{< ext "omni_service" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Service management |
-| {{< ext "omni_session" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Session management |
-| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Programmatic SQL manipulation |
-| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Embedded SQLite |
-| {{< ext "omni_test" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Testing framework |
-| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Transaction management |
-| {{< ext "omni_types" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Advanced types |
-| {{< ext "omni_var" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Scoped variables |
-| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Virtual File System |
-| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Virtual File System types (v1) |
-| {{< ext "omni_web" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Common web stack primitives |
-| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Generalized worker pool |
-| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | XML toolkit |
-| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | YAML toolkit |
+| {{< ext "omni" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Advanced adapter for Postgres extensions |
+| {{< ext "omni_auth" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Basic session management |
+| {{< ext "omni_aws" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Amazon Web Services APIs (S3) |
+| {{< ext "omni_cloudevents" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | CloudEvents support |
+| {{< ext "omni_containers" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Docker container management |
+| {{< ext "omni_credentials" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Application credential management |
+| {{< ext "omni_csv" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | CSV toolkit |
+| {{< ext "omni_datasets" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Dataset provisioning |
+| {{< ext "omni_email" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | E-mail framework |
+| {{< ext "omni_http" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Basic HTTP types |
+| {{< ext "omni_httpc" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | HTTP client |
+| {{< ext "omni_httpd" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | HTTP server |
+| {{< ext "omni_id" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Identity types |
+| {{< ext "omni_json" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | JSON toolkit |
+| {{< ext "omni_kube" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Kubernetes (k8s) integration |
+| {{< ext "omni_ledger" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Financial ledger |
+| {{< ext "omni_manifest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Package installation manifests |
+| {{< ext "omni_mimetypes" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | MIME types |
+| {{< ext "omni_os" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Operating system integration |
+| {{< ext "omni_polyfill" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Postgres API polyfills |
+| {{< ext "omni_python" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | First-class Python support |
+| {{< ext "omni_regex" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PCRE-compatible regular expressions |
+| {{< ext "omni_rest" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | REST API toolkit (with PostgREST support) |
+| {{< ext "omni_schema" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Advanced schema management tooling |
+| {{< ext "omni_seq" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Distributed integer sequences |
+| {{< ext "omni_service" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Service management |
+| {{< ext "omni_session" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Session management |
+| {{< ext "omni_shmem" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Shared Memory Management |
+| {{< ext "omni_sql" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Programmatic SQL manipulation |
+| {{< ext "omni_sqlite" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Embedded SQLite |
+| {{< ext "omni_test" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Testing framework |
+| {{< ext "omni_txn" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Transaction management |
+| {{< ext "omni_types" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Advanced types |
+| {{< ext "omni_var" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Scoped variables |
+| {{< ext "omni_vfs" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Virtual File System |
+| {{< ext "omni_vfs_types_v1" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Virtual File System types (v1) |
+| {{< ext "omni_web" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Common web stack primitives |
+| {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Generalized worker pool |
+| {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | XML toolkit |
+| {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | YAML toolkit |
+| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | data structure for on-line agg of data into approximate sketch |
 | {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | bloom access method - signature file based index |
 | {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Trusted Language Extensions for PostgreSQL |
 | {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -621,7 +627,6 @@ There are 428 available PostgreSQL extensions:
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Quantile aggregation function |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Lower quantile aggregate function |
 | {{< ext "count_distinct" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
-| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | data structure for on-line agg of data into approximate sketch |
 | {{< ext "ddsketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Provides ddsketch aggregate function |
 | {{< ext "vasco" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | discover hidden correlations in your data with MIC |
 | {{< ext "xicor" "pgxicor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | XI Correlation Coefficient in Postgres |
