@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-Allow EXPLAIN to dump even more details
+[**pg_overexplain**](https://www.postgresql.org/docs/devel/pgoverexplain.html)
 
 
 ## Overview

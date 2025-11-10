@@ -14,7 +14,7 @@ The simplest way to install `pig` is to run the following installation script:
 {{< tabs items="Default,Mirror" >}}
 
 {{< tab >}}
-```bash tab="Global"
+```bash tab="Default"
 curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
 ```
 {{< /tab >}}
@@ -30,22 +30,45 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
 It downloads the latest `pig` RPM / DEB from the pigsty [repo](/repo/) and install via `rpm` or `dpkg`.
 
 
+## Version
+
+You can install specific version of pig, just pass it as cli arg:
+
+{{< tabs items="Default,Mirror" >}}
+
+{{< tab >}}
+```bash tab="Default"
+curl -fsSL https://repo.pigsty.io/pig | bash -s 0.7.1    # via Cloudflare
+```
+{{< /tab >}}
+
+{{< tab >}}
+```bash tab="Mirror"
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.7.1    # via China Mirror
+```
+{{< /tab >}}
+
+{{< /tabs >}}
+
+
 ## Release
 
 You can also download `pig` package (`RPM`/`DEB`/ Tarball) directly from the [Latest GitHub Release Page](https://github.com/pgsty/pig/releases/latest):
 
 {{< filetree/container >}}
 {{< filetree/file name="latest" >}}
-{{< filetree/folder name="v0.6.2" state="open" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig_0.6.2-1_amd64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig_0.6.2-1_arm64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig-0.6.1-1.aarch64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig-0.6.1-1.x86_64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig-v0.6.2.linux-amd64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.6.2/pig-v0.6.2.linux-arm64.tar.gz" >}}
+{{< filetree/folder name="v0.7.1" state="open" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig_0.7.1-1_amd64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig_0.7.1-1_arm64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.aarch64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-v0.7.1.linux-amd64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-v0.7.1.linux-arm64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-v0.7.1.darwin-amd64.tar.gz]" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.1/pig-v0.7.1.darwin-arm64.tar.gz" >}}
 
 {{< /filetree/folder >}}
-{{< filetree/folder name="v0.5.0" state="closed" >}}{{< /filetree/folder >}}
+{{< filetree/folder name="v0.7.0" state="closed" >}}{{< /filetree/folder >}}
 {{< filetree/folder name="......" state="closed" >}}{{< /filetree/folder >}}
 {{< /filetree/container >}}
 
@@ -96,6 +119,13 @@ Once installed, you can self-update `pig` itself to the latest version with:
 pig update   # upgrade pig itself to the latest available version
 ```
 
+To reload the latest extension metadata, you can use the following command:
+
+```bash
+pig ext reload        # update extension metadata
+```
+
+
 
 ## Build
 
@@ -114,3 +144,5 @@ apt remove -y pig     # Debian / Ubuntu ...
 yum remove -y pig     # RHEL / CentOS / RockyLinux ...
 rm -rf /usr/bin/pig   # If installed via raw binary, just remove it
 ```
+
+All `deb/rpm` packages are built via GitHub CI/CD pipeline with goreleaser.

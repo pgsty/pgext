@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-functions for verifying relation integrity
+[**amcheck**](https://www.postgresql.org/docs/current/amcheck.html)
 
 
 ## Overview

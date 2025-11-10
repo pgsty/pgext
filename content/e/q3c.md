@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-q3c sky indexing plugin
+[**q3c**](https://github.com/segasai/q3c)
 
 
 ## Overview
@@ -58,156 +58,156 @@ q3c sky indexing plugin
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_18` | 2.0.1 | `el8.x86_64` | pigsty | 98.7 KiB | [q3c_18-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_18-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el8.x86_64` | pgdg | 103.5 KiB | [q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el8.aarch64` | pigsty | 93.1 KiB | [q3c_18-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_18-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_18` | 2.0.1 | `el8.aarch64` | pgdg | 97.8 KiB | [q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_18` | 2.0.1 | `el9.x86_64` | pigsty | 132.3 KiB | [q3c_18-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_18-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el9.x86_64` | pgdg | 108.7 KiB | [q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el9.aarch64` | pigsty | 126.1 KiB | [q3c_18-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_18-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_18` | 2.0.1 | `el9.aarch64` | pgdg | 105.3 KiB | [q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_18` | 2.0.1 | `el10.x86_64` | pigsty | 134.5 KiB | [q3c_18-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_18-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el10.x86_64` | pgdg | 127.7 KiB | [q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_18` | 2.0.1 | `el10.aarch64` | pigsty | 128.9 KiB | [q3c_18-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_18-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_18` | 2.0.1 | `el10.aarch64` | pgdg | 106.9 KiB | [q3c_18-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-18-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 140.8 KiB | [postgresql-18-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 157.1 KiB | [postgresql-18-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 138.9 KiB | [postgresql-18-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 161.0 KiB | [postgresql-18-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 153.8 KiB | [postgresql-18-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 124.0 KiB | [postgresql-18-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 155.3 KiB | [postgresql-18-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 124.4 KiB | [postgresql-18-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_18` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.7 KiB | [q3c_18-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_18-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/q3c_18-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.1 KiB | [q3c_18-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_18-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_18` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/q3c_18-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_18` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 132.3 KiB | [q3c_18-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_18-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/q3c_18-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 126.1 KiB | [q3c_18-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_18-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_18` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.3 KiB | [q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/q3c_18-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_18` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 134.5 KiB | [q3c_18-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_18-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/q3c_18-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_18` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.9 KiB | [q3c_18-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_18-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_18` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 106.9 KiB | [q3c_18-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/q3c_18-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 140.8 KiB | [postgresql-18-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 157.1 KiB | [postgresql-18-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 138.9 KiB | [postgresql-18-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 161.0 KiB | [postgresql-18-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 153.8 KiB | [postgresql-18-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 124.0 KiB | [postgresql-18-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 155.3 KiB | [postgresql-18-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 124.4 KiB | [postgresql-18-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_17` | 2.0.1 | `el8.x86_64` | pigsty | 98.7 KiB | [q3c_17-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_17-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el8.x86_64` | pgdg | 103.5 KiB | [q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el8.aarch64` | pigsty | 93.1 KiB | [q3c_17-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_17-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_17` | 2.0.1 | `el8.aarch64` | pgdg | 97.8 KiB | [q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_17` | 2.0.1 | `el9.x86_64` | pigsty | 132.3 KiB | [q3c_17-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_17-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el9.x86_64` | pgdg | 101.8 KiB | [q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el9.aarch64` | pigsty | 126.9 KiB | [q3c_17-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_17-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_17` | 2.0.1 | `el9.aarch64` | pgdg | 105.4 KiB | [q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_17` | 2.0.1 | `el10.x86_64` | pigsty | 105.7 KiB | [q3c_17-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_17-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el10.x86_64` | pgdg | 127.7 KiB | [q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_17` | 2.0.1 | `el10.aarch64` | pigsty | 100.4 KiB | [q3c_17-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_17-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_17` | 2.0.1 | `el10.aarch64` | pgdg | 107.7 KiB | [q3c_17-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 150.9 KiB | [postgresql-17-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 159.7 KiB | [postgresql-17-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 156.4 KiB | [postgresql-17-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 158.3 KiB | [postgresql-17-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 153.6 KiB | [postgresql-17-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 165.4 KiB | [postgresql-17-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 142.7 KiB | [postgresql-17-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 144.2 KiB | [postgresql-17-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_17` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.7 KiB | [q3c_17-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_17-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/q3c_17-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.1 KiB | [q3c_17-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_17-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_17` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/q3c_17-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_17` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 132.3 KiB | [q3c_17-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_17-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 101.8 KiB | [q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/q3c_17-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 126.9 KiB | [q3c_17-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_17-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_17` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.4 KiB | [q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/q3c_17-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_17` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.7 KiB | [q3c_17-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_17-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/q3c_17-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_17` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 100.4 KiB | [q3c_17-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_17-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_17` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.7 KiB | [q3c_17-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/q3c_17-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 150.9 KiB | [postgresql-17-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 159.7 KiB | [postgresql-17-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 156.4 KiB | [postgresql-17-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 158.3 KiB | [postgresql-17-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 153.6 KiB | [postgresql-17-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 165.4 KiB | [postgresql-17-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 142.7 KiB | [postgresql-17-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 144.2 KiB | [postgresql-17-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_16` | 2.0.1 | `el8.x86_64` | pigsty | 98.7 KiB | [q3c_16-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_16-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el8.x86_64` | pgdg | 103.5 KiB | [q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el8.aarch64` | pigsty | 93.1 KiB | [q3c_16-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_16-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_16` | 2.0.1 | `el8.aarch64` | pgdg | 97.8 KiB | [q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_16` | 2.0.1 | `el9.x86_64` | pigsty | 132.3 KiB | [q3c_16-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_16-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el9.x86_64` | pgdg | 103.3 KiB | [q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el9.aarch64` | pigsty | 103.8 KiB | [q3c_16-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_16-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_16` | 2.0.1 | `el9.aarch64` | pgdg | 105.4 KiB | [q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_16` | 2.0.1 | `el10.x86_64` | pigsty | 105.7 KiB | [q3c_16-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_16-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el10.x86_64` | pgdg | 127.7 KiB | [q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_16` | 2.0.1 | `el10.aarch64` | pigsty | 100.3 KiB | [q3c_16-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_16-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_16` | 2.0.1 | `el10.aarch64` | pgdg | 107.5 KiB | [q3c_16-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 134.7 KiB | [postgresql-16-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 160.4 KiB | [postgresql-16-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 159.1 KiB | [postgresql-16-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 159.2 KiB | [postgresql-16-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 160.8 KiB | [postgresql-16-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 154.0 KiB | [postgresql-16-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 149.6 KiB | [postgresql-16-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 144.3 KiB | [postgresql-16-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_16` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.7 KiB | [q3c_16-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_16-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 103.5 KiB | [q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/q3c_16-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.1 KiB | [q3c_16-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_16-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_16` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/q3c_16-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_16` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 132.3 KiB | [q3c_16-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_16-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 103.3 KiB | [q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/q3c_16-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 103.8 KiB | [q3c_16-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_16-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_16` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 105.4 KiB | [q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/q3c_16-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_16` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.7 KiB | [q3c_16-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_16-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 127.7 KiB | [q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/q3c_16-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_16` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 100.3 KiB | [q3c_16-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_16-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_16` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 107.5 KiB | [q3c_16-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/q3c_16-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 134.7 KiB | [postgresql-16-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 160.4 KiB | [postgresql-16-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 159.1 KiB | [postgresql-16-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 159.2 KiB | [postgresql-16-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 160.8 KiB | [postgresql-16-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 154.0 KiB | [postgresql-16-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 149.6 KiB | [postgresql-16-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 144.3 KiB | [postgresql-16-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_15` | 2.0.1 | `el8.x86_64` | pigsty | 97.6 KiB | [q3c_15-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_15-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el8.x86_64` | pgdg | 102.3 KiB | [q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el8.aarch64` | pigsty | 92.7 KiB | [q3c_15-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_15-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_15` | 2.0.1 | `el8.aarch64` | pgdg | 97.2 KiB | [q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_15` | 2.0.1 | `el9.x86_64` | pigsty | 160.3 KiB | [q3c_15-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_15-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el9.x86_64` | pgdg | 109.3 KiB | [q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el9.aarch64` | pigsty | 107.3 KiB | [q3c_15-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_15-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_15` | 2.0.1 | `el9.aarch64` | pgdg | 103.5 KiB | [q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_15` | 2.0.1 | `el10.x86_64` | pigsty | 134.0 KiB | [q3c_15-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_15-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el10.x86_64` | pgdg | 92.2 KiB | [q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_15` | 2.0.1 | `el10.aarch64` | pigsty | 128.1 KiB | [q3c_15-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_15-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_15` | 2.0.1 | `el10.aarch64` | pgdg | 104.1 KiB | [q3c_15-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 139.2 KiB | [postgresql-15-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 158.9 KiB | [postgresql-15-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 151.5 KiB | [postgresql-15-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 125.4 KiB | [postgresql-15-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 153.7 KiB | [postgresql-15-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 164.1 KiB | [postgresql-15-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 132.1 KiB | [postgresql-15-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 146.3 KiB | [postgresql-15-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_15` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.6 KiB | [q3c_15-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_15-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.3 KiB | [q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/q3c_15-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 92.7 KiB | [q3c_15-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_15-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_15` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/q3c_15-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_15` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 160.3 KiB | [q3c_15-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_15-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.3 KiB | [q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/q3c_15-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 107.3 KiB | [q3c_15-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_15-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_15` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.5 KiB | [q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/q3c_15-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_15` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 134.0 KiB | [q3c_15-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_15-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.2 KiB | [q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/q3c_15-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_15` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.1 KiB | [q3c_15-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_15-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_15` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.1 KiB | [q3c_15-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/q3c_15-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 139.2 KiB | [postgresql-15-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 158.9 KiB | [postgresql-15-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 151.5 KiB | [postgresql-15-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 125.4 KiB | [postgresql-15-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 153.7 KiB | [postgresql-15-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 164.1 KiB | [postgresql-15-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 132.1 KiB | [postgresql-15-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 146.3 KiB | [postgresql-15-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_14` | 2.0.1 | `el8.x86_64` | pigsty | 97.6 KiB | [q3c_14-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_14-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el8.x86_64` | pgdg | 102.3 KiB | [q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el8.aarch64` | pigsty | 92.6 KiB | [q3c_14-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_14-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_14` | 2.0.1 | `el8.aarch64` | pgdg | 97.2 KiB | [q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_14` | 2.0.1 | `el9.x86_64` | pigsty | 160.3 KiB | [q3c_14-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_14-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el9.x86_64` | pgdg | 109.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el9.aarch64` | pigsty | 128.1 KiB | [q3c_14-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_14-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_14` | 2.0.1 | `el9.aarch64` | pgdg | 103.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_14` | 2.0.1 | `el10.x86_64` | pigsty | 133.7 KiB | [q3c_14-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_14-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el10.x86_64` | pgdg | 92.1 KiB | [q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_14` | 2.0.1 | `el10.aarch64` | pigsty | 128.1 KiB | [q3c_14-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_14-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_14` | 2.0.1 | `el10.aarch64` | pgdg | 104.0 KiB | [q3c_14-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 143.4 KiB | [postgresql-14-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 158.3 KiB | [postgresql-14-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 148.8 KiB | [postgresql-14-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 144.2 KiB | [postgresql-14-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 163.5 KiB | [postgresql-14-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 146.2 KiB | [postgresql-14-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 150.9 KiB | [postgresql-14-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 155.4 KiB | [postgresql-14-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.6 KiB | [q3c_14-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_14-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.3 KiB | [q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/q3c_14-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 92.6 KiB | [q3c_14-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_14-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_14` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/q3c_14-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 160.3 KiB | [q3c_14-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_14-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/q3c_14-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 128.1 KiB | [q3c_14-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_14-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_14` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.3 KiB | [q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/q3c_14-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_14` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 133.7 KiB | [q3c_14-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_14-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.1 KiB | [q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/q3c_14-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_14` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.1 KiB | [q3c_14-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_14-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_14` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.0 KiB | [q3c_14-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/q3c_14-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 143.4 KiB | [postgresql-14-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 158.3 KiB | [postgresql-14-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 148.8 KiB | [postgresql-14-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 144.2 KiB | [postgresql-14-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 163.5 KiB | [postgresql-14-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 146.2 KiB | [postgresql-14-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 150.9 KiB | [postgresql-14-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 155.4 KiB | [postgresql-14-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_13` | 2.0.1 | `el8.x86_64` | pigsty | 97.3 KiB | [q3c_13-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_13-2.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el8.x86_64` | pgdg | 102.1 KiB | [q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el8.aarch64` | pigsty | 92.6 KiB | [q3c_13-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_13-2.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_13` | 2.0.1 | `el8.aarch64` | pgdg | 97.2 KiB | [q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_13` | 2.0.1 | `el9.x86_64` | pigsty | 160.3 KiB | [q3c_13-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_13-2.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el9.x86_64` | pgdg | 111.1 KiB | [q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el9.aarch64` | pigsty | 112.2 KiB | [q3c_13-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_13-2.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_13` | 2.0.1 | `el9.aarch64` | pgdg | 103.3 KiB | [q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_13` | 2.0.1 | `el10.x86_64` | pigsty | 133.9 KiB | [q3c_13-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_13-2.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el10.x86_64` | pgdg | 92.1 KiB | [q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_13` | 2.0.1 | `el10.aarch64` | pigsty | 128.1 KiB | [q3c_13-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_13-2.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_13` | 2.0.1 | `el10.aarch64` | pgdg | 104.0 KiB | [q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-q3c` | 2.0.1 | `d12.x86_64` | pgdg | 136.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `d12.aarch64` | pgdg | 156.1 KiB | [postgresql-13-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `d13.x86_64` | pgdg | 148.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `d13.aarch64` | pgdg | 155.4 KiB | [postgresql-13-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `u22.x86_64` | pgdg | 159.5 KiB | [postgresql-13-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `u22.aarch64` | pgdg | 161.4 KiB | [postgresql-13-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `u24.x86_64` | pgdg | 144.1 KiB | [postgresql-13-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-q3c` | 2.0.1 | `u24.aarch64` | pgdg | 149.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `q3c_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 97.3 KiB | [q3c_13-2.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_13-2.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.1 KiB | [q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 92.6 KiB | [q3c_13-2.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_13-2.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `q3c_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm) |
+| `q3c_13` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 160.3 KiB | [q3c_13-2.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_13-2.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 111.1 KiB | [q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 112.2 KiB | [q3c_13-2.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_13-2.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `q3c_13` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.3 KiB | [q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm) |
+| `q3c_13` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 133.9 KiB | [q3c_13-2.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_13-2.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.1 KiB | [q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `q3c_13` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 128.1 KiB | [q3c_13-2.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_13-2.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `q3c_13` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.0 KiB | [q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-13-q3c` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 136.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg12+1_amd64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 156.1 KiB | [postgresql-13-q3c_2.0.1-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg12+1_arm64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 148.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg13+1_amd64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 155.4 KiB | [postgresql-13-q3c_2.0.1-5.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg13+1_arm64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 159.5 KiB | [postgresql-13-q3c_2.0.1-5.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 161.4 KiB | [postgresql-13-q3c_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 144.1 KiB | [postgresql-13-q3c_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-q3c` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 149.9 KiB | [postgresql-13-q3c_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

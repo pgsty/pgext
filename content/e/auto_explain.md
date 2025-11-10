@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-Provides a means for logging execution plans of slow statements automatically
+[**auto_explain**](https://www.postgresql.org/docs/current/auto-explain.html)
 
 
 ## Overview

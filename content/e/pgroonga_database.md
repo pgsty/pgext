@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-PGroonga database management module
+[**pgroonga**](https://github.com/pgroonga/pgroonga)
 
 
 ## Overview

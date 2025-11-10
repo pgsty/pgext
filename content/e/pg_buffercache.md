@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-examine the shared buffer cache
+[**pg_buffercache**](https://www.postgresql.org/docs/current/pgbuffercache.html)
 
 
 ## Overview

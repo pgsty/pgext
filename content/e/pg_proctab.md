@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-PostgreSQL extension to access the OS process table
+[**pgnodemx**](https://github.com/markwkm/pg_proctab)
 
 
 ## Overview

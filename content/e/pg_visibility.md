@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-examine the visibility map (VM) and page-level visibility info
+[**pg_visibility**](https://www.postgresql.org/docs/current/pgvisibility.html)
 
 
 ## Overview

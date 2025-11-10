@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-calculate great-circle distances on the surface of the Earth
+[**earthdistance**](https://www.postgresql.org/docs/current/earthdistance.html)
 
 
 ## Overview

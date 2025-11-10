@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-examine the free space map (FSM)
+[**pg_freespacemap**](https://www.postgresql.org/docs/current/pgfreespacemap.html)
 
 
 ## Overview

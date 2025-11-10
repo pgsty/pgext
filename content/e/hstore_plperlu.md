@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-transform between hstore and plperlu
+[**plperlu**](https://www.postgresql.org/docs/current/plperl.html)
 
 
 ## Overview

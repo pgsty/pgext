@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data type for multidimensional cubes
+[**cube**](https://www.postgresql.org/docs/current/cube.html)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-support for indexing common datatypes in GIN
+[**btree_gin**](https://www.postgresql.org/docs/current/btree-gin.html)
 
 
 ## Overview

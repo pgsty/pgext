@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-checks user passwords and reject weak password
+[**passwordcheck**](https://www.postgresql.org/docs/current/passwordcheck.html)
 
 
 ## Overview

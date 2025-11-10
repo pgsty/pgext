@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-functions to inspect contents of PostgreSQL Write-Ahead Log
+[**pg_walinspect**](https://www.postgresql.org/docs/current/pgwalinspect.html)
 
 
 ## Overview

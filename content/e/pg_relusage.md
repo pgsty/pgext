@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-Log all the queries that reference a particular column
+[**pg_relusage**](https://github.com/adept/pg_relusage)
 
 
 ## Overview
@@ -58,120 +58,120 @@ Log all the queries that reference a particular column
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_18` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_18` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_18` | 0.0.1 | `el9.x86_64` | pigsty | 13.0 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_18` | 0.0.1 | `el9.aarch64` | pigsty | 13.2 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_18` | 0.0.1 | `el10.x86_64` | pigsty | 13.0 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_18` | 0.0.1 | `el10.aarch64` | pigsty | 13.4 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 12.4 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 12.4 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.6 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.5 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_18` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_18` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_18` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.0 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_18` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.2 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_18` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.0 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_18` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [pg_relusage_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.4 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.4 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.6 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.5 KiB | [postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-18-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_17` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_17` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_17` | 0.0.1 | `el9.x86_64` | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_17` | 0.0.1 | `el9.aarch64` | pigsty | 13.3 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_17` | 0.0.1 | `el10.x86_64` | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_17` | 0.0.1 | `el10.aarch64` | pigsty | 13.4 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 12.0 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.1 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 12.0 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.1 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 14.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 14.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_17` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_17` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_17` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_17` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_17` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_17` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [pg_relusage_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.0 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 14.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 14.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.6 KiB | [postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-17-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_16` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_16` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_16` | 0.0.1 | `el9.x86_64` | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_16` | 0.0.1 | `el9.aarch64` | pigsty | 13.3 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_16` | 0.0.1 | `el10.x86_64` | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_16` | 0.0.1 | `el10.aarch64` | pigsty | 13.4 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 12.0 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 14.5 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 14.6 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.6 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.5 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_16` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_16` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_16` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_16` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_16` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_16` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [pg_relusage_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 14.5 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 14.6 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.6 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.5 KiB | [postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-16-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_15` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_15` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_15` | 0.0.1 | `el9.x86_64` | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_15` | 0.0.1 | `el9.aarch64` | pigsty | 13.3 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_15` | 0.0.1 | `el10.x86_64` | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_15` | 0.0.1 | `el10.aarch64` | pigsty | 13.4 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 12.1 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.1 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 12.0 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 14.5 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 14.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_15` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_15` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_15` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_15` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_15` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_15` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [pg_relusage_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.1 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 14.5 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 14.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.6 KiB | [postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-15-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_14` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_14` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_14` | 0.0.1 | `el9.x86_64` | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_14` | 0.0.1 | `el9.aarch64` | pigsty | 13.3 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_14` | 0.0.1 | `el10.x86_64` | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_14` | 0.0.1 | `el10.aarch64` | pigsty | 13.4 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 12.0 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.1 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 12.0 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.1 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 14.5 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 14.6 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.6 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.5 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_14` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_14` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_14` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_14` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_14` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_14` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [pg_relusage_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.0 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 14.5 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 14.6 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.6 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.5 KiB | [postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-14-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_relusage_13` | 0.0.1 | `el8.x86_64` | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `pg_relusage_13` | 0.0.1 | `el8.aarch64` | pigsty | 13.5 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `pg_relusage_13` | 0.0.1 | `el9.x86_64` | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `pg_relusage_13` | 0.0.1 | `el9.aarch64` | pigsty | 13.3 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_relusage_13` | 0.0.1 | `el10.x86_64` | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `pg_relusage_13` | 0.0.1 | `el10.aarch64` | pigsty | 13.5 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `d12.x86_64` | pigsty | 11.8 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `d12.aarch64` | pigsty | 12.0 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `d13.x86_64` | pigsty | 11.8 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `d13.aarch64` | pigsty | 12.1 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `u22.x86_64` | pigsty | 14.2 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `u22.aarch64` | pigsty | 14.4 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `u24.x86_64` | pigsty | 12.3 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-pg-relusage` | 0.0.1 | `u24.aarch64` | pigsty | 12.4 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_relusage_13` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `pg_relusage_13` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `pg_relusage_13` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `pg_relusage_13` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_relusage_13` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_relusage_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `pg_relusage_13` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [pg_relusage_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_relusage_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.8 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.0 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.8 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 14.2 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 14.4 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.3 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pg-relusage` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.4 KiB | [postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-relusage/postgresql-13-pg-relusage_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

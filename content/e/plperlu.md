@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/PerlU untrusted procedural language
+[**plperlu**](https://www.postgresql.org/docs/current/plperl.html)
 
 
 ## Overview

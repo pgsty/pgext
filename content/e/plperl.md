@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/Perl procedural language
+[**plperl**](https://www.postgresql.org/docs/current/plperl.html)
 
 
 ## Overview

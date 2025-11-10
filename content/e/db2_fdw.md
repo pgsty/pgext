@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-foreign data wrapper for DB2 access
+[**db2_fdw**](https://github.com/wolfgangbrandl/db2_fdw)
 
 
 ## Overview
@@ -57,91 +57,91 @@ foreign data wrapper for DB2 access
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_18` | 18.0.1 | `el9.x86_64` | pgdg | 64.3 KiB | [db2_fdw_18-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/db2_fdw_18-18.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_18` | 18.0.1 | `el9.x86_64` | pgdg | 64.4 KiB | [db2_fdw_18-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/db2_fdw_18-18.0.1-2PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_18` | 18.0.1 | `el10.x86_64` | pgdg | 65.4 KiB | [db2_fdw_18-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/db2_fdw_18-18.0.1-2PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_18` | 18.0.1 | `el10.x86_64` | pgdg | 65.3 KiB | [db2_fdw_18-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/db2_fdw_18-18.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_18` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.3 KiB | [db2_fdw_18-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/db2_fdw_18-18.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_18` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.4 KiB | [db2_fdw_18-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/db2_fdw_18-18.0.1-2PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_18` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.4 KiB | [db2_fdw_18-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/db2_fdw_18-18.0.1-2PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_18` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.3 KiB | [db2_fdw_18-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/db2_fdw_18-18.0.1-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_17` | 7.0.0 | `el8.x86_64` | pgdg | 59.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el8.x86_64` | pgdg | 70.6 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el8.x86_64` | pgdg | 70.5 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_17` | 7.0.0 | `el9.x86_64` | pgdg | 56.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el9.x86_64` | pgdg | 64.4 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el9.x86_64` | pgdg | 64.3 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_17` | 7.0.0 | `el10.x86_64` | pgdg | 57.8 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el10.x86_64` | pgdg | 65.3 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_17` | 18.0.1 | `el10.x86_64` | pgdg | 65.4 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_17` | `7.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 59.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 70.6 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 70.5 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_17` | `7.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 56.6 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.4 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.3 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_17` | `7.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 57.8 KiB | [db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-7.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.3 KiB | [db2_fdw_17-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-18.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_17` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.4 KiB | [db2_fdw_17-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/db2_fdw_17-18.0.1-2PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_16` | 7.0.0 | `el8.x86_64` | pgdg | 59.6 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_16` | 6.0.1 | `el8.x86_64` | pgdg | 59.4 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el8.x86_64` | pgdg | 70.5 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el8.x86_64` | pgdg | 70.6 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_16` | 7.0.0 | `el9.x86_64` | pgdg | 56.6 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_16` | 6.0.1 | `el9.x86_64` | pgdg | 58.0 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el9.x86_64` | pgdg | 64.4 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el9.x86_64` | pgdg | 64.3 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_16` | 7.0.0 | `el10.x86_64` | pgdg | 57.9 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el10.x86_64` | pgdg | 65.5 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_16` | 18.0.1 | `el10.x86_64` | pgdg | 65.4 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_16` | `7.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 59.6 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_16` | `6.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 59.4 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 70.5 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 70.6 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_16` | `7.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 56.6 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_16` | `6.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 58.0 KiB | [db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.4 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.3 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_16` | `7.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 57.9 KiB | [db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-7.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.5 KiB | [db2_fdw_16-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-18.0.1-2PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_16` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 65.4 KiB | [db2_fdw_16-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/db2_fdw_16-18.0.1-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_15` | 7.0.0 | `el8.x86_64` | pgdg | 60.7 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_15` | 6.0.1 | `el8.x86_64` | pgdg | 60.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el8.x86_64` | pgdg | 73.1 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el8.x86_64` | pgdg | 73.0 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_15` | 7.0.0 | `el9.x86_64` | pgdg | 60.2 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_15` | 6.0.1 | `el9.x86_64` | pgdg | 62.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el9.x86_64` | pgdg | 69.2 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el9.x86_64` | pgdg | 69.3 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_15` | 7.0.0 | `el10.x86_64` | pgdg | 60.9 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el10.x86_64` | pgdg | 70.0 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_15` | 18.0.1 | `el10.x86_64` | pgdg | 69.9 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_15` | `7.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.7 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_15` | `6.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 73.1 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 73.0 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_15` | `7.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 60.2 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_15` | `6.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.4 KiB | [db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 69.2 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 69.3 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_15` | `7.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 60.9 KiB | [db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-7.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 70.0 KiB | [db2_fdw_15-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-18.0.1-2PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_15` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 69.9 KiB | [db2_fdw_15-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/db2_fdw_15-18.0.1-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_14` | 7.0.0 | `el8.x86_64` | pgdg | 60.8 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_14` | 6.0.1 | `el8.x86_64` | pgdg | 60.6 KiB | [db2_fdw_14-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-6.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_14` | 5.0.0 | `el8.x86_64` | pgdg | 357.6 KiB | [db2_fdw_14-5.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-5.0.0-1.rhel8.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el8.x86_64` | pgdg | 73.0 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el8.x86_64` | pgdg | 73.1 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_14` | 7.0.0 | `el9.x86_64` | pgdg | 60.2 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_14` | 6.0.1 | `el9.x86_64` | pgdg | 62.5 KiB | [db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_14` | 5.0.0 | `el9.x86_64` | pgdg | 364.1 KiB | [db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el9.x86_64` | pgdg | 69.3 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el9.x86_64` | pgdg | 69.4 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_14` | 7.0.0 | `el10.x86_64` | pgdg | 61.0 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el10.x86_64` | pgdg | 70.0 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `db2_fdw_14` | 18.0.1 | `el10.x86_64` | pgdg | 70.1 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_14` | `7.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.8 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_14` | `6.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.6 KiB | [db2_fdw_14-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-6.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_14` | `5.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 357.6 KiB | [db2_fdw_14-5.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-5.0.0-1.rhel8.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 73.0 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 73.1 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-8-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_14` | `7.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 60.2 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | `6.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.5 KiB | [db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | `5.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 364.1 KiB | [db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-5.0.0-1.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 69.3 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 69.4 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_14` | `7.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 61.0 KiB | [db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-7.0.0-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 70.0 KiB | [db2_fdw_14-18.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-18.0.1-1PGDG.rhel10.x86_64.rpm) |
+| `db2_fdw_14` | `18.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 70.1 KiB | [db2_fdw_14-18.0.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-10-x86_64/db2_fdw_14-18.0.1-2PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `db2_fdw_13` | 7.0.0 | `el8.x86_64` | pgdg | 60.5 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_13` | 6.0.1 | `el8.x86_64` | pgdg | 60.3 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `db2_fdw_13` | 5.0.0 | `el8.x86_64` | pgdg | 355.2 KiB | [db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm) |
-| `db2_fdw_13` | 7.0.0 | `el9.x86_64` | pgdg | 60.4 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_13` | 6.0.1 | `el9.x86_64` | pgdg | 62.5 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `db2_fdw_13` | 5.0.0 | `el9.x86_64` | pgdg | 362.2 KiB | [db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm) |
-| `db2_fdw_13` | 4.0.0 | `el9.x86_64` | pgdg | 362.2 KiB | [db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | `7.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.5 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | `6.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 60.3 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | `5.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 355.2 KiB | [db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/db2_fdw_13-5.0.0-1.rhel8.x86_64.rpm) |
+| `db2_fdw_13` | `7.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 60.4 KiB | [db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-7.0.0-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | `6.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.5 KiB | [db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-6.0.1-1PGDG.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | `5.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 362.2 KiB | [db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-5.0.0-1.rhel9.x86_64.rpm) |
+| `db2_fdw_13` | `4.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 362.2 KiB | [db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/db2_fdw_13-4.0.0-2.rhel9.x86_64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

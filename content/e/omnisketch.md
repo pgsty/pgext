@@ -2,19 +2,19 @@
 title: "omnisketch"
 linkTitle: "omnisketch"
 description: "data structure for on-line agg of data into approximate sketch"
-weight: 4640
+weight: 2980
 categories: ["FUNC"]
 width: full
 ---
 
-data structure for on-line agg of data into approximate sketch
+[**omnisketch**](https://github.com/tvondra/omnisketch)
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4640** | {{< badge content="omnisketch" link="https://github.com/tvondra/omnisketch" >}} | {{< ext "omnisketch" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2980** | {{< badge content="omnisketch" link="https://github.com/tvondra/omnisketch" >}} | {{< ext "omnisketch" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -58,120 +58,120 @@ data structure for on-line agg of data into approximate sketch
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_18` | 1.0.2 | `el8.x86_64` | pigsty | 20.4 KiB | [omnisketch_18-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_18-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_18` | 1.0.2 | `el8.aarch64` | pigsty | 20.3 KiB | [omnisketch_18-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_18-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_18` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_18-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_18-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_18` | 1.0.2 | `el9.aarch64` | pigsty | 20.3 KiB | [omnisketch_18-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_18-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_18` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_18-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_18-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_18` | 1.0.2 | `el10.aarch64` | pigsty | 20.5 KiB | [omnisketch_18-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_18-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.2 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 27.5 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 27.2 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_18` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.4 KiB | [omnisketch_18-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_18-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_18` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.3 KiB | [omnisketch_18-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_18-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_18` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_18-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_18-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_18` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.3 KiB | [omnisketch_18-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_18-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_18` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_18-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_18-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_18` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.5 KiB | [omnisketch_18-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_18-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.2 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 26.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 27.5 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 27.2 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.1 KiB | [postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-18-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_17` | 1.0.2 | `el8.x86_64` | pigsty | 20.4 KiB | [omnisketch_17-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_17-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_17` | 1.0.2 | `el8.aarch64` | pigsty | 20.4 KiB | [omnisketch_17-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_17-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_17` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_17-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_17-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_17` | 1.0.2 | `el9.aarch64` | pigsty | 20.2 KiB | [omnisketch_17-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_17-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_17` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_17-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_17-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_17` | 1.0.2 | `el10.aarch64` | pigsty | 20.5 KiB | [omnisketch_17-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_17-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 26.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.1 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 26.1 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 28.9 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 28.5 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_17` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.4 KiB | [omnisketch_17-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_17-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_17` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.4 KiB | [omnisketch_17-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_17-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_17` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_17-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_17-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_17` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.2 KiB | [omnisketch_17-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_17-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_17` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_17-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_17-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_17` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.5 KiB | [omnisketch_17-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_17-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.1 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 26.1 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 28.9 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.5 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-17-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_16` | 1.0.2 | `el8.x86_64` | pigsty | 20.4 KiB | [omnisketch_16-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_16-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_16` | 1.0.2 | `el8.aarch64` | pigsty | 20.4 KiB | [omnisketch_16-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_16-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_16` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_16-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_16-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_16` | 1.0.2 | `el9.aarch64` | pigsty | 20.2 KiB | [omnisketch_16-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_16-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_16` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_16-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_16-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_16` | 1.0.2 | `el10.aarch64` | pigsty | 20.5 KiB | [omnisketch_16-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_16-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 26.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 26.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 28.8 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 28.5 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 27.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_16` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.4 KiB | [omnisketch_16-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_16-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_16` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.4 KiB | [omnisketch_16-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_16-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_16` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_16-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_16-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_16` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.2 KiB | [omnisketch_16-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_16-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_16` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_16-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_16-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_16` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.5 KiB | [omnisketch_16-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_16-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 26.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 28.8 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.5 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.0 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.1 KiB | [postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-16-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_15` | 1.0.2 | `el8.x86_64` | pigsty | 20.4 KiB | [omnisketch_15-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_15-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_15` | 1.0.2 | `el8.aarch64` | pigsty | 20.4 KiB | [omnisketch_15-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_15-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_15` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_15-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_15-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_15` | 1.0.2 | `el9.aarch64` | pigsty | 20.2 KiB | [omnisketch_15-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_15-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_15` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_15-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_15-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_15` | 1.0.2 | `el10.aarch64` | pigsty | 20.5 KiB | [omnisketch_15-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_15-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.3 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 26.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.1 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 26.1 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 28.9 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 28.5 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_15` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.4 KiB | [omnisketch_15-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_15-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_15` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.4 KiB | [omnisketch_15-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_15-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_15` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_15-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_15-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_15` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.2 KiB | [omnisketch_15-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_15-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_15` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_15-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_15-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_15` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.5 KiB | [omnisketch_15-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_15-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.3 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.1 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 26.1 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 28.9 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.5 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-15-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_14` | 1.0.2 | `el8.x86_64` | pigsty | 20.4 KiB | [omnisketch_14-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_14-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_14` | 1.0.2 | `el8.aarch64` | pigsty | 20.3 KiB | [omnisketch_14-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_14-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_14` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_14-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_14-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_14` | 1.0.2 | `el9.aarch64` | pigsty | 20.2 KiB | [omnisketch_14-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_14-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_14` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_14-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_14-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_14` | 1.0.2 | `el10.aarch64` | pigsty | 20.5 KiB | [omnisketch_14-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_14-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 26.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.2 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 26.1 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 28.8 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 28.6 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.2 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 27.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_14` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.4 KiB | [omnisketch_14-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_14-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_14` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.3 KiB | [omnisketch_14-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_14-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_14` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_14-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_14-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_14` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.2 KiB | [omnisketch_14-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_14-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_14` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_14-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_14-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_14` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.5 KiB | [omnisketch_14-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_14-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 26.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.2 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 26.1 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 28.8 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.6 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.2 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 27.0 KiB | [postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-14-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `omnisketch_13` | 1.0.2 | `el8.x86_64` | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_13-1.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `omnisketch_13` | 1.0.2 | `el8.aarch64` | pigsty | 20.3 KiB | [omnisketch_13-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_13-1.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `omnisketch_13` | 1.0.2 | `el9.x86_64` | pigsty | 20.1 KiB | [omnisketch_13-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_13-1.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `omnisketch_13` | 1.0.2 | `el9.aarch64` | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_13-1.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `omnisketch_13` | 1.0.2 | `el10.x86_64` | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_13-1.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `omnisketch_13` | 1.0.2 | `el10.aarch64` | pigsty | 20.4 KiB | [omnisketch_13-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_13-1.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-omnisketch` | 1.0.2 | `d12.x86_64` | pigsty | 26.1 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `d12.aarch64` | pigsty | 25.5 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `d13.x86_64` | pigsty | 26.2 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `d13.aarch64` | pigsty | 25.8 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `u22.x86_64` | pigsty | 28.8 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `u22.aarch64` | pigsty | 28.5 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `u24.x86_64` | pigsty | 27.2 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-omnisketch` | 1.0.2 | `u24.aarch64` | pigsty | 26.7 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
+| `omnisketch_13` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/omnisketch_13-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `omnisketch_13` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.3 KiB | [omnisketch_13-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/omnisketch_13-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `omnisketch_13` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.1 KiB | [omnisketch_13-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/omnisketch_13-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `omnisketch_13` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/omnisketch_13-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `omnisketch_13` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.2 KiB | [omnisketch_13-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/omnisketch_13-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `omnisketch_13` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.4 KiB | [omnisketch_13-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/omnisketch_13-1.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-omnisketch` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 26.1 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 25.5 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 26.2 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 25.8 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 28.8 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.5 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 27.2 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-omnisketch` | `1.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.7 KiB | [postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/omnisketch/postgresql-13-omnisketch_1.0.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

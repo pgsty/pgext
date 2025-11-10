@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-extension to perform surgery on a damaged relation
+[**pg_surgery**](https://www.postgresql.org/docs/current/pgsurgery.html)
 
 
 ## Overview

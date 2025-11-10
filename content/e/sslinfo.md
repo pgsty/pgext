@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-information about SSL certificates
+[**sslinfo**](https://www.postgresql.org/docs/current/sslinfo.html)
 
 
 ## Overview

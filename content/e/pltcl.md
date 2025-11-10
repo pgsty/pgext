@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/Tcl procedural language
+[**pltcl**](https://www.postgresql.org/docs/current/pltcl.html)
 
 
 ## Overview

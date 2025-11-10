@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/Python3U untrusted procedural language
+[**plpython3u**](https://www.postgresql.org/docs/current/plpython.html)
 
 
 ## Overview

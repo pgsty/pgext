@@ -5,7 +5,7 @@ icon: Package
 ---
 
 
-There are unparalleled [**420+**](/list/) extensions available in Pigsty for 10 mainstream [Linux distros](/docs/prepare/linux).
+There are unparalleled [**430+**](/list/) extensions available in Pigsty for 10 mainstream [Linux distros](/docs/prepare/linux).
 
 --------
 

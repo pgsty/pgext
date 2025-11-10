@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-spherical objects with useful functions, operators and index support
+[**pgsphere**](https://github.com/postgrespro/pgsphere)
 
 
 ## Overview
@@ -58,120 +58,120 @@ spherical objects with useful functions, operators and index support
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_18` | 1.5.2 | `el8.x86_64` | pigsty | 125.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_18` | 1.5.2 | `el8.aarch64` | pigsty | 122.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_18` | 1.5.2 | `el9.x86_64` | pigsty | 118.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_18` | 1.5.2 | `el9.aarch64` | pigsty | 116.7 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_18` | 1.5.2 | `el10.x86_64` | pigsty | 119.3 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_18` | 1.5.2 | `el10.aarch64` | pigsty | 119.5 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 405.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 405.1 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 402.7 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 413.8 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 407.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 406.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 401.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_18` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_18-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_18-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_18-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_18-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_18-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_18` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.5 KiB | [pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_18-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 405.1 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 402.7 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 413.8 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 407.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_17` | 1.5.2 | `el8.x86_64` | pigsty | 125.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_17` | 1.5.2 | `el8.aarch64` | pigsty | 122.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_17` | 1.5.2 | `el9.x86_64` | pigsty | 118.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_17` | 1.5.2 | `el9.aarch64` | pigsty | 116.7 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_17` | 1.5.2 | `el10.x86_64` | pigsty | 119.3 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_17` | 1.5.2 | `el10.aarch64` | pigsty | 119.6 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 404.8 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 400.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 405.5 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 402.5 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 434.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 427.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 406.3 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 401.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_17` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_17-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_17-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_17-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_17-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_17-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_17` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.6 KiB | [pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_17-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 405.5 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 402.5 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 434.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 427.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.3 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_16` | 1.5.2 | `el8.x86_64` | pigsty | 125.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_16` | 1.5.2 | `el8.aarch64` | pigsty | 122.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_16` | 1.5.2 | `el9.x86_64` | pigsty | 118.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_16` | 1.5.2 | `el9.aarch64` | pigsty | 116.7 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_16` | 1.5.2 | `el10.x86_64` | pigsty | 119.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_16` | 1.5.2 | `el10.aarch64` | pigsty | 119.5 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 404.8 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 400.2 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 405.4 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 402.6 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 433.6 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 427.1 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 406.4 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 401.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_16` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 125.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_16-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 122.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_16-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.2 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_16-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 116.7 KiB | [pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_16-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 119.3 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_16-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_16` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 119.5 KiB | [pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_16-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 404.8 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.2 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 405.4 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 402.6 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 433.6 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 427.1 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.4 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_15` | 1.5.2 | `el8.x86_64` | pigsty | 127.2 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_15` | 1.5.2 | `el8.aarch64` | pigsty | 124.1 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_15` | 1.5.2 | `el9.x86_64` | pigsty | 114.7 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_15` | 1.5.2 | `el9.aarch64` | pigsty | 114.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_15` | 1.5.2 | `el10.x86_64` | pigsty | 114.5 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_15` | 1.5.2 | `el10.aarch64` | pigsty | 116.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 405.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 401.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 406.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 403.3 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 434.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 428.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 404.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 402.1 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_15` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 127.2 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_15-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 124.1 KiB | [pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_15-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 114.7 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_15-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_15-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 114.5 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_15-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_15` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 116.8 KiB | [pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_15-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 401.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 406.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 403.3 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 434.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 428.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 404.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.1 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_14` | 1.5.2 | `el8.x86_64` | pigsty | 127.1 KiB | [pgsphere_14-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_14-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_14` | 1.5.2 | `el8.aarch64` | pigsty | 124.1 KiB | [pgsphere_14-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_14-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_14` | 1.5.2 | `el9.x86_64` | pigsty | 114.6 KiB | [pgsphere_14-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_14-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_14` | 1.5.2 | `el9.aarch64` | pigsty | 114.8 KiB | [pgsphere_14-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_14-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_14` | 1.5.2 | `el10.x86_64` | pigsty | 114.5 KiB | [pgsphere_14-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_14-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_14` | 1.5.2 | `el10.aarch64` | pigsty | 116.7 KiB | [pgsphere_14-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_14-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 406.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 400.9 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 406.3 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 403.9 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 433.6 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 428.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 405.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 402.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_14` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 127.1 KiB | [pgsphere_14-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_14-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_14` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 124.1 KiB | [pgsphere_14-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_14-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_14` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 114.6 KiB | [pgsphere_14-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_14-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_14` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.8 KiB | [pgsphere_14-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_14-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_14` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 114.5 KiB | [pgsphere_14-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_14-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_14` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 116.7 KiB | [pgsphere_14-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_14-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 406.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.9 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 406.3 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 403.9 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 433.6 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 428.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 405.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsphere_13` | 1.5.2 | `el8.x86_64` | pigsty | 126.8 KiB | [pgsphere_13-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_13-1.5.2-1PIGSTY.el8.x86_64.rpm) |
-| `pgsphere_13` | 1.5.2 | `el8.aarch64` | pigsty | 124.0 KiB | [pgsphere_13-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_13-1.5.2-1PIGSTY.el8.aarch64.rpm) |
-| `pgsphere_13` | 1.5.2 | `el9.x86_64` | pigsty | 114.9 KiB | [pgsphere_13-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_13-1.5.2-1PIGSTY.el9.x86_64.rpm) |
-| `pgsphere_13` | 1.5.2 | `el9.aarch64` | pigsty | 114.7 KiB | [pgsphere_13-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_13-1.5.2-1PIGSTY.el9.aarch64.rpm) |
-| `pgsphere_13` | 1.5.2 | `el10.x86_64` | pigsty | 114.5 KiB | [pgsphere_13-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_13-1.5.2-1PIGSTY.el10.x86_64.rpm) |
-| `pgsphere_13` | 1.5.2 | `el10.aarch64` | pigsty | 116.7 KiB | [pgsphere_13-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_13-1.5.2-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-pgsphere` | 1.5.2 | `d12.x86_64` | pgdg | 405.4 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `d12.aarch64` | pgdg | 400.8 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `d13.x86_64` | pgdg | 405.5 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `d13.aarch64` | pgdg | 402.7 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `u22.x86_64` | pgdg | 432.6 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `u22.aarch64` | pgdg | 427.4 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `u24.x86_64` | pgdg | 404.5 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pgsphere` | 1.5.2 | `u24.aarch64` | pgdg | 401.3 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `pgsphere_13` | `1.5.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 126.8 KiB | [pgsphere_13-1.5.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsphere_13-1.5.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgsphere_13` | `1.5.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 124.0 KiB | [pgsphere_13-1.5.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsphere_13-1.5.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgsphere_13` | `1.5.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 114.9 KiB | [pgsphere_13-1.5.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsphere_13-1.5.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgsphere_13` | `1.5.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.7 KiB | [pgsphere_13-1.5.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsphere_13-1.5.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgsphere_13` | `1.5.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 114.5 KiB | [pgsphere_13-1.5.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsphere_13-1.5.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgsphere_13` | `1.5.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 116.7 KiB | [pgsphere_13-1.5.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsphere_13-1.5.2-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-pgsphere` | `1.5.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 405.4 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg12+1_amd64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 400.8 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg12+1_arm64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 405.5 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg13+1_amd64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 402.7 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg13+1_arm64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 432.6 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 427.4 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 404.5 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.3 KiB | [postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-13-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

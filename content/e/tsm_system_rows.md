@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-TABLESAMPLE method which accepts number of rows as a limit
+[**tsm_system_rows**](https://www.postgresql.org/docs/current/tsm-system-rows.html)
 
 
 ## Overview

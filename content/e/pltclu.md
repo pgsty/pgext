@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/TclU untrusted procedural language
+[**pltcl**](https://www.postgresql.org/docs/current/pltcl.html)
 
 
 ## Overview

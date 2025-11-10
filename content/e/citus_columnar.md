@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-Citus columnar storage engine
+[**citus**](https://github.com/citusdata/citus)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data type for representing line segments or floating-point intervals
+[**seg**](https://www.postgresql.org/docs/current/seg.html)
 
 
 ## Overview

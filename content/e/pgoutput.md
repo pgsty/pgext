@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-Logical Replication output plugin
+[**pgoutput**](https://www.postgresql.org/docs/current/protocol-logical-replication.html)
 
 
 ## Overview

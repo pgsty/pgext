@@ -2,19 +2,19 @@
 title: "omni_rest"
 linkTitle: "omni_rest"
 description: "REST API toolkit (with PostgREST support)"
-weight: 2972
+weight: 2962
 categories: ["FEAT"]
 width: full
 ---
 
-REST API toolkit (with PostgREST support)
+[**omnigres**](https://docs.omnigres.org/omni_rest/protocols/)
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2972** | {{< badge content="omni_rest" link="https://docs.omnigres.org/omni_rest/protocols/" >}} | {{< ext "omni_rest" "omnigres" >}} | `0.1.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2962** | {{< badge content="omni_rest" link="https://docs.omnigres.org/omni_rest/protocols/" >}} | {{< ext "omni_rest" "omnigres" >}} | `0.1.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -25,7 +25,6 @@ REST API toolkit (with PostgREST support)
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "omni_httpd" >}} {{< ext "omni_sql" >}} {{< ext "omni_web" >}} {{< ext "omni_var" >}} {{< ext "pgcrypto" >}} |
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
 |    **Siblings**   | {{< ext "omni" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_cloudevents" >}} {{< ext "omni_containers" >}} {{< ext "omni_credentials" >}} {{< ext "omni_email" >}} {{< ext "omni_http" >}} {{< ext "omni_httpc" >}} {{< ext "omni_httpd" >}} {{< ext "omni_id" >}} {{< ext "omni_json" >}} {{< ext "omni_kube" >}} {{< ext "omni_ledger" >}} {{< ext "omni_manifest" >}} {{< ext "omni_mimetypes" >}} {{< ext "omni_os" >}} {{< ext "omni_polyfill" >}} {{< ext "omni_python" >}} {{< ext "omni_regex" >}} {{< ext "omni_schema" >}} {{< ext "omni_seq" >}} {{< ext "omni_service" >}} {{< ext "omni_session" >}} {{< ext "omni_sql" >}} {{< ext "omni_sqlite" >}} {{< ext "omni_test" >}} {{< ext "omni_txn" >}} {{< ext "omni_types" >}} {{< ext "omni_var" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "omni_web" >}} {{< ext "omni_worker" >}} {{< ext "omni_xml" >}} {{< ext "omni_yaml" >}} |
 
 

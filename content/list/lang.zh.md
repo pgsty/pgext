@@ -11,7 +11,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 339 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 342 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 37 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 34 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -22,7 +22,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="339 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="342 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -77,45 +77,49 @@ weight: 200
 | 2860 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
 | 2880 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
-| 2910 | {{< alias "pgq" >}} | 通用队列的PG实现 |
-| 2920 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
-| 2951 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
-| 2952 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
-| 2953 | {{< alias "omni_aws" "omnigres" >}} | Omnigres AWS S3 API封装 |
-| 2954 | {{< alias "omni_cloudevents" "omnigres" >}} | Omnigres CloudEvents 支持 |
-| 2955 | {{< alias "omni_containers" "omnigres" >}} | Omnigres Docker容器管理模块 |
-| 2956 | {{< alias "omni_credentials" "omnigres" >}} | Omnigres 应用密钥管理模块 |
-| 2958 | {{< alias "omni_email" "omnigres" >}} | Omnigres Email 框架 |
-| 2959 | {{< alias "omni_http" "omnigres" >}} | Omnigres 基本HTTP类型 |
-| 2960 | {{< alias "omni_httpc" "omnigres" >}} | Omnigres HTTP客户端 |
-| 2961 | {{< alias "omni_httpd" "omnigres" >}} | Omnigres HTTP服务器 |
-| 2962 | {{< alias "omni_id" "omnigres" >}} | Omnigres ID身份数据类型 |
-| 2963 | {{< alias "omni_json" "omnigres" >}} | Omnigres JSON工具箱 |
-| 2964 | {{< alias "omni_kube" "omnigres" >}} | Omnigres Kubernetes集成模块 |
-| 2965 | {{< alias "omni_ledger" "omnigres" >}} | Omnigres 金融账本模块 |
-| 2966 | {{< alias "omni_manifest" "omnigres" >}} | Omnigres 包管理清单模块 |
-| 2967 | {{< alias "omni_mimetypes" "omnigres" >}} | Omnigres MIME数据类型 |
-| 2968 | {{< alias "omni_os" "omnigres" >}} | Omnigres 操作系统集成模块 |
-| 2969 | {{< alias "omni_polyfill" "omnigres" >}} | Omnigres Postgres多态API |
-| 2970 | {{< alias "omni_python" "omnigres" >}} | Omnigres 第一类Python支持模块 |
-| 2971 | {{< alias "omni_regex" "omnigres" >}} | Omnigres PCRE兼容正则表达式模块 |
-| 2972 | {{< alias "omni_rest" "omnigres" >}} | Omnigres REST API 工具包 |
-| 2973 | {{< alias "omni_schema" "omnigres" >}} | Omnigres 高级模式管理组件 |
-| 2974 | {{< alias "omni_seq" "omnigres" >}} | Omnigres 分布式整型序列号 |
-| 2975 | {{< alias "omni_service" "omnigres" >}} | Omnigres 服务管理器 |
-| 2976 | {{< alias "omni_session" "omnigres" >}} | Omnigres 会话管理器 |
-| 2977 | {{< alias "omni_sql" "omnigres" >}} | Omnigres SQL编程组件 |
-| 2979 | {{< alias "omni_sqlite" "omnigres" >}} | Omnigres 嵌入的SQLite支持 |
-| 2980 | {{< alias "omni_test" "omnigres" >}} | Omnigres 测试框架 |
-| 2981 | {{< alias "omni_txn" "omnigres" >}} | Omnigres 事务管理器模块 |
-| 2982 | {{< alias "omni_types" "omnigres" >}} | Omnigres 高级数据类型模块 |
-| 2983 | {{< alias "omni_var" "omnigres" >}} | Omnigres 局部变量模块 |
-| 2984 | {{< alias "omni_vfs" "omnigres" >}} | Omnigres 虚拟文件系统 |
-| 2985 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | Omnigres 虚拟文件系统（v1） |
-| 2986 | {{< alias "omni_web" "omnigres" >}} | Omnigres Web工具箱 |
-| 2987 | {{< alias "omni_worker" "omnigres" >}} | Omnigres 通用Worker池 |
-| 2988 | {{< alias "omni_xml" "omnigres" >}} | Omnigres XML工具包 |
-| 2989 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
+| 2900 | {{< alias "pgq" >}} | 通用队列的PG实现 |
+| 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
+| 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
+| 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
+| 2942 | {{< alias "omni_aws" "omnigres" >}} | Omnigres AWS S3 API封装 |
+| 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | Omnigres CloudEvents 支持 |
+| 2944 | {{< alias "omni_containers" "omnigres" >}} | Omnigres Docker容器管理模块 |
+| 2945 | {{< alias "omni_credentials" "omnigres" >}} | Omnigres 应用密钥管理模块 |
+| 2946 | {{< alias "omni_csv" >}} | Omnigres CSV 工具箱 |
+| 2947 | {{< alias "omni_datasets" >}} | Omnigres 数据库置备工具 |
+| 2948 | {{< alias "omni_email" "omnigres" >}} | Omnigres Email 框架 |
+| 2949 | {{< alias "omni_http" "omnigres" >}} | Omnigres 基本HTTP类型 |
+| 2950 | {{< alias "omni_httpc" "omnigres" >}} | Omnigres HTTP客户端 |
+| 2951 | {{< alias "omni_httpd" "omnigres" >}} | Omnigres HTTP服务器 |
+| 2952 | {{< alias "omni_id" "omnigres" >}} | Omnigres ID身份数据类型 |
+| 2953 | {{< alias "omni_json" "omnigres" >}} | Omnigres JSON工具箱 |
+| 2954 | {{< alias "omni_kube" "omnigres" >}} | Omnigres Kubernetes集成模块 |
+| 2955 | {{< alias "omni_ledger" "omnigres" >}} | Omnigres 金融账本模块 |
+| 2956 | {{< alias "omni_manifest" "omnigres" >}} | Omnigres 包管理清单模块 |
+| 2957 | {{< alias "omni_mimetypes" "omnigres" >}} | Omnigres MIME数据类型 |
+| 2958 | {{< alias "omni_os" "omnigres" >}} | Omnigres 操作系统集成模块 |
+| 2959 | {{< alias "omni_polyfill" "omnigres" >}} | Omnigres Postgres多态API |
+| 2960 | {{< alias "omni_python" "omnigres" >}} | Omnigres 第一类Python支持模块 |
+| 2961 | {{< alias "omni_regex" "omnigres" >}} | Omnigres PCRE兼容正则表达式模块 |
+| 2962 | {{< alias "omni_rest" "omnigres" >}} | Omnigres REST API 工具包 |
+| 2963 | {{< alias "omni_schema" "omnigres" >}} | Omnigres 高级模式管理组件 |
+| 2964 | {{< alias "omni_seq" "omnigres" >}} | Omnigres 分布式整型序列号 |
+| 2965 | {{< alias "omni_service" "omnigres" >}} | Omnigres 服务管理器 |
+| 2966 | {{< alias "omni_session" "omnigres" >}} | Omnigres 会话管理器 |
+| 2967 | {{< alias "omni_shmem" >}} | Omnigres 共享内存管理 |
+| 2968 | {{< alias "omni_sql" "omnigres" >}} | Omnigres SQL编程组件 |
+| 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Omnigres 嵌入的SQLite支持 |
+| 2970 | {{< alias "omni_test" "omnigres" >}} | Omnigres 测试框架 |
+| 2971 | {{< alias "omni_txn" "omnigres" >}} | Omnigres 事务管理器模块 |
+| 2972 | {{< alias "omni_types" "omnigres" >}} | Omnigres 高级数据类型模块 |
+| 2973 | {{< alias "omni_var" "omnigres" >}} | Omnigres 局部变量模块 |
+| 2974 | {{< alias "omni_vfs" "omnigres" >}} | Omnigres 虚拟文件系统 |
+| 2975 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | Omnigres 虚拟文件系统（v1） |
+| 2976 | {{< alias "omni_web" "omnigres" >}} | Omnigres Web工具箱 |
+| 2977 | {{< alias "omni_worker" "omnigres" >}} | Omnigres 通用Worker池 |
+| 2978 | {{< alias "omni_xml" "omnigres" >}} | Omnigres XML工具包 |
+| 2979 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
+| 2980 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3000 | {{< alias "pg_tle" >}} | AWS 可信语言扩展 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |
@@ -207,7 +211,6 @@ weight: 200
 | 4610 | {{< alias "quantile" >}} | Quantile聚合函数 |
 | 4620 | {{< alias "lower_quantile" >}} | Lower Quantile 聚合函数 |
 | 4630 | {{< alias "count_distinct" >}} | COUNT(DISTINCT …) 聚合的替代方案 |
-| 4640 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 4650 | {{< alias "ddsketch" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
@@ -382,7 +385,7 @@ weight: 200
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2840 | {{< alias "index_advisor" >}} | 查询索引建议器 |
-| 2900 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2890 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 3580 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
 | 3610 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |
 | 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n 工具包 |
@@ -441,7 +444,7 @@ weight: 200
 | 2460 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2790 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
-| 2930 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
+| 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3040 | {{< alias "plprql" >}} | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3540 | {{< alias "pglite_fusion" >}} | 在PG表中嵌入SQLite数据库作为数据类型 |
 | 4170 | {{< alias "pg_smtp_client" >}} | 使用SMTP从PostgreSQL内发送邮件的客户端扩展 |
@@ -487,7 +490,7 @@ weight: 200
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2770 | {{< alias "hll" >}} | hyperloglog 数据类型 |
-| 2940 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
+| 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
 
 ## Python

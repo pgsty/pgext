@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-TABLESAMPLE method which accepts time in milliseconds as a limit
+[**tsm_system_time**](https://www.postgresql.org/docs/current/tsm-system-time.html)
 
 
 ## Overview

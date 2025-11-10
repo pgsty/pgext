@@ -38,7 +38,7 @@ type OSPackageInfo struct {
 	PGData map[int]*PkgInfo // Package info by PG version
 }
 
-// GenerateOSPage generates a single OS-specific availability page
+// GenerateOSPage generates OS-specific availability pages in both English and Chinese
 func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
 	// Validate OS exists and is active
 	osInfo, err := g.getOSInfo(ctx, osName)
@@ -52,16 +52,21 @@ func (g *OSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
 		return fmt.Errorf("failed to load packages for %s: %w", osName, err)
 	}
 
-	// Generate content
-	content := g.generateOSContent(osInfo, packages)
-
-	// Write to file
-	outputPath := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", osName))
-	if err := os.WriteFile(outputPath, []byte(content), 0644); err != nil {
-		return fmt.Errorf("failed to write file: %w", err)
+	// Generate English content
+	contentEn := g.generateOSContent(osInfo, packages, "en")
+	outputPathEn := filepath.Join(g.OutputDir, fmt.Sprintf("%s.md", osName))
+	if err := os.WriteFile(outputPathEn, []byte(contentEn), 0644); err != nil {
+		return fmt.Errorf("failed to write English file: %w", err)
 	}
 
-	logrus.Infof("Generated OS page for %s with %d packages", osName, len(packages))
+	// Generate Chinese content
+	contentZh := g.generateOSContent(osInfo, packages, "zh")
+	outputPathZh := filepath.Join(g.OutputDir, fmt.Sprintf("%s.zh.md", osName))
+	if err := os.WriteFile(outputPathZh, []byte(contentZh), 0644); err != nil {
+		return fmt.Errorf("failed to write Chinese file: %w", err)
+	}
+
+	logrus.Infof("Generated OS pages for %s with %d packages (en/zh)", osName, len(packages))
 	return nil
 }
 
@@ -158,23 +163,23 @@ func sortOSPackages(packages []*OSPackageInfo) {
 }
 
 // generateOSContent generates the markdown content for an OS page
-func (g *OSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageInfo) string {
+func (g *OSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageInfo, locale string) string {
 	var b strings.Builder
 
 	// Frontmatter
-	b.WriteString(g.generateOSFrontmatter(osInfo))
+	b.WriteString(g.generateOSFrontmatter(osInfo, locale))
 
 	// Overview
-	b.WriteString(g.generateOSOverview(osInfo, packages))
+	b.WriteString(g.generateOSOverview(osInfo, packages, locale))
 
 	// Availability Matrix
-	b.WriteString(g.generateOSAvailabilityMatrix(packages, osInfo.OS))
+	b.WriteString(g.generateOSAvailabilityMatrix(packages, osInfo.OS, locale))
 
 	return b.String()
 }
 
 // generateOSFrontmatter generates the YAML frontmatter
-func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
+func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo, locale string) string {
 	weight := 100 // Default weight, can be adjusted based on OS priority
 
 	// Adjust weight based on OS (newer/popular OSes get lower weight = higher priority)
@@ -220,37 +225,61 @@ func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
 		weight = 931
 	}
 
+	isZh := locale == "zh"
+	localizedDesc := osInfo.Desc
+
+	if isZh {
+		return fmt.Sprintf(`---
+title: "OS: %s"
+linkTitle: "%s"
+description: "%s 的 PostgreSQL 扩展可用性"
+weight: %d
+width: full
+---
+
+`, osInfo.OS, osInfo.OS, localizedDesc, weight)
+	}
+
 	return fmt.Sprintf(`---
 title: "OS: %s"
+linkTitle: "%s"
 description: "PostgreSQL Extension Availability for %s"
 weight: %d
 width: full
 ---
 
-## %s
-
-`, osInfo.OS, osInfo.Desc, weight, osInfo.Desc)
+`, osInfo.OS, osInfo.OS, localizedDesc, weight)
 }
 
 // generateOSOverview generates the overview section
-func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageInfo) string {
+func (g *OSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageInfo, locale string) string {
 	var b strings.Builder
-	b.WriteString(fmt.Sprintf("This page shows the availability of PostgreSQL extensions for **%s**.\n\n", osInfo.Desc))
-	b.WriteString(fmt.Sprintf("- **OS Code**: `%s`\n", osInfo.OS))
-	b.WriteString(fmt.Sprintf("- **Architecture**: `%s`\n", osInfo.Arch))
-	b.WriteString(fmt.Sprintf("- **Total Packages**: %d\n\n", len(packages)))
+	isZh := locale == "zh"
+	localizedDesc := osInfo.Desc
+
+	if isZh {
+		b.WriteString(fmt.Sprintf("本页面展示了 **%s** (`%s`) 系统的 PostgreSQL 扩展可用性。\n\n", localizedDesc, osInfo.OS))
+	} else {
+		b.WriteString(fmt.Sprintf("This page shows the availability of PostgreSQL extensions for **%s** (`%s`) Platform.\n\n", localizedDesc, osInfo.OS))
+	}
 
 	return b.String()
 }
 
 // generateOSAvailabilityMatrix generates the availability matrix table
-func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, osName string) string {
+func (g *OSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, osName string, locale string) string {
 	var b strings.Builder
+	isZh := locale == "zh"
 
-	b.WriteString("## Extension Availability Matrix\n\n")
+	if isZh {
+		//b.WriteString("## 扩展可用性矩阵\n\n")
+		b.WriteString("| **扩展** / **PG版本** |")
+	} else {
+		//b.WriteString("## Extension Availability Matrix\n\n")
+		b.WriteString("| **Extension** / **PG** |")
+	}
 
-	// Table header
-	b.WriteString("| **Extension** / **PG** |")
+	// Table header - PG versions
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf("       **PG%d**        |", pg))
 	}

@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-XPath querying and XSLT
+[**xml2**](https://www.postgresql.org/docs/current/xml2.html)
 
 
 ## Overview

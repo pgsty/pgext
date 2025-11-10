@@ -2,19 +2,19 @@
 title: "omni_httpc"
 linkTitle: "omni_httpc"
 description: "HTTP client"
-weight: 2960
+weight: 2950
 categories: ["FEAT"]
 width: full
 ---
 
-HTTP client
+[**omnigres**](https://docs.omnigres.org/omni_httpc/reference/)
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2960** | {{< badge content="omni_httpc" link="https://docs.omnigres.org/omni_httpc/reference/" >}} | {{< ext "omni_httpc" "omnigres" >}} | `0.1.5` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2950** | {{< badge content="omni_httpc" link="https://docs.omnigres.org/omni_httpc/reference/" >}} | {{< ext "omni_httpc" "omnigres" >}} | `0.1.10` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,7 +26,6 @@ HTTP client
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "omni_http" >}} {{< ext "omni_types" >}} |
 |    **Need By**    | {{< ext "omni_aws" >}} {{< ext "omni_containers" >}} {{< ext "omni_kube" >}} |
-|   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} |
 |    **Siblings**   | {{< ext "omni" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_cloudevents" >}} {{< ext "omni_containers" >}} {{< ext "omni_credentials" >}} {{< ext "omni_email" >}} {{< ext "omni_http" >}} {{< ext "omni_httpd" >}} {{< ext "omni_id" >}} {{< ext "omni_json" >}} {{< ext "omni_kube" >}} {{< ext "omni_ledger" >}} {{< ext "omni_manifest" >}} {{< ext "omni_mimetypes" >}} {{< ext "omni_os" >}} {{< ext "omni_polyfill" >}} {{< ext "omni_python" >}} {{< ext "omni_regex" >}} {{< ext "omni_rest" >}} {{< ext "omni_schema" >}} {{< ext "omni_seq" >}} {{< ext "omni_service" >}} {{< ext "omni_session" >}} {{< ext "omni_sql" >}} {{< ext "omni_sqlite" >}} {{< ext "omni_test" >}} {{< ext "omni_txn" >}} {{< ext "omni_types" >}} {{< ext "omni_var" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "omni_web" >}} {{< ext "omni_worker" >}} {{< ext "omni_xml" >}} {{< ext "omni_yaml" >}} |
 
 
@@ -34,8 +33,8 @@ HTTP client
 
 | Type | Repo | Version | PG Major Availability | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EL** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.5` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} {{< bg "13" "omnigres_13" "green" >}} | `omnigres_$v` | - |
-| **Debian** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.5` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} {{< bg "13" "postgresql-13-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
+| **EL** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.10` | {{< bg "18" "omnigres_18" "green" >}} {{< bg "17" "omnigres_17" "green" >}} {{< bg "16" "omnigres_16" "green" >}} {{< bg "15" "omnigres_15" "green" >}} {{< bg "14" "omnigres_14" "green" >}} {{< bg "13" "omnigres_13" "green" >}} | `omnigres_$v` | - |
+| **Debian** | {{< badge content="PIGSTY" link="/e/omni" >}} | `0.1.10` | {{< bg "18" "postgresql-18-omnigres" "green" >}} {{< bg "17" "postgresql-17-omnigres" "green" >}} {{< bg "16" "postgresql-16-omnigres" "green" >}} {{< bg "15" "postgresql-15-omnigres" "green" >}} {{< bg "14" "postgresql-14-omnigres" "green" >}} {{< bg "13" "postgresql-13-omnigres" "green" >}} | `postgresql-$v-omnigres` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

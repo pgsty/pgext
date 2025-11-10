@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-cryptographic functions
+[**pgcrypto**](https://www.postgresql.org/docs/current/pgcrypto.html)
 
 
 ## Overview
@@ -24,7 +24,7 @@ cryptographic functions
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_credentials" >}} {{< ext "omni_kube" >}} {{< ext "omni_rest" >}} {{< ext "pgcryptokey" >}} |
+|    **Need By**    | {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_credentials" >}} {{< ext "omni_rest" >}} {{< ext "pgcryptokey" >}} |
 |   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgsmcrypto" >}} {{< ext "lo" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} |
 
 

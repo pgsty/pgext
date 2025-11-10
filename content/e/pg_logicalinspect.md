@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-Logical decoding components inspection
+[**pg_logicalinspect**](https://www.postgresql.org/docs/devel/pglogicalinspect.html)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-asn1oid extension
+[**asn1oid**](https://github.com/df7cb/pgsql-asn1oid)
 
 
 ## Overview
@@ -58,140 +58,140 @@ asn1oid extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_18` | 1.6 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_18-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_18-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_18` | 1.6 | `el8.aarch64` | pigsty | 13.7 KiB | [asn1oid_18-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_18-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_18` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_18-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_18-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_18` | 1.6 | `el9.aarch64` | pigsty | 13.5 KiB | [asn1oid_18-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_18-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_18` | 1.6 | `el10.x86_64` | pigsty | 13.3 KiB | [asn1oid_18-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_18-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_18` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_18-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_18-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.8 KiB | [postgresql-18-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.9 KiB | [postgresql-18-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.8 KiB | [postgresql-18-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 13.0 KiB | [postgresql-18-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.0 KiB | [postgresql-18-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.9 KiB | [postgresql-18-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_18` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_18-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_18-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_18` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.7 KiB | [asn1oid_18-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_18-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_18` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_18-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_18-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_18` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [asn1oid_18-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_18-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_18` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [asn1oid_18-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_18-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_18` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_18-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_18-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.8 KiB | [postgresql-18-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.9 KiB | [postgresql-18-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.8 KiB | [postgresql-18-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.0 KiB | [postgresql-18-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.0 KiB | [postgresql-18-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.9 KiB | [postgresql-18-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.1 KiB | [postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-18-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_17` | 1.6 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_17-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_17-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_17` | 1.5 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_17-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_17-1.5-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_17` | 1.6 | `el8.aarch64` | pigsty | 13.6 KiB | [asn1oid_17-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_17-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_17` | 1.5 | `el8.aarch64` | pigsty | 13.5 KiB | [asn1oid_17-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_17-1.5-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_17` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_17-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_17-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_17` | 1.5 | `el9.x86_64` | pigsty | 13.7 KiB | [asn1oid_17-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_17-1.5-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_17` | 1.6 | `el9.aarch64` | pigsty | 13.4 KiB | [asn1oid_17-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_17-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_17` | 1.5 | `el9.aarch64` | pigsty | 13.6 KiB | [asn1oid_17-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_17-1.5-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_17` | 1.6 | `el10.x86_64` | pigsty | 13.3 KiB | [asn1oid_17-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_17-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_17` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_17-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_17-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.8 KiB | [postgresql-17-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.8 KiB | [postgresql-17-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.7 KiB | [postgresql-17-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 12.9 KiB | [postgresql-17-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.4 KiB | [postgresql-17-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.3 KiB | [postgresql-17-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.9 KiB | [postgresql-17-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 13.0 KiB | [postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_17` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_17-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_17-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_17` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_17-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_17-1.5-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_17` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [asn1oid_17-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_17-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_17` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [asn1oid_17-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_17-1.5-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_17` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_17-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_17-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_17` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [asn1oid_17-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_17-1.5-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_17` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [asn1oid_17-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_17-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_17` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [asn1oid_17-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_17-1.5-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_17` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [asn1oid_17-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_17-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_17` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_17-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_17-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.8 KiB | [postgresql-17-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.8 KiB | [postgresql-17-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.7 KiB | [postgresql-17-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 12.9 KiB | [postgresql-17-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.4 KiB | [postgresql-17-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.3 KiB | [postgresql-17-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.9 KiB | [postgresql-17-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-17-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_16` | 1.6 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_16-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_16-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_16` | 1.5 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_16-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_16-1.5-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_16` | 1.6 | `el8.aarch64` | pigsty | 13.6 KiB | [asn1oid_16-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_16-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_16` | 1.5 | `el8.aarch64` | pigsty | 13.5 KiB | [asn1oid_16-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_16-1.5-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_16` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_16-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_16-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_16` | 1.5 | `el9.x86_64` | pigsty | 13.7 KiB | [asn1oid_16-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_16-1.5-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_16` | 1.6 | `el9.aarch64` | pigsty | 13.5 KiB | [asn1oid_16-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_16-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_16` | 1.5 | `el9.aarch64` | pigsty | 13.6 KiB | [asn1oid_16-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_16-1.5-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_16` | 1.6 | `el10.x86_64` | pigsty | 13.3 KiB | [asn1oid_16-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_16-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_16` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_16-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_16-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.8 KiB | [postgresql-16-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.8 KiB | [postgresql-16-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.7 KiB | [postgresql-16-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.4 KiB | [postgresql-16-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.3 KiB | [postgresql-16-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_16` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_16-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_16-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_16` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_16-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_16-1.5-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_16` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [asn1oid_16-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_16-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_16` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [asn1oid_16-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_16-1.5-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_16` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_16-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_16-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_16` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [asn1oid_16-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_16-1.5-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_16` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [asn1oid_16-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_16-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_16` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [asn1oid_16-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_16-1.5-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_16` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.3 KiB | [asn1oid_16-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_16-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_16` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_16-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_16-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.8 KiB | [postgresql-16-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.8 KiB | [postgresql-16-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.7 KiB | [postgresql-16-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.4 KiB | [postgresql-16-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.3 KiB | [postgresql-16-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.9 KiB | [postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-16-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_15` | 1.6 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_15-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_15-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_15` | 1.5 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_15-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_15-1.5-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_15` | 1.6 | `el8.aarch64` | pigsty | 13.6 KiB | [asn1oid_15-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_15-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_15` | 1.5 | `el8.aarch64` | pigsty | 13.5 KiB | [asn1oid_15-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_15-1.5-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_15` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_15-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_15-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_15` | 1.5 | `el9.x86_64` | pigsty | 13.7 KiB | [asn1oid_15-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_15-1.5-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_15` | 1.6 | `el9.aarch64` | pigsty | 13.5 KiB | [asn1oid_15-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_15-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_15` | 1.5 | `el9.aarch64` | pigsty | 13.6 KiB | [asn1oid_15-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_15-1.5-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_15` | 1.6 | `el10.x86_64` | pigsty | 13.4 KiB | [asn1oid_15-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_15-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_15` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_15-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_15-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 12.9 KiB | [postgresql-15-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.4 KiB | [postgresql-15-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.3 KiB | [postgresql-15-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.9 KiB | [postgresql-15-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 13.0 KiB | [postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_15` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_15-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_15-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_15` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_15-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_15-1.5-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_15` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [asn1oid_15-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_15-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_15` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [asn1oid_15-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_15-1.5-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_15` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_15-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_15-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_15` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [asn1oid_15-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_15-1.5-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_15` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [asn1oid_15-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_15-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_15` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [asn1oid_15-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_15-1.5-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_15` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.4 KiB | [asn1oid_15-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_15-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_15` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_15-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_15-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.8 KiB | [postgresql-15-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 12.9 KiB | [postgresql-15-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.4 KiB | [postgresql-15-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.3 KiB | [postgresql-15-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.9 KiB | [postgresql-15-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-15-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_14` | 1.6 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_14-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_14-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_14` | 1.5 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_14-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_14-1.5-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_14` | 1.6 | `el8.aarch64` | pigsty | 13.6 KiB | [asn1oid_14-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_14-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_14` | 1.5 | `el8.aarch64` | pigsty | 13.5 KiB | [asn1oid_14-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_14-1.5-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_14` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_14-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_14` | 1.5 | `el9.x86_64` | pigsty | 13.7 KiB | [asn1oid_14-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_14-1.5-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_14` | 1.6 | `el9.aarch64` | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_14-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_14` | 1.5 | `el9.aarch64` | pigsty | 13.6 KiB | [asn1oid_14-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_14-1.5-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_14` | 1.6 | `el10.x86_64` | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_14-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_14` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_14-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_14-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 12.9 KiB | [postgresql-14-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.4 KiB | [postgresql-14-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.3 KiB | [postgresql-14-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 13.0 KiB | [postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_14` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_14-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_14-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_14` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_14-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_14-1.5-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_14` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [asn1oid_14-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_14-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_14` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [asn1oid_14-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_14-1.5-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_14` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_14-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_14` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [asn1oid_14-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_14-1.5-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_14` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_14-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_14` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [asn1oid_14-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_14-1.5-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_14` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.4 KiB | [asn1oid_14-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_14-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_14` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_14-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_14-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 12.9 KiB | [postgresql-14-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.4 KiB | [postgresql-14-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.3 KiB | [postgresql-14-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.8 KiB | [postgresql-14-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.0 KiB | [postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-14-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `asn1oid_13` | 1.6 | `el8.x86_64` | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_13-1.6-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_13` | 1.5 | `el8.x86_64` | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_13-1.5-1PIGSTY.el8.x86_64.rpm) |
-| `asn1oid_13` | 1.6 | `el8.aarch64` | pigsty | 13.6 KiB | [asn1oid_13-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_13-1.6-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_13` | 1.5 | `el8.aarch64` | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_13-1.5-1PIGSTY.el8.aarch64.rpm) |
-| `asn1oid_13` | 1.6 | `el9.x86_64` | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_13-1.6-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_13` | 1.5 | `el9.x86_64` | pigsty | 13.7 KiB | [asn1oid_13-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_13-1.5-1PIGSTY.el9.x86_64.rpm) |
-| `asn1oid_13` | 1.6 | `el9.aarch64` | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_13-1.6-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_13` | 1.5 | `el9.aarch64` | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_13-1.5-1PIGSTY.el9.aarch64.rpm) |
-| `asn1oid_13` | 1.6 | `el10.x86_64` | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_13-1.6-1PIGSTY.el10.x86_64.rpm) |
-| `asn1oid_13` | 1.6 | `el10.aarch64` | pigsty | 13.6 KiB | [asn1oid_13-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_13-1.6-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-asn1oid` | 1.6 | `d12.x86_64` | pgdg | 12.7 KiB | [postgresql-13-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `d12.aarch64` | pgdg | 12.8 KiB | [postgresql-13-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `d13.x86_64` | pgdg | 12.7 KiB | [postgresql-13-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `d13.aarch64` | pgdg | 12.9 KiB | [postgresql-13-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `u22.x86_64` | pgdg | 13.3 KiB | [postgresql-13-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `u22.aarch64` | pgdg | 13.2 KiB | [postgresql-13-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `u24.x86_64` | pgdg | 12.8 KiB | [postgresql-13-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-asn1oid` | 1.6 | `u24.aarch64` | pgdg | 12.9 KiB | [postgresql-13-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
+| `asn1oid_13` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_13-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_13` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/asn1oid_13-1.5-1PIGSTY.el8.x86_64.rpm) |
+| `asn1oid_13` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.6 KiB | [asn1oid_13-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_13-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_13` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/asn1oid_13-1.5-1PIGSTY.el8.aarch64.rpm) |
+| `asn1oid_13` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_13-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_13` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [asn1oid_13-1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/asn1oid_13-1.5-1PIGSTY.el9.x86_64.rpm) |
+| `asn1oid_13` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_13-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_13` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [asn1oid_13-1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/asn1oid_13-1.5-1PIGSTY.el9.aarch64.rpm) |
+| `asn1oid_13` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.4 KiB | [asn1oid_13-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/asn1oid_13-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `asn1oid_13` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [asn1oid_13-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/asn1oid_13-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-asn1oid` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-13-asn1oid_1.6-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg12+1_amd64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [d12.aarch64](/os/d12.aarch64) | pgdg | 12.8 KiB | [postgresql-13-asn1oid_1.6-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg12+1_arm64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [d13.x86_64](/os/d13.x86_64) | pgdg | 12.7 KiB | [postgresql-13-asn1oid_1.6-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg13+1_amd64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [d13.aarch64](/os/d13.aarch64) | pgdg | 12.9 KiB | [postgresql-13-asn1oid_1.6-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg13+1_arm64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [u22.x86_64](/os/u22.x86_64) | pgdg | 13.3 KiB | [postgresql-13-asn1oid_1.6-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.2 KiB | [postgresql-13-asn1oid_1.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.8 KiB | [postgresql-13-asn1oid_1.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-asn1oid` | `1.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.9 KiB | [postgresql-13-asn1oid_1.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-asn1oid/postgresql-13-asn1oid_1.6-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-functions for tracking last modification time
+[**moddatetime**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-MODDATETIME)
 
 
 ## Overview

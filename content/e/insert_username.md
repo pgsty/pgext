@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-functions for tracking who changed a table
+[**insert_username**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-INSERT-USERNAME)
 
 
 ## Overview

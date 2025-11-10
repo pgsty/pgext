@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-load R interpreter and execute R script from within a database
+[**plr**](https://github.com/postgres-plr/plr)
 
 
 ## Overview
@@ -58,160 +58,160 @@ load R interpreter and execute R script from within a database
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_18` | 8.4.8 | `el8.x86_64` | pgdg | 76.1 KiB | [plr_18-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/plr_18-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_18` | 8.4.8 | `el8.aarch64` | pgdg | 73.7 KiB | [plr_18-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/plr_18-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_18` | 8.4.8 | `el9.x86_64` | pgdg | 73.9 KiB | [plr_18-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plr_18-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_18` | 8.4.8 | `el9.aarch64` | pgdg | 72.1 KiB | [plr_18-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plr_18-8.4.8-1PGDG.rhel9.aarch64.rpm) |
-| `plr_18` | 8.4.8 | `el10.aarch64` | pgdg | 73.7 KiB | [plr_18-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plr_18-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-18-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 136.0 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.2 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 136.0 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.6 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 131.5 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 128.2 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 127.1 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.5 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_18` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.1 KiB | [plr_18-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/plr_18-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_18` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.7 KiB | [plr_18-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/plr_18-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_18` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.9 KiB | [plr_18-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plr_18-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_18` | `8.4.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.1 KiB | [plr_18-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plr_18-8.4.8-1PGDG.rhel9.aarch64.rpm) |
+| `plr_18` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 73.7 KiB | [plr_18-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plr_18-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 136.0 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.2 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 136.0 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.6 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 131.5 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 128.2 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 127.1 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.5 KiB | [postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-18-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_17` | 8.4.8 | `el8.x86_64` | pgdg | 76.0 KiB | [plr_17-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plr_17-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_17` | 8.4.7 | `el8.x86_64` | pgdg | 75.7 KiB | [plr_17-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plr_17-8.4.7-1PGDG.rhel8.x86_64.rpm) |
-| `plr_17` | 8.4.8 | `el8.aarch64` | pgdg | 73.7 KiB | [plr_17-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plr_17-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_17` | 8.4.7 | `el8.aarch64` | pgdg | 73.4 KiB | [plr_17-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plr_17-8.4.7-1PGDG.rhel8.aarch64.rpm) |
-| `plr_17` | 8.4.8 | `el9.x86_64` | pgdg | 73.8 KiB | [plr_17-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plr_17-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_17` | 8.4.7 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_17-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plr_17-8.4.7-1PGDG.rhel9.x86_64.rpm) |
-| `plr_17` | 8.4.8 | `el9.aarch64` | pgdg | 72.2 KiB | [plr_17-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plr_17-8.4.8-1PGDG.rhel9.aarch64.rpm) |
-| `plr_17` | 8.4.7 | `el9.aarch64` | pgdg | 72.0 KiB | [plr_17-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plr_17-8.4.7-1PGDG.rhel9.aarch64.rpm) |
-| `plr_17` | 8.4.8 | `el10.aarch64` | pgdg | 73.5 KiB | [plr_17-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plr_17-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 135.6 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.0 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 135.8 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.4 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 155.6 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 152.1 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 126.9 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.3 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_17` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.0 KiB | [plr_17-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plr_17-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_17` | `8.4.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.7 KiB | [plr_17-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/plr_17-8.4.7-1PGDG.rhel8.x86_64.rpm) |
+| `plr_17` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.7 KiB | [plr_17-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plr_17-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_17` | `8.4.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.4 KiB | [plr_17-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/plr_17-8.4.7-1PGDG.rhel8.aarch64.rpm) |
+| `plr_17` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.8 KiB | [plr_17-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plr_17-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_17` | `8.4.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_17-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plr_17-8.4.7-1PGDG.rhel9.x86_64.rpm) |
+| `plr_17` | `8.4.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.2 KiB | [plr_17-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plr_17-8.4.8-1PGDG.rhel9.aarch64.rpm) |
+| `plr_17` | `8.4.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.0 KiB | [plr_17-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plr_17-8.4.7-1PGDG.rhel9.aarch64.rpm) |
+| `plr_17` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 73.5 KiB | [plr_17-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plr_17-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 135.6 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.0 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 135.8 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.4 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 155.6 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 152.1 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 126.9 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.3 KiB | [postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-17-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_16` | 8.4.8 | `el8.x86_64` | pgdg | 76.0 KiB | [plr_16-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_16` | 8.4.7 | `el8.x86_64` | pgdg | 75.7 KiB | [plr_16-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.7-1PGDG.rhel8.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el8.x86_64` | pgdg | 74.8 KiB | [plr_16-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.6-1PGDG.rhel8.x86_64.rpm) |
-| `plr_16` | 8.4.8 | `el8.aarch64` | pgdg | 73.6 KiB | [plr_16-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_16` | 8.4.7 | `el8.aarch64` | pgdg | 73.4 KiB | [plr_16-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.7-1PGDG.rhel8.aarch64.rpm) |
-| `plr_16` | 8.4.6 | `el8.aarch64` | pgdg | 72.6 KiB | [plr_16-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.6-1PGDG.rhel8.aarch64.rpm) |
-| `plr_16` | 8.4.8 | `el9.x86_64` | pgdg | 73.8 KiB | [plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.7 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.4 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 72.8 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_16` | 8.4.8 | `el9.aarch64` | pgdg | 72.2 KiB | [plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm) |
-| `plr_16` | 8.4.7 | `el9.aarch64` | pgdg | 72.0 KiB | [plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm) |
-| `plr_16` | 8.4.6 | `el9.aarch64` | pgdg | 71.1 KiB | [plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm) |
-| `plr_16` | 8.4.8 | `el10.aarch64` | pgdg | 73.5 KiB | [plr_16-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plr_16-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 135.6 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.0 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 135.7 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.4 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 151.6 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 148.2 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 127.0 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.4 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_16` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.0 KiB | [plr_16-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_16` | `8.4.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.7 KiB | [plr_16-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.7-1PGDG.rhel8.x86_64.rpm) |
+| `plr_16` | `8.4.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 74.8 KiB | [plr_16-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/plr_16-8.4.6-1PGDG.rhel8.x86_64.rpm) |
+| `plr_16` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.6 KiB | [plr_16-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_16` | `8.4.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.4 KiB | [plr_16-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.7-1PGDG.rhel8.aarch64.rpm) |
+| `plr_16` | `8.4.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 72.6 KiB | [plr_16-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/plr_16-8.4.6-1PGDG.rhel8.aarch64.rpm) |
+| `plr_16` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.8 KiB | [plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.7-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.4 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 72.8 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_16-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_16` | `8.4.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.2 KiB | [plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.8-1PGDG.rhel9.aarch64.rpm) |
+| `plr_16` | `8.4.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.0 KiB | [plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.7-1PGDG.rhel9.aarch64.rpm) |
+| `plr_16` | `8.4.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 71.1 KiB | [plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plr_16-8.4.6-1PGDG.rhel9.aarch64.rpm) |
+| `plr_16` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 73.5 KiB | [plr_16-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plr_16-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 135.6 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.0 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 135.7 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.4 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 151.6 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 148.2 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 127.0 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.4 KiB | [postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-16-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_15` | 8.4.8 | `el8.x86_64` | pgdg | 76.5 KiB | [plr_15-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_15` | 8.4.7 | `el8.x86_64` | pgdg | 76.2 KiB | [plr_15-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.7-1PGDG.rhel8.x86_64.rpm) |
-| `plr_15` | 8.4.6 | `el8.x86_64` | pgdg | 75.4 KiB | [plr_15-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.6-1PGDG.rhel8.x86_64.rpm) |
-| `plr_15` | 8.4.5 | `el8.x86_64` | pgdg | 167.4 KiB | [plr_15-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.5-1.rhel8.x86_64.rpm) |
-| `plr_15` | 8.4.8 | `el8.aarch64` | pgdg | 74.1 KiB | [plr_15-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_15` | 8.4.7 | `el8.aarch64` | pgdg | 73.9 KiB | [plr_15-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.7-1PGDG.rhel8.aarch64.rpm) |
-| `plr_15` | 8.4.6 | `el8.aarch64` | pgdg | 73.1 KiB | [plr_15-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.6-1PGDG.rhel8.aarch64.rpm) |
-| `plr_15` | 8.4.8 | `el9.x86_64` | pgdg | 74.5 KiB | [plr_15-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_15` | 8.4.7 | `el9.x86_64` | pgdg | 74.4 KiB | [plr_15-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.7-1PGDG.rhel9.x86_64.rpm) |
-| `plr_15` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_15-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_15` | 8.4.5 | `el9.x86_64` | pgdg | 167.8 KiB | [plr_15-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.5-1.rhel9.x86_64.rpm) |
-| `plr_15` | 8.4.8 | `el9.aarch64` | pgdg | 72.8 KiB | [plr_15-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.8-1PGDG.rhel9.aarch64.rpm) |
-| `plr_15` | 8.4.7 | `el9.aarch64` | pgdg | 72.6 KiB | [plr_15-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.7-1PGDG.rhel9.aarch64.rpm) |
-| `plr_15` | 8.4.6 | `el9.aarch64` | pgdg | 71.7 KiB | [plr_15-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.6-1PGDG.rhel9.aarch64.rpm) |
-| `plr_15` | 8.4.8 | `el10.aarch64` | pgdg | 74.1 KiB | [plr_15-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plr_15-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 136.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.4 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 136.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.8 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 151.4 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 148.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 127.2 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.6 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_15` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.5 KiB | [plr_15-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_15` | `8.4.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.2 KiB | [plr_15-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.7-1PGDG.rhel8.x86_64.rpm) |
+| `plr_15` | `8.4.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.4 KiB | [plr_15-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.6-1PGDG.rhel8.x86_64.rpm) |
+| `plr_15` | `8.4.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 167.4 KiB | [plr_15-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/plr_15-8.4.5-1.rhel8.x86_64.rpm) |
+| `plr_15` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 74.1 KiB | [plr_15-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_15` | `8.4.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.9 KiB | [plr_15-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.7-1PGDG.rhel8.aarch64.rpm) |
+| `plr_15` | `8.4.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.1 KiB | [plr_15-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/plr_15-8.4.6-1PGDG.rhel8.aarch64.rpm) |
+| `plr_15` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.5 KiB | [plr_15-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_15` | `8.4.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.4 KiB | [plr_15-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.7-1PGDG.rhel9.x86_64.rpm) |
+| `plr_15` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_15-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_15` | `8.4.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 167.8 KiB | [plr_15-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plr_15-8.4.5-1.rhel9.x86_64.rpm) |
+| `plr_15` | `8.4.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.8 KiB | [plr_15-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.8-1PGDG.rhel9.aarch64.rpm) |
+| `plr_15` | `8.4.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.6 KiB | [plr_15-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.7-1PGDG.rhel9.aarch64.rpm) |
+| `plr_15` | `8.4.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 71.7 KiB | [plr_15-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plr_15-8.4.6-1PGDG.rhel9.aarch64.rpm) |
+| `plr_15` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 74.1 KiB | [plr_15-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plr_15-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 136.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.4 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 136.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.8 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 151.4 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 148.1 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 127.2 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.6 KiB | [postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-15-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_14` | 8.4.8 | `el8.x86_64` | pgdg | 76.5 KiB | [plr_14-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_14` | 8.4.7 | `el8.x86_64` | pgdg | 76.2 KiB | [plr_14-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.7-1PGDG.rhel8.x86_64.rpm) |
-| `plr_14` | 8.4.6 | `el8.x86_64` | pgdg | 75.4 KiB | [plr_14-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.6-1PGDG.rhel8.x86_64.rpm) |
-| `plr_14` | 8.4.5 | `el8.x86_64` | pgdg | 166.7 KiB | [plr_14-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.5-1.rhel8.x86_64.rpm) |
-| `plr_14` | 8.4.3 | `el8.x86_64` | pgdg | 166.5 KiB | [plr_14-8.4.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.3-1.rhel8.x86_64.rpm) |
-| `plr_14` | 8.4.8 | `el8.aarch64` | pgdg | 74.1 KiB | [plr_14-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_14` | 8.4.7 | `el8.aarch64` | pgdg | 73.9 KiB | [plr_14-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.7-1PGDG.rhel8.aarch64.rpm) |
-| `plr_14` | 8.4.6 | `el8.aarch64` | pgdg | 73.1 KiB | [plr_14-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.6-1PGDG.rhel8.aarch64.rpm) |
-| `plr_14` | 8.4.8 | `el9.x86_64` | pgdg | 74.5 KiB | [plr_14-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_14` | 8.4.7 | `el9.x86_64` | pgdg | 74.3 KiB | [plr_14-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.7-1PGDG.rhel9.x86_64.rpm) |
-| `plr_14` | 8.4.6 | `el9.x86_64` | pgdg | 73.6 KiB | [plr_14-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_14` | 8.4.5 | `el9.x86_64` | pgdg | 167.4 KiB | [plr_14-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.5-1.rhel9.x86_64.rpm) |
-| `plr_14` | 8.4.8 | `el9.aarch64` | pgdg | 72.8 KiB | [plr_14-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.8-1PGDG.rhel9.aarch64.rpm) |
-| `plr_14` | 8.4.7 | `el9.aarch64` | pgdg | 72.6 KiB | [plr_14-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.7-1PGDG.rhel9.aarch64.rpm) |
-| `plr_14` | 8.4.6 | `el9.aarch64` | pgdg | 71.7 KiB | [plr_14-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.6-1PGDG.rhel9.aarch64.rpm) |
-| `plr_14` | 8.4.8 | `el10.aarch64` | pgdg | 74.1 KiB | [plr_14-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plr_14-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 136.0 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.4 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 136.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.8 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 151.2 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 148.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 127.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.6 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_14` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.5 KiB | [plr_14-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_14` | `8.4.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 76.2 KiB | [plr_14-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.7-1PGDG.rhel8.x86_64.rpm) |
+| `plr_14` | `8.4.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.4 KiB | [plr_14-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.6-1PGDG.rhel8.x86_64.rpm) |
+| `plr_14` | `8.4.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 166.7 KiB | [plr_14-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.5-1.rhel8.x86_64.rpm) |
+| `plr_14` | `8.4.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 166.5 KiB | [plr_14-8.4.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/plr_14-8.4.3-1.rhel8.x86_64.rpm) |
+| `plr_14` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 74.1 KiB | [plr_14-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_14` | `8.4.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.9 KiB | [plr_14-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.7-1PGDG.rhel8.aarch64.rpm) |
+| `plr_14` | `8.4.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.1 KiB | [plr_14-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/plr_14-8.4.6-1PGDG.rhel8.aarch64.rpm) |
+| `plr_14` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.5 KiB | [plr_14-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_14` | `8.4.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.3 KiB | [plr_14-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.7-1PGDG.rhel9.x86_64.rpm) |
+| `plr_14` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.6 KiB | [plr_14-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_14` | `8.4.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 167.4 KiB | [plr_14-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/plr_14-8.4.5-1.rhel9.x86_64.rpm) |
+| `plr_14` | `8.4.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.8 KiB | [plr_14-8.4.8-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.8-1PGDG.rhel9.aarch64.rpm) |
+| `plr_14` | `8.4.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.6 KiB | [plr_14-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.7-1PGDG.rhel9.aarch64.rpm) |
+| `plr_14` | `8.4.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 71.7 KiB | [plr_14-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plr_14-8.4.6-1PGDG.rhel9.aarch64.rpm) |
+| `plr_14` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 74.1 KiB | [plr_14-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plr_14-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 136.0 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.4 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 136.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.8 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 151.2 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 148.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 127.3 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.6 KiB | [postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-14-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `plr_13` | 8.4.8 | `el8.x86_64` | pgdg | 75.8 KiB | [plr_13-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.8-1PGDG.rhel8.x86_64.rpm) |
-| `plr_13` | 8.4.7 | `el8.x86_64` | pgdg | 75.6 KiB | [plr_13-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.7-1PGDG.rhel8.x86_64.rpm) |
-| `plr_13` | 8.4.6 | `el8.x86_64` | pgdg | 74.7 KiB | [plr_13-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.6-1PGDG.rhel8.x86_64.rpm) |
-| `plr_13` | 8.4.5 | `el8.x86_64` | pgdg | 165.5 KiB | [plr_13-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.5-1.rhel8.x86_64.rpm) |
-| `plr_13` | 8.4.2 | `el8.x86_64` | pgdg | 164.3 KiB | [plr_13-8.4.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.2-1.rhel8.x86_64.rpm) |
-| `plr_13` | 8.4.8 | `el8.aarch64` | pgdg | 74.1 KiB | [plr_13-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.8-1PGDG.rhel8.aarch64.rpm) |
-| `plr_13` | 8.4.7 | `el8.aarch64` | pgdg | 73.8 KiB | [plr_13-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.7-1PGDG.rhel8.aarch64.rpm) |
-| `plr_13` | 8.4.6 | `el8.aarch64` | pgdg | 73.0 KiB | [plr_13-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.6-1PGDG.rhel8.aarch64.rpm) |
-| `plr_13` | 8.4.8 | `el9.x86_64` | pgdg | 74.3 KiB | [plr_13-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.8-1PGDG.rhel9.x86_64.rpm) |
-| `plr_13` | 8.4.7 | `el9.x86_64` | pgdg | 74.2 KiB | [plr_13-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.7-1PGDG.rhel9.x86_64.rpm) |
-| `plr_13` | 8.4.6 | `el9.x86_64` | pgdg | 73.4 KiB | [plr_13-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.6-1PGDG.rhel9.x86_64.rpm) |
-| `plr_13` | 8.4.5 | `el9.x86_64` | pgdg | 166.6 KiB | [plr_13-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.5-1.rhel9.x86_64.rpm) |
-| `plr_13` | 8.4.7 | `el9.aarch64` | pgdg | 72.6 KiB | [plr_13-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/plr_13-8.4.7-1PGDG.rhel9.aarch64.rpm) |
-| `plr_13` | 8.4.6 | `el9.aarch64` | pgdg | 71.6 KiB | [plr_13-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/plr_13-8.4.6-1PGDG.rhel9.aarch64.rpm) |
-| `plr_13` | 8.4.8 | `el10.aarch64` | pgdg | 74.0 KiB | [plr_13-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/plr_13-8.4.8-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-plr` | 8.4.8.1 | `d12.x86_64` | pgdg | 135.4 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `d12.aarch64` | pgdg | 132.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `d13.x86_64` | pgdg | 136.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `d13.aarch64` | pgdg | 132.4 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `u22.x86_64` | pgdg | 150.5 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `u22.aarch64` | pgdg | 147.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `u24.x86_64` | pgdg | 126.8 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-plr` | 8.4.8.1 | `u24.aarch64` | pgdg | 123.2 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
+| `plr_13` | `8.4.8` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.8 KiB | [plr_13-8.4.8-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.8-1PGDG.rhel8.x86_64.rpm) |
+| `plr_13` | `8.4.7` | [el8.x86_64](/os/el8.x86_64) | pgdg | 75.6 KiB | [plr_13-8.4.7-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.7-1PGDG.rhel8.x86_64.rpm) |
+| `plr_13` | `8.4.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 74.7 KiB | [plr_13-8.4.6-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.6-1PGDG.rhel8.x86_64.rpm) |
+| `plr_13` | `8.4.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 165.5 KiB | [plr_13-8.4.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.5-1.rhel8.x86_64.rpm) |
+| `plr_13` | `8.4.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 164.3 KiB | [plr_13-8.4.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/plr_13-8.4.2-1.rhel8.x86_64.rpm) |
+| `plr_13` | `8.4.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 74.1 KiB | [plr_13-8.4.8-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.8-1PGDG.rhel8.aarch64.rpm) |
+| `plr_13` | `8.4.7` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.8 KiB | [plr_13-8.4.7-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.7-1PGDG.rhel8.aarch64.rpm) |
+| `plr_13` | `8.4.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.0 KiB | [plr_13-8.4.6-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/plr_13-8.4.6-1PGDG.rhel8.aarch64.rpm) |
+| `plr_13` | `8.4.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.3 KiB | [plr_13-8.4.8-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.8-1PGDG.rhel9.x86_64.rpm) |
+| `plr_13` | `8.4.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 74.2 KiB | [plr_13-8.4.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.7-1PGDG.rhel9.x86_64.rpm) |
+| `plr_13` | `8.4.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 73.4 KiB | [plr_13-8.4.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.6-1PGDG.rhel9.x86_64.rpm) |
+| `plr_13` | `8.4.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 166.6 KiB | [plr_13-8.4.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/plr_13-8.4.5-1.rhel9.x86_64.rpm) |
+| `plr_13` | `8.4.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.6 KiB | [plr_13-8.4.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/plr_13-8.4.7-1PGDG.rhel9.aarch64.rpm) |
+| `plr_13` | `8.4.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 71.6 KiB | [plr_13-8.4.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/plr_13-8.4.6-1PGDG.rhel9.aarch64.rpm) |
+| `plr_13` | `8.4.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 74.0 KiB | [plr_13-8.4.8-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/plr_13-8.4.8-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-13-plr` | `8.4.8.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 135.4 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 132.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 136.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 132.4 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 150.5 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 147.0 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 126.8 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-plr` | `8.4.8.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.2 KiB | [postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plr/postgresql-13-plr_8.4.8.1-1.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

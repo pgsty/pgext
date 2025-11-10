@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-Quantile aggregation function
+[**quantile**](https://github.com/tvondra/quantile)
 
 
 ## Overview
@@ -58,120 +58,120 @@ Quantile aggregation function
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_18` | 1.1.8 | `el8.x86_64` | pigsty | 18.5 KiB | [quantile_18-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_18-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_18` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_18-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_18-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_18` | 1.1.8 | `el9.x86_64` | pigsty | 18.1 KiB | [quantile_18-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_18-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_18` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_18-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_18-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_18` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_18-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_18-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_18` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_18-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_18-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.5 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 21.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.5 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 21.3 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 22.7 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 21.8 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.6 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 22.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_18` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.5 KiB | [quantile_18-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_18-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_18` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_18-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_18-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_18` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.1 KiB | [quantile_18-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_18-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_18` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_18-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_18-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_18` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_18-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_18-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_18` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_18-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_18-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.5 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 21.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.5 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.3 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 22.7 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 21.8 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.6 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.2 KiB | [postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-18-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_17` | 1.1.8 | `el8.x86_64` | pigsty | 18.5 KiB | [quantile_17-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_17-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_17` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_17-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_17-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_17` | 1.1.8 | `el9.x86_64` | pigsty | 18.2 KiB | [quantile_17-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_17-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_17` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_17-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_17-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_17` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_17-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_17-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_17` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_17-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_17-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.2 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 20.9 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.2 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 21.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 23.9 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 23.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.3 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 22.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_17` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.5 KiB | [quantile_17-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_17-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_17` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_17-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_17-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_17` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.2 KiB | [quantile_17-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_17-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_17` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_17-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_17-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_17` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_17-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_17-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_17` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_17-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_17-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.2 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 20.9 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.2 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.9 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.0 KiB | [postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-17-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_16` | 1.1.8 | `el8.x86_64` | pigsty | 18.5 KiB | [quantile_16-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_16-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_16` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_16-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_16-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_16` | 1.1.8 | `el9.x86_64` | pigsty | 18.2 KiB | [quantile_16-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_16-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_16` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_16-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_16-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_16` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_16-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_16-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_16` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_16-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_16-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 20.9 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 21.0 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 23.8 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 23.0 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 21.9 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_16` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.5 KiB | [quantile_16-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_16-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_16` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_16-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_16-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_16` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.2 KiB | [quantile_16-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_16-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_16` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_16-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_16-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_16` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_16-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_16-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_16` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_16-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_16-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 20.9 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.0 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.8 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 23.0 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.2 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-16-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_15` | 1.1.8 | `el8.x86_64` | pigsty | 18.5 KiB | [quantile_15-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_15-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_15` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_15-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_15-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_15` | 1.1.8 | `el9.x86_64` | pigsty | 18.2 KiB | [quantile_15-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_15-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_15` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_15-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_15-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_15` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_15-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_15-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_15` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_15-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_15-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 20.9 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 21.0 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 23.6 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 22.7 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 21.9 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_15` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.5 KiB | [quantile_15-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_15-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_15` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_15-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_15-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_15` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.2 KiB | [quantile_15-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_15-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_15` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_15-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_15-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_15` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_15-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_15-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_15` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_15-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_15-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 20.9 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.0 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.6 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 22.7 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.2 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.9 KiB | [postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-15-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_14` | 1.1.8 | `el8.x86_64` | pigsty | 18.5 KiB | [quantile_14-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_14-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_14` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_14-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_14-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_14` | 1.1.8 | `el9.x86_64` | pigsty | 18.1 KiB | [quantile_14-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_14-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_14` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_14-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_14-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_14` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_14-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_14-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_14` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_14-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_14-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 21.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 21.1 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 23.6 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 22.7 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 22.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_14` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.5 KiB | [quantile_14-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_14-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_14` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_14-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_14-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_14` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.1 KiB | [quantile_14-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_14-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_14` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_14-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_14-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_14` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_14-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_14-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_14` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_14-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_14-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 21.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 21.1 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.6 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 22.7 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 22.0 KiB | [postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-14-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `quantile_13` | 1.1.8 | `el8.x86_64` | pigsty | 18.2 KiB | [quantile_13-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_13-1.1.8-1PIGSTY.el8.x86_64.rpm) |
-| `quantile_13` | 1.1.8 | `el8.aarch64` | pigsty | 17.8 KiB | [quantile_13-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_13-1.1.8-1PIGSTY.el8.aarch64.rpm) |
-| `quantile_13` | 1.1.8 | `el9.x86_64` | pigsty | 18.2 KiB | [quantile_13-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_13-1.1.8-1PIGSTY.el9.x86_64.rpm) |
-| `quantile_13` | 1.1.8 | `el9.aarch64` | pigsty | 17.5 KiB | [quantile_13-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_13-1.1.8-1PIGSTY.el9.aarch64.rpm) |
-| `quantile_13` | 1.1.8 | `el10.x86_64` | pigsty | 18.1 KiB | [quantile_13-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_13-1.1.8-1PIGSTY.el10.x86_64.rpm) |
-| `quantile_13` | 1.1.8 | `el10.aarch64` | pigsty | 17.8 KiB | [quantile_13-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_13-1.1.8-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-quantile` | 1.1.8 | `d12.x86_64` | pigsty | 21.2 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `d12.aarch64` | pigsty | 20.5 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `d13.x86_64` | pigsty | 21.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `d13.aarch64` | pigsty | 20.6 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `u22.x86_64` | pigsty | 23.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `u22.aarch64` | pigsty | 22.8 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `u24.x86_64` | pigsty | 22.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-quantile` | 1.1.8 | `u24.aarch64` | pigsty | 21.5 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
+| `quantile_13` | `1.1.8` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.2 KiB | [quantile_13-1.1.8-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/quantile_13-1.1.8-1PIGSTY.el8.x86_64.rpm) |
+| `quantile_13` | `1.1.8` | [el8.aarch64](/os/el8.aarch64) | pigsty | 17.8 KiB | [quantile_13-1.1.8-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/quantile_13-1.1.8-1PIGSTY.el8.aarch64.rpm) |
+| `quantile_13` | `1.1.8` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.2 KiB | [quantile_13-1.1.8-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/quantile_13-1.1.8-1PIGSTY.el9.x86_64.rpm) |
+| `quantile_13` | `1.1.8` | [el9.aarch64](/os/el9.aarch64) | pigsty | 17.5 KiB | [quantile_13-1.1.8-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/quantile_13-1.1.8-1PIGSTY.el9.aarch64.rpm) |
+| `quantile_13` | `1.1.8` | [el10.x86_64](/os/el10.x86_64) | pigsty | 18.1 KiB | [quantile_13-1.1.8-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/quantile_13-1.1.8-1PIGSTY.el10.x86_64.rpm) |
+| `quantile_13` | `1.1.8` | [el10.aarch64](/os/el10.aarch64) | pigsty | 17.8 KiB | [quantile_13-1.1.8-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/quantile_13-1.1.8-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-quantile` | `1.1.8` | [d12.x86_64](/os/d12.x86_64) | pigsty | 21.2 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [d12.aarch64](/os/d12.aarch64) | pigsty | 20.5 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [d13.x86_64](/os/d13.x86_64) | pigsty | 21.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [d13.aarch64](/os/d13.aarch64) | pigsty | 20.6 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [u22.x86_64](/os/u22.x86_64) | pigsty | 23.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [u22.aarch64](/os/u22.aarch64) | pigsty | 22.8 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [u24.x86_64](/os/u24.x86_64) | pigsty | 22.3 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-quantile` | `1.1.8` | [u24.aarch64](/os/u24.aarch64) | pigsty | 21.5 KiB | [postgresql-13-quantile_1.1.8-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/q/quantile/postgresql-13-quantile_1.1.8-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

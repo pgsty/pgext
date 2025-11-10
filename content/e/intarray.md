@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-functions, operators, and index support for 1-D arrays of integers
+[**intarray**](https://www.postgresql.org/docs/current/intarray.html)
 
 
 ## Overview

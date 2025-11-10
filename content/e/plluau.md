@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-Lua as an untrusted procedural language
+[**pllua**](https://github.com/pllua/pllua)
 
 
 ## Overview

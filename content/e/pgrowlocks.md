@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-show row-level locking information
+[**pgrowlocks**](https://www.postgresql.org/docs/current/pgrowlocks.html)
 
 
 ## Overview

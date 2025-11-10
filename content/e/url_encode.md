@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-url_encode, url_decode functions
+[**url_encode**](https://github.com/okbob/url_encode)
 
 
 ## Overview
@@ -58,120 +58,120 @@ url_encode, url_decode functions
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_18` | 1.2.5 | `el8.x86_64` | pigsty | 13.3 KiB | [url_encode_18-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_18-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_18` | 1.2.5 | `el8.aarch64` | pigsty | 13.4 KiB | [url_encode_18-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_18-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_18` | 1.2.5 | `el9.x86_64` | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_18-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_18` | 1.2.5 | `el9.aarch64` | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_18-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_18` | 1.2.5 | `el10.x86_64` | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_18-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_18` | 1.2.5 | `el10.aarch64` | pigsty | 13.5 KiB | [url_encode_18-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_18-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 13.0 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 13.0 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 13.2 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 13.2 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_18` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [url_encode_18-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_18-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_18` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.4 KiB | [url_encode_18-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_18-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_18` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_18-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_18` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_18-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_18` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.2 KiB | [url_encode_18-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_18-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_18` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [url_encode_18-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_18-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 13.0 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.0 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.8 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.2 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.2 KiB | [postgresql-18-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-18-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_17` | 1.2.5 | `el8.x86_64` | pigsty | 13.3 KiB | [url_encode_17-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_17-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_17` | 1.2.5 | `el8.aarch64` | pigsty | 13.4 KiB | [url_encode_17-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_17-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_17` | 1.2.5 | `el9.x86_64` | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_17-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_17` | 1.2.5 | `el9.aarch64` | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_17-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_17` | 1.2.5 | `el10.x86_64` | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_17-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_17` | 1.2.5 | `el10.aarch64` | pigsty | 13.5 KiB | [url_encode_17-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_17-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.7 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.8 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.7 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 13.0 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.9 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 13.2 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 13.2 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_17` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.3 KiB | [url_encode_17-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_17-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_17` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.4 KiB | [url_encode_17-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_17-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_17` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_17-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_17` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_17-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_17` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.2 KiB | [url_encode_17-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_17-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_17` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.5 KiB | [url_encode_17-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_17-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.7 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.8 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.7 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 13.0 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.1 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.9 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.2 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.2 KiB | [postgresql-17-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-17-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_16` | 1.2.5 | `el8.x86_64` | pigsty | 13.2 KiB | [url_encode_16-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_16-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_16` | 1.2.5 | `el8.aarch64` | pigsty | 13.4 KiB | [url_encode_16-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_16-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_16` | 1.2.5 | `el9.x86_64` | pigsty | 13.0 KiB | [url_encode_16-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_16-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_16` | 1.2.5 | `el9.aarch64` | pigsty | 13.1 KiB | [url_encode_16-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_16-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_16` | 1.2.5 | `el10.x86_64` | pigsty | 13.1 KiB | [url_encode_16-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_16-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_16` | 1.2.5 | `el10.aarch64` | pigsty | 13.4 KiB | [url_encode_16-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_16-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.4 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.5 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.4 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 12.7 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 12.9 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.7 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 12.8 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 12.9 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_16` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.2 KiB | [url_encode_16-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_16-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_16` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.4 KiB | [url_encode_16-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_16-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_16` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.0 KiB | [url_encode_16-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_16-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_16` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.1 KiB | [url_encode_16-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_16-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_16` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [url_encode_16-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_16-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_16` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [url_encode_16-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_16-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.4 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.5 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.4 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.7 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.9 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.7 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.8 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.9 KiB | [postgresql-16-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-16-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_15` | 1.2.5 | `el8.x86_64` | pigsty | 13.2 KiB | [url_encode_15-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_15-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_15` | 1.2.5 | `el8.aarch64` | pigsty | 13.4 KiB | [url_encode_15-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_15-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_15` | 1.2.5 | `el9.x86_64` | pigsty | 13.0 KiB | [url_encode_15-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_15-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_15` | 1.2.5 | `el9.aarch64` | pigsty | 13.1 KiB | [url_encode_15-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_15-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_15` | 1.2.5 | `el10.x86_64` | pigsty | 13.1 KiB | [url_encode_15-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_15-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_15` | 1.2.5 | `el10.aarch64` | pigsty | 13.4 KiB | [url_encode_15-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_15-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.5 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.5 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.4 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 12.7 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.7 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_15` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.2 KiB | [url_encode_15-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_15-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_15` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.4 KiB | [url_encode_15-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_15-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_15` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.0 KiB | [url_encode_15-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_15-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_15` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.1 KiB | [url_encode_15-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_15-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_15` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [url_encode_15-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_15-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_15` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [url_encode_15-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_15-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.5 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.5 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.4 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.7 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.7 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.9 KiB | [postgresql-15-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-15-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_14` | 1.2.5 | `el8.x86_64` | pigsty | 13.2 KiB | [url_encode_14-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_14-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_14` | 1.2.5 | `el8.aarch64` | pigsty | 13.4 KiB | [url_encode_14-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_14-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_14` | 1.2.5 | `el9.x86_64` | pigsty | 13.0 KiB | [url_encode_14-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_14-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_14` | 1.2.5 | `el9.aarch64` | pigsty | 13.1 KiB | [url_encode_14-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_14-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_14` | 1.2.5 | `el10.x86_64` | pigsty | 13.1 KiB | [url_encode_14-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_14-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_14` | 1.2.5 | `el10.aarch64` | pigsty | 13.4 KiB | [url_encode_14-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_14-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.4 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.5 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.4 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 12.7 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 12.9 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.7 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 12.9 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_14` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.2 KiB | [url_encode_14-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_14-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_14` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.4 KiB | [url_encode_14-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_14-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_14` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.0 KiB | [url_encode_14-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_14-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_14` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.1 KiB | [url_encode_14-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_14-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_14` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [url_encode_14-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_14-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_14` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 KiB | [url_encode_14-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_14-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.4 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.5 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.4 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.7 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.9 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.7 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.9 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-14-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-14-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `url_encode_13` | 1.2.5 | `el8.x86_64` | pigsty | 13.0 KiB | [url_encode_13-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_13-1.2.5-1PIGSTY.el8.x86_64.rpm) |
-| `url_encode_13` | 1.2.5 | `el8.aarch64` | pigsty | 13.3 KiB | [url_encode_13-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_13-1.2.5-1PIGSTY.el8.aarch64.rpm) |
-| `url_encode_13` | 1.2.5 | `el9.x86_64` | pigsty | 13.2 KiB | [url_encode_13-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_13-1.2.5-1PIGSTY.el9.x86_64.rpm) |
-| `url_encode_13` | 1.2.5 | `el9.aarch64` | pigsty | 13.1 KiB | [url_encode_13-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_13-1.2.5-1PIGSTY.el9.aarch64.rpm) |
-| `url_encode_13` | 1.2.5 | `el10.x86_64` | pigsty | 13.1 KiB | [url_encode_13-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_13-1.2.5-1PIGSTY.el10.x86_64.rpm) |
-| `url_encode_13` | 1.2.5 | `el10.aarch64` | pigsty | 13.3 KiB | [url_encode_13-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_13-1.2.5-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-url-encode` | 1.2.5 | `d12.x86_64` | pigsty | 12.1 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `d12.aarch64` | pigsty | 12.4 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `d13.x86_64` | pigsty | 12.5 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `d13.aarch64` | pigsty | 12.3 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `u22.x86_64` | pigsty | 12.9 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `u22.aarch64` | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `u24.x86_64` | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-url-encode` | 1.2.5 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `url_encode_13` | `1.2.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.0 KiB | [url_encode_13-1.2.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/url_encode_13-1.2.5-1PIGSTY.el8.x86_64.rpm) |
+| `url_encode_13` | `1.2.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.3 KiB | [url_encode_13-1.2.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/url_encode_13-1.2.5-1PIGSTY.el8.aarch64.rpm) |
+| `url_encode_13` | `1.2.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.2 KiB | [url_encode_13-1.2.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/url_encode_13-1.2.5-1PIGSTY.el9.x86_64.rpm) |
+| `url_encode_13` | `1.2.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.1 KiB | [url_encode_13-1.2.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/url_encode_13-1.2.5-1PIGSTY.el9.aarch64.rpm) |
+| `url_encode_13` | `1.2.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.1 KiB | [url_encode_13-1.2.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/url_encode_13-1.2.5-1PIGSTY.el10.x86_64.rpm) |
+| `url_encode_13` | `1.2.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.3 KiB | [url_encode_13-1.2.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/url_encode_13-1.2.5-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-url-encode` | `1.2.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.1 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.4 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.5 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.3 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.9 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-url-encode` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-13-url-encode_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/u/url-encode/postgresql-13-url-encode_1.2.5-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

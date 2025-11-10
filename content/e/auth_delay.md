@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-pause briefly before reporting authentication failure
+[**auth_delay**](https://www.postgresql.org/docs/current/auth-delay.html)
 
 
 ## Overview

@@ -24,9 +24,21 @@ weight: 100
 
 [Install](/pig/install) `pig` with a single command
 
-```bash tab="Global"
-curl -fsSL https://repo.pigsty.io/pig | bash
+{{< tabs items="Default,Mirror" >}}
+
+{{< tab >}}
+```bash tab="Default"
+curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
 ```
+{{< /tab >}}
+
+{{< tab >}}
+```bash tab="Mirror"
+curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
+```
+{{< /tab >}}
+
+{{< /tabs >}}
 
 
 Then it’s ready to use, assume you want to install the [**`pg_duckdb`**](/e/pg_duckdb/) extension:

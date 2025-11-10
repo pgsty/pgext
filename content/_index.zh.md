@@ -13,12 +13,12 @@ comment: false
 
 Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQL 扩展生态系统的协同超能力：
 
-- [**扩展目录**](/list) ： 查阅 **424** 个扩展插件的详细信息，找到满足您需求的插件
+- [**扩展目录**](/list) ： 查阅 **431** 个扩展插件的详细信息，找到满足您需求的插件
 - [**扩展仓库**](/repo) ： 获取预先打包的 RPM/DEB 二进制包，在 10 大主流 Linux 平台上可用
 - [**包管理器**](/pig) ： `pig` 命令行工具，屏蔽复杂度与操作系统差异，一键完成所有设置
 
 {{< cards >}}
-  {{< card link="/zh/list" title="扩展目录" icon="clipboard-list" subtitle="420+ 个可用 PostgreSQL 扩展的完整列表" >}}
+  {{< card link="/zh/list" title="扩展目录" icon="clipboard-list" subtitle="430+ 个可用 PostgreSQL 扩展的完整列表" >}}
   {{< card link="/zh/repo" title="软件仓库" icon="cube" subtitle="包含扩展二进制包的 APT/YUM 软件仓库" >}}
   {{< card link="/zh/pig" title="包管理器" icon="cash" subtitle="PostgreSQL 与扩展生态中缺失的包管理器" >}}
 {{< /cards >}}

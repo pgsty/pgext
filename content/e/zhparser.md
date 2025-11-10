@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-a parser for full-text search of Chinese
+[**zhparser**](https://github.com/amutu/zhparser)
 
 
 ## Overview
@@ -58,120 +58,120 @@ a parser for full-text search of Chinese
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_18` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_18-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_18-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_18` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_18-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_18-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_18` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_18-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_18` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_18-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_18` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_18-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_18` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_18-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_18` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_18-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_18-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_18` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_18-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_18-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_18` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_18-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_18` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_18-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_18` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_18-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_18` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_18-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_18-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-18-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-18-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_17` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_17-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_17-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_17` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_17-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_17-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_17` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_17-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_17` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_17-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_17` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_17-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_17` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_17-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_17` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_17-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_17-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_17` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_17-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_17-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_17` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_17-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_17` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_17-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_17` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_17-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_17` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_17-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_17-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-17-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-17-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_16` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_16-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_16-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_16` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_16-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_16-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_16` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_16-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_16` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_16-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_16` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_16-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_16` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_16-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_16` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_16-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_16-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_16` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_16-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_16-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_16` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_16-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_16` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_16-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_16` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_16-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_16` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_16-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_16-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-16-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-16-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_15` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_15-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_15-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_15` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_15-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_15-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_15` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_15-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_15` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_15-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_15` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_15-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_15` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_15-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_15` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_15-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_15-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_15` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_15-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_15-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_15` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_15-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_15` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_15-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_15` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_15-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_15` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_15-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_15-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-15-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-15-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_14` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_14-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_14-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_14` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_14-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_14-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_14` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_14-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_14` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_14-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_14` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_14-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_14` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_14-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_14` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_14-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_14-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_14` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_14-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_14-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_14` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_14-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_14` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_14-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_14` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_14-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_14` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_14-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_14-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-14-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-14-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `zhparser_13` | 2.3 | `el8.x86_64` | pigsty | 4.7 MiB | [zhparser_13-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_13-2.3-1PIGSTY.el8.x86_64.rpm) |
-| `zhparser_13` | 2.3 | `el8.aarch64` | pigsty | 4.7 MiB | [zhparser_13-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_13-2.3-1PIGSTY.el8.aarch64.rpm) |
-| `zhparser_13` | 2.3 | `el9.x86_64` | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_13-2.3-1PIGSTY.el9.x86_64.rpm) |
-| `zhparser_13` | 2.3 | `el9.aarch64` | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_13-2.3-1PIGSTY.el9.aarch64.rpm) |
-| `zhparser_13` | 2.3 | `el10.x86_64` | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_13-2.3-1PIGSTY.el10.x86_64.rpm) |
-| `zhparser_13` | 2.3 | `el10.aarch64` | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_13-2.3-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-zhparser` | 2.3 | `d12.x86_64` | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `d13.x86_64` | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `d13.aarch64` | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `u22.x86_64` | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `u22.aarch64` | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `u24.x86_64` | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-zhparser` | 2.3 | `u24.aarch64` | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
+| `zhparser_13` | `2.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 4.7 MiB | [zhparser_13-2.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/zhparser_13-2.3-1PIGSTY.el8.x86_64.rpm) |
+| `zhparser_13` | `2.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.7 MiB | [zhparser_13-2.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/zhparser_13-2.3-1PIGSTY.el8.aarch64.rpm) |
+| `zhparser_13` | `2.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/zhparser_13-2.3-1PIGSTY.el9.x86_64.rpm) |
+| `zhparser_13` | `2.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/zhparser_13-2.3-1PIGSTY.el9.aarch64.rpm) |
+| `zhparser_13` | `2.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/zhparser_13-2.3-1PIGSTY.el10.x86_64.rpm) |
+| `zhparser_13` | `2.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 4.3 MiB | [zhparser_13-2.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/zhparser_13-2.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-zhparser` | `2.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 4.0 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-zhparser` | `2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.3 MiB | [postgresql-13-zhparser_2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/z/zhparser/postgresql-13-zhparser_2.3-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

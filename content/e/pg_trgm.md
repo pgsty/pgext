@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-text similarity measurement and index searching based on trigrams
+[**pg_trgm**](https://www.postgresql.org/docs/current/pgtrgm.html)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["FTS"]
 width: full
 ---
 
-determine similarities and distance between strings
+[**fuzzystrmatch**](https://www.postgresql.org/docs/current/fuzzystrmatch.html)
 
 
 ## Overview

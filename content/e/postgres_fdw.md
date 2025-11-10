@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-foreign-data wrapper for remote PostgreSQL servers
+[**postgres_fdw**](https://www.postgresql.org/docs/current/postgres-fdw.html)
 
 
 ## Overview
@@ -24,6 +24,7 @@ foreign-data wrapper for remote PostgreSQL servers
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "omni_schema" >}} |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "plproxy" >}} {{< ext "wrappers" >}} {{< ext "pgspider_ext" >}} {{< ext "dblink" >}} {{< ext "mimeo" >}} {{< ext "multicorn" >}} {{< ext "mysql_fdw" >}} |
 
 

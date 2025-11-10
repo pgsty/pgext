@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table.
+[**pg_dbms_errlog**](https://github.com/HexaCluster/pg_dbms_errlog)
 
 
 ## Overview
@@ -57,60 +57,60 @@ Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table.
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dbms_errlog_18` | 2.2 | `el8.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_dbms_errlog_18` | 2.2 | `el8.aarch64` | pgdg | 31.3 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_dbms_errlog_18` | 2.2 | `el9.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_dbms_errlog_18` | 2.2 | `el9.aarch64` | pgdg | 31.6 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_dbms_errlog_18` | 2.2 | `el10.x86_64` | pgdg | 32.6 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_errlog_18` | 2.2 | `el10.aarch64` | pgdg | 32.2 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.3 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.6 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_errlog_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dbms_errlog_17` | 2.2 | `el8.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_dbms_errlog_17` | 2.2 | `el8.aarch64` | pgdg | 31.3 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_dbms_errlog_17` | 2.2 | `el9.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_dbms_errlog_17` | 2.2 | `el9.aarch64` | pgdg | 31.6 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_dbms_errlog_17` | 2.2 | `el10.x86_64` | pgdg | 32.6 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_errlog_17` | 2.2 | `el10.aarch64` | pgdg | 32.3 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.3 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.6 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_errlog_17` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.3 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dbms_errlog_16` | 2.2 | `el8.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_dbms_errlog_16` | 2.2 | `el8.aarch64` | pgdg | 31.3 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_dbms_errlog_16` | 2.2 | `el9.x86_64` | pgdg | 32.0 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_dbms_errlog_16` | 2.2 | `el9.aarch64` | pgdg | 31.6 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_dbms_errlog_16` | 2.2 | `el10.x86_64` | pgdg | 32.6 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_errlog_16` | 2.2 | `el10.aarch64` | pgdg | 32.2 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.3 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 32.0 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.6 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_errlog_16` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dbms_errlog_15` | 2.2 | `el8.x86_64` | pgdg | 32.6 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_dbms_errlog_15` | 2.2 | `el8.aarch64` | pgdg | 31.8 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_dbms_errlog_15` | 2.2 | `el9.x86_64` | pgdg | 33.1 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_dbms_errlog_15` | 2.2 | `el9.aarch64` | pgdg | 32.7 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_dbms_errlog_15` | 2.2 | `el10.x86_64` | pgdg | 33.5 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_errlog_15` | 2.2 | `el10.aarch64` | pgdg | 33.2 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.8 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 33.1 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.7 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.5 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_errlog_15` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.2 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dbms_errlog_14` | 2.2 | `el8.x86_64` | pgdg | 32.5 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel8.x86_64.rpm) |
-| `pg_dbms_errlog_14` | 2.2 | `el8.aarch64` | pgdg | 31.8 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel8.aarch64.rpm) |
-| `pg_dbms_errlog_14` | 2.2 | `el9.x86_64` | pgdg | 33.1 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_dbms_errlog_14` | 2.2 | `el9.aarch64` | pgdg | 32.6 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_dbms_errlog_14` | 2.2 | `el10.x86_64` | pgdg | 33.4 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_errlog_14` | 2.2 | `el10.aarch64` | pgdg | 33.1 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 32.5 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel8.x86_64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.8 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel8.aarch64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 33.1 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.6 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel9.aarch64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.4 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm) |
+| `pg_dbms_errlog_14` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.1 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

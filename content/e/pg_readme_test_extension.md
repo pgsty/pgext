@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-Test generating a README.md document for extension or schema
+[**pg_readme**](https://github.com/bigsmoke/pg_readme)
 
 
 ## Overview

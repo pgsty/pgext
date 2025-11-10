@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-text search dictionary template for extended synonym processing
+[**dict_xsyn**](https://www.postgresql.org/docs/current/dict-xsyn.html)
 
 
 ## Overview

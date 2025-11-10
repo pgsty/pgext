@@ -7,7 +7,7 @@ categories: ["RAG"]
 width: full
 ---
 
-Run AL/ML workloads with SQL interface
+[**pgml**](https://github.com/postgresml/postgresml)
 
 
 ## Overview
@@ -60,83 +60,83 @@ Run AL/ML workloads with SQL interface
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgml_17` | 2.10.0 | `el8.x86_64` | pigsty | 5.7 MiB | [pgml_17-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_17-2.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgml_17` | 2.10.0 | `el8.aarch64` | pigsty | 4.8 MiB | [pgml_17-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_17-2.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgml_17` | 2.10.0 | `el9.x86_64` | pigsty | 5.3 MiB | [pgml_17-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_17-2.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_17` | 2.10.0 | `el9.aarch64` | pigsty | 5.1 MiB | [pgml_17-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_17-2.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-17-pgml` | 2.10.0 | `d12.x86_64` | pigsty | 4.7 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pgml` | 2.10.0 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pgml` | 2.10.0 | `u22.x86_64` | pigsty | 5.1 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pgml` | 2.10.0 | `u22.aarch64` | pigsty | 4.8 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pgml` | 2.10.0 | `u24.x86_64` | pigsty | 5.4 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pgml` | 2.10.0 | `u24.aarch64` | pigsty | 4.9 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
+| `pgml_17` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.7 MiB | [pgml_17-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_17-2.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgml_17` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.8 MiB | [pgml_17-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_17-2.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgml_17` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.3 MiB | [pgml_17-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_17-2.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_17` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.1 MiB | [pgml_17-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_17-2.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-17-pgml` | `2.10.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.7 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pgml` | `2.10.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pgml` | `2.10.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 5.1 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pgml` | `2.10.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.8 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pgml` | `2.10.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.4 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-17-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgml_16` | 2.10.0 | `el8.x86_64` | pigsty | 5.7 MiB | [pgml_16-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_16-2.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgml_16` | 2.10.0 | `el8.aarch64` | pigsty | 4.8 MiB | [pgml_16-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_16-2.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgml_16` | 2.9.3 | `el9.x86_64` | pigsty | 4.6 MiB | [pgml_16-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_16-2.9.3-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_16` | 2.10.0 | `el9.x86_64` | pigsty | 5.3 MiB | [pgml_16-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_16-2.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_16` | 2.10.0 | `el9.aarch64` | pigsty | 5.1 MiB | [pgml_16-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_16-2.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-16-pgml` | 2.10.0 | `d12.x86_64` | pigsty | 4.7 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pgml` | 2.10.0 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pgml` | 2.10.0 | `u22.x86_64` | pigsty | 5.1 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pgml` | 2.10.0 | `u22.aarch64` | pigsty | 4.8 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pgml` | 2.10.0 | `u24.x86_64` | pigsty | 5.4 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pgml` | 2.10.0 | `u24.aarch64` | pigsty | 4.9 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
+| `pgml_16` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.7 MiB | [pgml_16-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_16-2.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgml_16` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.8 MiB | [pgml_16-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_16-2.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgml_16` | `2.9.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.6 MiB | [pgml_16-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_16-2.9.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_16` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.3 MiB | [pgml_16-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_16-2.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_16` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.1 MiB | [pgml_16-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_16-2.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-16-pgml` | `2.10.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.7 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pgml` | `2.10.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pgml` | `2.10.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 5.1 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pgml` | `2.10.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.8 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pgml` | `2.10.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.4 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-16-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgml_15` | 2.10.0 | `el8.x86_64` | pigsty | 5.7 MiB | [pgml_15-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_15-2.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgml_15` | 2.10.0 | `el8.aarch64` | pigsty | 4.8 MiB | [pgml_15-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_15-2.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgml_15` | 2.9.3 | `el9.x86_64` | pigsty | 4.6 MiB | [pgml_15-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_15-2.9.3-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_15` | 2.10.0 | `el9.x86_64` | pigsty | 5.3 MiB | [pgml_15-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_15-2.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_15` | 2.10.0 | `el9.aarch64` | pigsty | 5.1 MiB | [pgml_15-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_15-2.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-pgml` | 2.10.0 | `d12.x86_64` | pigsty | 4.7 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pgml` | 2.10.0 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pgml` | 2.10.0 | `u22.x86_64` | pigsty | 5.1 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pgml` | 2.10.0 | `u22.aarch64` | pigsty | 4.8 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pgml` | 2.10.0 | `u24.x86_64` | pigsty | 5.4 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pgml` | 2.10.0 | `u24.aarch64` | pigsty | 4.9 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
+| `pgml_15` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.7 MiB | [pgml_15-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_15-2.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgml_15` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.8 MiB | [pgml_15-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_15-2.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgml_15` | `2.9.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.6 MiB | [pgml_15-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_15-2.9.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_15` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.3 MiB | [pgml_15-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_15-2.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_15` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.1 MiB | [pgml_15-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_15-2.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-15-pgml` | `2.10.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.7 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pgml` | `2.10.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pgml` | `2.10.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 5.1 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pgml` | `2.10.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.8 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pgml` | `2.10.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.4 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-15-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgml_14` | 2.10.0 | `el8.x86_64` | pigsty | 5.7 MiB | [pgml_14-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_14-2.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgml_14` | 2.10.0 | `el8.aarch64` | pigsty | 4.8 MiB | [pgml_14-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_14-2.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgml_14` | 2.9.3 | `el9.x86_64` | pigsty | 4.6 MiB | [pgml_14-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_14-2.9.3-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_14` | 2.10.0 | `el9.x86_64` | pigsty | 5.3 MiB | [pgml_14-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_14-2.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_14` | 2.10.0 | `el9.aarch64` | pigsty | 5.1 MiB | [pgml_14-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_14-2.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-14-pgml` | 2.10.0 | `d12.x86_64` | pigsty | 4.7 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgml` | 2.10.0 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgml` | 2.10.0 | `u22.x86_64` | pigsty | 5.1 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgml` | 2.10.0 | `u22.aarch64` | pigsty | 4.8 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgml` | 2.10.0 | `u24.x86_64` | pigsty | 5.4 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pgml` | 2.10.0 | `u24.aarch64` | pigsty | 4.9 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
+| `pgml_14` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.7 MiB | [pgml_14-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_14-2.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgml_14` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.8 MiB | [pgml_14-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_14-2.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgml_14` | `2.9.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 4.6 MiB | [pgml_14-2.9.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_14-2.9.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_14` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.3 MiB | [pgml_14-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_14-2.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_14` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.1 MiB | [pgml_14-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_14-2.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-14-pgml` | `2.10.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.7 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pgml` | `2.10.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pgml` | `2.10.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 5.1 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pgml` | `2.10.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.8 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pgml` | `2.10.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.4 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-14-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgml_13` | 2.10.0 | `el8.x86_64` | pigsty | 5.7 MiB | [pgml_13-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_13-2.10.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgml_13` | 2.10.0 | `el8.aarch64` | pigsty | 4.8 MiB | [pgml_13-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_13-2.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgml_13` | 2.10.0 | `el9.x86_64` | pigsty | 5.3 MiB | [pgml_13-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_13-2.10.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgml_13` | 2.10.0 | `el9.aarch64` | pigsty | 5.1 MiB | [pgml_13-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_13-2.10.0-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-13-pgml` | 2.10.0 | `d12.x86_64` | pigsty | 4.7 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pgml` | 2.10.0 | `d12.aarch64` | pigsty | 4.0 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pgml` | 2.10.0 | `u22.x86_64` | pigsty | 5.1 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pgml` | 2.10.0 | `u22.aarch64` | pigsty | 4.8 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pgml` | 2.10.0 | `u24.x86_64` | pigsty | 5.4 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-pgml` | 2.10.0 | `u24.aarch64` | pigsty | 4.9 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
+| `pgml_13` | `2.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 5.7 MiB | [pgml_13-2.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgml_13-2.10.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgml_13` | `2.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 4.8 MiB | [pgml_13-2.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgml_13-2.10.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgml_13` | `2.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 5.3 MiB | [pgml_13-2.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgml_13-2.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgml_13` | `2.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 5.1 MiB | [pgml_13-2.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgml_13-2.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-13-pgml` | `2.10.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.7 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pgml` | `2.10.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pgml` | `2.10.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 5.1 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pgml` | `2.10.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.8 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pgml` | `2.10.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.4 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pgml` | `2.10.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.9 MiB | [postgresql-13-pgml_2.10.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgml/postgresql-13-pgml_2.10.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

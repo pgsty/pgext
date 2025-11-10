@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-functions that manipulate whole tables, including crosstab
+[**tablefunc**](https://www.postgresql.org/docs/current/tablefunc.html)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-GSL statistical functions for postgresql
+[**pg_math**](https://github.com/chanukyasds/pg_math)
 
 
 ## Overview
@@ -58,120 +58,120 @@ GSL statistical functions for postgresql
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_18` | 1.0 | `el8.x86_64` | pigsty | 33.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_18` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_18` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_18` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_18` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_18` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.7 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `d12.aarch64` | pigsty | 60.1 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.9 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `d13.aarch64` | pigsty | 60.3 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `u22.x86_64` | pigsty | 68.3 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.1 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `u24.x86_64` | pigsty | 65.0 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.9 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_18` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 33.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_18-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_18` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 31.0 KiB | [pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_18-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.4 KiB | [pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_18-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_18-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.7 KiB | [pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_18-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_18-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.7 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 60.1 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.9 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 60.3 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 68.3 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.1 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 65.0 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.9 KiB | [postgresql-18-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-18-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_17` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_17` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_17` | 1.0 | `el9.x86_64` | pigsty | 31.5 KiB | [pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_17` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_17` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_17` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.7 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `d13.aarch64` | pigsty | 60.2 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `u24.x86_64` | pigsty | 64.9 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_17` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 33.1 KiB | [pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_17-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_17` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 31.0 KiB | [pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_17-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.5 KiB | [pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_17-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_17-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.7 KiB | [pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_17-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_17-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.7 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 60.2 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 69.0 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.9 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.8 KiB | [postgresql-17-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-17-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_16` | 1.0 | `el8.x86_64` | pigsty | 33.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_16` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_16` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_16` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_16` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_16` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.6 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `d13.aarch64` | pigsty | 60.2 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.8 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `u24.x86_64` | pigsty | 64.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.8 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_16` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 33.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_16-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_16` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 31.0 KiB | [pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_16-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.4 KiB | [pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_16-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_16-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.7 KiB | [pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_16-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_16-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.6 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 60.2 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 69.0 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.8 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.9 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.8 KiB | [postgresql-16-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-16-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_15` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_15` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_15` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_15` | 1.0 | `el9.aarch64` | pigsty | 29.8 KiB | [pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_15` | 1.0 | `el10.x86_64` | pigsty | 31.7 KiB | [pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_15` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `d12.aarch64` | pigsty | 60.1 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `d13.aarch64` | pigsty | 60.3 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `u22.x86_64` | pigsty | 69.0 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `u24.x86_64` | pigsty | 64.9 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 33.1 KiB | [pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_15-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 31.0 KiB | [pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_15-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.4 KiB | [pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_15-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.8 KiB | [pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_15-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.7 KiB | [pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_15-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_15-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 60.1 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 60.3 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 69.0 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.9 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.8 KiB | [postgresql-15-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-15-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_14` | 1.0 | `el8.x86_64` | pigsty | 33.1 KiB | [pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_14` | 1.0 | `el8.aarch64` | pigsty | 31.0 KiB | [pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_14` | 1.0 | `el9.x86_64` | pigsty | 31.3 KiB | [pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_14` | 1.0 | `el9.aarch64` | pigsty | 29.7 KiB | [pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_14` | 1.0 | `el10.x86_64` | pigsty | 31.6 KiB | [pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_14` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.6 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.7 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `d13.aarch64` | pigsty | 60.1 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `u22.x86_64` | pigsty | 68.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.7 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `u24.x86_64` | pigsty | 64.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 33.1 KiB | [pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_14-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 31.0 KiB | [pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_14-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.3 KiB | [pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_14-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.7 KiB | [pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_14-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.6 KiB | [pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_14-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_14-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.6 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.7 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 60.1 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 68.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.7 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.8 KiB | [postgresql-14-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-14-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_math_13` | 1.0 | `el8.x86_64` | pigsty | 32.0 KiB | [pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_math_13` | 1.0 | `el8.aarch64` | pigsty | 30.9 KiB | [pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_math_13` | 1.0 | `el9.x86_64` | pigsty | 31.4 KiB | [pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_math_13` | 1.0 | `el9.aarch64` | pigsty | 29.7 KiB | [pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_math_13` | 1.0 | `el10.x86_64` | pigsty | 31.6 KiB | [pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_math_13` | 1.0 | `el10.aarch64` | pigsty | 30.1 KiB | [pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-pg-math` | 1.0 | `d12.x86_64` | pigsty | 60.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `d12.aarch64` | pigsty | 59.7 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `d13.x86_64` | pigsty | 60.4 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `d13.aarch64` | pigsty | 59.9 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `u22.x86_64` | pigsty | 68.7 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `u22.aarch64` | pigsty | 67.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `u24.x86_64` | pigsty | 64.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-pg-math` | 1.0 | `u24.aarch64` | pigsty | 63.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
+| `pg_math_13` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 32.0 KiB | [pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_math_13-1.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_math_13` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 30.9 KiB | [pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_math_13-1.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_math_13` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 31.4 KiB | [pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_math_13-1.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_math_13` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.7 KiB | [pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_math_13-1.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_math_13` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 31.6 KiB | [pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_math_13-1.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_math_13` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 30.1 KiB | [pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_math_13-1.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-pg-math` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.7 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.4 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.9 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 68.7 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 67.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pg-math` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.6 KiB | [postgresql-13-pg-math_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-math/postgresql-13-pg-math_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

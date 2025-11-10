@@ -11,7 +11,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 339 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 342 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 37 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 34 | Extensions written in Rust with the pgrx framework |
 | {{< language "Data" >}} | 10 | Data-only extensions |
@@ -22,7 +22,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="339 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="342 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -77,45 +77,49 @@ The traditional PostgreSQL extension language
 | 2860 | {{< alias "imgsmlr" >}} | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2880 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
-| 2910 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
-| 2920 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
-| 2951 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
-| 2952 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
-| 2953 | {{< alias "omni_aws" "omnigres" >}} | Amazon Web Services APIs (S3) |
-| 2954 | {{< alias "omni_cloudevents" "omnigres" >}} | CloudEvents support |
-| 2955 | {{< alias "omni_containers" "omnigres" >}} | Docker container management |
-| 2956 | {{< alias "omni_credentials" "omnigres" >}} | Application credential management |
-| 2958 | {{< alias "omni_email" "omnigres" >}} | E-mail framework |
-| 2959 | {{< alias "omni_http" "omnigres" >}} | Basic HTTP types |
-| 2960 | {{< alias "omni_httpc" "omnigres" >}} | HTTP client |
-| 2961 | {{< alias "omni_httpd" "omnigres" >}} | HTTP server |
-| 2962 | {{< alias "omni_id" "omnigres" >}} | Identity types |
-| 2963 | {{< alias "omni_json" "omnigres" >}} | JSON toolkit |
-| 2964 | {{< alias "omni_kube" "omnigres" >}} | Kubernetes (k8s) integration |
-| 2965 | {{< alias "omni_ledger" "omnigres" >}} | Financial ledger |
-| 2966 | {{< alias "omni_manifest" "omnigres" >}} | Package installation manifests |
-| 2967 | {{< alias "omni_mimetypes" "omnigres" >}} | MIME types |
-| 2968 | {{< alias "omni_os" "omnigres" >}} | Operating system integration |
-| 2969 | {{< alias "omni_polyfill" "omnigres" >}} | Postgres API polyfills |
-| 2970 | {{< alias "omni_python" "omnigres" >}} | First-class Python support |
-| 2971 | {{< alias "omni_regex" "omnigres" >}} | PCRE-compatible regular expressions |
-| 2972 | {{< alias "omni_rest" "omnigres" >}} | REST API toolkit (with PostgREST support) |
-| 2973 | {{< alias "omni_schema" "omnigres" >}} | Advanced schema management tooling |
-| 2974 | {{< alias "omni_seq" "omnigres" >}} | Distributed integer sequences |
-| 2975 | {{< alias "omni_service" "omnigres" >}} | Service management |
-| 2976 | {{< alias "omni_session" "omnigres" >}} | Session management |
-| 2977 | {{< alias "omni_sql" "omnigres" >}} | Programmatic SQL manipulation |
-| 2979 | {{< alias "omni_sqlite" "omnigres" >}} | Embedded SQLite |
-| 2980 | {{< alias "omni_test" "omnigres" >}} | Testing framework |
-| 2981 | {{< alias "omni_txn" "omnigres" >}} | Transaction management |
-| 2982 | {{< alias "omni_types" "omnigres" >}} | Advanced types |
-| 2983 | {{< alias "omni_var" "omnigres" >}} | Scoped variables |
-| 2984 | {{< alias "omni_vfs" "omnigres" >}} | Virtual File System |
-| 2985 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | Virtual File System types (v1) |
-| 2986 | {{< alias "omni_web" "omnigres" >}} | Common web stack primitives |
-| 2987 | {{< alias "omni_worker" "omnigres" >}} | Generalized worker pool |
-| 2988 | {{< alias "omni_xml" "omnigres" >}} | XML toolkit |
-| 2989 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
+| 2900 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
+| 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
+| 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
+| 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
+| 2942 | {{< alias "omni_aws" "omnigres" >}} | Amazon Web Services APIs (S3) |
+| 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | CloudEvents support |
+| 2944 | {{< alias "omni_containers" "omnigres" >}} | Docker container management |
+| 2945 | {{< alias "omni_credentials" "omnigres" >}} | Application credential management |
+| 2946 | {{< alias "omni_csv" >}} | CSV toolkit |
+| 2947 | {{< alias "omni_datasets" >}} | Dataset provisioning |
+| 2948 | {{< alias "omni_email" "omnigres" >}} | E-mail framework |
+| 2949 | {{< alias "omni_http" "omnigres" >}} | Basic HTTP types |
+| 2950 | {{< alias "omni_httpc" "omnigres" >}} | HTTP client |
+| 2951 | {{< alias "omni_httpd" "omnigres" >}} | HTTP server |
+| 2952 | {{< alias "omni_id" "omnigres" >}} | Identity types |
+| 2953 | {{< alias "omni_json" "omnigres" >}} | JSON toolkit |
+| 2954 | {{< alias "omni_kube" "omnigres" >}} | Kubernetes (k8s) integration |
+| 2955 | {{< alias "omni_ledger" "omnigres" >}} | Financial ledger |
+| 2956 | {{< alias "omni_manifest" "omnigres" >}} | Package installation manifests |
+| 2957 | {{< alias "omni_mimetypes" "omnigres" >}} | MIME types |
+| 2958 | {{< alias "omni_os" "omnigres" >}} | Operating system integration |
+| 2959 | {{< alias "omni_polyfill" "omnigres" >}} | Postgres API polyfills |
+| 2960 | {{< alias "omni_python" "omnigres" >}} | First-class Python support |
+| 2961 | {{< alias "omni_regex" "omnigres" >}} | PCRE-compatible regular expressions |
+| 2962 | {{< alias "omni_rest" "omnigres" >}} | REST API toolkit (with PostgREST support) |
+| 2963 | {{< alias "omni_schema" "omnigres" >}} | Advanced schema management tooling |
+| 2964 | {{< alias "omni_seq" "omnigres" >}} | Distributed integer sequences |
+| 2965 | {{< alias "omni_service" "omnigres" >}} | Service management |
+| 2966 | {{< alias "omni_session" "omnigres" >}} | Session management |
+| 2967 | {{< alias "omni_shmem" >}} | Shared Memory Management |
+| 2968 | {{< alias "omni_sql" "omnigres" >}} | Programmatic SQL manipulation |
+| 2969 | {{< alias "omni_sqlite" "omnigres" >}} | Embedded SQLite |
+| 2970 | {{< alias "omni_test" "omnigres" >}} | Testing framework |
+| 2971 | {{< alias "omni_txn" "omnigres" >}} | Transaction management |
+| 2972 | {{< alias "omni_types" "omnigres" >}} | Advanced types |
+| 2973 | {{< alias "omni_var" "omnigres" >}} | Scoped variables |
+| 2974 | {{< alias "omni_vfs" "omnigres" >}} | Virtual File System |
+| 2975 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | Virtual File System types (v1) |
+| 2976 | {{< alias "omni_web" "omnigres" >}} | Common web stack primitives |
+| 2977 | {{< alias "omni_worker" "omnigres" >}} | Generalized worker pool |
+| 2978 | {{< alias "omni_xml" "omnigres" >}} | XML toolkit |
+| 2979 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
+| 2980 | {{< alias "omnisketch" >}} | data structure for on-line agg of data into approximate sketch |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
 | 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |
@@ -207,7 +211,6 @@ The traditional PostgreSQL extension language
 | 4610 | {{< alias "quantile" >}} | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | Lower quantile aggregate function |
 | 4630 | {{< alias "count_distinct" >}} | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
-| 4640 | {{< alias "omnisketch" >}} | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
@@ -382,7 +385,7 @@ Pure SQL extensions and functions
 | 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2840 | {{< alias "index_advisor" >}} | Query index advisor |
-| 2900 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2890 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 3580 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3610 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
 | 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n toolbox |
@@ -441,7 +444,7 @@ Extensions written in Rust with the pgrx framework
 | 2460 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
 | 2790 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
-| 2930 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
+| 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3540 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
 | 4170 | {{< alias "pg_smtp_client" >}} | PostgreSQL extension to send email using SMTP |
@@ -487,7 +490,7 @@ Extensions leveraging C++ features and libraries
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
 | 2770 | {{< alias "hll" >}} | type for storing hyperloglog data |
-| 2940 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
+| 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
 
 ## Python

@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-HTTP client for PostgreSQL, allows web page retrieval inside the database.
+[**pg_http**](https://github.com/pramsey/pgsql-http)
 
 
 ## Overview
@@ -58,120 +58,120 @@ HTTP client for PostgreSQL, allows web page retrieval inside the database.
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_18` | 1.7.0 | `el8.x86_64` | pigsty | 29.0 KiB | [pg_http_18-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_18-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_18` | 1.7.0 | `el8.aarch64` | pigsty | 28.3 KiB | [pg_http_18-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_18-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_18` | 1.7.0 | `el9.x86_64` | pigsty | 29.1 KiB | [pg_http_18-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_18-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_18` | 1.7.0 | `el9.aarch64` | pigsty | 28.0 KiB | [pg_http_18-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_18-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_18` | 1.7.0 | `el10.x86_64` | pigsty | 29.5 KiB | [pg_http_18-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_18-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_18` | 1.7.0 | `el10.aarch64` | pigsty | 28.2 KiB | [pg_http_18-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_18-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.5 KiB | [postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-18-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.1 KiB | [postgresql-18-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-18-http` | 1.7.0 | `d13.x86_64` | pgdg | 44.6 KiB | [postgresql-18-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-18-http` | 1.7.0 | `d13.aarch64` | pgdg | 43.2 KiB | [postgresql-18-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-18-http` | 1.7.0 | `u22.x86_64` | pgdg | 44.7 KiB | [postgresql-18-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-http` | 1.7.0 | `u22.aarch64` | pgdg | 43.1 KiB | [postgresql-18-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-http` | 1.7.0 | `u24.x86_64` | pgdg | 44.5 KiB | [postgresql-18-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.0 KiB | [postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_18` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.0 KiB | [pg_http_18-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_18-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_18` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.3 KiB | [pg_http_18-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_18-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_18` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.1 KiB | [pg_http_18-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_18-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_18` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.0 KiB | [pg_http_18-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_18-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_18` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.5 KiB | [pg_http_18-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_18-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_18` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.2 KiB | [pg_http_18-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_18-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.5 KiB | [postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-18-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 43.1 KiB | [postgresql-18-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-18-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 44.6 KiB | [postgresql-18-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-18-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 43.2 KiB | [postgresql-18-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-18-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 44.7 KiB | [postgresql-18-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 43.1 KiB | [postgresql-18-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 44.5 KiB | [postgresql-18-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.0 KiB | [postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-18-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_17` | 1.7.0 | `el8.x86_64` | pigsty | 29.1 KiB | [pg_http_17-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_17-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_17` | 1.7.0 | `el8.aarch64` | pigsty | 28.3 KiB | [pg_http_17-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_17-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_17` | 1.7.0 | `el9.x86_64` | pigsty | 29.2 KiB | [pg_http_17-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_17-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_17` | 1.7.0 | `el9.aarch64` | pigsty | 28.1 KiB | [pg_http_17-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_17-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_17` | 1.7.0 | `el10.x86_64` | pigsty | 29.5 KiB | [pg_http_17-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_17-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_17` | 1.7.0 | `el10.aarch64` | pigsty | 28.4 KiB | [pg_http_17-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_17-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-17-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.1 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-17-http` | 1.7.0 | `d13.x86_64` | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-17-http` | 1.7.0 | `d13.aarch64` | pgdg | 43.3 KiB | [postgresql-17-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u22.x86_64` | pgdg | 48.9 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u22.aarch64` | pgdg | 47.4 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u24.x86_64` | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_17` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.1 KiB | [pg_http_17-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_17-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_17` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.3 KiB | [pg_http_17-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_17-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_17` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.2 KiB | [pg_http_17-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_17-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_17` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.1 KiB | [pg_http_17-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_17-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_17` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.5 KiB | [pg_http_17-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_17-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_17` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.4 KiB | [pg_http_17-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_17-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-17-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 43.1 KiB | [postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-17-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-17-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 43.3 KiB | [postgresql-17-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-17-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 48.9 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 47.4 KiB | [postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 44.6 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.2 KiB | [postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-17-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_16` | 1.7.0 | `el8.x86_64` | pigsty | 29.1 KiB | [pg_http_16-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_16-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_16` | 1.7.0 | `el8.aarch64` | pigsty | 28.3 KiB | [pg_http_16-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_16-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_16` | 1.7.0 | `el9.x86_64` | pigsty | 29.2 KiB | [pg_http_16-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_16-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_16` | 1.7.0 | `el9.aarch64` | pigsty | 28.1 KiB | [pg_http_16-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_16-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_16` | 1.7.0 | `el10.x86_64` | pigsty | 29.5 KiB | [pg_http_16-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_16-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_16` | 1.7.0 | `el10.aarch64` | pigsty | 28.4 KiB | [pg_http_16-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_16-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-http` | 1.7.0 | `d12.x86_64` | pgdg | 44.5 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-16-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.1 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-16-http` | 1.7.0 | `d13.x86_64` | pgdg | 44.6 KiB | [postgresql-16-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-16-http` | 1.7.0 | `d13.aarch64` | pgdg | 43.3 KiB | [postgresql-16-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-16-http` | 1.7.0 | `u22.x86_64` | pgdg | 48.9 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-http` | 1.7.0 | `u22.aarch64` | pgdg | 47.3 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-http` | 1.7.0 | `u24.x86_64` | pgdg | 44.6 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.2 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_16` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.1 KiB | [pg_http_16-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_16-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_16` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.3 KiB | [pg_http_16-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_16-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_16` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.2 KiB | [pg_http_16-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_16-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_16` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.1 KiB | [pg_http_16-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_16-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_16` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.5 KiB | [pg_http_16-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_16-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_16` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.4 KiB | [pg_http_16-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_16-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.5 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-16-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 43.1 KiB | [postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-16-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 44.6 KiB | [postgresql-16-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-16-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 43.3 KiB | [postgresql-16-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-16-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 48.9 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 47.3 KiB | [postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 44.6 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.2 KiB | [postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-16-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_15` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pg_http_15-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_15-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_15` | 1.7.0 | `el8.aarch64` | pigsty | 28.6 KiB | [pg_http_15-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_15-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_15` | 1.7.0 | `el9.x86_64` | pigsty | 29.5 KiB | [pg_http_15-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_15-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_15` | 1.7.0 | `el9.aarch64` | pigsty | 28.4 KiB | [pg_http_15-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_15-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_15` | 1.7.0 | `el10.x86_64` | pigsty | 29.9 KiB | [pg_http_15-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_15-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_15` | 1.7.0 | `el10.aarch64` | pigsty | 28.7 KiB | [pg_http_15-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_15-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.4 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-15-http` | 1.7.0 | `d12.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-15-http` | 1.7.0 | `d13.x86_64` | pgdg | 45.7 KiB | [postgresql-15-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-15-http` | 1.7.0 | `d13.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-15-http` | 1.7.0 | `u22.x86_64` | pgdg | 50.0 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.1 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.5 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-http` | 1.7.0 | `u24.aarch64` | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_15` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.4 KiB | [pg_http_15-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_15-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_15` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.6 KiB | [pg_http_15-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_15-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_15` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.5 KiB | [pg_http_15-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_15-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_15` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.4 KiB | [pg_http_15-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_15-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_15` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.9 KiB | [pg_http_15-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_15-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_15` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.7 KiB | [pg_http_15-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_15-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.4 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-15-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-15-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.7 KiB | [postgresql-15-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-15-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-15-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 50.0 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 48.1 KiB | [postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.5 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.1 KiB | [postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-15-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_14` | 1.7.0 | `el8.x86_64` | pigsty | 29.4 KiB | [pg_http_14-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_14-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_14` | 1.7.0 | `el8.aarch64` | pigsty | 28.6 KiB | [pg_http_14-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_14-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_14` | 1.7.0 | `el9.x86_64` | pigsty | 29.5 KiB | [pg_http_14-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_14-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_14` | 1.7.0 | `el9.aarch64` | pigsty | 28.4 KiB | [pg_http_14-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_14-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_14` | 1.7.0 | `el10.x86_64` | pigsty | 29.9 KiB | [pg_http_14-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_14-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_14` | 1.7.0 | `el10.aarch64` | pigsty | 28.7 KiB | [pg_http_14-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_14-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-14-http` | 1.7.0 | `d12.aarch64` | pgdg | 44.0 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-14-http` | 1.7.0 | `d13.x86_64` | pgdg | 45.6 KiB | [postgresql-14-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-14-http` | 1.7.0 | `d13.aarch64` | pgdg | 44.1 KiB | [postgresql-14-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-14-http` | 1.7.0 | `u22.x86_64` | pgdg | 50.0 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.1 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.6 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-http` | 1.7.0 | `u24.aarch64` | pgdg | 44.1 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_14` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.4 KiB | [pg_http_14-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_14-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_14` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.6 KiB | [pg_http_14-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_14-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_14` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.5 KiB | [pg_http_14-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_14-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_14` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.4 KiB | [pg_http_14-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_14-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_14` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.9 KiB | [pg_http_14-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_14-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_14` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.7 KiB | [pg_http_14-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_14-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-14-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 44.0 KiB | [postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-14-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.6 KiB | [postgresql-14-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-14-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 44.1 KiB | [postgresql-14-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-14-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 50.0 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 48.1 KiB | [postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.6 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.1 KiB | [postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-14-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_http_13` | 1.7.0 | `el8.x86_64` | pigsty | 28.9 KiB | [pg_http_13-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_13-1.7.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_http_13` | 1.7.0 | `el8.aarch64` | pigsty | 28.5 KiB | [pg_http_13-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_13-1.7.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_http_13` | 1.7.0 | `el9.x86_64` | pigsty | 29.4 KiB | [pg_http_13-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_13-1.7.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_http_13` | 1.7.0 | `el9.aarch64` | pigsty | 28.7 KiB | [pg_http_13-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_13-1.7.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_http_13` | 1.7.0 | `el10.x86_64` | pigsty | 29.7 KiB | [pg_http_13-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_13-1.7.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_http_13` | 1.7.0 | `el10.aarch64` | pigsty | 28.6 KiB | [pg_http_13-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_13-1.7.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-http` | 1.7.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `d12.aarch64` | pgdg | 43.9 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `d13.x86_64` | pgdg | 45.5 KiB | [postgresql-13-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `d13.aarch64` | pgdg | 43.8 KiB | [postgresql-13-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u22.x86_64` | pgdg | 49.6 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u22.aarch64` | pgdg | 48.3 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u24.x86_64` | pgdg | 45.4 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-http` | 1.7.0 | `u24.aarch64` | pgdg | 43.7 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
+| `pg_http_13` | `1.7.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 28.9 KiB | [pg_http_13-1.7.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_http_13-1.7.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_http_13` | `1.7.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.5 KiB | [pg_http_13-1.7.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_http_13-1.7.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_http_13` | `1.7.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 29.4 KiB | [pg_http_13-1.7.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_http_13-1.7.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_http_13` | `1.7.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 28.7 KiB | [pg_http_13-1.7.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_http_13-1.7.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_http_13` | `1.7.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 29.7 KiB | [pg_http_13-1.7.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_http_13-1.7.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_http_13` | `1.7.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.6 KiB | [pg_http_13-1.7.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_http_13-1.7.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-http` | `1.7.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-13-http` | `1.7.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 43.9 KiB | [postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-13-http` | `1.7.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.5 KiB | [postgresql-13-http_1.7.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-13-http` | `1.7.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 43.8 KiB | [postgresql-13-http_1.7.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-13-http` | `1.7.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 49.6 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-http` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 48.3 KiB | [postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-http` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.4 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-http` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.7 KiB | [postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsql-http/postgresql-13-http_1.7.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-Math for vectors (arrays) of numbers
+[**floatvec**](https://github.com/pjungwir/floatvec)
 
 
 ## Overview
@@ -58,120 +58,120 @@ Math for vectors (arrays) of numbers
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_18` | 1.1.1 | `el8.x86_64` | pigsty | 18.1 KiB | [floatvec_18-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_18-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_18` | 1.1.1 | `el8.aarch64` | pigsty | 19.3 KiB | [floatvec_18-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_18-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_18` | 1.1.1 | `el9.x86_64` | pigsty | 18.0 KiB | [floatvec_18-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_18-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_18` | 1.1.1 | `el9.aarch64` | pigsty | 19.2 KiB | [floatvec_18-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_18-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_18` | 1.1.1 | `el10.x86_64` | pigsty | 17.8 KiB | [floatvec_18-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_18-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_18` | 1.1.1 | `el10.aarch64` | pigsty | 19.5 KiB | [floatvec_18-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_18-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 24.0 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 25.3 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 24.0 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 25.3 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.2 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 26.7 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 25.2 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 26.7 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_18` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.1 KiB | [floatvec_18-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_18-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_18` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.3 KiB | [floatvec_18-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_18-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_18` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.0 KiB | [floatvec_18-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_18-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_18` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.2 KiB | [floatvec_18-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_18-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_18` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.8 KiB | [floatvec_18-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_18-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_18` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.5 KiB | [floatvec_18-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_18-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 24.0 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 25.3 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 24.0 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 25.3 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.2 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.7 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.2 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.7 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_17` | 1.1.1 | `el8.x86_64` | pigsty | 18.1 KiB | [floatvec_17-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_17-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_17` | 1.1.1 | `el8.aarch64` | pigsty | 19.3 KiB | [floatvec_17-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_17-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_17` | 1.1.1 | `el9.x86_64` | pigsty | 18.0 KiB | [floatvec_17-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_17-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_17` | 1.1.1 | `el9.aarch64` | pigsty | 19.2 KiB | [floatvec_17-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_17-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_17` | 1.1.1 | `el10.x86_64` | pigsty | 17.8 KiB | [floatvec_17-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_17-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_17` | 1.1.1 | `el10.aarch64` | pigsty | 19.5 KiB | [floatvec_17-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_17-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 24.0 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 25.3 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 24.0 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 25.2 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.8 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 27.3 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 25.2 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 26.6 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_17` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.1 KiB | [floatvec_17-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_17-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_17` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.3 KiB | [floatvec_17-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_17-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_17` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.0 KiB | [floatvec_17-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_17-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_17` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.2 KiB | [floatvec_17-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_17-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_17` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.8 KiB | [floatvec_17-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_17-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_17` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.5 KiB | [floatvec_17-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_17-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 24.0 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 25.3 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 24.0 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 25.2 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.8 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 27.3 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.2 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.6 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_16` | 1.1.1 | `el8.x86_64` | pigsty | 18.1 KiB | [floatvec_16-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_16-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_16` | 1.1.1 | `el8.aarch64` | pigsty | 19.3 KiB | [floatvec_16-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_16-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_16` | 1.1.1 | `el9.x86_64` | pigsty | 18.0 KiB | [floatvec_16-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_16-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_16` | 1.1.1 | `el9.aarch64` | pigsty | 19.2 KiB | [floatvec_16-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_16-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_16` | 1.1.1 | `el10.x86_64` | pigsty | 17.9 KiB | [floatvec_16-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_16-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_16` | 1.1.1 | `el10.aarch64` | pigsty | 19.5 KiB | [floatvec_16-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_16-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 24.0 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 25.3 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 24.0 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 25.3 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.8 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 27.4 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 25.2 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 26.6 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_16` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.1 KiB | [floatvec_16-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_16-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_16` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.3 KiB | [floatvec_16-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_16-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_16` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.0 KiB | [floatvec_16-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_16-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_16` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.2 KiB | [floatvec_16-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_16-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_16` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.9 KiB | [floatvec_16-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_16-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_16` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.5 KiB | [floatvec_16-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_16-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 24.0 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 25.3 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 24.0 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 25.3 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.8 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 27.4 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.2 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.6 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_15` | 1.1.1 | `el8.x86_64` | pigsty | 18.1 KiB | [floatvec_15-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_15-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_15` | 1.1.1 | `el8.aarch64` | pigsty | 19.0 KiB | [floatvec_15-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_15-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_15` | 1.1.1 | `el9.x86_64` | pigsty | 18.0 KiB | [floatvec_15-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_15-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_15` | 1.1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [floatvec_15-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_15-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_15` | 1.1.1 | `el10.x86_64` | pigsty | 17.9 KiB | [floatvec_15-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_15-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_15` | 1.1.1 | `el10.aarch64` | pigsty | 19.2 KiB | [floatvec_15-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_15-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 23.6 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 24.4 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 23.6 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 24.5 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.7 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 26.8 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 24.7 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 25.8 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_15` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.1 KiB | [floatvec_15-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_15-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_15` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.0 KiB | [floatvec_15-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_15-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_15` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.0 KiB | [floatvec_15-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_15-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_15` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 18.8 KiB | [floatvec_15-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_15-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_15` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.9 KiB | [floatvec_15-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_15-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_15` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.2 KiB | [floatvec_15-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_15-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.6 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 24.4 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 23.6 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 24.5 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.7 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.8 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 24.7 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_14` | 1.1.1 | `el8.x86_64` | pigsty | 18.1 KiB | [floatvec_14-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_14-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_14` | 1.1.1 | `el8.aarch64` | pigsty | 19.0 KiB | [floatvec_14-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_14-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_14` | 1.1.1 | `el9.x86_64` | pigsty | 17.9 KiB | [floatvec_14-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_14-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_14` | 1.1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [floatvec_14-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_14-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_14` | 1.1.1 | `el10.x86_64` | pigsty | 17.9 KiB | [floatvec_14-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_14-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_14` | 1.1.1 | `el10.aarch64` | pigsty | 19.2 KiB | [floatvec_14-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_14-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 23.6 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 24.4 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 23.6 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 24.5 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 26.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 24.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 25.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_14` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 18.1 KiB | [floatvec_14-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_14-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_14` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.0 KiB | [floatvec_14-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_14-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_14` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 17.9 KiB | [floatvec_14-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_14-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_14` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 18.8 KiB | [floatvec_14-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_14-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_14` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.9 KiB | [floatvec_14-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_14-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_14` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.2 KiB | [floatvec_14-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_14-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.6 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 24.4 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 23.6 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 24.5 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 24.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.7 KiB | [postgresql-14-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-14-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `floatvec_13` | 1.1.1 | `el8.x86_64` | pigsty | 17.9 KiB | [floatvec_13-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_13-1.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `floatvec_13` | 1.1.1 | `el8.aarch64` | pigsty | 18.9 KiB | [floatvec_13-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_13-1.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `floatvec_13` | 1.1.1 | `el9.x86_64` | pigsty | 18.0 KiB | [floatvec_13-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_13-1.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `floatvec_13` | 1.1.1 | `el9.aarch64` | pigsty | 18.8 KiB | [floatvec_13-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_13-1.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `floatvec_13` | 1.1.1 | `el10.x86_64` | pigsty | 17.8 KiB | [floatvec_13-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_13-1.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `floatvec_13` | 1.1.1 | `el10.aarch64` | pigsty | 19.2 KiB | [floatvec_13-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_13-1.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-floatvec` | 1.1.1 | `d12.x86_64` | pigsty | 23.1 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `d12.aarch64` | pigsty | 24.2 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `d13.x86_64` | pigsty | 23.2 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `d13.aarch64` | pigsty | 24.3 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `u22.x86_64` | pigsty | 25.7 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `u22.aarch64` | pigsty | 26.4 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `u24.x86_64` | pigsty | 24.4 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-floatvec` | 1.1.1 | `u24.aarch64` | pigsty | 25.6 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
+| `floatvec_13` | `1.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 17.9 KiB | [floatvec_13-1.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/floatvec_13-1.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `floatvec_13` | `1.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 18.9 KiB | [floatvec_13-1.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/floatvec_13-1.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `floatvec_13` | `1.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 18.0 KiB | [floatvec_13-1.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/floatvec_13-1.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `floatvec_13` | `1.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 18.8 KiB | [floatvec_13-1.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/floatvec_13-1.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `floatvec_13` | `1.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 17.8 KiB | [floatvec_13-1.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/floatvec_13-1.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `floatvec_13` | `1.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 19.2 KiB | [floatvec_13-1.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/floatvec_13-1.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-floatvec` | `1.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 23.1 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 24.2 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 23.2 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 24.3 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 25.7 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.4 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 24.4 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.6 KiB | [postgresql-13-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-13-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-show tuple-level statistics
+[**pgstattuple**](https://www.postgresql.org/docs/current/pgstattuple.html)
 
 
 ## Overview

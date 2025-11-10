@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-an example of an archive module
+[**basic_archive**](https://www.postgresql.org/docs/current/basic-archive.html)
 
 
 ## Overview

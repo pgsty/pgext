@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-Columnstore Table in Postgres
+[**pg_mooncake**](https://github.com/Mooncake-Labs/pg_mooncake)
 
 
 ## Overview
@@ -61,103 +61,103 @@ Columnstore Table in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mooncake_18` | 0.2.0 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_mooncake_18` | 0.2.0 | `el8.aarch64` | pigsty | 9.8 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_mooncake_18` | 0.2.0 | `el9.x86_64` | pigsty | 10.5 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_mooncake_18` | 0.2.0 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_18` | 0.2.0 | `el10.x86_64` | pigsty | 10.3 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_mooncake_18` | 0.2.0 | `el10.aarch64` | pigsty | 10.0 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `d12.x86_64` | pigsty | 8.8 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `d12.aarch64` | pigsty | 7.7 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `d13.x86_64` | pigsty | 8.8 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `d13.aarch64` | pigsty | 7.7 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `u22.x86_64` | pigsty | 9.6 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `u22.aarch64` | pigsty | 9.1 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `u24.x86_64` | pigsty | 9.6 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-mooncake` | 0.2.0 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
+| `pg_mooncake_18` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_mooncake_18` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_mooncake_18` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.5 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_mooncake_18` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_18` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_18-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_mooncake_18` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.0 MiB | [pg_mooncake_18-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_18-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.8 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 7.7 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 7.7 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.6 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.1 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.6 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-18-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mooncake_17` | 0.2.0 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_mooncake_17` | 0.2.0 | `el8.aarch64` | pigsty | 9.8 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_mooncake_17` | 0.2.0 | `el9.x86_64` | pigsty | 10.5 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_mooncake_17` | 0.2.0 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_17` | 0.2.0 | `el10.x86_64` | pigsty | 10.3 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_mooncake_17` | 0.2.0 | `el10.aarch64` | pigsty | 10.0 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `d12.x86_64` | pigsty | 8.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `d12.aarch64` | pigsty | 7.7 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `d13.x86_64` | pigsty | 8.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `d13.aarch64` | pigsty | 7.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `u22.x86_64` | pigsty | 9.6 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `u22.aarch64` | pigsty | 9.1 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `u24.x86_64` | pigsty | 9.6 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-mooncake` | 0.2.0 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
+| `pg_mooncake_17` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_mooncake_17` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_mooncake_17` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.5 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_mooncake_17` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_17` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_17-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_mooncake_17` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.0 MiB | [pg_mooncake_17-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_17-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 7.7 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 7.8 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.6 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.1 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.6 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-17-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mooncake_16` | 0.2.0 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_mooncake_16` | 0.2.0 | `el8.aarch64` | pigsty | 9.8 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_mooncake_16` | 0.2.0 | `el9.x86_64` | pigsty | 10.5 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_mooncake_16` | 0.2.0 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_16` | 0.1.1 | `el9.aarch64` | pigsty | 27.7 MiB | [pg_mooncake_16-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_16-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_16` | 0.2.0 | `el10.x86_64` | pigsty | 10.3 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_mooncake_16` | 0.2.0 | `el10.aarch64` | pigsty | 10.0 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `d12.x86_64` | pigsty | 8.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `d12.aarch64` | pigsty | 7.7 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `d13.x86_64` | pigsty | 8.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `d13.aarch64` | pigsty | 7.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `u22.x86_64` | pigsty | 9.6 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `u22.aarch64` | pigsty | 9.1 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `u24.x86_64` | pigsty | 9.6 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-mooncake` | 0.2.0 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
+| `pg_mooncake_16` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_mooncake_16` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_mooncake_16` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.5 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_mooncake_16` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_16` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 27.7 MiB | [pg_mooncake_16-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_16-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_16` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_16-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_mooncake_16` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.0 MiB | [pg_mooncake_16-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_16-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 7.7 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 7.8 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.6 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.1 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.6 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-16-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mooncake_15` | 0.2.0 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_mooncake_15` | 0.2.0 | `el8.aarch64` | pigsty | 9.8 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_mooncake_15` | 0.2.0 | `el9.x86_64` | pigsty | 10.5 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_mooncake_15` | 0.2.0 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_15` | 0.1.1 | `el9.aarch64` | pigsty | 27.7 MiB | [pg_mooncake_15-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_15-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_15` | 0.2.0 | `el10.x86_64` | pigsty | 10.3 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_mooncake_15` | 0.2.0 | `el10.aarch64` | pigsty | 10.0 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `d12.x86_64` | pigsty | 8.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `d12.aarch64` | pigsty | 7.7 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `d13.x86_64` | pigsty | 8.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `d13.aarch64` | pigsty | 7.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `u22.x86_64` | pigsty | 9.7 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `u22.aarch64` | pigsty | 9.1 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `u24.x86_64` | pigsty | 9.6 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-mooncake` | 0.2.0 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
+| `pg_mooncake_15` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_mooncake_15` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_mooncake_15` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.5 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_mooncake_15` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_15` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 27.7 MiB | [pg_mooncake_15-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_15-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_15` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_15-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_mooncake_15` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.0 MiB | [pg_mooncake_15-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_15-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 7.7 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 7.8 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.7 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.1 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.6 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-15-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_mooncake_14` | 0.2.0 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_mooncake_14` | 0.2.0 | `el8.aarch64` | pigsty | 9.8 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_mooncake_14` | 0.2.0 | `el9.x86_64` | pigsty | 10.5 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_mooncake_14` | 0.2.0 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_14` | 0.1.1 | `el9.aarch64` | pigsty | 27.7 MiB | [pg_mooncake_14-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_14-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pg_mooncake_14` | 0.2.0 | `el10.x86_64` | pigsty | 10.3 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_mooncake_14` | 0.2.0 | `el10.aarch64` | pigsty | 10.0 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `d12.x86_64` | pigsty | 8.8 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `d12.aarch64` | pigsty | 7.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `d13.x86_64` | pigsty | 8.8 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `d13.aarch64` | pigsty | 7.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `u22.x86_64` | pigsty | 9.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `u22.aarch64` | pigsty | 9.1 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `u24.x86_64` | pigsty | 9.6 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-mooncake` | 0.2.0 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
+| `pg_mooncake_14` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pg_mooncake_14` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.8 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pg_mooncake_14` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.5 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pg_mooncake_14` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_14` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 27.7 MiB | [pg_mooncake_14-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_mooncake_14-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pg_mooncake_14` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.3 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_mooncake_14-0.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pg_mooncake_14` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.0 MiB | [pg_mooncake_14-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_mooncake_14-0.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.8 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 7.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 7.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 9.7 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.1 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 9.6 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-mooncake` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-mooncake/postgresql-14-pg-mooncake_0.2.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

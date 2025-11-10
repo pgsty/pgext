@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-Image similarity with haar
+[**imgsmlr**](https://github.com/postgrespro/imgsmlr)
 
 
 ## Overview
@@ -60,96 +60,96 @@ Image similarity with haar
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_18` | 1.0 | `el8.x86_64` | pigsty | 21.6 KiB | [imgsmlr_18-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_18-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_18` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_18-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_18-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_18` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_18-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_18-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_18` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_18-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_18-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-18-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.9 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.2 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 32.9 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 32.1 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.3 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.6 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_18` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_18-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_18-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_18` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_18-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_18-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_18-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_18-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_18-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_18-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-18-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 32.9 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 32.1 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-18-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_17` | 1.0 | `el8.x86_64` | pigsty | 21.6 KiB | [imgsmlr_17-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_17-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_17` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_17-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_17-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_17` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_17-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_17-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_17` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_17-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_17-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-17-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.9 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.2 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 34.0 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 33.3 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.3 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.6 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_17` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_17-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_17-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_17` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_17-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_17-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_17-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_17-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_17-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_17-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-17-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.0 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-17-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_16` | 1.0 | `el8.x86_64` | pigsty | 21.6 KiB | [imgsmlr_16-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_16-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_16` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_16-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_16-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_16` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_16-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_16-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_16` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_16-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_16-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-16-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.9 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.2 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 34.0 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 33.3 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.3 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.6 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_16` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_16-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_16-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_16` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_16-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_16-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_16-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_16-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_16-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_16-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-16-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.0 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-16-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_15` | 1.0 | `el8.x86_64` | pigsty | 21.6 KiB | [imgsmlr_15-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_15-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_15` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_15-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_15-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_15` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_15-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_15-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_15` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_15-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_15-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-15-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.9 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.2 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 34.1 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 33.4 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.3 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.6 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_15-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_15-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_15-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_15-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_15-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_15-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_15-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_15-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-15-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.1 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.4 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-15-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_14` | 1.0 | `el8.x86_64` | pigsty | 21.6 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_14` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_14` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_14` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-14-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.9 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.2 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 34.1 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 33.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.6 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.6 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_14-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_14-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_14-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_14-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-14-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.2 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.1 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.3 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.6 KiB | [postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-14-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `imgsmlr_13` | 1.0 | `el8.x86_64` | pigsty | 21.5 KiB | [imgsmlr_13-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_13-1.0-2PIGSTY.el8.x86_64.rpm) |
-| `imgsmlr_13` | 1.0 | `el8.aarch64` | pigsty | 21.2 KiB | [imgsmlr_13-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_13-1.0-2PIGSTY.el8.aarch64.rpm) |
-| `imgsmlr_13` | 1.0 | `el9.x86_64` | pigsty | 21.2 KiB | [imgsmlr_13-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_13-1.0-2PIGSTY.el9.x86_64.rpm) |
-| `imgsmlr_13` | 1.0 | `el9.aarch64` | pigsty | 20.9 KiB | [imgsmlr_13-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_13-1.0-2PIGSTY.el9.aarch64.rpm) |
-| `postgresql-13-imgsmlr` | 1.0 | `d12.x86_64` | pigsty | 30.8 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-imgsmlr` | 1.0 | `d12.aarch64` | pigsty | 30.3 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-imgsmlr` | 1.0 | `u22.x86_64` | pigsty | 34.0 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-imgsmlr` | 1.0 | `u22.aarch64` | pigsty | 33.1 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-imgsmlr` | 1.0 | `u24.x86_64` | pigsty | 32.2 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-imgsmlr` | 1.0 | `u24.aarch64` | pigsty | 31.7 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
+| `imgsmlr_13` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 21.5 KiB | [imgsmlr_13-1.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/imgsmlr_13-1.0-2PIGSTY.el8.x86_64.rpm) |
+| `imgsmlr_13` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.2 KiB | [imgsmlr_13-1.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/imgsmlr_13-1.0-2PIGSTY.el8.aarch64.rpm) |
+| `imgsmlr_13` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 21.2 KiB | [imgsmlr_13-1.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/imgsmlr_13-1.0-2PIGSTY.el9.x86_64.rpm) |
+| `imgsmlr_13` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.9 KiB | [imgsmlr_13-1.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/imgsmlr_13-1.0-2PIGSTY.el9.aarch64.rpm) |
+| `postgresql-13-imgsmlr` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.8 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-imgsmlr` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.3 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-imgsmlr` | `1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 34.0 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-imgsmlr` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 33.1 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-imgsmlr` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 32.2 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-imgsmlr` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 31.7 KiB | [postgresql-13-imgsmlr_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/i/imgsmlr/postgresql-13-imgsmlr_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -116,6 +116,14 @@ func (g *ExtensionGenerator) generateFrontmatter(ext *Extension) string {
 		desc = "PostgreSQL Extension"
 	}
 
+	// Build the subtitle line with format: [**<pkg>**](**url**) : <zh_desc>
+	subtitle := ""
+	if ext.URL.Valid && ext.URL.String != "" {
+		subtitle = fmt.Sprintf("[**%s**](%s)", ext.Pkg, ext.URL.String)
+	} else {
+		subtitle = fmt.Sprintf("**%s**", ext.Pkg)
+	}
+
 	return fmt.Sprintf(`---
 title: "%s"
 linkTitle: "%s"
@@ -127,7 +135,7 @@ width: full
 
 %s
 
-`, ext.Name, ext.Name, desc, ext.ID, categoryTitle, desc)
+`, ext.Name, ext.Name, desc, ext.ID, categoryTitle, subtitle)
 }
 
 func (g *ExtensionGenerator) generateOverview(ext *Extension) string {
@@ -637,8 +645,8 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 				url := pkg.Href
 				fileName := filepath.Base(url)
 
-				tab += fmt.Sprintf("| `%s` | %s | `%s` | %s | %s | [%s](%s) |\n",
-					pkg.Name, pkg.Version, pkg.OS, org, sizeStr, fileName, url)
+				tab += fmt.Sprintf("| `%s` | `%s` | [%s](/os/%s) | %s | %s | [%s](%s) |\n",
+					pkg.Name, pkg.Version, pkg.OS, pkg.OS, org, sizeStr, fileName, url)
 			}
 		} else {
 			tab += "*No packages available for this PostgreSQL version.*\n"
@@ -732,7 +740,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	// Build install commands
 	installScript := fmt.Sprintf(
 		"pig ext install %s; # install by extension name, for the current active PG version\n"+
-		"pig ext install %s; # install via package alias, for the active PG version",
+			"pig ext install %s; # install via package alias, for the active PG version",
 		ext.Name, ext.Pkg)
 	if len(installCmds) > 0 {
 		installScript += "\n" + strings.Join(installCmds, "\n") + "\n"

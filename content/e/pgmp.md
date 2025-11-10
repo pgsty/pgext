@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-Multiple Precision Arithmetic extension
+[**pgmp**](https://github.com/dvarrazzo/pgmp/)
 
 
 ## Overview
@@ -60,117 +60,117 @@ Multiple Precision Arithmetic extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_18` | 1.0.5 | `el8.x86_64` | pgdg | 41.8 KiB | [pgmp_18-1.0.5-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmp_18-1.0.5-4PGDG.rhel8.x86_64.rpm) |
-| `pgmp_18` | 1.0.5 | `el8.aarch64` | pgdg | 39.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmp_18-1.0.5-4PGDG.rhel8.aarch64.rpm) |
-| `pgmp_18` | 1.0.5 | `el9.x86_64` | pgdg | 42.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmp_18-1.0.5-4PGDG.rhel9.x86_64.rpm) |
-| `pgmp_18` | 1.0.5 | `el9.aarch64` | pgdg | 41.4 KiB | [pgmp_18-1.0.5-4PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmp_18-1.0.5-4PGDG.rhel9.aarch64.rpm) |
-| `pgmp_18` | 1.0.5 | `el10.x86_64` | pgdg | 44.2 KiB | [pgmp_18-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmp_18-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_18` | 1.0.5 | `el10.aarch64` | pgdg | 42.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmp_18-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-18-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.5 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.4 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.6 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.5 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 102.7 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 100.9 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 101.0 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 99.8 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_18` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pgmp_18-1.0.5-4PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmp_18-1.0.5-4PGDG.rhel8.x86_64.rpm) |
+| `pgmp_18` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmp_18-1.0.5-4PGDG.rhel8.aarch64.rpm) |
+| `pgmp_18` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmp_18-1.0.5-4PGDG.rhel9.x86_64.rpm) |
+| `pgmp_18` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 41.4 KiB | [pgmp_18-1.0.5-4PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmp_18-1.0.5-4PGDG.rhel9.aarch64.rpm) |
+| `pgmp_18` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.2 KiB | [pgmp_18-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmp_18-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_18` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.9 KiB | [pgmp_18-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmp_18-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.5 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.4 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.6 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.5 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 102.7 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 100.9 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 101.0 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.8 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_17` | 1.0.5 | `el8.x86_64` | pgdg | 41.7 KiB | [pgmp_17-1.0.5-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmp_17-1.0.5-3PGDG.rhel8.x86_64.rpm) |
-| `pgmp_17` | 1.0.5 | `el8.aarch64` | pgdg | 39.9 KiB | [pgmp_17-1.0.5-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmp_17-1.0.5-3PGDG.rhel8.aarch64.rpm) |
-| `pgmp_17` | 1.0.5 | `el9.x86_64` | pgdg | 43.0 KiB | [pgmp_17-1.0.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmp_17-1.0.5-3PGDG.rhel9.x86_64.rpm) |
-| `pgmp_17` | 1.0.5 | `el9.aarch64` | pgdg | 41.6 KiB | [pgmp_17-1.0.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmp_17-1.0.5-3PGDG.rhel9.aarch64.rpm) |
-| `pgmp_17` | 1.0.5 | `el10.x86_64` | pgdg | 44.3 KiB | [pgmp_17-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmp_17-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_17` | 1.0.5 | `el10.aarch64` | pgdg | 42.9 KiB | [pgmp_17-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmp_17-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.6 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.4 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.5 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.7 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 109.2 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 107.4 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 101.0 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 100.0 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_17` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.7 KiB | [pgmp_17-1.0.5-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmp_17-1.0.5-3PGDG.rhel8.x86_64.rpm) |
+| `pgmp_17` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.9 KiB | [pgmp_17-1.0.5-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmp_17-1.0.5-3PGDG.rhel8.aarch64.rpm) |
+| `pgmp_17` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 43.0 KiB | [pgmp_17-1.0.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmp_17-1.0.5-3PGDG.rhel9.x86_64.rpm) |
+| `pgmp_17` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 41.6 KiB | [pgmp_17-1.0.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmp_17-1.0.5-3PGDG.rhel9.aarch64.rpm) |
+| `pgmp_17` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [pgmp_17-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmp_17-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_17` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.9 KiB | [pgmp_17-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmp_17-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.6 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.4 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.5 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.7 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 109.2 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 107.4 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 101.0 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 100.0 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_16` | 1.0.5 | `el8.x86_64` | pgdg | 41.6 KiB | [pgmp_16-1.0.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmp_16-1.0.5-1PGDG.rhel8.x86_64.rpm) |
-| `pgmp_16` | 1.0.5 | `el8.aarch64` | pgdg | 39.7 KiB | [pgmp_16-1.0.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmp_16-1.0.5-1PGDG.rhel8.aarch64.rpm) |
-| `pgmp_16` | 1.0.5 | `el9.x86_64` | pgdg | 42.7 KiB | [pgmp_16-1.0.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmp_16-1.0.5-1PGDG.rhel9.x86_64.rpm) |
-| `pgmp_16` | 1.0.5 | `el9.aarch64` | pgdg | 41.0 KiB | [pgmp_16-1.0.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmp_16-1.0.5-1PGDG.rhel9.aarch64.rpm) |
-| `pgmp_16` | 1.0.5 | `el10.x86_64` | pgdg | 44.3 KiB | [pgmp_16-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmp_16-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_16` | 1.0.5 | `el10.aarch64` | pgdg | 42.9 KiB | [pgmp_16-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmp_16-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.6 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.5 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.6 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.5 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 109.1 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 107.4 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 101.3 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 99.8 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_16` | `1.0.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.6 KiB | [pgmp_16-1.0.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmp_16-1.0.5-1PGDG.rhel8.x86_64.rpm) |
+| `pgmp_16` | `1.0.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.7 KiB | [pgmp_16-1.0.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmp_16-1.0.5-1PGDG.rhel8.aarch64.rpm) |
+| `pgmp_16` | `1.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.7 KiB | [pgmp_16-1.0.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmp_16-1.0.5-1PGDG.rhel9.x86_64.rpm) |
+| `pgmp_16` | `1.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 41.0 KiB | [pgmp_16-1.0.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmp_16-1.0.5-1PGDG.rhel9.aarch64.rpm) |
+| `pgmp_16` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [pgmp_16-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmp_16-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_16` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.9 KiB | [pgmp_16-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmp_16-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.6 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.5 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.6 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.5 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 109.1 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 107.4 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 101.3 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.8 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_15` | 1.0.4 | `el8.x86_64` | pgdg | 106.9 KiB | [pgmp_15-1.0.4-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmp_15-1.0.4-4.rhel8.x86_64.rpm) |
-| `pgmp_15` | 1.0.4 | `el8.aarch64` | pgdg | 104.8 KiB | [pgmp_15-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmp_15-1.0.4-4.rhel8.aarch64.rpm) |
-| `pgmp_15` | 1.0.4 | `el9.x86_64` | pgdg | 109.4 KiB | [pgmp_15-1.0.4-4.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmp_15-1.0.4-4.rhel9.x86_64.rpm) |
-| `pgmp_15` | 1.0.4 | `el9.aarch64` | pgdg | 107.1 KiB | [pgmp_15-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmp_15-1.0.4-4.rhel9.aarch64.rpm) |
-| `pgmp_15` | 1.0.5 | `el10.x86_64` | pgdg | 43.4 KiB | [pgmp_15-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmp_15-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_15` | 1.0.5 | `el10.aarch64` | pgdg | 42.4 KiB | [pgmp_15-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmp_15-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.6 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 108.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 107.3 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 99.7 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_15` | `1.0.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.9 KiB | [pgmp_15-1.0.4-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmp_15-1.0.4-4.rhel8.x86_64.rpm) |
+| `pgmp_15` | `1.0.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 104.8 KiB | [pgmp_15-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgmp_15-1.0.4-4.rhel8.aarch64.rpm) |
+| `pgmp_15` | `1.0.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 109.4 KiB | [pgmp_15-1.0.4-4.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmp_15-1.0.4-4.rhel9.x86_64.rpm) |
+| `pgmp_15` | `1.0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 107.1 KiB | [pgmp_15-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgmp_15-1.0.4-4.rhel9.aarch64.rpm) |
+| `pgmp_15` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.4 KiB | [pgmp_15-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmp_15-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_15` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.4 KiB | [pgmp_15-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmp_15-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.6 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 108.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 107.3 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 100.8 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.7 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_14` | 1.0.4 | `el8.x86_64` | pgdg | 107.6 KiB | [pgmp_14-1.0.4-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmp_14-1.0.4-4.rhel8.x86_64.rpm) |
-| `pgmp_14` | 1.0.4 | `el8.aarch64` | pgdg | 104.7 KiB | [pgmp_14-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmp_14-1.0.4-4.rhel8.aarch64.rpm) |
-| `pgmp_14` | 1.0.4 | `el9.aarch64` | pgdg | 107.1 KiB | [pgmp_14-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmp_14-1.0.4-4.rhel9.aarch64.rpm) |
-| `pgmp_14` | 1.0.5 | `el10.x86_64` | pgdg | 43.4 KiB | [pgmp_14-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmp_14-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_14` | 1.0.5 | `el10.aarch64` | pgdg | 42.4 KiB | [pgmp_14-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmp_14-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.6 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.8 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 108.7 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 107.2 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 100.8 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 99.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_14` | `1.0.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.6 KiB | [pgmp_14-1.0.4-4.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmp_14-1.0.4-4.rhel8.x86_64.rpm) |
+| `pgmp_14` | `1.0.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 104.7 KiB | [pgmp_14-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgmp_14-1.0.4-4.rhel8.aarch64.rpm) |
+| `pgmp_14` | `1.0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 107.1 KiB | [pgmp_14-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgmp_14-1.0.4-4.rhel9.aarch64.rpm) |
+| `pgmp_14` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.4 KiB | [pgmp_14-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmp_14-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_14` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.4 KiB | [pgmp_14-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmp_14-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.6 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.8 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 108.7 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 107.2 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 100.8 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_13` | 1.0.4 | `el8.aarch64` | pgdg | 104.4 KiB | [pgmp_13-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgmp_13-1.0.4-4.rhel8.aarch64.rpm) |
-| `pgmp_13` | 1.0.4 | `el9.aarch64` | pgdg | 106.6 KiB | [pgmp_13-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgmp_13-1.0.4-4.rhel9.aarch64.rpm) |
-| `pgmp_13` | 1.0.5 | `el10.x86_64` | pgdg | 43.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_13` | 1.0.5 | `el10.aarch64` | pgdg | 42.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-pgmp` | 1.0.5 | `d12.x86_64` | pgdg | 100.7 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `d12.aarch64` | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `d13.x86_64` | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `d13.aarch64` | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `u22.x86_64` | pgdg | 108.5 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `u22.aarch64` | pgdg | 106.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `u24.x86_64` | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pgmp` | 1.0.5 | `u24.aarch64` | pgdg | 99.6 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
+| `pgmp_13` | `1.0.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 104.4 KiB | [pgmp_13-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgmp_13-1.0.4-4.rhel8.aarch64.rpm) |
+| `pgmp_13` | `1.0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 106.6 KiB | [pgmp_13-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgmp_13-1.0.4-4.rhel9.aarch64.rpm) |
+| `pgmp_13` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm) |
+| `pgmp_13` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-13-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.7 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 108.5 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 106.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.6 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

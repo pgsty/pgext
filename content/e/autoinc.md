@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-functions for autoincrementing fields
+[**autoinc**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-AUTOINC)
 
 
 ## Overview

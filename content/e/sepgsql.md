@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-label-based mandatory access control (MAC) based on SELinux security policy.
+[**sepgsql**](https://www.postgresql.org/docs/current/sepgsql.html)
 
 
 ## Overview

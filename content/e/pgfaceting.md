@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-fast faceting queries using an inverted index
+[**pgfaceting**](https://github.com/cybertec-postgresql/pgfaceting)
 
 
 ## Overview
@@ -59,136 +59,136 @@ fast faceting queries using an inverted index
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_18` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_18` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `d12.x86_64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `d12.aarch64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `d13.x86_64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `d13.aarch64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `u22.x86_64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `u22.aarch64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `u24.x86_64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
-| `postgresql-18-pgfaceting` | 0.2.0 | `u24.aarch64` | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `pgfaceting_18` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_18` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgfaceting_18-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_17` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_17-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_17` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `d12.x86_64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `d12.aarch64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `d13.x86_64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `d13.aarch64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `u22.x86_64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `u22.aarch64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `u24.x86_64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
-| `postgresql-17-pgfaceting` | 0.2.0 | `u24.aarch64` | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `pgfaceting_17` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_17-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_17` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgfaceting_17-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_16` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_16-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_16` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `d12.x86_64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `d12.aarch64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `d13.x86_64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `d13.aarch64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `u22.x86_64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `u22.aarch64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `u24.x86_64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
-| `postgresql-16-pgfaceting` | 0.2.0 | `u24.aarch64` | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `pgfaceting_16` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_16-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_16` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgfaceting_16-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_15` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_15-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_15` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `d12.x86_64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `d12.aarch64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `d13.x86_64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `d13.aarch64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `u22.x86_64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `u22.aarch64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `u24.x86_64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
-| `postgresql-15-pgfaceting` | 0.2.0 | `u24.aarch64` | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `pgfaceting_15` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_15-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_15` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgfaceting_15-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_14` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_14-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_14` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `d12.x86_64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `d12.aarch64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `d13.x86_64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `d13.aarch64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `u22.x86_64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `u22.aarch64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `u24.x86_64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
-| `postgresql-14-pgfaceting` | 0.2.0 | `u24.aarch64` | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `pgfaceting_14` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_14-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_14` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgfaceting_14-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg12+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg13+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfaceting_13` | 0.2.0 | `el8.x86_64` | pigsty | 14.6 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_13-0.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el8.x86_64` | pgdg | 15.5 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el8.aarch64` | pigsty | 14.6 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_13-0.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el8.aarch64` | pgdg | 15.5 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el9.x86_64` | pigsty | 14.4 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_13-0.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el9.x86_64` | pgdg | 15.3 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el9.aarch64` | pigsty | 14.4 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_13-0.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el9.aarch64` | pgdg | 15.3 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el10.x86_64` | pgdg | 15.8 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm) |
-| `pgfaceting_13` | 0.2.0 | `el10.aarch64` | pgdg | 15.8 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 14.6 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfaceting_13-0.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 15.5 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 14.6 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfaceting_13-0.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 15.5 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel8.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 14.4 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfaceting_13-0.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 15.3 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 14.4 KiB | [pgfaceting_13-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfaceting_13-0.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 15.3 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel9.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 15.8 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm) |
+| `pgfaceting_13` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 15.8 KiB | [pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgfaceting_13-0.2.0-1PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

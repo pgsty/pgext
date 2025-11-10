@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-track planning and execution statistics of all SQL statements executed
+[**pg_stat_statements**](https://www.postgresql.org/docs/current/pgstatstatements.html)
 
 
 ## Overview

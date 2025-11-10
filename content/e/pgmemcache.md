@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-memcached interface
+[**pgmemcache**](https://github.com/ohmu/pgmemcache)
 
 
 ## Overview
@@ -60,111 +60,111 @@ memcached interface
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_18` | 2.3.0 | `el8.x86_64` | pgdg | 26.5 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel8.x86_64.rpm) |
-| `pgmemcache_18` | 2.3.0 | `el8.aarch64` | pgdg | 26.0 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel8.aarch64.rpm) |
-| `pgmemcache_18` | 2.3.0 | `el9.x86_64` | pgdg | 25.9 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel9.x86_64.rpm) |
-| `pgmemcache_18` | 2.3.0 | `el9.aarch64` | pgdg | 25.4 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel9.aarch64.rpm) |
-| `pgmemcache_18` | 2.3.0 | `el10.x86_64` | pgdg | 26.3 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_18` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.4 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 45.0 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.6 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.0 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 46.5 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 46.3 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.7 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.1 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_18` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 26.5 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel8.x86_64.rpm) |
+| `pgmemcache_18` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 26.0 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel8.aarch64.rpm) |
+| `pgmemcache_18` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 25.9 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel9.x86_64.rpm) |
+| `pgmemcache_18` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.4 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel9.aarch64.rpm) |
+| `pgmemcache_18` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.3 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgmemcache_18-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_18` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_18-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgmemcache_18-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.4 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 45.0 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.6 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.0 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 46.5 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 46.3 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.7 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.1 KiB | [postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-18-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_17` | 2.3.0 | `el8.x86_64` | pgdg | 26.4 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmemcache_17-2.3.0-8PGDG.rhel8.x86_64.rpm) |
-| `pgmemcache_17` | 2.3.0 | `el8.aarch64` | pgdg | 25.9 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmemcache_17-2.3.0-8PGDG.rhel8.aarch64.rpm) |
-| `pgmemcache_17` | 2.3.0 | `el9.x86_64` | pgdg | 26.0 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmemcache_17-2.3.0-8PGDG.rhel9.x86_64.rpm) |
-| `pgmemcache_17` | 2.3.0 | `el9.aarch64` | pgdg | 25.6 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmemcache_17-2.3.0-8PGDG.rhel9.aarch64.rpm) |
-| `pgmemcache_17` | 2.3.0 | `el10.x86_64` | pgdg | 26.3 KiB | [pgmemcache_17-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmemcache_17-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_17` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_17-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmemcache_17-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 45.0 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.7 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.1 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 52.3 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 51.9 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.7 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.2 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_17` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 26.4 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgmemcache_17-2.3.0-8PGDG.rhel8.x86_64.rpm) |
+| `pgmemcache_17` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 25.9 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgmemcache_17-2.3.0-8PGDG.rhel8.aarch64.rpm) |
+| `pgmemcache_17` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.0 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgmemcache_17-2.3.0-8PGDG.rhel9.x86_64.rpm) |
+| `pgmemcache_17` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.6 KiB | [pgmemcache_17-2.3.0-8PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgmemcache_17-2.3.0-8PGDG.rhel9.aarch64.rpm) |
+| `pgmemcache_17` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.3 KiB | [pgmemcache_17-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgmemcache_17-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_17` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_17-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgmemcache_17-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 45.0 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.7 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.1 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 52.3 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 51.9 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.7 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.2 KiB | [postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-17-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_16` | 2.3.0 | `el8.x86_64` | pgdg | 26.2 KiB | [pgmemcache_16-2.3.0-6.rhel8.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmemcache_16-2.3.0-6.rhel8.1.x86_64.rpm) |
-| `pgmemcache_16` | 2.3.0 | `el8.aarch64` | pgdg | 25.7 KiB | [pgmemcache_16-2.3.0-6.rhel8.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmemcache_16-2.3.0-6.rhel8.1.aarch64.rpm) |
-| `pgmemcache_16` | 2.3.0 | `el9.x86_64` | pgdg | 25.7 KiB | [pgmemcache_16-2.3.0-6.rhel9.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmemcache_16-2.3.0-6.rhel9.1.x86_64.rpm) |
-| `pgmemcache_16` | 2.3.0 | `el9.aarch64` | pgdg | 25.1 KiB | [pgmemcache_16-2.3.0-6.rhel9.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmemcache_16-2.3.0-6.rhel9.1.aarch64.rpm) |
-| `pgmemcache_16` | 2.3.0 | `el10.x86_64` | pgdg | 26.4 KiB | [pgmemcache_16-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmemcache_16-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_16` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_16-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmemcache_16-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.4 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 44.9 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.6 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.1 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 51.7 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 51.6 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.7 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.1 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_16` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 26.2 KiB | [pgmemcache_16-2.3.0-6.rhel8.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgmemcache_16-2.3.0-6.rhel8.1.x86_64.rpm) |
+| `pgmemcache_16` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 25.7 KiB | [pgmemcache_16-2.3.0-6.rhel8.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgmemcache_16-2.3.0-6.rhel8.1.aarch64.rpm) |
+| `pgmemcache_16` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 25.7 KiB | [pgmemcache_16-2.3.0-6.rhel9.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgmemcache_16-2.3.0-6.rhel9.1.x86_64.rpm) |
+| `pgmemcache_16` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.1 KiB | [pgmemcache_16-2.3.0-6.rhel9.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgmemcache_16-2.3.0-6.rhel9.1.aarch64.rpm) |
+| `pgmemcache_16` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.4 KiB | [pgmemcache_16-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgmemcache_16-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_16` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_16-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgmemcache_16-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.4 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 44.9 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.6 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.1 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 51.7 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 51.6 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.7 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.1 KiB | [postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-16-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_15` | 2.3.0 | `el8.x86_64` | pgdg | 56.1 KiB | [pgmemcache_15-2.3.0-5.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmemcache_15-2.3.0-5.rhel8.x86_64.rpm) |
-| `pgmemcache_15` | 2.3.0 | `el9.x86_64` | pgdg | 57.3 KiB | [pgmemcache_15-2.3.0-5.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmemcache_15-2.3.0-5.rhel9.x86_64.rpm) |
-| `pgmemcache_15` | 2.3.0 | `el10.x86_64` | pgdg | 26.4 KiB | [pgmemcache_15-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmemcache_15-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_15` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_15-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmemcache_15-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 45.1 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.7 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.2 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 51.8 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 51.6 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.7 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.1 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_15` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 56.1 KiB | [pgmemcache_15-2.3.0-5.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgmemcache_15-2.3.0-5.rhel8.x86_64.rpm) |
+| `pgmemcache_15` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 57.3 KiB | [pgmemcache_15-2.3.0-5.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgmemcache_15-2.3.0-5.rhel9.x86_64.rpm) |
+| `pgmemcache_15` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.4 KiB | [pgmemcache_15-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgmemcache_15-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_15` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_15-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgmemcache_15-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 45.1 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.7 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.2 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 51.8 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 51.6 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.7 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.1 KiB | [postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-15-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_14` | 2.3.0 | `el8.x86_64` | pgdg | 56.6 KiB | [pgmemcache_14-2.3.0-5.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmemcache_14-2.3.0-5.rhel8.x86_64.rpm) |
-| `pgmemcache_14` | 2.3.0 | `el10.x86_64` | pgdg | 26.4 KiB | [pgmemcache_14-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmemcache_14-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_14` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_14-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmemcache_14-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 45.1 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.6 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.1 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 51.7 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 51.5 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.7 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.2 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_14` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 56.6 KiB | [pgmemcache_14-2.3.0-5.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgmemcache_14-2.3.0-5.rhel8.x86_64.rpm) |
+| `pgmemcache_14` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.4 KiB | [pgmemcache_14-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgmemcache_14-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_14` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_14-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgmemcache_14-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 45.1 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.6 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.1 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 51.7 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 51.5 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.7 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.2 KiB | [postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-14-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmemcache_13` | 2.3.0 | `el10.x86_64` | pgdg | 26.3 KiB | [pgmemcache_13-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgmemcache_13-2.3.0-9PGDG.rhel10.x86_64.rpm) |
-| `pgmemcache_13` | 2.3.0 | `el10.aarch64` | pgdg | 26.2 KiB | [pgmemcache_13-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgmemcache_13-2.3.0-9PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `d12.x86_64` | pgdg | 45.3 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `d12.aarch64` | pgdg | 44.9 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `d13.x86_64` | pgdg | 45.3 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `d13.aarch64` | pgdg | 45.0 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `u22.x86_64` | pgdg | 51.4 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `u22.aarch64` | pgdg | 51.0 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `u24.x86_64` | pgdg | 45.4 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pgmemcache` | 2.3.0 | `u24.aarch64` | pgdg | 45.1 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
+| `pgmemcache_13` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.3 KiB | [pgmemcache_13-2.3.0-9PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgmemcache_13-2.3.0-9PGDG.rhel10.x86_64.rpm) |
+| `pgmemcache_13` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.2 KiB | [pgmemcache_13-2.3.0-9PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgmemcache_13-2.3.0-9PGDG.rhel10.aarch64.rpm) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 45.3 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_amd64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 44.9 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg12+1_arm64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 45.3 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_amd64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 45.0 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg13+1_arm64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 51.4 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 51.0 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.4 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-pgmemcache` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.1 KiB | [postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgmemcache/postgresql-13-pgmemcache_2.3.0-15.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

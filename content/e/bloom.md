@@ -7,7 +7,7 @@ categories: ["FEAT"]
 width: full
 ---
 
-bloom access method - signature file based index
+[**bloom**](https://www.postgresql.org/docs/current/bloom.html)
 
 
 ## Overview

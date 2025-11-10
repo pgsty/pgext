@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-functions for implementing referential integrity (obsolete)
+[**refint**](https://www.postgresql.org/docs/current/contrib-spi.html#CONTRIB-SPI-REFINT)
 
 
 ## Overview

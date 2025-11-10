@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-SQL-based test/example module for WAL logical decoding
+[**test_decoding**](https://www.postgresql.org/docs/current/test-decoding.html)
 
 
 ## Overview

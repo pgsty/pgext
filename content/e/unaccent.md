@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-text search dictionary that removes accents
+[**unaccent**](https://www.postgresql.org/docs/current/unaccent.html)
 
 
 ## Overview

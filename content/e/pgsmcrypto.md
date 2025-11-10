@@ -7,7 +7,7 @@ categories: ["SEC"]
 width: full
 ---
 
-PostgreSQL SM Algorithm Extension
+[**pgsmcrypto**](https://github.com/zhuobie/pgsmcrypto)
 
 
 ## Overview
@@ -60,120 +60,120 @@ PostgreSQL SM Algorithm Extension
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_18` | 0.1.1 | `el8.x86_64` | pigsty | 845.9 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_18` | 0.1.1 | `el8.aarch64` | pigsty | 667.4 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_18` | 0.1.1 | `el9.x86_64` | pigsty | 877.0 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_18` | 0.1.1 | `el9.aarch64` | pigsty | 727.2 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_18` | 0.1.1 | `el10.x86_64` | pigsty | 884.8 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_18` | 0.1.1 | `el10.aarch64` | pigsty | 736.7 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_18` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 845.9 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_18` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.4 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_18` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 877.0 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_18` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.2 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_18` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 884.8 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_18-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_18` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 736.7 KiB | [pgsmcrypto_18-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_18-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.9 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.8 KiB | [postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-18-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_17` | 0.1.1 | `el8.x86_64` | pigsty | 845.5 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_17` | 0.1.1 | `el8.aarch64` | pigsty | 667.3 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_17` | 0.1.1 | `el9.x86_64` | pigsty | 877.2 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_17` | 0.1.1 | `el9.aarch64` | pigsty | 727.2 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_17` | 0.1.1 | `el10.x86_64` | pigsty | 884.5 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_17` | 0.1.1 | `el10.aarch64` | pigsty | 736.6 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 708.2 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 536.9 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 708.3 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 537.1 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 800.1 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 651.4 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 800.7 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 640.3 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_17` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 845.5 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_17` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.3 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_17` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 877.2 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_17` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.2 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_17` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 884.5 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_17-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_17` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 736.6 KiB | [pgsmcrypto_17-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_17-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 708.2 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 536.9 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 708.3 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 537.1 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 800.1 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 651.4 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 800.7 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 640.3 KiB | [postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-17-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_16` | 0.1.1 | `el8.x86_64` | pigsty | 845.5 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_16` | 0.1.1 | `el8.aarch64` | pigsty | 667.3 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_16` | 0.1.1 | `el9.x86_64` | pigsty | 877.3 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_16` | 0.1.1 | `el9.aarch64` | pigsty | 727.1 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_16` | 0.1.1 | `el10.x86_64` | pigsty | 883.1 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_16` | 0.1.1 | `el10.aarch64` | pigsty | 735.7 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 708.2 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 536.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 708.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 537.1 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 797.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 651.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 800.8 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 640.0 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_16` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 845.5 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_16` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.3 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_16` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 877.3 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_16` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.1 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_16` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 883.1 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_16-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_16` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 735.7 KiB | [pgsmcrypto_16-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_16-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 708.2 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 536.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 708.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 537.1 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 797.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 651.6 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 800.8 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 640.0 KiB | [postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-16-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_15` | 0.1.1 | `el8.x86_64` | pigsty | 845.8 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_15` | 0.1.1 | `el8.aarch64` | pigsty | 667.3 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_15` | 0.1.1 | `el9.x86_64` | pigsty | 875.5 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_15` | 0.1.1 | `el9.aarch64` | pigsty | 726.7 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_15` | 0.1.1 | `el10.x86_64` | pigsty | 880.1 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_15` | 0.1.1 | `el10.aarch64` | pigsty | 735.8 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 708.7 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 536.8 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 708.4 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 537.0 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 801.8 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 651.6 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 800.9 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 640.2 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_15` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 845.8 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_15` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.3 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_15` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 875.5 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_15` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 726.7 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_15` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 880.1 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_15-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_15` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 735.8 KiB | [pgsmcrypto_15-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_15-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 708.7 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 536.8 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 708.4 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 537.0 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 801.8 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 651.6 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 800.9 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 640.2 KiB | [postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-15-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_14` | 0.1.1 | `el8.x86_64` | pigsty | 845.7 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_14` | 0.1.1 | `el8.aarch64` | pigsty | 667.2 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_14` | 0.1.1 | `el9.x86_64` | pigsty | 875.8 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_14` | 0.1.1 | `el9.aarch64` | pigsty | 727.2 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_14` | 0.1.1 | `el10.x86_64` | pigsty | 884.8 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_14` | 0.1.1 | `el10.aarch64` | pigsty | 736.7 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 708.5 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 536.8 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 708.6 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 537.0 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 797.9 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 650.1 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 801.4 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 640.0 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_14` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 845.7 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_14` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.2 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_14` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 875.8 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_14` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.2 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_14` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 884.8 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_14-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_14` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 736.7 KiB | [pgsmcrypto_14-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_14-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 708.5 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 536.8 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 708.6 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 537.0 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 797.9 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 650.1 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 801.4 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 640.0 KiB | [postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-14-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsmcrypto_13` | 0.1.1 | `el8.x86_64` | pigsty | 846.0 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el8.x86_64.rpm) |
-| `pgsmcrypto_13` | 0.1.1 | `el8.aarch64` | pigsty | 667.1 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el8.aarch64.rpm) |
-| `pgsmcrypto_13` | 0.1.1 | `el9.x86_64` | pigsty | 879.9 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el9.x86_64.rpm) |
-| `pgsmcrypto_13` | 0.1.1 | `el9.aarch64` | pigsty | 727.2 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el9.aarch64.rpm) |
-| `pgsmcrypto_13` | 0.1.1 | `el10.x86_64` | pigsty | 885.4 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el10.x86_64.rpm) |
-| `pgsmcrypto_13` | 0.1.1 | `el10.aarch64` | pigsty | 736.5 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `d12.x86_64` | pigsty | 709.7 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `d12.aarch64` | pigsty | 536.8 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `d13.x86_64` | pigsty | 708.6 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `d13.aarch64` | pigsty | 536.8 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `u22.x86_64` | pigsty | 800.9 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `u22.aarch64` | pigsty | 650.2 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `u24.x86_64` | pigsty | 797.7 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-pgsmcrypto` | 0.1.1 | `u24.aarch64` | pigsty | 640.1 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
+| `pgsmcrypto_13` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 846.0 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsmcrypto_13` | `0.1.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 667.1 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsmcrypto_13` | `0.1.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 879.9 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsmcrypto_13` | `0.1.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.2 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsmcrypto_13` | `0.1.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 885.4 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsmcrypto_13-0.1.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsmcrypto_13` | `0.1.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 736.5 KiB | [pgsmcrypto_13-0.1.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsmcrypto_13-0.1.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 709.7 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 536.8 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 708.6 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 536.8 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 800.9 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 650.2 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 797.7 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-pgsmcrypto` | `0.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 640.1 KiB | [postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsmcrypto/postgresql-13-pgsmcrypto_0.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

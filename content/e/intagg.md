@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-integer aggregator and enumerator (obsolete)
+[**intagg**](https://www.postgresql.org/docs/current/intagg.html)
 
 
 ## Overview

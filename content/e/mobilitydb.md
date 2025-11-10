@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-MobilityDB geospatial trajectory data management & analysis platform
+[**mobilitydb**](https://github.com/MobilityDB/MobilityDB)
 
 
 ## Overview
@@ -60,82 +60,82 @@ MobilityDB geospatial trajectory data management & analysis platform
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-18-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 709.5 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-18-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 642.0 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-18-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 710.6 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-18-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 651.7 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-18-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.8 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 572.2 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 709.5 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 642.0 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 710.6 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 651.7 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.8 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 572.2 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-17-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 709.8 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-17-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 641.9 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-17-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 709.4 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-17-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 651.3 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-17-mobilitydb` | 1.2.0 | `u22.x86_64` | pgdg | 574.0 KiB | [postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-mobilitydb` | 1.2.0 | `u22.aarch64` | pgdg | 535.8 KiB | [postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.9 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 572.0 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 709.8 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 641.9 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 709.4 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 651.3 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-17-mobilitydb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 574.0 KiB | [postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-mobilitydb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 535.8 KiB | [postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.9 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 572.0 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-16-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 708.5 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-16-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 642.8 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-16-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 709.7 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-16-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 653.0 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-16-mobilitydb` | 1.2.0 | `u22.x86_64` | pgdg | 574.2 KiB | [postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-mobilitydb` | 1.2.0 | `u22.aarch64` | pgdg | 535.7 KiB | [postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.6 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 572.2 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.5 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 642.8 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 709.7 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 653.0 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-16-mobilitydb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 574.2 KiB | [postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-mobilitydb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 535.7 KiB | [postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.6 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 572.2 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-15-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 708.7 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-15-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 643.2 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-15-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 708.9 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-15-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 653.4 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-15-mobilitydb` | 1.2.0 | `u22.x86_64` | pgdg | 573.5 KiB | [postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-mobilitydb` | 1.2.0 | `u22.aarch64` | pgdg | 536.0 KiB | [postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.5 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 572.6 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.7 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 643.2 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 708.9 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 653.4 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-15-mobilitydb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 573.5 KiB | [postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-mobilitydb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 536.0 KiB | [postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.5 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 572.6 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-14-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 708.7 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-14-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 641.6 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-14-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 709.9 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-14-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 652.5 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-14-mobilitydb` | 1.2.0 | `u22.x86_64` | pgdg | 573.2 KiB | [postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-mobilitydb` | 1.2.0 | `u22.aarch64` | pgdg | 535.6 KiB | [postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.3 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 572.0 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.7 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 641.6 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 709.9 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 652.5 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-14-mobilitydb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 573.2 KiB | [postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-mobilitydb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 535.6 KiB | [postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.3 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 572.0 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-13-mobilitydb` | 1.3.0 | `d12.x86_64` | pgdg | 709.6 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
-| `postgresql-13-mobilitydb` | 1.3.0 | `d12.aarch64` | pgdg | 640.8 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
-| `postgresql-13-mobilitydb` | 1.3.0 | `d13.x86_64` | pgdg | 709.4 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
-| `postgresql-13-mobilitydb` | 1.3.0 | `d13.aarch64` | pgdg | 652.2 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
-| `postgresql-13-mobilitydb` | 1.2.0 | `u22.x86_64` | pgdg | 574.3 KiB | [postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-mobilitydb` | 1.2.0 | `u22.aarch64` | pgdg | 535.0 KiB | [postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-mobilitydb` | 1.3.0 | `u24.x86_64` | pgdg | 609.7 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-mobilitydb` | 1.3.0 | `u24.aarch64` | pgdg | 571.6 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 709.6 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 640.8 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg12+1_arm64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 709.4 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_amd64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 652.2 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg13+1_arm64.deb) |
+| `postgresql-13-mobilitydb` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 574.3 KiB | [postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-mobilitydb` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 535.0 KiB | [postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.2.0-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 609.7 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-mobilitydb` | `1.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 571.6 KiB | [postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-13-mobilitydb_1.3.0~alpha-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

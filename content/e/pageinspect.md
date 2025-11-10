@@ -7,7 +7,7 @@ categories: ["STAT"]
 width: full
 ---
 
-inspect the contents of database pages at a low level
+[**pageinspect**](https://www.postgresql.org/docs/current/pageinspect.html)
 
 
 ## Overview

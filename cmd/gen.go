@@ -330,7 +330,7 @@ var genCatalogCmd = &cobra.Command{
 var genOSCmd = &cobra.Command{
 	Use:   "os [os-name]",
 	Short: "Generate OS-specific availability page(s)",
-	Long:  `Generate markdown page(s) showing extension availability for specific OS distribution(s).
+	Long: `Generate markdown page(s) showing extension availability for specific OS distribution(s).
 If no argument is provided, generates pages for all active OS distributions.`,
 	Example: `  pgext gen os               # Generate pages for all active OS distributions
   pgext gen os el9.x86_64    # Generate page for RHEL 9 x86_64
@@ -359,7 +359,12 @@ If no argument is provided, generates pages for all active OS distributions.`,
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
 
-		generator := cli.NewOSGenerator(cache, listDir)
+		// Prepare os directory
+		osDir := filepath.Join(outputDir, "os")
+		if err := os.MkdirAll(osDir, 0755); err != nil {
+			return fmt.Errorf("failed to create os output directory: %w", err)
+		}
+		generator := cli.NewOSGenerator(cache, osDir)
 
 		// Determine which OS pages to generate
 		var osList []string

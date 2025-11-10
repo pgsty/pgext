@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-Triggered change notifications
+[**tcn**](https://www.postgresql.org/docs/current/tcn.html)
 
 
 ## Overview

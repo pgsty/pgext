@@ -7,7 +7,7 @@ categories: ["UTIL"]
 width: full
 ---
 
-gzip and gunzip functions.
+[**pg_gzip**](https://github.com/pramsey/pgsql-gzip)
 
 
 ## Overview
@@ -58,120 +58,120 @@ gzip and gunzip functions.
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_18` | 1.0.0 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_18` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_18` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_18` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_18` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_18` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-gzip` | 1.0.0 | `d12.x86_64` | pigsty | 12.3 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `d12.aarch64` | pigsty | 12.2 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.3 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `u22.x86_64` | pigsty | 12.7 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `u22.aarch64` | pigsty | 12.7 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `u24.x86_64` | pigsty | 12.8 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-gzip` | 1.0.0 | `u24.aarch64` | pigsty | 12.6 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_18` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_18` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_18-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_18-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_18-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-gzip` | `1.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.3 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.2 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.3 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.7 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.7 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.8 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-gzip` | `1.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.6 KiB | [postgresql-18-gzip_1.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-18-gzip_1.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_17` | 1.0.0 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_17` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_17` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_17` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_17` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_17` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-gzip` | 1.0.1 | `d12.x86_64` | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-gzip` | 1.0.1 | `d12.aarch64` | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.3 KiB | [postgresql-17-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-17-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-gzip` | 1.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-gzip` | 1.0.1 | `u22.aarch64` | pigsty | 13.2 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-gzip` | 1.0.1 | `u24.x86_64` | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-gzip` | 1.0.1 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_17` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_17` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_17` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_17` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_17` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_17-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_17` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_17-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_17-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-gzip` | `1.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-gzip` | `1.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.3 KiB | [postgresql-17-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-17-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-gzip` | `1.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.1 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-gzip` | `1.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.2 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-gzip` | `1.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.9 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-gzip` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-17-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-17-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_16` | 1.0.0 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_16` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_16` | 1.0.0 | `el9.x86_64` | pigsty | 13.7 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_16` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_16` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_16` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-gzip` | 1.0.1 | `d12.x86_64` | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-gzip` | 1.0.1 | `d12.aarch64` | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.3 KiB | [postgresql-16-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-16-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-gzip` | 1.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-gzip` | 1.0.1 | `u22.aarch64` | pigsty | 13.2 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-gzip` | 1.0.1 | `u24.x86_64` | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-gzip` | 1.0.1 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_16` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_16` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_16` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.7 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_16` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_16` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_16-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_16` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_16-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_16-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-gzip` | `1.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-gzip` | `1.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.3 KiB | [postgresql-16-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-16-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-gzip` | `1.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.1 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-gzip` | `1.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.2 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-gzip` | `1.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.9 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-gzip` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-16-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-16-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_15` | 1.0.0 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_15` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_15` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_15` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_15` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_15` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-gzip` | 1.0.1 | `d12.x86_64` | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-gzip` | 1.0.1 | `d12.aarch64` | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.3 KiB | [postgresql-15-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-15-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-gzip` | 1.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-gzip` | 1.0.1 | `u22.aarch64` | pigsty | 13.2 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-gzip` | 1.0.1 | `u24.x86_64` | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-gzip` | 1.0.1 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_15` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_15` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_15` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_15` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_15` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_15-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_15` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_15-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_15-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-gzip` | `1.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-gzip` | `1.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.3 KiB | [postgresql-15-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-15-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-gzip` | `1.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.1 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-gzip` | `1.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.2 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-gzip` | `1.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.9 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-gzip` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-15-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-15-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_14` | 1.0.0 | `el8.x86_64` | pigsty | 13.7 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_14` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_14` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_14` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_14` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_14` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-gzip` | 1.0.1 | `d12.x86_64` | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-gzip` | 1.0.1 | `d12.aarch64` | pigsty | 12.9 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.3 KiB | [postgresql-14-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-14-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-gzip` | 1.0.1 | `u22.x86_64` | pigsty | 13.1 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-gzip` | 1.0.1 | `u22.aarch64` | pigsty | 13.1 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-gzip` | 1.0.1 | `u24.x86_64` | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-gzip` | 1.0.1 | `u24.aarch64` | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_14` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_14` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_14` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_14` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_14-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_14` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_14-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_14-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-gzip` | `1.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-gzip` | `1.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.9 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.3 KiB | [postgresql-14-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-14-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-gzip` | `1.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.1 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-gzip` | `1.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.1 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-gzip` | `1.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-gzip` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.8 KiB | [postgresql-14-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-14-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_gzip_13` | 1.0.0 | `el8.x86_64` | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el8.x86_64.rpm) |
-| `pg_gzip_13` | 1.0.0 | `el8.aarch64` | pigsty | 13.9 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el8.aarch64.rpm) |
-| `pg_gzip_13` | 1.0.0 | `el9.x86_64` | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el9.x86_64.rpm) |
-| `pg_gzip_13` | 1.0.0 | `el9.aarch64` | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el9.aarch64.rpm) |
-| `pg_gzip_13` | 1.0.0 | `el10.x86_64` | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el10.x86_64.rpm) |
-| `pg_gzip_13` | 1.0.0 | `el10.aarch64` | pigsty | 13.8 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-gzip` | 1.0.1 | `d12.x86_64` | pigsty | 12.6 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-gzip` | 1.0.1 | `d12.aarch64` | pigsty | 12.7 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-gzip` | 1.0.0 | `d13.x86_64` | pigsty | 12.1 KiB | [postgresql-13-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-gzip` | 1.0.0 | `d13.aarch64` | pigsty | 12.2 KiB | [postgresql-13-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-gzip` | 1.0.1 | `u22.x86_64` | pigsty | 13.0 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-gzip` | 1.0.1 | `u22.aarch64` | pigsty | 13.1 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-gzip` | 1.0.1 | `u24.x86_64` | pigsty | 12.7 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-gzip` | 1.0.1 | `u24.aarch64` | pigsty | 12.6 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
+| `pg_gzip_13` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el8.x86_64.rpm) |
+| `pg_gzip_13` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el8.aarch64.rpm) |
+| `pg_gzip_13` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el9.x86_64.rpm) |
+| `pg_gzip_13` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el9.aarch64.rpm) |
+| `pg_gzip_13` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_gzip_13-1.0.0-2PIGSTY.el10.x86_64.rpm) |
+| `pg_gzip_13` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [pg_gzip_13-1.0.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_gzip_13-1.0.0-2PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-gzip` | `1.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.6 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-gzip` | `1.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.7 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-gzip` | `1.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.1 KiB | [postgresql-13-gzip_1.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-gzip` | `1.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 KiB | [postgresql-13-gzip_1.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-gzip` | `1.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 13.0 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-gzip` | `1.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.1 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-gzip` | `1.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.7 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-gzip` | `1.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.6 KiB | [postgresql-13-gzip_1.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsql-gzip/postgresql-13-gzip_1.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

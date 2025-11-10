@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data type for case-insensitive character strings
+[**citext**](https://www.postgresql.org/docs/current/citext.html)
 
 
 ## Overview

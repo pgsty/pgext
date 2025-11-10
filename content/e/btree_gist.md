@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-support for indexing common datatypes in GiST
+[**btree_gist**](https://www.postgresql.org/docs/current/btree-gist.html)
 
 
 ## Overview

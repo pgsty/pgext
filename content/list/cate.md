@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (428 ext in 361 pkg) categorized into 16 categories.
+PostgreSQL Extensions (431 ext in 364 pkg) categorized into 16 categories.
 
 ## TIME
 
@@ -133,48 +133,51 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | Incremental Processing by Crunchy Data |
-| 2900 | {{< alias "pgmq" >}} | 1.7.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
-| 2910 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
-| 2920 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
-| 2930 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
-| 2940 | {{< alias "rdkit" >}} | 202503.1 | Cheminformatics functionality for PostgreSQL. |
-| 2951 | {{< alias "omni" "omnigres" >}} | 0.2.9 | Advanced adapter for Postgres extensions |
-| 2952 | {{< alias "omni_auth" "omnigres" >}} | 0.1.3 | Basic session management |
-| 2953 | {{< alias "omni_aws" "omnigres" >}} | 0.1.2 | Amazon Web Services APIs (S3) |
-| 2954 | {{< alias "omni_cloudevents" "omnigres" >}} | 0.1.0 | CloudEvents support |
-| 2955 | {{< alias "omni_containers" "omnigres" >}} | 0.2.0 | Docker container management |
-| 2956 | {{< alias "omni_credentials" "omnigres" >}} | 0.2.0 | Application credential management |
-| 2958 | {{< alias "omni_email" "omnigres" >}} | 0 | E-mail framework |
-| 2959 | {{< alias "omni_http" "omnigres" >}} | 0.1.0 | Basic HTTP types |
-| 2960 | {{< alias "omni_httpc" "omnigres" >}} | 0.1.5 | HTTP client |
-| 2961 | {{< alias "omni_httpd" "omnigres" >}} | 0.4.6 | HTTP server |
-| 2962 | {{< alias "omni_id" "omnigres" >}} | 0.4.2 | Identity types |
-| 2963 | {{< alias "omni_json" "omnigres" >}} | 0.1.1 | JSON toolkit |
-| 2964 | {{< alias "omni_kube" "omnigres" >}} | 0.1.1 | Kubernetes (k8s) integration |
-| 2965 | {{< alias "omni_ledger" "omnigres" >}} | 0.1.2 | Financial ledger |
-| 2966 | {{< alias "omni_manifest" "omnigres" >}} | 0.1.2 | Package installation manifests |
-| 2967 | {{< alias "omni_mimetypes" "omnigres" >}} | 0.1.0 | MIME types |
-| 2968 | {{< alias "omni_os" "omnigres" >}} | 0.1.1 | Operating system integration |
-| 2969 | {{< alias "omni_polyfill" "omnigres" >}} | 0.2.2 | Postgres API polyfills |
-| 2970 | {{< alias "omni_python" "omnigres" >}} | 0.1.1 | First-class Python support |
-| 2971 | {{< alias "omni_regex" "omnigres" >}} | 0.1.0 | PCRE-compatible regular expressions |
-| 2972 | {{< alias "omni_rest" "omnigres" >}} | 0.1.1 | REST API toolkit (with PostgREST support) |
-| 2973 | {{< alias "omni_schema" "omnigres" >}} | 0.3.0 | Advanced schema management tooling |
-| 2974 | {{< alias "omni_seq" "omnigres" >}} | 0.1.1 | Distributed integer sequences |
-| 2975 | {{< alias "omni_service" "omnigres" >}} | 0.1.0 | Service management |
-| 2976 | {{< alias "omni_session" "omnigres" >}} | 0.2.0 | Session management |
-| 2977 | {{< alias "omni_sql" "omnigres" >}} | 0.5.1 | Programmatic SQL manipulation |
-| 2979 | {{< alias "omni_sqlite" "omnigres" >}} | 0.1.2 | Embedded SQLite |
-| 2980 | {{< alias "omni_test" "omnigres" >}} | 0.4.0 | Testing framework |
-| 2981 | {{< alias "omni_txn" "omnigres" >}} | 0.5.0 | Transaction management |
-| 2982 | {{< alias "omni_types" "omnigres" >}} | 0.3.4 | Advanced types |
-| 2983 | {{< alias "omni_var" "omnigres" >}} | 0.3.0 | Scoped variables |
-| 2984 | {{< alias "omni_vfs" "omnigres" >}} | 0.2.1 | Virtual File System |
-| 2985 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | 0.1.0 | Virtual File System types (v1) |
-| 2986 | {{< alias "omni_web" "omnigres" >}} | 0.3.0 | Common web stack primitives |
-| 2987 | {{< alias "omni_worker" "omnigres" >}} | 0.1.0 | Generalized worker pool |
-| 2988 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
-| 2989 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
+| 2890 | {{< alias "pgmq" >}} | 1.7.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2900 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
+| 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
+| 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
+| 2930 | {{< alias "rdkit" >}} | 202503.1 | Cheminformatics functionality for PostgreSQL. |
+| 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | Advanced adapter for Postgres extensions |
+| 2941 | {{< alias "omni_auth" "omnigres" >}} | 0.1.3 | Basic session management |
+| 2942 | {{< alias "omni_aws" "omnigres" >}} | 0.1.2 | Amazon Web Services APIs (S3) |
+| 2943 | {{< alias "omni_cloudevents" "omnigres" >}} | 0.1.0 | CloudEvents support |
+| 2944 | {{< alias "omni_containers" "omnigres" >}} | 0.2.0 | Docker container management |
+| 2945 | {{< alias "omni_credentials" "omnigres" >}} | 0.2.0 | Application credential management |
+| 2946 | {{< alias "omni_csv" >}} | 0.1.1 | CSV toolkit |
+| 2947 | {{< alias "omni_datasets" >}} | 0.1.0 | Dataset provisioning |
+| 2948 | {{< alias "omni_email" "omnigres" >}} | 0.1.0 | E-mail framework |
+| 2949 | {{< alias "omni_http" "omnigres" >}} | 0.1.0 | Basic HTTP types |
+| 2950 | {{< alias "omni_httpc" "omnigres" >}} | 0.1.10 | HTTP client |
+| 2951 | {{< alias "omni_httpd" "omnigres" >}} | 0.4.11 | HTTP server |
+| 2952 | {{< alias "omni_id" "omnigres" >}} | 0.4.3 | Identity types |
+| 2953 | {{< alias "omni_json" "omnigres" >}} | 0.1.1 | JSON toolkit |
+| 2954 | {{< alias "omni_kube" "omnigres" >}} | 0.4.2 | Kubernetes (k8s) integration |
+| 2955 | {{< alias "omni_ledger" "omnigres" >}} | 0.1.3 | Financial ledger |
+| 2956 | {{< alias "omni_manifest" "omnigres" >}} | 0.1.2 | Package installation manifests |
+| 2957 | {{< alias "omni_mimetypes" "omnigres" >}} | 0.1.0 | MIME types |
+| 2958 | {{< alias "omni_os" "omnigres" >}} | 0.1.1 | Operating system integration |
+| 2959 | {{< alias "omni_polyfill" "omnigres" >}} | 0.2.2 | Postgres API polyfills |
+| 2960 | {{< alias "omni_python" "omnigres" >}} | 0.1.1 | First-class Python support |
+| 2961 | {{< alias "omni_regex" "omnigres" >}} | 0.1.0 | PCRE-compatible regular expressions |
+| 2962 | {{< alias "omni_rest" "omnigres" >}} | 0.1.1 | REST API toolkit (with PostgREST support) |
+| 2963 | {{< alias "omni_schema" "omnigres" >}} | 0.3.0 | Advanced schema management tooling |
+| 2964 | {{< alias "omni_seq" "omnigres" >}} | 0.1.1 | Distributed integer sequences |
+| 2965 | {{< alias "omni_service" "omnigres" >}} | 0.1.0 | Service management |
+| 2966 | {{< alias "omni_session" "omnigres" >}} | 0.2.0 | Session management |
+| 2967 | {{< alias "omni_shmem" >}} | 0.1.0 | Shared Memory Management |
+| 2968 | {{< alias "omni_sql" "omnigres" >}} | 0.5.3 | Programmatic SQL manipulation |
+| 2969 | {{< alias "omni_sqlite" "omnigres" >}} | 0.2.2 | Embedded SQLite |
+| 2970 | {{< alias "omni_test" "omnigres" >}} | 0.4.0 | Testing framework |
+| 2971 | {{< alias "omni_txn" "omnigres" >}} | 0.5.0 | Transaction management |
+| 2972 | {{< alias "omni_types" "omnigres" >}} | 0.3.6 | Advanced types |
+| 2973 | {{< alias "omni_var" "omnigres" >}} | 0.3.0 | Scoped variables |
+| 2974 | {{< alias "omni_vfs" "omnigres" >}} | 0.2.2 | Virtual File System |
+| 2975 | {{< alias "omni_vfs_types_v1" "omnigres" >}} | 0.1.0 | Virtual File System types (v1) |
+| 2976 | {{< alias "omni_web" "omnigres" >}} | 0.3.0 | Common web stack primitives |
+| 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
+| 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
+| 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 
 ## LANG
@@ -305,6 +308,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
+| 2980 | {{< alias "omnisketch" >}} | 1.0.2 | data structure for on-line agg of data into approximate sketch |
 | 4500 | {{< alias "pg_idkit" >}} | 0.4.0 | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
 | 4510 | {{< alias "pgx_ulid" >}} | 0.2.1 | ulid type and methods |
 | 4540 | {{< alias "pg_uuidv7" >}} | 1.6.0 | Create UUIDv7 values in postgres |
@@ -315,7 +319,6 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower quantile aggregate function |
 | 4630 | {{< alias "count_distinct" >}} | 3.0.2 | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
-| 4640 | {{< alias "omnisketch" >}} | 1.0.2 | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | 1.0.1 | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | 0.1.0 | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.0 | XI Correlation Coefficient in Postgres |

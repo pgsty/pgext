@@ -13,14 +13,14 @@ comment: false
 Harness the synergistic superpower of the PostgreSQL extensions ecosystem with three things:
 
 - [**PIG CLI**](/pig/) : The PostgreSQL Extension Package Manager for Linux - `pig`
-- [**Catalog**](/list) : Find the extension you need, with unparalleled 420+ extensions included
-- [**Repository**](/repo) : Get pre-made RPM/DEB packages for 10 mainstream Linux OS
+- [**Catalog**](/list) : Find the extension you need, with unparalleled 431 extensions included
+- [**Repository**](/repo) : Get pre-made RPM/DEB packages for 14 mainstream Linux OS
 
 
-{{< cards cols=4 >}}
-  {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}  
-  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 420+ available PostgreSQL extensions" >}}
+{{< cards cols=4 >}}  
+  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 430+ available PostgreSQL extensions" >}}
   {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT / DNF repo that deliver PostgreSQL extensions in native Linux format" >}}
+  {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}
 {{< /cards >}}
 
 **Just use PostgreSQL for everything!** Also check our blog post: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
@@ -29,9 +29,9 @@ Harness the synergistic superpower of the PostgreSQL extensions ecosystem with t
 
 ## Catalog
 
-{{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
+  {{< category "time" >}} {{< category "gis" >}} {{< category "rag" >}} {{< category "fts" >}} {{< category "olap" >}} {{< category "feat" >}} {{< category "lang" >}} {{< category "type" >}}
 
-{{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
+  {{< category "util" >}} {{< category "func" >}} {{< category "admin" >}} {{< category "stat" >}} {{< category "sec" >}} {{< category "fdw" >}} {{< category "sim" >}} {{< category "etl" >}}
 
 {{< cards cols=5 >}}
   {{< card link="/cate/time" title="TIME" icon="clock" subtitle="TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Scheduler, ..." >}}

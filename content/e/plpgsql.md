@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-PL/pgSQL procedural language
+[**plpgsql**](https://www.postgresql.org/docs/current/plpgsql.html)
 
 
 ## Overview

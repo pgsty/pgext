@@ -7,7 +7,7 @@ categories: ["ETL"]
 width: full
 ---
 
-Dummy extension for compatibility when upgrading from Postgres 9.4
+[**pglogical**](https://github.com/2ndQuadrant/pglogical)
 
 
 ## Overview

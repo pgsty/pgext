@@ -22,13 +22,15 @@ weight: 100
 
 ### PIG
 
-您可以安装 [pig](/pig) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
+您可以安装 [pig](/zh/pig) - CLI 工具，并使用它添加 pgdg / pigsty 仓库（推荐）：
 
 ```bash tab="pig"
-curl https://repo.pigsty.io/pig | bash      # 下载并安装 pig CLI 工具
 pig repo add pigsty                         # 添加 pigsty-pgsql 仓库
-pig repo add pgdg                           # 添加 pgdg 仓库
-pig repo add pgsql -u                       # 添加 pgdg + pigsty-pgsql 仓库并更新缓存（推荐）
+pig repo add pigsty -u                      # 添加 pigsty-pgsql 仓库，并更新本地缓存
+pig repo add pigsty -u --region=default     # 强制使用全球默认区域的仓库（pigsty.io）
+pig repo add pigsty -u --region=china       # 使用中国镜像仓库 (pigsty.cc)
+pig repo add pgsql -u                       # pgsql = pgdg + pigsty-pgsql (同时添加 Pigsty 与 PGDG 官方仓库)
+pig repo add -u                             # all = node + pgsql (pgdg + pigsty) + infra，一次性添加所有仓库
 ```
 
 > [!TIP] 如果您在中国大陆区域，可以考虑使用中国 CDN 镜像 (将 pigsty.io 替换为 pigsty.cc)

@@ -7,7 +7,7 @@ categories: ["OLAP"]
 width: full
 ---
 
-Postgres for analytics, powered by DuckDB
+[**pg_analytics**](https://github.com/paradedb/pg_analytics)
 
 
 ## Overview
@@ -60,74 +60,74 @@ Postgres for analytics, powered by DuckDB
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_analytics_17` | 0.3.7 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_17-0.3.7-1PARADEDB.el8.x86_64.rpm) |
-| `pg_analytics_17` | 0.3.7 | `el8.aarch64` | pigsty | 9.7 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_17-0.3.7-1PARADEDB.el8.aarch64.rpm) |
-| `pg_analytics_17` | 0.3.7 | `el9.x86_64` | pigsty | 11.1 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_17-0.3.7-1PARADEDB.el9.x86_64.rpm) |
-| `pg_analytics_17` | 0.3.7 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_17-0.3.7-1PARADEDB.el9.aarch64.rpm) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `d12.x86_64` | pigsty | 10.2 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `d12.aarch64` | pigsty | 8.8 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `u22.x86_64` | pigsty | 10.3 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `u22.aarch64` | pigsty | 9.0 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `u24.x86_64` | pigsty | 10.6 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-17-pg-analytics` | 0.3.7 | `u24.aarch64` | pigsty | 9.2 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
+| `pg_analytics_17` | `0.3.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_17-0.3.7-1PARADEDB.el8.x86_64.rpm) |
+| `pg_analytics_17` | `0.3.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.7 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_17-0.3.7-1PARADEDB.el8.aarch64.rpm) |
+| `pg_analytics_17` | `0.3.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.1 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_17-0.3.7-1PARADEDB.el9.x86_64.rpm) |
+| `pg_analytics_17` | `0.3.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_analytics_17-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_17-0.3.7-1PARADEDB.el9.aarch64.rpm) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.8 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-17-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-17-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_analytics_16` | 0.3.7 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_16-0.3.7-1PARADEDB.el8.x86_64.rpm) |
-| `pg_analytics_16` | 0.3.7 | `el8.aarch64` | pigsty | 9.7 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_16-0.3.7-1PARADEDB.el8.aarch64.rpm) |
-| `pg_analytics_16` | 0.3.7 | `el9.x86_64` | pigsty | 11.1 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_16-0.3.7-1PARADEDB.el9.x86_64.rpm) |
-| `pg_analytics_16` | 0.3.7 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_16-0.3.7-1PARADEDB.el9.aarch64.rpm) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `d12.x86_64` | pigsty | 10.2 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `d12.aarch64` | pigsty | 8.8 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `u22.x86_64` | pigsty | 10.3 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `u22.aarch64` | pigsty | 9.0 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `u24.x86_64` | pigsty | 10.6 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-16-pg-analytics` | 0.3.7 | `u24.aarch64` | pigsty | 9.2 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
+| `pg_analytics_16` | `0.3.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_16-0.3.7-1PARADEDB.el8.x86_64.rpm) |
+| `pg_analytics_16` | `0.3.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.7 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_16-0.3.7-1PARADEDB.el8.aarch64.rpm) |
+| `pg_analytics_16` | `0.3.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.1 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_16-0.3.7-1PARADEDB.el9.x86_64.rpm) |
+| `pg_analytics_16` | `0.3.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_analytics_16-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_16-0.3.7-1PARADEDB.el9.aarch64.rpm) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.8 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-16-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-16-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_analytics_15` | 0.3.7 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_15-0.3.7-1PARADEDB.el8.x86_64.rpm) |
-| `pg_analytics_15` | 0.3.7 | `el8.aarch64` | pigsty | 9.7 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_15-0.3.7-1PARADEDB.el8.aarch64.rpm) |
-| `pg_analytics_15` | 0.3.7 | `el9.x86_64` | pigsty | 11.1 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_15-0.3.7-1PARADEDB.el9.x86_64.rpm) |
-| `pg_analytics_15` | 0.3.7 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_15-0.3.7-1PARADEDB.el9.aarch64.rpm) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `d12.x86_64` | pigsty | 10.2 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `d12.aarch64` | pigsty | 8.8 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `u22.x86_64` | pigsty | 10.4 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `u22.aarch64` | pigsty | 9.0 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `u24.x86_64` | pigsty | 10.5 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-15-pg-analytics` | 0.3.7 | `u24.aarch64` | pigsty | 9.2 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
+| `pg_analytics_15` | `0.3.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_15-0.3.7-1PARADEDB.el8.x86_64.rpm) |
+| `pg_analytics_15` | `0.3.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.7 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_15-0.3.7-1PARADEDB.el8.aarch64.rpm) |
+| `pg_analytics_15` | `0.3.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.1 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_15-0.3.7-1PARADEDB.el9.x86_64.rpm) |
+| `pg_analytics_15` | `0.3.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_analytics_15-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_15-0.3.7-1PARADEDB.el9.aarch64.rpm) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.8 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.4 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.5 MiB | [postgresql-15-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-15-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_analytics_14` | 0.3.7 | `el8.x86_64` | pigsty | 11.1 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_14-0.3.7-1PARADEDB.el8.x86_64.rpm) |
-| `pg_analytics_14` | 0.3.7 | `el8.aarch64` | pigsty | 9.7 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_14-0.3.7-1PARADEDB.el8.aarch64.rpm) |
-| `pg_analytics_14` | 0.3.7 | `el9.x86_64` | pigsty | 11.1 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_14-0.3.7-1PARADEDB.el9.x86_64.rpm) |
-| `pg_analytics_14` | 0.3.7 | `el9.aarch64` | pigsty | 10.2 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_14-0.3.7-1PARADEDB.el9.aarch64.rpm) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `d12.x86_64` | pigsty | 10.2 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `d12.aarch64` | pigsty | 8.8 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `u22.x86_64` | pigsty | 10.3 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `u22.aarch64` | pigsty | 9.0 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `u24.x86_64` | pigsty | 10.6 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
-| `postgresql-14-pg-analytics` | 0.3.7 | `u24.aarch64` | pigsty | 9.1 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
+| `pg_analytics_14` | `0.3.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 11.1 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_14-0.3.7-1PARADEDB.el8.x86_64.rpm) |
+| `pg_analytics_14` | `0.3.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.7 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_14-0.3.7-1PARADEDB.el8.aarch64.rpm) |
+| `pg_analytics_14` | `0.3.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.1 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_14-0.3.7-1PARADEDB.el9.x86_64.rpm) |
+| `pg_analytics_14` | `0.3.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.2 MiB | [pg_analytics_14-0.3.7-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_14-0.3.7-1PARADEDB.el9.aarch64.rpm) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.8 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.0 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 MiB | [postgresql-14-pg-analytics_0.3.7_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_amd64.deb) |
+| `postgresql-14-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.1 MiB | [postgresql-14-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-14-pg-analytics/postgresql-14-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_analytics_13` | 0.2.1 | `el8.x86_64` | pigsty | 10.1 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_13-0.2.1-1PARADEDB.el8.x86_64.rpm) |
-| `pg_analytics_13` | 0.2.1 | `el8.aarch64` | pigsty | 8.8 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_13-0.2.1-1PARADEDB.el8.aarch64.rpm) |
-| `pg_analytics_13` | 0.2.1 | `el9.x86_64` | pigsty | 10.1 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_13-0.2.1-1PARADEDB.el9.x86_64.rpm) |
-| `pg_analytics_13` | 0.2.1 | `el9.aarch64` | pigsty | 9.3 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_13-0.2.1-1PARADEDB.el9.aarch64.rpm) |
+| `pg_analytics_13` | `0.2.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.1 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_analytics_13-0.2.1-1PARADEDB.el8.x86_64.rpm) |
+| `pg_analytics_13` | `0.2.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 8.8 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_analytics_13-0.2.1-1PARADEDB.el8.aarch64.rpm) |
+| `pg_analytics_13` | `0.2.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.1 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_analytics_13-0.2.1-1PARADEDB.el9.x86_64.rpm) |
+| `pg_analytics_13` | `0.2.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 MiB | [pg_analytics_13-0.2.1-1PARADEDB.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_analytics_13-0.2.1-1PARADEDB.el9.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

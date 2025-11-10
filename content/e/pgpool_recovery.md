@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-recovery functions for pgpool-II for V4.3
+[**pgpool**](https://pgpool.net/)
 
 
 ## Overview

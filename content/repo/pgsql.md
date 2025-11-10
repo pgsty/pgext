@@ -29,10 +29,12 @@ You can check the [Release - RPM Chanagelog](/release/rpm) / [Release - DEB Chan
 You can install [pig](/pig) - the cli tool, and add pgdg / pigsty repo with it (recommended):
 
 ```bash tab="pig"
-curl https://repo.pigsty.io/pig | bash      # download and install the pig CLI tool
 pig repo add pigsty                         # add pigsty-pgsql repo
-pig repo add pgdg                           # add pgdg repo
-pig repo add pgsql -u                       # add pgdg + pigsty-pgsql repo and update cache (recommended)
+pig repo add pigsty -u                      # add pigsty-pgsql repo, and update cache
+pig repo add pigsty -u --region=default     # add pigsty-pgsql repo and enforce default region (pigsty.io)
+pig repo add pigsty -u --region=china       # add pigsty-pgsql repo with china region   (pigsty.cc)
+pig repo add pgsql -u                       # pgsql = pgdg + pigsty-pgsql (add pigsty + official PGDG)
+pig repo add -u                             # all = node + pgsql (pgdg + pigsty) + infra
 ```
 
 ### APT

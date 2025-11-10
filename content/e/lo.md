@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-Large Object maintenance
+[**lo**](https://www.postgresql.org/docs/current/lo.html)
 
 
 ## Overview

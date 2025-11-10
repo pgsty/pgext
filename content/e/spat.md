@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-Redis-like In-Memory DB Embedded in Postgres
+[**spat**](https://github.com/Florents-Tselai/spat)
 
 
 ## Overview
@@ -60,16 +60,16 @@ Redis-like In-Memory DB Embedded in Postgres
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `spat_17` | 0.1.0 | `el8.x86_64` | pigsty | 36.4 KiB | [spat_17-0.1.0a4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/spat_17-0.1.0a4-1PIGSTY.el8.x86_64.rpm) |
-| `spat_17` | 0.1.0 | `el8.aarch64` | pigsty | 35.8 KiB | [spat_17-0.1.0a4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/spat_17-0.1.0a4-1PIGSTY.el8.aarch64.rpm) |
-| `spat_17` | 0.1.0 | `el9.x86_64` | pigsty | 36.3 KiB | [spat_17-0.1.0a4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/spat_17-0.1.0a4-1PIGSTY.el9.x86_64.rpm) |
-| `spat_17` | 0.1.0 | `el9.aarch64` | pigsty | 35.5 KiB | [spat_17-0.1.0a4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/spat_17-0.1.0a4-1PIGSTY.el9.aarch64.rpm) |
-| `postgresql-17-spat` | 0.1.0 | `d12.x86_64` | pigsty | 46.3 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-spat` | 0.1.0 | `d12.aarch64` | pigsty | 45.6 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-spat` | 0.1.0 | `u22.x86_64` | pigsty | 51.3 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-spat` | 0.1.0 | `u22.aarch64` | pigsty | 50.8 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-spat` | 0.1.0 | `u24.x86_64` | pigsty | 47.7 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-spat` | 0.1.0 | `u24.aarch64` | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb) |
+| `spat_17` | `0.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 36.4 KiB | [spat_17-0.1.0a4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/spat_17-0.1.0a4-1PIGSTY.el8.x86_64.rpm) |
+| `spat_17` | `0.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.8 KiB | [spat_17-0.1.0a4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/spat_17-0.1.0a4-1PIGSTY.el8.aarch64.rpm) |
+| `spat_17` | `0.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.3 KiB | [spat_17-0.1.0a4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/spat_17-0.1.0a4-1PIGSTY.el9.x86_64.rpm) |
+| `spat_17` | `0.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.5 KiB | [spat_17-0.1.0a4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/spat_17-0.1.0a4-1PIGSTY.el9.aarch64.rpm) |
+| `postgresql-17-spat` | `0.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.3 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.6 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 51.3 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.8 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 47.7 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

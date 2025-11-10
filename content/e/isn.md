@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data types for international product numbering standards
+[**isn**](https://www.postgresql.org/docs/current/isn.html)
 
 
 ## Overview

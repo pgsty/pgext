@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-text search dictionary template for integers
+[**dict_int**](https://www.postgresql.org/docs/current/dict-int.html)
 
 
 ## Overview

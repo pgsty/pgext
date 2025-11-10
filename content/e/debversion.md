@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-Debian version number data type
+[**debversion**](https://github.com/ATIX-AG/postgresql-debversion-evr)
 
 
 ## Overview
@@ -57,84 +57,84 @@ Debian version number data type
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-18-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-18-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.7 KiB | [postgresql-18-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 15.6 KiB | [postgresql-18-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-18-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-18-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.7 KiB | [postgresql-18-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 15.6 KiB | [postgresql-18-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 14.0 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-18-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-17-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-17-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.6 KiB | [postgresql-17-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.4 KiB | [postgresql-17-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 16.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 14.0 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-17-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.6 KiB | [postgresql-17-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.4 KiB | [postgresql-17-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 16.1 KiB | [postgresql-17-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 14.0 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-17-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-16-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-16-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.6 KiB | [postgresql-16-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.4 KiB | [postgresql-16-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 16.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 14.0 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-16-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.6 KiB | [postgresql-16-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.4 KiB | [postgresql-16-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 16.1 KiB | [postgresql-16-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 14.0 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-16-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-15-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-15-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.7 KiB | [postgresql-15-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.4 KiB | [postgresql-15-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 16.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 14.0 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-15-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.7 KiB | [postgresql-15-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.4 KiB | [postgresql-15-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 16.1 KiB | [postgresql-15-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 14.0 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-15-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-14-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-14-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.6 KiB | [postgresql-14-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.2 KiB | [postgresql-14-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 15.8 KiB | [postgresql-14-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-14-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.6 KiB | [postgresql-14-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.2 KiB | [postgresql-14-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 15.8 KiB | [postgresql-14-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-14-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `postgresql-13-debversion` | 1.2.0 | `d12.x86_64` | pgdg | 14.6 KiB | [postgresql-13-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `d12.aarch64` | pgdg | 14.6 KiB | [postgresql-13-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `d13.x86_64` | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `d13.aarch64` | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `u22.x86_64` | pgdg | 16.2 KiB | [postgresql-13-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `u22.aarch64` | pgdg | 15.8 KiB | [postgresql-13-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `u24.x86_64` | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-debversion` | 1.2.0 | `u24.aarch64` | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 14.6 KiB | [postgresql-13-debversion_1.2.0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg12+1_amd64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 14.6 KiB | [postgresql-13-debversion_1.2.0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg12+1_arm64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg13+1_amd64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg13+1_arm64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 16.2 KiB | [postgresql-13-debversion_1.2.0-3.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 15.8 KiB | [postgresql-13-debversion_1.2.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-debversion` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 13.9 KiB | [postgresql-13-debversion_1.2.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-debversion/postgresql-13-debversion_1.2.0-3.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

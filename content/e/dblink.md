@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-connect to other PostgreSQL databases from within a database
+[**dblink**](https://www.postgresql.org/docs/current/dblink.html)
 
 
 ## Overview
@@ -24,7 +24,7 @@ connect to other PostgreSQL databases from within a database
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "emaj" >}} {{< ext "mimeo" >}} {{< ext "omni_schema" >}} {{< ext "omni_test" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_profile" >}} |
+|    **Need By**    | {{< ext "emaj" >}} {{< ext "mimeo" >}} {{< ext "omni_schema" >}} {{< ext "omni_test" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_profile" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} |
 |   **See Also**    | {{< ext "plproxy" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "citus" >}} {{< ext "wrappers" >}} {{< ext "pgspider_ext" >}} {{< ext "pglogical" >}} {{< ext "repmgr" >}} |
 
 

@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-prewarm relation data
+[**pg_prewarm**](https://www.postgresql.org/docs/current/pgprewarm.html)
 
 
 ## Overview

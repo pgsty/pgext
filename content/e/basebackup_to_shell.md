@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-adds a custom basebackup target called shell
+[**basebackup_to_shell**](https://www.postgresql.org/docs/current/basebackup-to-shell.html)
 
 
 ## Overview

@@ -1,5 +1,5 @@
 ---
-title: PIG CLI
+title: PIG 包管理器
 description: PostgreSQL 与扩展生态包管理器
 icon: PiggyBank
 full: true
@@ -27,21 +27,32 @@ weight: 100
 
 ## 快速上手
 
-使用以下命令即可[快速上手](/zh/pig/start) PIG 包管理器：
+使用以下命令即可在您的系统上 [**安装**](/zh/pig/install) PIG 包管理器：
 
-```bash tab="default"
-curl -fsSL https://repo.pigsty.io/pig | bash
-```
-```bash tab="mirror"
-curl -fsSL https://repo.pigsty.cc/pig | bash
-```
+{{< tabs items="默认,镜像" defaultIndex="1" >}}
 
-安装完成后，即可使用。例如，若需安装 [**`pg_duckdb`**](/zh/e/pg_duckdb/) 扩展：
+{{< tab >}}
+```bash
+curl -fsSL https://repo.pigsty.io/pig | bash     # 从 Cloudflare 安装
+```
+{{< /tab >}}
+
+{{< tab >}}
+```bash
+curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
+```
+{{< /tab >}}
+
+{{< /tabs >}}
+
+安装完成后，几行命令即可 [**快速开始**](/zh/pig/start) 。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/zh/e/pg_duckdb/) 扩展：
 
 ```bash
-$ pig repo add pigsty pgdg -u  # 添加 pgdg 与 pigsty 源，并更新仓库缓存
-$ pig ext install pg17         # 安装 PostgreSQL 17 内核（原生 PGDG 包）
-$ pig ext install pg_duckdb    # 安装 pg_duckdb 扩展（针对当前 pg17）
+$ pig repo set                  # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
+$ pig install pg18              # 安装 PostgreSQL 17 内核（原生 PGDG 包）
+$ pig install pg_duckdb -v 18   # 安装 pg_duckdb 扩展（针对当前 pg17）
+$ pig install -y postgis timescaledb  # 针对当前活跃PG版本，安装多个扩展并自动确定
+$ pig install -y vector         # 您可以使用扩展名称（vector）或者扩展包名称（pgvector）来安装扩展！
 ```
 
 

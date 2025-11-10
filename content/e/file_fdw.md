@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-foreign-data wrapper for flat file access
+[**file_fdw**](https://www.postgresql.org/docs/current/file-fdw.html)
 
 
 ## Overview

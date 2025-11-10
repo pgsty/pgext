@@ -7,7 +7,7 @@ categories: ["SIM"]
 width: full
 ---
 
-SQL Server Money Data Type
+[**babelfishpg_money**](https://babelfishpg.org/)
 
 
 ## Overview

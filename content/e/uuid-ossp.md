@@ -7,7 +7,7 @@ categories: ["FUNC"]
 width: full
 ---
 
-generate universally unique identifiers (UUIDs)
+[**uuid-ossp**](https://www.postgresql.org/docs/current/uuid-ossp.html)
 
 
 ## Overview

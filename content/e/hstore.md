@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data type for storing sets of (key, value) pairs
+[**hstore**](https://www.postgresql.org/docs/current/hstore.html)
 
 
 ## Overview

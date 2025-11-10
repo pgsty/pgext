@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-examine and manage the os buffer cache
+[**pgfincore**](https://github.com/klando/pgfincore)
 
 
 ## Overview
@@ -58,107 +58,107 @@ examine and manage the os buffer cache
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_17` | 1.3.1 | `el8.x86_64` | pgdg | 24.5 KiB | [pgfincore_17-1.3.1-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgfincore_17-1.3.1-3PGDG.rhel8.x86_64.rpm) |
-| `pgfincore_17` | 1.3.1 | `el8.aarch64` | pgdg | 24.2 KiB | [pgfincore_17-1.3.1-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgfincore_17-1.3.1-3PGDG.rhel8.aarch64.rpm) |
-| `pgfincore_17` | 1.3.1 | `el9.x86_64` | pgdg | 23.8 KiB | [pgfincore_17-1.3.1-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgfincore_17-1.3.1-3PGDG.rhel9.x86_64.rpm) |
-| `pgfincore_17` | 1.3.1 | `el9.aarch64` | pgdg | 23.2 KiB | [pgfincore_17-1.3.1-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgfincore_17-1.3.1-3PGDG.rhel9.aarch64.rpm) |
-| `pgfincore_17` | 1.3.1 | `el10.x86_64` | pgdg | 24.1 KiB | [pgfincore_17-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgfincore_17-1.3.1-4PGDG.rhel10.x86_64.rpm) |
-| `pgfincore_17` | 1.3.1 | `el10.aarch64` | pgdg | 23.7 KiB | [pgfincore_17-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgfincore_17-1.3.1-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-pgfincore` | 1.3.1 | `d12.x86_64` | pgdg | 32.5 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `d12.aarch64` | pgdg | 32.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `d13.x86_64` | pgdg | 32.6 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `d13.aarch64` | pgdg | 32.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `u22.x86_64` | pgdg | 31.6 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `u22.aarch64` | pgdg | 31.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `u24.x86_64` | pgdg | 26.8 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-17-pgfincore` | 1.3.1 | `u24.aarch64` | pgdg | 26.2 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
+| `pgfincore_17` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.5 KiB | [pgfincore_17-1.3.1-3PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgfincore_17-1.3.1-3PGDG.rhel8.x86_64.rpm) |
+| `pgfincore_17` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 24.2 KiB | [pgfincore_17-1.3.1-3PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgfincore_17-1.3.1-3PGDG.rhel8.aarch64.rpm) |
+| `pgfincore_17` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.8 KiB | [pgfincore_17-1.3.1-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgfincore_17-1.3.1-3PGDG.rhel9.x86_64.rpm) |
+| `pgfincore_17` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.2 KiB | [pgfincore_17-1.3.1-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgfincore_17-1.3.1-3PGDG.rhel9.aarch64.rpm) |
+| `pgfincore_17` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.1 KiB | [pgfincore_17-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgfincore_17-1.3.1-4PGDG.rhel10.x86_64.rpm) |
+| `pgfincore_17` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgfincore_17-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgfincore_17-1.3.1-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 32.5 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 32.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 32.6 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 32.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 31.6 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 31.1 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 26.8 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.2 KiB | [postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_16` | 1.3.1 | `el8.x86_64` | pgdg | 24.3 KiB | [pgfincore_16-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgfincore_16-1.3.1-1PGDG.rhel8.x86_64.rpm) |
-| `pgfincore_16` | 1.3.1 | `el8.aarch64` | pgdg | 24.0 KiB | [pgfincore_16-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgfincore_16-1.3.1-1PGDG.rhel8.aarch64.rpm) |
-| `pgfincore_16` | 1.3.1 | `el9.x86_64` | pgdg | 23.5 KiB | [pgfincore_16-1.3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgfincore_16-1.3.1-1PGDG.rhel9.x86_64.rpm) |
-| `pgfincore_16` | 1.3.1 | `el9.aarch64` | pgdg | 22.8 KiB | [pgfincore_16-1.3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgfincore_16-1.3.1-1PGDG.rhel9.aarch64.rpm) |
-| `pgfincore_16` | 1.3.1 | `el10.x86_64` | pgdg | 24.1 KiB | [pgfincore_16-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgfincore_16-1.3.1-4PGDG.rhel10.x86_64.rpm) |
-| `pgfincore_16` | 1.3.1 | `el10.aarch64` | pgdg | 23.7 KiB | [pgfincore_16-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgfincore_16-1.3.1-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-pgfincore` | 1.3.1 | `d12.x86_64` | pgdg | 32.0 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `d12.aarch64` | pgdg | 31.7 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `d13.x86_64` | pgdg | 32.1 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `d13.aarch64` | pgdg | 31.6 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `u22.x86_64` | pgdg | 31.1 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `u22.aarch64` | pgdg | 30.6 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `u24.x86_64` | pgdg | 26.8 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-16-pgfincore` | 1.3.1 | `u24.aarch64` | pgdg | 26.2 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
+| `pgfincore_16` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.3 KiB | [pgfincore_16-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgfincore_16-1.3.1-1PGDG.rhel8.x86_64.rpm) |
+| `pgfincore_16` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 24.0 KiB | [pgfincore_16-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgfincore_16-1.3.1-1PGDG.rhel8.aarch64.rpm) |
+| `pgfincore_16` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.5 KiB | [pgfincore_16-1.3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgfincore_16-1.3.1-1PGDG.rhel9.x86_64.rpm) |
+| `pgfincore_16` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.8 KiB | [pgfincore_16-1.3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgfincore_16-1.3.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgfincore_16` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.1 KiB | [pgfincore_16-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgfincore_16-1.3.1-4PGDG.rhel10.x86_64.rpm) |
+| `pgfincore_16` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgfincore_16-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgfincore_16-1.3.1-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 32.0 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 31.7 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 32.1 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 31.6 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 31.1 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 30.6 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 26.8 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.2 KiB | [postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_15` | 1.3.1 | `el8.x86_64` | pgdg | 24.3 KiB | [pgfincore_15-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfincore_15-1.3.1-1PGDG.rhel8.x86_64.rpm) |
-| `pgfincore_15` | 1.2.4 | `el8.x86_64` | pgdg | 24.0 KiB | [pgfincore_15-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfincore_15-1.2.4-1.rhel8.x86_64.rpm) |
-| `pgfincore_15` | 1.3.1 | `el8.aarch64` | pgdg | 24.0 KiB | [pgfincore_15-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfincore_15-1.3.1-1PGDG.rhel8.aarch64.rpm) |
-| `pgfincore_15` | 1.2.4 | `el8.aarch64` | pgdg | 23.7 KiB | [pgfincore_15-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfincore_15-1.2.4-1.rhel8.aarch64.rpm) |
-| `pgfincore_15` | 1.2.4 | `el9.x86_64` | pgdg | 23.7 KiB | [pgfincore_15-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgfincore_15-1.2.4-1.rhel9.x86_64.rpm) |
-| `pgfincore_15` | 1.2.4 | `el9.aarch64` | pgdg | 23.1 KiB | [pgfincore_15-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgfincore_15-1.2.4-1.rhel9.aarch64.rpm) |
-| `pgfincore_15` | 1.3.1 | `el10.x86_64` | pgdg | 24.1 KiB | [pgfincore_15-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgfincore_15-1.3.1-4PGDG.rhel10.x86_64.rpm) |
-| `pgfincore_15` | 1.3.1 | `el10.aarch64` | pgdg | 23.7 KiB | [pgfincore_15-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgfincore_15-1.3.1-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-pgfincore` | 1.3.1 | `d12.x86_64` | pgdg | 32.0 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `d12.aarch64` | pgdg | 31.7 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `d13.x86_64` | pgdg | 32.1 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `d13.aarch64` | pgdg | 31.6 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `u22.x86_64` | pgdg | 31.2 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `u22.aarch64` | pgdg | 30.6 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `u24.x86_64` | pgdg | 26.8 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-15-pgfincore` | 1.3.1 | `u24.aarch64` | pgdg | 26.2 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
+| `pgfincore_15` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.3 KiB | [pgfincore_15-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfincore_15-1.3.1-1PGDG.rhel8.x86_64.rpm) |
+| `pgfincore_15` | `1.2.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.0 KiB | [pgfincore_15-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgfincore_15-1.2.4-1.rhel8.x86_64.rpm) |
+| `pgfincore_15` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 24.0 KiB | [pgfincore_15-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfincore_15-1.3.1-1PGDG.rhel8.aarch64.rpm) |
+| `pgfincore_15` | `1.2.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.7 KiB | [pgfincore_15-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgfincore_15-1.2.4-1.rhel8.aarch64.rpm) |
+| `pgfincore_15` | `1.2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.7 KiB | [pgfincore_15-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgfincore_15-1.2.4-1.rhel9.x86_64.rpm) |
+| `pgfincore_15` | `1.2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.1 KiB | [pgfincore_15-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgfincore_15-1.2.4-1.rhel9.aarch64.rpm) |
+| `pgfincore_15` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.1 KiB | [pgfincore_15-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgfincore_15-1.3.1-4PGDG.rhel10.x86_64.rpm) |
+| `pgfincore_15` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgfincore_15-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgfincore_15-1.3.1-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 32.0 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 31.7 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 32.1 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 31.6 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 31.2 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 30.6 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 26.8 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.2 KiB | [postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_14` | 1.3.1 | `el8.x86_64` | pgdg | 24.3 KiB | [pgfincore_14-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.3.1-1PGDG.rhel8.x86_64.rpm) |
-| `pgfincore_14` | 1.2.4 | `el8.x86_64` | pgdg | 24.0 KiB | [pgfincore_14-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.2.4-1.rhel8.x86_64.rpm) |
-| `pgfincore_14` | 1.2.2 | `el8.x86_64` | pgdg | 41.0 KiB | [pgfincore_14-1.2.2-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.2.2-3.rhel8.x86_64.rpm) |
-| `pgfincore_14` | 1.3.1 | `el8.aarch64` | pgdg | 24.0 KiB | [pgfincore_14-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfincore_14-1.3.1-1PGDG.rhel8.aarch64.rpm) |
-| `pgfincore_14` | 1.2.4 | `el8.aarch64` | pgdg | 23.7 KiB | [pgfincore_14-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfincore_14-1.2.4-1.rhel8.aarch64.rpm) |
-| `pgfincore_14` | 1.2.4 | `el9.x86_64` | pgdg | 23.7 KiB | [pgfincore_14-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgfincore_14-1.2.4-1.rhel9.x86_64.rpm) |
-| `pgfincore_14` | 1.2.4 | `el9.aarch64` | pgdg | 23.1 KiB | [pgfincore_14-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgfincore_14-1.2.4-1.rhel9.aarch64.rpm) |
-| `pgfincore_14` | 1.3.1 | `el10.x86_64` | pgdg | 24.1 KiB | [pgfincore_14-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgfincore_14-1.3.1-4PGDG.rhel10.x86_64.rpm) |
-| `pgfincore_14` | 1.3.1 | `el10.aarch64` | pgdg | 23.7 KiB | [pgfincore_14-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgfincore_14-1.3.1-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-pgfincore` | 1.3.1 | `d12.x86_64` | pgdg | 32.0 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `d12.aarch64` | pgdg | 31.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `d13.x86_64` | pgdg | 32.1 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `d13.aarch64` | pgdg | 31.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `u22.x86_64` | pgdg | 31.1 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `u22.aarch64` | pgdg | 30.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `u24.x86_64` | pgdg | 26.7 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-14-pgfincore` | 1.3.1 | `u24.aarch64` | pgdg | 26.2 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
+| `pgfincore_14` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.3 KiB | [pgfincore_14-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.3.1-1PGDG.rhel8.x86_64.rpm) |
+| `pgfincore_14` | `1.2.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.0 KiB | [pgfincore_14-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.2.4-1.rhel8.x86_64.rpm) |
+| `pgfincore_14` | `1.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.0 KiB | [pgfincore_14-1.2.2-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgfincore_14-1.2.2-3.rhel8.x86_64.rpm) |
+| `pgfincore_14` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 24.0 KiB | [pgfincore_14-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfincore_14-1.3.1-1PGDG.rhel8.aarch64.rpm) |
+| `pgfincore_14` | `1.2.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.7 KiB | [pgfincore_14-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgfincore_14-1.2.4-1.rhel8.aarch64.rpm) |
+| `pgfincore_14` | `1.2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.7 KiB | [pgfincore_14-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgfincore_14-1.2.4-1.rhel9.x86_64.rpm) |
+| `pgfincore_14` | `1.2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.1 KiB | [pgfincore_14-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgfincore_14-1.2.4-1.rhel9.aarch64.rpm) |
+| `pgfincore_14` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.1 KiB | [pgfincore_14-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgfincore_14-1.3.1-4PGDG.rhel10.x86_64.rpm) |
+| `pgfincore_14` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgfincore_14-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgfincore_14-1.3.1-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 32.0 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 31.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 32.1 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 31.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 31.1 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 30.6 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 26.7 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.2 KiB | [postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgfincore_13` | 1.3.1 | `el8.x86_64` | pgdg | 24.1 KiB | [pgfincore_13-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfincore_13-1.3.1-1PGDG.rhel8.x86_64.rpm) |
-| `pgfincore_13` | 1.2.4 | `el8.x86_64` | pgdg | 23.8 KiB | [pgfincore_13-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfincore_13-1.2.4-1.rhel8.x86_64.rpm) |
-| `pgfincore_13` | 1.3.1 | `el8.aarch64` | pgdg | 24.0 KiB | [pgfincore_13-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfincore_13-1.3.1-1PGDG.rhel8.aarch64.rpm) |
-| `pgfincore_13` | 1.2.4 | `el8.aarch64` | pgdg | 23.7 KiB | [pgfincore_13-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfincore_13-1.2.4-1.rhel8.aarch64.rpm) |
-| `pgfincore_13` | 1.2.4 | `el9.x86_64` | pgdg | 23.7 KiB | [pgfincore_13-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgfincore_13-1.2.4-1.rhel9.x86_64.rpm) |
-| `pgfincore_13` | 1.2.4 | `el9.aarch64` | pgdg | 23.1 KiB | [pgfincore_13-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgfincore_13-1.2.4-1.rhel9.aarch64.rpm) |
-| `pgfincore_13` | 1.3.1 | `el10.x86_64` | pgdg | 24.1 KiB | [pgfincore_13-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgfincore_13-1.3.1-4PGDG.rhel10.x86_64.rpm) |
-| `pgfincore_13` | 1.3.1 | `el10.aarch64` | pgdg | 23.7 KiB | [pgfincore_13-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgfincore_13-1.3.1-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-pgfincore` | 1.3.1 | `d12.x86_64` | pgdg | 31.8 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `d12.aarch64` | pgdg | 31.4 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `d13.x86_64` | pgdg | 31.9 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `d13.aarch64` | pgdg | 31.4 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `u22.x86_64` | pgdg | 30.9 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `u22.aarch64` | pgdg | 30.3 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `u24.x86_64` | pgdg | 26.7 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pgfincore` | 1.3.1 | `u24.aarch64` | pgdg | 26.1 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
+| `pgfincore_13` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 24.1 KiB | [pgfincore_13-1.3.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfincore_13-1.3.1-1PGDG.rhel8.x86_64.rpm) |
+| `pgfincore_13` | `1.2.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.8 KiB | [pgfincore_13-1.2.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgfincore_13-1.2.4-1.rhel8.x86_64.rpm) |
+| `pgfincore_13` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 24.0 KiB | [pgfincore_13-1.3.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfincore_13-1.3.1-1PGDG.rhel8.aarch64.rpm) |
+| `pgfincore_13` | `1.2.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.7 KiB | [pgfincore_13-1.2.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgfincore_13-1.2.4-1.rhel8.aarch64.rpm) |
+| `pgfincore_13` | `1.2.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.7 KiB | [pgfincore_13-1.2.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgfincore_13-1.2.4-1.rhel9.x86_64.rpm) |
+| `pgfincore_13` | `1.2.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.1 KiB | [pgfincore_13-1.2.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgfincore_13-1.2.4-1.rhel9.aarch64.rpm) |
+| `pgfincore_13` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.1 KiB | [pgfincore_13-1.3.1-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgfincore_13-1.3.1-4PGDG.rhel10.x86_64.rpm) |
+| `pgfincore_13` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgfincore_13-1.3.1-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgfincore_13-1.3.1-4PGDG.rhel10.aarch64.rpm) |
+| `postgresql-13-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 31.8 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg120+1_amd64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 31.4 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg120+1_arm64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 31.9 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg130+2_amd64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 31.4 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg130+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg130+2_arm64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 30.9 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_amd64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 30.3 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg22.04+1_arm64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 26.7 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_amd64.deb) |
+| `postgresql-13-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.1 KiB | [postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-13-pgfincore_1.3.1-2.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

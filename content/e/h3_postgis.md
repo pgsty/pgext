@@ -7,7 +7,7 @@ categories: ["GIS"]
 width: full
 ---
 
-H3 PostGIS integration
+[**pg_h3**](https://github.com/zachasme/h3-pg)
 
 
 ## Overview

@@ -7,7 +7,7 @@ categories: ["FDW"]
 width: full
 ---
 
-aws_s3 postgres extension to import/export data from/to s3
+[**aws_s3**](https://github.com/chimpler/postgres-aws-s3)
 
 
 ## Overview
@@ -58,120 +58,120 @@ aws_s3 postgres extension to import/export data from/to s3
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_18` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_18` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_18` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_18` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_18` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_18` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_18` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_18-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_18` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_18-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_18` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_18-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_18` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_18-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_18` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_18-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_18-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_18` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_18-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_18-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-18-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_17` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_17` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_17` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_17` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_17` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_17` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_17` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_17-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_17` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_17-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_17` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_17-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_17` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_17-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_17` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_17-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_17-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_17` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_17-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_17-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-17-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_16` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_16` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_16` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_16` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_16` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_16` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_16` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_16-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_16` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_16-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_16` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_16-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_16` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_16-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_16` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_16-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_16-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_16` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_16-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_16-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-16-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_15` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_15` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_15` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_15` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_15` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_15` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_15` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_15-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_15` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_15-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_15` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_15-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_15` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_15-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_15` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_15-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_15-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_15` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_15-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_15-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-15-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_14` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_14` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_14` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_14` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_14` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_14` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_14` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_14-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_14` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_14-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_14` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_14-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_14` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_14-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_14` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_14-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_14-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_14` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_14-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_14-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-14-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `aws_s3_13` | 0.0.1 | `el8.x86_64` | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
-| `aws_s3_13` | 0.0.1 | `el8.aarch64` | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
-| `aws_s3_13` | 0.0.1 | `el9.x86_64` | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
-| `aws_s3_13` | 0.0.1 | `el9.aarch64` | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
-| `aws_s3_13` | 0.0.1 | `el10.x86_64` | pigsty | 9.4 KiB | [aws_s3_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
-| `aws_s3_13` | 0.0.1 | `el10.aarch64` | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-13-aws-s3` | 0.0.1 | `d12.x86_64` | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `d12.aarch64` | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `d13.x86_64` | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `d13.aarch64` | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `u22.x86_64` | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `u22.aarch64` | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `u24.x86_64` | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
-| `postgresql-13-aws-s3` | 0.0.1 | `u24.aarch64` | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `aws_s3_13` | `0.0.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/aws_s3_13-0.0.1-1PIGSTY.el8.x86_64.rpm) |
+| `aws_s3_13` | `0.0.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/aws_s3_13-0.0.1-1PIGSTY.el8.aarch64.rpm) |
+| `aws_s3_13` | `0.0.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/aws_s3_13-0.0.1-1PIGSTY.el9.x86_64.rpm) |
+| `aws_s3_13` | `0.0.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/aws_s3_13-0.0.1-1PIGSTY.el9.aarch64.rpm) |
+| `aws_s3_13` | `0.0.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 9.4 KiB | [aws_s3_13-0.0.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/aws_s3_13-0.0.1-1PIGSTY.el10.x86_64.rpm) |
+| `aws_s3_13` | `0.0.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 9.3 KiB | [aws_s3_13-0.0.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/aws_s3_13-0.0.1-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-13-aws-s3` | `0.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.4 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_amd64.deb) |
+| `postgresql-13-aws-s3` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.3 KiB | [postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/a/aws-s3/postgresql-13-aws-s3_0.0.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

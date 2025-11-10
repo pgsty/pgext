@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-administrative functions for PostgreSQL
+[**adminpack**](https://www.postgresql.org/docs/16/adminpack.html)
 
 
 ## Overview

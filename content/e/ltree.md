@@ -7,7 +7,7 @@ categories: ["TYPE"]
 width: full
 ---
 
-data type for hierarchical tree-like structures
+[**ltree**](https://www.postgresql.org/docs/current/ltree.html)
 
 
 ## Overview

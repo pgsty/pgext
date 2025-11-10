@@ -7,7 +7,7 @@ categories: ["ADMIN"]
 width: full
 ---
 
-replacement for regclass
+[**pgpool**](https://pgpool.net/)
 
 
 ## Overview

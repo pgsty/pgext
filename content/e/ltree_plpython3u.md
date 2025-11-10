@@ -7,7 +7,7 @@ categories: ["LANG"]
 width: full
 ---
 
-transform between ltree and plpython3u
+[**plpython3u**](https://www.postgresql.org/docs/current/plpython.html)
 
 
 ## Overview
