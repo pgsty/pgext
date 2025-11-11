@@ -24,58 +24,15 @@ var genCmd = &cobra.Command{
 	Use:   "gen",
 	Short: "Generate Hugo markdown content from database",
 	Long:  `Generate Hugo/Hextra-compatible markdown files for PostgreSQL extensions`,
-	Example: `  pgext gen ext      # Generate extension detail pages
-  pgext gen index    # Generate extension index pages
-  pgext gen cate     # Generate category list pages
-  pgext gen lang     # Generate language list pages
-  pgext gen license  # Generate license list pages
-  pgext gen os el9.x86_64  # Generate OS-specific availability page`,
-}
-
-// genExtCmd generates extension detail pages
-var genExtCmd = &cobra.Command{
-	Use:   "ext",
-	Short: "Generate extension detail pages",
-	Long:  `Generate individual markdown pages for each extension in content/e/`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		extDir := filepath.Join(outputDir, "e")
-		if err := os.MkdirAll(extDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Generate extension pages
-		generator := cli.NewExtensionGenerator(cache, extDir)
-		successCount, totalCount := 0, len(cache.Extensions)
-
-		logrus.Infof("Generating %d extension pages...", totalCount)
-		for _, ext := range cache.Extensions {
-			if err := generator.GenerateExtensionPage(ctx, ext); err != nil {
-				logrus.Errorf("Failed to generate page for %s: %v", ext.Name, err)
-			} else {
-				successCount++
-				logrus.Debugf("Generated: %s.md", ext.Name)
-			}
-		}
-
-		logrus.Infof("Successfully generated %d/%d extension pages", successCount, totalCount)
-		return nil
-	},
+	Example: `  pgext gen ext        # Generate extension detail pages
+  pgext gen index      # Generate extension index pages
+  pgext gen cate       # Generate category list pages
+  pgext gen lang       # Generate language list pages
+  pgext gen license    # Generate license list pages
+  pgext gen catalog    # Generate catalog pages
+  pgext gen ext        # Generate extension list pages with stats
+  pgext gen pkg        # Generate package list pages with stats
+  pgext gen os         # Generate OS-specific availability page`,
 }
 
 // genIndexCmd generates extension index pages
@@ -326,6 +283,124 @@ var genCatalogCmd = &cobra.Command{
 	},
 }
 
+// genExtCmd generates extension list pages
+var genExtCmd = &cobra.Command{
+	Use:   "ext",
+	Short: "Generate extension list pages and index",
+	Long: `Generate ext.md, ext.zh.md for comprehensive extension listing with statistics, categories, and full index.
+Also generates _index.md and _index.zh.md for extension index pages.`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		// Initialize database connection
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		// Load extension cache
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		// Prepare output directories
+		listDir := filepath.Join(outputDir, "list")
+		if err := os.MkdirAll(listDir, 0755); err != nil {
+			return fmt.Errorf("failed to create list directory: %w", err)
+		}
+
+		extDir := filepath.Join(outputDir, "e")
+		if err := os.MkdirAll(extDir, 0755); err != nil {
+			return fmt.Errorf("failed to create extension directory: %w", err)
+		}
+
+		// Initialize generator with database from cli package
+		generator := &cli.ExtensionGenerator{
+			DB:    cli.DB,
+			Cache: cache,
+		}
+
+		// Generate extension list pages (in list directory)
+		enListPath := filepath.Join(listDir, "ext.md")
+		if err := generator.GenerateExtensionList("en", enListPath); err != nil {
+			return fmt.Errorf("failed to generate English extension list: %w", err)
+		}
+		logrus.Infof("Generated: %s", enListPath)
+
+		zhListPath := filepath.Join(listDir, "ext.zh.md")
+		if err := generator.GenerateExtensionList("zh", zhListPath); err != nil {
+			return fmt.Errorf("failed to generate Chinese extension list: %w", err)
+		}
+		logrus.Infof("Generated: %s", zhListPath)
+
+		// Generate extension index pages (in e directory)
+		enIndexPath := filepath.Join(extDir, "_index.md")
+		zhIndexPath := filepath.Join(extDir, "_index.zh.md")
+		if err := generator.GenerateExtensionIndexPages(enIndexPath, zhIndexPath); err != nil {
+			return fmt.Errorf("failed to generate extension index pages: %w", err)
+		}
+		logrus.Infof("Generated: %s", enIndexPath)
+		logrus.Infof("Generated: %s", zhIndexPath)
+
+		logrus.Infof("Extension list and index generation completed")
+		return nil
+	},
+}
+
+// genPackageCmd generates package list pages
+var genPkgCmd = &cobra.Command{
+	Use:   "pkg",
+	Short: "Generate package list pages",
+	Long:  `Generate pkg.md and pkg.zh.md for comprehensive package listing with statistics, categories, and full index`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		// Initialize database connection
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		// Load extension cache
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		// Prepare output directory
+		listDir := filepath.Join(outputDir, "list")
+		if err := os.MkdirAll(listDir, 0755); err != nil {
+			return fmt.Errorf("failed to create output directory: %w", err)
+		}
+
+		// Initialize generator with database from cli package
+		generator := &cli.ExtensionGenerator{
+			DB:    cli.DB,
+			Cache: cache,
+		}
+
+		// Generate English version
+		enPath := filepath.Join(listDir, "pkg.md")
+		if err := generator.GeneratePackageList("en", enPath); err != nil {
+			return fmt.Errorf("failed to generate English package list: %w", err)
+		}
+		logrus.Infof("Generated: %s", enPath)
+
+		// Generate Chinese version
+		zhPath := filepath.Join(listDir, "pkg.zh.md")
+		if err := generator.GeneratePackageList("zh", zhPath); err != nil {
+			return fmt.Errorf("failed to generate Chinese package list: %w", err)
+		}
+		logrus.Infof("Generated: %s", zhPath)
+
+		logrus.Infof("Package list generation completed")
+		return nil
+	},
+}
+
 // genOSCmd generates OS-specific availability pages
 var genOSCmd = &cobra.Command{
 	Use:   "os [os-name]",
@@ -463,7 +538,7 @@ If no argument is provided, generates pages for all active OS distributions.`,
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	genCmd.AddCommand(genExtCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd)
+	genCmd.AddCommand(genExtCmd, genPkgCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
