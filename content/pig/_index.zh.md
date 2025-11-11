@@ -12,11 +12,19 @@ weight: 100
 
 —— **Postgres Install Genius，PostgreSQL 生态中缺失的扩展包管理器**
 
+PIG 包管理器是一个专门用于安装、管理、构建 PostgreSQL 及其扩展的命令行工具，使用 Go 开发，开箱即用，简单易用，小巧玲珑（4MB）。
+PIG 包管理器并非重新发明的土鳖轮子，而是 **依托** （PiggyBack）现有 Linux 发行版包管理器 （`apt`/`dnf`）的一个高级抽象层。
+它屏蔽了不同操作系统，不同芯片架构，以及不同 PG 大版本的管理差异，让您用简单的几行命令，就可以完成 PG 内核与 431+ 扩展的安装与管理。
+
+请注意：对于扩展安装来说，**pig 并非必须组件**，您依然可以使用 apt / dnf 等包管理器直接访问 [**Pigsty PGSQL**](/zh/repo/pgsql) 仓库。
+
 {{< cards >}}
 {{< card link="/zh/pig/intro"   title="简介" subtitle="为什么需要专用的PG包管理器？" icon="sparkles" >}}
 {{< card link="/zh/pig/start"   title="上手" subtitle="快速上手与样例"  icon="play" >}}
 {{< card link="/zh/pig/install" title="安装" subtitle="下载、安装、更新 pig" icon="save" >}}
 {{< /cards >}}
+
+
 
 ## 快速上手
 
@@ -35,7 +43,7 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
 {{< /tab >}}
 {{< /tabs >}}
 
-安装完成后，几行命令即可 [**快速开始**](/zh/pig/start) 。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/zh/e/pg_duckdb/) 扩展：
+安装完成后，几行命令即可 [**快速开始**](/zh/pig/start) 。例如，若需安装 PG 18 与相应的 [**`pg_duckdb`**](/e/pg_duckdb/) 扩展：
 
 ```bash
 $ pig repo set                        # 一次性设置好 Linux, Pigsty + PGDG 仓库（覆盖式！）
@@ -59,7 +67,7 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 {{< /cards >}}
 
 
-## 源代码
+## 关于
 
 `pig` 命令行工具由 [Vonng](https://vonng.com/en/)（冯若航 rh@vonng.com）开发，并以 [Apache 2.0](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme) 许可证开源。
 

@@ -10,7 +10,7 @@ comment: false
 ---
 
 
-Harness the synergistic superpower of the PostgreSQL extensions ecosystem with three things:
+PGEXT.CLOUD provides three things to help you harness the synergistic superpower of the PostgreSQL extensions ecosystem:
 
 - [**Catalog**](/list) : Find the extension you need, with unparalleled [**431**](/e/) extensions included
 - [**Repository**](/repo) : Get pre-built RPM/DEB packages on **14** mainstream [**Linux Distributions**](/os)
@@ -30,10 +30,21 @@ pig install pg18              # install PostgreSQL 18 kernel pkg from PGDG
 pig install pg_duckdb -v 18   # e.g. install pg_duckdb extension for PG 18
 ```
 
-
 **Just use PostgreSQL for everything!** Also check our blog post: [***PostgreSQL is eating the Database World***](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
 [![ecosystem](/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+
+
+## Highlights
+
+- **431 Extensions** : the largest catalog in the postgres ecosystem
+- **Linux Native** : RPM/DEB packages, properly built, freely compose
+- **Handy CLI** : pig on apt/dnf, zero‑config installs; out-of-the-box
+- **Compatibility** : PGDG‑Compliant, drop‑in with official PG kernel
+- **Fast & Reliable** : Distribute via Cloudflare CDN in worldwide 
+- **Commitment** : Driven by PG experts, with love and commitment
+- **Free & OSS** :  Reproducible building, Public infra, free for all 
+
 
 ## Catalog
 
@@ -96,13 +107,14 @@ Pigsty provides complete extension support on these [linux distributions](/os) m
 
 The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors:
 
-{{< cards cols=2 >}}
-{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="The author and maintainer, Battery-Included PG RDS" >}}
-{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="The All-in-One PostgreSQL as a Platform" >}}
-{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="Self-hosted DBaaS / Postgres automation" >}}
+{{< cards cols=1 >}}
+{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 430+ extensions!" >}}
 {{< /cards >}}
 
-The repository is hosted on Cloudflare CDN, It is a **free** service to the community.
+{{< cards cols=2 >}}
+{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="The All-in-One PostgreSQL as a Platform" >}}
+{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="Self-hosted DBaaS / Postgres Automation with Ansible" >}}
+{{< /cards >}}
 
 
 ## About

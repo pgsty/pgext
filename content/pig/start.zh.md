@@ -154,7 +154,10 @@ pgoutput                        -           ETL    --s---  PostgreSQL    CONTRIB
 pig repo set                # 一次性配置好所有仓库，包括 Linux 系统仓库，PGDG，PIGSTY (PGSQL+INFRA) 仓库
 ```
 
-> [!WARNING] `pig repo set` 会备份并清理现有的仓库配置，然后添加所需的仓库，实现 Overwrite 语义，请务必注意！
+{{< callout type="warning" >}}
+`pig repo set` 会备份并清理现有的仓库配置，然后添加所需的仓库，实现 Overwrite 语义，请务必注意！
+{{< /callout >}}
+
 
 或者选择使用温和的 [`pig repo add`](/zh/pig/cmd/repo#repo-add) 添加所需的仓库：
 
@@ -301,7 +304,10 @@ pig ext add -v 17 pgvector=0.7.1 # install pgvector 0.7.1 for PG 17
 pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
 ```
 
-> [!WARNING] 请注意，目前只有 PGDG YUM 仓库提供扩展历史版本，PIGSTY 仓库与 PGDG APT 仓库都只提供扩展的 **最新版本**。
+{{< callout type="warning" >}}
+请注意，目前只有 PGDG YUM 仓库提供扩展历史版本，PIGSTY 仓库与 PGDG APT 仓库都只提供扩展的 **最新版本**。
+{{< /callout >}} 
+
 
 
 

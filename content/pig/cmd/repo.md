@@ -11,18 +11,18 @@ The `pig repo` command is a comprehensive tool for managing package repositories
 
 ## Subcommands
 
-| Command | Description |
-|---------|------------|
-| `list`   | Print available repo list |
-| `info`   | Get repo detailed information |
-| `status` | Show current repo status |
-| `add`    | Add new repository |
+| Command  | Description                            |
+|----------|----------------------------------------|
+| `list`   | Print available repo list              |
+| `info`   | Get repo detailed information          |
+| `status` | Show current repo status               |
+| `add`    | Add new repository                     |
 | `set`    | Wipe, overwrite, and update repository |
-| `rm`     | Remove repository |
-| `update` | Update repo cache |
-| `create` | Create local YUM/APT repository |
+| `rm`     | Remove repository                      |
+| `update` | Update repo cache                      |
+| `create` | Create local YUM/APT repository        |
 | `cache`  | Create offline package from local repo |
-| `boot`   | Bootstrap repo from offline package |
+| `boot`   | Bootstrap repo from offline package    |
 
 ------
 
@@ -183,7 +183,7 @@ Base URL   : http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg ma
 # Repository content for current system:
 deb [trusted=yes] http://apt.postgresql.org/pub/repos/apt/ bookworm-pgdg main
 
-# China mirror (if using --region china):
+# China mirror (if using --region=china):
 deb [trusted=yes] https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/apt/ bookworm-pgdg main
 ```
 
@@ -236,13 +236,13 @@ pig repo add all -r              # Remove existing repos before adding
 pig repo add all -ru             # Remove, add, and update (complete reset)
 
 # Regional mirrors
-pig repo add pgdg --region china  # Use China mirrors
+pig repo add pgdg --region=china  # Use China mirrors
 ```
 
 **Options:**
 - `-u, --update`: Run package cache update after adding repos
 - `-r, --remove`: Remove existing repos before adding new ones
-- `--region <region>`: Use regional mirrors (default/china)
+- `--region=<region>`: Use regional mirrors (default/china)
 
 **File Locations:**
 - EL Systems: `/etc/yum.repos.d/<module>.repo`
@@ -272,7 +272,7 @@ Equivalent to `repo add --remove`. Wipes existing repositories and sets up new o
 ```bash
 pig repo set                     # Replace with default repos
 pig repo set pgdg pigsty -u      # Replace with specific repos and update
-pig repo set all --region china  # Use China mirrors
+pig repo set all --region=china  # Use China mirrors
 ```
 
 This is useful when you want to ensure a clean repository configuration without old or conflicting repos.
@@ -429,7 +429,7 @@ sudo pig ext add pg_duckdb postgis
 
 ```bash
 # For users in China
-sudo pig repo add all --region china -u
+sudo pig repo add all --region=china -u
 
 # Check mirror URLs
 pig repo info pgdg
@@ -534,5 +534,5 @@ sudo pig repo set all -u
 
 Use regional mirrors:
 ```bash
-sudo pig repo add all --region china -u
+sudo pig repo add all --region=china -u
 ```

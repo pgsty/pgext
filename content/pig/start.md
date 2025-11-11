@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Get Started
 description: Quick start guide for PIG, the PostgreSQL package manager
 icon: Play
 weight: 200
@@ -154,7 +154,10 @@ You can use the straightforward [`pig repo set`](/pig/cmd/repo#repo-set) to over
 pig repo set                # Configure all repos at once: Linux, PGDG, PIGSTY (PGSQL+INFRA) repositories
 ```
 
-> [!WARNING] `pig repo set` will backup and clean existing repository configurations, then add required repositories with overwrite semantics. Use with caution!
+{{< callout type="warning" >}}
+`pig repo set` will backup and clean existing repository configurations, then add required repositories with overwrite semantics. Use with caution!
+{{< /callout >}}
+
 
 Or choose the gentler [`pig repo add`](/pig/cmd/repo#repo-add) to add required repositories:
 
@@ -167,7 +170,8 @@ pig repo update              # Update cache: apt update / yum makecache
 PIG detects your network environment and chooses between Cloudflare global CDN or China mainland CDN, but you can force a region using the `--region` parameter.
 
 ```bash
-pig repo set      --region=china              # Use China region mirror for faster downloads
+pig repo set      --region=china              # Use China region mirror (pigsty/aliyun) for faster downloads
+pig repo set      --region=europe             # Use Europe region mirror (xtom) for faster downloads
 pig repo add pgdg --region=default --update   # Force using upstream PGDG repository
 ```
 
@@ -301,7 +305,10 @@ pig ext add -v 17 pgvector=0.7.1 # install pgvector 0.7.1 for PG 17
 pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
 ```
 
-> [!WARNING] Note that currently only PGDG YUM repository provides historical extension versions. PIGSTY repository and PGDG APT repository only provide the **latest version** of extensions.
+{{< callout type="warning" >}}
+Note that currently only PGDG YUM repository provides historical extension versions. PIGSTY repository and PGDG APT repository only provide the **latest version** of extensions.
+{{< /callout >}}
+
 
 
 

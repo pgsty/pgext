@@ -10,8 +10,7 @@ toc: false
 comment: false
 ---
 
-
-Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQL 扩展生态系统的协同超能力：
+PG 扩展云（PGEXT.CLOUD）提供了以下三样基础设施，帮助用户更好的利用 PostgreSQL 扩展生态系统的协同超能力：
 
 - [**扩展目录**](/list) ： 查阅 [**431**](/e/) 个扩展插件的详细信息，找到满足您需求的插件
 - [**扩展仓库**](/repo) ： 获取预先打包的 RPM/DEB 二进制包，在 [**14 个 Linux 大版本**](/zh/os) 上可用
@@ -27,14 +26,26 @@ Pigsty 提供了以下三样基础设施，帮助用户更好的利用 PostgreSQ
 
 ```bash
 curl -fsSL https://repo.pigsty.io/pig | bash  # 安装 pig 命令行工具
-pig repo set                  # 在您的 Linux 发行版上配置软件仓库
-pig install pg18              # 从 PGDG 官方仓库安装 PostgreSQL 18 内核包
-pig install pg_duckdb -v 18   # 例：针对 PG 18 安装 pg_duckdb
+pig repo set                                  # 在您的 Linux 发行版上配置软件仓库
+pig install pg18                              # 从 PGDG 官方仓库安装 PostgreSQL 18 内核包
+pig install pg_duckdb -v 18                   # 例：针对 PG 18 安装 pg_duckdb
 ```
 
 一切都可以用 PostgreSQL 解决！请参阅我们的博客文章：[**PostgreSQL 正在吞噬数据库世界！**](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
 
 [![ecosystem](/ecosystem.gif)](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4)
+
+## 核心特点
+
+- **数量**：无与伦比的扩展数量：431 个可用扩展，为 PG 扩展生态之最。
+- **质量**：原生 Linux RPM/DEB 包，同时安装，自由组合使用不同扩展。
+- **易用**：提供包管理器 pig，依托 apt / dnf，但开箱即用，简单快捷。
+- **兼容**：扩展完全兼容 PGDG 打包规范，可与官方 PG 内核完美配套使用。
+- **分发**：由 Cloudflare CDN 进行全球仓库分发，可靠稳定,高速访问。
+- **镜像**：提供国内CDN加速，中国境内唯一跟进 PGDG 仓库更新的镜像站。
+- **维护**：久经考验的开源维护者，修复过大量扩展问题，由热爱，专业与承诺驱动。
+- **开源**：完全开源，提供便利的构建工具，构建流程可轻松复现，确保供应链安全。
+- **免费**：免费对公众提供服务的软件基础设施，用爱发电，不收取任何费用。
 
 
 ## 扩展导航
@@ -74,16 +85,18 @@ pig install pg_duckdb -v 18   # 例：针对 PG 18 安装 pg_duckdb
 
 **PGSTY.CLOUD** 向用户提供无可比拟的扩展交付体验，一些 PostgreSQL 厂商使用本仓库进行交付：
 
-{{< cards cols=2 >}}
-{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="The author and maintainer, Battery-Included PG RDS" >}}
-{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="The All-in-One PostgreSQL as a Platform" >}}
-{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="Self-hosted DBaaS / Postgres automation" >}}
+{{< cards cols=1 >}}
+{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="开箱即用的 PostgreSQL RDS 发行版，一键交付生产级 PostgreSQL 集群，自带监控系统，高可用，PITR，IaC 以及 430+ 可用扩展。" >}}
 {{< /cards >}}
 
-服务仓库托管于 Cloudflare CDN 上（中国区域提供专用镜像仓库），这是一项向 PostgreSQL 用户社区提供的 **免费服务**。
+{{< cards cols=2 >}}
+{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="PostgreSQL as a Platform，使用 PG 开发你的全部业务逻辑！" >}}
+{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="基于 Ansible 的 PG 集群自动化部署，开源 DBaaS" >}}
+{{< /cards >}}
 
 
-## 系统兼容性
+
+## 兼容系统
 
 | OS                                                                                    | Vendor | Major |  Minor  | Fullname          | PG Major Version                                                                                                                                                                                                                                            |                     Comment                     |
 |:--------------------------------------------------------------------------------------|:-------|:-----:|:-------:|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------:|

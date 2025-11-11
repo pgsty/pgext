@@ -29,22 +29,17 @@ Examples:
   pig install pg_duckdb       # install certain postgresql extension
   pig install pgactive -v 18  # install extension for specifc pg major
 
-  check https://pig.pgsty.com for details
+  check https://pgext.cloud for details
 
 PostgreSQL Extension Manager
   build       Build Postgres Extension
   ext         Manage PostgreSQL Extensions (pgext)
   repo        Manage Linux Software Repo (apt/dnf)
-
-Pigsty Management Commands
-  do          run admin tasks
-  patroni     Manage PostgreSQL with patronictl
-  sty         Manage Pigsty Installation
+  install     Install packages using native package manager
 
 Additional Commands:
   completion  Generate the autocompletion script for the specified shell
   help        Help about any command
-  install     Install packages using native package manager
   status      Show Environment Status
   update      Upgrade pig itself
   version     Show pig version info
