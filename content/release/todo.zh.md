@@ -7,7 +7,15 @@ weight: 700
 
 ## 版本更新
 
-- 全部完成
+- pgvectorscale 0.9.0 https://github.com/timescale/pgvectorscale/releases/tag/0.9.0
+- pglite_fusion 0.0.6 
+- pgliter 1.0.0
+- pgx_ulid 0.2.2
+- citus 13.2.0 official release
+- pg_biscit
+- pg_retry
+- pg_lake
+
 
 ## 需要新增
 

@@ -8,7 +8,7 @@ breadcrumbs: false
 
 ## v0.7.1
 
-- The brand new website: https://pgext.cloud
+- The brand-new website: https://pgext.cloud
 - remove unnecessary sudo usage, now can be used inside docker
 - allow using `pg18`, `pg17` arg format in pig ext link command
 - add environment var `PIG_NO_SUDO` to force not using sudo

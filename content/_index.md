@@ -125,15 +125,16 @@ Pigsty provides complete extension support on these [linux distributions](/os) m
 
 ## Users
 
-The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors:
+The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors to deliver PG extensions to their users and customers.
 
 {{< cards cols=1 >}}
 {{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 430+ extensions!" >}}
 {{< /cards >}}
 
-{{< cards cols=2 >}}
-{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="The All-in-One PostgreSQL as a Platform" >}}
-{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="Self-hosted DBaaS / Postgres Automation with Ansible" >}}
+{{< cards cols=3 >}}
+{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"    icon="github" subtitle="The All-in-One PostgreSQL as a Platform. An in-Database App Development Framework" >}}
+{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"    icon="github" subtitle="Self-hosted DBaaS / Postgres Automation with Ansible, Original name is postgresql_cluster" >}}
+{{< card link="https://github.com/tensorchord"                 title="TensorChord" icon="github" subtitle="Cloud native AI Infra, Author of vchord, vchord_bm25, pgvector.rs, pg_bestmatch..." >}}
 {{< /cards >}}
 
 

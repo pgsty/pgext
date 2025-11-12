@@ -82,15 +82,16 @@ pig install pg_duckdb -v 18                   # 例：针对 PG 18 安装 pg_duc
 
 ## 用户
 
-**PGSTY.CLOUD** 向用户提供无可比拟的扩展交付体验，一些 PostgreSQL 厂商使用本仓库进行交付：
+**PGSTY.CLOUD** 向用户提供无可比拟的扩展交付体验，以下是一些使用本仓库向他们的用户与客户交付 PG 扩展的 PostgreSQL 厂商：
 
 {{< cards cols=1 >}}
 {{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="开箱即用的 PostgreSQL RDS 发行版，一键交付生产级 PostgreSQL 集群，自带监控系统，高可用，PITR，IaC 以及 430+ 可用扩展。" >}}
 {{< /cards >}}
 
-{{< cards cols=2 >}}
-{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"   icon="github" subtitle="PostgreSQL as a Platform，使用 PG 开发你的全部业务逻辑！" >}}
-{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"   icon="github" subtitle="基于 Ansible 的 PG 集群自动化部署，开源 DBaaS" >}}
+{{< cards cols=3 >}}
+{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"    icon="github" subtitle="PostgreSQL as a Platform，使用 PG 与扩展一站式开发你的全部业务逻辑！" >}}
+{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"    icon="github" subtitle="基于 Ansible 的 PG 集群自动化部署，开源 DBaaS，曾用名为 postgresql_cluster" >}}
+{{< card link="https://github.com/tensorchord"                 title="TensorChord" icon="github" subtitle="云原生 AI 基础设施， vchord, vchord_bm25, pgvector.rs, pg_bestmatch 等扩展的作者" >}}
 {{< /cards >}}
 
 
