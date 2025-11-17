@@ -14,7 +14,9 @@ import (
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/sirupsen/logrus"
+	"database/sql"
 )
 
 var (
@@ -195,4 +197,26 @@ func SchemaExists() (bool, error) {
 	var exists bool
 	err := QueryRowContext(ctx, "SELECT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'pgext')").Scan(&exists)
 	return exists, err
+}
+
+// GetStdDB returns a standard sql.DB from the pgxpool for compatibility
+func GetStdDB() (*sql.DB, error) {
+	if DB == nil {
+		return nil, fmt.Errorf("database connection pool not initialized")
+	}
+
+	// Get the connection string from the pool config
+	connStr := PGURL
+	if connStr == "" {
+		return nil, fmt.Errorf("connection string not available")
+	}
+
+	// Parse config for stdlib
+	connConfig, err := pgx.ParseConfig(connStr)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse config: %w", err)
+	}
+
+	// Register connection and open
+	return stdlib.OpenDB(*connConfig), nil
 }

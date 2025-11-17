@@ -535,11 +535,94 @@ If no argument is provided, generates pages for all active OS distributions.`,
 	},
 }
 
+// genConfCmd generates Pigsty configuration files
+var genConfCmd = &cobra.Command{
+	Use:   "conf [os...]",
+	Short: "Generate Pigsty configuration files",
+	Long: `Generate Pigsty configuration YAML files for different OS distributions.
+This command generates OS-specific package mappings and extension lists
+based on the availability data in the pgext database.`,
+	Example: `  # Generate configuration for all supported OS (default)
+  pgext gen conf
+
+  # Generate configuration for specific OS
+  pgext gen conf el9.x86_64
+  pgext gen conf el9.x86_64 d12.aarch64
+
+  # Generate to a specific output directory
+  pgext gen conf --output ./output el9.x86_64`,
+	PreRunE:  initDatabase,
+	PostRun:  closeDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		// Get flags
+		configOutputDir, _ := cmd.Flags().GetString("output")
+		dryRun, _ := cmd.Flags().GetBool("dry-run")
+		verbose, _ := cmd.Flags().GetBool("verbose")
+
+		// Set default output directory if not specified
+		if configOutputDir == "" {
+			homeDir, err := os.UserHomeDir()
+			if err != nil {
+				return fmt.Errorf("failed to get home directory: %w", err)
+			}
+			configOutputDir = filepath.Join(homeDir, "pigsty", "roles", "node_id", "vars")
+		}
+
+		// Determine which OS to generate
+		var osList []string
+		if len(args) > 0 {
+			// Use provided OS arguments
+			osList = args
+		} else {
+			// Default: generate for all 14 supported OS
+			osList = []string{
+				"el8.x86_64", "el8.aarch64",
+				"el9.x86_64", "el9.aarch64",
+				"el10.x86_64", "el10.aarch64",
+				"d12.x86_64", "d12.aarch64",
+				"d13.x86_64", "d13.aarch64",
+				"u22.x86_64", "u22.aarch64",
+				"u24.x86_64", "u24.aarch64",
+			}
+			if !verbose {
+				fmt.Printf("Generating configuration for all %d supported OS...\n", len(osList))
+			}
+		}
+
+		// Generate configuration for each OS
+		for _, osName := range osList {
+			if verbose {
+				logrus.Infof("Generating configuration for %s...", osName)
+			}
+
+			err := cli.GeneratePigstyConfig(osName, configOutputDir, dryRun, verbose)
+			if err != nil {
+				logrus.Errorf("Failed to generate config for %s: %v", osName, err)
+				// Continue with other OS even if one fails
+				continue
+			}
+
+			if verbose {
+				logrus.Infof("✓ Generated configuration for %s", osName)
+			} else {
+				fmt.Printf("Generated configuration for %s\n", osName)
+			}
+		}
+
+		return nil
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	genCmd.AddCommand(genExtCmd, genPkgCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd)
+	genCmd.AddCommand(genExtCmd, genPkgCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd, genConfCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
+
+	// Add flags specific to gen conf command
+	genConfCmd.Flags().StringP("output", "o", "", "Output directory for configuration files (default: ~/pigsty/roles/node_id/vars)")
+	genConfCmd.Flags().BoolP("dry-run", "n", false, "Perform a dry run without writing files")
+	genConfCmd.Flags().BoolP("verbose", "v", false, "Show verbose output")
 }
