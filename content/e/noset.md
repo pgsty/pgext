@@ -2,7 +2,7 @@
 title: "noset"
 linkTitle: "noset"
 description: "Module for blocking SET variables for non-super users."
-weight: 7210
+weight: 7420
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7210** | {{< badge content="noset" link="https://gitlab.com/ongresinc/extensions/noset" >}} | {{< ext "noset" "pg_noset" >}} | `0.3.0` | {{< category "SEC" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+| **7420** | {{< badge content="noset" link="https://gitlab.com/ongresinc/extensions/noset" >}} | {{< ext "noset" "pg_noset" >}} | `0.3.0` | {{< category "SEC" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

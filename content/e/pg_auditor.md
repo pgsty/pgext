@@ -2,7 +2,7 @@
 title: "pg_auditor"
 linkTitle: "pg_auditor"
 description: "Audit data changes and provide flashback ability"
-weight: 7190
+weight: 7130
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7190** | {{< badge content="pg_auditor" link="https://github.com/kouber/pg_auditor" >}} | {{< ext "pg_auditor" >}} | `0.2` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
+| **7130** | {{< badge content="pg_auditor" link="https://github.com/kouber/pg_auditor" >}} | {{< ext "pg_auditor" >}} | `0.2` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

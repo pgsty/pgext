@@ -124,7 +124,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/microsoft/documentdb" title="Repository" icon="github" subtitle="github.com/microsoft/documentdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.106.0-ferretdb-2.5.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.107.0-ferretdb-2.7.0.tar.gz" >}}
 {{< /cards >}}
 
 

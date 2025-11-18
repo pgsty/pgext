@@ -5,29 +5,50 @@ weight: 700
 ---
 
 
-## 版本更新
+## 最近更新
 
-- pgvectorscale 0.9.0 https://github.com/timescale/pgvectorscale/releases/tag/0.9.0
-- pglite_fusion 0.0.6 
-- pgliter 1.0.0
-- pgx_ulid 0.2.2
-- citus 13.2.0 official release
-- pg_biscit
-- pg_retry
-- pg_lake
+下列更新尚未发布至生产环境。
+
+| Name                | Old    | New    | Comment                    |
+|:--------------------|:-------|:-------|:---------------------------|
+| vchord              | 0.5.3  | 1.0.0  |                            |
+| pg_later            | 0.3.1  | 0.4.0  |                            |
+| pgvectorscale       | 0.8.0  | 0.9.0  | -pg13, +pg18               |
+| pglite_fusion       | 0.0.5  | 0.0.6  |                            |
+| pgx_ulid            | 0.2.1  | 0.2.2  |                            |
+| pg_search           | 0.19.5 | 0.19.7 | resume PIGSTY building     |
+| citus               | 13.2.0 | 13.2.0 | official tag               |
+| timescaledb         | 2.23.0 | 2.23.1 |                            |
+| pg_profile          | 4.10   | 4.11   |                            |
+| pglinter            |        | 1.0.0  | new                        |
+| pg_typeid           |        | 0.3.0  | head with pg18 support     |
+| pg_enigma           |        | 0.4.0  | vonng patched pgrx version |
+| pg_retry            |        | 1.0.0  | new, pg17-18               |
+| pg_biscuit          |        | 1.0    | new, pg16-18               |
+| weighted_statistics |        | 1.0.0  | new, pg13-18               |
 
 
-## 需要新增
+```bash
+pig build pkg pg_later pgvectorscale pglite_fusion pgx_ulid vchord
+pig build pkg pglinter pg_typeid pg_enigma pg_search
+pig build pkg citus timescaledb pg_profile #pg_stat_monitor
+pig build pkg pg_retry pg_biscuit pg_weighted_statistics
+```
 
-- pgelog 1.0.2
-- oai_fdw 1.11.0
-- pgcalendar 1.0.1
-- weighted_statistics 1.0.0
-- rdf_fdw 2.1.0
-- pg_ttl_index 1.0.2
+- EL TODO: 
+- pgsentinel 1.2.0 -> 1.3.0 
+- pg_stat_monitor 2.3.0
+- pgsql_tweaks
+- sslutils el8.x86
+
 
 ## 暂时雪藏
 
+- pgelog 1.0.2
+- oai_fdw 1.11.0
+- rdf_fdw 2.1.0
+- pg_ttl_index 1.0.2
+- [pgcalendar](https://github.com/h4kbas/pgcalendar) bad makefile
 - [dsef](https://github.com/ardentperf/dsef/)
 - [pg_mustach](https://github.com/RekGRpth/pg_mustach)
 - [is_jsonb_valid](https://github.com/furstenheim/is_jsonb_valid)
@@ -49,6 +70,8 @@ weight: 700
 - [pg_trgm pro](https://github.com/postgrespro/pg_trgm_pro)
 - [weighted_mean](https://github.com/Kozea/weighted_mean)
 - [kmeans](https://github.com/umitanuki/kmeans-postgresql)
+- [pgjwt_rs](https://github.com/vishvish/pgjwt_rs)
+- [plrust](https://github.com/tcdi/plrust)
 
 ## 缺少维护
 
@@ -58,6 +81,14 @@ weight: 700
 
 ## 尚未规划
 
+- pg_base62: https://github.com/bkircher/pg_base62/blob/main/Cargo.toml
+- pg_conda: PostgreSQL extension that adds types and functions for the conda ecosystem
+- pgfdb: https://github.com/fabianlindfors/pgfdb
+- postgres-ical: https://github.com/edgarogh/postgres-ical
+- pgsloth: https://github.com/jamessewell/pgsloth
+- pgfaker: https://github.com/rustprooflabs/pgfaker
+- pglance - PostgreSQL Lance Table Extension
+- pg_oidc_validator_rust https://github.com/UnAfraid/pg_oidc_validator_rust
 - pg_top: not ready due to cmake error
 - pg_quack, we already have a pg_lakehouse
 - pg_telemetry, we already have better observability

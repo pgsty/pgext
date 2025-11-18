@@ -2,7 +2,7 @@
 title: "credcheck"
 linkTitle: "credcheck"
 description: "credcheck - postgresql plain text credential checker"
-weight: 7110
+weight: 7310
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7110** | {{< badge content="credcheck" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< ext "credcheck" >}} | `4.2` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7310** | {{< badge content="credcheck" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< ext "credcheck" >}} | `4.2` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -320,8 +320,8 @@ width: full
 | `credcheck_13` | `2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 30.6 KiB | [credcheck_13-2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-2.0-1.rhel8.x86_64.rpm) |
 | `credcheck_13` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 27.3 KiB | [credcheck_13-1.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-1.2-1.rhel8.x86_64.rpm) |
 | `credcheck_13` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 26.7 KiB | [credcheck_13-1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-1.0-1.rhel8.x86_64.rpm) |
-| `credcheck_13` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.0 KiB | [credcheck_13-0.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-0.2.0-1.rhel8.x86_64.rpm) |
 | `credcheck_13` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 18.5 KiB | [credcheck_13-0.2.0-3.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-0.2.0-3.rhel8.x86_64.rpm) |
+| `credcheck_13` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 35.0 KiB | [credcheck_13-0.2.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-0.2.0-1.rhel8.x86_64.rpm) |
 | `credcheck_13` | `0.1.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 34.6 KiB | [credcheck_13-0.1.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/credcheck_13-0.1.1-1.rhel8.x86_64.rpm) |
 | `credcheck_13` | `4.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.1 KiB | [credcheck_13-4.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/credcheck_13-4.2-1PGDG.rhel8.aarch64.rpm) |
 | `credcheck_13` | `4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 38.7 KiB | [credcheck_13-4.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/credcheck_13-4.1-1PGDG.rhel8.aarch64.rpm) |

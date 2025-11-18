@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6240** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.2` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6240** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.3` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_qualstats` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.1` | {{< bg "18" "pg_qualstats_18*" "green" >}} {{< bg "17" "pg_qualstats_17*" "green" >}} {{< bg "16" "pg_qualstats_16*" "green" >}} {{< bg "15" "pg_qualstats_15*" "green" >}} {{< bg "14" "pg_qualstats_14*" "green" >}} {{< bg "13" "pg_qualstats_13*" "green" >}} | `pg_qualstats_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.2` | {{< bg "18" "postgresql-18-pg-qualstats" "green" >}} {{< bg "17" "postgresql-17-pg-qualstats" "green" >}} {{< bg "16" "postgresql-16-pg-qualstats" "green" >}} {{< bg "15" "postgresql-15-pg-qualstats" "green" >}} {{< bg "14" "postgresql-14-pg-qualstats" "green" >}} {{< bg "13" "postgresql-13-pg-qualstats" "green" >}} | `postgresql-$v-pg-qualstats` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_qualstats` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.2` | {{< bg "18" "pg_qualstats_18*" "green" >}} {{< bg "17" "pg_qualstats_17*" "green" >}} {{< bg "16" "pg_qualstats_16*" "green" >}} {{< bg "15" "pg_qualstats_15*" "green" >}} {{< bg "14" "pg_qualstats_14*" "green" >}} {{< bg "13" "pg_qualstats_13*" "green" >}} | `pg_qualstats_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.3` | {{< bg "18" "postgresql-18-pg-qualstats" "green" >}} {{< bg "17" "postgresql-17-pg-qualstats" "green" >}} {{< bg "16" "postgresql-16-pg-qualstats" "green" >}} {{< bg "15" "postgresql-15-pg-qualstats" "green" >}} {{< bg "14" "postgresql-14-pg-qualstats" "green" >}} {{< bg "13" "postgresql-13-pg-qualstats" "green" >}} | `postgresql-$v-pg-qualstats` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

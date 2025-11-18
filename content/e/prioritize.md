@@ -2,7 +2,7 @@
 title: "prioritize"
 linkTitle: "prioritize"
 description: "get and set the priority of PostgreSQL backends"
-weight: 5090
+weight: 5100
 categories: ["ADMIN"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5090** | {{< badge content="prioritize" link="https://github.com/schmiddy/pg_prioritize" >}} | {{< ext "prioritize" "pg_prioritize" >}} | `1.0.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5100** | {{< badge content="prioritize" link="https://github.com/schmiddy/pg_prioritize" >}} | {{< ext "prioritize" "pg_prioritize" >}} | `1.0.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

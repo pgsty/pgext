@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6220** | {{< badge content="pg_stat_kcache" link="https://github.com/powa-team/pg_stat_kcache" >}} | {{< ext "pg_stat_kcache" >}} | `2.3.0` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6220** | {{< badge content="pg_stat_kcache" link="https://github.com/powa-team/pg_stat_kcache" >}} | {{< ext "pg_stat_kcache" >}} | `2.3.1` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,9 +32,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_stat_kcache` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.0` | {{< bg "18" "pg_stat_kcache_18*" "green" >}} {{< bg "17" "pg_stat_kcache_17*" "green" >}} {{< bg "16" "pg_stat_kcache_16*" "green" >}} {{< bg "15" "pg_stat_kcache_15*" "green" >}} {{< bg "14" "pg_stat_kcache_14*" "green" >}} {{< bg "13" "pg_stat_kcache_13*" "green" >}} | `pg_stat_kcache_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-stat-kcache" "green" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} {{< bg "13" "postgresql-13-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_stat_kcache` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.1` | {{< bg "18" "pg_stat_kcache_18*" "green" >}} {{< bg "17" "pg_stat_kcache_17*" "green" >}} {{< bg "16" "pg_stat_kcache_16*" "green" >}} {{< bg "15" "pg_stat_kcache_15*" "green" >}} {{< bg "14" "pg_stat_kcache_14*" "green" >}} {{< bg "13" "pg_stat_kcache_13*" "green" >}} | `pg_stat_kcache_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.1` | {{< bg "18" "postgresql-18-pg-stat-kcache" "green" >}} {{< bg "17" "postgresql-17-pg-stat-kcache" "green" >}} {{< bg "16" "postgresql-16-pg-stat-kcache" "green" >}} {{< bg "15" "postgresql-15-pg-stat-kcache" "green" >}} {{< bg "14" "postgresql-14-pg-stat-kcache" "green" >}} {{< bg "13" "postgresql-13-pg-stat-kcache" "green" >}} | `postgresql-$v-pg-stat-kcache` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

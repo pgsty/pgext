@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsql_tweaks` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.11.3` | {{< bg "18" "pgsql_tweaks_18" "green" >}} {{< bg "17" "pgsql_tweaks_17" "green" >}} {{< bg "16" "pgsql_tweaks_16" "green" >}} {{< bg "15" "pgsql_tweaks_15" "green" >}} {{< bg "14" "pgsql_tweaks_14" "green" >}} {{< bg "13" "pgsql_tweaks_13" "green" >}} | `pgsql_tweaks_$v` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.2` | {{< bg "18" "pgsql_tweaks_18" "green" >}} {{< bg "17" "pgsql_tweaks_17" "green" >}} {{< bg "16" "pgsql_tweaks_16" "green" >}} {{< bg "15" "pgsql_tweaks_15" "green" >}} {{< bg "14" "pgsql_tweaks_14" "green" >}} {{< bg "13" "pgsql_tweaks_13" "green" >}} | `pgsql_tweaks_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pgsql-tweaks" "green" >}} {{< bg "17" "postgresql-17-pgsql-tweaks" "green" >}} {{< bg "16" "postgresql-16-pgsql-tweaks" "green" >}} {{< bg "15" "postgresql-15-pgsql-tweaks" "green" >}} {{< bg "14" "postgresql-14-pgsql-tweaks" "green" >}} {{< bg "13" "postgresql-13-pgsql-tweaks" "green" >}} | `postgresql-$v-pgsql-tweaks` | - |
 
 

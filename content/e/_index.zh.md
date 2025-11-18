@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-共有 431 个可用的 PostgreSQL 扩展：
+共有 437 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -43,7 +43,7 @@ weight: 900
 | {{< ext "earthdistance" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "GIS" >}} | 计算地球表面上的大圆距离 |
 | {{< ext "vector" "pgvector" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | {{< ext "vchord" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "RAG" >}} | 使用Rust重写的高性能向量扩展 |
-| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 使用DiskANN算法对向量进行高效索引 |
+| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 使用DiskANN算法对向量进行高效索引 |
 | {{< ext "vectorize" "pg_vectorize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 在PostgreSQL中封装RAG向量检索服务 |
 | {{< ext "pg_similarity" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | 提供17种距离度量函数 |
 | {{< ext "smlar" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | 高效的相似度搜索函数 |
@@ -59,6 +59,7 @@ weight: 900
 | {{< ext "pg_bestmatch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | 在数据库内生成BM25稀疏向量 |
 | {{< ext "vchord_bm25" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | BM25排序算法 |
 | {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FTS" >}} | 用于全文检索的分词器 |
+| {{< ext "pg_biscuit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | 使用IAM的高性能文本模式匹配 |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell捷克语全文检索词典 |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell德语全文检索词典 |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell英语全文检索词典 |
@@ -142,7 +143,6 @@ weight: 900
 | {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Omnigres 通用Worker池 |
 | {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Omnigres XML工具包 |
 | {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Omnigres YAML工具包 |
-| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FEAT" >}} | bloom 索引-基于指纹的索引 |
 | {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | AWS 可信语言扩展 |
 | {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JavaScript (v8) 可信过程程序语言 |
@@ -220,6 +220,7 @@ weight: 900
 | {{< ext "http" "pg_http" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | HTTP客户端，允许在数据库内收发HTTP请求 (supabase) |
 | {{< ext "pg_net" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "UTIL" >}} | 用 SQL 进行异步非阻塞HTTP/HTTPS 请求的扩展 (supabase) |
 | {{< ext "pg_curl" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 封装CURL，执行各种用URL传输数据的操作 |
+| {{< ext "pg_retry" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 在临时错误中使用指数退避重试语句 |
 | {{< ext "pgjq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | 在Postgres中使用jq查询JSON |
 | {{< ext "pgjwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | JSON Web Token API 的PG实现 (supabase) |
 | {{< ext "pg_smtp_client" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | 使用SMTP从PostgreSQL内发送邮件的客户端扩展 |
@@ -251,13 +252,16 @@ weight: 900
 | {{< ext "permuteseq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 伪随机数ID置换生成器 |
 | {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 加盐将整型ID转为短字符串ID |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 生成连续生成的UUID |
+| {{< ext "typeid" "pg_typeid" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | PG原生TypeID类型与函数 |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | top-n JSONB 的类型 |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Quantile聚合函数 |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Lower Quantile 聚合函数 |
 | {{< ext "count_distinct" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | COUNT(DISTINCT …) 聚合的替代方案 |
+| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | {{< ext "ddsketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | {{< ext "vasco" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 使用MIC发现数据中隐含的关联 |
 | {{< ext "xicor" "pgxicor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | 在PG中计算XI相关系数 |
+| {{< ext "pg_weighted_statistics" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | 针对稀疏数据的高性能加权统计量计算 |
 | {{< ext "tdigest" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | tdigest 聚合函数 |
 | {{< ext "first_last_agg" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | first() 与 last() 聚合函数 |
 | {{< ext "extra_window_functions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 额外的窗口函数 |
@@ -295,6 +299,7 @@ weight: 900
 | {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 检查和管理操作系统缓冲区缓存 |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 从缓冲区中移除特定关系的页面 |
 | {{< ext "ddlx" "pg_ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 提取数据库对象的DDL |
+| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | PG数据库规则检查插件 |
 | {{< ext "prioritize" "pg_prioritize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 获取和设置 PostgreSQL 后端的优先级 |
 | {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s---r" color="blue" >}} | {{< category "ADMIN" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 将集群设置为只读 |
@@ -365,22 +370,23 @@ weight: 900
 | {{< ext "supabase_vault" "pg_vault" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SEC" >}} | 使用JWT进行会话认证 |
 | {{< ext "anon" "pg_anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | 数据匿名化处理工具 |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Percona加密存储引擎 |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
+| {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL 加密数据类型 |
 | {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | 提供审计功能 |
 | {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
+| {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SEC" >}} | 审计数据变更并提供闪回能力 |
+| {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | 用于收集日志文件中消息统计信息的函数 |
 | {{< ext "pg_auth_mon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | 监控每个用户的连接尝试 |
+| {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 记录和监控函数 |
 | {{< ext "credcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | 明文凭证检查器 |
 | {{< ext "pgcryptokey" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | PG密钥管理 |
-| {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 记录和监控函数 |
-| {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | 用于收集日志文件中消息统计信息的函数 |
 | {{< ext "login_hook" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 在用户登陆时执行login_hook.login()函数 |
 | {{< ext "set_user" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 增加了日志记录的 SET ROLE |
 | {{< ext "pg_snakeoil" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL动态链接库反病毒功能 |
 | {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL扩展白名单功能 |
-| {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SEC" >}} | 审计数据变更并提供闪回能力 |
 | {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | 使用SQL管理SSL证书 |
 | {{< ext "noset" "pg_noset" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | 阻止非超级用户使用SET/RESET设置变量 |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Percona加密存储引擎 |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | 基于SELinux标签的强制访问控制 |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | 在返回认证失败前暂停一会，避免爆破 |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "SEC" >}} | 实用加解密函数 |
@@ -393,14 +399,14 @@ weight: 900
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | MySQL外部数据包装器 |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 提供对Oracle的外部数据源包装器 |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
-| {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 提供对DB2的外部数据源包装器 |
+| {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 提供对DB2的外部数据源包装器 |
 | {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | SQLite 外部数据包装器 |
 | {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | {{< ext "mongo_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | MongoDB 外部数据包装器 |
 | {{< ext "redis_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 查询外部Redis数据源 |
 | {{< ext "redis" "pg_redis_pubsub" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 从PG向Redis发送Pub/Sub消息 |
 | {{< ext "kafka_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Kafka外部数据源包装器 |
-| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | hdfs 外部数据包装器 |
+| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | hdfs 外部数据包装器 |
 | {{< ext "firebird_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Firebird外部数据源包装器 |
 | {{< ext "aws_s3" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FDW" >}} | 从S3导入导出数据的外部数据源包装器 |
 | {{< ext "log_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 访问PostgreSQL日志文件的FDW |

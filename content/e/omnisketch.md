@@ -2,7 +2,7 @@
 title: "omnisketch"
 linkTitle: "omnisketch"
 description: "data structure for on-line agg of data into approximate sketch"
-weight: 2980
+weight: 4640
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2980** | {{< badge content="omnisketch" link="https://github.com/tvondra/omnisketch" >}} | {{< ext "omnisketch" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4640** | {{< badge content="omnisketch" link="https://github.com/tvondra/omnisketch" >}} | {{< ext "omnisketch" >}} | `1.0.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

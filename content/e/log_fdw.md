@@ -162,8 +162,8 @@ width: full
 | `log_fdw_14` | `1.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 19.2 KiB | [log_fdw_14-1.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/log_fdw_14-1.4-1PIGSTY.el8.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 19.7 KiB | [log_fdw_14-1.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/log_fdw_14-1.4-1PIGSTY.el9.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.2 KiB | [log_fdw_14-1.4-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/log_fdw_14-1.4-2PIGSTY.el9.x86_64.rpm) |
-| `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.1 KiB | [log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 19.4 KiB | [log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-1PIGSTY.el9.aarch64.rpm) |
+| `log_fdw_14` | `1.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.1 KiB | [log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/log_fdw_14-1.4-2PIGSTY.el9.aarch64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 19.8 KiB | [log_fdw_14-1.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/log_fdw_14-1.4-1PIGSTY.el10.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.3 KiB | [log_fdw_14-1.4-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/log_fdw_14-1.4-2PIGSTY.el10.x86_64.rpm) |
 | `log_fdw_14` | `1.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.3 KiB | [log_fdw_14-1.4-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/log_fdw_14-1.4-2PIGSTY.el10.aarch64.rpm) |

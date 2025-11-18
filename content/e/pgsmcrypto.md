@@ -2,7 +2,7 @@
 title: "pgsmcrypto"
 linkTitle: "pgsmcrypto"
 description: "PostgreSQL SM Algorithm Extension"
-weight: 7070
+weight: 7060
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7070** | {{< badge content="pgsmcrypto" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **7060** | {{< badge content="pgsmcrypto" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

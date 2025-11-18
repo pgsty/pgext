@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.3.2` | {{< category "FDW" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.3.3` | {{< category "FDW" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hdfs_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.2` | {{< bg "18" "hdfs_fdw_18*" "red" >}} {{< bg "17" "hdfs_fdw_17*" "green" >}} {{< bg "16" "hdfs_fdw_16*" "green" >}} {{< bg "15" "hdfs_fdw_15*" "green" >}} {{< bg "14" "hdfs_fdw_14*" "green" >}} {{< bg "13" "hdfs_fdw_13*" "green" >}} | `hdfs_fdw_$v*` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hdfs_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18*" "green" >}} {{< bg "17" "hdfs_fdw_17*" "green" >}} {{< bg "16" "hdfs_fdw_16*" "green" >}} {{< bg "15" "hdfs_fdw_15*" "green" >}} {{< bg "14" "hdfs_fdw_14*" "green" >}} {{< bg "13" "hdfs_fdw_13*" "green" >}} | `hdfs_fdw_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -202,13 +202,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/hdfs_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/hdfs_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hdfs_fdw-2.0.5.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg hdfs_fdw;		# build spec not ready
-```
 
 
 ## Install
@@ -224,6 +218,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install hdfs_fdw;		# install via package name, for the active PG version
 
+pig install hdfs_fdw -v 18;   # install for PG 18
 pig install hdfs_fdw -v 17;   # install for PG 17
 pig install hdfs_fdw -v 16;   # install for PG 16
 pig install hdfs_fdw -v 15;   # install for PG 15

@@ -24,15 +24,16 @@ var genCmd = &cobra.Command{
 	Use:   "gen",
 	Short: "Generate Hugo markdown content from database",
 	Long:  `Generate Hugo/Hextra-compatible markdown files for PostgreSQL extensions`,
-	Example: `  pgext gen ext        # Generate extension detail pages
+	Example: `  pgext gen page       # Generate extension detail pages
+  pgext gen ext        # Generate extension list pages with stats
+  pgext gen pkg        # Generate package list pages with stats
   pgext gen index      # Generate extension index pages
   pgext gen cate       # Generate category list pages
   pgext gen lang       # Generate language list pages
   pgext gen license    # Generate license list pages
   pgext gen catalog    # Generate catalog pages
-  pgext gen ext        # Generate extension list pages with stats
-  pgext gen pkg        # Generate package list pages with stats
-  pgext gen os         # Generate OS-specific availability page`,
+  pgext gen os         # Generate OS-specific availability page
+  pgext gen conf       # Generate Pigsty configuration files`,
 }
 
 // genIndexCmd generates extension index pages
@@ -535,6 +536,98 @@ If no argument is provided, generates pages for all active OS distributions.`,
 	},
 }
 
+// genPageCmd generates individual extension detail pages
+var genPageCmd = &cobra.Command{
+	Use:   "page [extension-names...]",
+	Short: "Generate individual extension detail pages",
+	Long: `Generate Hugo markdown detail pages for PostgreSQL extensions.
+If no extension names are provided, generates pages for all extensions.`,
+	Example: `  pgext gen page              # Generate pages for all extensions
+  pgext gen page pgvector     # Generate page for pgvector extension
+  pgext gen page pgvector postgis pg_stat_statements  # Generate pages for specific extensions`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		// Initialize database connection
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		// Load extension cache
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		// Prepare output directory
+		extDir := filepath.Join(outputDir, "e")
+		if err := os.MkdirAll(extDir, 0755); err != nil {
+			return fmt.Errorf("failed to create output directory: %w", err)
+		}
+
+		// Initialize generator
+		generator := cli.NewExtensionGenerator(cache, extDir)
+
+		// Determine which extensions to generate
+		var extensionsToGenerate []*cli.Extension
+		if len(args) == 0 {
+			// No arguments provided, generate all extensions (except not-ready)
+			for _, ext := range cache.Extensions {
+				if !ext.State.Valid || ext.State.String != "not-ready" {
+					extensionsToGenerate = append(extensionsToGenerate, ext)
+				}
+			}
+			logrus.Infof("Generating pages for all %d extensions...", len(extensionsToGenerate))
+		} else {
+			// Specific extensions requested
+			for _, name := range args {
+				ext, exists := cache.ExtMap[name]
+				if !exists {
+					logrus.Warnf("Extension '%s' not found in cache, skipping", name)
+					continue
+				}
+				extensionsToGenerate = append(extensionsToGenerate, ext)
+			}
+			if len(extensionsToGenerate) == 0 {
+				return fmt.Errorf("no valid extensions found from provided names")
+			}
+			logrus.Infof("Generating pages for %d specified extensions...", len(extensionsToGenerate))
+		}
+
+		// Generate pages with progress tracking
+		successCount := 0
+		var failedExtensions []string
+
+		for i, ext := range extensionsToGenerate {
+			// Progress logging for batch generation
+			if len(extensionsToGenerate) > 10 && (i+1)%100 == 0 {
+				logrus.Infof("Progress: %d/%d extensions processed", i+1, len(extensionsToGenerate))
+			}
+
+			if err := generator.GenerateExtensionPage(ctx, ext); err != nil {
+				logrus.Errorf("Failed to generate page for %s: %v", ext.Name, err)
+				failedExtensions = append(failedExtensions, ext.Name)
+			} else {
+				successCount++
+				if len(args) > 0 {
+					// Only log individual successes when specific extensions are requested
+					logrus.Infof("Generated: %s/%s.md", extDir, ext.Name)
+				}
+			}
+		}
+
+		// Final summary
+		logrus.Infof("Successfully generated %d/%d extension pages", successCount, len(extensionsToGenerate))
+		if len(failedExtensions) > 0 {
+			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
+		}
+
+		return nil
+	},
+}
+
 // genConfCmd generates Pigsty configuration files
 var genConfCmd = &cobra.Command{
 	Use:   "conf [os...]",
@@ -616,7 +709,7 @@ based on the availability data in the pgext database.`,
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	genCmd.AddCommand(genExtCmd, genPkgCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd, genConfCmd)
+	genCmd.AddCommand(genExtCmd, genPkgCmd, genPageCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd, genConfCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")

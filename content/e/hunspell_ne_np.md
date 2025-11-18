@@ -2,7 +2,7 @@
 title: "hunspell_ne_np"
 linkTitle: "hunspell_ne_np"
 description: "Nepali Hunspell Dictionary"
-weight: 2174
+weight: 2274
 categories: ["FTS"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2174** | {{< badge content="hunspell_ne_np" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ne_np" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2274** | {{< badge content="hunspell_ne_np" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ne_np" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

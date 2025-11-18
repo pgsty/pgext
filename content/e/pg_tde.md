@@ -2,7 +2,7 @@
 title: "pg_tde"
 linkTitle: "pg_tde"
 description: "Percona pg_tde access method"
-weight: 7060
+weight: 7500
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7060** | {{< badge content="pg_tde" link="https://github.com/Percona-Lab/pg_tde" >}} | {{< ext "pg_tde" >}} | `1.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7500** | {{< badge content="pg_tde" link="https://github.com/Percona-Lab/pg_tde" >}} | {{< ext "pg_tde" >}} | `1.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

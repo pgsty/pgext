@@ -189,8 +189,8 @@ width: full
 | `pgtt_15` | `2.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 31.7 KiB | [pgtt_15-2.10-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgtt_15-2.10-1.rhel8.aarch64.rpm) |
 | `pgtt_15` | `4.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.7 KiB | [pgtt_15-4.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.4-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | `4.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 38.2 KiB | [pgtt_15-4.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.3-1PGDG.rhel9.x86_64.rpm) |
-| `pgtt_15` | `4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.1 KiB | [pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | `4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.1 KiB | [pgtt_15-4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-1PGDG.rhel9.x86_64.rpm) |
+| `pgtt_15` | `4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 37.1 KiB | [pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-4.0-3PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | `3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.1 KiB | [pgtt_15-3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-3.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | `3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 34.0 KiB | [pgtt_15-3.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-3.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgtt_15` | `2.9` | [el9.x86_64](/os/el9.x86_64) | pgdg | 70.9 KiB | [pgtt_15-2.9-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgtt_15-2.9-1.rhel9.x86_64.rpm) |

@@ -2,7 +2,7 @@
 title: "pgaudit"
 linkTitle: "pgaudit"
 description: "provides auditing functionality"
-weight: 7080
+weight: 7100
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7080** | {{< badge content="pgaudit" link="https://github.com/pgaudit/pgaudit" >}} | {{< ext "pgaudit" >}} | `17.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7100** | {{< badge content="pgaudit" link="https://github.com/pgaudit/pgaudit" >}} | {{< ext "pgaudit" >}} | `18.0` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,9 +33,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `17.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgaudit` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `17.1` | {{< bg "18" "pgaudit_18*" "red" >}} {{< bg "17" "pgaudit_17*" "green" >}} {{< bg "16" "pgaudit_16*" "green" >}} {{< bg "15" "pgaudit_15*" "green" >}} {{< bg "14" "pgaudit_14*" "green" >}} {{< bg "13" "pgaudit_13*" "green" >}} | `pgaudit_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `17.1` | {{< bg "18" "postgresql-18-pgaudit" "red" >}} {{< bg "17" "postgresql-17-pgaudit" "green" >}} {{< bg "16" "postgresql-16-pgaudit" "green" >}} {{< bg "15" "postgresql-15-pgaudit" "green" >}} {{< bg "14" "postgresql-14-pgaudit" "green" >}} {{< bg "13" "postgresql-13-pgaudit" "green" >}} | `postgresql-$v-pgaudit` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgaudit` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "pgaudit_18*" "red" >}} {{< bg "17" "pgaudit_17*" "green" >}} {{< bg "16" "pgaudit_16*" "green" >}} {{< bg "15" "pgaudit_15*" "green" >}} {{< bg "14" "pgaudit_14*" "green" >}} {{< bg "13" "pgaudit_13*" "green" >}} | `pgaudit_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "postgresql-18-pgaudit" "red" >}} {{< bg "17" "postgresql-17-pgaudit" "green" >}} {{< bg "16" "postgresql-16-pgaudit" "green" >}} {{< bg "15" "postgresql-15-pgaudit" "green" >}} {{< bg "14" "postgresql-14-pgaudit" "green" >}} {{< bg "13" "postgresql-13-pgaudit" "green" >}} | `postgresql-$v-pgaudit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

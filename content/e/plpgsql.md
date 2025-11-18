@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "data_historization" >}} {{< ext "ddl_historization" >}} {{< ext "pg4ml" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_profile" >}} {{< ext "pg_upless" >}} {{< ext "plpgsql_check" >}} {{< ext "powa" >}} {{< ext "table_version" >}} {{< ext "unit" >}} |
+|    **Need By**    | {{< ext "data_historization" >}} {{< ext "ddl_historization" >}} {{< ext "pg4ml" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_profile" >}} {{< ext "pg_upless" >}} {{< ext "plpgsql_check" >}} {{< ext "powa" >}} {{< ext "table_version" >}} {{< ext "unit" >}} {{< ext "pg_biscuit" >}} |
 |   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pltclu" >}} {{< ext "plv8" >}} {{< ext "plluau" >}} |
 
 

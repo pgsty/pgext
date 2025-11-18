@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6280** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.2.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6280** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,9 +33,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsentinel` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "pgsentinel_18*" "green" >}} {{< bg "17" "pgsentinel_17*" "green" >}} {{< bg "16" "pgsentinel_16*" "green" >}} {{< bg "15" "pgsentinel_15*" "green" >}} {{< bg "14" "pgsentinel_14*" "green" >}} {{< bg "13" "pgsentinel_13*" "green" >}} | `pgsentinel_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsentinel` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "pgsentinel_18*" "green" >}} {{< bg "17" "pgsentinel_17*" "green" >}} {{< bg "16" "pgsentinel_16*" "green" >}} {{< bg "15" "pgsentinel_15*" "green" >}} {{< bg "14" "pgsentinel_14*" "green" >}} {{< bg "13" "pgsentinel_13*" "green" >}} | `pgsentinel_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -234,7 +234,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgsentinel/pgsentinel" title="Repository" icon="github" subtitle="github.com/pgsentinel/pgsentinel" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.2.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.3.0.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8530** | {{< badge content="jdbc_fdw" link="https://github.com/pgspider/jdbc_fdw" >}} | {{< ext "jdbc_fdw" >}} | `1.2` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8530** | {{< badge content="jdbc_fdw" link="https://github.com/pgspider/jdbc_fdw" >}} | {{< ext "jdbc_fdw" >}} | `0.4.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,8 +33,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `jdbc_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "jdbc_fdw_18*" "red" >}} {{< bg "17" "jdbc_fdw_17*" "red" >}} {{< bg "16" "jdbc_fdw_16*" "green" >}} {{< bg "15" "jdbc_fdw_15*" "green" >}} {{< bg "14" "jdbc_fdw_14*" "green" >}} {{< bg "13" "jdbc_fdw_13*" "green" >}} | `jdbc_fdw_$v*` | `java-11-openjdk-headless` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `jdbc_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "jdbc_fdw_18*" "red" >}} {{< bg "17" "jdbc_fdw_17*" "red" >}} {{< bg "16" "jdbc_fdw_16*" "green" >}} {{< bg "15" "jdbc_fdw_15*" "green" >}} {{< bg "14" "jdbc_fdw_14*" "green" >}} {{< bg "13" "jdbc_fdw_13*" "green" >}} | `jdbc_fdw_$v*` | `java-11-openjdk-headless` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -93,13 +93,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgspider/jdbc_fdw" title="Repository" icon="github" subtitle="github.com/pgspider/jdbc_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="jdbc_fdw-0.4.0.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg jdbc_fdw;		# build spec not ready
-```
 
 
 ## Install

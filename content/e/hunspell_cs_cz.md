@@ -2,7 +2,7 @@
 title: "hunspell_cs_cz"
 linkTitle: "hunspell_cs_cz"
 description: "Czech Hunspell Dictionary"
-weight: 2170
+weight: 2270
 categories: ["FTS"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2170** | {{< badge content="hunspell_cs_cz" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_cs_cz" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2270** | {{< badge content="hunspell_cs_cz" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_cs_cz" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

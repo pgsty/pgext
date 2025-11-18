@@ -2,7 +2,7 @@
 title: "fuzzystrmatch"
 linkTitle: "fuzzystrmatch"
 description: "determine similarities and distance between strings"
-weight: 2180
+weight: 2380
 categories: ["FTS"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2180** | {{< badge content="fuzzystrmatch" link="https://www.postgresql.org/docs/current/fuzzystrmatch.html" >}} | {{< ext "fuzzystrmatch" >}} | `1.2` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2380** | {{< badge content="fuzzystrmatch" link="https://www.postgresql.org/docs/current/fuzzystrmatch.html" >}} | {{< ext "fuzzystrmatch" >}} | `1.2` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

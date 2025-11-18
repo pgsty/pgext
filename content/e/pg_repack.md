@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5010** | {{< badge content="pg_repack" link="https://github.com/reorg/pg_repack" >}} | {{< ext "pg_repack" >}} | `1.5.2` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5010** | {{< badge content="pg_repack" link="https://github.com/reorg/pg_repack" >}} | {{< ext "pg_repack" >}} | `1.5.3` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_repack` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "pg_repack_18*" "green" >}} {{< bg "17" "pg_repack_17*" "green" >}} {{< bg "16" "pg_repack_16*" "green" >}} {{< bg "15" "pg_repack_15*" "green" >}} {{< bg "14" "pg_repack_14*" "green" >}} {{< bg "13" "pg_repack_13*" "green" >}} | `pg_repack_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.2` | {{< bg "18" "postgresql-18-repack" "green" >}} {{< bg "17" "postgresql-17-repack" "green" >}} {{< bg "16" "postgresql-16-repack" "green" >}} {{< bg "15" "postgresql-15-repack" "green" >}} {{< bg "14" "postgresql-14-repack" "green" >}} {{< bg "13" "postgresql-13-repack" "green" >}} | `postgresql-$v-repack` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_repack` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "pg_repack_18*" "green" >}} {{< bg "17" "pg_repack_17*" "green" >}} {{< bg "16" "pg_repack_16*" "green" >}} {{< bg "15" "pg_repack_15*" "green" >}} {{< bg "14" "pg_repack_14*" "green" >}} {{< bg "13" "pg_repack_13*" "green" >}} | `pg_repack_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.3` | {{< bg "18" "postgresql-18-repack" "green" >}} {{< bg "17" "postgresql-17-repack" "green" >}} {{< bg "16" "postgresql-16-repack" "green" >}} {{< bg "15" "postgresql-15-repack" "green" >}} {{< bg "14" "postgresql-14-repack" "green" >}} {{< bg "13" "postgresql-13-repack" "green" >}} | `postgresql-$v-repack` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

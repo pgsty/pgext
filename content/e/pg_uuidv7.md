@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4540** | {{< badge content="pg_uuidv7" link="https://github.com/fboulnois/pg_uuidv7" >}} | {{< ext "pg_uuidv7" >}} | `1.6.0` | {{< category "FUNC" >}} | {{< license "MPL-2.0" >}} | {{< language "C" >}} |
+| **4540** | {{< badge content="pg_uuidv7" link="https://github.com/fboulnois/pg_uuidv7" >}} | {{< ext "pg_uuidv7" >}} | `1.7.0` | {{< category "FUNC" >}} | {{< license "MPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,7 +31,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_uuidv7` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_uuidv7` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.0` | {{< bg "18" "pg_uuidv7_18*" "green" >}} {{< bg "17" "pg_uuidv7_17*" "green" >}} {{< bg "16" "pg_uuidv7_16*" "green" >}} {{< bg "15" "pg_uuidv7_15*" "green" >}} {{< bg "14" "pg_uuidv7_14*" "green" >}} {{< bg "13" "pg_uuidv7_13*" "green" >}} | `pg_uuidv7_$v*` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7.0` | {{< bg "18" "postgresql-18-pg-uuidv7" "green" >}} {{< bg "17" "postgresql-17-pg-uuidv7" "green" >}} {{< bg "16" "postgresql-16-pg-uuidv7" "green" >}} {{< bg "15" "postgresql-15-pg-uuidv7" "green" >}} {{< bg "14" "postgresql-14-pg-uuidv7" "green" >}} {{< bg "13" "postgresql-13-pg-uuidv7" "green" >}} | `postgresql-$v-pg-uuidv7` | - |
 

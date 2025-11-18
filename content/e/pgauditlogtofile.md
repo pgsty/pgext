@@ -2,7 +2,7 @@
 title: "pgauditlogtofile"
 linkTitle: "pgauditlogtofile"
 description: "pgAudit addon to redirect audit log to an independent file"
-weight: 7090
+weight: 7120
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7090** | {{< badge content="pgauditlogtofile" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< ext "pgauditlogtofile" >}} | `1.7.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7120** | {{< badge content="pgauditlogtofile" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< ext "pgauditlogtofile" >}} | `1.7.6` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgauditlogtofile` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.1` | {{< bg "18" "pgauditlogtofile_18*" "red" >}} {{< bg "17" "pgauditlogtofile_17*" "green" >}} {{< bg "16" "pgauditlogtofile_16*" "green" >}} {{< bg "15" "pgauditlogtofile_15*" "green" >}} {{< bg "14" "pgauditlogtofile_14*" "green" >}} {{< bg "13" "pgauditlogtofile_13*" "green" >}} | `pgauditlogtofile_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.1` | {{< bg "18" "postgresql-18-pgauditlogtofile" "red" >}} {{< bg "17" "postgresql-17-pgauditlogtofile" "green" >}} {{< bg "16" "postgresql-16-pgauditlogtofile" "green" >}} {{< bg "15" "postgresql-15-pgauditlogtofile" "green" >}} {{< bg "14" "postgresql-14-pgauditlogtofile" "green" >}} {{< bg "13" "postgresql-13-pgauditlogtofile" "green" >}} | `postgresql-$v-pgauditlogtofile` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgauditlogtofile` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "pgauditlogtofile_18*" "red" >}} {{< bg "17" "pgauditlogtofile_17*" "green" >}} {{< bg "16" "pgauditlogtofile_16*" "green" >}} {{< bg "15" "pgauditlogtofile_15*" "green" >}} {{< bg "14" "pgauditlogtofile_14*" "green" >}} {{< bg "13" "pgauditlogtofile_13*" "green" >}} | `pgauditlogtofile_$v*` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "postgresql-18-pgauditlogtofile" "red" >}} {{< bg "17" "postgresql-17-pgauditlogtofile" "green" >}} {{< bg "16" "postgresql-16-pgauditlogtofile" "green" >}} {{< bg "15" "postgresql-15-pgauditlogtofile" "green" >}} {{< bg "14" "postgresql-14-pgauditlogtofile" "green" >}} {{< bg "13" "postgresql-13-pgauditlogtofile" "green" >}} | `postgresql-$v-pgauditlogtofile` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -118,8 +118,8 @@ width: full
 | `pgauditlogtofile_17` | `1.6.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.5 KiB | [pgauditlogtofile_17-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgauditlogtofile_17-1.6.2-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_17` | `1.7.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.4 KiB | [pgauditlogtofile_17-1.7.6-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.6-2PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_17` | `1.7.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.1 KiB | [pgauditlogtofile_17-1.7.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.5-1PGDG.rhel9.aarch64.rpm) |
-| `pgauditlogtofile_17` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.8 KiB | [pgauditlogtofile_17-1.7.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.3-2PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_17` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.7 KiB | [pgauditlogtofile_17-1.7.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgauditlogtofile_17` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.8 KiB | [pgauditlogtofile_17-1.7.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.3-2PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_17` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.3 KiB | [pgauditlogtofile_17-1.7.1-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.1-2PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_17` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.2 KiB | [pgauditlogtofile_17-1.7.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.7.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_17` | `1.6.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.3 KiB | [pgauditlogtofile_17-1.6.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgauditlogtofile_17-1.6.4-1PGDG.rhel9.aarch64.rpm) |
@@ -171,10 +171,10 @@ width: full
 | `pgauditlogtofile_16` | `1.5.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.3 KiB | [pgauditlogtofile_16-1.5.12-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgauditlogtofile_16-1.5.12-1PGDG.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.7.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 25.6 KiB | [pgauditlogtofile_16-1.7.6-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.6-2PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 25.3 KiB | [pgauditlogtofile_16-1.7.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.5-1PGDG.rhel9.x86_64.rpm) |
-| `pgauditlogtofile_16` | `1.7.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.6 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.9 KiB | [pgauditlogtofile_16-1.7.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.3-2PGDG.rhel9.x86_64.rpm) |
-| `pgauditlogtofile_16` | `1.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [pgauditlogtofile_16-1.7.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.1-1PGDG.rhel9.x86_64.rpm) |
+| `pgauditlogtofile_16` | `1.7.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.6 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.3 KiB | [pgauditlogtofile_16-1.7.1-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.1-2PGDG.rhel9.x86_64.rpm) |
+| `pgauditlogtofile_16` | `1.7.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.4 KiB | [pgauditlogtofile_16-1.7.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.7.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.6.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.4 KiB | [pgauditlogtofile_16-1.6.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.6.4-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.6.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.4 KiB | [pgauditlogtofile_16-1.6.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.6.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.6.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.4 KiB | [pgauditlogtofile_16-1.6.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.6.2-1PGDG.rhel9.x86_64.rpm) |
@@ -182,10 +182,10 @@ width: full
 | `pgauditlogtofile_16` | `1.5.12` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.1 KiB | [pgauditlogtofile_16-1.5.12-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgauditlogtofile_16-1.5.12-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.2 KiB | [pgauditlogtofile_16-1.7.6-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.6-2PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.7.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.0 KiB | [pgauditlogtofile_16-1.7.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.5-1PGDG.rhel9.aarch64.rpm) |
-| `pgauditlogtofile_16` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.3 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.6 KiB | [pgauditlogtofile_16-1.7.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.3-2PGDG.rhel9.aarch64.rpm) |
-| `pgauditlogtofile_16` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.0 KiB | [pgauditlogtofile_16-1.7.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgauditlogtofile_16` | `1.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.3 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.1 KiB | [pgauditlogtofile_16-1.7.1-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.1-2PGDG.rhel9.aarch64.rpm) |
+| `pgauditlogtofile_16` | `1.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 24.0 KiB | [pgauditlogtofile_16-1.7.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.7.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.6.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.1 KiB | [pgauditlogtofile_16-1.6.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.6.4-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.6.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.2 KiB | [pgauditlogtofile_16-1.6.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.6.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.6.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.2 KiB | [pgauditlogtofile_16-1.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.6.2-1PGDG.rhel9.aarch64.rpm) |
@@ -193,8 +193,8 @@ width: full
 | `pgauditlogtofile_16` | `1.5.12` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.8 KiB | [pgauditlogtofile_16-1.5.12-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgauditlogtofile_16-1.5.12-1PGDG.rhel9.aarch64.rpm) |
 | `pgauditlogtofile_16` | `1.7.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.9 KiB | [pgauditlogtofile_16-1.7.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.6-2PGDG.rhel10.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.6 KiB | [pgauditlogtofile_16-1.7.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.5-1PGDG.rhel10.x86_64.rpm) |
-| `pgauditlogtofile_16` | `1.7.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.0 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.3 KiB | [pgauditlogtofile_16-1.7.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.3-2PGDG.rhel10.x86_64.rpm) |
+| `pgauditlogtofile_16` | `1.7.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.0 KiB | [pgauditlogtofile_16-1.7.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.3-1PGDG.rhel10.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.9 KiB | [pgauditlogtofile_16-1.7.1-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.1-2PGDG.rhel10.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.7.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.8 KiB | [pgauditlogtofile_16-1.7.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.7.1-1PGDG.rhel10.x86_64.rpm) |
 | `pgauditlogtofile_16` | `1.6.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.6 KiB | [pgauditlogtofile_16-1.6.4-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgauditlogtofile_16-1.6.4-3PGDG.rhel10.x86_64.rpm) |
@@ -308,8 +308,8 @@ width: full
 | `pgauditlogtofile_14` | `1.6.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 23.5 KiB | [pgauditlogtofile_14-1.6.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.6.2-1PGDG.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_14` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.8 KiB | [pgauditlogtofile_14-1.6.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.6.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_14` | `1.5.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.8 KiB | [pgauditlogtofile_14-1.5.6-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.5.6-1.rhel8.aarch64.rpm) |
-| `pgauditlogtofile_14` | `1.5.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.5 KiB | [pgauditlogtofile_14-1.5.12-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.5.12-1PGDG.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_14` | `1.5.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.6 KiB | [pgauditlogtofile_14-1.5.12-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.5.12-2PGDG.rhel8.aarch64.rpm) |
+| `pgauditlogtofile_14` | `1.5.12` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.5 KiB | [pgauditlogtofile_14-1.5.12-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.5.12-1PGDG.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_14` | `1.5.10` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.1 KiB | [pgauditlogtofile_14-1.5.10-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgauditlogtofile_14-1.5.10-1.rhel8.aarch64.rpm) |
 | `pgauditlogtofile_14` | `1.7.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.5 KiB | [pgauditlogtofile_14-1.7.6-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgauditlogtofile_14-1.7.6-1PGDG.rhel9.x86_64.rpm) |
 | `pgauditlogtofile_14` | `1.7.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.5 KiB | [pgauditlogtofile_14-1.7.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgauditlogtofile_14-1.7.5-1PGDG.rhel9.x86_64.rpm) |

@@ -2,7 +2,7 @@
 title: "sslutils"
 linkTitle: "sslutils"
 description: "A Postgres extension for managing SSL certificates through SQL"
-weight: 7200
+weight: 7410
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7200** | {{< badge content="sslutils" link="https://github.com/EnterpriseDB/sslutils" >}} | {{< ext "sslutils" >}} | `1.4` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7410** | {{< badge content="sslutils" link="https://github.com/EnterpriseDB/sslutils" >}} | {{< ext "sslutils" >}} | `1.4` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

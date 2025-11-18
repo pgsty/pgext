@@ -2,7 +2,7 @@
 title: "pgcryptokey"
 linkTitle: "pgcryptokey"
 description: "cryptographic key management"
-weight: 7120
+weight: 7320
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7120** | {{< badge content="pgcryptokey" link="https://momjian.us/download/pgcryptokey/" >}} | {{< ext "pgcryptokey" >}} | `0.85` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7320** | {{< badge content="pgcryptokey" link="https://momjian.us/download/pgcryptokey/" >}} | {{< ext "pgcryptokey" >}} | `0.85` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

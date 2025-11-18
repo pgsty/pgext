@@ -2,7 +2,7 @@
 title: "pg_auth_mon"
 linkTitle: "pg_auth_mon"
 description: "monitor connection attempts per user"
-weight: 7100
+weight: 7150
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7100** | {{< badge content="pg_auth_mon" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< ext "pg_auth_mon" >}} | `3.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **7150** | {{< badge content="pg_auth_mon" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< ext "pg_auth_mon" >}} | `3.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

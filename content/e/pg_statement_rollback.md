@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9130** | {{< badge content="pg_statement_rollback" link="https://github.com/lzlabs/pg_statement_rollback" >}} | {{< ext "pg_statement_rollback" >}} | `1.4` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+| **9130** | {{< badge content="pg_statement_rollback" link="https://github.com/lzlabs/pg_statement_rollback" >}} | {{< ext "pg_statement_rollback" >}} | `1.5` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,7 +31,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_statement_rollback` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_statement_rollback` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "pg_statement_rollback_18*" "green" >}} {{< bg "17" "pg_statement_rollback_17*" "green" >}} {{< bg "16" "pg_statement_rollback_16*" "green" >}} {{< bg "15" "pg_statement_rollback_15*" "green" >}} {{< bg "14" "pg_statement_rollback_14*" "green" >}} {{< bg "13" "pg_statement_rollback_13*" "green" >}} | `pg_statement_rollback_$v*` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-statement-rollback" "green" >}} {{< bg "17" "postgresql-17-pg-statement-rollback" "green" >}} {{< bg "16" "postgresql-16-pg-statement-rollback" "green" >}} {{< bg "15" "postgresql-15-pg-statement-rollback" "green" >}} {{< bg "14" "postgresql-14-pg-statement-rollback" "green" >}} {{< bg "13" "postgresql-13-pg-statement-rollback" "green" >}} | `postgresql-$v-pg-statement-rollback` | - |
 

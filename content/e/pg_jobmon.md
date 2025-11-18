@@ -2,7 +2,7 @@
 title: "pg_jobmon"
 linkTitle: "pg_jobmon"
 description: "Extension for logging and monitoring functions in PostgreSQL"
-weight: 7130
+weight: 7160
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7130** | {{< badge content="pg_jobmon" link="https://github.com/omniti-labs/pg_jobmon" >}} | {{< ext "pg_jobmon" >}} | `1.4.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **7160** | {{< badge content="pg_jobmon" link="https://github.com/omniti-labs/pg_jobmon" >}} | {{< ext "pg_jobmon" >}} | `1.4.1` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

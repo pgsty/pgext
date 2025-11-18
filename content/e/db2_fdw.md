@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8630** | {{< badge content="db2_fdw" link="https://github.com/wolfgangbrandl/db2_fdw" >}} | {{< ext "db2_fdw" >}} | `7.0.0` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **8630** | {{< badge content="db2_fdw" link="https://github.com/wolfgangbrandl/db2_fdw" >}} | {{< ext "db2_fdw" >}} | `18.0.1` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.0.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `db2_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.0.0` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} {{< bg "13" "db2_fdw_13*" "green" >}} | `db2_fdw_$v*` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `db2_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0.1` | {{< bg "18" "db2_fdw_18*" "red" >}} {{< bg "17" "db2_fdw_17*" "red" >}} {{< bg "16" "db2_fdw_16*" "green" >}} {{< bg "15" "db2_fdw_15*" "green" >}} {{< bg "14" "db2_fdw_14*" "green" >}} {{< bg "13" "db2_fdw_13*" "green" >}} | `db2_fdw_$v*` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -172,6 +172,8 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install db2_fdw;		# install via package name, for the active PG version
 
+pig install db2_fdw -v 18;   # install for PG 18
+pig install db2_fdw -v 17;   # install for PG 17
 pig install db2_fdw -v 16;   # install for PG 16
 pig install db2_fdw -v 15;   # install for PG 15
 pig install db2_fdw -v 14;   # install for PG 14

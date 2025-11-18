@@ -3,49 +3,13 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (431 ext in 364 pkg) categorized into 16 categories.
+PostgreSQL Extensions (437 ext in 370 pkg) categorized into 16 categories.
+
+
 
 | {{< category "time" >}} | {{< category "gis" >}}  | {{< category "rag" >}}   | {{< category "fts" >}}  | {{< category "olap" >}} | {{< category "feat" >}} | {{< category "lang" >}} | {{< category "type" >}} |
-|-------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
+|------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|-------------------------|-------------------------| 
 | {{< category "util" >}} | {{< category "func" >}} | {{< category "admin" >}} | {{< category "stat" >}} | {{< category "sec" >}}  | {{< category "fdw" >}}  | {{< category "sim" >}}  | {{< category "etl" >}}  |
-
-{{< cards cols=5 >}}
-{{< card link="/list/cate#time" title="TIME" icon="clock" subtitle="TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Scheduler, ..." >}}
-{{< card link="/list/cate#gis" title="GIS" icon="globe" subtitle="GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW, GeoIP & MobilityDB, etc..." >}}
-{{< card link="/list/cate#rag" title="RAG" icon="light-bulb" subtitle="Vector Database with IVFFLAT, HNSW, DiskANN Indexes, AI & ML in SQL interface, Similarity Funcs, etc..." >}}
-{{< card link="/list/cate#fts" title="FTS" icon="search" subtitle="ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Hunspell Segregation Dicts, etc..." >}}
-{{< card link="/list/cate#olap" title="OLAP" icon="chart-bar" subtitle="DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Sharding with Citus/Partman/PlProxy, ..." >}}
-{{< card link="/list/cate#feat" title="FEAT" icon="sparkles" subtitle="OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, ChemRDKit, and Message Queues,..." >}}
-{{< card link="/list/cate#lang" title="LANG" icon="book-open" subtitle="Develop, Test, Package, and Deliver Stored Procedures written in various PL/Languages: Java, Js, Lua, R, Sh, PRQL, ..." >}}
-{{< card link="/list/cate#type" title="TYPE" icon="cube-transparent" subtitle="Dedicate New Data Types Like: prefix, sember, uint, SIUnit, RoaringBitmap, Rational, Sphere, Hash, RRule, and more..." >}}
-{{< card link="/list/cate#util" title="UTIL" icon="cog" subtitle="Utilities such as send http request, perform gzip/zstd compress, send mails, Regex, ICU, encoding, docs, Encryption,..." >}}
-{{< card link="/list/cate#func" title="FUNC" icon="variable" subtitle="Function such as id generator, aggregations, sketches, vector functions, mathematical functions and digest functions..." >}}
-{{< card link="/list/cate#admin" title="ADMIN" icon="office-building" subtitle="Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVerify, Permission, Priority, Catalog,..." >}}
-{{< card link="/list/cate#stat" title="STAT" icon="presentation-chart-line" subtitle="Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, WaitSampling, SlowLogs, and etc..." >}}
-{{< card link="/list/cate#sec" title="SEC" icon="shield-check" subtitle="Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, Log Error, Extension White List, ..." >}}
-{{< card link="/list/cate#fdw" title="FDW" icon="document-download" subtitle="Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLite, MSSQL, Oracle, HDFS, DB2,..." >}}
-{{< card link="/list/cate#sim" title="SIM" icon="terminal" subtitle="Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQL, Memcached, and Babelfish!" >}}
-{{< card link="/list/cate#etl" title="ETL" icon="truck" subtitle="Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & Compare Postgres Databases,..." >}}
-{{< /cards >}}
-
-| **Category** | **Count** | **Packages** |
-|:------------:|:---------:|:---------------|
-| {{< category time >}} | 11 | {{< ext "timescaledb" "timescaledb" >}} {{< ext "timescaledb_toolkit" "timescaledb_toolkit" >}} {{< ext "timeseries" "pg_timeseries" >}} {{< ext "periods" "periods" >}} {{< ext "temporal_tables" "temporal_tables" >}} {{< ext "emaj" "emaj" >}} {{< ext "table_version" "table_version" >}} {{< ext "pg_cron" "pg_cron" >}} {{< ext "pg_task" "pg_task" >}} {{< ext "pg_later" "pg_later" >}} {{< ext "pg_background" "pg_background" >}} |
-| {{< category gis >}} | 12 | {{< ext "postgis" "postgis" >}} {{< ext "pgrouting" "pgrouting" >}} {{< ext "pointcloud" "pointcloud" >}} {{< ext "h3" "pg_h3" >}} {{< ext "q3c" "q3c" >}} {{< ext "ogr_fdw" "ogr_fdw" >}} {{< ext "geoip" "geoip" >}} {{< ext "pg_polyline" "pg_polyline" >}} {{< ext "pg_geohash" "pg_geohash" >}} {{< ext "mobilitydb" "mobilitydb" >}} {{< ext "tzf" "pg_tzf" >}} {{< ext "earthdistance" "earthdistance" >}} |
-| {{< category rag >}} | 10 | {{< ext "vector" "pgvector" >}} {{< ext "vchord" "vchord" >}} {{< ext "vectorscale" "pgvectorscale" >}} {{< ext "vectorize" "pg_vectorize" >}} {{< ext "pg_similarity" "pg_similarity" >}} {{< ext "smlar" "smlar" >}} {{< ext "pg_summarize" "pg_summarize" >}} {{< ext "pg_tiktoken" "pg_tiktoken" >}} {{< ext "pg4ml" "pg4ml" >}} {{< ext "pgml" "pgml" >}} |
-| {{< category fts >}} | 19 | {{< ext "pg_search" "pg_search" >}} {{< ext "pgroonga" "pgroonga" >}} {{< ext "pg_bigm" "pg_bigm" >}} {{< ext "zhparser" "zhparser" >}} {{< ext "pg_bestmatch" "pg_bestmatch" >}} {{< ext "vchord_bm25" "vchord_bm25" >}} {{< ext "pg_tokenizer" "pg_tokenizer" >}} {{< ext "hunspell_cs_cz" "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" "hunspell_de_de" >}} {{< ext "hunspell_en_us" "hunspell_en_us" >}} {{< ext "hunspell_fr" "hunspell_fr" >}} {{< ext "hunspell_ne_np" "hunspell_ne_np" >}} {{< ext "hunspell_nl_nl" "hunspell_nl_nl" >}} {{< ext "hunspell_nn_no" "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" "hunspell_ru_ru" >}} {{< ext "hunspell_ru_ru_aot" "hunspell_ru_ru_aot" >}} {{< ext "fuzzystrmatch" "fuzzystrmatch" >}} {{< ext "pg_trgm" "pg_trgm" >}} |
-| {{< category olap >}} | 12 | {{< ext "citus" "citus" >}} {{< ext "columnar" "hydra" >}} {{< ext "pg_analytics" "pg_analytics" >}} {{< ext "pg_duckdb" "pg_duckdb" >}} {{< ext "pg_mooncake" "pg_mooncake" >}} {{< ext "duckdb_fdw" "duckdb_fdw" >}} {{< ext "pg_parquet" "pg_parquet" >}} {{< ext "pg_fkpart" "pg_fkpart" >}} {{< ext "pg_partman" "pg_partman" >}} {{< ext "plproxy" "plproxy" >}} {{< ext "pg_strom" "pg_strom" >}} {{< ext "tablefunc" "tablefunc" >}} |
-| {{< category feat >}} | 20 | {{< ext "age" "age" >}} {{< ext "hll" "hll" >}} {{< ext "rum" "rum" >}} {{< ext "pg_graphql" "pg_graphql" >}} {{< ext "pg_jsonschema" "pg_jsonschema" >}} {{< ext "jsquery" "jsquery" >}} {{< ext "pg_hint_plan" "pg_hint_plan" >}} {{< ext "hypopg" "hypopg" >}} {{< ext "index_advisor" "index_advisor" >}} {{< ext "plan_filter" "pg_plan_filter" >}} {{< ext "imgsmlr" "imgsmlr" >}} {{< ext "pg_ivm" "pg_ivm" >}} {{< ext "pg_incremental" "pg_incremental" >}} {{< ext "pgmq" "pgmq" >}} {{< ext "pgq" "pgq" >}} {{< ext "orioledb" "orioledb" >}} {{< ext "pg_cardano" "pg_cardano" >}} {{< ext "rdkit" "rdkit" >}} {{< ext "omni" "omnigres" >}} {{< ext "bloom" "bloom" >}} |
-| {{< category lang >}} | 20 | {{< ext "pg_tle" "pg_tle" >}} {{< ext "plv8" "plv8" >}} {{< ext "pljs" "pljs" >}} {{< ext "pllua" "pllua" >}} {{< ext "plprql" "plprql" >}} {{< ext "pldbgapi" "pldebugger" >}} {{< ext "plpgsql_check" "plpgsql_check" >}} {{< ext "plprofiler" "plprofiler" >}} {{< ext "plsh" "plsh" >}} {{< ext "pljava" "pljava" >}} {{< ext "plr" "plr" >}} {{< ext "plxslt" "plxslt" >}} {{< ext "pgtap" "pgtap" >}} {{< ext "faker" "faker" >}} {{< ext "dbt2" "dbt2" >}} {{< ext "pltcl" "pltcl" >}} {{< ext "plperl" "plperl" >}} {{< ext "plperlu" "plperlu" >}} {{< ext "plpgsql" "plpgsql" >}} {{< ext "plpython3u" "plpython3u" >}} |
-| {{< category type >}} | 36 | {{< ext "prefix" "pg_prefix" >}} {{< ext "semver" "pg_semver" >}} {{< ext "unit" "pgunit" >}} {{< ext "pgpdf" "pgpdf" >}} {{< ext "pglite_fusion" "pglite_fusion" >}} {{< ext "md5hash" "md5hash" >}} {{< ext "asn1oid" "asn1oid" >}} {{< ext "roaringbitmap" "pg_roaringbitmap" >}} {{< ext "pgfaceting" "pgfaceting" >}} {{< ext "pg_sphere" "pgsphere" >}} {{< ext "country" "pg_country" >}} {{< ext "pg_xenophile" "pg_xenophile" >}} {{< ext "currency" "pg_currency" >}} {{< ext "collection" "pgcollection" >}} {{< ext "pgmp" "pgmp" >}} {{< ext "numeral" "numeral" >}} {{< ext "pg_rational" "pg_rational" >}} {{< ext "uint" "pguint" >}} {{< ext "uint128" "pg_uint128" >}} {{< ext "hashtypes" "hashtypes" >}} {{< ext "ip4r" "ip4r" >}} {{< ext "pg_duration" "pg_duration" >}} {{< ext "uri" "pg_uri" >}} {{< ext "emailaddr" "pg_emailaddr" >}} {{< ext "acl" "pg_acl" >}} {{< ext "debversion" "debversion" >}} {{< ext "pg_rrule" "pg_rrule" >}} {{< ext "timestamp9" "timestamp9" >}} {{< ext "chkpass" "chkpass" >}} {{< ext "isn" "isn" >}} {{< ext "seg" "seg" >}} {{< ext "cube" "cube" >}} {{< ext "ltree" "ltree" >}} {{< ext "hstore" "hstore" >}} {{< ext "citext" "citext" >}} {{< ext "xml2" "xml2" >}} |
-| {{< category util >}} | 30 | {{< ext "gzip" "pg_gzip" >}} {{< ext "bzip" "pg_bzip" >}} {{< ext "zstd" "pg_zstd" >}} {{< ext "http" "pg_http" >}} {{< ext "pg_net" "pg_net" >}} {{< ext "pg_curl" "pg_curl" >}} {{< ext "pgjq" "pgjq" >}} {{< ext "pgjwt" "pgjwt" >}} {{< ext "pg_smtp_client" "pg_smtp_client" >}} {{< ext "pg_html5_email_address" "pg_html5_email_address" >}} {{< ext "url_encode" "url_encode" >}} {{< ext "pgsql_tweaks" "pgsql_tweaks" >}} {{< ext "pg_extra_time" "pg_extra_time" >}} {{< ext "pgpcre" "pgpcre" >}} {{< ext "icu_ext" "icu_ext" >}} {{< ext "pgqr" "pgqr" >}} {{< ext "pg_protobuf" "pg_protobuf" >}} {{< ext "envvar" "pg_envvar" >}} {{< ext "floatfile" "floatfile" >}} {{< ext "pg_render" "pg_render" >}} {{< ext "pg_readme" "pg_readme" >}} {{< ext "ddl_historization" "ddl_historization" >}} {{< ext "data_historization" "data_historization" >}} {{< ext "schedoc" "pg_schedoc" >}} {{< ext "hashlib" "pg_hashlib" >}} {{< ext "xxhash" "pg_xxhash" >}} {{< ext "shacrypt" "shacrypt" >}} {{< ext "cryptint" "cryptint" >}} {{< ext "pguecc" "pg_ecdsa" >}} {{< ext "sparql" "pgsparql" >}} |
-| {{< category func >}} | 44 | {{< ext "omnisketch" "omnisketch" >}} {{< ext "pg_idkit" "pg_idkit" >}} {{< ext "pgx_ulid" "pgx_ulid" >}} {{< ext "pg_uuidv7" "pg_uuidv7" >}} {{< ext "permuteseq" "permuteseq" >}} {{< ext "pg_hashids" "pg_hashids" >}} {{< ext "sequential_uuids" "sequential_uuids" >}} {{< ext "topn" "topn" >}} {{< ext "quantile" "quantile" >}} {{< ext "lower_quantile" "lower_quantile" >}} {{< ext "count_distinct" "count_distinct" >}} {{< ext "ddsketch" "ddsketch" >}} {{< ext "vasco" "vasco" >}} {{< ext "xicor" "pgxicor" >}} {{< ext "tdigest" "tdigest" >}} {{< ext "first_last_agg" "first_last_agg" >}} {{< ext "extra_window_functions" "extra_window_functions" >}} {{< ext "floatvec" "floatvec" >}} {{< ext "aggs_for_vecs" "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" "aggs_for_arrays" >}} {{< ext "pg_csv" "pg_csv" >}} {{< ext "arraymath" "pg_arraymath" >}} {{< ext "pg_math" "pg_math" >}} {{< ext "random" "pg_random" >}} {{< ext "base36" "pg_base36" >}} {{< ext "base62" "pg_base62" >}} {{< ext "pg_base58" "pg_base58" >}} {{< ext "financial" "pg_financial" >}} {{< ext "convert" "pg_convert" >}} {{< ext "refint" "refint" >}} {{< ext "autoinc" "autoinc" >}} {{< ext "insert_username" "insert_username" >}} {{< ext "moddatetime" "moddatetime" >}} {{< ext "tsm_system_time" "tsm_system_time" >}} {{< ext "dict_xsyn" "dict_xsyn" >}} {{< ext "tsm_system_rows" "tsm_system_rows" >}} {{< ext "tcn" "tcn" >}} {{< ext "uuid-ossp" "uuid-ossp" >}} {{< ext "btree_gist" "btree_gist" >}} {{< ext "btree_gin" "btree_gin" >}} {{< ext "intarray" "intarray" >}} {{< ext "intagg" "intagg" >}} {{< ext "dict_int" "dict_int" >}} {{< ext "unaccent" "unaccent" >}} |
-| {{< category admin >}} | 35 | {{< ext "pg_repack" "pg_repack" >}} {{< ext "pg_rewrite" "pg_rewrite" >}} {{< ext "pg_squeeze" "pg_squeeze" >}} {{< ext "pg_dirtyread" "pg_dirtyread" >}} {{< ext "pgfincore" "pgfincore" >}} {{< ext "pg_cooldown" "pg_cooldown" >}} {{< ext "ddlx" "pg_ddlx" >}} {{< ext "prioritize" "pg_prioritize" >}} {{< ext "pg_checksums" "pg_checksums" >}} {{< ext "pg_readonly" "pg_readonly" >}} {{< ext "pgdd" "pgdd" >}} {{< ext "pg_permissions" "pg_permissions" >}} {{< ext "pgautofailover" "pgautofailover" >}} {{< ext "pg_catcheck" "pg_catcheck" >}} {{< ext "pre_prepare" "preprepare" >}} {{< ext "pg_upless" "pg_upless" >}} {{< ext "pgcozy" "pgcozy" >}} {{< ext "pg_orphaned" "pg_orphaned" >}} {{< ext "pg_crash" "pg_crash" >}} {{< ext "pg_cheat_funcs" "pg_cheat_funcs" >}} {{< ext "fio" "pg_fio" >}} {{< ext "pg_savior" "pg_savior" >}} {{< ext "safeupdate" "safeupdate" >}} {{< ext "pg_drop_events" "pg_drop_events" >}} {{< ext "table_log" "table_log" >}} {{< ext "pgagent" "pgagent" >}} {{< ext "pg_prewarm" "pg_prewarm" >}} {{< ext "pgpool_adm" "pgpool" >}} {{< ext "lo" "lo" >}} {{< ext "basic_archive" "basic_archive" >}} {{< ext "basebackup_to_shell" "basebackup_to_shell" >}} {{< ext "old_snapshot" "old_snapshot" >}} {{< ext "adminpack" "adminpack" >}} {{< ext "amcheck" "amcheck" >}} {{< ext "pg_surgery" "pg_surgery" >}} |
-| {{< category stat >}} | 33 | {{< ext "pg_profile" "pg_profile" >}} {{< ext "pg_tracing" "pg_tracing" >}} {{< ext "pg_show_plans" "pg_show_plans" >}} {{< ext "pg_stat_kcache" "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" "pg_stat_monitor" >}} {{< ext "pg_qualstats" "pg_qualstats" >}} {{< ext "pg_store_plans" "pg_store_plans" >}} {{< ext "pg_track_settings" "pg_track_settings" >}} {{< ext "pg_wait_sampling" "pg_wait_sampling" >}} {{< ext "pgsentinel" "pgsentinel" >}} {{< ext "system_stats" "system_stats" >}} {{< ext "meta" "pg_meta" >}} {{< ext "pgnodemx" "pgnodemx" >}} {{< ext "pg_sqlog" "pg_sqlog" >}} {{< ext "bgw_replstatus" "bgw_replstatus" >}} {{< ext "pgmeminfo" "pgmeminfo" >}} {{< ext "toastinfo" "toastinfo" >}} {{< ext "explain_ui" "pg_explain_ui" >}} {{< ext "pg_relusage" "pg_relusage" >}} {{< ext "pagevis" "pagevis" >}} {{< ext "powa" "powa" >}} {{< ext "pg_overexplain" "pg_overexplain" >}} {{< ext "pg_logicalinspect" "pg_logicalinspect" >}} {{< ext "pageinspect" "pageinspect" >}} {{< ext "pgrowlocks" "pgrowlocks" >}} {{< ext "sslinfo" "sslinfo" >}} {{< ext "pg_buffercache" "pg_buffercache" >}} {{< ext "pg_walinspect" "pg_walinspect" >}} {{< ext "pg_freespacemap" "pg_freespacemap" >}} {{< ext "pg_visibility" "pg_visibility" >}} {{< ext "pgstattuple" "pgstattuple" >}} {{< ext "auto_explain" "auto_explain" >}} {{< ext "pg_stat_statements" "pg_stat_statements" >}} |
-| {{< category sec >}} | 26 | {{< ext "passwordcheck_cracklib" "passwordcheck_cracklib" >}} {{< ext "supautils" "supautils" >}} {{< ext "pgsodium" "pgsodium" >}} {{< ext "supabase_vault" "pg_vault" >}} {{< ext "pg_session_jwt" "pg_session_jwt" >}} {{< ext "anon" "pg_anon" >}} {{< ext "pg_tde" "pg_tde" >}} {{< ext "pgsmcrypto" "pgsmcrypto" >}} {{< ext "pgaudit" "pgaudit" >}} {{< ext "pgauditlogtofile" "pgauditlogtofile" >}} {{< ext "pg_auth_mon" "pg_auth_mon" >}} {{< ext "credcheck" "credcheck" >}} {{< ext "pgcryptokey" "pgcryptokey" >}} {{< ext "pg_jobmon" "pg_jobmon" >}} {{< ext "logerrors" "logerrors" >}} {{< ext "login_hook" "login_hook" >}} {{< ext "set_user" "set_user" >}} {{< ext "pg_snakeoil" "pg_snakeoil" >}} {{< ext "pgextwlist" "pgextwlist" >}} {{< ext "pg_auditor" "pg_auditor" >}} {{< ext "sslutils" "sslutils" >}} {{< ext "noset" "pg_noset" >}} {{< ext "sepgsql" "sepgsql" >}} {{< ext "auth_delay" "auth_delay" >}} {{< ext "pgcrypto" "pgcrypto" >}} {{< ext "passwordcheck" "passwordcheck" >}} |
-| {{< category fdw >}} | 22 | {{< ext "wrappers" "wrappers" >}} {{< ext "multicorn" "multicorn" >}} {{< ext "odbc_fdw" "odbc_fdw" >}} {{< ext "jdbc_fdw" "jdbc_fdw" >}} {{< ext "pgspider_ext" "pgspider_ext" >}} {{< ext "mysql_fdw" "mysql_fdw" >}} {{< ext "oracle_fdw" "oracle_fdw" >}} {{< ext "tds_fdw" "tds_fdw" >}} {{< ext "db2_fdw" "db2_fdw" >}} {{< ext "sqlite_fdw" "sqlite_fdw" >}} {{< ext "pgbouncer_fdw" "pgbouncer_fdw" >}} {{< ext "mongo_fdw" "mongo_fdw" >}} {{< ext "redis_fdw" "redis_fdw" >}} {{< ext "redis" "pg_redis_pubsub" >}} {{< ext "kafka_fdw" "kafka_fdw" >}} {{< ext "hdfs_fdw" "hdfs_fdw" >}} {{< ext "firebird_fdw" "firebird_fdw" >}} {{< ext "aws_s3" "aws_s3" >}} {{< ext "log_fdw" "log_fdw" >}} {{< ext "dblink" "dblink" >}} {{< ext "file_fdw" "file_fdw" >}} {{< ext "postgres_fdw" "postgres_fdw" >}} |
-| {{< category sim >}} | 15 | {{< ext "documentdb" "documentdb" >}} {{< ext "orafce" "orafce" >}} {{< ext "pgtt" "pgtt" >}} {{< ext "session_variable" "session_variable" >}} {{< ext "pg_statement_rollback" "pg_statement_rollback" >}} {{< ext "pg_dbms_metadata" "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" "pg_dbms_lock" >}} {{< ext "pg_dbms_job" "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" "pg_dbms_errlog" >}} {{< ext "babelfishpg_common" "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" "babelfishpg_tds" >}} {{< ext "babelfishpg_money" "babelfishpg_money" >}} {{< ext "spat" "spat" >}} {{< ext "pgmemcache" "pgmemcache" >}} |
-| {{< category etl >}} | 16 | {{< ext "pglogical" "pglogical" >}} {{< ext "pglogical_ticker" "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" "pgl_ddl_deploy" >}} {{< ext "pg_failover_slots" "pg_failover_slots" >}} {{< ext "db_migrator" "db_migrator" >}} {{< ext "pgactive" "pgactive" >}} {{< ext "wal2json" "wal2json" >}} {{< ext "wal2mongo" "wal2mongo" >}} {{< ext "decoderbufs" "decoderbufs" >}} {{< ext "decoder_raw" "decoder_raw" >}} {{< ext "mimeo" "mimeo" >}} {{< ext "repmgr" "repmgr" >}} {{< ext "pg_fact_loader" "pg_fact_loader" >}} {{< ext "pg_bulkload" "pg_bulkload" >}} {{< ext "test_decoding" "test_decoding" >}} {{< ext "pgoutput" "pgoutput" >}} |
 
 
 ## TIME
@@ -54,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.23.0 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.23.1 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.7 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -63,7 +27,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1060 | {{< alias "table_version" >}} | 1.11.1 | PostgreSQL table versioning extension |
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | Job scheduler for PostgreSQL |
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | execute any sql command at any specific time at background |
-| 1090 | {{< alias "pg_later" >}} | 0.3.1 | Run queries now and get results later |
+| 1090 | {{< alias "pg_later" >}} | 0.4.0 | Run queries now and get results later |
 | 1100 | {{< alias "pg_background" >}} | 1.5 | Run SQL queries in the background |
 
 ## GIS
@@ -72,13 +36,13 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.0 | PostGIS geometry and geography spatial types and functions |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.0 | PostGIS topology spatial types and functions |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.0 | PostGIS raster types and functions |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.0 | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.0 | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.0 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.0 | Address Standardizer US dataset example |
+| 1500 | {{< alias "postgis" >}} | 3.6.1 | PostGIS geometry and geography spatial types and functions |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.1 | PostGIS topology spatial types and functions |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.1 | PostGIS raster types and functions |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.1 | PostGIS SFCGAL functions |
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.1 | PostGIS tiger geocoder and reverse geocoder |
+| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.1 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.1 | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | 3.8.0 | pgRouting Extension |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
@@ -100,8 +64,8 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | vector data type and ivfflat and hnsw access methods |
-| 1810 | {{< alias "vchord" >}} | 0.5.3 | Vector database plugin for Postgres, written in Rust |
-| 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.8.0 | Advanced indexing for vector data with DiskANN |
+| 1810 | {{< alias "vchord" >}} | 1.0.0 | Vector database plugin for Postgres, written in Rust |
+| 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.25.0 | The simplest way to do vector search on Postgres |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | support similarity queries |
 | 1850 | {{< alias "smlar" >}} | 1.0 | Effective similarity search |
@@ -116,7 +80,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.19.3 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.19.7 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -124,18 +88,19 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.2.2 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
-| 2170 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
-| 2171 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
-| 2172 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
-| 2173 | {{< alias "hunspell_fr" >}} | 1.0 | French Hunspell Dictionary |
-| 2174 | {{< alias "hunspell_ne_np" >}} | 1.0 | Nepali Hunspell Dictionary |
-| 2175 | {{< alias "hunspell_nl_nl" >}} | 1.0 | Dutch Hunspell Dictionary |
-| 2176 | {{< alias "hunspell_nn_no" >}} | 1.0 | Norwegian (norsk) Hunspell Dictionary |
-| 2177 | {{< alias "hunspell_pt_pt" >}} | 1.0 | Portuguese Hunspell Dictionary |
-| 2178 | {{< alias "hunspell_ru_ru" >}} | 1.0 | Russian Hunspell Dictionary |
-| 2179 | {{< alias "hunspell_ru_ru_aot" >}} | 1.0 | Russian Hunspell Dictionary (from AOT.ru group) |
-| 2180 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
-| 2190 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
+| 2170 | {{< alias "pg_biscuit" >}} | 1.0 | IAM-LIKE pattern matching with bitmap indexing |
+| 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
+| 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
+| 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
+| 2273 | {{< alias "hunspell_fr" >}} | 1.0 | French Hunspell Dictionary |
+| 2274 | {{< alias "hunspell_ne_np" >}} | 1.0 | Nepali Hunspell Dictionary |
+| 2275 | {{< alias "hunspell_nl_nl" >}} | 1.0 | Dutch Hunspell Dictionary |
+| 2276 | {{< alias "hunspell_nn_no" >}} | 1.0 | Norwegian (norsk) Hunspell Dictionary |
+| 2277 | {{< alias "hunspell_pt_pt" >}} | 1.0 | Portuguese Hunspell Dictionary |
+| 2278 | {{< alias "hunspell_ru_ru" >}} | 1.0 | Russian Hunspell Dictionary |
+| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | 1.0 | Russian Hunspell Dictionary (from AOT.ru group) |
+| 2380 | {{< alias "fuzzystrmatch" >}} | 1.2 | determine similarities and distance between strings |
+| 2390 | {{< alias "pg_trgm" >}} | 1.6 | text similarity measurement and index searching based on trigrams |
 
 ## OLAP
 
@@ -164,7 +129,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 2760 | {{< alias "age" >}} | 1.5.0 | AGE graph database extension |
-| 2770 | {{< alias "hll" >}} | 2.18 | type for storing hyperloglog data |
+| 2770 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2780 | {{< alias "rum" >}} | 1.3.14 | RUM index access method |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | PostgreSQL extension providing JSON Schema validation |
@@ -244,7 +209,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
 | 3100 | {{< alias "plr" >}} | 8.4.8 | load R interpreter and execute R script from within a database |
 | 3110 | {{< alias "plxslt" >}} | 0.20140221 | XSLT procedural language for PostgreSQL |
-| 3200 | {{< alias "pgtap" >}} | 1.3.3 | Unit testing for PostgreSQL |
+| 3200 | {{< alias "pgtap" >}} | 1.3.4 | Unit testing for PostgreSQL |
 | 3210 | {{< alias "faker" >}} | 0.5.3 | Wrapper for the Faker Python library |
 | 3220 | {{< alias "dbt2" >}} | 0.61.7 | OSDL-DBT-2 test kit |
 | 3240 | {{< alias "pltcl" >}} | 1.0 | PL/Tcl procedural language |
@@ -273,10 +238,10 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3510 | {{< alias "semver" "pg_semver" >}} | 0.40.0 | Semantic version data type |
 | 3520 | {{< alias "unit" "pgunit" >}} | 7.10 | SI units extension |
 | 3530 | {{< alias "pgpdf" >}} | 0.1.0 | PDF type with meta admin & Full-Text Search |
-| 3540 | {{< alias "pglite_fusion" >}} | 0.0.5 | Embed an SQLite database in your PostgreSQL table |
+| 3540 | {{< alias "pglite_fusion" >}} | 0.0.6 | Embed an SQLite database in your PostgreSQL table |
 | 3550 | {{< alias "md5hash" >}} | 1.0.1 | type for storing 128-bit binary data inline |
 | 3560 | {{< alias "asn1oid" >}} | 1.6 | asn1oid extension |
-| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 0.5.5 | support for Roaring Bitmaps |
+| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 1.1.0 | support for Roaring Bitmaps |
 | 3580 | {{< alias "pgfaceting" >}} | 0.2.0 | fast faceting queries using an inverted index |
 | 3590 | {{< alias "pg_sphere" "pgsphere" >}} | 1.5.2 | spherical objects with useful functions, operators and index support |
 | 3600 | {{< alias "country" "pg_country" >}} | 0.0.3 | Country data type, ISO 3166-1 |
@@ -319,6 +284,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4070 | {{< alias "http" "pg_http" >}} | 1.7.0 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
 | 4080 | {{< alias "pg_net" >}} | 0.20.0 | Async HTTP Requests |
 | 4090 | {{< alias "pg_curl" >}} | 2.4.5 | Run curl actions for data transfer in URL syntax |
+| 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | Use jq in Postgres |
 | 4160 | {{< alias "pgjwt" >}} | 0.2.0 | JSON Web Token API for Postgresql |
 | 4170 | {{< alias "pg_smtp_client" >}} | 0.2.1 | PostgreSQL extension to send email using SMTP |
@@ -351,20 +317,22 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2980 | {{< alias "omnisketch" >}} | 1.0.2 | data structure for on-line agg of data into approximate sketch |
 | 4500 | {{< alias "pg_idkit" >}} | 0.4.0 | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
-| 4510 | {{< alias "pgx_ulid" >}} | 0.2.1 | ulid type and methods |
-| 4540 | {{< alias "pg_uuidv7" >}} | 1.6.0 | Create UUIDv7 values in postgres |
+| 4510 | {{< alias "pgx_ulid" >}} | 0.2.2 | ulid type and methods |
+| 4540 | {{< alias "pg_uuidv7" >}} | 1.7.0 | Create UUIDv7 values in postgres |
 | 4550 | {{< alias "permuteseq" >}} | 1.2.2 | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | 4560 | {{< alias "pg_hashids" >}} | 1.3 | Short unique id generator for PostgreSQL, using hashids |
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | generator of sequential UUIDs |
+| 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | Allows to use TypeIDs in Postgres natively |
 | 4600 | {{< alias "topn" >}} | 2.7.0 | type for top-n JSONB |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower quantile aggregate function |
 | 4630 | {{< alias "count_distinct" >}} | 3.0.2 | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
+| 4640 | {{< alias "omnisketch" >}} | 1.0.2 | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | 1.0.1 | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | 0.1.0 | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.0 | XI Correlation Coefficient in Postgres |
+| 4680 | {{< alias "pg_weighted_statistics" >}} | 1.0.0 | High-performance weighted statistics functions for sparse data |
 | 4700 | {{< alias "tdigest" >}} | 1.4.3 | Provides tdigest aggregate function. |
 | 4710 | {{< alias "first_last_agg" >}} | 0.1.4 | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | 1.0 | Extra Window Functions for PostgreSQL |
@@ -402,14 +370,15 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 5010 | {{< alias "pg_repack" >}} | 1.5.2 | Reorganize tables in PostgreSQL databases with minimal locks |
+| 5010 | {{< alias "pg_repack" >}} | 1.5.3 | Reorganize tables in PostgreSQL databases with minimal locks |
 | 5020 | {{< alias "pg_rewrite" >}} | 2.0.0 | Tool allows read write to the table during the rewriting |
-| 5040 | {{< alias "pg_squeeze" >}} | 1.9.0 | A tool to remove unused space from a relation. |
+| 5040 | {{< alias "pg_squeeze" >}} | 1.9.1 | A tool to remove unused space from a relation. |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.7 | Read dead but unvacuumed rows from table |
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | DDL eXtractor functions |
-| 5090 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
+| 5090 | {{< alias "pglinter" >}} | 1.0.0 | PostgreSQL Linting and Analysis Extension |
+| 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.3 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.0 | Introspect pg data dictionary via standard SQL |
@@ -446,16 +415,16 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 6000 | {{< alias "pg_profile" >}} | 4.10 | PostgreSQL load profile repository and report builder |
+| 6000 | {{< alias "pg_profile" >}} | 4.11 | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.7 | show query plans of all currently running SQL statements |
-| 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.0 | Kernel statistics gathering |
+| 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.2.0 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
-| 6240 | {{< alias "pg_qualstats" >}} | 2.1.2 | An extension collecting statistics about quals |
+| 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | track plan statistics of all SQL statements executed |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | Track settings changes |
 | 6270 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | sampling based statistics of wait events |
-| 6280 | {{< alias "pgsentinel" >}} | 1.2.0 | active session history |
+| 6280 | {{< alias "pgsentinel" >}} | 1.3.0 | active session history |
 | 6290 | {{< alias "system_stats" >}} | 3.2 | EnterpriseDB system statistics for PostgreSQL |
 | 6300 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | Normalized, friendlier system catalog for PostgreSQL |
 | 6310 | {{< alias "pgnodemx" >}} | 1.7 | Capture node OS metrics via SQL queries |
@@ -493,22 +462,23 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.3.3 | Manage authentication sessions using JWTs |
 | 7050 | {{< alias "anon" "pg_anon" >}} | 2.4.1 | PostgreSQL Anonymizer (anon) extension |
-| 7060 | {{< alias "pg_tde" >}} | 1.0 | Percona pg_tde access method |
-| 7070 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
-| 7080 | {{< alias "pgaudit" >}} | 17.1 | provides auditing functionality |
-| 7090 | {{< alias "pgauditlogtofile" >}} | 1.7.1 | pgAudit addon to redirect audit log to an independent file |
-| 7100 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
-| 7110 | {{< alias "credcheck" >}} | 4.2 | credcheck - postgresql plain text credential checker |
-| 7120 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
-| 7130 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
+| 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
+| 7070 | {{< alias "pg_enigma" >}} | 0.4.0 | Encrypted postgres data type |
+| 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |
+| 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.6 | pgAudit addon to redirect audit log to an independent file |
+| 7130 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
-| 7150 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
-| 7160 | {{< alias "set_user" >}} | 4.1.0 | similar to SET ROLE but with added logging |
-| 7170 | {{< alias "pg_snakeoil" >}} | 1.4 | The PostgreSQL Antivirus |
-| 7180 | {{< alias "pgextwlist" >}} | 1.19 | PostgreSQL Extension Whitelisting |
-| 7190 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
-| 7200 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
-| 7210 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | Module for blocking SET variables for non-super users. |
+| 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
+| 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
+| 7310 | {{< alias "credcheck" >}} | 4.2 | credcheck - postgresql plain text credential checker |
+| 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
+| 7360 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
+| 7370 | {{< alias "set_user" >}} | 4.2.0 | similar to SET ROLE but with added logging |
+| 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | The PostgreSQL Antivirus |
+| 7390 | {{< alias "pgextwlist" >}} | 1.19 | PostgreSQL Extension Whitelisting |
+| 7410 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
+| 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | Module for blocking SET variables for non-super users. |
+| 7500 | {{< alias "pg_tde" >}} | 1.0 | Percona pg_tde access method |
 | 7960 | {{< alias "sepgsql" >}} | - | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | - | pause briefly before reporting authentication failure |
 | 7980 | {{< alias "pgcrypto" >}} | 1.3 | cryptographic functions |
@@ -523,19 +493,19 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8500 | {{< alias "wrappers" >}} | 0.5.6 | Foreign data wrappers developed by Supabase |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | Fetch foreign data in Python in your PostgreSQL server. |
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | Foreign data wrapper for accessing remote databases using ODBC |
-| 8530 | {{< alias "jdbc_fdw" >}} | 1.2 | foreign-data wrapper for remote servers available over JDBC |
+| 8530 | {{< alias "jdbc_fdw" >}} | 0.4.0 | foreign-data wrapper for remote servers available over JDBC |
 | 8540 | {{< alias "pgspider_ext" >}} | 1.3.0 | foreign-data wrapper for remote PGSpider servers |
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | Foreign data wrapper for querying a MySQL server |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.8.0 | foreign data wrapper for Oracle access |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
-| 8630 | {{< alias "db2_fdw" >}} | 7.0.0 | foreign data wrapper for DB2 access |
+| 8630 | {{< alias "db2_fdw" >}} | 18.0.1 | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite Foreign Data Wrapper |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | kafka Foreign Data Wrapper for CSV formatted messages |
-| 8740 | {{< alias "hdfs_fdw" >}} | 2.3.2 | foreign-data wrapper for remote hdfs servers |
+| 8740 | {{< alias "hdfs_fdw" >}} | 2.3.3 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.1 | Foreign data wrapper for Firebird |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.4 | foreign-data wrapper for Postgres log file access |
@@ -552,10 +522,10 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9000 | {{< alias "documentdb" >}} | 0.106 | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.106 | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.106 | Multi-Node API surface for DocumentDB |
-| 9100 | {{< alias "orafce" >}} | 4.14.6 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| 9100 | {{< alias "orafce" >}} | 4.16.2 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
-| 9130 | {{< alias "pg_statement_rollback" >}} | 1.4 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
@@ -582,7 +552,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
-| 9650 | {{< alias "decoderbufs" >}} | 3.2.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| 9650 | {{< alias "decoderbufs" >}} | 3.3.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | Replication manager for PostgreSQL |

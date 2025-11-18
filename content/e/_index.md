@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-There are 431 available PostgreSQL extensions:
+There are 437 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -43,7 +43,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "earthdistance" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "GIS" >}} | calculate great-circle distances on the surface of the Earth |
 | {{< ext "vector" "pgvector" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | vector data type and ivfflat and hnsw access methods |
 | {{< ext "vchord" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "RAG" >}} | Vector database plugin for Postgres, written in Rust |
-| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Advanced indexing for vector data with DiskANN |
+| {{< ext "vectorscale" "pgvectorscale" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | Advanced indexing for vector data with DiskANN |
 | {{< ext "vectorize" "pg_vectorize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | The simplest way to do vector search on Postgres |
 | {{< ext "pg_similarity" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | support similarity queries |
 | {{< ext "smlar" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "RAG" >}} | Effective similarity search |
@@ -59,6 +59,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "pg_bestmatch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | {{< ext "vchord_bm25" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | A postgresql extension for bm25 ranking algorithm |
 | {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FTS" >}} | Tokenizers for full-text search |
+| {{< ext "pg_biscuit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | IAM-LIKE pattern matching with bitmap indexing |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Czech Hunspell Dictionary |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | German Hunspell Dictionary |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | en_US Hunspell Dictionary |
@@ -142,7 +143,6 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "omni_worker" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generalized worker pool |
 | {{< ext "omni_xml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | XML toolkit |
 | {{< ext "omni_yaml" "omnigres" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | YAML toolkit |
-| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | data structure for on-line agg of data into approximate sketch |
 | {{< ext "bloom" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | {{< category "FEAT" >}} | bloom access method - signature file based index |
 | {{< ext "pg_tle" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "LANG" >}} | Trusted Language Extensions for PostgreSQL |
 | {{< ext "plv8" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "LANG" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -220,6 +220,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "http" "pg_http" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
 | {{< ext "pg_net" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "UTIL" >}} | Async HTTP Requests |
 | {{< ext "pg_curl" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Run curl actions for data transfer in URL syntax |
+| {{< ext "pg_retry" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Retry SQL statements on transient errors with exponential backoff |
 | {{< ext "pgjq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | Use jq in Postgres |
 | {{< ext "pgjwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | JSON Web Token API for Postgresql |
 | {{< ext "pg_smtp_client" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "UTIL" >}} | PostgreSQL extension to send email using SMTP |
@@ -251,13 +252,16 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "permuteseq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Short unique id generator for PostgreSQL, using hashids |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | generator of sequential UUIDs |
+| {{< ext "typeid" "pg_typeid" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Allows to use TypeIDs in Postgres natively |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | type for top-n JSONB |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Quantile aggregation function |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Lower quantile aggregate function |
 | {{< ext "count_distinct" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | An alternative to COUNT(DISTINCT …) aggregate, usable with HashAggregate |
+| {{< ext "omnisketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | data structure for on-line agg of data into approximate sketch |
 | {{< ext "ddsketch" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides ddsketch aggregate function |
 | {{< ext "vasco" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | discover hidden correlations in your data with MIC |
 | {{< ext "xicor" "pgxicor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | XI Correlation Coefficient in Postgres |
+| {{< ext "pg_weighted_statistics" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FUNC" >}} | High-performance weighted statistics functions for sparse data |
 | {{< ext "tdigest" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Provides tdigest aggregate function. |
 | {{< ext "first_last_agg" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | first() and last() aggregate functions |
 | {{< ext "extra_window_functions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Extra Window Functions for PostgreSQL |
@@ -295,6 +299,7 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | examine and manage the os buffer cache |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | remove buffered pages for specific relations |
 | {{< ext "ddlx" "pg_ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | DDL eXtractor functions |
+| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL Linting and Analysis Extension |
 | {{< ext "prioritize" "pg_prioritize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | get and set the priority of PostgreSQL backends |
 | {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s---r" color="blue" >}} | {{< category "ADMIN" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | cluster database read only |
@@ -365,22 +370,23 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "supabase_vault" "pg_vault" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Supabase Vault Extension |
 | {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SEC" >}} | Manage authentication sessions using JWTs |
 | {{< ext "anon" "pg_anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Anonymizer (anon) extension |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL SM Algorithm Extension |
+| {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Encrypted postgres data type |
 | {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | provides auditing functionality |
 | {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | pgAudit addon to redirect audit log to an independent file |
+| {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SEC" >}} | Audit data changes and provide flashback ability |
+| {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | Function for collecting statistics about messages in logfile |
 | {{< ext "pg_auth_mon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | monitor connection attempts per user |
+| {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Extension for logging and monitoring functions in PostgreSQL |
 | {{< ext "credcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | credcheck - postgresql plain text credential checker |
 | {{< ext "pgcryptokey" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | cryptographic key management |
-| {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Extension for logging and monitoring functions in PostgreSQL |
-| {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | Function for collecting statistics about messages in logfile |
 | {{< ext "login_hook" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | login_hook - hook to execute login_hook.login() at login time |
 | {{< ext "set_user" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | similar to SET ROLE but with added logging |
 | {{< ext "pg_snakeoil" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "SEC" >}} | The PostgreSQL Antivirus |
 | {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Extension Whitelisting |
-| {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SEC" >}} | Audit data changes and provide flashback ability |
 | {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | A Postgres extension for managing SSL certificates through SQL |
 | {{< ext "noset" "pg_noset" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Module for blocking SET variables for non-super users. |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | pause briefly before reporting authentication failure |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "SEC" >}} | cryptographic functions |
@@ -393,14 +399,14 @@ There are 431 available PostgreSQL extensions:
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a MySQL server |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for Oracle access |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
-| {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for DB2 access |
+| {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for DB2 access |
 | {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | SQLite Foreign Data Wrapper |
 | {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from norma |
 | {{< ext "mongo_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for MongoDB access |
 | {{< ext "redis_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a Redis server |
 | {{< ext "redis" "pg_redis_pubsub" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | {{< ext "kafka_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | kafka Foreign Data Wrapper for CSV formatted messages |
-| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote hdfs servers |
+| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote hdfs servers |
 | {{< ext "firebird_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Firebird |
 | {{< ext "aws_s3" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FDW" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | {{< ext "log_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for Postgres log file access |

@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 202 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 205 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 72 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 60 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 63 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -39,7 +39,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="202 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="205 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -59,18 +59,18 @@ weight: 300
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |
-| 2170 | {{< alias "hunspell_cs_cz" >}} | Hunspell捷克语全文检索词典 |
-| 2171 | {{< alias "hunspell_de_de" >}} | Hunspell德语全文检索词典 |
-| 2172 | {{< alias "hunspell_en_us" >}} | Hunspell英语全文检索词典 |
-| 2173 | {{< alias "hunspell_fr" >}} | Hunspell法语全文检索词典 |
-| 2174 | {{< alias "hunspell_ne_np" >}} | Hunspell尼泊尔语全文检索词典 |
-| 2175 | {{< alias "hunspell_nl_nl" >}} | Hunspell荷兰语全文检索词典 |
-| 2176 | {{< alias "hunspell_nn_no" >}} | Hunspell挪威语全文检索词典 |
-| 2177 | {{< alias "hunspell_pt_pt" >}} | Hunspell葡萄牙语全文检索词典 |
-| 2178 | {{< alias "hunspell_ru_ru" >}} | Hunspell俄语全文检索词典 |
-| 2179 | {{< alias "hunspell_ru_ru_aot" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
-| 2180 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
-| 2190 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
+| 2270 | {{< alias "hunspell_cs_cz" >}} | Hunspell捷克语全文检索词典 |
+| 2271 | {{< alias "hunspell_de_de" >}} | Hunspell德语全文检索词典 |
+| 2272 | {{< alias "hunspell_en_us" >}} | Hunspell英语全文检索词典 |
+| 2273 | {{< alias "hunspell_fr" >}} | Hunspell法语全文检索词典 |
+| 2274 | {{< alias "hunspell_ne_np" >}} | Hunspell尼泊尔语全文检索词典 |
+| 2275 | {{< alias "hunspell_nl_nl" >}} | Hunspell荷兰语全文检索词典 |
+| 2276 | {{< alias "hunspell_nn_no" >}} | Hunspell挪威语全文检索词典 |
+| 2277 | {{< alias "hunspell_pt_pt" >}} | Hunspell葡萄牙语全文检索词典 |
+| 2278 | {{< alias "hunspell_ru_ru" >}} | Hunspell俄语全文检索词典 |
+| 2279 | {{< alias "hunspell_ru_ru_aot" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
+| 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
+| 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2420 | {{< alias "pg_analytics" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | 2460 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
@@ -86,7 +86,6 @@ weight: 300
 | 2880 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
 | 2890 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
-| 2980 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |
@@ -128,6 +127,7 @@ weight: 300
 | 3970 | {{< alias "hstore" >}} | 用于存储（键，值）对集合的数据类型 |
 | 3980 | {{< alias "citext" >}} | 提供大小写不敏感的字符串类型 |
 | 3990 | {{< alias "xml2" >}} | XPath 查询和 XSLT |
+| 4100 | {{< alias "pg_retry" >}} | 在临时错误中使用指数退避重试语句 |
 | 4180 | {{< alias "pg_html5_email_address" >}} | 验证Email是否符合HTML5规范的扩展 |
 | 4190 | {{< alias "url_encode" >}} | 提供URL编码解码函数 |
 | 4200 | {{< alias "pgsql_tweaks" >}} | 一些日常会用到的便利函数与视图 |
@@ -142,7 +142,9 @@ weight: 300
 | 4440 | {{< alias "shacrypt" >}} | 实现SHA256-CRYPT与SHA512-CRYPT密钥加密算法 |
 | 4450 | {{< alias "cryptint" >}} | 加密INT与BIGINT类型 |
 | 4550 | {{< alias "permuteseq" >}} | 伪随机数ID置换生成器 |
+| 4640 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 4650 | {{< alias "ddsketch" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
+| 4680 | {{< alias "pg_weighted_statistics" >}} | 针对稀疏数据的高性能加权统计量计算 |
 | 4710 | {{< alias "first_last_agg" >}} | first() 与 last() 聚合函数 |
 | 4720 | {{< alias "extra_window_functions" >}} | 额外的窗口函数 |
 | 4790 | {{< alias "random" "pg_random" >}} | 随机数生成器 |
@@ -164,7 +166,8 @@ weight: 300
 | 4990 | {{< alias "unaccent" >}} | 删除重音的文本搜索字典 |
 | 5010 | {{< alias "pg_repack" >}} | 在线垃圾清理与表膨胀治理 |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 提取数据库对象的DDL |
-| 5090 | {{< alias "prioritize" "pg_prioritize" >}} | 获取和设置 PostgreSQL 后端的优先级 |
+| 5090 | {{< alias "pglinter" >}} | PG数据库规则检查插件 |
+| 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 获取和设置 PostgreSQL 后端的优先级 |
 | 5120 | {{< alias "pg_readonly" >}} | 将集群设置为只读 |
 | 5150 | {{< alias "pgautofailover" >}} | PG 自动故障迁移 |
 | 5170 | {{< alias "pre_prepare" "preprepare" >}} | 在服务端预先准备好PreparedStatement备用 |
@@ -209,14 +212,14 @@ weight: 300
 | 6980 | {{< alias "auto_explain" >}} | 提供一种自动记录执行计划的手段 |
 | 6990 | {{< alias "pg_stat_statements" >}} | 跟踪所有执行的 SQL 语句的计划和执行统计信息 |
 | 7050 | {{< alias "anon" "pg_anon" >}} | 数据匿名化处理工具 |
-| 7080 | {{< alias "pgaudit" >}} | 提供审计功能 |
-| 7090 | {{< alias "pgauditlogtofile" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
-| 7120 | {{< alias "pgcryptokey" >}} | PG密钥管理 |
-| 7130 | {{< alias "pg_jobmon" >}} | 记录和监控函数 |
-| 7160 | {{< alias "set_user" >}} | 增加了日志记录的 SET ROLE |
-| 7170 | {{< alias "pg_snakeoil" >}} | PostgreSQL动态链接库反病毒功能 |
-| 7180 | {{< alias "pgextwlist" >}} | PostgreSQL扩展白名单功能 |
-| 7200 | {{< alias "sslutils" >}} | 使用SQL管理SSL证书 |
+| 7100 | {{< alias "pgaudit" >}} | 提供审计功能 |
+| 7120 | {{< alias "pgauditlogtofile" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
+| 7160 | {{< alias "pg_jobmon" >}} | 记录和监控函数 |
+| 7320 | {{< alias "pgcryptokey" >}} | PG密钥管理 |
+| 7370 | {{< alias "set_user" >}} | 增加了日志记录的 SET ROLE |
+| 7380 | {{< alias "pg_snakeoil" >}} | PostgreSQL动态链接库反病毒功能 |
+| 7390 | {{< alias "pgextwlist" >}} | PostgreSQL扩展白名单功能 |
+| 7410 | {{< alias "sslutils" >}} | 使用SQL管理SSL证书 |
 | 7960 | {{< alias "sepgsql" >}} | 基于SELinux标签的强制访问控制 |
 | 7970 | {{< alias "auth_delay" >}} | 在返回认证失败前暂停一会，避免爆破 |
 | 7980 | {{< alias "pgcrypto" >}} | 实用加解密函数 |
@@ -335,7 +338,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="60 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="63 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -347,6 +350,7 @@ weight: 300
 | 1590 | {{< alias "pg_geohash" >}} | 使用GeoHash处理空间坐标的函数包 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 快速根据GPS经纬度坐标查找时区 |
 | 1890 | {{< alias "pgml" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
+| 2170 | {{< alias "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2450 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
@@ -376,6 +380,7 @@ weight: 300
 | 4510 | {{< alias "pgx_ulid" >}} | ULID数据类型与函数 |
 | 4560 | {{< alias "pg_hashids" >}} | 加盐将整型ID转为短字符串ID |
 | 4570 | {{< alias "sequential_uuids" >}} | 生成连续生成的UUID |
+| 4580 | {{< alias "typeid" "pg_typeid" >}} | PG原生TypeID类型与函数 |
 | 4730 | {{< alias "floatvec" >}} | 数组类型数学运算扩展 |
 | 4740 | {{< alias "aggs_for_vecs" >}} | 针对数组类型的聚合函数集合扩展 |
 | 4750 | {{< alias "aggs_for_arrays" >}} | 计算数组聚合统计值的函数包 |
@@ -389,10 +394,11 @@ weight: 300
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
 | 6350 | {{< alias "pgmeminfo" >}} | 显示内存使用情况 |
 | 6800 | {{< alias "pagevis" >}} | 使用ASCII字符可视化数据库物理页面布局 |
-| 7060 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
-| 7070 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
-| 7100 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
-| 7110 | {{< alias "credcheck" >}} | 明文凭证检查器 |
+| 7060 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
+| 7070 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
+| 7150 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
+| 7310 | {{< alias "credcheck" >}} | 明文凭证检查器 |
+| 7500 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 从PG向Redis发送Pub/Sub消息 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
@@ -435,8 +441,8 @@ weight: 300
 | 6320 | {{< alias "pg_proctab" "pgnodemx" >}} | 通过SQL接口访问操作系统进程表 |
 | 6330 | {{< alias "pg_sqlog" >}} | 提供访问PostgreSQL日志的SQL接口 |
 | 7020 | {{< alias "pgsodium" >}} | 表数据加密存储 TDE |
+| 7130 | {{< alias "pg_auditor" >}} | 审计数据变更并提供闪回能力 |
 | 7140 | {{< alias "logerrors" >}} | 用于收集日志文件中消息统计信息的函数 |
-| 7190 | {{< alias "pg_auditor" >}} | 审计数据变更并提供闪回能力 |
 | 8600 | {{< alias "mysql_fdw" >}} | MySQL外部数据包装器 |
 | 8740 | {{< alias "hdfs_fdw" >}} | hdfs 外部数据包装器 |
 | 9540 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
@@ -512,7 +518,7 @@ weight: 300
 | 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
 | 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
-| 7150 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
+| 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 
@@ -534,7 +540,7 @@ weight: 300
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
 | 4600 | {{< alias "topn" >}} | top-n JSONB 的类型 |
-| 7210 | {{< alias "noset" "pg_noset" >}} | 阻止非超级用户使用SET/RESET设置变量 |
+| 7420 | {{< alias "noset" "pg_noset" >}} | 阻止非超级用户使用SET/RESET设置变量 |
 | 9400 | {{< alias "spat" >}} | 在PG中嵌入Redis风格的内存数据库 |
 
 ## ISC

@@ -2,7 +2,7 @@
 title: "hunspell_ru_ru_aot"
 linkTitle: "hunspell_ru_ru_aot"
 description: "Russian Hunspell Dictionary (from AOT.ru group)"
-weight: 2179
+weight: 2279
 categories: ["FTS"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2179** | {{< badge content="hunspell_ru_ru_aot" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ru_ru_aot" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
+| **2279** | {{< badge content="hunspell_ru_ru_aot" link="https://github.com/postgrespro/hunspell_dicts" >}} | {{< ext "hunspell_ru_ru_aot" >}} | `1.0` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "Data" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

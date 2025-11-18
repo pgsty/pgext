@@ -2,7 +2,7 @@
 title: "login_hook"
 linkTitle: "login_hook"
 description: "login_hook - hook to execute login_hook.login() at login time"
-weight: 7150
+weight: 7360
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7150** | {{< badge content="login_hook" link="https://github.com/splendiddata/login_hook" >}} | {{< ext "login_hook" >}} | `1.7` | {{< category "SEC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **7360** | {{< badge content="login_hook" link="https://github.com/splendiddata/login_hook" >}} | {{< ext "login_hook" >}} | `1.7` | {{< category "SEC" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

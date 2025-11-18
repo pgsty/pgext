@@ -6,25 +6,35 @@ weight: 700
 
 
 
-## Version Bump
+## Latest Update
 
-- citus 13.2.0 official release
+These changes are completed, but not published to public repo yet:
 
-## To Be Added
+| Name                | Old    | New    | Comment                    |
+|:--------------------|:-------|:-------|:---------------------------|
+| vchord              | 0.5.3  | 1.0.0  |                            |
+| pg_later            | 0.3.1  | 0.4.0  |                            |
+| pgvectorscale       | 0.8.0  | 0.9.0  | -pg13, +pg18               |
+| pglite_fusion       | 0.0.5  | 0.0.6  |                            |
+| pgx_ulid            | 0.2.1  | 0.2.2  |                            |
+| pg_search           | 0.19.5 | 0.19.7 | resume PIGSTY building     |
+| citus               | 13.2.0 | 13.2.0 | official tag               |
+| timescaledb         | 2.23.0 | 2.23.1 |                            |
+| pg_profile          | 4.10   | 4.11   |                            |
+| pglinter            |        | 1.0.0  | new                        |
+| pg_typeid           |        | 0.3.0  | head with pg18 support     |
+| pg_enigma           |        | 0.4.0  | vonng patched pgrx version |
+| pg_retry            |        | 1.0.0  | new, pg17-18               |
+| pg_biscuit          |        | 1.0    | new, pg16-18               |
+| weighted_statistics |        | 1.0.0  | new, pg13-18               |
 
-- pgelog 1.0.2
-- oai_fdw 1.11.0
-- pgcalendar 1.0.1
-- weighted_statistics 1.0.0
-- rdf_fdw 2.1.0
-- pg_ttl_index 1.0.2
 
-## Waiting for PG18
-
-- timescaledb_toolkit
-- pg_later
-- hydra
-- pg_timeseries
+```bash
+pig build pkg vchord pg_later pgvectorscale pglite_fusion pgx_ulid
+pig build pkg pglinter pg_typeid pg_enigma pg_search
+pig build pkg citus timescaledb pg_profile #pg_stat_monitor
+pig build pkg pg_retry pg_biscuit pg_weighted_statistics
+```
 
 
 ## Icebox

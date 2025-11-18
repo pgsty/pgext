@@ -2,7 +2,7 @@
 title: "pg_trgm"
 linkTitle: "pg_trgm"
 description: "text similarity measurement and index searching based on trigrams"
-weight: 2190
+weight: 2390
 categories: ["FTS"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2190** | {{< badge content="pg_trgm" link="https://www.postgresql.org/docs/current/pgtrgm.html" >}} | {{< ext "pg_trgm" >}} | `1.6` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2390** | {{< badge content="pg_trgm" link="https://www.postgresql.org/docs/current/pgtrgm.html" >}} | {{< ext "pg_trgm" >}} | `1.6` | {{< category "FTS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

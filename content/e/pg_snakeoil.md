@@ -2,7 +2,7 @@
 title: "pg_snakeoil"
 linkTitle: "pg_snakeoil"
 description: "The PostgreSQL Antivirus"
-weight: 7170
+weight: 7380
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7170** | {{< badge content="pg_snakeoil" link="https://github.com/credativ/pg_snakeoil" >}} | {{< ext "pg_snakeoil" >}} | `1.4` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7380** | {{< badge content="pg_snakeoil" link="https://github.com/credativ/pg_snakeoil" >}} | {{< ext "pg_snakeoil" >}} | `1.4` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

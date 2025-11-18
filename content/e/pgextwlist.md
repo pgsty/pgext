@@ -2,7 +2,7 @@
 title: "pgextwlist"
 linkTitle: "pgextwlist"
 description: "PostgreSQL Extension Whitelisting"
-weight: 7180
+weight: 7390
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7180** | {{< badge content="pgextwlist" link="https://github.com/dimitri/pgextwlist" >}} | {{< ext "pgextwlist" >}} | `1.19` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **7390** | {{< badge content="pgextwlist" link="https://github.com/dimitri/pgextwlist" >}} | {{< ext "pgextwlist" >}} | `1.19` | {{< category "SEC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
