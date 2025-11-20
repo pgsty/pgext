@@ -23,12 +23,6 @@ pig repo add pgsql -u                     # pgsql = pgdg + pigsty-pgsql (同时�
 pig repo add -u                           # all = node + pgsql (pgdg + pigsty) + infra，一次性添加所有仓库
 ```
 
-## 经典用例
-
-您可以直接使用 `apt/dnf` 等工具将本仓库添加到系统仓库列表中
-
-
-
 
 
 ## 镜像

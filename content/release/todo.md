@@ -8,34 +8,23 @@ weight: 700
 
 ## Latest Update
 
-These changes are completed, but not published to public repo yet:
-
-| Name                | Old    | New    | Comment                    |
-|:--------------------|:-------|:-------|:---------------------------|
-| vchord              | 0.5.3  | 1.0.0  |                            |
-| pg_later            | 0.3.1  | 0.4.0  |                            |
-| pgvectorscale       | 0.8.0  | 0.9.0  | -pg13, +pg18               |
-| pglite_fusion       | 0.0.5  | 0.0.6  |                            |
-| pgx_ulid            | 0.2.1  | 0.2.2  |                            |
-| pg_search           | 0.19.5 | 0.19.7 | resume PIGSTY building     |
-| citus               | 13.2.0 | 13.2.0 | official tag               |
-| timescaledb         | 2.23.0 | 2.23.1 |                            |
-| pg_profile          | 4.10   | 4.11   |                            |
-| pglinter            |        | 1.0.0  | new                        |
-| pg_typeid           |        | 0.3.0  | head with pg18 support     |
-| pg_enigma           |        | 0.4.0  | vonng patched pgrx version |
-| pg_retry            |        | 1.0.0  | new, pg17-18               |
-| pg_biscuit          |        | 1.0    | new, pg16-18               |
-| weighted_statistics |        | 1.0.0  | new, pg13-18               |
-
-
-```bash
-pig build pkg vchord pg_later pgvectorscale pglite_fusion pgx_ulid
-pig build pkg pglinter pg_typeid pg_enigma pg_search
-pig build pkg citus timescaledb pg_profile #pg_stat_monitor
-pig build pkg pg_retry pg_biscuit pg_weighted_statistics
-```
-
+- [vchord](/e/vchord) : 1.0.0
+- [pg_later](/e/pg_later) : 0.4.0
+- [pgvectorscale](/e/pgvectorscale) : 0.9.0
+- [pglite_fusion](/e/pglite_fusion) : 0.0.6
+- [pgx_ulid](/e/pgx_ulid) : 0.2.2
+- [pg_search](/e/pg_search) : 0.19.7
+- [citus](/e/citus) : 13.2.0
+- [timescaledb](/e/timescaledb) : 2.23.1
+- [pg_profile](/e/pg_profile) : 4.11
+- [pglinter](/e/pglinter) : 1.0.0
+- [pg_typeid](/e/pg_typeid) : 0.3.0
+- [pg_enigma](/e/pg_enigma) : 0.4.0
+- [pg_retry](/e/pg_retry) : 1.0.0
+- [pg_biscuit](/e/pg_biscuit) : 1.0
+- [pg_weighted_statistics](/e/pg_weighted_statistics) : 1.0.0
+- [pg_stat_monitor](/e/pg_stat_monitor) : 2.3.0
+- [documentdb](/e/documentdb) : 0.107
 
 ## Icebox
 

@@ -140,13 +140,13 @@ sudo yum makecache;
 
 |                                    Name                                     | Version | License | Comment |
 |:---------------------------------------------------------------------------:|:-------:|:-------:|:--------|
-|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.129.1 |         |         |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.37.2  |         |         |
 |           [prometheus](https://github.com/prometheus/prometheus)            |  3.7.3  |         |         |
 |          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  |         |         |
 |         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  |         |         |
 |    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  |         |         |
-|             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.1  |         |         |
+|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.129.1 |         |         |
+| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.37.2  |         |         |
+|             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  |         |         |
 |    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |         |         |
 |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  |         |         |
 |     [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)     |  1.7.0  |         |         |
@@ -162,10 +162,10 @@ sudo yum makecache;
 
 |                                                 Name                                                  | Version | License | Comment                |
 |:-----------------------------------------------------------------------------------------------------:|:-------:|:-------:|:-----------------------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.1.0  |         | Visualization Platform |
+|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |         | Visualization Platform |
 |                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |         | The logging platform   |
 |                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |         | Obsolete               |
-|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.0  |         |                        |
+|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |         |                        |
 |            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  |         |                        |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.21.4  |         |                        |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.6  |         |                        |
@@ -177,12 +177,12 @@ PostgreSQL related tools, DBMS, and other utils
 
 |                           Name                            |    Version     | License | Comment                   |
 |:---------------------------------------------------------:|:--------------:|:-------:|:--------------------------|
-|          [etcd](https://github.com/etcd-io/etcd)          |     3.6.5      |         | Fault Tolerant DCS        |
+|          [etcd](https://github.com/etcd-io/etcd)          |     3.6.6      |         | Fault Tolerant DCS        |
 |          [minio](https://github.com/minio/minio)          | 20250907161309 |         | FOSS S3 Server            |
 |            [mcli](https://github.com/minio/mc)            | 20250813083541 |         | FOSS S3 Client            |
 |        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      |         | Message Queue             |
-|        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.1      |         | Embedded OLAP             |
-|     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.5.0      |         | MongoDB over PG           |
+|        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |         | Embedded OLAP             |
+|     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.7.0      |         | MongoDB over PG           |
 | [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.60     |         | Financial OLTP            |
 |     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |      4.6       |         | Oracle Compatible PG 17.6 |
 
@@ -192,11 +192,11 @@ Pig the package manager, PostgreSQL tools, DBMS, and other utils
 
 |                                Name                                 | Version |  License   |        Comment         |
 |:-------------------------------------------------------------------:|:-------:|:----------:|:----------------------:|
-|                 [pig](https://github.com/pgsty/pig)                 |  0.7.1  | Apache-2.0 | The pg package manager |
+|                 [pig](https://github.com/pgsty/pig)                 |  0.7.2  | Apache-2.0 | The pg package manager |
 |  [vip-manager](https://github.com/cybertec-postgresql/vip-manager)  |  4.0.0  |            |                        |
 | [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable) |  6.1.0  |            |                        |
 |  [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)   | 1.17.0  |            |                        |
-|             [sealos](https://github.com/labring/sealos)             |  5.0.1  |            |                        |
+|             [sealos](https://github.com/labring/sealos)             |  5.1.1  |            |                        |
 |        [rclone](https://github.com/rclone/rclone/releases/)         | 1.71.2  |            |                        |
 |             [restic](https://github.com/restic/restic)              | 0.18.1  |            |                        |
 |           [juicefs](https://github.com/juicedata/juicefs)           |  1.3.0  |            |                        |
