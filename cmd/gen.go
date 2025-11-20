@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"pgext/cli"
+	"strings"
 	"sync"
 
 	"github.com/sirupsen/logrus"
@@ -25,71 +26,23 @@ var genCmd = &cobra.Command{
 	Short: "Generate Hugo markdown content from database",
 	Long:  `Generate Hugo/Hextra-compatible markdown files for PostgreSQL extensions`,
 	Example: `  pgext gen page       # Generate extension detail pages
-  pgext gen ext        # Generate extension list pages with stats
-  pgext gen pkg        # Generate package list pages with stats
-  pgext gen index      # Generate extension index pages
-  pgext gen cate       # Generate category list pages
-  pgext gen lang       # Generate language list pages
-  pgext gen license    # Generate license list pages
-  pgext gen catalog    # Generate catalog pages
+  pgext gen list       # Generate all list pages (ext, pkg, cate, lang, license, catalog)
+  pgext gen list lang  # Generate specific list pages, e.g. language list
   pgext gen os         # Generate OS-specific availability page
   pgext gen conf       # Generate Pigsty configuration files`,
 }
 
-// genIndexCmd generates extension index pages
-var genIndexCmd = &cobra.Command{
-	Use:   "index",
-	Short: "Generate extension index pages",
-	Long:  `Generate _index.md and _index.zh.md for extension listing`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		extDir := filepath.Join(outputDir, "e")
-		if err := os.MkdirAll(extDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Generate index pages
-		generator := cli.NewExtensionGenerator(cache, extDir)
-
-		// Generate English index
-		enPath := filepath.Join(extDir, "_index.md")
-		if err := generator.GenerateIndexPage("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English index: %w", err)
-		}
-		logrus.Infof("Generated: %s", enPath)
-
-		// Generate Chinese index
-		zhPath := filepath.Join(extDir, "_index.zh.md")
-		if err := generator.GenerateIndexPage("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese index: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhPath)
-
-		logrus.Infof("Extensions: %d, Packages: %d", len(cache.Extensions), len(cache.PkgMap))
-		return nil
-	},
-}
-
-// genCateCmd generates category list pages
-var genCateCmd = &cobra.Command{
-	Use:   "cate",
-	Short: "Generate category list pages",
-	Long:  `Generate cate.md and cate.zh.md for category-based listing`,
+// genListCmd generates various list pages
+var genListCmd = &cobra.Command{
+	Use:   "list [types...]",
+	Short: "Generate list pages for extensions",
+	Long: `Generate list pages for extensions. If no types are specified, generates all types.
+Available types: ext, pkg, cate, lang, license, catalog`,
+	Example: `  pgext gen list              # Generate all list pages
+  pgext gen list ext          # Generate extension list pages only
+  pgext gen list ext pkg      # Generate extension and package list pages
+  pgext gen list cate lang    # Generate category and language list pages`,
+	ValidArgs: []string{"ext", "pkg", "cate", "lang", "license", "catalog"},
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := context.Background()
 
@@ -112,292 +65,191 @@ var genCateCmd = &cobra.Command{
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
 
-		// Generate category list pages
-		generator := cli.NewListGenerator(cache, listDir)
-
-		// Generate English version
-		enPath := filepath.Join(listDir, "cate.md")
-		if err := generator.GenerateCategoryList("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English category list: %w", err)
-		}
-		logrus.Infof("Generated: %s", enPath)
-
-		// Generate Chinese version
-		zhPath := filepath.Join(listDir, "cate.zh.md")
-		if err := generator.GenerateCategoryList("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese category list: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhPath)
-
-		// Count unique packages
-		pkgCount := len(cache.PkgMap)
-		logrus.Infof("Categories: %d, Extensions: %d, Packages: %d",
-			len(cache.Categories), len(cache.Extensions), pkgCount)
-		return nil
-	},
-}
-
-// genLangCmd generates language list pages
-var genLangCmd = &cobra.Command{
-	Use:   "lang",
-	Short: "Generate language list pages",
-	Long:  `Generate lang.md and lang.zh.md for language-based listing`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
-		if err := os.MkdirAll(listDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Generate language list pages
-		generator := cli.NewListGenerator(cache, listDir)
-
-		// Generate English version
-		enPath := filepath.Join(listDir, "lang.md")
-		if err := generator.GenerateLanguageList("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English language list: %w", err)
-		}
-		logrus.Infof("Generated: %s", enPath)
-
-		// Generate Chinese version
-		zhPath := filepath.Join(listDir, "lang.zh.md")
-		if err := generator.GenerateLanguageList("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese language list: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhPath)
-
-		return nil
-	},
-}
-
-// genLicenseCmd generates license list pages
-var genLicenseCmd = &cobra.Command{
-	Use:   "license",
-	Short: "Generate license list pages",
-	Long:  `Generate license.md and license.zh.md for license-based listing`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
-		if err := os.MkdirAll(listDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Generate license list pages
-		generator := cli.NewListGenerator(cache, listDir)
-
-		// Generate English version
-		enPath := filepath.Join(listDir, "license.md")
-		if err := generator.GenerateLicenseList("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English license list: %w", err)
-		}
-		logrus.Infof("Generated: %s", enPath)
-
-		// Generate Chinese version
-		zhPath := filepath.Join(listDir, "license.zh.md")
-		if err := generator.GenerateLicenseList("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese license list: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhPath)
-
-		return nil
-	},
-}
-
-var genCatalogCmd = &cobra.Command{
-	Use:   "catalog",
-	Short: "Generate catalog list pages",
-	Long:  `Generate catalog list pages (_index.md and _index.zh.md) with statistics and categories`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
-		if err := os.MkdirAll(listDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Initialize generator with database from cli package
-		generator := &cli.ExtensionGenerator{
-			DB:    cli.DB,
-			Cache: cache,
-		}
-
-		// Generate English version
-		enPath := filepath.Join(listDir, "_index.md")
-		if err := generator.GenerateCatalogPage("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English catalog: %w", err)
-		}
-		logrus.Info("Generated English catalog", "path", enPath)
-
-		// Generate Chinese version
-		zhPath := filepath.Join(listDir, "_index.zh.md")
-		if err := generator.GenerateCatalogPage("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese catalog: %w", err)
-		}
-		logrus.Info("Generated Chinese catalog", "path", zhPath)
-
-		logrus.Info("Catalog generation completed", "output", outputDir)
-		return nil
-	},
-}
-
-// genExtCmd generates extension list pages
-var genExtCmd = &cobra.Command{
-	Use:   "ext",
-	Short: "Generate extension list pages and index",
-	Long: `Generate ext.md, ext.zh.md for comprehensive extension listing with statistics, categories, and full index.
-Also generates _index.md and _index.zh.md for extension index pages.`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directories
-		listDir := filepath.Join(outputDir, "list")
-		if err := os.MkdirAll(listDir, 0755); err != nil {
-			return fmt.Errorf("failed to create list directory: %w", err)
-		}
-
+		// Prepare e directory for ext index pages
 		extDir := filepath.Join(outputDir, "e")
 		if err := os.MkdirAll(extDir, 0755); err != nil {
 			return fmt.Errorf("failed to create extension directory: %w", err)
 		}
 
-		// Initialize generator with database from cli package
-		generator := &cli.ExtensionGenerator{
+		// Determine which lists to generate
+		typesToGenerate := make(map[string]bool)
+		if len(args) == 0 {
+			// No arguments, generate all types
+			typesToGenerate["ext"] = true
+			typesToGenerate["pkg"] = true
+			typesToGenerate["cate"] = true
+			typesToGenerate["lang"] = true
+			typesToGenerate["license"] = true
+			typesToGenerate["catalog"] = true
+			logrus.Info("Generating all list types...")
+		} else {
+			// Generate specified types
+			for _, arg := range args {
+				typesToGenerate[strings.ToLower(arg)] = true
+			}
+			logrus.Infof("Generating list types: %v", args)
+		}
+
+		// Initialize generators
+		listGenerator := cli.NewListGenerator(cache, listDir)
+		extGenerator := &cli.ExtensionGenerator{
 			DB:    cli.DB,
 			Cache: cache,
 		}
 
-		// Generate extension list pages (in list directory)
-		enListPath := filepath.Join(listDir, "ext.md")
-		if err := generator.GenerateExtensionList("en", enListPath); err != nil {
-			return fmt.Errorf("failed to generate English extension list: %w", err)
-		}
-		logrus.Infof("Generated: %s", enListPath)
+		// Track results
+		var errors []error
+		successCount := 0
 
-		zhListPath := filepath.Join(listDir, "ext.zh.md")
-		if err := generator.GenerateExtensionList("zh", zhListPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese extension list: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhListPath)
+		// Generate ext list pages
+		if typesToGenerate["ext"] {
+			logrus.Info("Generating extension list pages...")
 
-		// Generate extension index pages (in e directory)
-		enIndexPath := filepath.Join(extDir, "_index.md")
-		zhIndexPath := filepath.Join(extDir, "_index.zh.md")
-		if err := generator.GenerateExtensionIndexPages(enIndexPath, zhIndexPath); err != nil {
-			return fmt.Errorf("failed to generate extension index pages: %w", err)
-		}
-		logrus.Infof("Generated: %s", enIndexPath)
-		logrus.Infof("Generated: %s", zhIndexPath)
+			// Generate extension list pages (in list directory)
+			enListPath := filepath.Join(listDir, "ext.md")
+			if err := extGenerator.GenerateExtensionList("en", enListPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English extension list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enListPath)
+				successCount++
+			}
 
-		logrus.Infof("Extension list and index generation completed")
-		return nil
-	},
-}
+			zhListPath := filepath.Join(listDir, "ext.zh.md")
+			if err := extGenerator.GenerateExtensionList("zh", zhListPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese extension list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhListPath)
+				successCount++
+			}
 
-// genPackageCmd generates package list pages
-var genPkgCmd = &cobra.Command{
-	Use:   "pkg",
-	Short: "Generate package list pages",
-	Long:  `Generate pkg.md and pkg.zh.md for comprehensive package listing with statistics, categories, and full index`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
+			// Generate extension index pages (in e directory)
+			enIndexPath := filepath.Join(extDir, "_index.md")
+			zhIndexPath := filepath.Join(extDir, "_index.zh.md")
+			if err := extGenerator.GenerateExtensionIndexPages(enIndexPath, zhIndexPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate extension index pages: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enIndexPath)
+				logrus.Infof("Generated: %s", zhIndexPath)
+				successCount += 2
+			}
 		}
 
-		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
-		if err := os.MkdirAll(listDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
+		// Generate pkg list pages
+		if typesToGenerate["pkg"] {
+			logrus.Info("Generating package list pages...")
+
+			enPath := filepath.Join(listDir, "pkg.md")
+			if err := extGenerator.GeneratePackageList("en", enPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English package list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPath)
+				successCount++
+			}
+
+			zhPath := filepath.Join(listDir, "pkg.zh.md")
+			if err := extGenerator.GeneratePackageList("zh", zhPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese package list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPath)
+				successCount++
+			}
 		}
 
-		// Initialize generator with database from cli package
-		generator := &cli.ExtensionGenerator{
-			DB:    cli.DB,
-			Cache: cache,
+		// Generate cate list pages
+		if typesToGenerate["cate"] {
+			logrus.Info("Generating category list pages...")
+
+			enPath := filepath.Join(listDir, "cate.md")
+			if err := listGenerator.GenerateCategoryList("en", enPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English category list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPath)
+				successCount++
+			}
+
+			zhPath := filepath.Join(listDir, "cate.zh.md")
+			if err := listGenerator.GenerateCategoryList("zh", zhPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese category list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPath)
+				successCount++
+			}
 		}
 
-		// Generate English version
-		enPath := filepath.Join(listDir, "pkg.md")
-		if err := generator.GeneratePackageList("en", enPath); err != nil {
-			return fmt.Errorf("failed to generate English package list: %w", err)
-		}
-		logrus.Infof("Generated: %s", enPath)
+		// Generate lang list pages
+		if typesToGenerate["lang"] {
+			logrus.Info("Generating language list pages...")
 
-		// Generate Chinese version
-		zhPath := filepath.Join(listDir, "pkg.zh.md")
-		if err := generator.GeneratePackageList("zh", zhPath); err != nil {
-			return fmt.Errorf("failed to generate Chinese package list: %w", err)
-		}
-		logrus.Infof("Generated: %s", zhPath)
+			enPath := filepath.Join(listDir, "lang.md")
+			if err := listGenerator.GenerateLanguageList("en", enPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English language list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPath)
+				successCount++
+			}
 
-		logrus.Infof("Package list generation completed")
+			zhPath := filepath.Join(listDir, "lang.zh.md")
+			if err := listGenerator.GenerateLanguageList("zh", zhPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese language list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPath)
+				successCount++
+			}
+		}
+
+		// Generate license list pages
+		if typesToGenerate["license"] {
+			logrus.Info("Generating license list pages...")
+
+			enPath := filepath.Join(listDir, "license.md")
+			if err := listGenerator.GenerateLicenseList("en", enPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English license list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPath)
+				successCount++
+			}
+
+			zhPath := filepath.Join(listDir, "license.zh.md")
+			if err := listGenerator.GenerateLicenseList("zh", zhPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese license list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPath)
+				successCount++
+			}
+		}
+
+		// Generate catalog list pages
+		if typesToGenerate["catalog"] {
+			logrus.Info("Generating catalog list pages...")
+
+			enPath := filepath.Join(listDir, "_index.md")
+			if err := extGenerator.GenerateCatalogPage("en", enPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English catalog: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPath)
+				successCount++
+			}
+
+			zhPath := filepath.Join(listDir, "_index.zh.md")
+			if err := extGenerator.GenerateCatalogPage("zh", zhPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese catalog: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPath)
+				successCount++
+			}
+		}
+
+		// Report results
+		logrus.Infof("List generation completed: %d files generated", successCount)
+
+		if len(errors) > 0 {
+			logrus.Errorf("Encountered %d errors during generation:", len(errors))
+			for _, err := range errors {
+				logrus.Error(err)
+			}
+			return fmt.Errorf("list generation completed with %d errors", len(errors))
+		}
+
 		return nil
 	},
 }
@@ -644,8 +496,8 @@ based on the availability data in the pgext database.`,
 
   # Generate to a specific output directory
   pgext gen conf --output ./output el9.x86_64`,
-	PreRunE:  initDatabase,
-	PostRun:  closeDatabase,
+	PreRunE: initDatabase,
+	PostRun: closeDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		// Get flags
 		configOutputDir, _ := cmd.Flags().GetString("output")
@@ -709,7 +561,8 @@ based on the availability data in the pgext database.`,
 func init() {
 	rootCmd.AddCommand(genCmd)
 
-	genCmd.AddCommand(genExtCmd, genPkgCmd, genPageCmd, genIndexCmd, genCateCmd, genLangCmd, genLicenseCmd, genCatalogCmd, genOSCmd, genConfCmd)
+	// Add subcommands - removed genIndexCmd, added genListCmd
+	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genConfCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
