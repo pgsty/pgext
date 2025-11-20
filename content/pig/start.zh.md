@@ -40,18 +40,18 @@ PIG 二进制包大约 4 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安�
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = rpm
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm
-[INFO] download = /tmp/pig-0.7.1-1.x86_64.rpm
-[INFO] downloading pig v0.7.1
-curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm -o /tmp/pig-0.7.1-1.x86_64.rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm
+[INFO] download = /tmp/pig-0.7.2-1.x86_64.rpm
+[INFO] downloading pig v0.7.2
+curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm -o /tmp/pig-0.7.2-1.x86_64.rpm
 ######################################################################## 100.0%
 [INFO] md5sum = 85d75c16dfd3ce935d9d889fae345430
-[INFO] installing: rpm -ivh /tmp/pig-0.7.1-1.x86_64.rpm
+[INFO] installing: rpm -ivh /tmp/pig-0.7.2-1.x86_64.rpm
 Verifying...                          ################################# [100%]
 Preparing...                          ################################# [100%]
 Updating / installing...
-   1:pig-0.7.1-1                      ################################# [100%]
-[INFO] pig v0.7.1 installed successfully
+   1:pig-0.7.2-1                      ################################# [100%]
+[INFO] pig v0.7.2 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -64,7 +64,7 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 ```bash
 $ pig version
 
-pig version 0.7.1 linux/amd64
+pig version 0.7.2 linux/amd64
 build: HEAD 9cdb57a 2025-11-10T11:14:17Z
 ```
 
@@ -74,7 +74,7 @@ build: HEAD 9cdb57a 2025-11-10T11:14:17Z
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 0.7.1
+Pig Version      : 0.7.2
 Pig Config       : /root/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -300,7 +300,7 @@ pig ext link pg17             # 创建 /usr/pgsql 软链接，并写入 /etc/pro
 如果你想要安装特定版本的软件，可以使用 `name=ver` 的语法：
 
 ```bash
-pig ext add -v 17 pgvector=0.7.1 # install pgvector 0.7.1 for PG 17
+pig ext add -v 17 pgvector=0.7.2 # install pgvector 0.7.2 for PG 17
 pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
 ```
 

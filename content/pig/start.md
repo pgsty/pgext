@@ -40,18 +40,18 @@ The PIG binary is approximately 4 MB and will automatically install the latest a
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = rpm
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm
-[INFO] download = /tmp/pig-0.7.1-1.x86_64.rpm
-[INFO] downloading pig v0.7.1
-curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.1/pig-0.7.1-1.x86_64.rpm -o /tmp/pig-0.7.1-1.x86_64.rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm
+[INFO] download = /tmp/pig-0.7.2-1.x86_64.rpm
+[INFO] downloading pig v0.7.2
+curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm -o /tmp/pig-0.7.2-1.x86_64.rpm
 ######################################################################## 100.0%
 [INFO] md5sum = 85d75c16dfd3ce935d9d889fae345430
-[INFO] installing: rpm -ivh /tmp/pig-0.7.1-1.x86_64.rpm
+[INFO] installing: rpm -ivh /tmp/pig-0.7.2-1.x86_64.rpm
 Verifying...                          ################################# [100%]
 Preparing...                          ################################# [100%]
 Updating / installing...
-   1:pig-0.7.1-1                      ################################# [100%]
-[INFO] pig v0.7.1 installed successfully
+   1:pig-0.7.2-1                      ################################# [100%]
+[INFO] pig v0.7.2 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -64,7 +64,7 @@ PIG is a Go binary, installed by default at `/usr/bin/pig`. Use `pig version` to
 ```bash
 $ pig version
 
-pig version 0.7.1 linux/amd64
+pig version 0.7.2 linux/amd64
 build: HEAD 9cdb57a 2025-11-10T11:14:17Z
 ```
 
@@ -74,7 +74,7 @@ Use `pig status` to display the current environment status, OS code, PostgreSQL 
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 0.7.1
+Pig Version      : 0.7.2
 Pig Config       : /root/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -301,7 +301,7 @@ pig ext link pg17             # Create /usr/pgsql symlink and write to /etc/prof
 To install a specific software version, use `name=ver` syntax:
 
 ```bash
-pig ext add -v 17 pgvector=0.7.1 # install pgvector 0.7.1 for PG 17
+pig ext add -v 17 pgvector=0.7.2 # install pgvector 0.7.2 for PG 17
 pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
 ```
 
