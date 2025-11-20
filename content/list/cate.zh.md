@@ -519,9 +519,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.106 | 微软DocumentDB的API层 |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.106 | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.106 | DocumentDB多节点模式的API层 |
+| 9000 | {{< alias "documentdb" >}} | 0.107 | 微软DocumentDB的API层 |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.107 | 微软DocumentDB的核心API层实现 |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.107 | DocumentDB多节点模式的API层 |
 | 9100 | {{< alias "orafce" >}} | 4.16.2 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |

@@ -50,3 +50,4 @@ AGENTS.md
 public/
 .hugo_build.lock
 __pycache__/
+vars/

@@ -26,6 +26,8 @@ weight: 700
 | pg_retry            |        | 1.0.0  | new, pg17-18               |
 | pg_biscuit          |        | 1.0    | new, pg16-18               |
 | weighted_statistics |        | 1.0.0  | new, pg13-18               |
+| documentdb          | 0.106  | 0.107  | ferretdb fork              |
+
 
 
 ```bash
@@ -36,10 +38,10 @@ pig build pkg pg_retry pg_biscuit pg_weighted_statistics
 ```
 
 - EL TODO: 
-- pgsentinel 1.2.0 -> 1.3.0 
+- pgsentinel 1.2.0 -> 1.3.0 (d13.pg13)
 - pg_stat_monitor 2.3.0
-- pgsql_tweaks
 - sslutils el8.x86
+
 
 
 ## 暂时雪藏

@@ -6,6 +6,18 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2025-11-20
+
+| Name        |  Old   |  New   | Comment        |
+|:------------|:------:|:------:|:---------------|
+| vector      | 0.51.0 | 0.51.1 | bugfix release |
+| sealos      | 5.0.1  | 5.1.1  |                |
+| etcd        | 3.6.5  | 3.6.6  |                |
+| duckdb      | 1.4.1  | 1.4.2  |                |
+| pg_exporter | 1.0.2  | 1.0.3  |                |
+| pig         | 0.7.1  | 0.7.2  |                |
+| grafana     | 12.1.0 | 12.3.0 |                |
+
 
 ## 2025-11-08
 

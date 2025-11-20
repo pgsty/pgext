@@ -164,7 +164,7 @@ sudo yum makecache;
 
 |                                                  名称                                                   |   版本   | 许可证 | 备注    |
 |:-----------------------------------------------------------------------------------------------------:|:------:|:---:|:------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.1.0 |     | 可视化平台 |
+|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0 |     | 可视化平台 |
 |                                [loki](https://github.com/grafana/loki)                                | 3.1.1  |     | 日志平台  |
 |                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    | 3.0.0  |     | 已废弃   |
 |                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.0 |     |       |
@@ -194,7 +194,7 @@ Pig 包管理器、PostgreSQL 工具、数据库管理系统和其他实用程�
 
 |                                 名称                                  |   版本   |    许可证     |   备注    |
 |:-------------------------------------------------------------------:|:------:|:----------:|:-------:|
-|                 [pig](https://github.com/pgsty/pig)                 | 0.7.1  | Apache-2.0 | PG 包管理器 |
+|                 [pig](https://github.com/pgsty/pig)                 | 0.7.2  | Apache-2.0 | PG 包管理器 |
 |  [vip-manager](https://github.com/cybertec-postgresql/vip-manager)  | 4.0.0  |            |         |
 | [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable) | 6.1.0  |            |         |
 |  [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)   | 1.17.0 |            |         |

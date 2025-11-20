@@ -378,7 +378,7 @@ There are 306 available PostgreSQL packages:
 | {{< ext "dblink" >}} | `1.2` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/dblink.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "file_fdw" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/file-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "postgres_fdw" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "documentdb" >}} | `0.106` | {{< badge content="Link" link="https://github.com/microsoft/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v*` | `postgresql-$v-documentdb` |
+| {{< ext "documentdb" >}} | `0.107` | {{< badge content="Link" link="https://github.com/microsoft/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v*` | `postgresql-$v-documentdb` |
 | {{< ext "orafce" >}} | `4.16.2` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
 | {{< ext "pgtt" >}} | `4.4` | {{< badge content="Link" link="https://github.com/darold/pgtt" >}} | {{< category "SIM" >}} | `pgtt_$v*` | `postgresql-$v-pgtt` |
 | {{< ext "session_variable" >}} | `3.4` | {{< badge content="Link" link="https://github.com/splendiddata/session_variable" >}} | {{< category "SIM" >}} | `session_variable_$v*` | `postgresql-$v-session-variable` |

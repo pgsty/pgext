@@ -23,6 +23,14 @@ pig repo add pgsql -u                     # pgsql = pgdg + pigsty-pgsql (同时�
 pig repo add -u                           # all = node + pgsql (pgdg + pigsty) + infra，一次性添加所有仓库
 ```
 
+## 经典用例
+
+您可以直接使用 `apt/dnf` 等工具将本仓库添加到系统仓库列表中
+
+
+
+
+
 ## 镜像
 
 2025年5月中旬，PGDG 关闭了 rsync/ftp 同步渠道，导致全球几乎所有 PGDG 镜像站失去同步，根据观察，目前只有 YANDEX，XTOM，PIGSTY 提供定期同步。
@@ -69,3 +77,32 @@ Debian / Ubuntu APT 仓库信息：
 - { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,   22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main'            ,china: 'https://repo.pigsty.cc/apt/pgdg/ ${distro_codename}-pgdg main' }}
 - { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,   22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://repo.pigsty.cc/apt/pgdg/ ${distro_codename}-pgdg-testing main 19' }}
 ```
+
+
+
+## APT GPG
+
+PGDG APT 仓库使用以下 GPG 密钥签名: `B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8` (`ACCC4CF8`)
+
+MD5 校验和为 `f54c5c1aa1329dc26e33b29762faaec4`，详情参考 https://www.postgresql.org/download/linux/debian/
+
+```bash
+sudo curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
+. /etc/os-release
+sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+```
+
+使用此镜像站时，可以从 `https://repo.pigsty.cc/apt/pgdg/ACCC4CF8.key` 获取 PGDG APT 公钥： 
+
+```bash
+sudo curl -fsSL https://repo.pigsty.cc/apt/pgdg/ACCC4CF8.key -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc 
+. /etc/os-release
+sudo sh -c "echo 'deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://repo.pigsty.cc/apt/pgdg/ $VERSION_CODENAME-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+```
+
+
+## YUM GPG
+
+PGDG YUM 仓库使用 `https://ftp.postgresql.org/pub/repos/yum/keys/` 中的一系列密钥进行签名。请自行按需选取使用
+
+

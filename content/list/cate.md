@@ -519,9 +519,9 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.106 | API surface for DocumentDB for PostgreSQL |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.106 | Core API surface for DocumentDB for PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.106 | Multi-Node API surface for DocumentDB |
+| 9000 | {{< alias "documentdb" >}} | 0.107 | API surface for DocumentDB for PostgreSQL |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.107 | Core API surface for DocumentDB for PostgreSQL |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.107 | Multi-Node API surface for DocumentDB |
 | 9100 | {{< alias "orafce" >}} | 4.16.2 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
