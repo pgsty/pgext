@@ -10,6 +10,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 | Name        |  Old   |  New   | Comment        |
 |:------------|:------:|:------:|:---------------|
+| pgschema    |   -    | 1.4.2  | new            |
 | vector      | 0.51.0 | 0.51.1 | bugfix release |
 | sealos      | 5.0.1  | 5.1.1  |                |
 | etcd        | 3.6.5  | 3.6.6  |                |

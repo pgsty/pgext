@@ -28,6 +28,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pg_weighted_statistics |        | 1.0.0  | new, pg13-18               |
 | pg_stat_monitor        | 2.2.0  | 2.3.0  | fix PGDG pg18 missing      |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
+| PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
 
 
 ## 2025-11-10

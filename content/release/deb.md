@@ -26,7 +26,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | pg_biscuit             |        | 1.0    | new, pg16-18               |
 | pg_weighted_statistics |        | 1.0.0  | new, pg13-18               |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
-
+| PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
 
 
 ## 2025-11-10
