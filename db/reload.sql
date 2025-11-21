@@ -1,4 +1,5 @@
 -- update pgext.pkg with state/hide mark
+SET search_path TO pgext,public;
 
 -- 'step 1/5: trucnate pgext.pkg ...';
 TRUNCATE pgext.pkg;
@@ -21,7 +22,7 @@ UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.
 
 -- 'step 4/5: update pgext.pkg org and version ...';
 UPDATE pgext.pkg SET org = sub.org, version = sub.version
-FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version FROM pgext.bin b,LATERAL (SELECT org FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version DESC) sub
+FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version FROM pgext.bin b,LATERAL (SELECT org FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version USING OPERATOR (pgext.>)) sub
 WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 
 -- 'step 5/5: update pgext.pkg state ...';

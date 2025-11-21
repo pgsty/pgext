@@ -503,102 +503,88 @@ COMMENT ON COLUMN pgext.pkg.count IS 'Count of available package variants (inclu
 -- Domain: Semantic Version
 -----------------------------------
 -- DROP DOMAIN pgext.version CASCADE;
+SET search_path TO pgext, public;
 CREATE DOMAIN pgext.version AS TEXT;
 
--- Core comparison function: segment-wise comparison following RPM rules
-CREATE OR REPLACE FUNCTION pgext.version_compare(v1 TEXT, v2 TEXT)
-    RETURNS INTEGER AS $$
+-- Optimized version comparison following RPM/DEB rules
+-- Handles: epoch, tilde (~) for pre-releases, caret (^), and standard segments
+CREATE OR REPLACE FUNCTION pgext.version_compare(v1 TEXT, v2 TEXT) RETURNS INTEGER AS $$
 DECLARE
-    pos1 INTEGER := 1; pos2 INTEGER := 1;
-    len1 INTEGER := length(v1); len2 INTEGER := length(v2);
-    char1 CHAR; char2 CHAR;
-    num1 BIGINT; num2 BIGINT;
-    seg1 TEXT; seg2 TEXT;
-    is_num1 BOOLEAN; is_num2 BOOLEAN;
+    epoch1 INT := 0; epoch2 INT := 0; pos INT;
+    ver1 TEXT; ver2 TEXT;
+    p1 INT := 1; p2 INT := 1; l1 INT; l2 INT;
+    c1 CHAR; c2 CHAR; seg1 TEXT; seg2 TEXT;
+    num1 BIGINT; num2 BIGINT; cmp INT;
 BEGIN
-    -- Quick equality check
     IF v1 = v2 THEN RETURN 0; END IF;
+    IF v1 IS NULL THEN RETURN -1; END IF;
+    IF v2 IS NULL THEN RETURN 1; END IF;
 
-    -- Main comparison loop: process segments alternating between numeric and non-numeric
-    WHILE pos1 <= len1 OR pos2 <= len2 LOOP
+    -- Extract epoch if present (highest priority)
+    pos := position(':' IN v1);
+    IF pos > 0 THEN epoch1 := left(v1, pos-1)::INT; ver1 := substr(v1, pos+1); ELSE ver1 := v1; END IF;
+    pos := position(':' IN v2);
+    IF pos > 0 THEN epoch2 := left(v2, pos-1)::INT; ver2 := substr(v2, pos+1); ELSE ver2 := v2; END IF;
+    IF epoch1 < epoch2 THEN RETURN -1; ELSIF epoch1 > epoch2 THEN RETURN 1; END IF;
+
+    l1 := length(ver1); l2 := length(ver2);
+
+    -- Main comparison loop
+    WHILE p1 <= l1 OR p2 <= l2 LOOP
+            c1 := CASE WHEN p1 <= l1 THEN substr(ver1, p1, 1) ELSE NULL END;
+            c2 := CASE WHEN p2 <= l2 THEN substr(ver2, p2, 1) ELSE NULL END;
+
+            -- Handle tilde (sorts before everything, including NULL)
+            IF c1 = '~' OR c2 = '~' THEN
+                IF c1 = '~' AND c2 = '~' THEN p1 := p1 + 1; p2 := p2 + 1; CONTINUE;
+                ELSIF c1 = '~' THEN RETURN -1;
+                ELSE RETURN 1; END IF;
+            END IF;
+
+            -- Handle caret (sorts after normal chars but before NULL)
+            IF c1 = '^' OR c2 = '^' THEN
+                IF c1 = '^' AND c2 = '^' THEN p1 := p1 + 1; p2 := p2 + 1; CONTINUE;
+                ELSIF c1 = '^' THEN RETURN CASE WHEN c2 IS NULL THEN -1 ELSE 1 END;
+                ELSE RETURN CASE WHEN c1 IS NULL THEN 1 ELSE -1 END; END IF;
+            END IF;
+
             -- Skip common separators
-            WHILE pos1 <= len1 AND substring(v1, pos1, 1) IN ('.', '-', '_', '+', ':') LOOP
-                    pos1 := pos1 + 1;
-                END LOOP;
-            WHILE pos2 <= len2 AND substring(v2, pos2, 1) IN ('.', '-', '_', '+', ':') LOOP
-                    pos2 := pos2 + 1;
-                END LOOP;
+            WHILE p1 <= l1 AND substr(ver1, p1, 1) IN ('.', '-', '_', '+') LOOP p1 := p1 + 1; END LOOP;
+            WHILE p2 <= l2 AND substr(ver2, p2, 1) IN ('.', '-', '_', '+') LOOP p2 := p2 + 1; END LOOP;
 
-            -- Check if we've reached the end
-            IF pos1 > len1 AND pos2 > len2 THEN
-                RETURN 0;
-            ELSIF pos1 > len1 THEN
-                RETURN -1;  -- v1 is shorter
-            ELSIF pos2 > len2 THEN
-                RETURN 1;   -- v2 is shorter
-            END IF;
+            -- Check for end of strings
+            IF p1 > l1 AND p2 > l2 THEN RETURN 0;
+            ELSIF p1 > l1 THEN RETURN -1;
+            ELSIF p2 > l2 THEN RETURN 1; END IF;
 
-            -- Determine segment types
-            char1 := substring(v1, pos1, 1);
-            char2 := substring(v2, pos2, 1);
-            is_num1 := char1 ~ '[0-9]';
-            is_num2 := char2 ~ '[0-9]';
+            c1 := substr(ver1, p1, 1); c2 := substr(ver2, p2, 1);
 
-            -- Extract segments
-            IF is_num1 THEN
-                -- Extract numeric segment from v1
-                seg1 := '';
-                WHILE pos1 <= len1 AND substring(v1, pos1, 1) ~ '[0-9]' LOOP
-                        seg1 := seg1 || substring(v1, pos1, 1);
-                        pos1 := pos1 + 1;
-                    END LOOP;
-                num1 := seg1::BIGINT;
+            -- Extract and compare segments
+            IF c1 ~ '[0-9]' AND c2 ~ '[0-9]' THEN
+                -- Both numeric: extract and compare as numbers
+                num1 := 0; WHILE p1 <= l1 AND substr(ver1, p1, 1) ~ '[0-9]' LOOP
+                        num1 := num1 * 10 + substr(ver1, p1, 1)::INT; p1 := p1 + 1; END LOOP;
+                num2 := 0; WHILE p2 <= l2 AND substr(ver2, p2, 1) ~ '[0-9]' LOOP
+                        num2 := num2 * 10 + substr(ver2, p2, 1)::INT; p2 := p2 + 1; END LOOP;
+                IF num1 < num2 THEN RETURN -1; ELSIF num1 > num2 THEN RETURN 1; END IF;
+            ELSIF c1 ~ '[0-9]' THEN
+                RETURN 1;  -- Numbers sort after letters in RPM
+            ELSIF c2 ~ '[0-9]' THEN
+                RETURN -1; -- Numbers sort after letters in RPM
+            ELSIF c1 ~ '[a-zA-Z]' AND c2 ~ '[a-zA-Z]' THEN
+                -- Both alpha: extract and compare lexically
+                seg1 := ''; WHILE p1 <= l1 AND substr(ver1, p1, 1) ~ '[a-zA-Z]' LOOP
+                        seg1 := seg1 || substr(ver1, p1, 1); p1 := p1 + 1; END LOOP;
+                seg2 := ''; WHILE p2 <= l2 AND substr(ver2, p2, 1) ~ '[a-zA-Z]' LOOP
+                        seg2 := seg2 || substr(ver2, p2, 1); p2 := p2 + 1; END LOOP;
+                cmp := CASE WHEN seg1 < seg2 THEN -1 WHEN seg1 > seg2 THEN 1 ELSE 0 END;
+                IF cmp != 0 THEN RETURN cmp; END IF;
             ELSE
-                -- Extract alpha segment from v1
-                seg1 := '';
-                WHILE pos1 <= len1 AND substring(v1, pos1, 1) ~ '[a-zA-Z]' LOOP
-                        seg1 := seg1 || substring(v1, pos1, 1);
-                        pos1 := pos1 + 1;
-                    END LOOP;
-            END IF;
-
-            IF is_num2 THEN
-                -- Extract numeric segment from v2
-                seg2 := '';
-                WHILE pos2 <= len2 AND substring(v2, pos2, 1) ~ '[0-9]' LOOP
-                        seg2 := seg2 || substring(v2, pos2, 1);
-                        pos2 := pos2 + 1;
-                    END LOOP;
-                num2 := seg2::BIGINT;
-            ELSE
-                -- Extract alpha segment from v2
-                seg2 := '';
-                WHILE pos2 <= len2 AND substring(v2, pos2, 1) ~ '[a-zA-Z]' LOOP
-                        seg2 := seg2 || substring(v2, pos2, 1);
-                        pos2 := pos2 + 1;
-                    END LOOP;
-            END IF;
-
-            -- Compare segments according to RPM rules
-            IF is_num1 AND is_num2 THEN
-                -- Both numeric: compare as numbers
-                IF num1 < num2 THEN RETURN -1;
-                ELSIF num1 > num2 THEN RETURN 1;
-                END IF;
-            ELSIF is_num1 THEN
-                -- num1 vs alpha2: numbers are "newer" than alphas in RPM
-                RETURN 1;
-            ELSIF is_num2 THEN
-                -- alpha1 vs num2: numbers are "newer" than alphas in RPM
-                RETURN -1;
-            ELSE
-                -- Both alpha: lexical comparison
-                IF seg1 < seg2 THEN RETURN -1;
-                ELSIF seg1 > seg2 THEN RETURN 1;
-                END IF;
+                -- Handle other characters
+                IF c1 < c2 THEN RETURN -1; ELSIF c1 > c2 THEN RETURN 1; END IF;
+                p1 := p1 + 1; p2 := p2 + 1;
             END IF;
         END LOOP;
-
     RETURN 0;
 END;
 $$ LANGUAGE plpgsql IMMUTABLE STRICT PARALLEL SAFE;
