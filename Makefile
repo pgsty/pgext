@@ -74,6 +74,9 @@ load2:
 	cat db/bin.csv         | psql $(PGURL) -c "COPY pgext.bin FROM STDIN CSV HEADER;"
 	cat db/pkg.csv         | psql $(PGURL) -c "COPY pgext.pkg FROM STDIN CSV HEADER;"
 
+gr:
+	goreleaser release --clean --skip=publish
+
 # load extension data from data dir
 #load:
 #	psql $(PGURL) -c "TRUNCATE ext.extension; COPY ext.extension FROM '/Users/vonng/pgsty/extension/data/extension.csv' CSV HEADER;"
