@@ -467,7 +467,7 @@ COMMENT ON COLUMN pgext.bin.size_full IS 'Installed size';
 -- Extension Package Availability
 -----------------------------------
 -- DROP TYPE IF EXISTS pgext.pkg_state CASCADE;
-CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK','THROW');
+CREATE TYPE pgext.pkg_state AS ENUM ('AVAIL', 'MISS', 'HIDE', 'BREAK','THROW', 'FORK');
 
 -- Cross-reference table showing extension package availability across PG versions and OS platforms
 -- DROP TABLE IF EXISTS pgext.pkg CASCADE;

@@ -368,8 +368,8 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 				// Generate package name based on distribution type
 				pkgName := g.getPackageNameForCategory(ext, pgVer)
 
-				// Determine if should be hidden
-				isHidden := ext.Hidden || g.shouldHideInCategory(ext.Name, pgVer)
+				// Use the hide flag from database configuration
+				isHidden := ext.Hidden
 
 				// Don't add asterisk for wildcard matching - the package name already includes it if needed
 
@@ -423,11 +423,62 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 	// Sort extensions by category ID and extension ID
 	sortedExts := sortExtensionsByID(extensions)
 
+	// Collect all hunspell extensions for aggregation
+	hunspellExts := []string{}
+	hunspellVersions := make(map[int]bool)
+	for _, ext := range sortedExts {
+		if strings.HasPrefix(ext.Name, "hunspell_") && ext.Name != "hunspell_pt_pt" { // Exclude broken hunspell_pt_pt
+			hunspellExts = append(hunspellExts, ext.Alias)
+			for pg := range ext.Available {
+				if ext.Available[pg] {
+					hunspellVersions[pg] = true
+				}
+			}
+		}
+	}
+
 	// Generate mappings
 	for _, ext := range sortedExts {
 		// Skip contrib extensions
 		if ext.Category == "CONTRIB" {
 			continue
+		}
+
+		// Special handling: insert hunspell aggregation alias before hunspell_cs_cz
+		if ext.Name == "hunspell_cs_cz" && len(hunspellExts) > 0 {
+			// Create hunspell aggregate package pattern
+			var hunspellPkgPattern string
+			if g.isRPM() {
+				// For RPM: hunspell_cs_cz_$v hunspell_de_de_$v hunspell_en_us_$v ...
+				var pkgs []string
+				for _, hext := range hunspellExts {
+					pkgs = append(pkgs, hext+"_$v")
+				}
+				hunspellPkgPattern = strings.Join(pkgs, " ")
+			} else {
+				// For DEB: postgresql-$v-hunspell-cs-cz,postgresql-$v-hunspell-de-de,...
+				var pkgs []string
+				for _, hext := range hunspellExts {
+					pkgs = append(pkgs, "postgresql-$v-"+strings.ReplaceAll(hext, "_", "-"))
+				}
+				hunspellPkgPattern = strings.Join(pkgs, ",")
+			}
+
+			// Convert map to slice for versions
+			var hunspellVerList []int
+			for v := range hunspellVersions {
+				hunspellVerList = append(hunspellVerList, v)
+			}
+			sort.Sort(sort.Reverse(sort.IntSlice(hunspellVerList)))
+
+			// Add hunspell aggregate alias
+			mappings = append(mappings, ExtensionMapping{
+				Name:     "hunspell",
+				Package:  hunspellPkgPattern,
+				PGVers:   hunspellVerList,
+				Comment:  "aggregate all hunspell extensions",
+				Category: ext.Category,
+			})
 		}
 
 		// Determine package pattern
@@ -463,13 +514,6 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 func (g *PigstyConfigGenerator) getPackageNameForCategory(ext *ExtensionData, pgVer int) string {
 	// Special case handling
 	switch ext.Name {
-	case "pgaudit":
-		// Fix: use proper pgaudit naming for Debian/Ubuntu systems
-		if !g.isRPM() {
-			// For Debian/Ubuntu, use postgresql-$v-pgaudit pattern
-			return fmt.Sprintf("postgresql-%d-pgaudit", pgVer)
-		}
-		return g.getPGAuditPackageName(pgVer)
 	case "babelfishpg_common":
 		// Merge babelfish into wiltondb
 		if g.osCode == "el7" || g.osCode == "el8" || g.osCode == "el9" ||
@@ -513,89 +557,20 @@ func (g *PigstyConfigGenerator) getPackageNameForCategory(ext *ExtensionData, pg
 
 // getRPMPackagePattern returns the RPM package pattern for an extension
 func (g *PigstyConfigGenerator) getRPMPackagePattern(ext *ExtensionData) string {
-	// Special handling for specific extensions
-	switch ext.Alias {
-	case "pgaudit":
-		return "pgaudit_$v*"
-	case "hunspell_cs_cz":
-		return "hunspell_cs_cz_$v hunspell_de_de_$v hunspell_en_us_$v hunspell_fr_$v hunspell_ne_np_$v hunspell_nl_nl_$v hunspell_nn_no_$v hunspell_ru_ru_$v hunspell_ru_ru_aot_$v"
-	default:
-		// Use RPMPkg if available, keeping $v placeholder
-		if ext.RPMPkg != "" {
-			return ext.RPMPkg
-		}
-		return ext.Alias + "_$v"
+	// Use RPMPkg if available, keeping $v placeholder
+	if ext.RPMPkg != "" {
+		return ext.RPMPkg
 	}
+	return ext.Alias + "_$v"
 }
 
 // getDEBPackagePattern returns the DEB package pattern for an extension
 func (g *PigstyConfigGenerator) getDEBPackagePattern(ext *ExtensionData) string {
-	// Special handling for specific extensions
-	switch ext.Alias {
-	case "hunspell_cs_cz":
-		return "postgresql-$v-hunspell-cs-cz,postgresql-$v-hunspell-de-de,postgresql-$v-hunspell-en-us,postgresql-$v-hunspell-fr,postgresql-$v-hunspell-ne-np,postgresql-$v-hunspell-nl-nl,postgresql-$v-hunspell-nn-no,postgresql-$v-hunspell-ru-ru,postgresql-$v-hunspell-ru-ru-aot"
-	case "pgaudit":
-		return "postgresql-$v-pgaudit"
-	default:
-		// Use DEBPkg if available, keeping $v placeholder
-		if ext.DEBPkg != "" {
-			return ext.DEBPkg
-		}
-		return "postgresql-$v-" + strings.ReplaceAll(ext.Alias, "_", "-")
+	// Use DEBPkg if available, keeping $v placeholder
+	if ext.DEBPkg != "" {
+		return ext.DEBPkg
 	}
-}
-
-// shouldHideInCategory determines if an extension should be hidden in category packages
-func (g *PigstyConfigGenerator) shouldHideInCategory(extName string, pgVer int) bool {
-	// Extensions that should be hidden from the 16 category extension alias lists
-	// Special case: hydra extension is marked as HIDE status and excluded from category listings
-	hideList := []string{
-		"hydra", "duckdb_fdw", "pg_timeseries", "pgpool", "plr",
-		"pgagent", "dbt2", "pgtap", "faker", "repmgr", "slony",
-		"oracle_fdw", "pg_strom", "db2_fdw", "orioledb",
-	}
-
-	for _, h := range hideList {
-		if extName == h {
-			return true
-		}
-	}
-
-	// OS/arch specific hiding
-	if extName == "rdkit" && g.osCode != "u24" {
-		return true
-	}
-
-	if extName == "jdbc_fdw" && (g.osCode == "el8" || g.osCode == "el9") && g.arch == "aarch64" {
-		return true
-	}
-
-	if extName == "pllua" && (g.osCode == "el8" || g.osCode == "el9") && g.arch == "aarch64" && pgVer < 16 {
-		return true
-	}
-
-	// Hide timescaledb and timescaledb_toolkit for PG13
-	if (extName == "timescaledb" || extName == "timescaledb_toolkit") && pgVer == 13 {
-		return true
-	}
-
-	return false
-}
-
-// getPGAuditPackageName returns the correct pgaudit package name
-func (g *PigstyConfigGenerator) getPGAuditPackageName(pgVer int) string {
-	switch pgVer {
-	case 18, 17, 16:
-		return fmt.Sprintf("pgaudit_%d", pgVer)
-	case 15:
-		return "pgaudit17_15"
-	case 14:
-		return "pgaudit16_14"
-	case 13:
-		return "pgaudit15_13"
-	default:
-		return fmt.Sprintf("pgaudit_%d", pgVer)
-	}
+	return "postgresql-$v-" + strings.ReplaceAll(ext.Alias, "_", "-")
 }
 
 // getExtensionComment returns the comment for an extension
@@ -675,6 +650,21 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 				return g.constants.DistroAdhocPkg["rpm"]
 			}
 			return g.constants.DistroAdhocPkg["deb"]
+		},
+		"getJavaRuntime": func() string {
+			// el10 uses Java 21, others use Java 17
+			if g.osCode == "el10" {
+				return "java-21-openjdk-src java-21-openjdk-headless"
+			}
+			return "java-17-openjdk-src java-17-openjdk-headless"
+		},
+		"getNodePackage1": func() string {
+			// el10 doesn't have flamegraph package
+			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf"
+			if g.osCode == "el10" {
+				return basePkgs + " chkconfig"
+			}
+			return basePkgs + " flamegraph chkconfig"
 		},
 	}
 }
@@ -807,7 +797,7 @@ func GetConfigConstants() *ConfigConstants {
 			"el7":  "ansible python3 python3-pip python36-virtualenv python36-requests python36-idna yum-utils createrepo_c sshpass",
 			"el8":  "ansible python3 python3-pip python3-virtualenv python3-requests python3.12-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
 			"el9":  "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"el10": "ansible-core python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"el10": "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass",
 			"d11":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d12":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d13":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
@@ -916,7 +906,7 @@ package_map:
   infra-package:           "{{ index .Constants.RPMCommonPkg 0 }}"
   infra-addons:            "{{ index .Constants.RPMCommonPkg 1 }}"
   extra-modules:           "{{ index .Constants.RPMCommonPkg 2 }}"
-  node-package1:           "{{ index .Constants.RPMCommonPkg 3 }}"
+  node-package1:           "{{ getNodePackage1 }}"
   node-package2:           "{{ index .Constants.RPMCommonPkg 4 }}"
   pgsql-utility:           "{{ index .Constants.RPMCommonPkg 5 }}"
 
@@ -930,7 +920,7 @@ package_map:
   # MISC: pro modules
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
-  java-runtime:            "java-17-openjdk-src java-17-openjdk-headless"
+  java-runtime:            "{{ getJavaRuntime }}"
   kafka:                   "kafka kafka_exporter"
   kube-runtime:            "containerd.io"
   sealos:                  "sealos"

@@ -21,18 +21,27 @@ UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'p
 UPDATE pgext.pkg SET count = (SELECT COUNT(*) FROM pgext.bin b WHERE b.pg = pkg.pg AND b.os = pkg.os AND b.name = pkg.name);
 
 -- 'step 4/5: update pgext.pkg org and version ...';
-UPDATE pgext.pkg SET org = sub.org, version = sub.version
-FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version FROM pgext.bin b,LATERAL (SELECT org FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version USING OPERATOR (pgext.>)) sub
+UPDATE pgext.pkg SET org = sub.org, version = sub.version, hide = sub.hide
+FROM (SELECT DISTINCT ON (pg,os,name) pg,os,name,org,version,hide FROM pgext.bin b,LATERAL (SELECT org, position('pgnf' in id) > 0 AS hide FROM pgext.repository r WHERE r.id = b.repo) ORDER BY pg,os,name,ver::pgext.version USING OPERATOR (pgext.>)) sub
 WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 
 -- 'step 5/5: update pgext.pkg state ...';
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
--- Special case: hydra extension should be hidden from the 16 category extension alias lists
--- UPDATE pgext.pkg SET hide = true, state = 'HIDE' WHERE pkg IN ('hydra','duckdb_fdw','pg_timeseries','pgpool','plr','pgagent','dbt2','pgtap','faker','repmgr','oracle_fdw','pg_strom','db2_fdw','orioledb');
-UPDATE pgext.pkg SET hide = true, state = 'HIDE' WHERE pkg IN ('hydra','duckdb_fdw');
-UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('orioledb', 'pg_tde', 'hunspell_pt_pt');
-UPDATE pgext.pkg SET state = 'BREAK' WHERE pkg = 'pg_dbms_job' AND os ~ '^el8';
--- UPDATE pgext.pkg SET state = 'BREAK' WHERE pkg in ('pg_snakeoil') AND os ~ '^el8' AND state = 'AVAIL'; -- el8 duckdb/mooncake/snake oil break
+
+-- conflict with other extension, hide in list
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'duckdb_fdw', 'pg_timeseries');
+
+-- too big, non-free, heavy extensions
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr' ,'oracle_fdw', 'db2_fdw', 'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
+
+-- only works on postgres forks
+UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN ('orioledb', 'pg_tde' ,'babelfishpg_common', 'babelfishpg_tsql', 'babelfishpg_tds', 'babelfishpg_money');
+
+-- broken extensions
+UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('hunspell_pt_pt');   -- a broken extension conflict with pg dict file
+
+-- mark a brokwn extension
+UPDATE pgext.pkg SET hide = true, state = 'BREAK' WHERE pkg = 'pg_dbms_job' AND os ~ '^el8';
 
 -- 'pgext.refresh_pkg complete';
 UPDATE pgext.status SET recap_time = now();
