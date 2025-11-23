@@ -547,6 +547,8 @@ func (g *PigstyConfigGenerator) getDEBPackagePattern(ext *ExtensionData) string 
 
 // shouldHideInCategory determines if an extension should be hidden in category packages
 func (g *PigstyConfigGenerator) shouldHideInCategory(extName string, pgVer int) bool {
+	// Extensions that should be hidden from the 16 category extension alias lists
+	// Special case: hydra extension is marked as HIDE status and excluded from category listings
 	hideList := []string{
 		"hydra", "duckdb_fdw", "pg_timeseries", "pgpool", "plr",
 		"pgagent", "dbt2", "pgtap", "faker", "repmgr", "slony",
@@ -572,6 +574,11 @@ func (g *PigstyConfigGenerator) shouldHideInCategory(extName string, pgVer int) 
 		return true
 	}
 
+	// Hide timescaledb and timescaledb_toolkit for PG13
+	if (extName == "timescaledb" || extName == "timescaledb_toolkit") && pgVer == 13 {
+		return true
+	}
+
 	return false
 }
 
@@ -594,6 +601,7 @@ func (g *PigstyConfigGenerator) getPGAuditPackageName(pgVer int) string {
 // getExtensionComment returns the comment for an extension
 func (g *PigstyConfigGenerator) getExtensionComment(ext *ExtensionData) string {
 	comments := map[string]string{
+		"hydra":      "exclude from 16 category alias lists (special case)",
 		"pgpool":     "exclude due to not used",
 		"plr":        "exclude due to heavy deps",
 		"pgagent":    "exclude due to not used",
@@ -873,6 +881,7 @@ repo_upstream_default:
   - { name: pgdg-el8fix    ,description: 'PostgreSQL EL8FIX'  ,module: pgsql   ,releases: [8     ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-$basearch/'  ,china: 'https://repo.pigsty.cc/yum/pgdg/common/pgdg-centos8-sysupdates/redhat/rhel-8-x86_64/'  ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-x86_64/' }}
   - { name: pgdg-el9fix    ,description: 'PostgreSQL EL9FIX'  ,module: pgsql   ,releases: [  9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-rocky9-sysupdates/redhat/rhel-9-$basearch/'   ,china: 'https://repo.pigsty.cc/yum/pgdg/common/pgdg-rocky9-sysupdates/redhat/rhel-9-x86_64/'   ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-rocky9-sysupdates/redhat/rhel-9-x86_64/'  }}
   - { name: pgdg-el10fix   ,description: 'PostgreSQL EL10FIX' ,module: pgsql   ,releases: [    10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-rocky10-sysupdates/redhat/rhel-10-$basearch/' ,china: 'https://repo.pigsty.cc/yum/pgdg/common/pgdg-rocky10-sysupdates/redhat/rhel-10-x86_64/' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-rocky10-sysupdates/redhat/rhel-10-x86_64/' } }  
+  - { name: pgdg13         ,description: 'PostgreSQL 13'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/13/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/13/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg16         ,description: 'PostgreSQL 16'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-$releasever-$basearch' ,china: 'https://repo.pigsty.cc/yum/pgdg/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch' }}

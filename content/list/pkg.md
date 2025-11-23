@@ -75,7 +75,7 @@ There are 306 available PostgreSQL packages:
 | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< category "RAG" >}} | `pg_tiktoken_$v` | `postgresql-$v-pg-tiktoken` |
 | {{< ext "pg4ml" >}} | `2.0` | {{< badge content="Link" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< category "RAG" >}} | `pg4ml_$v` | `postgresql-$v-pg4ml` |
 | {{< ext "pgml" >}} | `2.10.0` | {{< badge content="Link" link="https://github.com/postgresml/postgresml" >}} | {{< category "RAG" >}} | `pgml_$v` | `postgresql-$v-pgml` |
-| {{< ext "pg_search" >}} | `0.19.7` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.20.0` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.0.4` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v*` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v*` | `postgresql-$v-pg-bigm` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v*` | `postgresql-$v-zhparser` |
@@ -379,7 +379,7 @@ There are 306 available PostgreSQL packages:
 | {{< ext "file_fdw" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/file-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "postgres_fdw" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "documentdb" >}} | `0.107` | {{< badge content="Link" link="https://github.com/microsoft/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v*` | `postgresql-$v-documentdb` |
-| {{< ext "orafce" >}} | `4.16.2` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
+| {{< ext "orafce" >}} | `4.16.3` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
 | {{< ext "pgtt" >}} | `4.4` | {{< badge content="Link" link="https://github.com/darold/pgtt" >}} | {{< category "SIM" >}} | `pgtt_$v*` | `postgresql-$v-pgtt` |
 | {{< ext "session_variable" >}} | `3.4` | {{< badge content="Link" link="https://github.com/splendiddata/session_variable" >}} | {{< category "SIM" >}} | `session_variable_$v*` | `postgresql-$v-session-variable` |
 | {{< ext "pg_statement_rollback" >}} | `1.5` | {{< badge content="Link" link="https://github.com/lzlabs/pg_statement_rollback" >}} | {{< category "SIM" >}} | `pg_statement_rollback_$v*` | `postgresql-$v-pg-statement-rollback` |

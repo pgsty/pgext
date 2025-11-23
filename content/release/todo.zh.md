@@ -4,6 +4,10 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
+## 待办事项
+
+- DocumentDB RPM 去除依赖 postgis35 弱依赖
+- pg_search 0.20.0
 
 ## 最近更新
 

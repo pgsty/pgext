@@ -173,8 +173,8 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `firebird_fdw_13` | `1.4.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 51.8 KiB | [firebird_fdw_13-1.4.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/firebird_fdw_13-1.4.1-1PIGSTY.el8.x86_64.rpm) |
-| `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.7 KiB | [firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-2.rhel8.x86_64.rpm) |
+| `firebird_fdw_13` | `1.2.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.3-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.6 KiB | [firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.2-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.2.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 150.5 KiB | [firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/firebird_fdw_13-1.2.1-1.rhel8.x86_64.rpm) |
 | `firebird_fdw_13` | `1.4.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 50.2 KiB | [firebird_fdw_13-1.4.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/firebird_fdw_13-1.4.1-1PIGSTY.el8.aarch64.rpm) |

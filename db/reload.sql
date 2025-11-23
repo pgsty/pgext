@@ -27,8 +27,10 @@ WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 
 -- 'step 5/5: update pgext.pkg state ...';
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
+-- Special case: hydra extension should be hidden from the 16 category extension alias lists
 -- UPDATE pgext.pkg SET hide = true, state = 'HIDE' WHERE pkg IN ('hydra','duckdb_fdw','pg_timeseries','pgpool','plr','pgagent','dbt2','pgtap','faker','repmgr','oracle_fdw','pg_strom','db2_fdw','orioledb');
-UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('orioledb','pg_tde', 'hunspell_pt_pt');
+UPDATE pgext.pkg SET hide = true, state = 'HIDE' WHERE pkg IN ('hydra','duckdb_fdw');
+UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('orioledb', 'pg_tde', 'hunspell_pt_pt');
 UPDATE pgext.pkg SET state = 'BREAK' WHERE pkg = 'pg_dbms_job' AND os ~ '^el8';
 -- UPDATE pgext.pkg SET state = 'BREAK' WHERE pkg in ('pg_snakeoil') AND os ~ '^el8' AND state = 'AVAIL'; -- el8 duckdb/mooncake/snake oil break
 

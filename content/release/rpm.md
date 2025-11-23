@@ -16,7 +16,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pgvectorscale          | 0.8.0  | 0.9.0  | -pg13, +pg18               |
 | pglite_fusion          | 0.0.5  | 0.0.6  |                            |
 | pgx_ulid               | 0.2.1  | 0.2.2  |                            |
-| pg_search              | 0.19.5 | 0.19.7 | resume PIGSTY building     |
+| pg_search              | 0.19.5 | 0.20.0 | resume PIGSTY building     |
 | citus                  | 13.2.0 | 13.2.0 | official tag               |
 | timescaledb            | 2.23.0 | 2.23.1 |                            |
 | pg_profile             | 4.10   | 4.11   |                            |

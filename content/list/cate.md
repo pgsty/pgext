@@ -80,7 +80,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.19.7 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.0 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -522,7 +522,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9000 | {{< alias "documentdb" >}} | 0.107 | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.107 | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.107 | Multi-Node API surface for DocumentDB |
-| 9100 | {{< alias "orafce" >}} | 4.16.2 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| 9100 | {{< alias "orafce" >}} | 4.16.3 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
