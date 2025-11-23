@@ -8,16 +8,25 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2025-11-20
 
-| Name        |  Old   |  New   | Comment        |
-|:------------|:------:|:------:|:---------------|
-| pgschema    |   -    | 1.4.2  | new            |
-| vector      | 0.51.0 | 0.51.1 | bugfix release |
-| sealos      | 5.0.1  | 5.1.1  |                |
-| etcd        | 3.6.5  | 3.6.6  |                |
-| duckdb      | 1.4.1  | 1.4.2  |                |
-| pg_exporter | 1.0.2  | 1.0.3  |                |
-| pig         | 0.7.1  | 0.7.2  |                |
-| grafana     | 12.1.0 | 12.3.0 |                |
+| Name                       |   Old   |   New   | Comment        |
+|:---------------------------|:-------:|:-------:|:---------------|
+| pgschema                   |    -    |  1.4.2  | new            |
+| vector                     | 0.51.0  | 0.51.1  | bugfix release |
+| sealos                     |  5.0.1  |  5.1.1  |                |
+| etcd                       |  3.6.5  |  3.6.6  |                |
+| duckdb                     |  1.4.1  |  1.4.2  |                |
+| pg_exporter                |  1.0.2  |  1.0.3  |                |
+| pig                        |  0.7.1  |  0.7.2  |                |
+| grafana                    | 12.1.0  | 12.3.0  |                |
+| pg_timetable               |  6.1.0  |  6.2.0  |                |
+| genai-toolbox              | 0.16.0  | 0.21.0  |                |
+| timescaledb-tools          | 0.18.0  | 0.18.1  | move to infra  |
+| timescaledb-event-streamer | 0.12.0  | 0.20.0  |                |
+| tigerbeetle                | 0.16.60 | 0.16.65 |                |
+| victoria-metrics           | 1.129.1 | 1.130.0 |                |
+| victorialogs               | 1.37.2  | 1.38.0  |                |
+| grafana-victorialogs-ds    | 0.21.4  | 0.22.1  |                |
+| grafana-victoriametrics-ds | 0.19.6  | 0.19.7  |                |
 
 
 ## 2025-11-08

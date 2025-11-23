@@ -146,8 +146,8 @@ sudo yum makecache;
 |          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  |     |    |
 |         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  |     |    |
 |    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  |     |    |
-|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.129.1 |     |    |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.37.2  |     |    |
+|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.130.0 |     |    |
+| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.38.0  |     |    |
 |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  |     |    |
 |    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |     |    |
 |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  |     |    |
@@ -169,8 +169,8 @@ sudo yum makecache;
 |                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    | 3.0.0  |     | 已废弃   |
 |                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1 |     |       |
 |            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             | 3.6.0  |     |       |
-|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.21.4 |     |       |
-| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.6 |     |       |
+|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.1 |     |       |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7 |     |       |
 |        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.0.0 |     |       |
 
 ### 数据库组件
@@ -185,23 +185,26 @@ PostgreSQL 相关工具、数据库管理系统和其他实用程序
 |        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      |     | 消息队列               |
 |        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |     | 嵌入式 OLAP           |
 |     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.7.0      |     | 基于 PG 的 MongoDB    |
-| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.60     |     | 金融 OLTP            |
+| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.65     |     | 金融 OLTP            |
 |     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |      4.6       |     | Oracle 兼容的 PG 17.6 |
 
 ### 数据库工具
 
 Pig 包管理器、PostgreSQL 工具、数据库管理系统和其他实用程序
 
-|                                 名称                                  |   版本   |    许可证     |   备注    |
-|:-------------------------------------------------------------------:|:------:|:----------:|:-------:|
-|                 [pig](https://github.com/pgsty/pig)                 | 0.7.2  | Apache-2.0 | PG 包管理器 |
-|  [vip-manager](https://github.com/cybertec-postgresql/vip-manager)  | 4.0.0  |            |         |
-| [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable) | 6.1.0  |            |         |
-|  [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)   | 1.17.0 |            |         |
-|             [sealos](https://github.com/labring/sealos)             | 5.1.1  |            |         |
-|        [rclone](https://github.com/rclone/rclone/releases/)         | 1.71.2 |            |         |
-|             [restic](https://github.com/restic/restic)              | 0.18.1 |            |         |
-|           [juicefs](https://github.com/juicedata/juicefs)           | 1.3.0  |            |         |
-|            [dblab](https://github.com/danvergara/dblab)             | 0.34.2 |            |         |
-|            [v2ray](https://github.com/v2fly/v2ray-core)             | 5.28.0 |            |         |
+|                                          名称                                           |   版本   |    许可证     |   备注    |
+|:-------------------------------------------------------------------------------------:|:------:|:----------:|:-------:|
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.2  | Apache-2.0 | PG 包管理器 |
+|           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |            |         |
+|          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0  |            |         |
+|          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1 |            |         |
+| [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0 |            |         |
+|           [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)            | 1.17.0 |            |         |
+|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.21.0 |            |         |
+|                      [sealos](https://github.com/labring/sealos)                      | 5.1.1  |            |         |
+|                 [rclone](https://github.com/rclone/rclone/releases/)                  | 1.72.0 |            |         |
+|                      [restic](https://github.com/restic/restic)                       | 0.18.1 |            |         |
+|                    [juicefs](https://github.com/juicedata/juicefs)                    | 1.3.0  |            |         |
+|                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2 |            |         |
+|                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0 |            |         |
 
