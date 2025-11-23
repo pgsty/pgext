@@ -6,7 +6,7 @@
 # Path      :   Makefile
 # Copyright (C) 2019-2025 Ruohang Feng
 #==============================================================#
-
+VERSION=v0.7.2
 default: v d
 
 PGURL="postgres:///vonng"
@@ -74,6 +74,9 @@ load2:
 	cat db/bin.csv         | psql $(PGURL) -c "COPY pgext.bin FROM STDIN CSV HEADER;"
 	cat db/pkg.csv         | psql $(PGURL) -c "COPY pgext.pkg FROM STDIN CSV HEADER;"
 
+gr:
+	goreleaser release --clean --skip=publish
+
 # load extension data from data dir
 #load:
 #	psql $(PGURL) -c "TRUNCATE ext.extension; COPY ext.extension FROM '/Users/vonng/pgsty/extension/data/extension.csv' CSV HEADER;"
@@ -89,6 +92,13 @@ gen-mdx:
 	@echo "Generating extension MDX files..."
 	@source ~/.venv/bin/activate && python bin/gen-ext.py
 	@echo "Extension MDX files generated in content/docs/ext/"
+
+arm:
+	CGO_ENABLED=0 GOOS=linux  GOARCH=arm64 go build -a -ldflags "$(LD_FLAGS) -extldflags '-static'" -o pgext
+	upx pgext
+amd:
+	CGO_ENABLED=0 GOOS=linux  GOARCH=amd64 go build -a -ldflags "$(LD_FLAGS) -extldflags '-static'" -o pgext
+	upx pgext
 
 # inventory
 .PHONY: default run gen dump save load gen-json gen-mdx build-mdx
