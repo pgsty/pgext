@@ -11,6 +11,7 @@ weight: 400
 | 名称                         | 旧版本     | 新版本     | 备注             |
 |:---------------------------|:--------|:--------|:---------------|
 | pgschema                   | -       | 1.4.2   | new            |
+| pgflo                      | -       | 0.0.15  | new            |
 | vector                     | 0.51.0  | 0.51.1  | bugfix release |
 | sealos                     | 5.0.1   | 5.1.1   |                |
 | etcd                       | 3.6.5   | 3.6.6   |                |
@@ -27,6 +28,7 @@ weight: 400
 | victorialogs               | 1.37.2  | 1.38.0  |                |
 | grafana-victorialogs-ds    | 0.21.4  | 0.22.1  |                |
 | grafana-victoriametrics-ds | 0.19.6  | 0.19.7  |                |
+| grafana-plugins            | 12.0.0  | 12.3.0  |                |
 
 
 ## 2025-11-08

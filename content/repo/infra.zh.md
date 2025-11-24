@@ -171,7 +171,7 @@ sudo yum makecache;
 |            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             | 3.6.0  |     |       |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.1 |     |       |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7 |     |       |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.0.0 |     |       |
+|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0 |     |       |
 
 ### 数据库组件
 
@@ -196,6 +196,7 @@ Pig 包管理器、PostgreSQL 工具、数据库管理系统和其他实用程�
 |:-------------------------------------------------------------------------------------:|:------:|:----------:|:-------:|
 |                          [pig](https://github.com/pgsty/pig)                          | 0.7.3  | Apache-2.0 | PG 包管理器 |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |            |         |
+|                         [pgschema](https://www.pgschema.com/)                         | 1.4.2  |            |         |
 |          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0  |            |         |
 |          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1 |            |         |
 | [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0 |            |         |
@@ -207,4 +208,5 @@ Pig 包管理器、PostgreSQL 工具、数据库管理系统和其他实用程�
 |                    [juicefs](https://github.com/juicedata/juicefs)                    | 1.3.0  |            |         |
 |                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2 |            |         |
 |                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0 |            |         |
+|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15 |            |         | 
 

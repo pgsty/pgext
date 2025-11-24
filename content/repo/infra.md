@@ -169,7 +169,7 @@ sudo yum makecache;
 |            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  |         |                        |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.1  |         |                        |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  |         |                        |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.0.0  |         |                        |
+|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  |         |                        |
 
 ### Databases
 
@@ -206,3 +206,4 @@ Pig the package manager, PostgreSQL tools, DBMS, and other utils
 |                    [juicefs](https://github.com/juicedata/juicefs)                    | 1.3.0   |            |                        |
 |                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |            |                        |
 |                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |            |                        |
+|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  |            |                        | 
