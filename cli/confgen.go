@@ -103,7 +103,8 @@ type ExtensionData struct {
 	CategoryID      int            // Category ID for sorting
 	Available       map[int]bool   // PG version -> availability
 	VersionPackages map[int]string // PG version -> package name from pgext.pkg
-	Hidden          bool
+	VersionHidden   map[int]bool   // PG version -> hidden status
+	Hidden          bool           // deprecated, kept for compatibility
 	Comment         string
 	RPMPkg          string // RPM package template from extension.rpm_pkg
 	DEBPkg          string // DEB package template from extension.deb_pkg
@@ -205,6 +206,7 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 				CategoryID:      catID,
 				Available:       make(map[int]bool),
 				VersionPackages: make(map[int]string),
+				VersionHidden:   make(map[int]bool),
 			}
 			if comment.Valid {
 				extensions[name].Comment = comment.String
@@ -228,11 +230,11 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 				// Also store a default package name (use the latest one we see)
 				extensions[name].Package = pkgName.String
 			}
-		}
 
-		// Update hidden status
-		if hide.Valid && hide.Bool {
-			extensions[name].Hidden = true
+			// Store version-specific hidden status
+			if hide.Valid {
+				extensions[name].VersionHidden[pgVersion] = hide.Bool
+			}
 		}
 	}
 
@@ -368,8 +370,11 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 				// Generate package name based on distribution type
 				pkgName := g.getPackageNameForCategory(ext, pgVer)
 
-				// Use the hide flag from database configuration
-				isHidden := ext.Hidden
+				// Use version-specific hide flag from database configuration
+				isHidden := false
+				if hidden, exists := ext.VersionHidden[pgVer]; exists {
+					isHidden = hidden
+				}
 
 				// Don't add asterisk for wildcard matching - the package name already includes it if needed
 
@@ -824,7 +829,7 @@ func GetConfigConstants() *ConfigConstants {
 			"el7":  "ansible python3 python3-pip python36-virtualenv python36-requests python36-idna yum-utils createrepo_c sshpass",
 			"el8":  "ansible python3 python3-pip python3-virtualenv python3-requests python3.12-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
 			"el9":  "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"el10": "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass",
+			"el10": "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass crypto-policies-scripts",
 			"d11":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d12":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d13":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
