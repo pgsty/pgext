@@ -128,7 +128,6 @@ PGEXT.CLOUD 项目由 [**PGSTY**](https://github.com/pgsty) / [**VONNG**](https:
 | [github.com/pgsty/pgext](https://github.com/pgsty/pgext)         | 本网站，扩展元数据，以及管理工具  |
 | [github.com/pgsty/pigsty](https://github.com/pgsty/pigsty)       | PostgreSQL 数据库发行版 |
 | [github.com/pgsty/pig](https://github.com/pgsty/pig)             | PostgreSQL 包管理器   |
-| [github.com/pgsty/ext](https://github.com/pgsty/ext)             | 本文档，扩展目录          |
 | [github.com/pgsty/rpm](https://github.com/pgsty/rpm)             | RPM 构建源代码         |
 | [github.com/pgsty/deb](https://github.com/pgsty/deb)             | DEB 构建源代码         |
 | [github.com/pgsty/infra-pkg](https://github.com/pgsty/infra-pkg) | 基础设施包仓库           |

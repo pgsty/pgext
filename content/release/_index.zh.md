@@ -20,10 +20,11 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v0.7.2](https://github.com/pgsty/pig/releases/tag/v0.7.2)。
+当前 `pig` 最新稳定版本为：[v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3)。
 
 |               版本               |     日期     | 摘要                             |                           GitHub                           |
 |:------------------------------:|:----------:|--------------------------------|:----------------------------------------------------------:|
+|  [v0.7.3](/release/pig#v073)   | 2025-11-24 | 修复 el10 & debian13 仓库配置        | [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3) |
 | [v0.7.2](/zh/release/pig#v072) | 2025-11-20 | 437 个扩展，修复 pig build 的一些问题     | [v0.7.2](https://github.com/pgsty/pig/releases/tag/v0.7.2) |
 | [v0.7.1](/zh/release/pig#v071) | 2025-11-10 | 新网站，改进容器内的使用体验                 | [v0.7.1](https://github.com/pgsty/pig/releases/tag/v0.7.1) |
 | [v0.7.0](/zh/release/pig#v070) | 2025-11-05 | 强化 build 能力，大批量包更新             | [v0.7.0](https://github.com/pgsty/pig/releases/tag/v0.7.0) |

@@ -194,7 +194,7 @@ Pig 包管理器、PostgreSQL 工具、数据库管理系统和其他实用程�
 
 |                                          名称                                           |   版本   |    许可证     |   备注    |
 |:-------------------------------------------------------------------------------------:|:------:|:----------:|:-------:|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.2  | Apache-2.0 | PG 包管理器 |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.3  | Apache-2.0 | PG 包管理器 |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |            |         |
 |          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0  |            |         |
 |          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1 |            |         |

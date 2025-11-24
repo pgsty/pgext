@@ -20,10 +20,11 @@ weight: 800
 
 ## PIG Releases
 
-The latest stable version of `pig` is [v0.7.2](https://github.com/pgsty/pig/releases/tag/v0.7.2)
+The latest stable version of `pig` is [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3)
 
 |           Version           |    Date    | Summary                                   |                           GitHub                           |
 |:---------------------------:|:----------:|-------------------------------------------|:----------------------------------------------------------:|
+| [v0.7.3](/release/pig#v073) | 2025-11-24 | fix repo for el10 & debian13              | [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3) |
 | [v0.7.2](/release/pig#v072) | 2025-11-20 | 437 extensions, fix pig build issue       | [v0.7.2](https://github.com/pgsty/pig/releases/tag/v0.7.2) |
 | [v0.7.1](/release/pig#v071) | 2025-11-10 | New website, improve in-docker experience | [v0.7.1](https://github.com/pgsty/pig/releases/tag/v0.7.1) |
 | [v0.7.0](/release/pig#v070) | 2025-11-05 | Build Enhancement and massive upgrade     | [v0.7.0](https://github.com/pgsty/pig/releases/tag/v0.7.0) |

@@ -40,13 +40,13 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
 
 {{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 0.7.2     # 安装 0.7.2 版本
+curl -fsSL https://repo.pigsty.io/pig | bash -s 0.7.3     # 安装 0.7.3 版本
 ```
 {{< /tab >}}
 
 {{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.7.2     # 安装 0.7.2 版本（中国镜像）
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.7.3     # 安装 0.7.3 版本（中国镜像）
 ```
 {{< /tab >}}
 
@@ -62,9 +62,9 @@ curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.7.2     # 安装 0.7.2 版本�
 
 {{< filetree/container >}}
 {{< filetree/file name="latest" >}}
-{{< filetree/folder name="v0.7.2" state="open" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.2/pig_0.7.2-1_amd64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.2/pig_0.7.2-1_arm64.deb" >}}
+{{< filetree/folder name="v0.7.3" state="open" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.3/pig_0.7.3-1_amd64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.3/pig_0.7.3-1_arm64.deb" >}}
 {{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.aarch64.rpm" >}}
 {{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm" >}}
 {{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.7.2/pig-v0.7.2.linux-amd64.tar.gz" >}}
