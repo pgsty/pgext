@@ -4,6 +4,18 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
+
+## 候选列表
+
+- [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
+- [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
+- [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
+- [pg_flo](https://github.com/pgflo/pg_flo) : Stream, transform, and route PostgreSQL data in real-time.
+- [river](https://github.com/riverqueue/river)
+- omnigres on legacy systems
+- plv8 on el10
+
+
 ## 最近更新
 
 - [vchord](/e/vchord) : 1.0.0  
@@ -23,7 +35,6 @@ weight: 700
 - [pg_weighted_statistics](/e/pg_weighted_statistics) : 1.0.0  
 - [pg_stat_monitor](/e/pg_stat_monitor) : 2.3.0  
 - [documentdb](/e/documentdb) : 0.107  
-
 
 
 ## 暂时雪藏

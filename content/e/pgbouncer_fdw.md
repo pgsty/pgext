@@ -63,7 +63,7 @@ width: full
 | `pgbouncer_fdw_18` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.9 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgbouncer_fdw_18` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.8 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_18` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -87,7 +87,7 @@ width: full
 | `pgbouncer_fdw_17` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.8 KiB | [pgbouncer_fdw_17-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgbouncer_fdw_17-1.2.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_17` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 18.5 KiB | [pgbouncer_fdw_17-1.1.0-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgbouncer_fdw_17-1.1.0-2PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_17` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -119,7 +119,7 @@ width: full
 | `pgbouncer_fdw_16` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.9 KiB | [pgbouncer_fdw_16-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgbouncer_fdw_16-1.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_16` | `0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [pgbouncer_fdw_16-0.4-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgbouncer_fdw_16-0.4-3.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_16` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -151,7 +151,7 @@ width: full
 | `pgbouncer_fdw_15` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.9 KiB | [pgbouncer_fdw_15-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgbouncer_fdw_15-1.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_15` | `0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.1 KiB | [pgbouncer_fdw_15-0.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgbouncer_fdw_15-0.4-2.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_15` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -185,7 +185,7 @@ width: full
 | `pgbouncer_fdw_14` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.9 KiB | [pgbouncer_fdw_14-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgbouncer_fdw_14-1.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_14` | `0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.1 KiB | [pgbouncer_fdw_14-0.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgbouncer_fdw_14-0.4-2.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_14` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_14` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_14` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -219,7 +219,7 @@ width: full
 | `pgbouncer_fdw_13` | `1.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.9 KiB | [pgbouncer_fdw_13-1.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgbouncer_fdw_13-1.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_13` | `0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.1 KiB | [pgbouncer_fdw_13-0.4-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgbouncer_fdw_13-0.4-2.rhel9.aarch64.rpm) |
 | `pgbouncer_fdw_13` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgbouncer_fdw_13` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `pgbouncer_fdw_13` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/pgbouncer_fdw_13-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

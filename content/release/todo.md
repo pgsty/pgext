@@ -4,7 +4,15 @@ description: PG Extensions in the radar!
 weight: 700
 ---
 
+## TODOLIST
 
+- [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
+- [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
+- [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
+- [pg_flo](https://github.com/pgflo/pg_flo) : Stream, transform, and route PostgreSQL data in real-time.
+- [river](https://github.com/riverqueue/river)
+- omnigres on legacy systems
+- plv8 on el10
 
 ## Latest Update
 

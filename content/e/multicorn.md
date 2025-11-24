@@ -68,8 +68,8 @@ width: full
 | `multicorn2_18` | `3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 110.0 KiB | [multicorn2_18-3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/multicorn2_18-3.1-1PGDG.rhel9.aarch64.rpm) |
 | `multicorn2_18` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 135.5 KiB | [multicorn2_18-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/multicorn2_18-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_18` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 133.0 KiB | [multicorn2_18-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/multicorn2_18-3.1-1PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_18` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.6 KiB | [multicorn2_18-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/multicorn2_18-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_18` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.9 KiB | [multicorn2_18-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/multicorn2_18-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_18` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.6 KiB | [multicorn2_18-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/multicorn2_18-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_18` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.9 KiB | [multicorn2_18-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/multicorn2_18-3.1-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -91,9 +91,9 @@ width: full
 | `multicorn2_17` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 135.5 KiB | [multicorn2_17-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/multicorn2_17-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_17` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 132.9 KiB | [multicorn2_17-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/multicorn2_17-3.1-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_17` | `3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 132.6 KiB | [multicorn2_17-3.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/multicorn2_17-3.0-2PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_17` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.6 KiB | [multicorn2_17-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/multicorn2_17-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_17` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 132.0 KiB | [multicorn2_17-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/multicorn2_17-3.1-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_17` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.6 KiB | [multicorn2_17-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/multicorn2_17-3.0-2PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_17` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.6 KiB | [multicorn2_17-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/multicorn2_17-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_17` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 132.0 KiB | [multicorn2_17-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/multicorn2_17-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_17` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.6 KiB | [multicorn2_17-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/multicorn2_17-3.0-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -115,9 +115,9 @@ width: full
 | `multicorn2_16` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 135.5 KiB | [multicorn2_16-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/multicorn2_16-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_16` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 133.0 KiB | [multicorn2_16-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/multicorn2_16-3.1-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_16` | `3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 132.5 KiB | [multicorn2_16-3.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/multicorn2_16-3.0-2PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_16` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_16-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/multicorn2_16-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_16` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 132.1 KiB | [multicorn2_16-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/multicorn2_16-3.1-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_16` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.8 KiB | [multicorn2_16-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/multicorn2_16-3.0-2PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_16` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_16-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/multicorn2_16-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_16` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 132.1 KiB | [multicorn2_16-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/multicorn2_16-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_16` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 131.8 KiB | [multicorn2_16-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/multicorn2_16-3.0-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -147,9 +147,9 @@ width: full
 | `multicorn2_15` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 139.3 KiB | [multicorn2_15-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/multicorn2_15-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_15` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 136.5 KiB | [multicorn2_15-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/multicorn2_15-3.1-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_15` | `3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 135.9 KiB | [multicorn2_15-3.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/multicorn2_15-3.0-2PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_15` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.9 KiB | [multicorn2_15-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/multicorn2_15-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_15` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 135.5 KiB | [multicorn2_15-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/multicorn2_15-3.1-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_15` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_15-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/multicorn2_15-3.0-2PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_15` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.9 KiB | [multicorn2_15-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/multicorn2_15-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_15` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 135.5 KiB | [multicorn2_15-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/multicorn2_15-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_15` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_15-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/multicorn2_15-3.0-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -183,9 +183,9 @@ width: full
 | `multicorn2_14` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 139.2 KiB | [multicorn2_14-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/multicorn2_14-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_14` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 136.4 KiB | [multicorn2_14-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/multicorn2_14-3.1-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_14` | `3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 136.0 KiB | [multicorn2_14-3.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/multicorn2_14-3.0-2PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_14` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.9 KiB | [multicorn2_14-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/multicorn2_14-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_14` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 135.5 KiB | [multicorn2_14-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/multicorn2_14-3.1-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_14` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_14-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/multicorn2_14-3.0-2PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_14` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.9 KiB | [multicorn2_14-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/multicorn2_14-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_14` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 135.5 KiB | [multicorn2_14-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/multicorn2_14-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_14` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.8 KiB | [multicorn2_14-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/multicorn2_14-3.0-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -219,9 +219,9 @@ width: full
 | `multicorn2_13` | `3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 138.6 KiB | [multicorn2_13-3.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/multicorn2_13-3.2-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_13` | `3.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 136.0 KiB | [multicorn2_13-3.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/multicorn2_13-3.1-1PGDG.rhel10.x86_64.rpm) |
 | `multicorn2_13` | `3.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 135.5 KiB | [multicorn2_13-3.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/multicorn2_13-3.0-2PGDG.rhel10.x86_64.rpm) |
-| `multicorn2_13` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.4 KiB | [multicorn2_13-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/multicorn2_13-3.2-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_13` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.9 KiB | [multicorn2_13-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/multicorn2_13-3.1-1PGDG.rhel10.aarch64.rpm) |
-| `multicorn2_13` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.3 KiB | [multicorn2_13-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/multicorn2_13-3.0-2PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_13` | `3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 137.4 KiB | [multicorn2_13-3.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/multicorn2_13-3.2-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_13` | `3.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.9 KiB | [multicorn2_13-3.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/multicorn2_13-3.1-1PGDG.rhel10.aarch64.rpm) |
+| `multicorn2_13` | `3.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 134.3 KiB | [multicorn2_13-3.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/multicorn2_13-3.0-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

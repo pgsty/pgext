@@ -61,7 +61,7 @@ width: full
 | `dbt2-pg18-extensions` | `0.61.7` | [el9.x86_64](/os/el9.x86_64) | pgdg | 29.9 KiB | [dbt2-pg18-extensions-0.61.7-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/dbt2-pg18-extensions-0.61.7-1PGDG.rhel9.x86_64.rpm) |
 | `dbt2-pg18-extensions` | `0.61.7` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.7 KiB | [dbt2-pg18-extensions-0.61.7-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/dbt2-pg18-extensions-0.61.7-1PGDG.rhel9.aarch64.rpm) |
 | `dbt2-pg18-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg18-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg18-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/dbt2-pg18-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -74,8 +74,8 @@ width: full
 | `dbt2-pg17-extensions` | `0.61.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.7 KiB | [dbt2-pg17-extensions-0.61.6-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/dbt2-pg17-extensions-0.61.6-2PGDG.rhel9.aarch64.rpm) |
 | `dbt2-pg17-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
 | `dbt2-pg17-extensions` | `0.61.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg17-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
-| `dbt2-pg17-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg17-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/dbt2-pg17-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg17-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/dbt2-pg17-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -94,8 +94,8 @@ width: full
 | `dbt2-pg16-extensions` | `0.53.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.9 KiB | [dbt2-pg16-extensions-0.53.6-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/dbt2-pg16-extensions-0.53.6-1PGDG.rhel9.aarch64.rpm) |
 | `dbt2-pg16-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
 | `dbt2-pg16-extensions` | `0.61.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg16-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
-| `dbt2-pg16-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg16-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/dbt2-pg16-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg16-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/dbt2-pg16-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -129,8 +129,8 @@ width: full
 | `dbt2-pg15-extensions` | `0.48.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.3 KiB | [dbt2-pg15-extensions-0.48.3-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/dbt2-pg15-extensions-0.48.3-2.rhel9.aarch64.rpm) |
 | `dbt2-pg15-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
 | `dbt2-pg15-extensions` | `0.61.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg15-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
-| `dbt2-pg15-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg15-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/dbt2-pg15-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg15-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/dbt2-pg15-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -164,8 +164,8 @@ width: full
 | `dbt2-pg14-extensions` | `0.48.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.3 KiB | [dbt2-pg14-extensions-0.48.3-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/dbt2-pg14-extensions-0.48.3-2.rhel9.aarch64.rpm) |
 | `dbt2-pg14-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.6 KiB | [dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
 | `dbt2-pg14-extensions` | `0.61.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg14-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
-| `dbt2-pg14-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg14-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/dbt2-pg14-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg14-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/dbt2-pg14-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -199,8 +199,8 @@ width: full
 | `dbt2-pg13-extensions` | `0.48.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 29.2 KiB | [dbt2-pg13-extensions-0.48.3-2.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/dbt2-pg13-extensions-0.48.3-2.rhel9.aarch64.rpm) |
 | `dbt2-pg13-extensions` | `0.61.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.6 KiB | [dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.x86_64.rpm) |
 | `dbt2-pg13-extensions` | `0.61.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.7 KiB | [dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.x86_64.rpm) |
-| `dbt2-pg13-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
-| `dbt2-pg13-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg13-extensions` | `0.61.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/dbt2-pg13-extensions-0.61.7-1PGDG.rhel10.aarch64.rpm) |
+| `dbt2-pg13-extensions` | `0.61.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.2 KiB | [dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/dbt2-pg13-extensions-0.61.6-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

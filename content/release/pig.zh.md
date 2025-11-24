@@ -6,9 +6,20 @@ weight: 100
 ---
 
 
+## v0.7.3
+
+- 新增 pig repo reload 命令，更新仓库元数据
+- 修复 EL PGDG sysupdate aarch64 仓库问题。
+- 修复 EL10.aarch64 PGDG 仓库重命名问题。
+- 更新 Pigsty 版本至 3.7.0
+
+**校验和**
+
+
+
 ## v0.7.2
 
-- 批量更新扩展，数量达到 438 个
+- 批量更新扩展，数量达到 437 个
 - 新增 PGDG EL10 Sysupdate 仓库
 - 新增 LLVM APT 仓库
 - 在 pig build 命令中使用可选的本地 extension.csv 扩展定义问题。
