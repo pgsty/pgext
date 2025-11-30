@@ -128,7 +128,7 @@ Pigsty provides complete extension support on these [linux distributions](/os) m
 The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors to deliver PG extensions to their users and customers.
 
 {{< cards cols=1 >}}
-{{< card link="https://github.com/github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 430+ extensions!" >}}
+{{< card link="https://github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 430+ extensions!" >}}
 {{< /cards >}}
 
 {{< cards cols=3 >}}

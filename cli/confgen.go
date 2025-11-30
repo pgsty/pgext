@@ -698,6 +698,40 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			}
 			return basePkgs + " flamegraph chkconfig"
 		},
+		"getNodePackage2": func() string {
+			// Handle OS-specific package differences
+			if g.isRPM() {
+				// RPM systems use bind-utils
+				return g.constants.RPMCommonPkg[4]
+			}
+			// DEB systems - check for Debian 13 special case
+			if g.osCode == "d13" {
+				// Debian 13 renamed dnsutils to bind9-dnsutils
+				return strings.ReplaceAll(g.constants.DEBCommonPkg[4], "dnsutils", "bind9-dnsutils")
+			}
+			// Other DEB systems use standard dnsutils
+			return g.constants.DEBCommonPkg[4]
+		},
+		"getDNSPackage": func() string {
+			// Return the appropriate DNS utilities package name
+			if g.isRPM() {
+				return "bind-utils"
+			}
+			if g.osCode == "d13" {
+				// Debian 13 renamed dnsutils to bind9-dnsutils
+				return "bind9-dnsutils"
+			}
+			// Other DEB systems use dnsutils
+			return "dnsutils"
+		},
+		"getDockerRepo": func() string {
+			// For el10, use RHEL repositories instead of CentOS
+			if g.osCode == "el10" {
+				return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/rhel/$releasever/$basearch/stable'      ,china: 'https://mirrors.aliyun.com/docker-ce/linux/rhel/$releasever/$basearch/stable'   ,europe: 'https://mirrors.xtom.de/docker-ce/linux/rhel/$releasever/$basearch/stable' }}"
+			}
+			// For other EL versions, use CentOS repositories
+			return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' }}"
+		},
 	}
 }
 
@@ -891,7 +925,7 @@ repo_upstream_default:
   - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/infra/$basearch' ,china: 'https://repo.pigsty.cc/yum/infra/$basearch' }}
   - { name: pigsty-pgsql   ,description: 'Pigsty PGSQL'       ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/pgsql/el$releasever.$basearch' }}
   - { name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' }}
-  - { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' }}
+  {{ getDockerRepo }}
   - { name: baseos         ,description: 'EL 8+ BaseOS'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/BaseOS/$basearch/os/'     ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/BaseOS/$basearch/os/'         ,europe: 'https://mirrors.xtom.de/rocky/$releasever/BaseOS/$basearch/os/'     }}
   - { name: appstream      ,description: 'EL 8+ AppStream'    ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/AppStream/$basearch/os/'  ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/AppStream/$basearch/os/'      ,europe: 'https://mirrors.xtom.de/rocky/$releasever/AppStream/$basearch/os/'  }}
   - { name: extras         ,description: 'EL 8+ Extras'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/extras/$basearch/os/'     ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/extras/$basearch/os/'         ,europe: 'https://mirrors.xtom.de/rocky/$releasever/extras/$basearch/os/'     }}
@@ -1015,7 +1049,7 @@ repo_extra_packages_default: [ pgsql-main ]
 node_packages_default:
   - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
   - python3,python3-pip,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
-  - zlib1g,acl,dnsutils,libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client
+  - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
@@ -1082,7 +1116,7 @@ package_map:
   infra-addons:            "{{ index .Constants.DEBCommonPkg 1 }}"
   extra-modules:           "{{ index .Constants.DEBCommonPkg 2 }}"
   node-package1:           "{{ index .Constants.DEBCommonPkg 3 }}"
-  node-package2:           "{{ index .Constants.DEBCommonPkg 4 }}"
+  node-package2:           "{{ getNodePackage2 }}"
   pgsql-utility:           "{{ index .Constants.DEBCommonPkg 5 }}"
 
   #--------------------------------#
