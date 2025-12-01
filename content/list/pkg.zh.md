@@ -11,9 +11,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 306 | 135 | 219 | 0 | 0 | 278 | 299 | 297 | 299 | 290 | 265 |
-| **EL** | 302 | 131 | 219 | 0 | 65 | 269 | 293 | 293 | 295 | 288 | 263 |
-| **Debian** | 292 | 91 | 201 | 0 | 75 | 264 | 286 | 283 | 285 | 278 | 250 |
+| **ALL** | 306 | 134 | 219 | 0 | 0 | 279 | 299 | 297 | 299 | 290 | 265 |
+| **EL** | 302 | 130 | 219 | 0 | 65 | 270 | 293 | 293 | 295 | 288 | 263 |
+| **Debian** | 292 | 91 | 201 | 0 | 75 | 265 | 286 | 283 | 285 | 278 | 250 |
 
 ## 分类
 
@@ -120,7 +120,7 @@ comments: false
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v*` | `postgresql-$v-imgsmlr` |
 | {{< ext "pg_ivm" >}} | `1.13` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v*` | `postgresql-$v-pg-ivm` |
 | {{< ext "pg_incremental" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v*` | `postgresql-$v-pg-incremental` |
-| {{< ext "pgmq" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
+| {{< ext "pgmq" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
 | {{< ext "pgq" >}} | `3.5.1` | {{< badge content="Link" link="https://github.com/pgq/pgq" >}} | {{< category "FEAT" >}} | `pgq_$v*` | `postgresql-$v-pgq3` |
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v*` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
@@ -300,7 +300,7 @@ comments: false
 | {{< ext "pg_tracing" >}} | `0.1.3` | {{< badge content="Link" link="https://github.com/DataDog/pg_tracing" >}} | {{< category "STAT" >}} | `pg_tracing_$v*` | `postgresql-$v-pg-tracing` |
 | {{< ext "pg_show_plans" >}} | `2.1.7` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/pg_show_plans" >}} | {{< category "STAT" >}} | `pg_show_plans_$v*` | `postgresql-$v-show-plans` |
 | {{< ext "pg_stat_kcache" >}} | `2.3.1` | {{< badge content="Link" link="https://github.com/powa-team/pg_stat_kcache" >}} | {{< category "STAT" >}} | `pg_stat_kcache_$v*` | `postgresql-$v-pg-stat-kcache` |
-| {{< ext "pg_stat_monitor" >}} | `2.2.0` | {{< badge content="Link" link="https://github.com/percona/pg_stat_monitor" >}} | {{< category "STAT" >}} | `pg_stat_monitor_$v*` | `postgresql-$v-pg-stat-monitor` |
+| {{< ext "pg_stat_monitor" >}} | `2.3.1` | {{< badge content="Link" link="https://github.com/percona/pg_stat_monitor" >}} | {{< category "STAT" >}} | `pg_stat_monitor_$v*` | `postgresql-$v-pg-stat-monitor` |
 | {{< ext "pg_qualstats" >}} | `2.1.3` | {{< badge content="Link" link="https://github.com/powa-team/pg_qualstats" >}} | {{< category "STAT" >}} | `pg_qualstats_$v*` | `postgresql-$v-pg-qualstats` |
 | {{< ext "pg_store_plans" >}} | `1.9` | {{< badge content="Link" link="https://github.com/ossc-db/pg_store_plans" >}} | {{< category "STAT" >}} | `pg_store_plans_$v*` | `postgresql-$v-pg-store-plan` |
 | {{< ext "pg_track_settings" >}} | `2.1.2` | {{< badge content="Link" link="https://github.com/rjuju/pg_track_settings" >}} | {{< category "STAT" >}} | `pg_track_settings_$v` | `postgresql-$v-pg-track-settings` |
@@ -316,7 +316,7 @@ comments: false
 | {{< ext "explain_ui" "pg_explain_ui" >}} | `0.0.2` | {{< badge content="Link" link="https://github.com/davidgomes/pg-explain-ui" >}} | {{< category "STAT" >}} | `pg_explain_ui_$v` | `postgresql-$v-pg-explain-ui` |
 | {{< ext "pg_relusage" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/adept/pg_relusage" >}} | {{< category "STAT" >}} | `pg_relusage_$v` | `postgresql-$v-pg-relusage` |
 | {{< ext "pagevis" >}} | `0.1` | {{< badge content="Link" link="https://github.com/hollobon/pagevis" >}} | {{< category "STAT" >}} | `pagevis_$v` | `postgresql-$v-pagevis` |
-| {{< ext "powa" >}} | `5.0.1` | {{< badge content="Link" link="https://github.com/powa-team/powa" >}} | {{< category "STAT" >}} | `powa_$v*` | `postgresql-$v-powa` |
+| {{< ext "powa" >}} | `5.1.0` | {{< badge content="Link" link="https://github.com/powa-team/powa" >}} | {{< category "STAT" >}} | `powa_$v*` | `postgresql-$v-powa` |
 | {{< ext "pg_overexplain" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/devel/pgoverexplain.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_logicalinspect" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/devel/pglogicalinspect.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pageinspect" >}} | `1.12` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pageinspect.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |

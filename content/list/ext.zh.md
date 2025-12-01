@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 437 | 150 | 265 | 71 | 0 | 404 | 426 | 426 | 428 | 413 | 386 |
-| **EL** | 431 | 144 | 265 | 71 | 6 | 392 | 418 | 420 | 422 | 410 | 382 |
-| **Debian** | 423 | 105 | 247 | 71 | 14 | 390 | 413 | 412 | 414 | 402 | 371 |
+| **ALL** | 437 | 149 | 265 | 71 | 0 | 405 | 426 | 426 | 428 | 413 | 386 |
+| **EL** | 431 | 143 | 265 | 71 | 6 | 393 | 418 | 420 | 422 | 410 | 382 |
+| **Debian** | 423 | 105 | 247 | 71 | 14 | 391 | 413 | 412 | 414 | 402 | 371 |
 
 ## 分类
 
@@ -335,7 +335,7 @@ comments: false
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 将集群设置为只读 |
 | {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
 | {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | 查看对象权限并将其与期望状态进行比较 |
-| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PG 自动故障迁移 |
+| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PG 自动故障迁移 |
 | {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用于诊断系统目录是否损坏的工具 |
 | {{< ext "pre_prepare" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在服务端预先准备好PreparedStatement备用 |
 | {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | 检测表上的无用UPDATE |

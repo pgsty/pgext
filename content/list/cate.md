@@ -141,7 +141,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | Incremental Processing by Crunchy Data |
-| 2890 | {{< alias "pgmq" >}} | 1.7.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2890 | {{< alias "pgmq" >}} | 1.8.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
@@ -419,7 +419,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.7 | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | Kernel statistics gathering |
-| 6230 | {{< alias "pg_stat_monitor" >}} | 2.2.0 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
+| 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.1 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | track plan statistics of all SQL statements executed |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | Track settings changes |
@@ -436,7 +436,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | easily jump into a visual plan UI for any SQL query |
 | 6380 | {{< alias "pg_relusage" >}} | 0.0.1 | Log all the queries that reference a particular column |
 | 6800 | {{< alias "pagevis" >}} | 0.1 | Visualise database pages in ascii code |
-| 6810 | {{< alias "powa" >}} | 5.0.1 | PostgreSQL Workload Analyser-core |
+| 6810 | {{< alias "powa" >}} | 5.1.0 | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | Logical decoding components inspection |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | inspect the contents of database pages at a low level |

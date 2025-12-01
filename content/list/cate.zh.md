@@ -141,7 +141,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | 增量处理流式事件 |
-| 2890 | {{< alias "pgmq" >}} | 1.7.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2890 | {{< alias "pgmq" >}} | 1.8.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -419,7 +419,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | PostgreSQL分布式Tracing |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.7 | 打印所有当前正在运行查询的执行计划 |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | 内核统计信息收集 |
-| 6230 | {{< alias "pg_stat_monitor" >}} | 2.2.0 | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
+| 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.1 | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | 收集有关 quals 的统计信息的扩展 |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | 跟踪设置更改 |
@@ -436,7 +436,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
 | 6380 | {{< alias "pg_relusage" >}} | 0.0.1 | 打印查询引用的表与列 |
 | 6800 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
-| 6810 | {{< alias "powa" >}} | 5.0.1 | PostgreSQL 工作负载分析器-核心 |
+| 6810 | {{< alias "powa" >}} | 5.1.0 | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | 允许 EXPLAIN 转储更多详细 |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | 检视逻辑解码组件详情 |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | 检查数据库页面二进制内容 |

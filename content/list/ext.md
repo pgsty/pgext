@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 437 | 150 | 265 | 71 | 0 | 404 | 426 | 426 | 428 | 413 | 386 |
-| **EL** | 431 | 144 | 265 | 71 | 6 | 392 | 418 | 420 | 422 | 410 | 382 |
-| **Debian** | 423 | 105 | 247 | 71 | 14 | 390 | 413 | 412 | 414 | 402 | 371 |
+| **ALL** | 437 | 149 | 265 | 71 | 0 | 405 | 426 | 426 | 428 | 413 | 386 |
+| **EL** | 431 | 143 | 265 | 71 | 6 | 393 | 418 | 420 | 422 | 410 | 382 |
+| **Debian** | 423 | 105 | 247 | 71 | 14 | 391 | 413 | 412 | 414 | 402 | 371 |
 
 ## Categories
 
@@ -335,7 +335,7 @@ There are 437 available PostgreSQL extensions:
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | cluster database read only |
 | {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | Introspect pg data dictionary via standard SQL |
 | {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | view object permissions and compare them with the desired state |
-| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | pg_auto_failover |
+| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | pg_auto_failover |
 | {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Diagnosing system catalog corruption |
 | {{< ext "pre_prepare" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Pre Prepare your Statement server side |
 | {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Detect Useless UPDATE |

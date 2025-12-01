@@ -305,7 +305,7 @@ weight: 900
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 将集群设置为只读 |
 | {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
 | {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | 查看对象权限并将其与期望状态进行比较 |
-| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | PG 自动故障迁移 |
+| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | PG 自动故障迁移 |
 | {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | 用于诊断系统目录是否损坏的工具 |
 | {{< ext "pre_prepare" "preprepare" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 在服务端预先准备好PreparedStatement备用 |
 | {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ADMIN" >}} | 检测表上的无用UPDATE |

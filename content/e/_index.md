@@ -305,7 +305,7 @@ There are 437 available PostgreSQL extensions:
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | cluster database read only |
 | {{< ext "pgdd" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | Introspect pg data dictionary via standard SQL |
 | {{< ext "pg_permissions" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ADMIN" >}} | view object permissions and compare them with the desired state |
-| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | pg_auto_failover |
+| {{< ext "pgautofailover" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | pg_auto_failover |
 | {{< ext "pg_catcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ADMIN" >}} | Diagnosing system catalog corruption |
 | {{< ext "pre_prepare" "preprepare" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Pre Prepare your Statement server side |
 | {{< ext "pg_upless" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ADMIN" >}} | Detect Useless UPDATE |
