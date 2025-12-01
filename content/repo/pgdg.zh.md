@@ -9,6 +9,8 @@ Pigsty PGSQL 仓库旨在与 PostgreSQL [PGDG 官方仓库](https://www.postgres
 
 Pigsty 依赖 PGDG 仓库中原生的 PostgreSQL 内核软件包，在此基础上提供了额外的 200+ 扩展插件。
 
+PGDG Pigsty 镜像仓库最后同步于：2025-12-01 18:00:00
+
 
 ## 快速上手
 

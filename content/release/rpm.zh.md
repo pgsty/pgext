@@ -25,7 +25,8 @@ weight: 200
 | pg_retry               |        | 1.0.0  | new, pg17-18               |
 | pg_biscuit             |        |  1.0   | new, pg16-18               |
 | pg_weighted_statistics |        | 1.0.0  | new, pg13-18               |
-| pg_stat_monitor        | 2.2.0  | 2.3.0  | fix PGDG pg18 missing      |
+| pg_stat_monitor        | 2.2.0  | 2.3.1  | fix PGDG pg18 missing      |
+| pgmq                   | 1.7.0  | 1.8.0  |                            |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
 

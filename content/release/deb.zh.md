@@ -15,7 +15,7 @@ weight: 300
 | pgvectorscale          | 0.8.0  | 0.9.0  | -pg13, +pg18               |
 | pglite_fusion          | 0.0.5  | 0.0.6  |                            |
 | pgx_ulid               | 0.2.1  | 0.2.2  |                            |
-| pg_search              | 0.19.5 | 0.19.7 | resume PIGSTY building     |
+| pg_search              | 0.19.5 | 0.20.0 | resume PIGSTY building     |
 | citus                  | 13.2.0 | 13.2.0 | official tag               |
 | timescaledb            | 2.23.0 | 2.23.1 |                            |
 | pg_profile             |  4.10  |  4.11  |                            |
@@ -24,6 +24,8 @@ weight: 300
 | pg_enigma              |        | 0.4.0  | vonng patched pgrx version |
 | pg_retry               |        | 1.0.0  | new, pg17-18               |
 | pg_biscuit             |        |  1.0   | new, pg16-18               |
+| pg_stat_monitor        | 2.3.0  | 2.3.1  |                            |
+| pgmq                   | 1.7.0  | 1.8.0  |                            |
 | pg_weighted_statistics |        | 1.0.0  | new, pg13-18               |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
