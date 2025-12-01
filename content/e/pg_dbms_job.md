@@ -63,7 +63,7 @@ width: full
 | `pg_dbms_job_18` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.0 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_job_18-1.5-5PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_18` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.0 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel9.aarch64.rpm) |
 | `pg_dbms_job_18` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_job_18-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_18` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_18` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -75,7 +75,7 @@ width: full
 | `pg_dbms_job_17` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.1 KiB | [pg_dbms_job_17-1.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_job_17-1.5-3PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_17` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.1 KiB | [pg_dbms_job_17-1.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_job_17-1.5-3PGDG.rhel9.aarch64.rpm) |
 | `pg_dbms_job_17` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_job_17-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_17` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_17` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -87,7 +87,7 @@ width: full
 | `pg_dbms_job_16` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 26.1 KiB | [pg_dbms_job_16-1.5-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_job_16-1.5-3PGDG.rhel9.x86_64.rpm) |
 | `pg_dbms_job_16` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 26.0 KiB | [pg_dbms_job_16-1.5-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_job_16-1.5-3PGDG.rhel9.aarch64.rpm) |
 | `pg_dbms_job_16` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_job_16-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_16` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_16` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -99,7 +99,7 @@ width: full
 | `pg_dbms_job_15` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 25.8 KiB | [pg_dbms_job_15-1.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_job_15-1.5-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_15` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.7 KiB | [pg_dbms_job_15-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_job_15-1.5-1.rhel9.aarch64.rpm) |
 | `pg_dbms_job_15` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_job_15-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_15` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_15` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -115,7 +115,7 @@ width: full
 | `pg_dbms_job_14` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.8 KiB | [pg_dbms_job_14-1.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_job_14-1.2.0-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_14` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.7 KiB | [pg_dbms_job_14-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_job_14-1.5-1.rhel9.aarch64.rpm) |
 | `pg_dbms_job_14` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_job_14-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_14` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_14` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -131,7 +131,7 @@ width: full
 | `pg_dbms_job_13` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.8 KiB | [pg_dbms_job_13-1.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pg_dbms_job_13-1.2.0-1.rhel9.x86_64.rpm) |
 | `pg_dbms_job_13` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 25.7 KiB | [pg_dbms_job_13-1.5-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pg_dbms_job_13-1.5-1.rhel9.aarch64.rpm) |
 | `pg_dbms_job_13` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 26.6 KiB | [pg_dbms_job_13-1.5-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pg_dbms_job_13-1.5-5PGDG.rhel10.x86_64.rpm) |
-| `pg_dbms_job_13` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `pg_dbms_job_13` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pg_dbms_job_13-1.5-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

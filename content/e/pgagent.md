@@ -64,7 +64,7 @@ width: full
 | `pgagent_18` | `4.2.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 121.5 KiB | [pgagent_18-4.2.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgagent_18-4.2.3-1PGDG.rhel9.x86_64.rpm) |
 | `pgagent_18` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 117.8 KiB | [pgagent_18-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgagent_18-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_18` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgagent_18-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_18` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10.0-aarch64/pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_18` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgagent_18-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -80,7 +80,7 @@ width: full
 | `pgagent_17` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.0 KiB | [pgagent_17-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgagent_17-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_17` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 116.7 KiB | [pgagent_17-4.2.2-5PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgagent_17-4.2.2-5PGDG.rhel9.aarch64.rpm) |
 | `pgagent_17` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgagent_17-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_17` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10.0-aarch64/pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_17` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgagent_17-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -96,7 +96,7 @@ width: full
 | `pgagent_16` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.0 KiB | [pgagent_16-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgagent_16-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_16` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 116.4 KiB | [pgagent_16-4.2.2-3.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgagent_16-4.2.2-3.rhel9.aarch64.rpm) |
 | `pgagent_16` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgagent_16-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_16` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10.0-aarch64/pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_16` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgagent_16-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -112,7 +112,7 @@ width: full
 | `pgagent_15` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.1 KiB | [pgagent_15-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgagent_15-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_15` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.4 KiB | [pgagent_15-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgagent_15-4.2.2-1.rhel9.aarch64.rpm) |
 | `pgagent_15` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgagent_15-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_15` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10.0-aarch64/pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_15` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgagent_15-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -130,7 +130,7 @@ width: full
 | `pgagent_14` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.0 KiB | [pgagent_14-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgagent_14-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_14` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.4 KiB | [pgagent_14-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgagent_14-4.2.2-1.rhel9.aarch64.rpm) |
 | `pgagent_14` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgagent_14-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_14` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.7 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10.0-aarch64/pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_14` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.7 KiB | [pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgagent_14-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -149,7 +149,7 @@ width: full
 | `pgagent_13` | `4.2.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 118.1 KiB | [pgagent_13-4.2.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgagent_13-4.2.3-1PGDG.rhel9.aarch64.rpm) |
 | `pgagent_13` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.4 KiB | [pgagent_13-4.2.2-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgagent_13-4.2.2-1.rhel9.aarch64.rpm) |
 | `pgagent_13` | `4.2.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 126.9 KiB | [pgagent_13-4.2.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgagent_13-4.2.3-1PGDG.rhel10.x86_64.rpm) |
-| `pgagent_13` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10.0-aarch64/pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm) |
+| `pgagent_13` | `4.2.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 116.6 KiB | [pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgagent_13-4.2.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

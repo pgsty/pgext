@@ -645,7 +645,7 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 			tab += "| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |\n"
 			tab += "|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|\n"
 
-			// Packages are already sorted by os_major, version DESC, org DESC from SQL
+			// Packages are already sorted by os_major ASC, version DESC, file DESC from SQL
 			for _, pkg := range pkgList {
 				sizeStr := FormatSize(pkg.Size)
 				org := pkg.Org.String

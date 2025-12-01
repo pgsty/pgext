@@ -101,10 +101,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `kafka_fdw_16` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 37.0 KiB | [kafka_fdw_16-0.0.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_16-0.0.3-2PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.1 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el8.x86_64.rpm) |
-| `kafka_fdw_16` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.2 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.4 KiB | [kafka_fdw_16-0.0.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-2PIGSTY.el8.aarch64.rpm) |
-| `kafka_fdw_16` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 35.3 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `kafka_fdw_16` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.2 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.0 KiB | [kafka_fdw_16-0.0.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_16-0.0.3-2PIGSTY.el9.x86_64.rpm) |
+| `kafka_fdw_16` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 35.3 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_16-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.2 KiB | [kafka_fdw_16-0.0.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_16-0.0.3-2PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 34.4 KiB | [kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_16-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_16` | `0.0.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.8 KiB | [kafka_fdw_16-0.0.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/kafka_fdw_16-0.0.3-2PIGSTY.el10.x86_64.rpm) |
@@ -123,10 +123,10 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `kafka_fdw_15` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_15` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 37.3 KiB | [kafka_fdw_15-0.0.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_15-0.0.3-2PIGSTY.el8.x86_64.rpm) |
-| `kafka_fdw_15` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm) |
+| `kafka_fdw_15` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_15` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.6 KiB | [kafka_fdw_15-0.0.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_15-0.0.3-2PIGSTY.el8.aarch64.rpm) |
+| `kafka_fdw_15` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.4 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_15-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_15` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.6 KiB | [kafka_fdw_15-0.0.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_15-0.0.3-2PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_15` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.1 KiB | [kafka_fdw_15-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_15-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_15` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.9 KiB | [kafka_fdw_15-0.0.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_15-0.0.3-2PIGSTY.el9.aarch64.rpm) |
@@ -147,14 +147,14 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `kafka_fdw_14` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 37.3 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-2PIGSTY.el8.x86_64.rpm) |
+| `kafka_fdw_14` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.6 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-2PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.4 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el8.aarch64.rpm) |
-| `kafka_fdw_14` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.1 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.6 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-2PIGSTY.el9.x86_64.rpm) |
-| `kafka_fdw_14` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.0 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm) |
+| `kafka_fdw_14` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.1 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_14-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.9 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_14-0.0.3-2PIGSTY.el9.aarch64.rpm) |
+| `kafka_fdw_14` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.0 KiB | [kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_14-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.4 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/kafka_fdw_14-0.0.3-2PIGSTY.el10.x86_64.rpm) |
 | `kafka_fdw_14` | `0.0.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.9 KiB | [kafka_fdw_14-0.0.3-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/kafka_fdw_14-0.0.3-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-kafka-fdw` | `0.0.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 84.3 KiB | [postgresql-14-kafka-fdw_0.0.3-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/k/kafka-fdw/postgresql-14-kafka-fdw_0.0.3-2PIGSTY~bookworm_amd64.deb) |
@@ -171,12 +171,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `kafka_fdw_13` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 36.8 KiB | [kafka_fdw_13-0.0.3-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_13-0.0.3-2PIGSTY.el8.x86_64.rpm) |
-| `kafka_fdw_13` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.3 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm) |
+| `kafka_fdw_13` | `0.0.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 35.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el8.x86_64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 35.6 KiB | [kafka_fdw_13-0.0.3-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_13-0.0.3-2PIGSTY.el8.aarch64.rpm) |
-| `kafka_fdw_13` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm) |
+| `kafka_fdw_13` | `0.0.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 33.3 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/kafka_fdw_13-0.0.3-1PIGSTY.el8.aarch64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.6 KiB | [kafka_fdw_13-0.0.3-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_13-0.0.3-2PIGSTY.el9.x86_64.rpm) |
+| `kafka_fdw_13` | `0.0.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 36.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/kafka_fdw_13-0.0.3-1PIGSTY.el9.x86_64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.8 KiB | [kafka_fdw_13-0.0.3-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_13-0.0.3-2PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 35.0 KiB | [kafka_fdw_13-0.0.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/kafka_fdw_13-0.0.3-1PIGSTY.el9.aarch64.rpm) |
 | `kafka_fdw_13` | `0.0.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.2 KiB | [kafka_fdw_13-0.0.3-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/kafka_fdw_13-0.0.3-2PIGSTY.el10.x86_64.rpm) |
