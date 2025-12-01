@@ -192,7 +192,7 @@ Pig the package manager, PostgreSQL tools, DBMS, and other utils
 
 |                                         Name                                          | Version |  License   |        Comment         |
 |:-------------------------------------------------------------------------------------:|:--------|:----------:|:----------------------:|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.3   | Apache-2.0 | The pg package manager |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.4   | Apache-2.0 | The pg package manager |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |            |                        |
 |                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   |            |                        |
 |          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   |            |                        |

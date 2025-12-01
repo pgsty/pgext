@@ -760,7 +760,7 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 		b.WriteString(TripleQuoteBash("pig repo add pgdg -u    # add pgdg repo and update cache"))
 	} else {
 		b.WriteString("Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:\n\n")
-		b.WriteString(TripleQuoteBash("pig repo add pgdg pigsty -u   # add both repo and update cache"))
+		b.WriteString(TripleQuoteBash("pig repo add pgsql -u   # add both repo and update cache"))
 	}
 	b.WriteString("\n\n")
 

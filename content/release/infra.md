@@ -17,7 +17,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | etcd                       | 3.6.5   | 3.6.6   |                |
 | duckdb                     | 1.4.1   | 1.4.2   |                |
 | pg_exporter                | 1.0.2   | 1.0.3   |                |
-| pig                        | 0.7.1   | 0.7.2   |                |
+| pig                        | 0.7.1   | 0.7.4   |                |
 | grafana                    | 12.1.0  | 12.3.0  |                |
 | pg_timetable               | 6.1.0   | 6.2.0   |                |
 | genai-toolbox              | 0.16.0  | 0.21.0  |                |
