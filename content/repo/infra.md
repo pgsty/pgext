@@ -138,38 +138,38 @@ sudo yum makecache;
 
 ### Prometheus Stack
 
-|                                    Name                                     | Version | License | Comment |
-|:---------------------------------------------------------------------------:|:-------:|:-------:|:--------|
-|           [prometheus](https://github.com/prometheus/prometheus)            |  3.7.3  |         |         |
-|          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  |         |         |
-|         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  |         |         |
-|    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  |         |         |
-|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.130.0 |         |         |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.38.0  |         |         |
-|             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  |         |         |
-|    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |         |         |
-|        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  |         |         |
-|     [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)     |  1.7.0  |         |         |
-|   [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter)   |  1.5.1  |         |         |
-|    [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)    |  3.8.1  |         |         |
-|      [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)       | 0.18.0  |         |         |
-|        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.0  |         |         |
-|        [kafka_exporter](https://github.com/danielqsj/kafka_exporter)        |  1.9.0  |         |         |
-|       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.1  |         |         |
-|                  [mtail](https://github.com/google/mtail)                   |  3.0.8  |         |         |
+|                                    Name                                     | Version |  License   | Comment |
+|:---------------------------------------------------------------------------:|:-------:|:----------:|:--------|
+|           [prometheus](https://github.com/prometheus/prometheus)            |  3.7.3  | Apache-2.0 |         |
+|          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  | Apache-2.0 |         |
+|         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  | Apache-2.0 |         |
+|    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  | Apache-2.0 |         |
+|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.131.0 | Apache-2.0 |         |
+| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.39.0  | Apache-2.0 |         |
+|             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | Apache-2.0 |         |
+|    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |    MIT     |         |
+|        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  | Apache-2.0 |         |
+|     [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)     |  1.7.0  |  GPL-3.0   |         |
+|   [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter)   |  1.5.1  | Apache-2.0 |         |
+|    [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)    |  3.8.1  |    MIT     |         |
+|      [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)       | 0.18.0  | Apache-2.0 |         |
+|        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.1  |    MIT     |         |
+|        [kafka_exporter](https://github.com/danielqsj/kafka_exporter)        |  1.9.0  | Apache-2.0 |         |
+|       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.2  | Apache-2.0 |         |
+|                  [mtail](https://github.com/google/mtail)                   |  3.0.8  | Apache-2.0 |         |
 
 ### Grafana Stack
 
-|                                                 Name                                                  | Version | License | Comment                |
-|:-----------------------------------------------------------------------------------------------------:|:-------:|:-------:|:-----------------------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |         | Visualization Platform |
-|                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |         | The logging platform   |
-|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |         | Obsolete               |
-|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |         |                        |
-|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  |         |                        |
-|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.1  |         |                        |
-| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  |         |                        |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  |         |                        |
+|                                                 Name                                                  | Version |  License   | Comment                |
+|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:-----------------------|
+|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |   AGPLv3   | Visualization Platform |
+|                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |   AGPLv3   | The logging platform   |
+|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |   APGLv3   | Obsolete               |
+|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |  MPL-2.0   |                        |
+|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  | Apache-2.0 |                        |
+|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.3  | Apache-2.0 |                        |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 |                        |
+|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  | Apache-2.0 |                        |
 
 ### Object Storage
 
@@ -182,7 +182,7 @@ sudo yum makecache;
 | [seaweedfs](https://github.com/seaweedfs/seaweedfs) |      4.01      | Apache-2.0 | S3 for small files |
 |     [rclone](https://github.com/rclone/rclone/)     |     1.72.0     |    MIT     | S3 CLI             |
 |     [restic](https://github.com/restic/restic)      |     0.18.1     |   BSD-2    | Backup tool        |
-|           [juicefs](https://juicefs.com/)           |     1.3.0      | Apache-2.0 | FS over S3         |
+|           [juicefs](https://juicefs.com/)           |     1.3.1      | Apache-2.0 | FS over S3         |
 
 ### Databases
 
@@ -190,14 +190,12 @@ PostgreSQL related tools, DBMS, and other utils
 
 |                           Name                            |    Version     | License | Comment                   |
 |:---------------------------------------------------------:|:--------------:|:-------:|:--------------------------|
-|          [etcd](https://github.com/etcd-io/etcd)          |     3.6.6      |         | Fault Tolerant DCS        |
-|          [minio](https://github.com/minio/minio)          | 20250422221226 |         | FOSS S3 Server            |
-|            [mcli](https://github.com/minio/mc)            | 20250813083541 |         | FOSS S3 Client            |
-|        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      |         | Message Queue             |
-|        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |         | Embedded OLAP             |
-|     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.7.0      |         | MongoDB over PG           |
-| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.65     |         | Financial OLTP            |
-|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |      4.6       |         | Oracle Compatible PG 17.6 |
+|          [etcd](https://github.com/etcd-io/etcd)          |     3.6.6      | Apache-2.0  | Fault Tolerant DCS        |
+|        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      | Apache-2.0  | Message Queue             |
+|        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |     MIT     | Embedded OLAP             |
+|     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.7.0      | Apache-2.0  | MongoDB over PG           |
+| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.65     | Apache-2.0  | Financial OLTP            |
+|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |      4.6       | Apache-2.0  | Oracle Compatible PG 17.6 |
 
 ### DB Utils
 
@@ -206,14 +204,14 @@ Pig the package manager, PostgreSQL tools, DBMS, and other utils
 |                                         Name                                          | Version |  License   |        Comment         |
 |:-------------------------------------------------------------------------------------:|:--------|:----------:|:----------------------:|
 |                          [pig](https://github.com/pgsty/pig)                          | 0.7.4   | Apache-2.0 | The pg package manager |
-|           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |            |                        |
-|                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   |            |                        |
-|          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   |            |                        |
-|          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1  |            |                        |
-| [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0  |            |                        |
-|           [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)            | 1.17.0  |            |                        |
-|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.21.0  |            |                        |
-|                      [sealos](https://github.com/labring/sealos)                      | 5.1.1   |            |                        |
-|                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |            |                        |
-|                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |            |                        |
-|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  |            |                        | 
+|           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |   BSD-2    |                        |
+|                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   | Apache-2.0 |                        |
+|          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   | PostgreSQL |                        |
+|          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1  | Apache-2.0 |                        |
+| [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0  | Apache-2.0 |                        |
+|           [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)            | 1.17.0  | PostgreSQL |                        |
+|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.22.0  | Apache-2.0 |                        |
+|                      [sealos](https://github.com/labring/sealos)                      | 5.1.1   | Apache-2.0 |     license change     |
+|                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |    MIT     |                        |
+|                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |    MIT     |                        |
+|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 |                        | 
