@@ -6,6 +6,19 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+
+## 2025-12-04
+
+Object storage bundle update, rollback minio to the last version with GUI
+
+| Name      | Old            | New            | Comment   |
+|:----------|:---------------|:---------------|:----------|
+| minio     | 20250907161309 | 20250422221226 | downgrade |
+| rustfs    | -              | 1.0.0-a71      | new       |
+| seaweedfs | -              | 4.1.0          | new       |
+| garage    | -              | 2.1.0          | new       |
+
+
 ## 2025-11-20
 
 | Name                       | Old     | New     | Comment        |

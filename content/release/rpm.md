@@ -7,6 +7,14 @@ weight: 200
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 
+
+## 2025-12-04
+
+| Name     | Old   | New   | Comment  |
+|:---------|:------|:------|:---------|
+| synchdb  | -     | 1.3   | EL9 only |
+
+
 ## 2025-11-20
 
 | Name                   | Old    | New    | Comment                    |

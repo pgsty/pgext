@@ -6,6 +6,12 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+# 2025-12-04
+
+| Name    | Old | New | Comment           |
+|:--------|:----|:----|:------------------|
+| synchdb | -   | 1.3 | Ubuntu 22/24 only |
+
 ## 2025-11-20
 
 | Name                   | Old    | New    | Comment                    |

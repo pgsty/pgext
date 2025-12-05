@@ -171,6 +171,19 @@ sudo yum makecache;
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  |         |                        |
 |        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  |         |                        |
 
+### Object Storage
+
+|                        Name                         |    Version     |  License   | Comment            |
+|:---------------------------------------------------:|:--------------:|:----------:|:-------------------|
+|       [minio](https://github.com/minio/minio)       | 20250422221226 |   AGPLv3   | FOSS S3 Server     |
+|         [mcli](https://github.com/minio/mc)         | 20250813083541 |   APGLv3   | FOSS S3 Client     |
+|            [rustfs](https://rustfs.com/)            |   1.0.0-a71    | Apache-2.0 | FOSS MinIO, Alpha  |
+|      [garage](https://garagehq.deuxfleurs.fr/)      |     2.1.0      | Apache-2.0 | Lightweight S3     |
+| [seaweedfs](https://github.com/seaweedfs/seaweedfs) |      4.01      | Apache-2.0 | S3 for small files |
+|     [rclone](https://github.com/rclone/rclone/)     |     1.72.0     |    MIT     | S3 CLI             |
+|     [restic](https://github.com/restic/restic)      |     0.18.1     |   BSD-2    | Backup tool        |
+|           [juicefs](https://juicefs.com/)           |     1.3.0      | Apache-2.0 | FS over S3         |
+
 ### Databases
 
 PostgreSQL related tools, DBMS, and other utils
@@ -178,7 +191,7 @@ PostgreSQL related tools, DBMS, and other utils
 |                           Name                            |    Version     | License | Comment                   |
 |:---------------------------------------------------------:|:--------------:|:-------:|:--------------------------|
 |          [etcd](https://github.com/etcd-io/etcd)          |     3.6.6      |         | Fault Tolerant DCS        |
-|          [minio](https://github.com/minio/minio)          | 20250907161309 |         | FOSS S3 Server            |
+|          [minio](https://github.com/minio/minio)          | 20250422221226 |         | FOSS S3 Server            |
 |            [mcli](https://github.com/minio/mc)            | 20250813083541 |         | FOSS S3 Client            |
 |        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      |         | Message Queue             |
 |        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |         | Embedded OLAP             |
@@ -201,9 +214,6 @@ Pig the package manager, PostgreSQL tools, DBMS, and other utils
 |           [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)            | 1.17.0  |            |                        |
 |             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.21.0  |            |                        |
 |                      [sealos](https://github.com/labring/sealos)                      | 5.1.1   |            |                        |
-|                 [rclone](https://github.com/rclone/rclone/releases/)                  | 1.72.0  |            |                        |
-|                      [restic](https://github.com/restic/restic)                       | 0.18.1  |            |                        |
-|                    [juicefs](https://github.com/juicedata/juicefs)                    | 1.3.0   |            |                        |
 |                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |            |                        |
 |                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |            |                        |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  |            |                        | 
