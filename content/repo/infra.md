@@ -144,8 +144,6 @@ sudo yum makecache;
 |          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  | Apache-2.0 |         |
 |         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  | Apache-2.0 |         |
 |    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  | Apache-2.0 |         |
-|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.131.0 | Apache-2.0 |         |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.39.0  | Apache-2.0 |         |
 |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | Apache-2.0 |         |
 |    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |    MIT     |         |
 |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  | Apache-2.0 |         |
@@ -160,22 +158,35 @@ sudo yum makecache;
 
 ### Grafana Stack
 
-|                                                 Name                                                  | Version |  License   | Comment                |
-|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:-----------------------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |   AGPLv3   | Visualization Platform |
-|                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |   AGPLv3   | The logging platform   |
-|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |   APGLv3   | Obsolete               |
-|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |  MPL-2.0   |                        |
-|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  | Apache-2.0 |                        |
-|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.3  | Apache-2.0 |                        |
-| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 |                        |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  | Apache-2.0 |                        |
+|                                                 Name                                                  | Version |  License   | Comment                          |
+|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:---------------------------------|
+|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |   AGPLv3   | Visualization Platform           |
+|                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |   AGPLv3   | The logging platform             |
+|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |   APGLv3   | Obsolete in 2025                 |
+|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |  MPL-2.0   | logging collector                |
+|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  | Apache-2.0 | versatile datasource             |
+|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  | Apache-2.0 | extra panel & datasource plugins |
+
+### Victoria Stack
+
+|                                                 Name                                                  | Version |  License   | Comment                                        |
+|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------------------|
+|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.131.0 | Apache-2.0 | VictoriaMetrics, Better Prometheus Alternative |
+|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.131.0 | Apache-2.0 | Distributive version of VictoriaMetrics        |
+|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.131.0 | Apache-2.0 | VictoriaMetrics Utils                          |
+|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
+|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs CLI Utils                         |
+|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs Logging Agent                     |
+|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs Datasource for Grafana            |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics Datasource for Grafana         |
+
+
 
 ### Object Storage
 
 |                        Name                         |    Version     |  License   | Comment            |
 |:---------------------------------------------------:|:--------------:|:----------:|:-------------------|
-|       [minio](https://github.com/minio/minio)       | 20250422221226 |   AGPLv3   | FOSS S3 Server     |
+|       [minio](https://github.com/minio/minio)       | 20250907161309 |   AGPLv3   | FOSS S3 Server     |
 |         [mcli](https://github.com/minio/mc)         | 20250813083541 |   APGLv3   | FOSS S3 Client     |
 |            [rustfs](https://rustfs.com/)            |   1.0.0-a71    | Apache-2.0 | FOSS MinIO, Alpha  |
 |      [garage](https://garagehq.deuxfleurs.fr/)      |     2.1.0      | Apache-2.0 | Lightweight S3     |
@@ -188,14 +199,14 @@ sudo yum makecache;
 
 PostgreSQL related tools, DBMS, and other utils
 
-|                           Name                            |    Version     | License | Comment                   |
-|:---------------------------------------------------------:|:--------------:|:-------:|:--------------------------|
-|          [etcd](https://github.com/etcd-io/etcd)          |     3.6.6      | Apache-2.0  | Fault Tolerant DCS        |
-|        [kafka](https://kafka.apache.org/downloads)        |     4.0.0      | Apache-2.0  | Message Queue             |
-|        [duckdb](https://github.com/duckdb/duckdb)         |     1.4.2      |     MIT     | Embedded OLAP             |
-|     [ferretdb](https://github.com/FerretDB/FerretDB)      |     2.7.0      | Apache-2.0  | MongoDB over PG           |
-| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) |    0.16.65     | Apache-2.0  | Financial OLTP            |
-|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |      4.6       | Apache-2.0  | Oracle Compatible PG 17.6 |
+|                           Name                            | Version |  License   | Comment                   |
+|:---------------------------------------------------------:|:-------:|:----------:|:--------------------------|
+|          [etcd](https://github.com/etcd-io/etcd)          |  3.6.6  | Apache-2.0 | Fault Tolerant DCS        |
+|        [kafka](https://kafka.apache.org/downloads)        |  4.0.0  | Apache-2.0 | Message Queue             |
+|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.2  |    MIT     | Embedded OLAP             |
+|     [ferretdb](https://github.com/FerretDB/FerretDB)      |  2.7.0  | Apache-2.0 | MongoDB over PG           |
+| [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) | 0.16.65 | Apache-2.0 | Financial OLTP            |
+|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   4.6   | Apache-2.0 | Oracle Compatible PG 17.6 |
 
 ### DB Utils
 

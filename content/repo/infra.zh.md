@@ -147,7 +147,7 @@ sudo yum makecache;
 |         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  | Apache-2.0 |    |
 |    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  | Apache-2.0 |    |
 |    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.131.0 | Apache-2.0 |    |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.39.0  | Apache-2.0 |    |
+| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.40.0  | Apache-2.0 |    |
 |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | Apache-2.0 |    |
 |    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |    MIT     |    |
 |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  | Apache-2.0 |    |
@@ -162,22 +162,35 @@ sudo yum makecache;
 
 ### Grafana 技术栈
 
-|                                                  名称                                                   |   版本   |    许可证     | 备注    |
-|:-----------------------------------------------------------------------------------------------------:|:------:|:----------:|:------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0 |   AGPLv3   | 可视化平台 |
-|                                [loki](https://github.com/grafana/loki)                                | 3.1.1  |   AGPLv3   | 日志平台  |
-|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    | 3.0.0  |   APGLv3   | 已废弃   |
-|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1 |  MPL-2.0   |       |
-|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             | 3.6.0  | Apache-2.0 |       |
-|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.1 | Apache-2.0 |       |
-| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7 | Apache-2.0 |       |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0 | Apache-2.0 |       |
+|                                                  名称                                                   |   版本   |    许可证     | 备注             |
+|:-----------------------------------------------------------------------------------------------------:|:------:|:----------:|:---------------|
+|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0 |   AGPLv3   | 可视化平台，监控大屏     |
+|                                [loki](https://github.com/grafana/loki)                                | 3.1.1  |   AGPLv3   | 日志平台           |
+|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    | 3.0.0  |   APGLv3   | 已弃用            |
+|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1 |  MPL-2.0   | 日志收集 Agent     |
+|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             | 3.6.0  | Apache-2.0 | Grafana 多功能数据源 |
+|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0 | Apache-2.0 | 一系列数据源与面板插件    |
+
+
+### Victoria 技术栈
+
+|                                                 Name                                                  | Version |  License   | Comment                           |
+|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:----------------------------------|
+|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.131.0 | Apache-2.0 | VictoriaMetrics，更好的 Prometheus 替代 |
+|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.131.0 | Apache-2.0 | VictoriaMetrics 的分布式集群版本          |
+|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.131.0 | Apache-2.0 | VictoriaMetrics 工具                |
+|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs，更好的日志平台              |
+|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 命令行工具                |
+|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 日志 Agent             |
+|    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs 的 Grafana 数据源插件      |
+| [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics 的 Grafana 数据源插件   |
+
 
 ### 对象存储技术栈
 
 |                         名称                          |       版本       |    许可证     | 备注             |
 |:---------------------------------------------------:|:--------------:|:----------:|:---------------|
-|       [minio](https://github.com/minio/minio)       | 20250422221226 |   AGPLv3   | 开源 S3 服务器      |
+|       [minio](https://github.com/minio/minio)       | 20250907161309 |   AGPLv3   | 开源 S3 服务器      |
 |         [mcli](https://github.com/minio/mc)         | 20250813083541 |   APGLv3   | 开源 S3 客户端      |
 |            [rustfs](https://rustfs.com/)            |   1.0.0-a71    | Apache-2.0 | MinIO 替代，Alpha |
 |      [garage](https://garagehq.deuxfleurs.fr/)      |     2.1.0      | Apache-2.0 | 轻量对象存储         |
