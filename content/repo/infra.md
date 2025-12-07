@@ -115,7 +115,7 @@ sudo apt update
 
 ### YUM Repo
 
-On **RHEL** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and APT repo file manually with:
+On **RHEL** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and Yum repo file manually with:
 
 {{< tabs items="Default,Mirror,NoKey" >}}
 {{< tab >}}

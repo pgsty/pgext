@@ -190,7 +190,7 @@ sudo yum makecache;
 
 |                                  名称                                  |   版本   |    许可证     | 备注                |
 |:--------------------------------------------------------------------:|:------:|:----------:|:------------------|
-|        [prometheus](https://github.com/prometheus/prometheus)        | 3.7.3  | Apache-2.0 | 开源时序数据库与监控平台      |
+|        [prometheus](https://github.com/prometheus/prometheus)        | 3.8.0  | Apache-2.0 | 开源时序数据库与监控平台      |
 |       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2 | Apache-2.0 | 向 Prometheus 推送指标 |
 |      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0 | Apache-2.0 | 管理告警事件            |
 | [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0 | Apache-2.0 | 向端点发送探针           |
@@ -255,14 +255,14 @@ sudo yum makecache;
 
 PostgreSQL 相关工具、数据库管理系统和其他实用程序
 
-|                           名称                           |   版本    |    许可证     | 备注                 |
-|:------------------------------------------------------:|:-------:|:----------:|:-------------------|
-|          [etcd](https://github.com/etcd-io/etcd)        |  3.6.6  | Apache-2.0 | 容错分布式协调服务          |
-|        [kafka](https://kafka.apache.org/downloads)      |  4.0.0  | Apache-2.0 | 消息队列               |
-|       [duckdb](https://github.com/duckdb/duckdb)        |  1.4.2  |    MIT     | 嵌入式 OLAP           |
-|     [ferretdb](https://github.com/FerretDB/FerretDB)    |  2.7.0  | Apache-2.0 | 基于 PG 的 MongoDB    |
+|                            名称                             |   版本    |    许可证     | 备注                 |
+|:---------------------------------------------------------:|:-------:|:----------:|:-------------------|
+|          [etcd](https://github.com/etcd-io/etcd)          |  3.6.6  | Apache-2.0 | 容错分布式协调服务          |
+|        [kafka](https://kafka.apache.org/downloads)        |  4.0.0  | Apache-2.0 | 消息队列               |
+|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.2  |    MIT     | 嵌入式 OLAP           |
+|     [ferretdb](https://github.com/FerretDB/FerretDB)      |  2.7.0  | Apache-2.0 | 基于 PG 的 MongoDB    |
 | [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) | 0.16.65 | Apache-2.0 | 金融 OLTP            |
-|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)    |   5.0   | Apache-2.0 | Oracle 兼容的 PG 17.6 |
+|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   5.0   | Apache-2.0 | Oracle 兼容的 PG 17.6 |
 
 ### 工具
 
