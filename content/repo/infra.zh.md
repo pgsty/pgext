@@ -146,8 +146,6 @@ sudo yum makecache;
 |          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  | Apache-2.0 |    |
 |         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  | Apache-2.0 |    |
 |    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  | Apache-2.0 |    |
-|    [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics)    | 1.131.0 | Apache-2.0 |    |
-| [VictoriaLogs](https://github.com/VictoriaMetrics/VictoriaMetrics/releases) | 1.40.0  | Apache-2.0 |    |
 |             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | Apache-2.0 |    |
 |    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |    MIT     |    |
 |        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  | Apache-2.0 |    |
@@ -182,6 +180,7 @@ sudo yum makecache;
 |                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs，更好的日志平台              |
 |                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 命令行工具                |
 |                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 日志 Agent             |
+|                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces，更好的 Tracing 平台     |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs 的 Grafana 数据源插件      |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics 的 Grafana 数据源插件   |
 

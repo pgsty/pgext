@@ -177,6 +177,7 @@ sudo yum makecache;
 |                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
 |                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs CLI Utils                         |
 |                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs Logging Agent                     |
+|                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces, Better Tracing platform        |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs Datasource for Grafana            |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics Datasource for Grafana         |
 
