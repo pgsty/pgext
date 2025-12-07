@@ -698,6 +698,13 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			}
 			return basePkgs + " flamegraph chkconfig"
 		},
+		"getDebNodePackage1": func() string {
+			// u24 temporarily disables tcpdump
+			if g.osCode == "u24" {
+				return "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl sysstat iotop htop rsync acl chrony" // tcpdump
+			}
+			return g.constants.DEBCommonPkg[3]
+		},
 		"getNodePackage2": func() string {
 			// Handle OS-specific package differences
 			if g.isRPM() {
@@ -787,7 +794,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node_exporter keepalived_exporter pg_exporter pgbackrest_exporter redis_exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins loki logcli vector promtail prometheus alertmanager pushgateway blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx",
+			"grafana grafana-plugins grafana-victorialogs-ds victoria-logs vlogscli vector prometheus alertmanager pushgateway blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx",
 			// 2: extra-modules
 			"docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
@@ -802,7 +809,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins loki logcli vector promtail prometheus alertmanager pushgateway blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx",
+			"grafana grafana-plugins grafana-victorialogs-ds victoria-logs vlogscli vector prometheus alertmanager pushgateway blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx",
 			// 2: extra-modules
 			"docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
@@ -900,11 +907,11 @@ repo_extra_packages_default: [ pgsql-main ]
 node_packages_default:
   - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
   - python3,python3-pip,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
-  - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig
+  - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,loki,logcli,prometheus,alertmanager,pushgateway,grafana-plugins,restic,certbot,python3-certbot-nginx
+  - grafana,grafana-victorialogs-ds,victoria-logs,vlogscli,prometheus,alertmanager,pushgateway,grafana-plugins,restic,certbot,python3-certbot-nginx
   - node_exporter,blackbox_exporter,nginx_exporter,pg_exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli
 
 # postgres home dir in various mode
@@ -993,10 +1000,11 @@ package_map:
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
   docker:                  "docker-ce docker-compose-plugin"
-  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent grafana-victorialogs-ds rclone mysqld_exporter mongodb_exporter kafka_exporter"
-  victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent grafana-victorialogs-ds"
-  vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds"
-  vlogs:                   "victoria-logs vlogscli vlagent grafana-victorialogs-ds"
+  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld_exporter mongodb_exporter kafka_exporter"
+  victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds"
+  vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils"
+  vlogs:                   "victoria-logs vlogscli vlagent"
+  vtraces:                 "victoria-traces"
   tigerbeetle:             "tigerbeetle"
   clickhouse:              "clickhouse-server clickhouse-client clickhouse-common-static"
 
@@ -1048,13 +1056,13 @@ repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
+  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
   - python3,python3-pip,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
-  - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client
+  - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,grafana-plugins,loki,logcli,prometheus,alertmanager,pushgateway,restic,certbot,python3-certbot-nginx
+  - grafana,grafana-plugins,grafana-victorialogs-ds,victoria-logs,vlogscli,prometheus,alertmanager,pushgateway,restic,certbot,python3-certbot-nginx
   - node-exporter,blackbox-exporter,nginx-exporter,pg-exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli
 
 # postgres home dir in various mode
@@ -1116,7 +1124,7 @@ package_map:
   infra-package:           "{{ index .Constants.DEBCommonPkg 0 }}"
   infra-addons:            "{{ index .Constants.DEBCommonPkg 1 }}"
   extra-modules:           "{{ index .Constants.DEBCommonPkg 2 }}"
-  node-package1:           "{{ index .Constants.DEBCommonPkg 3 }}"
+  node-package1:           "{{ getDebNodePackage1 }}"{{ if eq .OSCode "u24" }} #tcpdump{{ end }}
   node-package2:           "{{ getNodePackage2 }}"
   pgsql-utility:           "{{ index .Constants.DEBCommonPkg 5 }}"
 
@@ -1136,10 +1144,11 @@ package_map:
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
   docker:                  "docker-ce docker-compose-plugin"
-  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent grafana-victorialogs-ds rclone mysqld-exporter mongodb-exporter kafka-exporter"
-  victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent grafana-victorialogs-ds"
-  vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds"
-  vlogs:                   "victoria-logs vlogscli vlagent grafana-victorialogs-ds"
+  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld_exporter mongodb_exporter kafka_exporter"
+  victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds"
+  vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils"
+  vlogs:                   "victoria-logs vlogscli vlagent"
+  vtraces:                 "victoria-traces"
   tigerbeetle:             "tigerbeetle"
   clickhouse:              "clickhouse-server clickhouse-client clickhouse-common-static"
 
