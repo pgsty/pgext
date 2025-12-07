@@ -8,32 +8,39 @@ weight: 200
 The [`pigsty-infra`](https://github.com/pgsty/infra-pkg) repo contains packages that are generic to any PostgreSQL version and Linux major version,
 including prometheus & grafana stack, admin tools for postgres, and many utils written in go.
 
-This repo is maintained by the [Pigsty](https://doc.pgsty.com), you can find all build specs on [https://github.com/pgsty/infra-pkg](https://github.com/pgsty/infra-pkg).
+This repo is maintained by [Ruohang Feng](https://vonng.com/en/) ([Vonng](https://github.com/Vonng)) @ [Pigsty](https://doc.pgsty.com), 
+you can find all the build specs on [https://github.com/pgsty/infra-pkg](https://github.com/pgsty/infra-pkg).
 Prebuilt RPM / DEB packages for RHEL / Debian / Ubuntu distros available for `x86_64` and `aarch64` arch.
+Hosted on cloudflare CDN for free global access.
 
 | Linux  | Package | x86_64 | aarch64 |
 |:------:|:-------:|:------:|:-------:|
 |   EL   |  `rpm`  |   ✓    |    ✓    |
 | Debian |  `deb`  |   ✓    |    ✓    |
 
-You can check the [Release-Infra Chanagelog](/release/infra) for the latest updates.
-
---------
+You can check the [**Release - Infra Chanage Log**](/release/infra) for the latest updates.
 
 ## Quick Start
 
-You can add the `pigsty-infra` repo with the [`pig`](/cmd/repo) CLI tool, it will automatically choose from `apt/yum/dnf`.
+You can add the `pigsty-infra` repo with the [`pig`](/cmd/pig) CLI tool, it will automatically choose from `apt/yum/dnf`.
 
+{{< tabs items="Default,Mirror,Hint" >}}
+{{< tab >}}
 ```bash tab="default"
 curl https://repo.pigsty.io/pig | bash  # download and install the pig CLI tool
 pig repo add infra                      # add pigsty-infra repo file to you system
 pig repo update                         # update local repo cache with apt / dnf
 ```
+{{< /tab >}}
+{{< tab >}}
 ```bash tab="mirror"
-curl https://repo.pigsty.cc/pig | bash  # install pig from mirror
+# use when in mainland china or cloudflare is down
+curl https://repo.pigsty.cc/pig | bash  # install pig from china CDN mirror 
 pig repo add infra                      # add pigsty-infra repo file to you system
 pig repo update                         # update local repo cache with apt / dnf
 ```
+{{< /tab >}}
+{{< tab >}}
 ```bash tab="hint"
 # you can manage infra repo with these commands:
 pig repo add infra -u       # add repo file, and update cache
@@ -43,10 +50,10 @@ pig repo set infra          # = pigsty repo add infra -ru
 pig repo add all            # add infra, node, pgsql repo to your system
 pig repo set all            # remove existing repo, add above repos and update cache
 ```
+{{< /tab >}}
+{{< /tabs >}}
 
 
-
---------
 
 ## Manual Setup
 
@@ -56,8 +63,10 @@ You can also use this repo directly without the `pig` CLI tool, by add them to y
 
 On **Debian / Ubuntu** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and APT repo file manually with:
 
+{{< tabs items="Default,Mirror,NoKey" >}}
+{{< tab >}}
 ```bash tab="default"
-# Add Pigsty's GPG public key to your system keychain to verify package signatures
+# Add Pigsty's GPG public key to your system keychain to verify package signatures, or just trust
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
 
 # Get Debian distribution codename (distro_codename=jammy, focal, bullseye, bookworm)
@@ -70,8 +79,11 @@ EOF
 # Refresh APT repository cache
 sudo apt update
 ```
+{{< /tab >}}
+{{< tab >}}
 ```bash tab="mirror"
-# Add Pigsty's GPG public key to your system keychain to verify package signatures
+# use when in mainland china or cloudflare is down
+# Add Pigsty's GPG public key to your system keychain to verify package signatures, or just trust
 curl -fsSL https://repo.pigsty.cc/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
 
 # Get Debian distribution codename (distro_codename=jammy, focal, bullseye, bookworm)
@@ -84,11 +96,29 @@ EOF
 # Refresh APT repository cache
 sudo apt update
 ```
+{{< /tab >}}
+{{< tab >}}
+```bash tab="nokey"
+# If you don't want to trust any GPG key, just trust the repo directly
+distro_codename=$(lsb_release -cs)
+sudo tee /etc/apt/sources.list.d/pigsty-infra.list > /dev/null <<EOF
+deb [trust=yes] https://repo.pigsty.io/apt/infra generic main
+EOF
+
+sudo apt update
+```
+{{< /tab >}}
+{{< /tabs >}}
+
+
+
 
 ### YUM Repo
 
 On **RHEL** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and APT repo file manually with:
 
+{{< tabs items="Default,Mirror,NoKey" >}}
+{{< tab >}}
 ```bash tab="default"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
@@ -109,7 +139,10 @@ EOF
 # Refresh YUM/DNF repository cache
 sudo yum makecache;
 ```
+{{< /tab >}}
+{{< tab >}}
 ```bash tab="mirror"
+# use when in mainland china or cloudflare is down
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
 curl -fsSL https://repo.pigsty.cc/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
 
@@ -129,59 +162,81 @@ EOF
 # Refresh YUM/DNF repository cache
 sudo yum makecache;
 ```
+{{< /tab >}}
+{{< tab >}}
+```bash tab="nokey"
+# If you don't want to trust any GPG key, just trust the repo directly
+sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
+[pigsty-infra]
+name=Pigsty Infra for $basearch
+baseurl=https://repo.pigsty.io/yum/infra/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+EOF
+
+sudo yum makecache;
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 
-
---------
 
 ## Content
 
 ### Prometheus Stack
 
-|                                    Name                                     | Version |  License   | Comment |
-|:---------------------------------------------------------------------------:|:-------:|:----------:|:--------|
-|           [prometheus](https://github.com/prometheus/prometheus)            |  3.7.3  | Apache-2.0 |         |
-|          [pushgateway](https://github.com/prometheus/pushgateway)           | 1.11.2  | Apache-2.0 |         |
-|         [alertmanager](https://github.com/prometheus/alertmanager)          | 0.29.0  | Apache-2.0 |         |
-|    [blackbox_exporter](https://github.com/prometheus/blackbox_exporter)     | 0.27.0  | Apache-2.0 |         |
-|             [pg_exporter](https://github.com/Vonng/pg_exporter)             |  1.0.3  | Apache-2.0 |         |
-|    [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)    | 0.21.0  |    MIT     |         |
-|        [node_exporter](https://github.com/prometheus/node_exporter)         | 1.10.2  | Apache-2.0 |         |
-|     [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)     |  1.7.0  |  GPL-3.0   |         |
-|   [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter)   |  1.5.1  | Apache-2.0 |         |
-|    [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)    |  3.8.1  |    MIT     |         |
-|      [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)       | 0.18.0  | Apache-2.0 |         |
-|        [redis_exporter](https://github.com/oliver006/redis_exporter)        | 1.80.1  |    MIT     |         |
-|        [kafka_exporter](https://github.com/danielqsj/kafka_exporter)        |  1.9.0  | Apache-2.0 |         |
-|       [mongodb_exporter](https://github.com/percona/mongodb_exporter)       | 0.47.2  | Apache-2.0 |         |
-|                  [mtail](https://github.com/google/mtail)                   |  3.0.8  | Apache-2.0 |         |
+|                                 Name                                 | Version |  License   | Comment                           |
+|:--------------------------------------------------------------------:|:-------:|:----------:|:----------------------------------|
+|        [prometheus](https://github.com/prometheus/prometheus)        |  3.8.0  | Apache-2.0 | FOSS TSDB and monitoring platform |
+|       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2  | Apache-2.0 | push metrics to prometheus        |
+|      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0  | Apache-2.0 | manage alerting event             |
+| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0  | Apache-2.0 | send probe to endpoints           |
 
 ### Grafana Stack
 
-|                                                 Name                                                  | Version |  License   | Comment                          |
-|:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:---------------------------------|
-|                            [grafana](https://github.com/grafana/grafana/)                             | 12.3.0  |   AGPLv3   | Visualization Platform           |
-|                                [loki](https://github.com/grafana/loki)                                |  3.1.1  |   AGPLv3   | The logging platform             |
-|                    [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)                    |  3.0.0  |   APGLv3   | Obsolete in 2025                 |
-|                       [vector](https://github.com/vectordotdev/vector/releases)                       | 0.51.1  |  MPL-2.0   | logging collector                |
-|            [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)             |  3.6.0  | Apache-2.0 | versatile datasource             |
-|        [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)         | 12.3.0  | Apache-2.0 | extra panel & datasource plugins |
+|                                           Name                                            | Version |  License   | Comment                          |
+|:-----------------------------------------------------------------------------------------:|:-------:|:----------:|:---------------------------------|
+|                      [grafana](https://github.com/grafana/grafana/)                       | 12.3.0  |   AGPLv3   | Visualization Platform           |
+|                          [loki](https://github.com/grafana/loki)                          |  3.1.1  |   AGPLv3   | The logging platform             |
+|              [promtail](https://github.com/grafana/loki/releases/tag/v3.0.0)              |  3.0.0  |   APGLv3   | Obsolete in 2025                 |
+|      [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)       |  3.6.0  | Apache-2.0 | versatile datasource             |
+|  [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)   | 12.3.0  | Apache-2.0 | extra panel & datasource plugins |
 
 ### Victoria Stack
 
 |                                                 Name                                                  | Version |  License   | Comment                                        |
 |:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------------------|
 |                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.131.0 | Apache-2.0 | VictoriaMetrics, Better Prometheus Alternative |
+|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
+|                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces, Better Tracing platform        |
 |            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.131.0 | Apache-2.0 | Distributive version of VictoriaMetrics        |
 |                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.131.0 | Apache-2.0 | VictoriaMetrics Utils                          |
-|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
 |                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs CLI Utils                         |
 |                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs Logging Agent                     |
-|                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces, Better Tracing platform        |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs Datasource for Grafana            |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics Datasource for Grafana         |
 
 
+
+### Metric Exporters
+
+|                                  Name                                   | Version |  License   | Comment                            |
+|:-----------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------|
+|           [pg_exporter](https://github.com/Vonng/pg_exporter)           |  1.0.3  | Apache-2.0 | Advanced Postgres Metrics Exporter |
+|  [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.21.0  |    MIT     | expose pgbackrest metrics          |
+|      [node_exporter](https://github.com/prometheus/node_exporter)       | 1.10.2  | Apache-2.0 | expose linux node metrics          |
+|   [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)   |  1.7.0  |  GPL-3.0   | expose keepalived/VIP metrics      |
+| [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) |  1.5.1  | Apache-2.0 | expose nginx metrics               |
+|  [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)  |  3.8.1  |    MIT     | expose zfs metrics                 |
+|    [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)     | 0.18.0  | Apache-2.0 | expose mysql metrics               |
+|      [redis_exporter](https://github.com/oliver006/redis_exporter)      | 1.80.1  |    MIT     | expose redis metrics               |
+|      [kafka_exporter](https://github.com/danielqsj/kafka_exporter)      |  1.9.0  | Apache-2.0 | expose kafka metrics               |
+|     [mongodb_exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2  | Apache-2.0 | expose mongodb metrics             |
+|                [mtail](https://github.com/google/mtail)                 |  3.0.8  | Apache-2.0 | tail log and generate metrics      |
+|        [vector](https://github.com/vectordotdev/vector/releases)        | 0.51.1  |  MPL-2.0   | the versatile logging collector    |
 
 ### Object Storage
 
@@ -207,23 +262,26 @@ PostgreSQL related tools, DBMS, and other utils
 |        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.2  |    MIT     | Embedded OLAP             |
 |     [ferretdb](https://github.com/FerretDB/FerretDB)      |  2.7.0  | Apache-2.0 | MongoDB over PG           |
 | [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) | 0.16.65 | Apache-2.0 | Financial OLTP            |
-|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   4.6   | Apache-2.0 | Oracle Compatible PG 17.6 |
+|     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   5.0   | Apache-2.0 | Oracle Compatible PG 17.6 |
 
-### DB Utils
+### Utils
 
-Pig the package manager, PostgreSQL tools, DBMS, and other utils
+Pig the package manager, PostgreSQL tools, and other database related utils
 
-|                                         Name                                          | Version |  License   |        Comment         |
-|:-------------------------------------------------------------------------------------:|:--------|:----------:|:----------------------:|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.4   | Apache-2.0 | The pg package manager |
-|           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |   BSD-2    |                        |
-|                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   | Apache-2.0 |                        |
-|          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   | PostgreSQL |                        |
-|          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1  | Apache-2.0 |                        |
-| [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0  | Apache-2.0 |                        |
-|           [pev2](https://github.com/pgsty/infra-pkg/tree/main/noarch/pev2)            | 1.17.0  | PostgreSQL |                        |
-|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.22.0  | Apache-2.0 |                        |
-|                      [sealos](https://github.com/labring/sealos)                      | 5.1.1   | Apache-2.0 |     license change     |
-|                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |    MIT     |                        |
-|                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |    MIT     |                        |
-|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 |                        | 
+|                                         Name                                          | Version |  License   | Comment                                            |
+|:-------------------------------------------------------------------------------------:|:--------|:----------:|:---------------------------------------------------|
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.4   | Apache-2.0 | The pg package manager                             |
+|           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |   BSD-2    | bind L2 vip to pg primary                          |
+|                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 | Stream, transform, and route PG data in real-time. |
+|                          [schema](https://www.pgschema.com/)                          | 1.4.2   | Apache-2.0 | perform pg schema migration                        |
+|          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   | PostgreSQL | Advanced scheduling for PostgreSQL                 |
+|          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1  | Apache-2.0 | optimize timescaledb params                        |
+| [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0  | Apache-2.0 | CDC on timescaledb hypertable                      |
+|                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |    MIT     | Versatile cli for multiple databases               |
+|                   [sqlcmd](https://github.com/microsoft/go-sqlcmd)                    | 1.8.0   |    MIT     | cli for MS SQL Server (and babelfish)              |
+|                        [pev2](https://github.com/dalibo/pev2)                         | 1.17.0  | PostgreSQL | PostgreSQL explain visualizer 2                    |
+|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.22.0  | Apache-2.0 | Google MCP server for databases                    |
+|                      [sealos](https://github.com/labring/sealos)                      | 5.0.1   | Apache-2.0 | Battery-Included Kubernetes distribution           |
+|                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |    MIT     | Building proxies to bypass network restrictions.   |
+
+> Hint: When using the victoria datasource for grafana, don't forget to set `allow_loading_unsigned_plugins = victoriametrics-logs-datasource,victoriametrics-metrics-datasource` in `/etc/grafana/grafana.ini`

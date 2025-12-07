@@ -9,8 +9,6 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2025-12-04
 
-Object storage bundle update, rollback minio to the last version with GUI
-
 | Name                    | Old     | New       | Comment |
 |:------------------------|:--------|:----------|:--------|
 | rustfs                  | -       | 1.0.0-a71 | new     |
