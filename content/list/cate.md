@@ -203,7 +203,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.0 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.8.3 | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.8.5 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
@@ -398,9 +398,9 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | prewarm relation data |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.3 | Administrative functions for pgPool |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.3 | recovery functions for pgpool-II for V4.3 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.3 | replacement for regclass |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.4 | Administrative functions for pgPool |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.4 | recovery functions for pgpool-II for V4.3 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.4 | replacement for regclass |
 | 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |

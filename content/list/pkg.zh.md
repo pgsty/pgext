@@ -12,7 +12,7 @@ comments: false
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
 | **ALL** | 306 | 134 | 219 | 0 | 0 | 279 | 299 | 297 | 299 | 290 | 265 |
-| **EL** | 302 | 130 | 219 | 0 | 65 | 270 | 293 | 293 | 295 | 288 | 263 |
+| **EL** | 302 | 130 | 219 | 0 | 65 | 271 | 293 | 293 | 295 | 288 | 263 |
 | **Debian** | 292 | 91 | 201 | 0 | 75 | 265 | 286 | 283 | 285 | 278 | 250 |
 
 ## 分类
@@ -133,7 +133,7 @@ comments: false
 | {{< ext "pllua" >}} | `2.0.12` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v*` | `postgresql-$v-pllua` |
 | {{< ext "plprql" >}} | `18.0.0` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
 | {{< ext "pldbgapi" "pldebugger" >}} | `1.9` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< category "LANG" >}} | `pldebugger_$v*` | `postgresql-$v-pldebugger` |
-| {{< ext "plpgsql_check" >}} | `2.8.3` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v*` | `postgresql-$v-plpgsql-check` |
+| {{< ext "plpgsql_check" >}} | `2.8.5` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v*` | `postgresql-$v-plpgsql-check` |
 | {{< ext "plprofiler" >}} | `4.2.5` | {{< badge content="Link" link="https://github.com/bigsql/plprofiler" >}} | {{< category "LANG" >}} | `plprofiler_$v*` | `postgresql-$v-plprofiler` |
 | {{< ext "plsh" >}} | `1.20220917` | {{< badge content="Link" link="https://github.com/petere/plsh" >}} | {{< category "LANG" >}} | `plsh_$v*` | `postgresql-$v-plsh` |
 | {{< ext "pljava" >}} | `1.6.10` | {{< badge content="Link" link="https://github.com/tada/pljava" >}} | {{< category "LANG" >}} | `pljava_$v*` | `postgresql-$v-pljava` |
@@ -288,7 +288,7 @@ comments: false
 | {{< ext "table_log" >}} | `0.6.4` | {{< badge content="Link" link="https://github.com/df7cb/table_log" >}} | {{< category "ADMIN" >}} | `table_log_$v` | `postgresql-$v-tablelog` |
 | {{< ext "pgagent" >}} | `4.2.3` | {{< badge content="Link" link="https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html" >}} | {{< category "ADMIN" >}} | `pgagent_$v*` | `pgagent` |
 | {{< ext "pg_prewarm" >}} | `1.2` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pgprewarm.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "pgpool_adm" "pgpool" >}} | `4.6.3` | {{< badge content="Link" link="https://pgpool.net/" >}} | {{< category "ADMIN" >}} | `pgpool-II-pg$v-extensions` | `postgresql-$v-pgpool2` |
+| {{< ext "pgpool_adm" "pgpool" >}} | `4.6.4` | {{< badge content="Link" link="https://pgpool.net/" >}} | {{< category "ADMIN" >}} | `pgpool-II-pg$v-extensions` | `postgresql-$v-pgpool2` |
 | {{< ext "lo" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/lo.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "basic_archive" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/basic-archive.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "basebackup_to_shell" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/basebackup-to-shell.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |

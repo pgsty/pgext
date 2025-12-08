@@ -203,7 +203,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.0 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.8.3 | 对 plpgsql 函数进行扩展检查 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.8.5 | 对 plpgsql 函数进行扩展检查 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
@@ -398,9 +398,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | 预热关系数据 |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.3 | PGPool 管理函数 |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.3 | PGPool辅助扩展，从v4.3提供的恢复函数 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.3 | PGPool辅助扩展，RegClass替代 |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.4 | PGPool 管理函数 |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.4 | PGPool辅助扩展，从v4.3提供的恢复函数 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.4 | PGPool辅助扩展，RegClass替代 |
 | 5930 | {{< alias "lo" >}} | 1.1 | 大对象维护 |
 | 5940 | {{< alias "basic_archive" >}} | - | 归档模块样例 |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | 添加一种备份到Shell终端到基础备份方式 |
