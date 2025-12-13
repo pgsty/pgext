@@ -436,7 +436,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
 | 6380 | {{< alias "pg_relusage" >}} | 0.0.1 | 打印查询引用的表与列 |
 | 6800 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
-| 6810 | {{< alias "powa" >}} | 5.1.0 | PostgreSQL 工作负载分析器-核心 |
+| 6810 | {{< alias "powa" >}} | 5.1.1 | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | 允许 EXPLAIN 转储更多详细 |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | 检视逻辑解码组件详情 |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | 检查数据库页面二进制内容 |

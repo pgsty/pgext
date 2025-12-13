@@ -436,7 +436,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | easily jump into a visual plan UI for any SQL query |
 | 6380 | {{< alias "pg_relusage" >}} | 0.0.1 | Log all the queries that reference a particular column |
 | 6800 | {{< alias "pagevis" >}} | 0.1 | Visualise database pages in ascii code |
-| 6810 | {{< alias "powa" >}} | 5.1.0 | PostgreSQL Workload Analyser-core |
+| 6810 | {{< alias "powa" >}} | 5.1.1 | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | Logical decoding components inspection |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | inspect the contents of database pages at a low level |

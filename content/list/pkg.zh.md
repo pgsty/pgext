@@ -316,7 +316,7 @@ comments: false
 | {{< ext "explain_ui" "pg_explain_ui" >}} | `0.0.2` | {{< badge content="Link" link="https://github.com/davidgomes/pg-explain-ui" >}} | {{< category "STAT" >}} | `pg_explain_ui_$v` | `postgresql-$v-pg-explain-ui` |
 | {{< ext "pg_relusage" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/adept/pg_relusage" >}} | {{< category "STAT" >}} | `pg_relusage_$v` | `postgresql-$v-pg-relusage` |
 | {{< ext "pagevis" >}} | `0.1` | {{< badge content="Link" link="https://github.com/hollobon/pagevis" >}} | {{< category "STAT" >}} | `pagevis_$v` | `postgresql-$v-pagevis` |
-| {{< ext "powa" >}} | `5.1.0` | {{< badge content="Link" link="https://github.com/powa-team/powa" >}} | {{< category "STAT" >}} | `powa_$v*` | `postgresql-$v-powa` |
+| {{< ext "powa" >}} | `5.1.1` | {{< badge content="Link" link="https://github.com/powa-team/powa" >}} | {{< category "STAT" >}} | `powa_$v*` | `postgresql-$v-powa` |
 | {{< ext "pg_overexplain" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/devel/pgoverexplain.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_logicalinspect" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/devel/pglogicalinspect.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pageinspect" >}} | `1.12` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pageinspect.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
