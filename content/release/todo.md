@@ -9,6 +9,13 @@ weight: 700
 - [timescaledb](https://github.com/timescale/timescaledb) 2.24.0
 - [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0
 - pg_search 0.20.3
+- convert 0.0.4 -> 0.0.5
+- pglinter 1.0.0 -> 1.0.1
+- pgdd 0.6.0 -> 0.6.1
+- pg_session_jwt 0.3.3 -> 0.4.0
+- pg_anon 2.5.1
+- pg_enigma 0.4.0 0.5.0
+- wrappers 0.5.6 -> 0.5.7
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
