@@ -6,12 +6,13 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2025-12-15
+## 2025-12-16
 
 | Name              | Old            | New            | Comment  |
 |:------------------|:---------------|:---------------|:---------|
+| victoria-metrics  | 1.131.0        | 1.132.0        |          |
+| victoria-logs     | 1.40.0         | 1.41.0         |          |
 | blackbox_exporter | 0.27.0         | 0.28.0         |          |
-| victoralogs       | 1.40.0         | 1.41.0         |          |
 | duckdb            | 1.4.2          | 1.4.3          |          |
 | rclone            | 1.72.0         | 1.72.1         |          |
 | pev2              | 1.17.0         | 1.19.0         |          |
