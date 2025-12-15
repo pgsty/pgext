@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.23.1 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.24.0 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.7 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -66,7 +66,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.0.0 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
-| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.25.0 | The simplest way to do vector search on Postgres |
+| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | The simplest way to do vector search on Postgres |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | support similarity queries |
 | 1850 | {{< alias "smlar" >}} | 1.0 | Effective similarity search |
 | 1860 | {{< alias "pg_summarize" >}} | 0.0.1 | Text Summarization using LLMs. Built using pgrx |
@@ -80,7 +80,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.0 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.3 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -347,7 +347,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62 extension for PostgreSQL |
 | 4830 | {{< alias "pg_base58" >}} | 0.0.1 | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | Financial aggregate functions |
-| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.4 | conversion functions for spatial, routing and other specialized uses |
+| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.5 | conversion functions for spatial, routing and other specialized uses |
 | 4880 | {{< alias "refint" >}} | 1.0 | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | functions for autoincrementing fields |
 | 4882 | {{< alias "insert_username" >}} | 1.0 | functions for tracking who changed a table |
@@ -377,11 +377,11 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | DDL eXtractor functions |
-| 5090 | {{< alias "pglinter" >}} | 1.0.0 | PostgreSQL Linting and Analysis Extension |
+| 5090 | {{< alias "pglinter" >}} | 1.0.1 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.3 | cluster database read only |
-| 5130 | {{< alias "pgdd" >}} | 0.6.0 | Introspect pg data dictionary via standard SQL |
+| 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4 | view object permissions and compare them with the desired state |
 | 5150 | {{< alias "pgautofailover" >}} | 2.2 | pg_auto_failover |
 | 5160 | {{< alias "pg_catcheck" >}} | 1.6.0 | Diagnosing system catalog corruption |
@@ -460,10 +460,10 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7010 | {{< alias "supautils" >}} | 3.0.2 | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
-| 7040 | {{< alias "pg_session_jwt" >}} | 0.3.3 | Manage authentication sessions using JWTs |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 2.4.1 | PostgreSQL Anonymizer (anon) extension |
+| 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | Manage authentication sessions using JWTs |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 2.5.1 | PostgreSQL Anonymizer (anon) extension |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
-| 7070 | {{< alias "pg_enigma" >}} | 0.4.0 | Encrypted postgres data type |
+| 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |
 | 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.6 | pgAudit addon to redirect audit log to an independent file |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
@@ -490,7 +490,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 8500 | {{< alias "wrappers" >}} | 0.5.6 | Foreign data wrappers developed by Supabase |
+| 8500 | {{< alias "wrappers" >}} | 0.5.7 | Foreign data wrappers developed by Supabase |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | Fetch foreign data in Python in your PostgreSQL server. |
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | Foreign data wrapper for accessing remote databases using ODBC |
 | 8530 | {{< alias "jdbc_fdw" >}} | 0.4.0 | foreign-data wrapper for remote servers available over JDBC |

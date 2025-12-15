@@ -6,7 +6,7 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
-# 2025-12-15
+## 2025-12-15
 
 | Name           | Old    | New    | Comment  |
 |:---------------|:-------|:-------|:---------|

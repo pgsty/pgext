@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6810** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.1.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **6810** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.1.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `powa` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `powa` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "powa_18*" "green" >}} {{< bg "17" "powa_17*" "green" >}} {{< bg "16" "powa_16*" "green" >}} {{< bg "15" "powa_15*" "green" >}} {{< bg "14" "powa_14*" "green" >}} {{< bg "13" "powa_13*" "green" >}} | `powa_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "postgresql-18-powa" "red" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} {{< bg "13" "postgresql-13-powa" "green" >}} | `postgresql-$v-powa` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.1` | {{< bg "18" "postgresql-18-powa" "red" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} {{< bg "13" "postgresql-13-powa" "green" >}} | `postgresql-$v-powa` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -120,12 +120,12 @@ width: full
 | `powa_16` | `4.2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.5 KiB | [powa_16-4.2.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/powa_16-4.2.2-1PGDG.rhel8.aarch64.rpm) |
 | `powa_16` | `4.2.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.5 KiB | [powa_16-4.2.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/powa_16-4.2.1-1PGDG.rhel8.aarch64.rpm) |
 | `powa_16` | `4.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.4 KiB | [powa_16-4.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/powa_16-4.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `powa_16` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_16-5.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-5.1.0-1PGDG.rhel9.7.x86_64.rpm) |
+| `powa_16` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_16-5.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-5.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `powa_16` | `5.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.7 KiB | [powa_16-5.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-5.0.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_16` | `4.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_16-4.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-4.2.2-1PGDG.rhel9.x86_64.rpm) |
 | `powa_16` | `4.2.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_16-4.2.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-4.2.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_16` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.5 KiB | [powa_16-4.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/powa_16-4.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `powa_16` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_16-5.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/powa_16-5.1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `powa_16` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_16-5.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/powa_16-5.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `powa_16` | `5.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_16-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/powa_16-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `powa_16` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.5 KiB | [powa_16-4.2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/powa_16-4.2.2-1PGDG.rhel9.aarch64.rpm) |
 | `powa_16` | `4.2.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.4 KiB | [powa_16-4.2.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/powa_16-4.2.1-1PGDG.rhel9.aarch64.rpm) |
@@ -160,13 +160,13 @@ width: full
 | `powa_15` | `4.2.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.5 KiB | [powa_15-4.2.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/powa_15-4.2.1-1PGDG.rhel8.aarch64.rpm) |
 | `powa_15` | `4.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.4 KiB | [powa_15-4.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/powa_15-4.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `powa_15` | `4.1.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 66.7 KiB | [powa_15-4.1.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/powa_15-4.1.4-1.rhel8.aarch64.rpm) |
-| `powa_15` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_15-5.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-5.1.0-1PGDG.rhel9.7.x86_64.rpm) |
+| `powa_15` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_15-5.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-5.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `powa_15` | `5.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.7 KiB | [powa_15-5.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-5.0.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_15` | `4.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_15-4.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-4.2.2-1PGDG.rhel9.x86_64.rpm) |
 | `powa_15` | `4.2.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_15-4.2.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-4.2.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_15` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.5 KiB | [powa_15-4.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-4.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `powa_15` | `4.1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 61.6 KiB | [powa_15-4.1.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/powa_15-4.1.4-1.rhel9.x86_64.rpm) |
-| `powa_15` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_15-5.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/powa_15-5.1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `powa_15` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_15-5.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/powa_15-5.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `powa_15` | `5.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_15-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/powa_15-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `powa_15` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.5 KiB | [powa_15-4.2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/powa_15-4.2.2-1PGDG.rhel9.aarch64.rpm) |
 | `powa_15` | `4.2.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.4 KiB | [powa_15-4.2.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/powa_15-4.2.1-1PGDG.rhel9.aarch64.rpm) |
@@ -204,14 +204,14 @@ width: full
 | `powa_14` | `4.2.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.5 KiB | [powa_14-4.2.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/powa_14-4.2.1-1PGDG.rhel8.aarch64.rpm) |
 | `powa_14` | `4.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 6.4 KiB | [powa_14-4.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/powa_14-4.2.0-1PGDG.rhel8.aarch64.rpm) |
 | `powa_14` | `4.1.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 67.8 KiB | [powa_14-4.1.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/powa_14-4.1.4-1.rhel8.aarch64.rpm) |
-| `powa_14` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_14-5.1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-5.1.0-1PGDG.rhel9.7.x86_64.rpm) |
+| `powa_14` | `5.1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_14-5.1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-5.1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `powa_14` | `5.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.7 KiB | [powa_14-5.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-5.0.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_14` | `4.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_14-4.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-4.2.2-1PGDG.rhel9.x86_64.rpm) |
 | `powa_14` | `4.2.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.6 KiB | [powa_14-4.2.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-4.2.1-1PGDG.rhel9.x86_64.rpm) |
 | `powa_14` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.5 KiB | [powa_14-4.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-4.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `powa_14` | `4.1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.7 KiB | [powa_14-4.1.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-4.1.4-1.rhel9.x86_64.rpm) |
 | `powa_14` | `4.1.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.2 KiB | [powa_14-4.1.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/powa_14-4.1.3-1.rhel9.x86_64.rpm) |
-| `powa_14` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_14-5.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/powa_14-5.1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `powa_14` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_14-5.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/powa_14-5.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `powa_14` | `5.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_14-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/powa_14-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `powa_14` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.5 KiB | [powa_14-4.2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/powa_14-4.2.2-1PGDG.rhel9.aarch64.rpm) |
 | `powa_14` | `4.2.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.4 KiB | [powa_14-4.2.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/powa_14-4.2.1-1PGDG.rhel9.aarch64.rpm) |
@@ -255,7 +255,7 @@ width: full
 | `powa_13` | `4.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 6.5 KiB | [powa_13-4.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/powa_13-4.2.0-1PGDG.rhel9.x86_64.rpm) |
 | `powa_13` | `4.1.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.4 KiB | [powa_13-4.1.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/powa_13-4.1.4-1.rhel9.x86_64.rpm) |
 | `powa_13` | `4.1.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.0 KiB | [powa_13-4.1.3-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/powa_13-4.1.3-1.rhel9.x86_64.rpm) |
-| `powa_13` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_13-5.1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/powa_13-5.1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `powa_13` | `5.1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_13-5.1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/powa_13-5.1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `powa_13` | `5.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.6 KiB | [powa_13-5.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/powa_13-5.0.1-1PGDG.rhel9.aarch64.rpm) |
 | `powa_13` | `4.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.5 KiB | [powa_13-4.2.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/powa_13-4.2.2-1PGDG.rhel9.aarch64.rpm) |
 | `powa_13` | `4.2.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 6.4 KiB | [powa_13-4.2.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/powa_13-4.2.1-1PGDG.rhel9.aarch64.rpm) |

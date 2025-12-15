@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 437 | 149 | 265 | 71 | 0 | 405 | 426 | 426 | 428 | 413 | 386 |
-| **EL** | 431 | 143 | 265 | 71 | 6 | 394 | 418 | 420 | 422 | 410 | 382 |
-| **Debian** | 423 | 105 | 247 | 71 | 14 | 391 | 413 | 412 | 414 | 402 | 371 |
+| **ALL** | 437 | 149 | 265 | 71 | 0 | 405 | 426 | 426 | 428 | 413 | 385 |
+| **EL** | 431 | 143 | 265 | 71 | 6 | 394 | 418 | 420 | 422 | 410 | 381 |
+| **Debian** | 423 | 105 | 247 | 71 | 14 | 391 | 413 | 412 | 414 | 402 | 370 |
 
 ## Categories
 
@@ -306,7 +306,7 @@ There are 437 available PostgreSQL extensions:
 | {{< ext "base62" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Base62 extension for PostgreSQL |
 | {{< ext "pg_base58" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
 | {{< ext "financial" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Financial aggregate functions |
-| {{< ext "convert" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | conversion functions for spatial, routing and other specialized uses |
+| {{< ext "convert" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | conversion functions for spatial, routing and other specialized uses |
 | {{< ext "refint" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | functions for implementing referential integrity (obsolete) |
 | {{< ext "autoinc" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | functions for autoincrementing fields |
 | {{< ext "insert_username" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | functions for tracking who changed a table |

@@ -6,17 +6,7 @@ weight: 700
 
 ## TODOLIST
 
-- [timescaledb](https://github.com/timescale/timescaledb) 2.24.0
 - [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0
-- pg_search 0.20.3
-- convert 0.0.4 -> 0.0.5
-- pglinter 1.0.0 -> 1.0.1
-- pgdd 0.6.0 -> 0.6.1
-- pg_session_jwt 0.3.3 -> 0.4.0
-- pg_anon 2.5.1
-- pg_enigma 0.4.0 0.5.0
-- wrappers 0.5.6 -> 0.5.7
-- pg_vectorize 0.25.0 -> 0.26.0
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
@@ -27,23 +17,16 @@ weight: 700
 
 ## Latest Update
 
-- [vchord](/e/vchord) : 1.0.0
-- [pg_later](/e/pg_later) : 0.4.0
-- [pgvectorscale](/e/pgvectorscale) : 0.9.0
-- [pglite_fusion](/e/pglite_fusion) : 0.0.6
-- [pgx_ulid](/e/pgx_ulid) : 0.2.2
-- [pg_search](/e/pg_search) : 0.19.7
-- [citus](/e/citus) : 13.2.0
-- [timescaledb](/e/timescaledb) : 2.23.1
-- [pg_profile](/e/pg_profile) : 4.11
-- [pglinter](/e/pglinter) : 1.0.0
-- [pg_typeid](/e/pg_typeid) : 0.3.0
-- [pg_enigma](/e/pg_enigma) : 0.4.0
-- [pg_retry](/e/pg_retry) : 1.0.0
-- [pg_biscuit](/e/pg_biscuit) : 1.0
-- [pg_weighted_statistics](/e/pg_weighted_statistics) : 1.0.0
-- [pg_stat_monitor](/e/pg_stat_monitor) : 2.3.0
-- [documentdb](/e/documentdb) : 0.107
+- timescaledb 2.23.1 -> 2.24.0
+- pg_search 0.20.0 -> 0.20.3
+- convert 0.0.4 -> 0.0.5
+- pglinter 1.0.0 -> 1.0.1
+- pgdd 0.6.0 -> 0.6.1
+- pg_session_jwt 0.3.3 -> 0.4.0
+- pg_anon 2.4.1 -> 2.5.1
+- pg_enigma 0.4.0 -> 0.5.0
+- wrappers 0.5.6 -> 0.5.7
+- pg_vectorize 0.25.0 -> 0.26.0
 
 ## Icebox
 

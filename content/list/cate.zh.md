@@ -18,7 +18,7 @@ PostgreSQL 扩展（437 ext / 370 pkg）归属 16 个分类。
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.23.1 | 时序数据库扩展插件 |
+| 1000 | {{< alias "timescaledb" >}} | 2.24.0 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.7 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -66,7 +66,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1810 | {{< alias "vchord" >}} | 1.0.0 | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | 使用DiskANN算法对向量进行高效索引 |
-| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.25.0 | 在PostgreSQL中封装RAG向量检索服务 |
+| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | 在PostgreSQL中封装RAG向量检索服务 |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | 提供17种距离度量函数 |
 | 1850 | {{< alias "smlar" >}} | 1.0 | 高效的相似度搜索函数 |
 | 1860 | {{< alias "pg_summarize" >}} | 0.0.1 | 使用LLM对文本字段进行总结 |
@@ -80,7 +80,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.0 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.3 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -347,7 +347,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62编码解码扩展 |
 | 4830 | {{< alias "pg_base58" >}} | 0.0.1 | Base58 编码/解码函数 |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | 金融领域聚合函数 |
-| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.4 | 用于空间里程等的公英制转换函数 |
+| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.5 | 用于空间里程等的公英制转换函数 |
 | 4880 | {{< alias "refint" >}} | 1.0 | 实现引用完整性的函数 |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | 用于自动递增字段的函数 |
 | 4882 | {{< alias "insert_username" >}} | 1.0 | 用于跟踪谁更改了表的函数 |
@@ -377,11 +377,11 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | 检查和管理操作系统缓冲区缓存 |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | 从缓冲区中移除特定关系的页面 |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | 提取数据库对象的DDL |
-| 5090 | {{< alias "pglinter" >}} | 1.0.0 | PG数据库规则检查插件 |
+| 5090 | {{< alias "pglinter" >}} | 1.0.1 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.3 | 将集群设置为只读 |
-| 5130 | {{< alias "pgdd" >}} | 0.6.0 | 提供通过标准SQL查询数据库目录集簇的能力 |
+| 5130 | {{< alias "pgdd" >}} | 0.6.1 | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4 | 查看对象权限并将其与期望状态进行比较 |
 | 5150 | {{< alias "pgautofailover" >}} | 2.2 | PG 自动故障迁移 |
 | 5160 | {{< alias "pg_catcheck" >}} | 1.6.0 | 用于诊断系统目录是否损坏的工具 |
@@ -460,10 +460,10 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7010 | {{< alias "supautils" >}} | 3.0.2 | 用于在云环境中确保数据库集群的安全 |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | 表数据加密存储 TDE |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | 在 Vault 中存储加密凭证的扩展 (supabase) |
-| 7040 | {{< alias "pg_session_jwt" >}} | 0.3.3 | 使用JWT进行会话认证 |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 2.4.1 | 数据匿名化处理工具 |
+| 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | 使用JWT进行会话认证 |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 2.5.1 | 数据匿名化处理工具 |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
-| 7070 | {{< alias "pg_enigma" >}} | 0.4.0 | PostgreSQL 加密数据类型 |
+| 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | PostgreSQL 加密数据类型 |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | 提供审计功能 |
 | 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.6 | pgAudit 子扩展，将审计日志写入单独的文件中 |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | 审计数据变更并提供闪回能力 |
@@ -490,7 +490,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 8500 | {{< alias "wrappers" >}} | 0.5.6 | Supabase提供的外部数据源包装器捆绑包 |
+| 8500 | {{< alias "wrappers" >}} | 0.5.7 | Supabase提供的外部数据源包装器捆绑包 |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | 用Python编写自定义的外部数据源包装器 |
 | 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | 访问ODBC可访问的任何外部数据源 |
 | 8530 | {{< alias "jdbc_fdw" >}} | 0.4.0 | 访问JDBC可访问的任何外部数据源 |
