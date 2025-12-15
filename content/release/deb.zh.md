@@ -6,6 +6,27 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2025-11-15
+
+| 名称             |  旧版本   |  新版本   | 备注       |
+|:---------------|:------:|:------:|:---------|
+| timescaledb    | 2.23.1 | 2.24.0 |          |
+| pg_search      | 0.20.0 | 0.20.3 |          |
+| pg_convert     | 0.0.4  | 0.0.5  | rm pg13  |
+| pgdd           | 0.6.0  | 0.6.1  | rm pg13  |
+| pglinter       | 1.0.0  | 1.0.1  |          |
+| pg_session_jwt | 0.3.3  | 0.4.0  |          |
+| pg_anon        | 2.4.1  | 2.5.1  |          |
+| pg_enigma      | 0.4.0  | 0.5.0  |          |
+| wrappers       | 0.5.6  | 0.5.7  |          |
+| pg_vectorize   | 0.25.0 | 0.26.0 | fix pg18 |
+| pg_tiktoken    |   -    |   -    | fix pg18 |
+| pg_tzf         |   -    |   -    | fix pg18 |
+| pglite_fusion  |   -    |   -    | fix pg18 |
+| pgsmcrypto     |   -    |   -    | fix pg18 |
+| pgx_ulid       |   -    |   -    | fix pg18 |
+| plprql         |   -    |   -    | fix pg18 |
+
 
 ## 2025-12-04
 

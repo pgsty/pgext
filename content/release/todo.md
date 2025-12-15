@@ -16,6 +16,7 @@ weight: 700
 - pg_anon 2.5.1
 - pg_enigma 0.4.0 0.5.0
 - wrappers 0.5.6 -> 0.5.7
+- pg_vectorize 0.25.0 -> 0.26.0
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
