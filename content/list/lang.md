@@ -14,18 +14,18 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 345 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 346 | The traditional PostgreSQL extension language |
 | {{< language "Rust" >}} | 37 | Extensions written in Rust with the pgrx framework |
 | {{< language "SQL" >}} | 37 | Pure SQL extensions and functions |
 | {{< language "Data" >}} | 10 | Data-only extensions |
-| {{< language "C++" >}} | 5 | Extensions leveraging C++ features and libraries |
+| {{< language "C++" >}} | 7 | Extensions leveraging C++ features and libraries |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="345 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="346 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -61,19 +61,20 @@ The traditional PostgreSQL extension language
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "zhparser" >}} | a parser for full-text search of Chinese |
-| 2170 | {{< alias "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
+| 2180 | {{< alias "pg_textsearch" >}} | Full-text search with BM25 ranking |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | Hydra Columnar extension |
-| 2450 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
+| 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
-| 2760 | {{< alias "age" >}} | AGE graph database extension |
-| 2780 | {{< alias "rum" >}} | RUM index access method |
+| 2730 | {{< alias "age" >}} | AGE graph database extension |
+| 2750 | {{< alias "rum" >}} | RUM index access method |
 | 2810 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2820 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2830 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
@@ -401,7 +402,7 @@ Extensions written in Rust with the pgrx framework
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
-| 2460 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
+| 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
 | 2790 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
@@ -490,7 +491,7 @@ Data-only extensions
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="5 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="7 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -498,7 +499,9 @@ Extensions leveraging C++ features and libraries
 |:---:|:---|:---|
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
-| 2770 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2740 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2760 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
 

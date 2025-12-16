@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（440 ext / 370 pkg）归属 16 个分类。
+PostgreSQL 扩展（440 ext / 373 pkg）归属 16 个分类。
 
 
 
@@ -80,7 +80,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.3 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.4 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -88,7 +88,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | 在数据库内生成BM25稀疏向量 |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.2.2 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
-| 2170 | {{< alias "pg_biscuit" >}} | 1.0 | 使用IAM的高性能文本模式匹配 |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.0.1 | 使用IAM的高性能文本模式匹配 |
+| 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | 带有BM25排序的全文搜索扩展 |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Hunspell捷克语全文检索词典 |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | Hunspell德语全文检索词典 |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | Hunspell英语全文检索词典 |
@@ -114,8 +115,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | 由 DuckDB 驱动的数据分析引擎 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.0 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
-| 2450 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
-| 2460 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.0 | 从PostgreSQL中查询ClickHouse的接口 |
+| 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
+| 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
 | 2510 | {{< alias "pg_partman" >}} | 5.3.1 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | 作为过程语言实现的数据库分区 |
@@ -128,9 +130,10 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2760 | {{< alias "age" >}} | 1.5.0 | Apache AGE，图数据库扩展 （Deb可用） |
-| 2770 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
-| 2780 | {{< alias "rum" >}} | 1.3.14 | RUM 索引访问方法 |
+| 2730 | {{< alias "age" >}} | 1.5.0 | Apache AGE，图数据库扩展 （Deb可用） |
+| 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
+| 2750 | {{< alias "rum" >}} | 1.3.14 | RUM 索引访问方法 |
+| 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | 提供JSON Schema校验能力 |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |

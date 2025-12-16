@@ -17,8 +17,8 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 205 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 72 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "PostgreSQL" >}} | 206 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 74 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 63 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -39,7 +39,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="205 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="206 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -59,6 +59,7 @@ PostgreSQL extension categorized by license.
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "zhparser" >}} | a parser for full-text search of Chinese |
+| 2180 | {{< alias "pg_textsearch" >}} | Full-text search with BM25 ranking |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | Czech Hunspell Dictionary |
 | 2271 | {{< alias "hunspell_de_de" >}} | German Hunspell Dictionary |
 | 2272 | {{< alias "hunspell_en_us" >}} | en_US Hunspell Dictionary |
@@ -72,11 +73,11 @@ PostgreSQL extension categorized by license.
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
-| 2460 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
+| 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
-| 2780 | {{< alias "rum" >}} | RUM index access method |
+| 2750 | {{< alias "rum" >}} | RUM index access method |
 | 2810 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2830 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
 | 2840 | {{< alias "index_advisor" >}} | Query index advisor |
@@ -255,7 +256,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="72 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="74 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -266,8 +267,10 @@ PostgreSQL extension categorized by license.
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
-| 2760 | {{< alias "age" >}} | AGE graph database extension |
-| 2770 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2730 | {{< alias "age" >}} | AGE graph database extension |
+| 2740 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2760 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
 | 2790 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
@@ -350,10 +353,10 @@ PostgreSQL extension categorized by license.
 | 1590 | {{< alias "pg_geohash" >}} | Handle geohash based functionality for spatial coordinates |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | Fast lookup timezone name by GPS coordinates |
 | 1890 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
-| 2170 | {{< alias "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
-| 2450 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
+| 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | Hstore transform for Lua |

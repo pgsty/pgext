@@ -17,8 +17,8 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 205 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 72 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "PostgreSQL" >}} | 206 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 63 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -39,7 +39,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="205 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="206 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -59,6 +59,7 @@ weight: 300
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |
+| 2180 | {{< alias "pg_textsearch" >}} | 带有BM25排序的全文搜索扩展 |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | Hunspell捷克语全文检索词典 |
 | 2271 | {{< alias "hunspell_de_de" >}} | Hunspell德语全文检索词典 |
 | 2272 | {{< alias "hunspell_en_us" >}} | Hunspell英语全文检索词典 |
@@ -72,11 +73,11 @@ weight: 300
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2420 | {{< alias "pg_analytics" >}} | 由 DuckDB 驱动的数据分析引擎 |
-| 2460 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
+| 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
-| 2780 | {{< alias "rum" >}} | RUM 索引访问方法 |
+| 2750 | {{< alias "rum" >}} | RUM 索引访问方法 |
 | 2810 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | 2830 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
 | 2840 | {{< alias "index_advisor" >}} | 查询索引建议器 |
@@ -255,7 +256,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="72 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="74 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -266,8 +267,10 @@ weight: 300
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
-| 2760 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
-| 2770 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
+| 2730 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
+| 2740 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2760 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
 | 2790 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
@@ -350,10 +353,10 @@ weight: 300
 | 1590 | {{< alias "pg_geohash" >}} | 使用GeoHash处理空间坐标的函数包 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 快速根据GPS经纬度坐标查找时区 |
 | 1890 | {{< alias "pgml" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
-| 2170 | {{< alias "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
-| 2450 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
+| 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3020 | {{< alias "pllua" >}} | Lua 程序语言 |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | Lua 程序语言的Hstore适配扩展 |

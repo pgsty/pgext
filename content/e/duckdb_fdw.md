@@ -2,7 +2,7 @@
 title: "duckdb_fdw"
 linkTitle: "duckdb_fdw"
 description: "DuckDB Foreign Data Wrapper"
-weight: 2450
+weight: 2470
 categories: ["OLAP"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2450** | {{< badge content="duckdb_fdw" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< ext "duckdb_fdw" >}} | `1.1.2` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2470** | {{< badge content="duckdb_fdw" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< ext "duckdb_fdw" >}} | `1.1.2` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

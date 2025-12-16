@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (440 ext in 370 pkg) categorized into 16 categories.
+PostgreSQL Extensions (440 ext in 373 pkg) categorized into 16 categories.
 
 
 
@@ -80,7 +80,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.3 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.4 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -88,7 +88,8 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.2.2 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
-| 2170 | {{< alias "pg_biscuit" >}} | 1.0 | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.0.1 | IAM-LIKE pattern matching with bitmap indexing |
+| 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | Full-text search with BM25 ranking |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
@@ -114,8 +115,9 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.0 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2450 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
-| 2460 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.0 | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
+| 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
 | 2510 | {{< alias "pg_partman" >}} | 5.3.1 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | Database partitioning implemented as procedural language |
@@ -128,9 +130,10 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2760 | {{< alias "age" >}} | 1.5.0 | AGE graph database extension |
-| 2770 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
-| 2780 | {{< alias "rum" >}} | 1.3.14 | RUM index access method |
+| 2730 | {{< alias "age" >}} | 1.5.0 | AGE graph database extension |
+| 2740 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
+| 2750 | {{< alias "rum" >}} | 1.3.14 | RUM index access method |
+| 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | PostgreSQL extension providing JSON Schema validation |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |

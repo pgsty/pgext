@@ -14,18 +14,18 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 345 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 346 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "Rust" >}} | 37 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "SQL" >}} | 37 | 纯 SQL 扩展和函数 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
-| {{< language "C++" >}} | 5 | 使用 C++ 特性和库的扩展 |
+| {{< language "C++" >}} | 7 | 使用 C++ 特性和库的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="345 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="346 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -61,19 +61,20 @@ weight: 200
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |
-| 2170 | {{< alias "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
+| 2180 | {{< alias "pg_textsearch" >}} | 带有BM25排序的全文搜索扩展 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2400 | {{< alias "citus" >}} | Citus 分布式数据库 |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
-| 2450 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
+| 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
-| 2760 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
-| 2780 | {{< alias "rum" >}} | RUM 索引访问方法 |
+| 2730 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
+| 2750 | {{< alias "rum" >}} | RUM 索引访问方法 |
 | 2810 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | 2820 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
 | 2830 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
@@ -401,7 +402,7 @@ weight: 200
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2420 | {{< alias "pg_analytics" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
-| 2460 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
+| 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2790 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -490,7 +491,7 @@ weight: 200
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="5 个扩展" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="7 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -498,7 +499,9 @@ weight: 200
 |:---:|:---|:---|
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| 2770 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
+| 2740 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2760 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
 | 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
 

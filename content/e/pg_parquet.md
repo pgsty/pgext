@@ -2,7 +2,7 @@
 title: "pg_parquet"
 linkTitle: "pg_parquet"
 description: "copy data between Postgres and Parquet"
-weight: 2460
+weight: 2480
 categories: ["OLAP"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2460** | {{< badge content="pg_parquet" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< ext "pg_parquet" >}} | `0.5.1` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+| **2480** | {{< badge content="pg_parquet" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< ext "pg_parquet" >}} | `0.5.1` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
