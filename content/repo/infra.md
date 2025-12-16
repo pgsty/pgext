@@ -271,7 +271,7 @@ Pig the package manager, PostgreSQL tools, and other database related utils
 
 |                                         Name                                          | Version |  License   | Comment                                            |
 |:-------------------------------------------------------------------------------------:|:--------|:----------:|:---------------------------------------------------|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.5   | Apache-2.0 | The pg package manager                             |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.8.0   | Apache-2.0 | The pg package manager                             |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |   BSD-2    | bind L2 vip to pg primary                          |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 | Stream, transform, and route PG data in real-time. |
 |                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   | Apache-2.0 | perform pg schema migration                        |

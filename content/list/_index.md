@@ -5,7 +5,7 @@ excludeSearch: true
 comments: false
 ---
 
-The PostgreSQL Extension Catalog contains **437** extensions and **306** packages.
+The PostgreSQL Extension Catalog contains **440** extensions and **306** packages.
 
 ## Extension Stat
 

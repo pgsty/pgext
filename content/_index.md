@@ -12,7 +12,7 @@ comment: false
 
 PGEXT.CLOUD provides three things to help you harness the synergistic superpower of the PostgreSQL extensions ecosystem:
 
-- [**Catalog**](/list) : Find the extension you need, with unparalleled [**437**](/e/) extensions included
+- [**Catalog**](/list) : Find the extension you need, with unparalleled [**440**](/e/) extensions included
 - [**Repository**](/repo) : Get pre-built RPM/DEB packages on **14** mainstream [**Linux Distributions**](/os)
 - [**PIG Package Manager**](/pig/) : The Missing Package Manager for PostgreSQL & Extension Ecosystem
 
@@ -37,7 +37,7 @@ pig install pg_duckdb -v 18   # e.g. install pg_duckdb extension for PG 18
 
 ## Highlights
 
-- **437 Extensions** : the largest catalog in the postgres ecosystem
+- **440 Extensions** : the largest catalog in the postgres ecosystem
 - **Linux Native** : RPM/DEB packages, properly built, freely compose
 - **Handy CLI** : pig on apt/dnf, zero‑config installs; out-of-the-box
 - **Compatibility** : PGDG‑Compliant, drop‑in with official PG kernel

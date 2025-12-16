@@ -17,7 +17,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | rclone            | 1.72.0         | 1.72.1         |          |
 | pev2              | 1.17.0         | 1.19.0         |          |
 | pg_exporrter      | 1.0.3          | 1.1.0          |          |
-| pig               | 0.7.4          | 0.7.5          |          |
+| pig               | 0.7.4          | 0.8.0          |          |
 | rclone            | 1.72.0         | 1.72.1         |          |
 | genai-toolbox     | 0.22.0         | 0.23.0         |          |
 | minio             | 20250907161309 | 20251203120000 | by pgsty |

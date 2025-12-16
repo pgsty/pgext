@@ -271,7 +271,7 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 
 |                                          名称                                           |   版本   |    许可证     | 备注                     |
 |:-------------------------------------------------------------------------------------:|:------:|:----------:|:-----------------------|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.5  | Apache-2.0 | PG 包管理器                |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.8.0  | Apache-2.0 | PG 包管理器                |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |   BSD-2    | 将 L2 VIP 绑定到 PG 主节点    |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15 | Apache-2.0 | 实时流式传输、转换和路由 PG 数据     |
 |                         [pgschema](https://www.pgschema.com/)                         | 1.4.2  | Apache-2.0 | 执行 PG 模式迁移             |

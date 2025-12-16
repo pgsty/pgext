@@ -5,6 +5,31 @@ weight: 100
 breadcrumbs: false
 ---
 
+## v0.8.0
+
+**Extension Update**
+
+- 440 extensions
+- new extension: [pg_ai_query](https://github.com/benodiwal/pg_ai_query) : 0.1.1
+- new extension: [pg_textsearch](https://github.com/timescale/pg_textsearch) : 0.1.0
+- new extension: [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
+- bump pg_bsicuit from 1.0 to 2.0.1 (switch to new repo, rename to biscuit)
+- bump pg_search from 0.20.3 to 0.20.4
+- bump pigsty version to 4.0.0
+
+**Checksums**
+
+```bash
+8f80ff2aba042f024b72fb21dc55ec2ed704cbe5dcaef3cd188e9bc80f8e3003  pig_0.8.0-1_amd64.deb
+a73954152252f9c21decd27f4707356eaa9b2193a412aad25f8aa2164e27afb4  pig_0.8.0-1_arm64.deb
+335ec8684a5d372ca4ee0dca2c2270f6760e8c804c2f79ac1459902034e3aa08  pig-0.8.0-1.aarch64.rpm
+3fa57e6028bc95f31b9bb381fa610f3b755faf7ef6d477790d6799fa1f756125  pig-0.8.0-1.x86_64.rpm
+8a4e3fe181f92dd2b58a5dce45ebc2267e249afa9ec853c60eed9859b754421b  pig-v0.8.0.darwin-amd64.tar.gz
+29ae44f3f025202f29c0244ccc2725e33973941ba3983f5cc8b60c02a39f4fa4  pig-v0.8.0.darwin-arm64.tar.gz
+18c088df74cf9db449320b0fb44a745eb1572bc0b87d6d5a693d01b88e605b58  pig-v0.8.0.linux-amd64.tar.gz
+53ffb450b4c791594f8c08a9da6bdeb573aa6a84726c4c988cbae6236bf343f6  pig-v0.8.0.linux-arm64.tar.gz
+```
+
 
 ## v0.7.5
 

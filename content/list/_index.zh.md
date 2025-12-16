@@ -5,7 +5,7 @@ excludeSearch: true
 comments: false
 ---
 
-PostgreSQL 扩展目录包含了 **437** 个扩展和 **306** 个包。
+PostgreSQL 扩展目录包含了 **440** 个扩展和 **309** 个包。
 
 ## 扩展统计
 

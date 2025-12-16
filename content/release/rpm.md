@@ -8,20 +8,25 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 
 
-## 2025-11-15
+## 2025-12-16
 
-| Name           | Old    | New    | Comment |
-|:---------------|:-------|:-------|:--------|
-| timescaledb    | 2.23.1 | 2.24.0 |         |
-| pg_search      | 0.20.0 | 0.20.3 |         |
-| pg_convert     | 0.0.4  | 0.0.5  | rm pg13 |
-| pgdd           | 0.6.0  | 0.6.1  | rm pg13 |
-| pglinter       | 1.0.0  | 1.0.1  |         |
-| pg_session_jwt | 0.3.3  | 0.4.0  |         |
-| pg_anon        | 2.4.1  | 2.5.1  |         |
-| pg_enigma      | 0.4.0  | 0.5.0  |         |
-| wrappers       | 0.5.6  | 0.5.7  |         |
-| pg_vectorize   | 0.25.0 | 0.26.0 |         |
+| Name                                                          | Old     | New     | Comment          |
+|:--------------------------------------------------------------|:--------|:--------|:-----------------|
+| [pg_textsearch](https://github.com/timescale/pg_textsearch)   | -       | 0.1.0   | new              |
+| [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) | -       | 0.1.0   | new              |
+| [pg_ai_query](https://github.com/benodiwal/pg_ai_query)       | -       | 0.1.1   | new              |
+| timescaledb                                                   | 2.23.1  | 2.24.0  |                  |
+| pg_search                                                     | 0.20.0  | 0.20.4  |                  |
+| pg_duckdb                                                     | 1.1.0-1 | 1.1.0-2 | official release |
+| pg_biscuit                                                    | 1.0     | 2.0.1   | new repo         |
+| pg_convert                                                    | 0.0.4   | 0.0.5   | rm pg13          |
+| pgdd                                                          | 0.6.0   | 0.6.1   | rm pg13          |
+| pglinter                                                      | 1.0.0   | 1.0.1   |                  |
+| pg_session_jwt                                                | 0.3.3   | 0.4.0   |                  |
+| pg_anon                                                       | 2.4.1   | 2.5.1   |                  |
+| pg_enigma                                                     | 0.4.0   | 0.5.0   |                  |
+| wrappers                                                      | 0.5.6   | 0.5.7   |                  |
+| pg_vectorize                                                  | 0.25.0  | 0.26.0  |                  |
 
 
 ## 2025-12-04

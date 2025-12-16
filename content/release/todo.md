@@ -17,6 +17,9 @@ weight: 700
 
 ## Latest Update
 
+- [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.1.0 new
+- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0 new
+- [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 new
 - timescaledb 2.23.1 -> 2.24.0
 - pg_search 0.20.0 -> 0.20.3
 - convert 0.0.4 -> 0.0.5

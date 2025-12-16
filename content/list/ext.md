@@ -36,7 +36,7 @@ comments: false
 
 ## Extensions
 
-There are 437 available PostgreSQL extensions:
+There are 440 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
 |:----------|:------------|:---------:|:--------------|
