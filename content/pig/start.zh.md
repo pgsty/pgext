@@ -40,7 +40,7 @@ PIG 二进制包大约 4 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安�
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = rpm
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.7.4/pig-0.7.4-1.x86_64.rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.8.0/pig-0.8.0-1.x86_64.rpm
 [INFO] download = /tmp/pig-0.7.2-1.x86_64.rpm
 [INFO] downloading pig v0.7.2
 curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm -o /tmp/pig-0.7.2-1.x86_64.rpm

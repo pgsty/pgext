@@ -97,7 +97,7 @@ arm:
 	CGO_ENABLED=1 GOOS=linux  GOARCH=arm64 go build -a -ldflags "$(LD_FLAGS) -extldflags '-static'" -o pgext
 	upx pgext
 amd:
-	CGO_ENABLED=1 GOOS=linux  GOARCH=amd64 go build -a -ldflags "$(LD_FLAGS) -extldflags '-static'" -o pgext
+	CGO_ENABLED=1 GOOS=linux  GOARCH=amd64 go build -a -o pgext
 	upx pgext
 
 # inventory

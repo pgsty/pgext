@@ -16,6 +16,7 @@ weight: 100
 - 新扩展：[pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
 - 版本更新：pg_bsicuit 1.0 -> 2.0.1 (切换至新仓库，ext 重命名为 biscuit)
 - 版本更新：pg_search  0.20.3 -> 0.20.4
+- 版本更新：pg_duckdb 1.1.0 正式发布
 - 版本更新：pigsty 3.7.0 -> 4.0.0
 
 **校验和**

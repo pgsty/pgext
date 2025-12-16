@@ -15,6 +15,7 @@ breadcrumbs: false
 - new extension: [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
 - bump pg_bsicuit from 1.0 to 2.0.1 (switch to new repo, rename to biscuit)
 - bump pg_search from 0.20.3 to 0.20.4
+- bump pg_duckdb to the official 1.1.0 release
 - bump pigsty version to 4.0.0
 
 **Checksums**
