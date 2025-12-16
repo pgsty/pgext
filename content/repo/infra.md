@@ -186,15 +186,6 @@ sudo yum makecache;
 
 ## Content
 
-### Prometheus Stack
-
-|                                 Name                                 | Version |  License   | Comment                           |
-|:--------------------------------------------------------------------:|:-------:|:----------:|:----------------------------------|
-|        [prometheus](https://github.com/prometheus/prometheus)        |  3.8.0  | Apache-2.0 | FOSS TSDB and monitoring platform |
-|       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2  | Apache-2.0 | push metrics to prometheus        |
-|      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0  | Apache-2.0 | manage alerting event             |
-| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0  | Apache-2.0 | send probe to endpoints           |
-
 ### Grafana Stack
 
 |                                           Name                                            | Version |  License   | Comment                          |
@@ -205,27 +196,37 @@ sudo yum makecache;
 |      [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)       |  3.6.0  | Apache-2.0 | versatile datasource             |
 |  [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins)   | 12.3.0  | Apache-2.0 | extra panel & datasource plugins |
 
+
 ### Victoria Stack
 
 |                                                 Name                                                  | Version |  License   | Comment                                        |
 |:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------------------|
-|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.131.0 | Apache-2.0 | VictoriaMetrics, Better Prometheus Alternative |
-|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
+|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.132.0 | Apache-2.0 | VictoriaMetrics, Better Prometheus Alternative |
+|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.41.0  | Apache-2.0 | VictoriaLogs, Better Logging platform          |
 |                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces, Better Tracing platform        |
-|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.131.0 | Apache-2.0 | Distributive version of VictoriaMetrics        |
-|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.131.0 | Apache-2.0 | VictoriaMetrics Utils                          |
-|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs CLI Utils                         |
-|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs Logging Agent                     |
+|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.132.0 | Apache-2.0 | Distributive version of VictoriaMetrics        |
+|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.132.0 | Apache-2.0 | VictoriaMetrics Utils                          |
+|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.41.0  | Apache-2.0 | VictoriaLogs CLI Utils                         |
+|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.41.0  | Apache-2.0 | VictoriaLogs Logging Agent                     |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs Datasource for Grafana            |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics Datasource for Grafana         |
 
+
+### Prometheus Stack
+
+|                                 Name                                 | Version |  License   | Comment                           |
+|:--------------------------------------------------------------------:|:-------:|:----------:|:----------------------------------|
+|        [prometheus](https://github.com/prometheus/prometheus)        |  3.8.0  | Apache-2.0 | FOSS TSDB and monitoring platform |
+|       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2  | Apache-2.0 | push metrics to prometheus        |
+|      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0  | Apache-2.0 | manage alerting event             |
+| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0  | Apache-2.0 | send probe to endpoints           |
 
 
 ### Metric Exporters
 
 |                                  Name                                   | Version |  License   | Comment                            |
 |:-----------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------|
-|           [pg_exporter](https://github.com/Vonng/pg_exporter)           |  1.0.3  | Apache-2.0 | Advanced Postgres Metrics Exporter |
+|           [pg_exporter](https://github.com/Vonng/pg_exporter)           |  1.1.0  | Apache-2.0 | Advanced Postgres Metrics Exporter |
 |  [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.21.0  |    MIT     | expose pgbackrest metrics          |
 |      [node_exporter](https://github.com/prometheus/node_exporter)       | 1.10.2  | Apache-2.0 | expose linux node metrics          |
 |   [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)   |  1.7.0  |  GPL-3.0   | expose keepalived/VIP metrics      |
@@ -242,12 +243,12 @@ sudo yum makecache;
 
 |                        Name                         |    Version     |  License   | Comment            |
 |:---------------------------------------------------:|:--------------:|:----------:|:-------------------|
-|       [minio](https://github.com/minio/minio)       | 20250907161309 |   AGPLv3   | FOSS S3 Server     |
+|       [minio](https://github.com/minio/minio)       | 20251203120000 |   AGPLv3   | FOSS S3 Server     |
 |         [mcli](https://github.com/minio/mc)         | 20250813083541 |   APGLv3   | FOSS S3 Client     |
 |            [rustfs](https://rustfs.com/)            |   1.0.0-a71    | Apache-2.0 | FOSS MinIO, Alpha  |
 |      [garage](https://garagehq.deuxfleurs.fr/)      |     2.1.0      | Apache-2.0 | Lightweight S3     |
 | [seaweedfs](https://github.com/seaweedfs/seaweedfs) |      4.01      | Apache-2.0 | S3 for small files |
-|     [rclone](https://github.com/rclone/rclone/)     |     1.72.0     |    MIT     | S3 CLI             |
+|     [rclone](https://github.com/rclone/rclone/)     |     1.72.1     |    MIT     | S3 CLI             |
 |     [restic](https://github.com/restic/restic)      |     0.18.1     |   BSD-2    | Backup tool        |
 |           [juicefs](https://juicefs.com/)           |     1.3.1      | Apache-2.0 | FS over S3         |
 
@@ -259,7 +260,7 @@ PostgreSQL related tools, DBMS, and other utils
 |:---------------------------------------------------------:|:-------:|:----------:|:--------------------------|
 |          [etcd](https://github.com/etcd-io/etcd)          |  3.6.6  | Apache-2.0 | Fault Tolerant DCS        |
 |        [kafka](https://kafka.apache.org/downloads)        |  4.0.0  | Apache-2.0 | Message Queue             |
-|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.2  |    MIT     | Embedded OLAP             |
+|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.3  |    MIT     | Embedded OLAP             |
 |     [ferretdb](https://github.com/FerretDB/FerretDB)      |  2.7.0  | Apache-2.0 | MongoDB over PG           |
 | [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) | 0.16.65 | Apache-2.0 | Financial OLTP            |
 |     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   5.0   | Apache-2.0 | Oracle Compatible PG 17.6 |
@@ -270,17 +271,17 @@ Pig the package manager, PostgreSQL tools, and other database related utils
 
 |                                         Name                                          | Version |  License   | Comment                                            |
 |:-------------------------------------------------------------------------------------:|:--------|:----------:|:---------------------------------------------------|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.4   | Apache-2.0 | The pg package manager                             |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.5   | Apache-2.0 | The pg package manager                             |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0   |   BSD-2    | bind L2 vip to pg primary                          |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15  | Apache-2.0 | Stream, transform, and route PG data in real-time. |
-|                          [schema](https://www.pgschema.com/)                          | 1.4.2   | Apache-2.0 | perform pg schema migration                        |
+|                         [pgschema](https://www.pgschema.com/)                         | 1.4.2   | Apache-2.0 | perform pg schema migration                        |
 |          [pg_timetable](https://github.com/cybertec-postgresql/pg_timetable)          | 6.2.0   | PostgreSQL | Advanced scheduling for PostgreSQL                 |
 |          [timescaledb-tools](https://github.com/timescale/timescaledb-tune)           | 0.18.1  | Apache-2.0 | optimize timescaledb params                        |
 | [timescaledb-event-streamer](https://github.com/noctarius/timescaledb-event-streamer) | 0.20.0  | Apache-2.0 | CDC on timescaledb hypertable                      |
 |                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2  |    MIT     | Versatile cli for multiple databases               |
 |                   [sqlcmd](https://github.com/microsoft/go-sqlcmd)                    | 1.8.0   |    MIT     | cli for MS SQL Server (and babelfish)              |
 |                        [pev2](https://github.com/dalibo/pev2)                         | 1.17.0  | PostgreSQL | PostgreSQL explain visualizer 2                    |
-|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.22.0  | Apache-2.0 | Google MCP server for databases                    |
+|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.23.0  | Apache-2.0 | Google MCP server for databases                    |
 |                      [sealos](https://github.com/labring/sealos)                      | 5.0.1   | Apache-2.0 | Battery-Included Kubernetes distribution           |
 |                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0  |    MIT     | Building proxies to bypass network restrictions.   |
 

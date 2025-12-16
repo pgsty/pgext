@@ -186,15 +186,6 @@ sudo yum makecache;
 
 ## 内容
 
-### Prometheus 技术栈
-
-|                                  名称                                  |   版本   |    许可证     | 备注                |
-|:--------------------------------------------------------------------:|:------:|:----------:|:------------------|
-|        [prometheus](https://github.com/prometheus/prometheus)        | 3.8.0  | Apache-2.0 | 开源时序数据库与监控平台      |
-|       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2 | Apache-2.0 | 向 Prometheus 推送指标 |
-|      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0 | Apache-2.0 | 管理告警事件            |
-| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0 | Apache-2.0 | 向端点发送探针           |
-
 ### Grafana 技术栈
 
 |                                           名称                                           |   版本   |    许可证     | 备注          |
@@ -205,27 +196,37 @@ sudo yum makecache;
 |     [grafana-infinity-ds](https://github.com/grafana/grafana-infinity-datasource/)     | 3.6.0  | Apache-2.0 | 多功能数据源      |
 | [grafana-plugins](https://github.com/pgsty/infra-pkg/tree/main/noarch/grafana-plugins) | 12.3.0 | Apache-2.0 | 额外的面板与数据源插件 |
 
+
 ### Victoria 技术栈
 
 |                                                  名称                                                   |   版本    |    许可证     | 备注                                |
 |:-----------------------------------------------------------------------------------------------------:|:-------:|:----------:|:----------------------------------|
-|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.131.0 | Apache-2.0 | VictoriaMetrics，更好的 Prometheus 替代 |
-|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.40.0  | Apache-2.0 | VictoriaLogs，更好的日志平台              |
+|                [victoria-metrics](https://github.com/VictoriaMetrics/VictoriaMetrics)                 | 1.132.0 | Apache-2.0 | VictoriaMetrics，更好的 Prometheus 替代 |
+|                   [victoria-logs](https://github.com/VictoriaMetrics/VictoriaLogs/)                   | 1.41.0  | Apache-2.0 | VictoriaLogs，更好的日志平台              |
 |                 [victoria-traces](https://github.com/VictoriaMetrics/VictoriaTraces/)                 |  0.5.1  | Apache-2.0 | VictoriaTraces，更好的链路追踪平台          |
-|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.131.0 | Apache-2.0 | VictoriaMetrics 分布式版本             |
-|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.131.0 | Apache-2.0 | VictoriaMetrics 工具                |
-|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 命令行工具                |
-|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.40.0  | Apache-2.0 | VictoriaLogs 日志 Agent             |
+|            [victoria-metrics-cluster](https://github.com/VictoriaMetrics/VictoriaMetrics)             | 1.132.0 | Apache-2.0 | VictoriaMetrics 分布式版本             |
+|                     [vmutils](https://github.com/VictoriaMetrics/VictoriaMetrics)                     | 1.132.0 | Apache-2.0 | VictoriaMetrics 工具                |
+|                     [vlogscli](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.41.0  | Apache-2.0 | VictoriaLogs 命令行工具                |
+|                      [vlagent](https://github.com/VictoriaMetrics/VictoriaLogs/)                      | 1.41.0  | Apache-2.0 | VictoriaLogs 日志 Agent             |
 |    [grafana-victorialogs-ds](https://github.com/VictoriaMetrics/victorialogs-datasource/releases/)    | 0.22.4  | Apache-2.0 | VictoriaLogs 的 Grafana 数据源        |
 | [grafana-victoriametrics-ds](https://github.com/VictoriaMetrics/victoriametrics-datasource/releases/) | 0.19.7  | Apache-2.0 | VictoriaMetrics 的 Grafana 数据源     |
 
+
+### Prometheus 技术栈
+
+|                                  名称                                  |   版本   |    许可证     | 备注                |
+|:--------------------------------------------------------------------:|:------:|:----------:|:------------------|
+|        [prometheus](https://github.com/prometheus/prometheus)        | 3.8.0  | Apache-2.0 | 开源时序数据库与监控平台      |
+|       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2 | Apache-2.0 | 向 Prometheus 推送指标 |
+|      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.29.0 | Apache-2.0 | 管理告警事件            |
+| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0 | Apache-2.0 | 向端点发送探针           |
 
 
 ### 指标导出器
 
 |                                   名称                                    |   版本   |    许可证     | 备注                   |
 |:-----------------------------------------------------------------------:|:------:|:----------:|:---------------------|
-|           [pg_exporter](https://github.com/Vonng/pg_exporter)           | 1.0.3  | Apache-2.0 | 高级 Postgres 指标导出器    |
+|           [pg_exporter](https://github.com/Vonng/pg_exporter)           | 1.1.0  | Apache-2.0 | 高级 Postgres 指标导出器    |
 |  [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.21.0 |    MIT     | 导出 pgbackrest 指标     |
 |      [node_exporter](https://github.com/prometheus/node_exporter)       | 1.10.2 | Apache-2.0 | 导出 Linux 节点指标        |
 |   [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)   | 1.7.0  |  GPL-3.0   | 导出 keepalived/VIP 指标 |
@@ -242,12 +243,12 @@ sudo yum makecache;
 
 |                         名称                          |       版本       |    许可证     | 备注             |
 |:---------------------------------------------------:|:--------------:|:----------:|:---------------|
-|       [minio](https://github.com/minio/minio)       | 20250907161309 |   AGPLv3   | 开源 S3 服务器      |
+|       [minio](https://github.com/minio/minio)       | 20251203120000 |   AGPLv3   | 开源 S3 服务器      |
 |         [mcli](https://github.com/minio/mc)         | 20250813083541 |   APGLv3   | 开源 S3 客户端      |
 |            [rustfs](https://rustfs.com/)            |   1.0.0-a71    | Apache-2.0 | 开源 MinIO，Alpha |
 |      [garage](https://garagehq.deuxfleurs.fr/)      |     2.1.0      | Apache-2.0 | 轻量级 S3         |
 | [seaweedfs](https://github.com/seaweedfs/seaweedfs) |      4.01      | Apache-2.0 | 小文件 S3         |
-|     [rclone](https://github.com/rclone/rclone/)     |     1.72.0     |    MIT     | S3 命令行工具       |
+|     [rclone](https://github.com/rclone/rclone/)     |     1.72.1     |    MIT     | S3 命令行工具       |
 |     [restic](https://github.com/restic/restic)      |     0.18.1     |   BSD-2    | 备份工具           |
 |           [juicefs](https://juicefs.com/)           |     1.3.1      | Apache-2.0 | S3 上的文件系统      |
 
@@ -259,7 +260,7 @@ PostgreSQL 相关工具、数据库管理系统和其他实用程序
 |:---------------------------------------------------------:|:-------:|:----------:|:-------------------|
 |          [etcd](https://github.com/etcd-io/etcd)          |  3.6.6  | Apache-2.0 | 容错分布式协调服务          |
 |        [kafka](https://kafka.apache.org/downloads)        |  4.0.0  | Apache-2.0 | 消息队列               |
-|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.2  |    MIT     | 嵌入式 OLAP           |
+|        [duckdb](https://github.com/duckdb/duckdb)         |  1.4.3  |    MIT     | 嵌入式 OLAP           |
 |     [ferretdb](https://github.com/FerretDB/FerretDB)      |  2.7.0  | Apache-2.0 | 基于 PG 的 MongoDB    |
 | [tigerbeetle](https://github.com/tigerbeetle/tigerbeetle) | 0.16.65 | Apache-2.0 | 金融 OLTP            |
 |     [IvorySQL](https://github.com/IvorySQL/IvorySQL)      |   5.0   | Apache-2.0 | Oracle 兼容的 PG 17.6 |
@@ -270,7 +271,7 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 
 |                                          名称                                           |   版本   |    许可证     | 备注                     |
 |:-------------------------------------------------------------------------------------:|:------:|:----------:|:-----------------------|
-|                          [pig](https://github.com/pgsty/pig)                          | 0.7.4  | Apache-2.0 | PG 包管理器                |
+|                          [pig](https://github.com/pgsty/pig)                          | 0.7.5  | Apache-2.0 | PG 包管理器                |
 |           [vip-manager](https://github.com/cybertec-postgresql/vip-manager)           | 4.0.0  |   BSD-2    | 将 L2 VIP 绑定到 PG 主节点    |
 |                       [pgflo](https://github.com/pgflo/pg_flo)                        | 0.0.15 | Apache-2.0 | 实时流式传输、转换和路由 PG 数据     |
 |                         [pgschema](https://www.pgschema.com/)                         | 1.4.2  | Apache-2.0 | 执行 PG 模式迁移             |
@@ -280,7 +281,7 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 |                     [dblab](https://github.com/danvergara/dblab)                      | 0.34.2 |    MIT     | 多数据库命令行工具              |
 |                   [sqlcmd](https://github.com/microsoft/go-sqlcmd)                    | 1.8.0  |    MIT     | MS SQL Server 数据库客户端   |
 |                        [pev2](https://github.com/dalibo/pev2)                         | 1.17.0 | PostgreSQL | PostgreSQL 执行计划可视化工具 2 |
-|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.22.0 | Apache-2.0 | Google 数据库 MCP 服务器     |
+|             [genai-toolbox](https://github.com/googleapis/genai-toolbox)              | 0.23.0 | Apache-2.0 | Google 数据库 MCP 服务器     |
 |                      [sealos](https://github.com/labring/sealos)                      | 5.0.1  | Apache-2.0 | 开箱即用的 Kubernetes 发行版   |
 |                     [v2ray](https://github.com/v2fly/v2ray-core)                      | 5.28.0 |    MIT     | 构建代理以绕过网络限制            |
 
