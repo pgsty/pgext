@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.1.0` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2430** | {{< badge content="pg_duckdb" link="https://github.com/duckdb/pg_duckdb" >}} | {{< ext "pg_duckdb" >}} | `1.1.1` | {{< category "OLAP" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_duckdb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_duckdb` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "pg_duckdb_18*" "green" >}} {{< bg "17" "pg_duckdb_17*" "green" >}} {{< bg "16" "pg_duckdb_16*" "green" >}} {{< bg "15" "pg_duckdb_15*" "green" >}} {{< bg "14" "pg_duckdb_14*" "green" >}} {{< bg "13" "pg_duckdb_13*" "red" >}} | `pg_duckdb_$v*` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-pg-duckdb" "green" >}} {{< bg "17" "postgresql-17-pg-duckdb" "green" >}} {{< bg "16" "postgresql-16-pg-duckdb" "green" >}} {{< bg "15" "postgresql-15-pg-duckdb" "green" >}} {{< bg "14" "postgresql-14-pg-duckdb" "green" >}} {{< bg "13" "postgresql-13-pg-duckdb" "red" >}} | `postgresql-$v-pg-duckdb` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -69,7 +69,7 @@ width: full
 | `pg_duckdb_18` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.1 MiB | [pg_duckdb_18-1.1.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_duckdb_18-1.1.0-2PIGSTY.el10.x86_64.rpm) |
 | `pg_duckdb_18` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.4 MiB | [pg_duckdb_18-1.1.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_duckdb_18-1.1.0-2PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-duckdb` | `1.1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 13.9 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-duckdb` | `1.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.2 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-duckdb` | `1.1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.0 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-duckdb` | `1.1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 14.3 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_amd64.deb) |
 | `postgresql-18-pg-duckdb` | `1.1.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.2 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-pg-duckdb` | `1.1.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 15.6 MiB | [postgresql-18-pg-duckdb_1.1.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-duckdb/postgresql-18-pg-duckdb_1.1.0-2PIGSTY~jammy_amd64.deb) |
@@ -163,7 +163,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/duckdb/pg_duckdb" title="Repository" icon="github" subtitle="github.com/duckdb/pg_duckdb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.1.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_duckdb-1.1.1.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -80,7 +80,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.4 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.5 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -113,7 +113,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2401 | {{< alias "citus_columnar" "citus" >}} | 13.2.0 | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | Hydra Columnar extension |
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
-| 2430 | {{< alias "pg_duckdb" >}} | 1.1.0 | DuckDB Embedded in Postgres |
+| 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.1.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
@@ -238,7 +238,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.10 | Prefix Range module for PostgreSQL |
-| 3510 | {{< alias "semver" "pg_semver" >}} | 0.40.0 | Semantic version data type |
+| 3510 | {{< alias "semver" "pg_semver" >}} | 0.41.0 | Semantic version data type |
 | 3520 | {{< alias "unit" "pgunit" >}} | 7.10 | SI units extension |
 | 3530 | {{< alias "pgpdf" >}} | 0.1.0 | PDF type with meta admin & Full-Text Search |
 | 3540 | {{< alias "pglite_fusion" >}} | 0.0.6 | Embed an SQLite database in your PostgreSQL table |
@@ -264,7 +264,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email address type for PostgreSQL |
 | 3860 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL Data type |
 | 3870 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
-| 3880 | {{< alias "pg_rrule" >}} | 0.2.0 | RRULE field type for PostgreSQL |
+| 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |
 | 3920 | {{< alias "chkpass" >}} | 1.0 | data type for auto-encrypted passwords |
 | 3930 | {{< alias "isn" >}} | 1.2 | data types for international product numbering standards |
@@ -401,9 +401,9 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | prewarm relation data |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.4 | Administrative functions for pgPool |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.4 | recovery functions for pgpool-II for V4.3 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.4 | replacement for regclass |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.5 | Administrative functions for pgPool |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.5 | recovery functions for pgpool-II for V4.3 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.5 | replacement for regclass |
 | 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |

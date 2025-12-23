@@ -6,11 +6,15 @@ weight: 700
 
 ## TODOLIST
 
-- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0
+- pg_timeseries 0.1.8
+- pg_duckdb 1.1.1
+- pg_summarize rebuild for pg18 on deb
+- semver 0.41.0
+- pg_search 0.20.5
+- supautils rebuild for pg18 on deb
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
-- [pg_flo](https://github.com/pgflo/pg_flo) : Stream, transform, and route PostgreSQL data in real-time.
 - [river](https://github.com/riverqueue/river)
 - omnigres on legacy systems
 - plv8 on el10

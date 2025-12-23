@@ -80,7 +80,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.4 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.20.5 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -113,7 +113,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2401 | {{< alias "citus_columnar" "citus" >}} | 13.2.0 | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | 开源列式存储扩展 |
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | 由 DuckDB 驱动的数据分析引擎 |
-| 2430 | {{< alias "pg_duckdb" >}} | 1.1.0 | 在PostgreSQL中的嵌入式DuckDB扩展 |
+| 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.1.0 | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
@@ -238,7 +238,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.10 | 前缀树数据类型 |
-| 3510 | {{< alias "semver" "pg_semver" >}} | 0.40.0 | 语义版本号数据类型 |
+| 3510 | {{< alias "semver" "pg_semver" >}} | 0.41.0 | 语义版本号数据类型 |
 | 3520 | {{< alias "unit" "pgunit" >}} | 7.10 | SI 国标单位扩展 |
 | 3530 | {{< alias "pgpdf" >}} | 0.1.0 | PDF数据类型，管理函数与全文检索 |
 | 3540 | {{< alias "pglite_fusion" >}} | 0.0.6 | 在PG表中嵌入SQLite数据库作为数据类型 |
@@ -264,7 +264,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email地址数据类型 |
 | 3860 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL数据类型 |
 | 3870 | {{< alias "debversion" >}} | 1.2.0 | Debian版本号数据类型 |
-| 3880 | {{< alias "pg_rrule" >}} | 0.2.0 | 日历重复规则RRULE数据类型 |
+| 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | 日历重复规则RRULE数据类型 |
 | 3890 | {{< alias "timestamp9" >}} | 1.4.0 | 纳秒分辨率时间戳 |
 | 3920 | {{< alias "chkpass" >}} | 1.0 | 数据类型：自动加密的密码 |
 | 3930 | {{< alias "isn" >}} | 1.2 | 用于国际产品编号标准的数据类型 |
@@ -401,9 +401,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | 预热关系数据 |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.4 | PGPool 管理函数 |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.4 | PGPool辅助扩展，从v4.3提供的恢复函数 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.4 | PGPool辅助扩展，RegClass替代 |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.5 | PGPool 管理函数 |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.5 | PGPool辅助扩展，从v4.3提供的恢复函数 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.5 | PGPool辅助扩展，RegClass替代 |
 | 5930 | {{< alias "lo" >}} | 1.1 | 大对象维护 |
 | 5940 | {{< alias "basic_archive" >}} | - | 归档模块样例 |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | 添加一种备份到Shell终端到基础备份方式 |
