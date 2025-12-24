@@ -74,6 +74,11 @@ type PigstyConfigGenerator struct {
 	constants *ConfigConstants
 }
 
+// isEL9ARM returns true if this is el9.aarch64 (has special LLVM/patroni issues)
+func (g *PigstyConfigGenerator) isEL9ARM() bool {
+	return g.osCode == "el9" && g.arch == "aarch64"
+}
+
 // NewPigstyConfigGenerator creates a new generator
 func NewPigstyConfigGenerator(db *sql.DB, osName string, verbose bool) *PigstyConfigGenerator {
 	parts := strings.Split(osName, ".")
@@ -684,11 +689,18 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			return g.constants.DistroAdhocPkg["deb"]
 		},
 		"getJavaRuntime": func() string {
-			// el10 uses Java 21, others use Java 17
-			if g.osCode == "el10" {
-				return "java-21-openjdk-src java-21-openjdk-headless"
+			// el10 and d13 use Java 21, others use Java 17
+			if g.isRPM() {
+				if g.osCode == "el10" {
+					return "java-21-openjdk-src java-21-openjdk-headless"
+				}
+				return "java-17-openjdk-src java-17-openjdk-headless"
 			}
-			return "java-17-openjdk-src java-17-openjdk-headless"
+			// DEB systems
+			if g.osCode == "d13" {
+				return "openjdk-21-jdk"
+			}
+			return "openjdk-17-jdk"
 		},
 		"getNodePackage1": func() string {
 			// el10 doesn't have flamegraph package
@@ -738,6 +750,52 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			}
 			// For other EL versions, use CentOS repositories
 			return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' }}"
+		},
+		"isEL9ARM": func() bool {
+			return g.isEL9ARM()
+		},
+		"getPgsqlUtility": func() string {
+			// For el9.aarch64, lock patroni version due to PGDG upstream issues
+			if g.isEL9ARM() {
+				return "patroni-4.1.0 patroni-etcd-4.1.0 pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer"
+			}
+			return g.constants.RPMCommonPkg[5]
+		},
+		"stripLLVMJit": func(s string) string {
+			// For el9.aarch64, remove llvmjit package from the string
+			if g.isEL9ARM() {
+				// Remove postgresql$v-llvmjit and similar patterns
+				s = strings.ReplaceAll(s, " postgresql$v-llvmjit", "")
+				s = strings.ReplaceAll(s, "postgresql$v-llvmjit ", "")
+				s = strings.ReplaceAll(s, "postgresql$v-llvmjit", "")
+			}
+			return s
+		},
+		"stripWildcard": func(s string) string {
+			// For el9.aarch64, remove all * wildcards from package names
+			if g.isEL9ARM() {
+				return strings.ReplaceAll(s, "*", "")
+			}
+			return s
+		},
+		"getLLVMJitComment": func(pgVer int) string {
+			// For el9.aarch64, return llvmjit as comment
+			if g.isEL9ARM() {
+				return fmt.Sprintf(" #postgresql%d-llvmjit", pgVer)
+			}
+			return ""
+		},
+		"getUtilPkg": func(key, rpm string) string {
+			// For el9.aarch64, lock patroni and pgsql-common versions
+			if g.isEL9ARM() {
+				if key == "pgsql-common" {
+					return "patroni-4.1.0 patroni-etcd-4.1.0 pgbouncer pgbackrest pg_exporter pgbackrest_exporter vip-manager"
+				}
+				if key == "patroni" {
+					return "patroni-4.1.0 patroni-etcd-4.1.0"
+				}
+			}
+			return rpm
 		},
 	}
 }
@@ -889,9 +947,13 @@ func GetConfigConstants() *ConfigConstants {
 
 // rpmTemplate is the template for RPM-based distributions
 const rpmTemplate = `---
-# License    :   AGPLv3 @ https://doc.pgsty.com/about/license
-# Copyright  :   2018-2025  Ruohang Feng / Vonng (rh@vonng.com)
-# {{ .OSName }}  :  {{ if eq .OSCode "el8" }}RHEL 8{{ else if eq .OSCode "el9" }}RHEL 9{{ else if eq .OSCode "el10" }}RHEL 10{{ end }} Compatible
+# License      :   Apache-2.0 @ https://pigsty.io/docs/about/license
+# Copyright    :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
+# {{ .OSName }}  :  {{ if eq .OSCode "el8" }}RHEL 8{{ else if eq .OSCode "el9" }}RHEL 9{{ else if eq .OSCode "el10" }}RHEL 10{{ end }} Compatible{{ if isEL9ARM }}
+# WARNING!   : UPSTREAM IS BREAKING!, PGDG DOES NOT PROVIDE REQUIRED llvm-19 on aarch64 !
+# WARNING!   : UPSTREAM PGDG IS BROKEN!, THIS CONFIG FILE IS DEGRADDED:
+# - broken PGDG patroni 3.0.4 is handled by specify explicit package version for patroni
+# - postgres and extension llvmjit packages are ignored!{{ end }}
 
 # where to register systemd files
 systemd_dir: /usr/lib/systemd/system
@@ -982,18 +1044,18 @@ package_map:
   extra-modules:           "{{ index .Constants.RPMCommonPkg 2 }}"
   node-package1:           "{{ getNodePackage1 }}"
   node-package2:           "{{ index .Constants.RPMCommonPkg 4 }}"
-  pgsql-utility:           "{{ index .Constants.RPMCommonPkg 5 }}"
+  pgsql-utility:           "{{ getPgsqlUtility }}"
 
   #--------------------------------#
   # PGSQL: kernel packages
   #--------------------------------#
-  postgresql:              "postgresql$v*"{{ range .Constants.PGSQLKernelMap }}
-  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}
+  postgresql:              "{{ if isEL9ARM }}postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl{{ else }}postgresql$v*{{ end }}"{{ if isEL9ARM }} #postgresql$v-llvmjit{{ end }}{{ range .Constants.PGSQLKernelMap }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ stripWildcard (stripLLVMJit .RPM) }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql") (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql$v-llvmjit{{ end }}{{ end }}{{ end }}
 
   #--------------------------------#
   # MISC: pro modules
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
-  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ stripWildcard .RPM }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
   kafka:                   "kafka kafka_exporter"
   kube-runtime:            "containerd.io"
@@ -1011,7 +1073,7 @@ package_map:
   #--------------------------------#
   # PGSQL: tools & utils
   #--------------------------------#{{ range .Constants.PGSQLUtilMap }}
-  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ getUtilPkg .Key .RPM }}"{{ end }}
 
   #--------------------------------#
   # PGSQL: extensions (default pg18)
@@ -1023,8 +1085,8 @@ package_map:
   #--------------------------------#
   # PG{{ $pgVer }}: packages
   #--------------------------------#{{ range $.Constants.PGSQLKernelMap }}{{ if eq .Key "pgsql" }}
-  {{ printf "%-24s" (printf "pg%d:" $pgVer) }} "{{ replaceAll "$v" (printf "%d" $pgVer) .RPM }}"{{ else }}
-  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer (trimPrefix "pgsql-" .Key)) }} "{{ replaceAll "$v" (printf "%d" $pgVer) .RPM }}"{{ end }}{{ end }}
+  {{ printf "%-24s" (printf "pg%d:" $pgVer) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripWildcard (stripLLVMJit .RPM)) }}"{{ if isEL9ARM }} # postgresql{{ $pgVer }}-llvmjit{{ end }}{{ else }}
+  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer (trimPrefix "pgsql-" .Key)) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripWildcard (stripLLVMJit .RPM)) }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql{{ $pgVer }}-llvmjit{{ end }}{{ end }}{{ end }}{{ end }}
 {{ range $cat := $.Categories }}{{ $pkgs := index $.CategoryExts $pgVer $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer $cat) }} "{{ $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
 {{ end }}{{ end }}
 {{ end }}
@@ -1033,15 +1095,15 @@ package_map:
   #--------------------------------#
   # {{ toUpper .Category }}: extension
   #--------------------------------#
-{{ end }}  {{ printf "%-24s %-42s" (printf "%s:" .Name) (printf "\"%s\"" .Package) }} # {{ formatPGVersions .PGVers }}
+{{ end }}  {{ printf "%-24s %-42s" (printf "%s:" .Name) (printf "\"%s\"" (stripWildcard .Package)) }} # {{ formatPGVersions .PGVers }}
 {{ end }}
 
 ...`
 
 // debTemplate is the template for DEB-based distributions
 const debTemplate = `---
-# License    :   AGPLv3 @ https://doc.pgsty.com/about/license
-# Copyright  :   2018-2025  Ruohang Feng / Vonng (rh@vonng.com)
+# License      :   Apache-2.0 @ https://pigsty.io/docs/about/license
+# Copyright    :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 # {{ .OSName }} :   {{ if eq .OSCode "d11" }}Debian 11{{ else if eq .OSCode "d12" }}Debian 12{{ else if eq .OSCode "d13" }}Debian 13{{ else if eq .OSCode "u20" }}Ubuntu 20.04{{ else if eq .OSCode "u22" }}Ubuntu 22.04{{ else if eq .OSCode "u24" }}Ubuntu 24.04{{ end }} Compatible
 
 # where to register systemd files
@@ -1138,13 +1200,13 @@ package_map:
   # MISC: pro modules
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .DEB }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .DEB }}"{{ end }}{{ end }}
-  java-runtime:            "openjdk-17-jdk"
+  java-runtime:            "{{ getJavaRuntime }}"
   kafka:                   "kafka kafka-exporter"
   kube-runtime:            "containerd.io"
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
   docker:                  "docker-ce docker-compose-plugin"
-  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld_exporter mongodb_exporter kafka_exporter"
+  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld-exporter mongodb-exporter kafka-exporter"
   victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds"
   vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils"
   vlogs:                   "victoria-logs vlogscli vlagent"
