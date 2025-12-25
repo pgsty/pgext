@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2750** | {{< badge content="rum" link="https://github.com/postgrespro/rum" >}} | {{< ext "rum" >}} | `1.3.14` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2750** | {{< badge content="rum" link="https://github.com/postgrespro/rum" >}} | {{< ext "rum" >}} | `1.3.15` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,9 +32,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `rum` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `rum` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "rum_18" "red" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} {{< bg "13" "rum_13" "green" >}} | `rum_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "postgresql-18-rum" "red" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "postgresql-18-rum" "red" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

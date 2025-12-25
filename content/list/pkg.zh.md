@@ -11,9 +11,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 309 | 134 | 222 | 0 | 0 | 284 | 302 | 299 | 301 | 292 | 265 |
-| **EL** | 305 | 130 | 222 | 0 | 65 | 276 | 296 | 295 | 297 | 290 | 263 |
-| **Debian** | 295 | 91 | 204 | 0 | 75 | 270 | 289 | 285 | 287 | 280 | 250 |
+| **ALL** | 309 | 134 | 222 | 0 | 0 | 285 | 302 | 299 | 301 | 292 | 265 |
+| **EL** | 305 | 130 | 222 | 0 | 65 | 277 | 296 | 295 | 297 | 290 | 263 |
+| **Debian** | 295 | 91 | 204 | 0 | 75 | 271 | 289 | 285 | 287 | 280 | 250 |
 
 ## 分类
 
@@ -111,7 +111,7 @@ comments: false
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "age" >}} | `1.5.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `apache-age_$v` | `postgresql-$v-age` |
 | {{< ext "hll" >}} | `2.19` | {{< badge content="Link" link="https://github.com/citusdata/postgresql-hll" >}} | {{< category "FEAT" >}} | `hll_$v` | `postgresql-$v-hll` |
-| {{< ext "rum" >}} | `1.3.14` | {{< badge content="Link" link="https://github.com/postgrespro/rum" >}} | {{< category "FEAT" >}} | `rum_$v` | `postgresql-$v-rum` |
+| {{< ext "rum" >}} | `1.3.15` | {{< badge content="Link" link="https://github.com/postgrespro/rum" >}} | {{< category "FEAT" >}} | `rum_$v` | `postgresql-$v-rum` |
 | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< category "FEAT" >}} | `pg_ai_query_$v` | `postgresql-$v-ai-query` |
 | {{< ext "pg_graphql" >}} | `1.5.12` | {{< badge content="Link" link="https://github.com/supabase/pg_graphql" >}} | {{< category "FEAT" >}} | `pg_graphql_$v` | `postgresql-$v-pg-graphql` |
 | {{< ext "pg_jsonschema" >}} | `0.3.3` | {{< badge content="Link" link="https://github.com/supabase/pg_jsonschema" >}} | {{< category "FEAT" >}} | `pg_jsonschema_$v` | `postgresql-$v-pg-jsonschema` |
@@ -291,7 +291,7 @@ comments: false
 | {{< ext "table_log" >}} | `0.6.4` | {{< badge content="Link" link="https://github.com/df7cb/table_log" >}} | {{< category "ADMIN" >}} | `table_log_$v` | `postgresql-$v-tablelog` |
 | {{< ext "pgagent" >}} | `4.2.3` | {{< badge content="Link" link="https://www.pgadmin.org/docs/pgadmin4/development/pgagent.html" >}} | {{< category "ADMIN" >}} | `pgagent_$v` | `pgagent` |
 | {{< ext "pg_prewarm" >}} | `1.2` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pgprewarm.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "pgpool_adm" "pgpool" >}} | `4.6.5` | {{< badge content="Link" link="https://pgpool.net/" >}} | {{< category "ADMIN" >}} | `pgpool-II-pg$v-extensions` | `postgresql-$v-pgpool2` |
+| {{< ext "pgpool_adm" "pgpool" >}} | `4.7.0` | {{< badge content="Link" link="https://pgpool.net/" >}} | {{< category "ADMIN" >}} | `pgpool-II-pg$v-extensions` | `postgresql-$v-pgpool2` |
 | {{< ext "lo" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/lo.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "basic_archive" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/basic-archive.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "basebackup_to_shell" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/basebackup-to-shell.html" >}} | {{< category "ADMIN" >}} | `postgresql$v-contrib` | `postgresql-$v` |

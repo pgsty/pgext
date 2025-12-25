@@ -41,7 +41,7 @@ width: full
 | {{< os "el8.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
 | {{< os "el9.x86_64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      | {{< bg "PGDG 6.0" "pg_strom_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.0" "pg_strom_16 : AVAIL 8" "blue" >}} | {{< bg "PGDG 6.0" "pg_strom_15 : AVAIL 10" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_13 : AVAIL 3" "blue" >}} |
 | {{< os "el9.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
 | {{< os "el10.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
 | {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
 | {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
@@ -53,7 +53,14 @@ width: full
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tab >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pg_strom_18` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.8 KiB | [pg_strom_18-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/pg_strom_18-6.1-1PGDG.el10.x86_64.rpm) |
+
+{{< /tab >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -62,6 +69,7 @@ width: full
 | `pg_strom_17` | `5.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 472.4 KiB | [pg_strom_17-5.2.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/pg_strom_17-5.2.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_strom_17` | `6.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 539.0 KiB | [pg_strom_17-6.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/pg_strom_17-6.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_17` | `5.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 467.3 KiB | [pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/pg_strom_17-5.2.2-1PGDG.rhel9.x86_64.rpm) |
+| `pg_strom_17` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.4 KiB | [pg_strom_17-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/pg_strom_17-6.1-1PGDG.el10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -84,6 +92,7 @@ width: full
 | `pg_strom_16` | `5.0.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_16-5.0.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/pg_strom_16-5.0.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_16` | `5.0.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_16-5.0.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/pg_strom_16-5.0.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_16` | `5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/pg_strom_16-5.0-1PGDG.rhel9.x86_64.rpm) |
+| `pg_strom_16` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 705.7 KiB | [pg_strom_16-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/pg_strom_16-6.1-1PGDG.el10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -110,6 +119,7 @@ width: full
 | `pg_strom_15` | `5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 8.6 MiB | [pg_strom_15-5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/pg_strom_15-5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pg_strom_15` | `3.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.2 MiB | [pg_strom_15-3.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/pg_strom_15-3.5-1.rhel9.x86_64.rpm) |
 | `pg_strom_15` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_15-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/pg_strom_15-3.4-1.rhel9.x86_64.rpm) |
+| `pg_strom_15` | `6.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 730.1 KiB | [pg_strom_15-6.1-1PGDG.el10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/pg_strom_15-6.1-1PGDG.el10.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab >}}

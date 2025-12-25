@@ -132,7 +132,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 |:---:|:---|:---|:---|
 | 2730 | {{< alias "age" >}} | 1.5.0 | AGE graph database extension |
 | 2740 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
-| 2750 | {{< alias "rum" >}} | 1.3.14 | RUM index access method |
+| 2750 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | PostgreSQL extension providing JSON Schema validation |
@@ -401,9 +401,9 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | prewarm relation data |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.5 | Administrative functions for pgPool |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.5 | recovery functions for pgpool-II for V4.3 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.5 | replacement for regclass |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.0 | Administrative functions for pgPool |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.0 | recovery functions for pgpool-II for V4.3 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.0 | replacement for regclass |
 | 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |

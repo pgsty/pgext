@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 410 | 429 | 428 | 430 | 415 | 386 |
-| **EL** | 434 | 143 | 268 | 71 | 6 | 399 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 396 | 416 | 414 | 416 | 404 | 371 |
+| **ALL** | 440 | 149 | 268 | 71 | 0 | 411 | 429 | 428 | 430 | 415 | 386 |
+| **EL** | 434 | 143 | 268 | 71 | 6 | 400 | 421 | 422 | 424 | 412 | 382 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 397 | 416 | 414 | 416 | 404 | 371 |
 
 ## Categories
 
@@ -419,7 +419,7 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | PostgreSQL Extension Whitelisting |
 | {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A Postgres extension for managing SSL certificates through SQL |
 | {{< ext "noset" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Module for blocking SET variables for non-super users. |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | Percona pg_tde access method |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | Percona pg_tde access method |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | pause briefly before reporting authentication failure |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | cryptographic functions |

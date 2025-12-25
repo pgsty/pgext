@@ -27,7 +27,7 @@ width: full
 |   **Requires**    | {{< ext "columnar" >}} {{< ext "pg_cron" >}} {{< ext "pg_ivm" >}} {{< ext "pg_partman" >}} |
 |   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} |
 
-> [!Note] unmet deps: hydra17 not ready, pg_partman17/pg_ivm12 on el not ready, 0.1.7 break, pg18 break
+> [!Note] unmet deps: hydra17 not ready, pg_partman17/pg_ivm12 on el not ready
 
 
 ## Packages

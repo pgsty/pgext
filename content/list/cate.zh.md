@@ -132,7 +132,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 2730 | {{< alias "age" >}} | 1.5.0 | Apache AGE，图数据库扩展 （Deb可用） |
 | 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
-| 2750 | {{< alias "rum" >}} | 1.3.14 | RUM 索引访问方法 |
+| 2750 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | 提供JSON Schema校验能力 |
@@ -401,9 +401,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5840 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | 预热关系数据 |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.6.5 | PGPool 管理函数 |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.6.5 | PGPool辅助扩展，从v4.3提供的恢复函数 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.6.5 | PGPool辅助扩展，RegClass替代 |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.0 | PGPool 管理函数 |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.0 | PGPool辅助扩展，从v4.3提供的恢复函数 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.0 | PGPool辅助扩展，RegClass替代 |
 | 5930 | {{< alias "lo" >}} | 1.1 | 大对象维护 |
 | 5940 | {{< alias "basic_archive" >}} | - | 归档模块样例 |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | 添加一种备份到Shell终端到基础备份方式 |

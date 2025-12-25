@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5900** | {{< badge content="pgpool_adm" link="https://pgpool.net/" >}} | {{< ext "pgpool_adm" "pgpool" >}} | `4.6.5` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5900** | {{< badge content="pgpool_adm" link="https://pgpool.net/" >}} | {{< ext "pgpool_adm" "pgpool" >}} | `4.7.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,8 +32,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgpool` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6.5` | {{< bg "18" "pgpool-II-pg18-extensions" "green" >}} {{< bg "17" "pgpool-II-pg17-extensions" "green" >}} {{< bg "16" "pgpool-II-pg16-extensions" "green" >}} {{< bg "15" "pgpool-II-pg15-extensions" "green" >}} {{< bg "14" "pgpool-II-pg14-extensions" "green" >}} {{< bg "13" "pgpool-II-pg13-extensions" "green" >}} | `pgpool-II-pg$v-extensions` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgpool` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.7.0` | {{< bg "18" "pgpool-II-pg18-extensions" "green" >}} {{< bg "17" "pgpool-II-pg17-extensions" "green" >}} {{< bg "16" "pgpool-II-pg16-extensions" "green" >}} {{< bg "15" "pgpool-II-pg15-extensions" "green" >}} {{< bg "14" "pgpool-II-pg14-extensions" "green" >}} {{< bg "13" "pgpool-II-pg13-extensions" "green" >}} | `pgpool-II-pg$v-extensions` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.6.5` | {{< bg "18" "postgresql-18-pgpool2" "green" >}} {{< bg "17" "postgresql-17-pgpool2" "green" >}} {{< bg "16" "postgresql-16-pgpool2" "green" >}} {{< bg "15" "postgresql-15-pgpool2" "green" >}} {{< bg "14" "postgresql-14-pgpool2" "green" >}} {{< bg "13" "postgresql-13-pgpool2" "green" >}} | `postgresql-$v-pgpool2` | - |
 
 
