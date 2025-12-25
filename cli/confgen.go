@@ -574,10 +574,6 @@ func (g *PigstyConfigGenerator) getPackageNameForCategory(ext *ExtensionData, pg
 
 // getRPMPackagePattern returns the RPM package pattern for an extension
 func (g *PigstyConfigGenerator) getRPMPackagePattern(ext *ExtensionData) string {
-	// Special handling for pgaudit
-	if ext.Alias == "pgaudit" {
-		return "pgaudit_$v*" // Use wildcard to match versioned packages
-	}
 	// Use RPMPkg if available, keeping $v placeholder
 	if ext.RPMPkg != "" {
 		return ext.RPMPkg
@@ -746,10 +742,10 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		"getDockerRepo": func() string {
 			// For el10, use RHEL repositories instead of CentOS
 			if g.osCode == "el10" {
-				return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/rhel/$releasever/$basearch/stable'      ,china: 'https://mirrors.aliyun.com/docker-ce/linux/rhel/$releasever/$basearch/stable'   ,europe: 'https://mirrors.xtom.de/docker-ce/linux/rhel/$releasever/$basearch/stable' }}"
+				return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/rhel/$releasever/$basearch/stable'      ,china: 'https://mirrors.aliyun.com/docker-ce/linux/rhel/$releasever/$basearch/stable'   ,europe: 'https://mirrors.xtom.de/docker-ce/linux/rhel/$releasever/$basearch/stable' } ,skip_ifna: true }"
 			}
 			// For other EL versions, use CentOS repositories
-			return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' }}"
+			return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' } ,skip_ifna: true}"
 		},
 		"isEL9ARM": func() bool {
 			return g.isEL9ARM()
@@ -768,13 +764,6 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 				s = strings.ReplaceAll(s, " postgresql$v-llvmjit", "")
 				s = strings.ReplaceAll(s, "postgresql$v-llvmjit ", "")
 				s = strings.ReplaceAll(s, "postgresql$v-llvmjit", "")
-			}
-			return s
-		},
-		"stripWildcard": func(s string) string {
-			// For el9.aarch64, remove all * wildcards from package names
-			if g.isEL9ARM() {
-				return strings.ReplaceAll(s, "*", "")
 			}
 			return s
 		},
@@ -852,7 +841,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node_exporter keepalived_exporter pg_exporter pgbackrest_exporter redis_exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
+			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
 			// 2: extra-modules
 			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
@@ -867,7 +856,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
+			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
 			// 2: extra-modules
 			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
@@ -883,11 +872,11 @@ func GetConfigConstants() *ConfigConstants {
 			{"pgsql-mini", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib", "postgresql-$v postgresql-client-$v"},
 			{"pgsql-core", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit", "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v"},
 			{"pgsql-full", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit postgresql$v-test postgresql$v-devel", "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v postgresql-server-dev-$v"},
-			{"pgsql-main", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit pg_repack_$v* wal2json_$v* pgvector_$v*", "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector"},
+			{"pgsql-main", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit pg_repack_$v wal2json_$v pgvector_$v", "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector"},
 			{"pgsql-client", "postgresql$v", "postgresql-client-$v"},
 			{"pgsql-server", "postgresql$v-server postgresql$v-libs postgresql$v-contrib", "postgresql-$v"},
 			{"pgsql-devel", "postgresql$v-devel", "postgresql-server-dev-$v"},
-			{"pgsql-basic", "pg_repack_$v* wal2json_$v* pgvector_$v*", "postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector"},
+			{"pgsql-basic", "pg_repack_$v wal2json_$v pgvector_$v", "postgresql-$v-repack postgresql-$v-wal2json postgresql-$v-pgvector"},
 		},
 
 		PGSQLUtilMap: []PackageMapping{
@@ -915,7 +904,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"openhalodb", "openhalodb", "openhalodb"},
 			{"ivorysql", "ivorysql5", "ivorysql-5"},
 			{"oriole", "orioledb_17 oriolepg_17", "oriolepg-17 oriolepg-17-orioledb"},
-			{"supabase", "pg_tle_$v*,pgvector_$v*,pg_cron_$v*,pgsodium_$v*,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v*,pgsql_http_$v*,pg_net_$v*,supautils_$v*,index_advisor_$v,safeupdate_$v*,pg_plan_filter_$v*", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
+			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"greenplum", "open-source-greenplum-db-7", ""},
 			{"cloudberry", "cloudberry-db cloudberry-hll cloudberry-pgvector", ""},
 			{"percona-core", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18"},
@@ -923,18 +912,18 @@ func GetConfigConstants() *ConfigConstants {
 		},
 
 		DistroAdhocPkg: map[string]string{
-			"rpm":  "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"deb":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass",
-			"el7":  "ansible python3 python3-pip python36-virtualenv python36-requests python36-idna yum-utils createrepo_c sshpass",
-			"el8":  "ansible python3 python3-pip python3-virtualenv python3-requests python3.12-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"el9":  "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
-			"el10": "ansible python3 python3-pip python3-virtualenv python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass crypto-policies-scripts",
-			"d11":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
-			"d12":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
-			"d13":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass tnftp linux-perf",
-			"u20":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
-			"u22":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
-			"u24":  "ansible python3 python3-pip python3-venv python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
+			"rpm":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"deb":  "ansible python3 python3-jmespath dpkg-dev sshpass",
+			"el7":  "ansible python3 python36-requests python36-idna yum-utils createrepo_c sshpass",
+			"el8":  "ansible python3 python3-requests python3.12-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"el9":  "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils modulemd-tools createrepo_c sshpass",
+			"el10": "ansible python3 python3-requests python3-jmespath python3-cryptography dnf-utils createrepo_c sshpass crypto-policies-scripts",
+			"d11":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
+			"d12":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
+			"d13":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
+			"u20":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
+			"u22":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
+			"u24":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
 		},
 	}
 
@@ -947,13 +936,9 @@ func GetConfigConstants() *ConfigConstants {
 
 // rpmTemplate is the template for RPM-based distributions
 const rpmTemplate = `---
-# License      :   Apache-2.0 @ https://pigsty.io/docs/about/license
-# Copyright    :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
-# {{ .OSName }}  :  {{ if eq .OSCode "el8" }}RHEL 8{{ else if eq .OSCode "el9" }}RHEL 9{{ else if eq .OSCode "el10" }}RHEL 10{{ end }} Compatible{{ if isEL9ARM }}
-# WARNING!   : UPSTREAM IS BREAKING!, PGDG DOES NOT PROVIDE REQUIRED llvm-19 on aarch64 !
-# WARNING!   : UPSTREAM PGDG IS BROKEN!, THIS CONFIG FILE IS DEGRADDED:
-# - broken PGDG patroni 3.0.4 is handled by specify explicit package version for patroni
-# - postgres and extension llvmjit packages are ignored!{{ end }}
+# {{ .OSName }} distribution ad hoc configuration file
+# License    :   Apache-2.0 @ https://pigsty.io/docs/about/license
+# Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
 # where to register systemd files
 systemd_dir: /usr/lib/systemd/system
@@ -973,7 +958,7 @@ node_packages_default:
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager
+  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager,uv
   - node_exporter,blackbox_exporter,nginx_exporter,pg_exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
 
 # postgres home dir in various mode
@@ -990,22 +975,18 @@ pg_home_map:
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:
-  - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty'  }} # used by intranet nodes
-  - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/infra/$basearch' ,china: 'https://repo.pigsty.cc/yum/infra/$basearch' }}
-  - { name: pigsty-pgsql   ,description: 'Pigsty PGSQL'       ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/pgsql/el$releasever.$basearch' }}
+  - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty' } ,priority: 1 } # used by intranet nodes
+  - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/infra/$basearch' ,china: 'https://repo.pigsty.cc/yum/infra/$basearch' } ,priority: 12 }
+  - { name: pigsty-pgsql   ,description: 'Pigsty PGSQL'       ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/pgsql/el$releasever.$basearch' } ,priority: 11 }
   - { name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' }}
   {{ getDockerRepo }}
-  - { name: baseos         ,description: 'EL 8+ BaseOS'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/BaseOS/$basearch/os/'     ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/BaseOS/$basearch/os/'         ,europe: 'https://mirrors.xtom.de/rocky/$releasever/BaseOS/$basearch/os/'     }}
-  - { name: appstream      ,description: 'EL 8+ AppStream'    ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/AppStream/$basearch/os/'  ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/AppStream/$basearch/os/'      ,europe: 'https://mirrors.xtom.de/rocky/$releasever/AppStream/$basearch/os/'  }}
-  - { name: extras         ,description: 'EL 8+ Extras'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/extras/$basearch/os/'     ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/extras/$basearch/os/'         ,europe: 'https://mirrors.xtom.de/rocky/$releasever/extras/$basearch/os/'     }}
-  - { name: powertools     ,description: 'EL 8 PowerTools'    ,module: node    ,releases: [8     ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/PowerTools/$basearch/os/' ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/PowerTools/$basearch/os/'     ,europe: 'https://mirrors.xtom.de/rocky/$releasever/PowerTools/$basearch/os/' }}
-  - { name: crb            ,description: 'EL 9 CRB'           ,module: node    ,releases: [  9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/CRB/$basearch/os/'        ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/CRB/$basearch/os/'            ,europe: 'https://mirrors.xtom.de/rocky/$releasever/CRB/$basearch/os/'        }}
-  - { name: epel           ,description: 'EL 8+ EPEL'         ,module: node    ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://mirrors.edge.kernel.org/fedora-epel/$releasever/Everything/$basearch/' ,china: 'https://mirrors.aliyun.com/epel/$releasever/Everything/$basearch/'         ,europe: 'https://mirrors.xtom.de/epel/$releasever/Everything/$basearch/'     }}
-  - { name: epel           ,description: 'EL 10 EPEL'         ,module: node    ,releases: [    10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://mirrors.edge.kernel.org/fedora-epel/$releasever.0/Everything/$basearch/' ,china: 'https://mirrors.aliyun.com/epel/$releasever.0/Everything/$basearch/'     ,europe: 'https://mirrors.xtom.de/epel/$releasever.0/Everything/$basearch/'   }}
-  - { name: pgdg-common    ,description: 'PostgreSQL Common'  ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch' , europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg-el8fix    ,description: 'PostgreSQL EL8FIX'  ,module: pgsql   ,releases: [8     ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-$basearch/'  ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-$basearch/'  ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-$basearch/'  }}
-  - { name: pgdg-el9fix    ,description: 'PostgreSQL EL9FIX'  ,module: pgsql   ,releases: [  9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-rocky9-sysupdates/redhat/rhel-9-$basearch/'   ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/pgdg-rocky9-sysupdates/redhat/rhel-9-$basearch/'   ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-rocky9-sysupdates/redhat/rhel-9-$basearch/'   }}
-  - { name: pgdg-el10fix   ,description: 'PostgreSQL EL10FIX' ,module: pgsql   ,releases: [    10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/pgdg-rocky10-sysupdates/redhat/rhel-10-$basearch/' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/pgdg-rocky10-sysupdates/redhat/rhel-10-$basearch/' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/pgdg-rocky10-sysupdates/redhat/rhel-10-$basearch/' }}  
+  - { name: baseos         ,description: 'EL 8+ BaseOS'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/BaseOS/$basearch/os/'                        ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/BaseOS/$basearch/os/'                        ,europe: 'https://mirrors.xtom.de/rocky/$releasever/BaseOS/$basearch/os/'     }}
+  - { name: appstream      ,description: 'EL 8+ AppStream'    ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/AppStream/$basearch/os/'                     ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/AppStream/$basearch/os/'                     ,europe: 'https://mirrors.xtom.de/rocky/$releasever/AppStream/$basearch/os/'  }}
+  - { name: extras         ,description: 'EL 8+ Extras'       ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/extras/$basearch/os/'                        ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/extras/$basearch/os/'                        ,europe: 'https://mirrors.xtom.de/rocky/$releasever/extras/$basearch/os/'     }}
+  - { name: powertools     ,description: 'EL 8 PowerTools'    ,module: node    ,releases: [8     ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/PowerTools/$basearch/os/'                    ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/PowerTools/$basearch/os/'                    ,europe: 'https://mirrors.xtom.de/rocky/$releasever/PowerTools/$basearch/os/' }}
+  - { name: crb            ,description: 'EL 9 CRB'           ,module: node    ,releases: [  9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/CRB/$basearch/os/'                           ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/CRB/$basearch/os/'                           ,europe: 'https://mirrors.xtom.de/rocky/$releasever/CRB/$basearch/os/'        }}
+  - { name: epel           ,description: 'EL 8+ EPEL'         ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://mirrors.edge.kernel.org/fedora-epel/$releasever/Everything/$basearch/'               ,china: 'https://mirrors.aliyun.com/epel/$releasever/Everything/$basearch/'                             ,europe: 'https://mirrors.xtom.de/epel/$releasever/Everything/$basearch/'     }}
+  - { name: pgdg-common    ,description: 'PostgreSQL Common'  ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch'      ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch'      ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg13         ,description: 'PostgreSQL 13'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/13/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/13/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch' }}
@@ -1014,12 +995,12 @@ repo_upstream_default:
   - { name: pgdg18         ,description: 'PostgreSQL 18'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg-beta      ,description: 'PostgreSQL Testing' ,module: beta    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  }}
   - { name: pgdg-extras    ,description: 'PostgreSQL Extra'   ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/extras/redhat/rhel-$releasever-$basearch'      ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/extras/redhat/rhel-$releasever-$basearch'      ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/extras/redhat/rhel-$releasever-$basearch'      }}
-  - { name: pgdg13-nonfree ,description: 'PostgreSQL 13+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg14-nonfree ,description: 'PostgreSQL 14+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg15-nonfree ,description: 'PostgreSQL 15+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg16-nonfree ,description: 'PostgreSQL 16+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' }}
+  - { name: pgdg13-nonfree ,description: 'PostgreSQL 13+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
+  - { name: pgdg14-nonfree ,description: 'PostgreSQL 14+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
+  - { name: pgdg15-nonfree ,description: 'PostgreSQL 15+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
+  - { name: pgdg16-nonfree ,description: 'PostgreSQL 16+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
+  - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
+  - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' } ,skip_ifna: true }
   - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.1/yum/release/$releasever/RPMS/$basearch'  }}
   - { name: wiltondb       ,description: 'WiltonDB'           ,module: mssql   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/mssql/el$releasever.$basearch', china: 'https://repo.pigsty.cc/yum/mssql/el$releasever.$basearch' , origin: 'https://download.copr.fedorainfracloud.org/results/wiltondb/wiltondb/epel-$releasever-$basearch/' }}
@@ -1049,13 +1030,13 @@ package_map:
   #--------------------------------#
   # PGSQL: kernel packages
   #--------------------------------#
-  postgresql:              "{{ if isEL9ARM }}postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl{{ else }}postgresql$v*{{ end }}"{{ if isEL9ARM }} #postgresql$v-llvmjit{{ end }}{{ range .Constants.PGSQLKernelMap }}
-  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ stripWildcard (stripLLVMJit .RPM) }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql") (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql$v-llvmjit{{ end }}{{ end }}{{ end }}
+  postgresql:              "{{ if isEL9ARM }}postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl{{ else }}postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit{{ end }}"{{ if isEL9ARM }} #postgresql$v-llvmjit{{ end }}{{ range .Constants.PGSQLKernelMap }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ stripLLVMJit .RPM }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql") (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql$v-llvmjit{{ end }}{{ end }}{{ end }}
 
   #--------------------------------#
   # MISC: pro modules
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
-  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ stripWildcard .RPM }}"{{ end }}{{ end }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
   kafka:                   "kafka kafka_exporter"
   kube-runtime:            "containerd.io"
@@ -1085,8 +1066,8 @@ package_map:
   #--------------------------------#
   # PG{{ $pgVer }}: packages
   #--------------------------------#{{ range $.Constants.PGSQLKernelMap }}{{ if eq .Key "pgsql" }}
-  {{ printf "%-24s" (printf "pg%d:" $pgVer) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripWildcard (stripLLVMJit .RPM)) }}"{{ if isEL9ARM }} # postgresql{{ $pgVer }}-llvmjit{{ end }}{{ else }}
-  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer (trimPrefix "pgsql-" .Key)) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripWildcard (stripLLVMJit .RPM)) }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql{{ $pgVer }}-llvmjit{{ end }}{{ end }}{{ end }}{{ end }}
+  {{ printf "%-24s" (printf "pg%d:" $pgVer) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripLLVMJit .RPM) }}"{{ if isEL9ARM }} # postgresql{{ $pgVer }}-llvmjit{{ end }}{{ else }}
+  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer (trimPrefix "pgsql-" .Key)) }} "{{ replaceAll "$v" (printf "%d" $pgVer) (stripLLVMJit .RPM) }}"{{ if isEL9ARM }}{{ if or (eq .Key "pgsql-core") (eq .Key "pgsql-full") (eq .Key "pgsql-main") }} #postgresql{{ $pgVer }}-llvmjit{{ end }}{{ end }}{{ end }}{{ end }}
 {{ range $cat := $.Categories }}{{ $pkgs := index $.CategoryExts $pgVer $cat }}{{ if $pkgs }}  {{ printf "%-24s" (printf "pg%d-%s:" $pgVer $cat) }} "{{ $pkgs.Visible }}"{{ if $pkgs.Hidden }} # {{ $pkgs.Hidden }}{{ end }}
 {{ end }}{{ end }}
 {{ end }}
@@ -1095,16 +1076,16 @@ package_map:
   #--------------------------------#
   # {{ toUpper .Category }}: extension
   #--------------------------------#
-{{ end }}  {{ printf "%-24s %-42s" (printf "%s:" .Name) (printf "\"%s\"" (stripWildcard .Package)) }} # {{ formatPGVersions .PGVers }}
+{{ end }}  {{ printf "%-24s %-42s" (printf "%s:" .Name) (printf "\"%s\"" .Package) }} # {{ formatPGVersions .PGVers }}
 {{ end }}
 
 ...`
 
 // debTemplate is the template for DEB-based distributions
 const debTemplate = `---
-# License      :   Apache-2.0 @ https://pigsty.io/docs/about/license
-# Copyright    :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
-# {{ .OSName }} :   {{ if eq .OSCode "d11" }}Debian 11{{ else if eq .OSCode "d12" }}Debian 12{{ else if eq .OSCode "d13" }}Debian 13{{ else if eq .OSCode "u20" }}Ubuntu 20.04{{ else if eq .OSCode "u22" }}Ubuntu 22.04{{ else if eq .OSCode "u24" }}Ubuntu 24.04{{ end }} Compatible
+# {{ .OSName }} distribution ad hoc configuration file
+# License    :   Apache-2.0 @ https://pigsty.io/docs/about/license
+# Copyright  :   2018-2026  Ruohang Feng / Vonng (rh@vonng.com)
 
 # where to register systemd files
 systemd_dir: /lib/systemd/system
@@ -1124,7 +1105,7 @@ node_packages_default:
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager
+  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager,uv
   - node-exporter,blackbox-exporter,nginx-exporter,pg-exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
 
 # postgres home dir in various mode
