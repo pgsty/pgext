@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pgspider_ext` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "pgspider_ext_18*" "red" >}} {{< bg "17" "pgspider_ext_17*" "green" >}} {{< bg "16" "pgspider_ext_16*" "green" >}} {{< bg "15" "pgspider_ext_15*" "green" >}} {{< bg "14" "pgspider_ext_14*" "red" >}} {{< bg "13" "pgspider_ext_13*" "red" >}} | `pgspider_ext_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "pgspider_ext_18" "red" >}} {{< bg "17" "pgspider_ext_17" "green" >}} {{< bg "16" "pgspider_ext_16" "green" >}} {{< bg "15" "pgspider_ext_15" "green" >}} {{< bg "14" "pgspider_ext_14" "red" >}} {{< bg "13" "pgspider_ext_13" "red" >}} | `pgspider_ext_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgspider-ext" "red" >}} {{< bg "17" "postgresql-17-pgspider-ext" "green" >}} {{< bg "16" "postgresql-16-pgspider-ext" "green" >}} {{< bg "15" "postgresql-15-pgspider-ext" "green" >}} {{< bg "14" "postgresql-14-pgspider-ext" "red" >}} {{< bg "13" "postgresql-13-pgspider-ext" "red" >}} | `postgresql-$v-pgspider-ext` | - |
 
 

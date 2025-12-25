@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_uint128` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "pg_uint128_18*" "green" >}} {{< bg "17" "pg_uint128_17*" "green" >}} {{< bg "16" "pg_uint128_16*" "green" >}} {{< bg "15" "pg_uint128_15*" "green" >}} {{< bg "14" "pg_uint128_14*" "green" >}} {{< bg "13" "pg_uint128_13*" "green" >}} | `pg_uint128_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "pg_uint128_18" "green" >}} {{< bg "17" "pg_uint128_17" "green" >}} {{< bg "16" "pg_uint128_16" "green" >}} {{< bg "15" "pg_uint128_15" "green" >}} {{< bg "14" "pg_uint128_14" "green" >}} {{< bg "13" "pg_uint128_13" "green" >}} | `pg_uint128_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.1` | {{< bg "18" "postgresql-18-pg-uint128" "green" >}} {{< bg "17" "postgresql-17-pg-uint128" "green" >}} {{< bg "16" "postgresql-16-pg-uint128" "green" >}} {{< bg "15" "postgresql-15-pg-uint128" "green" >}} {{< bg "14" "postgresql-14-pg-uint128" "green" >}} {{< bg "13" "postgresql-13-pg-uint128" "green" >}} | `postgresql-$v-pg-uint128` | - |
 
 

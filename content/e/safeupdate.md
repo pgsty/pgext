@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `safeupdate` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "safeupdate_18*" "green" >}} {{< bg "17" "safeupdate_17*" "green" >}} {{< bg "16" "safeupdate_16*" "green" >}} {{< bg "15" "safeupdate_15*" "green" >}} {{< bg "14" "safeupdate_14*" "green" >}} {{< bg "13" "safeupdate_13*" "red" >}} | `safeupdate_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5` | {{< bg "18" "safeupdate_18" "green" >}} {{< bg "17" "safeupdate_17" "green" >}} {{< bg "16" "safeupdate_16" "green" >}} {{< bg "15" "safeupdate_15" "green" >}} {{< bg "14" "safeupdate_14" "green" >}} {{< bg "13" "safeupdate_13" "red" >}} | `safeupdate_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "postgresql-18-pg-safeupdate" "green" >}} {{< bg "17" "postgresql-17-pg-safeupdate" "green" >}} {{< bg "16" "postgresql-16-pg-safeupdate" "green" >}} {{< bg "15" "postgresql-15-pg-safeupdate" "green" >}} {{< bg "14" "postgresql-14-pg-safeupdate" "green" >}} {{< bg "13" "postgresql-13-pg-safeupdate" "red" >}} | `postgresql-$v-pg-safeupdate` | - |
 
 

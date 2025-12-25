@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `numeral` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "numeral_18*" "green" >}} {{< bg "17" "numeral_17*" "green" >}} {{< bg "16" "numeral_16*" "green" >}} {{< bg "15" "numeral_15*" "green" >}} {{< bg "14" "numeral_14*" "green" >}} {{< bg "13" "numeral_13*" "green" >}} | `numeral_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "numeral_18" "green" >}} {{< bg "17" "numeral_17" "green" >}} {{< bg "16" "numeral_16" "green" >}} {{< bg "15" "numeral_15" "green" >}} {{< bg "14" "numeral_14" "green" >}} {{< bg "13" "numeral_13" "green" >}} | `numeral_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3` | {{< bg "18" "postgresql-18-numeral" "green" >}} {{< bg "17" "postgresql-17-numeral" "green" >}} {{< bg "16" "postgresql-16-numeral" "green" >}} {{< bg "15" "postgresql-15-numeral" "green" >}} {{< bg "14" "postgresql-14-numeral" "green" >}} {{< bg "13" "postgresql-13-numeral" "green" >}} | `postgresql-$v-numeral` | - |
 
 

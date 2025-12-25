@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 408 | 429 | 428 | 430 | 415 | 386 |
-| **EL** | 434 | 143 | 268 | 71 | 6 | 397 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 394 | 416 | 414 | 416 | 404 | 371 |
+| **ALL** | 440 | 149 | 268 | 71 | 0 | 410 | 429 | 428 | 430 | 415 | 386 |
+| **EL** | 434 | 143 | 268 | 71 | 6 | 399 | 421 | 422 | 424 | 412 | 382 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 396 | 416 | 414 | 416 | 404 | 371 |
 
 ## Categories
 
@@ -405,8 +405,8 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Anonymizer (anon) extension |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL SM Algorithm Extension |
 | {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Encrypted postgres data type |
-| {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | provides auditing functionality |
-| {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | pgAudit addon to redirect audit log to an independent file |
+| {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | provides auditing functionality |
+| {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | pgAudit addon to redirect audit log to an independent file |
 | {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Audit data changes and provide flashback ability |
 | {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Function for collecting statistics about messages in logfile |
 | {{< ext "pg_auth_mon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | monitor connection attempts per user |

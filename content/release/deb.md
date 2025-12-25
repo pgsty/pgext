@@ -6,6 +6,20 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+
+## 2025-12-25
+
+| Name          | Old     | New     | Comment  |
+|:--------------|:--------|:--------|:---------|
+| pg_duckdb     | 1.1.0   | 1.1.1   |          |
+| pg_search     | 0.20.4  | 0.20.5  |          |
+| vchord_bm25   | 0.2.2   | 0.3.0   |          |
+| pg_semver     | 0.40.0  | 0.41.0  |          |
+| pg_timeseries | 0.1.7   | 0.1.8   |          |
+| supautils     | 3.0.2-1 | 3.0.2-2 | fix pg18 |
+| pg_summarize  | 0.0.1-1 | 0.0.1-2 | fix pg18 |
+
+
 ## 2025-12-16
 
 | Name                                                          | Old     | New     | Comment          |

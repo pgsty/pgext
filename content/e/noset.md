@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_noset` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "noset_18*" "green" >}} {{< bg "17" "noset_17*" "green" >}} {{< bg "16" "noset_16*" "green" >}} {{< bg "15" "noset_15*" "green" >}} {{< bg "14" "noset_14*" "green" >}} {{< bg "13" "noset_13*" "green" >}} | `noset_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "noset_18" "green" >}} {{< bg "17" "noset_17" "green" >}} {{< bg "16" "noset_16" "green" >}} {{< bg "15" "noset_15" "green" >}} {{< bg "14" "noset_14" "green" >}} {{< bg "13" "noset_13" "green" >}} | `noset_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-noset" "green" >}} {{< bg "17" "postgresql-17-noset" "green" >}} {{< bg "16" "postgresql-16-noset" "green" >}} {{< bg "15" "postgresql-15-noset" "green" >}} {{< bg "14" "postgresql-14-noset" "green" >}} {{< bg "13" "postgresql-13-noset" "green" >}} | `postgresql-$v-noset` | - |
 
 

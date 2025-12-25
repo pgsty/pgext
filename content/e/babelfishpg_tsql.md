@@ -36,7 +36,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_tsql` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.1` | {{< bg "18" "babelfishpg-tsql*" "red" >}} {{< bg "17" "babelfishpg-tsql*" "red" >}} {{< bg "16" "babelfishpg-tsql*" "red" >}} {{< bg "15" "babelfishpg-tsql*" "green" >}} {{< bg "14" "babelfishpg-tsql*" "red" >}} {{< bg "13" "babelfishpg-tsql*" "red" >}} | `babelfishpg-tsql*` | `babelfishpg-common`, `libantlr4-runtime` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.1` | {{< bg "18" "babelfishpg-tsql" "red" >}} {{< bg "17" "babelfishpg-tsql" "red" >}} {{< bg "16" "babelfishpg-tsql" "red" >}} {{< bg "15" "babelfishpg-tsql" "green" >}} {{< bg "14" "babelfishpg-tsql" "red" >}} {{< bg "13" "babelfishpg-tsql" "red" >}} | `babelfishpg-tsql` | `babelfishpg-common`, `libantlr4-runtime` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.1` | {{< bg "18" "babelfishpg-tsql" "red" >}} {{< bg "17" "babelfishpg-tsql" "red" >}} {{< bg "16" "babelfishpg-tsql" "red" >}} {{< bg "15" "babelfishpg-tsql" "green" >}} {{< bg "14" "babelfishpg-tsql" "red" >}} {{< bg "13" "babelfishpg-tsql" "red" >}} | `babelfishpg-tsql` | `babelfishpg-common`, `libantlr4-runtime4.9.3` |
 
 

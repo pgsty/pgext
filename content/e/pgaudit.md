@@ -33,9 +33,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgaudit` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "pgaudit_18*" "red" >}} {{< bg "17" "pgaudit_17*" "green" >}} {{< bg "16" "pgaudit_16*" "green" >}} {{< bg "15" "pgaudit_15*" "green" >}} {{< bg "14" "pgaudit_14*" "green" >}} {{< bg "13" "pgaudit_13*" "green" >}} | `pgaudit_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "postgresql-18-pgaudit" "red" >}} {{< bg "17" "postgresql-17-pgaudit" "green" >}} {{< bg "16" "postgresql-16-pgaudit" "green" >}} {{< bg "15" "postgresql-15-pgaudit" "green" >}} {{< bg "14" "postgresql-14-pgaudit" "green" >}} {{< bg "13" "postgresql-13-pgaudit" "green" >}} | `postgresql-$v-pgaudit` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgaudit` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "pgaudit_18" "green" >}} {{< bg "17" "pgaudit_17" "green" >}} {{< bg "16" "pgaudit_16" "green" >}} {{< bg "15" "pgaudit_15" "green" >}} {{< bg "14" "pgaudit_14" "green" >}} {{< bg "13" "pgaudit_13" "green" >}} | `pgaudit_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `18.0` | {{< bg "18" "postgresql-18-pgaudit" "green" >}} {{< bg "17" "postgresql-17-pgaudit" "green" >}} {{< bg "16" "postgresql-16-pgaudit" "green" >}} {{< bg "15" "postgresql-15-pgaudit" "green" >}} {{< bg "14" "postgresql-14-pgaudit" "green" >}} {{< bg "13" "postgresql-13-pgaudit" "green" >}} | `postgresql-$v-pgaudit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -223,6 +223,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install pgaudit;		# install via package name, for the active PG version
 
+pig install pgaudit -v 18;   # install for PG 18
 pig install pgaudit -v 17;   # install for PG 17
 pig install pgaudit -v 16;   # install for PG 16
 pig install pgaudit -v 15;   # install for PG 15

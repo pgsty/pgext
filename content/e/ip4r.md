@@ -33,7 +33,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `ip4r` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.2` | {{< bg "18" "ip4r_18*" "green" >}} {{< bg "17" "ip4r_17*" "green" >}} {{< bg "16" "ip4r_16*" "green" >}} {{< bg "15" "ip4r_15*" "green" >}} {{< bg "14" "ip4r_14*" "green" >}} {{< bg "13" "ip4r_13*" "green" >}} | `ip4r_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.2` | {{< bg "18" "ip4r_18" "green" >}} {{< bg "17" "ip4r_17" "green" >}} {{< bg "16" "ip4r_16" "green" >}} {{< bg "15" "ip4r_15" "green" >}} {{< bg "14" "ip4r_14" "green" >}} {{< bg "13" "ip4r_13" "green" >}} | `ip4r_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.4.2` | {{< bg "18" "postgresql-18-ip4r" "green" >}} {{< bg "17" "postgresql-17-ip4r" "green" >}} {{< bg "16" "postgresql-16-ip4r" "green" >}} {{< bg "15" "postgresql-15-ip4r" "green" >}} {{< bg "14" "postgresql-14-ip4r" "green" >}} {{< bg "13" "postgresql-13-ip4r" "green" >}} | `postgresql-$v-ip4r` | - |
 
 

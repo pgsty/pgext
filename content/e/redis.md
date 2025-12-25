@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_redis_pubsub` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_redis_pubsub_18*" "green" >}} {{< bg "17" "pg_redis_pubsub_17*" "green" >}} {{< bg "16" "pg_redis_pubsub_16*" "green" >}} {{< bg "15" "pg_redis_pubsub_15*" "green" >}} {{< bg "14" "pg_redis_pubsub_14*" "green" >}} {{< bg "13" "pg_redis_pubsub_13*" "green" >}} | `pg_redis_pubsub_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_redis_pubsub_18" "green" >}} {{< bg "17" "pg_redis_pubsub_17" "green" >}} {{< bg "16" "pg_redis_pubsub_16" "green" >}} {{< bg "15" "pg_redis_pubsub_15" "green" >}} {{< bg "14" "pg_redis_pubsub_14" "green" >}} {{< bg "13" "pg_redis_pubsub_13" "green" >}} | `pg_redis_pubsub_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-redis-pubsub" "green" >}} {{< bg "17" "postgresql-17-pg-redis-pubsub" "green" >}} {{< bg "16" "postgresql-16-pg-redis-pubsub" "green" >}} {{< bg "15" "postgresql-15-pg-redis-pubsub" "green" >}} {{< bg "14" "postgresql-14-pg-redis-pubsub" "green" >}} {{< bg "13" "postgresql-13-pg-redis-pubsub" "green" >}} | `postgresql-$v-pg-redis-pubsub` | - |
 
 

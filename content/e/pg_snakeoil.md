@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_snakeoil` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "pg_snakeoil_18*" "green" >}} {{< bg "17" "pg_snakeoil_17*" "green" >}} {{< bg "16" "pg_snakeoil_16*" "green" >}} {{< bg "15" "pg_snakeoil_15*" "green" >}} {{< bg "14" "pg_snakeoil_14*" "green" >}} {{< bg "13" "pg_snakeoil_13*" "green" >}} | `pg_snakeoil_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "pg_snakeoil_18" "green" >}} {{< bg "17" "pg_snakeoil_17" "green" >}} {{< bg "16" "pg_snakeoil_16" "green" >}} {{< bg "15" "pg_snakeoil_15" "green" >}} {{< bg "14" "pg_snakeoil_14" "green" >}} {{< bg "13" "pg_snakeoil_13" "green" >}} | `pg_snakeoil_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4` | {{< bg "18" "postgresql-18-snakeoil" "green" >}} {{< bg "17" "postgresql-17-snakeoil" "green" >}} {{< bg "16" "postgresql-16-snakeoil" "green" >}} {{< bg "15" "postgresql-15-snakeoil" "green" >}} {{< bg "14" "postgresql-14-snakeoil" "green" >}} {{< bg "13" "postgresql-13-snakeoil" "green" >}} | `postgresql-$v-snakeoil` | - |
 
 

@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgauditlogtofile` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "pgauditlogtofile_18*" "red" >}} {{< bg "17" "pgauditlogtofile_17*" "green" >}} {{< bg "16" "pgauditlogtofile_16*" "green" >}} {{< bg "15" "pgauditlogtofile_15*" "green" >}} {{< bg "14" "pgauditlogtofile_14*" "green" >}} {{< bg "13" "pgauditlogtofile_13*" "green" >}} | `pgauditlogtofile_$v*` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "postgresql-18-pgauditlogtofile" "red" >}} {{< bg "17" "postgresql-17-pgauditlogtofile" "green" >}} {{< bg "16" "postgresql-16-pgauditlogtofile" "green" >}} {{< bg "15" "postgresql-15-pgauditlogtofile" "green" >}} {{< bg "14" "postgresql-14-pgauditlogtofile" "green" >}} {{< bg "13" "postgresql-13-pgauditlogtofile" "green" >}} | `postgresql-$v-pgauditlogtofile` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgauditlogtofile` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "pgauditlogtofile_18" "green" >}} {{< bg "17" "pgauditlogtofile_17" "green" >}} {{< bg "16" "pgauditlogtofile_16" "green" >}} {{< bg "15" "pgauditlogtofile_15" "green" >}} {{< bg "14" "pgauditlogtofile_14" "green" >}} {{< bg "13" "pgauditlogtofile_13" "green" >}} | `pgauditlogtofile_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7.6` | {{< bg "18" "postgresql-18-pgauditlogtofile" "green" >}} {{< bg "17" "postgresql-17-pgauditlogtofile" "green" >}} {{< bg "16" "postgresql-16-pgauditlogtofile" "green" >}} {{< bg "15" "postgresql-15-pgauditlogtofile" "green" >}} {{< bg "14" "postgresql-14-pgauditlogtofile" "green" >}} {{< bg "13" "postgresql-13-pgauditlogtofile" "green" >}} | `postgresql-$v-pgauditlogtofile` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -452,6 +452,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install pgauditlogtofile;		# install via package name, for the active PG version
 
+pig install pgauditlogtofile -v 18;   # install for PG 18
 pig install pgauditlogtofile -v 17;   # install for PG 17
 pig install pgauditlogtofile -v 16;   # install for PG 16
 pig install pgauditlogtofile -v 15;   # install for PG 15

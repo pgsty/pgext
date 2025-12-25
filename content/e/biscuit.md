@@ -33,7 +33,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pg_biscuit` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pg_biscuit_18*" "green" >}} {{< bg "17" "pg_biscuit_17*" "green" >}} {{< bg "16" "pg_biscuit_16*" "green" >}} {{< bg "15" "pg_biscuit_15*" "red" >}} {{< bg "14" "pg_biscuit_14*" "red" >}} {{< bg "13" "pg_biscuit_13*" "red" >}} | `pg_biscuit_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "pg_biscuit_18" "green" >}} {{< bg "17" "pg_biscuit_17" "green" >}} {{< bg "16" "pg_biscuit_16" "green" >}} {{< bg "15" "pg_biscuit_15" "red" >}} {{< bg "14" "pg_biscuit_14" "red" >}} {{< bg "13" "pg_biscuit_13" "red" >}} | `pg_biscuit_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.1` | {{< bg "18" "postgresql-18-biscuit" "green" >}} {{< bg "17" "postgresql-17-biscuit" "green" >}} {{< bg "16" "postgresql-16-biscuit" "green" >}} {{< bg "15" "postgresql-15-biscuit" "red" >}} {{< bg "14" "postgresql-14-biscuit" "red" >}} {{< bg "13" "postgresql-13-biscuit" "red" >}} | `postgresql-$v-biscuit` | - |
 
 

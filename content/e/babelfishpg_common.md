@@ -35,7 +35,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_common` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common*" "red" >}} {{< bg "17" "babelfishpg-common*" "red" >}} {{< bg "16" "babelfishpg-common*" "red" >}} {{< bg "15" "babelfishpg-common*" "green" >}} {{< bg "14" "babelfishpg-common*" "red" >}} {{< bg "13" "babelfishpg-common*" "red" >}} | `babelfishpg-common*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "red" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "green" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "red" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "green" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
 
 

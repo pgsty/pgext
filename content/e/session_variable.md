@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `session_variable` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "session_variable_18*" "green" >}} {{< bg "17" "session_variable_17*" "green" >}} {{< bg "16" "session_variable_16*" "green" >}} {{< bg "15" "session_variable_15*" "green" >}} {{< bg "14" "session_variable_14*" "green" >}} {{< bg "13" "session_variable_13*" "green" >}} | `session_variable_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "session_variable_18" "green" >}} {{< bg "17" "session_variable_17" "green" >}} {{< bg "16" "session_variable_16" "green" >}} {{< bg "15" "session_variable_15" "green" >}} {{< bg "14" "session_variable_14" "green" >}} {{< bg "13" "session_variable_13" "green" >}} | `session_variable_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.4` | {{< bg "18" "postgresql-18-session-variable" "green" >}} {{< bg "17" "postgresql-17-session-variable" "green" >}} {{< bg "16" "postgresql-16-session-variable" "green" >}} {{< bg "15" "postgresql-15-session-variable" "green" >}} {{< bg "14" "postgresql-14-session-variable" "green" >}} {{< bg "13" "postgresql-13-session-variable" "green" >}} | `postgresql-$v-session-variable` | - |
 
 

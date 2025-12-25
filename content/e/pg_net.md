@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_net` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "pg_net_18*" "green" >}} {{< bg "17" "pg_net_17*" "green" >}} {{< bg "16" "pg_net_16*" "green" >}} {{< bg "15" "pg_net_15*" "green" >}} {{< bg "14" "pg_net_14*" "green" >}} {{< bg "13" "pg_net_13*" "green" >}} | `pg_net_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "pg_net_18" "green" >}} {{< bg "17" "pg_net_17" "green" >}} {{< bg "16" "pg_net_16" "green" >}} {{< bg "15" "pg_net_15" "green" >}} {{< bg "14" "pg_net_14" "green" >}} {{< bg "13" "pg_net_13" "green" >}} | `pg_net_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.0` | {{< bg "18" "postgresql-18-pg-net" "green" >}} {{< bg "17" "postgresql-17-pg-net" "green" >}} {{< bg "16" "postgresql-16-pg-net" "green" >}} {{< bg "15" "postgresql-15-pg-net" "green" >}} {{< bg "14" "postgresql-14-pg-net" "green" >}} {{< bg "13" "postgresql-13-pg-net" "green" >}} | `postgresql-$v-pg-net` | - |
 
 

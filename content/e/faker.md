@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `faker` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18*" "green" >}} {{< bg "17" "postgresql_faker_17*" "green" >}} {{< bg "16" "postgresql_faker_16*" "green" >}} {{< bg "15" "postgresql_faker_15*" "green" >}} {{< bg "14" "postgresql_faker_14*" "green" >}} {{< bg "13" "postgresql_faker_13*" "green" >}} | `postgresql_faker_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18" "green" >}} {{< bg "17" "postgresql_faker_17" "green" >}} {{< bg "16" "postgresql_faker_16" "green" >}} {{< bg "15" "postgresql_faker_15" "green" >}} {{< bg "14" "postgresql_faker_14" "green" >}} {{< bg "13" "postgresql_faker_13" "green" >}} | `postgresql_faker_$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

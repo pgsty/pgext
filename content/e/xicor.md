@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgxicor` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgxicor_18*" "green" >}} {{< bg "17" "pgxicor_17*" "green" >}} {{< bg "16" "pgxicor_16*" "green" >}} {{< bg "15" "pgxicor_15*" "green" >}} {{< bg "14" "pgxicor_14*" "green" >}} {{< bg "13" "pgxicor_13*" "green" >}} | `pgxicor_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgxicor_18" "green" >}} {{< bg "17" "pgxicor_17" "green" >}} {{< bg "16" "pgxicor_16" "green" >}} {{< bg "15" "pgxicor_15" "green" >}} {{< bg "14" "pgxicor_14" "green" >}} {{< bg "13" "pgxicor_13" "green" >}} | `pgxicor_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgxicor" "green" >}} {{< bg "17" "postgresql-17-pgxicor" "green" >}} {{< bg "16" "postgresql-16-pgxicor" "green" >}} {{< bg "15" "postgresql-15-pgxicor" "green" >}} {{< bg "14" "postgresql-14-pgxicor" "green" >}} {{< bg "13" "postgresql-13-pgxicor" "green" >}} | `postgresql-$v-pgxicor` | - |
 
 

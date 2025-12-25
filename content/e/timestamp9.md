@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `timestamp9` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "timestamp9_18*" "green" >}} {{< bg "17" "timestamp9_17*" "green" >}} {{< bg "16" "timestamp9_16*" "green" >}} {{< bg "15" "timestamp9_15*" "green" >}} {{< bg "14" "timestamp9_14*" "green" >}} {{< bg "13" "timestamp9_13*" "green" >}} | `timestamp9_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "timestamp9_18" "green" >}} {{< bg "17" "timestamp9_17" "green" >}} {{< bg "16" "timestamp9_16" "green" >}} {{< bg "15" "timestamp9_15" "green" >}} {{< bg "14" "timestamp9_14" "green" >}} {{< bg "13" "timestamp9_13" "green" >}} | `timestamp9_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "postgresql-18-timestamp9" "green" >}} {{< bg "17" "postgresql-17-timestamp9" "green" >}} {{< bg "16" "postgresql-16-timestamp9" "green" >}} {{< bg "15" "postgresql-15-timestamp9" "green" >}} {{< bg "14" "postgresql-14-timestamp9" "green" >}} {{< bg "13" "postgresql-13-timestamp9" "green" >}} | `postgresql-$v-timestamp9` | - |
 
 

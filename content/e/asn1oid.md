@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `asn1oid` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "asn1oid_18*" "green" >}} {{< bg "17" "asn1oid_17*" "green" >}} {{< bg "16" "asn1oid_16*" "green" >}} {{< bg "15" "asn1oid_15*" "green" >}} {{< bg "14" "asn1oid_14*" "green" >}} {{< bg "13" "asn1oid_13*" "green" >}} | `asn1oid_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "asn1oid_18" "green" >}} {{< bg "17" "asn1oid_17" "green" >}} {{< bg "16" "asn1oid_16" "green" >}} {{< bg "15" "asn1oid_15" "green" >}} {{< bg "14" "asn1oid_14" "green" >}} {{< bg "13" "asn1oid_13" "green" >}} | `asn1oid_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "18" "postgresql-18-asn1oid" "green" >}} {{< bg "17" "postgresql-17-asn1oid" "green" >}} {{< bg "16" "postgresql-16-asn1oid" "green" >}} {{< bg "15" "postgresql-15-asn1oid" "green" >}} {{< bg "14" "postgresql-14-asn1oid" "green" >}} {{< bg "13" "postgresql-13-asn1oid" "green" >}} | `postgresql-$v-asn1oid` | - |
 
 

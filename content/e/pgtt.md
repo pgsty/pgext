@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgtt` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.4` | {{< bg "18" "pgtt_18*" "green" >}} {{< bg "17" "pgtt_17*" "green" >}} {{< bg "16" "pgtt_16*" "green" >}} {{< bg "15" "pgtt_15*" "green" >}} {{< bg "14" "pgtt_14*" "green" >}} {{< bg "13" "pgtt_13*" "green" >}} | `pgtt_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.4` | {{< bg "18" "pgtt_18" "green" >}} {{< bg "17" "pgtt_17" "green" >}} {{< bg "16" "pgtt_16" "green" >}} {{< bg "15" "pgtt_15" "green" >}} {{< bg "14" "pgtt_14" "green" >}} {{< bg "13" "pgtt_13" "green" >}} | `pgtt_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.4` | {{< bg "18" "postgresql-18-pgtt" "green" >}} {{< bg "17" "postgresql-17-pgtt" "green" >}} {{< bg "16" "postgresql-16-pgtt" "green" >}} {{< bg "15" "postgresql-15-pgtt" "green" >}} {{< bg "14" "postgresql-14-pgtt" "green" >}} {{< bg "13" "postgresql-13-pgtt" "green" >}} | `postgresql-$v-pgtt` | - |
 
 

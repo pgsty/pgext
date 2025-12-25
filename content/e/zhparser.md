@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `zhparser` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "zhparser_18*" "green" >}} {{< bg "17" "zhparser_17*" "green" >}} {{< bg "16" "zhparser_16*" "green" >}} {{< bg "15" "zhparser_15*" "green" >}} {{< bg "14" "zhparser_14*" "green" >}} {{< bg "13" "zhparser_13*" "green" >}} | `zhparser_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "zhparser_18" "green" >}} {{< bg "17" "zhparser_17" "green" >}} {{< bg "16" "zhparser_16" "green" >}} {{< bg "15" "zhparser_15" "green" >}} {{< bg "14" "zhparser_14" "green" >}} {{< bg "13" "zhparser_13" "green" >}} | `zhparser_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3` | {{< bg "18" "postgresql-18-zhparser" "green" >}} {{< bg "17" "postgresql-17-zhparser" "green" >}} {{< bg "16" "postgresql-16-zhparser" "green" >}} {{< bg "15" "postgresql-15-zhparser" "green" >}} {{< bg "14" "postgresql-14-zhparser" "green" >}} {{< bg "13" "postgresql-13-zhparser" "green" >}} | `postgresql-$v-zhparser` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_ai_query` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "pg_ai_query_18*" "green" >}} {{< bg "17" "pg_ai_query_17*" "green" >}} {{< bg "16" "pg_ai_query_16*" "green" >}} {{< bg "15" "pg_ai_query_15*" "green" >}} {{< bg "14" "pg_ai_query_14*" "green" >}} {{< bg "13" "pg_ai_query_13*" "red" >}} | `pg_ai_query_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "pg_ai_query_18" "green" >}} {{< bg "17" "pg_ai_query_17" "green" >}} {{< bg "16" "pg_ai_query_16" "green" >}} {{< bg "15" "pg_ai_query_15" "green" >}} {{< bg "14" "pg_ai_query_14" "green" >}} {{< bg "13" "pg_ai_query_13" "red" >}} | `pg_ai_query_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.1` | {{< bg "18" "postgresql-18-ai-query" "green" >}} {{< bg "17" "postgresql-17-ai-query" "green" >}} {{< bg "16" "postgresql-16-ai-query" "green" >}} {{< bg "15" "postgresql-15-ai-query" "green" >}} {{< bg "14" "postgresql-14-ai-query" "green" >}} {{< bg "13" "postgresql-13-ai-query" "red" >}} | `postgresql-$v-ai-query` | - |
 
 

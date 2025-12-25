@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `smlar` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "smlar_18*" "green" >}} {{< bg "17" "smlar_17*" "green" >}} {{< bg "16" "smlar_16*" "green" >}} {{< bg "15" "smlar_15*" "green" >}} {{< bg "14" "smlar_14*" "green" >}} {{< bg "13" "smlar_13*" "green" >}} | `smlar_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "smlar_18" "green" >}} {{< bg "17" "smlar_17" "green" >}} {{< bg "16" "smlar_16" "green" >}} {{< bg "15" "smlar_15" "green" >}} {{< bg "14" "smlar_14" "green" >}} {{< bg "13" "smlar_13" "green" >}} | `smlar_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-smlar" "green" >}} {{< bg "17" "postgresql-17-smlar" "green" >}} {{< bg "16" "postgresql-16-smlar" "green" >}} {{< bg "15" "postgresql-15-smlar" "green" >}} {{< bg "14" "postgresql-14-smlar" "green" >}} {{< bg "13" "postgresql-13-smlar" "green" >}} | `postgresql-$v-smlar` | - |
 
 

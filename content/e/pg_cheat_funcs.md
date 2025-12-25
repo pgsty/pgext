@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_cheat_funcs` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_cheat_funcs_18*" "green" >}} {{< bg "17" "pg_cheat_funcs_17*" "green" >}} {{< bg "16" "pg_cheat_funcs_16*" "green" >}} {{< bg "15" "pg_cheat_funcs_15*" "green" >}} {{< bg "14" "pg_cheat_funcs_14*" "green" >}} {{< bg "13" "pg_cheat_funcs_13*" "green" >}} | `pg_cheat_funcs_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_cheat_funcs_18" "green" >}} {{< bg "17" "pg_cheat_funcs_17" "green" >}} {{< bg "16" "pg_cheat_funcs_16" "green" >}} {{< bg "15" "pg_cheat_funcs_15" "green" >}} {{< bg "14" "pg_cheat_funcs_14" "green" >}} {{< bg "13" "pg_cheat_funcs_13" "green" >}} | `pg_cheat_funcs_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-cheat-funcs" "green" >}} {{< bg "17" "postgresql-17-pg-cheat-funcs" "green" >}} {{< bg "16" "postgresql-16-pg-cheat-funcs" "green" >}} {{< bg "15" "postgresql-15-pg-cheat-funcs" "green" >}} {{< bg "14" "postgresql-14-pg-cheat-funcs" "green" >}} {{< bg "13" "postgresql-13-pg-cheat-funcs" "green" >}} | `postgresql-$v-pg-cheat-funcs` | - |
 
 

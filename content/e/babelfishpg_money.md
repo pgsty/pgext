@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_money` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money*" "red" >}} {{< bg "17" "babelfishpg-money*" "red" >}} {{< bg "16" "babelfishpg-money*" "red" >}} {{< bg "15" "babelfishpg-money*" "green" >}} {{< bg "14" "babelfishpg-money*" "red" >}} {{< bg "13" "babelfishpg-money*" "red" >}} | `babelfishpg-money*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money" "red" >}} {{< bg "17" "babelfishpg-money" "red" >}} {{< bg "16" "babelfishpg-money" "red" >}} {{< bg "15" "babelfishpg-money" "green" >}} {{< bg "14" "babelfishpg-money" "red" >}} {{< bg "13" "babelfishpg-money" "red" >}} | `babelfishpg-money` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "babelfishpg-money" "red" >}} {{< bg "17" "babelfishpg-money" "red" >}} {{< bg "16" "babelfishpg-money" "red" >}} {{< bg "15" "babelfishpg-money" "green" >}} {{< bg "14" "babelfishpg-money" "red" >}} {{< bg "13" "babelfishpg-money" "red" >}} | `babelfishpg-money` | - |
 
 

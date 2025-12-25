@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `vasco` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "vasco_18*" "green" >}} {{< bg "17" "vasco_17*" "green" >}} {{< bg "16" "vasco_16*" "green" >}} {{< bg "15" "vasco_15*" "green" >}} {{< bg "14" "vasco_14*" "green" >}} {{< bg "13" "vasco_13*" "green" >}} | `vasco_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "vasco_18" "green" >}} {{< bg "17" "vasco_17" "green" >}} {{< bg "16" "vasco_16" "green" >}} {{< bg "15" "vasco_15" "green" >}} {{< bg "14" "vasco_14" "green" >}} {{< bg "13" "vasco_13" "green" >}} | `vasco_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-vasco" "green" >}} {{< bg "17" "postgresql-17-vasco" "green" >}} {{< bg "16" "postgresql-16-vasco" "green" >}} {{< bg "15" "postgresql-15-vasco" "green" >}} {{< bg "14" "postgresql-14-vasco" "green" >}} {{< bg "13" "postgresql-13-vasco" "green" >}} | `postgresql-$v-vasco` | - |
 
 

@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_acl` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "acl_18*" "green" >}} {{< bg "17" "acl_17*" "green" >}} {{< bg "16" "acl_16*" "green" >}} {{< bg "15" "acl_15*" "green" >}} {{< bg "14" "acl_14*" "green" >}} {{< bg "13" "acl_13*" "green" >}} | `acl_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "acl_18" "green" >}} {{< bg "17" "acl_17" "green" >}} {{< bg "16" "acl_16" "green" >}} {{< bg "15" "acl_15" "green" >}} {{< bg "14" "acl_14" "green" >}} {{< bg "13" "acl_13" "green" >}} | `acl_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.4` | {{< bg "18" "postgresql-18-acl" "green" >}} {{< bg "17" "postgresql-17-acl" "green" >}} {{< bg "16" "postgresql-16-acl" "green" >}} {{< bg "15" "postgresql-15-acl" "green" >}} {{< bg "14" "postgresql-14-acl" "green" >}} {{< bg "13" "postgresql-13-acl" "green" >}} | `postgresql-$v-acl` | - |
 
 

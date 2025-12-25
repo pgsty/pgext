@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `spat` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0a4` | {{< bg "18" "spat_18*" "red" >}} {{< bg "17" "spat_17*" "green" >}} {{< bg "16" "spat_16*" "red" >}} {{< bg "15" "spat_15*" "red" >}} {{< bg "14" "spat_14*" "red" >}} {{< bg "13" "spat_13*" "red" >}} | `spat_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0a4` | {{< bg "18" "spat_18" "red" >}} {{< bg "17" "spat_17" "green" >}} {{< bg "16" "spat_16" "red" >}} {{< bg "15" "spat_15" "red" >}} {{< bg "14" "spat_14" "red" >}} {{< bg "13" "spat_13" "red" >}} | `spat_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0a4` | {{< bg "18" "postgresql-18-spat" "red" >}} {{< bg "17" "postgresql-17-spat" "green" >}} {{< bg "16" "postgresql-16-spat" "red" >}} {{< bg "15" "postgresql-15-spat" "red" >}} {{< bg "14" "postgresql-14-spat" "red" >}} {{< bg "13" "postgresql-13-spat" "red" >}} | `postgresql-$v-spat` | - |
 
 

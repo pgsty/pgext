@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plsh` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "plsh_18*" "green" >}} {{< bg "17" "plsh_17*" "green" >}} {{< bg "16" "plsh_16*" "green" >}} {{< bg "15" "plsh_15*" "green" >}} {{< bg "14" "plsh_14*" "green" >}} {{< bg "13" "plsh_13*" "green" >}} | `plsh_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "plsh_18" "green" >}} {{< bg "17" "plsh_17" "green" >}} {{< bg "16" "plsh_16" "green" >}} {{< bg "15" "plsh_15" "green" >}} {{< bg "14" "plsh_14" "green" >}} {{< bg "13" "plsh_13" "green" >}} | `plsh_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.20220917` | {{< bg "18" "postgresql-18-plsh" "green" >}} {{< bg "17" "postgresql-17-plsh" "green" >}} {{< bg "16" "postgresql-16-plsh" "green" >}} {{< bg "15" "postgresql-15-plsh" "green" >}} {{< bg "14" "postgresql-14-plsh" "green" >}} {{< bg "13" "postgresql-13-plsh" "green" >}} | `postgresql-$v-plsh` | - |
 
 

@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `age` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "apache-age_18*" "red" >}} {{< bg "17" "apache-age_17*" "green" >}} {{< bg "16" "apache-age_16*" "green" >}} {{< bg "15" "apache-age_15*" "green" >}} {{< bg "14" "apache-age_14*" "green" >}} {{< bg "13" "apache-age_13*" "green" >}} | `apache-age_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "apache-age_18" "red" >}} {{< bg "17" "apache-age_17" "green" >}} {{< bg "16" "apache-age_16" "green" >}} {{< bg "15" "apache-age_15" "green" >}} {{< bg "14" "apache-age_14" "green" >}} {{< bg "13" "apache-age_13" "green" >}} | `apache-age_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.0` | {{< bg "18" "postgresql-18-age" "red" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "green" >}} {{< bg "15" "postgresql-15-age" "green" >}} {{< bg "14" "postgresql-14-age" "green" >}} {{< bg "13" "postgresql-13-age" "green" >}} | `postgresql-$v-age` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `repmgr` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "repmgr_18*" "green" >}} {{< bg "17" "repmgr_17*" "green" >}} {{< bg "16" "repmgr_16*" "green" >}} {{< bg "15" "repmgr_15*" "green" >}} {{< bg "14" "repmgr_14*" "green" >}} {{< bg "13" "repmgr_13*" "green" >}} | `repmgr_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "repmgr_18" "green" >}} {{< bg "17" "repmgr_17" "green" >}} {{< bg "16" "repmgr_16" "green" >}} {{< bg "15" "repmgr_15" "green" >}} {{< bg "14" "repmgr_14" "green" >}} {{< bg "13" "repmgr_13" "green" >}} | `repmgr_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.5.0` | {{< bg "18" "postgresql-18-repmgr" "green" >}} {{< bg "17" "postgresql-17-repmgr" "green" >}} {{< bg "16" "postgresql-16-repmgr" "green" >}} {{< bg "15" "postgresql-15-repmgr" "green" >}} {{< bg "14" "postgresql-14-repmgr" "green" >}} {{< bg "13" "postgresql-13-repmgr" "green" >}} | `postgresql-$v-repmgr` | - |
 
 

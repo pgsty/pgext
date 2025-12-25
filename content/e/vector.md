@@ -33,7 +33,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgvector` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.1` | {{< bg "18" "pgvector_18*" "green" >}} {{< bg "17" "pgvector_17*" "green" >}} {{< bg "16" "pgvector_16*" "green" >}} {{< bg "15" "pgvector_15*" "green" >}} {{< bg "14" "pgvector_14*" "green" >}} {{< bg "13" "pgvector_13*" "green" >}} | `pgvector_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.1` | {{< bg "18" "pgvector_18" "green" >}} {{< bg "17" "pgvector_17" "green" >}} {{< bg "16" "pgvector_16" "green" >}} {{< bg "15" "pgvector_15" "green" >}} {{< bg "14" "pgvector_14" "green" >}} {{< bg "13" "pgvector_13" "green" >}} | `pgvector_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.8.1` | {{< bg "18" "postgresql-18-pgvector" "green" >}} {{< bg "17" "postgresql-17-pgvector" "green" >}} {{< bg "16" "postgresql-16-pgvector" "green" >}} {{< bg "15" "postgresql-15-pgvector" "green" >}} {{< bg "14" "postgresql-14-pgvector" "green" >}} {{< bg "13" "postgresql-13-pgvector" "green" >}} | `postgresql-$v-pgvector` | - |
 
 

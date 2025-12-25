@@ -17,6 +17,9 @@ breadcrumbs: false
 - bump pg_search from 0.20.3 to 0.20.4
 - bump pg_duckdb to the official 1.1.0 release
 - bump pigsty version to 4.0.0
+- remove pgdg yum sysupdate repo due to upstream change
+- remove pgdg yum llvmjit packages due to upstream change
+
 
 **Checksums**
 

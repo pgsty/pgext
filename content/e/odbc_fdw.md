@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `odbc_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.1` | {{< bg "18" "odbc_fdw_18*" "red" >}} {{< bg "17" "odbc_fdw_17*" "green" >}} {{< bg "16" "odbc_fdw_16*" "green" >}} {{< bg "15" "odbc_fdw_15*" "green" >}} {{< bg "14" "odbc_fdw_14*" "green" >}} {{< bg "13" "odbc_fdw_13*" "green" >}} | `odbc_fdw_$v*` | `unixODBC` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.1` | {{< bg "18" "odbc_fdw_18" "red" >}} {{< bg "17" "odbc_fdw_17" "green" >}} {{< bg "16" "odbc_fdw_16" "green" >}} {{< bg "15" "odbc_fdw_15" "green" >}} {{< bg "14" "odbc_fdw_14" "green" >}} {{< bg "13" "odbc_fdw_13" "green" >}} | `odbc_fdw_$v` | `unixODBC` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

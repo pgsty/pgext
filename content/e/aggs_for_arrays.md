@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `aggs_for_arrays` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.3` | {{< bg "18" "aggs_for_arrays_18*" "green" >}} {{< bg "17" "aggs_for_arrays_17*" "green" >}} {{< bg "16" "aggs_for_arrays_16*" "green" >}} {{< bg "15" "aggs_for_arrays_15*" "green" >}} {{< bg "14" "aggs_for_arrays_14*" "green" >}} {{< bg "13" "aggs_for_arrays_13*" "green" >}} | `aggs_for_arrays_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.3` | {{< bg "18" "aggs_for_arrays_18" "green" >}} {{< bg "17" "aggs_for_arrays_17" "green" >}} {{< bg "16" "aggs_for_arrays_16" "green" >}} {{< bg "15" "aggs_for_arrays_15" "green" >}} {{< bg "14" "aggs_for_arrays_14" "green" >}} {{< bg "13" "aggs_for_arrays_13" "green" >}} | `aggs_for_arrays_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.3` | {{< bg "18" "postgresql-18-aggs-for-arrays" "green" >}} {{< bg "17" "postgresql-17-aggs-for-arrays" "green" >}} {{< bg "16" "postgresql-16-aggs-for-arrays" "green" >}} {{< bg "15" "postgresql-15-aggs-for-arrays" "green" >}} {{< bg "14" "postgresql-14-aggs-for-arrays" "green" >}} {{< bg "13" "postgresql-13-aggs-for-arrays" "green" >}} | `postgresql-$v-aggs-for-arrays` | - |
 
 

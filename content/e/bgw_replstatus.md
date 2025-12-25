@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `bgw_replstatus` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "bgw_replstatus_18*" "green" >}} {{< bg "17" "bgw_replstatus_17*" "green" >}} {{< bg "16" "bgw_replstatus_16*" "green" >}} {{< bg "15" "bgw_replstatus_15*" "green" >}} {{< bg "14" "bgw_replstatus_14*" "green" >}} {{< bg "13" "bgw_replstatus_13*" "green" >}} | `bgw_replstatus_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "bgw_replstatus_18" "green" >}} {{< bg "17" "bgw_replstatus_17" "green" >}} {{< bg "16" "bgw_replstatus_16" "green" >}} {{< bg "15" "bgw_replstatus_15" "green" >}} {{< bg "14" "bgw_replstatus_14" "green" >}} {{< bg "13" "bgw_replstatus_13" "green" >}} | `bgw_replstatus_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.8` | {{< bg "18" "postgresql-18-bgw-replstatus" "green" >}} {{< bg "17" "postgresql-17-bgw-replstatus" "green" >}} {{< bg "16" "postgresql-16-bgw-replstatus" "green" >}} {{< bg "15" "postgresql-15-bgw-replstatus" "green" >}} {{< bg "14" "postgresql-14-bgw-replstatus" "green" >}} {{< bg "13" "postgresql-13-bgw-replstatus" "green" >}} | `postgresql-$v-bgw-replstatus` | - |
 
 

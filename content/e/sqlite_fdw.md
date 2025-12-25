@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `sqlite_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "sqlite_fdw_18*" "red" >}} {{< bg "17" "sqlite_fdw_17*" "green" >}} {{< bg "16" "sqlite_fdw_16*" "green" >}} {{< bg "15" "sqlite_fdw_15*" "green" >}} {{< bg "14" "sqlite_fdw_14*" "green" >}} {{< bg "13" "sqlite_fdw_13*" "green" >}} | `sqlite_fdw_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "sqlite_fdw_18" "red" >}} {{< bg "17" "sqlite_fdw_17" "green" >}} {{< bg "16" "sqlite_fdw_16" "green" >}} {{< bg "15" "sqlite_fdw_15" "green" >}} {{< bg "14" "sqlite_fdw_14" "green" >}} {{< bg "13" "sqlite_fdw_13" "green" >}} | `sqlite_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.5.0` | {{< bg "18" "postgresql-18-sqlite-fdw" "red" >}} {{< bg "17" "postgresql-17-sqlite-fdw" "green" >}} {{< bg "16" "postgresql-16-sqlite-fdw" "green" >}} {{< bg "15" "postgresql-15-sqlite-fdw" "green" >}} {{< bg "14" "postgresql-14-sqlite-fdw" "green" >}} {{< bg "13" "postgresql-13-sqlite-fdw" "green" >}} | `postgresql-$v-sqlite-fdw` | - |
 
 

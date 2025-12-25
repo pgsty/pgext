@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `orioledb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "orioledb_18*" "red" >}} {{< bg "17" "orioledb_17*" "green" >}} {{< bg "16" "orioledb_16*" "red" >}} {{< bg "15" "orioledb_15*" "red" >}} {{< bg "14" "orioledb_14*" "red" >}} {{< bg "13" "orioledb_13*" "red" >}} | `orioledb_$v*` | `oriolepg_$v` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "orioledb_18" "red" >}} {{< bg "17" "orioledb_17" "green" >}} {{< bg "16" "orioledb_16" "red" >}} {{< bg "15" "orioledb_15" "red" >}} {{< bg "14" "orioledb_14" "red" >}} {{< bg "13" "orioledb_13" "red" >}} | `orioledb_$v` | `oriolepg_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5` | {{< bg "18" "oriolepg-18-orioledb" "red" >}} {{< bg "17" "oriolepg-17-orioledb" "green" >}} {{< bg "16" "oriolepg-16-orioledb" "red" >}} {{< bg "15" "oriolepg-15-orioledb" "red" >}} {{< bg "14" "oriolepg-14-orioledb" "red" >}} {{< bg "13" "oriolepg-13-orioledb" "red" >}} | `oriolepg-$v-orioledb` | `oriolepg-$v` |
 
 

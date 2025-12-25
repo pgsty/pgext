@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.19` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hll` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.19` | {{< bg "18" "hll_18*" "green" >}} {{< bg "17" "hll_17*" "green" >}} {{< bg "16" "hll_16*" "green" >}} {{< bg "15" "hll_15*" "green" >}} {{< bg "14" "hll_14*" "green" >}} {{< bg "13" "hll_13*" "green" >}} | `hll_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.19` | {{< bg "18" "hll_18" "green" >}} {{< bg "17" "hll_17" "green" >}} {{< bg "16" "hll_16" "green" >}} {{< bg "15" "hll_15" "green" >}} {{< bg "14" "hll_14" "green" >}} {{< bg "13" "hll_13" "green" >}} | `hll_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.19` | {{< bg "18" "postgresql-18-hll" "green" >}} {{< bg "17" "postgresql-17-hll" "green" >}} {{< bg "16" "postgresql-16-hll" "green" >}} {{< bg "15" "postgresql-15-hll" "green" >}} {{< bg "14" "postgresql-14-hll" "green" >}} {{< bg "13" "postgresql-13-hll" "green" >}} | `postgresql-$v-hll` | - |
 
 

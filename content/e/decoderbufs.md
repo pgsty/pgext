@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `decoderbufs` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.3.0` | {{< bg "18" "postgres-decoderbufs_18*" "green" >}} {{< bg "17" "postgres-decoderbufs_17*" "green" >}} {{< bg "16" "postgres-decoderbufs_16*" "green" >}} {{< bg "15" "postgres-decoderbufs_15*" "green" >}} {{< bg "14" "postgres-decoderbufs_14*" "green" >}} {{< bg "13" "postgres-decoderbufs_13*" "green" >}} | `postgres-decoderbufs_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.3.0` | {{< bg "18" "postgres-decoderbufs_18" "green" >}} {{< bg "17" "postgres-decoderbufs_17" "green" >}} {{< bg "16" "postgres-decoderbufs_16" "green" >}} {{< bg "15" "postgres-decoderbufs_15" "green" >}} {{< bg "14" "postgres-decoderbufs_14" "green" >}} {{< bg "13" "postgres-decoderbufs_13" "green" >}} | `postgres-decoderbufs_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.3.1` | {{< bg "18" "postgresql-18-decoderbufs" "green" >}} {{< bg "17" "postgresql-17-decoderbufs" "green" >}} {{< bg "16" "postgresql-16-decoderbufs" "green" >}} {{< bg "15" "postgresql-15-decoderbufs" "green" >}} {{< bg "14" "postgresql-14-decoderbufs" "green" >}} {{< bg "13" "postgresql-13-decoderbufs" "green" >}} | `postgresql-$v-decoderbufs` | - |
 
 

@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `oracle_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "oracle_fdw_18*" "green" >}} {{< bg "17" "oracle_fdw_17*" "green" >}} {{< bg "16" "oracle_fdw_16*" "green" >}} {{< bg "15" "oracle_fdw_15*" "green" >}} {{< bg "14" "oracle_fdw_14*" "green" >}} {{< bg "13" "oracle_fdw_13*" "green" >}} | `oracle_fdw_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "oracle_fdw_18" "green" >}} {{< bg "17" "oracle_fdw_17" "green" >}} {{< bg "16" "oracle_fdw_16" "green" >}} {{< bg "15" "oracle_fdw_15" "green" >}} {{< bg "14" "oracle_fdw_14" "green" >}} {{< bg "13" "oracle_fdw_13" "green" >}} | `oracle_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.0` | {{< bg "18" "postgresql-18-oracle-fdw" "green" >}} {{< bg "17" "postgresql-17-oracle-fdw" "green" >}} {{< bg "16" "postgresql-16-oracle-fdw" "green" >}} {{< bg "15" "postgresql-15-oracle-fdw" "green" >}} {{< bg "14" "postgresql-14-oracle-fdw" "green" >}} {{< bg "13" "postgresql-13-oracle-fdw" "green" >}} | `postgresql-$v-oracle-fdw` | - |
 
 

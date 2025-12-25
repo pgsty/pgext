@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_ecdsa` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_ecdsa_18*" "green" >}} {{< bg "17" "pg_ecdsa_17*" "green" >}} {{< bg "16" "pg_ecdsa_16*" "green" >}} {{< bg "15" "pg_ecdsa_15*" "green" >}} {{< bg "14" "pg_ecdsa_14*" "green" >}} {{< bg "13" "pg_ecdsa_13*" "green" >}} | `pg_ecdsa_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_ecdsa_18" "green" >}} {{< bg "17" "pg_ecdsa_17" "green" >}} {{< bg "16" "pg_ecdsa_16" "green" >}} {{< bg "15" "pg_ecdsa_15" "green" >}} {{< bg "14" "pg_ecdsa_14" "green" >}} {{< bg "13" "pg_ecdsa_13" "green" >}} | `pg_ecdsa_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-ecdsa" "green" >}} {{< bg "17" "postgresql-17-pg-ecdsa" "green" >}} {{< bg "16" "postgresql-16-pg-ecdsa" "green" >}} {{< bg "15" "postgresql-15-pg-ecdsa" "green" >}} {{< bg "14" "postgresql-14-pg-ecdsa" "green" >}} {{< bg "13" "postgresql-13-pg-ecdsa" "green" >}} | `postgresql-$v-pg-ecdsa` | - |
 
 

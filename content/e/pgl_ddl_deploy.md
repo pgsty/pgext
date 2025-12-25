@@ -33,7 +33,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgl_ddl_deploy` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "pgl_ddl_deploy_18*" "red" >}} {{< bg "17" "pgl_ddl_deploy_17*" "green" >}} {{< bg "16" "pgl_ddl_deploy_16*" "green" >}} {{< bg "15" "pgl_ddl_deploy_15*" "green" >}} {{< bg "14" "pgl_ddl_deploy_14*" "green" >}} {{< bg "13" "pgl_ddl_deploy_13*" "green" >}} | `pgl_ddl_deploy_$v*` | `pglogical_$v` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "pgl_ddl_deploy_18" "red" >}} {{< bg "17" "pgl_ddl_deploy_17" "green" >}} {{< bg "16" "pgl_ddl_deploy_16" "green" >}} {{< bg "15" "pgl_ddl_deploy_15" "green" >}} {{< bg "14" "pgl_ddl_deploy_14" "green" >}} {{< bg "13" "pgl_ddl_deploy_13" "green" >}} | `pgl_ddl_deploy_$v` | `pglogical_$v` |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2.1` | {{< bg "18" "postgresql-18-pgl-ddl-deploy" "red" >}} {{< bg "17" "postgresql-17-pgl-ddl-deploy" "green" >}} {{< bg "16" "postgresql-16-pgl-ddl-deploy" "green" >}} {{< bg "15" "postgresql-15-pgl-ddl-deploy" "green" >}} {{< bg "14" "postgresql-14-pgl-ddl-deploy" "green" >}} {{< bg "13" "postgresql-13-pgl-ddl-deploy" "green" >}} | `postgresql-$v-pgl-ddl-deploy` | `postgresql-$v-pglogical` |
 
 

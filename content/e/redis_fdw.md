@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `redis_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "redis_fdw_18*" "green" >}} {{< bg "17" "redis_fdw_17*" "green" >}} {{< bg "16" "redis_fdw_16*" "green" >}} {{< bg "15" "redis_fdw_15*" "green" >}} {{< bg "14" "redis_fdw_14*" "green" >}} {{< bg "13" "redis_fdw_13*" "green" >}} | `redis_fdw_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "redis_fdw_18" "green" >}} {{< bg "17" "redis_fdw_17" "green" >}} {{< bg "16" "redis_fdw_16" "green" >}} {{< bg "15" "redis_fdw_15" "green" >}} {{< bg "14" "redis_fdw_14" "green" >}} {{< bg "13" "redis_fdw_13" "green" >}} | `redis_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-redis-fdw" "green" >}} {{< bg "17" "postgresql-17-redis-fdw" "green" >}} {{< bg "16" "postgresql-16-redis-fdw" "green" >}} {{< bg "15" "postgresql-15-redis-fdw" "green" >}} {{< bg "14" "postgresql-14-redis-fdw" "green" >}} {{< bg "13" "postgresql-13-redis-fdw" "green" >}} | `postgresql-$v-redis-fdw` | - |
 
 

@@ -6,12 +6,7 @@ weight: 700
 
 ## TODOLIST
 
-- pg_timeseries 0.1.8
-- pg_duckdb 1.1.1
-- pg_summarize rebuild for pg18 on deb
-- semver 0.41.0
-- pg_search 0.20.5
-- supautils rebuild for pg18 on deb
+
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
@@ -21,6 +16,12 @@ weight: 700
 
 ## Latest Update
 
+- pg_timeseries 0.1.8
+- pg_duckdb 1.1.1
+- pg_summarize rebuild for pg18 on deb
+- semver 0.41.0 (rpm only)
+- pg_search 0.20.5
+- supautils rebuild for pg18 on deb
 - [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.1.0 new
 - [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0 new
 - [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 new

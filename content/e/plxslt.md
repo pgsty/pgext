@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20140221` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plxslt` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20140221` | {{< bg "18" "plxslt_18*" "green" >}} {{< bg "17" "plxslt_17*" "green" >}} {{< bg "16" "plxslt_16*" "green" >}} {{< bg "15" "plxslt_15*" "green" >}} {{< bg "14" "plxslt_14*" "green" >}} {{< bg "13" "plxslt_13*" "green" >}} | `plxslt_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.20140221` | {{< bg "18" "plxslt_18" "green" >}} {{< bg "17" "plxslt_17" "green" >}} {{< bg "16" "plxslt_16" "green" >}} {{< bg "15" "plxslt_15" "green" >}} {{< bg "14" "plxslt_14" "green" >}} {{< bg "13" "plxslt_13" "green" >}} | `plxslt_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20140221` | {{< bg "18" "postgresql-18-plxslt" "green" >}} {{< bg "17" "postgresql-17-plxslt" "green" >}} {{< bg "16" "postgresql-16-plxslt" "green" >}} {{< bg "15" "postgresql-15-plxslt" "green" >}} {{< bg "14" "postgresql-14-plxslt" "green" >}} {{< bg "13" "postgresql-13-plxslt" "green" >}} | `postgresql-$v-plxslt` | - |
 
 

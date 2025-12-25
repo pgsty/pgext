@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `mysql_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "mysql_fdw_18*" "green" >}} {{< bg "17" "mysql_fdw_17*" "green" >}} {{< bg "16" "mysql_fdw_16*" "green" >}} {{< bg "15" "mysql_fdw_15*" "green" >}} {{< bg "14" "mysql_fdw_14*" "green" >}} {{< bg "13" "mysql_fdw_13*" "green" >}} | `mysql_fdw_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "mysql_fdw_18" "green" >}} {{< bg "17" "mysql_fdw_17" "green" >}} {{< bg "16" "mysql_fdw_16" "green" >}} {{< bg "15" "mysql_fdw_15" "green" >}} {{< bg "14" "mysql_fdw_14" "green" >}} {{< bg "13" "mysql_fdw_13" "green" >}} | `mysql_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.9.3` | {{< bg "18" "postgresql-18-mysql-fdw" "green" >}} {{< bg "17" "postgresql-17-mysql-fdw" "green" >}} {{< bg "16" "postgresql-16-mysql-fdw" "green" >}} {{< bg "15" "postgresql-15-mysql-fdw" "green" >}} {{< bg "14" "postgresql-14-mysql-fdw" "green" >}} {{< bg "13" "postgresql-13-mysql-fdw" "green" >}} | `postgresql-$v-mysql-fdw` | - |
 
 

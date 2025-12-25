@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `topn` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "topn_18*" "green" >}} {{< bg "17" "topn_17*" "green" >}} {{< bg "16" "topn_16*" "green" >}} {{< bg "15" "topn_15*" "green" >}} {{< bg "14" "topn_14*" "green" >}} {{< bg "13" "topn_13*" "green" >}} | `topn_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7.0` | {{< bg "18" "topn_18" "green" >}} {{< bg "17" "topn_17" "green" >}} {{< bg "16" "topn_16" "green" >}} {{< bg "15" "topn_15" "green" >}} {{< bg "14" "topn_14" "green" >}} {{< bg "13" "topn_13" "green" >}} | `topn_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7.0` | {{< bg "18" "postgresql-18-topn" "green" >}} {{< bg "17" "postgresql-17-topn" "green" >}} {{< bg "16" "postgresql-16-topn" "green" >}} {{< bg "15" "postgresql-15-topn" "green" >}} {{< bg "14" "postgresql-14-topn" "green" >}} {{< bg "13" "postgresql-13-topn" "green" >}} | `postgresql-$v-topn` | - |
 
 

@@ -35,7 +35,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_mooncake` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_mooncake_18*" "green" >}} {{< bg "17" "pg_mooncake_17*" "green" >}} {{< bg "16" "pg_mooncake_16*" "green" >}} {{< bg "15" "pg_mooncake_15*" "green" >}} {{< bg "14" "pg_mooncake_14*" "green" >}} {{< bg "13" "pg_mooncake_13*" "red" >}} | `pg_mooncake_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_mooncake_18" "green" >}} {{< bg "17" "pg_mooncake_17" "green" >}} {{< bg "16" "pg_mooncake_16" "green" >}} {{< bg "15" "pg_mooncake_15" "green" >}} {{< bg "14" "pg_mooncake_14" "green" >}} {{< bg "13" "pg_mooncake_13" "red" >}} | `pg_mooncake_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pg-mooncake" "green" >}} {{< bg "17" "postgresql-17-pg-mooncake" "green" >}} {{< bg "16" "postgresql-16-pg-mooncake" "green" >}} {{< bg "15" "postgresql-15-pg-mooncake" "green" >}} {{< bg "14" "postgresql-14-pg-mooncake" "green" >}} {{< bg "13" "postgresql-13-pg-mooncake" "red" >}} | `postgresql-$v-pg-mooncake` | - |
 
 

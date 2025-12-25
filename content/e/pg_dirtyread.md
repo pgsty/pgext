@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_dirtyread` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7` | {{< bg "18" "pg_dirtyread_18*" "green" >}} {{< bg "17" "pg_dirtyread_17*" "green" >}} {{< bg "16" "pg_dirtyread_16*" "green" >}} {{< bg "15" "pg_dirtyread_15*" "green" >}} {{< bg "14" "pg_dirtyread_14*" "green" >}} {{< bg "13" "pg_dirtyread_13*" "green" >}} | `pg_dirtyread_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.7` | {{< bg "18" "pg_dirtyread_18" "green" >}} {{< bg "17" "pg_dirtyread_17" "green" >}} {{< bg "16" "pg_dirtyread_16" "green" >}} {{< bg "15" "pg_dirtyread_15" "green" >}} {{< bg "14" "pg_dirtyread_14" "green" >}} {{< bg "13" "pg_dirtyread_13" "green" >}} | `pg_dirtyread_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.7` | {{< bg "18" "postgresql-18-dirtyread" "green" >}} {{< bg "17" "postgresql-17-dirtyread" "green" >}} {{< bg "16" "postgresql-16-dirtyread" "green" >}} {{< bg "15" "postgresql-15-dirtyread" "green" >}} {{< bg "14" "postgresql-14-dirtyread" "green" >}} {{< bg "13" "postgresql-13-dirtyread" "green" >}} | `postgresql-$v-dirtyread` | - |
 
 

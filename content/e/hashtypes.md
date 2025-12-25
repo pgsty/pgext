@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hashtypes` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "hashtypes_18*" "green" >}} {{< bg "17" "hashtypes_17*" "green" >}} {{< bg "16" "hashtypes_16*" "green" >}} {{< bg "15" "hashtypes_15*" "green" >}} {{< bg "14" "hashtypes_14*" "green" >}} {{< bg "13" "hashtypes_13*" "green" >}} | `hashtypes_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "hashtypes_18" "green" >}} {{< bg "17" "hashtypes_17" "green" >}} {{< bg "16" "hashtypes_16" "green" >}} {{< bg "15" "hashtypes_15" "green" >}} {{< bg "14" "hashtypes_14" "green" >}} {{< bg "13" "hashtypes_13" "green" >}} | `hashtypes_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.5` | {{< bg "18" "postgresql-18-hashtypes" "green" >}} {{< bg "17" "postgresql-17-hashtypes" "green" >}} {{< bg "16" "postgresql-16-hashtypes" "green" >}} {{< bg "15" "postgresql-15-hashtypes" "green" >}} {{< bg "14" "postgresql-14-hashtypes" "green" >}} {{< bg "13" "postgresql-13-hashtypes" "green" >}} | `postgresql-$v-hashtypes` | - |
 
 

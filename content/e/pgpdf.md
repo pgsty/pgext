@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgpdf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgpdf_18*" "green" >}} {{< bg "17" "pgpdf_17*" "green" >}} {{< bg "16" "pgpdf_16*" "green" >}} {{< bg "15" "pgpdf_15*" "green" >}} {{< bg "14" "pgpdf_14*" "green" >}} {{< bg "13" "pgpdf_13*" "green" >}} | `pgpdf_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "pgpdf_18" "green" >}} {{< bg "17" "pgpdf_17" "green" >}} {{< bg "16" "pgpdf_16" "green" >}} {{< bg "15" "pgpdf_15" "green" >}} {{< bg "14" "pgpdf_14" "green" >}} {{< bg "13" "pgpdf_13" "green" >}} | `pgpdf_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pgpdf" "green" >}} {{< bg "17" "postgresql-17-pgpdf" "green" >}} {{< bg "16" "postgresql-16-pgpdf" "green" >}} {{< bg "15" "postgresql-15-pgpdf" "green" >}} {{< bg "14" "postgresql-14-pgpdf" "green" >}} {{< bg "13" "postgresql-13-pgpdf" "green" >}} | `postgresql-$v-pgpdf` | - |
 
 

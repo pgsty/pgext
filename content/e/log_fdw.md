@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `log_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "log_fdw_18*" "green" >}} {{< bg "17" "log_fdw_17*" "green" >}} {{< bg "16" "log_fdw_16*" "green" >}} {{< bg "15" "log_fdw_15*" "green" >}} {{< bg "14" "log_fdw_14*" "green" >}} {{< bg "13" "log_fdw_13*" "red" >}} | `log_fdw_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "log_fdw_18" "green" >}} {{< bg "17" "log_fdw_17" "green" >}} {{< bg "16" "log_fdw_16" "green" >}} {{< bg "15" "log_fdw_15" "green" >}} {{< bg "14" "log_fdw_14" "green" >}} {{< bg "13" "log_fdw_13" "red" >}} | `log_fdw_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "postgresql-18-log-fdw" "green" >}} {{< bg "17" "postgresql-17-log-fdw" "green" >}} {{< bg "16" "postgresql-16-log-fdw" "green" >}} {{< bg "15" "postgresql-15-log-fdw" "green" >}} {{< bg "14" "postgresql-14-log-fdw" "green" >}} {{< bg "13" "postgresql-13-log-fdw" "red" >}} | `postgresql-$v-log-fdw` | - |
 
 

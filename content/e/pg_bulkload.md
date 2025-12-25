@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.22` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_bulkload` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.22` | {{< bg "18" "pg_bulkload_18*" "red" >}} {{< bg "17" "pg_bulkload_17*" "green" >}} {{< bg "16" "pg_bulkload_16*" "green" >}} {{< bg "15" "pg_bulkload_15*" "green" >}} {{< bg "14" "pg_bulkload_14*" "green" >}} {{< bg "13" "pg_bulkload_13*" "green" >}} | `pg_bulkload_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.1.22` | {{< bg "18" "pg_bulkload_18" "red" >}} {{< bg "17" "pg_bulkload_17" "green" >}} {{< bg "16" "pg_bulkload_16" "green" >}} {{< bg "15" "pg_bulkload_15" "green" >}} {{< bg "14" "pg_bulkload_14" "green" >}} {{< bg "13" "pg_bulkload_13" "green" >}} | `pg_bulkload_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.22` | {{< bg "18" "postgresql-18-pg-bulkload" "red" >}} {{< bg "17" "postgresql-17-pg-bulkload" "green" >}} {{< bg "16" "postgresql-16-pg-bulkload" "green" >}} {{< bg "15" "postgresql-15-pg-bulkload" "green" >}} {{< bg "14" "postgresql-14-pg-bulkload" "green" >}} {{< bg "13" "postgresql-13-pg-bulkload" "green" >}} | `postgresql-$v-pg-bulkload` | - |
 
 

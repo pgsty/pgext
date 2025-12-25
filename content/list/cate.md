@@ -20,7 +20,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 |:---:|:---|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | 2.24.0 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
-| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.7 | Convenience API for time series stack |
+| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.8 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | temporal tables |
 | 1050 | {{< alias "emaj" >}} | 4.7.1 | Enables fine-grained write logging and time travel on subsets of the database. |
@@ -86,7 +86,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
 | 2130 | {{< alias "zhparser" >}} | 2.3 | a parser for full-text search of Chinese |
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
-| 2150 | {{< alias "vchord_bm25" >}} | 0.2.2 | A postgresql extension for bm25 ranking algorithm |
+| 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.0.1 | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | Full-text search with BM25 ranking |

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pldebugger` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9` | {{< bg "18" "pldebugger_18*" "green" >}} {{< bg "17" "pldebugger_17*" "green" >}} {{< bg "16" "pldebugger_16*" "green" >}} {{< bg "15" "pldebugger_15*" "green" >}} {{< bg "14" "pldebugger_14*" "green" >}} {{< bg "13" "pldebugger_13*" "green" >}} | `pldebugger_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9` | {{< bg "18" "pldebugger_18" "green" >}} {{< bg "17" "pldebugger_17" "green" >}} {{< bg "16" "pldebugger_16" "green" >}} {{< bg "15" "pldebugger_15" "green" >}} {{< bg "14" "pldebugger_14" "green" >}} {{< bg "13" "pldebugger_13" "green" >}} | `pldebugger_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9` | {{< bg "18" "postgresql-18-pldebugger" "green" >}} {{< bg "17" "postgresql-17-pldebugger" "green" >}} {{< bg "16" "postgresql-16-pldebugger" "green" >}} {{< bg "15" "postgresql-15-pldebugger" "green" >}} {{< bg "14" "postgresql-14-pldebugger" "green" >}} {{< bg "13" "postgresql-13-pldebugger" "green" >}} | `postgresql-$v-pldebugger` | - |
 
 

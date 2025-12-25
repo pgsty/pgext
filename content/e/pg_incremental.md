@@ -33,7 +33,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pg_incremental` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_incremental_18*" "green" >}} {{< bg "17" "pg_incremental_17*" "green" >}} {{< bg "16" "pg_incremental_16*" "green" >}} {{< bg "15" "pg_incremental_15*" "red" >}} {{< bg "14" "pg_incremental_14*" "red" >}} {{< bg "13" "pg_incremental_13*" "red" >}} | `pg_incremental_$v*` | `pg_cron_$v` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_incremental_18" "green" >}} {{< bg "17" "pg_incremental_17" "green" >}} {{< bg "16" "pg_incremental_16" "green" >}} {{< bg "15" "pg_incremental_15" "red" >}} {{< bg "14" "pg_incremental_14" "red" >}} {{< bg "13" "pg_incremental_13" "red" >}} | `pg_incremental_$v` | `pg_cron_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-incremental" "green" >}} {{< bg "17" "postgresql-17-pg-incremental" "green" >}} {{< bg "16" "postgresql-16-pg-incremental" "green" >}} {{< bg "15" "postgresql-15-pg-incremental" "red" >}} {{< bg "14" "postgresql-14-pg-incremental" "red" >}} {{< bg "13" "postgresql-13-pg-incremental" "red" >}} | `postgresql-$v-pg-incremental` | `postgresql-$v-cron` |
 
 

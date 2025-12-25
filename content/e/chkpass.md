@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `chkpass` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "chkpass_18*" "green" >}} {{< bg "17" "chkpass_17*" "green" >}} {{< bg "16" "chkpass_16*" "green" >}} {{< bg "15" "chkpass_15*" "green" >}} {{< bg "14" "chkpass_14*" "green" >}} {{< bg "13" "chkpass_13*" "green" >}} | `chkpass_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "chkpass_18" "green" >}} {{< bg "17" "chkpass_17" "green" >}} {{< bg "16" "chkpass_16" "green" >}} {{< bg "15" "chkpass_15" "green" >}} {{< bg "14" "chkpass_14" "green" >}} {{< bg "13" "chkpass_13" "green" >}} | `chkpass_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-chkpass" "green" >}} {{< bg "17" "postgresql-17-chkpass" "green" >}} {{< bg "16" "postgresql-16-chkpass" "green" >}} {{< bg "15" "postgresql-15-chkpass" "green" >}} {{< bg "14" "postgresql-14-chkpass" "green" >}} {{< bg "13" "postgresql-13-chkpass" "green" >}} | `postgresql-$v-chkpass` | - |
 
 

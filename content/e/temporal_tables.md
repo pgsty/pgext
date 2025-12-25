@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `temporal_tables` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "temporal_tables_18*" "green" >}} {{< bg "17" "temporal_tables_17*" "green" >}} {{< bg "16" "temporal_tables_16*" "green" >}} {{< bg "15" "temporal_tables_15*" "green" >}} {{< bg "14" "temporal_tables_14*" "green" >}} {{< bg "13" "temporal_tables_13*" "green" >}} | `temporal_tables_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "temporal_tables_18" "green" >}} {{< bg "17" "temporal_tables_17" "green" >}} {{< bg "16" "temporal_tables_16" "green" >}} {{< bg "15" "temporal_tables_15" "green" >}} {{< bg "14" "temporal_tables_14" "green" >}} {{< bg "13" "temporal_tables_13" "green" >}} | `temporal_tables_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "postgresql-18-temporal-tables" "green" >}} {{< bg "17" "postgresql-17-temporal-tables" "green" >}} {{< bg "16" "postgresql-16-temporal-tables" "green" >}} {{< bg "15" "postgresql-15-temporal-tables" "green" >}} {{< bg "14" "postgresql-14-temporal-tables" "green" >}} {{< bg "13" "postgresql-13-temporal-tables" "green" >}} | `postgresql-$v-temporal-tables` | - |
 
 

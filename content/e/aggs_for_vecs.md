@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `aggs_for_vecs` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "aggs_for_vecs_18*" "green" >}} {{< bg "17" "aggs_for_vecs_17*" "green" >}} {{< bg "16" "aggs_for_vecs_16*" "green" >}} {{< bg "15" "aggs_for_vecs_15*" "green" >}} {{< bg "14" "aggs_for_vecs_14*" "green" >}} {{< bg "13" "aggs_for_vecs_13*" "green" >}} | `aggs_for_vecs_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "aggs_for_vecs_18" "green" >}} {{< bg "17" "aggs_for_vecs_17" "green" >}} {{< bg "16" "aggs_for_vecs_16" "green" >}} {{< bg "15" "aggs_for_vecs_15" "green" >}} {{< bg "14" "aggs_for_vecs_14" "green" >}} {{< bg "13" "aggs_for_vecs_13" "green" >}} | `aggs_for_vecs_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "postgresql-18-aggs-for-vecs" "green" >}} {{< bg "17" "postgresql-17-aggs-for-vecs" "green" >}} {{< bg "16" "postgresql-16-aggs-for-vecs" "green" >}} {{< bg "15" "postgresql-15-aggs-for-vecs" "green" >}} {{< bg "14" "postgresql-14-aggs-for-vecs" "green" >}} {{< bg "13" "postgresql-13-aggs-for-vecs" "green" >}} | `postgresql-$v-aggs-for-vecs` | - |
 
 

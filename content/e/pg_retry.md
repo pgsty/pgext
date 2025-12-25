@@ -27,7 +27,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pg_retry` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_retry_18*" "green" >}} {{< bg "17" "pg_retry_17*" "green" >}} {{< bg "16" "pg_retry_16*" "red" >}} {{< bg "15" "pg_retry_15*" "red" >}} {{< bg "14" "pg_retry_14*" "red" >}} {{< bg "13" "pg_retry_13*" "red" >}} | `pg_retry_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pg_retry_18" "green" >}} {{< bg "17" "pg_retry_17" "green" >}} {{< bg "16" "pg_retry_16" "red" >}} {{< bg "15" "pg_retry_15" "red" >}} {{< bg "14" "pg_retry_14" "red" >}} {{< bg "13" "pg_retry_13" "red" >}} | `pg_retry_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-retry" "green" >}} {{< bg "17" "postgresql-17-retry" "green" >}} {{< bg "16" "postgresql-16-retry" "red" >}} {{< bg "15" "postgresql-15-retry" "red" >}} {{< bg "14" "postgresql-14-retry" "red" >}} {{< bg "13" "postgresql-13-retry" "red" >}} | `postgresql-$v-retry` | - |
 
 

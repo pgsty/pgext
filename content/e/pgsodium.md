@@ -35,7 +35,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsodium` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "pgsodium_18*" "green" >}} {{< bg "17" "pgsodium_17*" "green" >}} {{< bg "16" "pgsodium_16*" "green" >}} {{< bg "15" "pgsodium_15*" "green" >}} {{< bg "14" "pgsodium_14*" "green" >}} {{< bg "13" "pgsodium_13*" "green" >}} | `pgsodium_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "pgsodium_18" "green" >}} {{< bg "17" "pgsodium_17" "green" >}} {{< bg "16" "pgsodium_16" "green" >}} {{< bg "15" "pgsodium_15" "green" >}} {{< bg "14" "pgsodium_14" "green" >}} {{< bg "13" "pgsodium_13" "green" >}} | `pgsodium_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.1.9` | {{< bg "18" "postgresql-18-pgsodium" "green" >}} {{< bg "17" "postgresql-17-pgsodium" "green" >}} {{< bg "16" "postgresql-16-pgsodium" "green" >}} {{< bg "15" "postgresql-15-pgsodium" "green" >}} {{< bg "14" "postgresql-14-pgsodium" "green" >}} {{< bg "13" "postgresql-13-pgsodium" "green" >}} | `postgresql-$v-pgsodium` | - |
 
 

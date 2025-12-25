@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `wal2json` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "wal2json_18*" "green" >}} {{< bg "17" "wal2json_17*" "green" >}} {{< bg "16" "wal2json_16*" "green" >}} {{< bg "15" "wal2json_15*" "green" >}} {{< bg "14" "wal2json_14*" "green" >}} {{< bg "13" "wal2json_13*" "green" >}} | `wal2json_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "wal2json_18" "green" >}} {{< bg "17" "wal2json_17" "green" >}} {{< bg "16" "wal2json_16" "green" >}} {{< bg "15" "wal2json_15" "green" >}} {{< bg "14" "wal2json_14" "green" >}} {{< bg "13" "wal2json_13" "green" >}} | `wal2json_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.6` | {{< bg "18" "postgresql-18-wal2json" "green" >}} {{< bg "17" "postgresql-17-wal2json" "green" >}} {{< bg "16" "postgresql-16-wal2json" "green" >}} {{< bg "15" "postgresql-15-wal2json" "green" >}} {{< bg "14" "postgresql-14-wal2json" "green" >}} {{< bg "13" "postgresql-13-wal2json" "green" >}} | `postgresql-$v-wal2json` | - |
 
 

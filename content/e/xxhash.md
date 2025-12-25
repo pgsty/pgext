@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_xxhash` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_xxhash_18*" "green" >}} {{< bg "17" "pg_xxhash_17*" "green" >}} {{< bg "16" "pg_xxhash_16*" "green" >}} {{< bg "15" "pg_xxhash_15*" "green" >}} {{< bg "14" "pg_xxhash_14*" "green" >}} {{< bg "13" "pg_xxhash_13*" "green" >}} | `pg_xxhash_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_xxhash_18" "green" >}} {{< bg "17" "pg_xxhash_17" "green" >}} {{< bg "16" "pg_xxhash_16" "green" >}} {{< bg "15" "pg_xxhash_15" "green" >}} {{< bg "14" "pg_xxhash_14" "green" >}} {{< bg "13" "pg_xxhash_13" "green" >}} | `pg_xxhash_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-xxhash" "green" >}} {{< bg "17" "postgresql-17-pg-xxhash" "green" >}} {{< bg "16" "postgresql-16-pg-xxhash" "green" >}} {{< bg "15" "postgresql-15-pg-xxhash" "green" >}} {{< bg "14" "postgresql-14-pg-xxhash" "green" >}} {{< bg "13" "postgresql-13-pg-xxhash" "green" >}} | `postgresql-$v-pg-xxhash` | - |
 
 

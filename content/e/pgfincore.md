@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfincore` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "pgfincore_18*" "red" >}} {{< bg "17" "pgfincore_17*" "green" >}} {{< bg "16" "pgfincore_16*" "green" >}} {{< bg "15" "pgfincore_15*" "green" >}} {{< bg "14" "pgfincore_14*" "green" >}} {{< bg "13" "pgfincore_13*" "green" >}} | `pgfincore_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "pgfincore_18" "red" >}} {{< bg "17" "pgfincore_17" "green" >}} {{< bg "16" "pgfincore_16" "green" >}} {{< bg "15" "pgfincore_15" "green" >}} {{< bg "14" "pgfincore_14" "green" >}} {{< bg "13" "pgfincore_13" "green" >}} | `pgfincore_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "postgresql-18-pgfincore" "red" >}} {{< bg "17" "postgresql-17-pgfincore" "green" >}} {{< bg "16" "postgresql-16-pgfincore" "green" >}} {{< bg "15" "postgresql-15-pgfincore" "green" >}} {{< bg "14" "postgresql-14-pgfincore" "green" >}} {{< bg "13" "postgresql-13-pgfincore" "green" >}} | `postgresql-$v-pgfincore` | - |
 
 

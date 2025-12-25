@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgmeminfo` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pgmeminfo_18*" "green" >}} {{< bg "17" "pgmeminfo_17*" "green" >}} {{< bg "16" "pgmeminfo_16*" "green" >}} {{< bg "15" "pgmeminfo_15*" "green" >}} {{< bg "14" "pgmeminfo_14*" "green" >}} {{< bg "13" "pgmeminfo_13*" "green" >}} | `pgmeminfo_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pgmeminfo_18" "green" >}} {{< bg "17" "pgmeminfo_17" "green" >}} {{< bg "16" "pgmeminfo_16" "green" >}} {{< bg "15" "pgmeminfo_15" "green" >}} {{< bg "14" "pgmeminfo_14" "green" >}} {{< bg "13" "pgmeminfo_13" "green" >}} | `pgmeminfo_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pgmeminfo" "green" >}} {{< bg "17" "postgresql-17-pgmeminfo" "green" >}} {{< bg "16" "postgresql-16-pgmeminfo" "green" >}} {{< bg "15" "postgresql-15-pgmeminfo" "green" >}} {{< bg "14" "postgresql-14-pgmeminfo" "green" >}} {{< bg "13" "postgresql-13-pgmeminfo" "green" >}} | `postgresql-$v-pgmeminfo` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.61.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `dbt2` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.61.7` | {{< bg "18" "dbt2-pg18-extensions*" "green" >}} {{< bg "17" "dbt2-pg17-extensions*" "green" >}} {{< bg "16" "dbt2-pg16-extensions*" "green" >}} {{< bg "15" "dbt2-pg15-extensions*" "green" >}} {{< bg "14" "dbt2-pg14-extensions*" "green" >}} {{< bg "13" "dbt2-pg13-extensions*" "green" >}} | `dbt2-pg$v-extensions*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.61.7` | {{< bg "18" "dbt2-pg18-extensions" "green" >}} {{< bg "17" "dbt2-pg17-extensions" "green" >}} {{< bg "16" "dbt2-pg16-extensions" "green" >}} {{< bg "15" "dbt2-pg15-extensions" "green" >}} {{< bg "14" "dbt2-pg14-extensions" "green" >}} {{< bg "13" "dbt2-pg13-extensions" "green" >}} | `dbt2-pg$v-extensions` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

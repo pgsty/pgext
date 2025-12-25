@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_envvar` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "pg_envvar_18*" "green" >}} {{< bg "17" "pg_envvar_17*" "green" >}} {{< bg "16" "pg_envvar_16*" "green" >}} {{< bg "15" "pg_envvar_15*" "green" >}} {{< bg "14" "pg_envvar_14*" "green" >}} {{< bg "13" "pg_envvar_13*" "green" >}} | `pg_envvar_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "pg_envvar_18" "green" >}} {{< bg "17" "pg_envvar_17" "green" >}} {{< bg "16" "pg_envvar_16" "green" >}} {{< bg "15" "pg_envvar_15" "green" >}} {{< bg "14" "pg_envvar_14" "green" >}} {{< bg "13" "pg_envvar_13" "green" >}} | `pg_envvar_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-envvar" "green" >}} {{< bg "17" "postgresql-17-pg-envvar" "green" >}} {{< bg "16" "postgresql-16-pg-envvar" "green" >}} {{< bg "15" "postgresql-15-pg-envvar" "green" >}} {{< bg "14" "postgresql-14-pg-envvar" "green" >}} {{< bg "13" "postgresql-13-pg-envvar" "green" >}} | `postgresql-$v-pg-envvar` | - |
 
 

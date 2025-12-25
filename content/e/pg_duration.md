@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `pg_duration` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "pg_duration_18*" "green" >}} {{< bg "17" "pg_duration_17*" "green" >}} {{< bg "16" "pg_duration_16*" "red" >}} {{< bg "15" "pg_duration_15*" "red" >}} {{< bg "14" "pg_duration_14*" "red" >}} {{< bg "13" "pg_duration_13*" "red" >}} | `pg_duration_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "pg_duration_18" "green" >}} {{< bg "17" "pg_duration_17" "green" >}} {{< bg "16" "pg_duration_16" "red" >}} {{< bg "15" "pg_duration_15" "red" >}} {{< bg "14" "pg_duration_14" "red" >}} {{< bg "13" "pg_duration_13" "red" >}} | `pg_duration_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-pg-duration" "green" >}} {{< bg "17" "postgresql-17-pg-duration" "green" >}} {{< bg "16" "postgresql-16-pg-duration" "red" >}} {{< bg "15" "postgresql-15-pg-duration" "red" >}} {{< bg "14" "postgresql-14-pg-duration" "red" >}} {{< bg "13" "postgresql-13-pg-duration" "red" >}} | `postgresql-$v-pg-duration` | - |
 
 

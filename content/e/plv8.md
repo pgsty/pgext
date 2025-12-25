@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plv8` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2.4` | {{< bg "18" "plv8_18*" "green" >}} {{< bg "17" "plv8_17*" "green" >}} {{< bg "16" "plv8_16*" "green" >}} {{< bg "15" "plv8_15*" "green" >}} {{< bg "14" "plv8_14*" "green" >}} {{< bg "13" "plv8_13*" "green" >}} | `plv8_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2.4` | {{< bg "18" "plv8_18" "green" >}} {{< bg "17" "plv8_17" "green" >}} {{< bg "16" "plv8_16" "green" >}} {{< bg "15" "plv8_15" "green" >}} {{< bg "14" "plv8_14" "green" >}} {{< bg "13" "plv8_13" "green" >}} | `plv8_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.2.4` | {{< bg "18" "postgresql-18-plv8" "green" >}} {{< bg "17" "postgresql-17-plv8" "green" >}} {{< bg "16" "postgresql-16-plv8" "green" >}} {{< bg "15" "postgresql-15-plv8" "green" >}} {{< bg "14" "postgresql-14-plv8" "green" >}} {{< bg "13" "postgresql-13-plv8" "green" >}} | `postgresql-$v-plv8` | - |
 
 

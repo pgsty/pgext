@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_squeeze` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.1` | {{< bg "18" "pg_squeeze_18*" "green" >}} {{< bg "17" "pg_squeeze_17*" "green" >}} {{< bg "16" "pg_squeeze_16*" "green" >}} {{< bg "15" "pg_squeeze_15*" "green" >}} {{< bg "14" "pg_squeeze_14*" "green" >}} {{< bg "13" "pg_squeeze_13*" "green" >}} | `pg_squeeze_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.1` | {{< bg "18" "pg_squeeze_18" "green" >}} {{< bg "17" "pg_squeeze_17" "green" >}} {{< bg "16" "pg_squeeze_16" "green" >}} {{< bg "15" "pg_squeeze_15" "green" >}} {{< bg "14" "pg_squeeze_14" "green" >}} {{< bg "13" "pg_squeeze_13" "green" >}} | `pg_squeeze_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.9.1` | {{< bg "18" "postgresql-18-squeeze" "green" >}} {{< bg "17" "postgresql-17-squeeze" "green" >}} {{< bg "16" "postgresql-16-squeeze" "green" >}} {{< bg "15" "postgresql-15-squeeze" "green" >}} {{< bg "14" "postgresql-14-squeeze" "green" >}} {{< bg "13" "postgresql-13-squeeze" "green" >}} | `postgresql-$v-squeeze` | - |
 
 

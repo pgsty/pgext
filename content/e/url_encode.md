@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `url_encode` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.5` | {{< bg "18" "url_encode_18*" "green" >}} {{< bg "17" "url_encode_17*" "green" >}} {{< bg "16" "url_encode_16*" "green" >}} {{< bg "15" "url_encode_15*" "green" >}} {{< bg "14" "url_encode_14*" "green" >}} {{< bg "13" "url_encode_13*" "green" >}} | `url_encode_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.5` | {{< bg "18" "url_encode_18" "green" >}} {{< bg "17" "url_encode_17" "green" >}} {{< bg "16" "url_encode_16" "green" >}} {{< bg "15" "url_encode_15" "green" >}} {{< bg "14" "url_encode_14" "green" >}} {{< bg "13" "url_encode_13" "green" >}} | `url_encode_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.5` | {{< bg "18" "postgresql-18-url-encode" "green" >}} {{< bg "17" "postgresql-17-url-encode" "green" >}} {{< bg "16" "postgresql-16-url-encode" "green" >}} {{< bg "15" "postgresql-15-url-encode" "green" >}} {{< bg "14" "postgresql-14-url-encode" "green" >}} {{< bg "13" "postgresql-13-url-encode" "green" >}} | `postgresql-$v-url-encode` | - |
 
 

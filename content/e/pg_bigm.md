@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_bigm` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "pg_bigm_18*" "green" >}} {{< bg "17" "pg_bigm_17*" "green" >}} {{< bg "16" "pg_bigm_16*" "green" >}} {{< bg "15" "pg_bigm_15*" "green" >}} {{< bg "14" "pg_bigm_14*" "green" >}} {{< bg "13" "pg_bigm_13*" "green" >}} | `pg_bigm_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "pg_bigm_18" "green" >}} {{< bg "17" "pg_bigm_17" "green" >}} {{< bg "16" "pg_bigm_16" "green" >}} {{< bg "15" "pg_bigm_15" "green" >}} {{< bg "14" "pg_bigm_14" "green" >}} {{< bg "13" "pg_bigm_13" "green" >}} | `pg_bigm_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2` | {{< bg "18" "postgresql-18-pg-bigm" "green" >}} {{< bg "17" "postgresql-17-pg-bigm" "green" >}} {{< bg "16" "postgresql-16-pg-bigm" "green" >}} {{< bg "15" "postgresql-15-pg-bigm" "green" >}} {{< bg "14" "postgresql-14-pg-bigm" "green" >}} {{< bg "13" "postgresql-13-pg-bigm" "green" >}} | `postgresql-$v-pg-bigm` | - |
 
 

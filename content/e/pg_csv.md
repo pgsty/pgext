@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "red" >}} | `pg_csv` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "pg_csv_18*" "green" >}} {{< bg "17" "pg_csv_17*" "green" >}} {{< bg "16" "pg_csv_16*" "green" >}} {{< bg "15" "pg_csv_15*" "green" >}} {{< bg "14" "pg_csv_14*" "green" >}} {{< bg "13" "pg_csv_13*" "red" >}} | `pg_csv_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.1` | {{< bg "18" "pg_csv_18" "green" >}} {{< bg "17" "pg_csv_17" "green" >}} {{< bg "16" "pg_csv_16" "green" >}} {{< bg "15" "pg_csv_15" "green" >}} {{< bg "14" "pg_csv_14" "green" >}} {{< bg "13" "pg_csv_13" "red" >}} | `pg_csv_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.1` | {{< bg "18" "postgresql-18-pg-csv" "green" >}} {{< bg "17" "postgresql-17-pg-csv" "green" >}} {{< bg "16" "postgresql-16-pg-csv" "green" >}} {{< bg "15" "postgresql-15-pg-csv" "green" >}} {{< bg "14" "postgresql-14-pg-csv" "green" >}} {{< bg "13" "postgresql-13-pg-csv" "red" >}} | `postgresql-$v-pg-csv` | - |
 
 

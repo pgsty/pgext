@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `cryptint` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "cryptint_18*" "green" >}} {{< bg "17" "cryptint_17*" "green" >}} {{< bg "16" "cryptint_16*" "green" >}} {{< bg "15" "cryptint_15*" "green" >}} {{< bg "14" "cryptint_14*" "green" >}} {{< bg "13" "cryptint_13*" "green" >}} | `cryptint_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "cryptint_18" "green" >}} {{< bg "17" "cryptint_17" "green" >}} {{< bg "16" "cryptint_16" "green" >}} {{< bg "15" "cryptint_15" "green" >}} {{< bg "14" "cryptint_14" "green" >}} {{< bg "13" "cryptint_13" "green" >}} | `cryptint_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-cryptint" "green" >}} {{< bg "17" "postgresql-17-cryptint" "green" >}} {{< bg "16" "postgresql-16-cryptint" "green" >}} {{< bg "15" "postgresql-15-cryptint" "green" >}} {{< bg "14" "postgresql-14-cryptint" "green" >}} {{< bg "13" "postgresql-13-cryptint" "green" >}} | `postgresql-$v-cryptint` | - |
 
 

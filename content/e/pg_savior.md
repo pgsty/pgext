@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_savior` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_savior_18*" "green" >}} {{< bg "17" "pg_savior_17*" "green" >}} {{< bg "16" "pg_savior_16*" "green" >}} {{< bg "15" "pg_savior_15*" "green" >}} {{< bg "14" "pg_savior_14*" "green" >}} {{< bg "13" "pg_savior_13*" "green" >}} | `pg_savior_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_savior_18" "green" >}} {{< bg "17" "pg_savior_17" "green" >}} {{< bg "16" "pg_savior_16" "green" >}} {{< bg "15" "pg_savior_15" "green" >}} {{< bg "14" "pg_savior_14" "green" >}} {{< bg "13" "pg_savior_13" "green" >}} | `pg_savior_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-pg-savior" "green" >}} {{< bg "17" "postgresql-17-pg-savior" "green" >}} {{< bg "16" "postgresql-16-pg-savior" "green" >}} {{< bg "15" "postgresql-15-pg-savior" "green" >}} {{< bg "14" "postgresql-14-pg-savior" "green" >}} {{< bg "13" "postgresql-13-pg-savior" "green" >}} | `postgresql-$v-pg-savior` | - |
 
 

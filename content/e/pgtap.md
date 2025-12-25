@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgtap` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "pgtap_18*" "green" >}} {{< bg "17" "pgtap_17*" "green" >}} {{< bg "16" "pgtap_16*" "green" >}} {{< bg "15" "pgtap_15*" "green" >}} {{< bg "14" "pgtap_14*" "green" >}} {{< bg "13" "pgtap_13*" "green" >}} | `pgtap_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "pgtap_18" "green" >}} {{< bg "17" "pgtap_17" "green" >}} {{< bg "16" "pgtap_16" "green" >}} {{< bg "15" "pgtap_15" "green" >}} {{< bg "14" "pgtap_14" "green" >}} {{< bg "13" "pgtap_13" "green" >}} | `pgtap_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "postgresql-18-pgtap" "green" >}} {{< bg "17" "postgresql-17-pgtap" "green" >}} {{< bg "16" "postgresql-16-pgtap" "green" >}} {{< bg "15" "postgresql-15-pgtap" "green" >}} {{< bg "14" "postgresql-14-pgtap" "green" >}} {{< bg "13" "postgresql-13-pgtap" "green" >}} | `postgresql-$v-pgtap` | - |
 
 

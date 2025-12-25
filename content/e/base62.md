@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_base62` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_base62_18*" "green" >}} {{< bg "17" "pg_base62_17*" "green" >}} {{< bg "16" "pg_base62_16*" "green" >}} {{< bg "15" "pg_base62_15*" "green" >}} {{< bg "14" "pg_base62_14*" "green" >}} {{< bg "13" "pg_base62_13*" "green" >}} | `pg_base62_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "pg_base62_18" "green" >}} {{< bg "17" "pg_base62_17" "green" >}} {{< bg "16" "pg_base62_16" "green" >}} {{< bg "15" "pg_base62_15" "green" >}} {{< bg "14" "pg_base62_14" "green" >}} {{< bg "13" "pg_base62_13" "green" >}} | `pg_base62_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.1` | {{< bg "18" "postgresql-18-base62" "green" >}} {{< bg "17" "postgresql-17-base62" "green" >}} {{< bg "16" "postgresql-16-base62" "green" >}} {{< bg "15" "postgresql-15-base62" "green" >}} {{< bg "14" "postgresql-14-base62" "green" >}} {{< bg "13" "postgresql-13-base62" "green" >}} | `postgresql-$v-base62` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgagent` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "pgagent_18*" "green" >}} {{< bg "17" "pgagent_17*" "green" >}} {{< bg "16" "pgagent_16*" "green" >}} {{< bg "15" "pgagent_15*" "green" >}} {{< bg "14" "pgagent_14*" "green" >}} {{< bg "13" "pgagent_13*" "green" >}} | `pgagent_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "pgagent_18" "green" >}} {{< bg "17" "pgagent_17" "green" >}} {{< bg "16" "pgagent_16" "green" >}} {{< bg "15" "pgagent_15" "green" >}} {{< bg "14" "pgagent_14" "green" >}} {{< bg "13" "pgagent_13" "green" >}} | `pgagent_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.3` | {{< bg "18" "pgagent" "green" >}} {{< bg "17" "pgagent" "green" >}} {{< bg "16" "pgagent" "green" >}} {{< bg "15" "pgagent" "green" >}} {{< bg "14" "pgagent" "green" >}} {{< bg "13" "pgagent" "green" >}} | `pgagent` | - |
 
 

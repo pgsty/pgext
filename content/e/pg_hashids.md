@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_hashids` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "pg_hashids_18*" "green" >}} {{< bg "17" "pg_hashids_17*" "green" >}} {{< bg "16" "pg_hashids_16*" "green" >}} {{< bg "15" "pg_hashids_15*" "green" >}} {{< bg "14" "pg_hashids_14*" "green" >}} {{< bg "13" "pg_hashids_13*" "green" >}} | `pg_hashids_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "pg_hashids_18" "green" >}} {{< bg "17" "pg_hashids_17" "green" >}} {{< bg "16" "pg_hashids_16" "green" >}} {{< bg "15" "pg_hashids_15" "green" >}} {{< bg "14" "pg_hashids_14" "green" >}} {{< bg "13" "pg_hashids_13" "green" >}} | `pg_hashids_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3` | {{< bg "18" "postgresql-18-pg-hashids" "green" >}} {{< bg "17" "postgresql-17-pg-hashids" "green" >}} {{< bg "16" "postgresql-16-pg-hashids" "green" >}} {{< bg "15" "postgresql-15-pg-hashids" "green" >}} {{< bg "14" "postgresql-14-pg-hashids" "green" >}} {{< bg "13" "postgresql-13-pg-hashids" "green" >}} | `postgresql-$v-pg-hashids` | - |
 
 

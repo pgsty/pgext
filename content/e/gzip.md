@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_gzip` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "pg_gzip_18*" "green" >}} {{< bg "17" "pg_gzip_17*" "green" >}} {{< bg "16" "pg_gzip_16*" "green" >}} {{< bg "15" "pg_gzip_15*" "green" >}} {{< bg "14" "pg_gzip_14*" "green" >}} {{< bg "13" "pg_gzip_13*" "green" >}} | `pg_gzip_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "pg_gzip_18" "green" >}} {{< bg "17" "pg_gzip_17" "green" >}} {{< bg "16" "pg_gzip_16" "green" >}} {{< bg "15" "pg_gzip_15" "green" >}} {{< bg "14" "pg_gzip_14" "green" >}} {{< bg "13" "pg_gzip_13" "green" >}} | `pg_gzip_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-gzip" "green" >}} {{< bg "17" "postgresql-17-gzip" "green" >}} {{< bg "16" "postgresql-16-gzip" "green" >}} {{< bg "15" "postgresql-15-gzip" "green" >}} {{< bg "14" "postgresql-14-gzip" "green" >}} {{< bg "13" "postgresql-13-gzip" "green" >}} | `postgresql-$v-gzip` | - |
 
 

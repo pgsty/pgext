@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `permuteseq` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "permuteseq_18*" "green" >}} {{< bg "17" "permuteseq_17*" "green" >}} {{< bg "16" "permuteseq_16*" "green" >}} {{< bg "15" "permuteseq_15*" "green" >}} {{< bg "14" "permuteseq_14*" "green" >}} {{< bg "13" "permuteseq_13*" "green" >}} | `permuteseq_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "permuteseq_18" "green" >}} {{< bg "17" "permuteseq_17" "green" >}} {{< bg "16" "permuteseq_16" "green" >}} {{< bg "15" "permuteseq_15" "green" >}} {{< bg "14" "permuteseq_14" "green" >}} {{< bg "13" "permuteseq_13" "green" >}} | `permuteseq_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "postgresql-18-permuteseq" "green" >}} {{< bg "17" "postgresql-17-permuteseq" "green" >}} {{< bg "16" "postgresql-16-permuteseq" "green" >}} {{< bg "15" "postgresql-15-permuteseq" "green" >}} {{< bg "14" "postgresql-14-permuteseq" "green" >}} {{< bg "13" "postgresql-13-permuteseq" "green" >}} | `postgresql-$v-permuteseq` | - |
 
 

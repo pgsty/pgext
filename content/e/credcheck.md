@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `credcheck` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2` | {{< bg "18" "credcheck_18*" "green" >}} {{< bg "17" "credcheck_17*" "green" >}} {{< bg "16" "credcheck_16*" "green" >}} {{< bg "15" "credcheck_15*" "green" >}} {{< bg "14" "credcheck_14*" "green" >}} {{< bg "13" "credcheck_13*" "green" >}} | `credcheck_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2` | {{< bg "18" "credcheck_18" "green" >}} {{< bg "17" "credcheck_17" "green" >}} {{< bg "16" "credcheck_16" "green" >}} {{< bg "15" "credcheck_15" "green" >}} {{< bg "14" "credcheck_14" "green" >}} {{< bg "13" "credcheck_13" "green" >}} | `credcheck_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2` | {{< bg "18" "postgresql-18-credcheck" "green" >}} {{< bg "17" "postgresql-17-credcheck" "green" >}} {{< bg "16" "postgresql-16-credcheck" "green" >}} {{< bg "15" "postgresql-15-credcheck" "green" >}} {{< bg "14" "postgresql-14-credcheck" "green" >}} {{< bg "13" "postgresql-13-credcheck" "green" >}} | `postgresql-$v-credcheck` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `hdfs_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18*" "green" >}} {{< bg "17" "hdfs_fdw_17*" "green" >}} {{< bg "16" "hdfs_fdw_16*" "green" >}} {{< bg "15" "hdfs_fdw_15*" "green" >}} {{< bg "14" "hdfs_fdw_14*" "green" >}} {{< bg "13" "hdfs_fdw_13*" "green" >}} | `hdfs_fdw_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18" "green" >}} {{< bg "17" "hdfs_fdw_17" "green" >}} {{< bg "16" "hdfs_fdw_16" "green" >}} {{< bg "15" "hdfs_fdw_15" "green" >}} {{< bg "14" "hdfs_fdw_14" "green" >}} {{< bg "13" "hdfs_fdw_13" "green" >}} | `hdfs_fdw_$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

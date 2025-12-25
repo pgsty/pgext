@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_geohash` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_geohash_18*" "green" >}} {{< bg "17" "pg_geohash_17*" "green" >}} {{< bg "16" "pg_geohash_16*" "green" >}} {{< bg "15" "pg_geohash_15*" "green" >}} {{< bg "14" "pg_geohash_14*" "green" >}} {{< bg "13" "pg_geohash_13*" "green" >}} | `pg_geohash_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_geohash_18" "green" >}} {{< bg "17" "pg_geohash_17" "green" >}} {{< bg "16" "pg_geohash_16" "green" >}} {{< bg "15" "pg_geohash_15" "green" >}} {{< bg "14" "pg_geohash_14" "green" >}} {{< bg "13" "pg_geohash_13" "green" >}} | `pg_geohash_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-geohash" "green" >}} {{< bg "17" "postgresql-17-pg-geohash" "green" >}} {{< bg "16" "postgresql-16-pg-geohash" "green" >}} {{< bg "15" "postgresql-15-pg-geohash" "green" >}} {{< bg "14" "postgresql-14-pg-geohash" "green" >}} {{< bg "13" "postgresql-13-pg-geohash" "green" >}} | `postgresql-$v-pg-geohash` | - |
 
 

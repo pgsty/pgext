@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.10.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `icu_ext` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10.0` | {{< bg "18" "icu_ext_18*" "green" >}} {{< bg "17" "icu_ext_17*" "green" >}} {{< bg "16" "icu_ext_16*" "green" >}} {{< bg "15" "icu_ext_15*" "green" >}} {{< bg "14" "icu_ext_14*" "green" >}} {{< bg "13" "icu_ext_13*" "green" >}} | `icu_ext_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10.0` | {{< bg "18" "icu_ext_18" "green" >}} {{< bg "17" "icu_ext_17" "green" >}} {{< bg "16" "icu_ext_16" "green" >}} {{< bg "15" "icu_ext_15" "green" >}} {{< bg "14" "icu_ext_14" "green" >}} {{< bg "13" "icu_ext_13" "green" >}} | `icu_ext_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.10.0` | {{< bg "18" "postgresql-18-icu-ext" "green" >}} {{< bg "17" "postgresql-17-icu-ext" "green" >}} {{< bg "16" "postgresql-16-icu-ext" "green" >}} {{< bg "15" "postgresql-15-icu-ext" "green" >}} {{< bg "14" "postgresql-14-icu-ext" "green" >}} {{< bg "13" "postgresql-13-icu-ext" "green" >}} | `postgresql-$v-icu-ext` | - |
 
 

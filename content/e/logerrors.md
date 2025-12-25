@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.1.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `logerrors` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.5` | {{< bg "18" "logerrors_18*" "green" >}} {{< bg "17" "logerrors_17*" "green" >}} {{< bg "16" "logerrors_16*" "green" >}} {{< bg "15" "logerrors_15*" "green" >}} {{< bg "14" "logerrors_14*" "green" >}} {{< bg "13" "logerrors_13*" "green" >}} | `logerrors_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.5` | {{< bg "18" "logerrors_18" "green" >}} {{< bg "17" "logerrors_17" "green" >}} {{< bg "16" "logerrors_16" "green" >}} {{< bg "15" "logerrors_15" "green" >}} {{< bg "14" "logerrors_14" "green" >}} {{< bg "13" "logerrors_13" "green" >}} | `logerrors_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.5` | {{< bg "18" "postgresql-18-logerrors" "green" >}} {{< bg "17" "postgresql-17-logerrors" "green" >}} {{< bg "16" "postgresql-16-logerrors" "green" >}} {{< bg "15" "postgresql-15-logerrors" "green" >}} {{< bg "14" "postgresql-14-logerrors" "green" >}} {{< bg "13" "postgresql-13-logerrors" "green" >}} | `postgresql-$v-logerrors` | - |
 
 

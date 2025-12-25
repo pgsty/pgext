@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_failover_slots` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_failover_slots_18*" "green" >}} {{< bg "17" "pg_failover_slots_17*" "green" >}} {{< bg "16" "pg_failover_slots_16*" "green" >}} {{< bg "15" "pg_failover_slots_15*" "green" >}} {{< bg "14" "pg_failover_slots_14*" "green" >}} {{< bg "13" "pg_failover_slots_13*" "green" >}} | `pg_failover_slots_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "pg_failover_slots_18" "green" >}} {{< bg "17" "pg_failover_slots_17" "green" >}} {{< bg "16" "pg_failover_slots_16" "green" >}} {{< bg "15" "pg_failover_slots_15" "green" >}} {{< bg "14" "pg_failover_slots_14" "green" >}} {{< bg "13" "pg_failover_slots_13" "green" >}} | `pg_failover_slots_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.0` | {{< bg "18" "postgresql-18-pg-failover-slots" "green" >}} {{< bg "17" "postgresql-17-pg-failover-slots" "green" >}} {{< bg "16" "postgresql-16-pg-failover-slots" "green" >}} {{< bg "15" "postgresql-15-pg-failover-slots" "green" >}} {{< bg "14" "postgresql-14-pg-failover-slots" "green" >}} {{< bg "13" "postgresql-13-pg-failover-slots" "green" >}} | `postgresql-$v-pg-failover-slots` | - |
 
 

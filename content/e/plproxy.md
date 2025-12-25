@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plproxy` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "plproxy_18*" "green" >}} {{< bg "17" "plproxy_17*" "green" >}} {{< bg "16" "plproxy_16*" "green" >}} {{< bg "15" "plproxy_15*" "green" >}} {{< bg "14" "plproxy_14*" "green" >}} {{< bg "13" "plproxy_13*" "green" >}} | `plproxy_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "plproxy_18" "green" >}} {{< bg "17" "plproxy_17" "green" >}} {{< bg "16" "plproxy_16" "green" >}} {{< bg "15" "plproxy_15" "green" >}} {{< bg "14" "plproxy_14" "green" >}} {{< bg "13" "plproxy_13" "green" >}} | `plproxy_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.11.0` | {{< bg "18" "postgresql-18-plproxy" "green" >}} {{< bg "17" "postgresql-17-plproxy" "green" >}} {{< bg "16" "postgresql-16-plproxy" "green" >}} {{< bg "15" "postgresql-15-plproxy" "green" >}} {{< bg "14" "postgresql-14-plproxy" "green" >}} {{< bg "13" "postgresql-13-plproxy" "green" >}} | `postgresql-$v-plproxy` | - |
 
 

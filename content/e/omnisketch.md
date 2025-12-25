@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `omnisketch` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "omnisketch_18*" "green" >}} {{< bg "17" "omnisketch_17*" "green" >}} {{< bg "16" "omnisketch_16*" "green" >}} {{< bg "15" "omnisketch_15*" "green" >}} {{< bg "14" "omnisketch_14*" "green" >}} {{< bg "13" "omnisketch_13*" "green" >}} | `omnisketch_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "omnisketch_18" "green" >}} {{< bg "17" "omnisketch_17" "green" >}} {{< bg "16" "omnisketch_16" "green" >}} {{< bg "15" "omnisketch_15" "green" >}} {{< bg "14" "omnisketch_14" "green" >}} {{< bg "13" "omnisketch_13" "green" >}} | `omnisketch_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.2` | {{< bg "18" "postgresql-18-omnisketch" "green" >}} {{< bg "17" "postgresql-17-omnisketch" "green" >}} {{< bg "16" "postgresql-16-omnisketch" "green" >}} {{< bg "15" "postgresql-15-omnisketch" "green" >}} {{< bg "14" "postgresql-14-omnisketch" "green" >}} {{< bg "13" "postgresql-13-omnisketch" "green" >}} | `postgresql-$v-omnisketch` | - |
 
 

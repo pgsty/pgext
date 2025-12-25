@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_auth_mon` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.0` | {{< bg "18" "pg_auth_mon_18*" "green" >}} {{< bg "17" "pg_auth_mon_17*" "green" >}} {{< bg "16" "pg_auth_mon_16*" "green" >}} {{< bg "15" "pg_auth_mon_15*" "green" >}} {{< bg "14" "pg_auth_mon_14*" "green" >}} {{< bg "13" "pg_auth_mon_13*" "green" >}} | `pg_auth_mon_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.0` | {{< bg "18" "pg_auth_mon_18" "green" >}} {{< bg "17" "pg_auth_mon_17" "green" >}} {{< bg "16" "pg_auth_mon_16" "green" >}} {{< bg "15" "pg_auth_mon_15" "green" >}} {{< bg "14" "pg_auth_mon_14" "green" >}} {{< bg "13" "pg_auth_mon_13" "green" >}} | `pg_auth_mon_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.0` | {{< bg "18" "postgresql-18-pg-auth-mon" "green" >}} {{< bg "17" "postgresql-17-pg-auth-mon" "green" >}} {{< bg "16" "postgresql-16-pg-auth-mon" "green" >}} {{< bg "15" "postgresql-15-pg-auth-mon" "green" >}} {{< bg "14" "postgresql-14-pg-auth-mon" "green" >}} {{< bg "13" "postgresql-13-pg-auth-mon" "green" >}} | `postgresql-$v-pg-auth-mon` | - |
 
 

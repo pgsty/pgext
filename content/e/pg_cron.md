@@ -35,7 +35,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_cron` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.7` | {{< bg "18" "pg_cron_18*" "green" >}} {{< bg "17" "pg_cron_17*" "green" >}} {{< bg "16" "pg_cron_16*" "green" >}} {{< bg "15" "pg_cron_15*" "green" >}} {{< bg "14" "pg_cron_14*" "green" >}} {{< bg "13" "pg_cron_13*" "green" >}} | `pg_cron_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.7` | {{< bg "18" "pg_cron_18" "green" >}} {{< bg "17" "pg_cron_17" "green" >}} {{< bg "16" "pg_cron_16" "green" >}} {{< bg "15" "pg_cron_15" "green" >}} {{< bg "14" "pg_cron_14" "green" >}} {{< bg "13" "pg_cron_13" "green" >}} | `pg_cron_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.7` | {{< bg "18" "postgresql-18-cron" "green" >}} {{< bg "17" "postgresql-17-cron" "green" >}} {{< bg "16" "postgresql-16-cron" "green" >}} {{< bg "15" "postgresql-15-cron" "green" >}} {{< bg "14" "postgresql-14-cron" "green" >}} {{< bg "13" "postgresql-13-cron" "green" >}} | `postgresql-$v-cron` | - |
 
 

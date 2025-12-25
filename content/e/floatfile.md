@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `floatfile` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "floatfile_18*" "green" >}} {{< bg "17" "floatfile_17*" "green" >}} {{< bg "16" "floatfile_16*" "green" >}} {{< bg "15" "floatfile_15*" "green" >}} {{< bg "14" "floatfile_14*" "green" >}} {{< bg "13" "floatfile_13*" "green" >}} | `floatfile_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "floatfile_18" "green" >}} {{< bg "17" "floatfile_17" "green" >}} {{< bg "16" "floatfile_16" "green" >}} {{< bg "15" "floatfile_15" "green" >}} {{< bg "14" "floatfile_14" "green" >}} {{< bg "13" "floatfile_13" "green" >}} | `floatfile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "postgresql-18-floatfile" "green" >}} {{< bg "17" "postgresql-17-floatfile" "green" >}} {{< bg "16" "postgresql-16-floatfile" "green" >}} {{< bg "15" "postgresql-15-floatfile" "green" >}} {{< bg "14" "postgresql-14-floatfile" "green" >}} {{< bg "13" "postgresql-13-floatfile" "green" >}} | `postgresql-$v-floatfile` | - |
 
 

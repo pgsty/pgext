@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgqr` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgqr_18*" "green" >}} {{< bg "17" "pgqr_17*" "green" >}} {{< bg "16" "pgqr_16*" "green" >}} {{< bg "15" "pgqr_15*" "green" >}} {{< bg "14" "pgqr_14*" "green" >}} {{< bg "13" "pgqr_13*" "green" >}} | `pgqr_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgqr_18" "green" >}} {{< bg "17" "pgqr_17" "green" >}} {{< bg "16" "pgqr_16" "green" >}} {{< bg "15" "pgqr_15" "green" >}} {{< bg "14" "pgqr_14" "green" >}} {{< bg "13" "pgqr_13" "green" >}} | `pgqr_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgqr" "green" >}} {{< bg "17" "postgresql-17-pgqr" "green" >}} {{< bg "16" "postgresql-16-pgqr" "green" >}} {{< bg "15" "postgresql-15-pgqr" "green" >}} {{< bg "14" "postgresql-14-pgqr" "green" >}} {{< bg "13" "postgresql-13-pgqr" "green" >}} | `postgresql-$v-pgqr` | - |
 
 

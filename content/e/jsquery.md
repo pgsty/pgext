@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `jsquery` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "jsquery_18*" "green" >}} {{< bg "17" "jsquery_17*" "green" >}} {{< bg "16" "jsquery_16*" "green" >}} {{< bg "15" "jsquery_15*" "green" >}} {{< bg "14" "jsquery_14*" "green" >}} {{< bg "13" "jsquery_13*" "green" >}} | `jsquery_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "jsquery_18" "green" >}} {{< bg "17" "jsquery_17" "green" >}} {{< bg "16" "jsquery_16" "green" >}} {{< bg "15" "jsquery_15" "green" >}} {{< bg "14" "jsquery_14" "green" >}} {{< bg "13" "jsquery_13" "green" >}} | `jsquery_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2` | {{< bg "18" "postgresql-18-jsquery" "green" >}} {{< bg "17" "postgresql-17-jsquery" "green" >}} {{< bg "16" "postgresql-16-jsquery" "green" >}} {{< bg "15" "postgresql-15-jsquery" "green" >}} {{< bg "14" "postgresql-14-jsquery" "green" >}} {{< bg "13" "postgresql-13-jsquery" "green" >}} | `postgresql-$v-jsquery` | - |
 
 

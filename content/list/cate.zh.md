@@ -20,7 +20,7 @@ PostgreSQL 扩展（440 ext / 373 pkg）归属 16 个分类。
 |:---:|:---|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | 2.24.0 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
-| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.7 | 时序数据API封装 |
+| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.8 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | 时态表功能支持 |
 | 1050 | {{< alias "emaj" >}} | 4.7.1 | 让数据库的子集具有细粒度日志和时间旅行功能 |
@@ -86,7 +86,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
 | 2130 | {{< alias "zhparser" >}} | 2.3 | 中文分词，全文搜索解析器 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | 在数据库内生成BM25稀疏向量 |
-| 2150 | {{< alias "vchord_bm25" >}} | 0.2.2 | BM25排序算法 |
+| 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.0.1 | 使用IAM的高性能文本模式匹配 |
 | 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | 带有BM25排序的全文搜索扩展 |

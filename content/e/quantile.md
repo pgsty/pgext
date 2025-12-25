@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `quantile` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "quantile_18*" "green" >}} {{< bg "17" "quantile_17*" "green" >}} {{< bg "16" "quantile_16*" "green" >}} {{< bg "15" "quantile_15*" "green" >}} {{< bg "14" "quantile_14*" "green" >}} {{< bg "13" "quantile_13*" "green" >}} | `quantile_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "quantile_18" "green" >}} {{< bg "17" "quantile_17" "green" >}} {{< bg "16" "quantile_16" "green" >}} {{< bg "15" "quantile_15" "green" >}} {{< bg "14" "quantile_14" "green" >}} {{< bg "13" "quantile_13" "green" >}} | `quantile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.8` | {{< bg "18" "postgresql-18-quantile" "green" >}} {{< bg "17" "postgresql-17-quantile" "green" >}} {{< bg "16" "postgresql-16-quantile" "green" >}} {{< bg "15" "postgresql-15-quantile" "green" >}} {{< bg "14" "postgresql-14-quantile" "green" >}} {{< bg "13" "postgresql-13-quantile" "green" >}} | `postgresql-$v-quantile` | - |
 
 

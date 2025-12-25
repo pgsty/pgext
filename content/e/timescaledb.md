@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `timescaledb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "timescaledb-tsl_18*" "green" >}} {{< bg "17" "timescaledb-tsl_17*" "green" >}} {{< bg "16" "timescaledb-tsl_16*" "green" >}} {{< bg "15" "timescaledb-tsl_15*" "green" >}} {{< bg "14" "timescaledb-tsl_14*" "green" >}} {{< bg "13" "timescaledb-tsl_13*" "red" >}} | `timescaledb-tsl_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "timescaledb-tsl_18" "green" >}} {{< bg "17" "timescaledb-tsl_17" "green" >}} {{< bg "16" "timescaledb-tsl_16" "green" >}} {{< bg "15" "timescaledb-tsl_15" "green" >}} {{< bg "14" "timescaledb-tsl_14" "green" >}} {{< bg "13" "timescaledb-tsl_13" "red" >}} | `timescaledb-tsl_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "postgresql-18-timescaledb-tsl" "green" >}} {{< bg "17" "postgresql-17-timescaledb-tsl" "green" >}} {{< bg "16" "postgresql-16-timescaledb-tsl" "green" >}} {{< bg "15" "postgresql-15-timescaledb-tsl" "green" >}} {{< bg "14" "postgresql-14-timescaledb-tsl" "green" >}} {{< bg "13" "postgresql-13-timescaledb-tsl" "red" >}} | `postgresql-$v-timescaledb-tsl` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `multicorn` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "multicorn2_18*" "green" >}} {{< bg "17" "multicorn2_17*" "green" >}} {{< bg "16" "multicorn2_16*" "green" >}} {{< bg "15" "multicorn2_15*" "green" >}} {{< bg "14" "multicorn2_14*" "green" >}} {{< bg "13" "multicorn2_13*" "green" >}} | `multicorn2_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.2` | {{< bg "18" "multicorn2_18" "green" >}} {{< bg "17" "multicorn2_17" "green" >}} {{< bg "16" "multicorn2_16" "green" >}} {{< bg "15" "multicorn2_15" "green" >}} {{< bg "14" "multicorn2_14" "green" >}} {{< bg "13" "multicorn2_13" "green" >}} | `multicorn2_$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |

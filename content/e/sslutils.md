@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `sslutils` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "sslutils_18*" "green" >}} {{< bg "17" "sslutils_17*" "green" >}} {{< bg "16" "sslutils_16*" "green" >}} {{< bg "15" "sslutils_15*" "green" >}} {{< bg "14" "sslutils_14*" "green" >}} {{< bg "13" "sslutils_13*" "green" >}} | `sslutils_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "sslutils_18" "green" >}} {{< bg "17" "sslutils_17" "green" >}} {{< bg "16" "sslutils_16" "green" >}} {{< bg "15" "sslutils_15" "green" >}} {{< bg "14" "sslutils_14" "green" >}} {{< bg "13" "sslutils_13" "green" >}} | `sslutils_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4` | {{< bg "18" "postgresql-18-sslutils" "green" >}} {{< bg "17" "postgresql-17-sslutils" "green" >}} {{< bg "16" "postgresql-16-sslutils" "green" >}} {{< bg "15" "postgresql-15-sslutils" "green" >}} {{< bg "14" "postgresql-14-sslutils" "green" >}} {{< bg "13" "postgresql-13-sslutils" "green" >}} | `postgresql-$v-sslutils` | - |
 
 

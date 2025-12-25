@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 408 | 429 | 428 | 430 | 415 | 386 |
-| **EL** | 434 | 143 | 268 | 71 | 6 | 397 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 394 | 416 | 414 | 416 | 404 | 371 |
+| **ALL** | 440 | 149 | 268 | 71 | 0 | 410 | 429 | 428 | 430 | 415 | 386 |
+| **EL** | 434 | 143 | 268 | 71 | 6 | 399 | 421 | 422 | 424 | 412 | 382 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 396 | 416 | 414 | 416 | 404 | 371 |
 
 ## 分类
 
@@ -405,8 +405,8 @@ comments: false
 | {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 数据匿名化处理工具 |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 加密数据类型 |
-| {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 提供审计功能 |
-| {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
+| {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 提供审计功能 |
+| {{< ext "pgauditlogtofile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
 | {{< ext "pg_auditor" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | 审计数据变更并提供闪回能力 |
 | {{< ext "logerrors" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 用于收集日志文件中消息统计信息的函数 |
 | {{< ext "pg_auth_mon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 监控每个用户的连接尝试 |

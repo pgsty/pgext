@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.9` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `preprepare` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9` | {{< bg "18" "preprepare_18*" "green" >}} {{< bg "17" "preprepare_17*" "green" >}} {{< bg "16" "preprepare_16*" "green" >}} {{< bg "15" "preprepare_15*" "green" >}} {{< bg "14" "preprepare_14*" "green" >}} {{< bg "13" "preprepare_13*" "green" >}} | `preprepare_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.9` | {{< bg "18" "preprepare_18" "green" >}} {{< bg "17" "preprepare_17" "green" >}} {{< bg "16" "preprepare_16" "green" >}} {{< bg "15" "preprepare_15" "green" >}} {{< bg "14" "preprepare_14" "green" >}} {{< bg "13" "preprepare_13" "green" >}} | `preprepare_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.9` | {{< bg "18" "postgresql-18-preprepare" "green" >}} {{< bg "17" "postgresql-17-preprepare" "green" >}} {{< bg "16" "postgresql-16-preprepare" "green" >}} {{< bg "15" "postgresql-15-preprepare" "green" >}} {{< bg "14" "postgresql-14-preprepare" "green" >}} {{< bg "13" "postgresql-13-preprepare" "green" >}} | `postgresql-$v-preprepare` | - |
 
 

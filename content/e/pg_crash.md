@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_crash` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_crash_18*" "green" >}} {{< bg "17" "pg_crash_17*" "green" >}} {{< bg "16" "pg_crash_16*" "green" >}} {{< bg "15" "pg_crash_15*" "green" >}} {{< bg "14" "pg_crash_14*" "green" >}} {{< bg "13" "pg_crash_13*" "green" >}} | `pg_crash_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pg_crash_18" "green" >}} {{< bg "17" "pg_crash_17" "green" >}} {{< bg "16" "pg_crash_16" "green" >}} {{< bg "15" "pg_crash_15" "green" >}} {{< bg "14" "pg_crash_14" "green" >}} {{< bg "13" "pg_crash_13" "green" >}} | `pg_crash_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pg-crash" "green" >}} {{< bg "17" "postgresql-17-pg-crash" "green" >}} {{< bg "16" "postgresql-16-pg-crash" "green" >}} {{< bg "15" "postgresql-15-pg-crash" "green" >}} {{< bg "14" "postgresql-14-pg-crash" "green" >}} {{< bg "13" "postgresql-13-pg-crash" "green" >}} | `postgresql-$v-pg-crash` | - |
 
 

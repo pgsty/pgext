@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `duckdb_fdw` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "duckdb_fdw_18*" "red" >}} {{< bg "17" "duckdb_fdw_17*" "green" >}} {{< bg "16" "duckdb_fdw_16*" "green" >}} {{< bg "15" "duckdb_fdw_15*" "green" >}} {{< bg "14" "duckdb_fdw_14*" "green" >}} {{< bg "13" "duckdb_fdw_13*" "green" >}} | `duckdb_fdw_$v*` | `libduckdb` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "duckdb_fdw_18" "red" >}} {{< bg "17" "duckdb_fdw_17" "green" >}} {{< bg "16" "duckdb_fdw_16" "green" >}} {{< bg "15" "duckdb_fdw_15" "green" >}} {{< bg "14" "duckdb_fdw_14" "green" >}} {{< bg "13" "duckdb_fdw_13" "green" >}} | `duckdb_fdw_$v` | `libduckdb` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.2` | {{< bg "18" "postgresql-18-duckdb-fdw" "red" >}} {{< bg "17" "postgresql-17-duckdb-fdw" "green" >}} {{< bg "16" "postgresql-16-duckdb-fdw" "green" >}} {{< bg "15" "postgresql-15-duckdb-fdw" "green" >}} {{< bg "14" "postgresql-14-duckdb-fdw" "green" >}} {{< bg "13" "postgresql-13-duckdb-fdw" "green" >}} | `postgresql-$v-duckdb-fdw` | `libduckdb` |
 
 

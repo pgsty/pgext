@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_curl` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.5` | {{< bg "18" "pg_curl_18*" "green" >}} {{< bg "17" "pg_curl_17*" "green" >}} {{< bg "16" "pg_curl_16*" "green" >}} {{< bg "15" "pg_curl_15*" "green" >}} {{< bg "14" "pg_curl_14*" "green" >}} {{< bg "13" "pg_curl_13*" "green" >}} | `pg_curl_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.5` | {{< bg "18" "pg_curl_18" "green" >}} {{< bg "17" "pg_curl_17" "green" >}} {{< bg "16" "pg_curl_16" "green" >}} {{< bg "15" "pg_curl_15" "green" >}} {{< bg "14" "pg_curl_14" "green" >}} {{< bg "13" "pg_curl_13" "green" >}} | `pg_curl_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.5` | {{< bg "18" "postgresql-18-pg-curl" "green" >}} {{< bg "17" "postgresql-17-pg-curl" "green" >}} {{< bg "16" "postgresql-16-pg-curl" "green" >}} {{< bg "15" "postgresql-15-pg-curl" "green" >}} {{< bg "14" "postgresql-14-pg-curl" "green" >}} {{< bg "13" "postgresql-13-pg-curl" "green" >}} | `postgresql-$v-pg-curl` | - |
 
 

@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `tds_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "tds_fdw_18*" "green" >}} {{< bg "17" "tds_fdw_17*" "green" >}} {{< bg "16" "tds_fdw_16*" "green" >}} {{< bg "15" "tds_fdw_15*" "green" >}} {{< bg "14" "tds_fdw_14*" "green" >}} {{< bg "13" "tds_fdw_13*" "green" >}} | `tds_fdw_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "tds_fdw_18" "green" >}} {{< bg "17" "tds_fdw_17" "green" >}} {{< bg "16" "tds_fdw_16" "green" >}} {{< bg "15" "tds_fdw_15" "green" >}} {{< bg "14" "tds_fdw_14" "green" >}} {{< bg "13" "tds_fdw_13" "green" >}} | `tds_fdw_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.5` | {{< bg "18" "postgresql-18-tds-fdw" "green" >}} {{< bg "17" "postgresql-17-tds-fdw" "green" >}} {{< bg "16" "postgresql-16-tds-fdw" "green" >}} {{< bg "15" "postgresql-15-tds-fdw" "green" >}} {{< bg "14" "postgresql-14-tds-fdw" "green" >}} {{< bg "13" "postgresql-13-tds-fdw" "green" >}} | `postgresql-$v-tds-fdw` | - |
 
 

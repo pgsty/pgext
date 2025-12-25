@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.7` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `wal2mongo` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.7` | {{< bg "18" "wal2mongo_18*" "red" >}} {{< bg "17" "wal2mongo_17*" "red" >}} {{< bg "16" "wal2mongo_16*" "green" >}} {{< bg "15" "wal2mongo_15*" "green" >}} {{< bg "14" "wal2mongo_14*" "green" >}} {{< bg "13" "wal2mongo_13*" "green" >}} | `wal2mongo_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.7` | {{< bg "18" "wal2mongo_18" "red" >}} {{< bg "17" "wal2mongo_17" "red" >}} {{< bg "16" "wal2mongo_16" "green" >}} {{< bg "15" "wal2mongo_15" "green" >}} {{< bg "14" "wal2mongo_14" "green" >}} {{< bg "13" "wal2mongo_13" "green" >}} | `wal2mongo_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.7` | {{< bg "18" "postgresql-18-wal2mongo" "red" >}} {{< bg "17" "postgresql-17-wal2mongo" "red" >}} {{< bg "16" "postgresql-16-wal2mongo" "green" >}} {{< bg "15" "postgresql-15-wal2mongo" "green" >}} {{< bg "14" "postgresql-14-wal2mongo" "green" >}} {{< bg "13" "postgresql-13-wal2mongo" "green" >}} | `postgresql-$v-wal2mongo` | - |
 
 

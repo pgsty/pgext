@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_emailaddr` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0` | {{< bg "18" "pg_emailaddr_18*" "green" >}} {{< bg "17" "pg_emailaddr_17*" "green" >}} {{< bg "16" "pg_emailaddr_16*" "green" >}} {{< bg "15" "pg_emailaddr_15*" "green" >}} {{< bg "14" "pg_emailaddr_14*" "green" >}} {{< bg "13" "pg_emailaddr_13*" "green" >}} | `pg_emailaddr_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0` | {{< bg "18" "pg_emailaddr_18" "green" >}} {{< bg "17" "pg_emailaddr_17" "green" >}} {{< bg "16" "pg_emailaddr_16" "green" >}} {{< bg "15" "pg_emailaddr_15" "green" >}} {{< bg "14" "pg_emailaddr_14" "green" >}} {{< bg "13" "pg_emailaddr_13" "green" >}} | `pg_emailaddr_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0` | {{< bg "18" "postgresql-18-pg-emailaddr" "green" >}} {{< bg "17" "postgresql-17-pg-emailaddr" "green" >}} {{< bg "16" "postgresql-16-pg-emailaddr" "green" >}} {{< bg "15" "postgresql-15-pg-emailaddr" "green" >}} {{< bg "14" "postgresql-14-pg-emailaddr" "green" >}} {{< bg "13" "postgresql-13-pg-emailaddr" "green" >}} | `postgresql-$v-pg-emailaddr` | - |
 
 

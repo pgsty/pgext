@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pguint` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "pguint_18*" "green" >}} {{< bg "17" "pguint_17*" "green" >}} {{< bg "16" "pguint_16*" "green" >}} {{< bg "15" "pguint_15*" "green" >}} {{< bg "14" "pguint_14*" "green" >}} {{< bg "13" "pguint_13*" "green" >}} | `pguint_$v*` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "pguint_18" "green" >}} {{< bg "17" "pguint_17" "green" >}} {{< bg "16" "pguint_16" "green" >}} {{< bg "15" "pguint_15" "green" >}} {{< bg "14" "pguint_14" "green" >}} {{< bg "13" "pguint_13" "green" >}} | `pguint_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.20250815` | {{< bg "18" "postgresql-18-pguint" "green" >}} {{< bg "17" "postgresql-17-pguint" "green" >}} {{< bg "16" "postgresql-16-pguint" "green" >}} {{< bg "15" "postgresql-15-pguint" "green" >}} {{< bg "14" "postgresql-14-pguint" "green" >}} {{< bg "13" "postgresql-13-pguint" "green" >}} | `postgresql-$v-pguint` | - |
 
 

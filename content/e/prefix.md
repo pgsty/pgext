@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_prefix` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.10` | {{< bg "18" "prefix_18*" "green" >}} {{< bg "17" "prefix_17*" "green" >}} {{< bg "16" "prefix_16*" "green" >}} {{< bg "15" "prefix_15*" "green" >}} {{< bg "14" "prefix_14*" "green" >}} {{< bg "13" "prefix_13*" "green" >}} | `prefix_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.10` | {{< bg "18" "prefix_18" "green" >}} {{< bg "17" "prefix_17" "green" >}} {{< bg "16" "prefix_16" "green" >}} {{< bg "15" "prefix_15" "green" >}} {{< bg "14" "prefix_14" "green" >}} {{< bg "13" "prefix_13" "green" >}} | `prefix_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.10` | {{< bg "18" "postgresql-18-prefix" "green" >}} {{< bg "17" "postgresql-17-prefix" "green" >}} {{< bg "16" "postgresql-16-prefix" "green" >}} {{< bg "15" "postgresql-15-prefix" "green" >}} {{< bg "14" "postgresql-14-prefix" "green" >}} {{< bg "13" "postgresql-13-prefix" "green" >}} | `postgresql-$v-prefix` | - |
 
 

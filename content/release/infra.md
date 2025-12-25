@@ -6,6 +6,15 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2025-12-25
+
+| Name | Old    | New    | Comment            |
+|:-----|:-------|:-------|:-------------------|
+| pig  | 0.8.0  | 0.8.1  | routine update     |
+| uv   | 0.9.18 | 0.9.18 | python pkg manager |
+| ccm  | 2.0.76 | 2.0.76 | claude utils       |
+
+
 ## 2025-12-16
 
 | Name              | Old            | New            | Comment  |

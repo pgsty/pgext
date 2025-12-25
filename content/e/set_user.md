@@ -32,7 +32,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `set_user` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "set_user_18*" "green" >}} {{< bg "17" "set_user_17*" "green" >}} {{< bg "16" "set_user_16*" "green" >}} {{< bg "15" "set_user_15*" "green" >}} {{< bg "14" "set_user_14*" "green" >}} {{< bg "13" "set_user_13*" "green" >}} | `set_user_$v*` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "set_user_18" "green" >}} {{< bg "17" "set_user_17" "green" >}} {{< bg "16" "set_user_16" "green" >}} {{< bg "15" "set_user_15" "green" >}} {{< bg "14" "set_user_14" "green" >}} {{< bg "13" "set_user_13" "green" >}} | `set_user_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.2.0` | {{< bg "18" "postgresql-18-set-user" "green" >}} {{< bg "17" "postgresql-17-set-user" "green" >}} {{< bg "16" "postgresql-16-set-user" "green" >}} {{< bg "15" "postgresql-15-set-user" "green" >}} {{< bg "14" "postgresql-14-set-user" "green" >}} {{< bg "13" "postgresql-13-set-user" "green" >}} | `postgresql-$v-set-user` | - |
 
 
