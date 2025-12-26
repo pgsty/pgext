@@ -933,7 +933,7 @@ repo_extra_packages_default: [ pgsql-main ]
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
   - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
-  - python3,python3-pip,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
+  - python3,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
   - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
@@ -1080,7 +1080,7 @@ repo_extra_packages_default: [ pgsql-main ]
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
   - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
-  - python3,python3-pip,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
+  - python3,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
   - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
