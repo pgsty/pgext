@@ -24,7 +24,7 @@ weight: 800
 
 | 版本                             |     日期     | 摘要                                |                           GitHub                           |
 |:-------------------------------|:----------:|-----------------------------------|:----------------------------------------------------------:|
-| [v0.8.0](/zh/release/pig#v080) | 2025-12-16 | 440 个扩展，Pigsty v4                 | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
+| [v0.8.0](/zh/release/pig#v080) | 2025-12-16 | 440 个扩展，Pigsty v4，例行修复            | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/zh/release/pig#v075) | 2025-12-15 | 例行扩展更新，使用阿里云镜像仓库                  | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
 | [v0.7.4](/zh/release/pig#v074) | 2025-12-01 | 更新 ivory/pgtde 内核与 pgdg extras 仓库 | [v0.7.4](https://github.com/pgsty/pig/releases/tag/v0.7.4) |
 | [v0.7.3](/zh/release/pig#v073) | 2025-11-24 | 修复 el10 & debian13 仓库配置           | [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3) |

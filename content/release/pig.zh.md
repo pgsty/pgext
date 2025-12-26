@@ -1,32 +1,47 @@
 ---
 title: PIG 变更记录
 description: pig 发布说明与变更记录
-icon: ClipboardList
 weight: 100
+breadcrumbs: false
 ---
-
 
 ## v0.8.0
 
 **扩展更新**
-
 - 扩展总数达到 440 个
-- 新扩展：[pg_ai_query](https://github.com/benodiwal/pg_ai_query) : 0.1.1
-- 新扩展：[pg_textsearch](https://github.com/timescale/pg_textsearch) : 0.1.0
-- 新扩展：[pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
-- 版本更新：pg_bsicuit 1.0 -> 2.0.1 (切换至新仓库，ext 重命名为 biscuit)
-- 版本更新：pg_search  0.20.3 -> 0.20.4
-- 版本更新：pg_duckdb 1.1.0 正式发布
-- 版本更新：pigsty 3.7.0 -> 4.0.0
-- 因为上游仓库变动，移除了 pgdg yum sysupdate 仓库
-- 因为上游仓库变动，移除了 pgdg yum llvmjit 相关包的安装
+- 新增扩展：[pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1
+- 新增扩展：[pg_textsearch](https://github.com/timescale/pg_textsearch) 0.1.0
+- 新增扩展：[pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0
+- pg_biscuit 从 1.0 升级至 2.0.1（切换至新仓库，更名为 biscuit）
+- pg_search 从 0.20.3 升级至 0.20.5
+- pg_duckdb 升级至官方正式版 1.1.1
+- vchord_bm25 从 0.2.2 升级至 0.3.0
+- pg_semver 从 0.40.0 升级至 0.41.0
+- pg_timeseries 从 0.1.7 升级至 0.1.8
+- 修复 debian/ubuntu pg18 扩展问题：supautils、pg_summarize、pg_vectorize、pg_tiktoken、pg_tzf、pglite_fusion、pgsmcrypto、pgx_ulid、plprql
+- pigsty 版本号同步至 4.0.0
 
+**仓库更新**
+- 因上游变更移除 pgdg yum sysupdate 仓库
+- 因上游变更移除 pgdg yum llvmjit 软件包
+- 修复 el9.aarch64 上 patroni 3.0.4 重复软件包问题
+- 为 el 仓库定义添加优先级，docker 仓库不可用时自动跳过
+- 添加 epel 10 / pgdg 9/10 操作系统小版本热修复
 
 **校验和**
 
 ```bash
-
+e457832fb290e2f9975bf719966dc36e650bdcbf8505d319c9e0431f4c03bc9e  pig-0.8.0-1.aarch64.rpm
+c97b1bfdd7541f0f464cab0ecc273e65535c8dd2603c38d5cf8dccbf7e95b523  pig-0.8.0-1.x86_64.rpm
+d892f06d3d3b440671529f40e6cc7949686e0167e2a4758adc666b8a3d75254d  pig-v0.8.0.darwin-amd64.tar.gz
+222413bafdf5a62dc682dac32ea1118cbc34ec3544e2a1b85076ec450b9cc7ae  pig-v0.8.0.darwin-arm64.tar.gz
+d50aa9806bbab8fee5ad9228e104fc9e7ead48729228116b5bf889000791fedc  pig-v0.8.0.linux-amd64.tar.gz
+d2f410f7b243a8323c8d479f462a0267ac72d217aa4a506c80b5a9927d12dff8  pig-v0.8.0.linux-arm64.tar.gz
+4ccd330a995911d4f732e8c9d62aa0db479c21c9596f64c4bc129ec43f156abe  pig_0.8.0-1_amd64.deb
+5cb9eccce659110f3ba58e502575564bd6befffd51992a43d84df5a17f8eb8a0  pig_0.8.0-1_arm64.deb
 ```
+
+发布：https://github.com/pgsty/pig/releases/tag/v0.8.0
 
 
 
@@ -62,6 +77,9 @@ dc45726c5e7fccd502cacaffc94c659570844151cdc279f2cac6500836071ade  pig-v0.7.5.lin
 7d22116d26ca09c5e2b8afbf086bb1acb1aea1148905efcc38944c18908fb105  pig_0.7.5-1_arm64.deb
 ```
 
+发布注记：https://github.com/pgsty/pig/releases/tag/v0.7.5
+
+
 
 
 ## v0.7.4
@@ -84,6 +102,8 @@ faaf7ac7b08390f5048c081bb7a78100714387e35dc890e26d9746fc1caef415  pig-v0.7.4.dar
 d2b80af89ed42601716f6b41eda3f8bee16db34023527df9deef8a43aa25a498  pig_0.7.4-1_arm64.deb
 ```
 
+发布注记：https://github.com/pgsty/pig/releases/tag/v0.7.4
+
 
 ## v0.7.3
 
@@ -105,6 +125,9 @@ e7f612df0e8e4d9fac6df3765862b9e491bb50aad651856abf7a6935986e6f99  pig-v0.7.3.lin
 3d5306ce95dcf704dd498b05325d942637564b13115f1e5a5bb9ef6781df1ba6  pig_0.7.3-1_amd64.deb
 32e695ba2d49a741d8cd92008f8f2dec29f10754d35b732035f48517b382c30d  pig_0.7.3-1_arm64.deb
 ```
+
+发布注记：https://github.com/pgsty/pig/releases/tag/v0.7.3
+
 
 ## v0.7.2
 
@@ -129,6 +152,7 @@ b6faad9f92b926546a10f590274f2cb2afff21b9cea878094cfc5caf09e67d2c  pig_0.7.2-1_am
 452f73f1fa035e5417ab49fc51d797925550179ffcc023e8f03d80144309212a  pig_0.7.2-1_arm64.deb
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.2
 
 
 ## v0.7.1
@@ -153,6 +177,9 @@ ffc687add0ca71ac90cba5749c8a7a6075cf7618cba85584072831cf3eb182f7  pig-v0.7.1.lin
 43e91a3bea273d7cacb2d7a58c0a5745501dbd06348b5cb3af971171fae70268  pig_0.7.1-1_amd64.deb
 fc2a34aeb46e07cb0ae93611de47d6622c3bd46fe4c415ce4c9091840e0e08a2  pig_0.7.1-1_arm64.deb
 ```
+
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.1
+
 
 
 ## v0.7.0
@@ -184,6 +211,8 @@ ee7e055ceff638039956765fb747f80b  pig-v0.7.0.linux-amd64.tar.gz
 284e674807b87447d4b33691fd7a420d  pig-v0.7.0.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.0
+
 
 ## v0.6.2
 
@@ -203,6 +232,9 @@ e637ca86a7f38866c67686b060223d9a  pig-v0.6.2.darwin-amd64.tar.gz
 ad4f02993c7d7d8eec142f0224551bb4  pig-v0.6.2.linux-amd64.tar.gz
 9793affa4a0cb60e9753e65b7cba3dca  pig-v0.6.2.linux-arm64.tar.gz
 ```
+
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.2
+
 
 ## v0.6.1
 
@@ -228,6 +260,7 @@ d02239f82c1bcf1674ec16a25d62d3fe  pig-v0.6.1.darwin-amd64.tar.gz
 060ab4314b873832cce8c3602a95579b  pig-v0.6.1.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.1
 
 ## v0.6.0
 
@@ -253,6 +286,8 @@ f635c12d9ad46a779aa7174552977d11  pig-v0.6.0.linux-amd64.tar.gz
 165af4e63ec0031d303fe8b6c35c5732  pig-v0.6.0.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.0
+
 
 ## v0.5.0
 
@@ -276,8 +311,7 @@ d9a8d78c30f45e098b29c3d16471aa8d  pig-0.5.0-1.x86_64.rpm
 5d1830069d98030728f08835f883ea39  pig-v0.5.0.linux-arm64.tar.gz
 ```
 
-发布：https://github.com/pgsty/pig/releases/tag/v0.6.0
-
+发布：https://github.com/pgsty/pig/releases/tag/v0.5.0
 
 
 ## v0.4.2
@@ -354,8 +388,6 @@ b2655628df326a1d0ed13f3dd8762c65  pig-v0.4.1.linux-arm64.tar.gz
 发布：https://github.com/pgsty/pig/releases/tag/v0.4.1
 
 
-
-
 ## v0.4.0
 
 - 更新扩展列表，可用扩展达到 **407** 个
@@ -393,8 +425,6 @@ bbc0adf94b342ac450c7999ea1c5ab76  pig_0.4.0-1_amd64.deb
 发布：https://github.com/pgsty/pig/releases/tag/v0.4.0
 
 
-
-
 ## v0.3.4
 
 ```bash
@@ -418,8 +448,6 @@ f7ea5ba8abaa89e866811e5b2508e82f  pig-v0.3.4.linux-arm64.tar.gz
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.3.4
-
-
 
 
 ## v0.3.3
@@ -465,8 +493,6 @@ c43e082c661e75d91f1c726e60911ea3  pig-v0.3.3.linux-arm64.tar.gz
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.3.3
-
-
 
 
 ## v0.3.2
@@ -526,8 +552,6 @@ adda8986efc048565834cda1ef206a20  pig-v0.3.2.linux-arm64.tar.gz
 发布：https://github.com/pgsty/pig/releases/tag/v0.3.2
 
 
-
-
 ## v0.3.1
 
 常规错误修复
@@ -548,8 +572,6 @@ e38e8a21ed73a37d4588053f8c900f7c  pig_0.3.1-1_arm64.deb
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.3.1
-
-
 
 
 ## v0.3.0
@@ -615,8 +637,6 @@ c0a411cf53cb58706ca81b49b4fc840e  pig_0.3.0-1_arm64.deb
 发布：https://github.com/pgsty/pig/releases/tag/v0.3.0
 
 
-
-
 ## v0.2.2
 
 Pig v0.2.2 中提供 [**404**](/zh/list) 个扩展
@@ -645,7 +665,6 @@ curl https://repo.pigsty.io/pig | bash -s v0.2.2
 - pgsql_tweaks 0.11.0
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.2.2
-
 
 
 ## v0.2.0
@@ -685,8 +704,6 @@ curl -fsSL https://repo.pigsty.io/pig | bash
 - pg_vectorize 0.20.0 -> 0.21.1
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.2.0
-
-
 
 
 ## v0.1.4
@@ -739,8 +756,6 @@ d6778e628d82bddf3fae1e058e1e05e4  pig_0.1.4_arm64.deb
 发布：https://github.com/pgsty/pig/releases/tag/v0.1.4
 
 
-
-
 ## v0.1.3
 
 v0.1.3，常规更新，现在可用 390 个扩展！
@@ -774,8 +789,6 @@ cb376ef2c3512ad35ff43132942c0052  pig_0.1.3_amd64.deb
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.1.3
-
-
 
 
 ## v0.1.2
@@ -833,8 +846,6 @@ curl -fsSL https://repo.pigsty.cc/pig | bash
 - pg_repack 1.5.2
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.1.2
-
-
 
 
 ## v0.1.0
@@ -971,8 +982,6 @@ d5f0874601bc1bbd0dd40b5c9982ea9f  pig_0.1.0_arm64.deb
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.1.0
-
-
 
 
 ## v0.0.1

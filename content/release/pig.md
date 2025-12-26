@@ -14,18 +14,36 @@ breadcrumbs: false
 - new extension: [pg_textsearch](https://github.com/timescale/pg_textsearch) : 0.1.0
 - new extension: [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
 - bump pg_bsicuit from 1.0 to 2.0.1 (switch to new repo, rename to biscuit)
-- bump pg_search from 0.20.3 to 0.20.4
-- bump pg_duckdb to the official 1.1.0 release
+- bump pg_search from 0.20.3 to 0.20.5
+- bump pg_duckdb to the official 1.1.1 release
+- bump vchord_bm25 from 0.2.2 to 0.3.0
+- bump pg_semver from 0.40.0 to 0.41.0
+- bump pg_timeseries from 0.1.7 to 0.1.8
 - bump pigsty version to 4.0.0
+
+**Repository Update**
 - remove pgdg yum sysupdate repo due to upstream change
 - remove pgdg yum llvmjit packages due to upstream change
-
+- fix el9.aarch64 patroni 3.0.4 duplicate package issue
+- add priority to el repo definition and skip if unavailable for docker repo
+- add epel 10 / pgdg 9/10 os minior version hot fixes
+- fix debian/ubuntu pg18 extension: supautils, pg_summarize , pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsmcrypto, pgx_ulid, plprql
 
 **Checksums**
 
 ```bash
-
+e457832fb290e2f9975bf719966dc36e650bdcbf8505d319c9e0431f4c03bc9e  pig-0.8.0-1.aarch64.rpm
+c97b1bfdd7541f0f464cab0ecc273e65535c8dd2603c38d5cf8dccbf7e95b523  pig-0.8.0-1.x86_64.rpm
+d892f06d3d3b440671529f40e6cc7949686e0167e2a4758adc666b8a3d75254d  pig-v0.8.0.darwin-amd64.tar.gz
+222413bafdf5a62dc682dac32ea1118cbc34ec3544e2a1b85076ec450b9cc7ae  pig-v0.8.0.darwin-arm64.tar.gz
+d50aa9806bbab8fee5ad9228e104fc9e7ead48729228116b5bf889000791fedc  pig-v0.8.0.linux-amd64.tar.gz
+d2f410f7b243a8323c8d479f462a0267ac72d217aa4a506c80b5a9927d12dff8  pig-v0.8.0.linux-arm64.tar.gz
+4ccd330a995911d4f732e8c9d62aa0db479c21c9596f64c4bc129ec43f156abe  pig_0.8.0-1_amd64.deb
+5cb9eccce659110f3ba58e502575564bd6befffd51992a43d84df5a17f8eb8a0  pig_0.8.0-1_arm64.deb
 ```
+
+Release: https://github.com/pgsty/pig/releases/tag/v0.8.0
+
 
 
 ## v0.7.5
@@ -60,6 +78,9 @@ dc45726c5e7fccd502cacaffc94c659570844151cdc279f2cac6500836071ade  pig-v0.7.5.lin
 7d22116d26ca09c5e2b8afbf086bb1acb1aea1148905efcc38944c18908fb105  pig_0.7.5-1_arm64.deb
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.5
+
+
 
 
 ## v0.7.4
@@ -82,6 +103,9 @@ faaf7ac7b08390f5048c081bb7a78100714387e35dc890e26d9746fc1caef415  pig-v0.7.4.dar
 d2b80af89ed42601716f6b41eda3f8bee16db34023527df9deef8a43aa25a498  pig_0.7.4-1_arm64.deb
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.4
+
+
 ## v0.7.3
 
 - add new command: `pig repo reload` to update `repo.yml`
@@ -103,6 +127,8 @@ e7f612df0e8e4d9fac6df3765862b9e491bb50aad651856abf7a6935986e6f99  pig-v0.7.3.lin
 32e695ba2d49a741d8cd92008f8f2dec29f10754d35b732035f48517b382c30d  pig_0.7.3-1_arm64.deb
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.3
+
 
 ## v0.7.2
 
@@ -112,6 +138,9 @@ e7f612df0e8e4d9fac6df3765862b9e491bb50aad651856abf7a6935986e6f99  pig-v0.7.3.lin
 - use local extension.csv catalog in pig build sub command
 - update: vchord pg_later pgvectorscale pglite_fusion pgx_ulid pg_search citus timescaledb pg_profile pg_stat_monitor documentdb
 - new: pglinter pg_typeid pg_enigma pg_retry pg_biscuit pg_weighted_statistics
+
+- 更新的扩展： vchord pg_later pgvectorscale pglite_fusion pgx_ulid pg_search citus timescaledb pg_profile pg_stat_monitor documentdb
+- 新增的扩展：pglinter pg_typeid pg_enigma pg_retry pg_biscuit pg_weighted_statistics
 
 **Checksums**
 
@@ -125,6 +154,8 @@ c096a61a4e3a49b1238659664bbe2cd7f29954c43fb6bb8e8e9fb271f95a612e  pig-0.7.2-1.x8
 b6faad9f92b926546a10f590274f2cb2afff21b9cea878094cfc5caf09e67d2c  pig_0.7.2-1_amd64.deb
 452f73f1fa035e5417ab49fc51d797925550179ffcc023e8f03d80144309212a  pig_0.7.2-1_arm64.deb
 ```
+
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.2
 
 
 ## v0.7.1
@@ -150,9 +181,13 @@ ffc687add0ca71ac90cba5749c8a7a6075cf7618cba85584072831cf3eb182f7  pig-v0.7.1.lin
 fc2a34aeb46e07cb0ae93611de47d6622c3bd46fe4c415ce4c9091840e0e08a2  pig_0.7.1-1_arm64.deb
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.1
+
+
 
 ## v0.7.0
 
+- Add Debian 13 / EL 10 support
 - Bump tons of extension to the latest version, with pg 18 support.
 - Most rust extension are bump to the latest pgrx 0.16.1
 - `pig build` overhaul
@@ -179,6 +214,9 @@ ee7e055ceff638039956765fb747f80b  pig-v0.7.0.linux-amd64.tar.gz
 284e674807b87447d4b33691fd7a420d  pig-v0.7.0.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.7.0
+
+
 ## v0.6.2
 
 - Use official PG 18 repo instead of testing repo
@@ -197,6 +235,9 @@ e637ca86a7f38866c67686b060223d9a  pig-v0.6.2.darwin-amd64.tar.gz
 ad4f02993c7d7d8eec142f0224551bb4  pig-v0.6.2.linux-amd64.tar.gz
 9793affa4a0cb60e9753e65b7cba3dca  pig-v0.6.2.linux-arm64.tar.gz
 ```
+
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.2
+
 
 ## v0.6.1
 
@@ -222,6 +263,7 @@ d02239f82c1bcf1674ec16a25d62d3fe  pig-v0.6.1.darwin-amd64.tar.gz
 060ab4314b873832cce8c3602a95579b  pig-v0.6.1.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.1
 
 ## v0.6.0
 
@@ -247,6 +289,8 @@ f635c12d9ad46a779aa7174552977d11  pig-v0.6.0.linux-amd64.tar.gz
 165af4e63ec0031d303fe8b6c35c5732  pig-v0.6.0.linux-arm64.tar.gz
 ```
 
+Release: https://github.com/pgsty/pig/releases/tag/v0.6.0
+
 
 ## v0.5.0
 
@@ -270,7 +314,7 @@ d9a8d78c30f45e098b29c3d16471aa8d  pig-0.5.0-1.x86_64.rpm
 5d1830069d98030728f08835f883ea39  pig-v0.5.0.linux-arm64.tar.gz
 ```
 
-Release: https://github.com/pgsty/pig/releases/tag/v0.6.0
+Release: https://github.com/pgsty/pig/releases/tag/v0.5.0
 
 
 ## v0.4.2

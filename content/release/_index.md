@@ -24,7 +24,7 @@ The latest stable version of `pig` is [v0.8.0](https://github.com/pgsty/pig/rele
 
 |           Version           |    Date    | Summary                                   |                           GitHub                           |
 |:---------------------------:|:----------:|-------------------------------------------|:----------------------------------------------------------:|
-| [v0.8.0](/release/pig#v080) | 2025-12-16 | 440 extensions, pigsty v4                 | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
+| [v0.8.0](/release/pig#v080) | 2025-12-16 | 440 extensions, pigsty v4, routine fixes  | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/release/pig#v074) | 2025-12-15 | routine ext update, use aliyun mirror     | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
 | [v0.7.4](/release/pig#v074) | 2025-12-01 | update ivory, pgtde, pgdg extras          | [v0.7.4](https://github.com/pgsty/pig/releases/tag/v0.7.4) |
 | [v0.7.3](/release/pig#v073) | 2025-11-24 | fix repo for el10 & debian13              | [v0.7.3](https://github.com/pgsty/pig/releases/tag/v0.7.3) |
