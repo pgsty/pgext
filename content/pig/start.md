@@ -40,10 +40,10 @@ The PIG binary is approximately 4 MB and will automatically install the latest a
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = rpm
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.8.0/pig-0.8.0-1.x86_64.rpm
-[INFO] download = /tmp/pig-0.8.0-1.x86_64.rpm
-[INFO] downloading pig v0.8.0
-curl -fSL https://repo.pigsty.io/pkg/pig/v0.8.0/pig-0.8.0-1.x86_64.rpm -o /tmp/pig-0.8.0-1.x86_64.rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.x86_64.rpm
+[INFO] download = /tmp/pig-0.9.0-1.x86_64.rpm
+[INFO] downloading pig v0.9.0
+curl -fSL https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.x86_64.rpm -o /tmp/pig-0.9.0-1.x86_64.rpm
 ######################################################################## 100.0%
 [INFO] md5sum = 85d75c16dfd3ce935d9d889fae345430
 [INFO] installing: rpm -ivh /tmp/pig-0.7.2-1.x86_64.rpm

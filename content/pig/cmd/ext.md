@@ -262,7 +262,7 @@ postgis_sfcgal                3.5.2    GIS    -ds--r  GPL-2.0       PGDG    post
 postgis_tiger_geocoder        3.5.2    GIS    -ds-t-  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  PostGIS tiger geocoder and reverse geocoder
 address_standardizer          3.5.2    GIS    -ds--r  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  Used to parse an address into constituent elements. Generally us
 address_standardizer_data_us  3.5.2    GIS    -ds--r  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  Address Standardizer US dataset example
-vector                        0.8.0    RAG    -ds--r  PostgreSQL    PGDG    postgresql-17-pgvector                                   vector data type and ivfflat and hnsw access methods
+vector                        0.9.0    RAG    -ds--r  PostgreSQL    PGDG    postgresql-17-pgvector                                   vector data type and ivfflat and hnsw access methods
 pg_search                     0.15.2   FTS    -ds-t-  AGPL-3.0      PIGSTY  postgresql-17-pg-search                                  pg_search: Full text search for PostgreSQL using BM25
 pgroonga                      4.0.0    FTS    -ds-tr  PostgreSQL    PIGSTY  postgresql-17-pgroonga                                   Use Groonga as index, fast full text search platform for all lan
 pgroonga_database             4.0.0    FTS    -ds-tr  PostgreSQL    PIGSTY  postgresql-17-pgroonga                                   PGroonga database management module

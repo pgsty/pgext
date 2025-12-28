@@ -192,7 +192,7 @@ Manage Pigsty PostgreSQL distribution:
 pig sty init                     # Install Pigsty to ~/pigsty
 pig sty boot                     # Install Ansible prerequisites
 pig sty conf                     # Generate configuration
-pig sty install                  # Run installation playbook
+pig sty deploy                   # Run deployment playbook
 ```
 
 **Pigsty Features:**

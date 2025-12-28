@@ -8,13 +8,21 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2025-12-25
 
-| Name      | Old    | New    | Comment            |
-|:----------|:-------|:-------|:-------------------|
-| pig       | 0.8.0  | 0.8.1  | routine update     |
-| uv        | 0.9.18 | 0.9.18 | python pkg manager |
-| ccm       | 2.0.76 | 2.0.76 | claude utils       |
-| IvorySQL  | 5.0    | 5.1    |                    |
-| asciinema |        | 3.0.1  |                    |
+| Name                | Old    | New    | Comment            |
+|:--------------------|:-------|:-------|:-------------------|
+| pig                 | 0.8.0  | 0.9.0  | routine update     |
+| etcd                | 3.6.6  | 3.6.7  | routine update     |
+| uv                  | -      | 0.9.18 | python pkg manager |
+| ccm                 | -      | 2.0.76 | claude utils       |
+| asciinema           |        | 3.0.1  | new package        |
+| IvorySQL            | 5.0    | 5.1    |                    |
+| grafana             | 12.3.0 | 12.3.1 |                    |
+| vector              | 0.51.1 | 0.52.0 |                    |
+| prometheus          | 3.8.0  | 3.8.1  |                    |
+| alertmanager        | 0.29.0 | 0.30.0 |                    |
+| victorialogs        | 1.41.0 | 1.43.1 |                    |
+| pgbackrest_exporter | 0.21.0 | 0.22.0 |                    |
+
 
 ## 2025-12-16
 

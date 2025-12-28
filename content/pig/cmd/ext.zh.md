@@ -263,7 +263,7 @@ postgis_sfcgal                3.5.2    GIS    -ds--r  GPL-2.0       PGDG    post
 postgis_tiger_geocoder        3.5.2    GIS    -ds-t-  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  PostGIS Tiger 地理编码与逆地理编码
 address_standardizer          3.5.2    GIS    -ds--r  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  地址标准化工具
 address_standardizer_data_us  3.5.2    GIS    -ds--r  GPL-2.0       PGDG    postgresql-17-postgis-3 postgresql-$v-postgis-3-scripts  美国地址标准化数据集
-vector                        0.8.0    RAG    -ds--r  PostgreSQL    PGDG    postgresql-17-pgvector                                   向量数据类型及 ivfflat/hnsw 索引
+vector                        0.9.0    RAG    -ds--r  PostgreSQL    PGDG    postgresql-17-pgvector                                   向量数据类型及 ivfflat/hnsw 索引
 pg_search                     0.15.2   FTS    -ds-t-  AGPL-3.0      PIGSTY  postgresql-17-pg-search                                  pg_search：基于 BM25 的全文检索
 pgroonga                      4.0.0    FTS    -ds-tr  PostgreSQL    PIGSTY  postgresql-17-pgroonga                                   Groonga 引擎全文检索，支持多语言
 pgroonga_database             4.0.0    FTS    -ds-tr  PostgreSQL    PIGSTY  postgresql-17-pgroonga                                   PGroonga 数据库管理模块

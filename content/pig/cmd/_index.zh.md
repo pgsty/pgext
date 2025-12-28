@@ -128,7 +128,7 @@ pig build ext citus              # 构建包
 pig sty init                     # 安装 Pigsty 到 ~/pigsty
 pig sty boot                     # 安装 Ansible 依赖
 pig sty conf                     # 生成配置
-pig sty install                  # 运行安装 playbook
+pig sty deploy                   # 运行部署 playbook
 ```
 
 
