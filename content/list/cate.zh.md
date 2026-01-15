@@ -119,7 +119,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
-| 2510 | {{< alias "pg_partman" >}} | 5.3.1 | 用于按时间或 ID 管理分区表的扩展 |
+| 2510 | {{< alias "pg_partman" >}} | 5.4.0 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 6.0 | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
@@ -130,7 +130,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2730 | {{< alias "age" >}} | 1.5.0 | Apache AGE，图数据库扩展 （Deb可用） |
+| 2730 | {{< alias "age" >}} | 1.6.0 | Apache AGE，图数据库扩展 （Deb可用） |
 | 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
@@ -199,7 +199,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 3000 | {{< alias "pg_tle" >}} | 1.5.2 | AWS 可信语言扩展 |
 | 3010 | {{< alias "plv8" >}} | 3.2.4 | PL/JavaScript (v8) 可信过程程序语言 |
-| 3011 | {{< alias "pljs" >}} | 1.0.3 | PL/JS 可信过程程序语言 |
+| 3011 | {{< alias "pljs" >}} | 1.0.4 | PL/JS 可信过程程序语言 |
 | 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua 程序语言 |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展 |
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua 程序语言（不受信任的） |
@@ -473,7 +473,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | 用于收集日志文件中消息统计信息的函数 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | 监控每个用户的连接尝试 |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | 记录和监控函数 |
-| 7310 | {{< alias "credcheck" >}} | 4.2 | 明文凭证检查器 |
+| 7310 | {{< alias "credcheck" >}} | 4.3 | 明文凭证检查器 |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | 在用户登陆时执行login_hook.login()函数 |
 | 7370 | {{< alias "set_user" >}} | 4.2.0 | 增加了日志记录的 SET ROLE |
@@ -555,7 +555,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | PostgreSQL多主逻辑复制 |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
-| 9650 | {{< alias "decoderbufs" >}} | 3.3.1 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
+| 9650 | {{< alias "decoderbufs" >}} | 3.4.0 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | 逻辑复制解码输出插件：RAW SQL格式 |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | 在PostgreSQL实例间进行表级复制 |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | PostgreSQL复制管理组件 |

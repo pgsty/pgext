@@ -119,7 +119,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
-| 2510 | {{< alias "pg_partman" >}} | 5.3.1 | Extension to manage partitioned tables by time or ID |
+| 2510 | {{< alias "pg_partman" >}} | 5.4.0 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | 6.0 | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
@@ -130,7 +130,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2730 | {{< alias "age" >}} | 1.5.0 | AGE graph database extension |
+| 2730 | {{< alias "age" >}} | 1.6.0 | AGE graph database extension |
 | 2740 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
@@ -199,7 +199,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 |:---:|:---|:---|:---|
 | 3000 | {{< alias "pg_tle" >}} | 1.5.2 | Trusted Language Extensions for PostgreSQL |
 | 3010 | {{< alias "plv8" >}} | 3.2.4 | PL/JavaScript (v8) trusted procedural language |
-| 3011 | {{< alias "pljs" >}} | 1.0.3 | PL/JS trusted procedural language |
+| 3011 | {{< alias "pljs" >}} | 1.0.4 | PL/JS trusted procedural language |
 | 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua as a procedural language |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Hstore transform for Lua |
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua as an untrusted procedural language |
@@ -473,7 +473,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
-| 7310 | {{< alias "credcheck" >}} | 4.2 | credcheck - postgresql plain text credential checker |
+| 7310 | {{< alias "credcheck" >}} | 4.3 | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
 | 7370 | {{< alias "set_user" >}} | 4.2.0 | similar to SET ROLE but with added logging |
@@ -555,7 +555,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
-| 9650 | {{< alias "decoderbufs" >}} | 3.3.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| 9650 | {{< alias "decoderbufs" >}} | 3.4.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | Replication manager for PostgreSQL |

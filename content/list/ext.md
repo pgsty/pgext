@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 411 | 429 | 428 | 430 | 415 | 386 |
+| **ALL** | 440 | 149 | 268 | 71 | 0 | 412 | 429 | 428 | 430 | 415 | 386 |
 | **EL** | 434 | 143 | 268 | 71 | 6 | 400 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 397 | 416 | 414 | 416 | 404 | 371 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 399 | 416 | 414 | 416 | 404 | 371 |
 
 ## Categories
 
@@ -117,7 +117,7 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Database partitioning implemented as procedural language |
 | {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | functions that manipulate whole tables, including crosstab |
-| {{< ext "age" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | AGE graph database extension |
+| {{< ext "age" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | AGE graph database extension |
 | {{< ext "hll" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | type for storing hyperloglog data |
 | {{< ext "rum" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | RUM index access method |
 | {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | AI-powered SQL query generation for PostgreSQL |

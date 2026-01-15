@@ -4,6 +4,13 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
+## 待办事项
+
+- citus 14.0 with pg18 support
+- age 1.6.0 with pg18 support
+- pg_partman
+- pgsentinel 1.3.1 rpm
+
 
 ## 候选列表
 

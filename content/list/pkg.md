@@ -11,9 +11,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 309 | 134 | 222 | 0 | 0 | 285 | 302 | 299 | 301 | 292 | 265 |
+| **ALL** | 309 | 134 | 222 | 0 | 0 | 286 | 302 | 299 | 301 | 292 | 265 |
 | **EL** | 305 | 130 | 222 | 0 | 65 | 277 | 296 | 295 | 297 | 290 | 263 |
-| **Debian** | 295 | 91 | 204 | 0 | 75 | 271 | 289 | 285 | 287 | 280 | 250 |
+| **Debian** | 295 | 91 | 204 | 0 | 75 | 273 | 289 | 285 | 287 | 280 | 250 |
 
 ## Categories
 
@@ -105,11 +105,11 @@ There are 309 available PostgreSQL packages:
 | {{< ext "duckdb_fdw" >}} | `1.1.2` | {{< badge content="Link" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< category "OLAP" >}} | `duckdb_fdw_$v` | `postgresql-$v-duckdb-fdw` |
 | {{< ext "pg_parquet" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< category "OLAP" >}} | `pg_parquet_$v` | `postgresql-$v-pg-parquet` |
 | {{< ext "pg_fkpart" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/lemoineat/pg_fkpart" >}} | {{< category "OLAP" >}} | `pg_fkpart_$v` | `postgresql-$v-pg-fkpart` |
-| {{< ext "pg_partman" >}} | `5.3.1` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
+| {{< ext "pg_partman" >}} | `5.4.0` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
 | {{< ext "plproxy" >}} | `2.11.0` | {{< badge content="Link" link="https://github.com/plproxy/plproxy" >}} | {{< category "OLAP" >}} | `plproxy_$v` | `postgresql-$v-plproxy` |
 | {{< ext "pg_strom" >}} | `6.0` | {{< badge content="Link" link="https://github.com/heterodb/pg-strom" >}} | {{< category "OLAP" >}} | `pg_strom_$v` | - |
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "age" >}} | `1.5.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `apache-age_$v` | `postgresql-$v-age` |
+| {{< ext "age" >}} | `1.6.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `apache-age_$v` | `postgresql-$v-age` |
 | {{< ext "hll" >}} | `2.19` | {{< badge content="Link" link="https://github.com/citusdata/postgresql-hll" >}} | {{< category "FEAT" >}} | `hll_$v` | `postgresql-$v-hll` |
 | {{< ext "rum" >}} | `1.3.15` | {{< badge content="Link" link="https://github.com/postgrespro/rum" >}} | {{< category "FEAT" >}} | `rum_$v` | `postgresql-$v-rum` |
 | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< category "FEAT" >}} | `pg_ai_query_$v` | `postgresql-$v-ai-query` |
@@ -132,7 +132,7 @@ There are 309 available PostgreSQL packages:
 | {{< ext "bloom" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/bloom.html" >}} | {{< category "FEAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_tle" >}} | `1.5.2` | {{< badge content="Link" link="https://github.com/aws/pg_tle" >}} | {{< category "LANG" >}} | `pg_tle_$v` | `postgresql-$v-pg-tle` |
 | {{< ext "plv8" >}} | `3.2.4` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v` | `postgresql-$v-plv8` |
-| {{< ext "pljs" >}} | `1.0.3` | {{< badge content="Link" link="https://github.com/plv8/pljs" >}} | {{< category "LANG" >}} | - | `postgresql-$v-pljs` |
+| {{< ext "pljs" >}} | `1.0.4` | {{< badge content="Link" link="https://github.com/plv8/pljs" >}} | {{< category "LANG" >}} | - | `postgresql-$v-pljs` |
 | {{< ext "pllua" >}} | `2.0.12` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v` | `postgresql-$v-pllua` |
 | {{< ext "plprql" >}} | `18.0.0` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
 | {{< ext "pldbgapi" "pldebugger" >}} | `1.9` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< category "LANG" >}} | `pldebugger_$v` | `postgresql-$v-pldebugger` |
@@ -346,7 +346,7 @@ There are 309 available PostgreSQL packages:
 | {{< ext "logerrors" >}} | `2.1.5` | {{< badge content="Link" link="https://github.com/munakoiso/logerrors" >}} | {{< category "SEC" >}} | `logerrors_$v` | `postgresql-$v-logerrors` |
 | {{< ext "pg_auth_mon" >}} | `3.0` | {{< badge content="Link" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< category "SEC" >}} | `pg_auth_mon_$v` | `postgresql-$v-pg-auth-mon` |
 | {{< ext "pg_jobmon" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/omniti-labs/pg_jobmon" >}} | {{< category "SEC" >}} | `pg_jobmon_$v` | `postgresql-$v-pg-jobmon` |
-| {{< ext "credcheck" >}} | `4.2` | {{< badge content="Link" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< category "SEC" >}} | `credcheck_$v` | `postgresql-$v-credcheck` |
+| {{< ext "credcheck" >}} | `4.3` | {{< badge content="Link" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< category "SEC" >}} | `credcheck_$v` | `postgresql-$v-credcheck` |
 | {{< ext "pgcryptokey" >}} | `0.85` | {{< badge content="Link" link="https://momjian.us/download/pgcryptokey/" >}} | {{< category "SEC" >}} | `pgcryptokey_$v` | `postgresql-$v-pgcryptokey` |
 | {{< ext "login_hook" >}} | `1.7` | {{< badge content="Link" link="https://github.com/splendiddata/login_hook" >}} | {{< category "SEC" >}} | `login_hook_$v` | `postgresql-$v-login-hook` |
 | {{< ext "set_user" >}} | `4.2.0` | {{< badge content="Link" link="https://github.com/pgaudit/set_user" >}} | {{< category "SEC" >}} | `set_user_$v` | `postgresql-$v-set-user` |
@@ -404,7 +404,7 @@ There are 309 available PostgreSQL packages:
 | {{< ext "pgactive" >}} | `2.1.7` | {{< badge content="Link" link="https://github.com/aws/pgactive" >}} | {{< category "ETL" >}} | `pgactive_$v` | `postgresql-$v-pgactive` |
 | {{< ext "wal2json" >}} | `2.6` | {{< badge content="Link" link="https://github.com/eulerto/wal2json" >}} | {{< category "ETL" >}} | `wal2json_$v` | `postgresql-$v-wal2json` |
 | {{< ext "wal2mongo" >}} | `1.0.7` | {{< badge content="Link" link="https://github.com/HighgoSoftware/wal2mongo" >}} | {{< category "ETL" >}} | `wal2mongo_$v` | `postgresql-$v-wal2mongo` |
-| {{< ext "decoderbufs" >}} | `3.3.1` | {{< badge content="Link" link="https://github.com/debezium/postgres-decoderbufs" >}} | {{< category "ETL" >}} | `postgres-decoderbufs_$v` | `postgresql-$v-decoderbufs` |
+| {{< ext "decoderbufs" >}} | `3.4.0` | {{< badge content="Link" link="https://github.com/debezium/postgres-decoderbufs" >}} | {{< category "ETL" >}} | `postgres-decoderbufs_$v` | `postgresql-$v-decoderbufs` |
 | {{< ext "decoder_raw" >}} | `1.0` | {{< badge content="Link" link="https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" >}} | {{< category "ETL" >}} | `decoder_raw_$v` | `postgresql-$v-decoder-raw` |
 | {{< ext "mimeo" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/omniti-labs/mimeo" >}} | {{< category "ETL" >}} | `mimeo_$v` | `postgresql-$v-mimeo` |
 | {{< ext "repmgr" >}} | `5.5.0` | {{< badge content="Link" link="https://github.com/EnterpriseDB/repmgr" >}} | {{< category "ETL" >}} | `repmgr_$v` | `postgresql-$v-repmgr` |
