@@ -25,7 +25,7 @@ PG 扩展云（PGEXT.CLOUD）提供了以下三样基础设施，帮助用户更
 只需几行命令，即可在 [**主流 Linux 系统**](/zh/os) 上原生安装多达 440 个 PostgreSQL 扩展，组合使用，发挥 PostgreSQL 的超能力：
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash  # 安装 pig 命令行工具
+curl -fsSL https://repo.pigsty.cc/pig | bash  # 安装 pig 命令行工具
 pig repo set                                  # 在您的 Linux 发行版上配置软件仓库
 pig install pg18                              # 从 PGDG 官方仓库安装 PostgreSQL 18 内核包
 pig install pg_duckdb -v 18                   # 例：针对 PG 18 安装 pg_duckdb
@@ -85,13 +85,14 @@ pig install pg_duckdb -v 18                   # 例：针对 PG 18 安装 pg_duc
 **PGSTY.CLOUD** 向用户提供无可比拟的扩展交付体验，以下是一些使用本仓库向他们的用户与客户交付 PG 扩展的 PostgreSQL 厂商：
 
 {{< cards cols=1 >}}
-{{< card link="https://github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="开箱即用的 PostgreSQL RDS 发行版，一键交付生产级 PostgreSQL 集群，自带监控系统，高可用，PITR，IaC 以及 430+ 可用扩展。" >}}
+{{< card link="https://github.com/pgsty/pigsty" title="Pigsty" icon="github" subtitle="开箱即用的 PostgreSQL RDS 发行版，一键交付生产级 PostgreSQL 集群，自带监控系统，高可用，PITR，IaC 以及 440 可用扩展。" >}}
 {{< /cards >}}
 
-{{< cards cols=3 >}}
-{{< card link="https://docs.omnigres.org/quick_start/"         title="Omnigres"    icon="github" subtitle="PostgreSQL as a Platform，使用 PG 与扩展一站式开发你的全部业务逻辑！" >}}
-{{< card link="https://autobase.tech/docs/extensions/install"  title="AutoBase"    icon="github" subtitle="基于 Ansible 的 PG 集群自动化部署，开源 DBaaS，曾用名为 postgresql_cluster" >}}
-{{< card link="https://github.com/tensorchord"                 title="TensorChord" icon="github" subtitle="云原生 AI 基础设施， vchord, vchord_bm25, pgvector.rs, pg_bestmatch 等扩展的作者" >}}
+{{< cards cols=4 >}}
+{{< card link="https://docs.omnigres.org/quick_start/"        title="Omnigres"    icon="github" subtitle="PostgreSQL as a Platform，使用 PG 与扩展一站式开发你的全部业务逻辑！" >}}
+{{< card link="https://autobase.tech/docs/extensions/install" title="AutoBase"    icon="github" subtitle="基于 Ansible 的 PG 集群自动化部署，开源 DBaaS，曾用名为 postgresql_cluster" >}}
+{{< card link="https://github.com/tensorchord"                title="TensorChord" icon="github" subtitle="云原生 AI 基础设施， vchord, vchord_bm25, pgvector.rs, pg_bestmatch 等扩展的作者" >}}
+{{< card link="https://w3.ww-it.cn/"                          title="文武IT"       icon="github" subtitle="企业级 PostgreSQL 供应商" >}}
 {{< /cards >}}
 
 
