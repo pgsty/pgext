@@ -7,13 +7,20 @@ weight: 700
 ## 待办事项
 
 - citus 14.0 with pg18 support
-- age 1.6.0 with pg18 support
-- pg_partman
-- pgsentinel 1.3.1 rpm
+- age 1.6.0 with pg18 support (age)
+- pgsentinel 1.3.0 -> 1.3.1 rpm
+- pg_timeseries 0.1.8 -> 0.2.0
+- pg_clickhouse 0.1.0 -> 0.1.2
+- pg_bulkload 3.1.22 -> 3.1.23
+- pg_biscuit 2.0.2 -> 2.2.2
+- documentdb 0.107 -> 0.109 (switch to upstream)
+- pg_partman 5.4.0 new
+- pljs new 1.0.4
 
 
 ## 候选列表
 
+- pgmq 1.8.1
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL

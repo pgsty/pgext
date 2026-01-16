@@ -20,7 +20,7 @@ PostgreSQL 扩展（440 ext / 373 pkg）归属 16 个分类。
 |:---:|:---|:---|:---|
 | 1000 | {{< alias "timescaledb" >}} | 2.24.0 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
-| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.1.8 | 时序数据API封装 |
+| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
 | 1040 | {{< alias "temporal_tables" >}} | 1.2.2 | 时态表功能支持 |
 | 1050 | {{< alias "emaj" >}} | 4.7.1 | 让数据库的子集具有细粒度日志和时间旅行功能 |
@@ -80,7 +80,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.20.5 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.2 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -88,7 +88,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | 在数据库内生成BM25稀疏向量 |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
-| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.0.1 | 使用IAM的高性能文本模式匹配 |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | 使用IAM的高性能文本模式匹配 |
 | 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | 带有BM25排序的全文搜索扩展 |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Hunspell捷克语全文检索词典 |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | Hunspell德语全文检索词典 |
@@ -115,7 +115,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | 由 DuckDB 驱动的数据分析引擎 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.0 | 从PostgreSQL中查询ClickHouse的接口 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.2 | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
@@ -427,7 +427,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | 跟踪设置更改 |
 | 6270 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | 基于采样的等待事件统计 |
-| 6280 | {{< alias "pgsentinel" >}} | 1.3.0 | 活跃会话历史 |
+| 6280 | {{< alias "pgsentinel" >}} | 1.3.1 | 活跃会话历史 |
 | 6290 | {{< alias "system_stats" >}} | 3.2 | PostgreSQL 的系统统计函数 |
 | 6300 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | 标准化，更友好的PostgreSQL系统目录视图 |
 | 6310 | {{< alias "pgnodemx" >}} | 1.7 | 使用SQL查询获取操作系统指标 |
@@ -473,7 +473,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | 用于收集日志文件中消息统计信息的函数 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | 监控每个用户的连接尝试 |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | 记录和监控函数 |
-| 7310 | {{< alias "credcheck" >}} | 4.3 | 明文凭证检查器 |
+| 7310 | {{< alias "credcheck" >}} | 4.4 | 明文凭证检查器 |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | 在用户登陆时执行login_hook.login()函数 |
 | 7370 | {{< alias "set_user" >}} | 4.2.0 | 增加了日志记录的 SET ROLE |
@@ -522,9 +522,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.107 | 微软DocumentDB的API层 |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.107 | 微软DocumentDB的核心API层实现 |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.107 | DocumentDB多节点模式的API层 |
+| 9000 | {{< alias "documentdb" >}} | 0.109 | 微软DocumentDB的API层 |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | 微软DocumentDB的核心API层实现 |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | DocumentDB多节点模式的API层 |
 | 9100 | {{< alias "orafce" >}} | 4.16.3 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |
@@ -560,7 +560,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | 在PostgreSQL实例间进行表级复制 |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | PostgreSQL复制管理组件 |
 | 9820 | {{< alias "pg_fact_loader" >}} | 2.0.1 | 在 Postgres 中构建事实表 |
-| 9830 | {{< alias "pg_bulkload" >}} | 3.1.22 | 向 PostgreSQL 中高速加载数据 |
+| 9830 | {{< alias "pg_bulkload" >}} | 3.1.23 | 向 PostgreSQL 中高速加载数据 |
 | 9970 | {{< alias "test_decoding" >}} | - | 基于SQL的WAL逻辑解码样例 |
 | 9980 | {{< alias "pgoutput" >}} | - | PG内置的逻辑解码输出插件 |
 

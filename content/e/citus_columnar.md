@@ -27,7 +27,7 @@ width: full
 |   **See Also**    | {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "timescaledb" >}} {{< ext "pg_analytics" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "orioledb" >}} |
 |    **Siblings**   | {{< ext "citus" >}} |
 
-> [!Note] conflict with hydra columnar
+> [!Note] conflict with hydra columnar, no pg18
 
 
 ## Packages

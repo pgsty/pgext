@@ -26,26 +26,24 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "ltree" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "citus" >}} |
 
-> [!Note] no longer maintained
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `age` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.0` | {{< bg "18" "apache-age_18" "red" >}} {{< bg "17" "apache-age_17" "green" >}} {{< bg "16" "apache-age_16" "green" >}} {{< bg "15" "apache-age_15" "green" >}} {{< bg "14" "apache-age_14" "green" >}} {{< bg "13" "apache-age_13" "green" >}} | `apache-age_$v` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6.0` | {{< bg "18" "apache-age_18" "green" >}} {{< bg "17" "apache-age_17" "green" >}} {{< bg "16" "apache-age_16" "green" >}} {{< bg "15" "apache-age_15" "green" >}} {{< bg "14" "apache-age_14" "green" >}} {{< bg "13" "apache-age_13" "green" >}} | `apache-age_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6.0` | {{< bg "18" "postgresql-18-age" "green" >}} {{< bg "17" "postgresql-17-age" "green" >}} {{< bg "16" "postgresql-16-age" "green" >}} {{< bg "15" "postgresql-15-age" "green" >}} {{< bg "14" "postgresql-14-age" "green" >}} {{< bg "13" "postgresql-13-age" "green" >}} | `postgresql-$v-age` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "apache-age_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.5.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.5.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_14 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.6.0" "apache-age_13 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-14-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-13-age : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-14-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-13-age : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.6.0" "postgresql-18-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-17-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-14-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.0" "postgresql-13-age : AVAIL 1" "blue" >}} |
@@ -61,6 +59,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `apache-age_18` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 245.8 KiB | [apache-age_18-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_18-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_18` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 228.2 KiB | [apache-age_18-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_18-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_18` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 226.6 KiB | [apache-age_18-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_18-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_18` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 220.9 KiB | [apache-age_18-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_18-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_18` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 228.6 KiB | [apache-age_18-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_18-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_18` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 219.3 KiB | [apache-age_18-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_18-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-age` | `1.6.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 677.1 KiB | [postgresql-18-age_1.6.0~rc0-5.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.6.0~rc0-5.pgdg12+1_amd64.deb) |
 | `postgresql-18-age` | `1.6.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 656.0 KiB | [postgresql-18-age_1.6.0~rc0-5.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.6.0~rc0-5.pgdg12+1_arm64.deb) |
 | `postgresql-18-age` | `1.6.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 678.1 KiB | [postgresql-18-age_1.6.0~rc0-5.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.6.0~rc0-5.pgdg13+1_amd64.deb) |
@@ -75,12 +79,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `apache-age_17` | `1.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 219.4 KiB | [apache-age_17-1.5.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_17-1.5.0-2PIGSTY.el8.x86_64.rpm) |
-| `apache-age_17` | `1.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 201.7 KiB | [apache-age_17-1.5.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_17-1.5.0-2PIGSTY.el8.aarch64.rpm) |
-| `apache-age_17` | `1.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 216.6 KiB | [apache-age_17-1.5.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_17-1.5.0-2PIGSTY.el9.x86_64.rpm) |
-| `apache-age_17` | `1.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 208.1 KiB | [apache-age_17-1.5.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_17-1.5.0-2PIGSTY.el9.aarch64.rpm) |
-| `apache-age_17` | `1.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 227.2 KiB | [apache-age_17-1.5.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_17-1.5.0-2PIGSTY.el10.x86_64.rpm) |
-| `apache-age_17` | `1.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 218.1 KiB | [apache-age_17-1.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_17-1.5.0-2PIGSTY.el10.aarch64.rpm) |
+| `apache-age_17` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 245.1 KiB | [apache-age_17-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_17-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_17` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 227.7 KiB | [apache-age_17-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_17-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_17` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 226.0 KiB | [apache-age_17-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_17-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_17` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 216.8 KiB | [apache-age_17-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_17-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_17` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 228.4 KiB | [apache-age_17-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_17-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_17` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 218.6 KiB | [apache-age_17-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_17-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-age` | `1.6.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 677.4 KiB | [postgresql-17-age_1.6.0~rc0-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.6.0~rc0-3.pgdg12+1_amd64.deb) |
 | `postgresql-17-age` | `1.6.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 655.2 KiB | [postgresql-17-age_1.6.0~rc0-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.6.0~rc0-3.pgdg12+1_arm64.deb) |
 | `postgresql-17-age` | `1.6.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 676.4 KiB | [postgresql-17-age_1.6.0~rc0-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.6.0~rc0-3.pgdg13+1_amd64.deb) |
@@ -95,12 +99,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `apache-age_16` | `1.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 205.1 KiB | [apache-age_16-1.5.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_16-1.5.0-2PIGSTY.el8.x86_64.rpm) |
-| `apache-age_16` | `1.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 188.7 KiB | [apache-age_16-1.5.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_16-1.5.0-2PIGSTY.el8.aarch64.rpm) |
-| `apache-age_16` | `1.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 202.3 KiB | [apache-age_16-1.5.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_16-1.5.0-2PIGSTY.el9.x86_64.rpm) |
-| `apache-age_16` | `1.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 195.5 KiB | [apache-age_16-1.5.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_16-1.5.0-2PIGSTY.el9.aarch64.rpm) |
-| `apache-age_16` | `1.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 211.2 KiB | [apache-age_16-1.5.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_16-1.5.0-2PIGSTY.el10.x86_64.rpm) |
-| `apache-age_16` | `1.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 203.2 KiB | [apache-age_16-1.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_16-1.5.0-2PIGSTY.el10.aarch64.rpm) |
+| `apache-age_16` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 246.5 KiB | [apache-age_16-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_16-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_16` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 228.9 KiB | [apache-age_16-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_16-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_16` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 226.9 KiB | [apache-age_16-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_16-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_16` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 219.1 KiB | [apache-age_16-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_16-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_16` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 230.1 KiB | [apache-age_16-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_16-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_16` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 219.9 KiB | [apache-age_16-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_16-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-age` | `1.6.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 680.5 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg12+1_amd64.deb) |
 | `postgresql-16-age` | `1.6.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 657.6 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg12+1_arm64.deb) |
 | `postgresql-16-age` | `1.6.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 678.5 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg13+1_amd64.deb) |
@@ -115,12 +119,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `apache-age_15` | `1.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 207.9 KiB | [apache-age_15-1.5.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_15-1.5.0-2PIGSTY.el8.x86_64.rpm) |
-| `apache-age_15` | `1.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 191.5 KiB | [apache-age_15-1.5.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_15-1.5.0-2PIGSTY.el8.aarch64.rpm) |
-| `apache-age_15` | `1.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 208.4 KiB | [apache-age_15-1.5.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_15-1.5.0-2PIGSTY.el9.x86_64.rpm) |
-| `apache-age_15` | `1.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 200.2 KiB | [apache-age_15-1.5.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_15-1.5.0-2PIGSTY.el9.aarch64.rpm) |
-| `apache-age_15` | `1.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 219.2 KiB | [apache-age_15-1.5.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_15-1.5.0-2PIGSTY.el10.x86_64.rpm) |
-| `apache-age_15` | `1.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 211.5 KiB | [apache-age_15-1.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_15-1.5.0-2PIGSTY.el10.aarch64.rpm) |
+| `apache-age_15` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 250.8 KiB | [apache-age_15-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_15-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_15` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 233.1 KiB | [apache-age_15-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_15-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_15` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 233.3 KiB | [apache-age_15-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_15-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_15` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 224.4 KiB | [apache-age_15-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_15-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_15` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 236.9 KiB | [apache-age_15-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_15-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_15` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 227.1 KiB | [apache-age_15-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_15-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-age` | `1.5.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 728.5 KiB | [postgresql-15-age_1.5.0~rc0-1.pgdg120+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.5.0~rc0-1.pgdg120+2_amd64.deb) |
 | `postgresql-15-age` | `1.5.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 710.0 KiB | [postgresql-15-age_1.5.0~rc0-1.pgdg120+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.5.0~rc0-1.pgdg120+2_arm64.deb) |
 | `postgresql-15-age` | `1.5.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 624.9 KiB | [postgresql-15-age_1.5.0~rc0-1.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.5.0~rc0-1.pgdg130+2_amd64.deb) |
@@ -135,12 +139,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `apache-age_14` | `1.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 207.9 KiB | [apache-age_14-1.5.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_14-1.5.0-2PIGSTY.el8.x86_64.rpm) |
-| `apache-age_14` | `1.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 191.4 KiB | [apache-age_14-1.5.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_14-1.5.0-2PIGSTY.el8.aarch64.rpm) |
-| `apache-age_14` | `1.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 211.6 KiB | [apache-age_14-1.5.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_14-1.5.0-2PIGSTY.el9.x86_64.rpm) |
-| `apache-age_14` | `1.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 207.6 KiB | [apache-age_14-1.5.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_14-1.5.0-2PIGSTY.el9.aarch64.rpm) |
-| `apache-age_14` | `1.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 218.6 KiB | [apache-age_14-1.5.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_14-1.5.0-2PIGSTY.el10.x86_64.rpm) |
-| `apache-age_14` | `1.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 211.3 KiB | [apache-age_14-1.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_14-1.5.0-2PIGSTY.el10.aarch64.rpm) |
+| `apache-age_14` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 250.7 KiB | [apache-age_14-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_14-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_14` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 232.9 KiB | [apache-age_14-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_14-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_14` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 233.4 KiB | [apache-age_14-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_14-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_14` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 222.9 KiB | [apache-age_14-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_14-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_14` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 235.9 KiB | [apache-age_14-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_14-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_14` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 227.0 KiB | [apache-age_14-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_14-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-age` | `1.5.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 728.5 KiB | [postgresql-14-age_1.5.0~rc0-1.pgdg120+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.5.0~rc0-1.pgdg120+2_amd64.deb) |
 | `postgresql-14-age` | `1.5.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 710.0 KiB | [postgresql-14-age_1.5.0~rc0-1.pgdg120+2_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.5.0~rc0-1.pgdg120+2_arm64.deb) |
 | `postgresql-14-age` | `1.5.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 625.1 KiB | [postgresql-14-age_1.5.0~rc0-1.pgdg130+2_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-14-age/postgresql-14-age_1.5.0~rc0-1.pgdg130+2_amd64.deb) |
@@ -155,12 +159,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `apache-age_13` | `1.5.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 204.9 KiB | [apache-age_13-1.5.0-2PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_13-1.5.0-2PIGSTY.el8.x86_64.rpm) |
-| `apache-age_13` | `1.5.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 191.4 KiB | [apache-age_13-1.5.0-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_13-1.5.0-2PIGSTY.el8.aarch64.rpm) |
-| `apache-age_13` | `1.5.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 217.5 KiB | [apache-age_13-1.5.0-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_13-1.5.0-2PIGSTY.el9.x86_64.rpm) |
-| `apache-age_13` | `1.5.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 206.8 KiB | [apache-age_13-1.5.0-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_13-1.5.0-2PIGSTY.el9.aarch64.rpm) |
-| `apache-age_13` | `1.5.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 219.3 KiB | [apache-age_13-1.5.0-2PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_13-1.5.0-2PIGSTY.el10.x86_64.rpm) |
-| `apache-age_13` | `1.5.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 210.8 KiB | [apache-age_13-1.5.0-2PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_13-1.5.0-2PIGSTY.el10.aarch64.rpm) |
+| `apache-age_13` | `1.6.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 246.7 KiB | [apache-age_13-1.6.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/apache-age_13-1.6.0-1PIGSTY.el8.x86_64.rpm) |
+| `apache-age_13` | `1.6.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 231.7 KiB | [apache-age_13-1.6.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/apache-age_13-1.6.0-1PIGSTY.el8.aarch64.rpm) |
+| `apache-age_13` | `1.6.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 233.0 KiB | [apache-age_13-1.6.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/apache-age_13-1.6.0-1PIGSTY.el9.x86_64.rpm) |
+| `apache-age_13` | `1.6.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 222.7 KiB | [apache-age_13-1.6.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/apache-age_13-1.6.0-1PIGSTY.el9.aarch64.rpm) |
+| `apache-age_13` | `1.6.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 236.3 KiB | [apache-age_13-1.6.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/apache-age_13-1.6.0-1PIGSTY.el10.x86_64.rpm) |
+| `apache-age_13` | `1.6.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 226.7 KiB | [apache-age_13-1.6.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/apache-age_13-1.6.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-13-age` | `1.5.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 729.1 KiB | [postgresql-13-age_1.5.0~rc0-1.pgdg120+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-13-age/postgresql-13-age_1.5.0~rc0-1.pgdg120+1_amd64.deb) |
 | `postgresql-13-age` | `1.5.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 708.6 KiB | [postgresql-13-age_1.5.0~rc0-1.pgdg120+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-13-age/postgresql-13-age_1.5.0~rc0-1.pgdg120+1_arm64.deb) |
 | `postgresql-13-age` | `1.5.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 726.4 KiB | [postgresql-13-age_1.5.0~rc0-1.pgdg130+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-13-age/postgresql-13-age_1.5.0~rc0-1.pgdg130+1_amd64.deb) |
@@ -176,7 +180,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/apache/age" title="Repository" icon="github" subtitle="github.com/apache/age" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-1.5.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="age-1.6.0.tar.gz" >}}
 {{< /cards >}}
 
 

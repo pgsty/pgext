@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 412 | 429 | 428 | 430 | 415 | 386 |
-| **EL** | 434 | 143 | 268 | 71 | 6 | 400 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 399 | 416 | 414 | 416 | 404 | 371 |
+| **ALL** | 440 | 149 | 270 | 71 | 0 | 418 | 429 | 428 | 430 | 414 | 386 |
+| **EL** | 435 | 144 | 270 | 71 | 5 | 408 | 422 | 423 | 425 | 412 | 382 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 404 | 416 | 414 | 416 | 403 | 371 |
 
 ## 分类
 
@@ -81,7 +81,7 @@ comments: false
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | PG4ML是一个机器学习框架 |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
-| {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | {{< ext "pgroonga_database" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | PGGroonga 数据库管理模块 |
 | {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 基于二字组的多语言全文检索扩展 |
@@ -329,7 +329,7 @@ comments: false
 | {{< ext "pg_rewrite" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 在线重写整表，不阻塞读写 |
 | {{< ext "pg_squeeze" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 从关系中删除未使用空间 |
 | {{< ext "pg_dirtyread" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 从表中读取尚未垃圾回收的行 |
-| {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 检查和管理操作系统缓冲区缓存 |
+| {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 检查和管理操作系统缓冲区缓存 |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 从缓冲区中移除特定关系的页面 |
 | {{< ext "ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提取数据库对象的DDL |
 | {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PG数据库规则检查插件 |
@@ -446,9 +446,9 @@ comments: false
 | {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
 | {{< ext "file_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | 访问外部文件的外部数据包装器 |
 | {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | 用于远程 PostgreSQL 服务器的外部数据包装器 |
-| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的API层 |
-| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的核心API层实现 |
-| {{< ext "documentdb_distributed" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | DocumentDB多节点模式的API层 |
+| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的API层 |
+| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 微软DocumentDB的核心API层实现 |
+| {{< ext "documentdb_distributed" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | DocumentDB多节点模式的API层 |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 类似Oracle的全局临时表功能 |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Oracle兼容的会话变量/常量操作函数 |
@@ -477,6 +477,6 @@ comments: false
 | {{< ext "mimeo" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | 在PostgreSQL实例间进行表级复制 |
 | {{< ext "repmgr" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL复制管理组件 |
 | {{< ext "pg_fact_loader" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 在 Postgres 中构建事实表 |
-| {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | 向 PostgreSQL 中高速加载数据 |
+| {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | 向 PostgreSQL 中高速加载数据 |
 | {{< ext "test_decoding" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | 基于SQL的WAL逻辑解码样例 |
 | {{< ext "pgoutput" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | PG内置的逻辑解码输出插件 |

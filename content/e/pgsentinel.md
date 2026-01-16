@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6280** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.3.0` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6280** | {{< badge content="pgsentinel" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< ext "pgsentinel" >}} | `1.3.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,26 +26,24 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "system_stats" >}} {{< ext "pgnodemx" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_wait_sampling" >}} {{< ext "bgw_replstatus" >}} {{< ext "pg_profile" >}} {{< ext "pg_proctab" >}} {{< ext "powa" >}} |
 
-> [!Note] el build break
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsentinel` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} {{< bg "13" "pgsentinel_13" "green" >}} | `pgsentinel_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsentinel` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.1` | {{< bg "18" "pgsentinel_18" "green" >}} {{< bg "17" "pgsentinel_17" "green" >}} {{< bg "16" "pgsentinel_16" "green" >}} {{< bg "15" "pgsentinel_15" "green" >}} {{< bg "14" "pgsentinel_14" "green" >}} {{< bg "13" "pgsentinel_13" "green" >}} | `pgsentinel_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "postgresql-18-pgsentinel" "green" >}} {{< bg "17" "postgresql-17-pgsentinel" "green" >}} {{< bg "16" "postgresql-16-pgsentinel" "green" >}} {{< bg "15" "postgresql-15-pgsentinel" "green" >}} {{< bg "14" "postgresql-14-pgsentinel" "green" >}} {{< bg "13" "postgresql-13-pgsentinel" "green" >}} | `postgresql-$v-pgsentinel` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.3.0" "pgsentinel_13 : AVAIL 3" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_14 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.1" "pgsentinel_13 : AVAIL 2" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-13-pgsentinel : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-13-pgsentinel : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgsentinel : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgsentinel : AVAIL 1" "blue" >}} |      {{< bg "MISS" "postgresql-13-pgsentinel : MISS 0" "red" >}}      |
@@ -61,18 +59,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_18` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_18-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_18-1.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_18` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_18-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_18-1.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_18` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.7 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_18-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.7 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_18-1.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_18` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_18-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.2 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_18-1.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_18` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_18-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.0 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_18-1.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_18` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_18-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_18-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_18` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_18-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_18-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.8 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_18-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.2 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_18-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.0 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_18-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.5 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_18-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_18-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_18` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.6 KiB | [pgsentinel_18-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_18-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgsentinel` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.3 KiB | [postgresql-18-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgsentinel` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 42.8 KiB | [postgresql-18-pgsentinel_1.3.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.3.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-18-pgsentinel` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 44.3 KiB | [postgresql-18-pgsentinel_1.3.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.3.1-1.pgdg13+1_amd64.deb) |
@@ -87,23 +79,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_17` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.6 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_17-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_17-1.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.8 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_17-1.3.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.6 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgsentinel_17-1.2.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsentinel_17` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_17-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_17-1.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.2 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_17-1.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.8 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgsentinel_17-1.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsentinel_17` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_17-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_17-1.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.1 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_17-1.3.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.1 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgsentinel_17-1.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsentinel_17` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_17-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_17-1.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.6 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_17-1.3.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.2 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgsentinel_17-1.2.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsentinel_17` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_17-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_17-1.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_17-1.3.1-1PIGSTY.el10.x86_64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.7 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgsentinel_17-1.2.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgsentinel_17` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 KiB | [pgsentinel_17-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_17-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_17` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_17-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_17-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_17` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.7 KiB | [pgsentinel_17-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_17-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `pgsentinel_17` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.8 KiB | [pgsentinel_17-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgsentinel_17-1.2.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgsentinel` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.3 KiB | [postgresql-17-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pgsentinel` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 40.4 KiB | [postgresql-17-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb) |
@@ -125,23 +111,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_16` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.6 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_16-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_16-1.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.8 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_16-1.3.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.6 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgsentinel_16-1.2.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsentinel_16` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_16-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_16-1.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.1 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_16-1.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.8 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgsentinel_16-1.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsentinel_16` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_16-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_16-1.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.1 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_16-1.3.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.1 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgsentinel_16-1.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsentinel_16` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_16-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_16-1.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.6 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_16-1.3.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.2 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgsentinel_16-1.2.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsentinel_16` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_16-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_16-1.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_16-1.3.1-1PIGSTY.el10.x86_64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.7 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgsentinel_16-1.2.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgsentinel_16` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 KiB | [pgsentinel_16-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_16-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_16` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 KiB | [pgsentinel_16-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_16-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_16` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.7 KiB | [pgsentinel_16-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_16-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `pgsentinel_16` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.8 KiB | [pgsentinel_16-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgsentinel_16-1.2.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgsentinel` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.2 KiB | [postgresql-16-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pgsentinel` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 40.3 KiB | [postgresql-16-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb) |
@@ -163,23 +143,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_15` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.6 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_15-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.6 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_15-1.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.9 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_15-1.3.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.8 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgsentinel_15-1.2.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsentinel_15` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_15-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.9 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_15-1.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.1 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_15-1.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.8 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgsentinel_15-1.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsentinel_15` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.0 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_15-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.9 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_15-1.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.3 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_15-1.3.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.2 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgsentinel_15-1.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsentinel_15` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.4 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_15-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.4 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_15-1.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.6 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_15-1.3.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.4 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgsentinel_15-1.2.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsentinel_15` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.2 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_15-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.2 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_15-1.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.6 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_15-1.3.1-1PIGSTY.el10.x86_64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.9 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgsentinel_15-1.2.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgsentinel_15` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.5 KiB | [pgsentinel_15-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_15-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_15` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 KiB | [pgsentinel_15-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_15-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_15` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.8 KiB | [pgsentinel_15-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_15-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `pgsentinel_15` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.9 KiB | [pgsentinel_15-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgsentinel_15-1.2.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgsentinel` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.3 KiB | [postgresql-15-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pgsentinel` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 40.3 KiB | [postgresql-15-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb) |
@@ -201,23 +175,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_14` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_14-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.5 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_14-1.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.8 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_14-1.3.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.7 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgsentinel_14-1.2.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsentinel_14` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.8 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_14-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.8 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_14-1.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.0 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_14-1.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.7 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgsentinel_14-1.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsentinel_14` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.9 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_14-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.9 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_14-1.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.1 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_14-1.3.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.1 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgsentinel_14-1.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsentinel_14` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.4 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_14-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.3 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_14-1.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.7 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_14-1.3.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgsentinel_14-1.2.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsentinel_14` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.2 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_14-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_14-1.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.4 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_14-1.3.1-1PIGSTY.el10.x86_64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.8 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgsentinel_14-1.2.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgsentinel_14` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.4 KiB | [pgsentinel_14-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_14-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_14` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_14-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_14-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_14` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.7 KiB | [pgsentinel_14-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_14-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `pgsentinel_14` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.8 KiB | [pgsentinel_14-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgsentinel_14-1.2.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgsentinel` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 44.0 KiB | [postgresql-14-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.3.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-pgsentinel` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 40.1 KiB | [postgresql-14-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb) |
@@ -239,23 +207,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgsentinel_13` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.4 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_13-1.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.4 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_13-1.2.0-1PIGSTY.el8.x86_64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 22.7 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgsentinel_13-1.3.1-1PIGSTY.el8.x86_64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 23.6 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/pgsentinel_13-1.2.0-1PGDG.rhel8.x86_64.rpm) |
-| `pgsentinel_13` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.8 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_13-1.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 21.7 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_13-1.2.0-1PIGSTY.el8.aarch64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 22.0 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgsentinel_13-1.3.1-1PIGSTY.el8.aarch64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.7 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgsentinel_13-1.2.0-1PGDG.rhel8.aarch64.rpm) |
-| `pgsentinel_13` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.9 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_13-1.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 22.8 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_13-1.2.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 23.1 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgsentinel_13-1.3.1-1PIGSTY.el9.x86_64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 24.1 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/pgsentinel_13-1.2.0-1PGDG.rhel9.x86_64.rpm) |
-| `pgsentinel_13` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.2 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_13-1.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.2 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_13-1.2.0-1PIGSTY.el9.aarch64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 22.5 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgsentinel_13-1.3.1-1PIGSTY.el9.aarch64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 23.3 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgsentinel_13-1.2.0-1PGDG.rhel9.aarch64.rpm) |
-| `pgsentinel_13` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.2 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_13-1.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.1 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_13-1.2.0-1PIGSTY.el10.x86_64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 23.5 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgsentinel_13-1.3.1-1PIGSTY.el10.x86_64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 24.8 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgsentinel_13-1.2.0-1PGDG.rhel10.x86_64.rpm) |
-| `pgsentinel_13` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_13-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_13-1.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pgsentinel_13` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.3 KiB | [pgsentinel_13-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_13-1.2.0-1PIGSTY.el10.aarch64.rpm) |
+| `pgsentinel_13` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 22.6 KiB | [pgsentinel_13-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgsentinel_13-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `pgsentinel_13` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 23.7 KiB | [pgsentinel_13-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgsentinel_13-1.2.0-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-13-pgsentinel` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 39.9 KiB | [postgresql-13-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-13-pgsentinel_1.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-13-pgsentinel` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 38.4 KiB | [postgresql-13-pgsentinel_1.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgsentinel/postgresql-13-pgsentinel_1.2.0-1PIGSTY~bookworm_arm64.deb) |
@@ -270,21 +232,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgsentinel/pgsentinel" title="Repository" icon="github" subtitle="github.com/pgsentinel/pgsentinel" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.3.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgsentinel-1.3.1.tar.gz" >}}
 {{< /cards >}}
 
 
 ```bash
-pig build pkg pgsentinel;		# build spec not ready
+pig build pkg pgsentinel;		# build rpm / deb with pig
 ```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

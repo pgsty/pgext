@@ -27,7 +27,7 @@ width: full
 |    **Need By**    | {{< ext "timeseries" >}} |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "pg_mooncake" >}} {{< ext "timescaledb" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} |
 
-> [!Note] conflict with citus columnar, no pg17
+> [!Note] conflict with citus columnar, obsolete, no longer maintained
 
 
 ## Packages

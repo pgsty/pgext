@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 440 | 149 | 268 | 71 | 0 | 412 | 429 | 428 | 430 | 415 | 386 |
-| **EL** | 434 | 143 | 268 | 71 | 6 | 400 | 421 | 422 | 424 | 412 | 382 |
-| **Debian** | 426 | 105 | 250 | 71 | 14 | 399 | 416 | 414 | 416 | 404 | 371 |
+| **ALL** | 440 | 149 | 270 | 71 | 0 | 418 | 429 | 428 | 430 | 414 | 386 |
+| **EL** | 435 | 144 | 270 | 71 | 5 | 408 | 422 | 423 | 425 | 412 | 382 |
+| **Debian** | 426 | 105 | 250 | 71 | 14 | 404 | 416 | 414 | 416 | 403 | 371 |
 
 ## Categories
 
@@ -81,7 +81,7 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | Machine learning framework for PostgreSQL |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Run AL/ML workloads with SQL interface |
-| {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Full text search for PostgreSQL using BM25 |
+| {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Full text search for PostgreSQL using BM25 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | {{< ext "pgroonga_database" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | PGroonga database management module |
 | {{< ext "pg_bigm" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | create 2-gram (bigram) index for faster full text search. |
@@ -329,7 +329,7 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "pg_rewrite" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Tool allows read write to the table during the rewriting |
 | {{< ext "pg_squeeze" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | A tool to remove unused space from a relation. |
 | {{< ext "pg_dirtyread" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Read dead but unvacuumed rows from table |
-| {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | examine and manage the os buffer cache |
+| {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | examine and manage the os buffer cache |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | remove buffered pages for specific relations |
 | {{< ext "ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | DDL eXtractor functions |
 | {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL Linting and Analysis Extension |
@@ -446,9 +446,9 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "dblink" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | connect to other PostgreSQL databases from within a database |
 | {{< ext "file_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | foreign-data wrapper for flat file access |
 | {{< ext "postgres_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | foreign-data wrapper for remote PostgreSQL servers |
-| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | API surface for DocumentDB for PostgreSQL |
-| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Core API surface for DocumentDB for PostgreSQL |
-| {{< ext "documentdb_distributed" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Multi-Node API surface for DocumentDB |
+| {{< ext "documentdb" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | API surface for DocumentDB for PostgreSQL |
+| {{< ext "documentdb_core" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Core API surface for DocumentDB for PostgreSQL |
+| {{< ext "documentdb_distributed" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Multi-Node API surface for DocumentDB |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Registration and manipulation of session variables and constants |
@@ -477,6 +477,6 @@ There are 440 available PostgreSQL extensions:
 | {{< ext "mimeo" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
 | {{< ext "repmgr" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Replication manager for PostgreSQL |
 | {{< ext "pg_fact_loader" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | build fact tables with Postgres |
-| {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
+| {{< ext "pg_bulkload" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="-bs-d--" color="blue" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
 | {{< ext "test_decoding" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | SQL-based test/example module for WAL logical decoding |
 | {{< ext "pgoutput" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s----" color="blue" >}} | Logical Replication output plugin |

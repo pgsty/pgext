@@ -26,24 +26,26 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_cooldown" >}} {{< ext "pgcozy" >}} {{< ext "fio" >}} {{< ext "pg_prewarm" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_repack" >}} {{< ext "pg_rewrite" >}} |
 
+> [!Note] pg18 el fixed by vonng
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfincore` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "pgfincore_18" "red" >}} {{< bg "17" "pgfincore_17" "green" >}} {{< bg "16" "pgfincore_16" "green" >}} {{< bg "15" "pgfincore_15" "green" >}} {{< bg "14" "pgfincore_14" "green" >}} {{< bg "13" "pgfincore_13" "green" >}} | `pgfincore_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfincore` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "pgfincore_18" "green" >}} {{< bg "17" "pgfincore_17" "green" >}} {{< bg "16" "pgfincore_16" "green" >}} {{< bg "15" "pgfincore_15" "green" >}} {{< bg "14" "pgfincore_14" "green" >}} {{< bg "13" "pgfincore_13" "green" >}} | `pgfincore_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.1` | {{< bg "18" "postgresql-18-pgfincore" "green" >}} {{< bg "17" "postgresql-17-pgfincore" "green" >}} {{< bg "16" "postgresql-16-pgfincore" "green" >}} {{< bg "15" "postgresql-15-pgfincore" "green" >}} {{< bg "14" "postgresql-14-pgfincore" "green" >}} {{< bg "13" "postgresql-13-pgfincore" "green" >}} | `postgresql-$v-pgfincore` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 2" "blue" >}} |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 2" "blue" >}} |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_13 : AVAIL 1" "blue" >}} |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_13 : AVAIL 1" "blue" >}} |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "pgfincore_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 1" "blue" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 2" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 2" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_13 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.4" "pgfincore_13 : AVAIL 1" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 1" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "pgfincore_18 : AVAIL 1" "green" >}} | {{< bg "PGDG 1.3.1" "pgfincore_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "pgfincore_13 : AVAIL 1" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-13-pgfincore : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-13-pgfincore : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-13-pgfincore : AVAIL 1" "blue" >}} |
@@ -59,6 +61,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgfincore_18` | `1.3.1` | [el8.x86_64](/os/el8.x86_64) | pigsty | 16.6 KiB | [pgfincore_18-1.3.1-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgfincore_18-1.3.1-1PIGSTY.el8.x86_64.rpm) |
+| `pgfincore_18` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pigsty | 16.4 KiB | [pgfincore_18-1.3.1-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgfincore_18-1.3.1-1PIGSTY.el8.aarch64.rpm) |
+| `pgfincore_18` | `1.3.1` | [el9.x86_64](/os/el9.x86_64) | pigsty | 16.7 KiB | [pgfincore_18-1.3.1-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgfincore_18-1.3.1-1PIGSTY.el9.x86_64.rpm) |
+| `pgfincore_18` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pigsty | 16.3 KiB | [pgfincore_18-1.3.1-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgfincore_18-1.3.1-1PIGSTY.el9.aarch64.rpm) |
+| `pgfincore_18` | `1.3.1` | [el10.x86_64](/os/el10.x86_64) | pigsty | 16.8 KiB | [pgfincore_18-1.3.1-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgfincore_18-1.3.1-1PIGSTY.el10.x86_64.rpm) |
+| `pgfincore_18` | `1.3.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 16.6 KiB | [pgfincore_18-1.3.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgfincore_18-1.3.1-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgfincore` | `1.3.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 28.8 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 28.4 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg12+1_arm64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 29.0 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg13+1_amd64.deb) |
@@ -181,7 +189,13 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/klando/pgfincore" title="Repository" icon="github" subtitle="github.com/klando/pgfincore" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgfincore-1.3.1.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pgfincore;		# build spec not ready
+```
 
 
 ## Install
@@ -197,6 +211,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install pgfincore;		# install via package name, for the active PG version
 
+pig install pgfincore -v 18;   # install for PG 18
 pig install pgfincore -v 17;   # install for PG 17
 pig install pgfincore -v 16;   # install for PG 16
 pig install pgfincore -v 15;   # install for PG 15
