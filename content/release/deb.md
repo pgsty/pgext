@@ -7,6 +7,23 @@ weight: 300
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 
+## 2026-01-16
+
+| Name          | Old    | New    | Comment               |
+|:--------------|:-------|:-------|:----------------------|
+| pg_search     | 0.20.5 | 0.21.2 | +pg18                 |
+| pg_clickhouse | 0.1.0  | 0.1.2  |                       |
+| pg_timeseries | 0.1.8  | 0.2.0  |                       |
+| biscuit       | 2.0.1  | 2.2.2  |                       |
+| documentdb    | 0.107  | 0.109  | +pg18, use ms version |
+| pg_bulkload   | 3.1.22 | 3.1.23 | +pg18                 |
+| pgsentinel    | 1.2.0  | 1.3.1  | use PGDG              |
+| age           | -      | 1.6.0  | use PGDG              |
+| pljs          | -      | 1.0.4  | use PGDG              |
+| pg_partman    | 5.3.0  | 5.4.0  | use PGDG              |
+| pgfincore     | -      | 1.3.1  | use PGDG              |
+
+
 ## 2025-12-25
 
 | Name          | Old     | New     | Comment  |
