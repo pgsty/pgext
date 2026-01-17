@@ -163,7 +163,7 @@ menu:
 
 
 params:
-  description: PostgreSQL Extension Catalog, Install 430+ PG Extensions on 14 Linux Distribution with the PIG Package Manager
+  description: PostgreSQL Extension Catalog, Install 444 PG Extensions on 14 Linux Distribution with the PIG Package Manager
 
   navbar:
     displayTitle: true

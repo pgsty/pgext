@@ -27,7 +27,7 @@ width: full
 |    **Need By**    | {{< ext "timeseries" >}} |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "pg_fkpart" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "plproxy" >}} {{< ext "temporal_tables" >}} |
 
-> [!Note] pg13 fixed on el10, u24
+> [!Note] pg13 missing on el10, u24
 
 
 ## Packages

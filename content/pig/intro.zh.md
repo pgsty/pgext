@@ -9,7 +9,7 @@ breadcrumbs: false
 你是否曾因安装或升级 PostgreSQL 扩展而头疼？翻查过时的文档、晦涩难懂的配置脚本，或是在 GitHub 上苦寻分支与补丁？
 Postgres 丰富的扩展生态同时意味着复杂的部署流程 —— 在多发行版、多架构环境下尤为棘手。而 PIG 可以为您解决这些烦恼。
 
-这正是 **Pig** 诞生的初衷。Pig 由 Go 语言开发，致力于一站式管理 Postgres 及其 [430+](/zh/list/) 扩展。
+这正是 **Pig** 诞生的初衷。Pig 由 Go 语言开发，致力于一站式管理 Postgres 及其 [444](/zh/list/) 扩展。
 无论是 TimescaleDB、Citus、PGVector，还是 30+ Rust 扩展，亦或 [自建 Supabase](/zh/app/supabase) 所需的全部组件 —— Pig 统一的 CLI 让一切触手可及。
 它彻底告别源码编译与杂乱仓库，直接提供版本对齐的 RPM/DEB 包，完美兼容 Debian、Ubuntu、RedHat 等主流发行版，支持 x86 与 Arm 架构，无需猜测，无需折腾。
 

@@ -14,9 +14,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 346 | The traditional PostgreSQL extension language |
-| {{< language "Rust" >}} | 37 | Extensions written in Rust with the pgrx framework |
-| {{< language "SQL" >}} | 37 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 348 | The traditional PostgreSQL extension language |
+| {{< language "Rust" >}} | 38 | Extensions written in Rust with the pgrx framework |
+| {{< language "SQL" >}} | 38 | Pure SQL extensions and functions |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "C++" >}} | 7 | Extensions leveraging C++ features and libraries |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="346 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="348 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -75,6 +75,7 @@ The traditional PostgreSQL extension language
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
 | 2730 | {{< alias "age" >}} | AGE graph database extension |
 | 2750 | {{< alias "rum" >}} | RUM index access method |
+| 2780 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
 | 2810 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2820 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2830 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
@@ -220,7 +221,7 @@ The traditional PostgreSQL extension language
 | 4650 | {{< alias "ddsketch" >}} | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
-| 4680 | {{< alias "pg_weighted_statistics" >}} | High-performance weighted statistics functions for sparse data |
+| 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | High-performance weighted statistics functions for sparse data |
 | 4700 | {{< alias "tdigest" >}} | Provides tdigest aggregate function. |
 | 4710 | {{< alias "first_last_agg" >}} | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | Extra Window Functions for PostgreSQL |
@@ -351,6 +352,7 @@ The traditional PostgreSQL extension language
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB Extended RUM index access method |
 | 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
@@ -380,7 +382,7 @@ The traditional PostgreSQL extension language
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="37 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="38 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -423,10 +425,11 @@ Extensions written in Rust with the pgrx framework
 | 7060 | {{< alias "pgsmcrypto" >}} | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
+| 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="37 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="38 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -436,6 +439,7 @@ Pure SQL extensions and functions
 | 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
 | 1060 | {{< alias "table_version" >}} | PostgreSQL table versioning extension |
 | 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2840 | {{< alias "index_advisor" >}} | Query index advisor |
 | 2890 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |

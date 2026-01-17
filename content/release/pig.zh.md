@@ -5,6 +5,13 @@ weight: 100
 breadcrumbs: false
 ---
 
+## v0.9.1
+
+- 扩展数量达到 444 个，新增 etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen
+- citus, age, pg_search, pg_bulkload, documentdb 支持 PG 18
+- 修复 `pig ext scan` 出现重复扩展问题。
+- 修复了 `pg_weighted_statistics` 扩展名称，现在 `ext` 名称为 `weighted_statistics`
+
 
 
 ## v0.9.0

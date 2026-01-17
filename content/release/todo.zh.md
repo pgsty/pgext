@@ -4,6 +4,19 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
+
+# 待办事项
+
+- citus 14.0 with pg18 support
+- pg_ttl_index 0.1.0
+- etcd_fdw 0.0.0
+- convert 0.0.5 -> 0.1.0
+- pg_textsearch 0.1.0 -> 0.4.0
+- pgmq 1.8.0 -> 1.8.1
+- documentdb_extened_rum
+- mobilitydb_datagen
+
+
 ## 候选列表
 
 - pgmq 1.8.1
@@ -16,7 +29,6 @@ weight: 700
 
 ## 最近更新
 
-- citus 14.0 with pg18 support
 - age 1.6.0 with pg18 support (age)
 - pgsentinel 1.3.0 -> 1.3.1 rpm
 - pg_timeseries 0.1.8 -> 0.2.0

@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（440 ext / 373 pkg）归属 16 个分类。
+PostgreSQL 扩展（444 ext / 375 pkg）归属 16 个分类。
 
 
 
@@ -54,6 +54,7 @@ PostgreSQL 扩展（440 ext / 373 pkg）归属 16 个分类。
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Google快速Polyline编码解码扩展 |
 | 1590 | {{< alias "pg_geohash" >}} | 1.0 | 使用GeoHash处理空间坐标的函数包 |
 | 1650 | {{< alias "mobilitydb" >}} | 1.3.0 | MobilityDB地理空间投影数据管理分析平台 |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.0 | MobilityDB随机数据生成函数 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 0.2.3 | 快速根据GPS经纬度坐标查找时区 |
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | 计算地球表面上的大圆距离 |
 
@@ -89,7 +90,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | 使用IAM的高性能文本模式匹配 |
-| 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | 带有BM25排序的全文搜索扩展 |
+| 2180 | {{< alias "pg_textsearch" >}} | 0.4.0 | 带有BM25排序的全文搜索扩展 |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Hunspell捷克语全文检索词典 |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | Hunspell德语全文检索词典 |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | Hunspell英语全文检索词典 |
@@ -109,8 +110,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 13.2.0 | Citus 分布式数据库 |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 13.2.0 | Citus 列式存储引擎 |
+| 2400 | {{< alias "citus" >}} | 14.0.0 | Citus 分布式数据库 |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.0.0 | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | 开源列式存储扩展 |
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | 由 DuckDB 驱动的数据分析引擎 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
@@ -134,6 +135,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
+| 2780 | {{< alias "pg_ttl_index" >}} | 2.0.0 | 基于TTL索引的自动数据过期清理 |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | 提供JSON Schema校验能力 |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
@@ -144,7 +146,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | 增量处理流式事件 |
-| 2890 | {{< alias "pgmq" >}} | 1.8.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2890 | {{< alias "pgmq" >}} | 1.8.1 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -335,7 +337,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4650 | {{< alias "ddsketch" >}} | 1.0.1 | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | 4660 | {{< alias "vasco" >}} | 0.1.0 | 使用MIC发现数据中隐含的关联 |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.0 | 在PG中计算XI相关系数 |
-| 4680 | {{< alias "pg_weighted_statistics" >}} | 1.0.0 | 针对稀疏数据的高性能加权统计量计算 |
+| 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 1.0.0 | 针对稀疏数据的高性能加权统计量计算 |
 | 4700 | {{< alias "tdigest" >}} | 1.4.3 | tdigest 聚合函数 |
 | 4710 | {{< alias "first_last_agg" >}} | 0.1.4 | first() 与 last() 聚合函数 |
 | 4720 | {{< alias "extra_window_functions" >}} | 1.0 | 额外的窗口函数 |
@@ -350,7 +352,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62编码解码扩展 |
 | 4830 | {{< alias "pg_base58" >}} | 0.0.1 | Base58 编码/解码函数 |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | 金融领域聚合函数 |
-| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.5 | 用于空间里程等的公英制转换函数 |
+| 4850 | {{< alias "convert" "pg_convert" >}} | 0.1.0 | 用于空间里程等的公英制转换函数 |
 | 4880 | {{< alias "refint" >}} | 1.0 | 实现引用完整性的函数 |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | 用于自动递增字段的函数 |
 | 4882 | {{< alias "insert_username" >}} | 1.0 | 用于跟踪谁更改了表的函数 |
@@ -504,6 +506,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8630 | {{< alias "db2_fdw" >}} | 18.0.1 | 提供对DB2的外部数据源包装器 |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite 外部数据包装器 |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
+| 8660 | {{< alias "etcd_fdw" >}} | 0.0.0 | etcd分布式键值存储外部数据包装器 |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | MongoDB 外部数据包装器 |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | 查询外部Redis数据源 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | 从PG向Redis发送Pub/Sub消息 |
@@ -525,6 +528,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9000 | {{< alias "documentdb" >}} | 0.109 | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | 微软DocumentDB的核心API层实现 |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | DocumentDB多节点模式的API层 |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.109 | DocumentDB扩展RUM索引访问方法 |
 | 9100 | {{< alias "orafce" >}} | 4.16.3 | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |

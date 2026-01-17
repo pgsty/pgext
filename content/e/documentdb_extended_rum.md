@@ -1,32 +1,31 @@
 ---
-title: "documentdb_core"
-linkTitle: "documentdb_core"
-description: "Core API surface for DocumentDB for PostgreSQL"
-weight: 9010
+title: "documentdb_extended_rum"
+linkTitle: "documentdb_extended_rum"
+description: "DocumentDB Extended RUM index access method"
+weight: 9030
 categories: ["SIM"]
 width: full
 ---
 
-[**documentdb**](https://github.com/microsoft/documentdb) : Core API surface for DocumentDB for PostgreSQL
+[**documentdb**](https://github.com/documentdb/documentdb) : DocumentDB Extended RUM index access method
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9010** | {{< badge content="documentdb_core" link="https://github.com/microsoft/documentdb" >}} | {{< ext "documentdb_core" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9030** | {{< badge content="documentdb_extended_rum" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_extended_rum" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "documentdb" >}} |
-|   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "vector" >}} |
-|    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
+|   **See Also**    | {{< ext "rum" >}} {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "mongo_fdw" >}} |
+|    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} |
 
 
 ## Packages
@@ -59,7 +58,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/microsoft/documentdb" title="Repository" icon="github" subtitle="github.com/microsoft/documentdb" >}}
+{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.109-0.tar.gz" >}}
 {{< /cards >}}
 
@@ -81,12 +80,12 @@ pig repo add pgsql -u   # add both repo and update cache
 
 ```bash
 pig install documentdb;		# install via package name, for the active PG version
-pig install documentdb_core;		# install by extension name, for the current active PG version
+pig install documentdb_extended_rum;		# install by extension name, for the current active PG version
 
-pig install documentdb_core -v 18;   # install for PG 18
-pig install documentdb_core -v 17;   # install for PG 17
-pig install documentdb_core -v 16;   # install for PG 16
-pig install documentdb_core -v 15;   # install for PG 15
+pig install documentdb_extended_rum -v 18;   # install for PG 18
+pig install documentdb_extended_rum -v 17;   # install for PG 17
+pig install documentdb_extended_rum -v 16;   # install for PG 16
+pig install documentdb_extended_rum -v 15;   # install for PG 15
 
 ```
 
@@ -94,12 +93,12 @@ pig install documentdb_core -v 15;   # install for PG 15
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```sql
-shared_preload_libraries = 'pg_documentdb, pg_documentdb_core';
+shared_preload_libraries = 'pg_documentdb_extended_rum';
 ```
 
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION documentdb_core;
+CREATE EXTENSION documentdb_extended_rum;
 ```

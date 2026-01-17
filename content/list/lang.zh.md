@@ -14,9 +14,9 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 346 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "Rust" >}} | 37 | 使用 pgrx 框架用 Rust 编写的扩展 |
-| {{< language "SQL" >}} | 37 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 348 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "Rust" >}} | 38 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "SQL" >}} | 38 | 纯 SQL 扩展和函数 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "C++" >}} | 7 | 使用 C++ 特性和库的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="346 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="348 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -75,6 +75,7 @@ weight: 200
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
 | 2730 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | 2750 | {{< alias "rum" >}} | RUM 索引访问方法 |
+| 2780 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
 | 2810 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | 2820 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
 | 2830 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
@@ -220,7 +221,7 @@ weight: 200
 | 4650 | {{< alias "ddsketch" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
-| 4680 | {{< alias "pg_weighted_statistics" >}} | 针对稀疏数据的高性能加权统计量计算 |
+| 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 针对稀疏数据的高性能加权统计量计算 |
 | 4700 | {{< alias "tdigest" >}} | tdigest 聚合函数 |
 | 4710 | {{< alias "first_last_agg" >}} | first() 与 last() 聚合函数 |
 | 4720 | {{< alias "extra_window_functions" >}} | 额外的窗口函数 |
@@ -351,6 +352,7 @@ weight: 200
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | DocumentDB多节点模式的API层 |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB扩展RUM索引访问方法 |
 | 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
@@ -380,7 +382,7 @@ weight: 200
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="37 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="38 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -423,10 +425,11 @@ weight: 200
 | 7060 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7070 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
+| 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="37 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="38 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -436,6 +439,7 @@ weight: 200
 | 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
 | 1060 | {{< alias "table_version" >}} | PostgreSQL 版本控制表扩展 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2840 | {{< alias "index_advisor" >}} | 查询索引建议器 |
 | 2890 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |

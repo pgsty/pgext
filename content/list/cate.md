@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (440 ext in 373 pkg) categorized into 16 categories.
+PostgreSQL Extensions (444 ext in 375 pkg) categorized into 16 categories.
 
 
 
@@ -54,6 +54,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |
 | 1590 | {{< alias "pg_geohash" >}} | 1.0 | Handle geohash based functionality for spatial coordinates |
 | 1650 | {{< alias "mobilitydb" >}} | 1.3.0 | MobilityDB geospatial trajectory data management & analysis platform |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.0 | MobilityDB random data generator functions |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 0.2.3 | Fast lookup timezone name by GPS coordinates |
 | 1690 | {{< alias "earthdistance" >}} | 1.2 | calculate great-circle distances on the surface of the Earth |
 
@@ -89,7 +90,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | IAM-LIKE pattern matching with bitmap indexing |
-| 2180 | {{< alias "pg_textsearch" >}} | 0.1.0 | Full-text search with BM25 ranking |
+| 2180 | {{< alias "pg_textsearch" >}} | 0.4.0 | Full-text search with BM25 ranking |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
@@ -109,8 +110,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 13.2.0 | Distributed PostgreSQL as an extension |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 13.2.0 | Citus columnar storage engine |
+| 2400 | {{< alias "citus" >}} | 14.0.0 | Distributed PostgreSQL as an extension |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.0.0 | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | Hydra Columnar extension |
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
@@ -134,6 +135,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2740 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
+| 2780 | {{< alias "pg_ttl_index" >}} | 2.0.0 | Automatic data expiration with TTL indexes |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
 | 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | PostgreSQL extension providing JSON Schema validation |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
@@ -144,7 +146,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | Incremental Processing by Crunchy Data |
-| 2890 | {{< alias "pgmq" >}} | 1.8.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2890 | {{< alias "pgmq" >}} | 1.8.1 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
@@ -335,7 +337,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4650 | {{< alias "ddsketch" >}} | 1.0.1 | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | 0.1.0 | discover hidden correlations in your data with MIC |
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.0 | XI Correlation Coefficient in Postgres |
-| 4680 | {{< alias "pg_weighted_statistics" >}} | 1.0.0 | High-performance weighted statistics functions for sparse data |
+| 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 1.0.0 | High-performance weighted statistics functions for sparse data |
 | 4700 | {{< alias "tdigest" >}} | 1.4.3 | Provides tdigest aggregate function. |
 | 4710 | {{< alias "first_last_agg" >}} | 0.1.4 | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | 1.0 | Extra Window Functions for PostgreSQL |
@@ -350,7 +352,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62 extension for PostgreSQL |
 | 4830 | {{< alias "pg_base58" >}} | 0.0.1 | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | Financial aggregate functions |
-| 4850 | {{< alias "convert" "pg_convert" >}} | 0.0.5 | conversion functions for spatial, routing and other specialized uses |
+| 4850 | {{< alias "convert" "pg_convert" >}} | 0.1.0 | conversion functions for spatial, routing and other specialized uses |
 | 4880 | {{< alias "refint" >}} | 1.0 | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | functions for autoincrementing fields |
 | 4882 | {{< alias "insert_username" >}} | 1.0 | functions for tracking who changed a table |
@@ -504,6 +506,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8630 | {{< alias "db2_fdw" >}} | 18.0.1 | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite Foreign Data Wrapper |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
+| 8660 | {{< alias "etcd_fdw" >}} | 0.0.0 | Foreign data wrapper for etcd |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | Send redis pub/sub messages to Redis from PostgreSQL Directly |
@@ -525,6 +528,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9000 | {{< alias "documentdb" >}} | 0.109 | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | Multi-Node API surface for DocumentDB |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.109 | DocumentDB Extended RUM index access method |
 | 9100 | {{< alias "orafce" >}} | 4.16.3 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |

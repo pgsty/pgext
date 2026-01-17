@@ -1,6 +1,6 @@
 ---
-title: "pg_weighted_statistics"
-linkTitle: "pg_weighted_statistics"
+title: "weighted_statistics"
+linkTitle: "weighted_statistics"
 description: "High-performance weighted statistics functions for sparse data"
 weight: 4680
 categories: ["FUNC"]
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4680** | {{< badge content="pg_weighted_statistics" link="https://github.com/schmidni/pg_weighted_statistics" >}} | {{< ext "pg_weighted_statistics" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4680** | {{< badge content="weighted_statistics" link="https://github.com/schmidni/pg_weighted_statistics" >}} | {{< ext "weighted_statistics" "pg_weighted_statistics" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -196,13 +196,14 @@ pig repo add pgsql -u   # add both repo and update cache
 
 ```bash
 pig install pg_weighted_statistics;		# install via package name, for the active PG version
+pig install weighted_statistics;		# install by extension name, for the current active PG version
 
-pig install pg_weighted_statistics -v 18;   # install for PG 18
-pig install pg_weighted_statistics -v 17;   # install for PG 17
-pig install pg_weighted_statistics -v 16;   # install for PG 16
-pig install pg_weighted_statistics -v 15;   # install for PG 15
-pig install pg_weighted_statistics -v 14;   # install for PG 14
-pig install pg_weighted_statistics -v 13;   # install for PG 13
+pig install weighted_statistics -v 18;   # install for PG 18
+pig install weighted_statistics -v 17;   # install for PG 17
+pig install weighted_statistics -v 16;   # install for PG 16
+pig install weighted_statistics -v 15;   # install for PG 15
+pig install weighted_statistics -v 14;   # install for PG 14
+pig install weighted_statistics -v 13;   # install for PG 13
 
 ```
 
@@ -210,5 +211,5 @@ pig install pg_weighted_statistics -v 13;   # install for PG 13
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pg_weighted_statistics;
+CREATE EXTENSION weighted_statistics;
 ```

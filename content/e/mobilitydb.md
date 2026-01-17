@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3_postgis" >}} {{< ext "timescaledb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
+|    **Siblings**   | {{< ext "mobilitydb_datagen" >}} |
 
 > [!Note] need another schema
 

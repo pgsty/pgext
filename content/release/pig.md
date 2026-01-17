@@ -6,6 +6,12 @@ breadcrumbs: false
 ---
 
 
+## v0.9.1
+
+- Extension count reaches 444, adding etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen
+- citus, age, pg_search, pg_bulkload, documentdb now support PG 18
+- Fix `pig ext scan` duplicate extension issue
+- Fix `pg_weighted_statistics` extension name, now `ext` name is `weighted_statistics`
 
 
 ## v0.9.0
@@ -35,7 +41,7 @@ ecb504efffde8d696b765579332fc0b3304751fa8077c4c0394e7f3c44aa0fe2  pig_0.9.0-1_ar
 
 **Extension Update**
 
-- 440 extensions
+- 444 extensions
 - new extension: [pg_ai_query](https://github.com/benodiwal/pg_ai_query) : 0.1.1
 - new extension: [pg_textsearch](https://github.com/timescale/pg_textsearch) : 0.1.0
 - new extension: [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) : 0.1.0
