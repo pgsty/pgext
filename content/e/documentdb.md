@@ -7,14 +7,14 @@ categories: ["SIM"]
 width: full
 ---
 
-[**documentdb**](https://github.com/microsoft/documentdb) : API surface for DocumentDB for PostgreSQL
+[**documentdb**](https://github.com/documentdb/documentdb) : API surface for DocumentDB for PostgreSQL
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9000** | {{< badge content="documentdb" link="https://github.com/microsoft/documentdb" >}} | {{< ext "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9000** | {{< badge content="documentdb" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **Requires**    | {{< ext "documentdb_core" >}} {{< ext "pg_cron" >}} {{< ext "tsm_system_rows" >}} {{< ext "vector" >}} {{< ext "postgis" >}} {{< ext "rum" >}} |
+|    **Need By**    | {{< ext "documentdb_distributed" >}} |
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "wal2mongo" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} |
 |    **Siblings**   | {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 
@@ -153,7 +154,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/microsoft/documentdb" title="Repository" icon="github" subtitle="github.com/microsoft/documentdb" >}}
+{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.109-0.tar.gz" >}}
 {{< /cards >}}
 

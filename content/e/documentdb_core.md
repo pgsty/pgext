@@ -7,14 +7,14 @@ categories: ["SIM"]
 width: full
 ---
 
-[**documentdb**](https://github.com/microsoft/documentdb) : Core API surface for DocumentDB for PostgreSQL
+[**documentdb**](https://github.com/documentdb/documentdb) : Core API surface for DocumentDB for PostgreSQL
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9010** | {{< badge content="documentdb_core" link="https://github.com/microsoft/documentdb" >}} | {{< ext "documentdb_core" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9010** | {{< badge content="documentdb_core" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_core" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "documentdb" >}} |
+|    **Need By**    | {{< ext "documentdb" >}} {{< ext "documentdb_distributed" >}} |
 |   **See Also**    | {{< ext "mongo_fdw" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_cron" >}} {{< ext "postgis" >}} {{< ext "vector" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} |
 
@@ -59,7 +59,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/microsoft/documentdb" title="Repository" icon="github" subtitle="github.com/microsoft/documentdb" >}}
+{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.109-0.tar.gz" >}}
 {{< /cards >}}
 

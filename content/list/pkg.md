@@ -11,9 +11,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 311 | 134 | 226 | 0 | 0 | 293 | 304 | 301 | 302 | 292 | 266 |
-| **EL** | 308 | 131 | 226 | 0 | 64 | 286 | 299 | 298 | 299 | 290 | 264 |
-| **Debian** | 297 | 91 | 206 | 0 | 75 | 279 | 291 | 287 | 288 | 279 | 251 |
+| **ALL** | 311 | 136 | 226 | 0 | 0 | 294 | 304 | 301 | 302 | 292 | 266 |
+| **EL** | 308 | 133 | 226 | 0 | 64 | 287 | 299 | 298 | 299 | 290 | 264 |
+| **Debian** | 297 | 93 | 204 | 0 | 75 | 280 | 291 | 287 | 288 | 279 | 251 |
 
 ## Categories
 
@@ -383,7 +383,7 @@ There are 311 available PostgreSQL packages:
 | {{< ext "dblink" >}} | `1.2` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/dblink.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "file_fdw" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/file-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "postgres_fdw" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "documentdb" >}} | `0.109` | {{< badge content="Link" link="https://github.com/microsoft/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v` | `postgresql-$v-documentdb` |
+| {{< ext "documentdb" >}} | `0.109` | {{< badge content="Link" link="https://github.com/documentdb/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v` | `postgresql-$v-documentdb` |
 | {{< ext "orafce" >}} | `4.16.3` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
 | {{< ext "pgtt" >}} | `4.4` | {{< badge content="Link" link="https://github.com/darold/pgtt" >}} | {{< category "SIM" >}} | `pgtt_$v` | `postgresql-$v-pgtt` |
 | {{< ext "session_variable" >}} | `3.4` | {{< badge content="Link" link="https://github.com/splendiddata/session_variable" >}} | {{< category "SIM" >}} | `session_variable_$v` | `postgresql-$v-session-variable` |

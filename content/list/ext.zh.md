@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 444 | 150 | 273 | 71 | 0 | 424 | 433 | 432 | 432 | 416 | 388 |
-| **EL** | 438 | 144 | 273 | 71 | 6 | 413 | 425 | 426 | 426 | 411 | 383 |
-| **Debian** | 430 | 106 | 253 | 71 | 14 | 410 | 420 | 418 | 418 | 403 | 373 |
+| **ALL** | 444 | 152 | 273 | 71 | 0 | 425 | 433 | 432 | 432 | 416 | 388 |
+| **EL** | 438 | 146 | 273 | 71 | 6 | 414 | 425 | 426 | 426 | 411 | 383 |
+| **Debian** | 430 | 108 | 251 | 71 | 14 | 411 | 420 | 418 | 418 | 403 | 373 |
 
 ## 分类
 
@@ -120,7 +120,7 @@ comments: false
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | 交叉表函数 |
 | {{< ext "age" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | {{< ext "hll" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | hyperloglog 数据类型 |
-| {{< ext "rum" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | RUM 索引访问方法 |
+| {{< ext "rum" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | RUM 索引访问方法 |
 | {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | AI驱动的 Postgres SQL 查询生成 |
 | {{< ext "pg_ttl_index" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | 基于TTL索引的自动数据过期清理 |
 | {{< ext "pg_graphql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PG内的GraphQL支持 |

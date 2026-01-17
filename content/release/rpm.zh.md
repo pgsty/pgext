@@ -29,7 +29,7 @@ weight: 200
 | pgfincore               | -      | 1.3.1  | +pg18        |
 | documentdb_extended_rum |        | 0.109  | 新增           |
 | mobilitydb_datagen      |        | 1.3.0  | 新增           |
-
+| rum                     |        | 1.3.15 | +pg18, 新增    |
 
 ## 2025-12-25
 

@@ -7,14 +7,14 @@ categories: ["SIM"]
 width: full
 ---
 
-[**documentdb**](https://github.com/microsoft/documentdb) : Multi-Node API surface for DocumentDB
+[**documentdb**](https://github.com/documentdb/documentdb) : Multi-Node API surface for DocumentDB
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/microsoft/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **9020** | {{< badge content="documentdb_distributed" link="https://github.com/documentdb/documentdb" >}} | {{< ext "documentdb_distributed" "documentdb" >}} | `0.109` | {{< category "SIM" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "citus" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb" >}} |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "mongo_fdw" >}} {{< ext "plproxy" >}} {{< ext "postgres_fdw" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} |
 |    **Siblings**   | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_extended_rum" >}} |
 
@@ -58,7 +59,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/microsoft/documentdb" title="Repository" icon="github" subtitle="github.com/microsoft/documentdb" >}}
+{{< card link="https://github.com/documentdb/documentdb" title="Repository" icon="github" subtitle="github.com/documentdb/documentdb" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="documentdb-0.109-0.tar.gz" >}}
 {{< /cards >}}
 
@@ -93,12 +94,12 @@ pig install documentdb_distributed -v 15;   # install for PG 15
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```sql
-shared_preload_libraries = 'pg_documentdb, pg_documentdb_core';
+shared_preload_libraries = 'citus, pg_documentdb, pg_documentdb_core';
 ```
 
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION documentdb_distributed;
+CREATE EXTENSION documentdb_distributed CASCADE; -- requires citus, documentdb_core, documentdb
 ```

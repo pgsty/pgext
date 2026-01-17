@@ -29,7 +29,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pgfincore               | -      | 1.3.1  | +pg18                 |
 | documentdb_extended_rum |        | 0.109  | new                   |
 | mobilitydb_datagen      |        | 1.3.0  | new                   |
-
+| rum                     |        | 1.3.15 | +pg18, new            |
 
 ## 2025-12-25
 

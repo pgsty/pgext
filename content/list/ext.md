@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 444 | 150 | 273 | 71 | 0 | 424 | 433 | 432 | 432 | 416 | 388 |
-| **EL** | 438 | 144 | 273 | 71 | 6 | 413 | 425 | 426 | 426 | 411 | 383 |
-| **Debian** | 430 | 106 | 253 | 71 | 14 | 410 | 420 | 418 | 418 | 403 | 373 |
+| **ALL** | 444 | 152 | 273 | 71 | 0 | 425 | 433 | 432 | 432 | 416 | 388 |
+| **EL** | 438 | 146 | 273 | 71 | 6 | 414 | 425 | 426 | 426 | 411 | 383 |
+| **Debian** | 430 | 108 | 251 | 71 | 14 | 411 | 420 | 418 | 418 | 403 | 373 |
 
 ## Categories
 
@@ -120,7 +120,7 @@ There are 444 available PostgreSQL extensions:
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | functions that manipulate whole tables, including crosstab |
 | {{< ext "age" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | AGE graph database extension |
 | {{< ext "hll" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | type for storing hyperloglog data |
-| {{< ext "rum" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | RUM index access method |
+| {{< ext "rum" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | RUM index access method |
 | {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | AI-powered SQL query generation for PostgreSQL |
 | {{< ext "pg_ttl_index" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | Automatic data expiration with TTL indexes |
 | {{< ext "pg_graphql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Add in-database GraphQL support |

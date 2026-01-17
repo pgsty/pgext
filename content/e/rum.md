@@ -27,24 +27,26 @@ width: full
 |    **Need By**    | {{< ext "documentdb" >}} |
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} |
 
+> [!Note] 1.3.15 build pass on pg 16,17,18
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `rum` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.14` | {{< bg "18" "rum_18" "red" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} {{< bg "13" "rum_13" "green" >}} | `rum_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "postgresql-18-rum" "red" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3.15` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `rum` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.15` | {{< bg "18" "rum_18" "green" >}} {{< bg "17" "rum_17" "green" >}} {{< bg "16" "rum_16" "green" >}} {{< bg "15" "rum_15" "green" >}} {{< bg "14" "rum_14" "green" >}} {{< bg "13" "rum_13" "green" >}} | `rum_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.15` | {{< bg "18" "postgresql-18-rum" "green" >}} {{< bg "17" "postgresql-17-rum" "green" >}} {{< bg "16" "postgresql-16-rum" "green" >}} {{< bg "15" "postgresql-15-rum" "green" >}} {{< bg "14" "postgresql-14-rum" "green" >}} {{< bg "13" "postgresql-13-rum" "green" >}} | `postgresql-$v-rum` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 4" "blue" >}} |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PGDG 1.3.14" "rum_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 1" "blue" >}} |
+| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 3" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 4" "blue" >}} |
+| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 3" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
+| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "rum_18 : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 3" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.15" "rum_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 3" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 2" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.15" "rum_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 1" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.15" "rum_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.3.15" "rum_16 : AVAIL 2" "green" >}} | {{< bg "PGDG 1.3.14" "rum_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.14" "rum_13 : AVAIL 1" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-13-rum : AVAIL 1" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-13-rum : AVAIL 1" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-13-rum : AVAIL 1" "blue" >}} |
@@ -60,6 +62,9 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `rum_18` | `1.3.15` | [el9.aarch64](/os/el9.aarch64) | pigsty | 92.7 KiB | [rum_18-1.3.15-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rum_18-1.3.15-1PIGSTY.el9.aarch64.rpm) |
+| `rum_18` | `1.3.15` | [el10.x86_64](/os/el10.x86_64) | pigsty | 97.1 KiB | [rum_18-1.3.15-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rum_18-1.3.15-1PIGSTY.el10.x86_64.rpm) |
+| `rum_18` | `1.3.15` | [el10.aarch64](/os/el10.aarch64) | pigsty | 93.6 KiB | [rum_18-1.3.15-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rum_18-1.3.15-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-rum` | `1.3.15` | [d12.x86_64](/os/d12.x86_64) | pgdg | 233.3 KiB | [postgresql-18-rum_1.3.15-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [d12.aarch64](/os/d12.aarch64) | pgdg | 225.4 KiB | [postgresql-18-rum_1.3.15-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg12+1_arm64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [d13.x86_64](/os/d13.x86_64) | pgdg | 233.5 KiB | [postgresql-18-rum_1.3.15-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg13+1_amd64.deb) |
@@ -74,11 +79,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `rum_17` | `1.3.15` | [el8.x86_64](/os/el8.x86_64) | pigsty | 104.2 KiB | [rum_17-1.3.15-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rum_17-1.3.15-1PIGSTY.el8.x86_64.rpm) |
 | `rum_17` | `1.3.14` | [el8.x86_64](/os/el8.x86_64) | pgdg | 93.1 KiB | [rum_17-1.3.14-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/rum_17-1.3.14-1PGDG.rhel8.x86_64.rpm) |
+| `rum_17` | `1.3.15` | [el8.aarch64](/os/el8.aarch64) | pigsty | 97.7 KiB | [rum_17-1.3.15-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rum_17-1.3.15-1PIGSTY.el8.aarch64.rpm) |
 | `rum_17` | `1.3.14` | [el8.aarch64](/os/el8.aarch64) | pgdg | 86.8 KiB | [rum_17-1.3.14-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/rum_17-1.3.14-1PGDG.rhel8.aarch64.rpm) |
+| `rum_17` | `1.3.15` | [el9.x86_64](/os/el9.x86_64) | pigsty | 96.5 KiB | [rum_17-1.3.15-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rum_17-1.3.15-1PIGSTY.el9.x86_64.rpm) |
 | `rum_17` | `1.3.14` | [el9.x86_64](/os/el9.x86_64) | pgdg | 91.6 KiB | [rum_17-1.3.14-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/rum_17-1.3.14-1PGDG.rhel9.x86_64.rpm) |
+| `rum_17` | `1.3.15` | [el9.aarch64](/os/el9.aarch64) | pigsty | 92.7 KiB | [rum_17-1.3.15-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rum_17-1.3.15-1PIGSTY.el9.aarch64.rpm) |
 | `rum_17` | `1.3.14` | [el9.aarch64](/os/el9.aarch64) | pgdg | 87.8 KiB | [rum_17-1.3.14-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/rum_17-1.3.14-1PGDG.rhel9.aarch64.rpm) |
+| `rum_17` | `1.3.15` | [el10.x86_64](/os/el10.x86_64) | pigsty | 97.3 KiB | [rum_17-1.3.15-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rum_17-1.3.15-1PIGSTY.el10.x86_64.rpm) |
 | `rum_17` | `1.3.14` | [el10.x86_64](/os/el10.x86_64) | pgdg | 93.0 KiB | [rum_17-1.3.14-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/rum_17-1.3.14-2PGDG.rhel10.x86_64.rpm) |
+| `rum_17` | `1.3.15` | [el10.aarch64](/os/el10.aarch64) | pigsty | 94.0 KiB | [rum_17-1.3.15-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rum_17-1.3.15-1PIGSTY.el10.aarch64.rpm) |
 | `rum_17` | `1.3.14` | [el10.aarch64](/os/el10.aarch64) | pgdg | 88.8 KiB | [rum_17-1.3.14-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/rum_17-1.3.14-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-rum` | `1.3.15` | [d12.x86_64](/os/d12.x86_64) | pgdg | 234.4 KiB | [postgresql-17-rum_1.3.15-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-rum` | `1.3.15` | [d12.aarch64](/os/d12.aarch64) | pgdg | 225.9 KiB | [postgresql-17-rum_1.3.15-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg12+1_arm64.deb) |
@@ -94,15 +105,21 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `rum_16` | `1.3.15` | [el8.x86_64](/os/el8.x86_64) | pigsty | 104.1 KiB | [rum_16-1.3.15-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/rum_16-1.3.15-1PIGSTY.el8.x86_64.rpm) |
 | `rum_16` | `1.3.14` | [el8.x86_64](/os/el8.x86_64) | pgdg | 93.0 KiB | [rum_16-1.3.14-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/rum_16-1.3.14-1PGDG.rhel8.x86_64.rpm) |
 | `rum_16` | `1.3.13` | [el8.x86_64](/os/el8.x86_64) | pgdg | 92.7 KiB | [rum_16-1.3.13-2.rhel8.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/rum_16-1.3.13-2.rhel8.1.x86_64.rpm) |
+| `rum_16` | `1.3.15` | [el8.aarch64](/os/el8.aarch64) | pigsty | 97.7 KiB | [rum_16-1.3.15-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/rum_16-1.3.15-1PIGSTY.el8.aarch64.rpm) |
 | `rum_16` | `1.3.14` | [el8.aarch64](/os/el8.aarch64) | pgdg | 86.8 KiB | [rum_16-1.3.14-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/rum_16-1.3.14-1PGDG.rhel8.aarch64.rpm) |
 | `rum_16` | `1.3.13` | [el8.aarch64](/os/el8.aarch64) | pgdg | 86.4 KiB | [rum_16-1.3.13-2.rhel8.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/rum_16-1.3.13-2.rhel8.1.aarch64.rpm) |
+| `rum_16` | `1.3.15` | [el9.x86_64](/os/el9.x86_64) | pigsty | 96.5 KiB | [rum_16-1.3.15-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/rum_16-1.3.15-1PIGSTY.el9.x86_64.rpm) |
 | `rum_16` | `1.3.14` | [el9.x86_64](/os/el9.x86_64) | pgdg | 91.7 KiB | [rum_16-1.3.14-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/rum_16-1.3.14-1PGDG.rhel9.x86_64.rpm) |
 | `rum_16` | `1.3.13` | [el9.x86_64](/os/el9.x86_64) | pgdg | 91.3 KiB | [rum_16-1.3.13-2.rhel9.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/rum_16-1.3.13-2.rhel9.1.x86_64.rpm) |
+| `rum_16` | `1.3.15` | [el9.aarch64](/os/el9.aarch64) | pigsty | 92.8 KiB | [rum_16-1.3.15-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/rum_16-1.3.15-1PIGSTY.el9.aarch64.rpm) |
 | `rum_16` | `1.3.14` | [el9.aarch64](/os/el9.aarch64) | pgdg | 87.7 KiB | [rum_16-1.3.14-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/rum_16-1.3.14-1PGDG.rhel9.aarch64.rpm) |
 | `rum_16` | `1.3.13` | [el9.aarch64](/os/el9.aarch64) | pgdg | 87.3 KiB | [rum_16-1.3.13-2.rhel9.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/rum_16-1.3.13-2.rhel9.1.aarch64.rpm) |
+| `rum_16` | `1.3.15` | [el10.x86_64](/os/el10.x86_64) | pigsty | 97.3 KiB | [rum_16-1.3.15-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/rum_16-1.3.15-1PIGSTY.el10.x86_64.rpm) |
 | `rum_16` | `1.3.14` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.9 KiB | [rum_16-1.3.14-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/rum_16-1.3.14-2PGDG.rhel10.x86_64.rpm) |
+| `rum_16` | `1.3.15` | [el10.aarch64](/os/el10.aarch64) | pigsty | 93.9 KiB | [rum_16-1.3.15-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/rum_16-1.3.15-1PIGSTY.el10.aarch64.rpm) |
 | `rum_16` | `1.3.14` | [el10.aarch64](/os/el10.aarch64) | pgdg | 88.7 KiB | [rum_16-1.3.14-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/rum_16-1.3.14-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-rum` | `1.3.15` | [d12.x86_64](/os/d12.x86_64) | pgdg | 234.4 KiB | [postgresql-16-rum_1.3.15-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-rum` | `1.3.15` | [d12.aarch64](/os/d12.aarch64) | pgdg | 225.7 KiB | [postgresql-16-rum_1.3.15-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg12+1_arm64.deb) |
@@ -194,15 +211,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/postgrespro/rum" title="Repository" icon="github" subtitle="github.com/postgrespro/rum" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rum-1.3.15.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg rum;		# build rpm / deb with pig
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -210,6 +233,7 @@ pig repo add pgdg -u    # add pgdg repo and update cache
 ```bash
 pig install rum;		# install via package name, for the active PG version
 
+pig install rum -v 18;   # install for PG 18
 pig install rum -v 17;   # install for PG 17
 pig install rum -v 16;   # install for PG 16
 pig install rum -v 15;   # install for PG 15
