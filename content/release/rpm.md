@@ -15,7 +15,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pg_timeseries | 0.1.8  | 0.2.0  |                       |
 | biscuit       | 2.0.1  | 2.2.2  |                       |
 | documentdb    | 0.107  | 0.109  | +pg18, use ms version |
-| pg_bulkload   | 3.1.22 | 3.1.23 | +pg18              |
+| pg_bulkload   | 3.1.22 | 3.1.23 | +pg18                 |
 | pgsentinel    | 1.3.0  | 1.3.1  |                       |
 | age           | 1.5.0  | 1.6.0  |                       |
 | pljs          | -      | 1.0.4  | new                   |

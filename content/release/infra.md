@@ -6,6 +6,48 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-01-16
+
+| Name                       | Old      | New      | Comment |
+|:---------------------------|:---------|:---------|:--------|
+| prometheus                 | 3.8.1    | 3.9.1    |         |
+| victoria-metrics           | 1.132.0  | 1.133.0  |         |
+| tigerbeetle                | 0.16.65  | 0.16.68  |         |
+| kafka                      | 4.0.0    | 4.1.1    |         |
+| grafana-victoriametrics-ds | 0.19.7   | 0.20.0   |         |
+| grafana-victorialogs-ds    | 0.23.2   | 0.23.3   |         |
+| grafana-infinity-ds        | 3.6.0    | 3.7.0    |         |
+| uv                         | 0.9.18   | 0.9.26   |         |
+| seaweedfs                  | 4.01     | 4.06     |         |
+| rustfs                     | alpha.71 | alpha.80 |         |
+| v2ray                      | 5.28.0   | 5.44.1   |         |
+| sqlcmd                     | 1.8.0    | 1.9.0    |         |
+| opencode                   | 1.0.223  | 1.1.23   |         |
+| claude                     | 2.1.1    | 2.1.9    |         |
+| golang                     | 1.25.5   | 1.25.6   |         |
+| asciinema                  | 3.0.1    | 3.1.0    |         |
+| code                       | 1.107.0  | 1.108.0  |         |
+| code-server                | 4.107.0  | 4.108.0  |         |
+| npgsqlrest                 | 3.3.0    | 3.4.3    |         |
+| genai-toolbox              | 0.24.0   | 0.25.0   |         |
+| pg_exporter                | 1.1.1    | 1.1.2    |         |
+| pig                        | 0.9.0    | 0.9.1    |         |
+
+## 2026-01-08
+
+| 名称            | 旧版本      | 新版本       | 备注                     |
+|:--------------|:---------|:----------|:-----------------------|
+| pg_exporter   | `1.1.0`  | `1.1.1`   | new pg_timeline 采集器    |
+| npgsqlrest    |          | `3.3.3`   | new                    |
+| postgrest     |          | `14.3`    | new                    |
+| opencode      |          | `1.0.223` | new                    |
+| code-server   |          | `4.107.0` | new                    |
+| claude        | `2.0.76` | `2.1.1`   | new                    |
+| genai-toolbox | `0.23.0` | `0.24.0`  | remove oracle C driver |
+| golang        |          | `1.25.5`  | new                    |
+| nodejs        |          | `24.12.0` | new                    |
+
+
 ## 2025-12-25
 
 | Name                | Old    | New    | Comment            |

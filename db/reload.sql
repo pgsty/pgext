@@ -29,7 +29,8 @@ WHERE pkg.pg = sub.pg AND pkg.os = sub.os AND pkg.name = sub.name;
 UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 
 -- conflict with other extension, hide in list
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'duckdb_fdw', 'pg_timeseries');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'duckdb_fdw');
+UPDATE pgext.pkg SET hide = true  WHERE pkg = 'pg_timeseries' AND (os ~ 'u24.*' OR os ~ 'el10.*') AND pg = 13;
 
 -- too big, non-free, heavy extensions
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr' ,'oracle_fdw', 'db2_fdw', 'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
