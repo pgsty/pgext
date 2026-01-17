@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `ag_catalog` |
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "rum" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "ltree" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "citus" >}} |
 
 
@@ -185,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg age;		# build rpm / deb with pig
+pig build pkg age;		# build rpm/deb
 ```
 
 

@@ -237,7 +237,7 @@ width: full
 
 
 ```bash
-pig build pkg pgsentinel;		# build rpm / deb with pig
+pig build pkg pgsentinel;		# build rpm/deb
 ```
 
 

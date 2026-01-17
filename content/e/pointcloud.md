@@ -186,11 +186,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg pointcloud;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

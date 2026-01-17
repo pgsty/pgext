@@ -195,7 +195,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_store_plans;		# build rpm / deb with pig
+pig build pkg pg_store_plans;		# build rpm/deb
 ```
 
 

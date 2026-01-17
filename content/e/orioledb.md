@@ -87,7 +87,7 @@ width: full
 
 
 ```bash
-pig build pkg orioledb;		# build rpm / deb with pig
+pig build pkg orioledb;		# build deb
 ```
 
 

@@ -187,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_rrule;		# build rpm / deb with pig
+pig build pkg pg_rrule;		# build rpm
 ```
 
 

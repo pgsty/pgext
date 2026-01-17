@@ -205,7 +205,7 @@ width: full
 
 
 ```bash
-pig build pkg toastinfo;		# build rpm / deb with pig
+pig build pkg toastinfo;		# build rpm
 ```
 
 

@@ -221,7 +221,7 @@ width: full
 
 
 ```bash
-pig build pkg pgpdf;		# build rpm / deb with pig
+pig build pkg pgpdf;		# build rpm/deb
 ```
 
 

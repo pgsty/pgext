@@ -225,7 +225,7 @@ width: full
 
 
 ```bash
-pig build pkg sqlite_fdw;		# build spec not ready
+pig build pkg sqlite_fdw;		# build rpm/deb
 ```
 
 

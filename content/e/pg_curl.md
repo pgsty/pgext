@@ -251,7 +251,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_curl;		# build rpm / deb with pig
+pig build pkg pg_curl;		# build rpm/deb
 ```
 
 

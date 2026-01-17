@@ -147,7 +147,7 @@ width: full
 
 
 ```bash
-pig build pkg duckdb_fdw;		# build rpm / deb with pig
+pig build pkg duckdb_fdw;		# build deb
 ```
 
 

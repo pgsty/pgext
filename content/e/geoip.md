@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `geoip` |
 |   **Requires**    | {{< ext "ip4r" >}} |
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "tzf" >}} {{< ext "country" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
@@ -34,7 +35,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `geoip` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `geoip` | `ip4r` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "geoip_18" "green" >}} {{< bg "17" "geoip_17" "green" >}} {{< bg "16" "geoip_16" "green" >}} {{< bg "15" "geoip_15" "green" >}} {{< bg "14" "geoip_14" "green" >}} {{< bg "13" "geoip_13" "green" >}} | `geoip_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-geoip" "green" >}} {{< bg "17" "postgresql-17-geoip" "green" >}} {{< bg "16" "postgresql-16-geoip" "green" >}} {{< bg "15" "postgresql-15-geoip" "green" >}} {{< bg "14" "postgresql-14-geoip" "green" >}} {{< bg "13" "postgresql-13-geoip" "green" >}} | `postgresql-$v-geoip` | - |
 
@@ -199,7 +200,7 @@ width: full
 
 
 ```bash
-pig build pkg geoip;		# build rpm / deb with pig
+pig build pkg geoip;		# build rpm/deb
 ```
 
 

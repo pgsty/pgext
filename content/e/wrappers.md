@@ -167,7 +167,7 @@ width: full
 
 
 ```bash
-pig build pkg wrappers;		# build rpm / deb with pig
+pig build pkg wrappers;		# build rpm/deb
 ```
 
 

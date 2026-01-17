@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `data_historization` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `data_historization` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "data_historization_18" "green" >}} {{< bg "17" "data_historization_17" "green" >}} {{< bg "16" "data_historization_16" "green" >}} {{< bg "15" "data_historization_15" "green" >}} {{< bg "14" "data_historization_14" "green" >}} {{< bg "13" "data_historization_13" "green" >}} | `data_historization_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.1.0` | {{< bg "18" "postgresql-18-data-historization" "green" >}} {{< bg "17" "postgresql-17-data-historization" "green" >}} {{< bg "16" "postgresql-16-data-historization" "green" >}} {{< bg "15" "postgresql-15-data-historization" "green" >}} {{< bg "14" "postgresql-14-data-historization" "green" >}} {{< bg "13" "postgresql-13-data-historization" "green" >}} | `postgresql-$v-data-historization` | - |
 
@@ -186,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg data_historization;		# build rpm / deb with pig
+pig build pkg data_historization;		# build rpm/deb
 ```
 
 

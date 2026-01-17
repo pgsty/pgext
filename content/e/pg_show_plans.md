@@ -250,11 +250,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg pg_show_plans;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

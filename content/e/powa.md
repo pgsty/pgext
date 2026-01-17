@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "pg_stat_statements" >}} {{< ext "btree_gist" >}} |
 |   **See Also**    | {{< ext "pg_stat_kcache" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_wait_sampling" >}} {{< ext "hypopg" >}} {{< ext "plprofiler" >}} {{< ext "pg_profile" >}} {{< ext "pg_track_settings" >}} {{< ext "btree_gin" >}} |
 
@@ -34,7 +35,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `powa` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `powa` | `plpgsql`, `pg_stat_statements`, `btree_gist` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.0` | {{< bg "18" "powa_18" "green" >}} {{< bg "17" "powa_17" "green" >}} {{< bg "16" "powa_16" "green" >}} {{< bg "15" "powa_15" "green" >}} {{< bg "14" "powa_14" "green" >}} {{< bg "13" "powa_13" "green" >}} | `powa_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.1.1` | {{< bg "18" "postgresql-18-powa" "red" >}} {{< bg "17" "postgresql-17-powa" "green" >}} {{< bg "16" "postgresql-16-powa" "green" >}} {{< bg "15" "postgresql-15-powa" "green" >}} {{< bg "14" "postgresql-14-powa" "green" >}} {{< bg "13" "postgresql-13-powa" "green" >}} | `postgresql-$v-powa` | - |
 

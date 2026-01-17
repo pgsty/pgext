@@ -190,7 +190,7 @@ width: full
 
 
 ```bash
-pig build pkg redis_fdw;		# build rpm / deb with pig
+pig build pkg redis_fdw;		# build rpm/deb
 ```
 
 

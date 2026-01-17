@@ -223,7 +223,7 @@ width: full
 
 
 ```bash
-pig build pkg pgmeminfo;		# build rpm / deb with pig
+pig build pkg pgmeminfo;		# build rpm/deb
 ```
 
 

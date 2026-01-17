@@ -199,7 +199,7 @@ width: full
 
 
 ```bash
-pig build pkg topn;		# build spec not ready
+pig build pkg topn;		# build deb
 ```
 
 

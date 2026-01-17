@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pgxicor;		# build rpm / deb with pig
+pig build pkg pgxicor;		# build rpm/deb
 ```
 
 

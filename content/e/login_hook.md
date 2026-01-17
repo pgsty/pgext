@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `login_hook` |
 |   **See Also**    | {{< ext "pg_auth_mon" >}} {{< ext "credcheck" >}} {{< ext "set_user" >}} {{< ext "pg_permissions" >}} {{< ext "passwordcheck_cracklib" >}} {{< ext "pgaudit" >}} {{< ext "auth_delay" >}} {{< ext "passwordcheck" >}} |
 
 
@@ -221,7 +222,7 @@ width: full
 
 
 ```bash
-pig build pkg login_hook;		# build spec not ready
+pig build pkg login_hook;		# build rpm/deb
 ```
 
 

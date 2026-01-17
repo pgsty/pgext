@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `paradedb` |
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "orioledb" >}} {{< ext "citus" >}} |
 
 > [!Note] archived, no longer maintained

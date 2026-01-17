@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg url_encode;		# build rpm / deb with pig
+pig build pkg url_encode;		# build rpm/deb
 ```
 
 

@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg cryptint;		# build rpm / deb with pig
+pig build pkg cryptint;		# build rpm/deb
 ```
 
 

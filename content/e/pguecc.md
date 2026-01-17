@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_ecdsa;		# build rpm / deb with pig
+pig build pkg pg_ecdsa;		# build rpm/deb
 ```
 
 

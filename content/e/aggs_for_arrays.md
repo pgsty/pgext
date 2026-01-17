@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg aggs_for_arrays;		# build rpm / deb with pig
+pig build pkg aggs_for_arrays;		# build rpm/deb
 ```
 
 

@@ -184,11 +184,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg pg_dirtyread;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

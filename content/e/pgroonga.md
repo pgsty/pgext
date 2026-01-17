@@ -188,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pgroonga;		# build rpm / deb with pig
+pig build pkg pgroonga;		# build rpm/deb
 ```
 
 

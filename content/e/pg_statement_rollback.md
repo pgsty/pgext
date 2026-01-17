@@ -196,7 +196,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_statement_rollback;		# build spec not ready
+pig build pkg pg_statement_rollback;		# build deb
 ```
 
 

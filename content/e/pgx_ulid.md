@@ -167,7 +167,7 @@ width: full
 
 
 ```bash
-pig build pkg pgx_ulid;		# build rpm / deb with pig
+pig build pkg pgx_ulid;		# build rpm/deb
 ```
 
 

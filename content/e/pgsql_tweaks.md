@@ -373,7 +373,7 @@ width: full
 
 
 ```bash
-pig build pkg pgsql_tweaks;		# build spec not ready
+pig build pkg pgsql_tweaks;		# build deb
 ```
 
 

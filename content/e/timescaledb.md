@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `timescaledb_information` `timescaledb_experimental` |
 |   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_task" >}} |
 
 
@@ -32,8 +33,8 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `timescaledb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "timescaledb-tsl_18" "green" >}} {{< bg "17" "timescaledb-tsl_17" "green" >}} {{< bg "16" "timescaledb-tsl_16" "green" >}} {{< bg "15" "timescaledb-tsl_15" "green" >}} {{< bg "14" "timescaledb-tsl_14" "green" >}} {{< bg "13" "timescaledb-tsl_13" "red" >}} | `timescaledb-tsl_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "postgresql-18-timescaledb-tsl" "green" >}} {{< bg "17" "postgresql-17-timescaledb-tsl" "green" >}} {{< bg "16" "postgresql-16-timescaledb-tsl" "green" >}} {{< bg "15" "postgresql-15-timescaledb-tsl" "green" >}} {{< bg "14" "postgresql-14-timescaledb-tsl" "green" >}} {{< bg "13" "postgresql-13-timescaledb-tsl" "red" >}} | `postgresql-$v-timescaledb-tsl` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "timescaledb-tsl_18" "green" >}} {{< bg "17" "timescaledb-tsl_17" "green" >}} {{< bg "16" "timescaledb-tsl_16" "green" >}} {{< bg "15" "timescaledb-tsl_15" "green" >}} {{< bg "14" "timescaledb-tsl_14" "red" >}} {{< bg "13" "timescaledb-tsl_13" "red" >}} | `timescaledb-tsl_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.24.0` | {{< bg "18" "postgresql-18-timescaledb-tsl" "green" >}} {{< bg "17" "postgresql-17-timescaledb-tsl" "green" >}} {{< bg "16" "postgresql-16-timescaledb-tsl" "green" >}} {{< bg "15" "postgresql-15-timescaledb-tsl" "green" >}} {{< bg "14" "postgresql-14-timescaledb-tsl" "red" >}} {{< bg "13" "postgresql-13-timescaledb-tsl" "red" >}} | `postgresql-$v-timescaledb-tsl` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -463,7 +464,7 @@ width: full
 
 
 ```bash
-pig build pkg timescaledb;		# build rpm / deb with pig
+pig build pkg timescaledb;		# build rpm/deb
 ```
 
 

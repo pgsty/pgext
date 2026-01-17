@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgtle` |
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "pllua" >}} {{< ext "pljava" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "plprql" >}} {{< ext "plsh" >}} |
 
 > [!Note] require bison flex to build
@@ -263,7 +264,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_tle;		# build spec not ready
+pig build pkg pg_tle;		# build rpm/deb
 ```
 
 

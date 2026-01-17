@@ -34,7 +34,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgcryptokey` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgcryptokey` | `pgcrypto` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "pgcryptokey_18" "green" >}} {{< bg "17" "pgcryptokey_17" "green" >}} {{< bg "16" "pgcryptokey_16" "green" >}} {{< bg "15" "pgcryptokey_15" "green" >}} {{< bg "14" "pgcryptokey_14" "green" >}} {{< bg "13" "pgcryptokey_13" "green" >}} | `pgcryptokey_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.85` | {{< bg "18" "postgresql-18-pgcryptokey" "green" >}} {{< bg "17" "postgresql-17-pgcryptokey" "green" >}} {{< bg "16" "postgresql-16-pgcryptokey" "green" >}} {{< bg "15" "postgresql-15-pgcryptokey" "green" >}} {{< bg "14" "postgresql-14-pgcryptokey" "green" >}} {{< bg "13" "postgresql-13-pgcryptokey" "green" >}} | `postgresql-$v-pgcryptokey` | - |
 
@@ -215,7 +215,7 @@ width: full
 
 
 ```bash
-pig build pkg pgcryptokey;		# build rpm / deb with pig
+pig build pkg pgcryptokey;		# build rpm/deb
 ```
 
 

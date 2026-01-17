@@ -221,7 +221,7 @@ width: full
 
 
 ```bash
-pig build pkg q3c;		# build rpm / deb with pig
+pig build pkg q3c;		# build rpm
 ```
 
 

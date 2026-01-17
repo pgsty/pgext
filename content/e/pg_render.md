@@ -183,7 +183,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_render;		# build rpm / deb with pig
+pig build pkg pg_render;		# build rpm/deb
 ```
 
 

@@ -34,7 +34,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `mimeo` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `mimeo` | `dblink` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.5.1` | {{< bg "18" "mimeo_18" "green" >}} {{< bg "17" "mimeo_17" "green" >}} {{< bg "16" "mimeo_16" "green" >}} {{< bg "15" "mimeo_15" "green" >}} {{< bg "14" "mimeo_14" "green" >}} {{< bg "13" "mimeo_13" "green" >}} | `mimeo_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.5.1` | {{< bg "18" "postgresql-18-mimeo" "green" >}} {{< bg "17" "postgresql-17-mimeo" "green" >}} {{< bg "16" "postgresql-16-mimeo" "green" >}} {{< bg "15" "postgresql-15-mimeo" "green" >}} {{< bg "14" "postgresql-14-mimeo" "green" >}} {{< bg "13" "postgresql-13-mimeo" "green" >}} | `postgresql-$v-mimeo` | - |
 
@@ -188,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg mimeo;		# build rpm / deb with pig
+pig build pkg mimeo;		# build rpm
 ```
 
 

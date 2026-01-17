@@ -165,7 +165,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_csv;		# build spec not ready
+pig build pkg pg_csv;		# build deb
 ```
 
 

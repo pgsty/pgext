@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pglogical` |
 |    **Need By**    | {{< ext "pgl_ddl_deploy" >}} {{< ext "pglogical_ticker" >}} |
 |   **See Also**    | {{< ext "decoderbufs" >}} {{< ext "wal2json" >}} {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_failover_slots" >}} {{< ext "pgactive" >}} {{< ext "repmgr" >}} {{< ext "kafka_fdw" >}} |
 |    **Siblings**   | {{< ext "pglogical_origin" >}} |
@@ -203,11 +204,6 @@ width: full
 {{< card link="https://github.com/2ndQuadrant/pglogical" title="Repository" icon="github" subtitle="github.com/2ndQuadrant/pglogical" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical_ticker-1.4.1.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg pglogical;		# build spec not ready
-```
 
 
 ## Install

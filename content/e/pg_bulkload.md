@@ -266,7 +266,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_bulkload;		# build spec not ready
+pig build pkg pg_bulkload;		# build rpm/deb
 ```
 
 

@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg plxslt;		# build spec not ready
+pig build pkg plxslt;		# build deb
 ```
 
 

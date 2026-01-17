@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg index_advisor;		# build rpm / deb with pig
+pig build pkg index_advisor;		# build rpm/deb
 ```
 
 

@@ -197,7 +197,7 @@ width: full
 
 
 ```bash
-pig build pkg safeupdate;		# build spec not ready
+pig build pkg safeupdate;		# build deb
 ```
 
 

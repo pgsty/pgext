@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `anon` |
 |   **See Also**    | {{< ext "faker" >}} {{< ext "pgsodium" >}} {{< ext "pgcrypto" >}} {{< ext "pgaudit" >}} {{< ext "set_user" >}} {{< ext "pg_tde" >}} |
 
 
@@ -185,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_anon;		# build rpm / deb with pig
+pig build pkg pg_anon;		# build rpm/deb
 ```
 
 

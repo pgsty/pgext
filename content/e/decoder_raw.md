@@ -169,7 +169,7 @@ width: full
 
 
 ```bash
-pig build pkg decoder_raw;		# build rpm / deb with pig
+pig build pkg decoder_raw;		# build rpm/deb
 ```
 
 

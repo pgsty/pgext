@@ -213,7 +213,7 @@ width: full
 
 
 ```bash
-pig build pkg sequential_uuids;		# build spec not ready
+pig build pkg sequential_uuids;		# build rpm/deb
 ```
 
 

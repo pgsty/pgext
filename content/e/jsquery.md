@@ -185,11 +185,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg jsquery;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

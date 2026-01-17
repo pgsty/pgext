@@ -203,7 +203,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_task;		# build spec not ready
+pig build pkg pg_task;		# build deb
 ```
 
 

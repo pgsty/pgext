@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pglite_fusion;		# build rpm / deb with pig
+pig build pkg pglite_fusion;		# build rpm/deb
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "columnar" >}} {{< ext "pg_fkpart" >}} {{< ext "timescaledb" >}} {{< ext "pg_duckdb" >}} {{< ext "tablefunc" >}} {{< ext "hll" >}} |
 |    **Siblings**   | {{< ext "citus_columnar" >}} |
 
@@ -505,7 +506,7 @@ width: full
 
 
 ```bash
-pig build pkg citus;		# build rpm / deb with pig
+pig build pkg citus;		# build rpm/deb
 ```
 
 

@@ -257,11 +257,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg mysql_fdw;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

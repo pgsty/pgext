@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg db_migrator;		# build rpm / deb with pig
+pig build pkg db_migrator;		# build rpm/deb
 ```
 
 

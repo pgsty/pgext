@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg table_log;		# build rpm / deb with pig
+pig build pkg table_log;		# build rpm
 ```
 
 

@@ -201,7 +201,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_similarity;		# build rpm / deb with pig
+pig build pkg pg_similarity;		# build rpm
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `net` |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} |
 
 > [!Note] patched 0.9.2 on el8/el9
@@ -323,7 +324,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_net;		# build rpm / deb with pig
+pig build pkg pg_net;		# build rpm/deb
 ```
 
 

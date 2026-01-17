@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plpgsql_check` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `plpgsql_check` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.5` | {{< bg "18" "plpgsql_check_18" "green" >}} {{< bg "17" "plpgsql_check_17" "green" >}} {{< bg "16" "plpgsql_check_16" "green" >}} {{< bg "15" "plpgsql_check_15" "green" >}} {{< bg "14" "plpgsql_check_14" "green" >}} {{< bg "13" "plpgsql_check_13" "green" >}} | `plpgsql_check_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.8.5` | {{< bg "18" "postgresql-18-plpgsql-check" "green" >}} {{< bg "17" "postgresql-17-plpgsql-check" "green" >}} {{< bg "16" "postgresql-16-plpgsql-check" "green" >}} {{< bg "15" "postgresql-15-plpgsql-check" "green" >}} {{< bg "14" "postgresql-14-plpgsql-check" "green" >}} {{< bg "13" "postgresql-13-plpgsql-check" "green" >}} | `postgresql-$v-plpgsql-check` | - |
 
@@ -724,11 +724,6 @@ width: full
 {{< card link="https://github.com/okbob/plpgsql_check" title="Repository" icon="github" subtitle="github.com/okbob/plpgsql_check" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="plpgsql_check-2.8.2.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg plpgsql_check;		# build spec not ready
-```
 
 
 ## Install

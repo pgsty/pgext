@@ -65,7 +65,7 @@ width: full
 
 
 ```bash
-pig build pkg documentdb;		# build rpm / deb with pig
+pig build pkg documentdb;		# build rpm/deb
 ```
 
 

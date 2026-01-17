@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `xeno` |
 |    **Need By**    | {{< ext "l10n_table_dependent_extension" >}} |
 |   **See Also**    | {{< ext "country" >}} {{< ext "currency" >}} {{< ext "icu_ext" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
 |    **Siblings**   | {{< ext "l10n_table_dependent_extension" >}} |
@@ -187,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_xenophile;		# build rpm / deb with pig
+pig build pkg pg_xenophile;		# build rpm/deb
 ```
 
 

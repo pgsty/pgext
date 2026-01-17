@@ -34,7 +34,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgrouting` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.8.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgrouting` | `postgis` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.8.0` | {{< bg "18" "pgrouting_18" "green" >}} {{< bg "17" "pgrouting_17" "green" >}} {{< bg "16" "pgrouting_16" "green" >}} {{< bg "15" "pgrouting_15" "green" >}} {{< bg "14" "pgrouting_14" "green" >}} {{< bg "13" "pgrouting_13" "green" >}} | `pgrouting_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.8.0` | {{< bg "18" "postgresql-18-pgrouting" "green" >}} {{< bg "17" "postgresql-17-pgrouting" "green" >}} {{< bg "16" "postgresql-16-pgrouting" "green" >}} {{< bg "15" "postgresql-15-pgrouting" "green" >}} {{< bg "14" "postgresql-14-pgrouting" "green" >}} {{< bg "13" "postgresql-13-pgrouting" "green" >}} | `postgresql-$v-pgrouting` | - |
 

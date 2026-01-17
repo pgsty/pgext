@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg lower_quantile;		# build rpm / deb with pig
+pig build pkg lower_quantile;		# build rpm/deb
 ```
 
 

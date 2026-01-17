@@ -221,7 +221,7 @@ width: full
 
 
 ```bash
-pig build pkg icu_ext;		# build rpm / deb with pig
+pig build pkg icu_ext;		# build rpm
 ```
 
 

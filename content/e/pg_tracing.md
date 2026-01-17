@@ -165,7 +165,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_tracing;		# build rpm / deb with pig
+pig build pkg pg_tracing;		# build rpm/deb
 ```
 
 

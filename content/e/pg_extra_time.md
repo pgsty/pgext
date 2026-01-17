@@ -221,7 +221,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_extra_time;		# build spec not ready
+pig build pkg pg_extra_time;		# build deb
 ```
 
 

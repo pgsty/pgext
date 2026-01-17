@@ -187,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg aggs_for_vecs;		# build rpm / deb with pig
+pig build pkg aggs_for_vecs;		# build rpm/deb
 ```
 
 

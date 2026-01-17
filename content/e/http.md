@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_http;		# build spec not ready
+pig build pkg pg_http;		# build rpm
 ```
 
 

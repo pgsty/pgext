@@ -63,7 +63,7 @@ width: full
 
 
 ```bash
-pig build pkg omnigres;		# build rpm / deb with pig
+pig build pkg omnigres;		# build rpm/deb
 ```
 
 

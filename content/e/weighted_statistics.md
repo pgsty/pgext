@@ -180,7 +180,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_weighted_statistics;		# build rpm / deb with pig
+pig build pkg pg_weighted_statistics;		# build rpm/deb
 ```
 
 

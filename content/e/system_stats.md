@@ -211,7 +211,7 @@ width: full
 
 
 ```bash
-pig build pkg system_stats;		# build spec not ready
+pig build pkg system_stats;		# build deb
 ```
 
 

@@ -100,7 +100,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_retry;		# build rpm / deb with pig
+pig build pkg pg_retry;		# build rpm/deb
 ```
 
 

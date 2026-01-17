@@ -125,7 +125,7 @@ width: full
 
 
 ```bash
-pig build pkg pgspider_ext;		# build spec not ready
+pig build pkg pgspider_ext;		# build deb
 ```
 
 

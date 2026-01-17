@@ -216,7 +216,7 @@ width: full
 
 
 ```bash
-pig build pkg rum;		# build rpm / deb with pig
+pig build pkg rum;		# build rpm
 ```
 
 

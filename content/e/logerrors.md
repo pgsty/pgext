@@ -277,7 +277,7 @@ width: full
 
 
 ```bash
-pig build pkg logerrors;		# build spec not ready
+pig build pkg logerrors;		# build deb
 ```
 
 

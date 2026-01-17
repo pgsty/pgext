@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "pglogical" >}} {{< ext "pg_failover_slots" >}} {{< ext "repmgr" >}} {{< ext "bgw_replstatus" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "decoderbufs" >}} |
 
 > [!Note] require libpgfeutils
@@ -187,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pgactive;		# build rpm / deb with pig
+pig build pkg pgactive;		# build rpm/deb
 ```
 
 

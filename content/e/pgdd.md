@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `dd` |
 |   **See Also**    | {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_checksums" >}} |
 
 > [!Note] manual updated pgrx by Vonng
@@ -187,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pgdd;		# build rpm / deb with pig
+pig build pkg pgdd;		# build rpm/deb
 ```
 
 

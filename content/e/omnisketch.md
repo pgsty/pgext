@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg omnisketch;		# build rpm / deb with pig
+pig build pkg omnisketch;		# build rpm/deb
 ```
 
 

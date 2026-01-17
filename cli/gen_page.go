@@ -222,13 +222,21 @@ func (g *ExtensionGenerator) generateAttributes(ext *Extension) string {
 }
 
 func (g *ExtensionGenerator) generateRelationships(ext *Extension, siblings []*Extension) string {
-	if len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 && len(siblings) == 0 {
+	if len(ext.Schemas) == 0 && len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 && len(siblings) == 0 {
 		return ""
 	}
 
 	var b strings.Builder
 	b.WriteString("\n| **Relationships** |   |\n")
 	b.WriteString("|:-----------------:|:----|\n")
+
+	if len(ext.Schemas) > 0 {
+		schemas := make([]string, len(ext.Schemas))
+		for i, s := range ext.Schemas {
+			schemas[i] = fmt.Sprintf("`%s`", s)
+		}
+		b.WriteString(fmt.Sprintf("|    **Schemas**    | %s |\n", strings.Join(schemas, " ")))
+	}
 
 	if len(ext.Requires) > 0 {
 		requires := make([]string, len(ext.Requires))
@@ -292,7 +300,7 @@ func (g *ExtensionGenerator) generatePackagesTable(ext *Extension, packages []*P
 	if ext.Repo.Valid || ext.Version.Valid || len(ext.PgVer) > 0 {
 		srcPgVersions := ParsePGVersions(ext.PgVer)
 		srcRow := g.buildPackageSummaryRow("EXT", ext.Repo.String, ext.Version.String,
-			ext.Pkg, srcPgVersions, nil, ext, true) // true indicates this is a EXT row
+			ext.Pkg, srcPgVersions, ext.Requires, ext, true) // true indicates this is a EXT row
 		if srcRow != "" {
 			rows = append(rows, srcRow)
 		}
@@ -706,25 +714,31 @@ func (g *ExtensionGenerator) generateSourceSection(ext *Extension) string {
 	section += CardsShortcode(3, strings.Join(cards, "\n"))
 	section += "\n\n"
 
+	// Check extra.rpm and extra.deb to determine if build command should be shown
 	var buildRPM, buildDEB bool
-	var buildHint string
-	if ext.RpmRepo.Valid && ext.RpmRepo.String == "PIGSTY" {
-		buildRPM = true
-	}
-	if ext.DebRepo.Valid && ext.RpmRepo.String == "PIGSTY" {
-		buildDEB = true
-	}
-	if buildRPM && buildDEB {
-		buildHint = "build rpm / deb with pig"
-	} else if buildRPM && !buildDEB {
-		buildHint = "build rpm with pig"
-	} else if !buildRPM && buildDEB {
-		buildHint = "build deb with pig"
-	} else {
-		buildHint = "build spec not ready"
+	if ext.Extra != nil {
+		if rpm, ok := ext.Extra["rpm"]; ok {
+			if rpmBool, ok := rpm.(bool); ok && rpmBool {
+				buildRPM = true
+			}
+		}
+		if deb, ok := ext.Extra["deb"]; ok {
+			if debBool, ok := deb.(bool); ok && debBool {
+				buildDEB = true
+			}
+		}
 	}
 
-	if ext.Source.Valid && ext.Source.String != "" {
+	// Only show build command if either rpm or deb is true in extra
+	if ext.Source.Valid && ext.Source.String != "" && (buildRPM || buildDEB) {
+		var buildHint string
+		if buildRPM && buildDEB {
+			buildHint = "build rpm/deb"
+		} else if buildRPM {
+			buildHint = "build rpm"
+		} else {
+			buildHint = "build deb"
+		}
 		commands := fmt.Sprintf("pig build pkg %s;\t\t# %s", ext.Pkg, buildHint)
 		section += "\n" + TripleQuoteBash(commands) + "\n\n"
 	}

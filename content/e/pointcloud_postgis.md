@@ -33,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pointcloud` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pointcloud` | `postgis`, `pointcloud` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "pointcloud_18" "green" >}} {{< bg "17" "pointcloud_17" "green" >}} {{< bg "16" "pointcloud_16" "green" >}} {{< bg "15" "pointcloud_15" "green" >}} {{< bg "14" "pointcloud_14" "green" >}} {{< bg "13" "pointcloud_13" "green" >}} | `pointcloud_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.5` | {{< bg "18" "postgresql-18-pointcloud" "green" >}} {{< bg "17" "postgresql-17-pointcloud" "green" >}} {{< bg "16" "postgresql-16-pointcloud" "green" >}} {{< bg "15" "postgresql-15-pointcloud" "green" >}} {{< bg "14" "postgresql-14-pointcloud" "green" >}} {{< bg "13" "postgresql-13-pointcloud" "green" >}} | `postgresql-$v-pointcloud` | - |
 
@@ -62,11 +62,6 @@ width: full
 {{< card link="https://github.com/pgpointcloud/pointcloud" title="Repository" icon="github" subtitle="github.com/pgpointcloud/pointcloud" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pointcloud-1.2.5.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg pointcloud;		# build spec not ready
-```
 
 
 ## Install

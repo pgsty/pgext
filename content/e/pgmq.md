@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgmq` |
 |    **Need By**    | {{< ext "pg_later" >}} {{< ext "vectorize" >}} |
 |   **See Also**    | {{< ext "kafka_fdw" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_net" >}} {{< ext "pg_background" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} |
 
@@ -186,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg pgmq;		# build rpm / deb with pig
+pig build pkg pgmq;		# build rpm/deb
 ```
 
 

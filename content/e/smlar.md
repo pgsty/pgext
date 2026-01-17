@@ -187,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg smlar;		# build rpm / deb with pig
+pig build pkg smlar;		# build rpm/deb
 ```
 
 

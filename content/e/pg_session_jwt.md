@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `auth` |
 |   **See Also**    | {{< ext "pgjwt" >}} {{< ext "pgaudit" >}} {{< ext "pgsodium" >}} {{< ext "supabase_vault" >}} {{< ext "anon" >}} |
 
 > [!Note] manual updated pgrx by Vonng
@@ -167,7 +168,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_session_jwt;		# build rpm / deb with pig
+pig build pkg pg_session_jwt;		# build rpm/deb
 ```
 
 

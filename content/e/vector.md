@@ -423,7 +423,7 @@ width: full
 
 
 ```bash
-pig build pkg pgvector;		# build spec not ready
+pig build pkg pgvector;		# build rpm
 ```
 
 

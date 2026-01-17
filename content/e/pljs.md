@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "plv8" >}} {{< ext "jsquery" >}} {{< ext "pllua" >}} {{< ext "pg_tle" >}} {{< ext "plpgsql" >}} {{< ext "pg_jsonschema" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} |
 
 > [!Note] with submodules, hot fix with CONFIG_VERSION
@@ -167,7 +168,7 @@ width: full
 
 
 ```bash
-pig build pkg pljs;		# build rpm / deb with pig
+pig build pkg pljs;		# build rpm/deb
 ```
 
 

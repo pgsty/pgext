@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `4.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_profile` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `4.11` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_profile` | `dblink`, `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.11` | {{< bg "18" "pg_profile_18" "green" >}} {{< bg "17" "pg_profile_17" "green" >}} {{< bg "16" "pg_profile_16" "green" >}} {{< bg "15" "pg_profile_15" "green" >}} {{< bg "14" "pg_profile_14" "green" >}} {{< bg "13" "pg_profile_13" "green" >}} | `pg_profile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `4.11` | {{< bg "18" "postgresql-18-pg-profile" "green" >}} {{< bg "17" "postgresql-17-pg-profile" "green" >}} {{< bg "16" "postgresql-16-pg-profile" "green" >}} {{< bg "15" "postgresql-15-pg-profile" "green" >}} {{< bg "14" "postgresql-14-pg-profile" "green" >}} {{< bg "13" "postgresql-13-pg-profile" "green" >}} | `postgresql-$v-pg-profile` | - |
 
@@ -304,7 +304,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_profile;		# build spec not ready
+pig build pkg pg_profile;		# build deb
 ```
 
 

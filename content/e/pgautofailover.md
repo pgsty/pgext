@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgautofailover` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgautofailover` | `btree_gist` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "pg_auto_failover_18" "red" >}} {{< bg "17" "pg_auto_failover_17" "green" >}} {{< bg "16" "pg_auto_failover_16" "green" >}} {{< bg "15" "pg_auto_failover_15" "green" >}} {{< bg "14" "pg_auto_failover_14" "green" >}} {{< bg "13" "pg_auto_failover_13" "green" >}} | `pg_auto_failover_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "postgresql-18-auto-failover" "green" >}} {{< bg "17" "postgresql-17-auto-failover" "green" >}} {{< bg "16" "postgresql-16-auto-failover" "green" >}} {{< bg "15" "postgresql-15-auto-failover" "green" >}} {{< bg "14" "postgresql-14-auto-failover" "green" >}} {{< bg "13" "postgresql-13-auto-failover" "green" >}} | `postgresql-$v-auto-failover` | - |
 

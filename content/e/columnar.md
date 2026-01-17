@@ -148,7 +148,7 @@ width: full
 
 
 ```bash
-pig build pkg hydra;		# build rpm / deb with pig
+pig build pkg hydra;		# build rpm/deb
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `hint_plan` |
 |   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_stat_statements" >}} {{< ext "hypopg" >}} {{< ext "pg_qualstats" >}} {{< ext "auto_explain" >}} {{< ext "index_advisor" >}} {{< ext "pg_profile" >}} |
 
 
@@ -228,11 +229,6 @@ width: full
 {{< card link="https://github.com/ossc-db/pg_hint_plan" title="Repository" icon="github" subtitle="github.com/ossc-db/pg_hint_plan" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_hint_plan-REL18_1_8_0.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg pg_hint_plan;		# build spec not ready
-```
 
 
 ## Install

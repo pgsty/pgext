@@ -191,7 +191,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_readonly;		# build spec not ready
+pig build pkg pg_readonly;		# build deb
 ```
 
 

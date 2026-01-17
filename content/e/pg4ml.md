@@ -34,7 +34,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg4ml` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg4ml` | `plpgsql`, `tablefunc`, `cube`, `plpython3u` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "pg4ml_18" "green" >}} {{< bg "17" "pg4ml_17" "green" >}} {{< bg "16" "pg4ml_16" "green" >}} {{< bg "15" "pg4ml_15" "green" >}} {{< bg "14" "pg4ml_14" "green" >}} {{< bg "13" "pg4ml_13" "green" >}} | `pg4ml_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "postgresql-18-pg4ml" "green" >}} {{< bg "17" "postgresql-17-pg4ml" "green" >}} {{< bg "16" "postgresql-16-pg4ml" "green" >}} {{< bg "15" "postgresql-15-pg4ml" "green" >}} {{< bg "14" "postgresql-14-pg4ml" "green" >}} {{< bg "13" "postgresql-13-pg4ml" "green" >}} | `postgresql-$v-pg4ml` | - |
 
@@ -188,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pg4ml;		# build rpm / deb with pig
+pig build pkg pg4ml;		# build rpm/deb
 ```
 
 

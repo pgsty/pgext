@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgfkpart` |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "pg_partman" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "btree_gist" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} |
 
 > [!Note] no pg13,12 on el8 pgdg repo
@@ -206,7 +207,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_fkpart;		# build rpm / deb with pig
+pig build pkg pg_fkpart;		# build deb
 ```
 
 

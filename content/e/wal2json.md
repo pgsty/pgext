@@ -208,11 +208,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg wal2json;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `tokenizer_catalog` |
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_trgm" >}} |
 
 > [!Note] PG18 fix by Vonng
@@ -187,7 +188,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_tokenizer;		# build rpm / deb with pig
+pig build pkg pg_tokenizer;		# build rpm/deb
 ```
 
 

@@ -374,7 +374,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_uuidv7;		# build spec not ready
+pig build pkg pg_uuidv7;		# build deb
 ```
 
 

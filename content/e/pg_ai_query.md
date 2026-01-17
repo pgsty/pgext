@@ -135,7 +135,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_ai_query;		# build rpm / deb with pig
+pig build pkg pg_ai_query;		# build rpm/deb
 ```
 
 

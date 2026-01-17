@@ -213,7 +213,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_rewrite;		# build spec not ready
+pig build pkg pg_rewrite;		# build deb
 ```
 
 

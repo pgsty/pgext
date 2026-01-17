@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_relusage;		# build rpm / deb with pig
+pig build pkg pg_relusage;		# build rpm/deb
 ```
 
 

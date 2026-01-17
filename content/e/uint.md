@@ -269,7 +269,7 @@ width: full
 
 
 ```bash
-pig build pkg pguint;		# build rpm / deb with pig
+pig build pkg pguint;		# build rpm/deb
 ```
 
 

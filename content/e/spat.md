@@ -83,7 +83,7 @@ width: full
 
 
 ```bash
-pig build pkg spat;		# build spec not ready
+pig build pkg spat;		# build rpm/deb
 ```
 
 

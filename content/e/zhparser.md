@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg zhparser;		# build rpm / deb with pig
+pig build pkg zhparser;		# build rpm/deb
 ```
 
 

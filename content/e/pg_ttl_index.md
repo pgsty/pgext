@@ -167,7 +167,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_ttl_index;		# build rpm / deb with pig
+pig build pkg pg_ttl_index;		# build rpm/deb
 ```
 
 

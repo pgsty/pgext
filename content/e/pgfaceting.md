@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `faceting` |
 |   **Requires**    | {{< ext "roaringbitmap" >}} |
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "rum" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfaceting` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgfaceting` | `roaringbitmap` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pgfaceting_18" "green" >}} {{< bg "17" "pgfaceting_17" "green" >}} {{< bg "16" "pgfaceting_16" "green" >}} {{< bg "15" "pgfaceting_15" "green" >}} {{< bg "14" "pgfaceting_14" "green" >}} {{< bg "13" "pgfaceting_13" "green" >}} | `pgfaceting_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pgfaceting" "green" >}} {{< bg "17" "postgresql-17-pgfaceting" "green" >}} {{< bg "16" "postgresql-16-pgfaceting" "green" >}} {{< bg "15" "postgresql-15-pgfaceting" "green" >}} {{< bg "14" "postgresql-14-pgfaceting" "green" >}} {{< bg "13" "postgresql-13-pgfaceting" "red" >}} | `postgresql-$v-pgfaceting` | - |
 
@@ -202,7 +203,7 @@ width: full
 
 
 ```bash
-pig build pkg pgfaceting;		# build rpm / deb with pig
+pig build pkg pgfaceting;		# build rpm
 ```
 
 

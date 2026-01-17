@@ -194,7 +194,7 @@ width: full
 
 
 ```bash
-pig build pkg pgfincore;		# build spec not ready
+pig build pkg pgfincore;		# build rpm/deb
 ```
 
 

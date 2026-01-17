@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `sparql` |
 |   **Requires**    | {{< ext "plperl" >}} {{< ext "plperlu" >}} |
 |   **See Also**    | {{< ext "pgjq" >}} {{< ext "pgjwt" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsparql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgsparql` | `plperl`, `plperlu` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgsparql_18" "green" >}} {{< bg "17" "pgsparql_17" "green" >}} {{< bg "16" "pgsparql_16" "green" >}} {{< bg "15" "pgsparql_15" "green" >}} {{< bg "14" "pgsparql_14" "green" >}} {{< bg "13" "pgsparql_13" "green" >}} | `pgsparql_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgsparql" "green" >}} {{< bg "17" "postgresql-17-pgsparql" "green" >}} {{< bg "16" "postgresql-16-pgsparql" "green" >}} {{< bg "15" "postgresql-15-pgsparql" "green" >}} {{< bg "14" "postgresql-14-pgsparql" "green" >}} {{< bg "13" "postgresql-13-pgsparql" "green" >}} | `postgresql-$v-pgsparql` | - |
 
@@ -186,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg pgsparql;		# build rpm / deb with pig
+pig build pkg pgsparql;		# build rpm/deb
 ```
 
 

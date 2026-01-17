@@ -22,6 +22,11 @@ width: full
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
+| **Relationships** |   |
+|:-----------------:|:----|
+|    **Schemas**    | `omni_csv` |
+
+
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
@@ -58,7 +63,7 @@ width: full
 
 
 ```bash
-pig build pkg omni_csv;		# build rpm / deb with pig
+pig build pkg omni_csv;		# build rpm/deb
 ```
 
 

@@ -201,7 +201,7 @@ width: full
 
 
 ```bash
-pig build pkg kafka_fdw;		# build rpm / deb with pig
+pig build pkg kafka_fdw;		# build rpm/deb
 ```
 
 

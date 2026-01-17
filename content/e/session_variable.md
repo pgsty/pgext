@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg session_variable;		# build rpm / deb with pig
+pig build pkg session_variable;		# build rpm/deb
 ```
 
 

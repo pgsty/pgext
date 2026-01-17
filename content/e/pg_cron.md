@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "documentdb" >}} {{< ext "pg_incremental" >}} {{< ext "timeseries" >}} {{< ext "vectorize" >}} |
 |   **See Also**    | {{< ext "timescaledb_toolkit" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} |
 

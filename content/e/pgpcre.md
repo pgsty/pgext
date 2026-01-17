@@ -231,7 +231,7 @@ width: full
 
 
 ```bash
-pig build pkg pgpcre;		# build rpm / deb with pig
+pig build pkg pgpcre;		# build rpm
 ```
 
 

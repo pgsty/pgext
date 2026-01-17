@@ -33,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_xenophile` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_xenophile` | `pg_xenophile` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "pg_xenophile_18" "green" >}} {{< bg "17" "pg_xenophile_17" "green" >}} {{< bg "16" "pg_xenophile_16" "green" >}} {{< bg "15" "pg_xenophile_15" "green" >}} {{< bg "14" "pg_xenophile_14" "green" >}} {{< bg "13" "pg_xenophile_13" "green" >}} | `pg_xenophile_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.8.3` | {{< bg "18" "postgresql-18-pg-xenophile" "green" >}} {{< bg "17" "postgresql-17-pg-xenophile" "green" >}} {{< bg "16" "postgresql-16-pg-xenophile" "green" >}} {{< bg "15" "postgresql-15-pg-xenophile" "green" >}} {{< bg "14" "postgresql-14-pg-xenophile" "green" >}} {{< bg "13" "postgresql-13-pg-xenophile" "green" >}} | `postgresql-$v-pg-xenophile` | - |
 
@@ -65,7 +65,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_xenophile;		# build rpm / deb with pig
+pig build pkg pg_xenophile;		# build rpm/deb
 ```
 
 

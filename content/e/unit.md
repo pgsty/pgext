@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgunit` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgunit` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "postgresql-unit_18" "green" >}} {{< bg "17" "postgresql-unit_17" "green" >}} {{< bg "16" "postgresql-unit_16" "green" >}} {{< bg "15" "postgresql-unit_15" "green" >}} {{< bg "14" "postgresql-unit_14" "green" >}} {{< bg "13" "postgresql-unit_13" "green" >}} | `postgresql-unit_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `7.10` | {{< bg "18" "postgresql-18-unit" "green" >}} {{< bg "17" "postgresql-17-unit" "green" >}} {{< bg "16" "postgresql-16-unit" "green" >}} {{< bg "15" "postgresql-15-unit" "green" >}} {{< bg "14" "postgresql-14-unit" "green" >}} {{< bg "13" "postgresql-13-unit" "green" >}} | `postgresql-$v-unit` | - |
 
@@ -217,11 +217,6 @@ width: full
 {{< card link="https://github.com/df7cb/postgresql-unit" title="Repository" icon="github" subtitle="github.com/df7cb/postgresql-unit" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql-unit-7.9.tar.gz" >}}
 {{< /cards >}}
-
-
-```bash
-pig build pkg pgunit;		# build spec not ready
-```
 
 
 ## Install

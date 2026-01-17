@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_upless` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_upless` | `plpgsql` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_upless_18" "green" >}} {{< bg "17" "pg_upless_17" "green" >}} {{< bg "16" "pg_upless_16" "green" >}} {{< bg "15" "pg_upless_15" "green" >}} {{< bg "14" "pg_upless_14" "green" >}} {{< bg "13" "pg_upless_13" "green" >}} | `pg_upless_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-upless" "green" >}} {{< bg "17" "postgresql-17-pg-upless" "green" >}} {{< bg "16" "postgresql-16-pg-upless" "green" >}} {{< bg "15" "postgresql-15-pg-upless" "green" >}} {{< bg "14" "postgresql-14-pg-upless" "green" >}} {{< bg "13" "postgresql-13-pg-upless" "green" >}} | `postgresql-$v-pg-upless` | - |
 
@@ -186,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_upless;		# build rpm / deb with pig
+pig build pkg pg_upless;		# build rpm/deb
 ```
 
 

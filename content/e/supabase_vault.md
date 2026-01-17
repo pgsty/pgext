@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `vault` |
 |   **Requires**    | {{< ext "pgsodium" >}} |
 |   **See Also**    | {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "pg_session_jwt" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "pgsmcrypto" >}} {{< ext "pgaudit" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_vault` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_vault` | `pgsodium` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "vault_18" "green" >}} {{< bg "17" "vault_17" "green" >}} {{< bg "16" "vault_16" "green" >}} {{< bg "15" "vault_15" "green" >}} {{< bg "14" "vault_14" "green" >}} {{< bg "13" "vault_13" "green" >}} | `vault_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.1` | {{< bg "18" "postgresql-18-vault" "green" >}} {{< bg "17" "postgresql-17-vault" "green" >}} {{< bg "16" "postgresql-16-vault" "green" >}} {{< bg "15" "postgresql-15-vault" "green" >}} {{< bg "14" "postgresql-14-vault" "green" >}} {{< bg "13" "postgresql-13-vault" "green" >}} | `postgresql-$v-vault` | - |
 
@@ -186,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_vault;		# build rpm / deb with pig
+pig build pkg pg_vault;		# build rpm/deb
 ```
 
 

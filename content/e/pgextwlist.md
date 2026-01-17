@@ -207,7 +207,7 @@ width: full
 
 
 ```bash
-pig build pkg pgextwlist;		# build rpm / deb with pig
+pig build pkg pgextwlist;		# build rpm
 ```
 
 

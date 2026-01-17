@@ -197,7 +197,7 @@ width: full
 
 
 ```bash
-pig build pkg timestamp9;		# build spec not ready
+pig build pkg timestamp9;		# build deb
 ```
 
 

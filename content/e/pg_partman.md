@@ -462,7 +462,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_partman;		# build spec not ready
+pig build pkg pg_partman;		# build rpm/deb
 ```
 
 

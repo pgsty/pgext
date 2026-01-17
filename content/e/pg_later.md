@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pglater` |
 |   **Requires**    | {{< ext "pgmq" >}} |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_later` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_later` | `pgmq` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "pg_later_18" "green" >}} {{< bg "17" "pg_later_17" "green" >}} {{< bg "16" "pg_later_16" "green" >}} {{< bg "15" "pg_later_15" "green" >}} {{< bg "14" "pg_later_14" "green" >}} {{< bg "13" "pg_later_13" "green" >}} | `pg_later_$v` | `pgmq_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.0` | {{< bg "18" "postgresql-18-pg-later" "green" >}} {{< bg "17" "postgresql-17-pg-later" "green" >}} {{< bg "16" "postgresql-16-pg-later" "green" >}} {{< bg "15" "postgresql-15-pg-later" "green" >}} {{< bg "14" "postgresql-14-pg-later" "green" >}} {{< bg "13" "postgresql-13-pg-later" "green" >}} | `postgresql-$v-pg-later` | `postgresql-$v-pgmq` |
 
@@ -221,7 +222,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_later;		# build rpm / deb with pig
+pig build pkg pg_later;		# build rpm/deb
 ```
 
 

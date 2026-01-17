@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `public` |
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "pg_savior" >}} {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "pg_auditor" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_upless" >}} {{< ext "pgauditlogtofile" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_drop_events` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_drop_events` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.1.0` | {{< bg "18" "pg_drop_events_18" "green" >}} {{< bg "17" "pg_drop_events_17" "green" >}} {{< bg "16" "pg_drop_events_16" "green" >}} {{< bg "15" "pg_drop_events_15" "green" >}} {{< bg "14" "pg_drop_events_14" "green" >}} {{< bg "13" "pg_drop_events_13" "green" >}} | `pg_drop_events_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.0` | {{< bg "18" "postgresql-18-pg-drop-events" "green" >}} {{< bg "17" "postgresql-17-pg-drop-events" "green" >}} {{< bg "16" "postgresql-16-pg-drop-events" "green" >}} {{< bg "15" "postgresql-15-pg-drop-events" "green" >}} {{< bg "14" "postgresql-14-pg-drop-events" "green" >}} {{< bg "13" "postgresql-13-pg-drop-events" "green" >}} | `postgresql-$v-pg-drop-events` | - |
 
@@ -186,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_drop_events;		# build spec not ready
+pig build pkg pg_drop_events;		# build rpm/deb
 ```
 
 

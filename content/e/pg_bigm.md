@@ -241,7 +241,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_bigm;		# build spec not ready
+pig build pkg pg_bigm;		# build rpm/deb
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `sqlog` |
 |   **Requires**    | {{< ext "file_fdw" >}} |
 |   **See Also**    | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} |
 
@@ -34,7 +35,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_sqlog` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_sqlog` | `file_fdw` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "pg_sqlog_18" "green" >}} {{< bg "17" "pg_sqlog_17" "green" >}} {{< bg "16" "pg_sqlog_16" "green" >}} {{< bg "15" "pg_sqlog_15" "green" >}} {{< bg "14" "pg_sqlog_14" "green" >}} {{< bg "13" "pg_sqlog_13" "green" >}} | `pg_sqlog_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "postgresql-18-pg-sqlog" "green" >}} {{< bg "17" "postgresql-17-pg-sqlog" "green" >}} {{< bg "16" "postgresql-16-pg-sqlog" "green" >}} {{< bg "15" "postgresql-15-pg-sqlog" "green" >}} {{< bg "14" "postgresql-14-pg-sqlog" "green" >}} {{< bg "13" "postgresql-13-pg-sqlog" "green" >}} | `postgresql-$v-pg-sqlog` | - |
 
@@ -188,7 +189,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_sqlog;		# build rpm / deb with pig
+pig build pkg pg_sqlog;		# build rpm/deb
 ```
 
 

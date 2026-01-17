@@ -157,7 +157,7 @@ width: full
 
 
 ```bash
-pig build pkg timescaledb_toolkit;		# build rpm / deb with pig
+pig build pkg timescaledb_toolkit;		# build rpm/deb
 ```
 
 

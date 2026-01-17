@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `graphql` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "wrappers" >}} |
 
 > [!Note] not an official release by Vonng
@@ -167,7 +168,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_graphql;		# build rpm / deb with pig
+pig build pkg pg_graphql;		# build rpm/deb
 ```
 
 

@@ -197,7 +197,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_uint128;		# build rpm / deb with pig
+pig build pkg pg_uint128;		# build rpm/deb
 ```
 
 

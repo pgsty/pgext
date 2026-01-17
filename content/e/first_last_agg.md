@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg first_last_agg;		# build rpm / deb with pig
+pig build pkg first_last_agg;		# build rpm
 ```
 
 

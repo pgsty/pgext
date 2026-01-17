@@ -187,7 +187,7 @@ width: full
 
 
 ```bash
-pig build pkg log_fdw;		# build rpm / deb with pig
+pig build pkg log_fdw;		# build deb
 ```
 
 

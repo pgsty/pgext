@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgml` |
 |   **See Also**    | {{< ext "pg4ml" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_strom" >}} |
 
 > [!Note] pgrx=0.12.9
@@ -150,7 +151,7 @@ width: full
 
 
 ```bash
-pig build pkg pgml;		# build rpm / deb with pig
+pig build pkg pgml;		# build rpm/deb
 ```
 
 

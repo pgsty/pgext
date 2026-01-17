@@ -167,7 +167,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_parquet;		# build rpm / deb with pig
+pig build pkg pg_parquet;		# build rpm/deb
 ```
 
 

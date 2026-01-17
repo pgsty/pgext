@@ -194,7 +194,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_prefix;		# build spec not ready
+pig build pkg pg_prefix;		# build rpm
 ```
 
 

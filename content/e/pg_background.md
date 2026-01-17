@@ -209,7 +209,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_background;		# build spec not ready
+pig build pkg pg_background;		# build deb
 ```
 
 

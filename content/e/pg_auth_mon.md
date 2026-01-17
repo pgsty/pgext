@@ -195,7 +195,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_auth_mon;		# build spec not ready
+pig build pkg pg_auth_mon;		# build deb
 ```
 
 

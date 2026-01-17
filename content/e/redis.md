@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_redis_pubsub;		# build rpm / deb with pig
+pig build pkg pg_redis_pubsub;		# build rpm/deb
 ```
 
 

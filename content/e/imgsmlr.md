@@ -163,7 +163,7 @@ width: full
 
 
 ```bash
-pig build pkg imgsmlr;		# build rpm / deb with pig
+pig build pkg imgsmlr;		# build rpm/deb
 ```
 
 

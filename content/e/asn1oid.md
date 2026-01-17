@@ -205,7 +205,7 @@ width: full
 
 
 ```bash
-pig build pkg asn1oid;		# build rpm / deb with pig
+pig build pkg asn1oid;		# build rpm
 ```
 
 

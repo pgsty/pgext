@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `bm25_catalog` |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgroonga" >}} |
 
 
@@ -185,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg vchord_bm25;		# build rpm / deb with pig
+pig build pkg vchord_bm25;		# build rpm/deb
 ```
 
 

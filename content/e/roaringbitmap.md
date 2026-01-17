@@ -312,7 +312,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_roaringbitmap;		# build spec not ready
+pig build pkg pg_roaringbitmap;		# build rpm
 ```
 
 

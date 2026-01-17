@@ -277,7 +277,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_permissions;		# build spec not ready
+pig build pkg pg_permissions;		# build deb
 ```
 
 

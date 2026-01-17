@@ -189,7 +189,7 @@ width: full
 
 
 ```bash
-pig build pkg passwordcheck_cracklib;		# build spec not ready
+pig build pkg passwordcheck_cracklib;		# build deb
 ```
 
 

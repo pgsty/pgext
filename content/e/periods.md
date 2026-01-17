@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `periods` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `periods` | `btree_gist` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.3` | {{< bg "18" "periods_18" "green" >}} {{< bg "17" "periods_17" "green" >}} {{< bg "16" "periods_16" "green" >}} {{< bg "15" "periods_15" "green" >}} {{< bg "14" "periods_14" "green" >}} {{< bg "13" "periods_13" "green" >}} | `periods_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.2.3` | {{< bg "18" "postgresql-18-periods" "green" >}} {{< bg "17" "postgresql-17-periods" "green" >}} {{< bg "16" "postgresql-16-periods" "green" >}} {{< bg "15" "postgresql-15-periods" "green" >}} {{< bg "14" "postgresql-14-periods" "green" >}} {{< bg "13" "postgresql-13-periods" "green" >}} | `postgresql-$v-periods` | - |
 
@@ -226,7 +226,7 @@ width: full
 
 
 ```bash
-pig build pkg periods;		# build spec not ready
+pig build pkg periods;		# build rpm
 ```
 
 

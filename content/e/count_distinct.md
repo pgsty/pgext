@@ -220,7 +220,7 @@ width: full
 
 
 ```bash
-pig build pkg count_distinct;		# build rpm / deb with pig
+pig build pkg count_distinct;		# build rpm/deb
 ```
 
 

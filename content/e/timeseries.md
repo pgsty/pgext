@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_timeseries` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_timeseries` | `pg_cron`, `pg_partman` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "pg_timeseries_18" "green" >}} {{< bg "17" "pg_timeseries_17" "green" >}} {{< bg "16" "pg_timeseries_16" "green" >}} {{< bg "15" "pg_timeseries_15" "green" >}} {{< bg "14" "pg_timeseries_14" "green" >}} {{< bg "13" "pg_timeseries_13" "green" >}} | `pg_timeseries_$v` | `pg_cron_$v`, `pg_partman_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.2.0` | {{< bg "18" "postgresql-18-pg-timeseries" "green" >}} {{< bg "17" "postgresql-17-pg-timeseries" "green" >}} {{< bg "16" "postgresql-16-pg-timeseries" "green" >}} {{< bg "15" "postgresql-15-pg-timeseries" "green" >}} {{< bg "14" "postgresql-14-pg-timeseries" "green" >}} {{< bg "13" "postgresql-13-pg-timeseries" "green" >}} | `postgresql-$v-pg-timeseries` | `postgresql-$v-cron`, `postgresql-$v-partman` |
 
@@ -186,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_timeseries;		# build rpm / deb with pig
+pig build pkg pg_timeseries;		# build rpm/deb
 ```
 
 

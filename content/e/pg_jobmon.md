@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_jobmon` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_jobmon` | `dblink` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.1` | {{< bg "18" "pg_jobmon_18" "green" >}} {{< bg "17" "pg_jobmon_17" "green" >}} {{< bg "16" "pg_jobmon_16" "green" >}} {{< bg "15" "pg_jobmon_15" "green" >}} {{< bg "14" "pg_jobmon_14" "green" >}} {{< bg "13" "pg_jobmon_13" "green" >}} | `pg_jobmon_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.1` | {{< bg "18" "postgresql-18-pg-jobmon" "green" >}} {{< bg "17" "postgresql-17-pg-jobmon" "green" >}} {{< bg "16" "postgresql-16-pg-jobmon" "green" >}} {{< bg "15" "postgresql-15-pg-jobmon" "green" >}} {{< bg "14" "postgresql-14-pg-jobmon" "green" >}} {{< bg "13" "postgresql-13-pg-jobmon" "green" >}} | `postgresql-$v-pg-jobmon` | - |
 
@@ -186,7 +186,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_jobmon;		# build spec not ready
+pig build pkg pg_jobmon;		# build deb
 ```
 
 

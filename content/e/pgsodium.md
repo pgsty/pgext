@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pgsodium` |
 |    **Need By**    | {{< ext "supabase_vault" >}} |
 |   **See Also**    | {{< ext "pgsmcrypto" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "anon" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} |
 
@@ -345,7 +346,7 @@ width: full
 
 
 ```bash
-pig build pkg pgsodium;		# build rpm / deb with pig
+pig build pkg pgsodium;		# build rpm/deb
 ```
 
 

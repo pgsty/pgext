@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg aws_s3;		# build rpm / deb with pig
+pig build pkg aws_s3;		# build rpm/deb
 ```
 
 

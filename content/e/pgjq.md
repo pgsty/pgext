@@ -167,7 +167,7 @@ width: full
 
 
 ```bash
-pig build pkg pgjq;		# build rpm / deb with pig
+pig build pkg pgjq;		# build rpm/deb
 ```
 
 

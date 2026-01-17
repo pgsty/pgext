@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} |
 
 > [!Note] deb takeover by pgdg since 2026-01
@@ -408,7 +409,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_ivm;		# build rpm / deb with pig
+pig build pkg pg_ivm;		# build deb
 ```
 
 

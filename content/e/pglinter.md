@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pglinter;		# build rpm / deb with pig
+pig build pkg pglinter;		# build rpm/deb
 ```
 
 

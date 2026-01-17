@@ -212,7 +212,7 @@ width: full
 
 
 ```bash
-pig build pkg sslutils;		# build rpm / deb with pig
+pig build pkg sslutils;		# build rpm/deb
 ```
 
 

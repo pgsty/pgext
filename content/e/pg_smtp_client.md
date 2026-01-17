@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `smtp_client` |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_html5_email_address" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
 
 > [!Note] manual updated pgrx by Vonng
@@ -167,7 +168,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_smtp_client;		# build rpm / deb with pig
+pig build pkg pg_smtp_client;		# build rpm/deb
 ```
 
 

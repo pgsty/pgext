@@ -215,7 +215,7 @@ width: full
 
 
 ```bash
-pig build pkg temporal_tables;		# build rpm / deb with pig
+pig build pkg temporal_tables;		# build rpm/deb
 ```
 
 

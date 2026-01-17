@@ -360,7 +360,7 @@ width: full
 
 
 ```bash
-pig build pkg pgtt;		# build spec not ready
+pig build pkg pgtt;		# build deb
 ```
 
 

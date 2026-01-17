@@ -213,11 +213,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg plproxy;		# build spec not ready
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) repo available:

@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg numeral;		# build rpm / deb with pig
+pig build pkg numeral;		# build rpm
 ```
 
 

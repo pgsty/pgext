@@ -145,7 +145,7 @@ width: full
 
 
 ```bash
-pig build pkg wal2mongo;		# build rpm / deb with pig
+pig build pkg wal2mongo;		# build deb
 ```
 
 

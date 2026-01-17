@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg hunspell_de_de;		# build rpm / deb with pig
+pig build pkg hunspell_de_de;		# build rpm/deb
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "hstore_pllua" >}} |
 |   **See Also**    | {{< ext "plperl" >}} {{< ext "plpgsql" >}} {{< ext "plpython3u" >}} {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljava" >}} {{< ext "plperlu" >}} |
 |    **Siblings**   | {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} |

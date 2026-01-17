@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg md5hash;		# build rpm / deb with pig
+pig build pkg md5hash;		# build rpm/deb
 ```
 
 

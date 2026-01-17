@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `bm_catalog` |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "vectorize" >}} |
 
 > [!Note] manual updated pgrx by Vonng
@@ -202,7 +203,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_bestmatch;		# build rpm / deb with pig
+pig build pkg pg_bestmatch;		# build rpm/deb
 ```
 
 

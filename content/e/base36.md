@@ -185,7 +185,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_base36;		# build rpm / deb with pig
+pig build pkg pg_base36;		# build rpm/deb
 ```
 
 

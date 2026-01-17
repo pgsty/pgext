@@ -65,7 +65,7 @@ width: full
 
 
 ```bash
-pig build pkg pg_tde;		# build rpm / deb with pig
+pig build pkg pg_tde;		# build deb
 ```
 
 
