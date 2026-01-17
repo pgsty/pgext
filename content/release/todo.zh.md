@@ -4,20 +4,6 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
-## 待办事项
-
-- citus 14.0 with pg18 support
-- age 1.6.0 with pg18 support (age)
-- pgsentinel 1.3.0 -> 1.3.1 rpm
-- pg_timeseries 0.1.8 -> 0.2.0
-- pg_clickhouse 0.1.0 -> 0.1.2
-- pg_bulkload 3.1.22 -> 3.1.23
-- pg_biscuit 2.0.2 -> 2.2.2
-- documentdb 0.107 -> 0.109 (switch to upstream)
-- pg_partman 5.4.0 new
-- pljs new 1.0.4
-
-
 ## 候选列表
 
 - pgmq 1.8.1
@@ -30,6 +16,16 @@ weight: 700
 
 ## 最近更新
 
+- citus 14.0 with pg18 support
+- age 1.6.0 with pg18 support (age)
+- pgsentinel 1.3.0 -> 1.3.1 rpm
+- pg_timeseries 0.1.8 -> 0.2.0
+- pg_clickhouse 0.1.0 -> 0.1.2
+- pg_bulkload 3.1.22 -> 3.1.23
+- pg_biscuit 2.0.2 -> 2.2.2
+- documentdb 0.107 -> 0.109 (switch to upstream)
+- pg_partman 5.4.0 new
+- pljs new 1.0.4
 - pg_timeseries 0.1.8
 - pg_duckdb 1.1.1
 - pg_summarize rebuild for pg18 on deb

@@ -17,7 +17,7 @@ PGEXT.CLOUD provides three things to help you harness the synergistic superpower
 - [**PIG Package Manager**](/pig/) : The Missing Package Manager for PostgreSQL & Extension Ecosystem
 
 {{< cards cols=4 >}}  
-  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 430+ available PostgreSQL extensions" >}}
+  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 440+ available PostgreSQL extensions" >}}
   {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT / DNF repo that deliver PostgreSQL extensions in native Linux format" >}}
   {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}
 {{< /cards >}}

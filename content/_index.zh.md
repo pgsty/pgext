@@ -17,7 +17,7 @@ PG 扩展云（PGEXT.CLOUD）提供了以下三样基础设施，帮助用户更
 - [**包管理器**](/pig) ： 屏蔽复杂度与操作系统与架构差异，使用 [**`pig`**](/zh/pig) 命令行工具一键完成所有步骤
 
 {{< cards >}}
-  {{< card link="/zh/list" title="扩展目录" icon="clipboard-list" subtitle="430+ 个可用 PostgreSQL 扩展的完整列表" >}}
+  {{< card link="/zh/list" title="扩展目录" icon="clipboard-list" subtitle="440+ 个可用 PostgreSQL 扩展的完整列表" >}}
   {{< card link="/zh/repo" title="软件仓库" icon="cube" subtitle="包含扩展二进制包的 APT/YUM 软件仓库" >}}
   {{< card link="/zh/pig" title="包管理器" icon="cash" subtitle="PostgreSQL 与扩展生态中缺失的包管理器" >}}
 {{< /cards >}}
