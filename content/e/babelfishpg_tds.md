@@ -84,7 +84,7 @@ pig install babelfishpg_tds -v 15;   # install for PG 15
 
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
-```sql
+```ini
 shared_preload_libraries = 'babelfishpg_tds';
 ```
 

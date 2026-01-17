@@ -208,7 +208,7 @@ pig install omni -v 13;   # install for PG 13
 
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
-```sql
+```ini
 shared_preload_libraries = 'omni--0.2.14.so';
 ```
 

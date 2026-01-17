@@ -835,7 +835,7 @@ func (g *ExtensionGenerator) generateLoadCreate(ext *Extension) string {
 
 		// Generate the shared_preload_libraries config
 		libConfig := strings.Join(libsToLoad, ", ")
-		b.WriteString(TripleQuoteSQL(fmt.Sprintf("shared_preload_libraries = '%s';", libConfig)))
+		b.WriteString(TripleQuoteINI(fmt.Sprintf("shared_preload_libraries = '%s';", libConfig)))
 		b.WriteString("\n\n")
 	}
 

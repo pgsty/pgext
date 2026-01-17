@@ -195,7 +195,7 @@ pig install pg_parquet -v 14;   # install for PG 14
 
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
-```sql
+```ini
 shared_preload_libraries = 'pg_parquet';
 ```
 

@@ -232,3 +232,8 @@ func TripleQuoteBash(content string) string {
 func TripleQuoteSQL(content string) string {
 	return TripleQuoteLang("sql", content)
 }
+
+// TripleQuoteINI is a convenience function for SQL code blocks
+func TripleQuoteINI(content string) string {
+	return TripleQuoteLang("ini", content)
+}
