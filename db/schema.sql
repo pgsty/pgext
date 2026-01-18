@@ -645,3 +645,37 @@ SELECT 5::INTEGER AS id, 'Debian Packages' AS title, count(*) AS total,
        count(*) FILTER ( WHERE deb_repo = 'PGDG' or deb_repo = 'PGDG' ) AS pgdg, count(*) FILTER ( WHERE deb_repo = 'PIGSTY' or deb_repo = 'PIGSTY' ) AS pigsty,count(*) FILTER ( WHERE contrib ) AS contrib, (SELECT count(*) FROM pgext.extension WHERE lead) - count(*) AS miss,
        count(*) FILTER ( WHERE deb_pg @> '{18}') AS pg18,count(*) FILTER ( WHERE deb_pg @> '{17}') AS pg17,count(*) FILTER ( WHERE deb_pg @> '{16}') AS pg16,count(*) FILTER ( WHERE deb_pg @> '{15}') AS pg15,count(*) FILTER ( WHERE deb_pg @> '{14}') AS pg14, count(*) FILTER ( WHERE deb_pg @> '{13}') AS pg13
 FROM pgext.extension WHERE deb_repo IS NOT NULL AND lead AND NOT contrib;
+
+
+-----------------------------------
+-- View used by pig the PM
+-----------------------------------
+CREATE OR REPLACE VIEW pgext.pig AS
+    SELECT
+        e.id, e.name, e.pkg, e.lead_ext, e.category, e.state, e.url, e.license,
+        e.tags, e.version, e.repo, e.lang, e.contrib, e.lead, e.has_bin, e.has_lib,
+        e.need_ddl, e.need_load, e.trusted, e.relocatable, e.schemas, e.pg_ver,
+        e.requires, e.require_by, e.see_also,
+        e.rpm_ver, e.rpm_repo, e.rpm_pkg, e.rpm_pg, e.rpm_deps,
+        e.deb_ver, e.deb_repo, e.deb_pkg, e.deb_deps, e.deb_pg,
+        e.source,
+        CASE WHEN e.lead THEN
+                 COALESCE(e.extra, '{}'::jsonb) || jsonb_build_object('matrix', m.arr)
+             ELSE e.extra END AS extra,
+        e.en_desc, e.zh_desc, e.comment, e.mtime
+    FROM pgext.extension e
+             LEFT JOIN LATERAL (
+        SELECT array_agg(
+                       split_part(p.os,'.',1) || CASE WHEN p.os LIKE '%x86%' THEN 'i' ELSE 'a' END
+                           ||':'|| p.pg ||':'|| left(p.state::TEXT,1)
+                           ||':'|| CASE p.hide WHEN true THEN 't' ELSE 'f' END
+                           ||':'|| COALESCE(p.count,0)
+                           ||':'|| COALESCE(CASE p.org WHEN 'pgdg' then 'G' when 'pigsty' then 'P' else '' END)
+                           ||':'|| COALESCE(p.version,'')
+                       ORDER BY p.os, p.pg DESC
+               ) AS arr
+        FROM pgext.pkg p WHERE p.pkg = e.pkg
+        ) m ON e.lead = true
+    ORDER BY id;
+
+COMMENT ON VIEW pgext.pig IS 'Extensions with Package Availability Matrix';

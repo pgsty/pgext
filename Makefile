@@ -70,8 +70,12 @@ load:
 dd:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.category   ORDER BY id)       TO STDOUT CSV HEADER;"  > ~/pgsty/repo/ext/data/category.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.repository ORDER BY id)       TO STDOUT CSV HEADER;"  > ~/pgsty/repo/ext/data/repository.csv
-	psql $(PGURL) -c "COPY (SELECT * FROM pgext.extension  ORDER BY id)       TO STDOUT CSV HEADER;"  > ~/pgsty/repo/ext/data/extension.csv
-	psql $(PGURL) -c "COPY (SELECT * FROM pgext.pkg ORDER BY pg,os,name,version) TO STDOUT CSV HEADER;"  > ~/pgsty/repo/ext/data/pkg.csv
+	psql $(PGURL) -c "COPY (SELECT * FROM pgext.pig) TO STDOUT CSV HEADER;"  > ~/pgsty/repo/ext/data/extension.csv
+
+# dump extension data to data dir
+d2:
+	psql $(PGURL) -c "COPY (SELECT * FROM pgext.pig) TO STDOUT CSV HEADER;"  > ~/pgsty/pig/cli/ext/assets/extension.csv
+
 
 # dump extension data to data dir
 dump2:
