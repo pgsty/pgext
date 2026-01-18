@@ -5,12 +5,30 @@ weight: 100
 breadcrumbs: false
 ---
 
-## v0.9.1
+## v1.0.0
 
 - 扩展数量达到 444 个，新增 etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen
 - citus, age, pg_search, pg_bulkload, documentdb 支持 PG 18
+- 新增 `pig ext avail` 子命令使用 `--pkg` 列出扩展包可用性矩阵
+- 调整 `pig ext ls` 的 status 字段，利用可用性矩阵显示扩展包状态
+- 允许 `pig ext ls` 使用 输出软件包名称
 - 修复 `pig ext scan` 出现重复扩展问题。
 - 修复了 `pg_weighted_statistics` 扩展名称，现在 `ext` 名称为 `weighted_statistics`
+
+**校验和**
+
+```bash
+e18130c7f3ee2b1b3e50e6c06b82a23e66f9d4cb88e412c6a5d77771f2cca857  pig-1.0.0-1.aarch64.rpm
+e110b336d0dae7fa4e0513cb484a5204ae59e486976f8a7697ab10c98c28f95a  pig-1.0.0-1.x86_64.rpm
+ed672df54ad8bbc1af3a7316162400e204bd481f73a656ac82bf8140113bcd22  pig-v1.0.0.darwin-amd64.tar.gz
+67a41c54e861aaa071b4827d6ce1ee4e6b73bbfb73c218e913caf36b10746b7f  pig-v1.0.0.darwin-arm64.tar.gz
+f1bac69a6eb89fbe21cef91d5f55a44c766d4b11491e0694018cc40457038247  pig-v1.0.0.linux-amd64.tar.gz
+a0dd35b1cc110c21b4347c7fe76dc5698287ae3a020e4e7537d479ed87bc357e  pig-v1.0.0.linux-arm64.tar.gz
+b824d7f6e7909512a2ef60f4513afe43ee6dd3f2a19a39f42d4f8787229addea  pig_1.0.0-1_amd64.deb
+2125712551e91c8b50c5eb392314723c9cbcedb408538cfa48965602512da11e  pig_1.0.0-1_arm64.deb
+```
+
+发布：https://github.com/pgsty/pig/releases/tag/v1.0.0
 
 
 

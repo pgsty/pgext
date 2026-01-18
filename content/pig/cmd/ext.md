@@ -30,31 +30,35 @@ Examples:
 
   pig ext list    [query]      # list & search extension
   pig ext info    [ext...]     # get information of a specific extension
+  pig ext avail   [ext...]     # show extension availability matrix
   pig ext status  [-v]         # show installed extension and pg status
+  pig ext scan                 # scan installed extensions for active pg
   pig ext add     [ext...]     # install extension for current pg version
   pig ext rm      [ext...]     # remove extension for current pg version
   pig ext update  [ext...]     # update extension to the latest version
   pig ext import  [ext...]     # download extension to local repo
   pig ext link    [ext...]     # link postgres installation to path
-  pig ext upgrade              # upgrade to the latest extension catalog
+  pig ext reload               # reload extension catalog to the latest version
 
 
 Available Commands:
   add         install postgres extension
+  avail       show extension availability matrix
   import      import extension packages to local repo
   info        get extension information
   link        link postgres to active PATH
   list        list & search available extensions
+  reload      reload extension catalog to the latest version
   rm          remove postgres extension
   scan        scan installed extensions for active pg
   status      show installed extension on active pg
   update      update installed extensions for current pg version
-  upgrade     upgrade extension catalog to the latest version
 
 Flags:
   -h, --help          help for ext
   -p, --path string   specify a postgres by pg_config path
   -v, --version int   specify a postgres by major version
+      --pkg           show Pkg instead of Name, only list lead extensions
 
 Global Flags:
       --debug              enable debug mode
@@ -127,11 +131,20 @@ Examples:
   pig ext list postgis        # search extensions by name/description
   pig ext ls olap             # list extension of olap category
   pig ext ls gis -v 16        # list gis category for pg 16
+  pig ext ls --pkg            # list packages instead of extensions
+
+Flags:
+      --pkg           show Pkg instead of Name, only list lead extensions
 ```
+
+The output includes a **Status** column that shows the installation status of each extension:
+- **installed** (green): The extension package is already installed on the system
+- **available** (yellow): The extension package is available in the repository but not installed
+- **not avail** (red): The extension package is not available for the current OS/Arch/PG combination
 
 The default extension catalog is defined in [**`cli/ext/assets/extension.csv`**](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv)
 
-You can update to the latest extension catalog with: `pig ext upgrade` it will download the latest extension catalog data to `~/.pig/extension.csv`.
+You can update to the latest extension catalog with: `pig ext reload` it will download the latest extension catalog data to `~/.pig/extension.csv`.
 
 
 
@@ -443,7 +456,38 @@ pig ext link null                      # Unlink current PostgreSQL installation
 
 
 
-## `reload`
+## `ext avail`
+
+Show extension availability matrix across different OS/Arch/PG combinations.
+
+```bash
+show extension availability matrix
+
+Usage:
+  pig ext avail [ext...] [flags]
+
+Aliases:
+  avail, av, m, matrix
+
+Examples:
+
+  pig ext avail                     # show all packages availability on current OS
+  pig ext avail timescaledb         # show availability matrix for timescaledb
+  pig ext avail postgis pg_duckdb   # show matrix for multiple extensions
+  pig ext av pgvector               # show availability for pgvector
+  pig ext matrix citus              # alias for avail command
+```
+
+When called without arguments, it shows a global availability matrix for all packages on the current OS/Arch.
+The output uses colored indicators:
+- **Green**: Available from PIGSTY repository
+- **Blue**: Available from PGDG repository
+- **Empty**: Not available for that PG version
+
+When called with extension names, it shows detailed availability for each extension across all supported OS/Arch/PG combinations.
+
+
+## `ext reload`
 
 Update the extension catalog to the latest version.
 
@@ -451,3 +495,4 @@ Update the extension catalog to the latest version.
 pig ext reload
 ```
 
+This command downloads the latest extension catalog data to `~/.pig/extension.csv`.

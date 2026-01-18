@@ -40,13 +40,13 @@ curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
 
 {{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 0.9.0     # 安装 0.9.0 版本
+curl -fsSL https://repo.pigsty.io/pig | bash -s 1.0.0     # 安装 1.0.0 版本
 ```
 {{< /tab >}}
 
 {{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.9.0     # 安装 0.9.0 版本（中国镜像）
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.0.0     # 安装 1.0.0 版本（中国镜像）
 ```
 {{< /tab >}}
 
@@ -62,15 +62,15 @@ curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.9.0     # 安装 0.9.0 版本�
 
 {{< filetree/container >}}
 {{< filetree/file name="latest" >}}
-{{< filetree/folder name="v0.9.0" state="open" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig_0.9.0-1_amd64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig_0.9.0-1_arm64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.aarch64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.x86_64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.linux-amd64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.linux-arm64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.darwin-amd64.tar.gz]" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.darwin-arm64.tar.gz" >}}
+{{< filetree/folder name="v1.0.0" state="open" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_amd64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_arm64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.aarch64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.x86_64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-amd64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-arm64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-amd64.tar.gz]" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-arm64.tar.gz" >}}
 
 {{< /filetree/folder >}}
 {{< filetree/folder name="v0.7.5" state="closed" >}}{{< /filetree/folder >}}

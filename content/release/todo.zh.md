@@ -7,6 +7,10 @@ weight: 700
 
 # 待办事项
 
+- citus / age official release
+
+## 候选列表
+
 - citus 14.0 with pg18 support
 - pg_ttl_index 0.1.0
 - etcd_fdw 0.0.0
@@ -15,10 +19,6 @@ weight: 700
 - pgmq 1.8.0 -> 1.8.1
 - documentdb_extened_rum
 - mobilitydb_datagen
-
-
-## 候选列表
-
 - pgmq 1.8.1
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access

@@ -38,13 +38,13 @@ You can install specific version of pig, just pass it as cli arg:
 
 {{< tab >}}
 ```bash tab="Default"
-curl -fsSL https://repo.pigsty.io/pig | bash -s 0.9.0    # via Cloudflare
+curl -fsSL https://repo.pigsty.io/pig | bash -s 1.0.0    # via Cloudflare
 ```
 {{< /tab >}}
 
 {{< tab >}}
 ```bash tab="Mirror"
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 0.9.0    # via China Mirror
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.0.0    # via China Mirror
 ```
 {{< /tab >}}
 
@@ -57,15 +57,15 @@ You can also download `pig` package (`RPM`/`DEB`/ Tarball) directly from the [La
 
 {{< filetree/container >}}
 {{< filetree/file name="latest" >}}
-{{< filetree/folder name="v0.9.0" state="open" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig_0.9.0-1_amd64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig_0.9.0-1_arm64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.aarch64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.x86_64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.linux-amd64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.linux-arm64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.darwin-amd64.tar.gz]" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v0.9.0/pig-v0.9.0.darwin-arm64.tar.gz" >}}
+{{< filetree/folder name="v1.0.0" state="open" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_amd64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_arm64.deb" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.aarch64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.x86_64.rpm" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-amd64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-arm64.tar.gz" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-amd64.tar.gz]" >}}
+{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-arm64.tar.gz" >}}
 
 {{< /filetree/folder >}}
 {{< filetree/folder name="v0.7.5" state="closed" >}}{{< /filetree/folder >}}

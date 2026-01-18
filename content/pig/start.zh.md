@@ -40,18 +40,18 @@ PIG 二进制包大约 4 MB，在 Linux 上会自动使用 `rpm` 或 `dpkg` 安�
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = rpm
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v0.9.0/pig-0.9.0-1.x86_64.rpm
-[INFO] download = /tmp/pig-0.7.2-1.x86_64.rpm
-[INFO] downloading pig v0.7.2
-curl -fSL https://repo.pigsty.io/pkg/pig/v0.7.2/pig-0.7.2-1.x86_64.rpm -o /tmp/pig-0.7.2-1.x86_64.rpm
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.x86_64.rpm
+[INFO] download = /tmp/pig-1.0.0-1.x86_64.rpm
+[INFO] downloading pig v1.0.0
+curl -fSL https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.x86_64.rpm -o /tmp/pig-1.0.0-1.x86_64.rpm
 ######################################################################## 100.0%
 [INFO] md5sum = 85d75c16dfd3ce935d9d889fae345430
-[INFO] installing: rpm -ivh /tmp/pig-0.7.2-1.x86_64.rpm
+[INFO] installing: rpm -ivh /tmp/pig-1.0.0-1.x86_64.rpm
 Verifying...                          ################################# [100%]
 Preparing...                          ################################# [100%]
 Updating / installing...
-   1:pig-0.7.2-1                      ################################# [100%]
-[INFO] pig v0.7.2 installed successfully
+   1:pig-1.0.0-1                      ################################# [100%]
+[INFO] pig v1.0.0 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -64,8 +64,8 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 ```bash
 $ pig version
 
-pig version 0.7.2 linux/amd64
-build: HEAD 9cdb57a 2025-11-10T11:14:17Z
+pig version 1.0.0 linux/amd64
+build: HEAD 35f3aac 2026-01-18T00:00:00Z
 ```
 
 使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG的安装情况，仓库的可访问性与延迟。
@@ -74,7 +74,7 @@ build: HEAD 9cdb57a 2025-11-10T11:14:17Z
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 0.7.2
+Pig Version      : 1.0.0
 Pig Config       : /root/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -119,22 +119,21 @@ Latest Pigsty Ver :  v3.6.1
 使用 `pig ext list` 命令，可以打印内置的 PG 扩展数据目录。
 
 ```bash
-[root@pg-meta ~]# pig ext list
+$ pig ext list
+Name                            Status              Version     Cate   Flags   License       Repo     PGVer  Package                    Description
+----                            ------              -------     ----   ------  -------       ------   -----  ------------               ---------------------
+timescaledb                     installed  2.24.0      TIME   -dsl--  Timescale     PIGSTY   15-18  timescaledb-tsl_18         Enables scalable inserts and complex queries for time-series dat
+timescaledb_toolkit             installed  1.22.0      TIME   -ds-t-  Timescale     PIGSTY   15-18  timescaledb-toolkit_18     Library of analytical hyperfunctions, time-series pipelining, an
+timeseries                      installed  0.2.0       TIME   -d----  PostgreSQL    PIGSTY   13-18  pg_timeseries_18           Convenience API for time series stack
+periods                         installed  1.2.3       TIME   -ds---  PostgreSQL    PGDG     13-18  periods_18                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
+temporal_tables                 installed  1.2.2       TIME   -ds--r  BSD 2-Clause  PIGSTY   13-18  temporal_tables_18         temporal tables
+...
+pg_bulkload                     installed  3.1.23      ETL    bds---  BSD 3-Clause  PGDG     13-18  pg_bulkload_18             pg_bulkload is a high speed data loading utility for PostgreSQL
+test_decoding                   available  -           ETL    --s--x  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       SQL-based test/example module for WAL logical decoding
+pgoutput                        available  -           ETL    --s---  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       Logical Replication output plugin
 
-Name                            Version     Cate   Flags   License       RPM      DEB      PG Ver  Description
-----                            -------     ----   ------  -------       ------   ------   ------  ---------------------
-timescaledb                     2.23.0      TIME   -dsl--  Timescale     PIGSTY   PIGSTY   15-18   Enables scalable inserts and complex queries for time-series dat...
-timescaledb_toolkit             1.22.0      TIME   -ds-t-  Timescale     PIGSTY   PIGSTY   15-18   Library of analytical hyperfunctions, time-series pipelining, an...
-timeseries                      0.1.7       TIME   -d----  PostgreSQL    PIGSTY   PIGSTY   13-18   Convenience API for time series stack
-periods                         1.2.3       TIME   -ds---  PostgreSQL    PGDG     PGDG     13-18   Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO...
-temporal_tables                 1.2.2       TIME   -ds--r  BSD 2-Clause  PIGSTY   PIGSTY   13-18   temporal tables
-.........
-pg_fact_loader                  2.0.1       ETL    -ds--x  MIT           PGDG     PGDG     13-18   build fact tables with Postgres
-pg_bulkload                     3.1.22      ETL    bds---  BSD 3-Clause  PGDG     PIGSTY   13-17   pg_bulkload is a high speed data loading utility for PostgreSQL
-test_decoding                   -           ETL    --s--x  PostgreSQL    CONTRIB  CONTRIB  13-18   SQL-based test/example module for WAL logical decoding
-pgoutput                        -           ETL    --s---  PostgreSQL    CONTRIB  CONTRIB  13-18   Logical Replication output plugin
+(444 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
 
-(431 Rows) (Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，
@@ -187,13 +186,13 @@ PIG 本身不支持离线安装，您可以自行下载 RPM/DEB 包，拷贝到�
 pig ext add -v 18 -y pgsql timescaledb postgis vector pg_duckdb pg_mooncake # 安装 PG 18 内核与扩展，自动确认
 
 # 该命令会自动执行翻译，将软件包翻译为
-INFO[20:34:44] translate alias 'pgsql' to package: postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit
-INFO[20:34:44] translate extension 'timescaledb' to package: timescaledb-tsl_18*
-INFO[20:34:44] translate extension 'postgis' to package: postgis36_18*
-INFO[20:34:44] translate extension 'vector' to package: pgvector_18*
-INFO[20:34:44] translate extension 'pg_duckdb' to package: pg_duckdb_18*
-INFO[20:34:44] translate extension 'pg_mooncake' to package: pg_mooncake_18*
-INFO[20:34:44] installing packages: dnf install -y postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl postgresql18-llvmjit timescaledb-tsl_18* postgis36_18* pgvector_18* pg_duckdb_18* pg_mooncake_18*
+INFO[20:34:44] translate alias 'pgsql' to package: postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl
+INFO[20:34:44] translate extension 'timescaledb' to package: timescaledb-tsl_18
+INFO[20:34:44] translate extension 'postgis' to package: postgis36_18
+INFO[20:34:44] translate extension 'vector' to package: pgvector_18
+INFO[20:34:44] translate extension 'pg_duckdb' to package: pg_duckdb_18
+INFO[20:34:44] translate extension 'pg_mooncake' to package: pg_mooncake_18
+INFO[20:34:44] installing packages: dnf install -y postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl timescaledb-tsl_18 postgis36_18 pgvector_18 pg_duckdb_18 pg_mooncake_18
 ```
 
 这里使用了 “别名翻译” 机制，将清爽的 PG 内核/扩展 逻辑包名翻译为实际的 RPM/DEB 列表。如果您不需要别名翻译机制，可以直接使用 `apt/dnf` 安装，
@@ -214,39 +213,39 @@ PostgreSQL 内核与扩展对应着一系列的 RPM/DEB 包，记住这些包是
 例如在 EL 系统上， 下面的别名将会被翻译为右侧的对应 RPM 包列表：
 
 ```yaml
-pgsql:        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit"
-pg18:         "postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl postgresql18-llvmjit"
-pg17-client:  "postgresql17"
-pg17-server:  "postgresql17-server postgresql17-libs postgresql17-contrib"
-pg17-devel:   "postgresql17-devel"
-pg17-basic:   "pg_repack_17* wal2json_17* pgvector_17*"
-pg16-mini:    "postgresql16 postgresql16-server postgresql16-libs postgresql16-contrib"
-pg15-full:    "postgresql15 postgresql15-server postgresql15-libs postgresql15-contrib postgresql15-plperl postgresql15-plpython3 postgresql15-pltcl postgresql15-llvmjit postgresql15-test postgresql15-devel"
-pg14-main:    "postgresql14 postgresql14-server postgresql14-libs postgresql14-contrib postgresql14-plperl postgresql14-plpython3 postgresql14-pltcl postgresql14-llvmjit pg_repack_14* wal2json_14* pgvector_14*"
-pg13-core:    "postgresql13 postgresql13-server postgresql13-libs postgresql13-contrib postgresql13-plperl postgresql13-plpython3 postgresql13-pltcl postgresql13-llvmjit"
+pgsql:        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl"
+pg18:         "postgresql18 postgresql18-server postgresql18-libs postgresql18-contrib postgresql18-plperl postgresql18-plpython3 postgresql18-pltcl"
+pg18-client:  "postgresql18"
+pg18-server:  "postgresql18-server postgresql18-libs postgresql18-contrib"
+pg18-devel:   "postgresql18-devel"
+pg18-basic:   "pg_repack_18 wal2json_18 pgvector_18"
+pg17-mini:    "postgresql17 postgresql17-server postgresql17-libs postgresql17-contrib"
+pg16-full:    "postgresql16 postgresql16-server postgresql16-libs postgresql16-contrib postgresql16-plperl postgresql16-plpython3 postgresql16-pltcl postgresql16-llvmjit postgresql16-test postgresql16-devel"
+pg15-main:    "postgresql15 postgresql15-server postgresql15-libs postgresql15-contrib postgresql15-plperl postgresql15-plpython3 postgresql15-pltcl pg_repack_15 wal2json_15 pgvector_15"
+pg14-core:    "postgresql14 postgresql14-server postgresql14-libs postgresql14-contrib postgresql14-plperl postgresql14-plpython3 postgresql14-pltcl"
 ```
 
 注意这里的 `$v` 占位符会被替换为 PG 大版本号，因此当您使用 `pgsql` 别名时，`$v` 会被实际替代为 18，17 这样的大版本号。
-因此，当您安装 `pg17-server` 别名时，EL 上实际安装的是 `postgresql17-server`, `postgresql17-libs`, `postgresql17-contrib`，在 Debian / Ubuntu 上安装的是 `postgresql-17` ，pig 会处理好所有细节。
+因此，当您安装 `pg18-server` 别名时，EL 上实际安装的是 `postgresql18-server`, `postgresql18-libs`, `postgresql18-contrib`，在 Debian / Ubuntu 上安装的是 `postgresql-18` ，pig 会处理好所有细节。
 
 <br>
 <details><summary> 常用 PostgreSQL 别名</summary>
 
-[EL 使用的别名翻译列表](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L154)
+[EL 使用的别名翻译列表](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L206)
 
 ```bash {base_url="https://github.com/pgsty/pig/blob/main/",filename="cli/ext/catalog.go"}
-"pgsql":        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit",
+"pgsql":        "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl",
 "pgsql-mini":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib",
-"pgsql-core":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit",
+"pgsql-core":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl",
 "pgsql-full":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit postgresql$v-test postgresql$v-devel",
-"pgsql-main":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl postgresql$v-llvmjit pg_repack_$v* wal2json_$v* pgvector_$v*",
+"pgsql-main":   "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl pg_repack_$v wal2json_$v pgvector_$v",
 "pgsql-client": "postgresql$v",
 "pgsql-server": "postgresql$v-server postgresql$v-libs postgresql$v-contrib",
 "pgsql-devel":  "postgresql$v-devel",
-"pgsql-basic":  "pg_repack_$v* wal2json_$v* pgvector_$v*",
+"pgsql-basic":  "pg_repack_$v wal2json_$v pgvector_$v",
 ```
 
-[Debian / Ubuntu 系统使用的别名翻译](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L260)
+[Debian / Ubuntu 系统使用的别名翻译](https://github.com/pgsty/pig/blob/main/cli/ext/catalog.go#L270)
 
 ```bash {base_url="https://github.com/pgsty/pig/blob/main/",filename="cli/ext/catalog.go"}
 "pgsql":        "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v",
@@ -293,14 +292,14 @@ dnf install pg_smtp_client_18       # 最直接……，但并非所有扩展都
 提示：如需将特定大版本的 PostgreSQL 内核二进制加入 `PATH`，可用 `pig ext link` 命令：
 
 ```bash
-pig ext link pg17             # 创建 /usr/pgsql 软链接，并写入 /etc/profile.d/pgsql.sh
+pig ext link pg18             # 创建 /usr/pgsql 软链接，并写入 /etc/profile.d/pgsql.sh
 . /etc/profile.d/pgsql.sh     # 立即生效，更新 PATH 环境变量
 ```
 
 如果你想要安装特定版本的软件，可以使用 `name=ver` 的语法：
 
 ```bash
-pig ext add -v 17 pgvector=0.7.2 # install pgvector 0.7.2 for PG 17
+pig ext add -v 17 pgvector=0.8.0 # install pgvector 0.8.0 for PG 17
 pig ext add pg16=16.5            # install PostgreSQL 16 with a specific minor version
 ```
 

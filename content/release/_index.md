@@ -6,24 +6,25 @@ weight: 800
 
 
 {{< cards cols=2 >}}
-{{< card link="/release/pig"                    title="PIG Release"    subtitle="Changelog of the PG Package Manager"      icon="sparkles" >}}
-{{< card link="https://doc.pgsty.com/release"   title="Pigsty Release" subtitle="Battery-Included PostgreSQL Distribution" icon="play"     >}}
+{{< card link="/release/pig"                         title="PIG Release"    subtitle="Changelog of the PG Package Manager"      icon="sparkles" >}}
+{{< card link="https://pigsty.io/docs/about/release" title="Pigsty Release" subtitle="Battery-Included PostgreSQL Distribution" icon="play"     >}}
 {{< /cards >}}
 
 
 {{< cards >}}
-{{< card link="/release/rpm"   title="RPM Chanagelog"   subtitle="Changelog of EL RPM Packages" icon="sparkles" >}}
-{{< card link="/release/deb"   title="DEB Chanagelog"   subtitle="Changelog of Debian Packages" icon="play" >}}
+{{< card link="/release/rpm"   title="RPM Chanagelog"   subtitle="Changelog of EL RPM Packages" icon="sparkles"  >}}
+{{< card link="/release/deb"   title="DEB Chanagelog"   subtitle="Changelog of Debian Packages" icon="play"      >}}
 {{< card link="/release/infra" title="Infra Chanagelog" subtitle="Changelog of OS-Generic Packages"  icon="save" >}}
 {{< /cards >}}
 
 
 ## PIG Releases
 
-The latest stable version of `pig` is [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0)
+The latest stable version of `pig` is [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0)
 
 |           Version           |    Date    | Summary                                   |                           GitHub                           |
 |:---------------------------:|:----------:|-------------------------------------------|:----------------------------------------------------------:|
+| [v1.0.0](/release/pig#v100) | 2026-01-18 | 444 ext, availability matrix              | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
 | [v0.9.0](/release/pig#v090) | 2025-12-28 | pig sty command enhancement               | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
 | [v0.8.0](/release/pig#v080) | 2025-12-16 | 440 extensions, pigsty v4, routine fixes  | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/release/pig#v074) | 2025-12-15 | routine ext update, use aliyun mirror     | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |

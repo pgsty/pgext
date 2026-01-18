@@ -30,30 +30,34 @@ pig ext - 管理 PostgreSQL 扩展
 
   pig ext list    [query]      # 列出 & 搜索扩展
   pig ext info    [ext...]     # 获取指定扩展信息
+  pig ext avail   [ext...]     # 显示扩展可用性矩阵
   pig ext status  [-v]         # 显示已安装扩展及 PG 状态
+  pig ext scan                 # 扫描当前 PG 已安装扩展
   pig ext add     [ext...]     # 为当前 PG 版本安装扩展
   pig ext rm      [ext...]     # 为当前 PG 版本移除扩展
   pig ext update  [ext...]     # 更新扩展到最新版
   pig ext import  [ext...]     # 下载扩展到本地仓库
   pig ext link    [ext...]     # 将 Postgres 安装链接到 PATH
-  pig ext upgrade              # 升级到最新扩展目录
+  pig ext reload               # 重新加载最新扩展目录
 
 可用命令：
   add         安装 postgres 扩展
+  avail       显示扩展可用性矩阵
   import      导入扩展包到本地仓库
   info        获取扩展信息
   link        链接 postgres 到活动 PATH
   list        列出 & 搜索可用扩展
+  reload      重新加载最新扩展目录
   rm          移除 postgres 扩展
   scan        扫描当前 PG 已安装扩展
   status      显示当前 PG 已安装扩展
   update      更新当前 PG 版本已安装扩展
-  upgrade     升级扩展目录到最新版
 
 参数：
   -h, --help          获取 ext 帮助
   -p, --path string   指定 pg_config 路径定位 postgres
   -v, --version int   指定 postgres 主版本号
+      --pkg           显示包名而非扩展名，仅列出主扩展
 
 全局参数：
       --debug              启用调试模式
@@ -128,7 +132,16 @@ list & search available extensions
   pig ext list postgis        # 按名称/描述搜索扩展
   pig ext ls olap             # 列出 olap 类别扩展
   pig ext ls gis -v 16        # 列出 PG 16 的 GIS 类扩展
+  pig ext ls --pkg            # 列出软件包而非扩展
+
+参数：
+      --pkg           显示包名而非扩展名，仅列出主扩展
 ```
+
+输出包含 **Status** 列，显示每个扩展的安装状态：
+- **installed**（绿色）：扩展包已安装在系统上
+- **available**（黄色）：扩展包在仓库中可用但尚未安装
+- **not avail**（红色）：扩展包在当前 OS/架构/PG 版本组合下不可用
 
 默认扩展目录定义在 [**`cli/ext/assets/extension.csv`**](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv)
 
@@ -442,11 +455,43 @@ pig ext link null                      # 取消当前 PostgreSQL 链接
 
 
 
-## `reload`
+## `ext avail`
 
-升级扩展目录到最新版。
+显示扩展在不同 OS/架构/PG 版本组合下的可用性矩阵。
+
+```bash
+show extension availability matrix
+
+用法：
+  pig ext avail [ext...] [参数]
+
+别名：
+  avail, av, m, matrix
+
+示例：
+
+  pig ext avail                     # 显示当前操作系统上所有包的可用性
+  pig ext avail timescaledb         # 显示 timescaledb 的可用性矩阵
+  pig ext avail postgis pg_duckdb   # 显示多个扩展的可用性矩阵
+  pig ext av pgvector               # 显示 pgvector 的可用性
+  pig ext matrix citus              # avail 命令的别名
+```
+
+不带参数调用时，显示当前 OS/架构下所有软件包的全局可用性矩阵。
+输出使用彩色指示器：
+- **绿色**：可从 PIGSTY 仓库获取
+- **蓝色**：可从 PGDG 仓库获取
+- **空白**：该 PG 版本不可用
+
+带扩展名参数调用时，显示每个扩展在所有支持的 OS/架构/PG 版本组合下的详细可用性。
+
+
+## `ext reload`
+
+更新扩展目录到最新版。
 
 ```bash
 pig ext reload
 ```
 
+该命令会下载最新的扩展目录数据到 `~/.pig/extension.csv`。

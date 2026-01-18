@@ -6,25 +6,26 @@ weight: 800
 
 
 {{< cards cols=2 >}}
-{{< card link="/release/pig"                    title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" >}}
-{{< card link="https://doc.pgsty.com/release"   title="Pigsty 发布记录" subtitle="开箱即用的 PostgreSQL 发行版" icon="play"     >}}
+{{< card link="/release/pig"                         title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" >}}
+{{< card link="https://pigsty.io/docs/about/release" title="Pigsty 发布记录" subtitle="开箱即用的 PostgreSQL 发行版" icon="play"     >}}
 {{< /cards >}}
 
 
 {{< cards >}}
-{{< card link="/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles" >}}
-{{< card link="/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play" >}}
-{{< card link="/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save" >}}
+{{< card link="/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles"       >}}
+{{< card link="/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play"           >}}
+{{< card link="/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save"  >}}
 {{< /cards >}}
 
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0)。
+当前 `pig` 最新稳定版本为：[v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0)。
 
 | 版本                             |     日期     | 摘要                                |                           GitHub                           |
 |:-------------------------------|:----------:|-----------------------------------|:----------------------------------------------------------:|
-| [v0.9.0](/release/pig#v090)    | 2025-12-28 | pig sty 子命令强化，修复 YUM 仓库问题         | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
+| [v1.0.0](/zh/release/pig#v090) | 2026-01-18 | 444 扩展，可用性矩阵，`pig ext` 强化         | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
+| [v0.9.0](/zh/release/pig#v090) | 2025-12-28 | pig sty 子命令强化，修复 YUM 仓库问题         | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
 | [v0.8.0](/zh/release/pig#v080) | 2025-12-16 | 440 个扩展，Pigsty v4，例行修复            | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/zh/release/pig#v075) | 2025-12-15 | 例行扩展更新，使用阿里云镜像仓库                  | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
 | [v0.7.4](/zh/release/pig#v074) | 2025-12-01 | 更新 ivory/pgtde 内核与 pgdg extras 仓库 | [v0.7.4](https://github.com/pgsty/pig/releases/tag/v0.7.4) |

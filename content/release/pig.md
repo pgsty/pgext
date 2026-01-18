@@ -6,12 +6,31 @@ breadcrumbs: false
 ---
 
 
-## v0.9.1
+## v1.0.0
 
 - Extension count reaches 444, adding etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen
 - citus, age, pg_search, pg_bulkload, documentdb now support PG 18
+- Add `pig ext avail` subcommand with `--pkg` option to show extension package availability matrix
+- Adjust `pig ext ls` status field to display package status using availability matrix
+- Allow `pig ext ls` to output package names with `--pkg` option
 - Fix `pig ext scan` duplicate extension issue
 - Fix `pg_weighted_statistics` extension name, now `ext` name is `weighted_statistics`
+
+**Checksums**
+
+```bash
+e18130c7f3ee2b1b3e50e6c06b82a23e66f9d4cb88e412c6a5d77771f2cca857  pig-1.0.0-1.aarch64.rpm
+e110b336d0dae7fa4e0513cb484a5204ae59e486976f8a7697ab10c98c28f95a  pig-1.0.0-1.x86_64.rpm
+ed672df54ad8bbc1af3a7316162400e204bd481f73a656ac82bf8140113bcd22  pig-v1.0.0.darwin-amd64.tar.gz
+67a41c54e861aaa071b4827d6ce1ee4e6b73bbfb73c218e913caf36b10746b7f  pig-v1.0.0.darwin-arm64.tar.gz
+f1bac69a6eb89fbe21cef91d5f55a44c766d4b11491e0694018cc40457038247  pig-v1.0.0.linux-amd64.tar.gz
+a0dd35b1cc110c21b4347c7fe76dc5698287ae3a020e4e7537d479ed87bc357e  pig-v1.0.0.linux-arm64.tar.gz
+b824d7f6e7909512a2ef60f4513afe43ee6dd3f2a19a39f42d4f8787229addea  pig_1.0.0-1_amd64.deb
+2125712551e91c8b50c5eb392314723c9cbcedb408538cfa48965602512da11e  pig_1.0.0-1_arm64.deb
+```
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.0.0
+
 
 
 ## v0.9.0
@@ -20,7 +39,7 @@ breadcrumbs: false
 - Add new parameters to command `pig sty conf` to align with the `configure` script
 - Add llvmjit package to the pgsql-full alias
 
-**校验和**
+**Checksums**
 
 ```bash
 ea0c098d0829720b6e364d2f2a91328876962c7f0ae94eee7bdcde0bd43313fa  pig-0.9.0-1.aarch64.rpm
@@ -33,7 +52,7 @@ e80d2cb3ceb5fd58fc0262ab4b39b44e8dcccb7712151c73a41ba50cb510353b  pig_0.9.0-1_am
 ecb504efffde8d696b765579332fc0b3304751fa8077c4c0394e7f3c44aa0fe2  pig_0.9.0-1_arm64.deb
 ```
 
-发布：https://github.com/pgsty/pig/releases/tag/v0.9.0
+Release: https://github.com/pgsty/pig/releases/tag/v0.9.0
 
 
 
