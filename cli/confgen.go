@@ -823,7 +823,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
 			// 2: extra-modules
-			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
+			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
 			// 3: node-package1
 			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf flamegraph chkconfig",
 			// 4: node-package2
@@ -838,7 +838,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
 			// 2: extra-modules
-			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
+			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
 			// 3: node-package1
 			"lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony",
 			// 4: node-package2
