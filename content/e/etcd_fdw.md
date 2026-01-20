@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8660** | {{< badge content="etcd_fdw" link="https://github.com/cybertec-postgresql/etcd_fdw" >}} | {{< ext "etcd_fdw" >}} | `0.0.0` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **8660** | {{< badge content="etcd_fdw" link="https://github.com/cybertec-postgresql/etcd_fdw" >}} | {{< ext "etcd_fdw" >}} | `0.0.0` | {{< category "FDW" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -18,8 +18,8 @@ weight: 300
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 207 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 75 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 64 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 65 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -257,7 +257,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="75 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="74 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -329,7 +329,6 @@ weight: 300
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7040 | {{< alias "pg_session_jwt" >}} | 使用JWT进行会话认证 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
-| 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
 | 9300 | {{< alias "babelfishpg_common" >}} | SQL Server 数据类型兼容扩展 |
@@ -343,7 +342,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="64 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="65 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -404,6 +403,7 @@ weight: 300
 | 7150 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
 | 7310 | {{< alias "credcheck" >}} | 明文凭证检查器 |
 | 7500 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
+| 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 从PG向Redis发送Pub/Sub消息 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
