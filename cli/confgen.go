@@ -700,16 +700,16 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"getNodePackage1": func() string {
 			// el10 doesn't have flamegraph package
-			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf"
+			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf"
 			if g.osCode == "el10" {
-				return basePkgs + " chkconfig"
+				return basePkgs + " chkconfig uv"
 			}
-			return basePkgs + " flamegraph chkconfig"
+			return basePkgs + " flamegraph chkconfig uv"
 		},
 		"getDebNodePackage1": func() string {
 			// u24 temporarily disables tcpdump
 			if g.osCode == "u24" {
-				return "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl sysstat iotop htop rsync acl chrony" // tcpdump
+				return "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync acl chrony cron uv" // tcpdump
 			}
 			return g.constants.DEBCommonPkg[3]
 		},
@@ -821,13 +821,13 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node_exporter keepalived_exporter pg_exporter pgbackrest_exporter redis_exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
+			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
 			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
 			// 3: node-package1
-			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf flamegraph chkconfig",
+			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf flamegraph chkconfig uv",
 			// 4: node-package2
-			"netcat socat ftp lrzsz net-tools ipvsadm bind-utils telnet audit ca-certificates readline vim-minimal keepalived chrony openssl openssh-server openssh-clients",
+			"netcat socat ftp net-tools ipvsadm bind-utils telnet audit ca-certificates readline vim-minimal keepalived openssl openssh-server openssh-clients chrony cronie",
 			// 5: pgsql-utility
 			"patroni patroni-etcd pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
@@ -836,13 +836,13 @@ func GetConfigConstants() *ConfigConstants {
 			// 0: infra-package
 			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
 			// 1: infra-addons
-			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager uv",
+			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
 			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
 			// 3: node-package1
-			"lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget uuid tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony",
+			"lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony cron uv",
 			// 4: node-package2
-			"netcat-openbsd socat lrzsz net-tools ipvsadm dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client",
+			"netcat-openbsd socat net-tools ipvsadm dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client",
 			// 5: pgsql-utility
 			"patroni python3-etcd pgbouncer pgbackrest pgbadger pg-timetable pgformatter postgresql-filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
@@ -932,13 +932,13 @@ repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
-  - python3,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
+  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
+  - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cronie,pig,uv
   - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager,uv
+  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager
   - node_exporter,blackbox_exporter,nginx_exporter,pg_exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
 
 # postgres home dir in various mode
@@ -1079,13 +1079,13 @@ repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,uuid,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
-  - python3,socat,lrzsz,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,pig
+  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
+  - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cron,pig,uv
   - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
-  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager,uv
+  - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager
   - node-exporter,blackbox-exporter,nginx-exporter,pg-exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
 
 # postgres home dir in various mode
