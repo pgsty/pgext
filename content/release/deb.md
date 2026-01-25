@@ -6,6 +6,16 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-01-25
+
+| Name          | Old            | New            | Comment                 |
+|:--------------|:---------------|:---------------|:------------------------|
+| age           | 1.6.0          | 1.7.0          | PG 18 only              |
+| citus         | 14.0.0-1PIGSTY | 14.0.0-2PIGSTY | official branch release |
+| pg_clickhouse | 0.1.2          | 0.1.3          |                         |
+| pgmq          | 1.8.1          | 1.9.0          |                         |
+| pg_search     | 0.21.2         | 0.21.4         |                         |
+
 
 ## 2026-01-16
 

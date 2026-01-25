@@ -8,6 +8,10 @@ weight: 700
 
 ## TODOLIST
 
+- biscuit pgdg yum
+- pgsentinel pgdg yum
+- pg_utl_smtp pgdg yum
+- pg_pwhash pgdg yum
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL

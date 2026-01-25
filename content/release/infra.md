@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+
+## 2026-01-25
+
+| Name                       | Old     | New      | Comment |
+|:---------------------------|:--------|:---------|:--------|
+| alertmanager               | 0.30.0  | 0.30.1   |         |
+| victoria-metrics           | 1.133.0 | 1.134.0  |         |
+| victoria-traces            | 0.5.1   | 0.7.1    |         |
+| grafana-victorialogs-ds    | 0.23.3  | 0.23.5   |         |
+| grafana-victoriametrics-ds | 0.20.0  | 0.20.1   |         |
+| npgsqlrest                 | 3.4.3   | 3.4.7    |         |
+| claude                     | 2.1.9   | 2.1.19   |         |
+| opencode                   | 1.1.23  | 1.1.34   |         |
+| caddy                      | -       | 2.10.2   | new     |
+| hugo                       | -       | 0.154.5  | new     |
+| cloudflared                | -       | 2026.1.1 | new     |
+| headscale                  | -       | 0.27.1   | new     |
+
+
 ## 2026-01-16
 
 | Name                       | Old      | New      | Comment |
