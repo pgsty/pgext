@@ -59,11 +59,15 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 
 你可以执行 `pig help <command>` 获取子命令的详细帮助。
 
-{{< cards cols="5" >}}
+{{< cards cols="4" >}}
 {{< card link="/zh/pig/cmd/repo"  title="pig repo"  subtitle="管理软件仓库"  icon="library" >}}
 {{< card link="/zh/pig/cmd/ext"   title="pig ext"   subtitle="管理PG扩展"   icon="cube" >}}
 {{< card link="/zh/pig/cmd/build" title="pig build" subtitle="设置构建环境"  icon="view-grid" >}}
 {{< card link="/zh/pig/cmd/sty"   title="pig sty"   subtitle="管理 Pigsty"  icon="cloud-download" >}}
+{{< card link="/zh/pig/cmd/pg"    title="pig pg"    subtitle="管理 PostgreSQL 服务"   icon="database" >}}
+{{< card link="/zh/pig/cmd/pt"    title="pig pt"    subtitle="管理 Patroni 集群"   icon="refresh-cw" >}}
+{{< card link="/zh/pig/cmd/pb"    title="pig pb"    subtitle="管理 pgBackRest 备份"   icon="archive" >}}
+{{< card link="/zh/pig/cmd/pitr"  title="pig pitr"  subtitle="编排式 PITR 恢复"   icon="clock" >}}
 {{< /cards >}}
 
 
@@ -74,8 +78,8 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 您还可以参考 [**PIGSTY**](https://pgsty.com) 项目，提供了包括扩展交付在内的完整 PostgreSQL RDS DBaaS 使用体验。
 
 {{< cards cols=4 >}}
-{{< card link="https://github.com/github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="本网站，扩展数据与管理工具" >}}
-{{< card link="https://github.com/github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="PostgreSQL 包管理器" >}}
-{{< card link="https://github.com/github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="开箱即用的 PostgreSQL 发行版" >}}
+{{< card link="https://github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="本网站，扩展数据与管理工具" >}}
+{{< card link="https://github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="PostgreSQL 包管理器" >}}
+{{< card link="https://github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="开箱即用的 PostgreSQL 发行版" >}}
 {{< /cards >}}
 

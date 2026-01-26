@@ -11,18 +11,19 @@ The `pig repo` command is a comprehensive tool for managing package repositories
 
 ## Subcommands
 
-| Command  | Description                            |
-|----------|----------------------------------------|
-| `list`   | Print available repo list              |
-| `info`   | Get repo detailed information          |
-| `status` | Show current repo status               |
-| `add`    | Add new repository                     |
-| `set`    | Wipe, overwrite, and update repository |
-| `rm`     | Remove repository                      |
-| `update` | Update repo cache                      |
-| `create` | Create local YUM/APT repository        |
-| `cache`  | Create offline package from local repo |
-| `boot`   | Bootstrap repo from offline package    |
+| Command  | Description                            | Notes |
+|----------|----------------------------------------|-------|
+| `list`   | Print available repo list              | |
+| `info`   | Get repo detailed information          | |
+| `status` | Show current repo status               | |
+| `add`    | Add new repository                     | Requires sudo or root |
+| `set`    | Wipe, overwrite, and update repository | Requires sudo or root |
+| `rm`     | Remove repository                      | Requires sudo or root |
+| `update` | Update repo cache                      | Requires sudo or root |
+| `create` | Create local YUM/APT repository        | Requires sudo or root |
+| `cache`  | Create offline package from local repo | Requires sudo or root |
+| `boot`   | Bootstrap repo from offline package    | Requires sudo or root |
+| `reload` | Refresh repo catalog                   | |
 
 ------
 
@@ -101,6 +102,19 @@ In pig, repositories are organized into **modules** - logical groups of reposito
 - OS major version (8/9 for EL, 12 for Debian, 22/24 for Ubuntu)
 - CPU architecture (x86_64/aarch64)
 - Geographic region (default/china)
+
+### Modules
+
+In pig, APT/YUM repositories are organized into **modules** — groups of repositories serving a specific purpose.
+
+| Module | Description | Repository List |
+|:---:|:---|:---|
+| `all` | All core modules needed to install PG | `node` + `infra` + `pgsql` |
+| `pgsql` | PGDG + Pigsty PG extensions | `pigsty-pgsql` + `pgdg` |
+| `pigsty` | Pigsty Infra + PGSQL repos | pigsty-infra, pigsty-pgsql |
+| `pgdg` | PGDG official repository | pgdg-common, pgdg13-18 |
+| `node` | Linux system repositories | base, updates, extras, epel... |
+| `infra` | Infrastructure component repos | pigsty-infra, nginx, docker-ce |
 
 ### Essential Modules
 
@@ -242,7 +256,7 @@ pig repo add pgdg --region=china  # Use China mirrors
 **Options:**
 - `-u, --update`: Run package cache update after adding repos
 - `-r, --remove`: Remove existing repos before adding new ones
-- `--region=<region>`: Use regional mirrors (default/china)
+- `--region <region>`: Use regional mirror repositories (`default` / `china` / `europe`)
 
 **File Locations:**
 - EL Systems: `/etc/yum.repos.d/<module>.repo`
@@ -388,6 +402,18 @@ pig repo boot -d /srv           # Custom target directory
 **Options:**
 - `-p, --path`: Package path (default: `/tmp/pkg.tgz`)
 - `-d, --dir`: Target directory (default: `/www/`)
+
+------
+
+### `repo reload`
+
+Refresh repo metadata from GitHub to latest version.
+
+```bash
+pig repo reload                  # Refresh repo catalog
+```
+
+The updated file is placed in `~/.pig/repo.yml`.
 
 ------
 

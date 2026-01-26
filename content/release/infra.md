@@ -24,6 +24,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | cloudflared                | -       | 2026.1.1 | new     |
 | headscale                  | -       | 0.27.1   | new     |
 | pig                        | 0.9.0   | 1.0.0    |         |
+| duckdb                     | 1.4.3   | 1.4.4    |         |
 
 ## 2026-01-16
 

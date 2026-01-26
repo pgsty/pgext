@@ -7,11 +7,18 @@ weight: 600
 
 The `pig` CLI provides comprehensive tools for managing PostgreSQL installations, extensions, repositories, and building extensions from source. Check command documentation with `pig help <command>`.
 
-{{< cards cols="5" >}}
+{{< cards cols="4" >}}
 {{< card link="/pig/cmd/repo"  title="pig repo"  subtitle="Manage software repositories" icon="library" >}}
 {{< card link="/pig/cmd/ext"   title="pig ext"   subtitle="Manage postgres extensions"   icon="cube" >}}
 {{< card link="/pig/cmd/build" title="pig build" subtitle="Build extension from source"  icon="view-grid" >}}
 {{< card link="/pig/cmd/sty"   title="pig sty"   subtitle="Manage pigsty installation"   icon="cloud-download" >}}
+{{< /cards >}}
+
+{{< cards cols="4" >}}
+{{< card link="/pig/cmd/pg"    title="pig pg"    subtitle="Manage local PostgreSQL"      icon="database" >}}
+{{< card link="/pig/cmd/pt"    title="pig pt"    subtitle="Manage Patroni HA cluster"    icon="refresh-cw" >}}
+{{< card link="/pig/cmd/pb"    title="pig pb"    subtitle="Manage pgBackRest backup"     icon="archive" >}}
+{{< card link="/pig/cmd/pitr"  title="pig pitr"  subtitle="Orchestrated PITR recovery"   icon="clock" >}}
 {{< /cards >}}
 
 ## Overview
@@ -32,10 +39,19 @@ Examples:
   check https://pgext.cloud for details
 
 PostgreSQL Extension Manager
-  build       Build Postgres Extension
   ext         Manage PostgreSQL Extensions (pgext)
   repo        Manage Linux Software Repo (apt/dnf)
-  install     Install packages using native package manager
+  build       Build Postgres Extension
+
+PostgreSQL Management Commands
+  pg          Manage local PostgreSQL server
+  pt          Manage Patroni HA cluster
+  pb          Manage pgBackRest backup & recovery
+  pitr        Orchestrated Point-In-Time Recovery
+
+Pigsty Management Commands
+  do          Run admin tasks
+  sty         Manage Pigsty installation
 
 Additional Commands:
   completion  Generate the autocompletion script for the specified shell
@@ -124,7 +140,7 @@ pig repo boot                    # Bootstrap from offline package
 
 **Key Features:**
 - Support for both RPM (EL) and DEB (Debian/Ubuntu) systems
-- Regional mirrors (China, etc.)
+- Regional mirrors (China, Europe, etc.)
 - Offline package support
 - Module-based repository organization
 
@@ -148,7 +164,7 @@ pig ext reload                   # Refresh extension catalog
 ```
 
 **Key Features:**
-- 400+ PostgreSQL extensions
+- 444+ PostgreSQL extensions
 - Multi-version PostgreSQL support
 - Automatic dependency resolution
 - Category-based browsing
@@ -201,6 +217,101 @@ pig sty deploy                   # Run deployment playbook
 - Point-In-Time Recovery (PITR)
 - Comprehensive monitoring stack
 - Infrastructure as Code (IaC)
+
+------
+
+### [`pig pg`](/pig/cmd/pg/) - PostgreSQL Management
+
+Manage local PostgreSQL server and databases:
+
+```bash
+# Service control
+pig pg init                      # Initialize data directory
+pig pg start                     # Start PostgreSQL
+pig pg stop                      # Stop PostgreSQL
+pig pg status                    # Check status
+
+# Connection & query
+pig pg psql mydb                 # Connect to database
+pig pg ps                        # Show current connections
+pig pg kill -x                   # Terminate connections
+
+# Maintenance
+pig pg vacuum mydb               # Vacuum database
+pig pg analyze mydb              # Analyze database
+pig pg log tail                  # Real-time log viewing
+```
+
+**Key Features:**
+- Service control (pg_ctl/systemctl wrapper)
+- Connection management
+- Database maintenance utilities
+- Log viewing tools
+
+------
+
+### [`pig pt`](/pig/cmd/pt/) - Patroni Management
+
+Manage Patroni HA cluster:
+
+```bash
+pig pt list                      # List cluster members
+pig pt config                    # Show cluster config
+pig pt config ttl=60             # Modify cluster config
+pig pt status                    # Check service status
+pig pt restart                   # Restart PostgreSQL via Patroni
+pig pt switchover                # Perform planned switchover
+pig pt log -f                    # Real-time log viewing
+```
+
+**Key Features:**
+- Cluster member management
+- Configuration management
+- Service control
+- Switchover/failover operations
+
+------
+
+### [`pig pb`](/pig/cmd/pb/) - pgBackRest Management
+
+Manage pgBackRest backup and PITR:
+
+```bash
+pig pb info                      # Show backup info
+pig pb ls                        # List all backups
+pig pb backup                    # Create backup
+pig pb backup full               # Full backup
+pig pb restore                   # Restore to latest
+pig pb restore -t "2025-01-01"   # Restore to specific time
+pig pb log tail                  # Real-time log viewing
+```
+
+**Key Features:**
+- Backup management
+- Point-in-time recovery
+- Stanza management
+- Multi-repository support
+
+------
+
+### [`pig pitr`](/pig/cmd/pitr/) - Orchestrated PITR
+
+Orchestrated Point-In-Time Recovery that coordinates Patroni, PostgreSQL, and pgBackRest:
+
+```bash
+pig pitr -d                      # Restore to latest (end of WAL stream)
+pig pitr -t "2025-01-01 12:00"   # Restore to specific time
+pig pitr -I                      # Restore to backup consistency point
+pig pitr -d --dry-run            # Show execution plan
+pig pitr -d -y                   # Skip confirmation (automation)
+pig pitr -d --skip-patroni       # Standalone PostgreSQL (non-Patroni)
+```
+
+**Key Features:**
+- Automatic Patroni/PostgreSQL stop
+- Progressive shutdown strategy
+- Automatic PostgreSQL restart
+- Post-restore guidance
 
 ------
 
