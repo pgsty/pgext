@@ -23,7 +23,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | hugo                       | -       | 0.154.5  | new     |
 | cloudflared                | -       | 2026.1.1 | new     |
 | headscale                  | -       | 0.27.1   | new     |
-
+| pig                        | 0.9.0   | 1.0.0    |         |
 
 ## 2026-01-16
 
@@ -50,7 +50,6 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | npgsqlrest                 | 3.3.0    | 3.4.3    |         |
 | genai-toolbox              | 0.24.0   | 0.25.0   |         |
 | pg_exporter                | 1.1.1    | 1.1.2    |         |
-| pig                        | 0.9.0    | 1.0.0    |         |
 
 ## 2026-01-08
 

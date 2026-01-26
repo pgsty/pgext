@@ -8,20 +8,21 @@ weight: 400
 
 ## 2026-01-25
 
-| 名称                         | 旧版本     | 新版本      | 备注  |
-|:---------------------------|:--------|:---------|:----|
-| alertmanager               | 0.30.0  | 0.30.1   |     |
-| victoria-metrics           | 1.133.0 | 1.134.0  |     |
-| victoria-traces            | 0.5.1   | 0.7.1    |     |
-| grafana-victorialogs-ds    | 0.23.3  | 0.23.5   |     |
-| grafana-victoriametrics-ds | 0.20.0  | 0.20.1   |     |
-| npgsqlrest                 | 3.4.3   | 3.4.7    |     |
-| claude                     | 2.1.9   | 2.1.19   |     |
-| opencode                   | 1.1.23  | 1.1.34   |     |
-| caddy                      | -       | 2.10.2   | 新增  |
-| hugo                       | -       | 0.154.5  | 新增  |
-| cloudflared                | -       | 2026.1.1 | 新增  |
-| headscale                  | -       | 0.27.1   | 新增  |
+| 名称                         | 旧版本     | 新版本      | 备注 |
+|:---------------------------|:--------|:---------|:---|
+| alertmanager               | 0.30.0  | 0.30.1   |    |
+| victoria-metrics           | 1.133.0 | 1.134.0  |    |
+| victoria-traces            | 0.5.1   | 0.7.1    |    |
+| grafana-victorialogs-ds    | 0.23.3  | 0.23.5   |    |
+| grafana-victoriametrics-ds | 0.20.0  | 0.20.1   |    |
+| npgsqlrest                 | 3.4.3   | 3.4.7    |    |
+| claude                     | 2.1.9   | 2.1.19   |    |
+| opencode                   | 1.1.23  | 1.1.34   |    |
+| caddy                      | -       | 2.10.2   | 新增 |
+| hugo                       | -       | 0.154.5  | 新增 |
+| cloudflared                | -       | 2026.1.1 | 新增 |
+| headscale                  | -       | 0.27.1   | 新增 |
+| pig                        | 0.9.0   | 1.0.0    |    |
 
 ## 2026-01-16
 
@@ -48,7 +49,6 @@ weight: 400
 | npgsqlrest                 | 3.3.0    | 3.4.3    |    |
 | genai-toolbox              | 0.24.0   | 0.25.0   |    |
 | pg_exporter                | 1.1.1    | 1.1.2    |    |
-| pig                        | 0.9.0    | 1.0.0    |    |
 
 ## 2026-01-08
 
