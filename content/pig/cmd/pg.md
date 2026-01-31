@@ -7,6 +7,45 @@ weight: 650
 
 The `pig pg` command (alias `pig postgres`) manages local PostgreSQL server and databases. It wraps native tools like `pg_ctl`, `psql`, `vacuumdb`, providing a simplified server management experience.
 
+```bash
+pig pg - Manage local postgres server (pg_ctl, psql, vacuumdb)
+
+Control Commands (via pg_ctl or systemctl):
+  pig pg init                      initialize postgres data directory
+  pig pg start                     start postgres server
+  pig pg stop                      stop postgres server
+  pig pg restart                   restart postgres server
+  pig pg reload                    reload postgres server
+  pig pg status                    show postgres server status
+  pig pg promote                   promote replica to primary
+  pig pg role                      detect and print postgres role
+
+Connection & Query (via psql):
+  pig pg psql [db] [-c sql]        connect to postgres
+  pig pg ps                        show current connections
+  pig pg kill [-a] [-x] [-u user] [-d db] [-q sql] [-w secs]
+
+Maintenance (via vacuumdb & pg_repack):
+  pig pg vacuum  [db] [-a]         vacuum database
+  pig pg analyze [db] [-a]         analyze database
+  pig pg freeze  [db] [-a]         vacuum freeze tables
+  pig pg repack  [db] [-a]         online repack database
+
+Log Commands:
+  pig pg log list                  list log files
+  pig pg log tail <logfile>        tail -f log file
+  pig pg log cat  <logfile>        cat log file
+  pig pg log less <logfile>        less log file
+  pig pg log grep <logfile> <pat>  grep log file
+
+Service Management (via systemctl):
+  pig pg svc start                 start postgres service
+  pig pg svc stop                  stop postgres service
+  pig pg svc restart               restart postgres service
+  pig pg svc reload                reload postgres service
+  pig pg svc status                show postgres service status
+```
+
 ------
 
 ## Command Overview

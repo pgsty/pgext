@@ -7,6 +7,39 @@ weight: 670
 
 `pig pitr` 命令用于执行**编排式时间点恢复**（Orchestrated Point-In-Time Recovery）。与 `pig pb restore` 不同，此命令会自动协调 Patroni、PostgreSQL 和 pgBackRest，完成完整的 PITR 工作流。
 
+```bash
+pig pitr - 执行编排式 PITR（自动管理 Patroni/PostgreSQL 生命周期）
+
+此命令编排完整的 PITR 工作流：
+  1. 停止 Patroni 服务（如果正在运行）
+  2. 确保 PostgreSQL 已停止（带重试和降级策略）
+  3. 执行 pgbackrest restore
+  4. 启动 PostgreSQL
+  5. 提供恢复后操作指引
+
+恢复目标（至少需要指定一个）：
+  --default, -d      恢复到 WAL 流末尾（最新数据）
+  --immediate, -I    恢复到备份一致性点
+  --time, -t         恢复到指定时间戳
+  --name, -n         恢复到命名还原点
+  --lsn, -l          恢复到指定 LSN
+  --xid, -x          恢复到指定事务 ID
+
+时间格式：
+  - 完整格式: "2025-01-01 12:00:00+08"
+  - 仅日期: "2025-01-01"（默认为 00:00:00）
+  - 仅时间: "12:00:00"（默认为今天）
+
+示例：
+  pig pitr -d                      # 恢复到最新（最常用）
+  pig pitr -t "2025-01-01 12:00"   # 恢复到指定时间
+  pig pitr -I                      # 恢复到备份一致性点
+  pig pitr -d --dry-run            # 仅显示执行计划
+  pig pitr -d -y                   # 跳过确认（用于自动化）
+  pig pitr -d --skip-patroni       # 跳过 Patroni 管理
+  pig pitr -d --no-restart         # 恢复后不自动启动 PostgreSQL
+```
+
 
 ## 命令概览
 

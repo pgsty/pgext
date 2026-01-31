@@ -7,6 +7,37 @@ weight: 610
 
 `pig repo` 命令是一个综合性的软件包仓库管理工具。它提供了添加、移除、创建和管理软件仓库的功能，支持 RPM 系统（RHEL/CentOS/Rocky/Alma）和 Debian 系统（Debian/Ubuntu）。该命令是安装 PostgreSQL 及其扩展所需仓库设置的关键工具。
 
+```bash
+pig repo - 管理 Linux 软件仓库（apt/dnf）
+
+Usage: pig repo <command>
+
+Commands:
+  add       添加新仓库
+  set       清空、覆盖并更新仓库
+  rm        移除仓库
+  list      打印可用仓库与模块列表
+  info      获取仓库详细信息
+  status    显示当前仓库状态
+  update    更新仓库缓存
+  create    创建本地 YUM/APT 仓库
+  cache     从本地仓库创建离线包
+  boot      从离线包引导仓库
+  reload    刷新仓库元数据
+
+Flags:
+  -h, --help   获取帮助信息
+
+Global Flags:
+      --debug              启用调试模式
+  -H, --home string        pigsty 主目录路径
+  -i, --inventory string   配置清单路径
+      --log-level string   日志级别: debug, info, warn, error, fatal, panic (默认 "info")
+      --log-path string    日志文件路径，默认为终端输出
+
+使用 "pig repo [command] --help" 获取命令的详细信息。
+```
+
 | 命令                            | 描述              | 备注                |
 |-------------------------------|-----------------|-------------------|
 | [`repo list`](#repo-list)     | 打印可用仓库与模块列表     |                   |

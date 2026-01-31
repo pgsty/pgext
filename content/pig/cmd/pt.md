@@ -7,6 +7,33 @@ weight: 660
 
 The `pig patroni` command (alias `pig pt`) manages Patroni service and PostgreSQL HA clusters. It wraps common `patronictl` and `systemctl` operations for simplified cluster management.
 
+```bash
+pig pt - Manage Patroni cluster using patronictl commands.
+
+Cluster Operations (via patronictl):
+  pig pt list                      list cluster members
+  pig pt restart [member]          restart PostgreSQL (rolling restart)
+  pig pt reload                    reload PostgreSQL config
+  pig pt reinit <member>           reinitialize a member
+  pig pt pause                     pause automatic failover
+  pig pt resume                    resume automatic failover
+  pig pt switchover                perform planned switchover
+  pig pt failover                  perform manual failover
+  pig pt config <action>           manage cluster config
+
+Service Management (via systemctl):
+  pig pt status                    show comprehensive patroni status
+  pig pt start                     start patroni service (shortcut)
+  pig pt stop                      stop patroni service (shortcut)
+  pig pt svc start                 start patroni service
+  pig pt svc stop                  stop patroni service
+  pig pt svc restart               restart patroni service
+  pig pt svc status                show patroni service status
+
+Logs:
+  pig pt log [-f] [-n 100]         view patroni logs
+```
+
 ------
 
 ## Command Overview

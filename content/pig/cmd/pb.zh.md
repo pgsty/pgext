@@ -7,6 +7,43 @@ weight: 660
 
 `pig pgbackrest` 命令（别名 `pig pb`）用于管理 pgBackRest 备份和时间点恢复（PITR）。它封装了常用的 `pgbackrest` 操作，提供简化的备份管理体验。所有命令均以数据库超级用户身份执行。
 
+```bash
+pig pb - 管理 pgBackRest 备份和时间点恢复
+
+信息查询：
+  pig pb info                      显示备份信息
+  pig pb ls                        列出备份
+  pig pb ls repo                   列出已配置的仓库
+  pig pb ls stanza                 列出所有 stanza
+
+备份与恢复：
+  pig pb backup                    创建备份（自动：全量/增量）
+  pig pb backup full               创建全量备份
+  pig pb restore                   从备份恢复（PITR）
+  pig pb restore -t "..."          恢复到指定时间
+  pig pb expire                    清理过期备份
+
+Stanza 管理：
+  pig pb create                    创建 stanza（首次设置）
+  pig pb upgrade                   升级 stanza（PG 升级后）
+  pig pb delete                    删除 stanza（危险！）
+
+控制命令：
+  pig pb check                     验证备份完整性
+  pig pb start                     启用 pgBackRest 操作
+  pig pb stop                      禁用 pgBackRest 操作
+  pig pb log                       查看 pgBackRest 日志
+
+示例：
+  pig pb info                      # 显示所有备份信息
+  pig pb backup                    # 自动：无备份则全量，否则增量
+  pig pb backup full               # 全量备份
+  pig pb restore                   # 恢复到最新（默认）
+  pig pb restore -t "2025-01-01 12:00:00+08"  # 恢复到指定时间
+  pig pb create                    # 初始化 stanza
+  pig pb expire                    # 按保留策略清理
+```
+
 
 ## 命令概览
 

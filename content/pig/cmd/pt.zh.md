@@ -7,6 +7,33 @@ weight: 650
 
 `pig patroni` 命令（别名 `pig pt`）用于管理 Patroni 服务和 PostgreSQL HA 集群。它封装了常用的 `patronictl` 和 `systemctl` 操作，提供简化的集群管理体验。
 
+```bash
+pig pt - 使用 patronictl 命令管理 Patroni 集群
+
+集群操作（通过 patronictl）：
+  pig pt list                      列出集群成员
+  pig pt restart [member]          重启 PostgreSQL（滚动重启）
+  pig pt reload                    重载 PostgreSQL 配置
+  pig pt reinit <member>           重新初始化成员
+  pig pt pause                     暂停自动故障切换
+  pig pt resume                    恢复自动故障切换
+  pig pt switchover                执行计划内主从切换
+  pig pt failover                  执行手动故障切换
+  pig pt config <action>           管理集群配置
+
+服务管理（通过 systemctl）：
+  pig pt status                    显示 Patroni 综合状态
+  pig pt start                     启动 Patroni 服务（快捷方式）
+  pig pt stop                      停止 Patroni 服务（快捷方式）
+  pig pt svc start                 启动 Patroni 服务
+  pig pt svc stop                  停止 Patroni 服务
+  pig pt svc restart               重启 Patroni 服务
+  pig pt svc status                显示 Patroni 服务状态
+
+日志：
+  pig pt log [-f] [-n 100]         查看 Patroni 日志
+```
+
 
 ## 命令概览
 

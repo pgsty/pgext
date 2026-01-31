@@ -7,6 +7,45 @@ weight: 640
 
 `pig pg` 命令（别名 `pig postgres`）用于管理本地 PostgreSQL 服务器和数据库。它封装了 `pg_ctl`、`psql`、`vacuumdb` 等原生工具，提供简化的服务器管理体验。
 
+```bash
+pig pg - 管理本地 PostgreSQL 服务器（pg_ctl, psql, vacuumdb）
+
+控制命令（通过 pg_ctl 或 systemctl）：
+  pig pg init                      初始化 PostgreSQL 数据目录
+  pig pg start                     启动 PostgreSQL 服务器
+  pig pg stop                      停止 PostgreSQL 服务器
+  pig pg restart                   重启 PostgreSQL 服务器
+  pig pg reload                    重载 PostgreSQL 服务器配置
+  pig pg status                    显示 PostgreSQL 服务器状态
+  pig pg promote                   将备库提升为主库
+  pig pg role                      检测并打印 PostgreSQL 角色
+
+连接与查询（通过 psql）：
+  pig pg psql [db] [-c sql]        连接到 PostgreSQL
+  pig pg ps                        显示当前连接
+  pig pg kill [-a] [-x] [-u user] [-d db] [-q sql] [-w secs]
+
+维护命令（通过 vacuumdb 和 pg_repack）：
+  pig pg vacuum  [db] [-a]         清理数据库
+  pig pg analyze [db] [-a]         分析数据库
+  pig pg freeze  [db] [-a]         冻结清理表
+  pig pg repack  [db] [-a]         在线重整数据库
+
+日志命令：
+  pig pg log list                  列出日志文件
+  pig pg log tail <logfile>        tail -f 查看日志
+  pig pg log cat  <logfile>        cat 查看日志
+  pig pg log less <logfile>        less 查看日志
+  pig pg log grep <logfile> <pat>  grep 搜索日志
+
+服务管理（通过 systemctl）：
+  pig pg svc start                 启动 postgres 服务
+  pig pg svc stop                  停止 postgres 服务
+  pig pg svc restart               重启 postgres 服务
+  pig pg svc reload                重载 postgres 服务
+  pig pg svc status                显示 postgres 服务状态
+```
+
 ## 命令概览
 
 **服务控制**（pg_ctl 封装）：

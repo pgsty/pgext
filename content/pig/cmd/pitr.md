@@ -7,6 +7,39 @@ weight: 680
 
 The `pig pitr` command performs **Orchestrated Point-In-Time Recovery**. Unlike `pig pb restore`, this command automatically coordinates Patroni, PostgreSQL, and pgBackRest to complete the full PITR workflow.
 
+```bash
+pig pitr - Perform PITR with automatic Patroni/PostgreSQL lifecycle management.
+
+This command orchestrates a complete PITR workflow:
+  1. Stop Patroni service (if running)
+  2. Ensure PostgreSQL is stopped (with retry and fallback)
+  3. Execute pgbackrest restore
+  4. Start PostgreSQL
+  5. Provide post-restore guidance
+
+Recovery Targets (at least one required):
+  --default, -d      Recover to end of WAL stream (latest)
+  --immediate, -I    Recover to backup consistency point
+  --time, -t         Recover to specific timestamp
+  --name, -n         Recover to named restore point
+  --lsn, -l          Recover to specific LSN
+  --xid, -x          Recover to specific transaction ID
+
+Time Format:
+  - Full: "2025-01-01 12:00:00+08"
+  - Date only: "2025-01-01" (defaults to 00:00:00)
+  - Time only: "12:00:00" (defaults to today)
+
+Examples:
+  pig pitr -d                      # Recover to latest (most common)
+  pig pitr -t "2025-01-01 12:00"   # Recover to specific time
+  pig pitr -I                      # Recover to backup consistency point
+  pig pitr -d --dry-run            # Show execution plan without running
+  pig pitr -d -y                   # Skip confirmation (for automation)
+  pig pitr -d --skip-patroni       # Skip Patroni management
+  pig pitr -d --no-restart         # Don't auto-start PostgreSQL after restore
+```
+
 
 ## Overview
 

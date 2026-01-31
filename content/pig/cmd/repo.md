@@ -7,6 +7,37 @@ weight: 610
 
 The `pig repo` command is a comprehensive tool for managing package repositories on Linux systems. It provides functionality to add, remove, create, and manage software repositories for both RPM-based (RHEL/CentOS/Rocky/Alma) and Debian-based (Debian/Ubuntu) distributions. This command is essential for setting up the required repositories to install PostgreSQL and its extensions.
 
+```bash
+pig repo - Manage Linux software repo (apt/dnf)
+
+Usage: pig repo <command>
+
+Commands:
+  add       Add new repository
+  set       Wipe and overwrite and update repository
+  rm        Remove repository
+  list      Print available repo and module list
+  info      Get repo detailed information
+  status    Show current repo status
+  update    Update repo cache
+  create    Create local YUM/APT repository
+  cache     Create offline package from local repo
+  boot      Bootstrap repo from offline package
+  reload    Refresh repo catalog
+
+Flags:
+  -h, --help   help for repo
+
+Global Flags:
+      --debug              enable debug mode
+  -H, --home string        pigsty home path
+  -i, --inventory string   config inventory path
+      --log-level string   log level: debug, info, warn, error, fatal, panic (default "info")
+      --log-path string    log file path, terminal by default
+
+Use "pig repo [command] --help" for more information about a command.
+```
+
 ------
 
 ## Subcommands
