@@ -250,7 +250,9 @@ func printSchemaNotFound() {
 	fmt.Println("╚═══════════════════════════════════════════╝")
 	fmt.Printf("\nDatabase: %s\n", SanitizeURL(PGURL))
 	fmt.Println("Schema:   not found")
-	fmt.Println("\n⚠️  Schema not initialized. Run 'pgext init' to create it.\n")
+	fmt.Println()
+	fmt.Println("⚠️  Schema not initialized. Run 'pgext init' to create it.")
+	fmt.Println()
 }
 
 // ShowRepositories displays repository summary

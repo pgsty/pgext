@@ -217,7 +217,7 @@ func displayMatrix(pkgName string, matrix map[string]map[int]PkgAvailability, os
 	for range pgList {
 		fmt.Print("╧" + strings.Repeat("═", cellWidth+2))
 	}
-	fmt.Println("\n")
+	fmt.Println()
 }
 
 // calculateCellWidth calculates the minimum cell width based on content.

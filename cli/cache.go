@@ -292,15 +292,18 @@ func LoadPackages(ctx context.Context, pkgName string) ([]*PkgInfo, error) {
 func LoadBinaries(ctx context.Context, extName string) ([]*Binary, error) {
 	// Query binaries with proper ordering: pg DESC, os ASC, version DESC, file DESC
 	query := `
-		SELECT b.pg,b.os,b.name,b.version,r.org,b.size,b.file,
-			   format('%s/%s', r.default_url, b.href) AS url
-		FROM pgext.pkg p
-			 JOIN pgext.bin b USING (pg, os, name)
-			 JOIN pgext.repository r ON b.repo = r.id
-			 JOIN pgext.os o ON p.os = o.os
-		WHERE p.ext = $1
-		ORDER BY b.pg DESC, o.os_major, o.os_arch DESC, b.ver::pgext.VERSION USING OPERATOR (pgext.>), r.org DESC, b.file DESC
-	`
+			SELECT b.pg,b.os,b.name,b.version,r.org,b.size,b.file,
+				   format('%s/%s', r.default_url, b.href) AS url
+			FROM pgext.pkg p
+				 JOIN pgext.bin b USING (pg, os, name)
+				 JOIN pgext.repository r ON b.repo = r.id
+				 JOIN pgext.os o ON p.os = o.os
+			WHERE p.ext = $1
+			-- NOTE: Add stable tie-breakers (repo/href) to avoid non-deterministic row order when all other keys equal.
+			ORDER BY b.pg DESC, o.os_major, o.os_arch DESC,
+			         b.ver::pgext.VERSION USING OPERATOR (pgext.>),
+			         r.org DESC, b.file DESC, b.repo DESC, b.href DESC
+		`
 
 	rows, err := QueryContext(ctx, query, extName)
 	if err != nil {

@@ -120,7 +120,9 @@ func formatSize(bytes int64) string {
 // displayBinTable displays binary packages in a table format.
 func displayBinTable(packages []BinPackage) {
 	if len(packages) == 0 {
-		fmt.Println("\nNo packages found.\n")
+		fmt.Println()
+		fmt.Println("No packages found.")
+		fmt.Println()
 		return
 	}
 
@@ -201,7 +203,8 @@ func ShowExt(extName string) error {
 	// Print extension info
 	fmt.Println("\n╔═══════════════════════════════════════════╗")
 	fmt.Println("║        Extension Information              ║")
-	fmt.Println("╚═══════════════════════════════════════════╝\n")
+	fmt.Println("╚═══════════════════════════════════════════╝")
+	fmt.Println()
 
 	fmt.Printf("Name:        %s\n", name)
 	fmt.Printf("Package:     %s\n", pkg)
