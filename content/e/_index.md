@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-There are 444 available PostgreSQL extensions:
+There are 448 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -385,6 +385,7 @@ There are 444 available PostgreSQL extensions:
 | {{< ext "pg_jobmon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | Extension for logging and monitoring functions in PostgreSQL |
 | {{< ext "credcheck" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | credcheck - postgresql plain text credential checker |
 | {{< ext "pgcryptokey" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | cryptographic key management |
+| {{< ext "pg_pwhash" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SEC" >}} | Advanced password hashing methods for PostgreSQL |
 | {{< ext "login_hook" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | login_hook - hook to execute login_hook.login() at login time |
 | {{< ext "set_user" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | similar to SET ROLE but with added logging |
 | {{< ext "pg_snakeoil" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "SEC" >}} | The PostgreSQL Antivirus |
@@ -408,6 +409,8 @@ There are 444 available PostgreSQL extensions:
 | {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | SQLite Foreign Data Wrapper |
 | {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from norma |
 | {{< ext "etcd_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for etcd |
+| {{< ext "informix_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for Informix access |
+| {{< ext "nominatim_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
 | {{< ext "mongo_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | foreign data wrapper for MongoDB access |
 | {{< ext "redis_fdw" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a Redis server |
 | {{< ext "redis" "pg_redis_pubsub" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
@@ -431,6 +434,7 @@ There are 444 available PostgreSQL extensions:
 | {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
+| {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL Datatype Support |
 | {{< ext "babelfishpg_tsql" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL compatibility |
 | {{< ext "babelfishpg_tds" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |

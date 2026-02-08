@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（444 ext / 375 pkg）归属 16 个分类。
+PostgreSQL 扩展（448 ext / 379 pkg）归属 16 个分类。
 
 
 
@@ -18,7 +18,7 @@ PostgreSQL 扩展（444 ext / 375 pkg）归属 16 个分类。
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.24.0 | 时序数据库扩展插件 |
+| 1000 | {{< alias "timescaledb" >}} | 2.25.0 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -43,7 +43,7 @@ PostgreSQL 扩展（444 ext / 375 pkg）归属 16 个分类。
 | 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.1 | PostGIS tiger 地理编码器和反向地理编码器 |
 | 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.1 | 地址标准化函数。 |
 | 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.1 | 地址标准化函数：美国数据集示例 |
-| 1510 | {{< alias "pgrouting" >}} | 3.8.0 | 提供寻路能力 |
+| 1510 | {{< alias "pgrouting" >}} | 4.0.1 | 提供寻路能力 |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3六边形层级索引支持 |
@@ -90,7 +90,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | 用于全文检索的分词器 |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | 使用IAM的高性能文本模式匹配 |
-| 2180 | {{< alias "pg_textsearch" >}} | 0.4.0 | 带有BM25排序的全文搜索扩展 |
+| 2180 | {{< alias "pg_textsearch" >}} | 0.5.0 | 带有BM25排序的全文搜索扩展 |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Hunspell捷克语全文检索词典 |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | Hunspell德语全文检索词典 |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | Hunspell英语全文检索词典 |
@@ -146,7 +146,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | 增量处理流式事件 |
-| 2890 | {{< alias "pgmq" >}} | 1.9.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2890 | {{< alias "pgmq" >}} | 1.10.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -201,14 +201,14 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 |:---:|:---|:---|:---|
 | 3000 | {{< alias "pg_tle" >}} | 1.5.2 | AWS 可信语言扩展 |
 | 3010 | {{< alias "plv8" >}} | 3.2.4 | PL/JavaScript (v8) 可信过程程序语言 |
-| 3011 | {{< alias "pljs" >}} | 1.0.4 | PL/JS 可信过程程序语言 |
+| 3011 | {{< alias "pljs" >}} | 1.0.5 | PL/JS 可信过程程序语言 |
 | 3020 | {{< alias "pllua" >}} | 2.0.12 | Lua 程序语言 |
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展 |
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua 程序语言（不受信任的） |
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.0 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.8.5 | 对 plpgsql 函数进行扩展检查 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.8.8 | 对 plpgsql 函数进行扩展检查 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
@@ -385,7 +385,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5090 | {{< alias "pglinter" >}} | 1.0.1 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
-| 5120 | {{< alias "pg_readonly" >}} | 1.0.3 | 将集群设置为只读 |
+| 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | 将集群设置为只读 |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4 | 查看对象权限并将其与期望状态进行比较 |
 | 5150 | {{< alias "pgautofailover" >}} | 2.2 | PG 自动故障迁移 |
@@ -475,8 +475,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | 用于收集日志文件中消息统计信息的函数 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | 监控每个用户的连接尝试 |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | 记录和监控函数 |
-| 7310 | {{< alias "credcheck" >}} | 4.4 | 明文凭证检查器 |
+| 7310 | {{< alias "credcheck" >}} | 4.5 | 明文凭证检查器 |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
+| 7330 | {{< alias "pg_pwhash" >}} | 1.0 | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | 在用户登陆时执行login_hook.login()函数 |
 | 7370 | {{< alias "set_user" >}} | 4.2.0 | 增加了日志记录的 SET ROLE |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | PostgreSQL动态链接库反病毒功能 |
@@ -503,10 +504,12 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | MySQL外部数据包装器 |
 | 8610 | {{< alias "oracle_fdw" >}} | 2.8.0 | 提供对Oracle的外部数据源包装器 |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | TDS 数据库（Sybase/SQL Server）外部数据包装器 |
-| 8630 | {{< alias "db2_fdw" >}} | 18.0.1 | 提供对DB2的外部数据源包装器 |
+| 8630 | {{< alias "db2_fdw" >}} | 18.1.1 | 提供对DB2的外部数据源包装器 |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite 外部数据包装器 |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.0 | etcd分布式键值存储外部数据包装器 |
+| 8670 | {{< alias "informix_fdw" >}} | 0.6.3 | Informix 外部数据包装器 |
+| 8680 | {{< alias "nominatim_fdw" >}} | 1.1.0 | Nominatim 地理编码接口的 FDW 扩展 |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | MongoDB 外部数据包装器 |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | 查询外部Redis数据源 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | 从PG向Redis发送Pub/Sub消息 |
@@ -537,6 +540,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
+| 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
 | 9300 | {{< alias "babelfishpg_common" >}} | 3.3.3 | SQL Server 数据类型兼容扩展 |
 | 9310 | {{< alias "babelfishpg_tsql" >}} | 3.3.1 | SQL Server SQL语法兼容性扩展 |
 | 9320 | {{< alias "babelfishpg_tds" >}} | 1.0.0 | SQL Server TDS线缆协议兼容扩展 |

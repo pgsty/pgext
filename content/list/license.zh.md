@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 207 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 209 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 65 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 67 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -39,7 +39,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="207 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="209 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -235,6 +235,7 @@ weight: 300
 | 8630 | {{< alias "db2_fdw" >}} | 提供对DB2的外部数据源包装器 |
 | 8640 | {{< alias "sqlite_fdw" >}} | SQLite 外部数据包装器 |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
+| 8670 | {{< alias "informix_fdw" >}} | Informix 外部数据包装器 |
 | 8710 | {{< alias "redis_fdw" >}} | 查询外部Redis数据源 |
 | 8730 | {{< alias "kafka_fdw" >}} | Kafka外部数据源包装器 |
 | 8750 | {{< alias "firebird_fdw" >}} | Firebird外部数据源包装器 |
@@ -244,6 +245,7 @@ weight: 300
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
+| 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
 | 9500 | {{< alias "pglogical" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | pglogical复制延迟以秒计的精确视图 |
@@ -342,7 +344,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="65 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="67 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -402,8 +404,10 @@ weight: 300
 | 7070 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
 | 7310 | {{< alias "credcheck" >}} | 明文凭证检查器 |
+| 7330 | {{< alias "pg_pwhash" >}} | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
 | 7500 | {{< alias "pg_tde" >}} | Percona加密存储引擎 |
 | 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
+| 8680 | {{< alias "nominatim_fdw" >}} | Nominatim 地理编码接口的 FDW 扩展 |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 从PG向Redis发送Pub/Sub消息 |
 | 9000 | {{< alias "documentdb" >}} | 微软DocumentDB的API层 |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |

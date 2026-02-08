@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 207 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 209 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 65 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 67 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -39,7 +39,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="207 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="209 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -235,6 +235,7 @@ PostgreSQL extension categorized by license.
 | 8630 | {{< alias "db2_fdw" >}} | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | SQLite Foreign Data Wrapper |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
+| 8670 | {{< alias "informix_fdw" >}} | Foreign data wrapper for Informix access |
 | 8710 | {{< alias "redis_fdw" >}} | Foreign data wrapper for querying a Redis server |
 | 8730 | {{< alias "kafka_fdw" >}} | kafka Foreign Data Wrapper for CSV formatted messages |
 | 8750 | {{< alias "firebird_fdw" >}} | Foreign data wrapper for Firebird |
@@ -244,6 +245,7 @@ PostgreSQL extension categorized by license.
 | 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
+| 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9500 | {{< alias "pglogical" >}} | PostgreSQL Logical Replication |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | Have an accurate view on pglogical replication delay |
@@ -342,7 +344,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="65 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="67 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -402,8 +404,10 @@ PostgreSQL extension categorized by license.
 | 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
 | 7150 | {{< alias "pg_auth_mon" >}} | monitor connection attempts per user |
 | 7310 | {{< alias "credcheck" >}} | credcheck - postgresql plain text credential checker |
+| 7330 | {{< alias "pg_pwhash" >}} | Advanced password hashing methods for PostgreSQL |
 | 7500 | {{< alias "pg_tde" >}} | Percona pg_tde access method |
 | 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
+| 8680 | {{< alias "nominatim_fdw" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB for PostgreSQL |

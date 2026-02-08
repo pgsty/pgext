@@ -65,7 +65,7 @@ $ pig install -y vector               # 您可以使用扩展名称（vector）�
 {{< card link="/zh/pig/cmd/build" title="pig build" subtitle="设置构建环境"  icon="view-grid" >}}
 {{< card link="/zh/pig/cmd/sty"   title="pig sty"   subtitle="管理 Pigsty"  icon="cloud-download" >}}
 {{< card link="/zh/pig/cmd/pg"    title="pig pg"    subtitle="管理 PostgreSQL 服务"   icon="database" >}}
-{{< card link="/zh/pig/cmd/pt"    title="pig pt"    subtitle="管理 Patroni 集群"   icon="refresh-cw" >}}
+{{< card link="/zh/pig/cmd/pt"    title="pig pt"    subtitle="管理 Patroni 集群"   icon="refresh" >}}
 {{< card link="/zh/pig/cmd/pb"    title="pig pb"    subtitle="管理 pgBackRest 备份"   icon="archive" >}}
 {{< card link="/zh/pig/cmd/pitr"  title="pig pitr"  subtitle="编排式 PITR 恢复"   icon="clock" >}}
 {{< /cards >}}

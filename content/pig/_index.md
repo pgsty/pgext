@@ -62,7 +62,7 @@ Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
 
 {{< cards cols="4" >}}
 {{< card link="/pig/cmd/pg"    title="pig pg"    subtitle="Manage local PostgreSQL"      icon="database" >}}
-{{< card link="/pig/cmd/pt"    title="pig pt"    subtitle="Manage Patroni HA cluster"    icon="refresh-cw" >}}
+{{< card link="/pig/cmd/pt"    title="pig pt"    subtitle="Manage Patroni HA cluster"    icon="refresh" >}}
 {{< card link="/pig/cmd/pb"    title="pig pb"    subtitle="Manage pgBackRest backup"     icon="archive" >}}
 {{< card link="/pig/cmd/pitr"  title="pig pitr"  subtitle="Orchestrated PITR recovery"   icon="clock" >}}
 {{< /cards >}}

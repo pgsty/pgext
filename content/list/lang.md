@@ -14,9 +14,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 348 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 351 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 39 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 38 | Extensions written in Rust with the pgrx framework |
-| {{< language "SQL" >}} | 38 | Pure SQL extensions and functions |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "C++" >}} | 7 | Extensions leveraging C++ features and libraries |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="348 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="351 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -319,6 +319,7 @@ The traditional PostgreSQL extension language
 | 7150 | {{< alias "pg_auth_mon" >}} | monitor connection attempts per user |
 | 7310 | {{< alias "credcheck" >}} | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | cryptographic key management |
+| 7330 | {{< alias "pg_pwhash" >}} | Advanced password hashing methods for PostgreSQL |
 | 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
 | 7370 | {{< alias "set_user" >}} | similar to SET ROLE but with added logging |
 | 7380 | {{< alias "pg_snakeoil" >}} | The PostgreSQL Antivirus |
@@ -339,6 +340,8 @@ The traditional PostgreSQL extension language
 | 8620 | {{< alias "tds_fdw" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
 | 8630 | {{< alias "db2_fdw" >}} | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | SQLite Foreign Data Wrapper |
+| 8670 | {{< alias "informix_fdw" >}} | Foreign data wrapper for Informix access |
+| 8680 | {{< alias "nominatim_fdw" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8700 | {{< alias "mongo_fdw" >}} | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
@@ -379,6 +382,54 @@ The traditional PostgreSQL extension language
 | 9830 | {{< alias "pg_bulkload" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
 | 9970 | {{< alias "test_decoding" >}} | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | Logical Replication output plugin |
+
+## SQL
+
+{{< language "SQL" >}} {{< badge content="39 Extensions" color="gray" icon="cube" >}}
+
+Pure SQL extensions and functions
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | Convenience API for time series stack |
+| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
+| 1060 | {{< alias "table_version" >}} | PostgreSQL table versioning extension |
+| 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
+| 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
+| 2840 | {{< alias "index_advisor" >}} | Query index advisor |
+| 2890 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 3580 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
+| 3610 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
+| 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n toolbox |
+| 3870 | {{< alias "debversion" >}} | Debian version number data type |
+| 4160 | {{< alias "pgjwt" >}} | JSON Web Token API for Postgresql |
+| 4180 | {{< alias "pg_html5_email_address" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
+| 4200 | {{< alias "pgsql_tweaks" >}} | Some functions and views for daily usage |
+| 4220 | {{< alias "pg_extra_time" >}} | Some date time functions and operators that, |
+| 4310 | {{< alias "ddl_historization" >}} | Historize the ddl changes inside PostgreSQL database |
+| 4320 | {{< alias "data_historization" >}} | PLPGSQL Script to historize data in partitionned table |
+| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
+| 4470 | {{< alias "sparql" "pgsparql" >}} | Query SPARQL datasource with SQL |
+| 5080 | {{< alias "ddlx" "pg_ddlx" >}} | DDL eXtractor functions |
+| 5140 | {{< alias "pg_permissions" >}} | view object permissions and compare them with the desired state |
+| 5180 | {{< alias "pg_upless" >}} | Detect Useless UPDATE |
+| 5190 | {{< alias "pgcozy" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
+| 5830 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
+| 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
+| 6300 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
+| 6330 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
+| 6800 | {{< alias "pagevis" >}} | Visualise database pages in ascii code |
+| 7130 | {{< alias "pg_auditor" >}} | Audit data changes and provide flashback ability |
+| 7160 | {{< alias "pg_jobmon" >}} | Extension for logging and monitoring functions in PostgreSQL |
+| 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
+| 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
+| 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
+| 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
+| 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
+| 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
+| 9540 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
+| 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
 
 ## Rust
 
@@ -426,53 +477,6 @@ Extensions written in Rust with the pgrx framework
 | 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
-
-## SQL
-
-{{< language "SQL" >}} {{< badge content="38 Extensions" color="gray" icon="cube" >}}
-
-Pure SQL extensions and functions
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 1020 | {{< alias "timeseries" "pg_timeseries" >}} | Convenience API for time series stack |
-| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
-| 1060 | {{< alias "table_version" >}} | PostgreSQL table versioning extension |
-| 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
-| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
-| 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
-| 2840 | {{< alias "index_advisor" >}} | Query index advisor |
-| 2890 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
-| 3580 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
-| 3610 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
-| 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n toolbox |
-| 3870 | {{< alias "debversion" >}} | Debian version number data type |
-| 4160 | {{< alias "pgjwt" >}} | JSON Web Token API for Postgresql |
-| 4180 | {{< alias "pg_html5_email_address" >}} | PostgreSQL email validation that is consistent with the HTML5 spec |
-| 4200 | {{< alias "pgsql_tweaks" >}} | Some functions and views for daily usage |
-| 4220 | {{< alias "pg_extra_time" >}} | Some date time functions and operators that, |
-| 4310 | {{< alias "ddl_historization" >}} | Historize the ddl changes inside PostgreSQL database |
-| 4320 | {{< alias "data_historization" >}} | PLPGSQL Script to historize data in partitionned table |
-| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
-| 4470 | {{< alias "sparql" "pgsparql" >}} | Query SPARQL datasource with SQL |
-| 5080 | {{< alias "ddlx" "pg_ddlx" >}} | DDL eXtractor functions |
-| 5140 | {{< alias "pg_permissions" >}} | view object permissions and compare them with the desired state |
-| 5180 | {{< alias "pg_upless" >}} | Detect Useless UPDATE |
-| 5190 | {{< alias "pgcozy" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
-| 5830 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
-| 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
-| 6300 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
-| 6330 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
-| 6800 | {{< alias "pagevis" >}} | Visualise database pages in ascii code |
-| 7130 | {{< alias "pg_auditor" >}} | Audit data changes and provide flashback ability |
-| 7160 | {{< alias "pg_jobmon" >}} | Extension for logging and monitoring functions in PostgreSQL |
-| 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
-| 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
-| 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
-| 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
-| 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
-| 9540 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
-| 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
 
 ## Data
 
