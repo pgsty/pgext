@@ -60,7 +60,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/2ndQuadrant/pglogical" title="Repository" icon="github" subtitle="github.com/2ndQuadrant/pglogical" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical_ticker-1.4.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglogical-2.4.6.tar.gz" >}}
 {{< /cards >}}
 
 

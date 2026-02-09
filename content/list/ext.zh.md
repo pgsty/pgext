@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 448 | 156 | 274 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 390 |
-| **EL** | 442 | 150 | 274 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 384 |
-| **Debian** | 431 | 108 | 252 | 71 | 17 | 412 | 421 | 419 | 419 | 403 | 374 |
+| **ALL** | 448 | 156 | 274 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 389 |
+| **EL** | 442 | 150 | 274 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 383 |
+| **Debian** | 431 | 108 | 252 | 71 | 17 | 412 | 421 | 419 | 419 | 403 | 373 |
 
 ## 分类
 
@@ -133,7 +133,7 @@ comments: false
 | {{< ext "imgsmlr" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用Haar小波分析计算图片相似度 |
 | {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 增量维护的物化视图 |
 | {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | 增量处理流式事件 |
-| {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 通用队列的PG实现 |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | OrioleDB，下一代事务处理引擎 |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |

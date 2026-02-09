@@ -11,9 +11,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 315 | 140 | 227 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 268 |
-| **EL** | 312 | 137 | 227 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 265 |
-| **Debian** | 298 | 93 | 205 | 0 | 78 | 281 | 292 | 288 | 289 | 279 | 252 |
+| **ALL** | 315 | 140 | 227 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 267 |
+| **EL** | 312 | 137 | 227 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 264 |
+| **Debian** | 298 | 93 | 205 | 0 | 78 | 281 | 292 | 288 | 289 | 279 | 251 |
 
 ## Categories
 
@@ -107,15 +107,15 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pg_fkpart" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/lemoineat/pg_fkpart" >}} | {{< category "OLAP" >}} | `pg_fkpart_$v` | `postgresql-$v-pg-fkpart` |
 | {{< ext "pg_partman" >}} | `5.4.0` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
 | {{< ext "plproxy" >}} | `2.11.0` | {{< badge content="Link" link="https://github.com/plproxy/plproxy" >}} | {{< category "OLAP" >}} | `plproxy_$v` | `postgresql-$v-plproxy` |
-| {{< ext "pg_strom" >}} | `6.0` | {{< badge content="Link" link="https://github.com/heterodb/pg-strom" >}} | {{< category "OLAP" >}} | `pg_strom_$v` | - |
+| {{< ext "pg_strom" >}} | `6.1` | {{< badge content="Link" link="https://github.com/heterodb/pg-strom" >}} | {{< category "OLAP" >}} | `pg_strom_$v` | - |
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "age" >}} | `1.6.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `apache-age_$v` | `postgresql-$v-age` |
+| {{< ext "age" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/apache/age" >}} | {{< category "FEAT" >}} | `apache-age_$v` | `postgresql-$v-age` |
 | {{< ext "hll" >}} | `2.19` | {{< badge content="Link" link="https://github.com/citusdata/postgresql-hll" >}} | {{< category "FEAT" >}} | `hll_$v` | `postgresql-$v-hll` |
 | {{< ext "rum" >}} | `1.3.15` | {{< badge content="Link" link="https://github.com/postgrespro/rum" >}} | {{< category "FEAT" >}} | `rum_$v` | `postgresql-$v-rum` |
 | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< category "FEAT" >}} | `pg_ai_query_$v` | `postgresql-$v-ai-query` |
 | {{< ext "pg_ttl_index" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< category "FEAT" >}} | `pg_ttl_index_$v` | `postgresql-$v-ttl-index` |
 | {{< ext "pg_graphql" >}} | `1.5.12` | {{< badge content="Link" link="https://github.com/supabase/pg_graphql" >}} | {{< category "FEAT" >}} | `pg_graphql_$v` | `postgresql-$v-pg-graphql` |
-| {{< ext "pg_jsonschema" >}} | `0.3.3` | {{< badge content="Link" link="https://github.com/supabase/pg_jsonschema" >}} | {{< category "FEAT" >}} | `pg_jsonschema_$v` | `postgresql-$v-pg-jsonschema` |
+| {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< badge content="Link" link="https://github.com/supabase/pg_jsonschema" >}} | {{< category "FEAT" >}} | `pg_jsonschema_$v` | `postgresql-$v-pg-jsonschema` |
 | {{< ext "jsquery" >}} | `1.2` | {{< badge content="Link" link="https://github.com/postgrespro/jsquery" >}} | {{< category "FEAT" >}} | `jsquery_$v` | `postgresql-$v-jsquery` |
 | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< category "FEAT" >}} | `pg_hint_plan_$v` | `postgresql-$v-pg-hint-plan` |
 | {{< ext "hypopg" >}} | `1.4.2` | {{< badge content="Link" link="https://github.com/HypoPG/hypopg" >}} | {{< category "FEAT" >}} | `hypopg_$v` | `postgresql-$v-hypopg` |
@@ -123,7 +123,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< category "FEAT" >}} | `pg_plan_filter_$v` | `postgresql-$v-pg-plan-filter` |
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v` | `postgresql-$v-imgsmlr` |
 | {{< ext "pg_ivm" >}} | `1.13` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v` | `postgresql-$v-pg-ivm` |
-| {{< ext "pg_incremental" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v` | `postgresql-$v-pg-incremental` |
+| {{< ext "pg_incremental" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v` | `postgresql-$v-pg-incremental` |
 | {{< ext "pgmq" >}} | `1.10.0` | {{< badge content="Link" link="https://github.com/pgmq/pgmq" >}} | {{< category "FEAT" >}} | `pgmq_$v` | `postgresql-$v-pgmq` |
 | {{< ext "pgq" >}} | `3.5.1` | {{< badge content="Link" link="https://github.com/pgq/pgq" >}} | {{< category "FEAT" >}} | `pgq_$v` | `postgresql-$v-pgq3` |
 | {{< ext "orioledb" >}} | `1.5` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v` | `oriolepg-$v-orioledb` |
@@ -164,16 +164,16 @@ There are 315 available PostgreSQL packages:
 | {{< ext "country" "pg_country" >}} | `0.0.3` | {{< badge content="Link" link="https://github.com/adjust/pg-country" >}} | {{< category "TYPE" >}} | `pg_country_$v` | `postgresql-$v-pg-country` |
 | {{< ext "pg_xenophile" >}} | `0.8.3` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< category "TYPE" >}} | `pg_xenophile_$v` | `postgresql-$v-pg-xenophile` |
 | {{< ext "currency" "pg_currency" >}} | `0.0.3` | {{< badge content="Link" link="https://github.com/adjust/pg-currency" >}} | {{< category "TYPE" >}} | `pg_currency_$v` | `postgresql-$v-pg-currency` |
-| {{< ext "collection" "pgcollection" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/aws/pgcollection" >}} | {{< category "TYPE" >}} | `pgcollection_$v` | `postgresql-$v-collection` |
+| {{< ext "collection" "pgcollection" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/aws/pgcollection" >}} | {{< category "TYPE" >}} | `pgcollection_$v` | `postgresql-$v-collection` |
 | {{< ext "pgmp" >}} | `1.0.5` | {{< badge content="Link" link="https://github.com/dvarrazzo/pgmp/" >}} | {{< category "TYPE" >}} | `pgmp_$v` | `postgresql-$v-pgmp` |
 | {{< ext "numeral" >}} | `1.3` | {{< badge content="Link" link="https://github.com/df7cb/postgresql-numeral" >}} | {{< category "TYPE" >}} | `numeral_$v` | `postgresql-$v-numeral` |
 | {{< ext "pg_rational" >}} | `0.0.2` | {{< badge content="Link" link="https://github.com/begriffs/pg_rational" >}} | {{< category "TYPE" >}} | `pg_rational_$v` | `postgresql-$v-rational` |
 | {{< ext "uint" "pguint" >}} | `1.20250815` | {{< badge content="Link" link="https://github.com/petere/pguint" >}} | {{< category "TYPE" >}} | `pguint_$v` | `postgresql-$v-pguint` |
-| {{< ext "uint128" "pg_uint128" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/pg-uint/pg-uint128" >}} | {{< category "TYPE" >}} | `pg_uint128_$v` | `postgresql-$v-pg-uint128` |
+| {{< ext "uint128" "pg_uint128" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/pg-uint/pg-uint128" >}} | {{< category "TYPE" >}} | `pg_uint128_$v` | `postgresql-$v-pg-uint128` |
 | {{< ext "hashtypes" >}} | `0.1.5` | {{< badge content="Link" link="https://github.com/adjust/hashtypes/" >}} | {{< category "TYPE" >}} | `hashtypes_$v` | `postgresql-$v-hashtypes` |
 | {{< ext "ip4r" >}} | `2.4.2` | {{< badge content="Link" link="https://github.com/RhodiumToad/ip4r" >}} | {{< category "TYPE" >}} | `ip4r_$v` | `postgresql-$v-ip4r` |
 | {{< ext "pg_duration" >}} | `1.0.2` | {{< badge content="Link" link="https://github.com/jkosh44/pg_duration" >}} | {{< category "TYPE" >}} | `pg_duration_$v` | `postgresql-$v-pg-duration` |
-| {{< ext "uri" "pg_uri" >}} | `1.20151224` | {{< badge content="Link" link="https://github.com/petere/pguri" >}} | {{< category "TYPE" >}} | `pg_uri_$v` | `postgresql-$v-pg-uri` |
+| {{< ext "uri" "pg_uri" >}} | `1.20251029` | {{< badge content="Link" link="https://github.com/petere/pguri" >}} | {{< category "TYPE" >}} | `pg_uri_$v` | `postgresql-$v-pg-uri` |
 | {{< ext "emailaddr" "pg_emailaddr" >}} | `0` | {{< badge content="Link" link="https://github.com/petere/pgemailaddr" >}} | {{< category "TYPE" >}} | `pg_emailaddr_$v` | `postgresql-$v-pg-emailaddr` |
 | {{< ext "acl" "pg_acl" >}} | `1.0.4` | {{< badge content="Link" link="https://github.com/arkhipov/acl" >}} | {{< category "TYPE" >}} | `acl_$v` | `postgresql-$v-acl` |
 | {{< ext "debversion" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/ATIX-AG/postgresql-debversion-evr" >}} | {{< category "TYPE" >}} | - | `postgresql-$v-debversion` |
@@ -191,7 +191,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "bzip" "pg_bzip" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/steve-chavez/pg_bzip" >}} | {{< category "UTIL" >}} | `pg_bzip_$v` | `postgresql-$v-bzip` |
 | {{< ext "zstd" "pg_zstd" >}} | `1.1.2` | {{< badge content="Link" link="https://github.com/grahamedgecombe/pgzstd" >}} | {{< category "UTIL" >}} | `pg_zstd_$v` | `postgresql-$v-zstd` |
 | {{< ext "http" "pg_http" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-http" >}} | {{< category "UTIL" >}} | `pg_http_$v` | `postgresql-$v-http` |
-| {{< ext "pg_net" >}} | `0.20.0` | {{< badge content="Link" link="https://github.com/supabase/pg_net" >}} | {{< category "UTIL" >}} | `pg_net_$v` | `postgresql-$v-pg-net` |
+| {{< ext "pg_net" >}} | `0.20.2` | {{< badge content="Link" link="https://github.com/supabase/pg_net" >}} | {{< category "UTIL" >}} | `pg_net_$v` | `postgresql-$v-pg-net` |
 | {{< ext "pg_curl" >}} | `2.4.5` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_curl" >}} | {{< category "UTIL" >}} | `pg_curl_$v` | `postgresql-$v-pg-curl` |
 | {{< ext "pg_retry" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/Agent-Hellboy/pg_retry" >}} | {{< category "UTIL" >}} | `pg_retry_$v` | `postgresql-$v-retry` |
 | {{< ext "pgjq" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/Florents-Tselai/pgJQ" >}} | {{< category "UTIL" >}} | `pgjq_$v` | `postgresql-$v-pgjq` |
@@ -242,7 +242,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< category "FUNC" >}} | `aggs_for_arrays_$v` | `postgresql-$v-aggs-for-arrays` |
 | {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v` | `postgresql-$v-pg-csv` |
 | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< category "FUNC" >}} | `pg_arraymath_$v` | `postgresql-$v-pg-arraymath` |
-| {{< ext "pg_math" >}} | `1.0` | {{< badge content="Link" link="https://github.com/chanukyasds/pg_math" >}} | {{< category "FUNC" >}} | `pg_math_$v` | `postgresql-$v-pg-math` |
+| {{< ext "pg_math" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/chanukyasds/pg_math" >}} | {{< category "FUNC" >}} | `pg_math_$v` | `postgresql-$v-pg-math` |
 | {{< ext "random" "pg_random" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/tvondra/random" >}} | {{< category "FUNC" >}} | `pg_random_$v` | `postgresql-$v-random` |
 | {{< ext "base36" "pg_base36" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/adjust/pg-base36" >}} | {{< category "FUNC" >}} | `pg_base36_$v` | `postgresql-$v-base36` |
 | {{< ext "base62" "pg_base62" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/adjust/pg-base62" >}} | {{< category "FUNC" >}} | `pg_base62_$v` | `postgresql-$v-base62` |
@@ -271,7 +271,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pgfincore" >}} | `1.3.1` | {{< badge content="Link" link="https://github.com/klando/pgfincore" >}} | {{< category "ADMIN" >}} | `pgfincore_$v` | `postgresql-$v-pgfincore` |
 | {{< ext "pg_cooldown" >}} | `0.1` | {{< badge content="Link" link="https://github.com/rbergm/pg_cooldown" >}} | {{< category "ADMIN" >}} | `pg_cooldown_$v` | `postgresql-$v-pg-cooldown` |
 | {{< ext "ddlx" "pg_ddlx" >}} | `0.30` | {{< badge content="Link" link="https://github.com/lacanoid/pgddl" >}} | {{< category "ADMIN" >}} | `ddlx_$v` | `postgresql-$v-ddlx` |
-| {{< ext "pglinter" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/pmpetit/pglinter" >}} | {{< category "ADMIN" >}} | `pglinter_$v` | `postgresql-$v-pglinter` |
+| {{< ext "pglinter" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/pmpetit/pglinter" >}} | {{< category "ADMIN" >}} | `pglinter_$v` | `postgresql-$v-pglinter` |
 | {{< ext "prioritize" "pg_prioritize" >}} | `1.0.4` | {{< badge content="Link" link="https://github.com/schmiddy/pg_prioritize" >}} | {{< category "ADMIN" >}} | `pg_prioritize_$v` | `postgresql-$v-prioritize` |
 | {{< ext "pg_checksums" >}} | `1.3` | {{< badge content="Link" link="https://github.com/credativ/pg_checksums" >}} | {{< category "ADMIN" >}} | `pg_checksums_$v` | `postgresql-$v-pg-checksums` |
 | {{< ext "pg_readonly" >}} | `1.0.4` | {{< badge content="Link" link="https://github.com/pierreforstmann/pg_readonly" >}} | {{< category "ADMIN" >}} | `pg_readonly_$v` | `postgresql-$v-pg-readonly` |
@@ -309,7 +309,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pg_store_plans" >}} | `1.9` | {{< badge content="Link" link="https://github.com/ossc-db/pg_store_plans" >}} | {{< category "STAT" >}} | `pg_store_plans_$v` | `postgresql-$v-pg-store-plan` |
 | {{< ext "pg_track_settings" >}} | `2.1.2` | {{< badge content="Link" link="https://github.com/rjuju/pg_track_settings" >}} | {{< category "STAT" >}} | `pg_track_settings_$v` | `postgresql-$v-pg-track-settings` |
 | {{< ext "pg_wait_sampling" >}} | `1.1.9` | {{< badge content="Link" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< category "STAT" >}} | `pg_wait_sampling_$v` | `postgresql-$v-pg-wait-sampling` |
-| {{< ext "pgsentinel" >}} | `1.3.1` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
+| {{< ext "pgsentinel" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
 | {{< ext "system_stats" >}} | `3.2` | {{< badge content="Link" link="https://github.com/EnterpriseDB/system_stats" >}} | {{< category "STAT" >}} | `system_stats_$v` | `postgresql-$v-system-stats` |
 | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/aquameta/meta" >}} | {{< category "STAT" >}} | `pg_meta_$v` | `postgresql-$v-pg-meta` |
 | {{< ext "pgnodemx" >}} | `1.7` | {{< badge content="Link" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< category "STAT" >}} | `pgnodemx_$v` | `postgresql-$v-pgnodemx` |
@@ -334,7 +334,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "auto_explain" >}} | `-` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/auto-explain.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "pg_stat_statements" >}} | `1.11` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/pgstatstatements.html" >}} | {{< category "STAT" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "passwordcheck_cracklib" >}} | `3.1.0` | {{< badge content="Link" link="https://github.com/devrimgunduz/passwordcheck_cracklib" >}} | {{< category "SEC" >}} | `passwordcheck_cracklib_$v` | `postgresql-$v-passwordcheck-cracklib` |
-| {{< ext "supautils" >}} | `3.0.2` | {{< badge content="Link" link="https://github.com/supabase/supautils" >}} | {{< category "SEC" >}} | `supautils_$v` | `postgresql-$v-supautils` |
+| {{< ext "supautils" >}} | `3.1.0` | {{< badge content="Link" link="https://github.com/supabase/supautils" >}} | {{< category "SEC" >}} | `supautils_$v` | `postgresql-$v-supautils` |
 | {{< ext "pgsodium" >}} | `3.1.9` | {{< badge content="Link" link="https://github.com/michelp/pgsodium" >}} | {{< category "SEC" >}} | `pgsodium_$v` | `postgresql-$v-pgsodium` |
 | {{< ext "supabase_vault" "pg_vault" >}} | `0.3.1` | {{< badge content="Link" link="https://github.com/supabase/vault" >}} | {{< category "SEC" >}} | `vault_$v` | `postgresql-$v-vault` |
 | {{< ext "pg_session_jwt" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/neondatabase/pg_session_jwt" >}} | {{< category "SEC" >}} | `pg_session_jwt_$v` | `postgresql-$v-pg-session-jwt` |

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2800** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.3` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2800** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_jsonschema` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_jsonschema` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "pg_jsonschema_18" "green" >}} {{< bg "17" "pg_jsonschema_17" "green" >}} {{< bg "16" "pg_jsonschema_16" "green" >}} {{< bg "15" "pg_jsonschema_15" "green" >}} {{< bg "14" "pg_jsonschema_14" "green" >}} {{< bg "13" "pg_jsonschema_13" "green" >}} | `pg_jsonschema_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.3` | {{< bg "18" "postgresql-18-pg-jsonschema" "green" >}} {{< bg "17" "postgresql-17-pg-jsonschema" "green" >}} {{< bg "16" "postgresql-16-pg-jsonschema" "green" >}} {{< bg "15" "postgresql-15-pg-jsonschema" "green" >}} {{< bg "14" "postgresql-14-pg-jsonschema" "green" >}} {{< bg "13" "postgresql-13-pg-jsonschema" "green" >}} | `postgresql-$v-pg-jsonschema` | - |
 

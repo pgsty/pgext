@@ -122,7 +122,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
 | 2510 | {{< alias "pg_partman" >}} | 5.4.0 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | 作为过程语言实现的数据库分区 |
-| 2530 | {{< alias "pg_strom" >}} | 6.0 | 使用GPU与NVMe加速大数据处理 |
+| 2530 | {{< alias "pg_strom" >}} | 6.1 | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
 
 ## FEAT
@@ -131,13 +131,13 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2730 | {{< alias "age" >}} | 1.6.0 | Apache AGE，图数据库扩展 （Deb可用） |
+| 2730 | {{< alias "age" >}} | 1.7.0 | Apache AGE，图数据库扩展 （Deb可用） |
 | 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
 | 2780 | {{< alias "pg_ttl_index" >}} | 2.0.0 | 基于TTL索引的自动数据过期清理 |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
-| 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | 提供JSON Schema校验能力 |
+| 2800 | {{< alias "pg_jsonschema" >}} | 0.3.4 | 提供JSON Schema校验能力 |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
 | 2820 | {{< alias "pg_hint_plan" >}} | 1.8.0 | 添加强制指定执行计划的能力 |
 | 2830 | {{< alias "hypopg" >}} | 1.4.2 | 假设索引，用于创建一个虚拟索引检验执行计划 |
@@ -145,7 +145,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2850 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | 使用执行计划代价过滤阻止特定查询语句 |
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
-| 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | 增量处理流式事件 |
+| 2880 | {{< alias "pg_incremental" >}} | 1.4.1 | 增量处理流式事件 |
 | 2890 | {{< alias "pgmq" >}} | 1.10.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
@@ -253,16 +253,16 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3610 | {{< alias "pg_xenophile" >}} | 0.8.3 | PostgreSQL i8n与l10n工具包 |
 | 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n 工具包 |
 | 3620 | {{< alias "currency" "pg_currency" >}} | 0.0.3 | 使用1字节表示的货币数据类型 |
-| 3630 | {{< alias "collection" "pgcollection" >}} | 1.1.0 | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
+| 3630 | {{< alias "collection" "pgcollection" >}} | 1.1.1 | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
 | 3700 | {{< alias "pgmp" >}} | 1.0.5 | 多精度算术扩展 |
 | 3710 | {{< alias "numeral" >}} | 1.3 | 数值类型扩展 |
 | 3720 | {{< alias "pg_rational" >}} | 0.0.2 | 使用BIGINT表示的有理数数据类型 |
 | 3730 | {{< alias "uint" "pguint" >}} | 1.20250815 | 无符号整型数据类型 |
-| 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.1.1 | 原生128位无符号整型数据类型 |
+| 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 0.1.5 | 包括SHA1，MD5在内的多种哈希数据类型 |
 | 3820 | {{< alias "ip4r" >}} | 2.4.2 | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
 | 3830 | {{< alias "pg_duration" >}} | 1.0.2 | 用于表示时间段的强化数据类型 |
-| 3840 | {{< alias "uri" "pg_uri" >}} | 1.20151224 | URI数据类型 |
+| 3840 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI数据类型 |
 | 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email地址数据类型 |
 | 3860 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL数据类型 |
 | 3870 | {{< alias "debversion" >}} | 1.2.0 | Debian版本号数据类型 |
@@ -287,7 +287,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4020 | {{< alias "bzip" "pg_bzip" >}} | 1.0.0 | BZIP压缩解压缩函数包 |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | ZSTD压缩解压缩函数包 |
 | 4070 | {{< alias "http" "pg_http" >}} | 1.7.0 | HTTP客户端，允许在数据库内收发HTTP请求 (supabase) |
-| 4080 | {{< alias "pg_net" >}} | 0.20.0 | 用 SQL 进行异步非阻塞HTTP/HTTPS 请求的扩展 (supabase) |
+| 4080 | {{< alias "pg_net" >}} | 0.20.2 | 用 SQL 进行异步非阻塞HTTP/HTTPS 请求的扩展 (supabase) |
 | 4090 | {{< alias "pg_curl" >}} | 2.4.5 | 封装CURL，执行各种用URL传输数据的操作 |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | 在临时错误中使用指数退避重试语句 |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | 在Postgres中使用jq查询JSON |
@@ -346,7 +346,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4750 | {{< alias "aggs_for_arrays" >}} | 1.3.3 | 计算数组聚合统计值的函数包 |
 | 4760 | {{< alias "pg_csv" >}} | 1.0.1 | 灵活的CSV聚合处理函数 |
 | 4770 | {{< alias "arraymath" "pg_arraymath" >}} | 1.1 | 数组逐元素数学运算符包 |
-| 4780 | {{< alias "pg_math" >}} | 1.0 | 使用GSL库的数学统计函数 |
+| 4780 | {{< alias "pg_math" >}} | 1.1.0 | 使用GSL库的数学统计函数 |
 | 4790 | {{< alias "random" "pg_random" >}} | 2.0.0 | 随机数生成器 |
 | 4800 | {{< alias "base36" "pg_base36" >}} | 1.0.0 | Base36编码解码扩展 |
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62编码解码扩展 |
@@ -382,7 +382,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | 检查和管理操作系统缓冲区缓存 |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | 从缓冲区中移除特定关系的页面 |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | 提取数据库对象的DDL |
-| 5090 | {{< alias "pglinter" >}} | 1.0.1 | PG数据库规则检查插件 |
+| 5090 | {{< alias "pglinter" >}} | 1.1.0 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | 将集群设置为只读 |
@@ -429,7 +429,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | 跟踪设置更改 |
 | 6270 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | 基于采样的等待事件统计 |
-| 6280 | {{< alias "pgsentinel" >}} | 1.3.1 | 活跃会话历史 |
+| 6280 | {{< alias "pgsentinel" >}} | 1.4.0 | 活跃会话历史 |
 | 6290 | {{< alias "system_stats" >}} | 3.2 | PostgreSQL 的系统统计函数 |
 | 6300 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | 标准化，更友好的PostgreSQL系统目录视图 |
 | 6310 | {{< alias "pgnodemx" >}} | 1.7 | 使用SQL查询获取操作系统指标 |
@@ -462,7 +462,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.1.0 | 使用cracklib加固PG用户密码 |
-| 7010 | {{< alias "supautils" >}} | 3.0.2 | 用于在云环境中确保数据库集群的安全 |
+| 7010 | {{< alias "supautils" >}} | 3.1.0 | 用于在云环境中确保数据库集群的安全 |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | 表数据加密存储 TDE |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | 使用JWT进行会话认证 |

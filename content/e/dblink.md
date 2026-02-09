@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "emaj" >}} {{< ext "mimeo" >}} {{< ext "omni_schema" >}} {{< ext "omni_test" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_profile" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} |
+|    **Need By**    | {{< ext "emaj" >}} {{< ext "mimeo" >}} {{< ext "omni_schema" >}} {{< ext "omni_test" >}} {{< ext "omni_vfs" >}} {{< ext "pg_jobmon" >}} {{< ext "pg_profile" >}} |
 |   **See Also**    | {{< ext "plproxy" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "citus" >}} {{< ext "wrappers" >}} {{< ext "pgspider_ext" >}} {{< ext "pglogical" >}} {{< ext "repmgr" >}} |
 
 

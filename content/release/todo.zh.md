@@ -7,7 +7,8 @@ weight: 700
 
 # 待办事项
 
-- citus / age official release
+- pglinter 
+- pg_jsonschema
 
 ## 候选列表
 

@@ -122,7 +122,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
 | 2510 | {{< alias "pg_partman" >}} | 5.4.0 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | Database partitioning implemented as procedural language |
-| 2530 | {{< alias "pg_strom" >}} | 6.0 | PG-Strom - big-data processing acceleration using GPU and NVME |
+| 2530 | {{< alias "pg_strom" >}} | 6.1 | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
 
 ## FEAT
@@ -131,13 +131,13 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2730 | {{< alias "age" >}} | 1.6.0 | AGE graph database extension |
+| 2730 | {{< alias "age" >}} | 1.7.0 | AGE graph database extension |
 | 2740 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2750 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
 | 2780 | {{< alias "pg_ttl_index" >}} | 2.0.0 | Automatic data expiration with TTL indexes |
 | 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
-| 2800 | {{< alias "pg_jsonschema" >}} | 0.3.3 | PostgreSQL extension providing JSON Schema validation |
+| 2800 | {{< alias "pg_jsonschema" >}} | 0.3.4 | PostgreSQL extension providing JSON Schema validation |
 | 2810 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
 | 2820 | {{< alias "pg_hint_plan" >}} | 1.8.0 | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2830 | {{< alias "hypopg" >}} | 1.4.2 | Hypothetical indexes for PostgreSQL |
@@ -145,7 +145,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2850 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | filter statements by their execution plans. |
 | 2860 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2870 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
-| 2880 | {{< alias "pg_incremental" >}} | 1.2.0 | Incremental Processing by Crunchy Data |
+| 2880 | {{< alias "pg_incremental" >}} | 1.4.1 | Incremental Processing by Crunchy Data |
 | 2890 | {{< alias "pgmq" >}} | 1.10.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2900 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB, the next generation transactional engine |
@@ -253,16 +253,16 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3610 | {{< alias "pg_xenophile" >}} | 0.8.3 | More than the bare necessities for PostgreSQL i18n and l10n. |
 | 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n toolbox |
 | 3620 | {{< alias "currency" "pg_currency" >}} | 0.0.3 | Custom PostgreSQL currency type in 1Byte |
-| 3630 | {{< alias "collection" "pgcollection" >}} | 1.1.0 | Memory optimized data type to be used inside of plpglsql func |
+| 3630 | {{< alias "collection" "pgcollection" >}} | 1.1.1 | Memory optimized data type to be used inside of plpglsql func |
 | 3700 | {{< alias "pgmp" >}} | 1.0.5 | Multiple Precision Arithmetic extension |
 | 3710 | {{< alias "numeral" >}} | 1.3 | numeral datatypes extension |
 | 3720 | {{< alias "pg_rational" >}} | 0.0.2 | bigint fractions |
 | 3730 | {{< alias "uint" "pguint" >}} | 1.20250815 | unsigned integer types |
-| 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.1.1 | Native uint128 type |
+| 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | 0.1.5 | sha1, md5 and other data types for PostgreSQL |
 | 3820 | {{< alias "ip4r" >}} | 2.4.2 | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
 | 3830 | {{< alias "pg_duration" >}} | 1.0.2 | data type for representing durations |
-| 3840 | {{< alias "uri" "pg_uri" >}} | 1.20151224 | URI Data type for PostgreSQL |
+| 3840 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI Data type for PostgreSQL |
 | 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email address type for PostgreSQL |
 | 3860 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL Data type |
 | 3870 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
@@ -287,7 +287,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4020 | {{< alias "bzip" "pg_bzip" >}} | 1.0.0 | Bzip compression and decompression |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | Zstandard compression algorithm implementation in PostgreSQL |
 | 4070 | {{< alias "http" "pg_http" >}} | 1.7.0 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
-| 4080 | {{< alias "pg_net" >}} | 0.20.0 | Async HTTP Requests |
+| 4080 | {{< alias "pg_net" >}} | 0.20.2 | Async HTTP Requests |
 | 4090 | {{< alias "pg_curl" >}} | 2.4.5 | Run curl actions for data transfer in URL syntax |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | Use jq in Postgres |
@@ -346,7 +346,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4750 | {{< alias "aggs_for_arrays" >}} | 1.3.3 | Various functions for computing statistics on arrays of numbers |
 | 4760 | {{< alias "pg_csv" >}} | 1.0.1 | Flexible CSV processing for Postgres |
 | 4770 | {{< alias "arraymath" "pg_arraymath" >}} | 1.1 | Array math and operators that work element by element on the contents of arrays |
-| 4780 | {{< alias "pg_math" >}} | 1.0 | GSL statistical functions for postgresql |
+| 4780 | {{< alias "pg_math" >}} | 1.1.0 | GSL statistical functions for postgresql |
 | 4790 | {{< alias "random" "pg_random" >}} | 2.0.0 | random data generator |
 | 4800 | {{< alias "base36" "pg_base36" >}} | 1.0.0 | Integer Base36 types |
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62 extension for PostgreSQL |
@@ -382,7 +382,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | DDL eXtractor functions |
-| 5090 | {{< alias "pglinter" >}} | 1.0.1 | PostgreSQL Linting and Analysis Extension |
+| 5090 | {{< alias "pglinter" >}} | 1.1.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | cluster database read only |
@@ -429,7 +429,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | track plan statistics of all SQL statements executed |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | Track settings changes |
 | 6270 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | sampling based statistics of wait events |
-| 6280 | {{< alias "pgsentinel" >}} | 1.3.1 | active session history |
+| 6280 | {{< alias "pgsentinel" >}} | 1.4.0 | active session history |
 | 6290 | {{< alias "system_stats" >}} | 3.2 | EnterpriseDB system statistics for PostgreSQL |
 | 6300 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | Normalized, friendlier system catalog for PostgreSQL |
 | 6310 | {{< alias "pgnodemx" >}} | 1.7 | Capture node OS metrics via SQL queries |
@@ -462,7 +462,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.1.0 | Strengthen PostgreSQL user password checks with cracklib |
-| 7010 | {{< alias "supautils" >}} | 3.0.2 | Extension that secures a cluster on a cloud environment |
+| 7010 | {{< alias "supautils" >}} | 3.1.0 | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | Manage authentication sessions using JWTs |
