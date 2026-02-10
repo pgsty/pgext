@@ -33,7 +33,7 @@ UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'duckdb_fdw');
 UPDATE pgext.pkg SET hide = true  WHERE pkg = 'pg_timeseries' AND (os ~ 'u24.*' OR os ~ 'el10.*') AND pg = 13;
 
 -- too big, non-free, heavy extensions
-UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr' ,'oracle_fdw', 'db2_fdw', 'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
+UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
 
 -- only works on postgres forks
 UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN ('orioledb', 'pg_tde' ,'babelfishpg_common', 'babelfishpg_tsql', 'babelfishpg_tds', 'babelfishpg_money');

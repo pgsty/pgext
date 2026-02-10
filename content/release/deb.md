@@ -7,28 +7,34 @@ weight: 300
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 
-## 2026-02-09
+## 2026-02-10
 
-| Package        | OLD        | NEW          | PG Versions          | bookworm | jammy | noble | trixie |
-|----------------|------------|--------------|----------------------|----------|-------|-------|--------|
-| timescaledb    | 2.24.0     | 2.25.0       | 18,17,16,15          | 4        | 4     | 4     | 4      |
-| pg_incremental | 1.2.0      | 1.4.1        | 18,17,16             | 3        | 3     | 3     | 3      |
-| pg_bigm        | 1.2        | 1.2-20250903 | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| pg_net         | 0.20.0     | 0.20.2       | 18,17,16,15,14,13    | 6        | **0** | 6     | 6      |
-| pgmq           | 1.9.0      | 1.10.0       | 18,17,16,15,14       | 5        | 5     | 5     | 5      |
-| pg_textsearch  | 0.4.0      | 0.5.0        | 18,17                | 2        | 2     | 2     | 2      |
-| pljs           | 1.0.4      | 1.0.5        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| sslutils       |            | 1.4          | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| table_version  |            | 1.11.1       | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| supautils      | 3.0.2      | 3.1.0        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| pg_math        | 1.0        | 1.1.0        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| pgsentinel     | 1.3.1      | 1.4.0        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| pg_uri         | 1.20151224 | 1.20251029   | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| pgcollection   | 1.1.0      | 1.1.1        | 18,17,16,15,14       | 5        | 5     | 5     | 5      |
-| nominatim_fdw  |            | 1.1.0        | 18,17,16,15,14       | 5        | 5     | 5     | 5      |
-| pg_utl_smtp    |            | 1.0.0        | 18,17,16,15,14       | 5        | 5     | 5     | 5      |
-| pg_readonly    |            | 1.0.4        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
-| timestamp9     |            | 1.4.0        | 18,17,16,15,14,13    | 6        | 6     | 6     | 6      |
+| Package        | OLD        | NEW          | Comment                      |
+|----------------|------------|--------------|------------------------------|
+| timescaledb    | 2.24.0     | 2.25.0       |                              |
+| pg_incremental | 1.2.0      | 1.4.1        |                              |
+| pg_bigm        | 1.2        | 1.2-20250903 |                              |
+| pg_net         | 0.20.0     | 0.20.2       | ubuntu22 libcurl too low     |
+| pgmq           | 1.9.0      | 1.10.0       |                              |
+| pg_textsearch  | 0.4.0      | 0.5.0        |                              |
+| pljs           | 1.0.4      | 1.0.5        |                              |
+| sslutils       | 1.4-1      | 1.4-2        |                              |
+| supautils      | 3.0.2      | 3.1.0        |                              |
+| pg_math        | 1.0        | 1.1.0        |                              |
+| pgsentinel     | 1.3.1      | 1.4.0        |                              |
+| pg_uri         | 1.20151224 | 1.20251029   |                              |
+| pgcollection   | 1.1.0      | 1.1.1        |                              |
+| pg_readonly    | 1.0.3      | 1.0.4        |                              |
+| timestamp9     | 1.4.0-1    | 1.4.0-2      | rebuild to fix deps          |
+| plprql         | 18.0.0     | 18.0.1       |                              |
+| pglinter       | 1.0.1      | 1.1.0        |                              |
+| pg_jsonschema  | 0.3.3      | 0.3.4        |                              |
+| pg_anon        | 2.5.1      | 3.0.0        |                              |
+| pg_search      | 0.21.4     | 0.21.6       |                              |
+| pg_graphql     | 1.5.12-1   | 1.5.12-2     | switch to official release   |
+| pg_summarize   | 0.0.1-2    | 0.0.1-3      | rebuild to fix pg18 issue    |
+| nominatim_fdw  |            | 1.1.0        | new, sync with pgdg yum repo |
+| pg_utl_smtp    |            | 1.0.0        | new, sync with pgdg yum repo |
 
 
 ## 2026-01-25
