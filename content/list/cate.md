@@ -81,7 +81,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.4 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.6 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -206,7 +206,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Hstore transform for Lua |
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua as an untrusted procedural language |
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
-| 3040 | {{< alias "plprql" >}} | 18.0.0 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
+| 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | server-side support for debugging PL/pgSQL functions |
 | 3060 | {{< alias "plpgsql_check" >}} | 2.8.8 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
@@ -466,7 +466,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | Manage authentication sessions using JWTs |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 2.5.1 | PostgreSQL Anonymizer (anon) extension |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.0 | PostgreSQL Anonymizer (anon) extension |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |

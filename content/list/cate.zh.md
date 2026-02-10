@@ -81,7 +81,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.4 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.6 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -206,7 +206,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3021 | {{< alias "hstore_pllua" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展 |
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua 程序语言（不受信任的） |
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
-| 3040 | {{< alias "plprql" >}} | 18.0.0 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
+| 3040 | {{< alias "plprql" >}} | 18.0.1 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | 用于调试 PL/pgSQL 函数的服务器端支持 |
 | 3060 | {{< alias "plpgsql_check" >}} | 2.8.8 | 对 plpgsql 函数进行扩展检查 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
@@ -466,7 +466,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | 表数据加密存储 TDE |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | 使用JWT进行会话认证 |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 2.5.1 | 数据匿名化处理工具 |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.0 | 数据匿名化处理工具 |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | PostgreSQL 加密数据类型 |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | 提供审计功能 |

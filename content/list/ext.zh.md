@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 448 | 155 | 276 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 389 |
-| **EL** | 442 | 149 | 276 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 383 |
-| **Debian** | 433 | 107 | 255 | 71 | 15 | 414 | 423 | 421 | 421 | 405 | 373 |
+| **ALL** | 448 | 155 | 276 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 387 |
+| **EL** | 442 | 149 | 276 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 381 |
+| **Debian** | 433 | 107 | 255 | 71 | 15 | 414 | 423 | 421 | 421 | 405 | 371 |
 
 ## 分类
 
@@ -334,7 +334,7 @@ comments: false
 | {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 检查和管理操作系统缓冲区缓存 |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 从缓冲区中移除特定关系的页面 |
 | {{< ext "ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 提取数据库对象的DDL |
-| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PG数据库规则检查插件 |
+| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PG数据库规则检查插件 |
 | {{< ext "prioritize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 获取和设置 PostgreSQL 后端的优先级 |
 | {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s---r" color="blue" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 将集群设置为只读 |
@@ -404,7 +404,7 @@ comments: false
 | {{< ext "pgsodium" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 表数据加密存储 TDE |
 | {{< ext "supabase_vault" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 使用JWT进行会话认证 |
-| {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 数据匿名化处理工具 |
+| {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 数据匿名化处理工具 |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 加密数据类型 |
 | {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 提供审计功能 |

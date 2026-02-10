@@ -11,9 +11,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 315 | 139 | 229 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 267 |
-| **EL** | 312 | 136 | 229 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 264 |
-| **Debian** | 300 | 92 | 208 | 0 | 76 | 283 | 294 | 290 | 291 | 281 | 251 |
+| **ALL** | 315 | 139 | 229 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 265 |
+| **EL** | 312 | 136 | 229 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 262 |
+| **Debian** | 300 | 92 | 208 | 0 | 76 | 283 | 294 | 290 | 291 | 281 | 249 |
 
 ## 分类
 
@@ -75,7 +75,7 @@ comments: false
 | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< category "RAG" >}} | `pg_tiktoken_$v` | `postgresql-$v-pg-tiktoken` |
 | {{< ext "pg4ml" >}} | `2.0` | {{< badge content="Link" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< category "RAG" >}} | `pg4ml_$v` | `postgresql-$v-pg4ml` |
 | {{< ext "pgml" >}} | `2.10.0` | {{< badge content="Link" link="https://github.com/postgresml/postgresml" >}} | {{< category "RAG" >}} | `pgml_$v` | `postgresql-$v-pgml` |
-| {{< ext "pg_search" >}} | `0.21.4` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.21.6` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.0.4` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v` | `postgresql-$v-pg-bigm` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v` | `postgresql-$v-zhparser` |
@@ -135,7 +135,7 @@ comments: false
 | {{< ext "plv8" >}} | `3.2.4` | {{< badge content="Link" link="https://github.com/plv8/plv8" >}} | {{< category "LANG" >}} | `plv8_$v` | `postgresql-$v-plv8` |
 | {{< ext "pljs" >}} | `1.0.5` | {{< badge content="Link" link="https://github.com/plv8/pljs" >}} | {{< category "LANG" >}} | `pljs_$v` | `postgresql-$v-pljs` |
 | {{< ext "pllua" >}} | `2.0.12` | {{< badge content="Link" link="https://github.com/pllua/pllua" >}} | {{< category "LANG" >}} | `pllua_$v` | `postgresql-$v-pllua` |
-| {{< ext "plprql" >}} | `18.0.0` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
+| {{< ext "plprql" >}} | `18.0.1` | {{< badge content="Link" link="https://github.com/kaspermarstal/plprql" >}} | {{< category "LANG" >}} | `plprql_$v` | `postgresql-$v-plprql` |
 | {{< ext "pldbgapi" "pldebugger" >}} | `1.9` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< category "LANG" >}} | `pldebugger_$v` | `postgresql-$v-pldebugger` |
 | {{< ext "plpgsql_check" >}} | `2.8.8` | {{< badge content="Link" link="https://github.com/okbob/plpgsql_check" >}} | {{< category "LANG" >}} | `plpgsql_check_$v` | `postgresql-$v-plpgsql-check` |
 | {{< ext "plprofiler" >}} | `4.2.5` | {{< badge content="Link" link="https://github.com/bigsql/plprofiler" >}} | {{< category "LANG" >}} | `plprofiler_$v` | `postgresql-$v-plprofiler` |
@@ -338,7 +338,7 @@ comments: false
 | {{< ext "pgsodium" >}} | `3.1.9` | {{< badge content="Link" link="https://github.com/michelp/pgsodium" >}} | {{< category "SEC" >}} | `pgsodium_$v` | `postgresql-$v-pgsodium` |
 | {{< ext "supabase_vault" "pg_vault" >}} | `0.3.1` | {{< badge content="Link" link="https://github.com/supabase/vault" >}} | {{< category "SEC" >}} | `vault_$v` | `postgresql-$v-vault` |
 | {{< ext "pg_session_jwt" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/neondatabase/pg_session_jwt" >}} | {{< category "SEC" >}} | `pg_session_jwt_$v` | `postgresql-$v-pg-session-jwt` |
-| {{< ext "anon" "pg_anon" >}} | `2.5.1` | {{< badge content="Link" link="https://gitlab.com/dalibo/postgresql_anonymizer/" >}} | {{< category "SEC" >}} | `pg_anon_$v` | `postgresql-$v-pg-anon` |
+| {{< ext "anon" "pg_anon" >}} | `3.0.0` | {{< badge content="Link" link="https://gitlab.com/dalibo/postgresql_anonymizer/" >}} | {{< category "SEC" >}} | `pg_anon_$v` | `postgresql-$v-pg-anon` |
 | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< category "SEC" >}} | `pgsmcrypto_$v` | `postgresql-$v-pgsmcrypto` |
 | {{< ext "pg_enigma" >}} | `0.5.0` | {{< badge content="Link" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< category "SEC" >}} | `pg_enigma_$v` | `postgresql-$v-enigma` |
 | {{< ext "pgaudit" >}} | `18.0` | {{< badge content="Link" link="https://github.com/pgaudit/pgaudit" >}} | {{< category "SEC" >}} | `pgaudit_$v` | `postgresql-$v-pgaudit` |

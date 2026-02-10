@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 448 | 155 | 276 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 389 |
-| **EL** | 442 | 149 | 276 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 383 |
-| **Debian** | 433 | 107 | 255 | 71 | 15 | 414 | 423 | 421 | 421 | 405 | 373 |
+| **ALL** | 448 | 155 | 276 | 71 | 0 | 429 | 437 | 436 | 436 | 420 | 387 |
+| **EL** | 442 | 149 | 276 | 71 | 6 | 419 | 430 | 430 | 430 | 414 | 381 |
+| **Debian** | 433 | 107 | 255 | 71 | 15 | 414 | 423 | 421 | 421 | 405 | 371 |
 
 ## Categories
 
@@ -334,7 +334,7 @@ There are 448 available PostgreSQL extensions:
 | {{< ext "pgfincore" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | examine and manage the os buffer cache |
 | {{< ext "pg_cooldown" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | remove buffered pages for specific relations |
 | {{< ext "ddlx" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | DDL eXtractor functions |
-| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL Linting and Analysis Extension |
+| {{< ext "pglinter" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL Linting and Analysis Extension |
 | {{< ext "prioritize" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | get and set the priority of PostgreSQL backends |
 | {{< ext "pg_checksums" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s---r" color="blue" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
 | {{< ext "pg_readonly" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | cluster database read only |
@@ -404,7 +404,7 @@ There are 448 available PostgreSQL extensions:
 | {{< ext "pgsodium" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Postgres extension for libsodium functions |
 | {{< ext "supabase_vault" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Supabase Vault Extension |
 | {{< ext "pg_session_jwt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Manage authentication sessions using JWTs |
-| {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Anonymizer (anon) extension |
+| {{< ext "anon" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Anonymizer (anon) extension |
 | {{< ext "pgsmcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL SM Algorithm Extension |
 | {{< ext "pg_enigma" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Encrypted postgres data type |
 | {{< ext "pgaudit" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | provides auditing functionality |
