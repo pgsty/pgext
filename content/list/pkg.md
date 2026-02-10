@@ -11,9 +11,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 315 | 140 | 227 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 267 |
-| **EL** | 312 | 137 | 227 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 264 |
-| **Debian** | 298 | 93 | 205 | 0 | 78 | 281 | 292 | 288 | 289 | 279 | 251 |
+| **ALL** | 315 | 139 | 229 | 0 | 0 | 298 | 308 | 305 | 306 | 296 | 267 |
+| **EL** | 312 | 136 | 229 | 0 | 64 | 292 | 304 | 302 | 303 | 293 | 264 |
+| **Debian** | 300 | 92 | 208 | 0 | 76 | 283 | 294 | 290 | 291 | 281 | 251 |
 
 ## Categories
 
@@ -374,7 +374,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pgbouncer_fdw" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pgbouncer_fdw" >}} | {{< category "FDW" >}} | `pgbouncer_fdw_$v` | - |
 | {{< ext "etcd_fdw" >}} | `0.0.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/etcd_fdw" >}} | {{< category "FDW" >}} | `etcd_fdw_$v` | `postgresql-$v-etcd-fdw` |
 | {{< ext "informix_fdw" >}} | `0.6.3` | {{< badge content="Link" link="https://github.com/credativ/informix_fdw" >}} | {{< category "FDW" >}} | `informix_fdw_$v` | - |
-| {{< ext "nominatim_fdw" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | - |
+| {{< ext "nominatim_fdw" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | `postgresql-$v-nominatim-fdw` |
 | {{< ext "mongo_fdw" >}} | `5.5.3` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mongo_fdw" >}} | {{< category "FDW" >}} | `mongo_fdw_$v` | - |
 | {{< ext "redis_fdw" >}} | `1.0` | {{< badge content="Link" link="https://github.com/pg-redis-fdw/redis_fdw" >}} | {{< category "FDW" >}} | `redis_fdw_$v` | `postgresql-$v-redis-fdw` |
 | {{< ext "redis" "pg_redis_pubsub" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/brettlaforge/pg_redis_pubsub" >}} | {{< category "FDW" >}} | `pg_redis_pubsub_$v` | `postgresql-$v-pg-redis-pubsub` |
@@ -395,7 +395,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pg_dbms_lock" >}} | `1.0` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_lock" >}} | {{< category "SIM" >}} | `pg_dbms_lock_$v` | - |
 | {{< ext "pg_dbms_job" >}} | `1.5` | {{< badge content="Link" link="https://github.com/MigOpsRepos/pg_dbms_job" >}} | {{< category "SIM" >}} | `pg_dbms_job_$v` | - |
 | {{< ext "pg_dbms_errlog" >}} | `2.2` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_errlog" >}} | {{< category "SIM" >}} | `pg_dbms_errlog_$v` | - |
-| {{< ext "pg_utl_smtp" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< category "SIM" >}} | `pg_utl_smtp_$v` | - |
+| {{< ext "pg_utl_smtp" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< category "SIM" >}} | `pg_utl_smtp_$v` | `postgresql-$v-utl-smtp` |
 | {{< ext "babelfishpg_common" >}} | `3.3.3` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-common` | `babelfishpg-common` |
 | {{< ext "babelfishpg_tsql" >}} | `3.3.1` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-tsql` | `babelfishpg-tsql` |
 | {{< ext "babelfishpg_tds" >}} | `1.0.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-tds` | `babelfishpg-tds` |

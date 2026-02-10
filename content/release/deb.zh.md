@@ -6,6 +6,30 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+
+## 2026-02-09
+
+| 名称             | 旧版本        | 新版本          | 备注                       |
+|:---------------|:-----------|:-------------|:-------------------------|
+| timescaledb    | 2.24.0     | 2.25.0       |                          |
+| pg_incremental | 1.2.0      | 1.4.1        |                          |
+| pg_bigm        | 1.2        | 1.2-20250903 |                          |
+| pg_net         | 0.20.0     | 0.20.2       | ubuntu22 libcurl too low |
+| pgmq           | 1.9.0      | 1.10.0       |                          |
+| pg_textsearch  | 0.4.0      | 0.5.0        |                          |
+| pljs           | 1.0.4      | 1.0.5        |                          |
+| table_version  | 1.11.0     | 1.11.1       |                          |
+| supautils      | 3.0.2      | 3.1.0        |                          |
+| pg_math        | 1.0        | 1.1.0        |                          |
+| pgsentinel     | 1.3.1      | 1.4.0        |                          |
+| pg_uri         | 1.20151224 | 1.20251029   |                          |
+| pgcollection   | 1.1.0      | 1.1.1        | patched version          |
+| nominatim_fdw  | -          | 1.1.0        |                          |
+| pg_utl_smtp    |            | 1.0.0        |                          |
+| pg_readonly    |            | 1.0.4        |                          |
+| timestamp9     |            | 1.4.0        |                          |
+
+
 ## 2026-01-25
 
 | 名称            | 旧版本            | 新版本            | 备注        |

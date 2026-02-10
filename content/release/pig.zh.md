@@ -5,6 +5,14 @@ weight: 100
 breadcrumbs: false
 ---
 
+
+## v1.1.0 (beta)
+
+- 扩展数量达到 448 个
+- 命令行工具 Agent Native 改造
+
+
+
 ## v1.0.0
 
 - 扩展数量达到 444 个，新增 etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen
