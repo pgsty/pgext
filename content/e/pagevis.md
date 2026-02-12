@@ -2,7 +2,7 @@
 title: "pagevis"
 linkTitle: "pagevis"
 description: "Visualise database pages in ascii code"
-weight: 6800
+weight: 6860
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6800** | {{< badge content="pagevis" link="https://github.com/hollobon/pagevis" >}} | {{< ext "pagevis" >}} | `0.1` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
+| **6860** | {{< badge content="pagevis" link="https://github.com/hollobon/pagevis" >}} | {{< ext "pagevis" >}} | `0.1` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "pg_sqlog"
 linkTitle: "pg_sqlog"
 description: "Provide SQL interface to logs"
-weight: 6330
+weight: 6500
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6330** | {{< badge content="pg_sqlog" link="https://github.com/kouber/pg_sqlog" >}} | {{< ext "pg_sqlog" >}} | `1.6` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
+| **6500** | {{< badge content="pg_sqlog" link="https://github.com/kouber/pg_sqlog" >}} | {{< ext "pg_sqlog" >}} | `1.6` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

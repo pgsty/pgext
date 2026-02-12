@@ -2,7 +2,7 @@
 title: "plan_filter"
 linkTitle: "plan_filter"
 description: "filter statements by their execution plans."
-weight: 2850
+weight: 2810
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2850** | {{< badge content="plan_filter" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2810** | {{< badge content="plan_filter" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

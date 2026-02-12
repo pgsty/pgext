@@ -2,7 +2,7 @@
 title: "pgmeminfo"
 linkTitle: "pgmeminfo"
 description: "show memory usage"
-weight: 6350
+weight: 6520
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6350** | {{< badge content="pgmeminfo" link="https://github.com/okbob/pgmeminfo" >}} | {{< ext "pgmeminfo" >}} | `1.0.0` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **6520** | {{< badge content="pgmeminfo" link="https://github.com/okbob/pgmeminfo" >}} | {{< ext "pgmeminfo" >}} | `1.0.0` | {{< category "STAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

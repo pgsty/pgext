@@ -2,7 +2,7 @@
 title: "pg_ttl_index"
 linkTitle: "pg_ttl_index"
 description: "Automatic data expiration with TTL indexes"
-weight: 2780
+weight: 2740
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2780** | {{< badge content="pg_ttl_index" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< ext "pg_ttl_index" >}} | `2.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2740** | {{< badge content="pg_ttl_index" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< ext "pg_ttl_index" >}} | `2.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -67,14 +67,14 @@ width: full
 | `pg_ttl_index_18` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.2 KiB | [pg_ttl_index_18-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_ttl_index_18-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_ttl_index_18` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.2 KiB | [pg_ttl_index_18-2.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_ttl_index_18-2.0.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_ttl_index_18` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.4 KiB | [pg_ttl_index_18-2.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_ttl_index_18-2.0.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 15.2 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.2 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 15.2 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 15.3 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 15.2 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 15.1 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 15.2 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.0 KiB | [postgresql-18-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.0 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.9 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.0 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.0 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.8 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.9 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb) |
+| `postgresql-18-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.7 KiB | [postgresql-18-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -87,14 +87,14 @@ width: full
 | `pg_ttl_index_17` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.2 KiB | [pg_ttl_index_17-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_ttl_index_17-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_ttl_index_17` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.2 KiB | [pg_ttl_index_17-2.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_ttl_index_17-2.0.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_ttl_index_17` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.4 KiB | [pg_ttl_index_17-2.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_ttl_index_17-2.0.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 15.1 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 15.2 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.0 KiB | [postgresql-17-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.0 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.9 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.0 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.9 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.8 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.9 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb) |
+| `postgresql-17-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.7 KiB | [postgresql-17-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -107,14 +107,14 @@ width: full
 | `pg_ttl_index_16` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.2 KiB | [pg_ttl_index_16-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_ttl_index_16-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_ttl_index_16` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.2 KiB | [pg_ttl_index_16-2.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_ttl_index_16-2.0.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_ttl_index_16` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.4 KiB | [pg_ttl_index_16-2.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_ttl_index_16-2.0.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 15.3 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.2 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 15.2 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 15.2 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 15.2 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 15.1 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 15.2 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.0 KiB | [postgresql-16-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.0 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.9 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.0 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.0 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.9 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.8 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.9 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb) |
+| `postgresql-16-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.7 KiB | [postgresql-16-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -127,14 +127,14 @@ width: full
 | `pg_ttl_index_15` | `2.0.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 21.5 KiB | [pg_ttl_index_15-2.0.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_ttl_index_15-2.0.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_ttl_index_15` | `2.0.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 21.6 KiB | [pg_ttl_index_15-2.0.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_ttl_index_15-2.0.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_ttl_index_15` | `2.0.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 21.7 KiB | [pg_ttl_index_15-2.0.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_ttl_index_15-2.0.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 15.4 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.3 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 15.4 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 15.4 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 15.5 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 15.3 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 15.5 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 15.3 KiB | [postgresql-15-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 12.3 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 12.3 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~noble_amd64.deb) |
+| `postgresql-15-ttl-index` | `2.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 12.1 KiB | [postgresql-15-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-15-ttl-index_2.0.0-2PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}

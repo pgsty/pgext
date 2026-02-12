@@ -2,7 +2,7 @@
 title: "pg_ai_query"
 linkTitle: "pg_ai_query"
 description: "AI-powered SQL query generation for PostgreSQL"
-weight: 2760
+weight: 2730
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2760** | {{< badge content="pg_ai_query" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+| **2730** | {{< badge content="pg_ai_query" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

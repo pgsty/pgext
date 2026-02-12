@@ -2,7 +2,7 @@
 title: "pg_jsonschema"
 linkTitle: "pg_jsonschema"
 description: "PostgreSQL extension providing JSON Schema validation"
-weight: 2800
+weight: 2760
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2800** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2760** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

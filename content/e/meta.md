@@ -2,7 +2,7 @@
 title: "meta"
 linkTitle: "meta"
 description: "Normalized, friendlier system catalog for PostgreSQL"
-weight: 6300
+weight: 6430
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6300** | {{< badge content="meta" link="https://github.com/aquameta/meta" >}} | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< category "STAT" >}} | {{< license "BSD 2-Clause" >}} | {{< language "SQL" >}} |
+| **6430** | {{< badge content="meta" link="https://github.com/aquameta/meta" >}} | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< category "STAT" >}} | {{< license "BSD 2-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

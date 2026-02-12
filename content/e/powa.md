@@ -2,7 +2,7 @@
 title: "powa"
 linkTitle: "powa"
 description: "PostgreSQL Workload Analyser-core"
-weight: 6810
+weight: 6870
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6810** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.1.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **6870** | {{< badge content="powa" link="https://github.com/powa-team/powa" >}} | {{< ext "powa" >}} | `5.1.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

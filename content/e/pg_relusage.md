@@ -2,7 +2,7 @@
 title: "pg_relusage"
 linkTitle: "pg_relusage"
 description: "Log all the queries that reference a particular column"
-weight: 6380
+weight: 6850
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6380** | {{< badge content="pg_relusage" link="https://github.com/adept/pg_relusage" >}} | {{< ext "pg_relusage" >}} | `0.0.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6850** | {{< badge content="pg_relusage" link="https://github.com/adept/pg_relusage" >}} | {{< ext "pg_relusage" >}} | `0.0.1` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

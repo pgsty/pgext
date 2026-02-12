@@ -10,6 +10,8 @@ breadcrumbs: false
 
 This release focuses on an Agent-native architecture upgrade from `v1.0.0` to `v1.1.0`.
 
+Add 7 new extensions, now provide 451 extensions.
+
 **New Features**
 
 - Introduce unified structured output with global `--output` (`text`, `yaml`, `json`, `json-pretty`) across major command groups.
@@ -24,6 +26,7 @@ This release focuses on an Agent-native architecture upgrade from `v1.0.0` to `v
 - `pig pb info` now embeds native pgBackRest info JSON in structured output.
 - Add legacy structured-output wrapper for existing command groups (`pg_exporter`, `pg_probe`, `do`, `sty`) for better automation compatibility.
 - Routine extension catalog updates, including several Rust extension updates.
+- Update pigsty version to v4.1.0
 
 **Bug Fixes**
 
@@ -44,6 +47,8 @@ This release focuses on an Agent-native architecture upgrade from `v1.0.0` to `v
 ```
 
 Release: https://github.com/pgsty/pig/releases/tag/v1.1.0
+
+
 
 
 ## v1.0.0

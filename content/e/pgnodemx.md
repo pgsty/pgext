@@ -2,7 +2,7 @@
 title: "pgnodemx"
 linkTitle: "pgnodemx"
 description: "Capture node OS metrics via SQL queries"
-weight: 6310
+weight: 6440
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6310** | {{< badge content="pgnodemx" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< ext "pgnodemx" >}} | `1.7` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **6440** | {{< badge content="pgnodemx" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< ext "pgnodemx" >}} | `1.7` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

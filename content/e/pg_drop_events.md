@@ -2,7 +2,7 @@
 title: "pg_drop_events"
 linkTitle: "pg_drop_events"
 description: "logs transaction ids of drop table, drop column, drop materialized view statements"
-weight: 5830
+weight: 5850
 categories: ["ADMIN"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5830** | {{< badge content="pg_drop_events" link="https://github.com/bolajiwahab/pg_drop_events" >}} | {{< ext "pg_drop_events" >}} | `0.1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **5850** | {{< badge content="pg_drop_events" link="https://github.com/bolajiwahab/pg_drop_events" >}} | {{< ext "pg_drop_events" >}} | `0.1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

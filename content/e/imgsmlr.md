@@ -2,7 +2,7 @@
 title: "imgsmlr"
 linkTitle: "imgsmlr"
 description: "Image similarity with haar"
-weight: 2860
+weight: 2830
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2860** | {{< badge content="imgsmlr" link="https://github.com/postgrespro/imgsmlr" >}} | {{< ext "imgsmlr" >}} | `1.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2830** | {{< badge content="imgsmlr" link="https://github.com/postgrespro/imgsmlr" >}} | {{< ext "imgsmlr" >}} | `1.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

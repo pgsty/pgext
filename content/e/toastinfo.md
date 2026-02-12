@@ -2,7 +2,7 @@
 title: "toastinfo"
 linkTitle: "toastinfo"
 description: "show details on toasted datums"
-weight: 6360
+weight: 6530
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6360** | {{< badge content="toastinfo" link="https://github.com/credativ/toastinfo" >}} | {{< ext "toastinfo" >}} | `1.5` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6530** | {{< badge content="toastinfo" link="https://github.com/credativ/toastinfo" >}} | {{< ext "toastinfo" >}} | `1.5` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

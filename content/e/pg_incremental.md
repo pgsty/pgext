@@ -2,7 +2,7 @@
 title: "pg_incremental"
 linkTitle: "pg_incremental"
 description: "Incremental Processing by Crunchy Data"
-weight: 2880
+weight: 2850
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2880** | {{< badge content="pg_incremental" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< ext "pg_incremental" >}} | `1.4.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2850** | {{< badge content="pg_incremental" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< ext "pg_incremental" >}} | `1.4.1` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "jsquery"
 linkTitle: "jsquery"
 description: "data type for jsonb inspection"
-weight: 2810
+weight: 2770
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2810** | {{< badge content="jsquery" link="https://github.com/postgrespro/jsquery" >}} | {{< ext "jsquery" >}} | `1.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2770** | {{< badge content="jsquery" link="https://github.com/postgrespro/jsquery" >}} | {{< ext "jsquery" >}} | `1.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

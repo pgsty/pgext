@@ -2,7 +2,7 @@
 title: "hypopg"
 linkTitle: "hypopg"
 description: "Hypothetical indexes for PostgreSQL"
-weight: 2830
+weight: 2790
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2830** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2790** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

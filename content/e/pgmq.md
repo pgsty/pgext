@@ -2,7 +2,7 @@
 title: "pgmq"
 linkTitle: "pgmq"
 description: "A lightweight message queue. Like AWS SQS and RSMQ but on Postgres."
-weight: 2890
+weight: 2880
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2890** | {{< badge content="pgmq" link="https://github.com/pgmq/pgmq" >}} | {{< ext "pgmq" >}} | `1.10.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **2880** | {{< badge content="pgmq" link="https://github.com/pgmq/pgmq" >}} | {{< ext "pgmq" >}} | `1.10.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -63,7 +63,7 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_18` | `1.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 34.6 KiB | [pgmq_18-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_18-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_18` | `1.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 34.6 KiB | [pgmq_18-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_18-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_18` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.1 KiB | [pgmq_18-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgmq_18` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.2 KiB | [pgmq_18-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_18-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_18` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 33.1 KiB | [pgmq_18-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_18-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_18` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 33.3 KiB | [pgmq_18-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_18-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_18` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 33.2 KiB | [pgmq_18-1.10.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_18-1.10.0-1PIGSTY.el10.aarch64.rpm) |
@@ -83,7 +83,7 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_17` | `1.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 34.6 KiB | [pgmq_17-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_17-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_17` | `1.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 34.6 KiB | [pgmq_17-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_17-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_17` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.1 KiB | [pgmq_17-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgmq_17` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.2 KiB | [pgmq_17-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_17-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_17` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 33.1 KiB | [pgmq_17-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_17-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_17` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 33.3 KiB | [pgmq_17-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_17-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_17` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 33.2 KiB | [pgmq_17-1.10.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_17-1.10.0-1PIGSTY.el10.aarch64.rpm) |
@@ -103,7 +103,7 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_16` | `1.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 34.6 KiB | [pgmq_16-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_16-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_16` | `1.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 34.6 KiB | [pgmq_16-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_16-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_16` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.1 KiB | [pgmq_16-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgmq_16` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.2 KiB | [pgmq_16-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_16-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_16` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 33.1 KiB | [pgmq_16-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_16-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_16` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 33.3 KiB | [pgmq_16-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_16-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_16` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 33.2 KiB | [pgmq_16-1.10.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_16-1.10.0-1PIGSTY.el10.aarch64.rpm) |
@@ -123,7 +123,7 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_15` | `1.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 34.6 KiB | [pgmq_15-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_15-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_15` | `1.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 34.6 KiB | [pgmq_15-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_15-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_15` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.1 KiB | [pgmq_15-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgmq_15` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.2 KiB | [pgmq_15-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_15-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_15` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 33.1 KiB | [pgmq_15-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_15-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_15` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 33.3 KiB | [pgmq_15-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_15-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_15` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 33.2 KiB | [pgmq_15-1.10.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_15-1.10.0-1PIGSTY.el10.aarch64.rpm) |
@@ -143,7 +143,7 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgmq_14` | `1.10.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 34.6 KiB | [pgmq_14-1.10.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgmq_14-1.10.0-1PIGSTY.el8.x86_64.rpm) |
 | `pgmq_14` | `1.10.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 34.6 KiB | [pgmq_14-1.10.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgmq_14-1.10.0-1PIGSTY.el8.aarch64.rpm) |
-| `pgmq_14` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.1 KiB | [pgmq_14-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.10.0-1PIGSTY.el9.x86_64.rpm) |
+| `pgmq_14` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 33.2 KiB | [pgmq_14-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgmq_14-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `pgmq_14` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 33.1 KiB | [pgmq_14-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgmq_14-1.10.0-1PIGSTY.el9.aarch64.rpm) |
 | `pgmq_14` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 33.3 KiB | [pgmq_14-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgmq_14-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `pgmq_14` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 33.2 KiB | [pgmq_14-1.10.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgmq_14-1.10.0-1PIGSTY.el10.aarch64.rpm) |

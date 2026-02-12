@@ -2,7 +2,7 @@
 title: "bgw_replstatus"
 linkTitle: "bgw_replstatus"
 description: "Small PostgreSQL background worker to report whether a node is a replication master or standby"
-weight: 6340
+weight: 6510
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6340** | {{< badge content="bgw_replstatus" link="https://github.com/mhagander/bgw_replstatus" >}} | {{< ext "bgw_replstatus" >}} | `1.0.8` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6510** | {{< badge content="bgw_replstatus" link="https://github.com/mhagander/bgw_replstatus" >}} | {{< ext "bgw_replstatus" >}} | `1.0.8` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "table_log"
 linkTitle: "table_log"
 description: "record table modification logs and PITR for table/row"
-weight: 5840
+weight: 5860
 categories: ["ADMIN"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5840** | {{< badge content="table_log" link="https://github.com/df7cb/table_log" >}} | {{< ext "table_log" >}} | `0.6.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **5860** | {{< badge content="table_log" link="https://github.com/df7cb/table_log" >}} | {{< ext "table_log" >}} | `0.6.4` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -2,7 +2,7 @@
 title: "pg_hint_plan"
 linkTitle: "pg_hint_plan"
 description: "Give PostgreSQL ability to manually force some decisions in execution plans."
-weight: 2820
+weight: 2780
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2820** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< category "FEAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **2780** | {{< badge content="pg_hint_plan" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< category "FEAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

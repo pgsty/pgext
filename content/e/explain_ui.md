@@ -2,7 +2,7 @@
 title: "explain_ui"
 linkTitle: "explain_ui"
 description: "easily jump into a visual plan UI for any SQL query"
-weight: 6370
+weight: 6540
 categories: ["STAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6370** | {{< badge content="explain_ui" link="https://github.com/davidgomes/pg-explain-ui" >}} | {{< ext "explain_ui" "pg_explain_ui" >}} | `0.0.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
+| **6540** | {{< badge content="explain_ui" link="https://github.com/davidgomes/pg-explain-ui" >}} | {{< ext "explain_ui" "pg_explain_ui" >}} | `0.0.2` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
