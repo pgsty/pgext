@@ -466,7 +466,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | 表数据加密存储 TDE |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | 使用JWT进行会话认证 |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.0 | 数据匿名化处理工具 |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.1 | 数据匿名化处理工具 |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | PostgreSQL 加密数据类型 |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | 提供审计功能 |

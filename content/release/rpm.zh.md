@@ -29,7 +29,7 @@ weight: 200
 | plprql           | 18.0.0       | 18.0.1       |                           |
 | pglinter         | 1.0.1        | 1.1.0        |                           |
 | pg_jsonschema    | 0.3.3        | 0.3.4        |                           |
-| pg_anon          | 2.5.1        | 3.0.0        |                           |
+| pg_anon          | 2.5.1        | 3.0.1        |                           |
 | pg_search        | 0.21.4       | 0.21.6       | 针对 el8 手工构建               |
 | pg_graphql       | 1.5.12-1     | 1.5.12-2     | 切换至官方版本                   |
 | nominatim_fdw    |              | 1.1.0        | new, build by pgdg        |

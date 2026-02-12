@@ -466,7 +466,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7040 | {{< alias "pg_session_jwt" >}} | 0.4.0 | Manage authentication sessions using JWTs |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.0 | PostgreSQL Anonymizer (anon) extension |
+| 7050 | {{< alias "anon" "pg_anon" >}} | 3.0.1 | PostgreSQL Anonymizer (anon) extension |
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |

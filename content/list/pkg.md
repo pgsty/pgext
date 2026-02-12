@@ -338,7 +338,7 @@ There are 315 available PostgreSQL packages:
 | {{< ext "pgsodium" >}} | `3.1.9` | {{< badge content="Link" link="https://github.com/michelp/pgsodium" >}} | {{< category "SEC" >}} | `pgsodium_$v` | `postgresql-$v-pgsodium` |
 | {{< ext "supabase_vault" "pg_vault" >}} | `0.3.1` | {{< badge content="Link" link="https://github.com/supabase/vault" >}} | {{< category "SEC" >}} | `vault_$v` | `postgresql-$v-vault` |
 | {{< ext "pg_session_jwt" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/neondatabase/pg_session_jwt" >}} | {{< category "SEC" >}} | `pg_session_jwt_$v` | `postgresql-$v-pg-session-jwt` |
-| {{< ext "anon" "pg_anon" >}} | `3.0.0` | {{< badge content="Link" link="https://gitlab.com/dalibo/postgresql_anonymizer/" >}} | {{< category "SEC" >}} | `pg_anon_$v` | `postgresql-$v-pg-anon` |
+| {{< ext "anon" "pg_anon" >}} | `3.0.1` | {{< badge content="Link" link="https://gitlab.com/dalibo/postgresql_anonymizer/" >}} | {{< category "SEC" >}} | `pg_anon_$v` | `postgresql-$v-pg-anon` |
 | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< category "SEC" >}} | `pgsmcrypto_$v` | `postgresql-$v-pgsmcrypto` |
 | {{< ext "pg_enigma" >}} | `0.5.0` | {{< badge content="Link" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< category "SEC" >}} | `pg_enigma_$v` | `postgresql-$v-enigma` |
 | {{< ext "pgaudit" >}} | `18.0` | {{< badge content="Link" link="https://github.com/pgaudit/pgaudit" >}} | {{< category "SEC" >}} | `pgaudit_$v` | `postgresql-$v-pgaudit` |
