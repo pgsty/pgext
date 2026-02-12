@@ -30,6 +30,7 @@ weight: 300
 | pglinter       | 1.0.1      | 1.1.0        |                       |
 | pg_jsonschema  | 0.3.3      | 0.3.4        |                       |
 | pg_anon        | 2.5.1      | 3.0.1        |                       |
+| vchord         | 1.0.0      | 1.1.0        |                       |
 | pg_search      | 0.21.4     | 0.21.6       |                       |
 | pg_graphql     | 1.5.12-1   | 1.5.12-2     | 切换至官方 release         |
 | pg_summarize   | 0.0.1-2    | 0.0.1-3      | 重新构建，修复 pg18 问题       |

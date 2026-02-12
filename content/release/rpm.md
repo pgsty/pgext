@@ -30,6 +30,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pglinter         | 1.0.1        | 1.1.0        |                            |
 | pg_jsonschema    | 0.3.3        | 0.3.4        |                            |
 | pg_anon          | 2.5.1        | 3.0.1        |                            |
+| vchord           | 1.0.0        | 1.1.0        |                            |
 | pg_search        | 0.21.4       | 0.21.6       | build for el8              |
 | pg_graphql       | 1.5.12-1     | 1.5.12-2     | switch to official release |
 | nominatim_fdw    |              | 1.1.0        | new, build by pgdg         |

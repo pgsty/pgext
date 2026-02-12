@@ -6,11 +6,44 @@ breadcrumbs: false
 ---
 
 
-## v1.1.0 (beta)
+## v1.1.0
 
-- 扩展数量达到 448 个
-- 命令行工具 Agent Native 改造
+本版本聚焦于从 `v1.0.0` 到 `v1.1.0` 的 Agent-native 架构升级。
 
+**新功能**
+
+- 引入全局统一结构化输出 `--output`（`text` / `yaml` / `json` / `json-pretty`），覆盖主要命令组。
+- 引入 ANCS（Agent Native Command Schema）命令元数据，为 Agent 提供机器可读的能力与风险语义。
+- 新增 `pig context`（`pig ctx`）环境快照命令，一次聚合主机、PostgreSQL、Patroni、pgBackRest、扩展信息。
+- 为高风险操作扩展 `--plan` 模式：
+  - `pig ext add/rm --plan`
+  - `pig pg stop/restart --plan`
+  - `pig pt switchover/failover --plan`
+  - 并与 `pig pitr --plan/--dry-run` 保持一致
+- 强化 `ext/repo/pg/pt/pb/pitr/status/version/context` 结构化结果覆盖，并统一稳定状态码。
+- `pig pb info` 在结构化输出中可嵌入 pgBackRest 原生 info JSON。
+- 为 `pg_exporter`、`pg_probe`、`do`、`sty` 等存量命令补充 legacy structured wrapper，提升自动化兼容性。
+- 例行扩展目录更新，包含一批 Rust 扩展更新。
+
+**Bug 修复**
+
+- 修复 `pig build proxy` 在异常代理地址输入下的解析 panic。
+- 修复 `pig pg log` 日志文件访问中的路径穿越风险。
+- 加固 installer/repo 路径处理与引号处理逻辑。
+- 修复构建流水线在下载/构建失败时的错误透传与非零退出码行为。
+- 修复 `pg_ver` 不匹配导致的 DEB 构建误报失败问题。
+- 修复 `repo add/set/rm` 在缓存更新失败时返回码不正确问题。
+- 修复 `ext/repo reload` 的静默镜像回退逻辑。
+- 修复扩展更新行为（仅显式目标更新与状态漂移问题）。
+- 修复 `ext import`，将请求的 DEB 包下载到目标 repo 目录。
+
+**校验和**
+
+```bash
+
+```
+
+发布：https://github.com/pgsty/pig/releases/tag/v1.1.0
 
 
 ## v1.0.0

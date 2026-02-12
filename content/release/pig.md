@@ -6,6 +6,46 @@ breadcrumbs: false
 ---
 
 
+## v1.1.0
+
+This release focuses on an Agent-native architecture upgrade from `v1.0.0` to `v1.1.0`.
+
+**New Features**
+
+- Introduce unified structured output with global `--output` (`text`, `yaml`, `json`, `json-pretty`) across major command groups.
+- Add ANCS (Agent Native Command Schema) metadata for commands, including machine-readable capability/risk semantics.
+- Add `pig context` (`pig ctx`) for one-shot environment snapshot (host, PostgreSQL, Patroni, pgBackRest, extensions).
+- Expand `--plan` mode for risky operations:
+  - `pig ext add/rm --plan`
+  - `pig pg stop/restart --plan`
+  - `pig pt switchover/failover --plan`
+  - aligned with `pig pitr --plan/--dry-run`
+- Improve structured result coverage for `ext/repo/pg/pt/pb/pitr/status/version/context`, with stable status codes.
+- `pig pb info` now embeds native pgBackRest info JSON in structured output.
+- Add legacy structured-output wrapper for existing command groups (`pg_exporter`, `pg_probe`, `do`, `sty`) for better automation compatibility.
+- Routine extension catalog updates, including several Rust extension updates.
+
+**Bug Fixes**
+
+- Fix panic in `pig build proxy` when parsing malformed proxy addresses.
+- Fix path traversal risk in `pig pg log` file access.
+- Harden installer/repo path handling and quoting behavior.
+- Fix build pipeline error propagation and non-zero exit behavior for download/build failures.
+- Fix false DEB build failures caused by `pg_ver` mismatch.
+- Fix `repo add/set/rm` to return proper non-zero status when cache update fails.
+- Fix `ext/repo reload` with quiet mirror fallback.
+- Fix extension update behavior (explicit-only update + status drift issues).
+- Fix `ext import` to download requested DEB packages into target repo directory.
+
+**Checksums**
+
+```bash
+
+```
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.1.0
+
+
 ## v1.0.0
 
 - Extension count reaches 444, adding etcd_fdw, pg_ttl_index, documentdb_extended_rum, mobilitydb_datagen

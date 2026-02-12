@@ -20,11 +20,12 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0)。
+当前 `pig` 最新稳定版本为：[v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0)。
 
 | 版本                             |     日期     | 摘要                                |                           GitHub                           |
 |:-------------------------------|:----------:|-----------------------------------|:----------------------------------------------------------:|
-| [v1.0.0](/zh/release/pig#v090) | 2026-01-18 | 444 扩展，可用性矩阵，`pig ext` 强化         | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
+| [v1.1.0](/zh/release/pig#v110) | 2026-02-12 | Agent-native 输出框架，新增 context 与 plan 模式 | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
+| [v1.0.0](/zh/release/pig#v100) | 2026-01-18 | 444 扩展，可用性矩阵，`pig ext` 强化         | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
 | [v0.9.0](/zh/release/pig#v090) | 2025-12-28 | pig sty 子命令强化，修复 YUM 仓库问题         | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
 | [v0.8.0](/zh/release/pig#v080) | 2025-12-16 | 440 个扩展，Pigsty v4，例行修复            | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/zh/release/pig#v075) | 2025-12-15 | 例行扩展更新，使用阿里云镜像仓库                  | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
@@ -53,5 +54,4 @@ weight: 800
 | [v0.1.1](/zh/release/pig#v011) | 2025-01-09 | 更新扩展列表                            | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](/zh/release/pig#v010) | 2024-12-29 | repo、ext、sty 和自更新                 | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](/zh/release/pig#v001) | 2024-12-23 | 创世发布                              | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
-
 
