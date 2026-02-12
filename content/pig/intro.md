@@ -10,7 +10,7 @@ Ever wished installing or upgrading PostgreSQL extensions didn’t feel like dig
 The painful truth is that Postgres’s richness of extension often comes at the cost of complicated setups—especially if you’re juggling multiple distros or CPU architectures.
 
 
-Enter **Pig**, a Go-based package manager built to tame Postgres and its ecosystem of [448+](/list) extensions in one fell swoop.
+Enter **Pig**, a Go-based package manager built to tame Postgres and its ecosystem of [444+](/list) extensions in one fell swoop.
 TimescaleDB, Citus, PGVector, 20+ Rust extensions, plus every must-have pieces to [Self-hosting Supabase](https://doc.pgsty.com/app/supabase) —
 Pig’s unified CLI makes them all effortlessly accessible. It cuts out messy source builds and half-baked repos,
 offering version-aligned RPM / DEB packages that work seamlessly across Debian, Ubuntu, and RedHat flavors Linuxl, as well as x86 & ARM arch. No guesswork, no drama.
@@ -19,7 +19,7 @@ Instead of reinventing the wheel, Pig piggyback your system’s native package m
 That means you don’t have to choose between "the right way" and "the quick way"; Pig respects your existing repos, aligns with standard OS best practices, and fits neatly alongside other packages you already use.
 And if your favorite linux distro is not [listed here](/os), you can even [`pig build`](/pig/cmd/build) them from src in no time. 
 
-Ready to give your Postgres superpowers without the usual hassle? Check out [GitHub](https://github.com/pgsty/pig) And [official site](https://pig.pgsty.com) for documentation,
+Ready to give your Postgres superpowers without the usual hassle? Check out [GitHub](https://github.com/pgsty/pig) And [official site](https://pigsty.io/docs/pig) for documentation,
 installation steps, and a peek at its massive [extension list](/list/). Then, watch your local Postgres instance transform into a powerhouse of specialized modules.
 
 If [the future of Postgres is unstoppable extensibility](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4),

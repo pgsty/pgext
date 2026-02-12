@@ -338,7 +338,7 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.6.2
 ## v0.6.1
 
 - Add el10 and debian 13 trixie support stub
-- Dedicate website: https://pig.pgsty.com
+- Dedicate website: https://pigsty.io/docs/pig
 - rebuild with go 1.25 and CI/CD pipeline
 - Use the PIGSTY mirror in mainland china due to pgdg ftp rsync mirror break
 - Remove unused `pgdg-el10fix` repo
@@ -675,7 +675,7 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.3.1
 
 ## v0.3.0
 
-The [`pig`](/pig/) project now has a new [homepage](https://pig.pgsty.com), alone with the PostgreSQL Extension [Catalog](https://ext.pgsty.com/list).
+The [`pig`](/pig/) project now has a new [homepage](https://pigsty.io/docs/pig), alone with the PostgreSQL Extension [Catalog](https://ext.pgsty.com/list).
 
 ```bash
 curl https://repo.pigsty.io/pig | bash    # cloudflare
@@ -687,7 +687,7 @@ pig v0.3 is also embedded & shipped with the latest Pigsty [v3.3.0](https://doc.
 
 **New Features**
 
-`pig build` subcommand with the [ability](https://pig.pgsty.com/cmd/build/) to set up extension building environment
+`pig build` subcommand with the [ability](https://pigsty.io/docs/pig/build/) to set up extension building environment
 
 ```bash
 pig build repo     # init build repo (=repo set -ru)

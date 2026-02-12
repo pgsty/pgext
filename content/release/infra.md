@@ -6,6 +6,17 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-02-12
+
+| Name                 | Old     | New     | Comment |
+|:---------------------|:--------|:--------|:--------|
+| alertmanager         | 0.31.0  | 0.31.1  |         |
+| tigerbeetle          | 0.16.70 | 0.16.72 |         |
+| grafana-infinity-ds  | 3.7.0   | 3.7.1   |         |
+| nodejs               | 24.13.0 | 24.13.1 |         |
+| opencode             | 1.1.53  | 1.1.59  |         |
+| golang               | 1.25.7  | 1.26.0  |         |
+
 ## 2026-02-08
 
 | Name                       | Old            | New            | Comment |

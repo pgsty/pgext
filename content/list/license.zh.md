@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 209 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 210 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 67 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 69 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -39,7 +39,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="209 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="210 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -77,16 +77,17 @@ weight: 300
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
-| 2750 | {{< alias "rum" >}} | RUM 索引访问方法 |
-| 2780 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
-| 2810 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
-| 2830 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
-| 2840 | {{< alias "index_advisor" >}} | 查询索引建议器 |
-| 2850 | {{< alias "plan_filter" "pg_plan_filter" >}} | 使用执行计划代价过滤阻止特定查询语句 |
-| 2860 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
-| 2870 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
-| 2880 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
-| 2890 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2720 | {{< alias "rum" >}} | RUM 索引访问方法 |
+| 2740 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
+| 2770 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
+| 2790 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
+| 2800 | {{< alias "index_advisor" >}} | 查询索引建议器 |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 使用执行计划代价过滤阻止特定查询语句 |
+| 2830 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
+| 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
+| 2850 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
+| 2870 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
+| 2880 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
@@ -177,8 +178,8 @@ weight: 300
 | 5190 | {{< alias "pgcozy" >}} | 根据先前的pg_buffercache快照预热内存缓冲区 |
 | 5200 | {{< alias "pg_orphaned" >}} | 处理孤儿文件的扩展插件 |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 一些超级实用的作弊函数 |
-| 5830 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
-| 5840 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
+| 5850 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
+| 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 预热关系数据 |
 | 5900 | {{< alias "pgpool_adm" "pgpool" >}} | PGPool 管理函数 |
@@ -193,14 +194,14 @@ weight: 300
 | 5990 | {{< alias "pg_surgery" >}} | 对损坏的关系进行手术 |
 | 6210 | {{< alias "pg_show_plans" >}} | 打印所有当前正在运行查询的执行计划 |
 | 6260 | {{< alias "pg_track_settings" >}} | 跟踪设置更改 |
-| 6270 | {{< alias "pg_wait_sampling" >}} | 基于采样的等待事件统计 |
-| 6280 | {{< alias "pgsentinel" >}} | 活跃会话历史 |
-| 6290 | {{< alias "system_stats" >}} | PostgreSQL 的系统统计函数 |
-| 6340 | {{< alias "bgw_replstatus" >}} | 用于汇报本机主从状态的后台工作进程 |
-| 6360 | {{< alias "toastinfo" >}} | 显示TOAST字段的详细信息 |
-| 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
-| 6380 | {{< alias "pg_relusage" >}} | 打印查询引用的表与列 |
-| 6810 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
+| 6280 | {{< alias "pg_wait_sampling" >}} | 基于采样的等待事件统计 |
+| 6410 | {{< alias "pgsentinel" >}} | 活跃会话历史 |
+| 6420 | {{< alias "system_stats" >}} | PostgreSQL 的系统统计函数 |
+| 6510 | {{< alias "bgw_replstatus" >}} | 用于汇报本机主从状态的后台工作进程 |
+| 6530 | {{< alias "toastinfo" >}} | 显示TOAST字段的详细信息 |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
+| 6850 | {{< alias "pg_relusage" >}} | 打印查询引用的表与列 |
+| 6870 | {{< alias "powa" >}} | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 允许 EXPLAIN 转储更多详细 |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 检视逻辑解码组件详情 |
 | 6900 | {{< alias "pageinspect" >}} | 检查数据库页面二进制内容 |
@@ -271,11 +272,11 @@ weight: 300
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
-| 2730 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
-| 2740 | {{< alias "hll" >}} | hyperloglog 数据类型 |
-| 2760 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
-| 2790 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
-| 2800 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
+| 2700 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
+| 2710 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2730 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
+| 2750 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
+| 2760 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
 | 2942 | {{< alias "omni_aws" "omnigres" >}} | Omnigres AWS S3 API封装 |
@@ -326,7 +327,7 @@ weight: 300
 | 4700 | {{< alias "tdigest" >}} | tdigest 聚合函数 |
 | 5070 | {{< alias "pg_cooldown" >}} | 从缓冲区中移除特定关系的页面 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
-| 6310 | {{< alias "pgnodemx" >}} | 使用SQL查询获取操作系统指标 |
+| 6440 | {{< alias "pgnodemx" >}} | 使用SQL查询获取操作系统指标 |
 | 7010 | {{< alias "supautils" >}} | 用于在云环境中确保数据库集群的安全 |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7040 | {{< alias "pg_session_jwt" >}} | 使用JWT进行会话认证 |
@@ -344,7 +345,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="67 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="69 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -397,9 +398,11 @@ weight: 300
 | 4830 | {{< alias "pg_base58" >}} | Base58 编码/解码函数 |
 | 4850 | {{< alias "convert" "pg_convert" >}} | 用于空间里程等的公英制转换函数 |
 | 5130 | {{< alias "pgdd" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
+| 5830 | {{< alias "pg_strict" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
-| 6350 | {{< alias "pgmeminfo" >}} | 显示内存使用情况 |
-| 6800 | {{< alias "pagevis" >}} | 使用ASCII字符可视化数据库物理页面布局 |
+| 6270 | {{< alias "pg_track_optimizer" >}} | 跟踪规划器决策与实际执行的差距 |
+| 6520 | {{< alias "pgmeminfo" >}} | 显示内存使用情况 |
+| 6860 | {{< alias "pagevis" >}} | 使用ASCII字符可视化数据库物理页面布局 |
 | 7060 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7070 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 监控每个用户的连接尝试 |
@@ -432,7 +435,7 @@ weight: 300
 | 1520 | {{< alias "pointcloud" >}} | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1840 | {{< alias "pg_similarity" >}} | 提供17种距离度量函数 |
-| 2820 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
+| 2780 | {{< alias "pg_hint_plan" >}} | 添加强制指定执行计划的能力 |
 | 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3090 | {{< alias "pljava" >}} | Java 程序语言 |
 | 3580 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
@@ -448,8 +451,8 @@ weight: 300
 | 6230 | {{< alias "pg_stat_monitor" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
 | 6240 | {{< alias "pg_qualstats" >}} | 收集有关 quals 的统计信息的扩展 |
 | 6250 | {{< alias "pg_store_plans" >}} | 跟踪所有执行的 SQL 语句的计划统计信息 |
-| 6320 | {{< alias "pg_proctab" "pgnodemx" >}} | 通过SQL接口访问操作系统进程表 |
-| 6330 | {{< alias "pg_sqlog" >}} | 提供访问PostgreSQL日志的SQL接口 |
+| 6450 | {{< alias "pg_proctab" "pgnodemx" >}} | 通过SQL接口访问操作系统进程表 |
+| 6500 | {{< alias "pg_sqlog" >}} | 提供访问PostgreSQL日志的SQL接口 |
 | 7020 | {{< alias "pgsodium" >}} | 表数据加密存储 TDE |
 | 7130 | {{< alias "pg_auditor" >}} | 审计数据变更并提供闪回能力 |
 | 7140 | {{< alias "logerrors" >}} | 用于收集日志文件中消息统计信息的函数 |
@@ -482,7 +485,7 @@ weight: 300
 | 5110 | {{< alias "pg_checksums" >}} | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | 5140 | {{< alias "pg_permissions" >}} | 查看对象权限并将其与期望状态进行比较 |
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
-| 6300 | {{< alias "meta" "pg_meta" >}} | 标准化，更友好的PostgreSQL系统目录视图 |
+| 6430 | {{< alias "meta" "pg_meta" >}} | 标准化，更友好的PostgreSQL系统目录视图 |
 
 ## GPL-2.0
 
@@ -564,7 +567,7 @@ weight: 300
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 2900 | {{< alias "pgq" >}} | 通用队列的PG实现 |
+| 2890 | {{< alias "pgq" >}} | 通用队列的PG实现 |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | ZSTD压缩解压缩函数包 |
 | 5820 | {{< alias "safeupdate" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |

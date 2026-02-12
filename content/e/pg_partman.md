@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2510** | {{< badge content="pg_partman" link="https://github.com/pgpartman/pg_partman" >}} | {{< ext "pg_partman" >}} | `5.4.0` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2510** | {{< badge content="pg_partman" link="https://github.com/pgpartman/pg_partman" >}} | {{< ext "pg_partman" >}} | `5.4.1` | {{< category "OLAP" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,8 +34,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_partman` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.0` | {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} {{< bg "14" "pg_partman_14" "green" >}} {{< bg "13" "pg_partman_13" "green" >}} | `pg_partman_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_partman` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.1` | {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} {{< bg "14" "pg_partman_14" "green" >}} {{< bg "13" "pg_partman_13" "green" >}} | `pg_partman_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.0` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} {{< bg "13" "postgresql-13-partman" "green" >}} | `postgresql-$v-partman` | - |
 
 

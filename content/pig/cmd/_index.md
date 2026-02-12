@@ -36,7 +36,7 @@ Examples:
   pig install pg_duckdb       # install certain postgresql extension
   pig install pgactive -v 18  # install extension for specifc pg major
 
-  check https://pgext.cloud for details
+  check https://pigsty.io/docs/pig for details
 
 PostgreSQL Extension Manager
   ext         Manage PostgreSQL Extensions (pgext)
@@ -164,7 +164,7 @@ pig ext reload                   # Refresh extension catalog
 ```
 
 **Key Features:**
-- 448+ PostgreSQL extensions
+- 444+ PostgreSQL extensions
 - Multi-version PostgreSQL support
 - Automatic dependency resolution
 - Category-based browsing

@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（448 ext / 379 pkg）归属 16 个分类。
+PostgreSQL 扩展（451 ext / 382 pkg）归属 16 个分类。
 
 
 
@@ -28,7 +28,7 @@ PostgreSQL 扩展（448 ext / 379 pkg）归属 16 个分类。
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | 定时任务调度器 |
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | 在特定时间点在后台执行SQL命令 |
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | 执行查询，并在稍后异步获取查询结果 |
-| 1100 | {{< alias "pg_background" >}} | 1.5 | 在后台运行 SQL 查询 |
+| 1100 | {{< alias "pg_background" >}} | 1.6 | 在后台运行 SQL 查询 |
 
 ## GIS
 
@@ -36,13 +36,13 @@ PostgreSQL 扩展（448 ext / 379 pkg）归属 16 个分类。
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.1 | PostGIS 几何和地理空间扩展 |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.1 | PostGIS 拓扑空间类型和函数 |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.1 | PostGIS 光栅类型和函数 |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.1 | PostGIS SFCGAL 函数 |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.1 | PostGIS tiger 地理编码器和反向地理编码器 |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.1 | 地址标准化函数。 |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.1 | 地址标准化函数：美国数据集示例 |
+| 1500 | {{< alias "postgis" >}} | 3.6.2 | PostGIS 几何和地理空间扩展 |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.2 | PostGIS 拓扑空间类型和函数 |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.2 | PostGIS 光栅类型和函数 |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.2 | PostGIS SFCGAL 函数 |
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.2 | PostGIS tiger 地理编码器和反向地理编码器 |
+| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.2 | 地址标准化函数。 |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.2 | 地址标准化函数：美国数据集示例 |
 | 1510 | {{< alias "pgrouting" >}} | 4.0.1 | 提供寻路能力 |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | 提供激光雷达点云数据类型支持 |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
@@ -65,7 +65,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | 向量数据类型和 ivfflat / hnsw 访问方法 |
-| 1810 | {{< alias "vchord" >}} | 1.0.0 | 使用Rust重写的高性能向量扩展 |
+| 1810 | {{< alias "vchord" >}} | 1.1.0 | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | 在PostgreSQL中封装RAG向量检索服务 |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | 提供17种距离度量函数 |
@@ -81,7 +81,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.6 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.7 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -120,7 +120,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
-| 2510 | {{< alias "pg_partman" >}} | 5.4.0 | 用于按时间或 ID 管理分区表的扩展 |
+| 2510 | {{< alias "pg_partman" >}} | 5.4.1 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 6.1 | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
@@ -131,23 +131,24 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2730 | {{< alias "age" >}} | 1.7.0 | Apache AGE，图数据库扩展 （Deb可用） |
-| 2740 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
-| 2750 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
-| 2760 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
-| 2780 | {{< alias "pg_ttl_index" >}} | 2.0.0 | 基于TTL索引的自动数据过期清理 |
-| 2790 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
-| 2800 | {{< alias "pg_jsonschema" >}} | 0.3.4 | 提供JSON Schema校验能力 |
-| 2810 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
-| 2820 | {{< alias "pg_hint_plan" >}} | 1.8.0 | 添加强制指定执行计划的能力 |
-| 2830 | {{< alias "hypopg" >}} | 1.4.2 | 假设索引，用于创建一个虚拟索引检验执行计划 |
-| 2840 | {{< alias "index_advisor" >}} | 0.2.0 | 查询索引建议器 |
-| 2850 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | 使用执行计划代价过滤阻止特定查询语句 |
-| 2860 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
-| 2870 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
-| 2880 | {{< alias "pg_incremental" >}} | 1.4.1 | 增量处理流式事件 |
-| 2890 | {{< alias "pgmq" >}} | 1.10.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
-| 2900 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
+| 2700 | {{< alias "age" >}} | 1.7.0 | Apache AGE，图数据库扩展 （Deb可用） |
+| 2710 | {{< alias "hll" >}} | 2.19 | hyperloglog 数据类型 |
+| 2720 | {{< alias "rum" >}} | 1.3.15 | RUM 索引访问方法 |
+| 2730 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI驱动的 Postgres SQL 查询生成 |
+| 2740 | {{< alias "pg_ttl_index" >}} | 2.0.0 | 基于TTL索引的自动数据过期清理 |
+| 2750 | {{< alias "pg_graphql" >}} | 1.5.12 | PG内的GraphQL支持 |
+| 2760 | {{< alias "pg_jsonschema" >}} | 0.3.4 | 提供JSON Schema校验能力 |
+| 2770 | {{< alias "jsquery" >}} | 1.2 | 用于内省 JSONB 数据类型的查询类型 |
+| 2780 | {{< alias "pg_hint_plan" >}} | 1.8.0 | 添加强制指定执行计划的能力 |
+| 2790 | {{< alias "hypopg" >}} | 1.4.2 | 假设索引，用于创建一个虚拟索引检验执行计划 |
+| 2800 | {{< alias "index_advisor" >}} | 0.2.0 | 查询索引建议器 |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | 使用执行计划代价过滤阻止特定查询语句 |
+| 2830 | {{< alias "imgsmlr" >}} | 1.0 | 使用Haar小波分析计算图片相似度 |
+| 2840 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
+| 2850 | {{< alias "pg_incremental" >}} | 1.4.1 | 增量处理流式事件 |
+| 2870 | {{< alias "pgmb" >}} | 1.0.0 | 一个简单的PostgreSQL消息代理系统 |
+| 2880 | {{< alias "pgmq" >}} | 1.10.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2890 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 2930 | {{< alias "rdkit" >}} | 202503.1 | 在PostgreSQL化学领域数据管理功能 |
@@ -399,8 +400,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5230 | {{< alias "fio" "pg_fio" >}} | 1.0 | PostgreSQL文件IO函数包 |
 | 5810 | {{< alias "pg_savior" >}} | 0.0.1 | 阻止不带条件的全表更新以避免意外事故 |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
-| 5830 | {{< alias "pg_drop_events" >}} | 0.1.0 | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
-| 5840 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
+| 5830 | {{< alias "pg_strict" >}} | 1.0.2 | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
+| 5850 | {{< alias "pg_drop_events" >}} | 0.1.0 | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
+| 5860 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | 预热关系数据 |
 | 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.0 | PGPool 管理函数 |
@@ -428,20 +430,21 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | 收集有关 quals 的统计信息的扩展 |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | 跟踪设置更改 |
-| 6270 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | 基于采样的等待事件统计 |
-| 6280 | {{< alias "pgsentinel" >}} | 1.4.0 | 活跃会话历史 |
-| 6290 | {{< alias "system_stats" >}} | 3.2 | PostgreSQL 的系统统计函数 |
-| 6300 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | 标准化，更友好的PostgreSQL系统目录视图 |
-| 6310 | {{< alias "pgnodemx" >}} | 1.7 | 使用SQL查询获取操作系统指标 |
-| 6320 | {{< alias "pg_proctab" "pgnodemx" >}} | 1.7 | 通过SQL接口访问操作系统进程表 |
-| 6330 | {{< alias "pg_sqlog" >}} | 1.6 | 提供访问PostgreSQL日志的SQL接口 |
-| 6340 | {{< alias "bgw_replstatus" >}} | 1.0.8 | 用于汇报本机主从状态的后台工作进程 |
-| 6350 | {{< alias "pgmeminfo" >}} | 1.0.0 | 显示内存使用情况 |
-| 6360 | {{< alias "toastinfo" >}} | 1.5 | 显示TOAST字段的详细信息 |
-| 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
-| 6380 | {{< alias "pg_relusage" >}} | 0.0.1 | 打印查询引用的表与列 |
-| 6800 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
-| 6810 | {{< alias "powa" >}} | 5.1.1 | PostgreSQL 工作负载分析器-核心 |
+| 6270 | {{< alias "pg_track_optimizer" >}} | 0.9.1 | 跟踪规划器决策与实际执行的差距 |
+| 6280 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | 基于采样的等待事件统计 |
+| 6410 | {{< alias "pgsentinel" >}} | 1.4.0 | 活跃会话历史 |
+| 6420 | {{< alias "system_stats" >}} | 3.2 | PostgreSQL 的系统统计函数 |
+| 6430 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | 标准化，更友好的PostgreSQL系统目录视图 |
+| 6440 | {{< alias "pgnodemx" >}} | 1.7 | 使用SQL查询获取操作系统指标 |
+| 6450 | {{< alias "pg_proctab" "pgnodemx" >}} | 1.7 | 通过SQL接口访问操作系统进程表 |
+| 6500 | {{< alias "pg_sqlog" >}} | 1.6 | 提供访问PostgreSQL日志的SQL接口 |
+| 6510 | {{< alias "bgw_replstatus" >}} | 1.0.8 | 用于汇报本机主从状态的后台工作进程 |
+| 6520 | {{< alias "pgmeminfo" >}} | 1.0.0 | 显示内存使用情况 |
+| 6530 | {{< alias "toastinfo" >}} | 1.5 | 显示TOAST字段的详细信息 |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | 快速跳转至PEV查阅可视化执行计划 |
+| 6850 | {{< alias "pg_relusage" >}} | 0.0.1 | 打印查询引用的表与列 |
+| 6860 | {{< alias "pagevis" >}} | 0.1 | 使用ASCII字符可视化数据库物理页面布局 |
+| 6870 | {{< alias "powa" >}} | 5.1.1 | PostgreSQL 工作负载分析器-核心 |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | 允许 EXPLAIN 转储更多详细 |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | 检视逻辑解码组件详情 |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | 检查数据库页面二进制内容 |

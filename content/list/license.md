@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 209 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 210 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 67 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 69 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -39,7 +39,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="209 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="210 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -77,16 +77,17 @@ PostgreSQL extension categorized by license.
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
-| 2750 | {{< alias "rum" >}} | RUM index access method |
-| 2780 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
-| 2810 | {{< alias "jsquery" >}} | data type for jsonb inspection |
-| 2830 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
-| 2840 | {{< alias "index_advisor" >}} | Query index advisor |
-| 2850 | {{< alias "plan_filter" "pg_plan_filter" >}} | filter statements by their execution plans. |
-| 2860 | {{< alias "imgsmlr" >}} | Image similarity with haar |
-| 2870 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
-| 2880 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
-| 2890 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2720 | {{< alias "rum" >}} | RUM index access method |
+| 2740 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
+| 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
+| 2790 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
+| 2800 | {{< alias "index_advisor" >}} | Query index advisor |
+| 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | filter statements by their execution plans. |
+| 2830 | {{< alias "imgsmlr" >}} | Image similarity with haar |
+| 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
+| 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
+| 2870 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
+| 2880 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -177,8 +178,8 @@ PostgreSQL extension categorized by license.
 | 5190 | {{< alias "pgcozy" >}} | Pre-warming shared buffers according to previous pg_buffercache snapshots for PostgreSQL. |
 | 5200 | {{< alias "pg_orphaned" >}} | Deal with orphaned files |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | Provides cheat (but useful) functions |
-| 5830 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
-| 5840 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
+| 5850 | {{< alias "pg_drop_events" >}} | logs transaction ids of drop table, drop column, drop materialized view statements |
+| 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | prewarm relation data |
 | 5900 | {{< alias "pgpool_adm" "pgpool" >}} | Administrative functions for pgPool |
@@ -193,14 +194,14 @@ PostgreSQL extension categorized by license.
 | 5990 | {{< alias "pg_surgery" >}} | extension to perform surgery on a damaged relation |
 | 6210 | {{< alias "pg_show_plans" >}} | show query plans of all currently running SQL statements |
 | 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
-| 6270 | {{< alias "pg_wait_sampling" >}} | sampling based statistics of wait events |
-| 6280 | {{< alias "pgsentinel" >}} | active session history |
-| 6290 | {{< alias "system_stats" >}} | EnterpriseDB system statistics for PostgreSQL |
-| 6340 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
-| 6360 | {{< alias "toastinfo" >}} | show details on toasted datums |
-| 6370 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
-| 6380 | {{< alias "pg_relusage" >}} | Log all the queries that reference a particular column |
-| 6810 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
+| 6280 | {{< alias "pg_wait_sampling" >}} | sampling based statistics of wait events |
+| 6410 | {{< alias "pgsentinel" >}} | active session history |
+| 6420 | {{< alias "system_stats" >}} | EnterpriseDB system statistics for PostgreSQL |
+| 6510 | {{< alias "bgw_replstatus" >}} | Small PostgreSQL background worker to report whether a node is a replication master or standby |
+| 6530 | {{< alias "toastinfo" >}} | show details on toasted datums |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
+| 6850 | {{< alias "pg_relusage" >}} | Log all the queries that reference a particular column |
+| 6870 | {{< alias "powa" >}} | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | Logical decoding components inspection |
 | 6900 | {{< alias "pageinspect" >}} | inspect the contents of database pages at a low level |
@@ -271,11 +272,11 @@ PostgreSQL extension categorized by license.
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
-| 2730 | {{< alias "age" >}} | AGE graph database extension |
-| 2740 | {{< alias "hll" >}} | type for storing hyperloglog data |
-| 2760 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
-| 2790 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
-| 2800 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
+| 2700 | {{< alias "age" >}} | AGE graph database extension |
+| 2710 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2730 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
+| 2750 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
+| 2760 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
 | 2942 | {{< alias "omni_aws" "omnigres" >}} | Amazon Web Services APIs (S3) |
@@ -326,7 +327,7 @@ PostgreSQL extension categorized by license.
 | 4700 | {{< alias "tdigest" >}} | Provides tdigest aggregate function. |
 | 5070 | {{< alias "pg_cooldown" >}} | remove buffered pages for specific relations |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
-| 6310 | {{< alias "pgnodemx" >}} | Capture node OS metrics via SQL queries |
+| 6440 | {{< alias "pgnodemx" >}} | Capture node OS metrics via SQL queries |
 | 7010 | {{< alias "supautils" >}} | Extension that secures a cluster on a cloud environment |
 | 7030 | {{< alias "supabase_vault" "pg_vault" >}} | Supabase Vault Extension |
 | 7040 | {{< alias "pg_session_jwt" >}} | Manage authentication sessions using JWTs |
@@ -344,7 +345,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="67 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="69 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -397,9 +398,11 @@ PostgreSQL extension categorized by license.
 | 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
+| 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
-| 6350 | {{< alias "pgmeminfo" >}} | show memory usage |
-| 6800 | {{< alias "pagevis" >}} | Visualise database pages in ascii code |
+| 6270 | {{< alias "pg_track_optimizer" >}} | Track planning decisions in comparison with execution reality |
+| 6520 | {{< alias "pgmeminfo" >}} | show memory usage |
+| 6860 | {{< alias "pagevis" >}} | Visualise database pages in ascii code |
 | 7060 | {{< alias "pgsmcrypto" >}} | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
 | 7150 | {{< alias "pg_auth_mon" >}} | monitor connection attempts per user |
@@ -432,7 +435,7 @@ PostgreSQL extension categorized by license.
 | 1520 | {{< alias "pointcloud" >}} | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1840 | {{< alias "pg_similarity" >}} | support similarity queries |
-| 2820 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
+| 2780 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3090 | {{< alias "pljava" >}} | PL/Java procedural language |
 | 3580 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
@@ -448,8 +451,8 @@ PostgreSQL extension categorized by license.
 | 6230 | {{< alias "pg_stat_monitor" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
 | 6240 | {{< alias "pg_qualstats" >}} | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | track plan statistics of all SQL statements executed |
-| 6320 | {{< alias "pg_proctab" "pgnodemx" >}} | PostgreSQL extension to access the OS process table |
-| 6330 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
+| 6450 | {{< alias "pg_proctab" "pgnodemx" >}} | PostgreSQL extension to access the OS process table |
+| 6500 | {{< alias "pg_sqlog" >}} | Provide SQL interface to logs |
 | 7020 | {{< alias "pgsodium" >}} | Postgres extension for libsodium functions |
 | 7130 | {{< alias "pg_auditor" >}} | Audit data changes and provide flashback ability |
 | 7140 | {{< alias "logerrors" >}} | Function for collecting statistics about messages in logfile |
@@ -482,7 +485,7 @@ PostgreSQL extension categorized by license.
 | 5110 | {{< alias "pg_checksums" >}} | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 5140 | {{< alias "pg_permissions" >}} | view object permissions and compare them with the desired state |
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL load profile repository and report builder |
-| 6300 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
+| 6430 | {{< alias "meta" "pg_meta" >}} | Normalized, friendlier system catalog for PostgreSQL |
 
 ## GPL-2.0
 
@@ -564,7 +567,7 @@ PostgreSQL extension categorized by license.
 
 | ID | Extension | Description |
 |:---:|:---|:---|
-| 2900 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
+| 2890 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | Zstandard compression algorithm implementation in PostgreSQL |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |

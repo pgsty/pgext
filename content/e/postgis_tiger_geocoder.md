@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_tiger_geocoder" "postgis" >}} | `3.6.1` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1504** | {{< badge content="postgis_tiger_geocoder" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< ext "postgis_tiger_geocoder" "postgis" >}} | `3.6.2` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,8 +34,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `postgis` | `postgis`, `fuzzystrmatch` |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.1` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} {{< bg "13" "postgis36_13" "green" >}} | `postgis36_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `postgis` | `postgis`, `fuzzystrmatch` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.2` | {{< bg "18" "postgis36_18" "green" >}} {{< bg "17" "postgis36_17" "green" >}} {{< bg "16" "postgis36_16" "green" >}} {{< bg "15" "postgis36_15" "green" >}} {{< bg "14" "postgis36_14" "green" >}} {{< bg "13" "postgis36_13" "green" >}} | `postgis36_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `3.6.1` | {{< bg "18" "postgresql-18-postgis-3" "green" >}} {{< bg "17" "postgresql-17-postgis-3" "green" >}} {{< bg "16" "postgresql-16-postgis-3" "green" >}} {{< bg "15" "postgresql-15-postgis-3" "green" >}} {{< bg "14" "postgresql-14-postgis-3" "green" >}} {{< bg "13" "postgresql-13-postgis-3" "green" >}} | `postgresql-$v-postgis-3` | - |
 
 

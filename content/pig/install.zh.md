@@ -7,88 +7,72 @@ breadcrumbs: false
 ---
 
 
-## 脚本
+
+## 脚本安装
 
 安装 `pig` 最简单的方式是运行以下安装脚本：
 
-{{< tabs items="默认,镜像" defaultIndex="1" >}}
+**默认安装**（Cloudflare CDN）：
 
-{{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash     # 从 Cloudflare 安装
+curl -fsSL https://repo.pigsty.io/pig | bash
 ```
-{{< /tab >}}
 
-{{< tab >}}
+**中国镜像**：
+
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash     # 从中国 CDN 镜像站安装
+curl -fsSL https://repo.pigsty.cc/pig | bash
 ```
-{{< /tab >}}
-
-{{< /tabs >}}
 
 该脚本会从 Pigsty [软件仓库](/zh/repo/) 下载最新版 `pig` 的 RPM / DEB 包，并通过 `rpm` 或 `dpkg` 进行安装。
 
 
-
-
-## 版本
+## 指定版本
 
 您可以指定特定版本进行安装，将版本号作为参数传入即可：
 
-{{< tabs items="默认,镜像" defaultIndex="1" >}}
+**默认安装**（Cloudflare CDN）：
 
-{{< tab >}}
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 1.0.0     # 安装 1.0.0 版本
+curl -fsSL https://repo.pigsty.io/pig | bash -s 1.0.0
 ```
-{{< /tab >}}
 
-{{< tab >}}
+**中国镜像**：
+
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.0.0     # 安装 1.0.0 版本（中国镜像）
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.0.0
 ```
-{{< /tab >}}
-
-{{< /tabs >}}
-
-
-
 
 
 ## 发布页下载
 
-你也可以直接从 Pigsty 仓库下载 `pig` 安装包（`RPM`/`DEB`/ 压缩包）：[GitHub 最新版本发布页](https://github.com/pgsty/pig/releases/latest)
+你也可以直接从 Pigsty 仓库下载 `pig` 安装包（`RPM`/`DEB`/ 压缩包）：[GitHub v1.0.0 稳定版发布页](https://github.com/pgsty/pig/releases/tag/v1.0.0)
 
-{{< filetree/container >}}
-{{< filetree/file name="latest" >}}
-{{< filetree/folder name="v1.0.0" state="open" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_amd64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig_1.0.0-1_arm64.deb" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.aarch64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-1.0.0-1.x86_64.rpm" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-amd64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.linux-arm64.tar.gz" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-amd64.tar.gz]" >}}
-{{< filetree/file name="https://repo.pigsty.io/pkg/pig/v1.0.0/pig-v1.0.0.darwin-arm64.tar.gz" >}}
-
-{{< /filetree/folder >}}
-{{< filetree/folder name="v0.7.5" state="closed" >}}{{< /filetree/folder >}}
-{{< filetree/folder name="......" state="closed" >}}{{< /filetree/folder >}}
-{{< /filetree/container >}}
+```
+latest
+└── v1.0.0
+    ├── pig_1.0.0-1_amd64.deb
+    ├── pig_1.0.0-1_arm64.deb
+    ├── pig-1.0.0-1.aarch64.rpm
+    ├── pig-1.0.0-1.x86_64.rpm
+    ├── pig-v1.0.0.linux-amd64.tar.gz
+    ├── pig-v1.0.0.linux-arm64.tar.gz
+    ├── pig-v1.0.0.darwin-amd64.tar.gz
+    └── pig-v1.0.0.darwin-arm64.tar.gz
+```
 
 将其解压后，将二进制文件放入您的 PATH 系统路径中即可。
 
 
-## 仓库
+## 仓库安装
 
-`pig` 软件位于 [`pigsty-infra`](/zh/repo/infra) 仓库中。你可以将该仓库添加到操作系统后，使用操作系统的包管理器进行安装：
+`pig` 软件位于 [`pigsty-infra`](/zh/repo/infra/) 仓库中。你可以将该仓库添加到操作系统后，使用操作系统的包管理器进行安装：
 
 ### YUM
 
 对于 RHEL，RockyLinux，CentOS，Alma Linux，OracleLinux 等 EL 系发行版：
 
-```bash tab="yum"
+```bash
 sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'
 [pigsty-infra]
 name=Pigsty Infra for $basearch
@@ -106,7 +90,7 @@ sudo yum install -y pig
 
 对于 Debian，Ubuntu 等 DEB 系发行版：
 
-```bash tab="apt"
+```bash
 sudo tee /etc/apt/sources.list.d/pigsty-infra.list > /dev/null <<EOF
 deb [trusted=yes] https://repo.pigsty.io/apt/infra generic main
 EOF
@@ -114,7 +98,6 @@ EOF
 sudo apt update;
 sudo apt install -y pig
 ```
-
 
 
 ## 更新
@@ -132,7 +115,6 @@ pig ext reload        # 将 pig 扩展数据更新至最新版本
 ```
 
 
-
 ## 卸载
 
 ```bash
@@ -140,7 +122,6 @@ apt remove -y pig     # Debian / Ubuntu 等 Debian 系统
 yum remove -y pig     # RHEL / CentOS / RockyLinux 等 EL 系发行版
 rm -rf /usr/bin/pig   # 若直接使用二进制安装，删除二进制文件即可
 ```
-
 
 
 ## 构建
@@ -153,4 +134,3 @@ go get -u; go build
 ```
 
 所有 RPM / DEB 包都通过 GitHub CI/CD 流程使用 goreleaser 自动化构建。
-

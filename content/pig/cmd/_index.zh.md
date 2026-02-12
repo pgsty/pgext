@@ -5,18 +5,16 @@ icon: SquareTerminal
 weight: 600
 ---
 
+
 `pig` CLI 提供了全面的工具集，用于管理 PostgreSQL 安装、扩展、软件仓库以及从源码构建扩展。使用 `pig help <command>` 查看命令文档。
 
-{{< cards cols="4" >}}
-{{< card link="/pig/cmd/repo"  title="pig repo"  subtitle="管理软件仓库" icon="library" >}}
-{{< card link="/pig/cmd/ext"   title="pig ext"   subtitle="管理 PostgreSQL 扩展"   icon="cube" >}}
-{{< card link="/pig/cmd/build" title="pig build" subtitle="从源码构建扩展"  icon="view-grid" >}}
-{{< card link="/pig/cmd/sty"   title="pig sty"   subtitle="管理 Pigsty 安装"   icon="cloud-download" >}}
-{{< card link="/pig/cmd/pg"    title="pig pg"    subtitle="管理 PostgreSQL 服务"   icon="database" >}}
-{{< card link="/pig/cmd/pt"    title="pig pt"    subtitle="管理 Patroni 集群"   icon="refresh" >}}
-{{< card link="/pig/cmd/pb"    title="pig pb"    subtitle="管理 pgBackRest 备份"   icon="archive" >}}
-{{< card link="/pig/cmd/pitr"  title="pig pitr"  subtitle="编排式 PITR 恢复"   icon="clock" >}}
-{{< /cards >}}
+- [**pig repo**](/zh/pig/cmd/repo)：管理软件仓库
+- [**pig ext**](/zh/pig/cmd/ext)：管理 PostgreSQL 扩展
+- [**pig build**](/zh/pig/cmd/build)：从源码构建扩展
+- [**pig sty**](/zh/pig/cmd/sty)：管理 Pigsty 安装
+- [**pig pg**](/zh/pig/cmd/pg)：管理本地 PostgreSQL 服务器
+- [**pig pt**](/zh/pig/cmd/pt)：管理 Patroni HA 集群
+- [**pig pb**](/zh/pig/cmd/pb)：管理 pgBackRest 备份与恢复
 
 ## 概览
 
@@ -33,21 +31,20 @@ Examples:
   pig install pg_duckdb       # 安装指定的 PostgreSQL 扩展
   pig install pgactive -v 18  # 为特定 PG 版本安装扩展
 
-  访问 https://pig.pgsty.com 获取详情
+  访问 https://pgext.cloud 获取详情
 
 PostgreSQL Extension Manager
+  build       构建 Postgres 扩展
   ext         管理 PostgreSQL 扩展 (pgext)
   repo        管理 Linux 软件仓库 (apt/dnf)
-  build       构建 Postgres 扩展
-
-PostgreSQL Management Commands
-  pg          管理本地 PostgreSQL 服务器
-  pt          管理 Patroni HA 集群
-  pb          管理 pgBackRest 备份与恢复
-  pitr        编排式时间点恢复
 
 Pigsty Management Commands
   do          运行管理任务
+  patroni     使用 patronictl 管理 Patroni 集群
+  pg_exporter 管理 pg_exporter 与监控指标
+  pgbackrest  管理 pgBackRest 备份与恢复
+  pitr        编排式时间点恢复
+  postgres    管理本地 PostgreSQL 服务器与数据库
   sty         管理 Pigsty 安装
 
 Additional Commands:
@@ -63,6 +60,7 @@ Flags:
   -h, --help               获取帮助信息
   -H, --home string        Pigsty 主目录路径
   -i, --inventory string   配置清单路径
+  -t, --toggle             帮助信息中的占位参数
       --log-level string   日志级别: debug, info, warn, error, fatal, panic (默认 "info")
       --log-path string    日志文件路径，默认为终端输出
 
@@ -70,10 +68,9 @@ Flags:
 ```
 
 
+## pig repo
 
-## `pig repo`
-
-管理 PostgreSQL 软件包的 APT/YUM 仓库，详情请参考 [`CMD: pig repo`](/zh/pig/cmd/repo)
+管理 PostgreSQL 软件包的 APT/YUM 仓库，详情请参考 [`pig repo`](/zh/pig/cmd/repo)
 
 ```bash
 pig repo list                    # 列出可用仓库
@@ -90,9 +87,9 @@ pig repo boot                    # 从离线包引导
 
 
 
-## `pig ext`
+## pig ext
 
-管理 PostgreSQL 扩展和内核包，详情请参考 [`CMD: pig ext`](/zh/pig/cmd/ext)
+管理 PostgreSQL 扩展和内核包，详情请参考 [`pig ext`](/zh/pig/cmd/ext)
 
 ```bash
 pig ext list    duck             # 搜索扩展
@@ -110,16 +107,16 @@ pig ext reload                   # 刷新扩展目录
 
 
 
-## `pig build`
+## pig build
 
-从源码构建 PostgreSQL 扩展，详情请参考 [`CMD: pig build`](/zh/pig/cmd/build)
+从源码构建 PostgreSQL 扩展，详情请参考 [`pig build`](/zh/pig/cmd/build)
 
 ```bash
 # 环境设置
 pig build spec                   # 初始化构建规格
 pig build repo                   # 设置仓库
 pig build tool                   # 安装构建工具
-pig build rust -y                # 安装 Rust（用于 Rust 扩展）
+pig build rust -y                # 强制重装 Rust（默认不重装）
 pig build pgrx                   # 安装 PGRX 框架
 
 # 构建扩展
@@ -130,9 +127,9 @@ pig build ext citus              # 构建包
 ```
 
 
-## `pig sty`
+## pig sty
 
-安装 Pigsty 发行版，详情请参考 [`CMD: pig sty`](/zh/pig/cmd/sty)
+安装 Pigsty 发行版，详情请参考 [`pig sty`](/zh/pig/cmd/sty)
 
 ```bash
 pig sty init                     # 安装 Pigsty 到 ~/pigsty
@@ -142,9 +139,9 @@ pig sty deploy                   # 运行部署 playbook
 ```
 
 
-## `pig pg`
+## pig pg
 
-管理本地 PostgreSQL 服务器，详情请参考 [`CMD: pig pg`](/zh/pig/cmd/pg)
+管理本地 PostgreSQL 服务器，详情请参考 [`pig pg`](/zh/pig/cmd/pg)
 
 ```bash
 pig pg init                      # 初始化数据目录
@@ -158,47 +155,42 @@ pig pg log tail                  # 实时查看日志
 ```
 
 
-## `pig pt`
+## pig pt
 
-管理 Patroni HA 集群，详情请参考 [`CMD: pig pt`](/zh/pig/cmd/pt)
+管理 Patroni HA 集群，详情请参考 [`pig pt`](/zh/pig/cmd/pt)
 
 ```bash
 pig pt list                      # 列出集群成员
 pig pt config                    # 显示集群配置
 pig pt config ttl=60             # 修改集群配置
-pig pt switchover                # 计划内主从切换
-pig pt failover                  # 手动故障切换
-pig pt pause                     # 暂停自动故障切换
-pig pt resume                    # 恢复自动故障切换
 pig pt status                    # 查看服务状态
 pig pt log -f                    # 实时查看日志
 ```
 
 
-## `pig pb`
+## pig pb
 
-管理 pgBackRest 备份与恢复，详情请参考 [`CMD: pig pb`](/zh/pig/cmd/pb)
+管理 pgBackRest 备份与恢复，详情请参考 [`pig pb`](/zh/pig/cmd/pb)
 
 ```bash
 pig pb info                      # 显示备份信息
 pig pb ls                        # 列出所有备份
 pig pb backup                    # 创建备份
 pig pb backup full               # 全量备份
-pig pb restore                   # 恢复到最新
+pig pb restore -d                # 恢复到最新
 pig pb restore -t "2025-01-01"   # 恢复到指定时间
 pig pb log tail                  # 实时查看日志
 ```
 
 
-## `pig pitr`
+## pig pitr
 
-编排式时间点恢复，详情请参考 [`CMD: pig pitr`](/zh/pig/cmd/pitr)
+执行编排式时间点恢复（PITR），详情请参考 [`pig pitr`](/zh/pig/cmd/pitr)
 
 ```bash
 pig pitr -d                      # 恢复到最新数据
-pig pitr -t "2025-01-01 12:00"   # 恢复到指定时间点
+pig pitr -t "2025-01-01 12:00"   # 恢复到指定时间
 pig pitr -I                      # 恢复到备份一致性点
-pig pitr -d --dry-run            # 查看执行计划
+pig pitr -d --dry-run            # 显示执行计划（不实际执行）
 pig pitr -d -y                   # 跳过确认（自动化）
 ```
-

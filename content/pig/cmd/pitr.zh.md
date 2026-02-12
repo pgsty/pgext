@@ -5,41 +5,41 @@ icon: Clock
 weight: 670
 ---
 
+
 `pig pitr` 命令用于执行**编排式时间点恢复**（Orchestrated Point-In-Time Recovery）。与 `pig pb restore` 不同，此命令会自动协调 Patroni、PostgreSQL 和 pgBackRest，完成完整的 PITR 工作流。
 
 ```bash
-pig pitr - 执行编排式 PITR（自动管理 Patroni/PostgreSQL 生命周期）
+pig pitr - Perform PITR with automatic Patroni/PostgreSQL lifecycle management.
 
-此命令编排完整的 PITR 工作流：
-  1. 停止 Patroni 服务（如果正在运行）
-  2. 确保 PostgreSQL 已停止（带重试和降级策略）
-  3. 执行 pgbackrest restore
-  4. 启动 PostgreSQL
-  5. 提供恢复后操作指引
+This command orchestrates a complete PITR workflow:
+  1. Stop Patroni service (if running)
+  2. Ensure PostgreSQL is stopped (with retry and fallback)
+  3. Execute pgbackrest restore
+  4. Start PostgreSQL
+  5. Provide post-restore guidance
 
-恢复目标（至少需要指定一个）：
-  --default, -d      恢复到 WAL 流末尾（最新数据）
-  --immediate, -I    恢复到备份一致性点
-  --time, -t         恢复到指定时间戳
-  --name, -n         恢复到命名还原点
-  --lsn, -l          恢复到指定 LSN
-  --xid, -x          恢复到指定事务 ID
+Recovery Targets (at least one required):
+  --default, -d      Recover to end of WAL stream (latest)
+  --immediate, -I    Recover to backup consistency point
+  --time, -t         Recover to specific timestamp
+  --name, -n         Recover to named restore point
+  --lsn, -l          Recover to specific LSN
+  --xid, -x          Recover to specific transaction ID
 
-时间格式：
-  - 完整格式: "2025-01-01 12:00:00+08"
-  - 仅日期: "2025-01-01"（默认为 00:00:00）
-  - 仅时间: "12:00:00"（默认为今天）
+Time Format:
+  - Full: "2025-01-01 12:00:00+08"
+  - Date only: "2025-01-01" (defaults to 00:00:00)
+  - Time only: "12:00:00" (defaults to today)
 
-示例：
-  pig pitr -d                      # 恢复到最新（最常用）
-  pig pitr -t "2025-01-01 12:00"   # 恢复到指定时间
-  pig pitr -I                      # 恢复到备份一致性点
-  pig pitr -d --dry-run            # 仅显示执行计划
-  pig pitr -d -y                   # 跳过确认（用于自动化）
-  pig pitr -d --skip-patroni       # 跳过 Patroni 管理
-  pig pitr -d --no-restart         # 恢复后不自动启动 PostgreSQL
+Examples:
+  pig pitr -d                      # Recover to latest (most common)
+  pig pitr -t "2025-01-01 12:00"   # Recover to specific time
+  pig pitr -I                      # Recover to backup consistency point
+  pig pitr -d --dry-run            # Show execution plan without running
+  pig pitr -d -y                   # Skip confirmation (for automation)
+  pig pitr -d --skip-patroni       # Skip Patroni management
+  pig pitr -d --no-restart         # Don't auto-start PostgreSQL after restore
 ```
-
 
 ## 命令概览
 
@@ -60,6 +60,7 @@ pig pitr - 执行编排式 PITR（自动管理 Patroni/PostgreSQL 生命周期�
 | 启动 PostgreSQL | 自动 | 手动 |
 | 恢复后指引 | 提供详细指引 | 无 |
 | 适用场景 | 生产环境完整恢复 | 底层操作或脚本集成 |
+{.full-width}
 
 
 ## 快速入门
@@ -103,12 +104,14 @@ pig pitr -d --no-restart
 | `--name` | `-n` | 恢复到命名还原点 |
 | `--lsn` | `-l` | 恢复到指定 LSN |
 | `--xid` | `-x` | 恢复到指定事务 ID |
+{.full-width}
 
 ### 备份选择
 
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
 | `--set` | `-b` | 从特定备份集恢复 |
+{.full-width}
 
 ### 流程控制
 
@@ -118,6 +121,7 @@ pig pitr -d --no-restart
 | `--no-restart` | `-N` | 恢复后不自动启动 PostgreSQL |
 | `--dry-run` | | 仅显示执行计划，不实际执行 |
 | `--yes` | `-y` | 跳过确认倒计时 |
+{.full-width}
 
 ### 恢复选项
 
@@ -125,6 +129,7 @@ pig pitr -d --no-restart
 |:----|:----|:----|
 | `--exclusive` | `-X` | 排他模式：在目标前停止 |
 | `--promote` | `-P` | 恢复后自动提升为主库 |
+{.full-width}
 
 ### 配置参数
 
@@ -135,6 +140,7 @@ pig pitr -d --no-restart
 | `--repo` | `-r` | 仓库编号（多仓库场景） |
 | `--dbsu` | `-U` | 数据库超级用户（默认：`postgres`） |
 | `--data` | `-D` | 目标数据目录 |
+{.full-width}
 
 
 ## 时间格式
@@ -146,6 +152,7 @@ pig pitr -d --no-restart
 | 完整格式 | `2025-01-01 12:00:00+08` | 包含时区的完整时间戳 |
 | 仅日期 | `2025-01-01` | 自动补全为当天 00:00:00（当前时区） |
 | 仅时间 | `12:00:00` | 自动补全为今天（当前时区） |
+{.full-width}
 
 
 ## 执行流程
