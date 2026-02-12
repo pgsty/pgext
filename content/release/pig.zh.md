@@ -25,6 +25,44 @@ breadcrumbs: false
 - 为 `pg_exporter`、`pg_probe`、`do`、`sty` 等存量命令补充 legacy structured wrapper，提升自动化兼容性。
 - 例行扩展目录更新，包含一批 Rust 扩展更新。
 
+
+**扩展更新**
+
+| 扩展                 | 旧版本          | 新版本           |
+|:-------------------|:-------------|:--------------|
+| timescaledb        | 2.24.0       | 2.25.0        |
+| citus              | 14.0.0-2     | 14.0.0-3      |
+| pg_incremental     | 1.2.0        | 1.4.1         |
+| pg_bigm            | 1.2-20240606 | 1.2-20250903  |
+| pg_net             | 0.20.0       | 0.20.2        |
+| pgmq               | 1.9.0        | 1.10.0        |
+| pg_textsearch      | 0.4.0        | 0.5.0         |
+| pljs               | 1.0.4        | 1.0.5         |
+| sslutils           | 1.4-1        | 1.4-2         |
+| table_version      | 1.11.0       | 1.11.1        |
+| supautils          | 3.0.2        | 3.1.0         |
+| pg_math            | 1.0          | 1.1.0         |
+| pgsentinel         | 1.3.1        | 1.4.0         |
+| pg_uri             | 1.20151224   | 1.20251029    |
+| pgcollection       | 1.1.0        | 1.1.1         |
+| pg_readonly        | 1.0.3        | 1.0.4         |
+| timestamp9         | 1.4.0-1      | 1.4.0-2       |
+| pg_uint128         | 1.1.1        | 1.2.0         |
+| pg_roaringbitmap   | 0.5.5        | 1.1.0         |
+| plprql             | 18.0.0       | 18.0.1        |
+| pglinter           | 1.0.1        | 1.1.0         |
+| pg_jsonschema      | 0.3.3        | 0.3.4         |
+| pg_anon            | 2.5.1        | 3.0.1         |
+| vchord             | 1.0.0        | 1.1.0         |
+| pg_search          | 0.21.4       | 0.21.6/0.21.7 |
+| pg_graphql         | 1.5.12-1     | 1.5.12-2      |
+| pg_summarize       | 0.0.1-2      | 0.0.1-3       |
+| nominatim_fdw      | -            | 1.1.0         |
+| pg_utl_smtp        | -            | 1.0.0         |
+| pg_strict          | -            | 1.0.2         |
+| pg_track_optimizer | -            | 0.9.1         |
+| pgmb               | -            | 1.0.0         |
+
 **Bug 修复**
 
 - 修复 `pig build proxy` 在异常代理地址输入下的解析 panic。
@@ -40,7 +78,14 @@ breadcrumbs: false
 **校验和**
 
 ```bash
-
+95245dc035270df2b02cdd5d19afac57ccf4949a61b07b1b806fffde3a3b780e  pig-1.1.0-1.aarch64.rpm
+8b1a26f1b5dd002841a0b31904eea8ce94d1e6c4acde4704a78d9e121e1656f4  pig-1.1.0-1.x86_64.rpm
+dbd079510513f1cd0521b0871cc6fe3eed8f7fa26f66c04c682568c43e24c456  pig-v1.1.0.darwin-amd64.tar.gz
+3f3ba081b54569a7de4d9a8fce72c02c84d9e1cbeb53173567f970c7291af251  pig-v1.1.0.darwin-arm64.tar.gz
+ad61384bf01cbb8346ce869da0bc893203ad316c516fb9420cb748f1519a005e  pig-v1.1.0.linux-amd64.tar.gz
+7713632beea1e6ca5c3e2e7172c4adee13a2b1b256755f6c2898b6ca98ee1e00  pig-v1.1.0.linux-arm64.tar.gz
+70cfc41b7b0aad48f29e12c22c34afd55b938bf50868ac8ab067b9cb62ccb867  pig_1.1.0-1_amd64.deb
+fc5cf16671254f8f3495ff7e80c9d77d06b2328c1a247f90f96cf1e918e0ad0e  pig_1.1.0-1_arm64.deb
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v1.1.0
