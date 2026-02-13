@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (451 ext in 382 pkg) categorized into 16 categories.
+PostgreSQL Extensions (451 ext in 318 pkg) categorized into 16 categories.
 
 
 

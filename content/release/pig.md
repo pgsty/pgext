@@ -166,7 +166,7 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.9.0
 - remove pgdg yum llvmjit packages due to upstream change
 - fix el9.aarch64 patroni 3.0.4 duplicate package issue
 - add priority to el repo definition and skip if unavailable for docker repo
-- add epel 10 / pgdg 9/10 os minior version hot fixes
+- add epel 10 / pgdg 9/10 os minor version hot fixes
 - fix debian/ubuntu pg18 extension: supautils, pg_summarize , pg_vectorize, pg_tiktoken, pg_tzf, pglite_fusion, pgsmcrypto, pgx_ulid, plprql
 
 **Checksums**

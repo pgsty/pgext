@@ -164,7 +164,7 @@ pig ext reload                   # Refresh extension catalog
 ```
 
 **Key Features:**
-- 444+ PostgreSQL extensions
+- 451 PostgreSQL extensions
 - Multi-version PostgreSQL support
 - Automatic dependency resolution
 - Category-based browsing

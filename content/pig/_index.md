@@ -73,7 +73,7 @@ Check sub-commands [documentation](/pig/cmd) with `pig help <command>`
 
 The `pig` CLI is developed by [Vonng](https://blog.vonng.com/en/), and open-sourced under the [Apache License 2.0](https://github.com/pgsty/pig/?tab=Apache-2.0-1-ov-file#readme).
 
-You can also check the [pigsty](https://pgsty.com) project, which makes it even smoother to deliver all these [extensions](/usage) in an IaC way:
+You can also check the [pigsty](https://pgsty.com) project, which makes it even smoother to deliver all these [extensions](/list) in an IaC way:
 
 {{< cards cols=4 >}}
 {{< card link="https://github.com/pgsty/pgext"  title="PGEXT"  icon="github" subtitle="This Website and Extension Catalog" >}}

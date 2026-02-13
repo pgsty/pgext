@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（451 ext / 382 pkg）归属 16 个分类。
+PostgreSQL 扩展（451 ext / 318 pkg）归属 16 个分类。
 
 
 

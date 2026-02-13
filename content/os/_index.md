@@ -1,6 +1,6 @@
 ---
 title: Platform
-description: Support Linux OS & Distribution Major Verions
+description: Support Linux OS & Distribution Major Versions
 weight: 300
 breadcrumbs: false
 ---

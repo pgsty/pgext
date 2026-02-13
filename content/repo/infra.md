@@ -18,17 +18,17 @@ Hosted on cloudflare CDN for free global access.
 |   EL   |  `rpm`  |   ✓    |    ✓    |
 | Debian |  `deb`  |   ✓    |    ✓    |
 
-You can check the [**Release - Infra Chanage Log**](/release/infra) for the latest updates.
+You can check the [**Release - Infra Changelog**](/release/infra) for the latest updates.
 
 ## Quick Start
 
-You can add the `pigsty-infra` repo with the [`pig`](/cmd/pig) CLI tool, it will automatically choose from `apt/yum/dnf`.
+You can add the `pigsty-infra` repo with the [`pig`](/pig) CLI tool, it will automatically choose from `apt/yum/dnf`.
 
 {{< tabs items="Default,Mirror,Hint" >}}
 {{< tab >}}
 ```bash tab="default"
 curl https://repo.pigsty.io/pig | bash  # download and install the pig CLI tool
-pig repo add infra                      # add pigsty-infra repo file to you system
+pig repo add infra                      # add pigsty-infra repo file to your system
 pig repo update                         # update local repo cache with apt / dnf
 ```
 {{< /tab >}}
@@ -36,7 +36,7 @@ pig repo update                         # update local repo cache with apt / dnf
 ```bash tab="mirror"
 # use when in mainland china or cloudflare is down
 curl https://repo.pigsty.cc/pig | bash  # install pig from china CDN mirror 
-pig repo add infra                      # add pigsty-infra repo file to you system
+pig repo add infra                      # add pigsty-infra repo file to your system
 pig repo update                         # update local repo cache with apt / dnf
 ```
 {{< /tab >}}

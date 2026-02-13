@@ -6,15 +6,15 @@ weight: 800
 
 
 {{< cards cols=2 >}}
-{{< card link="/release/pig"                         title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" >}}
+{{< card link="/zh/release/pig"                         title="PIG 发布记录"    subtitle="PG 包管理器发布历史"          icon="sparkles" >}}
 {{< card link="https://pigsty.io/docs/about/release" title="Pigsty 发布记录" subtitle="开箱即用的 PostgreSQL 发行版" icon="play"     >}}
 {{< /cards >}}
 
 
 {{< cards >}}
-{{< card link="/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles"       >}}
-{{< card link="/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play"           >}}
-{{< card link="/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save"  >}}
+{{< card link="/zh/release/rpm"   title="RPM 发布记录"   subtitle="EL RPM 软件包变更记录" icon="sparkles"       >}}
+{{< card link="/zh/release/deb"   title="DEB 发布记录"   subtitle="Debian 软件包变更记录" icon="play"           >}}
+{{< card link="/zh/release/infra" title="Infra 发布记录" subtitle="与OS版本无关的通用软件包变更记录"  icon="save"  >}}
 {{< /cards >}}
 
 
@@ -25,7 +25,7 @@ weight: 800
 | 版本                             |     日期     | 摘要                                |                           GitHub                           |
 |:-------------------------------|:----------:|-----------------------------------|:----------------------------------------------------------:|
 | [v1.1.0](/zh/release/pig#v110) | 2026-02-12 | Agent-native 输出框架，新增 context 与 plan 模式 | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
-| [v1.0.0](/zh/release/pig#v100) | 2026-01-18 | 444 扩展，可用性矩阵，`pig ext` 强化         | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
+| [v1.0.0](/zh/release/pig#v100) | 2026-01-18 | 451 扩展，可用性矩阵，`pig ext` 强化         | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
 | [v0.9.0](/zh/release/pig#v090) | 2025-12-28 | pig sty 子命令强化，修复 YUM 仓库问题         | [v0.9.0](https://github.com/pgsty/pig/releases/tag/v0.9.0) |
 | [v0.8.0](/zh/release/pig#v080) | 2025-12-16 | 440 个扩展，Pigsty v4，例行修复            | [v0.8.0](https://github.com/pgsty/pig/releases/tag/v0.8.0) |
 | [v0.7.5](/zh/release/pig#v075) | 2025-12-15 | 例行扩展更新，使用阿里云镜像仓库                  | [v0.7.5](https://github.com/pgsty/pig/releases/tag/v0.7.5) |
@@ -37,7 +37,7 @@ weight: 800
 | [v0.6.2](/zh/release/pig#v062) | 2025-10-03 | 正式提供 PG 18 支持                     | [v0.6.2](https://github.com/pgsty/pig/releases/tag/v0.6.2) |
 | [v0.6.1](/zh/release/pig#v061) | 2025-08-13 | 添加 CI/CD 管道，使用 PIGSTY PGDG 仓库     | [v0.6.1](https://github.com/pgsty/pig/releases/tag/v0.6.1) |
 | [v0.6.0](/zh/release/pig#v060) | 2025-07-17 | 423 个扩展，percona pg_tde，mcp 工具箱    | [v0.6.0](https://github.com/pgsty/pig/releases/tag/v0.6.0) |
-| [v0.5.0](/zh/release/pig#v050) | 2025-06-30 | 422 个扩展，新的扩展目录                    | [v0.6.0](https://github.com/pgsty/pig/releases/tag/v0.5.0) |
+| [v0.5.0](/zh/release/pig#v050) | 2025-06-30 | 422 个扩展，新的扩展目录                    | [v0.5.0](https://github.com/pgsty/pig/releases/tag/v0.5.0) |
 | [v0.4.2](/zh/release/pig#v042) | 2025-05-27 | 421 个扩展，halo 和 oriole deb         | [v0.4.2](https://github.com/pgsty/pig/releases/tag/v0.4.2) |
 | [v0.4.1](/zh/release/pig#v041) | 2025-05-07 | 414 个扩展，pg18 别名支持                 | [v0.4.1](https://github.com/pgsty/pig/releases/tag/v0.4.1) |
 | [v0.4.0](/zh/release/pig#v040) | 2025-05-01 | do 和 pt 子命令，halo 和 orioledb       | [v0.4.0](https://github.com/pgsty/pig/releases/tag/v0.4.0) |

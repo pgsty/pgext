@@ -296,9 +296,9 @@ Release: https://github.com/pgsty/pig/releases/tag/v0.7.2
 - 修复了不必要的 sudo 使用问题，现在可以方便的在容器中使用
 - 允许 pig ext link 命令使用形如 pg17 pg18 的参数形式
 - 新增环境变量 `PIG_NO_SUDO`，强制不使用 sudo 执行命令
-- [RPM 变更日志](/release/rpm#2025-11-10): 为几乎所有扩展新增 PG 18 支持
-- [DEB 变更日志](/release/deb#2025-11-10): 为几乎所有扩展新增 PG 18 支持
-- [Infra 变更日志](/release/infra#2025-11-08): 例行更新至最新版本
+- [RPM 变更日志](/zh/release/rpm#2025-11-10): 为几乎所有扩展新增 PG 18 支持
+- [DEB 变更日志](/zh/release/deb#2025-11-10): 为几乎所有扩展新增 PG 18 支持
+- [Infra 变更日志](/zh/release/infra#2025-11-08): 例行更新至最新版本
 
 **校验和**
 

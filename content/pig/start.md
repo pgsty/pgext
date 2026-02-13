@@ -132,7 +132,7 @@ pg_bulkload                     installed  3.1.23      ETL    bds---  BSD 3-Clau
 test_decoding                   available  -           ETL    --s--x  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       SQL-based test/example module for WAL logical decoding
 pgoutput                        available  -           ETL    --s---  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       Logical Replication output plugin
 
-(448 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
+(451 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
 
 ```
 

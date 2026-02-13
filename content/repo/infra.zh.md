@@ -22,7 +22,7 @@ Infra 仓库的更新记录可以参考 [**Release - Infra 变更日志**](/zh/r
 
 ## 快速上手
 
-您可以使用 [`pig`](/zh/cmd/pig) CLI 工具添加 `pigsty-infra` 仓库，它会自动从 `apt/yum/dnf` 中选择合适的包管理器。
+您可以使用 [`pig`](/zh/pig) CLI 工具添加 `pigsty-infra` 仓库，它会自动从 `apt/yum/dnf` 中选择合适的包管理器。
 
 {{< tabs items="默认,镜像,提示" >}}
 {{< tab >}}
