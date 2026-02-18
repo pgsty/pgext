@@ -4,11 +4,6 @@ description: PG Extensions in the radar!
 weight: 700
 ---
 
-## TODO
-
-- pglinter
-- pg_jsonschema
-
 ## TODOLIST
 
 - biscuit pgdg yum
