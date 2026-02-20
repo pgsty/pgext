@@ -6,6 +6,26 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-02-20
+
+注：`pg_background` 本次仅提供 DEB 包。
+
+### 更新包
+
+| 包名                | 旧版本      | 新版本    | 备注                    |
+|:------------------|:---------|:-------|:----------------------|
+| timescaledb       | 2.25.0   | 2.25.1 |                       |
+| citus             | 14.0.0-3 | 14.0.0 | 使用最新官方版本重新构建          |
+| age               | 1.7.0    | 1.7.0  | 新增 PG 17 的 1.7.0 版本支持 |
+| pgmq              | 1.10.0   | 1.10.1 | 当前没有该扩展包              |
+| pg_search         | 0.21.7   | 0.21.8 | 直接下载使用                |
+| oriolepg          | 17.11    | 17.16  | OriolePG 内核更新         |
+| orioledb          | beta12   | beta14 | 配套 OriolePG 17.16     |
+| cloudberry        | -        | 2.0.0  | 新增包                   |
+| babelfishpg       | -        | 5.5.0  | 新增 BabelfishPG 包组     |
+| babelfish         | -        | 5.5.0  | 新增 Babelfish 兼容包      |
+| antlr4-runtime413 | -        | 4.13   | 新增 Babelfish 依赖运行时    |
+
 ## 2026-02-12
 
 | 名称                 | 旧版本          | 新版本          | 备注                   |
@@ -464,4 +484,3 @@ weight: 200
 |   pg-orphaned   |  -  |    latest    |    |
 |    pgnodemx     |  -  |     1.7      |    |
 |    sslutils     |  -  | 1.4 (+16,17) |    |
-

@@ -6,6 +6,32 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-02-18
+
+| Name                       | Old            | New            | Comment |
+|:---------------------------|:---------------|:---------------|:--------|
+| grafana                    | 12.3.2         | 12.3.3         |         |
+| grafana-victorialogs-ds    | 0.24.1         | 0.25.0         |         |
+| grafana-victoriametrics-ds | 0.21.0         | 0.22.0         |         |
+| grafana-infinity-ds        | 3.7.0          | 3.7.1          |         |
+| redis_exporter             | 1.80.2         | 1.81.0         |         |
+| etcd                       | 3.6.7          | 3.6.8          |         |
+| dblab                      | 0.34.2         | 0.34.3         |         |
+| tigerbeetle                | 0.16.72        | 0.16.73        |         |
+| seaweedfs                  | 4.09           | 4.13           |         |
+| rustfs                     | 1.0.0-alpha.82 | 1.0.0-alpha.83 |         |
+| uv                         | 0.10.0         | 0.10.4         |         |
+| kafka                      | 4.1.1          | 4.2.0          |         |
+| npgsqlrest                 | 3.7.0          | 3.8.0          |         |
+| postgrest                  | 14.4           | 14.5           |         |
+| opencode                   | 1.1.59         | 1.2.6          |         |
+| genai-toolbox              | 0.25.0         | 0.27.0         |         |
+| claude                     | 2.1.37         | 2.1.45         |         |
+| rclone                     | 1.73.0         | 1.73.1         |         |
+| code-server                | 4.108.2        | 4.109.2        |         |
+| code                       | 1.109.2        | 1.109.4        |         |
+| pig                        | 1.1.1          | 1.1.2          |         |
+
 ## 2026-02-12
 
 | Name                 | Old     | New     | Comment |

@@ -35,7 +35,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_task` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.1.7` | {{< bg "18" "pg_task_18" "green" >}} {{< bg "17" "pg_task_17" "green" >}} {{< bg "16" "pg_task_16" "green" >}} {{< bg "15" "pg_task_15" "green" >}} {{< bg "14" "pg_task_14" "green" >}} {{< bg "13" "pg_task_13" "green" >}} | `pg_task_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.12` | {{< bg "18" "postgresql-18-pg-task" "green" >}} {{< bg "17" "postgresql-17-pg-task" "green" >}} {{< bg "16" "postgresql-16-pg-task" "green" >}} {{< bg "15" "postgresql-15-pg-task" "green" >}} {{< bg "14" "postgresql-14-pg-task" "green" >}} {{< bg "13" "postgresql-13-pg-task" "green" >}} | `postgresql-$v-pg-task` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.1.29` | {{< bg "18" "postgresql-18-pg-task" "green" >}} {{< bg "17" "postgresql-17-pg-task" "green" >}} {{< bg "16" "postgresql-16-pg-task" "green" >}} {{< bg "15" "postgresql-15-pg-task" "green" >}} {{< bg "14" "postgresql-14-pg-task" "green" >}} {{< bg "13" "postgresql-13-pg-task" "green" >}} | `postgresql-$v-pg-task` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -198,7 +198,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/RekGRpth/pg_task" title="Repository" icon="github" subtitle="github.com/RekGRpth/pg_task" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_task-2.1.12.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_task-1.0.0.tar.gz" >}}
 {{< /cards >}}
 
 

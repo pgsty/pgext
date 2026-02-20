@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（451 ext / 318 pkg）归属 16 个分类。
+PostgreSQL 扩展（451 ext / 382 pkg）归属 16 个分类。
 
 
 
@@ -18,7 +18,7 @@ PostgreSQL 扩展（451 ext / 318 pkg）归属 16 个分类。
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.25.0 | 时序数据库扩展插件 |
+| 1000 | {{< alias "timescaledb" >}} | 2.25.1 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -28,7 +28,7 @@ PostgreSQL 扩展（451 ext / 318 pkg）归属 16 个分类。
 | 1070 | {{< alias "pg_cron" >}} | 1.6.7 | 定时任务调度器 |
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | 在特定时间点在后台执行SQL命令 |
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | 执行查询，并在稍后异步获取查询结果 |
-| 1100 | {{< alias "pg_background" >}} | 1.6 | 在后台运行 SQL 查询 |
+| 1100 | {{< alias "pg_background" >}} | 1.8 | 在后台运行 SQL 查询 |
 
 ## GIS
 
@@ -81,7 +81,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.7 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.8 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -116,11 +116,11 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | 由 DuckDB 驱动的数据分析引擎 |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | PostgreSQL列式存储表 |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.3 | 从PostgreSQL中查询ClickHouse的接口 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.4 | 从PostgreSQL中查询ClickHouse的接口 |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB 外部数据源包装器 |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | 按外键实用程序进行表分区的扩展 |
-| 2510 | {{< alias "pg_partman" >}} | 5.4.1 | 用于按时间或 ID 管理分区表的扩展 |
+| 2510 | {{< alias "pg_partman" >}} | 5.4.2 | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 6.1 | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | 交叉表函数 |
@@ -147,9 +147,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2840 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 1.4.1 | 增量处理流式事件 |
 | 2870 | {{< alias "pgmb" >}} | 1.0.0 | 一个简单的PostgreSQL消息代理系统 |
-| 2880 | {{< alias "pgmq" >}} | 1.10.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2880 | {{< alias "pgmq" >}} | 1.10.1 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2890 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
-| 2910 | {{< alias "orioledb" >}} | 1.5 | OrioleDB，下一代事务处理引擎 |
+| 2910 | {{< alias "orioledb" >}} | 1.6 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 2930 | {{< alias "rdkit" >}} | 202503.1 | 在PostgreSQL化学领域数据管理功能 |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | PostgreSQL即平台，Omnigres主扩展与加载器 |
@@ -209,7 +209,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Lua 程序语言的Hstore适配扩展（不受信任的） |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | 在PostgreSQL使用PRQL——管线式关系查询语言 |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.8.8 | 对 plpgsql 函数进行扩展检查 |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.8.10 | 对 plpgsql 函数进行扩展检查 |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | 剖析 PL/pgSQL 函数 |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh 程序语言 |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | Java 程序语言 |
@@ -377,7 +377,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
 | 5010 | {{< alias "pg_repack" >}} | 1.5.3 | 在线垃圾清理与表膨胀治理 |
-| 5020 | {{< alias "pg_rewrite" >}} | 2.0.0 | 在线重写整表，不阻塞读写 |
+| 5020 | {{< alias "pg_rewrite" >}} | 2.1.0 | 在线重写整表，不阻塞读写 |
 | 5040 | {{< alias "pg_squeeze" >}} | 1.9.1 | 从关系中删除未使用空间 |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.7 | 从表中读取尚未垃圾回收的行 |
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | 检查和管理操作系统缓冲区缓存 |
@@ -426,7 +426,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | PostgreSQL分布式Tracing |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.7 | 打印所有当前正在运行查询的执行计划 |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | 内核统计信息收集 |
-| 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.1 | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
+| 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | 收集有关 quals 的统计信息的扩展 |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | 跟踪设置更改 |
@@ -473,12 +473,12 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | PostgreSQL 加密数据类型 |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | 提供审计功能 |
-| 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.6 | pgAudit 子扩展，将审计日志写入单独的文件中 |
+| 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.7 | pgAudit 子扩展，将审计日志写入单独的文件中 |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | 审计数据变更并提供闪回能力 |
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | 用于收集日志文件中消息统计信息的函数 |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | 监控每个用户的连接尝试 |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | 记录和监控函数 |
-| 7310 | {{< alias "credcheck" >}} | 4.5 | 明文凭证检查器 |
+| 7310 | {{< alias "credcheck" >}} | 4.6 | 明文凭证检查器 |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | PG密钥管理 |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | PostgreSQL 高级密码哈希扩展（Argon2/scrypt/yescrypt） |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | 在用户登陆时执行login_hook.login()函数 |
@@ -544,8 +544,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
-| 9300 | {{< alias "babelfishpg_common" >}} | 3.3.3 | SQL Server 数据类型兼容扩展 |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | 3.3.1 | SQL Server SQL语法兼容性扩展 |
+| 9300 | {{< alias "babelfishpg_common" >}} | 5.5.0 | SQL Server 数据类型兼容扩展 |
+| 9310 | {{< alias "babelfishpg_tsql" >}} | 5.5.0 | SQL Server SQL语法兼容性扩展 |
 | 9320 | {{< alias "babelfishpg_tds" >}} | 1.0.0 | SQL Server TDS线缆协议兼容扩展 |
 | 9330 | {{< alias "babelfishpg_money" >}} | 1.1.0 | SQL Server 货币数据类型兼容扩展 |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | 在PG中嵌入Redis风格的内存数据库 |
@@ -566,7 +566,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | PostgreSQL多主逻辑复制 |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
-| 9650 | {{< alias "decoderbufs" >}} | 3.4.0 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
+| 9650 | {{< alias "decoderbufs" >}} | 3.4.1 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | 逻辑复制解码输出插件：RAW SQL格式 |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | 在PostgreSQL实例间进行表级复制 |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | PostgreSQL复制管理组件 |

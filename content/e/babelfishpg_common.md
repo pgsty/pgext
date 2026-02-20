@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9300** | {{< badge content="babelfishpg_common" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_common" >}} | `3.3.3` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **9300** | {{< badge content="babelfishpg_common" link="https://babelfishpg.org/" >}} | {{< ext "babelfishpg_common" >}} | `5.5.0` | {{< category "SIM" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_common` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "red" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "green" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `3.3.3` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "red" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "green" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.5.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_common` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.5.0` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "green" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "red" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `5.5.0` | {{< bg "18" "babelfishpg-common" "red" >}} {{< bg "17" "babelfishpg-common" "green" >}} {{< bg "16" "babelfishpg-common" "red" >}} {{< bg "15" "babelfishpg-common" "red" >}} {{< bg "14" "babelfishpg-common" "red" >}} {{< bg "13" "babelfishpg-common" "red" >}} | `babelfishpg-common` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -77,7 +77,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install babelfishpg_common;		# install via package name, for the active PG version
 
-pig install babelfishpg_common -v 15;   # install for PG 15
+pig install babelfishpg_common -v 17;   # install for PG 17
 
 ```
 

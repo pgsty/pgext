@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_tds` | `babelfishpg_tsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "red" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "green" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "red" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "green" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} {{< bg "13" "" "red" >}} | `babelfishpg_tds` | `babelfishpg_tsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "green" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "red" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "babelfishpg-tds" "red" >}} {{< bg "17" "babelfishpg-tds" "green" >}} {{< bg "16" "babelfishpg-tds" "red" >}} {{< bg "15" "babelfishpg-tds" "red" >}} {{< bg "14" "babelfishpg-tds" "red" >}} {{< bg "13" "babelfishpg-tds" "red" >}} | `babelfishpg-tds` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -77,7 +77,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install babelfishpg_tds;		# install via package name, for the active PG version
 
-pig install babelfishpg_tds -v 15;   # install for PG 15
+pig install babelfishpg_tds -v 17;   # install for PG 17
 
 ```
 

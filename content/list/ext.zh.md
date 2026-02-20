@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 451 | 155 | 279 | 71 | 0 | 432 | 440 | 438 | 438 | 422 | 388 |
-| **EL** | 445 | 149 | 279 | 71 | 6 | 422 | 433 | 432 | 432 | 416 | 382 |
-| **Debian** | 436 | 107 | 258 | 71 | 15 | 417 | 426 | 423 | 423 | 407 | 372 |
+| **ALL** | 451 | 155 | 279 | 71 | 0 | 432 | 444 | 438 | 434 | 422 | 388 |
+| **EL** | 445 | 149 | 279 | 71 | 6 | 422 | 437 | 432 | 428 | 416 | 382 |
+| **Debian** | 436 | 107 | 258 | 71 | 15 | 417 | 430 | 423 | 419 | 407 | 372 |
 
 ## 分类
 
@@ -468,10 +468,10 @@ comments: false
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
-| {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server 数据类型兼容扩展 |
-| {{< ext "babelfishpg_tsql" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server SQL语法兼容性扩展 |
-| {{< ext "babelfishpg_tds" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | SQL Server TDS线缆协议兼容扩展 |
-| {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server 货币数据类型兼容扩展 |
+| {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server 数据类型兼容扩展 |
+| {{< ext "babelfishpg_tsql" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server SQL语法兼容性扩展 |
+| {{< ext "babelfishpg_tds" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | SQL Server TDS线缆协议兼容扩展 |
+| {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server 货币数据类型兼容扩展 |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在PG中嵌入Redis风格的内存数据库 |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 为PG提供memcached兼容接口 |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |

@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 451 | 155 | 279 | 71 | 0 | 432 | 440 | 438 | 438 | 422 | 388 |
-| **EL** | 445 | 149 | 279 | 71 | 6 | 422 | 433 | 432 | 432 | 416 | 382 |
-| **Debian** | 436 | 107 | 258 | 71 | 15 | 417 | 426 | 423 | 423 | 407 | 372 |
+| **ALL** | 451 | 155 | 279 | 71 | 0 | 432 | 444 | 438 | 434 | 422 | 388 |
+| **EL** | 445 | 149 | 279 | 71 | 6 | 422 | 437 | 432 | 428 | 416 | 382 |
+| **Debian** | 436 | 107 | 258 | 71 | 15 | 417 | 430 | 423 | 419 | 407 | 372 |
 
 ## Categories
 
@@ -468,10 +468,10 @@ There are 451 available PostgreSQL extensions:
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
-| {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server Transact SQL Datatype Support |
-| {{< ext "babelfishpg_tsql" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server Transact SQL compatibility |
-| {{< ext "babelfishpg_tds" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | SQL Server TDS protocol extension |
-| {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,g,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server Money Data Type |
+| {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server Transact SQL Datatype Support |
+| {{< ext "babelfishpg_tsql" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server Transact SQL compatibility |
+| {{< ext "babelfishpg_tds" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | SQL Server TDS protocol extension |
+| {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server Money Data Type |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | memcached interface |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Logical Replication |
