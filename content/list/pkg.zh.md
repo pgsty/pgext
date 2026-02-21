@@ -399,10 +399,10 @@ comments: false
 | {{< ext "pg_dbms_job" >}} | `1.5` | {{< badge content="Link" link="https://github.com/MigOpsRepos/pg_dbms_job" >}} | {{< category "SIM" >}} | `pg_dbms_job_$v` | - |
 | {{< ext "pg_dbms_errlog" >}} | `2.2` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_errlog" >}} | {{< category "SIM" >}} | `pg_dbms_errlog_$v` | - |
 | {{< ext "pg_utl_smtp" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< category "SIM" >}} | `pg_utl_smtp_$v` | `postgresql-$v-utl-smtp` |
-| {{< ext "babelfishpg_common" >}} | `5.5.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-common` | `babelfishpg-common` |
-| {{< ext "babelfishpg_tsql" >}} | `5.5.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-tsql` | `babelfishpg-tsql` |
-| {{< ext "babelfishpg_tds" >}} | `1.0.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-tds` | `babelfishpg-tds` |
-| {{< ext "babelfishpg_money" >}} | `1.1.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfishpg-money` | `babelfishpg-money` |
+| {{< ext "babelfishpg_common" >}} | `5.5.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish_$v` | `babelfishpg-$v-babelfish` |
+| {{< ext "babelfishpg_tsql" >}} | `5.5.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish_$v` | `babelfishpg-$v-babelfish` |
+| {{< ext "babelfishpg_tds" >}} | `1.0.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish_$v` | `babelfishpg-$v-babelfish` |
+| {{< ext "babelfishpg_money" >}} | `1.1.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish_$v` | `babelfishpg-$v-babelfish` |
 | {{< ext "spat" >}} | `0.1.0a4` | {{< badge content="Link" link="https://github.com/Florents-Tselai/spat" >}} | {{< category "SIM" >}} | `spat_$v` | `postgresql-$v-spat` |
 | {{< ext "pgmemcache" >}} | `2.3.0` | {{< badge content="Link" link="https://github.com/ohmu/pgmemcache" >}} | {{< category "SIM" >}} | `pgmemcache_$v` | `postgresql-$v-pgmemcache` |
 | {{< ext "pglogical" >}} | `2.4.6` | {{< badge content="Link" link="https://github.com/2ndQuadrant/pglogical" >}} | {{< category "ETL" >}} | `pglogical_$v` | `postgresql-$v-pglogical` |

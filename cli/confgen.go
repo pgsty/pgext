@@ -113,6 +113,8 @@ type ExtensionData struct {
 	Comment         string
 	RPMPkg          string // RPM package template from extension.rpm_pkg
 	DEBPkg          string // DEB package template from extension.deb_pkg
+	RPMPG           []int  // Declared RPM PG versions from extension.rpm_pg
+	DEBPG           []int  // Declared DEB PG versions from extension.deb_pg
 }
 
 // CategoryPkgList holds visible and hidden packages for a category
@@ -158,6 +160,8 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 				e.comment,
 				e.rpm_pkg,
 				e.deb_pkg,
+				e.rpm_pg,
+				e.deb_pg,
 				p.pg,
 				p.name as pkg_name,
 				p.state,
@@ -167,7 +171,7 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 			LEFT JOIN pgext.pkg p ON p.ext = e.name AND p.os = $1
 			WHERE e.lead = true AND e.contrib IS NOT TRUE
 		)
-		SELECT ext_id, name, alias, category, cat_id, comment, rpm_pkg, deb_pkg, pg, pkg_name, state, hide
+		SELECT ext_id, name, alias, category, cat_id, comment, rpm_pkg, deb_pkg, rpm_pg, deb_pg, pg, pkg_name, state, hide
 		FROM ext_avail
 		ORDER BY cat_id, ext_id, pg
 	`
@@ -190,13 +194,15 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 			comment  sql.NullString
 			rpmPkg   sql.NullString
 			debPkg   sql.NullString
+			rpmPG    interface{}
+			debPG    interface{}
 			pg       sql.NullInt32
 			pkgName  sql.NullString
 			state    sql.NullString
 			hide     sql.NullBool
 		)
 
-		err := rows.Scan(&extID, &name, &alias, &category, &catID, &comment, &rpmPkg, &debPkg, &pg, &pkgName, &state, &hide)
+		err := rows.Scan(&extID, &name, &alias, &category, &catID, &comment, &rpmPkg, &debPkg, &rpmPG, &debPG, &pg, &pkgName, &state, &hide)
 		if err != nil {
 			return nil, err
 		}
@@ -222,6 +228,8 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 			if debPkg.Valid {
 				extensions[name].DEBPkg = debPkg.String
 			}
+			extensions[name].RPMPG = ParsePGVersions(parseArrayValue(rpmPG))
+			extensions[name].DEBPG = ParsePGVersions(parseArrayValue(debPG))
 		}
 
 		// Update availability and package name for specific PG version
@@ -426,6 +434,28 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 	return result
 }
 
+// getExtensionMappingVersions returns PG versions for extension alias comments.
+// Prefer real AVAIL data from pkg table, and fallback to declared rpm_pg/deb_pg when AVAIL is empty.
+func (g *PigstyConfigGenerator) getExtensionMappingVersions(ext *ExtensionData) []int {
+	var versions []int
+	for pg := range ext.Available {
+		if ext.Available[pg] {
+			versions = append(versions, pg)
+		}
+	}
+	if len(versions) > 0 {
+		return versions
+	}
+
+	if g.isRPM() && len(ext.RPMPG) > 0 {
+		return append([]int(nil), ext.RPMPG...)
+	}
+	if !g.isRPM() && len(ext.DEBPG) > 0 {
+		return append([]int(nil), ext.DEBPG...)
+	}
+	return versions
+}
+
 // generateExtensionMappings generates extension to package name mappings
 func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]*ExtensionData) []ExtensionMapping {
 	var mappings []ExtensionMapping
@@ -500,12 +530,7 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 		}
 
 		// Determine available versions
-		var availVersions []int
-		for pg := range ext.Available {
-			if ext.Available[pg] {
-				availVersions = append(availVersions, pg)
-			}
-		}
+		availVersions := g.getExtensionMappingVersions(ext)
 		sort.Sort(sort.Reverse(sort.IntSlice(availVersions)))
 
 		mappings = append(mappings, ExtensionMapping{
@@ -531,12 +556,6 @@ func (g *PigstyConfigGenerator) getPackageNameForCategory(ext *ExtensionData, pg
 		}
 		// For Debian/Ubuntu, use standard postgresql-$v-pgaudit pattern
 		return fmt.Sprintf("postgresql-%d-pgaudit", pgVer)
-	case "babelfishpg_common":
-		// Merge babelfish into wiltondb
-		if g.osCode == "el7" || g.osCode == "el8" || g.osCode == "el9" ||
-			g.osCode == "u20" || g.osCode == "u22" || g.osCode == "u24" {
-			return "wiltondb"
-		}
 	}
 
 	// Use rpm_pkg or deb_pkg templates from extension
@@ -880,6 +899,7 @@ func GetConfigConstants() *ConfigConstants {
 
 		PGSQLExoticMap: []PackageMapping{
 			{"wiltondb", "wiltondb", "wiltondb"},
+			{"babelfish", "babelfishpg-17 babelfishpg-17-babelfish", "babelfishpg-17 babelfishpg-17-babelfish"},
 			{"polardb", "PolarDB", "polardb-for-postgresql"},
 			{"openhalodb", "openhalodb", "openhalodb"},
 			{"ivorysql", "ivorysql5", "ivorysql-5"},
@@ -945,10 +965,10 @@ infra_packages_default:
 pg_home_map:
   pgsql:  '/usr/pgsql-$v'
   citus:  '/usr/pgsql-$v'
-  mssql:  '/usr/'
+  mssql:  '/usr/babelfish-$v/'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
-  gpsql:  '/usr/gpsql'
+  gpsql:  '/usr/local/cloudberry'
   polar:  '/u01/polardb_pg'
   oracle: '/u01/polardb_pg'
   oriole: '/usr/oriole-$v'
@@ -1092,7 +1112,8 @@ infra_packages_default:
 pg_home_map:
   pgsql:  '/usr/lib/postgresql/$v'
   citus:  '/usr/lib/postgresql/$v'
-  mssql:  '/usr/lib/postgresql/$v'
+  mssql:  '/usr/babelfish-$v/'
+  gpsql:  '/usr/local/cloudberry'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
   polar:  '/u01/polardb_pg'
