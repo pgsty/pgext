@@ -6,6 +6,18 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-02-22
+
+| Name                      | Old     | New     | Comment |
+|:--------------------------|:--------|:--------|:--------|
+| victoria-metrics          | 1.135.0 | 1.136.0 |         |
+| victoria-metrics-cluster  | 1.135.0 | 1.136.0 |         |
+| vmutils                   | 1.135.0 | 1.136.0 |         |
+| loki                      | 3.6.5   | 3.6.6   |         |
+| promtail                  | 3.6.5   | 3.6.6   |         |
+| logcli                    | 3.6.5   | 3.6.6   |         |
+| opencode                  | 1.2.6   | 1.2.10  |         |
+
 ## 2026-02-18
 
 | Name                       | Old            | New            | Comment |
