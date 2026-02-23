@@ -8,15 +8,17 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-02-22
 
-| Name                      | Old     | New     | Comment |
-|:--------------------------|:--------|:--------|:--------|
-| victoria-metrics          | 1.135.0 | 1.136.0 |         |
-| victoria-metrics-cluster  | 1.135.0 | 1.136.0 |         |
-| vmutils                   | 1.135.0 | 1.136.0 |         |
-| loki                      | 3.6.5   | 3.6.6   |         |
-| promtail                  | 3.6.5   | 3.6.6   |         |
-| logcli                    | 3.6.5   | 3.6.6   |         |
-| opencode                  | 1.2.6   | 1.2.10  |         |
+| Name                     | Old     | New     | Comment |
+|:-------------------------|:--------|:--------|:--------|
+| victoria-metrics         | 1.135.0 | 1.136.0 |         |
+| victoria-metrics-cluster | 1.135.0 | 1.136.0 |         |
+| vmutils                  | 1.135.0 | 1.136.0 |         |
+| loki                     | 3.6.5   | 3.6.6   |         |
+| promtail                 | 3.6.5   | 3.6.6   |         |
+| logcli                   | 3.6.5   | 3.6.6   |         |
+| opencode                 | 1.2.6   | 1.2.10  |         |
+| pig                      | 1.1.0   | 1.2.0   |         |
+
 
 ## 2026-02-18
 
@@ -42,7 +44,6 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | rclone                     | 1.73.0         | 1.73.1         |         |
 | code-server                | 4.108.2        | 4.109.2        |         |
 | code                       | 1.109.2        | 1.109.4        |         |
-| pig                        | 1.1.1          | 1.1.2          |         |
 
 ## 2026-02-12
 

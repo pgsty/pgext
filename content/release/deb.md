@@ -9,8 +9,6 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 ## 2026-02-20
 
-### Updated Packages
-
 | Package           | Old            | New    | Comment                              |
 |:------------------|:---------------|:-------|:-------------------------------------|
 | timescaledb       | 2.25.0         | 2.25.1 |                                      |

@@ -8,10 +8,6 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 ## 2026-02-20
 
-Note: `pg_background` is DEB-only in this release.
-
-### Updated Packages
-
 | Package           | Old      | New    | Comment                              |
 |:------------------|:---------|:-------|:-------------------------------------|
 | timescaledb       | 2.25.0   | 2.25.1 |                                      |
