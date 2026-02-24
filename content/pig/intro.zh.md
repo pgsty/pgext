@@ -36,27 +36,27 @@ PIG 的命令体系可直接用于自动化脚本：参数风格统一、输出�
 
 PIG 与 Pigsty 扩展仓库支持以下 Linux 发行版和 PostgreSQL 版本组合：
 
-| OS 代码 | 厂商 | 大版本 | 小版本 | 全名 | PG 版本 | 备注 |
-|:---|:---|:---:|:---:|:---|:---|:---:|
-| `el7.x86_64` | EL | 7 | 7.9 | CentOS 7 x86 | 13-15 | EOL |
-| `el8.x86_64` | EL | 8 | 8.10 | RockyLinux 8 x86 | 13-18 | 即将EOL |
-| `el8.aarch64` | EL | 8 | 8.10 | RockyLinux 8 ARM | 13-18 | 即将EOL |
-| `el9.x86_64` | EL | 9 | 9.6 | RockyLinux 9 x86 | 13-18 | ✅ |
-| `el9.aarch64` | EL | 9 | 9.6 | RockyLinux 9 ARM | 13-18 | ✅ |
-| `el10.x86_64` | EL | 10 | 10.0 | RockyLinux 10 x86 | 13-18 | ✅ |
-| `el10.aarch64` | EL | 10 | 10.0 | RockyLinux 10 ARM | 13-18 | ✅ |
-| `d11.x86_64` | Debian | 11 | 11.11 | Debian 11 x86 | 13-18 | EOL |
-| `d11.aarch64` | Debian | 11 | 11.11 | Debian 11 ARM | 13-18 | EOL |
-| `d12.x86_64` | Debian | 12 | 12.12 | Debian 12 x86 | 13-18 | ✅ |
-| `d12.aarch64` | Debian | 12 | 12.12 | Debian 12 ARM | 13-18 | ✅ |
-| `d13.x86_64` | Debian | 13 | 13.1 | Debian 13 x86 | 13-18 | ✅ |
-| `d13.aarch64` | Debian | 13 | 13.1 | Debian 13 ARM | 13-18 | ✅ |
-| `u20.x86_64` | Ubuntu | 20 | 20.04.6 | Ubuntu 20.04 x86 | 13-18 | EOL |
-| `u20.aarch64` | Ubuntu | 20 | 20.04.6 | Ubuntu 20.04 ARM | 13-18 | EOL |
-| `u22.x86_64` | Ubuntu | 22 | 22.04.5 | Ubuntu 22.04 x86 | 13-18 | ✅ |
-| `u22.aarch64` | Ubuntu | 22 | 22.04.5 | Ubuntu 22.04 ARM | 13-18 | ✅ |
-| `u24.x86_64` | Ubuntu | 24 | 24.04.3 | Ubuntu 24.04 x86 | 13-18 | ✅ |
-| `u24.aarch64` | Ubuntu | 24 | 24.04.3 | Ubuntu 24.04 ARM | 13-18 | ✅ |
+| OS 代码          | 厂商     | 大版本 |   小版本   | 全名                | PG 版本 |  备注   |
+|:---------------|:-------|:---:|:-------:|:------------------|:------|:-----:|
+| `el7.x86_64`   | EL     |  7  |   7.9  | CentOS 7 x86      | 13-15 |  EOL  |
+| `el8.x86_64`   | EL     |  8  |  8.10  | RockyLinux 8 x86  | 13-18 | 即将EOL |
+| `el8.aarch64`  | EL     |  8  |  8.10  | RockyLinux 8 ARM  | 13-18 | 即将EOL |
+| `el9.x86_64`   | EL     |  9  |   9.7  | RockyLinux 9 x86  | 13-18 |   ✅   |
+| `el9.aarch64`  | EL     |  9  |   9.7  | RockyLinux 9 ARM  | 13-18 |   ✅   |
+| `el10.x86_64`  | EL     | 10  |  10.1  | RockyLinux 10 x86 | 13-18 |   ✅   |
+| `el10.aarch64` | EL     | 10  |  10.1  | RockyLinux 10 ARM | 13-18 |   ✅   |
+| `d11.x86_64`   | Debian | 11  |  11.11 | Debian 11 x86     | 13-18 |  EOL  |
+| `d11.aarch64`  | Debian | 11  |  11.11 | Debian 11 ARM     | 13-18 |  EOL  |
+| `d12.x86_64`   | Debian | 12  |  12.3  | Debian 12 x86     | 13-18 |   ✅   |
+| `d12.aarch64`  | Debian | 12  |  12.3  | Debian 12 ARM     | 13-18 |   ✅   |
+| `d13.x86_64`   | Debian | 13  |  13.3  | Debian 13 x86     | 13-18 |   ✅   |
+| `d13.aarch64`  | Debian | 13  |  13.3  | Debian 13 ARM     | 13-18 |   ✅   |
+| `u20.x86_64`   | Ubuntu | 20  | 20.04.6| Ubuntu 20.04 x86  | 13-18 |  EOL  |
+| `u20.aarch64`  | Ubuntu | 20  | 20.04.6| Ubuntu 20.04 ARM  | 13-18 |  EOL  |
+| `u22.x86_64`   | Ubuntu | 22  | 22.04.5| Ubuntu 22.04 x86  | 13-18 |   ✅   |
+| `u22.aarch64`  | Ubuntu | 22  | 22.04.5| Ubuntu 22.04 ARM  | 13-18 |   ✅   |
+| `u24.x86_64`   | Ubuntu | 24  | 24.04.4| Ubuntu 24.04 x86  | 13-18 |   ✅   |
+| `u24.aarch64`  | Ubuntu | 24  | 24.04.4| Ubuntu 24.04 ARM  | 13-18 |   ✅   |
 {.full-width}
 
 **说明：**

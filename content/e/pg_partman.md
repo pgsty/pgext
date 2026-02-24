@@ -36,7 +36,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_partman` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.2` | {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} {{< bg "14" "pg_partman_14" "green" >}} {{< bg "13" "pg_partman_13" "green" >}} | `pg_partman_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.1` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} {{< bg "13" "postgresql-13-partman" "green" >}} | `postgresql-$v-partman` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.2` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} {{< bg "13" "postgresql-13-partman" "green" >}} | `postgresql-$v-partman` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
@@ -517,7 +517,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgpartman/pg_partman" title="Repository" icon="github" subtitle="github.com/pgpartman/pg_partman" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_partman-5.4.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_partman-5.4.2.tar.gz" >}}
 {{< /cards >}}
 
 
