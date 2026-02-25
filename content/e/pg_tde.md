@@ -64,11 +64,6 @@ width: full
 {{< /cards >}}
 
 
-```bash
-pig build pkg pg_tde;		# build deb
-```
-
-
 ## Install
 
 Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
