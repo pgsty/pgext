@@ -9,7 +9,7 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 461 | 155 | 289 | 71 | 0 | 439 | 447 | 440 | 435 | 423 | 388 |
+| **ALL** | 461 | 155 | 289 | 71 | 0 | 438 | 447 | 438 | 434 | 423 | 388 |
 | **EL** | 455 | 149 | 289 | 71 | 6 | 428 | 440 | 432 | 428 | 417 | 382 |
 | **Debian** | 446 | 107 | 268 | 71 | 15 | 423 | 433 | 423 | 419 | 408 | 372 |
 
@@ -426,7 +426,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | PostgreSQL Extension Whitelisting |
 | {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A Postgres extension for managing SSL certificates through SQL |
 | {{< ext "noset" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Module for blocking SET variables for non-super users. |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | Percona pg_tde access method |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Percona pg_tde access method |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | pause briefly before reporting authentication failure |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | cryptographic functions |
@@ -489,8 +489,8 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | PG Failover Slots extension |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | Tools to migrate other databases to PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | Active-Active Replication Extension for PostgreSQL |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Multi-master logical replication extension for PostgreSQL |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Multi-master logical replication extension for PostgreSQL |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | Changing data capture in JSON format |
 | {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | PostgreSQL logical decoding output plugin for MongoDB |
 | {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |

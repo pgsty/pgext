@@ -355,7 +355,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/darold/pgtt" title="Repository" icon="github" subtitle="github.com/darold/pgtt" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgtt-4.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgtt-4.4.tar.gz" >}}
 {{< /cards >}}
 
 

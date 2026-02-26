@@ -396,7 +396,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pgextwlist" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SEC" >}} | PostgreSQL Extension Whitelisting |
 | {{< ext "sslutils" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SEC" >}} | A Postgres extension for managing SSL certificates through SQL |
 | {{< ext "noset" "pg_noset" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Module for blocking SET variables for non-super users. |
-| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
+| {{< ext "pg_tde" >}} | {{< pgver "18,17,16,15,14,13" "g,g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SEC" >}} | Percona pg_tde access method |
 | {{< ext "sepgsql" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | label-based mandatory access control (MAC) based on SELinux security policy. |
 | {{< ext "auth_delay" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | pause briefly before reporting authentication failure |
 | {{< ext "pgcrypto" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "SEC" >}} | cryptographic functions |
@@ -434,7 +434,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | Registration and manipulation of session variables and constants |
 | {{< ext "pg_statement_rollback" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SIM" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
-| {{< ext "ivorysql_ora" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle Compatible extension on Postgres Database |
+| {{< ext "ivorysql_ora" "ivory" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle Compatible extension on Postgres Database |
 | {{< ext "ora_btree_gin" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for indexing oracle datatypes in GIN |
 | {{< ext "ora_btree_gist" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Support for oracle indexing common datatypes in GiST |
 | {{< ext "pg_get_functiondef" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Get function's definition |
@@ -451,7 +451,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | memcached interface |
-| {{< ext "aux_mysql" "openhalodb" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,r,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
+| {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,r,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL Logical Replication |
 | {{< ext "pglogical_origin" "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Have an accurate view on pglogical replication delay |
@@ -459,8 +459,8 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ETL" >}} | PG Failover Slots extension |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ETL" >}} | Tools to migrate other databases to PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Active-Active Replication Extension for PostgreSQL |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Changing data capture in JSON format |
 | {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL logical decoding output plugin for MongoDB |
 | {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |

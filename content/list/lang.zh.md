@@ -362,7 +362,7 @@ weight: 200
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
-| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |
@@ -375,7 +375,7 @@ weight: 200
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | SQL Server 货币数据类型兼容扩展 |
 | 9400 | {{< alias "spat" >}} | 在PG中嵌入Redis风格的内存数据库 |
 | 9410 | {{< alias "pgmemcache" >}} | 为PG提供memcached兼容接口 |
-| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL兼容辅助扩展模块 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
 | 9500 | {{< alias "pglogical" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | pglogical复制延迟以秒计的精确视图 |

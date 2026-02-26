@@ -337,7 +337,7 @@ weight: 300
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
-| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |
@@ -543,7 +543,7 @@ weight: 300
 | 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
 | 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
-| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL兼容辅助扩展模块 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
 | 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 
 ## AGPL-3.0

@@ -210,7 +210,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/HypoPG/hypopg" title="Repository" icon="github" subtitle="github.com/HypoPG/hypopg" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hypopg-1.4.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hypopg-1.4.2.tar.gz" >}}
 {{< /cards >}}
 
 

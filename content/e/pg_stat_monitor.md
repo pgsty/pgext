@@ -379,7 +379,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/percona/pg_stat_monitor" title="Repository" icon="github" subtitle="github.com/percona/pg_stat_monitor" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_monitor-2.3.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_stat_monitor-2.3.2.tar.gz" >}}
 {{< /cards >}}
 
 

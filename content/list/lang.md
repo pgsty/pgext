@@ -362,7 +362,7 @@ The traditional PostgreSQL extension language
 | 9110 | {{< alias "pgtt" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
-| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle Compatible extension on Postgres Database |
+| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle Compatible extension on Postgres Database |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Support for indexing oracle datatypes in GIN |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Support for oracle indexing common datatypes in GiST |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | Get function's definition |
@@ -375,7 +375,7 @@ The traditional PostgreSQL extension language
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | SQL Server Money Data Type |
 | 9400 | {{< alias "spat" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | 9410 | {{< alias "pgmemcache" >}} | memcached interface |
-| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL Supplementary Extension |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
 | 9500 | {{< alias "pglogical" >}} | PostgreSQL Logical Replication |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | Have an accurate view on pglogical replication delay |

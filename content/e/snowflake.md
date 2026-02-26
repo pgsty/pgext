@@ -62,12 +62,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `snowflake_17` | `2.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 29.7 KiB | [snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 29.5 KiB | [snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm) |
-| `snowflake_17` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 30.0 KiB | [snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 29.6 KiB | [snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm) |
-| `snowflake_17` | `2.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 30.1 KiB | [snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 29.9 KiB | [snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm) |
+| `snowflake_17` | `2.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm) |
+| `snowflake_17` | `2.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm) |
+| `snowflake_17` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.6 KiB | [snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm) |
+| `snowflake_17` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.4 KiB | [snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm) |
+| `snowflake_17` | `2.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm) |
+| `snowflake_17` | `2.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.6 KiB | [snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm) |
 | `pgedge-17-snowflake` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~bookworm_amd64.deb) |
 | `pgedge-17-snowflake` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.1 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~bookworm_arm64.deb) |
 | `pgedge-17-snowflake` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.2 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~trixie_amd64.deb) |

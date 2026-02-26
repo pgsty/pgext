@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（461 ext / 384 pkg）归属 16 个分类。
+PostgreSQL 扩展（461 ext / 385 pkg）归属 16 个分类。
 
 
 
@@ -64,7 +64,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | 向量数据类型和 ivfflat / hnsw 访问方法 |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.2 | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1810 | {{< alias "vchord" >}} | 1.1.0 | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | 在PostgreSQL中封装RAG向量检索服务 |
@@ -406,9 +406,9 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5860 | {{< alias "table_log" >}} | 0.6.4 | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | PostgreSQL任务调度工具，与PGADMIN配合使用 |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | 预热关系数据 |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.0 | PGPool 管理函数 |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.0 | PGPool辅助扩展，从v4.3提供的恢复函数 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.0 | PGPool辅助扩展，RegClass替代 |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.1 | PGPool 管理函数 |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.1 | PGPool辅助扩展，从v4.3提供的恢复函数 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.1 | PGPool辅助扩展，RegClass替代 |
 | 5930 | {{< alias "lo" >}} | 1.1 | 大对象维护 |
 | 5940 | {{< alias "basic_archive" >}} | - | 归档模块样例 |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | 添加一种备份到Shell终端到基础备份方式 |
@@ -488,7 +488,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 7390 | {{< alias "pgextwlist" >}} | 1.19 | PostgreSQL扩展白名单功能 |
 | 7410 | {{< alias "sslutils" >}} | 1.4 | 使用SQL管理SSL证书 |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | 阻止非超级用户使用SET/RESET设置变量 |
-| 7500 | {{< alias "pg_tde" >}} | 1.0 | Percona加密存储引擎 |
+| 7500 | {{< alias "pg_tde" >}} | 2.1 | Percona加密存储引擎 |
 | 7960 | {{< alias "sepgsql" >}} | - | 基于SELinux标签的强制访问控制 |
 | 7970 | {{< alias "auth_delay" >}} | - | 在返回认证失败前暂停一会，避免爆破 |
 | 7980 | {{< alias "pgcrypto" >}} | 1.3 | 实用加解密函数 |
@@ -540,7 +540,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
-| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | 1.0 | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | 获取函数定义 |
@@ -557,7 +557,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server 货币数据类型兼容扩展 |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | 在PG中嵌入Redis风格的内存数据库 |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | 为PG提供memcached兼容接口 |
-| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | 1.5 | MySQL兼容辅助扩展模块 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL兼容辅助扩展模块 |
 
 ## ETL
 

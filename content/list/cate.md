@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (461 ext in 384 pkg) categorized into 16 categories.
+PostgreSQL Extensions (461 ext in 385 pkg) categorized into 16 categories.
 
 
 
@@ -64,7 +64,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.1 | vector data type and ivfflat and hnsw access methods |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.2 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.1.0 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | The simplest way to do vector search on Postgres |
@@ -406,9 +406,9 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5860 | {{< alias "table_log" >}} | 0.6.4 | record table modification logs and PITR for table/row |
 | 5880 | {{< alias "pgagent" >}} | 4.2.3 | A PostgreSQL job scheduler |
 | 5890 | {{< alias "pg_prewarm" >}} | 1.2 | prewarm relation data |
-| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.0 | Administrative functions for pgPool |
-| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.0 | recovery functions for pgpool-II for V4.3 |
-| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.0 | replacement for regclass |
+| 5900 | {{< alias "pgpool_adm" "pgpool" >}} | 4.7.1 | Administrative functions for pgPool |
+| 5910 | {{< alias "pgpool_recovery" "pgpool" >}} | 4.7.1 | recovery functions for pgpool-II for V4.3 |
+| 5920 | {{< alias "pgpool_regclass" "pgpool" >}} | 4.7.1 | replacement for regclass |
 | 5930 | {{< alias "lo" >}} | 1.1 | Large Object maintenance |
 | 5940 | {{< alias "basic_archive" >}} | - | an example of an archive module |
 | 5950 | {{< alias "basebackup_to_shell" >}} | - | adds a custom basebackup target called shell |
@@ -488,7 +488,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7390 | {{< alias "pgextwlist" >}} | 1.19 | PostgreSQL Extension Whitelisting |
 | 7410 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | Module for blocking SET variables for non-super users. |
-| 7500 | {{< alias "pg_tde" >}} | 1.0 | Percona pg_tde access method |
+| 7500 | {{< alias "pg_tde" >}} | 2.1 | Percona pg_tde access method |
 | 7960 | {{< alias "sepgsql" >}} | - | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | - | pause briefly before reporting authentication failure |
 | 7980 | {{< alias "pgcrypto" >}} | 1.3 | cryptographic functions |
@@ -540,7 +540,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
-| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle Compatible extension on Postgres Database |
+| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | 1.0 | Oracle Compatible extension on Postgres Database |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Support for indexing oracle datatypes in GIN |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Support for oracle indexing common datatypes in GiST |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | Get function's definition |
@@ -557,7 +557,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server Money Data Type |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | Redis-like In-Memory DB Embedded in Postgres |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | memcached interface |
-| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | 1.5 | MySQL Supplementary Extension |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | 1.5 | MySQL Supplementary Extension |
 
 ## ETL
 
