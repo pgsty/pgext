@@ -36,7 +36,7 @@ UPDATE pgext.pkg SET hide = true  WHERE pkg = 'pg_timeseries' AND (os ~ 'u24.*' 
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
 
 -- only works on postgres forks
-UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN ('orioledb', 'pg_tde', 'babelfishpg_common', 'babelfishpg_tsql', 'babelfishpg_tds', 'babelfishpg_money');
+UPDATE pgext.pkg SET hide = true, state = 'FORK' WHERE pkg IN ('orioledb', 'pg_tde', 'babelfishpg_common', 'babelfishpg_tsql', 'babelfishpg_tds', 'babelfishpg_money', 'spock', 'lolor', 'snowflake');
 
 -- broken extensions
 UPDATE pgext.pkg SET hide = true, state = 'THROW' WHERE pkg IN ('hunspell_pt_pt');   -- a broken extension conflict with pg dict file

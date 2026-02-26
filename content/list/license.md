@@ -17,7 +17,7 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 210 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 213 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 69 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
@@ -39,7 +39,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="210 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="213 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -145,6 +145,7 @@ PostgreSQL extension categorized by license.
 | 4440 | {{< alias "shacrypt" >}} | Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes |
 | 4450 | {{< alias "cryptint" >}} | Encryption functions for int and bigint values |
 | 4550 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
+| 4590 | {{< alias "snowflake" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4640 | {{< alias "omnisketch" >}} | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | Provides ddsketch aggregate function |
 | 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | High-performance weighted statistics functions for sparse data |
@@ -251,6 +252,8 @@ PostgreSQL extension categorized by license.
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | 9510 | {{< alias "pglogical_ticker" >}} | Have an accurate view on pglogical replication delay |
 | 9530 | {{< alias "pg_failover_slots" >}} | PG Failover Slots extension |
+| 9560 | {{< alias "spock" >}} | Multi-master logical replication extension for PostgreSQL |
+| 9570 | {{< alias "lolor" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9660 | {{< alias "decoder_raw" >}} | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9970 | {{< alias "test_decoding" >}} | SQL-based test/example module for WAL logical decoding |

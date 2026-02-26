@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（451 ext / 382 pkg）归属 16 个分类。
+PostgreSQL 扩展（454 ext / 385 pkg）归属 16 个分类。
 
 
 
@@ -147,7 +147,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 2840 | {{< alias "pg_ivm" >}} | 1.13 | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 1.4.1 | 增量处理流式事件 |
 | 2870 | {{< alias "pgmb" >}} | 1.0.0 | 一个简单的PostgreSQL消息代理系统 |
-| 2880 | {{< alias "pgmq" >}} | 1.10.1 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2880 | {{< alias "pgmq" >}} | 1.11.0 | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2890 | {{< alias "pgq" >}} | 3.5.1 | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | 1.6 | OrioleDB，下一代事务处理引擎 |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -330,6 +330,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 4560 | {{< alias "pg_hashids" >}} | 1.3 | 加盐将整型ID转为短字符串ID |
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | 生成连续生成的UUID |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | PG原生TypeID类型与函数 |
+| 4590 | {{< alias "snowflake" >}} | 2.4 | Snowflake 风格 64 位 ID 生成与序列工具 |
 | 4600 | {{< alias "topn" >}} | 2.7.0 | top-n JSONB 的类型 |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile聚合函数 |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower Quantile 聚合函数 |
@@ -383,7 +384,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | 检查和管理操作系统缓冲区缓存 |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | 从缓冲区中移除特定关系的页面 |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | 提取数据库对象的DDL |
-| 5090 | {{< alias "pglinter" >}} | 1.1.0 | PG数据库规则检查插件 |
+| 5090 | {{< alias "pglinter" >}} | 1.1.1 | PG数据库规则检查插件 |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | 获取和设置 PostgreSQL 后端的优先级 |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | 在离线模式下激活/启用/禁用数据库集群的校验和功能 |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | 将集群设置为只读 |
@@ -564,6 +565,8 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9530 | {{< alias "pg_failover_slots" >}} | 1.2.0 | 在Failover过程中保留复制槽 |
 | 9540 | {{< alias "db_migrator" >}} | 1.0.0 | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | PostgreSQL多主逻辑复制 |
+| 9560 | {{< alias "spock" >}} | 5.0.5 | PostgreSQL 多主逻辑复制扩展 |
+| 9570 | {{< alias "lolor" >}} | 1.2.2 | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 | 9650 | {{< alias "decoderbufs" >}} | 3.4.1 | 将WAL逻辑解码为ProtocolBuffer协议的消息 |

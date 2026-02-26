@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (451 ext in 382 pkg) categorized into 16 categories.
+PostgreSQL Extensions (454 ext in 385 pkg) categorized into 16 categories.
 
 
 
@@ -147,7 +147,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2840 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.4.1 | Incremental Processing by Crunchy Data |
 | 2870 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
-| 2880 | {{< alias "pgmq" >}} | 1.10.1 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2880 | {{< alias "pgmq" >}} | 1.11.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2890 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.6 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.1.1 | A suite of Cardano-related tools |
@@ -330,6 +330,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4560 | {{< alias "pg_hashids" >}} | 1.3 | Short unique id generator for PostgreSQL, using hashids |
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | generator of sequential UUIDs |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | Allows to use TypeIDs in Postgres natively |
+| 4590 | {{< alias "snowflake" >}} | 2.4 | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4600 | {{< alias "topn" >}} | 2.7.0 | type for top-n JSONB |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower quantile aggregate function |
@@ -383,7 +384,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5060 | {{< alias "pgfincore" >}} | 1.3.1 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | DDL eXtractor functions |
-| 5090 | {{< alias "pglinter" >}} | 1.1.0 | PostgreSQL Linting and Analysis Extension |
+| 5090 | {{< alias "pglinter" >}} | 1.1.1 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | Activate/deactivate/verify checksums in offline Postgres clusters |
 | 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | cluster database read only |
@@ -564,6 +565,8 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9530 | {{< alias "pg_failover_slots" >}} | 1.2.0 | PG Failover Slots extension |
 | 9540 | {{< alias "db_migrator" >}} | 1.0.0 | Tools to migrate other databases to PostgreSQL |
 | 9550 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
+| 9560 | {{< alias "spock" >}} | 5.0.5 | Multi-master logical replication extension for PostgreSQL |
+| 9570 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
 | 9650 | {{< alias "decoderbufs" >}} | 3.4.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |

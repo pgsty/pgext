@@ -14,7 +14,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 352 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 355 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 40 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 39 | Extensions written in Rust with the pgrx framework |
 | {{< language "Data" >}} | 10 | Data-only extensions |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="352 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="355 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -213,6 +213,7 @@ The traditional PostgreSQL extension language
 | 4550 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | 4560 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
 | 4570 | {{< alias "sequential_uuids" >}} | generator of sequential UUIDs |
+| 4590 | {{< alias "snowflake" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4600 | {{< alias "topn" >}} | type for top-n JSONB |
 | 4610 | {{< alias "quantile" >}} | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | Lower quantile aggregate function |
@@ -374,6 +375,8 @@ The traditional PostgreSQL extension language
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | automated ddl deployment using pglogical |
 | 9530 | {{< alias "pg_failover_slots" >}} | PG Failover Slots extension |
 | 9550 | {{< alias "pgactive" >}} | Active-Active Replication Extension for PostgreSQL |
+| 9560 | {{< alias "spock" >}} | Multi-master logical replication extension for PostgreSQL |
+| 9570 | {{< alias "lolor" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9630 | {{< alias "wal2json" >}} | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | PostgreSQL logical decoding output plugin for MongoDB |
 | 9650 | {{< alias "decoderbufs" >}} | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |

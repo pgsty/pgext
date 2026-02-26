@@ -17,7 +17,7 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 210 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 213 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 69 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
@@ -39,7 +39,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="210 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="213 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -145,6 +145,7 @@ weight: 300
 | 4440 | {{< alias "shacrypt" >}} | 实现SHA256-CRYPT与SHA512-CRYPT密钥加密算法 |
 | 4450 | {{< alias "cryptint" >}} | 加密INT与BIGINT类型 |
 | 4550 | {{< alias "permuteseq" >}} | 伪随机数ID置换生成器 |
+| 4590 | {{< alias "snowflake" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
 | 4640 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 4650 | {{< alias "ddsketch" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
 | 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 针对稀疏数据的高性能加权统计量计算 |
@@ -251,6 +252,8 @@ weight: 300
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | pglogical复制延迟以秒计的精确视图 |
 | 9530 | {{< alias "pg_failover_slots" >}} | 在Failover过程中保留复制槽 |
+| 9560 | {{< alias "spock" >}} | PostgreSQL 多主逻辑复制扩展 |
+| 9570 | {{< alias "lolor" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | 9660 | {{< alias "decoder_raw" >}} | 逻辑复制解码输出插件：RAW SQL格式 |
 | 9700 | {{< alias "mimeo" >}} | 在PostgreSQL实例间进行表级复制 |
 | 9970 | {{< alias "test_decoding" >}} | 基于SQL的WAL逻辑解码样例 |

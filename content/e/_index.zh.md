@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-共有 451 个可用的 PostgreSQL 扩展：
+共有 454 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -259,6 +259,7 @@ weight: 900
 | {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 加盐将整型ID转为短字符串ID |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 生成连续生成的UUID |
 | {{< ext "typeid" "pg_typeid" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | PG原生TypeID类型与函数 |
+| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | top-n JSONB 的类型 |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Quantile聚合函数 |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Lower Quantile 聚合函数 |
@@ -451,6 +452,8 @@ weight: 900
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ETL" >}} | 在Failover过程中保留复制槽 |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "ETL" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL多主逻辑复制 |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | PostgreSQL 多主逻辑复制扩展 |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14,13" "r,g,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | {{< ext "wal2mongo" >}} | {{< pgver "18,17,16,15,14,13" "r,r,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 | {{< ext "decoderbufs" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |

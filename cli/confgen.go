@@ -899,7 +899,7 @@ func GetConfigConstants() *ConfigConstants {
 
 		PGSQLExoticMap: []PackageMapping{
 			{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
-			{"agens", "agensgraph_$v", "agensgraph-$v"},
+			{"agensgraph", "agensgraph_$v", "agensgraph-$v"},
 			{"polardb", "PolarDB", "polardb-for-postgresql"},
 			{"openhalodb", "openhalodb", "openhalodb"},
 			{"ivorysql", "ivorysql5", "ivorysql-5"},

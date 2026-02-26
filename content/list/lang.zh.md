@@ -14,7 +14,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 352 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 355 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 40 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 39 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="352 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="355 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -213,6 +213,7 @@ weight: 200
 | 4550 | {{< alias "permuteseq" >}} | 伪随机数ID置换生成器 |
 | 4560 | {{< alias "pg_hashids" >}} | 加盐将整型ID转为短字符串ID |
 | 4570 | {{< alias "sequential_uuids" >}} | 生成连续生成的UUID |
+| 4590 | {{< alias "snowflake" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
 | 4600 | {{< alias "topn" >}} | top-n JSONB 的类型 |
 | 4610 | {{< alias "quantile" >}} | Quantile聚合函数 |
 | 4620 | {{< alias "lower_quantile" >}} | Lower Quantile 聚合函数 |
@@ -374,6 +375,8 @@ weight: 200
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 使用 pglogical 执行自动 DDL 部署 |
 | 9530 | {{< alias "pg_failover_slots" >}} | 在Failover过程中保留复制槽 |
 | 9550 | {{< alias "pgactive" >}} | PostgreSQL多主逻辑复制 |
+| 9560 | {{< alias "spock" >}} | PostgreSQL 多主逻辑复制扩展 |
+| 9570 | {{< alias "lolor" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | 9630 | {{< alias "wal2json" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9640 | {{< alias "wal2mongo" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 | 9650 | {{< alias "decoderbufs" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
