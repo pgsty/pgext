@@ -899,10 +899,12 @@ func GetConfigConstants() *ConfigConstants {
 
 		PGSQLExoticMap: []PackageMapping{
 			{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
+			{"agens", "agensgraph_$v", "agensgraph-$v"},
 			{"polardb", "PolarDB", "polardb-for-postgresql"},
 			{"openhalodb", "openhalodb", "openhalodb"},
 			{"ivorysql", "ivorysql5", "ivorysql-5"},
 			{"oriole", "orioledb_17 oriolepg_17", "oriolepg-17 oriolepg-17-orioledb"},
+			{"pgedge", "pgedge_$v spock_$v lolor_$v snowflake_$v", "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"greenplum", "open-source-greenplum-db-7", ""},
 			{"cloudberry", "cloudberry", "cloudberry"},
@@ -966,12 +968,14 @@ pg_home_map:
   pgsql:  '/usr/pgsql-$v'
   citus:  '/usr/pgsql-$v'
   mssql:  '/usr/babelfish-$v/'
+  agens:  '/usr/agens-$v'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
   gpsql:  '/usr/local/cloudberry'
   polar:  '/u01/polardb_pg'
   oracle: '/u01/polardb_pg'
   oriole: '/usr/oriole-$v'
+  pgedge: '/usr/pgedge-$v'
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:
@@ -1113,12 +1117,14 @@ pg_home_map:
   pgsql:  '/usr/lib/postgresql/$v'
   citus:  '/usr/lib/postgresql/$v'
   mssql:  '/usr/babelfish-$v/'
+  agens:  '/usr/agens-$v'
   gpsql:  '/usr/local/cloudberry'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
   polar:  '/u01/polardb_pg'
   oracle: '/u01/polardb_pg'
   oriole: '/usr/oriole-$v'
+  pgedge: '/usr/pgedge-$v'
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:

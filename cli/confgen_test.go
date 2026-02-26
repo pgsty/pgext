@@ -137,6 +137,57 @@ func TestConfigConstantsIncludeBabelfishAlias(t *testing.T) {
 	t.Fatal("babelfish mapping not found in PGSQLExoticMap")
 }
 
+func TestConfigConstantsIncludeAgensAndPgEdgeAlias(t *testing.T) {
+	constants := GetConfigConstants()
+	expected := map[string]PackageMapping{
+		"agens": {
+			Key: "agens",
+			RPM: "agensgraph_$v",
+			DEB: "agensgraph-$v",
+		},
+		"pgedge": {
+			Key: "pgedge",
+			RPM: "pgedge_$v spock_$v lolor_$v snowflake_$v",
+			DEB: "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake",
+		},
+	}
+
+	found := make(map[string]PackageMapping)
+	for _, mapping := range constants.PGSQLExoticMap {
+		if _, ok := expected[mapping.Key]; ok {
+			found[mapping.Key] = mapping
+		}
+	}
+
+	for key, want := range expected {
+		got, ok := found[key]
+		if !ok {
+			t.Fatalf("%s mapping not found in PGSQLExoticMap", key)
+		}
+		if got.RPM != want.RPM {
+			t.Fatalf("%s RPM alias = %q, want %q", key, got.RPM, want.RPM)
+		}
+		if got.DEB != want.DEB {
+			t.Fatalf("%s DEB alias = %q, want %q", key, got.DEB, want.DEB)
+		}
+	}
+}
+
+func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
+	required := []string{
+		"agens:  '/usr/agens-$v'",
+		"pgedge: '/usr/pgedge-$v'",
+	}
+	for _, fragment := range required {
+		if !strings.Contains(rpmTemplate, fragment) {
+			t.Fatalf("rpmTemplate missing expected home map fragment: %q", fragment)
+		}
+		if !strings.Contains(debTemplate, fragment) {
+			t.Fatalf("debTemplate missing expected home map fragment: %q", fragment)
+		}
+	}
+}
+
 func TestDebTemplateUbuntuRepoSuffixesMatchRepoName(t *testing.T) {
 	required := []string{
 		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates",
