@@ -60,7 +60,6 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Percona-Lab/pg_tde" title="Repository" icon="github" subtitle="github.com/Percona-Lab/pg_tde" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_tde-1.0.0.tar.gz" >}}
 {{< /cards >}}
 
 

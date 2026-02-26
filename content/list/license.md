@@ -18,12 +18,12 @@ PostgreSQL extension categorized by license.
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 213 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 74 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "Apache-2.0" >}} | 80 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 69 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "GPL-3.0" >}} | 13 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
+| {{< license "GPL-3.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 10 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "Artistic" >}} | 3 | [License Text](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
@@ -263,7 +263,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="74 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="80 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -337,10 +337,16 @@ PostgreSQL extension categorized by license.
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | foreign-data wrapper for Postgres log file access |
-| 9300 | {{< alias "babelfishpg_common" >}} | SQL Server Transact SQL Datatype Support |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | SQL Server Transact SQL compatibility |
-| 9320 | {{< alias "babelfishpg_tds" >}} | SQL Server TDS protocol extension |
-| 9330 | {{< alias "babelfishpg_money" >}} | SQL Server Money Data Type |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle Compatible extension on Postgres Database |
+| 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Support for indexing oracle datatypes in GIN |
+| 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Support for oracle indexing common datatypes in GiST |
+| 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | Get function's definition |
+| 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL procedural language |
+| 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | Support GB18030-2022 and UTF-8 conversion |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server Transact SQL Datatype Support |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server Transact SQL compatibility |
+| 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | SQL Server TDS protocol extension |
+| 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | SQL Server Money Data Type |
 | 9550 | {{< alias "pgactive" >}} | Active-Active Replication Extension for PostgreSQL |
 | 9640 | {{< alias "wal2mongo" >}} | PostgreSQL logical decoding output plugin for MongoDB |
 
@@ -519,7 +525,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "GPL-3.0" >}} | {{< badge content="13 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "GPL-3.0" >}} | {{< badge content="14 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
 
@@ -537,6 +543,7 @@ PostgreSQL extension categorized by license.
 | 4780 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
 | 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
 | 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
+| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL Supplementary Extension |
 | 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
 
 ## AGPL-3.0

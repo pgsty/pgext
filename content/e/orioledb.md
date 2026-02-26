@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "citus_columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "pg_strom" >}} |
 
-> [!Note] special case: this extension only works on patched postgres kernel: oriolepg
+> [!Note] special case: this extension only works on patched postgres kernel: oriolepg, 1.6-beta14
 
 
 ## Packages

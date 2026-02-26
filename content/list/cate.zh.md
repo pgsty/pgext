@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（454 ext / 385 pkg）归属 16 个分类。
+PostgreSQL 扩展（461 ext / 384 pkg）归属 16 个分类。
 
 
 
@@ -540,17 +540,24 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle 兼容扩展 |
+| 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Oracle 数据类型 GIN 索引支持 |
+| 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Oracle 数据类型 GiST 索引支持 |
+| 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | 获取函数定义 |
+| 9180 | {{< alias "plisql" "ivorysql" >}} | 1.0 | PL/iSQL 过程语言 |
+| 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 1.0 | 支持 GB18030-2022 与 UTF-8 编码转换 |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
-| 9300 | {{< alias "babelfishpg_common" >}} | 5.5.0 | SQL Server 数据类型兼容扩展 |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | 5.5.0 | SQL Server SQL语法兼容性扩展 |
-| 9320 | {{< alias "babelfishpg_tds" >}} | 1.0.0 | SQL Server TDS线缆协议兼容扩展 |
-| 9330 | {{< alias "babelfishpg_money" >}} | 1.1.0 | SQL Server 货币数据类型兼容扩展 |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 5.5.0 | SQL Server 数据类型兼容扩展 |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | 5.5.0 | SQL Server SQL语法兼容性扩展 |
+| 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS线缆协议兼容扩展 |
+| 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server 货币数据类型兼容扩展 |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | 在PG中嵌入Redis风格的内存数据库 |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | 为PG提供memcached兼容接口 |
+| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | 1.5 | MySQL兼容辅助扩展模块 |
 
 ## ETL
 

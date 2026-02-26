@@ -18,12 +18,12 @@ weight: 300
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 213 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 74 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "Apache-2.0" >}} | 80 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 69 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "GPL-3.0" >}} | 13 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
+| {{< license "GPL-3.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 10 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "Artistic" >}} | 3 | [许可证文本](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
@@ -263,7 +263,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="74 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="80 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -337,10 +337,16 @@ weight: 300
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
-| 9300 | {{< alias "babelfishpg_common" >}} | SQL Server 数据类型兼容扩展 |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | SQL Server SQL语法兼容性扩展 |
-| 9320 | {{< alias "babelfishpg_tds" >}} | SQL Server TDS线缆协议兼容扩展 |
-| 9330 | {{< alias "babelfishpg_money" >}} | SQL Server 货币数据类型兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
+| 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
+| 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
+| 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |
+| 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL 过程语言 |
+| 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 支持 GB18030-2022 与 UTF-8 编码转换 |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server 数据类型兼容扩展 |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server SQL语法兼容性扩展 |
+| 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | SQL Server TDS线缆协议兼容扩展 |
+| 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | SQL Server 货币数据类型兼容扩展 |
 | 9550 | {{< alias "pgactive" >}} | PostgreSQL多主逻辑复制 |
 | 9640 | {{< alias "wal2mongo" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
 
@@ -519,7 +525,7 @@ weight: 300
 
 
 
-| {{< license "GPL-3.0" >}} | {{< badge content="13 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "GPL-3.0" >}} | {{< badge content="14 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
 
@@ -537,6 +543,7 @@ weight: 300
 | 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
 | 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
+| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL兼容辅助扩展模块 |
 | 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 
 ## AGPL-3.0

@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 454 | 155 | 282 | 71 | 0 | 433 | 447 | 440 | 435 | 422 | 388 |
-| **EL** | 448 | 149 | 282 | 71 | 6 | 422 | 440 | 432 | 428 | 416 | 382 |
-| **Debian** | 439 | 107 | 261 | 71 | 15 | 417 | 433 | 423 | 419 | 407 | 372 |
+| **ALL** | 461 | 155 | 289 | 71 | 0 | 439 | 447 | 440 | 435 | 423 | 388 |
+| **EL** | 455 | 149 | 289 | 71 | 6 | 428 | 440 | 432 | 428 | 417 | 382 |
+| **Debian** | 446 | 107 | 268 | 71 | 15 | 423 | 433 | 423 | 419 | 408 | 372 |
 
 ## Categories
 
@@ -31,12 +31,12 @@ comments: false
 | {{< category stat >}} | 35 | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgsentinel" >}} {{< ext "system_stats" >}} {{< ext "meta" >}} {{< ext "pgnodemx" >}} {{< ext "pg_proctab" >}} {{< ext "pg_sqlog" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgmeminfo" >}} {{< ext "toastinfo" >}} {{< ext "explain_ui" >}} {{< ext "pg_relusage" >}} {{< ext "pagevis" >}} {{< ext "powa" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_logicalinspect" >}} {{< ext "pageinspect" >}} {{< ext "pgrowlocks" >}} {{< ext "sslinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} |
 | {{< category sec >}} | 28 | {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "pgsodium" >}} {{< ext "supabase_vault" >}} {{< ext "pg_session_jwt" >}} {{< ext "anon" >}} {{< ext "pgsmcrypto" >}} {{< ext "pg_enigma" >}} {{< ext "pgaudit" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "logerrors" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_jobmon" >}} {{< ext "credcheck" >}} {{< ext "pgcryptokey" >}} {{< ext "pg_pwhash" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} {{< ext "pg_snakeoil" >}} {{< ext "pgextwlist" >}} {{< ext "sslutils" >}} {{< ext "noset" >}} {{< ext "pg_tde" >}} {{< ext "sepgsql" >}} {{< ext "auth_delay" >}} {{< ext "pgcrypto" >}} {{< ext "passwordcheck" >}} |
 | {{< category fdw >}} | 25 | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "informix_fdw" >}} {{< ext "nominatim_fdw" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "redis" >}} {{< ext "kafka_fdw" >}} {{< ext "hdfs_fdw" >}} {{< ext "firebird_fdw" >}} {{< ext "aws_s3" >}} {{< ext "log_fdw" >}} {{< ext "dblink" >}} {{< ext "file_fdw" >}} {{< ext "postgres_fdw" >}} |
-| {{< category sim >}} | 19 | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} |
+| {{< category sim >}} | 26 | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} {{< ext "aux_mysql" >}} |
 | {{< category etl >}} | 19 | {{< ext "pglogical" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "pg_failover_slots" >}} {{< ext "db_migrator" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "lolor" >}} {{< ext "wal2json" >}} {{< ext "wal2mongo" >}} {{< ext "decoderbufs" >}} {{< ext "decoder_raw" >}} {{< ext "mimeo" >}} {{< ext "repmgr" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_bulkload" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} |
 
 ## Extensions
 
-There are 454 available PostgreSQL extensions:
+There are 461 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
 |:----------|:------------|:---------:|:--------------|
@@ -464,6 +464,12 @@ There are 454 available PostgreSQL extensions:
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Registration and manipulation of session variables and constants |
 | {{< ext "pg_statement_rollback" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| {{< ext "ivorysql_ora" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Oracle Compatible extension on Postgres Database |
+| {{< ext "ora_btree_gin" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Support for indexing oracle datatypes in GIN |
+| {{< ext "ora_btree_gist" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Support for oracle indexing common datatypes in GiST |
+| {{< ext "pg_get_functiondef" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Get function's definition |
+| {{< ext "plisql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | PL/iSQL procedural language |
+| {{< ext "gb18030_2022" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Support GB18030-2022 and UTF-8 conversion |
 | {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
@@ -475,6 +481,7 @@ There are 454 available PostgreSQL extensions:
 | {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server Money Data Type |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | memcached interface |
+| {{< ext "aux_mysql" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,r,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | MySQL Supplementary Extension |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL Logical Replication |
 | {{< ext "pglogical_origin" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Dummy extension for compatibility when upgrading from Postgres 9.4 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Have an accurate view on pglogical replication delay |

@@ -14,7 +14,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 355 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 362 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 40 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 39 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="355 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="362 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -362,13 +362,20 @@ weight: 200
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
+| 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
+| 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
+| 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |
+| 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL 过程语言 |
+| 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 支持 GB18030-2022 与 UTF-8 编码转换 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
-| 9300 | {{< alias "babelfishpg_common" >}} | SQL Server 数据类型兼容扩展 |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | SQL Server SQL语法兼容性扩展 |
-| 9320 | {{< alias "babelfishpg_tds" >}} | SQL Server TDS线缆协议兼容扩展 |
-| 9330 | {{< alias "babelfishpg_money" >}} | SQL Server 货币数据类型兼容扩展 |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server 数据类型兼容扩展 |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server SQL语法兼容性扩展 |
+| 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | SQL Server TDS线缆协议兼容扩展 |
+| 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | SQL Server 货币数据类型兼容扩展 |
 | 9400 | {{< alias "spat" >}} | 在PG中嵌入Redis风格的内存数据库 |
 | 9410 | {{< alias "pgmemcache" >}} | 为PG提供memcached兼容接口 |
+| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | MySQL兼容辅助扩展模块 |
 | 9500 | {{< alias "pglogical" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | pglogical复制延迟以秒计的精确视图 |

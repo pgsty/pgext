@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (454 ext in 385 pkg) categorized into 16 categories.
+PostgreSQL Extensions (461 ext in 384 pkg) categorized into 16 categories.
 
 
 
@@ -540,17 +540,24 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle Compatible extension on Postgres Database |
+| 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Support for indexing oracle datatypes in GIN |
+| 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Support for oracle indexing common datatypes in GiST |
+| 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | Get function's definition |
+| 9180 | {{< alias "plisql" "ivorysql" >}} | 1.0 | PL/iSQL procedural language |
+| 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 1.0 | Support GB18030-2022 and UTF-8 conversion |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |
-| 9300 | {{< alias "babelfishpg_common" >}} | 5.5.0 | SQL Server Transact SQL Datatype Support |
-| 9310 | {{< alias "babelfishpg_tsql" >}} | 5.5.0 | SQL Server Transact SQL compatibility |
-| 9320 | {{< alias "babelfishpg_tds" >}} | 1.0.0 | SQL Server TDS protocol extension |
-| 9330 | {{< alias "babelfishpg_money" >}} | 1.1.0 | SQL Server Money Data Type |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 5.5.0 | SQL Server Transact SQL Datatype Support |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | 5.5.0 | SQL Server Transact SQL compatibility |
+| 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS protocol extension |
+| 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server Money Data Type |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | Redis-like In-Memory DB Embedded in Postgres |
 | 9410 | {{< alias "pgmemcache" >}} | 2.3.0 | memcached interface |
+| 9420 | {{< alias "aux_mysql" "openhalodb" >}} | 1.5 | MySQL Supplementary Extension |
 
 ## ETL
 

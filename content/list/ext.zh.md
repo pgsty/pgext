@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 454 | 155 | 282 | 71 | 0 | 433 | 447 | 440 | 435 | 422 | 388 |
-| **EL** | 448 | 149 | 282 | 71 | 6 | 422 | 440 | 432 | 428 | 416 | 382 |
-| **Debian** | 439 | 107 | 261 | 71 | 15 | 417 | 433 | 423 | 419 | 407 | 372 |
+| **ALL** | 461 | 155 | 289 | 71 | 0 | 439 | 447 | 440 | 435 | 423 | 388 |
+| **EL** | 455 | 149 | 289 | 71 | 6 | 428 | 440 | 432 | 428 | 417 | 382 |
+| **Debian** | 446 | 107 | 268 | 71 | 15 | 423 | 433 | 423 | 419 | 408 | 372 |
 
 ## 分类
 
@@ -31,12 +31,12 @@ comments: false
 | {{< category stat >}} | 35 | {{< ext "pg_profile" >}} {{< ext "pg_tracing" >}} {{< ext "pg_show_plans" >}} {{< ext "pg_stat_kcache" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_track_settings" >}} {{< ext "pg_track_optimizer" >}} {{< ext "pg_wait_sampling" >}} {{< ext "pgsentinel" >}} {{< ext "system_stats" >}} {{< ext "meta" >}} {{< ext "pgnodemx" >}} {{< ext "pg_proctab" >}} {{< ext "pg_sqlog" >}} {{< ext "bgw_replstatus" >}} {{< ext "pgmeminfo" >}} {{< ext "toastinfo" >}} {{< ext "explain_ui" >}} {{< ext "pg_relusage" >}} {{< ext "pagevis" >}} {{< ext "powa" >}} {{< ext "pg_overexplain" >}} {{< ext "pg_logicalinspect" >}} {{< ext "pageinspect" >}} {{< ext "pgrowlocks" >}} {{< ext "sslinfo" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_walinspect" >}} {{< ext "pg_freespacemap" >}} {{< ext "pg_visibility" >}} {{< ext "pgstattuple" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} |
 | {{< category sec >}} | 28 | {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "pgsodium" >}} {{< ext "supabase_vault" >}} {{< ext "pg_session_jwt" >}} {{< ext "anon" >}} {{< ext "pgsmcrypto" >}} {{< ext "pg_enigma" >}} {{< ext "pgaudit" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "logerrors" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_jobmon" >}} {{< ext "credcheck" >}} {{< ext "pgcryptokey" >}} {{< ext "pg_pwhash" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} {{< ext "pg_snakeoil" >}} {{< ext "pgextwlist" >}} {{< ext "sslutils" >}} {{< ext "noset" >}} {{< ext "pg_tde" >}} {{< ext "sepgsql" >}} {{< ext "auth_delay" >}} {{< ext "pgcrypto" >}} {{< ext "passwordcheck" >}} |
 | {{< category fdw >}} | 25 | {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} {{< ext "mysql_fdw" >}} {{< ext "oracle_fdw" >}} {{< ext "tds_fdw" >}} {{< ext "db2_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "pgbouncer_fdw" >}} {{< ext "etcd_fdw" >}} {{< ext "informix_fdw" >}} {{< ext "nominatim_fdw" >}} {{< ext "mongo_fdw" >}} {{< ext "redis_fdw" >}} {{< ext "redis" >}} {{< ext "kafka_fdw" >}} {{< ext "hdfs_fdw" >}} {{< ext "firebird_fdw" >}} {{< ext "aws_s3" >}} {{< ext "log_fdw" >}} {{< ext "dblink" >}} {{< ext "file_fdw" >}} {{< ext "postgres_fdw" >}} |
-| {{< category sim >}} | 19 | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} |
+| {{< category sim >}} | 26 | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} {{< ext "aux_mysql" >}} |
 | {{< category etl >}} | 19 | {{< ext "pglogical" >}} {{< ext "pglogical_origin" >}} {{< ext "pglogical_ticker" >}} {{< ext "pgl_ddl_deploy" >}} {{< ext "pg_failover_slots" >}} {{< ext "db_migrator" >}} {{< ext "pgactive" >}} {{< ext "spock" >}} {{< ext "lolor" >}} {{< ext "wal2json" >}} {{< ext "wal2mongo" >}} {{< ext "decoderbufs" >}} {{< ext "decoder_raw" >}} {{< ext "mimeo" >}} {{< ext "repmgr" >}} {{< ext "pg_fact_loader" >}} {{< ext "pg_bulkload" >}} {{< ext "test_decoding" >}} {{< ext "pgoutput" >}} |
 
 ## 扩展列表
 
-共有 454 个可用的 PostgreSQL 扩展：
+共有 461 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 描述 |
 |:----------|:------------|:---------:|:--------------|
@@ -464,6 +464,12 @@ comments: false
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 类似Oracle的全局临时表功能 |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Oracle兼容的会话变量/常量操作函数 |
 | {{< ext "pg_statement_rollback" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
+| {{< ext "ivorysql_ora" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Oracle 兼容扩展 |
+| {{< ext "ora_btree_gin" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Oracle 数据类型 GIN 索引支持 |
+| {{< ext "ora_btree_gist" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Oracle 数据类型 GiST 索引支持 |
+| {{< ext "pg_get_functiondef" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 获取函数定义 |
+| {{< ext "plisql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | PL/iSQL 过程语言 |
+| {{< ext "gb18030_2022" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 支持 GB18030-2022 与 UTF-8 编码转换 |
 | {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
@@ -475,6 +481,7 @@ comments: false
 | {{< ext "babelfishpg_money" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | SQL Server 货币数据类型兼容扩展 |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14,13" "r,g,r,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 在PG中嵌入Redis风格的内存数据库 |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 为PG提供memcached兼容接口 |
+| {{< ext "aux_mysql" >}} | {{< pgver "18,17,16,15,14,13" "r,r,r,r,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | MySQL兼容辅助扩展模块 |
 | {{< ext "pglogical" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | PostgreSQL逻辑复制：三方扩展实现 |
 | {{< ext "pglogical_origin" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | {{< ext "pglogical_ticker" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | pglogical复制延迟以秒计的精确视图 |
