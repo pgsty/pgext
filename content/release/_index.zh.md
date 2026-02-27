@@ -20,10 +20,11 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0)。
+当前 `pig` 最新稳定版本为：[v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0)。
 
 | 版本                             |     日期     | 摘要                                     |                           GitHub                           |
 |:-------------------------------|:----------:|----------------------------------------|:----------------------------------------------------------:|
+| [v1.3.0](/zh/release/pig#v130) | 2026-02-27 | 构建链路强化，扩展增至 461，新增 pgedge/ivory 生态支持 | [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0) |
 | [v1.2.0](/zh/release/pig#v120) | 2026-02-23 | 统一别名，例行更新，计划模式，仓库修复                    | [v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0) |
 | [v1.1.0](/zh/release/pig#v110) | 2026-02-12 | Agent-native 输出框架，新增 context 与 plan 模式 | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
 | [v1.0.0](/zh/release/pig#v100) | 2026-01-18 | 451 扩展，可用性矩阵，`pig ext` 强化              | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
@@ -55,4 +56,3 @@ weight: 800
 | [v0.1.1](/zh/release/pig#v011) | 2025-01-09 | 更新扩展列表                                 | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](/zh/release/pig#v010) | 2024-12-29 | repo、ext、sty 和自更新                      | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](/zh/release/pig#v001) | 2024-12-23 | 创世发布                                   | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
-

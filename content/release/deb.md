@@ -7,7 +7,7 @@ weight: 300
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 
-## 2026-02-20
+## 2026-02-27
 
 | Package           | Old      | New      | Comment                              |
 |:------------------|:---------|:---------|:-------------------------------------|
@@ -16,12 +16,16 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | age               | 1.7.0    | 1.7.0    | added PG 17 build for 1.7.0          |
 | pg_background     | -        | 1.8      | DEB only, no RPM package             |
 | pgmq              | 1.10.0   | 1.10.1   | package unavailable for now          |
-| pg_search         | 0.21.6   | 0.21.8   | direct download usage                |
-| oriolepg          | 17.11    | 17.16    | kernel update for OrioleDB           |
-| orioledb          | beta12   | beta14   | follows oriolepg 17.16               |
-| cloudberry        | -        | 2.0.0    | new package                          |
-| babelfishpg       | -        | 5.5.0    | new package family                   |
-| babelfish         | -        | 5.5.0    | new compatibility package            |
+| pg_search         | 0.21.6   | 0.21.9   | direct download usage                |
+| oriolepg          | 17.11    | 17.16    | OriolePG kernel update               |
+| orioledb          | beta12   | beta14   | paired with OriolePG 17.16           |
+| openhalo          | 14.10    | 1.0      | updated and renamed, 14.18           |
+| pgedge            | -        | 17.9     | new multi-master edge kernel         |
+| spock             | -        | 5.0.5    | new, pgEdge core extension           |
+| lolor             | -        | 1.2.2    | new, pgEdge core extension           |
+| snowflake         | -        | 2.4      | new, pgEdge core extension           |
+| babelfishpg       | -        | 5.5.0    | new BabelfishPG package group        |
+| babelfish         | -        | 5.5.0    | new Babelfish compatibility package  |
 | antlr4-runtime413 | -        | 4.13     | new runtime dependency for Babelfish |
 
 ## 2026-02-12

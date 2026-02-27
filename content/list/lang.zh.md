@@ -362,7 +362,7 @@ weight: 200
 | 9110 | {{< alias "pgtt" >}} | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
-| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |

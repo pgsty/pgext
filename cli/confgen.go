@@ -898,11 +898,12 @@ func GetConfigConstants() *ConfigConstants {
 		},
 
 		PGSQLExoticMap: []PackageMapping{
-			{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
+
 			{"agensgraph", "agensgraph_$v", "agensgraph-$v"},
 			{"polardb", "PolarDB", "polardb-for-postgresql"},
 			{"openhalodb", "openhalodb_14", "openhalodb-14"},
-			{"ivorysql", "ivorysql5", "ivorysql-5"},
+			//{"ivorysql", "ivorysql5", "ivorysql-5"},
+			//{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
 			{"oriole", "orioledb_17 oriolepg_17", "oriolepg-17 oriolepg-17-orioledb"},
 			{"pgedge", "pgedge_$v spock_$v lolor_$v snowflake_$v", "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},

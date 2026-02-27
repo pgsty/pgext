@@ -66,7 +66,7 @@ width: full
 | `lolor_17` | `1.2.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 28.5 KiB | [lolor_17-1.2.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/lolor_17-1.2.2-1PIGSTY.el8.aarch64.rpm) |
 | `lolor_17` | `1.2.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 28.6 KiB | [lolor_17-1.2.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/lolor_17-1.2.2-1PIGSTY.el9.x86_64.rpm) |
 | `lolor_17` | `1.2.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 27.8 KiB | [lolor_17-1.2.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/lolor_17-1.2.2-1PIGSTY.el9.aarch64.rpm) |
-| `lolor_17` | `1.2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 28.7 KiB | [lolor_17-1.2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/lolor_17-1.2.2-1PIGSTY.el10.x86_64.rpm) |
+| `lolor_17` | `1.2.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 28.8 KiB | [lolor_17-1.2.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/lolor_17-1.2.2-1PIGSTY.el10.x86_64.rpm) |
 | `lolor_17` | `1.2.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 28.0 KiB | [lolor_17-1.2.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/lolor_17-1.2.2-1PIGSTY.el10.aarch64.rpm) |
 | `pgedge-17-lolor` | `1.2.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.6 KiB | [pgedge-17-lolor_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/lolor/pgedge-17-lolor_1.2.2-1PIGSTY~bookworm_amd64.deb) |
 | `pgedge-17-lolor` | `1.2.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.9 KiB | [pgedge-17-lolor_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/lolor/pgedge-17-lolor_1.2.2-1PIGSTY~bookworm_arm64.deb) |

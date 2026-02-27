@@ -6,6 +6,33 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-02-26
+
+| Name                       | Old     | New     | Comment |
+|:---------------------------|:--------|:--------|:--------|
+| grafana                    | 12.3.3  | 12.4.0  |         |
+| prometheus                 | 3.9.1   | 3.10.0  |         |
+| mongodb_exporter           | 0.47.2  | 0.49.0  |         |
+| victoria-logs              | 1.45.0  | 1.47.0  |         |
+| vlagent                    | 1.45.0  | 1.47.0  |         |
+| vlogscli                   | 1.45.0  | 1.47.0  |         |
+| tigerbeetle                | 0.16.73 | 0.16.74 |         |
+| loki                       | 3.6.6   | 3.6.7   |         |
+| promtail                   | 3.6.6   | 3.6.7   |         |
+| logcli                     | 3.6.6   | 3.6.7   |         |
+| grafana-victorialogs-ds    | 0.25.0  | 0.26.2  |         |
+| grafana-victoriametrics-ds | 0.22.0  | 0.23.1  |         |
+| grafana-infinity-ds        | 3.7.1   | 3.7.2   |         |
+| caddy                      | 2.10.2  | 2.11.1  |         |
+| npgsqlrest                 | 3.8.0   | 3.10.0  |         |
+| opencode                   | 1.2.10  | 1.2.15  |         |
+| nodejs                     | 24.13.1 | 24.14.0 |         |
+| pev2                       | 1.20.1  | 1.20.2  |         |
+| claude                     | 2.1.45  | 2.1.59  |         |
+| codex                      | 0.104.0 | 0.105.0 |         |
+| pig                        | 1.2.0   | 1.3.0   |         |
+
+
 ## 2026-02-22
 
 | Name                     | Old     | New     | Comment |

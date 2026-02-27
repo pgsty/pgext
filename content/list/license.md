@@ -337,7 +337,7 @@ PostgreSQL extension categorized by license.
 | 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | foreign-data wrapper for Postgres log file access |
-| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle Compatible extension on Postgres Database |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle Compatible extension on Postgres Database |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Support for indexing oracle datatypes in GIN |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Support for oracle indexing common datatypes in GiST |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | Get function's definition |

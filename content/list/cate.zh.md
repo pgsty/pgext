@@ -3,7 +3,7 @@ title: "按分类"
 weight: 100
 ---
 
-PostgreSQL 扩展（461 ext / 385 pkg）归属 16 个分类。
+PostgreSQL 扩展（461 ext / 384 pkg）归属 16 个分类。
 
 
 
@@ -81,7 +81,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.8 | ParadeDB BM25算法全文检索插件，ES全文检索 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.9 | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | 使用Groonga，面向所有语言的高速全文检索平台 |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGGroonga 数据库管理模块 |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | 基于二字组的多语言全文检索扩展 |
@@ -540,7 +540,7 @@ AI与RAG扩展插件：向量数据库，DiskANN 向量索引，相似度度量�
 | 9110 | {{< alias "pgtt" >}} | 4.4 | 类似Oracle的全局临时表功能 |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Oracle兼容的会话变量/常量操作函数 |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
-| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | 1.0 | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | 获取函数定义 |

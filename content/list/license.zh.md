@@ -337,7 +337,7 @@ weight: 300
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 8810 | {{< alias "log_fdw" >}} | 访问PostgreSQL日志文件的FDW |
-| 9140 | {{< alias "ivorysql_ora" "ivory" >}} | Oracle 兼容扩展 |
+| 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | Oracle 兼容扩展 |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | Oracle 数据类型 GIN 索引支持 |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | Oracle 数据类型 GiST 索引支持 |
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |

@@ -434,7 +434,7 @@ weight: 900
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | 类似Oracle的全局临时表功能 |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | Oracle兼容的会话变量/常量操作函数 |
 | {{< ext "pg_statement_rollback" >}} | {{< pgver "18,17,16,15,14,13" "g,g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "SIM" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
-| {{< ext "ivorysql_ora" "ivory" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle 兼容扩展 |
+| {{< ext "ivorysql_ora" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle 兼容扩展 |
 | {{< ext "ora_btree_gin" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Oracle 数据类型 GIN 索引支持 |
 | {{< ext "ora_btree_gist" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | Oracle 数据类型 GiST 索引支持 |
 | {{< ext "pg_get_functiondef" "ivorysql" >}} | {{< pgver "18,17,16,15,14,13" "g,r,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | 获取函数定义 |

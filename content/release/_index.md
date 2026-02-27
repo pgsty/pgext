@@ -20,10 +20,11 @@ weight: 800
 
 ## PIG Releases
 
-The latest stable version of `pig` is [v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0)
+The latest stable version of `pig` is [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0)
 
 |           Version           |    Date    | Summary                                                 |                           GitHub                           |
 |:---------------------------:|:----------:|---------------------------------------------------------|:----------------------------------------------------------:|
+| [v1.3.0](/release/pig#v130) | 2026-02-27 | Build pipeline hardening, 461 extensions, pgedge/ivory support | [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0) |
 | [v1.2.0](/release/pig#v120) | 2026-02-23 | Unified aliases, routine updates, plan mode, repo fixes | [v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0) |
 | [v1.1.0](/release/pig#v110) | 2026-02-12 | Agent-native output, context, plan mode                 | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
 | [v1.0.0](/release/pig#v100) | 2026-01-18 | 451 ext, availability matrix                            | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |
@@ -55,4 +56,3 @@ The latest stable version of `pig` is [v1.2.0](https://github.com/pgsty/pig/rele
 | [v0.1.1](/release/pig#v011) | 2025-01-09 | Update Extension List                                   | [v0.1.1](https://github.com/pgsty/pig/releases/tag/v0.1.1) |
 | [v0.1.0](/release/pig#v010) | 2024-12-29 | repo, ext, sty, and self-update                         | [v0.1.0](https://github.com/pgsty/pig/releases/tag/v0.1.0) |
 | [v0.0.1](/release/pig#v001) | 2024-12-23 | Genesis Release                                         | [v0.0.1](https://github.com/pgsty/pig/releases/tag/v0.0.1) |
-

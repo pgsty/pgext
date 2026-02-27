@@ -10,7 +10,7 @@ Ever wished installing or upgrading PostgreSQL extensions didn’t feel like dig
 The painful truth is that Postgres’s richness of extension often comes at the cost of complicated setups—especially if you’re juggling multiple distros or CPU architectures.
 
 
-Enter **Pig**, a Go-based package manager built to tame Postgres and its ecosystem of [451](/list) extensions in one fell swoop.
+Enter **Pig**, a Go-based package manager built to tame Postgres and its ecosystem of [461](/list) extensions in one fell swoop.
 TimescaleDB, Citus, PGVector, 20+ Rust extensions, plus every must-have pieces to [Self-hosting Supabase](https://doc.pgsty.com/app/supabase) —
 Pig’s unified CLI makes them all effortlessly accessible. It cuts out messy source builds and half-baked repos,
 offering version-aligned RPM / DEB packages that work seamlessly across Debian, Ubuntu, and RedHat-flavored Linux, as well as x86 & ARM arch. No guesswork, no drama.
