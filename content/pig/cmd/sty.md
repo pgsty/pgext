@@ -117,7 +117,7 @@ Configure pigsty with ./configure
 pig sty conf
   [-c|--conf <name>]      # config template: [meta|rich|slim|full|supabase|...]
   [--ip <ip>]             # primary IP address (skip with -s)
-  [-v|--version <pgver>]  # postgres major version: [18|17|16|15|14|13]
+  [-v|--version <pgver>]  # postgres major version: [18|17|16|15|14]
   [-r|--region <region>]  # upstream repo region: [default|china|europe]
   [-o|--output <file>]    # output config file path (default: pigsty.yml)
   [-s|--skip]             # skip IP address probing

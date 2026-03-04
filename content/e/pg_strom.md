@@ -31,29 +31,29 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pg_strom` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "red" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "green" >}} {{< bg "13" "pg_strom_13" "green" >}} | `pg_strom_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_strom` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `6.1` | {{< bg "18" "pg_strom_18" "red" >}} {{< bg "17" "pg_strom_17" "green" >}} {{< bg "16" "pg_strom_16" "green" >}} {{< bg "15" "pg_strom_15" "green" >}} {{< bg "14" "pg_strom_14" "green" >}} | `pg_strom_$v` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_14 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_13 : AVAIL 4" "blue" >}} |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_14 : AVAIL 3" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_13 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 2" "blue" >}} |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_13 : MISS 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_14 : AVAIL 2" "blue" >}} |
+| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 9" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 11" "blue" >}} | {{< bg "PGDG 3.5" "pg_strom_14 : AVAIL 3" "blue" >}} |
+| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 6.1" "pg_strom_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 6.1" "pg_strom_15 : AVAIL 2" "blue" >}} |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "pg_strom_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom_14 : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_strom : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -145,19 +145,6 @@ width: full
 | `pg_strom_14` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.4-1.rhel9.x86_64.rpm) |
 | `pg_strom_14` | `3.3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_14-3.3.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-9-x86_64/pg_strom_14-3.3.2-1.rhel9.x86_64.rpm) |
 
-{{< /tab >}}
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_strom_13` | `3.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.6 MiB | [pg_strom_13-3.5-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/pg_strom_13-3.5-1.rhel8.x86_64.rpm) |
-| `pg_strom_13` | `3.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 28.4 MiB | [pg_strom_13-3.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/pg_strom_13-3.4-1.rhel8.x86_64.rpm) |
-| `pg_strom_13` | `3.3.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 29.4 MiB | [pg_strom_13-3.3.2-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/pg_strom_13-3.3.2-1.rhel8.x86_64.rpm) |
-| `pg_strom_13` | `3.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 16.0 MiB | [pg_strom_13-3.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-8-x86_64/pg_strom_13-3.1-1.rhel8.x86_64.rpm) |
-| `pg_strom_13` | `3.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.2 MiB | [pg_strom_13-3.5-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/pg_strom_13-3.5-1.rhel9.x86_64.rpm) |
-| `pg_strom_13` | `3.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_13-3.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/pg_strom_13-3.4-1.rhel9.x86_64.rpm) |
-| `pg_strom_13` | `3.3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.0 MiB | [pg_strom_13-3.3.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-9-x86_64/pg_strom_13-3.3.2-1.rhel9.x86_64.rpm) |
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -184,7 +171,6 @@ pig install pg_strom -v 17;   # install for PG 17
 pig install pg_strom -v 16;   # install for PG 16
 pig install pg_strom -v 15;   # install for PG 15
 pig install pg_strom -v 14;   # install for PG 14
-pig install pg_strom -v 13;   # install for PG 13
 
 ```
 

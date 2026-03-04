@@ -179,7 +179,7 @@ $ pig ext info postgis        # Show detailed information about PostGIS
 ├────────────────────────────────────────────────────────────────────────────┤
 │ Extension Properties                                                       │
 ├────────────────────────────────────────────────────────────────────────────┤
-│ PostgreSQL Ver │  Available on: 17, 16, 15, 14, 13                         │
+│ PostgreSQL Ver │  Available on: 17, 16, 15, 14                         │
 │ CREATE  :  Yes │  CREATE EXTENSION postgis;                                │
 │ DYLOAD  :  No  │  no need to load shared libraries                         │
 │ TRUST   :  No  │  require database superuser to install                    │
@@ -203,14 +203,14 @@ $ pig ext info postgis        # Show detailed information about PostGIS
 │ Repository     │  PGDG                                                     │
 │ Package        │  postgis35_$v*                                            │
 │ Version        │  3.5.2                                                    │
-│ Availability   │  17, 16, 15, 14, 13                                       │
+│ Availability   │  17, 16, 15, 14                                       │
 ├────────────────────────────────────────────────────────────────────────────┤
 │ DEB Package                                                                │
 ├────────────────────────────────────────────────────────────────────────────┤
 │ Repository     │  PGDG                                                     │
 │ Package        │  postgresql-$v-postgis-3 postgresql-$v-postgis-3-scripts  │
 │ Version        │  3.5.2                                                    │
-│ Availability   │  17, 16, 15, 14, 13                                       │
+│ Availability   │  17, 16, 15, 14                                       │
 ╰────────────────────────────────────────────────────────────────────────────╯
 ```
 
@@ -317,7 +317,7 @@ Description:
   pig ext ins pg16                           # install postgresql 16 kernel packages
   pig ext install pg15-core                  # install postgresql 15 core packages
   pig ext install pg14-main -y               # install pg 14 + essential extensions (vector, repack, wal2json)
-  pig ext install pg13-devel --yes           # install pg 13 devel packages (auto-confirm)
+  pig ext install pg14-devel --yes           # install pg 14 devel packages (auto-confirm)
   pig ext install pgsql-common               # install common utils such as patroni pgbouncer pgbackrest,...
 
 

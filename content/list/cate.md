@@ -81,7 +81,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.9 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.10 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -344,7 +344,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4710 | {{< alias "first_last_agg" >}} | 0.1.4 | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | 1.0 | Extra Window Functions for PostgreSQL |
 | 4730 | {{< alias "floatvec" >}} | 1.1.1 | Math for vectors (arrays) of numbers |
-| 4740 | {{< alias "aggs_for_vecs" >}} | 1.4.0 | Aggregate functions for array inputs |
+| 4740 | {{< alias "aggs_for_vecs" >}} | 1.4.1 | Aggregate functions for array inputs |
 | 4750 | {{< alias "aggs_for_arrays" >}} | 1.3.3 | Various functions for computing statistics on arrays of numbers |
 | 4760 | {{< alias "pg_csv" >}} | 1.0.1 | Flexible CSV processing for Postgres |
 | 4770 | {{< alias "arraymath" "pg_arraymath" >}} | 1.1 | Array math and operators that work element by element on the contents of arrays |

@@ -1335,20 +1335,20 @@ sudo yum makecache; sudo yum install -y pig
 
 |   代码    | 发行版                         |  `x86_64`  | `aarch64`  |
 |:-------:|-----------------------------|:----------:|:----------:|
-| **el9** | RHEL 9 / Rocky9 / Alma9 / … | PG 17 - 13 | PG 17 - 13 |
-| **el8** | RHEL 8 / Rocky8 / Alma8 / … | PG 17 - 13 | PG 17 - 13 |
-| **u24** | Ubuntu 24.04 (`noble`)      | PG 17 - 13 | PG 17 - 13 |
-| **u22** | Ubuntu 22.04 (`jammy`)      | PG 17 - 13 | PG 17 - 13 |
-| **d12** | Debian 12 (`bookworm`)      | PG 17 - 13 | PG 17 - 13 |
+| **el9** | RHEL 9 / Rocky9 / Alma9 / … | PG 17 - 14 | PG 17 - 14 |
+| **el8** | RHEL 8 / Rocky8 / Alma8 / … | PG 17 - 14 | PG 17 - 14 |
+| **u24** | Ubuntu 24.04 (`noble`)      | PG 17 - 14 | PG 17 - 14 |
+| **u22** | Ubuntu 22.04 (`jammy`)      | PG 17 - 14 | PG 17 - 14 |
+| **d12** | Debian 12 (`bookworm`)      | PG 17 - 14 | PG 17 - 14 |
 
 以下是上述发行版的一些坏情况和限制：
 
 - [`citus`](https://ext.pgsty.com/e/citus) 在 `aarch64` 和 ubuntu 24.04 上不可用
 - [`pljava`](https://ext.pgsty.com/e/pljava) 在 `el8` 上缺失
 - [`jdbc_fdw`](https://ext.pgsty.com/e/jdbc_fdw) 在 `el8.aarch64` 和 `el9.aarch64` 上缺失
-- [`pllua`](https://ext.pgsty.com/e/pllua) 在 `el8.aarch64` 上对 pg 13,14,15 缺失
-- [`topn`](https://ext.pgsty.com/e/topn) 在 `el8.aarch64` 和 `el9.aarch64` 上对 pg13 缺失，以及所有 `deb.aarch64`
-- [`pg_partman`](https://ext.pgsty.com/e/pg_partman) 和 [`timeseries`](https://ext.pgsty.com/e/timeseries) 在 `u24` 上对 pg13 缺失
+- [`pllua`](https://ext.pgsty.com/e/pllua) 在 `el8.aarch64` 上对 pg 14,15 缺失
+- [`topn`](https://ext.pgsty.com/e/topn) 在 `el8.aarch64` 和 `el9.aarch64` 上对 pg14 缺失，以及所有 `deb.aarch64`
+- [`pg_partman`](https://ext.pgsty.com/e/pg_partman) 和 [`timeseries`](https://ext.pgsty.com/e/timeseries) 在 `u24` 上对 pg14 缺失
 - [`wiltondb`](https://ext.pgsty.com/e/wiltondb) 在 `d12` 上缺失
 
 发布：https://github.com/pgsty/pig/releases/tag/v0.0.1

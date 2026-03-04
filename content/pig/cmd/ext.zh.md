@@ -142,7 +142,7 @@ pig ext av pgvector               # 显示 pgvector 的可用性
 pig ext matrix citus              # avail 命令的别名
 ```
 
-可用性矩阵会显示扩展在各个操作系统（EL8/9/10, Debian 12/13, Ubuntu 22/24）、架构（x86_64/aarch64）和 PostgreSQL 版本（13-18）上的可用情况。
+可用性矩阵会显示扩展在各个操作系统（EL8/9/10, Debian 12/13, Ubuntu 22/24）、架构（x86_64/aarch64）和 PostgreSQL 版本（14-18）上的可用情况。
 
 
 ## ext status

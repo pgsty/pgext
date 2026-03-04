@@ -109,7 +109,7 @@ pig sty conf -c full -g -o ha.yml  # 完整 HA 模板，随机密码输出到 ha
 **选项：**
 - `-c|--conf`：配置模板名称（meta/rich/slim/full/supabase/...）
 - `--ip`：主节点 IP 地址
-- `-v|--version`：PostgreSQL 主版本（18/17/16/15/14/13）
+- `-v|--version`：PostgreSQL 主版本（18/17/16/15/14）
 - `-r|--region`：上游仓库区域（default/china/europe）
 - `-o|--output`：输出配置文件路径（默认：pigsty.yml）
 - `-s|--skip`：跳过 IP 探测

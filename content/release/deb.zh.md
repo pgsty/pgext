@@ -119,8 +119,8 @@ weight: 300
 | pg_search                                                     | 0.20.0  | 0.20.4  |            |
 | pg_duckdb                                                     | 1.1.0-1 | 1.1.0-2 | 官方版本       |
 | pg_biscuit                                                    |   1.0   |  2.0.1  | 新仓库        |
-| pg_convert                                                    |  0.0.4  |  0.0.5  | 移除 pg13 支持 |
-| pgdd                                                          |  0.6.0  |  0.6.1  | 移除 pg13 支持 |
+| pg_convert                                                    |  0.0.4  |  0.0.5  | 移除旧版PG支持 |
+| pgdd                                                          |  0.6.0  |  0.6.1  | 移除旧版PG支持 |
 | pglinter                                                      |  1.0.0  |  1.0.1  |            |
 | pg_session_jwt                                                |  0.3.3  |  0.4.0  |            |
 | pg_anon                                                       |  2.4.1  |  2.5.1  |            |
@@ -147,7 +147,7 @@ weight: 300
 |:-----------------------|:------:|:------:|:---------------------------|
 | vchord                 | 0.5.3  | 1.0.0  |                            |
 | pg_later               | 0.3.1  | 0.4.0  |                            |
-| pgvectorscale          | 0.8.0  | 0.9.0  | -pg13, +pg18               |
+| pgvectorscale          | 0.8.0  | 0.9.0  | -legacy, +pg18             |
 | pglite_fusion          | 0.0.5  | 0.0.6  |                            |
 | pgx_ulid               | 0.2.1  | 0.2.2  |                            |
 | pg_search              | 0.19.5 | 0.20.0 | resume PIGSTY building     |
@@ -161,7 +161,7 @@ weight: 300
 | pg_biscuit             |        |  1.0   | new, pg16-18               |
 | pg_stat_monitor        | 2.3.0  | 2.3.1  |                            |
 | pgmq                   | 1.7.0  | 1.8.0  |                            |
-| pg_weighted_statistics |        | 1.0.0  | new, pg13-18               |
+| pg_weighted_statistics |        | 1.0.0  | new, pg14-18               |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
 

@@ -33,29 +33,29 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `jdbc_fdw` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "jdbc_fdw_18" "red" >}} {{< bg "17" "jdbc_fdw_17" "red" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} {{< bg "13" "jdbc_fdw_13" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "" "red" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `jdbc_fdw` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.4.0` | {{< bg "18" "jdbc_fdw_18" "red" >}} {{< bg "17" "jdbc_fdw_17" "red" >}} {{< bg "16" "jdbc_fdw_16" "green" >}} {{< bg "15" "jdbc_fdw_15" "green" >}} {{< bg "14" "jdbc_fdw_14" "green" >}} | `jdbc_fdw_$v` | `java-11-openjdk-headless` |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_13 : AVAIL 1" "blue" >}} |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_13 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_13 : AVAIL 1" "blue" >}} |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_13 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_13 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_13 : MISS 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
+| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -78,14 +78,6 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `jdbc_fdw_14` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.5 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm) |
 | `jdbc_fdw_14` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.0 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm) |
-
-{{< /tab >}}
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `jdbc_fdw_13` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.0 KiB | [jdbc_fdw_13-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/jdbc_fdw_13-0.4.0-1PGDG.rhel8.x86_64.rpm) |
-| `jdbc_fdw_13` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 51.8 KiB | [jdbc_fdw_13-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/jdbc_fdw_13-0.4.0-1PGDG.rhel9.x86_64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -112,7 +104,6 @@ pig install jdbc_fdw;		# install via package name, for the active PG version
 pig install jdbc_fdw -v 16;   # install for PG 16
 pig install jdbc_fdw -v 15;   # install for PG 15
 pig install jdbc_fdw -v 14;   # install for PG 14
-pig install jdbc_fdw -v 13;   # install for PG 13
 
 ```
 

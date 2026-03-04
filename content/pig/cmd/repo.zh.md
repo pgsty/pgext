@@ -78,7 +78,7 @@ pig repo update                       # 更新系统包缓存
 | `all` | 安装 PG 所需的全部核心模块 | `node` + `infra` + `pgsql` |
 | `pgsql` | PGDG + Pigsty PG 扩展 | `pigsty-pgsql` + `pgdg` |
 | `pigsty` | Pigsty Infra + PGSQL 仓库 | pigsty-infra, pigsty-pgsql |
-| `pgdg` | PGDG 官方仓库 | pgdg-common, pgdg13-18 |
+| `pgdg` | PGDG 官方仓库 | pgdg-common, pgdg14-18 |
 | `node` | Linux 系统仓库 | base, updates, extras, epel, baseos, appstream... |
 | `infra` | 基础设施组件仓库 | pigsty-infra, nginx, docker-ce |
 | `beta` | PostgreSQL 19 Beta 版本 | pgdg19-beta, pgdg-beta |

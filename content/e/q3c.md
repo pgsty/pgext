@@ -31,30 +31,30 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `q3c` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0.2` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} {{< bg "13" "q3c_13" "green" >}} | `q3c_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} {{< bg "13" "postgresql-13-q3c" "green" >}} | `postgresql-$v-q3c` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} | `postgresql-$v-q3c` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_13 : AVAIL 2" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-13-q3c : AVAIL 1" "blue" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.0.2" "q3c_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_17 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 2.0.2" "q3c_14 : AVAIL 3" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -214,32 +214,6 @@ width: full
 | `postgresql-14-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 145.2 KiB | [postgresql-14-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 147.0 KiB | [postgresql-14-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `q3c_13` | `2.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 98.0 KiB | [q3c_13-2.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/q3c_13-2.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `q3c_13` | `2.0.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 102.1 KiB | [q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-x86_64/q3c_13-2.0.1-1PGDG.rhel8.x86_64.rpm) |
-| `q3c_13` | `2.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 93.2 KiB | [q3c_13-2.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/q3c_13-2.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `q3c_13` | `2.0.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/q3c_13-2.0.1-1PGDG.rhel8.aarch64.rpm) |
-| `q3c_13` | `2.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 109.3 KiB | [q3c_13-2.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/q3c_13-2.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `q3c_13` | `2.0.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 111.1 KiB | [q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-x86_64/q3c_13-2.0.1-1PGDG.rhel9.x86_64.rpm) |
-| `q3c_13` | `2.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 101.0 KiB | [q3c_13-2.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/q3c_13-2.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `q3c_13` | `2.0.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 103.3 KiB | [q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/q3c_13-2.0.1-1PGDG.rhel9.aarch64.rpm) |
-| `q3c_13` | `2.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 106.0 KiB | [q3c_13-2.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/q3c_13-2.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `q3c_13` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 92.1 KiB | [q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/q3c_13-2.0.1-1PGDG.rhel10.x86_64.rpm) |
-| `q3c_13` | `2.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 100.4 KiB | [q3c_13-2.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/q3c_13-2.0.2-1PIGSTY.el10.aarch64.rpm) |
-| `q3c_13` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 104.0 KiB | [q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/q3c_13-2.0.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-q3c` | `2.0.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 141.8 KiB | [postgresql-13-q3c_2.0.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg12+1_amd64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 125.4 KiB | [postgresql-13-q3c_2.0.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg12+1_arm64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 139.4 KiB | [postgresql-13-q3c_2.0.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg13+1_amd64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 129.0 KiB | [postgresql-13-q3c_2.0.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg13+1_arm64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 168.5 KiB | [postgresql-13-q3c_2.0.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 145.7 KiB | [postgresql-13-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 149.4 KiB | [postgresql-13-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 160.5 KiB | [postgresql-13-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-13-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -257,10 +231,10 @@ pig build pkg q3c;		# build rpm
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
+Make sure [**PGDG**](/repo/pgdg) repo available:
 
 ```bash
-pig repo add pgsql -u   # add both repo and update cache
+pig repo add pgdg -u    # add pgdg repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -273,7 +247,6 @@ pig install q3c -v 17;   # install for PG 17
 pig install q3c -v 16;   # install for PG 16
 pig install q3c -v 15;   # install for PG 15
 pig install q3c -v 14;   # install for PG 14
-pig install q3c -v 13;   # install for PG 13
 
 ```
 

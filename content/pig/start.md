@@ -124,13 +124,13 @@ Name                            Status              Version     Cate   Flags   L
 ----                            ------              -------     ----   ------  -------       ------   -----  ------------               ---------------------
 timescaledb                     installed  2.24.0      TIME   -dsl--  Timescale     PIGSTY   15-18  timescaledb-tsl_18         Enables scalable inserts and complex queries for time-series dat
 timescaledb_toolkit             installed  1.22.0      TIME   -ds-t-  Timescale     PIGSTY   15-18  timescaledb-toolkit_18     Library of analytical hyperfunctions, time-series pipelining, an
-timeseries                      installed  0.2.0       TIME   -d----  PostgreSQL    PIGSTY   13-18  pg_timeseries_18           Convenience API for time series stack
-periods                         installed  1.2.3       TIME   -ds---  PostgreSQL    PGDG     13-18  periods_18                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
-temporal_tables                 installed  1.2.2       TIME   -ds--r  BSD 2-Clause  PIGSTY   13-18  temporal_tables_18         temporal tables
+timeseries                      installed  0.2.0       TIME   -d----  PostgreSQL    PIGSTY   14-18  pg_timeseries_18           Convenience API for time series stack
+periods                         installed  1.2.3       TIME   -ds---  PostgreSQL    PGDG     14-18  periods_18                 Provide Standard SQL functionality for PERIODs and SYSTEM VERSIO
+temporal_tables                 installed  1.2.2       TIME   -ds--r  BSD 2-Clause  PIGSTY   14-18  temporal_tables_18         temporal tables
 ...
-pg_bulkload                     installed  3.1.23      ETL    bds---  BSD 3-Clause  PGDG     13-18  pg_bulkload_18             pg_bulkload is a high speed data loading utility for PostgreSQL
-test_decoding                   available  -           ETL    --s--x  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       SQL-based test/example module for WAL logical decoding
-pgoutput                        available  -           ETL    --s---  PostgreSQL    CONTRIB  13-18  postgresql18-contrib       Logical Replication output plugin
+pg_bulkload                     installed  3.1.23      ETL    bds---  BSD 3-Clause  PGDG     14-18  pg_bulkload_18             pg_bulkload is a high speed data loading utility for PostgreSQL
+test_decoding                   available  -           ETL    --s--x  PostgreSQL    CONTRIB  14-18  postgresql18-contrib       SQL-based test/example module for WAL logical decoding
+pgoutput                        available  -           ETL    --s---  PostgreSQL    CONTRIB  14-18  postgresql18-contrib       Logical Replication output plugin
 
 (461 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
 
@@ -263,17 +263,17 @@ So when you install the `pg18-server` alias, on EL you're actually installing `p
 These aliases can be used directly and instantiated with parameters for major versions, or you can use variants with specific major version numbers: replace `pgsql` with `pg18`, `pg17`, `pgxx`, etc.
 For example, for PostgreSQL 18, you can use these aliases directly:
 
-| `pgsql`        | `pg18`        | `pg17`        | `pg16`        | `pg15`        | `pg14`        | `pg13`        |
-|:---------------|:--------------|:--------------|:--------------|:--------------|:--------------|:--------------|
-| `pgsql`        | **`pg18`**    | `pg17`        | `pg16`        | `pg15`        | `pg14`        | `pg13`        |
-| `pgsql-mini`   | `pg18-mini`   | `pg17-mini`   | `pg16-mini`   | `pg15-mini`   | `pg14-mini`   | `pg13-mini`   |
-| `pgsql-core`   | `pg18-core`   | `pg17-core`   | `pg16-core`   | `pg15-core`   | `pg14-core`   | `pg13-core`   |
-| `pgsql-full`   | `pg18-full`   | `pg17-full`   | `pg16-full`   | `pg15-full`   | `pg14-full`   | `pg13-full`   |
-| `pgsql-main`   | `pg18-main`   | `pg17-main`   | `pg16-main`   | `pg15-main`   | `pg14-main`   | `pg13-main`   |
-| `pgsql-client` | `pg18-client` | `pg17-client` | `pg16-client` | `pg15-client` | `pg14-client` | `pg13-client` |
-| `pgsql-server` | `pg18-server` | `pg17-server` | `pg16-server` | `pg15-server` | `pg14-server` | `pg13-server` |
-| `pgsql-devel`  | `pg18-devel`  | `pg17-devel`  | `pg16-devel`  | `pg15-devel`  | `pg14-devel`  | `pg13-devel`  |
-| `pgsql-basic`  | `pg18-basic`  | `pg17-basic`  | `pg16-basic`  | `pg15-basic`  | `pg14-basic`  | `pg13-basic`  |
+| `pgsql`        | `pg18`        | `pg17`        | `pg16`        | `pg15`        | `pg14`        |
+|:---------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| `pgsql`        | **`pg18`**    | `pg17`        | `pg16`        | `pg15`        | `pg14`        |
+| `pgsql-mini`   | `pg18-mini`   | `pg17-mini`   | `pg16-mini`   | `pg15-mini`   | `pg14-mini`   |
+| `pgsql-core`   | `pg18-core`   | `pg17-core`   | `pg16-core`   | `pg15-core`   | `pg14-core`   |
+| `pgsql-full`   | `pg18-full`   | `pg17-full`   | `pg16-full`   | `pg15-full`   | `pg14-full`   |
+| `pgsql-main`   | `pg18-main`   | `pg17-main`   | `pg16-main`   | `pg15-main`   | `pg14-main`   |
+| `pgsql-client` | `pg18-client` | `pg17-client` | `pg16-client` | `pg15-client` | `pg14-client` |
+| `pgsql-server` | `pg18-server` | `pg17-server` | `pg16-server` | `pg15-server` | `pg14-server` |
+| `pgsql-devel`  | `pg18-devel`  | `pg17-devel`  | `pg16-devel`  | `pg15-devel`  | `pg14-devel`  |
+| `pgsql-basic`  | `pg18-basic`  | `pg17-basic`  | `pg16-basic`  | `pg15-basic`  | `pg14-basic`  |
 
 </details>
 
@@ -359,7 +359,6 @@ Installed:
 * PostgreSQL 17.6 (Debian 17.6-2.pgdg13+1)    70  Extensions
 - PostgreSQL 15.14 (Debian 15.14-1.pgdg13+1)  69  Extensions
 - PostgreSQL 14.19 (Debian 14.19-1.pgdg13+1)  66  Extensions
-- PostgreSQL 13.22 (Debian 13.22-1.pgdg13+1)  64  Extensions
 - PostgreSQL 18.0 (Debian 18.0-1.pgdg13+3)    70  Extensions
 - PostgreSQL 16.10 (Debian 16.10-1.pgdg13+1)  70  Extensions
 

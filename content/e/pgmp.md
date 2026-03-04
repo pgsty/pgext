@@ -26,37 +26,37 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "numeral" >}} {{< ext "unit" >}} {{< ext "pguecc" >}} {{< ext "pgcrypto" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} |
 
-> [!Note] missing pg14,13,12 on el pgdg repo
+> [!Note] missing pg14 on el pgdg repo
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} {{< bg "13" "" "green" >}} | `pgmp` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "pgmp_18" "green" >}} {{< bg "17" "pgmp_17" "green" >}} {{< bg "16" "pgmp_16" "green" >}} {{< bg "15" "pgmp_15" "green" >}} {{< bg "14" "pgmp_14" "green" >}} {{< bg "13" "pgmp_13" "green" >}} | `pgmp_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} {{< bg "13" "postgresql-13-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmp` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "pgmp_18" "green" >}} {{< bg "17" "pgmp_17" "green" >}} {{< bg "16" "pgmp_16" "green" >}} {{< bg "15" "pgmp_15" "green" >}} {{< bg "14" "pgmp_14" "green" >}} | `pgmp_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.0.5` | {{< bg "18" "postgresql-18-pgmp" "green" >}} {{< bg "17" "postgresql-17-pgmp" "green" >}} {{< bg "16" "postgresql-16-pgmp" "green" >}} {{< bg "15" "postgresql-15-pgmp" "green" >}} {{< bg "14" "postgresql-14-pgmp" "green" >}} | `postgresql-$v-pgmp` | - |
 
 
-| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |                  **PG13**                   |
-|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgmp_13 : MISS 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_13 : AVAIL 1" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgmp_14 : MISS 0" "red" >}}      |      {{< bg "MISS" "pgmp_13 : MISS 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_13 : AVAIL 1" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_13 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_14 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_13 : AVAIL 1" "blue" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-13-pgmp : AVAIL 1" "blue" >}} |
+| **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
+|:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} |      {{< bg "MISS" "pgmp_14 : MISS 0" "red" >}}      |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "pgmp_14 : AVAIL 1" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_14 : AVAIL 1" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0.5" "pgmp_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "pgmp_14 : AVAIL 1" "blue" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14,PG13" >}}
+{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
 {{< tab >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -155,24 +155,6 @@ width: full
 | `postgresql-14-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 100.8 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.9 KiB | [postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-14-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
 
-{{< /tab >}}
-{{< tab >}}
-
-| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
-|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgmp_13` | `1.0.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 104.4 KiB | [pgmp_13-1.0.4-4.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-8-aarch64/pgmp_13-1.0.4-4.rhel8.aarch64.rpm) |
-| `pgmp_13` | `1.0.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 106.6 KiB | [pgmp_13-1.0.4-4.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-9-aarch64/pgmp_13-1.0.4-4.rhel9.aarch64.rpm) |
-| `pgmp_13` | `1.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 43.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-x86_64/pgmp_13-1.0.5-4PGDG.rhel10.x86_64.rpm) |
-| `pgmp_13` | `1.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 42.4 KiB | [pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-10-aarch64/pgmp_13-1.0.5-4PGDG.rhel10.aarch64.rpm) |
-| `postgresql-13-pgmp` | `1.0.5` | [d12.x86_64](/os/d12.x86_64) | pgdg | 100.7 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_amd64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [d12.aarch64](/os/d12.aarch64) | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg12+1_arm64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [d13.x86_64](/os/d13.x86_64) | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_amd64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [d13.aarch64](/os/d13.aarch64) | pgdg | 99.4 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg13+1_arm64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [u22.x86_64](/os/u22.x86_64) | pgdg | 108.5 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_amd64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 106.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg22.04+1_arm64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 100.8 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_amd64.deb) |
-| `postgresql-13-pgmp` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 99.6 KiB | [postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-13-pgmp_1.0.5-4.pgdg24.04+1_arm64.deb) |
-
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
@@ -200,7 +182,6 @@ pig install pgmp -v 17;   # install for PG 17
 pig install pgmp -v 16;   # install for PG 16
 pig install pgmp -v 15;   # install for PG 15
 pig install pgmp -v 14;   # install for PG 14
-pig install pgmp -v 13;   # install for PG 13
 
 ```
 

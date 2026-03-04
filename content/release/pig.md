@@ -1346,20 +1346,20 @@ sudo yum makecache; sudo yum install -y pig
 
 |  Code   | Distribution                |  `x86_64`  | `aarch64`  |
 |:-------:|-----------------------------|:----------:|:----------:|
-| **el9** | RHEL 9 / Rocky9 / Alma9 / … | PG 17 - 13 | PG 17 - 13 |
-| **el8** | RHEL 8 / Rocky8 / Alma8 / … | PG 17 - 13 | PG 17 - 13 |
-| **u24** | Ubuntu 24.04 (`noble`)      | PG 17 - 13 | PG 17 - 13 |
-| **u22** | Ubuntu 22.04 (`jammy`)      | PG 17 - 13 | PG 17 - 13 |
-| **d12** | Debian 12 (`bookworm`)      | PG 17 - 13 | PG 17 - 13 |
+| **el9** | RHEL 9 / Rocky9 / Alma9 / … | PG 17 - 14 | PG 17 - 14 |
+| **el8** | RHEL 8 / Rocky8 / Alma8 / … | PG 17 - 14 | PG 17 - 14 |
+| **u24** | Ubuntu 24.04 (`noble`)      | PG 17 - 14 | PG 17 - 14 |
+| **u22** | Ubuntu 22.04 (`jammy`)      | PG 17 - 14 | PG 17 - 14 |
+| **d12** | Debian 12 (`bookworm`)      | PG 17 - 14 | PG 17 - 14 |
 
 Here are some bad cases and limitations for the above distros:
 
 - [`citus`](https://ext.pgsty.com/e/citus) is not available on `aarch64` and ubuntu 24.04
 - [`pljava`](https://ext.pgsty.com/e/pljava) is missing on `el8`
 - [`jdbc_fdw`](https://ext.pgsty.com/e/jdbc_fdw) is missing on `el8.aarch64` and `el9.aarch64`
-- [`pllua`](https://ext.pgsty.com/e/pllua) is missing on `el8.aarch64` for pg 13,14,15
-- [`topn`](https://ext.pgsty.com/e/topn) is missing on `el8.aarch64` and `el9.aarch64` for pg13, and all `deb.aarch64`
-- [`pg_partman`](https://ext.pgsty.com/e/pg_partman) and [`timeseries`](https://ext.pgsty.com/e/timeseries) is missing on `u24` for pg13
+- [`pllua`](https://ext.pgsty.com/e/pllua) is missing on `el8.aarch64` for pg 14,15
+- [`topn`](https://ext.pgsty.com/e/topn) is missing on `el8.aarch64` and `el9.aarch64` for pg14, and all `deb.aarch64`
+- [`pg_partman`](https://ext.pgsty.com/e/pg_partman) and [`timeseries`](https://ext.pgsty.com/e/timeseries) is missing on `u24` for pg14
 - [`wiltondb`](https://ext.pgsty.com/e/wiltondb) is missing on `d12`
 
 Release: https://github.com/pgsty/pig/releases/tag/v0.0.1

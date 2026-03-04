@@ -9,11 +9,11 @@ comments: false
 
 ※ One extension package may consist of multiple extensions
 
-| **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** | **PG13** |
-|:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 320 | 139 | 234 | 0 | 0 | 302 | 315 | 307 | 304 | 299 | 266 |
-| **EL** | 317 | 136 | 234 | 0 | 64 | 296 | 311 | 304 | 301 | 296 | 263 |
-| **Debian** | 305 | 92 | 213 | 0 | 76 | 287 | 301 | 292 | 289 | 284 | 250 |
+| **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
+|:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| **ALL** | 320 | 139 | 233 | 0 | 0 | 302 | 315 | 307 | 304 | 299 |
+| **EL** | 317 | 136 | 233 | 0 | 64 | 296 | 311 | 304 | 301 | 296 |
+| **Debian** | 305 | 92 | 213 | 0 | 76 | 287 | 301 | 292 | 289 | 284 |
 
 ## Categories
 
@@ -75,7 +75,7 @@ There are 320 available PostgreSQL packages:
 | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< category "RAG" >}} | `pg_tiktoken_$v` | `postgresql-$v-pg-tiktoken` |
 | {{< ext "pg4ml" >}} | `2.0` | {{< badge content="Link" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< category "RAG" >}} | `pg4ml_$v` | `postgresql-$v-pg4ml` |
 | {{< ext "pgml" >}} | `2.10.0` | {{< badge content="Link" link="https://github.com/postgresml/postgresml" >}} | {{< category "RAG" >}} | `pgml_$v` | `postgresql-$v-pgml` |
-| {{< ext "pg_search" >}} | `0.21.9` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.21.10` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.0.4` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v` | `postgresql-$v-pg-bigm` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v` | `postgresql-$v-zhparser` |
@@ -240,7 +240,7 @@ There are 320 available PostgreSQL packages:
 | {{< ext "first_last_agg" >}} | `0.1.4` | {{< badge content="Link" link="https://github.com/wulczer/first_last_agg" >}} | {{< category "FUNC" >}} | `first_last_agg_$v` | `postgresql-$v-first-last-agg` |
 | {{< ext "extra_window_functions" >}} | `1.0` | {{< badge content="Link" link="https://github.com/xocolatl/extra_window_functions" >}} | {{< category "FUNC" >}} | `extra_window_functions_$v` | `postgresql-$v-extra-window-functions` |
 | {{< ext "floatvec" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/pjungwir/floatvec" >}} | {{< category "FUNC" >}} | `floatvec_$v` | `postgresql-$v-floatvec` |
-| {{< ext "aggs_for_vecs" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< category "FUNC" >}} | `aggs_for_vecs_$v` | `postgresql-$v-aggs-for-vecs` |
+| {{< ext "aggs_for_vecs" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_vecs" >}} | {{< category "FUNC" >}} | `aggs_for_vecs_$v` | `postgresql-$v-aggs-for-vecs` |
 | {{< ext "aggs_for_arrays" >}} | `1.3.3` | {{< badge content="Link" link="https://github.com/pjungwir/aggs_for_arrays" >}} | {{< category "FUNC" >}} | `aggs_for_arrays_$v` | `postgresql-$v-aggs-for-arrays` |
 | {{< ext "pg_csv" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/PostgREST/pg_csv" >}} | {{< category "FUNC" >}} | `pg_csv_$v` | `postgresql-$v-pg-csv` |
 | {{< ext "arraymath" "pg_arraymath" >}} | `1.1` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-arraymath" >}} | {{< category "FUNC" >}} | `pg_arraymath_$v` | `postgresql-$v-pg-arraymath` |
