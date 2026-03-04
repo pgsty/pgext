@@ -618,8 +618,6 @@ func (g *PigstyConfigGenerator) getPGAuditPackageName(pgVer int) string {
 		return "pgaudit17_15"
 	case 14:
 		return "pgaudit16_14"
-	case 13:
-		return "pgaudit15_13"
 	default:
 		return fmt.Sprintf("pgaudit_%d", pgVer)
 	}

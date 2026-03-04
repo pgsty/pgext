@@ -13,7 +13,7 @@ FROM (SELECT * FROM pgext.extension WHERE lead AND NOT contrib) ext,
      (SELECT * FROM pgext.os WHERE active) os,
      (SELECT * FROM pgext.pg WHERE active) pg;
 -- special case handling
-UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (13,14,15) AND os ~ 'el\d';
+UPDATE pgext.pkg SET name = replace(name, 'pgaudit', 'pgaudit' || (pg+2)::TEXT ) WHERE pkg = 'pgaudit' AND pg IN (14,15) AND os ~ 'el\d';
 UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'postgis' AND position(' ' in name) > 0;
 UPDATE pgext.pkg SET name = (regexp_split_to_array(name, ' '))[1] WHERE pkg = 'pgrouting' AND position(' ' in name) > 0;
 
@@ -30,7 +30,6 @@ UPDATE pgext.pkg SET state = 'AVAIL' WHERE count > 0;
 
 -- conflict with other extension, hide in list
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('hydra' ,'duckdb_fdw');
-UPDATE pgext.pkg SET hide = true  WHERE pkg = 'pg_timeseries' AND (os ~ 'u24.*' OR os ~ 'el10.*') AND pg = 13;
 
 -- too big, non-free, heavy extensions
 UPDATE pgext.pkg SET hide = true WHERE pkg IN ('plr', 'informix_fdw' ,'oracle_fdw', 'db2_fdw', 'pg_utl_smtp' ,'pg_strom', 'repmgr', 'pgpool', 'pgagent', 'dbt2');
@@ -46,4 +45,3 @@ UPDATE pgext.pkg SET hide = true, state = 'BREAK' WHERE pkg = 'pg_dbms_job' AND 
 
 -- 'pgext.refresh_pkg complete';
 UPDATE pgext.status SET recap_time = now();
-

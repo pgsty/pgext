@@ -520,8 +520,16 @@ func (g *CCPageGenerator) generateDownloads(binaries []*Binary) string {
 	var b strings.Builder
 
 	// Group by PG version
+	activePG := make(map[int]bool, len(g.Cache.PGVersions))
+	for _, pg := range g.Cache.PGVersions {
+		activePG[pg] = true
+	}
+
 	pgGroups := make(map[int][]*Binary)
 	for _, bin := range binaries {
+		if !activePG[bin.PG] {
+			continue
+		}
 		pgGroups[bin.PG] = append(pgGroups[bin.PG], bin)
 	}
 
@@ -668,7 +676,17 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 	}
 
 	// Version-specific install
-	pgVersions := ParsePGVersions(ext.PgVer)
+	activePG := make(map[int]bool, len(g.Cache.PGVersions))
+	for _, pg := range g.Cache.PGVersions {
+		activePG[pg] = true
+	}
+
+	var pgVersions []int
+	for _, pg := range ParsePGVersions(ext.PgVer) {
+		if activePG[pg] {
+			pgVersions = append(pgVersions, pg)
+		}
+	}
 	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf("pig ext install %s -v %d;    # 为 PG %d 安装\n", ext.Name, pg, pg))

@@ -618,8 +618,16 @@ func (g *ExtensionGenerator) generateAvailabilityMatrix(packages []*PkgInfo, bin
 
 func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages []*PkgInfo, binaries []*Binary) string {
 	// Group binaries by PG version (binaries are already properly sorted from SQL)
+	activePG := make(map[int]bool, len(g.Cache.PGVersions))
+	for _, pg := range g.Cache.PGVersions {
+		activePG[pg] = true
+	}
+
 	pgGroups := make(map[int][]*Binary)
 	for _, binary := range binaries {
+		if !activePG[binary.PG] {
+			continue
+		}
 		pgGroups[binary.PG] = append(pgGroups[binary.PG], binary)
 	}
 
@@ -759,7 +767,17 @@ func (g *ExtensionGenerator) generateInstallSection(ext *Extension) string {
 	}
 
 	// Parse PG versions
-	pgVersions := ParsePGVersions(ext.PgVer)
+	activePG := make(map[int]bool, len(g.Cache.PGVersions))
+	for _, pg := range g.Cache.PGVersions {
+		activePG[pg] = true
+	}
+
+	var pgVersions []int
+	for _, pg := range ParsePGVersions(ext.PgVer) {
+		if activePG[pg] {
+			pgVersions = append(pgVersions, pg)
+		}
+	}
 	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
 
 	// Generate install commands

@@ -734,7 +734,10 @@ width: full
 
         # Group packages by PG version
         pg_groups: Dict[int, List[PackageDetail]] = {}
+        active_pg = set(self.pg_versions)
         for detail in details:
+            if detail.pg not in active_pg:
+                continue
             if detail.pg not in pg_groups:
                 pg_groups[detail.pg] = []
             pg_groups[detail.pg].append(detail)
@@ -821,7 +824,10 @@ pig build ext {ext.name}; # build extension rpms
 
         # Generate install commands for supported PG versions
         install_cmds = []
+        active_pg = set(self.pg_versions)
         for pg in sorted(ext.pg_ver, reverse=True):
+            if pg not in active_pg:
+                continue
             install_cmds.append(f"pig ext install {ext.name} -v {pg};   # install for PG {pg}")
 
         # Determine CASCADE SCHEMA clause
