@@ -304,7 +304,7 @@ func (g *PigstyConfigGenerator) prepareTemplateData(extensions map[string]*Exten
 		"Arch":         g.arch,
 		"Constants":    g.constants,
 		"Extensions":   extensions,
-		"PGVersions":   []int{18, 17, 16, 15, 14, 13},
+		"PGVersions":   []int{18, 17, 16, 15, 14},
 		"CategoryExts": catExts,
 		"Categories":   categories,
 		"ExtMappings":  g.generateExtensionMappings(extensions),
@@ -350,7 +350,7 @@ func (g *PigstyConfigGenerator) generateCategoryPackages(extensions map[string]*
 		// Fallback to default order if database query fails
 		categories = []string{"time", "gis", "rag", "fts", "olap", "feat", "lang", "type", "util", "func", "admin", "stat", "sec", "fdw", "sim", "etl"}
 	}
-	pgVersions := []int{18, 17, 16, 15, 14, 13}
+	pgVersions := []int{18, 17, 16, 15, 14}
 
 	// Convert extensions to sorted slice
 	sortedExtensions := sortExtensionsByID(extensions)
@@ -675,7 +675,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"formatPGVersions": func(versions []int) string {
 			var result []string
-			allVersions := []int{18, 17, 16, 15, 14, 13}
+			allVersions := []int{18, 17, 16, 15, 14}
 			for _, v := range allVersions {
 				found := false
 				for _, av := range versions {
@@ -992,7 +992,6 @@ repo_upstream_default:
   - { name: crb            ,description: 'EL 9 CRB'           ,module: node    ,releases: [  9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://dl.rockylinux.org/pub/rocky/$releasever/CRB/$basearch/os/'                           ,china: 'https://mirrors.aliyun.com/rockylinux/$releasever/CRB/$basearch/os/'                           ,europe: 'https://mirrors.xtom.de/rocky/$releasever/CRB/$basearch/os/'        }}
   - { name: epel           ,description: 'EL 8+ EPEL'         ,module: node    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://mirrors.edge.kernel.org/fedora-epel/$releasever/Everything/$basearch/'               ,china: 'https://mirrors.aliyun.com/epel/$releasever/Everything/$basearch/'                             ,europe: 'https://mirrors.xtom.de/epel/$releasever/Everything/$basearch/'     }}
   - { name: pgdg-common    ,description: 'PostgreSQL Common'  ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/common/redhat/rhel-$releasever-$basearch'      ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch'      ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/common/redhat/rhel-$releasever-$basearch' }}
-  - { name: pgdg13         ,description: 'PostgreSQL 13'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/13/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/13/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/13/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg14         ,description: 'PostgreSQL 14'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/14/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg15         ,description: 'PostgreSQL 15'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/15/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg16         ,description: 'PostgreSQL 16'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/16/redhat/rhel-$releasever-$basearch' }}
@@ -1000,7 +999,6 @@ repo_upstream_default:
   - { name: pgdg18         ,description: 'PostgreSQL 18'      ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-$releasever-$basearch'          ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch'          ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/18/redhat/rhel-$releasever-$basearch' }}
   - { name: pgdg-beta      ,description: 'PostgreSQL Testing' ,module: beta    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/testing/19/redhat/rhel-$releasever-$basearch'  }}
   - { name: pgdg-extras    ,description: 'PostgreSQL Extra'   ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/extras/redhat/rhel-$releasever-$basearch'      ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/extras/redhat/rhel-$releasever-$basearch'      ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/extras/redhat/rhel-$releasever-$basearch'      }}
-  - { name: pgdg13-nonfree ,description: 'PostgreSQL 13+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/13/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg14-nonfree ,description: 'PostgreSQL 14+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/14/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg15-nonfree ,description: 'PostgreSQL 15+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/15/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg16-nonfree ,description: 'PostgreSQL 16+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
