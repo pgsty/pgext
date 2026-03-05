@@ -23,6 +23,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | uv                         | 0.10.4         | 0.10.8         |         |
 | codex                      | 0.105.0        | 0.110.0        |         |
 | claude                     | 2.1.59         | 2.1.68         |         |
+| xray                       | -              | 26.2.6         | new     |
+| gost                       | -              | 2.12.0         | new     |
+| sabiql                     | -              | 1.6.2          | new     |
+| agentsview                 | -              | 0.10.0         | new     |
 
 ## 2026-02-26
 

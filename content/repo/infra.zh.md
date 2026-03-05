@@ -283,6 +283,9 @@ Pig 包管理器、PostgreSQL 工具和其他数据库相关实用程序
 |                        [pev2](https://github.com/dalibo/pev2)                         | 1.19.0 | PostgreSQL | PostgreSQL 执行计划可视化工具 2       |
 |                      [sealos](https://github.com/labring/sealos)                      | 5.0.1  | Apache-2.0 | 开箱即用的 Kubernetes 发行版         |
 |                     [vray](https://github.com/v2fly/v2ray-core)                       | 5.44.1 |    MIT     | 构建代理以绕过网络限制                  |
+|                     [xray](https://github.com/XTLS/Xray-core)                         | 26.2.6 |  MPL-2.0   | 新一代代理核心，支持更强路由与传输协议          |
+|                      [gost](https://github.com/ginuerzh/gost)                         | 2.12.0 |    MIT     | Go 编写的通用隧道与代理工具               |
+|                     [sabiql](https://github.com/riii111/sabiql)                       | 1.6.2  |    MIT     | 现代化 SQL 客户端（PostgreSQL/MySQL） |
 |                   [postgrest](https://github.com/PostgREST/postgrest)                 |  14.3  |    MIT     | PostgreSQL RESTful API 服务器   |
 |               [npgsqlrest](https://github.com/vb-consulting/NpgsqlRest)               | 3.4.3  |    MIT     | .NET PostgreSQL REST API 生成器 |
 
@@ -295,6 +298,7 @@ AI Agent，MCP 工具箱，编码 IDE，Python/Go/Node 工具……
 |:-------------------------------------------------------------:|:--------:|:----------:|:-------------------------------|
 |         [claude](https://github.com/anthropics/claude-code)   |  2.1.9   | Proprietary | Claude Code - Anthropic 代理编程工具 |
 |        [opencode](https://github.com/opencode-ai/opencode)    | 1.1.23   |    MIT     | 终端 AI 编程助手                     |
+|       [agentsview](https://github.com/wesm/agentsview)        | 0.10.0   |    MIT     | 在终端中浏览与回放 AI 编码代理轨迹            |
 |       [code-server](https://github.com/coder/code-server)     | 4.108.0  |    MIT     | 浏览器中的 VS Code                  |
 |      [genai-toolbox](https://github.com/googleapis/genai-toolbox) | 0.25.0 | Apache-2.0 | Google 数据库 MCP 服务器             |
 |              [uv](https://github.com/astral-sh/uv)            |  0.9.26  |    MIT     | 新一代 Python 包管理器                |

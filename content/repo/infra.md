@@ -283,6 +283,9 @@ Pig the package manager, PostgreSQL tools, and other database related utils
 |                        [pev2](https://github.com/dalibo/pev2)                         | 1.19.0  | PostgreSQL | PostgreSQL explain visualizer 2                    |
 |                      [sealos](https://github.com/labring/sealos)                      |  5.0.1  | Apache-2.0 | Battery-Included Kubernetes distribution           |
 |                     [vray](https://github.com/v2fly/v2ray-core)                       | 5.44.1  |    MIT     | Building proxies to bypass network restrictions.   |
+|                     [xray](https://github.com/XTLS/Xray-core)                         | 26.2.6  |  MPL-2.0   | Next-generation proxy core with advanced routing and transports |
+|                      [gost](https://github.com/ginuerzh/gost)                         | 2.12.0  |    MIT     | General-purpose tunneling and proxy tool written in Go |
+|                     [sabiql](https://github.com/riii111/sabiql)                       |  1.6.2  |    MIT     | Modern SQL client for PostgreSQL and MySQL         |
 |                 [postgrest](https://github.com/PostgREST/postgrest)                   |  14.3   |    MIT     | PostgreSQL RESTful API Server                      |
 |              [npgsqlrest](https://github.com/vb-consulting/NpgsqlRest)                |  3.4.3  |    MIT     | .NET PostgreSQL REST API Generator                 |
 
@@ -295,6 +298,7 @@ AI Agents, MCP toolbox, coding IDEs, Python/Go/Node tools...
 |:-------------------------------------------------------------:|:---------:|:-----------:|:--------------------------------------|
 |        [claude](https://github.com/anthropics/claude-code)    |   2.1.9   | Proprietary | Claude Code - Anthropic Agentic Coder |
 |       [opencode](https://github.com/opencode-ai/opencode)     |  1.1.23   |     MIT     | Terminal AI coding assistant          |
+|      [agentsview](https://github.com/wesm/agentsview)         |  0.10.0   |     MIT     | Browse and replay AI coding agent trajectories in terminal |
 |      [code-server](https://github.com/coder/code-server)      |  4.108.0  |     MIT     | VS Code in the browser                |
 |    [genai-toolbox](https://github.com/googleapis/genai-toolbox) |  0.25.0 | Apache-2.0  | Google MCP server for databases       |
 |             [uv](https://github.com/astral-sh/uv)             |  0.9.26   |     MIT     | Modern Python package manager         |
