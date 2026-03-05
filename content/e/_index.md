@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-There are 461 available PostgreSQL extensions:
+There are 464 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -37,6 +37,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "ogr_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | foreign-data wrapper for GIS data access |
 | {{< ext "geoip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | IP-based geolocation query |
 | {{< ext "pg_polyline" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
+| {{< ext "pg_eviltransform" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
 | {{< ext "pg_geohash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | Handle geohash based functionality for spatial coordinates |
 | {{< ext "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB geospatial trajectory data management & analysis platform |
 | {{< ext "mobilitydb_datagen" "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB random data generator functions |
@@ -62,6 +63,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FTS" >}} | Tokenizers for full-text search |
 | {{< ext "biscuit" "pg_biscuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | IAM-LIKE pattern matching with bitmap indexing |
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 ranking |
+| {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | Pinyin romanization and search helpers for PostgreSQL |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Czech Hunspell Dictionary |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | German Hunspell Dictionary |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | en_US Hunspell Dictionary |
@@ -321,6 +323,7 @@ There are 461 available PostgreSQL extensions:
 | {{< ext "pg_crash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Send random signals to random processes |
 | {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Provides cheat (but useful) functions |
 | {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL File I/O Functions |
+| {{< ext "qos" "pg_qos" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
 | {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | Postgres extension to save OOPS mistakes |
 | {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | Require criteria for UPDATE and DELETE |
 | {{< ext "pg_strict" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |

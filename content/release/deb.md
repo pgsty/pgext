@@ -7,6 +7,20 @@ weight: 300
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 
+## 2026-03-05
+
+Built 264 DEB packages across 7 extensions for Debian 12/13 + Ubuntu 22/24 on amd64/arm64.
+
+| Package          | Old     | New     | Comment                                     |
+|:-----------------|:--------|:--------|:--------------------------------------------|
+| aggs_for_vecs    | 1.4.0   | 1.4.1   | upstream bump, PG 14-18                     |
+| timescaledb      | 2.25.1  | 2.25.2  | upstream bump (`timescaledb-tsl`), PG 15-18 |
+| vchord           | 1.1.0   | 1.1.1   | upstream bump, PG 14-18                     |
+| vchord_bm25      | 0.3.0-1 | 0.3.0-2 | packaging fix, PG 14-18                     |
+| pg_pinyin        | -       | 0.0.2   | new package, PG 14-18                       |
+| pg_eviltransform | -       | 0.0.2   | new package, version aligned                 |
+| qos              | -       | 1.0.0   | new package, PG 15-18                       |
+
 ## 2026-02-27
 
 | Package           | Old      | New      | Comment                              |

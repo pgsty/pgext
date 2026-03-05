@@ -19,11 +19,11 @@ PostgreSQL extension categorized by license.
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 213 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 80 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 69 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 71 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
+| {{< license "GPL-3.0" >}} | 15 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "BSD 2-Clause" >}} | 14 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "GPL-3.0" >}} | 14 | [License Text](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 10 | [License Text](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [License Text](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "Artistic" >}} | 3 | [License Text](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
@@ -354,7 +354,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="69 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="71 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -363,10 +363,12 @@ PostgreSQL extension categorized by license.
 | 1080 | {{< alias "pg_task" >}} | execute any sql command at any specific time at background |
 | 1550 | {{< alias "ogr_fdw" >}} | foreign-data wrapper for GIS data access |
 | 1570 | {{< alias "pg_polyline" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
+| 1580 | {{< alias "pg_eviltransform" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
 | 1590 | {{< alias "pg_geohash" >}} | Handle geohash based functionality for spatial coordinates |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | Fast lookup timezone name by GPS coordinates |
 | 1890 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
+| 2190 | {{< alias "pg_pinyin" >}} | Pinyin romanization and search helpers for PostgreSQL |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
@@ -471,6 +473,32 @@ PostgreSQL extension categorized by license.
 | 9630 | {{< alias "wal2json" >}} | Changing data capture in JSON format |
 | 9830 | {{< alias "pg_bulkload" >}} | pg_bulkload is a high speed data loading utility for PostgreSQL |
 
+## GPL-3.0
+
+
+
+| {{< license "GPL-3.0" >}} | {{< badge content="15 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
+| 1100 | {{< alias "pg_background" >}} | Run SQL queries in the background |
+| 1650 | {{< alias "mobilitydb" >}} | MobilityDB geospatial trajectory data management & analysis platform |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
+| 3530 | {{< alias "pgpdf" >}} | PDF type with meta admin & Full-Text Search |
+| 3560 | {{< alias "asn1oid" >}} | asn1oid extension |
+| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
+| 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
+| 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
+| 4780 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
+| 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
+| 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
+| 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
+| 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
+
 ## BSD 2-Clause
 
 
@@ -520,31 +548,6 @@ PostgreSQL extension categorized by license.
 | 3520 | {{< alias "unit" "pgunit" >}} | SI units extension |
 | 3710 | {{< alias "numeral" >}} | numeral datatypes extension |
 | 4310 | {{< alias "ddl_historization" >}} | Historize the ddl changes inside PostgreSQL database |
-
-## GPL-3.0
-
-
-
-| {{< license "GPL-3.0" >}} | {{< badge content="14 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 1050 | {{< alias "emaj" >}} | Enables fine-grained write logging and time travel on subsets of the database. |
-| 1100 | {{< alias "pg_background" >}} | Run SQL queries in the background |
-| 1650 | {{< alias "mobilitydb" >}} | MobilityDB geospatial trajectory data management & analysis platform |
-| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
-| 3530 | {{< alias "pgpdf" >}} | PDF type with meta admin & Full-Text Search |
-| 3560 | {{< alias "asn1oid" >}} | asn1oid extension |
-| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | Cross documentation between Django and DBT projects |
-| 4660 | {{< alias "vasco" >}} | discover hidden correlations in your data with MIC |
-| 4670 | {{< alias "xicor" "pgxicor" >}} | XI Correlation Coefficient in Postgres |
-| 4780 | {{< alias "pg_math" >}} | GSL statistical functions for postgresql |
-| 7360 | {{< alias "login_hook" >}} | login_hook - hook to execute login_hook.login() at login time |
-| 9120 | {{< alias "session_variable" >}} | Registration and manipulation of session variables and constants |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL Supplementary Extension |
-| 9710 | {{< alias "repmgr" >}} | Replication manager for PostgreSQL |
 
 ## AGPL-3.0
 

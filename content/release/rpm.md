@@ -6,6 +6,18 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-03-05
+
+| Package         | Old    | New     | Comment                              |
+|:----------------|:-------|:--------|:-------------------------------------|
+| timescaledb     | 2.25.1 | 2.25.2  |                                      |
+| vchord          | 1.1.0  | 1.1.1   | add clang build requirement          |
+| aggs_for_vecs   | 1.4.0  | 1.4.1   |                                      |
+| pg_search       | 0.21.9 | 0.21.12 |                                      |
+| pg_pinyin       | -      | 0.0.2   | new extension                        |
+| pg_eviltransform | -      | 0.0.2   | new extension                        |
+| pg_qos          | -      | 1.0.0   | new extension, QoS resource governor |
+
 ## 2026-02-27
 
 | Package           | Old      | New      | Comment                              |

@@ -14,9 +14,9 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 362 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 363 | The traditional PostgreSQL extension language |
+| {{< language "Rust" >}} | 41 | Extensions written in Rust with the pgrx framework |
 | {{< language "SQL" >}} | 40 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 39 | Extensions written in Rust with the pgrx framework |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "C++" >}} | 7 | Extensions leveraging C++ features and libraries |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="362 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="363 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -267,6 +267,7 @@ The traditional PostgreSQL extension language
 | 5210 | {{< alias "pg_crash" >}} | Send random signals to random processes |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | Provides cheat (but useful) functions |
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL File I/O Functions |
+| 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
@@ -394,6 +395,56 @@ The traditional PostgreSQL extension language
 | 9970 | {{< alias "test_decoding" >}} | SQL-based test/example module for WAL logical decoding |
 | 9980 | {{< alias "pgoutput" >}} | Logical Replication output plugin |
 
+## Rust
+
+{{< language "Rust" >}} {{< badge content="41 Extensions" color="gray" icon="cube" >}}
+
+Extensions written in Rust with the pgrx framework
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 1010 | {{< alias "timescaledb_toolkit" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
+| 1090 | {{< alias "pg_later" >}} | Run queries now and get results later |
+| 1570 | {{< alias "pg_polyline" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
+| 1580 | {{< alias "pg_eviltransform" >}} | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
+| 1680 | {{< alias "tzf" "pg_tzf" >}} | Fast lookup timezone name by GPS coordinates |
+| 1810 | {{< alias "vchord" >}} | Vector database plugin for Postgres, written in Rust |
+| 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
+| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | The simplest way to do vector search on Postgres |
+| 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
+| 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
+| 1890 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
+| 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
+| 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
+| 2150 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
+| 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
+| 2190 | {{< alias "pg_pinyin" >}} | Pinyin romanization and search helpers for PostgreSQL |
+| 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
+| 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
+| 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
+| 2750 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
+| 2760 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
+| 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
+| 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
+| 3540 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
+| 4170 | {{< alias "pg_smtp_client" >}} | PostgreSQL extension to send email using SMTP |
+| 4290 | {{< alias "pg_render" >}} | Render HTML in SQL |
+| 4500 | {{< alias "pg_idkit" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
+| 4510 | {{< alias "pgx_ulid" >}} | ulid type and methods |
+| 4580 | {{< alias "typeid" "pg_typeid" >}} | Allows to use TypeIDs in Postgres natively |
+| 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
+| 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
+| 5090 | {{< alias "pglinter" >}} | PostgreSQL Linting and Analysis Extension |
+| 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
+| 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
+| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
+| 7040 | {{< alias "pg_session_jwt" >}} | Manage authentication sessions using JWTs |
+| 7050 | {{< alias "anon" "pg_anon" >}} | PostgreSQL Anonymizer (anon) extension |
+| 7060 | {{< alias "pgsmcrypto" >}} | PostgreSQL SM Algorithm Extension |
+| 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
+| 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
+| 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
+
 ## SQL
 
 {{< language "SQL" >}} {{< badge content="40 Extensions" color="gray" icon="cube" >}}
@@ -442,54 +493,6 @@ Pure SQL extensions and functions
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9540 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |
-
-## Rust
-
-{{< language "Rust" >}} {{< badge content="39 Extensions" color="gray" icon="cube" >}}
-
-Extensions written in Rust with the pgrx framework
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 1010 | {{< alias "timescaledb_toolkit" >}} | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
-| 1090 | {{< alias "pg_later" >}} | Run queries now and get results later |
-| 1570 | {{< alias "pg_polyline" >}} | Fast Google Encoded Polyline encoding & decoding for postgres |
-| 1680 | {{< alias "tzf" "pg_tzf" >}} | Fast lookup timezone name by GPS coordinates |
-| 1810 | {{< alias "vchord" >}} | Vector database plugin for Postgres, written in Rust |
-| 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
-| 1830 | {{< alias "vectorize" "pg_vectorize" >}} | The simplest way to do vector search on Postgres |
-| 1860 | {{< alias "pg_summarize" >}} | Text Summarization using LLMs. Built using pgrx |
-| 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
-| 1890 | {{< alias "pgml" >}} | Run AL/ML workloads with SQL interface |
-| 2100 | {{< alias "pg_search" >}} | Full text search for PostgreSQL using BM25 |
-| 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
-| 2150 | {{< alias "vchord_bm25" >}} | A postgresql extension for bm25 ranking algorithm |
-| 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
-| 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
-| 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
-| 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
-| 2750 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
-| 2760 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
-| 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
-| 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
-| 3540 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
-| 4170 | {{< alias "pg_smtp_client" >}} | PostgreSQL extension to send email using SMTP |
-| 4290 | {{< alias "pg_render" >}} | Render HTML in SQL |
-| 4500 | {{< alias "pg_idkit" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
-| 4510 | {{< alias "pgx_ulid" >}} | ulid type and methods |
-| 4580 | {{< alias "typeid" "pg_typeid" >}} | Allows to use TypeIDs in Postgres natively |
-| 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
-| 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
-| 5090 | {{< alias "pglinter" >}} | PostgreSQL Linting and Analysis Extension |
-| 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
-| 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
-| 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | easily jump into a visual plan UI for any SQL query |
-| 7040 | {{< alias "pg_session_jwt" >}} | Manage authentication sessions using JWTs |
-| 7050 | {{< alias "anon" "pg_anon" >}} | PostgreSQL Anonymizer (anon) extension |
-| 7060 | {{< alias "pgsmcrypto" >}} | PostgreSQL SM Algorithm Extension |
-| 7070 | {{< alias "pg_enigma" >}} | Encrypted postgres data type |
-| 8500 | {{< alias "wrappers" >}} | Foreign data wrappers developed by Supabase |
-| 8660 | {{< alias "etcd_fdw" >}} | Foreign data wrapper for etcd |
 
 ## Data
 

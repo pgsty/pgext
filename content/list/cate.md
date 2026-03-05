@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (461 ext in 384 pkg) categorized into 16 categories.
+PostgreSQL Extensions (464 ext in 387 pkg) categorized into 16 categories.
 
 
 
@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.25.1 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.25.2 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -52,6 +52,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.7 | foreign-data wrapper for GIS data access |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP-based geolocation query |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |
+| 1580 | {{< alias "pg_eviltransform" >}} | 0.0.2 | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
 | 1590 | {{< alias "pg_geohash" >}} | 1.0 | Handle geohash based functionality for spatial coordinates |
 | 1650 | {{< alias "mobilitydb" >}} | 1.3.0 | MobilityDB geospatial trajectory data management & analysis platform |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | 1.3.0 | MobilityDB random data generator functions |
@@ -65,7 +66,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
 | 1800 | {{< alias "vector" "pgvector" >}} | 0.8.2 | vector data type and ivfflat and hnsw access methods |
-| 1810 | {{< alias "vchord" >}} | 1.1.0 | Vector database plugin for Postgres, written in Rust |
+| 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.0 | The simplest way to do vector search on Postgres |
 | 1840 | {{< alias "pg_similarity" >}} | 1.0 | support similarity queries |
@@ -81,7 +82,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.10 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.21.12 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -91,6 +92,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | 0.5.0 | Full-text search with BM25 ranking |
+| 2190 | {{< alias "pg_pinyin" >}} | 0.0.2 | Pinyin romanization and search helpers for PostgreSQL |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
@@ -399,6 +401,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5210 | {{< alias "pg_crash" >}} | 1.0 | Send random signals to random processes |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 1.0 | Provides cheat (but useful) functions |
 | 5230 | {{< alias "fio" "pg_fio" >}} | 1.0 | PostgreSQL File I/O Functions |
+| 5240 | {{< alias "qos" "pg_qos" >}} | 1.0 | QoS resource governor extension for PostgreSQL sessions and queries |
 | 5810 | {{< alias "pg_savior" >}} | 0.0.1 | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | Require criteria for UPDATE and DELETE |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.2 | Prevent dangerous UPDATE and DELETE without WHERE clause |
@@ -474,7 +477,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |
-| 7120 | {{< alias "pgauditlogtofile" >}} | 1.7.7 | pgAudit addon to redirect audit log to an independent file |
+| 7120 | {{< alias "pgauditlogtofile" >}} | 1.8.0 | pgAudit addon to redirect audit log to an independent file |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
@@ -536,7 +539,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.109 | DocumentDB Extended RUM index access method |
-| 9100 | {{< alias "orafce" >}} | 4.16.3 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| 9100 | {{< alias "orafce" >}} | 4.16.4 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |

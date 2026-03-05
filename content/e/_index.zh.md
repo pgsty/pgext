@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-共有 461 个可用的 PostgreSQL 扩展：
+共有 464 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -37,6 +37,7 @@ weight: 900
 | {{< ext "ogr_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | GIS 数据外部数据源包装器 |
 | {{< ext "geoip" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | {{< ext "pg_polyline" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | Google快速Polyline编码解码扩展 |
+| {{< ext "pg_eviltransform" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "GIS" >}} | 基于PostGIS ST_Transform 的 BD09/GCJ02 坐标转换扩展 |
 | {{< ext "pg_geohash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | 使用GeoHash处理空间坐标的函数包 |
 | {{< ext "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB地理空间投影数据管理分析平台 |
 | {{< ext "mobilitydb_datagen" "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "GIS" >}} | MobilityDB随机数据生成函数 |
@@ -62,6 +63,7 @@ weight: 900
 | {{< ext "pg_tokenizer" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "FTS" >}} | 用于全文检索的分词器 |
 | {{< ext "biscuit" "pg_biscuit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | 使用IAM的高性能文本模式匹配 |
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | 带有BM25排序的全文搜索扩展 |
+| {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL 拼音转写与检索辅助扩展 |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell捷克语全文检索词典 |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell德语全文检索词典 |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell英语全文检索词典 |
@@ -321,6 +323,7 @@ weight: 900
 | {{< ext "pg_crash" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | 向数据库进程随机发送信号模拟故障 |
 | {{< ext "pg_cheat_funcs" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 一些超级实用的作弊函数 |
 | {{< ext "fio" "pg_fio" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL文件IO函数包 |
+| {{< ext "qos" "pg_qos" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
 | {{< ext "pg_savior" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "ADMIN" >}} | 阻止不带条件的全表更新以避免意外事故 |
 | {{< ext "safeupdate" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL---" color="blue" >}} | {{< category "ADMIN" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | {{< ext "pg_strict" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ADMIN" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |

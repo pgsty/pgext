@@ -19,11 +19,11 @@ weight: 300
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 213 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 80 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 69 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 71 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 30 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
+| {{< license "GPL-3.0" >}} | 15 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "BSD 2-Clause" >}} | 14 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-2.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "GPL-3.0" >}} | 14 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 10 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
 | {{< license "Artistic" >}} | 3 | [许可证文本](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
@@ -354,7 +354,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="69 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="71 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -363,10 +363,12 @@ weight: 300
 | 1080 | {{< alias "pg_task" >}} | 在特定时间点在后台执行SQL命令 |
 | 1550 | {{< alias "ogr_fdw" >}} | GIS 数据外部数据源包装器 |
 | 1570 | {{< alias "pg_polyline" >}} | Google快速Polyline编码解码扩展 |
+| 1580 | {{< alias "pg_eviltransform" >}} | 基于PostGIS ST_Transform 的 BD09/GCJ02 坐标转换扩展 |
 | 1590 | {{< alias "pg_geohash" >}} | 使用GeoHash处理空间坐标的函数包 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 快速根据GPS经纬度坐标查找时区 |
 | 1890 | {{< alias "pgml" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
+| 2190 | {{< alias "pg_pinyin" >}} | PostgreSQL 拼音转写与检索辅助扩展 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
@@ -471,6 +473,32 @@ weight: 300
 | 9630 | {{< alias "wal2json" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9830 | {{< alias "pg_bulkload" >}} | 向 PostgreSQL 中高速加载数据 |
 
+## GPL-3.0
+
+
+
+| {{< license "GPL-3.0" >}} | {{< badge content="15 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
+| 1100 | {{< alias "pg_background" >}} | 在后台运行 SQL 查询 |
+| 1650 | {{< alias "mobilitydb" >}} | MobilityDB地理空间投影数据管理分析平台 |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
+| 3530 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
+| 3560 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
+| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
+| 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
+| 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
+| 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
+| 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
+| 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
+| 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
+| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
+| 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
+
 ## BSD 2-Clause
 
 
@@ -520,31 +548,6 @@ weight: 300
 | 3520 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
 | 3710 | {{< alias "numeral" >}} | 数值类型扩展 |
 | 4310 | {{< alias "ddl_historization" >}} | 用SQL将所有DDL变更写入到数据库表中 |
-
-## GPL-3.0
-
-
-
-| {{< license "GPL-3.0" >}} | {{< badge content="14 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
-| 1100 | {{< alias "pg_background" >}} | 在后台运行 SQL 查询 |
-| 1650 | {{< alias "mobilitydb" >}} | MobilityDB地理空间投影数据管理分析平台 |
-| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
-| 3530 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
-| 3560 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
-| 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
-| 4660 | {{< alias "vasco" >}} | 使用MIC发现数据中隐含的关联 |
-| 4670 | {{< alias "xicor" "pgxicor" >}} | 在PG中计算XI相关系数 |
-| 4780 | {{< alias "pg_math" >}} | 使用GSL库的数学统计函数 |
-| 7360 | {{< alias "login_hook" >}} | 在用户登陆时执行login_hook.login()函数 |
-| 9120 | {{< alias "session_variable" >}} | Oracle兼容的会话变量/常量操作函数 |
-| 9420 | {{< alias "aux_mysql" "openhalo" >}} | MySQL兼容辅助扩展模块 |
-| 9710 | {{< alias "repmgr" >}} | PostgreSQL复制管理组件 |
 
 ## AGPL-3.0
 
