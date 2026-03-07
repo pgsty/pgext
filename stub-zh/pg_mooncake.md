@@ -1,21 +1,21 @@
 
-## Usage
+## 用法
 
-[`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake) is a Postgres extension that creates columnstore mirrors of your tables in Iceberg format, designed as a sub-extension of `pg_duckdb`.
+[`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake) 是一个 Postgres 扩展，能够为表创建 Iceberg 格式的列存镜像，设计为 `pg_duckdb` 的子扩展。
 
-pg_mooncake docs: https://docs.mooncake.dev/
+pg_mooncake 文档：https://docs.mooncake.dev/
 
 
-### Quick Setup
+### 快速上手
 
-Install pg_duckdb and pg_mooncake with pig:
+使用 pig 安装 pg_duckdb 和 pg_mooncake：
 
 ```bash
 pig repo set
 pig install pg_duckdb pg_mooncake
 ```
 
-Edit postgresql.conf, then restart to take effect
+编辑 postgresql.conf，然后重启使配置生效
 
 ```ini
 shared_preload_libraries = 'pg_duckdb,pg_mooncake'
@@ -25,15 +25,15 @@ wal_level = logical
 
 
 
-### Hello Worlds
+### 入门示例
 
-- [Tutorial](https://docs.mooncake.dev/pg/get-started/Hello-world)
+- [教程](https://docs.mooncake.dev/pg/get-started/Hello-world)
 
 ```sql
--- create the extension alone with pg_duckdb
+-- 连同 pg_duckdb 一起创建扩展
 CREATE EXTENSION pg_mooncake CASCADE;
 
--- Next, create a regular Postgres table trades:
+-- 接下来，创建一张普通的 Postgres 表 trades：
 CREATE TABLE trades(
   id bigint PRIMARY KEY,
   symbol text,
@@ -41,22 +41,22 @@ CREATE TABLE trades(
   price real
 );
 
--- Then, create a columnstore mirror trades_iceberg that stays in sync with trades:
+-- 然后，创建一个列存镜像 trades_iceberg，与 trades 保持同步：
 CALL mooncake.create_table('trades_iceberg', 'trades');
 
--- Now, insert some data into trades:
+-- 现在，向 trades 中插入一些数据：
 INSERT INTO trades VALUES
     (1,  'AMD', '2024-06-05 10:00:00', 119),
     (2, 'AMZN', '2024-06-05 10:05:00', 207),
     (3, 'AAPL', '2024-06-05 10:10:00', 203),
     (4, 'AMZN', '2024-06-05 10:15:00', 210);
 
--- Finally, query it with duckdb
+-- 最后，使用 duckdb 进行查询
 EXPLAIN
     SELECT avg(price) FROM trades_iceberg WHERE symbol = 'AMZN';
 ```
 
-You will see the DuckDBScan in the execution plan:
+执行计划中将显示 DuckDBScan：
 
 ```bash
                          QUERY PLAN

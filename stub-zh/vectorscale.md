@@ -1,5 +1,5 @@
 
-## Usage
+## 用法
 
 ```sql
 CREATE EXTENSION vectorscale CASCADE;
@@ -10,10 +10,12 @@ CREATE TABLE IF NOT EXISTS document_embedding  (
     contents TEXT,
     embedding VECTOR(1536)
 );
-  
+
+-- 使用 diskann 索引方法创建向量索引
 CREATE INDEX document_embedding_idx ON document_embedding
 USING diskann (embedding);
 
+-- 基于向量距离进行近似最近邻查询
 SELECT *
 FROM document_embedding
 ORDER BY embedding <=> $1

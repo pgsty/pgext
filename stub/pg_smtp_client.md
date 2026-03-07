@@ -1,8 +1,6 @@
 
 ## Usage
 
-Docs: https://github.com/frectonz/pglite-fusion/blob/main/README.md
-
 ### Enabling the extension
 
 Connect to postgres and run the following command.
@@ -10,8 +8,6 @@ Connect to postgres and run the following command.
 ```sql
 CREATE EXTENSION IF NOT EXISTS pg_smtp_client CASCADE;
 ```
-
-## Usage
 
 Use the `smtp_client.send_email()` function to send an email.
 

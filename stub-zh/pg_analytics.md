@@ -1,25 +1,25 @@
 
-> [!WARNING] This extension is archived (Mar 2025) and no longer maintained. ParadeDB's analytics work is now part of pg_search. Consider using pg_duckdb or pg_mooncake for data lake analytics instead.
+> [!WARNING] 此扩展已于 2025 年 3 月归档，不再维护。ParadeDB 的分析功能已整合到 pg_search 中。建议使用 pg_duckdb 或 pg_mooncake 作为数据湖分析的替代方案。
 
-## Usage
+## 用法
 
 https://github.com/paradedb/pg_analytics
 
-Example, read parquet files from S3:
+示例：从 S3 读取 Parquet 文件：
 
 ```bash
 CREATE EXTENSION pg_analytics;
 CREATE FOREIGN DATA WRAPPER parquet_wrapper HANDLER parquet_fdw_handler VALIDATOR parquet_fdw_validator;
 
--- Provide S3 credentials
+-- 提供 S3 凭证
 CREATE SERVER parquet_server FOREIGN DATA WRAPPER parquet_wrapper;
 
--- Create foreign table with auto schema creation
+-- 创建外部表并自动生成表结构
 CREATE FOREIGN TABLE trips ()
 SERVER parquet_server
 OPTIONS (files 's3://paradedb-benchmarks/yellow_tripdata_2024-01.parquet');
 
--- Success! Now you can query the remote Parquet file like a regular Postgres table
+-- 完成！现在可以像查询普通 PostgreSQL 表一样查询远程 Parquet 文件
 SELECT COUNT(*) FROM trips;
   count
 ---------
@@ -27,13 +27,13 @@ SELECT COUNT(*) FROM trips;
 (1 row)
 ```
 
-This fdw is read-only for now.
+该外部数据包装器目前仅支持只读操作。
 
 
 
 ----
 
-## Iceberg Support
+## Iceberg 支持
 
 ```sql
 CREATE EXTENSION pg_analytics;
@@ -45,11 +45,11 @@ CREATE FOREIGN DATA WRAPPER iceberg_wrapper
 CREATE SERVER iceberg_server
     FOREIGN DATA WRAPPER iceberg_wrapper;
 
--- Replace the dummy schema with the actual schema
+-- 请将示例中的占位结构替换为实际的表结构定义
 CREATE FOREIGN TABLE iceberg_table (x INT)
     SERVER iceberg_server
     OPTIONS (files 's3://bucket/iceberg_folder');
 
--- Success! You can now query the Iceberg table
+-- 完成！现在可以查询 Iceberg 表了
 SELECT COUNT(*) FROM iceberg_table;
 ```

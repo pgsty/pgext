@@ -1,7 +1,7 @@
 
-## Usage
+## 用法
 
-Create a table and turn it into hypertable
+创建一张表并将其转换为超表（hypertable）
 
 ```sql
 DROP TABLE IF EXISTS ts_test;
@@ -9,7 +9,7 @@ CREATE TABLE ts_test
 (
     ts TIMESTAMPTZ NOT NULL,
     id BIGINT,
-    v  INTEGER -- payload
+    v  INTEGER -- 载荷数据
 );
 SELECT create_hypertable('ts_test', by_range('ts'));
 
@@ -18,7 +18,7 @@ INSERT INTO ts_test
     FROM generate_series(1, 1000000) i;
 ```
 
-Continuous Agg Example:
+连续聚合示例：
 
 ```sql
 CREATE MATERIALIZED VIEW ts_hourly
@@ -29,20 +29,20 @@ WITH (timescaledb.continuous) AS
   FROM ts_test
   GROUP BY bucket;
 
--- Add a refresh policy to keep the continuous aggregate up to date
+-- 添加刷新策略以保持连续聚合的数据是最新的
 SELECT add_continuous_aggregate_policy('ts_hourly',
     start_offset    => INTERVAL '3 hours',
     end_offset      => INTERVAL '1 hour',
     schedule_interval => INTERVAL '1 hour');
 ```
 
-Job Scheduling Example:
+任务调度示例：
 
 ```sql
 SELECT add_job('SELECT 1','1h', initial_start => now()::timestamptz);
 ```
 
-Compression Example:
+压缩示例：
 
 ```sql
 ALTER TABLE ts_test SET (
@@ -51,6 +51,6 @@ ALTER TABLE ts_test SET (
     timescaledb.compress_orderby = 'ts'
 );
 
--- Add a compression policy to compress chunks older than 1 day
+-- 添加压缩策略，自动压缩超过 1 天的数据块
 SELECT add_compression_policy('ts_test', INTERVAL '1 day');
 ```
