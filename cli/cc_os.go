@@ -2,6 +2,7 @@
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
 CC OS Generator - generates OS-specific availability pages for pigsty.cc (Chinese only)
+Uses CSS classes and {.ext-table} for consistent styling
 */
 package cli
 
@@ -31,27 +32,22 @@ func NewCCOSGenerator(cache *ExtensionCache, outputDir string) *CCOSGenerator {
 }
 
 // GenerateOSPage generates an OS-specific availability page (Chinese only)
-// Uses flat file structure: os/xxx.md instead of os/xxx/_index.md
 func (g *CCOSGenerator) GenerateOSPage(ctx context.Context, osName string) error {
-	// Validate OS exists and is active
 	osInfo, err := g.getOSInfo(ctx, osName)
 	if err != nil {
 		return fmt.Errorf("failed to get OS info for %s: %w", osName, err)
 	}
 
-	// Load all packages for this OS
 	packages, err := g.loadOSPackages(ctx, osName)
 	if err != nil {
 		return fmt.Errorf("failed to load packages for %s: %w", osName, err)
 	}
 
-	// Create OS directory (os/)
 	osDir := filepath.Join(g.OutputDir, "os")
 	if err := os.MkdirAll(osDir, 0755); err != nil {
 		return fmt.Errorf("failed to create OS directory: %w", err)
 	}
 
-	// Generate Chinese content only
 	content := g.generateOSContent(osInfo, packages)
 	outputPath := filepath.Join(osDir, osName+".md")
 	if err := os.WriteFile(outputPath, []byte(content), 0644); err != nil {
@@ -97,7 +93,6 @@ func (g *CCOSGenerator) loadOSPackages(ctx context.Context, osName string) ([]*O
 	}
 	defer rows.Close()
 
-	// Organize packages by pkg name
 	pkgMap := make(map[string]*OSPackageInfo)
 
 	for rows.Next() {
@@ -116,7 +111,6 @@ func (g *CCOSGenerator) loadOSPackages(ctx context.Context, osName string) ([]*O
 		info.Pkg = pkgName
 		info.Ext = lead
 
-		// Get or create package info
 		if _, exists := pkgMap[pkgName]; !exists {
 			pkgMap[pkgName] = &OSPackageInfo{
 				ID:     extID,
@@ -129,13 +123,11 @@ func (g *CCOSGenerator) loadOSPackages(ctx context.Context, osName string) ([]*O
 		pkgMap[pkgName].PGData[pg] = info
 	}
 
-	// Convert map to sorted slice
 	var packages []*OSPackageInfo
 	for _, pkg := range pkgMap {
 		packages = append(packages, pkg)
 	}
 
-	// Sort packages by extension ID
 	sortOSPackages(packages)
 
 	return packages, nil
@@ -145,13 +137,8 @@ func (g *CCOSGenerator) loadOSPackages(ctx context.Context, osName string) ([]*O
 func (g *CCOSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageInfo) string {
 	var b strings.Builder
 
-	// Frontmatter
 	b.WriteString(g.generateOSFrontmatter(osInfo))
-
-	// Overview
 	b.WriteString(g.generateOSOverview(osInfo, packages))
-
-	// Availability Matrix
 	b.WriteString(g.generateOSAvailabilityMatrix(packages, osInfo.OS))
 
 	return b.String()
@@ -161,7 +148,6 @@ func (g *CCOSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageI
 func (g *CCOSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
 	weight := 100
 
-	// Adjust weight based on OS
 	switch osInfo.OS {
 	case "el7.x86_64":
 		weight = 710
@@ -203,14 +189,28 @@ func (g *CCOSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
 		weight = 931
 	}
 
+	// Icon: brand icon based on OS family, flipped for aarch64
+	var iconBrand string
+	switch {
+	case strings.HasPrefix(osInfo.OS, "el"):
+		iconBrand = "fa-brands fa-redhat"
+	case strings.HasPrefix(osInfo.OS, "d"):
+		iconBrand = "fa-brands fa-debian"
+	case strings.HasPrefix(osInfo.OS, "u"):
+		iconBrand = "fa-brands fa-ubuntu"
+	}
+	if strings.Contains(osInfo.OS, "aarch64") {
+		iconBrand += " fa-flip-vertical"
+	}
+
 	return fmt.Sprintf(`---
-title: "%s"
-linkTitle: "%s"
+title: "Linux %s"
 description: "%s 系统的 PostgreSQL 扩展可用性"
 weight: %d
+icon: %s
 ---
 
-`, osInfo.OS, osInfo.OS, osInfo.Desc, weight)
+`, osInfo.OS, osInfo.Desc, weight, iconBrand)
 }
 
 // generateOSOverview generates the overview section
@@ -234,72 +234,35 @@ func (g *CCOSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, 
 	}
 	b.WriteString("\n")
 
-	// Separator
 	b.WriteString("|:----------------------:|")
 	for range g.Cache.PGVersions {
-		b.WriteString(":------:|")
+		b.WriteString(":-----------------------------------------------------:|")
 	}
 	b.WriteString("\n")
 
-	// Generate rows for each package
 	for _, ospkg := range packages {
-		// Extension link
-		extLink := CCExtLinkWithLabel(ospkg.Lead, ospkg.Pkg)
+		extLink := fmt.Sprintf("[`%s`](/ext/e/%s)", ospkg.Pkg, ospkg.Lead)
 		b.WriteString(fmt.Sprintf("| %s |", extLink))
 
-		// Generate cells for each PG version
 		for _, pg := range g.Cache.PGVersions {
-			cell := g.generateOSMatrixCell(ospkg, pg, osName)
+			cell := g.generateOSMatrixCell(ospkg, pg)
 			b.WriteString(fmt.Sprintf(" %s |", cell))
 		}
 		b.WriteString("\n")
 	}
 
+	b.WriteString("{.ext-table .ext-table--matrix}\n\n")
+
 	return b.String()
 }
 
-// generateOSMatrixCell generates a single cell in the availability matrix
-func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osName string) string {
+// generateOSMatrixCell generates a single cell in the availability matrix using CSS class badges
+func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string {
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
-		// Not available - check why
-		ext, hasExt := g.Cache.PkgMap[ospkg.Pkg]
-		if hasExt {
-			// Check if the extension supports this PG version
-			pgSupported := false
-			pgStr := fmt.Sprintf("%d", pg)
-			for _, ver := range ext.PgVer {
-				if ver == pgStr {
-					pgSupported = true
-					break
-				}
-			}
-
-			if !pgSupported {
-				return "✗"
-			}
-
-			// Check if the platform provides this extension
-			osPrefix := strings.Split(osName, ".")[0]
-			isRPMBased := strings.HasPrefix(osPrefix, "el")
-			isDEBBased := strings.HasPrefix(osPrefix, "d") || strings.HasPrefix(osPrefix, "u")
-
-			platformUnsupported := false
-			if isRPMBased && (!ext.RpmRepo.Valid || ext.RpmRepo.String == "") {
-				platformUnsupported = true
-			} else if isDEBBased && (!ext.DebRepo.Valid || ext.DebRepo.String == "") {
-				platformUnsupported = true
-			}
-
-			if platformUnsupported {
-				return "⚠"
-			}
-		}
-
-		return "✗"
+		return CCMissBadge()
 	}
 
-	// Get package state
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
@@ -310,38 +273,27 @@ func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osNam
 		version = pkg.Version.String
 	}
 
-	org := ""
-	if pkg.Org.Valid {
-		org = strings.ToUpper(pkg.Org.String)
-	}
-
-	// Generate display based on state
 	switch state {
 	case "AVAIL":
-		if version != "" && org != "" {
-			return fmt.Sprintf("%s %s", org, version)
-		} else if version != "" {
-			return version
+		if version != "" {
+			return CCAvailBadge(version)
 		}
-		return "✓"
+		return CCAvailBadge("✓")
 	case "MISS":
-		return "✗"
+		return CCMissBadge()
 	case "HIDE":
-		return "-"
+		return `<span class="ext-badge ext-badge--hide">-</span>`
 	case "THROW":
-		return "THROW"
+		return `<span class="ext-badge ext-badge--throw">!</span>`
 	case "BREAK":
-		return "BREAK"
-	case "TBD":
-		return "TBD"
+		return `<span class="ext-badge ext-badge--break">!</span>`
 	default:
-		return "?"
+		return `<span class="ext-badge ext-badge--hide">-</span>`
 	}
 }
 
 // GenerateAllOSPages generates OS pages for all active OS distributions
 func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
-	// Get all active OS
 	osList, err := GetActiveOS(ctx)
 	if err != nil {
 		return fmt.Errorf("failed to get active OS list: %w", err)
@@ -353,7 +305,6 @@ func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 
 	logrus.Infof("Generating OS pages for %d distributions...", len(osList))
 
-	// Generate pages in parallel
 	type result struct {
 		os      string
 		success bool
@@ -387,7 +338,6 @@ func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 		close(results)
 	}()
 
-	// Collect results
 	successCount := 0
 	failedOS := []string{}
 	for res := range results {

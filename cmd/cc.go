@@ -11,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"pgext/cli"
+	"strings"
 	"sync"
 
 	"github.com/sirupsen/logrus"
@@ -209,6 +210,52 @@ If no argument is provided, generates pages for all active OS distributions.`,
 	},
 }
 
+// ccCateCmd generates per-category PKG index pages
+var ccCateCmd = &cobra.Command{
+	Use:   "cate [category-name]",
+	Short: "Generate per-category PKG index pages for pigsty.cc",
+	Long: `Generate markdown pages showing PKG-centric index for each extension category.
+If no argument is provided, generates pages for all 16 categories.`,
+	Example: `  pgext cc cate              # Generate pages for all categories
+  pgext cc cate fts          # Generate page for FTS category`,
+	Args: cobra.MaximumNArgs(1),
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		generator := cli.NewCCCateGenerator(cache, ccOutputDir)
+
+		if len(args) == 1 {
+			catName := strings.ToUpper(args[0])
+			cat, exists := cache.CateMap[catName]
+			if !exists {
+				return fmt.Errorf("category '%s' not found", args[0])
+			}
+			logrus.Infof("Generating category page for %s...", catName)
+			if err := generator.GenerateCategoryPage(ctx, cat); err != nil {
+				return fmt.Errorf("failed to generate category page for %s: %w", catName, err)
+			}
+			logrus.Infof("Successfully generated category page for %s", catName)
+		} else {
+			if err := generator.GenerateAllCategoryPages(ctx); err != nil {
+				return fmt.Errorf("failed to generate category pages: %w", err)
+			}
+		}
+
+		return nil
+	},
+}
+
 // ccAllCmd generates all content
 var ccAllCmd = &cobra.Command{
 	Use:   "all",
@@ -266,10 +313,25 @@ var ccAllCmd = &cobra.Command{
 			}
 		}()
 
-		// Wait for list and OS pages to complete first
+		// 3. Generate category pages
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			logrus.Info("Generating category pages...")
+			cateGenerator := cli.NewCCCateGenerator(cache, ccOutputDir)
+			if err := cateGenerator.GenerateAllCategoryPages(ctx); err != nil {
+				mu.Lock()
+				errors = append(errors, fmt.Errorf("category pages: %w", err))
+				mu.Unlock()
+			} else {
+				logrus.Info("Category pages generated successfully")
+			}
+		}()
+
+		// Wait for list, OS, and category pages to complete first
 		wg.Wait()
 
-		// 3. Generate extension pages (sequential to avoid overwhelming the system)
+		// 4. Generate extension pages (sequential to avoid overwhelming the system)
 		logrus.Info("Generating extension pages...")
 		pageGenerator := cli.NewCCPageGenerator(cache, ccOutputDir)
 
@@ -317,7 +379,7 @@ func init() {
 	rootCmd.AddCommand(ccCmd)
 
 	// Add subcommands
-	ccCmd.AddCommand(ccPageCmd, ccListCmd, ccOSCmd, ccAllCmd)
+	ccCmd.AddCommand(ccPageCmd, ccListCmd, ccOSCmd, ccCateCmd, ccAllCmd)
 
 	// Default output directory is ~/pgsty/pigsty.cc/content/ext
 	defaultOutput := filepath.Join(os.Getenv("HOME"), "pgsty", "pigsty.cc", "content", "ext")

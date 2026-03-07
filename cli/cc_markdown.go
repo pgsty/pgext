@@ -1,8 +1,8 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-CC (pigsty.cc) Markdown generators - Tailwind-inspired inline CSS badges for Hugo/Docsy
-Modern, clean design with semantic colors
+CC (pigsty.cc) Markdown generators - CSS class-based badges for Hugo/Docsy
+Uses semantic CSS classes instead of inline styles
 */
 package cli
 
@@ -14,77 +14,116 @@ import (
 // CCBaseURL is the base URL path for extension pages on pigsty.cc
 const CCBaseURL = "/ext"
 
-// Tailwind-inspired color palette
-var Colors = map[string]string{
-	// Semantic colors
-	"green":  "#22c55e", // Success, available
-	"blue":   "#3b82f6", // Info, PGDG
-	"red":    "#ef4444", // Error, missing, PIGSTY
-	"amber":  "#f59e0b", // Warning
-	"gray":   "#6b7280", // Neutral
-	"purple": "#a855f7", // Special
-	"cyan":   "#06b6d4", // Alternate
-	"rose":   "#f43f5e", // Danger
-	"teal":   "#14b8a6", // Alternate success
-	"indigo": "#6366f1", // Deep blue
-	"orange": "#f97316", // Alert
-	"slate":  "#64748b", // Muted
+// CCCategoryBadge generates a category badge with CSS class
+func CCCategoryBadge(category string) string {
+	if category == "" {
+		return "-"
+	}
+	lower := strings.ToLower(category)
+	return fmt.Sprintf(`<a class="ext-badge ext-badge--cate %s" href="%s/cate/%s">%s</a>`,
+		lower, CCBaseURL, lower, strings.ToUpper(category))
 }
 
-// Category colors - vibrant professional palette
-var CategoryColors = map[string]string{
-	"TIME":  "#0ea5e9", // Sky blue
-	"GIS":   "#22c55e", // Green
-	"RAG":   "#a855f7", // Purple
-	"FTS":   "#f43f5e", // Rose
-	"OLAP":  "#f97316", // Orange
-	"FEAT":  "#14b8a6", // Teal
-	"LANG":  "#6366f1", // Indigo
-	"TYPE":  "#06b6d4", // Cyan
-	"UTIL":  "#64748b", // Slate
-	"FUNC":  "#3b82f6", // Blue
-	"ADMIN": "#ef4444", // Red
-	"STAT":  "#8b5cf6", // Violet
-	"SEC":   "#ea580c", // Orange dark
-	"FDW":   "#475569", // Slate dark
-	"SIM":   "#d97706", // Amber
-	"ETL":   "#71717a", // Zinc
+// CCLanguageBadge generates a language badge with CSS class
+func CCLanguageBadge(lang string) string {
+	if lang == "" {
+		return "-"
+	}
+	anchor := strings.ToLower(strings.ReplaceAll(lang, "+", ""))
+	return fmt.Sprintf(`<a class="ext-badge ext-badge--lang %s" href="%s/language#%s">%s</a>`,
+		anchor, CCBaseURL, anchor, lang)
 }
 
-// Language colors
-var LanguageColors = map[string]string{
-	"C":       "#555555",
-	"C++":     "#f34b7d",
-	"Rust":    "#dea584",
-	"SQL":     "#e38c00",
-	"PLpgSQL": "#336791",
-	"Perl":    "#0298c3",
-	"Python":  "#3572a5",
-	"Java":    "#b07219",
-	"Go":      "#00add8",
-	"Data":    "#1e293b",
+// CCLicenseBadge generates a license badge with CSS class
+func CCLicenseBadge(license string) string {
+	if license == "" {
+		return "-"
+	}
+	cls := strings.ToLower(strings.ReplaceAll(strings.ReplaceAll(license, ".", ""), "-", ""))
+	anchor := strings.ReplaceAll(cls, " ", "")
+	return fmt.Sprintf(`<a class="ext-badge ext-badge--license %s" href="%s/license#%s">%s</a>`,
+		cls, CCBaseURL, anchor, license)
 }
 
-// License colors
-var LicenseColors = map[string]string{
-	"PostgreSQL":   "#336791",
-	"MIT":          "#22c55e",
-	"Apache-2.0":   "#ef4444",
-	"BSD-2-Clause": "#3b82f6",
-	"BSD-3-Clause": "#3b82f6",
-	"GPL-2.0":      "#8b5cf6",
-	"GPL-3.0":      "#8b5cf6",
-	"LGPL-2.1":     "#a855f7",
-	"LGPL-3.0":     "#a855f7",
-	"AGPLv3":       "#7c3aed",
-	"ISC":          "#10b981",
-	"MPL-2.0":      "#f97316",
-	"Timescale":    "#fbbf24",
-	"Elastic-2.0":  "#06b6d4",
+// CCRepoBadge generates a repo badge (PGDG or PIGSTY) with CSS class
+func CCRepoBadge(repo string) string {
+	if repo == "" {
+		return "-"
+	}
+	repoLower := strings.ToLower(repo)
+	return fmt.Sprintf(`<a class="ext-badge ext-badge--repo %s" href="%s/repo#%s">%s</a>`,
+		repoLower, CCBaseURL, repoLower, strings.ToUpper(repo))
 }
 
-// CCColorBadge generates a colored badge with semantic color name
+// CCPGVerBadge generates a PG version badge with ok/na CSS class
+func CCPGVerBadge(ver string, ok bool) string {
+	cls := "ext-pgver--na"
+	if ok {
+		cls = "ext-pgver--ok"
+	}
+	return fmt.Sprintf(`<span class="ext-pgver %s">%s</span>`, cls, ver)
+}
+
+// CCFlagBadge generates a yes/no flag badge with CSS class
+func CCFlagBadge(val bool) string {
+	if val {
+		return `<span class="ext-flag ext-flag--yes">是</span>`
+	}
+	return `<span class="ext-flag ext-flag--no">否</span>`
+}
+
+// CCOptFlagBadge generates a yes/no/unknown flag badge
+func CCOptFlagBadge(val NullBool) string {
+	if !val.Valid {
+		return `<span class="ext-flag ext-flag--no">否</span>`
+	}
+	return CCFlagBadge(val.Bool)
+}
+
+// CCAvailBadge generates an availability badge with CSS class
+func CCAvailBadge(version string) string {
+	return fmt.Sprintf(`<span class="ext-badge ext-badge--avail">%s</span>`, version)
+}
+
+// CCMissBadge generates a missing badge
+func CCMissBadge() string {
+	return `<span class="ext-badge ext-badge--miss">✗</span>`
+}
+
+// CCExtLink generates a plain markdown extension link
+func CCExtLink(name string) string {
+	if name == "" {
+		return ""
+	}
+	return fmt.Sprintf("[`%s`](%s/e/%s)", name, CCBaseURL, name)
+}
+
+// CCExtBoldLink generates a bold code extension link
+func CCExtBoldLink(name, url string) string {
+	if url != "" {
+		return fmt.Sprintf("[**`%s`**](%s)", name, url)
+	}
+	return fmt.Sprintf("**`%s`**", name)
+}
+
+// CCOSLink generates a link to an OS page
+func CCOSLink(os string) string {
+	if os == "" {
+		return ""
+	}
+	return fmt.Sprintf("[**%s**](%s/os/%s)", os, CCBaseURL, os)
+}
+
+// CCColorBadge kept for backward compatibility with list/os generators
 func CCColorBadge(text, color string) string {
+	Colors := map[string]string{
+		"green":  "#22c55e",
+		"blue":   "#3b82f6",
+		"red":    "#ef4444",
+		"amber":  "#f59e0b",
+		"gray":   "#6b7280",
+		"purple": "#a855f7",
+	}
 	bgColor := Colors[color]
 	if bgColor == "" {
 		bgColor = Colors["gray"]
@@ -96,7 +135,7 @@ func CCColorBadge(text, color string) string {
 	return fmt.Sprintf(`<span style="%s">%s</span>`, style, text)
 }
 
-// CCBadge generates a modern badge with optional link
+// CCBadge kept for backward compatibility
 func CCBadge(text, bgColor, link string) string {
 	style := fmt.Sprintf(
 		"display:inline-block;padding:0.2em 0.5em;font-size:0.8em;font-weight:600;"+
@@ -109,85 +148,28 @@ func CCBadge(text, bgColor, link string) string {
 	return fmt.Sprintf(`<span style="%s">%s</span>`, style, text)
 }
 
-// CCCategoryBadge generates a category badge with link
-func CCCategoryBadge(category string) string {
-	if category == "" {
-		return "-"
-	}
-	color := CategoryColors[strings.ToUpper(category)]
-	if color == "" {
-		color = Colors["gray"]
-	}
-	link := fmt.Sprintf("%s/list/cate#%s", CCBaseURL, strings.ToLower(category))
-	return CCBadge(strings.ToUpper(category), color, link)
-}
-
-// CCLanguageBadge generates a language badge
-func CCLanguageBadge(lang string) string {
-	if lang == "" {
-		return "-"
-	}
-	color := LanguageColors[lang]
-	if color == "" {
-		color = Colors["gray"]
-	}
-	anchor := strings.ToLower(strings.ReplaceAll(lang, "+", ""))
-	link := fmt.Sprintf("%s/list/lang#%s", CCBaseURL, anchor)
-	return CCBadge(lang, color, link)
-}
-
-// CCLicenseBadge generates a license badge
-func CCLicenseBadge(license string) string {
-	if license == "" {
-		return "-"
-	}
-	color := LicenseColors[license]
-	if color == "" {
-		color = Colors["gray"]
-	}
-	anchor := strings.ToLower(strings.ReplaceAll(strings.ReplaceAll(license, ".", ""), "-", ""))
-	link := fmt.Sprintf("%s/list/license#%s", CCBaseURL, anchor)
-	return CCBadge(license, color, link)
-}
-
-// CCRepoBadge generates a repo badge (PGDG or PIGSTY)
-func CCRepoBadge(repo string) string {
-	if repo == "" {
-		return "-"
-	}
-	repoLower := strings.ToLower(repo)
-	color := Colors["gray"]
-	if repoLower == "pgdg" {
-		color = "#336791" // PostgreSQL blue
-	} else if repoLower == "pigsty" {
-		color = Colors["red"]
-	}
-	link := fmt.Sprintf("%s/repo/%s", CCBaseURL, repoLower)
-	return CCBadge(strings.ToUpper(repo), color, link)
-}
-
-// CCPGBadge generates a compact PG version badge
+// CCPGBadge kept for backward compatibility
 func CCPGBadge(ver string) string {
 	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
 		"color:#fff;background:#336791;border-radius:0.25rem;margin:0 1px;"
 	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
 }
 
-// CCPGBadgeGreen generates a green PG version badge (supported)
+// CCPGBadgeGreen kept for backward compatibility
 func CCPGBadgeGreen(ver string) string {
-	style := fmt.Sprintf("display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;"+
-		"color:#fff;background:%s;border-radius:0.25rem;margin:0 1px;", Colors["green"])
+	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
+		"color:#fff;background:#22c55e;border-radius:0.25rem;margin:0 1px;"
 	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
 }
 
-// CCPGBadgeRed generates a red PG version badge (not supported)
+// CCPGBadgeRed kept for backward compatibility
 func CCPGBadgeRed(ver string) string {
-	style := fmt.Sprintf("display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;"+
-		"color:#fff;background:%s;border-radius:0.25rem;margin:0 1px;", Colors["red"])
+	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
+		"color:#fff;background:#ef4444;border-radius:0.25rem;margin:0 1px;"
 	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
 }
 
-// CCPGBadges generates a row of PG version badges
+// CCPGBadges kept for backward compatibility
 func CCPGBadges(versions []string) string {
 	if len(versions) == 0 {
 		return "-"
@@ -200,30 +182,19 @@ func CCPGBadges(versions []string) string {
 	return strings.Join(badges, "")
 }
 
-// CCExtBadge generates an extension link badge
-func CCExtBadge(name string) string {
-	if name == "" {
-		return ""
-	}
-	style := "display:inline-block;padding:0.15em 0.4em;font-size:0.8em;" +
-		"background:#f1f5f9;border-radius:0.25rem;text-decoration:none;color:#334155;margin:0.1em;"
-	return fmt.Sprintf(`<a href="%s/e/%s" style="%s">%s</a>`, CCBaseURL, name, style, name)
+// CCCategoryLink kept for backward compatibility
+func CCCategoryLink(category string) string {
+	return CCCategoryBadge(category)
 }
 
-// CCAvailBadge generates an availability badge
-func CCAvailBadge(version, repo string) string {
-	repoLower := strings.ToLower(repo)
-	bgColor := Colors["green"]
-	if repoLower == "pgdg" {
-		bgColor = "#336791"
-	} else if repoLower == "pigsty" {
-		bgColor = Colors["red"]
-	}
-	style := fmt.Sprintf(
-		"display:inline-block;padding:0.1em 0.3em;font-size:0.7em;font-weight:500;"+
-			"color:#fff;background:%s;border-radius:0.2rem;",
-		bgColor)
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, version)
+// CCLanguageLink kept for backward compatibility
+func CCLanguageLink(lang string) string {
+	return CCLanguageBadge(lang)
+}
+
+// CCLicenseLink kept for backward compatibility
+func CCLicenseLink(license string) string {
+	return CCLicenseBadge(license)
 }
 
 // CCIcon generates a Font Awesome icon
@@ -231,39 +202,40 @@ func CCIcon(name string) string {
 	return fmt.Sprintf(`<i class="fab fa-%s"></i>`, name)
 }
 
-// CCExtLink generates a code-style extension link
-func CCExtLink(name, pkg string) string {
-	if name == "" {
-		return ""
+// CCExtensionTable generates a markdown extension table for a list of extensions
+// Used by both category pages and extension index page
+func CCExtensionTable(exts []*Extension) string {
+	var b strings.Builder
+	b.WriteString("| **扩展** | **包** | **版本** | **许可证** | **语言** | **描述** |\n")
+	b.WriteString("|:---------|:-------|:--------:|:----------:|:--------:|:---------|\n")
+	for _, ext := range exts {
+		version := "-"
+		if ext.Version.Valid {
+			version = ext.Version.String
+		}
+		license := "-"
+		if ext.License.Valid {
+			license = CCLicenseBadge(ext.License.String)
+		}
+		lang := "-"
+		if ext.Lang.Valid {
+			lang = CCLanguageBadge(ext.Lang.String)
+		}
+		desc := SanitizeText(ext.Name)
+		if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
+			desc = SanitizeText(ext.ZhDesc.String)
+		} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
+			desc = SanitizeText(ext.EnDesc.String)
+		}
+		pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
+		if ext.URL.Valid && ext.URL.String != "" {
+			pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
+		}
+		b.WriteString(fmt.Sprintf("| [`%s`](/ext/e/%s) | %s | `%s` | %s | %s | %s |\n",
+			ext.Name, ext.Name, pkgLink, version, license, lang, desc))
 	}
-	display := name
-	if pkg != "" && pkg != name {
-		display = pkg
-	}
-	return fmt.Sprintf("[`%s`](%s/e/%s)", display, CCBaseURL, name)
-}
-
-// CCOSLink generates a link to an OS page
-func CCOSLink(os string) string {
-	if os == "" {
-		return ""
-	}
-	return fmt.Sprintf("[%s](%s/os/%s)", os, CCBaseURL, os)
-}
-
-// CCCategoryLink generates a category badge link
-func CCCategoryLink(category string) string {
-	return CCCategoryBadge(category)
-}
-
-// CCLanguageLink generates a language badge link
-func CCLanguageLink(lang string) string {
-	return CCLanguageBadge(lang)
-}
-
-// CCLicenseLink generates a license badge link
-func CCLicenseLink(license string) string {
-	return CCLicenseBadge(license)
+	b.WriteString("{.ext-table}\n\n")
+	return b.String()
 }
 
 // CCExtLinkWithLabel generates extension link with custom display label

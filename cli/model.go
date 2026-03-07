@@ -73,6 +73,7 @@ func (ext *Extension) GetLibName() string {
 type Category struct {
 	ID     int            `db:"id"`
 	Name   string         `db:"name"`
+	Icon1  sql.NullString `db:"icon1"`
 	EnDesc sql.NullString `db:"en_desc"`
 	ZhDesc sql.NullString `db:"zh_desc"`
 }

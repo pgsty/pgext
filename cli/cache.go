@@ -130,7 +130,7 @@ func loadOSVersions(ctx context.Context, cache *ExtensionCache) error {
 }
 
 func loadCategories(ctx context.Context, cache *ExtensionCache) error {
-	query := `SELECT id, name, en_desc, zh_desc FROM pgext.category ORDER BY id`
+	query := `SELECT id, name, icon1, en_desc, zh_desc FROM pgext.category ORDER BY id`
 
 	rows, err := QueryContext(ctx, query)
 	if err != nil {
@@ -140,7 +140,7 @@ func loadCategories(ctx context.Context, cache *ExtensionCache) error {
 
 	for rows.Next() {
 		cat := &Category{}
-		if err := rows.Scan(&cat.ID, &cat.Name, &cat.EnDesc, &cat.ZhDesc); err != nil {
+		if err := rows.Scan(&cat.ID, &cat.Name, &cat.Icon1, &cat.EnDesc, &cat.ZhDesc); err != nil {
 			return err
 		}
 		cache.Categories = append(cache.Categories, cat)

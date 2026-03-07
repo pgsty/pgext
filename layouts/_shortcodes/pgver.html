@@ -22,7 +22,7 @@ Renders a compact series of PostgreSQL version numbers with color coding.
   "gr" "#6b7280"
 -}}
 
-<span class="pgver" style="display: inline-flex; gap: 0.25rem; font-family: monospace; font-size: 0.875em; font-weight: 600;">
+<span class="pgver" style="display: inline-flex; gap: 0.25rem; font-family: monospace; font-size: 0.875em; font-weight: 600; white-space: nowrap;">
 {{- range $index, $version := $versions -}}
   {{- $version = trim $version " " -}}
   {{- $colorCode := trim (index $colors $index) " " -}}
