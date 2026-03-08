@@ -70,12 +70,13 @@ func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Ext
 	b.WriteString(g.generateOverview(ext))
 	b.WriteString(g.generateExtensionTable(ext, allExts))
 	b.WriteString(g.generateRelationships(ext, siblings))
-	b.WriteString("\n> Bin: 二进制；Lib：库文件；Load：显式加载；Create：需要DDL创建；Trust：普通用户可创建；Reloc：安装至其他模式\n\n")
+	if ext.Comment.Valid && ext.Comment.String != "" {
+		b.WriteString(fmt.Sprintf("\n> %s\n\n", ext.Comment.String))
+	}
 	b.WriteString(g.generatePackages(ext))
 
 	if !ext.Contrib {
-		b.WriteString(g.generateAvailability(ext, packages))
-		b.WriteString(g.generateDownloads(binaries))
+		b.WriteString(g.generateAvailability(ext, packages, binaries))
 		b.WriteString(g.generateBuild(ext))
 	}
 
@@ -159,10 +160,12 @@ func (g *CCPageGenerator) generateOverview(ext *Extension) string {
 	var b strings.Builder
 	b.WriteString("## 概览\n\n")
 
-	// Extension badge with URL
-	extBadge := fmt.Sprintf("**`%s`**", ext.Name)
-	if ext.URL.Valid && ext.URL.String != "" {
-		extBadge = fmt.Sprintf("[**`%s`**](%s)", ext.Name, ext.URL.String)
+	// Package badge: link to the primary extension page
+	pkgLink := fmt.Sprintf("**`%s`**", ext.Pkg)
+	if ext.LeadExt.Valid && ext.LeadExt.String != "" {
+		pkgLink = fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.LeadExt.String)
+	} else {
+		pkgLink = fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.Name)
 	}
 
 	version := "-"
@@ -187,7 +190,7 @@ func (g *CCPageGenerator) generateOverview(ext *Extension) string {
 
 	b.WriteString("| **扩展包名** | **版本** | **分类** | **许可证** | **语言** |\n")
 	b.WriteString("|:---------------------------------------------------:|:-------:|:--------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------:|:--------------------------------------------------------------------:|\n")
-	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s |\n", extBadge, version, category, license, lang))
+	b.WriteString(fmt.Sprintf("| %s | %s | %s | %s | %s |\n", pkgLink, version, category, license, lang))
 	b.WriteString("{.ext-table}\n\n")
 
 	return b.String()
@@ -201,10 +204,7 @@ func (g *CCPageGenerator) generateExtensionTable(ext *Extension, allExts []*Exte
 	b.WriteString("|:-----:|:-------------------------------------------------------------------------|:--------------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:---------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:----------|\n")
 
 	for _, e := range allExts {
-		extLink := CCExtBoldLink(e.Name, "")
-		if ext.URL.Valid && ext.URL.String != "" {
-			extLink = CCExtBoldLink(e.Name, ext.URL.String)
-		}
+		extLink := CCExtBoldLink(e.Name, fmt.Sprintf("/ext/e/%s", e.Name))
 
 		schema := "-"
 		if len(e.Schemas) > 0 {
@@ -231,48 +231,43 @@ func (g *CCPageGenerator) generateExtensionTable(ext *Extension, allExts []*Exte
 
 // generateRelationships generates the relationships section
 func (g *CCPageGenerator) generateRelationships(ext *Extension, siblings []*Extension) string {
-	if len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 && len(siblings) == 0 {
+	if len(ext.Requires) == 0 && len(ext.RequireBy) == 0 && len(ext.SeeAlso) == 0 {
 		return ""
 	}
 
 	var b strings.Builder
 
-	b.WriteString("| **关联扩展** | |\n")
-	b.WriteString("|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n")
-
+	// Build "相关扩展" header row content from requires + see_also
+	headerParts := make([]string, 0)
 	if len(ext.Requires) > 0 {
-		links := make([]string, len(ext.Requires))
-		for i, req := range ext.Requires {
-			links[i] = CCExtLink(req)
+		for _, req := range ext.Requires {
+			headerParts = append(headerParts, CCExtLink(req))
 		}
-		b.WriteString(fmt.Sprintf("| 上游依赖 | %s |\n", strings.Join(links, " ")))
 	}
+	if len(ext.SeeAlso) > 0 {
+		for _, see := range ext.SeeAlso {
+			headerParts = append(headerParts, CCExtLink(see))
+		}
+	}
+
+	// If no related extensions at all (only require_by), use empty header
+	headerContent := ""
+	if len(headerParts) > 0 {
+		headerContent = strings.Join(headerParts, " ")
+	}
+
+	b.WriteString(fmt.Sprintf("| **相关扩展** | %s |\n", headerContent))
+	b.WriteString("|:--------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n")
 
 	if len(ext.RequireBy) > 0 {
 		links := make([]string, len(ext.RequireBy))
 		for i, req := range ext.RequireBy {
 			links[i] = CCExtLink(req)
 		}
-		b.WriteString(fmt.Sprintf("| 下游依赖 | %s |\n", strings.Join(links, " ")))
+		b.WriteString(fmt.Sprintf("| **下游依赖** | %s |\n", strings.Join(links, " ")))
 	}
 
-	if len(ext.SeeAlso) > 0 {
-		links := make([]string, len(ext.SeeAlso))
-		for i, see := range ext.SeeAlso {
-			links[i] = CCExtLink(see)
-		}
-		b.WriteString(fmt.Sprintf("| 相关扩展 | %s |\n", strings.Join(links, " ")))
-	}
-
-	if len(siblings) > 0 {
-		links := make([]string, len(siblings))
-		for i, sib := range siblings {
-			links[i] = CCExtLink(sib.Name)
-		}
-		b.WriteString(fmt.Sprintf("| 兄弟扩展 | %s |\n", strings.Join(links, " ")))
-	}
-
-	b.WriteString("{.ext-table}\n\n")
+	b.WriteString("{.ext-table .ext-table--rel}\n\n")
 	return b.String()
 }
 
@@ -283,13 +278,13 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 	}
 
 	var b strings.Builder
-	b.WriteString("\n## 软件包\n\n")
-	b.WriteString("| 类型 | 仓库 | 版本 | PG兼容 | 包名模式 | 依赖 |\n")
+	b.WriteString("\n## 版本\n\n")
+	b.WriteString("| 类型 | 仓库 | 版本 | PG 大版本 | 包名 | 依赖 |\n")
 	b.WriteString("|:----:|:----:|:----:|:------:|:--------:|:----:|\n")
 
 	// EXT row
 	if ext.Repo.Valid || ext.Version.Valid || len(ext.PgVer) > 0 {
-		b.WriteString(g.buildPackageRow("EXT", ext.Repo.String, ext.Version.String, ext.Pkg, ext.PgVer, ext.Requires))
+		b.WriteString(g.buildPackageRow("EXT", ext.Category.String, ext.Repo.String, ext.Version.String, ext.Pkg, ext.PgVer, ext.Requires))
 	}
 
 	// RPM row
@@ -298,7 +293,7 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 		if ext.RpmPkg.Valid && ext.RpmPkg.String != "" {
 			pkg = ext.RpmPkg.String
 		}
-		b.WriteString(g.buildPackageRow("RPM", ext.RpmRepo.String, ext.RpmVer.String, pkg, ext.RpmPg, ext.RpmDeps))
+		b.WriteString(g.buildPackageRow("RPM", ext.Category.String, ext.RpmRepo.String, ext.RpmVer.String, pkg, ext.RpmPg, ext.RpmDeps))
 	}
 
 	// DEB row
@@ -307,7 +302,7 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 		if ext.DebPkg.Valid && ext.DebPkg.String != "" {
 			pkg = ext.DebPkg.String
 		}
-		b.WriteString(g.buildPackageRow("DEB", ext.DebRepo.String, ext.DebVer.String, pkg, ext.DebPg, ext.DebDeps))
+		b.WriteString(g.buildPackageRow("DEB", ext.Category.String, ext.DebRepo.String, ext.DebVer.String, pkg, ext.DebPg, ext.DebDeps))
 	}
 
 	b.WriteString("{.ext-table}\n\n")
@@ -315,7 +310,7 @@ func (g *CCPageGenerator) generatePackages(ext *Extension) string {
 }
 
 // buildPackageRow builds a single package row
-func (g *CCPageGenerator) buildPackageRow(label, repo, version, pattern string, pgVers, deps []string) string {
+func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, pattern string, pgVers, deps []string) string {
 	repoBadge := "-"
 	if repo != "" {
 		repoBadge = CCRepoBadge(repo)
@@ -342,8 +337,23 @@ func (g *CCPageGenerator) buildPackageRow(label, repo, version, pattern string, 
 		depsStr = strings.Join(depList, ", ")
 	}
 
-	return fmt.Sprintf("| **%s** | %s | %s | %s | %s | %s |\n",
-		label, repoBadge, verStr, pgBadges, patternStr, depsStr)
+	// Map label to URL with category anchor
+	catPath := ""
+	if category != "" {
+		catPath = "/" + strings.ToLower(category)
+	}
+	labelLink := fmt.Sprintf("**%s**", label)
+	switch label {
+	case "EXT":
+		labelLink = fmt.Sprintf("[**EXT**](/ext/list%s)", catPath)
+	case "RPM":
+		labelLink = fmt.Sprintf("[**RPM**](/ext/rpm%s)", catPath)
+	case "DEB":
+		labelLink = fmt.Sprintf("[**DEB**](/ext/deb%s)", catPath)
+	}
+
+	return fmt.Sprintf("| %s | %s | %s | %s | %s | %s |\n",
+		labelLink, repoBadge, verStr, pgBadges, patternStr, depsStr)
 }
 
 // buildPGCompatBadges builds PG version compatibility badges with CSS classes
@@ -372,7 +382,7 @@ func (g *CCPageGenerator) buildPGCompatBadges(supported []string) string {
 // generateContribPackages generates package info for contrib extensions
 func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 	var b strings.Builder
-	b.WriteString("\n## 软件包\n\n")
+	b.WriteString("\n## 版本\n\n")
 
 	// Build header
 	b.WriteString("|")
@@ -414,7 +424,7 @@ func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 // generateAvailability generates the availability matrix using the pgext_matrix shortcode.
 // Each cell is plain text: "STATE REPO VERSION PKG_NAME"
 // The shortcode parses cells and renders two-line badges with CSS coloring.
-func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgInfo) string {
+func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgInfo, binaries []*Binary) string {
 	if len(packages) == 0 {
 		return ""
 	}
@@ -429,7 +439,6 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 		}
 	}
 
-	b.WriteString("## 可用性\n\n")
 	b.WriteString("{{< pgext_matrix >}}\n")
 
 	// Header
@@ -464,6 +473,26 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 			}
 		}
 		b.WriteString("\n")
+	}
+
+	// Download data lines (@ OS PG PKG FILENAME REPO VERSION SIZE URL)
+	if len(binaries) > 0 {
+		activePG := make(map[int]bool, len(g.Cache.PGVersions))
+		for _, pg := range g.Cache.PGVersions {
+			activePG[pg] = true
+		}
+		for _, bin := range binaries {
+			if !activePG[bin.PG] {
+				continue
+			}
+			org := "-"
+			if bin.Org.Valid && bin.Org.String != "" {
+				org = bin.Org.String
+			}
+			size := strings.ReplaceAll(FormatSize(bin.Size), " ", "")
+			b.WriteString(fmt.Sprintf("@ %s %d %s %s %s %s %s %s\n",
+				bin.OS, bin.PG, bin.Name, bin.File, org, bin.Version, size, bin.Href))
+		}
 	}
 
 	b.WriteString("{{< /pgext_matrix >}}\n\n")
@@ -514,70 +543,6 @@ func (g *CCPageGenerator) inferRepo(ext *Extension, osName string) string {
 		return r
 	}
 	return "-"
-}
-
-// generateDownloads generates the downloads section with Hugo tabpane shortcodes
-func (g *CCPageGenerator) generateDownloads(binaries []*Binary) string {
-	if len(binaries) == 0 {
-		return ""
-	}
-
-	activePG := make(map[int]bool, len(g.Cache.PGVersions))
-	for _, pg := range g.Cache.PGVersions {
-		activePG[pg] = true
-	}
-
-	pgGroups := make(map[int][]*Binary)
-	for _, bin := range binaries {
-		if !activePG[bin.PG] {
-			continue
-		}
-		pgGroups[bin.PG] = append(pgGroups[bin.PG], bin)
-	}
-
-	if len(pgGroups) == 0 {
-		return ""
-	}
-
-	var pgVersions []int
-	for pg := range pgGroups {
-		pgVersions = append(pgVersions, pg)
-	}
-	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
-
-	var b strings.Builder
-	b.WriteString("## 下载\n\n")
-	b.WriteString("<div class=\"ext-tabs\">\n")
-	b.WriteString("{{< tabpane text=true persist=\"disabled\" >}}\n\n")
-
-	for _, pg := range pgVersions {
-		bins := pgGroups[pg]
-		if len(bins) == 0 {
-			continue
-		}
-
-		b.WriteString(fmt.Sprintf("{{%% tab header=\"PG%d\" %%}}\n", pg))
-		b.WriteString("| 包名 | 版本 | 系统 | 来源 | 大小 |\n")
-		b.WriteString("|:-----|:----:|:----:|:----:|-----:|\n")
-
-		for _, bin := range bins {
-			org := "-"
-			if bin.Org.Valid {
-				org = bin.Org.String
-			}
-
-			b.WriteString(fmt.Sprintf("| [`%s`](%s) | `%s` | [%s](/ext/os/%s) | %s | %s |\n",
-				bin.Name, bin.Href, bin.Version, bin.OS, bin.OS, org, FormatSize(bin.Size)))
-		}
-
-		b.WriteString("{.ext-table .ext-table--download}\n")
-		b.WriteString("{{% /tab %}}\n\n")
-	}
-
-	b.WriteString("{{< /tabpane >}}\n")
-	b.WriteString("</div>\n\n")
-
-	return b.String()
 }
 
 // generateBuild generates the build section
