@@ -109,7 +109,7 @@ func (g *ExtensionGenerator) GenerateExtensionList(locale, outputPath string) er
 	// Filter out not-ready extensions
 	var extensions []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if !ext.State.Valid || ext.State.String != "not-ready" {
+		if ext.IsReady() {
 			extensions = append(extensions, ext)
 		}
 	}
@@ -167,7 +167,7 @@ func (g *ExtensionGenerator) generateExtensionListContent(stats *CatalogStats, c
 func (g *ExtensionGenerator) GenerateExtensionIndexPages(enPath, zhPath string) error {
 	var extensions []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if !ext.State.Valid || ext.State.String != "not-ready" {
+		if ext.IsReady() {
 			extensions = append(extensions, ext)
 		}
 	}
@@ -320,7 +320,7 @@ func (g *ExtensionGenerator) GeneratePackageList(locale, outputPath string) erro
 
 	var packages []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		if ext.Lead {

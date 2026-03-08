@@ -146,48 +146,7 @@ func (g *CCOSGenerator) generateOSContent(osInfo *OSInfo, packages []*OSPackageI
 
 // generateOSFrontmatter generates the YAML frontmatter
 func (g *CCOSGenerator) generateOSFrontmatter(osInfo *OSInfo) string {
-	weight := 100
-
-	switch osInfo.OS {
-	case "el7.x86_64":
-		weight = 710
-	case "el8.x86_64":
-		weight = 720
-	case "el8.aarch64":
-		weight = 721
-	case "el9.x86_64":
-		weight = 730
-	case "el9.aarch64":
-		weight = 731
-	case "el10.x86_64":
-		weight = 740
-	case "el10.aarch64":
-		weight = 741
-	case "d11.x86_64":
-		weight = 810
-	case "d11.aarch64":
-		weight = 811
-	case "d12.x86_64":
-		weight = 820
-	case "d12.aarch64":
-		weight = 821
-	case "d13.x86_64":
-		weight = 830
-	case "d13.aarch64":
-		weight = 831
-	case "u20.x86_64":
-		weight = 910
-	case "u20.aarch64":
-		weight = 911
-	case "u22.x86_64":
-		weight = 920
-	case "u22.aarch64":
-		weight = 921
-	case "u24.x86_64":
-		weight = 930
-	case "u24.aarch64":
-		weight = 931
-	}
+	weight := computeOSWeight(osInfo.OS)
 
 	// Icon: brand icon based on OS family, flipped for aarch64
 	var iconBrand string
@@ -262,34 +221,15 @@ func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) strin
 	if !exists {
 		return CCMissBadge()
 	}
-
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
 	}
-
 	version := ""
 	if pkg.Version.Valid {
 		version = pkg.Version.String
 	}
-
-	switch state {
-	case "AVAIL":
-		if version != "" {
-			return CCAvailBadge(version)
-		}
-		return CCAvailBadge("✓")
-	case "MISS":
-		return CCMissBadge()
-	case "HIDE":
-		return `<span class="ext-badge ext-badge--hide">-</span>`
-	case "THROW":
-		return `<span class="ext-badge ext-badge--throw">!</span>`
-	case "BREAK":
-		return `<span class="ext-badge ext-badge--break">!</span>`
-	default:
-		return `<span class="ext-badge ext-badge--hide">-</span>`
-	}
+	return CCPkgStateBadge(state, version)
 }
 
 // GenerateAllOSPages generates OS pages for all active OS distributions
@@ -358,4 +298,32 @@ func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 		return fmt.Errorf("failed to generate any OS pages")
 	}
 	return nil
+}
+
+// computeOSWeight computes Hugo frontmatter weight for an OS page
+// Pattern: EL base=700 offset=(major-6)*10, Debian base=800 offset=(major-10)*10, Ubuntu base=900 offset=(major-18)/2*10
+// aarch64 adds +1 to the weight
+func computeOSWeight(osName string) int {
+	parts := strings.SplitN(osName, ".", 2)
+	code := parts[0]
+
+	var base, major int
+	switch {
+	case strings.HasPrefix(code, "el"):
+		fmt.Sscanf(code, "el%d", &major)
+		base = 700 + (major-6)*10
+	case strings.HasPrefix(code, "d"):
+		fmt.Sscanf(code, "d%d", &major)
+		base = 800 + (major-10)*10
+	case strings.HasPrefix(code, "u"):
+		fmt.Sscanf(code, "u%d", &major)
+		base = 900 + (major-18)/2*10
+	default:
+		base = 100
+	}
+
+	if len(parts) > 1 && parts[1] == "aarch64" {
+		base++
+	}
+	return base
 }

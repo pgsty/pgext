@@ -20,13 +20,15 @@ import (
 type CCPageGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
+	StubDir   string
 }
 
 // NewCCPageGenerator creates a new CC page generator
-func NewCCPageGenerator(cache *ExtensionCache, outputDir string) *CCPageGenerator {
+func NewCCPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPageGenerator {
 	return &CCPageGenerator{
 		Cache:     cache,
 		OutputDir: outputDir,
+		StubDir:   stubDir,
 	}
 }
 
@@ -39,8 +41,8 @@ func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extens
 
 	content := g.generateExtensionContent(ctx, ext)
 
-	// Append stub-zh content if exists
-	stubPath := filepath.Join("stub-zh", ext.Name+".md")
+	// Append stub content if exists
+	stubPath := filepath.Join(g.StubDir, ext.Name+".md")
 	if stubContent, err := os.ReadFile(stubPath); err == nil && len(stubContent) > 0 {
 		content += "\n" + string(stubContent)
 	}
@@ -72,7 +74,7 @@ func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Ext
 	b.WriteString(g.generatePackages(ext))
 
 	if !ext.Contrib {
-		b.WriteString(g.generateAvailability(packages))
+		b.WriteString(g.generateAvailability(ext, packages))
 		b.WriteString(g.generateDownloads(binaries))
 		b.WriteString(g.generateBuild(ext))
 	}
@@ -93,13 +95,7 @@ func (g *CCPageGenerator) getAllPackageExtensions(ext *Extension, siblings []*Ex
 
 // generateFrontmatter generates YAML frontmatter
 func (g *CCPageGenerator) generateFrontmatter(ext *Extension) string {
-	desc := ext.Name
-	if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-		desc = ext.ZhDesc.String
-	} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-		desc = ext.EnDesc.String
-	}
-	desc = strings.ReplaceAll(desc, `"`, `\"`)
+	desc := strings.ReplaceAll(ext.GetZhDesc(), `"`, `\"`)
 
 	return fmt.Sprintf(`---
 title: "%s"
@@ -415,8 +411,10 @@ func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 	return b.String()
 }
 
-// generateAvailability generates the availability matrix
-func (g *CCPageGenerator) generateAvailability(packages []*PkgInfo) string {
+// generateAvailability generates the availability matrix using the pgext_matrix shortcode.
+// Each cell is plain text: "STATE REPO VERSION PKG_NAME"
+// The shortcode parses cells and renders two-line badges with CSS coloring.
+func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgInfo) string {
 	if len(packages) == 0 {
 		return ""
 	}
@@ -432,71 +430,90 @@ func (g *CCPageGenerator) generateAvailability(packages []*PkgInfo) string {
 	}
 
 	b.WriteString("## 可用性\n\n")
+	b.WriteString("{{< pgext_matrix >}}\n")
 
 	// Header
-	b.WriteString("| **Linux / PGSQL** |")
+	b.WriteString("| **OS / PG** |")
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
-	b.WriteString("\n|:-----------------------------------------:|")
+	b.WriteString("\n|:--:|")
 	for range g.Cache.PGVersions {
-		b.WriteString(":-----------------------------------------------------:|")
+		b.WriteString(":--:|")
 	}
 	b.WriteString("\n")
 
 	// Data rows
-	for _, os := range g.Cache.OSVersions {
-		if !os.Active {
+	for _, osv := range g.Cache.OSVersions {
+		if !osv.Active {
 			continue
 		}
 
-		b.WriteString(fmt.Sprintf("| %s |", CCOSLink(os.OS)))
+		b.WriteString(fmt.Sprintf("| %s |", osv.OS))
 
 		for _, pg := range g.Cache.PGVersions {
-			key := fmt.Sprintf("%d-%s", pg, os.OS)
+			key := fmt.Sprintf("%d-%s", pg, osv.OS)
 
 			if pkg, ok := pkgMap[key]; ok {
-				cell := g.formatAvailCell(pkg)
+				cell := g.formatAvailCell(pkg, ext, osv.OS)
 				b.WriteString(fmt.Sprintf(" %s |", cell))
 			} else {
-				b.WriteString(fmt.Sprintf(" %s |", CCMissBadge()))
+				// Infer repo for missing cells, count is 0
+				repo := g.inferRepo(ext, osv.OS)
+				b.WriteString(fmt.Sprintf(" MISS %s - 0 |", repo))
 			}
 		}
 		b.WriteString("\n")
 	}
 
-	b.WriteString("{.ext-table .ext-table--matrix}\n\n")
+	b.WriteString("{{< /pgext_matrix >}}\n\n")
 	return b.String()
 }
 
-// formatAvailCell formats an availability cell
-func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo) string {
+// formatAvailCell formats a cell as plain text: "STATE REPO VERSION COUNT"
+func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName string) string {
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
 	}
 
-	switch state {
-	case "MISS":
-		return CCMissBadge()
-	case "HIDE":
-		return `<span class="ext-badge ext-badge--hide">-</span>`
-	case "THROW":
-		return `<span class="ext-badge ext-badge--throw">!</span>`
-	case "BREAK":
-		return `<span class="ext-badge ext-badge--break">!</span>`
-	case "AVAIL":
-		version := ""
-		if pkg.Version.Valid {
-			version = pkg.Version.String
-		}
-		if version != "" {
-			return CCAvailBadge(version)
-		}
-		return CCAvailBadge("✓")
-	default:
-		return `<span class="ext-badge ext-badge--hide">-</span>`
+	org := g.inferRepo(ext, osName)
+	if pkg.Org.Valid && pkg.Org.String != "" {
+		org = strings.ToUpper(pkg.Org.String)
 	}
+
+	version := "-"
+	if pkg.Version.Valid && pkg.Version.String != "" {
+		version = pkg.Version.String
+	}
+
+	count := int64(1)
+	if pkg.Count.Valid {
+		count = pkg.Count.Int64
+	}
+
+	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
+}
+
+// inferRepo infers the repository for a given extension and OS.
+func (g *CCPageGenerator) inferRepo(ext *Extension, osName string) string {
+	if strings.HasPrefix(osName, "el") {
+		if ext.RpmRepo.Valid && ext.RpmRepo.String != "" {
+			return strings.ToUpper(ext.RpmRepo.String)
+		}
+	} else {
+		if ext.DebRepo.Valid && ext.DebRepo.String != "" {
+			return strings.ToUpper(ext.DebRepo.String)
+		}
+	}
+	if ext.Repo.Valid && ext.Repo.String != "" {
+		r := strings.ToUpper(ext.Repo.String)
+		if r == "MIXED" {
+			return "PIGSTY"
+		}
+		return r
+	}
+	return "-"
 }
 
 // generateDownloads generates the downloads section with Hugo tabpane shortcodes

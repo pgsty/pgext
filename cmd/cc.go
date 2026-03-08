@@ -20,6 +20,7 @@ import (
 
 var (
 	ccOutputDir string
+	ccStubDir   string
 )
 
 // ccCmd represents the cc command
@@ -68,14 +69,14 @@ If no extension names are provided, generates pages for all extensions.`,
 		}
 
 		// Initialize generator
-		generator := cli.NewCCPageGenerator(cache, ccOutputDir)
+		generator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
 
 		// Determine which extensions to generate
 		var extensionsToGenerate []*cli.Extension
 		if len(args) == 0 {
 			// No arguments provided, generate all extensions (except not-ready)
 			for _, ext := range cache.Extensions {
-				if !ext.State.Valid || ext.State.String != "not-ready" {
+				if ext.IsReady() {
 					extensionsToGenerate = append(extensionsToGenerate, ext)
 				}
 			}
@@ -333,13 +334,13 @@ var ccAllCmd = &cobra.Command{
 
 		// 4. Generate extension pages (sequential to avoid overwhelming the system)
 		logrus.Info("Generating extension pages...")
-		pageGenerator := cli.NewCCPageGenerator(cache, ccOutputDir)
+		pageGenerator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
 
 		successCount := 0
 		var failedExtensions []string
 
 		for i, ext := range cache.Extensions {
-			if ext.State.Valid && ext.State.String == "not-ready" {
+			if !ext.IsReady() {
 				continue
 			}
 
@@ -385,4 +386,6 @@ func init() {
 	defaultOutput := filepath.Join(os.Getenv("HOME"), "pgsty", "pigsty.cc", "content", "ext")
 	ccCmd.PersistentFlags().StringVarP(&ccOutputDir, "output", "o", defaultOutput,
 		"Output directory for generated files")
+	ccCmd.PersistentFlags().StringVar(&ccStubDir, "stub-dir", "stub-zh",
+		"Directory containing stub markdown files for extension pages")
 }

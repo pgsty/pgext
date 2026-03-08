@@ -427,7 +427,7 @@ If no extension names are provided, generates pages for all extensions.`,
 		if len(args) == 0 {
 			// No arguments provided, generate all extensions (except not-ready)
 			for _, ext := range cache.Extensions {
-				if !ext.State.Valid || ext.State.String != "not-ready" {
+				if ext.IsReady() {
 					extensionsToGenerate = append(extensionsToGenerate, ext)
 				}
 			}

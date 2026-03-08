@@ -90,6 +90,27 @@ func CCMissBadge() string {
 	return `<span class="ext-badge ext-badge--miss">✗</span>`
 }
 
+// CCPkgStateBadge generates an availability badge based on package state and version
+func CCPkgStateBadge(state, version string) string {
+	switch state {
+	case "AVAIL":
+		if version != "" {
+			return CCAvailBadge(version)
+		}
+		return CCAvailBadge("✓")
+	case "MISS":
+		return CCMissBadge()
+	case "HIDE":
+		return `<span class="ext-badge ext-badge--hide">-</span>`
+	case "THROW":
+		return `<span class="ext-badge ext-badge--throw">!</span>`
+	case "BREAK":
+		return `<span class="ext-badge ext-badge--break">!</span>`
+	default:
+		return `<span class="ext-badge ext-badge--hide">-</span>`
+	}
+}
+
 // CCExtLink generates a plain markdown extension link
 func CCExtLink(name string) string {
 	if name == "" {
@@ -114,94 +135,6 @@ func CCOSLink(os string) string {
 	return fmt.Sprintf("[**%s**](%s/os/%s)", os, CCBaseURL, os)
 }
 
-// CCColorBadge kept for backward compatibility with list/os generators
-func CCColorBadge(text, color string) string {
-	Colors := map[string]string{
-		"green":  "#22c55e",
-		"blue":   "#3b82f6",
-		"red":    "#ef4444",
-		"amber":  "#f59e0b",
-		"gray":   "#6b7280",
-		"purple": "#a855f7",
-	}
-	bgColor := Colors[color]
-	if bgColor == "" {
-		bgColor = Colors["gray"]
-	}
-	style := fmt.Sprintf(
-		"display:inline-block;padding:0.2em 0.5em;font-size:0.8em;font-weight:600;"+
-			"line-height:1.2;color:#fff;background:%s;border-radius:0.375rem;",
-		bgColor)
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, text)
-}
-
-// CCBadge kept for backward compatibility
-func CCBadge(text, bgColor, link string) string {
-	style := fmt.Sprintf(
-		"display:inline-block;padding:0.2em 0.5em;font-size:0.8em;font-weight:600;"+
-			"line-height:1.2;color:#fff;background:%s;border-radius:0.375rem;"+
-			"text-decoration:none;",
-		bgColor)
-	if link != "" {
-		return fmt.Sprintf(`<a href="%s" style="%s">%s</a>`, link, style, text)
-	}
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, text)
-}
-
-// CCPGBadge kept for backward compatibility
-func CCPGBadge(ver string) string {
-	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
-		"color:#fff;background:#336791;border-radius:0.25rem;margin:0 1px;"
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
-}
-
-// CCPGBadgeGreen kept for backward compatibility
-func CCPGBadgeGreen(ver string) string {
-	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
-		"color:#fff;background:#22c55e;border-radius:0.25rem;margin:0 1px;"
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
-}
-
-// CCPGBadgeRed kept for backward compatibility
-func CCPGBadgeRed(ver string) string {
-	style := "display:inline-block;padding:0.15em 0.35em;font-size:0.75em;font-weight:600;" +
-		"color:#fff;background:#ef4444;border-radius:0.25rem;margin:0 1px;"
-	return fmt.Sprintf(`<span style="%s">%s</span>`, style, ver)
-}
-
-// CCPGBadges kept for backward compatibility
-func CCPGBadges(versions []string) string {
-	if len(versions) == 0 {
-		return "-"
-	}
-	var badges []string
-	for _, v := range versions {
-		v = strings.TrimSuffix(v, "+")
-		badges = append(badges, CCPGBadge(v))
-	}
-	return strings.Join(badges, "")
-}
-
-// CCCategoryLink kept for backward compatibility
-func CCCategoryLink(category string) string {
-	return CCCategoryBadge(category)
-}
-
-// CCLanguageLink kept for backward compatibility
-func CCLanguageLink(lang string) string {
-	return CCLanguageBadge(lang)
-}
-
-// CCLicenseLink kept for backward compatibility
-func CCLicenseLink(license string) string {
-	return CCLicenseBadge(license)
-}
-
-// CCIcon generates a Font Awesome icon
-func CCIcon(name string) string {
-	return fmt.Sprintf(`<i class="fab fa-%s"></i>`, name)
-}
-
 // CCExtensionTable generates a markdown extension table for a list of extensions
 // Used by both category pages and extension index page
 func CCExtensionTable(exts []*Extension) string {
@@ -221,12 +154,7 @@ func CCExtensionTable(exts []*Extension) string {
 		if ext.Lang.Valid {
 			lang = CCLanguageBadge(ext.Lang.String)
 		}
-		desc := SanitizeText(ext.Name)
-		if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-			desc = SanitizeText(ext.ZhDesc.String)
-		} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-			desc = SanitizeText(ext.EnDesc.String)
-		}
+		desc := SanitizeText(ext.GetZhDesc())
 		pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
 		if ext.URL.Valid && ext.URL.String != "" {
 			pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
@@ -238,13 +166,3 @@ func CCExtensionTable(exts []*Extension) string {
 	return b.String()
 }
 
-// CCExtLinkWithLabel generates extension link with custom display label
-func CCExtLinkWithLabel(name, label string) string {
-	if name == "" {
-		return ""
-	}
-	if label == "" {
-		label = name
-	}
-	return fmt.Sprintf("[`%s`](%s/e/%s)", label, CCBaseURL, name)
-}

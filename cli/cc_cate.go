@@ -107,7 +107,7 @@ func (g *CCCateGenerator) GenerateCategoryPage(ctx context.Context, cat *Categor
 	// Filter out not-ready extensions and sort by ID
 	var exts []*Extension
 	for _, ext := range allExts {
-		if !ext.State.Valid || ext.State.String != "not-ready" {
+		if ext.IsReady() {
 			exts = append(exts, ext)
 		}
 	}
@@ -267,13 +267,7 @@ func (g *CCCateGenerator) generateExtensionTable(exts []*Extension) string {
 func (g *CCCateGenerator) generateExtCard(ext *Extension, avail map[string]*PkgInfo) string {
 	var b strings.Builder
 
-	// Description
-	desc := ext.Name
-	if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-		desc = ext.ZhDesc.String
-	} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-		desc = ext.EnDesc.String
-	}
+	desc := ext.GetZhDesc()
 
 	// H2 heading: extension name
 	b.WriteString(fmt.Sprintf("\n---------\n\n## %s {#%s}\n\n", ext.Name, ext.Name))
@@ -347,36 +341,8 @@ func (g *CCCateGenerator) generateExtCard(ext *Extension, avail map[string]*PkgI
 	for i := 0; i < numRows; i++ {
 		left := leftRows[i]
 		osc := g.OSCodes[i]
-
 		b.WriteString(fmt.Sprintf("| **%s** | %s | **%s** |", left.Label, left.Value, osc.Code))
-
-		if usePgVer {
-			// Contrib/kernel-fork: use PgVer for all OS uniformly
-			for _, pg := range pgVersions {
-				if pgVerSet[pg] {
-					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
-				} else {
-					b.WriteString(" |")
-				}
-			}
-			for _, pg := range pgVersions {
-				if pgVerSet[pg] {
-					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
-				} else {
-					b.WriteString(" |")
-				}
-			}
-		} else {
-			// Normal: use actual package availability
-			for _, pg := range pgVersions {
-				badge := g.pgAvailBadge(avail, pg, osc.X86)
-				b.WriteString(fmt.Sprintf(" %s |", badge))
-			}
-			for _, pg := range pgVersions {
-				badge := g.pgAvailBadge(avail, pg, osc.ARM)
-				b.WriteString(fmt.Sprintf(" %s |", badge))
-			}
-		}
+		g.writeAvailCells(&b, osc, avail, usePgVer, pgVerSet)
 		b.WriteString("\n")
 	}
 
@@ -384,31 +350,7 @@ func (g *CCCateGenerator) generateExtCard(ext *Extension, avail map[string]*PkgI
 	for i := numRows; i < len(g.OSCodes); i++ {
 		osc := g.OSCodes[i]
 		b.WriteString(fmt.Sprintf("| | | **%s** |", osc.Code))
-		if usePgVer {
-			for _, pg := range pgVersions {
-				if pgVerSet[pg] {
-					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
-				} else {
-					b.WriteString(" |")
-				}
-			}
-			for _, pg := range pgVersions {
-				if pgVerSet[pg] {
-					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
-				} else {
-					b.WriteString(" |")
-				}
-			}
-		} else {
-			for _, pg := range pgVersions {
-				badge := g.pgAvailBadge(avail, pg, osc.X86)
-				b.WriteString(fmt.Sprintf(" %s |", badge))
-			}
-			for _, pg := range pgVersions {
-				badge := g.pgAvailBadge(avail, pg, osc.ARM)
-				b.WriteString(fmt.Sprintf(" %s |", badge))
-			}
-		}
+		g.writeAvailCells(&b, osc, avail, usePgVer, pgVerSet)
 		b.WriteString("\n")
 	}
 
@@ -494,6 +436,31 @@ func (g *CCCateGenerator) pgAvailBadge(avail map[string]*PkgInfo, pg int, osName
 	return ""
 }
 
+// writeAvailCells writes availability cells (x86_64 + aarch64) for a single OS row
+func (g *CCCateGenerator) writeAvailCells(b *strings.Builder, osc OSCodeEntry, avail map[string]*PkgInfo, usePgVer bool, pgVerSet map[int]bool) {
+	pgVersions := g.Cache.PGVersions
+	if usePgVer {
+		// Contrib/kernel-fork: use PgVer for all OS uniformly (x86 then arm)
+		for range 2 {
+			for _, pg := range pgVersions {
+				if pgVerSet[pg] {
+					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
+				} else {
+					b.WriteString(" |")
+				}
+			}
+		}
+	} else {
+		// Normal: use actual package availability (x86 then arm)
+		for _, osName := range []string{osc.X86, osc.ARM} {
+			for _, pg := range pgVersions {
+				badge := g.pgAvailBadge(avail, pg, osName)
+				b.WriteString(fmt.Sprintf(" %s |", badge))
+			}
+		}
+	}
+}
+
 // GenerateCategoryIndexPage generates the _index.md for the cate/ directory
 func (g *CCCateGenerator) GenerateCategoryIndexPage() error {
 	cateDir := filepath.Join(g.OutputDir, "cate")
@@ -522,7 +489,7 @@ sidebar_expanded: true
 		extCount := 0
 		pkgCount := 0
 		for _, ext := range allExts {
-			if ext.State.Valid && ext.State.String == "not-ready" {
+			if !ext.IsReady() {
 				continue
 			}
 			extCount++

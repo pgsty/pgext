@@ -39,7 +39,7 @@ func (g *CCListGenerator) GenerateExtensionIndexPage(outputPath string) error {
 	// Filter non-not-ready extensions
 	var allExts []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		allExts = append(allExts, ext)
@@ -224,7 +224,7 @@ Pigsty 收录了 **%d** 个 PostgreSQL 扩展，分布在 **%d** 个扩展包中
 
 		var exts []*Extension
 		for _, ext := range catExts {
-			if !ext.State.Valid || ext.State.String != "not-ready" {
+			if ext.IsReady() {
 				exts = append(exts, ext)
 			}
 		}
@@ -270,7 +270,7 @@ icon: fas fa-puzzle-piece
 	// Collect all non-not-ready extensions
 	var allExts []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		allExts = append(allExts, ext)
@@ -386,7 +386,7 @@ icon: fas fa-puzzle-piece
 			if ext.Contrib {
 				continue
 			}
-			if ext.State.Valid && ext.State.String == "not-ready" {
+			if !ext.IsReady() {
 				continue
 			}
 			exts = append(exts, ext)
@@ -475,7 +475,7 @@ icon: fas fa-box
 
 	var packages []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.Lead && (!ext.State.Valid || ext.State.String != "not-ready") {
+		if ext.Lead && ext.IsReady() {
 			packages = append(packages, ext)
 		}
 	}
@@ -525,7 +525,7 @@ icon: fas fa-code
 
 	langMap := make(map[string][]*Extension)
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		lang := "Unknown"
@@ -595,12 +595,7 @@ icon: fas fa-code
 			if ext.Version.Valid && ext.Version.String != "" {
 				version = ext.Version.String
 			}
-			desc := SanitizeText(ext.Name)
-			if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-				desc = SanitizeText(ext.ZhDesc.String)
-			} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-				desc = SanitizeText(ext.EnDesc.String)
-			}
+			desc := SanitizeText(ext.GetZhDesc())
 			pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
 			if ext.URL.Valid && ext.URL.String != "" {
 				pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
@@ -643,7 +638,7 @@ icon: fas fa-scale-balanced
 
 	licenseMap := make(map[string][]*Extension)
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		license := "Unknown"
@@ -765,12 +760,7 @@ icon: fas fa-scale-balanced
 			if ext.Version.Valid && ext.Version.String != "" {
 				version = ext.Version.String
 			}
-			desc := SanitizeText(ext.Name)
-			if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-				desc = SanitizeText(ext.ZhDesc.String)
-			} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-				desc = SanitizeText(ext.EnDesc.String)
-			}
+			desc := SanitizeText(ext.GetZhDesc())
 			pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
 			if ext.URL.Valid && ext.URL.String != "" {
 				pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
@@ -803,7 +793,7 @@ icon: fas fa-warehouse
 	// Collect all non-not-ready extensions, group by Repo field
 	var pgdgExts, pigstyExts, mixedExts, contribExts []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		repo := ""
@@ -921,12 +911,7 @@ func writeContribExtTable(b *strings.Builder, exts []*Extension) {
 			}
 			pgVer = strings.Join(vers, ", ")
 		}
-		desc := SanitizeText(ext.Name)
-		if ext.ZhDesc.Valid && ext.ZhDesc.String != "" {
-			desc = SanitizeText(ext.ZhDesc.String)
-		} else if ext.EnDesc.Valid && ext.EnDesc.String != "" {
-			desc = SanitizeText(ext.EnDesc.String)
-		}
+		desc := SanitizeText(ext.GetZhDesc())
 
 		b.WriteString(fmt.Sprintf("| [`%s`](/ext/e/%s) | %s | %s | %s | %s |\n",
 			ext.Name, ext.Name, catBadge, version, pgVer, desc))
@@ -1002,7 +987,7 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 	// Collect all non-not-ready extensions
 	var allExts []*Extension
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		allExts = append(allExts, ext)
@@ -1135,7 +1120,7 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 			if !ext.Lead || ext.Contrib {
 				continue
 			}
-			if ext.State.Valid && ext.State.String == "not-ready" {
+			if !ext.IsReady() {
 				continue
 			}
 			repo := cfg.GetRepo(ext)
@@ -1308,7 +1293,7 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 	}
 
 	for _, ext := range g.Cache.Extensions {
-		if ext.State.Valid && ext.State.String == "not-ready" {
+		if !ext.IsReady() {
 			continue
 		}
 		repo := ""
@@ -1393,9 +1378,9 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 		Name string
 		Pkgs string
 	}
-	categoryOrder := []string{"TIME", "GIS", "RAG", "FTS", "OLAP", "FEAT", "LANG", "TYPE", "UTIL", "FUNC", "ADMIN", "STAT", "SEC", "FDW", "SIM", "ETL"}
 	var cateInfos []cateInfo
-	for _, cateName := range categoryOrder {
+	for _, cat := range g.Cache.Categories {
+		cateName := strings.ToUpper(cat.Name)
 		exts := g.Cache.CateExtMap[cateName]
 		var pkgLinks []string
 		for _, ext := range exts {

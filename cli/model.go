@@ -56,6 +56,22 @@ type Extension struct {
 // JsonMap is a type alias for map[string]interface{} to handle JSONB fields
 type JsonMap map[string]interface{}
 
+// IsReady returns true if the extension is not in "not-ready" state
+func (e *Extension) IsReady() bool {
+	return !e.State.Valid || e.State.String != "not-ready"
+}
+
+// GetZhDesc returns the Chinese description, falling back to English description, then extension name
+func (e *Extension) GetZhDesc() string {
+	if e.ZhDesc.Valid && e.ZhDesc.String != "" {
+		return e.ZhDesc.String
+	}
+	if e.EnDesc.Valid && e.EnDesc.String != "" {
+		return e.EnDesc.String
+	}
+	return e.Name
+}
+
 // GetLibName returns the library name for shared_preload_libraries
 // It checks the Extra field for a "lib" key, otherwise returns the extension Name
 func (ext *Extension) GetLibName() string {
