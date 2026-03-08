@@ -8,7 +8,6 @@ package cli
 
 import (
 	"context"
-	"database/sql"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -34,11 +33,6 @@ func NewCCPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPag
 
 // GenerateExtensionPage generates a single extension page (Chinese only)
 func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
-	extDir := filepath.Join(g.OutputDir, "e")
-	if err := os.MkdirAll(extDir, 0755); err != nil {
-		return fmt.Errorf("failed to create extension directory: %w", err)
-	}
-
 	content := g.generateExtensionContent(ctx, ext)
 
 	// Append stub content if exists
@@ -47,12 +41,7 @@ func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extens
 		content += "\n" + string(stubContent)
 	}
 
-	outputPath := filepath.Join(extDir, ext.Name+".md")
-	if err := os.WriteFile(outputPath, []byte(content), 0644); err != nil {
-		return fmt.Errorf("failed to write file: %w", err)
-	}
-
-	return nil
+	return WriteMarkdownFile(filepath.Join(g.OutputDir, "e", ext.Name+".md"), content)
 }
 
 // generateExtensionContent generates the markdown content
@@ -326,7 +315,7 @@ func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, patter
 		patternStr = fmt.Sprintf("`%s`", pattern)
 	}
 
-	pgBadges := g.buildPGCompatBadges(pgVers)
+	pgBadges := CCPGVersShortcode(pgVers)
 
 	depsStr := "-"
 	if len(deps) > 0 {
@@ -338,46 +327,24 @@ func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, patter
 	}
 
 	// Map label to URL with category anchor
-	catPath := ""
+	catAnchor := ""
 	if category != "" {
-		catPath = "/" + strings.ToLower(category)
+		catAnchor = "#" + strings.ToLower(category)
 	}
 	labelLink := fmt.Sprintf("**%s**", label)
 	switch label {
 	case "EXT":
-		labelLink = fmt.Sprintf("[**EXT**](/ext/list%s)", catPath)
+		labelLink = fmt.Sprintf("[**EXT**](/ext/list%s)", catAnchor)
 	case "RPM":
-		labelLink = fmt.Sprintf("[**RPM**](/ext/rpm%s)", catPath)
+		labelLink = fmt.Sprintf("[**RPM**](/ext/rpm%s)", catAnchor)
 	case "DEB":
-		labelLink = fmt.Sprintf("[**DEB**](/ext/deb%s)", catPath)
+		labelLink = fmt.Sprintf("[**DEB**](/ext/deb%s)", catAnchor)
 	}
 
 	return fmt.Sprintf("| %s | %s | %s | %s | %s | %s |\n",
 		labelLink, repoBadge, verStr, pgBadges, patternStr, depsStr)
 }
 
-// buildPGCompatBadges builds PG version compatibility badges with CSS classes
-func (g *CCPageGenerator) buildPGCompatBadges(supported []string) string {
-	if len(supported) == 0 {
-		return "-"
-	}
-
-	supportedMap := make(map[int]bool)
-	for _, v := range supported {
-		v = strings.TrimSuffix(strings.TrimSpace(v), "+")
-		var ver int
-		if _, err := fmt.Sscanf(v, "%d", &ver); err == nil {
-			supportedMap[ver] = true
-		}
-	}
-
-	var badges []string
-	for _, pg := range g.Cache.PGVersions {
-		badges = append(badges, CCPGVerBadge(fmt.Sprintf("%d", pg), supportedMap[pg]))
-	}
-
-	return strings.Join(badges, " ")
-}
 
 // generateContribPackages generates package info for contrib extensions
 func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
@@ -404,10 +371,7 @@ func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 		}
 	}
 
-	version := "-"
-	if ext.Version.Valid {
-		version = ext.Version.String
-	}
+	version := ext.GetVersion()
 
 	for _, pg := range g.Cache.PGVersions {
 		if availablePgs[pg] {
@@ -468,7 +432,7 @@ func (g *CCPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 				b.WriteString(fmt.Sprintf(" %s |", cell))
 			} else {
 				// Infer repo for missing cells, count is 0
-				repo := g.inferRepo(ext, osv.OS)
+				repo := InferRepo(ext, osv.OS)
 				b.WriteString(fmt.Sprintf(" MISS %s - 0 |", repo))
 			}
 		}
@@ -506,7 +470,7 @@ func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName s
 		state = pkg.State.String
 	}
 
-	org := g.inferRepo(ext, osName)
+	org := InferRepo(ext, osName)
 	if pkg.Org.Valid && pkg.Org.String != "" {
 		org = strings.ToUpper(pkg.Org.String)
 	}
@@ -514,6 +478,11 @@ func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName s
 	version := "-"
 	if pkg.Version.Valid && pkg.Version.String != "" {
 		version = pkg.Version.String
+	}
+
+	// MISS takes highest priority: if no actual package exists, override to MISS
+	if version == "-" && state != "AVAIL" && state != "HIDE" {
+		state = "MISS"
 	}
 
 	count := int64(1)
@@ -524,26 +493,6 @@ func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName s
 	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
 }
 
-// inferRepo infers the repository for a given extension and OS.
-func (g *CCPageGenerator) inferRepo(ext *Extension, osName string) string {
-	if strings.HasPrefix(osName, "el") {
-		if ext.RpmRepo.Valid && ext.RpmRepo.String != "" {
-			return strings.ToUpper(ext.RpmRepo.String)
-		}
-	} else {
-		if ext.DebRepo.Valid && ext.DebRepo.String != "" {
-			return strings.ToUpper(ext.DebRepo.String)
-		}
-	}
-	if ext.Repo.Valid && ext.Repo.String != "" {
-		r := strings.ToUpper(ext.Repo.String)
-		if r == "MIXED" {
-			return "PIGSTY"
-		}
-		return r
-	}
-	return "-"
-}
 
 // generateBuild generates the build section
 func (g *CCPageGenerator) generateBuild(ext *Extension) string {
@@ -732,5 +681,3 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 	return b.String()
 }
 
-// NullBool type alias for sql.NullBool
-type NullBool = sql.NullBool

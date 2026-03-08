@@ -13,10 +13,9 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
-)
 
-// NullString is a type alias for sql.NullString for cc_list use
-type NullString = sql.NullString
+	"github.com/sirupsen/logrus"
+)
 
 // CCListGenerator generates list pages for pigsty.cc
 type CCListGenerator struct {
@@ -33,225 +32,21 @@ func NewCCListGenerator(cache *ExtensionCache, outputDir string) *CCListGenerato
 }
 
 // GenerateExtensionIndexPage generates the extension index page (e/_index.md)
+// If the file already exists, it is kept as-is (user may have custom content).
+// If generating fresh, only the YAML frontmatter is written.
 func (g *CCListGenerator) GenerateExtensionIndexPage(outputPath string) error {
-	var b strings.Builder
-
-	// Filter non-not-ready extensions
-	var allExts []*Extension
-	for _, ext := range g.Cache.Extensions {
-		if !ext.IsReady() {
-			continue
-		}
-		allExts = append(allExts, ext)
+	if _, err := os.Stat(outputPath); err == nil {
+		logrus.Infof("Keeping existing %s", outputPath)
+		return nil
 	}
-
-	leadCount := 0
-	for _, ext := range allExts {
-		if ext.Lead {
-			leadCount++
-		}
-	}
-
-	// Frontmatter
-	b.WriteString(fmt.Sprintf(`---
-title: "PostgreSQL 扩展详情列表"
-linkTitle: "扩展列表"
-description: "Pigsty 收录的所有 PostgreSQL 扩展详情页面"
-weight: 1001
-exclude_search: true
-no_list: true
+	content := `---
+title: "扩展详情"
+description: "每个 PostgreSQL 扩展的详细信息，可用性情况，下载链接，使用说明"
+weight: 600
+icon: fas fa-puzzle-piece
 ---
-
-Pigsty 收录了 **%d** 个 PostgreSQL 扩展，分布在 **%d** 个扩展包中。
-
-`, len(allExts), leadCount))
-
-	// Compute stats
-	pgVersions := g.Cache.PGVersions
-
-	type pStats struct {
-		all, pgdg, pigsty, contrib, miss int
-		pgCount                          map[int]int
-	}
-	as := &pStats{pgCount: make(map[int]int)} // ALL
-	es := &pStats{pgCount: make(map[int]int)} // EL
-	ds := &pStats{pgCount: make(map[int]int)} // Debian
-
-	for _, ext := range allExts {
-		hasRpm := ext.RpmRepo.Valid && ext.RpmRepo.String != ""
-		hasDeb := ext.DebRepo.Valid && ext.DebRepo.String != ""
-		isContrib := ext.Contrib
-		hasKernel := ext.Extra != nil && ext.Extra["kernel"] != nil
-
-		rpmRepo := ""
-		if hasRpm {
-			rpmRepo = ext.RpmRepo.String
-		}
-		debRepo := ""
-		if hasDeb {
-			debRepo = ext.DebRepo.String
-		}
-
-		// ALL
-		as.all++
-		if rpmRepo == "PGDG" || debRepo == "PGDG" {
-			as.pgdg++
-		}
-		if rpmRepo == "PIGSTY" || debRepo == "PIGSTY" {
-			as.pigsty++
-		}
-		if isContrib {
-			as.contrib++
-		}
-		if !hasRpm && !hasDeb && !isContrib {
-			as.miss++
-		}
-
-		// EL
-		if hasRpm || isContrib {
-			es.all++
-			if rpmRepo == "PGDG" {
-				es.pgdg++
-			}
-			if rpmRepo == "PIGSTY" {
-				es.pigsty++
-			}
-			if isContrib {
-				es.contrib++
-			}
-		}
-
-		// Debian
-		if hasDeb || isContrib {
-			ds.all++
-			if debRepo == "PGDG" {
-				ds.pgdg++
-			}
-			if debRepo == "PIGSTY" {
-				ds.pigsty++
-			}
-			if isContrib {
-				ds.contrib++
-			}
-		}
-
-		// PG version availability
-		elPGs := make(map[int]bool)
-		debPGs := make(map[int]bool)
-		allPGs := make(map[int]bool)
-
-		for _, v := range ext.RpmPg {
-			v = strings.TrimSuffix(v, "+")
-			var pg int
-			if _, err := fmt.Sscanf(v, "%d", &pg); err == nil {
-				elPGs[pg] = true
-				allPGs[pg] = true
-			}
-		}
-		for _, v := range ext.DebPg {
-			v = strings.TrimSuffix(v, "+")
-			var pg int
-			if _, err := fmt.Sscanf(v, "%d", &pg); err == nil {
-				debPGs[pg] = true
-				allPGs[pg] = true
-			}
-		}
-
-		// Contrib/kernel: fallback to pg_ver if platform-specific is empty
-		if isContrib || hasKernel {
-			for _, v := range ext.PgVer {
-				v = strings.TrimSuffix(v, "+")
-				var pg int
-				if _, err := fmt.Sscanf(v, "%d", &pg); err == nil {
-					if len(ext.RpmPg) == 0 {
-						elPGs[pg] = true
-					}
-					if len(ext.DebPg) == 0 {
-						debPGs[pg] = true
-					}
-					allPGs[pg] = true
-				}
-			}
-		}
-
-		for pg := range allPGs {
-			as.pgCount[pg]++
-		}
-		for pg := range elPGs {
-			es.pgCount[pg]++
-		}
-		for pg := range debPGs {
-			ds.pgCount[pg]++
-		}
-	}
-
-	es.miss = as.all - es.all
-	ds.miss = as.all - ds.all
-
-	// Stats table
-	b.WriteString("## 扩展统计\n\n")
-	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** |")
-	for _, pg := range pgVersions {
-		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
-	}
-	b.WriteString("\n")
-
-	b.WriteString("|:---:|:---:|---:|:---:|:---:|:---:|")
-	for range pgVersions {
-		b.WriteString(":---:|")
-	}
-	b.WriteString("\n")
-
-	writeStatRow := func(label string, s *pStats) {
-		b.WriteString(fmt.Sprintf("| **%s** | %d | %d | %d | %d | %d |",
-			label, s.all, s.pgdg, s.pigsty, s.contrib, s.miss))
-		for _, pg := range pgVersions {
-			b.WriteString(fmt.Sprintf(" %d |", s.pgCount[pg]))
-		}
-		b.WriteString("\n")
-	}
-
-	writeStatRow("ALL", as)
-	writeStatRow("EL", es)
-	writeStatRow("Debian", ds)
-
-	b.WriteString("{.ext-table}\n\n")
-
-	// Per-category sections
-	for _, cat := range g.Cache.Categories {
-		catKey := strings.ToUpper(cat.Name)
-		catExts := g.Cache.CateExtMap[catKey]
-
-		var exts []*Extension
-		for _, ext := range catExts {
-			if ext.IsReady() {
-				exts = append(exts, ext)
-			}
-		}
-		if len(exts) == 0 {
-			continue
-		}
-
-		sort.Slice(exts, func(i, j int) bool { return exts[i].ID < exts[j].ID })
-
-		pkgCount := 0
-		seen := make(map[string]bool)
-		for _, ext := range exts {
-			if ext.Lead && !seen[ext.Pkg] {
-				pkgCount++
-				seen[ext.Pkg] = true
-			}
-		}
-
-		lower := strings.ToLower(cat.Name)
-		b.WriteString("\n--------\n\n")
-		b.WriteString(fmt.Sprintf("## %s\n\n", catKey))
-		b.WriteString(fmt.Sprintf("[**%s**](/ext/cate/%s) 分类共有 **%d** 个扩展，位于 **%d** 个扩展包中。\n\n",
-			catKey, lower, len(exts), pkgCount))
-		b.WriteString(CCExtensionTable(exts))
-	}
-
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+`
+	return os.WriteFile(outputPath, []byte(content), 0644)
 }
 
 // GenerateExtensionList generates the full extension list page
@@ -261,7 +56,7 @@ func (g *CCListGenerator) GenerateExtensionList(outputPath string) error {
 	b.WriteString(`---
 title: "扩展列表"
 description: "在 Pigsty 扩展目录中收录的的 PostgreSQL 扩展列表"
-weight: 100
+weight: 120
 icon: fas fa-puzzle-piece
 ---
 
@@ -348,27 +143,27 @@ icon: fas fa-puzzle-piece
 		extAll, pkgAll))
 
 	// Stats table - all fields centered
-	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** |")
+	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | |")
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
-	b.WriteString("\n|:--------:|:------:|:--------:|:----------:|:-----------:|:--------:|")
+	b.WriteString("\n|:--------:|:------:|:--------:|:----------:|:-----------:|:---:|")
 	for range pgVersions {
 		b.WriteString(":--------:|")
 	}
 	b.WriteString("\n")
 
 	// EXT row
-	b.WriteString(fmt.Sprintf("| **EXT** | %d | %d | %d | %d | %d |",
-		extAll, extPGDG, extPigsty, extContrib, extMiss))
+	b.WriteString(fmt.Sprintf("| [**EXT**](/ext/list) | %d | %d | %d | %d | |",
+		extAll, extPGDG, extPigsty, extContrib))
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" %d |", extPGCount[pg]))
 	}
 	b.WriteString("\n")
 
 	// PKG row
-	b.WriteString(fmt.Sprintf("| **PKG** | %d | %d | %d | %d | %d |",
-		pkgAll, pkgPGDG, pkgPigsty, 0, pkgMiss))
+	b.WriteString(fmt.Sprintf("| [**PKG**](/ext/repo) | %d | %d | %d | %d | |",
+		pkgAll, pkgPGDG, pkgPigsty, 0))
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" %d |", pkgPGCount[pg]))
 	}
@@ -427,17 +222,8 @@ icon: fas fa-puzzle-piece
 				repoBadge = CCRepoBadge(ext.Repo.String)
 			}
 
-			// Column 6: PG大版本 - colored badges in nowrap group
-			pgSet := make(map[string]bool)
-			for _, v := range ext.PgVer {
-				pgSet[strings.TrimSuffix(v, "+")] = true
-			}
-			var pgBadges []string
-			for _, pg := range pgVersions {
-				ver := fmt.Sprintf("%d", pg)
-				pgBadges = append(pgBadges, CCPGVerBadge(ver, pgSet[ver]))
-			}
-			pgStr := fmt.Sprintf(`<span class="ext-pgver-group" style="white-space:nowrap">%s</span>`, strings.Join(pgBadges, ""))
+			// Column 6: PG大版本 - pgvers shortcode
+			pgStr := CCPGVersShortcode(ext.PgVer)
 
 			// Column 7: 依赖 (requires - linked to ext pages)
 			depsStr := "-"
@@ -467,7 +253,7 @@ func (g *CCListGenerator) GeneratePackageList(outputPath string) error {
 title: "扩展包"
 linkTitle: "扩展包"
 description: "按安装包名排序的扩展列表"
-weight: 200
+weight: 150
 icon: fas fa-box
 ---
 
@@ -487,10 +273,7 @@ icon: fas fa-box
 	b.WriteString("|:---------|:-----------|:--------:|:--------:|:-------:|:-------:|\n")
 
 	for _, ext := range packages {
-		version := "-"
-		if ext.Version.Valid {
-			version = ext.Version.String
-		}
+		version := ext.GetVersion()
 
 		catBadge := "-"
 		if ext.Category.Valid {
@@ -517,7 +300,7 @@ func (g *CCListGenerator) GenerateLanguageList(outputPath string) error {
 title: "编程语言"
 linkTitle: "编程语言"
 description: "按编程语言分类的扩展列表"
-weight: 400
+weight: 220
 icon: fas fa-code
 ---
 
@@ -556,7 +339,7 @@ icon: fas fa-code
 	for _, lang := range langs {
 		b.WriteString(fmt.Sprintf(" %d |", len(langMap[lang])))
 	}
-	b.WriteString("\n\n")
+	b.WriteString("\n{.ext-table}\n\n")
 
 	for _, lang := range langs {
 		exts := langMap[lang]
@@ -567,7 +350,9 @@ icon: fas fa-code
 		sort.Slice(exts, func(i, j int) bool { return exts[i].ID < exts[j].ID })
 
 		anchor := strings.ToLower(lang)
-		anchor = strings.ReplaceAll(anchor, "+", "")
+		if anchor == "c++" {
+			anchor = "cpp"
+		}
 
 		b.WriteString(fmt.Sprintf("\n--------\n\n"))
 		b.WriteString(fmt.Sprintf("## %s {#%s}\n\n", lang, anchor))
@@ -630,7 +415,7 @@ func (g *CCListGenerator) GenerateLicenseList(outputPath string) error {
 title: "开源协议"
 linkTitle: "开源协议"
 description: "按开源许可证分类的扩展列表"
-weight: 500
+weight: 230
 icon: fas fa-scale-balanced
 ---
 
@@ -727,7 +512,7 @@ icon: fas fa-scale-balanced
 	for i := len(copyleft); i < maxCols; i++ {
 		b.WriteString(" |")
 	}
-	b.WriteString("\n\n")
+	b.WriteString("\n{.ext-table}\n\n")
 
 	// Per-license detail sections
 	for _, lic := range allLicenses {
@@ -784,7 +569,7 @@ func (g *CCListGenerator) GenerateRepoList(outputPath string) error {
 title: "归属仓库"
 linkTitle: "归属仓库"
 description: "按归属仓库分类的扩展列表"
-weight: 300
+weight: 210
 icon: fas fa-warehouse
 ---
 
@@ -899,9 +684,9 @@ func writeContribExtTable(b *strings.Builder, exts []*Extension) {
 		if ext.Category.Valid {
 			catBadge = CCCategoryBadge(ext.Category.String)
 		}
-		version := "-"
-		if ext.Version.Valid && ext.Version.String != "" {
-			version = fmt.Sprintf("`%s`", ext.Version.String)
+		version := ext.GetVersion()
+		if version != "-" {
+			version = fmt.Sprintf("`%s`", version)
 		}
 		pgVer := "-"
 		if len(ext.PgVer) > 0 {
@@ -930,13 +715,13 @@ type platformListConfig struct {
 	Weight    int
 	OtherName string // "DEB" or "RPM"
 	// Field accessors
-	GetRepo func(*Extension) NullString
-	GetPkg  func(*Extension) NullString
-	GetVer  func(*Extension) NullString
+	GetRepo func(*Extension) sql.NullString
+	GetPkg  func(*Extension) sql.NullString
+	GetVer  func(*Extension) sql.NullString
 	GetPG   func(*Extension) []string
 	GetDeps func(*Extension) []string
 	// Cross-platform accessor
-	GetOtherRepo func(*Extension) NullString
+	GetOtherRepo func(*Extension) sql.NullString
 }
 
 // GenerateRPMList generates the RPM package list page
@@ -947,14 +732,14 @@ func (g *CCListGenerator) GenerateRPMList(outputPath string) error {
 		Title:        "RPM 列表",
 		Desc:         "在 EL 系统上可用的 PostgreSQL 扩展 RPM 二进制包",
 		Icon:         "fa-brands fa-redhat",
-		Weight:       210,
+		Weight:       130,
 		OtherName:    "DEB",
-		GetRepo:      func(e *Extension) NullString { return e.RpmRepo },
-		GetPkg:       func(e *Extension) NullString { return e.RpmPkg },
-		GetVer:       func(e *Extension) NullString { return e.RpmVer },
+		GetRepo:      func(e *Extension) sql.NullString { return e.RpmRepo },
+		GetPkg:       func(e *Extension) sql.NullString { return e.RpmPkg },
+		GetVer:       func(e *Extension) sql.NullString { return e.RpmVer },
 		GetPG:        func(e *Extension) []string { return e.RpmPg },
 		GetDeps:      func(e *Extension) []string { return e.RpmDeps },
-		GetOtherRepo: func(e *Extension) NullString { return e.DebRepo },
+		GetOtherRepo: func(e *Extension) sql.NullString { return e.DebRepo },
 	})
 }
 
@@ -966,14 +751,14 @@ func (g *CCListGenerator) GenerateDEBList(outputPath string) error {
 		Title:        "DEB 列表",
 		Desc:         "在 Debian/Ubuntu 系统上可用的 PostgreSQL 扩展 DEB 二进制包",
 		Icon:         "fa-brands fa-debian",
-		Weight:       220,
+		Weight:       140,
 		OtherName:    "RPM",
-		GetRepo:      func(e *Extension) NullString { return e.DebRepo },
-		GetPkg:       func(e *Extension) NullString { return e.DebPkg },
-		GetVer:       func(e *Extension) NullString { return e.DebVer },
+		GetRepo:      func(e *Extension) sql.NullString { return e.DebRepo },
+		GetPkg:       func(e *Extension) sql.NullString { return e.DebPkg },
+		GetVer:       func(e *Extension) sql.NullString { return e.DebVer },
 		GetPG:        func(e *Extension) []string { return e.DebPg },
 		GetDeps:      func(e *Extension) []string { return e.DebDeps },
-		GetOtherRepo: func(e *Extension) NullString { return e.RpmRepo },
+		GetOtherRepo: func(e *Extension) sql.NullString { return e.RpmRepo },
 	})
 }
 
@@ -1082,27 +867,28 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 		exclusive, cfg.OSDesc, otherMissing, cfg.OtherName, cfg.Name))
 
 	// Stats table - all fields centered
-	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** |")
+	extLink := fmt.Sprintf("/ext/%s", strings.ToLower(cfg.Name))
+	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | |")
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
-	b.WriteString("\n|:--------:|:------:|:--------:|:----------:|:-----------:|:--------:|")
+	b.WriteString("\n|:--------:|:------:|:--------:|:----------:|:-----------:|:---:|")
 	for range pgVersions {
 		b.WriteString(":--------:|")
 	}
 	b.WriteString("\n")
 
 	// EXT row
-	b.WriteString(fmt.Sprintf("| **EXT** | %d | %d | %d | %d | %d |",
-		extAll, extPGDG, extPigsty, extContrib, extMiss))
+	b.WriteString(fmt.Sprintf("| [**EXT**](%s) | %d | %d | %d | %d | |",
+		extLink, extAll, extPGDG, extPigsty, extContrib))
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" %d |", extPGCount[pg]))
 	}
 	b.WriteString("\n")
 
 	// PKG row
-	b.WriteString(fmt.Sprintf("| **PKG** | %d | %d | %d | %d | %d |",
-		pkgAll, pkgPGDG, pkgPigsty, 0, pkgMiss))
+	b.WriteString(fmt.Sprintf("| [**PKG**](/ext/repo) | %d | %d | %d | %d | |",
+		pkgAll, pkgPGDG, pkgPigsty, 0))
 	for _, pg := range pgVersions {
 		b.WriteString(fmt.Sprintf(" %d |", pkgPGCount[pg]))
 	}
@@ -1164,21 +950,12 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 				pkgName = fmt.Sprintf("`%s`", pkg.String)
 			}
 
-			// Column 5: PG大版本 - colored badges in nowrap group
+			// Column 5: PG大版本 - pgvers shortcode
 			pgs := cfg.GetPG(ext)
 			if ext.Contrib && len(pgs) == 0 {
 				pgs = ext.PgVer
 			}
-			pgSet := make(map[string]bool)
-			for _, v := range pgs {
-				pgSet[strings.TrimSuffix(v, "+")] = true
-			}
-			var pgBadges []string
-			for _, pg := range pgVersions {
-				ver := fmt.Sprintf("%d", pg)
-				pgBadges = append(pgBadges, CCPGVerBadge(ver, pgSet[ver]))
-			}
-			pgStr := fmt.Sprintf(`<span class="ext-pgver-group" style="white-space:nowrap">%s</span>`, strings.Join(pgBadges, ""))
+			pgStr := CCPGVersShortcode(pgs)
 
 			// Column 6: 依赖
 			deps := cfg.GetDeps(ext)
@@ -1201,72 +978,23 @@ func (g *CCListGenerator) generatePlatformList(outputPath string, cfg *platformL
 	return os.WriteFile(outputPath, []byte(b.String()), 0644)
 }
 
-// GenerateOSIndexPage generates the OS index page
+// GenerateOSIndexPage generates the OS index page (os/_index.md)
+// If the file already exists, it is kept as-is (user may have custom content).
+// If generating fresh, only the YAML frontmatter is written.
 func (g *CCListGenerator) GenerateOSIndexPage(outputPath string) error {
-	var b strings.Builder
-
-	b.WriteString(`---
+	if _, err := os.Stat(outputPath); err == nil {
+		logrus.Infof("Keeping existing %s", outputPath)
+		return nil
+	}
+	content := `---
 title: "操作系统"
 linkTitle: "操作系统"
 description: "各操作系统的扩展可用性"
-weight: 600
+weight: 400
 icon: fa-brands fa-linux
 ---
-
-`)
-
-	rhelOS := make([]OSVersion, 0)
-	debOS := make([]OSVersion, 0)
-	ubuntuOS := make([]OSVersion, 0)
-
-	for _, os := range g.Cache.OSVersions {
-		if !os.Active {
-			continue
-		}
-		switch {
-		case strings.HasPrefix(os.OS, "el"):
-			rhelOS = append(rhelOS, os)
-		case strings.HasPrefix(os.OS, "d"):
-			debOS = append(debOS, os)
-		case strings.HasPrefix(os.OS, "u"):
-			ubuntuOS = append(ubuntuOS, os)
-		}
-	}
-
-	if len(rhelOS) > 0 {
-		b.WriteString("### RHEL / Rocky / AlmaLinux\n\n")
-		b.WriteString("| **系统** | **描述** | **架构** |\n")
-		b.WriteString("|:---------|:---------|:--------:|\n")
-		for _, os := range rhelOS {
-			b.WriteString(fmt.Sprintf("| [**%s**](/ext/os/%s) | %s | %s |\n",
-				os.OS, os.OS, os.OSFull, os.OSArch))
-		}
-		b.WriteString("{.ext-table}\n\n")
-	}
-
-	if len(debOS) > 0 {
-		b.WriteString("### Debian\n\n")
-		b.WriteString("| **系统** | **描述** | **架构** |\n")
-		b.WriteString("|:---------|:---------|:--------:|\n")
-		for _, os := range debOS {
-			b.WriteString(fmt.Sprintf("| [**%s**](/ext/os/%s) | %s | %s |\n",
-				os.OS, os.OS, os.OSFull, os.OSArch))
-		}
-		b.WriteString("{.ext-table}\n\n")
-	}
-
-	if len(ubuntuOS) > 0 {
-		b.WriteString("### Ubuntu\n\n")
-		b.WriteString("| **系统** | **描述** | **架构** |\n")
-		b.WriteString("|:---------|:---------|:--------:|\n")
-		for _, os := range ubuntuOS {
-			b.WriteString(fmt.Sprintf("| [**%s**](/ext/os/%s) | %s | %s |\n",
-				os.OS, os.OS, os.OSFull, os.OSArch))
-		}
-		b.WriteString("{.ext-table}\n\n")
-	}
-
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+`
+	return os.WriteFile(outputPath, []byte(content), 0644)
 }
 
 // GenerateOverviewPage generates the ext/_index.md overview page with dynamic data
@@ -1402,16 +1130,12 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 
 	// ── PG version badge helper ───────────────────────────────────────
 	pgVerBadges := func() string {
-		var badges []string
-		for _, pg := range g.Cache.PGVersions {
-			badges = append(badges, CCPGVerBadge(fmt.Sprintf("%d", pg), true))
-		}
-		return fmt.Sprintf(`<span class="ext-pgver-group" style="white-space:nowrap">%s</span>`, strings.Join(badges, ""))
+		return CCPGVersAllShortcode(g.Cache.PGVersions)
 	}
 
 	// ── Stats row helper ──────────────────────────────────────────────
 	writeStatsRow := func(label string, r rowStats) {
-		b.WriteString(fmt.Sprintf("| **%s** | %d | %d | %d | %d | %d |", label, r.All, r.PGDG, r.PIGSTY, r.CONTRIB, r.MISS))
+		b.WriteString(fmt.Sprintf("| **%s** | %d | %d | %d | %d | |", label, r.All, r.PGDG, r.PIGSTY, r.CONTRIB))
 		for _, pg := range g.Cache.PGVersions {
 			b.WriteString(fmt.Sprintf(" %d |", r.PGCounts[pg]))
 		}
@@ -1426,7 +1150,7 @@ title: Pigsty 扩展目录
 linkTitle: Pigsty 扩展目录
 description: >
   扩展是 PostgreSQL 的灵魂所在，Pigsty 制作、收录、整合了 %d 个 PG 生态扩展，供用户开箱即用。
-weight: 10
+weight: 20
 cascade:
   type: docs
 ---
@@ -1467,12 +1191,12 @@ cascade:
 	// 扩展统计
 	// ══════════════════════════════════════════════════════════════════
 	b.WriteString("--------\n\n## 扩展统计\n\n")
-	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** |")
+	b.WriteString("| **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | |")
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
 	b.WriteString("\n")
-	b.WriteString("|:------:|:------:|:------:|:------:|:------:|:------:|")
+	b.WriteString("|:------:|:------:|:------:|:------:|:------:|:---:|")
 	for range g.Cache.PGVersions {
 		b.WriteString(":------:|")
 	}
@@ -1660,13 +1384,18 @@ func (g *CCListGenerator) GenerateAllLists() error {
 		return fmt.Errorf("failed to generate repo list: %w", err)
 	}
 
+	// Divider: before dimension pages (归属仓库, 编程语言, 开源协议)
+	if err := g.GenerateDivider(filepath.Join(g.OutputDir, "_div_dimension.md"), 200); err != nil {
+		return fmt.Errorf("failed to generate dimension divider: %w", err)
+	}
+
 	// Divider: before category pages
-	if err := g.GenerateDivider(filepath.Join(g.OutputDir, "_div_category.md"), 700); err != nil {
+	if err := g.GenerateDivider(filepath.Join(g.OutputDir, "_div_category.md"), 499); err != nil {
 		return fmt.Errorf("failed to generate category divider: %w", err)
 	}
 
 	// Divider: before extension detail pages
-	if err := g.GenerateDivider(filepath.Join(g.OutputDir, "_div_details.md"), 1000); err != nil {
+	if err := g.GenerateDivider(filepath.Join(g.OutputDir, "_div_details.md"), 599); err != nil {
 		return fmt.Errorf("failed to generate details divider: %w", err)
 	}
 
@@ -1696,7 +1425,7 @@ toc_hide: false
 }
 
 // ccRepoBadgeOrMiss returns a repo badge or a miss badge
-func ccRepoBadgeOrMiss(repo NullString) string {
+func ccRepoBadgeOrMiss(repo sql.NullString) string {
 	if repo.Valid && repo.String != "" {
 		return CCRepoBadge(repo.String)
 	}

@@ -23,6 +23,23 @@ var (
 	ccStubDir   string
 )
 
+// runWithCache wraps common boilerplate: InitDB, LoadExtensionCache, then call fn
+func runWithCache(fn func(ctx context.Context, cache *cli.ExtensionCache, args []string) error) func(*cobra.Command, []string) error {
+	return func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+		return fn(ctx, cache, args)
+	}
+}
+
 // ccCmd represents the cc command
 var ccCmd = &cobra.Command{
 	Use:   "cc",
@@ -46,43 +63,14 @@ If no extension names are provided, generates pages for all extensions.`,
 	Example: `  pgext cc page              # Generate pages for all extensions
   pgext cc page pgvector     # Generate page for pgvector extension
   pgext cc page pgvector postgis  # Generate pages for specific extensions`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Prepare output directory
-		extDir := filepath.Join(ccOutputDir, "e")
-		if err := os.MkdirAll(extDir, 0755); err != nil {
-			return fmt.Errorf("failed to create output directory: %w", err)
-		}
-
-		// Initialize generator
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
 
-		// Determine which extensions to generate
 		var extensionsToGenerate []*cli.Extension
 		if len(args) == 0 {
-			// No arguments provided, generate all extensions (except not-ready)
-			for _, ext := range cache.Extensions {
-				if ext.IsReady() {
-					extensionsToGenerate = append(extensionsToGenerate, ext)
-				}
-			}
+			extensionsToGenerate = cache.ReadyExtensions()
 			logrus.Infof("Generating pages for all %d extensions...", len(extensionsToGenerate))
 		} else {
-			// Specific extensions requested
 			for _, name := range args {
 				ext, exists := cache.ExtMap[name]
 				if !exists {
@@ -97,71 +85,45 @@ If no extension names are provided, generates pages for all extensions.`,
 			logrus.Infof("Generating pages for %d specified extensions...", len(extensionsToGenerate))
 		}
 
-		// Generate pages with progress tracking
 		successCount := 0
 		var failedExtensions []string
-
 		for i, ext := range extensionsToGenerate {
-			// Progress logging for batch generation
 			if len(extensionsToGenerate) > 10 && (i+1)%100 == 0 {
 				logrus.Infof("Progress: %d/%d extensions processed", i+1, len(extensionsToGenerate))
 			}
-
 			if err := generator.GenerateExtensionPage(ctx, ext); err != nil {
 				logrus.Errorf("Failed to generate page for %s: %v", ext.Name, err)
 				failedExtensions = append(failedExtensions, ext.Name)
 			} else {
 				successCount++
 				if len(args) > 0 {
-					logrus.Infof("Generated: %s/e/%s/_index.md", ccOutputDir, ext.Name)
+					logrus.Infof("Generated: %s/e/%s.md", ccOutputDir, ext.Name)
 				}
 			}
 		}
 
-		// Final summary
 		logrus.Infof("Successfully generated %d/%d extension pages", successCount, len(extensionsToGenerate))
 		if len(failedExtensions) > 0 {
 			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
 		}
-
 		return nil
-	},
+	}),
 }
 
 // ccListCmd generates various list pages
 var ccListCmd = &cobra.Command{
-	Use:   "list",
-	Short: "Generate list pages for pigsty.cc",
-	Long:  `Generate list pages including extension list, package list, category list, language list, and license list.`,
+	Use:     "list",
+	Short:   "Generate list pages for pigsty.cc",
+	Long:    `Generate list pages including extension list, package list, category list, language list, and license list.`,
 	Example: `  pgext cc list    # Generate all list pages`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Initialize generator
-		generator := cli.NewCCListGenerator(cache, ccOutputDir)
-
-		// Generate all list pages
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		logrus.Info("Generating list pages...")
-		if err := generator.GenerateAllLists(); err != nil {
+		if err := cli.NewCCListGenerator(cache, ccOutputDir).GenerateAllLists(); err != nil {
 			return fmt.Errorf("failed to generate list pages: %w", err)
 		}
-
 		logrus.Info("Successfully generated all list pages")
 		return nil
-	},
+	}),
 }
 
 // ccOSCmd generates OS-specific availability pages
@@ -173,42 +135,21 @@ If no argument is provided, generates pages for all active OS distributions.`,
 	Example: `  pgext cc os               # Generate pages for all active OS distributions
   pgext cc os el9.x86_64    # Generate page for RHEL 9 x86_64`,
 	Args: cobra.MaximumNArgs(1),
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Initialize generator
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCOSGenerator(cache, ccOutputDir)
-
 		if len(args) == 1 {
-			// Generate for specific OS
-			osName := args[0]
-			logrus.Infof("Generating OS page for %s...", osName)
-			if err := generator.GenerateOSPage(ctx, osName); err != nil {
-				return fmt.Errorf("failed to generate OS page for %s: %w", osName, err)
+			logrus.Infof("Generating OS page for %s...", args[0])
+			if err := generator.GenerateOSPage(ctx, args[0]); err != nil {
+				return fmt.Errorf("failed to generate OS page for %s: %w", args[0], err)
 			}
-			logrus.Infof("Successfully generated OS page for %s", osName)
+			logrus.Infof("Successfully generated OS page for %s", args[0])
 		} else {
-			// Generate for all active OS
 			if err := generator.GenerateAllOSPages(ctx); err != nil {
 				return fmt.Errorf("failed to generate OS pages: %w", err)
 			}
 		}
-
 		return nil
-	},
+	}),
 }
 
 // ccCateCmd generates per-category PKG index pages
@@ -220,22 +161,8 @@ If no argument is provided, generates pages for all 16 categories.`,
 	Example: `  pgext cc cate              # Generate pages for all categories
   pgext cc cate fts          # Generate page for FTS category`,
 	Args: cobra.MaximumNArgs(1),
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCCateGenerator(cache, ccOutputDir)
-
 		if len(args) == 1 {
 			catName := strings.ToUpper(args[0])
 			cat, exists := cache.CateMap[catName]
@@ -252,103 +179,71 @@ If no argument is provided, generates pages for all 16 categories.`,
 				return fmt.Errorf("failed to generate category pages: %w", err)
 			}
 		}
-
 		return nil
-	},
+	}),
+}
+
+// ccAttrCmd generates extension attribute pages
+var ccAttrCmd = &cobra.Command{
+	Use:     "attr",
+	Short:   "Generate extension attribute pages for pigsty.cc",
+	Long:    `Generate attribute pages including load, headless, deps, multi, and fork sub-pages.`,
+	Example: `  pgext cc attr    # Generate all attribute pages`,
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
+		logrus.Info("Generating attribute pages...")
+		if err := cli.NewCCAttrGenerator(cache, ccOutputDir).GenerateAllAttrPages(); err != nil {
+			return fmt.Errorf("failed to generate attribute pages: %w", err)
+		}
+		logrus.Info("Successfully generated all attribute pages")
+		return nil
+	}),
 }
 
 // ccAllCmd generates all content
 var ccAllCmd = &cobra.Command{
-	Use:   "all",
-	Short: "Generate all content for pigsty.cc",
-	Long:  `Generate all content including extension pages, list pages, and OS availability pages.`,
+	Use:     "all",
+	Short:   "Generate all content for pigsty.cc",
+	Long:    `Generate all content including extension pages, list pages, and OS availability pages.`,
 	Example: `  pgext cc all    # Generate all content`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
-
-		// Initialize database connection
-		if err := cli.InitDB(dbURL); err != nil {
-			return fmt.Errorf("failed to initialize database: %w", err)
-		}
-		defer cli.CloseDB()
-
-		// Load extension cache
-		logrus.Info("Loading extension data...")
-		cache, err := cli.LoadExtensionCache(ctx)
-		if err != nil {
-			return fmt.Errorf("failed to load extension cache: %w", err)
-		}
-
-		// Track results
+	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		var errors []error
 		var wg sync.WaitGroup
 		var mu sync.Mutex
 
-		// 1. Generate list pages
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			logrus.Info("Generating list pages...")
-			listGenerator := cli.NewCCListGenerator(cache, ccOutputDir)
-			if err := listGenerator.GenerateAllLists(); err != nil {
-				mu.Lock()
-				errors = append(errors, fmt.Errorf("list pages: %w", err))
-				mu.Unlock()
-			} else {
-				logrus.Info("List pages generated successfully")
-			}
-		}()
+		runTask := func(name string, fn func() error) {
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				logrus.Infof("Generating %s...", name)
+				if err := fn(); err != nil {
+					mu.Lock()
+					errors = append(errors, fmt.Errorf("%s: %w", name, err))
+					mu.Unlock()
+				} else {
+					logrus.Infof("%s generated successfully", name)
+				}
+			}()
+		}
 
-		// 2. Generate OS pages
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			logrus.Info("Generating OS pages...")
-			osGenerator := cli.NewCCOSGenerator(cache, ccOutputDir)
-			if err := osGenerator.GenerateAllOSPages(ctx); err != nil {
-				mu.Lock()
-				errors = append(errors, fmt.Errorf("OS pages: %w", err))
-				mu.Unlock()
-			} else {
-				logrus.Info("OS pages generated successfully")
-			}
-		}()
+		runTask("list pages", func() error { return cli.NewCCListGenerator(cache, ccOutputDir).GenerateAllLists() })
+		runTask("OS pages", func() error { return cli.NewCCOSGenerator(cache, ccOutputDir).GenerateAllOSPages(ctx) })
+		runTask("category pages", func() error {
+			return cli.NewCCCateGenerator(cache, ccOutputDir).GenerateAllCategoryPages(ctx)
+		})
+		runTask("attribute pages", func() error { return cli.NewCCAttrGenerator(cache, ccOutputDir).GenerateAllAttrPages() })
 
-		// 3. Generate category pages
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			logrus.Info("Generating category pages...")
-			cateGenerator := cli.NewCCCateGenerator(cache, ccOutputDir)
-			if err := cateGenerator.GenerateAllCategoryPages(ctx); err != nil {
-				mu.Lock()
-				errors = append(errors, fmt.Errorf("category pages: %w", err))
-				mu.Unlock()
-			} else {
-				logrus.Info("Category pages generated successfully")
-			}
-		}()
-
-		// Wait for list, OS, and category pages to complete first
 		wg.Wait()
 
-		// 4. Generate extension pages (sequential to avoid overwhelming the system)
+		// Generate extension pages sequentially
 		logrus.Info("Generating extension pages...")
 		pageGenerator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
-
 		successCount := 0
 		var failedExtensions []string
 
-		for i, ext := range cache.Extensions {
-			if !ext.IsReady() {
-				continue
-			}
-
-			// Progress logging
+		for i, ext := range cache.ReadyExtensions() {
 			if (i+1)%100 == 0 {
-				logrus.Infof("Progress: %d/%d extensions processed", i+1, len(cache.Extensions))
+				logrus.Infof("Progress: %d extensions processed", i+1)
 			}
-
 			if err := pageGenerator.GenerateExtensionPage(ctx, ext); err != nil {
 				logrus.Errorf("Failed to generate page for %s: %v", ext.Name, err)
 				failedExtensions = append(failedExtensions, ext.Name)
@@ -362,9 +257,7 @@ var ccAllCmd = &cobra.Command{
 			logrus.Warnf("Failed extensions: %v", failedExtensions)
 		}
 
-		// Report any errors
 		if len(errors) > 0 {
-			logrus.Errorf("Encountered %d errors during generation:", len(errors))
 			for _, err := range errors {
 				logrus.Error(err)
 			}
@@ -373,16 +266,13 @@ var ccAllCmd = &cobra.Command{
 
 		logrus.Info("All content generated successfully!")
 		return nil
-	},
+	}),
 }
 
 func init() {
 	rootCmd.AddCommand(ccCmd)
+	ccCmd.AddCommand(ccPageCmd, ccListCmd, ccOSCmd, ccCateCmd, ccAttrCmd, ccAllCmd)
 
-	// Add subcommands
-	ccCmd.AddCommand(ccPageCmd, ccListCmd, ccOSCmd, ccCateCmd, ccAllCmd)
-
-	// Default output directory is ~/pgsty/pigsty.cc/content/ext
 	defaultOutput := filepath.Join(os.Getenv("HOME"), "pgsty", "pigsty.cc", "content", "ext")
 	ccCmd.PersistentFlags().StringVarP(&ccOutputDir, "output", "o", defaultOutput,
 		"Output directory for generated files")

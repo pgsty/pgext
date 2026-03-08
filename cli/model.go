@@ -6,6 +6,8 @@ package cli
 import (
 	"database/sql"
 	"fmt"
+	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -242,6 +244,43 @@ func (e *Extension) GetAttributeBadge() string {
 	return string(attrs)
 }
 
+// GetVersion returns the version string, or "-" if not set
+func (e *Extension) GetVersion() string {
+	if e.Version.Valid {
+		return e.Version.String
+	}
+	return "-"
+}
+
+// GetPkgURLLink returns a markdown link to the package URL, or plain backtick-wrapped name
+func (e *Extension) GetPkgURLLink() string {
+	if e.URL.Valid && e.URL.String != "" {
+		return fmt.Sprintf("[`%s`](%s)", e.Pkg, e.URL.String)
+	}
+	return fmt.Sprintf("`%s`", e.Pkg)
+}
+
+// InferRepo infers the expected repository (PGDG/PIGSTY) for an extension on a given OS
+func InferRepo(ext *Extension, osName string) string {
+	if strings.HasPrefix(osName, "el") {
+		if ext.RpmRepo.Valid && ext.RpmRepo.String != "" {
+			return strings.ToUpper(ext.RpmRepo.String)
+		}
+	} else {
+		if ext.DebRepo.Valid && ext.DebRepo.String != "" {
+			return strings.ToUpper(ext.DebRepo.String)
+		}
+	}
+	if ext.Repo.Valid && ext.Repo.String != "" {
+		r := strings.ToUpper(ext.Repo.String)
+		if r == "MIXED" {
+			return "PIGSTY"
+		}
+		return r
+	}
+	return "-"
+}
+
 // SanitizeText normalizes text for safe markdown table output
 func SanitizeText(value string) string {
 	if value == "" {
@@ -255,6 +294,14 @@ func SanitizeText(value string) string {
 	// Normalize whitespace
 	fields := strings.Fields(sanitized)
 	return strings.Join(fields, " ")
+}
+
+// WriteMarkdownFile writes content to a markdown file, creating parent directories as needed
+func WriteMarkdownFile(path string, content string) error {
+	if err := os.MkdirAll(filepath.Dir(path), 0755); err != nil {
+		return fmt.Errorf("failed to create directory %s: %w", filepath.Dir(path), err)
+	}
+	return os.WriteFile(path, []byte(content), 0644)
 }
 
 // FormatSize formats byte size to human-readable format

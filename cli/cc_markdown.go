@@ -7,6 +7,7 @@ Uses semantic CSS classes instead of inline styles
 package cli
 
 import (
+	"database/sql"
 	"fmt"
 	"strings"
 )
@@ -29,7 +30,10 @@ func CCLanguageBadge(lang string) string {
 	if lang == "" {
 		return "-"
 	}
-	anchor := strings.ToLower(strings.ReplaceAll(lang, "+", ""))
+	anchor := strings.ToLower(lang)
+	if anchor == "c++" {
+		anchor = "cpp"
+	}
 	return fmt.Sprintf(`<a class="ext-badge ext-badge--lang %s" href="%s/language#%s">%s</a>`,
 		anchor, CCBaseURL, anchor, lang)
 }
@@ -64,6 +68,33 @@ func CCPGVerBadge(ver string, ok bool) string {
 	return fmt.Sprintf(`<span class="ext-pgver %s">%s</span>`, cls, ver)
 }
 
+// CCPGVersShortcode generates a {{< pgvers "..." >}} shortcode call from supported version strings
+func CCPGVersShortcode(supported []string) string {
+	if len(supported) == 0 {
+		return "-"
+	}
+	cleaned := make([]string, 0, len(supported))
+	for _, v := range supported {
+		v = strings.TrimSuffix(strings.TrimSpace(v), "+")
+		if v != "" {
+			cleaned = append(cleaned, v)
+		}
+	}
+	if len(cleaned) == 0 {
+		return "-"
+	}
+	return fmt.Sprintf(`{{< pgvers "%s" >}}`, strings.Join(cleaned, ","))
+}
+
+// CCPGVersAllShortcode generates a {{< pgvers "..." >}} shortcode with all active PG versions
+func CCPGVersAllShortcode(pgVersions []int) string {
+	vers := make([]string, len(pgVersions))
+	for i, pg := range pgVersions {
+		vers[i] = fmt.Sprintf("%d", pg)
+	}
+	return fmt.Sprintf(`{{< pgvers "%s" >}}`, strings.Join(vers, ","))
+}
+
 // CCFlagBadge generates a yes/no flag badge with CSS class
 func CCFlagBadge(val bool) string {
 	if val {
@@ -73,7 +104,7 @@ func CCFlagBadge(val bool) string {
 }
 
 // CCOptFlagBadge generates a yes/no/unknown flag badge
-func CCOptFlagBadge(val NullBool) string {
+func CCOptFlagBadge(val sql.NullBool) string {
 	if !val.Valid {
 		return `<span class="ext-flag ext-flag--no">否</span>`
 	}
@@ -142,10 +173,7 @@ func CCExtensionTable(exts []*Extension) string {
 	b.WriteString("| **扩展** | **包** | **版本** | **许可证** | **语言** | **描述** |\n")
 	b.WriteString("|:---------|:-------|:--------:|:----------:|:--------:|:---------|\n")
 	for _, ext := range exts {
-		version := "-"
-		if ext.Version.Valid {
-			version = ext.Version.String
-		}
+		version := ext.GetVersion()
 		license := "-"
 		if ext.License.Valid {
 			license = CCLicenseBadge(ext.License.String)
@@ -155,10 +183,7 @@ func CCExtensionTable(exts []*Extension) string {
 			lang = CCLanguageBadge(ext.Lang.String)
 		}
 		desc := SanitizeText(ext.GetZhDesc())
-		pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
-		if ext.URL.Valid && ext.URL.String != "" {
-			pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
-		}
+		pkgLink := ext.GetPkgURLLink()
 		b.WriteString(fmt.Sprintf("| [`%s`](/ext/e/%s) | %s | `%s` | %s | %s | %s |\n",
 			ext.Name, ext.Name, pkgLink, version, license, lang, desc))
 	}

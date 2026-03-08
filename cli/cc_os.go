@@ -9,7 +9,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"os"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -43,14 +42,9 @@ func (g *CCOSGenerator) GenerateOSPage(ctx context.Context, osName string) error
 		return fmt.Errorf("failed to load packages for %s: %w", osName, err)
 	}
 
-	osDir := filepath.Join(g.OutputDir, "os")
-	if err := os.MkdirAll(osDir, 0755); err != nil {
-		return fmt.Errorf("failed to create OS directory: %w", err)
-	}
-
 	content := g.generateOSContent(osInfo, packages)
-	outputPath := filepath.Join(osDir, osName+".md")
-	if err := os.WriteFile(outputPath, []byte(content), 0644); err != nil {
+	outputPath := filepath.Join(g.OutputDir, "os", osName+".md")
+	if err := WriteMarkdownFile(outputPath, content); err != nil {
 		return fmt.Errorf("failed to write file: %w", err)
 	}
 
@@ -176,61 +170,112 @@ icon: %s
 func (g *CCOSGenerator) generateOSOverview(osInfo *OSInfo, packages []*OSPackageInfo) string {
 	var b strings.Builder
 
-	b.WriteString(fmt.Sprintf("本页面展示了 **%s** (`%s`) 系统的 PostgreSQL 扩展可用性。\n\n", osInfo.Desc, osInfo.OS))
-	b.WriteString(fmt.Sprintf("共有 **%d** 个扩展包可用。\n\n", len(packages)))
+	// Count available packages (at least one AVAIL PG version)
+	availPkgs := make(map[string]bool)
+	for _, pkg := range packages {
+		for _, pgData := range pkg.PGData {
+			if pgData.State.Valid && pgData.State.String == "AVAIL" {
+				availPkgs[pkg.Pkg] = true
+				break
+			}
+		}
+	}
+
+	// Count non-contrib extensions belonging to available packages
+	extCount := 0
+	for _, ext := range g.Cache.Extensions {
+		if ext.IsReady() && !ext.Contrib && availPkgs[ext.Pkg] {
+			extCount++
+		}
+	}
+
+	// Determine alias YAML file URL
+	aliasFile := fmt.Sprintf("%s.yml", osInfo.OS)
+	aliasURL := fmt.Sprintf("https://github.com/pgsty/pigsty/blob/main/roles/node_id/vars/%s", aliasFile)
+
+	b.WriteString(fmt.Sprintf("当前系统共有 **%d** 个非 contrib 扩展可用，分布于 **%d** 个扩展包中。", extCount, len(availPkgs)))
+	b.WriteString(fmt.Sprintf("完整可用的 [**包别名**](/docs/pgsql/config/alias/) 请参考 [**`%s`**](%s)。\n\n", aliasFile, aliasURL))
 
 	return b.String()
 }
 
-// generateOSAvailabilityMatrix generates the availability matrix table
+// generateOSAvailabilityMatrix generates the availability matrix using pgext_os_matrix shortcode
 func (g *CCOSGenerator) generateOSAvailabilityMatrix(packages []*OSPackageInfo, osName string) string {
 	var b strings.Builder
 
-	// Table header
-	b.WriteString("| **扩展** / **PG版本** |")
+	b.WriteString("{{< pgext_os_matrix >}}\n")
+
+	// Header row
+	b.WriteString("| **PKG / PG** |")
 	for _, pg := range g.Cache.PGVersions {
 		b.WriteString(fmt.Sprintf(" **PG%d** |", pg))
 	}
 	b.WriteString("\n")
 
-	b.WriteString("|:----------------------:|")
+	// Separator
+	b.WriteString("|:---|")
 	for range g.Cache.PGVersions {
-		b.WriteString(":-----------------------------------------------------:|")
+		b.WriteString(":--:|")
 	}
 	b.WriteString("\n")
 
+	// Data rows
 	for _, ospkg := range packages {
-		extLink := fmt.Sprintf("[`%s`](/ext/e/%s)", ospkg.Pkg, ospkg.Lead)
-		b.WriteString(fmt.Sprintf("| %s |", extLink))
+		b.WriteString(fmt.Sprintf("| [`%s`](/ext/e/%s) |", ospkg.Pkg, ospkg.Lead))
 
 		for _, pg := range g.Cache.PGVersions {
-			cell := g.generateOSMatrixCell(ospkg, pg)
+			cell := g.generateOSMatrixCell(ospkg, pg, osName)
 			b.WriteString(fmt.Sprintf(" %s |", cell))
 		}
 		b.WriteString("\n")
 	}
 
-	b.WriteString("{.ext-table .ext-table--matrix}\n\n")
+	b.WriteString("{{< /pgext_os_matrix >}}\n\n")
 
 	return b.String()
 }
 
-// generateOSMatrixCell generates a single cell in the availability matrix using CSS class badges
-func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int) string {
+// generateOSMatrixCell generates a cell as "STATE REPO VERSION COUNT" for pgext_matrix
+func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osName string) string {
+	// Infer the expected repo from extension metadata (rpm_repo / deb_repo)
+	fallbackRepo := "-"
+	if ext, ok := g.Cache.PkgMap[ospkg.Pkg]; ok {
+		fallbackRepo = InferRepo(ext, osName)
+	}
+
 	pkg, exists := ospkg.PGData[pg]
 	if !exists {
-		return CCMissBadge()
+		return fmt.Sprintf("MISS %s - 0", fallbackRepo)
 	}
+
 	state := "MISS"
 	if pkg.State.Valid {
 		state = pkg.State.String
 	}
-	version := ""
-	if pkg.Version.Valid {
+
+	org := fallbackRepo
+	if pkg.Org.Valid && pkg.Org.String != "" {
+		org = strings.ToUpper(pkg.Org.String)
+	}
+
+	version := "-"
+	if pkg.Version.Valid && pkg.Version.String != "" {
 		version = pkg.Version.String
 	}
-	return CCPkgStateBadge(state, version)
+
+	// MISS takes highest priority when no actual package
+	if version == "-" && state != "AVAIL" && state != "HIDE" {
+		state = "MISS"
+	}
+
+	count := int64(1)
+	if pkg.Count.Valid {
+		count = pkg.Count.Int64
+	}
+
+	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
 }
+
 
 // GenerateAllOSPages generates OS pages for all active OS distributions
 func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {

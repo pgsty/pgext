@@ -9,7 +9,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"os"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -137,13 +136,8 @@ func (g *CCCateGenerator) GenerateCategoryPage(ctx context.Context, cat *Categor
 	}
 
 	content := g.generateContent(cat, exts, pkgAvail)
-
-	cateDir := filepath.Join(g.OutputDir, "cate")
-	if err := os.MkdirAll(cateDir, 0755); err != nil {
-		return fmt.Errorf("failed to create category directory: %w", err)
-	}
-	outputPath := filepath.Join(cateDir, strings.ToLower(cat.Name)+".md")
-	if err := os.WriteFile(outputPath, []byte(content), 0644); err != nil {
+	outputPath := filepath.Join(g.OutputDir, "cate", strings.ToLower(cat.Name)+".md")
+	if err := WriteMarkdownFile(outputPath, content); err != nil {
 		return fmt.Errorf("failed to write file: %w", err)
 	}
 
@@ -272,22 +266,13 @@ func (g *CCCateGenerator) generateExtCard(ext *Extension, avail map[string]*PkgI
 	// H2 heading: extension name
 	b.WriteString(fmt.Sprintf("\n---------\n\n## %s {#%s}\n\n", ext.Name, ext.Name))
 
-	// Intro line: [**`pkg`**](url) - `version` : description
-	pkgLink := fmt.Sprintf("**`%s`**", ext.Pkg)
-	if ext.URL.Valid && ext.URL.String != "" {
-		pkgLink = fmt.Sprintf("[**`%s`**](%s)", ext.Pkg, ext.URL.String)
-	}
-	version := "-"
-	if ext.Version.Valid {
-		version = ext.Version.String
-	}
+	// Intro line: [**`pkg`**](/ext/e/name) - `version` : description
+	pkgLink := fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.Name)
+	version := ext.GetVersion()
 	b.WriteString(fmt.Sprintf("%s - `%s` : %s\n\n", pkgLink, version, desc))
 
 	// Build the 7 left-side metadata rows
 	leftRows := g.buildLeftRows(ext)
-
-	pgVersions := g.Cache.PGVersions
-	pgCount := len(pgVersions)
 
 	// For contrib or kernel-fork extensions, build synthetic availability from PgVer
 	hasKernel := ext.Extra != nil && ext.Extra["kernel"] != nil
@@ -304,33 +289,9 @@ func (g *CCCateGenerator) generateExtCard(ext *Extension, avail map[string]*PkgI
 		}
 	}
 
-	// Header row with centered x86_64 / aarch64 spanning across PG columns
-	// Use HTML colspan-like centering via merged empty headers
-	b.WriteString("| **条目** | **属性** | **OS** |")
-	// x86_64 header: first cell has text, rest empty
-	for i := 0; i < pgCount; i++ {
-		if i == pgCount/2 {
-			b.WriteString(" **x86_64** |")
-		} else {
-			b.WriteString(" |")
-		}
-	}
-	// aarch64 header: first cell has text, rest empty
-	for i := 0; i < pgCount; i++ {
-		if i == pgCount/2 {
-			b.WriteString(" **aarch64** |")
-		} else {
-			b.WriteString(" |")
-		}
-	}
-	b.WriteString("\n")
-
-	// Separator
-	b.WriteString("|:---:|:---|:---:|")
-	for i := 0; i < pgCount*2; i++ {
-		b.WriteString(":---:|")
-	}
-	b.WriteString("\n")
+	// Header row with x86_64 / aarch64 columns
+	b.WriteString("| **条目** | **属性** | **OS** | **x86_64** | **aarch64** |\n")
+	b.WriteString("|:---:|:---|:---:|:---:|:---:|\n")
 
 	// 7 data rows: left metadata + right OS availability
 	numRows := len(leftRows)
@@ -370,10 +331,7 @@ func (g *CCCateGenerator) buildLeftRows(ext *Extension) []leftRow {
 	extLink := fmt.Sprintf("[`%s`](/ext/e/%s)", ext.Name, ext.Name)
 
 	// Row 2: 扩展包
-	pkgLink := fmt.Sprintf("`%s`", ext.Pkg)
-	if ext.URL.Valid && ext.URL.String != "" {
-		pkgLink = fmt.Sprintf("[`%s`](%s)", ext.Pkg, ext.URL.String)
-	}
+	pkgLink := ext.GetPkgURLLink()
 
 	// Row 3: RPM 包名
 	rpmPkg := "-"
@@ -416,64 +374,58 @@ func (g *CCCateGenerator) buildLeftRows(ext *Extension) []leftRow {
 	}
 }
 
-// pgAvailBadge generates a PG version availability badge for the category page
-func (g *CCCateGenerator) pgAvailBadge(avail map[string]*PkgInfo, pg int, osName string) string {
+// collectAvailPGVers returns the list of available PG versions for a given OS name
+func (g *CCCateGenerator) collectAvailPGVers(avail map[string]*PkgInfo, osName string) []string {
 	if osName == "" {
-		return ""
+		return nil
 	}
-	key := fmt.Sprintf("%d-%s", pg, osName)
-	pkg, exists := avail[key]
-	if !exists {
-		return ""
-	}
-	state := "MISS"
-	if pkg.State.Valid {
-		state = pkg.State.String
-	}
-	if state == "AVAIL" {
-		return fmt.Sprintf(`<span class="ext-pgver ext-pgver--ok">%d</span>`, pg)
-	}
-	return ""
-}
-
-// writeAvailCells writes availability cells (x86_64 + aarch64) for a single OS row
-func (g *CCCateGenerator) writeAvailCells(b *strings.Builder, osc OSCodeEntry, avail map[string]*PkgInfo, usePgVer bool, pgVerSet map[int]bool) {
-	pgVersions := g.Cache.PGVersions
-	if usePgVer {
-		// Contrib/kernel-fork: use PgVer for all OS uniformly (x86 then arm)
-		for range 2 {
-			for _, pg := range pgVersions {
-				if pgVerSet[pg] {
-					b.WriteString(fmt.Sprintf(` <span class="ext-pgver ext-pgver--ok">%d</span> |`, pg))
-				} else {
-					b.WriteString(" |")
-				}
+	var vers []string
+	for _, pg := range g.Cache.PGVersions {
+		key := fmt.Sprintf("%d-%s", pg, osName)
+		if pkg, exists := avail[key]; exists {
+			state := "MISS"
+			if pkg.State.Valid {
+				state = pkg.State.String
+			}
+			if state == "AVAIL" {
+				vers = append(vers, fmt.Sprintf("%d", pg))
 			}
 		}
-	} else {
-		// Normal: use actual package availability (x86 then arm)
-		for _, osName := range []string{osc.X86, osc.ARM} {
-			for _, pg := range pgVersions {
-				badge := g.pgAvailBadge(avail, pg, osName)
-				b.WriteString(fmt.Sprintf(" %s |", badge))
+	}
+	return vers
+}
+
+// writeAvailCells writes two cells (x86_64, aarch64) with pgvers shortcodes
+func (g *CCCateGenerator) writeAvailCells(b *strings.Builder, osc OSCodeEntry, avail map[string]*PkgInfo, usePgVer bool, pgVerSet map[int]bool) {
+	if usePgVer {
+		// Contrib/kernel-fork: use PgVer for both arches uniformly
+		var vers []string
+		for _, pg := range g.Cache.PGVersions {
+			if pgVerSet[pg] {
+				vers = append(vers, fmt.Sprintf("%d", pg))
 			}
+		}
+		badge := CCPGVersShortcode(vers)
+		b.WriteString(fmt.Sprintf(" %s | %s |", badge, badge))
+	} else {
+		// Normal: use actual package availability per arch
+		for _, osName := range []string{osc.X86, osc.ARM} {
+			vers := g.collectAvailPGVers(avail, osName)
+			badge := CCPGVersShortcode(vers)
+			b.WriteString(fmt.Sprintf(" %s |", badge))
 		}
 	}
 }
 
 // GenerateCategoryIndexPage generates the _index.md for the cate/ directory
 func (g *CCCateGenerator) GenerateCategoryIndexPage() error {
-	cateDir := filepath.Join(g.OutputDir, "cate")
-	if err := os.MkdirAll(cateDir, 0755); err != nil {
-		return fmt.Errorf("failed to create category directory: %w", err)
-	}
-
 	var b strings.Builder
 	b.WriteString(`---
 title: "扩展分类"
 linkTitle: "扩展分类"
 description: "将 PostgreSQL 扩展按照功能分为 16 个大类别，方便用户按功能浏览扩展包索引。"
-weight: 810
+weight: 500
+icon: fa-solid fa-cubes
 sidebar_expanded: true
 ---
 
@@ -513,8 +465,7 @@ sidebar_expanded: true
 
 	b.WriteString("{.ext-table}\n\n")
 
-	outputPath := filepath.Join(cateDir, "_index.md")
-	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+	return WriteMarkdownFile(filepath.Join(g.OutputDir, "cate", "_index.md"), b.String())
 }
 
 // GenerateAllCategoryPages generates all 16 category pages into cate/ subdirectory

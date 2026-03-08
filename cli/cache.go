@@ -246,6 +246,17 @@ func buildDependencyMap(cache *ExtensionCache) {
 	}
 }
 
+// ReadyExtensions returns all extensions that are not in "not-ready" state
+func (cache *ExtensionCache) ReadyExtensions() []*Extension {
+	var exts []*Extension
+	for _, ext := range cache.Extensions {
+		if ext.IsReady() {
+			exts = append(exts, ext)
+		}
+	}
+	return exts
+}
+
 // GetSiblingExtensions returns other extensions that share the same package
 func (cache *ExtensionCache) GetSiblingExtensions(pkgName, currentExtName string) []*Extension {
 	var siblings []*Extension
