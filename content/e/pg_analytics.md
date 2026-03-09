@@ -158,7 +158,7 @@ CREATE EXTENSION pg_analytics;
 ```
 
 
-> [!WARNING] This extension is archived and no longer maintained. It is recommended to use other duckdb related extensions instead.
+> [!WARNING] This extension is archived (Mar 2025) and no longer maintained. ParadeDB's analytics work is now part of pg_search. Consider using pg_duckdb or pg_mooncake for data lake analytics instead.
 
 ## Usage
 
@@ -167,7 +167,7 @@ https://github.com/paradedb/pg_analytics
 Example, read parquet files from S3:
 
 ```bash
-CREATE EXTENSION pg_lakehouse;
+CREATE EXTENSION pg_analytics;
 CREATE FOREIGN DATA WRAPPER parquet_wrapper HANDLER parquet_fdw_handler VALIDATOR parquet_fdw_validator;
 
 -- Provide S3 credentials
@@ -195,7 +195,7 @@ This fdw is read-only for now.
 ## Iceberg Support
 
 ```sql
-CREATE EXTENSION pg_lakehouse;
+CREATE EXTENSION pg_analytics;
 
 CREATE FOREIGN DATA WRAPPER iceberg_wrapper
     HANDLER iceberg_fdw_handler
@@ -212,4 +212,3 @@ CREATE FOREIGN TABLE iceberg_table (x INT)
 -- Success! You can now query the Iceberg table
 SELECT COUNT(*) FROM iceberg_table;
 ```
-

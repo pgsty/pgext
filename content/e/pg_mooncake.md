@@ -210,7 +210,7 @@ CREATE EXTENSION pg_mooncake CASCADE; -- requires pg_duckdb
 
 ## Usage
 
-[`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake) 0.2.0 (unpublished yet) is rewritten in Rust and designed as a sub-extension of `pg_duckdb`.
+[`pg_mooncake`](https://github.com/Mooncake-Labs/pg_mooncake) is a Postgres extension that creates columnstore mirrors of your tables in Iceberg format, designed as a sub-extension of `pg_duckdb`.
 
 pg_mooncake docs: https://docs.mooncake.dev/
 

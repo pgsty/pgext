@@ -220,6 +220,3 @@ FROM document_embedding
 ORDER BY embedding <=> $1
 LIMIT 10
 ```
-
-This fdw is read-only for now.
-

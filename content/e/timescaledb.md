@@ -500,28 +500,50 @@ Create a table and turn it into hypertable
 DROP TABLE IF EXISTS ts_test;
 CREATE TABLE ts_test
 (
-    id BIGINT PRIMARY KEY,
     ts TIMESTAMPTZ NOT NULL,
+    id BIGINT,
     v  INTEGER -- payload
 );
-SELECT create_hypertable('ts_test', by_range('id'));
+SELECT create_hypertable('ts_test', by_range('ts'));
 
-INSERT INTO ts_test 
-    SELECT i, now() + (i || ' seconds')::INTERVAL, i % 100 
+INSERT INTO ts_test
+    SELECT now() + (i || ' seconds')::INTERVAL, i, i % 100
     FROM generate_series(1, 1000000) i;
-
-
-ALTER TABLE ts_test SET (timescaledb.compress_chunk_time_interval = '24 hours');
 ```
 
 Continuous Agg Example:
 
 ```sql
-
-CREATE MATERIALIZED VIEW continuous_aggregate_daily( timec, minl, sumt, sumh )
+CREATE MATERIALIZED VIEW ts_hourly
 WITH (timescaledb.continuous) AS
-  SELECT count(*) FROM ts_test;
+  SELECT time_bucket('1 hour', ts) AS bucket,
+         count(*) AS cnt,
+         avg(v)   AS avg_v
+  FROM ts_test
+  GROUP BY bucket;
 
+-- Add a refresh policy to keep the continuous aggregate up to date
+SELECT add_continuous_aggregate_policy('ts_hourly',
+    start_offset    => INTERVAL '3 hours',
+    end_offset      => INTERVAL '1 hour',
+    schedule_interval => INTERVAL '1 hour');
+```
 
-SELECT add_job('SELECT 1','1h', initial_start => '2024-07-09 18:52:00+00'::timestamptz);
+Job Scheduling Example:
+
+```sql
+SELECT add_job('SELECT 1','1h', initial_start => now()::timestamptz);
+```
+
+Compression Example:
+
+```sql
+ALTER TABLE ts_test SET (
+    timescaledb.compress,
+    timescaledb.compress_segmentby = 'id',
+    timescaledb.compress_orderby = 'ts'
+);
+
+-- Add a compression policy to compress chunks older than 1 day
+SELECT add_compression_policy('ts_test', INTERVAL '1 day');
 ```
