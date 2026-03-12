@@ -32,7 +32,7 @@ languages:
 
         - name: Pigsty
           weight: 2
-          url: "https://pgsty.com"
+          url: "https://pigsty.io"
 
         - name: GitHub
           weight: 3
@@ -57,19 +57,19 @@ languages:
           weight: 7
         - identifier: pigsty
           name: "Pigsty, PG RDS ↗"
-          url: "https://pgsty.com"
+          url: "https://pigsty.io"
           weight: 8
         - identifier: pigsty-doc
-          name: "Pigsty v3.6 Doc ↗"
-          url: "https://doc.pgsty.com"
+          name: "Pigsty v4.2 Doc ↗"
+          url: "https://pigsty.io/docs"
           weight: 9
         - identifier: pgext
           name: "PG Extension ↗"
-          url: "https://ext.pgsty.com"
+          url: "https://pigsty.io/ext"
           weight: 10
         - identifier: pgexp
           name: "PG Exporter ↗"
-          url: "https://exp.pgsty.com"
+          url: "https://pigsty.io/docs/pg_exporter"
           weight: 11
         - identifier: vonng
           name: "Author: Vonng ↗"
@@ -87,7 +87,7 @@ languages:
       main:
         - name: Pigsty
           weight: 2
-          url: "https://pgsty.com"
+          url: "https://pigsty.cc"
         - name: GitHub
           weight: 3
           url: "https://github.com/pgsty/pgext"
@@ -110,19 +110,19 @@ languages:
           weight: 7
         - identifier: pigsty
           name: "Pigsty, PG RDS ↗"
-          url: "https://pgsty.com"
+          url: "https://pigsty.cc"
           weight: 8
         - identifier: pigsty-doc
-          name: "Pigsty v3.6文档 ↗"
-          url: "https://doc.pgsty.com/zh/"
+          name: "Pigsty v4.2文档 ↗"
+          url: "https://pigsty.io/docs/"
           weight: 9
         - identifier: pgext
           name: "PG 扩展目录 ↗"
-          url: "https://ext.pgsty.com/zh/"
+          url: "https://pigsty.cc/ext/"
           weight: 10
         - identifier: pgexp
           name: "PG Exporter ↗"
-          url: "https://exp.pgsty.com"
+          url: "https://pigsty.cc/ext"
           weight: 11
         - identifier: vonng
           name: "作者：Vonng ↗"

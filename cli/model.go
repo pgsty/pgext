@@ -74,6 +74,14 @@ func (e *Extension) GetZhDesc() string {
 	return e.Name
 }
 
+// GetEnDesc returns the English description, falling back to extension name
+func (e *Extension) GetEnDesc() string {
+	if e.EnDesc.Valid && e.EnDesc.String != "" {
+		return e.EnDesc.String
+	}
+	return e.Name
+}
+
 // GetLibName returns the library name for shared_preload_libraries
 // It checks the Extra field for a "lib" key, otherwise returns the extension Name
 func (ext *Extension) GetLibName() string {
