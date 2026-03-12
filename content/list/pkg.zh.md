@@ -107,7 +107,7 @@ comments: false
 | {{< ext "duckdb_fdw" >}} | `1.1.2` | {{< badge content="Link" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< category "OLAP" >}} | `duckdb_fdw_$v` | `postgresql-$v-duckdb-fdw` |
 | {{< ext "pg_parquet" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< category "OLAP" >}} | `pg_parquet_$v` | `postgresql-$v-pg-parquet` |
 | {{< ext "pg_fkpart" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/lemoineat/pg_fkpart" >}} | {{< category "OLAP" >}} | `pg_fkpart_$v` | `postgresql-$v-pg-fkpart` |
-| {{< ext "pg_partman" >}} | `5.4.2` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
+| {{< ext "pg_partman" >}} | `5.4.3` | {{< badge content="Link" link="https://github.com/pgpartman/pg_partman" >}} | {{< category "OLAP" >}} | `pg_partman_$v` | `postgresql-$v-partman` |
 | {{< ext "plproxy" >}} | `2.11.0` | {{< badge content="Link" link="https://github.com/plproxy/plproxy" >}} | {{< category "OLAP" >}} | `plproxy_$v` | `postgresql-$v-plproxy` |
 | {{< ext "pg_strom" >}} | `6.1` | {{< badge content="Link" link="https://github.com/heterodb/pg-strom" >}} | {{< category "OLAP" >}} | `pg_strom_$v` | - |
 | {{< ext "tablefunc" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/tablefunc.html" >}} | {{< category "OLAP" >}} | `postgresql$v-contrib` | `postgresql-$v` |
@@ -394,7 +394,7 @@ comments: false
 | {{< ext "file_fdw" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/file-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "postgres_fdw" >}} | `1.1` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/postgres-fdw.html" >}} | {{< category "FDW" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "documentdb" >}} | `0.109` | {{< badge content="Link" link="https://github.com/documentdb/documentdb" >}} | {{< category "SIM" >}} | `documentdb_$v` | `postgresql-$v-documentdb` |
-| {{< ext "orafce" >}} | `4.16.4` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
+| {{< ext "orafce" >}} | `4.16.5` | {{< badge content="Link" link="https://github.com/orafce/orafce" >}} | {{< category "SIM" >}} | `orafce_$v` | `postgresql-$v-orafce` |
 | {{< ext "pgtt" >}} | `4.4` | {{< badge content="Link" link="https://github.com/darold/pgtt" >}} | {{< category "SIM" >}} | `pgtt_$v` | `postgresql-$v-pgtt` |
 | {{< ext "session_variable" >}} | `3.4` | {{< badge content="Link" link="https://github.com/splendiddata/session_variable" >}} | {{< category "SIM" >}} | `session_variable_$v` | `postgresql-$v-session-variable` |
 | {{< ext "pg_statement_rollback" >}} | `1.5` | {{< badge content="Link" link="https://github.com/lzlabs/pg_statement_rollback" >}} | {{< category "SIM" >}} | `pg_statement_rollback_$v` | `postgresql-$v-pg-statement-rollback` |

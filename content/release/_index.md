@@ -24,7 +24,7 @@ The latest stable version of `pig` is [v1.3.0](https://github.com/pgsty/pig/rele
 
 |           Version           |    Date    | Summary                                                 |                           GitHub                           |
 |:---------------------------:|:----------:|---------------------------------------------------------|:----------------------------------------------------------:|
-| [v1.3.0](/release/pig#v130) | 2026-02-27 | Build pipeline hardening, 461 extensions, pgedge/ivory support | [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0) |
+| [v1.3.0](/release/pig#v130) | 2026-02-27 | Build pipeline hardening, 464 extensions, pgedge/ivory support | [v1.3.0](https://github.com/pgsty/pig/releases/tag/v1.3.0) |
 | [v1.2.0](/release/pig#v120) | 2026-02-23 | Unified aliases, routine updates, plan mode, repo fixes | [v1.2.0](https://github.com/pgsty/pig/releases/tag/v1.2.0) |
 | [v1.1.0](/release/pig#v110) | 2026-02-12 | Agent-native output, context, plan mode                 | [v1.1.0](https://github.com/pgsty/pig/releases/tag/v1.1.0) |
 | [v1.0.0](/release/pig#v100) | 2026-01-18 | 451 ext, availability matrix                            | [v1.0.0](https://github.com/pgsty/pig/releases/tag/v1.0.0) |

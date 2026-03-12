@@ -97,3 +97,12 @@ pig install omni_sql -v 14;   # install for PG 14
 ```sql
 CREATE EXTENSION omni_sql;
 ```
+
+
+
+
+## Usage
+
+> [omni_sql: Programmatic SQL manipulation](https://github.com/omnigres/omnigres)
+
+The `omni_sql` extension provides programmatic SQL manipulation capabilities within the Omnigres ecosystem, enabling construction and transformation of SQL statements from within PostgreSQL.

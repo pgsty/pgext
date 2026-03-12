@@ -122,7 +122,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
-| 2510 | {{< alias "pg_partman" >}} | 5.4.2 | Extension to manage partitioned tables by time or ID |
+| 2510 | {{< alias "pg_partman" >}} | 5.4.3 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | 6.1 | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | 1.0 | functions that manipulate whole tables, including crosstab |
@@ -539,7 +539,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | Core API surface for DocumentDB for PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.109 | DocumentDB Extended RUM index access method |
-| 9100 | {{< alias "orafce" >}} | 4.16.4 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
+| 9100 | {{< alias "orafce" >}} | 4.16.5 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
