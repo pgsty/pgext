@@ -1,15 +1,16 @@
 
 ## Usage
 
+> [pg_explain_ui: send EXPLAIN plans to explain.dalibo.com](https://github.com/davidgomes/pg-explain-ui)
+> Blog: [Writing a Postgres Extension With Pgrx for Visual Query Plans](https://davidgomes.com/writing-postgres-extension-with-pgrx-query-plans/)
+
 This function will explain query and post it to the [`explain.dalibo.com`](https://explain.dalibo.com/) to visualize the plan
 
 > WARNING: http post will be sent to the internet service!
 
-```bash
+```sql
 SELECT explain_ui($$query$$);
 ```
-
-There's a blog post on the idea behind this extension: [Writing a Postgres Extension With Pgrx for Visual Query Plans](https://davidgomes.com/writing-postgres-extension-with-pgrx-query-plans/)
 
 
 ### Example
