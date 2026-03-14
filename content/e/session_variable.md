@@ -19,11 +19,12 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `session_variable` |
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "pg_statement_rollback" >}} {{< ext "plpgsql" >}} {{< ext "set_user" >}} {{< ext "oracle_fdw" >}} {{< ext "pg_dbms_lock" >}} {{< ext "babelfishpg_common" >}} |
 
 

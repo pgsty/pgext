@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "plpgsql" >}} |
 |    **Need By**    | {{< ext "timeseries" >}} |
 |   **See Also**    | {{< ext "citus" >}} {{< ext "pg_fkpart" >}} {{< ext "timescaledb" >}} {{< ext "periods" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "plproxy" >}} {{< ext "temporal_tables" >}} |
 
@@ -32,7 +33,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_partman` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_partman` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.3` | {{< bg "18" "pg_partman_18" "green" >}} {{< bg "17" "pg_partman_17" "green" >}} {{< bg "16" "pg_partman_16" "green" >}} {{< bg "15" "pg_partman_15" "green" >}} {{< bg "14" "pg_partman_14" "green" >}} | `pg_partman_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `5.4.3` | {{< bg "18" "postgresql-18-partman" "green" >}} {{< bg "17" "postgresql-17-partman" "green" >}} {{< bg "16" "postgresql-16-partman" "green" >}} {{< bg "15" "postgresql-15-partman" "green" >}} {{< bg "14" "postgresql-14-partman" "green" >}} | `postgresql-$v-partman` | - |
 
@@ -577,7 +578,7 @@ pig install pg_partman -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pg_partman;
+CREATE EXTENSION pg_partman CASCADE; -- requires plpgsql
 ```
 
 

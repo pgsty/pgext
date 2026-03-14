@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `public` |
 |    **Need By**    | {{< ext "pg_mooncake" >}} |
 |   **See Also**    | {{< ext "pg_mooncake" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_analytics" >}} {{< ext "pg_parquet" >}} {{< ext "columnar" >}} {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "orioledb" >}} |
 

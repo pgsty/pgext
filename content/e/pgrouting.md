@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **Requires**    | {{< ext "postgis" >}} |
+|   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "postgis_topology" >}} {{< ext "mobilitydb" >}} {{< ext "pg_polyline" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} |
 
 
@@ -32,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrouting` | `postgis` |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrouting` | `plpgsql`, `postgis` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.1` | {{< bg "18" "pgrouting_18" "green" >}} {{< bg "17" "pgrouting_17" "green" >}} {{< bg "16" "pgrouting_16" "green" >}} {{< bg "15" "pgrouting_15" "green" >}} {{< bg "14" "pgrouting_14" "green" >}} | `pgrouting_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `4.0.1` | {{< bg "18" "postgresql-18-pgrouting" "green" >}} {{< bg "17" "postgresql-17-pgrouting" "green" >}} {{< bg "16" "postgresql-16-pgrouting" "green" >}} {{< bg "15" "postgresql-15-pgrouting" "green" >}} {{< bg "14" "postgresql-14-pgrouting" "green" >}} | `postgresql-$v-pgrouting` | - |
 
@@ -367,7 +367,7 @@ pig install pgrouting -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pgrouting CASCADE; -- requires postgis
+CREATE EXTENSION pgrouting CASCADE; -- requires plpgsql, postgis
 ```
 
 

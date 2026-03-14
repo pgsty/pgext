@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|   **Requires**    | {{< ext "plperl" >}} |
+|   **Requires**    | {{< ext "hstore" >}} {{< ext "plperl" >}} |
 |   **See Also**    | {{< ext "hstore_pllua" >}} {{< ext "hstore_plluau" >}} {{< ext "hstore_plperlu" >}} {{< ext "hstore_plpython3u" >}} {{< ext "hstore" >}} {{< ext "plperlu" >}} {{< ext "plpgsql" >}} |
 |    **Siblings**   | {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "jsonb_plperl" >}} |
 
@@ -44,7 +44,7 @@ width: full
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION hstore_plperl CASCADE; -- requires plperl
+CREATE EXTENSION hstore_plperl CASCADE; -- requires hstore, plperl
 ```
 
 

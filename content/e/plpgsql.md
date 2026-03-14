@@ -19,11 +19,12 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-dt-" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="yes" color="green" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Schemas**    | `pg_catalog` |
 |    **Need By**    | {{< ext "data_historization" >}} {{< ext "ddl_historization" >}} {{< ext "pg4ml" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_profile" >}} {{< ext "pg_upless" >}} {{< ext "plpgsql_check" >}} {{< ext "powa" >}} {{< ext "table_version" >}} {{< ext "unit" >}} {{< ext "biscuit" >}} |
 |   **See Also**    | {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "pltclu" >}} {{< ext "plv8" >}} {{< ext "plluau" >}} |
 

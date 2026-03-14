@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "plpgsql_check" >}} {{< ext "plpgsql" >}} {{< ext "pldbgapi" >}} {{< ext "plprofiler" >}} {{< ext "faker" >}} {{< ext "unit" >}} {{< ext "dbt2" >}} {{< ext "plperl" >}} |
 
 > [!Note] missing pg17 el9, breaking perl deps
@@ -33,7 +34,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgtap` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgtap` | `plpgsql` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "pgtap_18" "green" >}} {{< bg "17" "pgtap_17" "green" >}} {{< bg "16" "pgtap_16" "green" >}} {{< bg "15" "pgtap_15" "green" >}} {{< bg "14" "pgtap_14" "green" >}} | `pgtap_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.4` | {{< bg "18" "postgresql-18-pgtap" "green" >}} {{< bg "17" "postgresql-17-pgtap" "green" >}} {{< bg "16" "postgresql-16-pgtap" "green" >}} {{< bg "15" "postgresql-15-pgtap" "green" >}} {{< bg "14" "postgresql-14-pgtap" "green" >}} | `postgresql-$v-pgtap` | - |
 
@@ -222,7 +223,7 @@ pig install pgtap -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pgtap;
+CREATE EXTENSION pgtap CASCADE; -- requires plpgsql
 ```
 
 

@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "pg_buffercache" >}} {{< ext "pg_prewarm" >}} |
 |   **See Also**    | {{< ext "pgfincore" >}} {{< ext "pg_cooldown" >}} {{< ext "pg_prewarm" >}} {{< ext "pg_buffercache" >}} {{< ext "pg_repack" >}} {{< ext "pg_squeeze" >}} {{< ext "pg_visibility" >}} {{< ext "system_stats" >}} |
 
 
@@ -31,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgcozy` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgcozy` | `pg_buffercache`, `pg_prewarm` |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "pgcozy_18" "green" >}} {{< bg "17" "pgcozy_17" "green" >}} {{< bg "16" "pgcozy_16" "green" >}} {{< bg "15" "pgcozy_15" "green" >}} {{< bg "14" "pgcozy_14" "green" >}} | `pgcozy_$v` | - |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0` | {{< bg "18" "postgresql-18-pgcozy" "green" >}} {{< bg "17" "postgresql-17-pgcozy" "green" >}} {{< bg "16" "postgresql-16-pgcozy" "green" >}} {{< bg "15" "postgresql-15-pgcozy" "green" >}} {{< bg "14" "postgresql-14-pgcozy" "green" >}} | `postgresql-$v-pgcozy` | - |
 
@@ -194,7 +195,7 @@ pig install pgcozy -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pgcozy;
+CREATE EXTENSION pgcozy CASCADE; -- requires pg_buffercache, pg_prewarm
 ```
 
 

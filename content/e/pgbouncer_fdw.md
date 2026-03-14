@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "dblink" >}} |
 |   **See Also**    | {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_statements" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} |
 
 
@@ -31,7 +32,7 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgbouncer_fdw` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgbouncer_fdw` | `dblink` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "pgbouncer_fdw_18" "green" >}} {{< bg "17" "pgbouncer_fdw_17" "green" >}} {{< bg "16" "pgbouncer_fdw_16" "green" >}} {{< bg "15" "pgbouncer_fdw_15" "green" >}} {{< bg "14" "pgbouncer_fdw_14" "green" >}} | `pgbouncer_fdw_$v` | - |
 
 
@@ -221,7 +222,7 @@ pig install pgbouncer_fdw -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pgbouncer_fdw;
+CREATE EXTENSION pgbouncer_fdw CASCADE; -- requires dblink
 ```
 
 
