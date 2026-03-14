@@ -35,6 +35,7 @@ suitable for the Hugo Docsy theme used by pigsty.io.`,
   pgext io list       # Generate all list pages
   pgext io os         # Generate OS-specific availability pages
   pgext io all        # Generate all content`,
+	RunE: defaultToSubcommand(ioAllCmd),
 }
 
 // ioPageCmd generates individual extension detail pages

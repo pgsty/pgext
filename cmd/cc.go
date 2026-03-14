@@ -52,6 +52,7 @@ suitable for the Hugo Docsy theme used by pigsty.cc.`,
   pgext cc list       # Generate all list pages
   pgext cc os         # Generate OS-specific availability pages
   pgext cc all        # Generate all content`,
+	RunE: defaultToSubcommand(ccAllCmd),
 }
 
 // ccPageCmd generates individual extension detail pages

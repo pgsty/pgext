@@ -31,6 +31,7 @@ var genCmd = &cobra.Command{
   pgext gen os         # Generate OS-specific availability page
   pgext gen all        # Generate all content
   pgext gen conf       # Generate Pigsty configuration files`,
+	RunE: defaultToSubcommand(genAllCmd),
 }
 
 // genListCmd generates various list pages
