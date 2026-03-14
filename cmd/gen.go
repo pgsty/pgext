@@ -29,6 +29,7 @@ var genCmd = &cobra.Command{
   pgext gen list       # Generate all list pages (ext, pkg, cate, lang, license, catalog)
   pgext gen list lang  # Generate specific list pages, e.g. language list
   pgext gen os         # Generate OS-specific availability page
+  pgext gen all        # Generate all content
   pgext gen conf       # Generate Pigsty configuration files`,
 }
 
@@ -480,6 +481,296 @@ If no extension names are provided, generates pages for all extensions.`,
 	},
 }
 
+// genAllCmd generates all Hugo content under the gen command
+var genAllCmd = &cobra.Command{
+	Use:     "all",
+	Short:   "Generate all Hugo content",
+	Long:    `Generate all Hugo content including extension pages, list pages, and OS availability pages.`,
+	Example: `  pgext gen all    # Generate all content`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		generateListPages := func() error {
+			listDir := filepath.Join(outputDir, "list")
+			if err := os.MkdirAll(listDir, 0755); err != nil {
+				return fmt.Errorf("failed to create list output directory: %w", err)
+			}
+
+			extDir := filepath.Join(outputDir, "e")
+			if err := os.MkdirAll(extDir, 0755); err != nil {
+				return fmt.Errorf("failed to create extension output directory: %w", err)
+			}
+
+			listGenerator := cli.NewListGenerator(cache, listDir)
+			extGenerator := &cli.ExtensionGenerator{
+				DB:    cli.DB,
+				Cache: cache,
+			}
+
+			var errors []error
+			successCount := 0
+
+			enListPath := filepath.Join(listDir, "ext.md")
+			if err := extGenerator.GenerateExtensionList("en", enListPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English extension list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enListPath)
+				successCount++
+			}
+
+			zhListPath := filepath.Join(listDir, "ext.zh.md")
+			if err := extGenerator.GenerateExtensionList("zh", zhListPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese extension list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhListPath)
+				successCount++
+			}
+
+			enIndexPath := filepath.Join(extDir, "_index.md")
+			zhIndexPath := filepath.Join(extDir, "_index.zh.md")
+			if err := extGenerator.GenerateExtensionIndexPages(enIndexPath, zhIndexPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate extension index pages: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enIndexPath)
+				logrus.Infof("Generated: %s", zhIndexPath)
+				successCount += 2
+			}
+
+			enPkgPath := filepath.Join(listDir, "pkg.md")
+			if err := extGenerator.GeneratePackageList("en", enPkgPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English package list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enPkgPath)
+				successCount++
+			}
+
+			zhPkgPath := filepath.Join(listDir, "pkg.zh.md")
+			if err := extGenerator.GeneratePackageList("zh", zhPkgPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese package list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhPkgPath)
+				successCount++
+			}
+
+			enCatePath := filepath.Join(listDir, "cate.md")
+			if err := listGenerator.GenerateCategoryList("en", enCatePath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English category list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enCatePath)
+				successCount++
+			}
+
+			zhCatePath := filepath.Join(listDir, "cate.zh.md")
+			if err := listGenerator.GenerateCategoryList("zh", zhCatePath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese category list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhCatePath)
+				successCount++
+			}
+
+			enLangPath := filepath.Join(listDir, "lang.md")
+			if err := listGenerator.GenerateLanguageList("en", enLangPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English language list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enLangPath)
+				successCount++
+			}
+
+			zhLangPath := filepath.Join(listDir, "lang.zh.md")
+			if err := listGenerator.GenerateLanguageList("zh", zhLangPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese language list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhLangPath)
+				successCount++
+			}
+
+			enLicensePath := filepath.Join(listDir, "license.md")
+			if err := listGenerator.GenerateLicenseList("en", enLicensePath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English license list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enLicensePath)
+				successCount++
+			}
+
+			zhLicensePath := filepath.Join(listDir, "license.zh.md")
+			if err := listGenerator.GenerateLicenseList("zh", zhLicensePath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese license list: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhLicensePath)
+				successCount++
+			}
+
+			enCatalogPath := filepath.Join(listDir, "_index.md")
+			if err := extGenerator.GenerateCatalogPage("en", enCatalogPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate English catalog: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", enCatalogPath)
+				successCount++
+			}
+
+			zhCatalogPath := filepath.Join(listDir, "_index.zh.md")
+			if err := extGenerator.GenerateCatalogPage("zh", zhCatalogPath); err != nil {
+				errors = append(errors, fmt.Errorf("failed to generate Chinese catalog: %w", err))
+			} else {
+				logrus.Infof("Generated: %s", zhCatalogPath)
+				successCount++
+			}
+
+			logrus.Infof("List generation completed: %d files generated", successCount)
+			if len(errors) == 0 {
+				return nil
+			}
+
+			for _, err := range errors {
+				logrus.Error(err)
+			}
+			return fmt.Errorf("list generation completed with %d errors", len(errors))
+		}
+
+		generateOSPages := func() error {
+			osDir := filepath.Join(outputDir, "os")
+			if err := os.MkdirAll(osDir, 0755); err != nil {
+				return fmt.Errorf("failed to create os output directory: %w", err)
+			}
+
+			generator := cli.NewOSGenerator(cache, osDir)
+			osList, err := cli.GetActiveOS(ctx)
+			if err != nil {
+				return fmt.Errorf("failed to get active OS list: %w", err)
+			}
+			if len(osList) == 0 {
+				return fmt.Errorf("no active OS distributions found")
+			}
+
+			type result struct {
+				os      string
+				success bool
+			}
+
+			results := make(chan result, len(osList))
+			const maxParallel = 8
+			semaphore := make(chan struct{}, maxParallel)
+			var wg sync.WaitGroup
+
+			for _, osName := range osList {
+				wg.Add(1)
+				go func(osName string) {
+					defer wg.Done()
+					semaphore <- struct{}{}
+					defer func() { <-semaphore }()
+
+					logrus.Infof("Generating OS page for %s...", osName)
+					if err := generator.GenerateOSPage(ctx, osName); err != nil {
+						logrus.Errorf("Failed to generate OS page for %s: %v", osName, err)
+						results <- result{os: osName, success: false}
+						return
+					}
+					logrus.Infof("Successfully generated OS page: %s.md", osName)
+					results <- result{os: osName, success: true}
+				}(osName)
+			}
+
+			go func() {
+				wg.Wait()
+				close(results)
+			}()
+
+			successCount := 0
+			failedOS := []string{}
+			for res := range results {
+				if res.success {
+					successCount++
+				} else {
+					failedOS = append(failedOS, res.os)
+				}
+			}
+
+			logrus.Infof("Successfully generated %d/%d OS pages", successCount, len(osList))
+			if len(failedOS) == 0 {
+				return nil
+			}
+
+			logrus.Warnf("Failed to generate pages for: %v", failedOS)
+			return fmt.Errorf("failed to generate %d/%d OS pages", len(failedOS), len(osList))
+		}
+
+		var (
+			errors []error
+			mu     sync.Mutex
+			wg     sync.WaitGroup
+		)
+
+		runTask := func(name string, fn func() error) {
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				logrus.Infof("Generating %s...", name)
+				if err := fn(); err != nil {
+					mu.Lock()
+					errors = append(errors, fmt.Errorf("%s: %w", name, err))
+					mu.Unlock()
+				} else {
+					logrus.Infof("%s generated successfully", name)
+				}
+			}()
+		}
+
+		runTask("list pages", generateListPages)
+		runTask("OS pages", generateOSPages)
+		wg.Wait()
+
+		logrus.Info("Generating extension pages...")
+		extDir := filepath.Join(outputDir, "e")
+		if err := os.MkdirAll(extDir, 0755); err != nil {
+			return fmt.Errorf("failed to create extension output directory: %w", err)
+		}
+
+		pageGenerator := cli.NewExtensionGenerator(cache, extDir)
+		extensionsToGenerate := cache.ReadyExtensions()
+		successCount := 0
+		var failedExtensions []string
+
+		for i, ext := range extensionsToGenerate {
+			if len(extensionsToGenerate) > 10 && (i+1)%100 == 0 {
+				logrus.Infof("Progress: %d/%d extensions processed", i+1, len(extensionsToGenerate))
+			}
+			if err := pageGenerator.GenerateExtensionPage(ctx, ext); err != nil {
+				logrus.Errorf("Failed to generate page for %s: %v", ext.Name, err)
+				failedExtensions = append(failedExtensions, ext.Name)
+			} else {
+				successCount++
+			}
+		}
+
+		logrus.Infof("Successfully generated %d/%d extension pages", successCount, len(extensionsToGenerate))
+		if len(failedExtensions) > 0 {
+			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
+			errors = append(errors, fmt.Errorf("failed to generate %d/%d extension pages", len(failedExtensions), len(extensionsToGenerate)))
+		}
+
+		if len(errors) == 0 {
+			logrus.Info("All content generated successfully!")
+			return nil
+		}
+
+		for _, err := range errors {
+			logrus.Error(err)
+		}
+		return fmt.Errorf("generation completed with %d errors", len(errors))
+	},
+}
+
 // genConfCmd generates Pigsty configuration files
 var genConfCmd = &cobra.Command{
 	Use:   "conf [os...]",
@@ -562,7 +853,7 @@ func init() {
 	rootCmd.AddCommand(genCmd)
 
 	// Add subcommands - removed genIndexCmd, added genListCmd
-	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genConfCmd)
+	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genAllCmd, genConfCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")
