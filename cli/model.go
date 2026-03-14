@@ -82,6 +82,43 @@ func (e *Extension) GetEnDesc() string {
 	return e.Name
 }
 
+// GetSourceFilename returns the source tarball filename.
+func (e *Extension) GetSourceFilename() string {
+	if !e.Source.Valid {
+		return ""
+	}
+
+	source := strings.TrimSpace(e.Source.String)
+	if source == "" {
+		return ""
+	}
+	if idx := strings.LastIndex(source, "/"); idx >= 0 {
+		return source[idx+1:]
+	}
+	return source
+}
+
+// GetSourceURL returns a site-specific source tarball URL.
+func (e *Extension) GetSourceURL(region Region) string {
+	if !e.Source.Valid {
+		return ""
+	}
+
+	source := strings.TrimSpace(e.Source.String)
+	if source == "" {
+		return ""
+	}
+	if strings.HasPrefix(source, "http://") || strings.HasPrefix(source, "https://") {
+		return source
+	}
+
+	base := DefaultSourceURL
+	if region == RegionChina {
+		base = ChinaSourceURL
+	}
+	return strings.TrimRight(base, "/") + "/" + strings.TrimLeft(source, "/")
+}
+
 // GetLibName returns the library name for shared_preload_libraries
 // It checks the Extra field for a "lib" key, otherwise returns the extension Name
 func (ext *Extension) GetLibName() string {
@@ -266,6 +303,19 @@ func (e *Extension) GetPkgURLLink() string {
 		return fmt.Sprintf("[`%s`](%s)", e.Pkg, e.URL.String)
 	}
 	return fmt.Sprintf("`%s`", e.Pkg)
+}
+
+// GetPkgPageName returns the extension page slug that should represent this package.
+// Lead pages should always point to themselves; non-lead extensions can point to
+// the package's lead extension page when provided.
+func (e *Extension) GetPkgPageName() string {
+	if e.Lead {
+		return e.Name
+	}
+	if e.LeadExt.Valid && e.LeadExt.String != "" {
+		return e.LeadExt.String
+	}
+	return e.Name
 }
 
 // InferRepo infers the expected repository (PGDG/PIGSTY) for an extension on a given OS

@@ -21,8 +21,10 @@ import (
 const (
 	DefaultExtensionURL  = "https://repo.pigsty.io/ext/data/extension.csv"
 	DefaultRepositoryURL = "https://repo.pigsty.io/ext/data/repository.csv"
+	DefaultSourceURL     = "https://repo.pigsty.io/ext/src/"
 	ChinaExtensionURL    = "https://repo.pigsty.cc/ext/data/extension.csv"
 	ChinaRepositoryURL   = "https://repo.pigsty.cc/ext/data/repository.csv"
+	ChinaSourceURL       = "https://repo.pigsty.cc/ext/src/"
 )
 
 // Region represents the deployment region

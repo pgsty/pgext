@@ -127,13 +127,9 @@ func (g *CCPageGenerator) generateCards(ext *Extension) string {
 	}
 
 	if hasSource {
-		source := ext.Source.String
-		// Extract filename from source URL/path
-		fileName := source
-		if idx := strings.LastIndex(source, "/"); idx >= 0 {
-			fileName = source[idx+1:]
-		}
-		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--source\" href=\"%s\">\n", source))
+		sourceURL := ext.GetSourceURL(RegionChina)
+		fileName := ext.GetSourceFilename()
+		b.WriteString(fmt.Sprintf("  <a class=\"ext-card ext-card--source\" href=\"%s\">\n", sourceURL))
 		b.WriteString("    <div class=\"ext-card__kicker\">源码</div>\n")
 		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__title\">%s</div>\n", fileName))
 		b.WriteString(fmt.Sprintf("    <div class=\"ext-card__desc\">%s</div>\n", fileName))
@@ -149,13 +145,8 @@ func (g *CCPageGenerator) generateOverview(ext *Extension) string {
 	var b strings.Builder
 	b.WriteString("## 概览\n\n")
 
-	// Package badge: link to the primary extension page
-	pkgLink := fmt.Sprintf("**`%s`**", ext.Pkg)
-	if ext.LeadExt.Valid && ext.LeadExt.String != "" {
-		pkgLink = fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.LeadExt.String)
-	} else {
-		pkgLink = fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.Name)
-	}
+	// Package badge: lead pages point to themselves, sibling pages point to the lead page.
+	pkgLink := fmt.Sprintf("[**`%s`**](/ext/e/%s)", ext.Pkg, ext.GetPkgPageName())
 
 	version := "-"
 	if ext.Version.Valid {
@@ -345,7 +336,6 @@ func (g *CCPageGenerator) buildPackageRow(label, category, repo, version, patter
 		labelLink, repoBadge, verStr, pgBadges, patternStr, depsStr)
 }
 
-
 // generateContribPackages generates package info for contrib extensions
 func (g *CCPageGenerator) generateContribPackages(ext *Extension) string {
 	var b strings.Builder
@@ -492,7 +482,6 @@ func (g *CCPageGenerator) formatAvailCell(pkg *PkgInfo, ext *Extension, osName s
 
 	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
 }
-
 
 // generateBuild generates the build section
 func (g *CCPageGenerator) generateBuild(ext *Extension) string {
@@ -680,4 +669,3 @@ func (g *CCPageGenerator) generateInstall(ext *Extension) string {
 
 	return b.String()
 }
-
