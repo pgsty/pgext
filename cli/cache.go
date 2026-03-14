@@ -299,12 +299,13 @@ func LoadPackages(ctx context.Context, pkgName string) ([]*PkgInfo, error) {
 	return packages, rows.Err()
 }
 
-// LoadBinaries loads binary package details for a specific extension with proper ordering
+// LoadBinaries loads binary package details for a specific extension with proper ordering.
+// URL prefixes are resolved at render time so callers can choose default vs mirror base URLs.
 func LoadBinaries(ctx context.Context, extName string) ([]*Binary, error) {
 	// Query binaries with proper ordering: pg DESC, os ASC, version DESC, file DESC
 	query := `
 			SELECT b.pg,b.os,b.name,b.version,r.org,b.size,b.file,
-				   format('%s/%s', r.default_url, b.href) AS url
+				   b.href,r.default_url,r.mirror_url
 			FROM pgext.pkg p
 				 JOIN pgext.bin b USING (pg, os, name)
 				 JOIN pgext.repository r ON b.repo = r.id
@@ -325,14 +326,11 @@ func LoadBinaries(ctx context.Context, extName string) ([]*Binary, error) {
 	var binaries []*Binary
 	for rows.Next() {
 		bin := &Binary{}
-		var url string
 		err := rows.Scan(&bin.PG, &bin.OS, &bin.Name, &bin.Version,
-			&bin.Org, &bin.Size, &bin.File, &url)
+			&bin.Org, &bin.Size, &bin.File, &bin.Href, &bin.DefaultURL, &bin.MirrorURL)
 		if err != nil {
 			return nil, err
 		}
-		// Set the URL in the Href field for compatibility
-		bin.Href = url
 		binaries = append(binaries, bin)
 	}
 

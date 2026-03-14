@@ -1004,7 +1004,7 @@ func (g *CCListGenerator) GenerateOverviewPage(outputPath string) error {
 	// ── Compute statistics ────────────────────────────────────────────
 	type rowStats struct {
 		All, PGDG, PIGSTY, CONTRIB, MISS int
-		PGCounts                          map[int]int
+		PGCounts                         map[int]int
 	}
 	allRow := rowStats{PGCounts: make(map[int]int)}
 	elRow := rowStats{PGCounts: make(map[int]int)}
@@ -1151,8 +1151,14 @@ linkTitle: Pigsty 扩展目录
 description: >
   扩展是 PostgreSQL 的灵魂所在，Pigsty 制作、收录、整合了 %d 个 PG 生态扩展，供用户开箱即用。
 weight: 20
+outputs:
+  - HTML
+  - print
 cascade:
   type: docs
+  outputs:
+    - HTML
+    - print
 ---
 
 `, totalExts))

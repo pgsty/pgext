@@ -669,9 +669,11 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 					org = "N/A"
 				}
 
-				// URL is already formatted in the SQL query
-				url := pkg.Href
-				fileName := filepath.Base(url)
+				url := pkg.GetDownloadURL(RegionDefault)
+				fileName := pkg.File
+				if fileName == "" {
+					fileName = filepath.Base(url)
+				}
 
 				tab += fmt.Sprintf("| `%s` | `%s` | [%s](/os/%s) | %s | %s | [%s](%s) |\n",
 					pkg.Name, pkg.Version, pkg.OS, pkg.OS, org, sizeStr, fileName, url)

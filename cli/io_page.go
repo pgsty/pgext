@@ -444,8 +444,9 @@ func (g *IOPageGenerator) generateAvailability(ext *Extension, packages []*PkgIn
 				org = bin.Org.String
 			}
 			size := strings.ReplaceAll(FormatSize(bin.Size), " ", "")
+			url := bin.GetDownloadURL(RegionDefault)
 			b.WriteString(fmt.Sprintf("@ %s %d %s %s %s %s %s %s\n",
-				bin.OS, bin.PG, bin.Name, bin.File, org, bin.Version, size, bin.Href))
+				bin.OS, bin.PG, bin.Name, bin.File, org, bin.Version, size, url))
 		}
 	}
 

@@ -172,6 +172,27 @@ type Binary struct {
 	SizeFull   int64          `db:"size_full"`
 }
 
+// GetDownloadURL returns a site-specific download URL for a binary package.
+func (b *Binary) GetDownloadURL(region Region) string {
+	href := strings.TrimSpace(b.Href)
+	if href == "" {
+		return ""
+	}
+	if strings.HasPrefix(href, "http://") || strings.HasPrefix(href, "https://") {
+		return href
+	}
+
+	base := strings.TrimSpace(b.DefaultURL)
+	if region == RegionChina && b.MirrorURL.Valid && strings.TrimSpace(b.MirrorURL.String) != "" {
+		base = strings.TrimSpace(b.MirrorURL.String)
+	}
+	if base == "" {
+		return href
+	}
+
+	return strings.TrimRight(base, "/") + "/" + strings.TrimLeft(href, "/")
+}
+
 // PGVersion represents a PostgreSQL major version configuration
 type PGVersion struct {
 	PG     int  `db:"pg"`

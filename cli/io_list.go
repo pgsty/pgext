@@ -566,8 +566,8 @@ func (g *IOListGenerator) GenerateRepoList(outputPath string) error {
 	var b strings.Builder
 
 	b.WriteString(`---
-title: "Repo Provider"
-linkTitle: "Repo Provider"
+title: "Repository"
+linkTitle: "Repository"
 description: "Extensions by repository"
 weight: 210
 icon: fas fa-warehouse
@@ -1004,7 +1004,7 @@ func (g *IOListGenerator) GenerateOverviewPage(outputPath string) error {
 	// ── Compute statistics ────────────────────────────────────────────
 	type rowStats struct {
 		All, PGDG, PIGSTY, CONTRIB, MISS int
-		PGCounts                          map[int]int
+		PGCounts                         map[int]int
 	}
 	allRow := rowStats{PGCounts: make(map[int]int)}
 	elRow := rowStats{PGCounts: make(map[int]int)}
@@ -1151,8 +1151,14 @@ linkTitle: Pigsty Extension Catalog
 description: >
   Extensions are the soul of PostgreSQL. Pigsty builds, collects, and integrates %d PG ecosystem extensions for out-of-the-box use.
 weight: 20
+outputs:
+  - HTML
+  - print
 cascade:
   type: docs
+  outputs:
+    - HTML
+    - print
 ---
 
 `, totalExts))
