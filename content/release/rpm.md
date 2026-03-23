@@ -6,6 +6,20 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+
+## 2026-03-21
+
+| Package            | Old   | New       | Comment  |
+|:-------------------|:------|:----------|:---------|
+| pgsentinel         | 1.4.0 | 1.4.1     | rpm only |   
+| pg_track_optimizer | 0.9.1 | 0.9.2     |          |   
+| pgcollection       | 1.0.0 | 2.0.0     |          |   
+| pg_ttl_index       | 2.0.0 | 3.0.0     |          |   
+| pg_clickhouse      | 0.1.4 | 0.1.5     |          |
+| pdu                |       | 3.0.25.12 | new      |
+| pgdog              |       | 0.1.32    | new      |
+
+
 ## 2026-03-05
 
 Drop PG 13 support for all extensions

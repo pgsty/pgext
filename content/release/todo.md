@@ -4,6 +4,15 @@ description: PG Extensions in the radar!
 weight: 700
 ---
 
+## DOING
+
+- pg_search 0.21.12 -> 0.22.2
+- pgsentinel 1.4.0 -> 1.4.1
+- pg_track_optimizer 0.9.1 -> 0.9.2
+- pgcollection 1.0.0 -> 2.0.0
+- pg_ttl_index 2.0.0 -> 3.0.0
+- pg_clickhouse: 0.1.4 -> 0.1.5
+
 ## TODOLIST
 
 - biscuit pgdg yum

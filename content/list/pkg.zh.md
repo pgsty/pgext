@@ -76,7 +76,7 @@ comments: false
 | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< category "RAG" >}} | `pg_tiktoken_$v` | `postgresql-$v-pg-tiktoken` |
 | {{< ext "pg4ml" >}} | `2.0` | {{< badge content="Link" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< category "RAG" >}} | `pg4ml_$v` | `postgresql-$v-pg4ml` |
 | {{< ext "pgml" >}} | `2.10.0` | {{< badge content="Link" link="https://github.com/postgresml/postgresml" >}} | {{< category "RAG" >}} | `pgml_$v` | `postgresql-$v-pgml` |
-| {{< ext "pg_search" >}} | `0.21.12` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.22.2` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.0.4` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v` | `postgresql-$v-pg-bigm` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v` | `postgresql-$v-zhparser` |
@@ -103,7 +103,7 @@ comments: false
 | {{< ext "pg_analytics" >}} | `0.3.7` | {{< badge content="Link" link="https://github.com/paradedb/pg_analytics" >}} | {{< category "OLAP" >}} | `pg_analytics_$v` | `postgresql-$v-pg-analytics` |
 | {{< ext "pg_duckdb" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/duckdb/pg_duckdb" >}} | {{< category "OLAP" >}} | `pg_duckdb_$v` | `postgresql-$v-pg-duckdb` |
 | {{< ext "pg_mooncake" >}} | `0.2.0` | {{< badge content="Link" link="https://github.com/Mooncake-Labs/pg_mooncake" >}} | {{< category "OLAP" >}} | `pg_mooncake_$v` | `postgresql-$v-pg-mooncake` |
-| {{< ext "pg_clickhouse" >}} | `0.1.4` | {{< badge content="Link" link="https://github.com/ClickHouse/pg_clickhouse" >}} | {{< category "OLAP" >}} | `pg_clickhouse_$v` | `postgresql-$v-clickhouse` |
+| {{< ext "pg_clickhouse" >}} | `0.1.5` | {{< badge content="Link" link="https://github.com/ClickHouse/pg_clickhouse" >}} | {{< category "OLAP" >}} | `pg_clickhouse_$v` | `postgresql-$v-clickhouse` |
 | {{< ext "duckdb_fdw" >}} | `1.1.2` | {{< badge content="Link" link="https://github.com/alitrack/duckdb_fdw" >}} | {{< category "OLAP" >}} | `duckdb_fdw_$v` | `postgresql-$v-duckdb-fdw` |
 | {{< ext "pg_parquet" >}} | `0.5.1` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_parquet/" >}} | {{< category "OLAP" >}} | `pg_parquet_$v` | `postgresql-$v-pg-parquet` |
 | {{< ext "pg_fkpart" >}} | `1.7.0` | {{< badge content="Link" link="https://github.com/lemoineat/pg_fkpart" >}} | {{< category "OLAP" >}} | `pg_fkpart_$v` | `postgresql-$v-pg-fkpart` |
@@ -115,7 +115,7 @@ comments: false
 | {{< ext "hll" >}} | `2.19` | {{< badge content="Link" link="https://github.com/citusdata/postgresql-hll" >}} | {{< category "FEAT" >}} | `hll_$v` | `postgresql-$v-hll` |
 | {{< ext "rum" >}} | `1.3.15` | {{< badge content="Link" link="https://github.com/postgrespro/rum" >}} | {{< category "FEAT" >}} | `rum_$v` | `postgresql-$v-rum` |
 | {{< ext "pg_ai_query" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/benodiwal/pg_ai_query" >}} | {{< category "FEAT" >}} | `pg_ai_query_$v` | `postgresql-$v-ai-query` |
-| {{< ext "pg_ttl_index" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< category "FEAT" >}} | `pg_ttl_index_$v` | `postgresql-$v-ttl-index` |
+| {{< ext "pg_ttl_index" >}} | `3.0.0` | {{< badge content="Link" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< category "FEAT" >}} | `pg_ttl_index_$v` | `postgresql-$v-ttl-index` |
 | {{< ext "pg_graphql" >}} | `1.5.12` | {{< badge content="Link" link="https://github.com/supabase/pg_graphql" >}} | {{< category "FEAT" >}} | `pg_graphql_$v` | `postgresql-$v-pg-graphql` |
 | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< badge content="Link" link="https://github.com/supabase/pg_jsonschema" >}} | {{< category "FEAT" >}} | `pg_jsonschema_$v` | `postgresql-$v-pg-jsonschema` |
 | {{< ext "jsquery" >}} | `1.2` | {{< badge content="Link" link="https://github.com/postgrespro/jsquery" >}} | {{< category "FEAT" >}} | `jsquery_$v` | `postgresql-$v-jsquery` |
@@ -167,7 +167,7 @@ comments: false
 | {{< ext "country" "pg_country" >}} | `0.0.3` | {{< badge content="Link" link="https://github.com/adjust/pg-country" >}} | {{< category "TYPE" >}} | `pg_country_$v` | `postgresql-$v-pg-country` |
 | {{< ext "pg_xenophile" >}} | `0.8.3` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< category "TYPE" >}} | `pg_xenophile_$v` | `postgresql-$v-pg-xenophile` |
 | {{< ext "currency" "pg_currency" >}} | `0.0.3` | {{< badge content="Link" link="https://github.com/adjust/pg-currency" >}} | {{< category "TYPE" >}} | `pg_currency_$v` | `postgresql-$v-pg-currency` |
-| {{< ext "collection" "pgcollection" >}} | `1.1.1` | {{< badge content="Link" link="https://github.com/aws/pgcollection" >}} | {{< category "TYPE" >}} | `pgcollection_$v` | `postgresql-$v-collection` |
+| {{< ext "collection" "pgcollection" >}} | `2.0.0` | {{< badge content="Link" link="https://github.com/aws/pgcollection" >}} | {{< category "TYPE" >}} | `pgcollection_$v` | `postgresql-$v-collection` |
 | {{< ext "pgmp" >}} | `1.0.5` | {{< badge content="Link" link="https://github.com/dvarrazzo/pgmp/" >}} | {{< category "TYPE" >}} | `pgmp_$v` | `postgresql-$v-pgmp` |
 | {{< ext "numeral" >}} | `1.3` | {{< badge content="Link" link="https://github.com/df7cb/postgresql-numeral" >}} | {{< category "TYPE" >}} | `numeral_$v` | `postgresql-$v-numeral` |
 | {{< ext "pg_rational" >}} | `0.0.2` | {{< badge content="Link" link="https://github.com/begriffs/pg_rational" >}} | {{< category "TYPE" >}} | `pg_rational_$v` | `postgresql-$v-rational` |
@@ -314,9 +314,9 @@ comments: false
 | {{< ext "pg_qualstats" >}} | `2.1.3` | {{< badge content="Link" link="https://github.com/powa-team/pg_qualstats" >}} | {{< category "STAT" >}} | `pg_qualstats_$v` | `postgresql-$v-pg-qualstats` |
 | {{< ext "pg_store_plans" >}} | `1.9` | {{< badge content="Link" link="https://github.com/ossc-db/pg_store_plans" >}} | {{< category "STAT" >}} | `pg_store_plans_$v` | `postgresql-$v-pg-store-plan` |
 | {{< ext "pg_track_settings" >}} | `2.1.2` | {{< badge content="Link" link="https://github.com/rjuju/pg_track_settings" >}} | {{< category "STAT" >}} | `pg_track_settings_$v` | `postgresql-$v-pg-track-settings` |
-| {{< ext "pg_track_optimizer" >}} | `0.9.1` | {{< badge content="Link" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< category "STAT" >}} | `pg_track_optimizer_$v` | `postgresql-$v-pg-track-optimizer` |
+| {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< badge content="Link" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< category "STAT" >}} | `pg_track_optimizer_$v` | `postgresql-$v-pg-track-optimizer` |
 | {{< ext "pg_wait_sampling" >}} | `1.1.9` | {{< badge content="Link" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< category "STAT" >}} | `pg_wait_sampling_$v` | `postgresql-$v-pg-wait-sampling` |
-| {{< ext "pgsentinel" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
+| {{< ext "pgsentinel" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
 | {{< ext "system_stats" >}} | `3.2` | {{< badge content="Link" link="https://github.com/EnterpriseDB/system_stats" >}} | {{< category "STAT" >}} | `system_stats_$v` | `postgresql-$v-system-stats` |
 | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/aquameta/meta" >}} | {{< category "STAT" >}} | `pg_meta_$v` | `postgresql-$v-pg-meta` |
 | {{< ext "pgnodemx" >}} | `1.7` | {{< badge content="Link" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< category "STAT" >}} | `pgnodemx_$v` | `postgresql-$v-pgnodemx` |

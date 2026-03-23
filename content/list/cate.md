@@ -82,7 +82,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.21.12 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.22.2 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -118,7 +118,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.4 | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.5 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.1.2 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
@@ -137,7 +137,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2710 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2720 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2730 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
-| 2740 | {{< alias "pg_ttl_index" >}} | 2.0.0 | Automatic data expiration with TTL indexes |
+| 2740 | {{< alias "pg_ttl_index" >}} | 3.0.0 | Automatic data expiration with TTL indexes |
 | 2750 | {{< alias "pg_graphql" >}} | 1.5.12 | Add in-database GraphQL support |
 | 2760 | {{< alias "pg_jsonschema" >}} | 0.3.4 | PostgreSQL extension providing JSON Schema validation |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
@@ -256,7 +256,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3610 | {{< alias "pg_xenophile" >}} | 0.8.3 | More than the bare necessities for PostgreSQL i18n and l10n. |
 | 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | 0.8.3 | PostgreSQL l10n toolbox |
 | 3620 | {{< alias "currency" "pg_currency" >}} | 0.0.3 | Custom PostgreSQL currency type in 1Byte |
-| 3630 | {{< alias "collection" "pgcollection" >}} | 1.1.1 | Memory optimized data type to be used inside of plpglsql func |
+| 3630 | {{< alias "collection" "pgcollection" >}} | 2.0.0 | Memory optimized data type to be used inside of plpglsql func |
 | 3700 | {{< alias "pgmp" >}} | 1.0.5 | Multiple Precision Arithmetic extension |
 | 3710 | {{< alias "numeral" >}} | 1.3 | numeral datatypes extension |
 | 3720 | {{< alias "pg_rational" >}} | 0.0.2 | bigint fractions |
@@ -434,9 +434,9 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.9 | track plan statistics of all SQL statements executed |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | Track settings changes |
-| 6270 | {{< alias "pg_track_optimizer" >}} | 0.9.1 | Track planning decisions in comparison with execution reality |
+| 6270 | {{< alias "pg_track_optimizer" >}} | 0.9.2 | Track planning decisions in comparison with execution reality |
 | 6280 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | sampling based statistics of wait events |
-| 6410 | {{< alias "pgsentinel" >}} | 1.4.0 | active session history |
+| 6410 | {{< alias "pgsentinel" >}} | 1.4.1 | active session history |
 | 6420 | {{< alias "system_stats" >}} | 3.2 | EnterpriseDB system statistics for PostgreSQL |
 | 6430 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | Normalized, friendlier system catalog for PostgreSQL |
 | 6440 | {{< alias "pgnodemx" >}} | 1.7 | Capture node OS metrics via SQL queries |

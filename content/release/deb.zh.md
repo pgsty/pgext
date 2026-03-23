@@ -7,6 +7,19 @@ weight: 300
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
 
+
+## 2026-03-21
+
+| 包名                 | 旧版本   | 新版本       | 备注      |
+|:-------------------|:------|:----------|:--------|
+| pg_track_optimizer | 0.9.1 | 0.9.2     |         |   
+| pgcollection       | 1.0.0 | 2.0.0     |         |   
+| pg_ttl_index       | 2.0.0 | 3.0.0     |         |   
+| pg_clickhouse      | 0.1.4 | 0.1.5     |         |
+| pdu                |       | 3.0.25.12 | 新增      |
+| pgdog              |       | 0.1.32    | 新增      |
+
+
 ## 2026-03-05
 
 Drop PG 13 support for all extensions
