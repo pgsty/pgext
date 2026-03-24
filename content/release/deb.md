@@ -11,6 +11,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 | Package            | Old   | New       | Comment  |
 |:-------------------|:------|:----------|:---------|
+| pg_search          | 0.21.12 | 0.22.2    |         |
 | pg_track_optimizer | 0.9.1 | 0.9.2     |          |   
 | pgcollection       | 1.0.0 | 2.0.0     |          |   
 | pg_ttl_index       | 2.0.0 | 3.0.0     |          |   
