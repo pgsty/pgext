@@ -29,7 +29,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | execute any sql command at any specific time at background |
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | Run queries now and get results later |
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | Asynchronous SQL dispatcher built on pg_cron |
-| 1110 | {{< alias "pg_background" >}} | 1.8 | Run SQL queries in the background |
+| 1110 | {{< alias "pg_background" >}} | 1.9.1 | Run SQL queries in the background |
 
 ## GIS
 
@@ -83,7 +83,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.22.5 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.22.6 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -451,7 +451,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6270 | {{< alias "pg_track_optimizer" >}} | 0.9.2 | Track planning decisions in comparison with execution reality |
 | 6280 | {{< alias "pg_wait_sampling" >}} | 1.1.9 | sampling based statistics of wait events |
 | 6410 | {{< alias "pgsentinel" >}} | 1.4.1 | active session history |
-| 6420 | {{< alias "system_stats" >}} | 3.2 | EnterpriseDB system statistics for PostgreSQL |
+| 6420 | {{< alias "system_stats" >}} | 4.0 | EnterpriseDB system statistics for PostgreSQL |
 | 6430 | {{< alias "meta" "pg_meta" >}} | 0.4.0 | Normalized, friendlier system catalog for PostgreSQL |
 | 6440 | {{< alias "pgnodemx" >}} | 1.7 | Capture node OS metrics via SQL queries |
 | 6450 | {{< alias "pg_proctab" "pgnodemx" >}} | 1.7 | PostgreSQL extension to access the OS process table |
@@ -491,7 +491,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7060 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7070 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |
-| 7120 | {{< alias "pgauditlogtofile" >}} | 1.8.0 | pgAudit addon to redirect audit log to an independent file |
+| 7120 | {{< alias "pgauditlogtofile" >}} | 1.8.3 | pgAudit addon to redirect audit log to an independent file |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
@@ -531,7 +531,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.0 | Foreign data wrapper for etcd |
 | 8670 | {{< alias "informix_fdw" >}} | 0.6.3 | Foreign data wrapper for Informix access |
-| 8680 | {{< alias "nominatim_fdw" >}} | 1.1.0 | Nominatim Foreign Data Wrapper for PostgreSQL |
+| 8680 | {{< alias "nominatim_fdw" >}} | 1.2 | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | Send redis pub/sub messages to Redis from PostgreSQL Directly |

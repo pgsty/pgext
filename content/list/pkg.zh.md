@@ -53,7 +53,7 @@ comments: false
 | {{< ext "pg_task" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_task" >}} | {{< category "TIME" >}} | `pg_task_$v` | `postgresql-$v-pg-task` |
 | {{< ext "pg_later" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_later" >}} | {{< category "TIME" >}} | `pg_later_$v` | `postgresql-$v-pg-later` |
 | {{< ext "pg_dispatch" >}} | `0.1.5` | {{< badge content="Link" link="https://github.com/Snehil-Shah/pg_dispatch" >}} | {{< category "TIME" >}} | `pg_dispatch_$v` | `postgresql-$v-pg-dispatch` |
-| {{< ext "pg_background" >}} | `1.8` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v` | `postgresql-$v-pg-background` |
+| {{< ext "pg_background" >}} | `1.9.1` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v` | `postgresql-$v-pg-background` |
 | {{< ext "postgis" >}} | `3.6.2` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v` | `postgresql-$v-postgis-3` |
 | {{< ext "pgrouting" >}} | `4.0.1` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v` | `postgresql-$v-pgrouting` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v` | `postgresql-$v-pointcloud` |
@@ -77,7 +77,7 @@ comments: false
 | {{< ext "pg_tiktoken" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/kelvich/pg_tiktoken" >}} | {{< category "RAG" >}} | `pg_tiktoken_$v` | `postgresql-$v-pg-tiktoken` |
 | {{< ext "pg4ml" >}} | `2.0` | {{< badge content="Link" link="https://gitee.com/guotiecheng/plpgsql_pg4ml" >}} | {{< category "RAG" >}} | `pg4ml_$v` | `postgresql-$v-pg4ml` |
 | {{< ext "pgml" >}} | `2.10.0` | {{< badge content="Link" link="https://github.com/postgresml/postgresml" >}} | {{< category "RAG" >}} | `pgml_$v` | `postgresql-$v-pgml` |
-| {{< ext "pg_search" >}} | `0.22.5` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
+| {{< ext "pg_search" >}} | `0.22.6` | {{< badge content="Link" link="https://github.com/paradedb/paradedb/tree/dev/pg_search" >}} | {{< category "FTS" >}} | `pg_search_$v` | `postgresql-$v-pg-search` |
 | {{< ext "pgroonga" >}} | `4.0.4` | {{< badge content="Link" link="https://github.com/pgroonga/pgroonga" >}} | {{< category "FTS" >}} | `pgroonga_$v` | `postgresql-$v-pgroonga` |
 | {{< ext "pg_bigm" >}} | `1.2` | {{< badge content="Link" link="https://github.com/pgbigm/pg_bigm" >}} | {{< category "FTS" >}} | `pg_bigm_$v` | `postgresql-$v-pg-bigm` |
 | {{< ext "zhparser" >}} | `2.3` | {{< badge content="Link" link="https://github.com/amutu/zhparser" >}} | {{< category "FTS" >}} | `zhparser_$v` | `postgresql-$v-zhparser` |
@@ -331,7 +331,7 @@ comments: false
 | {{< ext "pg_track_optimizer" >}} | `0.9.2` | {{< badge content="Link" link="https://github.com/danolivo/pg_track_optimizer" >}} | {{< category "STAT" >}} | `pg_track_optimizer_$v` | `postgresql-$v-pg-track-optimizer` |
 | {{< ext "pg_wait_sampling" >}} | `1.1.9` | {{< badge content="Link" link="https://github.com/postgrespro/pg_wait_sampling" >}} | {{< category "STAT" >}} | `pg_wait_sampling_$v` | `postgresql-$v-pg-wait-sampling` |
 | {{< ext "pgsentinel" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/pgsentinel/pgsentinel" >}} | {{< category "STAT" >}} | `pgsentinel_$v` | `postgresql-$v-pgsentinel` |
-| {{< ext "system_stats" >}} | `3.2` | {{< badge content="Link" link="https://github.com/EnterpriseDB/system_stats" >}} | {{< category "STAT" >}} | `system_stats_$v` | `postgresql-$v-system-stats` |
+| {{< ext "system_stats" >}} | `4.0` | {{< badge content="Link" link="https://github.com/EnterpriseDB/system_stats" >}} | {{< category "STAT" >}} | `system_stats_$v` | `postgresql-$v-system-stats` |
 | {{< ext "meta" "pg_meta" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/aquameta/meta" >}} | {{< category "STAT" >}} | `pg_meta_$v` | `postgresql-$v-pg-meta` |
 | {{< ext "pgnodemx" >}} | `1.7` | {{< badge content="Link" link="https://github.com/CrunchyData/pgnodemx" >}} | {{< category "STAT" >}} | `pgnodemx_$v` | `postgresql-$v-pgnodemx` |
 | {{< ext "pg_sqlog" >}} | `1.6` | {{< badge content="Link" link="https://github.com/kouber/pg_sqlog" >}} | {{< category "STAT" >}} | `pg_sqlog_$v` | `postgresql-$v-pg-sqlog` |
@@ -363,7 +363,7 @@ comments: false
 | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< category "SEC" >}} | `pgsmcrypto_$v` | `postgresql-$v-pgsmcrypto` |
 | {{< ext "pg_enigma" >}} | `0.5.0` | {{< badge content="Link" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< category "SEC" >}} | `pg_enigma_$v` | `postgresql-$v-enigma` |
 | {{< ext "pgaudit" >}} | `18.0` | {{< badge content="Link" link="https://github.com/pgaudit/pgaudit" >}} | {{< category "SEC" >}} | `pgaudit_$v` | `postgresql-$v-pgaudit` |
-| {{< ext "pgauditlogtofile" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< category "SEC" >}} | `pgauditlogtofile_$v` | `postgresql-$v-pgauditlogtofile` |
+| {{< ext "pgauditlogtofile" >}} | `1.8.3` | {{< badge content="Link" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< category "SEC" >}} | `pgauditlogtofile_$v` | `postgresql-$v-pgauditlogtofile` |
 | {{< ext "pg_auditor" >}} | `0.2` | {{< badge content="Link" link="https://github.com/kouber/pg_auditor" >}} | {{< category "SEC" >}} | `pg_auditor_$v` | `postgresql-$v-pg-auditor` |
 | {{< ext "logerrors" >}} | `2.1.5` | {{< badge content="Link" link="https://github.com/munakoiso/logerrors" >}} | {{< category "SEC" >}} | `logerrors_$v` | `postgresql-$v-logerrors` |
 | {{< ext "pg_auth_mon" >}} | `3.0` | {{< badge content="Link" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< category "SEC" >}} | `pg_auth_mon_$v` | `postgresql-$v-pg-auth-mon` |
@@ -396,7 +396,7 @@ comments: false
 | {{< ext "pgbouncer_fdw" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pgbouncer_fdw" >}} | {{< category "FDW" >}} | `pgbouncer_fdw_$v` | - |
 | {{< ext "etcd_fdw" >}} | `0.0.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/etcd_fdw" >}} | {{< category "FDW" >}} | `etcd_fdw_$v` | `postgresql-$v-etcd-fdw` |
 | {{< ext "informix_fdw" >}} | `0.6.3` | {{< badge content="Link" link="https://github.com/credativ/informix_fdw" >}} | {{< category "FDW" >}} | `informix_fdw_$v` | - |
-| {{< ext "nominatim_fdw" >}} | `1.1.0` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | `postgresql-$v-nominatim-fdw` |
+| {{< ext "nominatim_fdw" >}} | `1.2` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | `postgresql-$v-nominatim-fdw` |
 | {{< ext "mongo_fdw" >}} | `5.5.3` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mongo_fdw" >}} | {{< category "FDW" >}} | `mongo_fdw_$v` | - |
 | {{< ext "redis_fdw" >}} | `1.0` | {{< badge content="Link" link="https://github.com/pg-redis-fdw/redis_fdw" >}} | {{< category "FDW" >}} | `redis_fdw_$v` | `postgresql-$v-redis-fdw` |
 | {{< ext "redis" "pg_redis_pubsub" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/brettlaforge/pg_redis_pubsub" >}} | {{< category "FDW" >}} | `pg_redis_pubsub_$v` | `postgresql-$v-pg-redis-pubsub` |

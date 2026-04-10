@@ -32,8 +32,8 @@ PostgreSQL extension categorized by license.
 | {{< license "LGPL-3.0" >}} | 2 | [License Text](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "BSD-2-Clause" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "BSD-2-Clause" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
 
@@ -681,18 +681,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
 
-## BSD-2-Clause
-
-
-
-| {{< license "BSD-2-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 3230 | {{< alias "pg_regresql" >}} | Trust pg_class statistics for planning instead of physical relation size |
-
 ## BSD-3-Clause
 
 
@@ -704,4 +692,16 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 7400 | {{< alias "pg_command_fw" >}} | DDL and utility command firewall for PostgreSQL |
+
+## BSD-2-Clause
+
+
+
+| {{< license "BSD-2-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 3230 | {{< alias "pg_regresql" >}} | Trust pg_class statistics for planning instead of physical relation size |
 

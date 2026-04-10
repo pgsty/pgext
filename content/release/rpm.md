@@ -11,7 +11,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 | Package        | Old    | New    | Comment                  |
 |:---------------|:-------|:-------|:-------------------------|
-| timescaledb    | 2.25.2 | 2.26.0 | available, PG15-18       |
+| timescaledb    | 2.25.2 | 2.26.2 | available, PG15-18       |
+| pg_ivm         | 1.13   | 1.14   | upgraded, PG14-18        |
+| system_stats   | 3.2    | 4.0    | upgraded, PG14-18        |
+| nominatim_fdw  | 1.1.0  | 1.2    | upgraded, PG14-18        |
 | pg_textsearch  | 0.5.0  | 1.0.0  | PG17-18                  |
 | pg_clickhouse  | 0.1.5  | 0.1.10 | available, PG14-18       |
 | pg_dispatch    | -      | 0.1.5  | new, PG14-18             |
