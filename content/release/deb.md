@@ -6,18 +6,42 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-04-10
+
+| Package        | Old    | New    | Comment                  |
+|:---------------|:-------|:-------|:-------------------------|
+| timescaledb    | 2.25.2 | 2.26.0 | available, PG15-18       |
+| pg_textsearch  | 0.5.0  | 1.0.0  | PG17-18                  |
+| pg_clickhouse  | 0.1.5  | 0.1.10 | available, PG14-18       |
+| pg_dispatch    | -      | 0.1.5  | new, PG14-18             |
+| pg_search      | 0.22.2 | 0.22.6 | manual download, PG15-18 |
+| pg_fsql        | -      | 1.1.0  | new, PG14-18             |
+| pg_liquid      | -      | 0.1.7  | new, PG14-18             |
+| pg_regresql    | -      | 2.0.0  | new, PG14-18             |
+| pg_slug_gen    | -      | 1.0.0  | new, PG15-18             |
+| pg_stat_ch     | -      | 0.3.3  | new, PG16-18             |
+| pg_variables   | -      | 1.2.5  | new, PG14-18             |
+| pgcalendar     | -      | 1.1.0  | new, PG14-18             |
+| pgclone        | -      | 2.2.0  | new, PG14-18             |
+| pgelog         | -      | 1.0.2  | new, PG14-18             |
+| pglock         | -      | 1.0.0  | new, PG14-18             |
+| pgproto        | -      | 0.2.1  | new, PG14-18             |
+| postgresbson   | -      | 2.0.2  | new, PG14-18             |
+| rdf_fdw        | -      | 2.4.0  | new, PG14-18             |
+| parray_gin     | -      | 1.4.0  | new, PG14-18             |
+| pg_store_plans | 1.9    | 1.10   | upgraded, PG14-18        |
 
 ## 2026-03-21
 
-| Package            | Old   | New       | Comment  |
-|:-------------------|:------|:----------|:---------|
+| Package            | Old     | New       | Comment |
+|:-------------------|:--------|:----------|:--------|
 | pg_search          | 0.21.12 | 0.22.2    |         |
-| pg_track_optimizer | 0.9.1 | 0.9.2     |          |   
-| pgcollection       | 1.0.0 | 2.0.0     |          |   
-| pg_ttl_index       | 2.0.0 | 3.0.0     |          |   
-| pg_clickhouse      | 0.1.4 | 0.1.5     |          |
-| pdu                |       | 3.0.25.12 | new      |
-| pgdog              |       | 0.1.32    | new      |
+| pg_track_optimizer | 0.9.1   | 0.9.2     |         |   
+| pgcollection       | 1.0.0   | 2.0.0     |         |   
+| pg_ttl_index       | 2.0.0   | 3.0.0     |         |   
+| pg_clickhouse      | 0.1.4   | 0.1.5     |         |
+| pdu                |         | 3.0.25.12 | new     |
+| pgdog              |         | 0.1.32    | new     |
 
 ## 2026-03-05
 
@@ -162,7 +186,7 @@ Drop PG 13 support for all extensions
 | pgx_ulid                                                      | -       | -       | fix pg18         |
 | plprql                                                        | -       | -       | fix pg18         |
 
-# 2025-12-04
+## 2025-12-04
 
 | Name    | Old | New | Comment           |
 |:--------|:----|:----|:------------------|

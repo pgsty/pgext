@@ -2,7 +2,7 @@
 title: "pg_hashids"
 linkTitle: "pg_hashids"
 description: "Short unique id generator for PostgreSQL, using hashids"
-weight: 4560
+weight: 4540
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4560** | {{< badge content="pg_hashids" link="https://github.com/iCyberon/pg_hashids" >}} | {{< ext "pg_hashids" >}} | `1.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4540** | {{< badge content="pg_hashids" link="https://github.com/iCyberon/pg_hashids" >}} | {{< ext "pg_hashids" >}} | `1.3` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

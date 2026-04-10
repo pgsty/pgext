@@ -7,14 +7,14 @@ categories: ["FTS"]
 width: full
 ---
 
-[**pg_biscuit**](https://github.com/CrystallineCore/pg_biscuit) : IAM-LIKE pattern matching with bitmap indexing
+[**pg_biscuit**](https://github.com/CrystallineCore/Biscuit) : IAM-LIKE pattern matching with bitmap indexing
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2170** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/pg_biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `2.2.2` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2170** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `2.2.2` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -121,7 +121,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/CrystallineCore/pg_biscuit" title="Repository" icon="github" subtitle="github.com/CrystallineCore/pg_biscuit" >}}
+{{< card link="https://github.com/CrystallineCore/Biscuit" title="Repository" icon="github" subtitle="github.com/CrystallineCore/Biscuit" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="Biscuit-2.2.2.tar.gz" >}}
 {{< /cards >}}
 

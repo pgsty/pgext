@@ -6,6 +6,55 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-04-10
+
+| Name                       | Old            | New              | Comment                                 |
+|:---------------------------|:---------------|:-----------------|:----------------------------------------|
+| prometheus                 | 3.10.0         | 3.11.1           | upstream bump                           |
+| alertmanager               | 0.31.1         | 0.32.0           | upstream bump                           |
+| node_exporter              | 1.10.2         | 1.11.1           | upstream bump                           |
+| mongodb_exporter           | 0.49.0         | 0.50.0           | upstream bump                           |
+| victoria-metrics           | 1.138.0        | 1.139.0          | base package                            |
+| victoria-metrics-cluster   | 1.138.0        | 1.139.0          | bundled with VictoriaMetrics            |
+| vmutils                    | 1.138.0        | 1.139.0          | bundled with VictoriaMetrics            |
+| victoria-logs              | 1.48.0         | 1.49.0           | base package                            |
+| vlagent                    | 1.48.0         | 1.49.0           | bundled with VictoriaLogs               |
+| vlogscli                   | 1.48.0         | 1.49.0           | bundled with VictoriaLogs               |
+| grafana                    | 12.4.1         | 12.4.2           | direct-download metadata                |
+| duckdb                     | 1.5.0          | 1.5.1            | upstream bump                           |
+| dblab                      | 0.34.3         | 0.37.1           | upstream bump                           |
+| grafana-victoriametrics-ds | 0.23.1         | 0.23.4           | upstream bump                           |
+| grafana-infinity-ds        | 3.7.4          | 3.8.0            | upstream bump                           |
+| seaweedfs                  | 4.17           | 4.19             | upstream bump                           |
+| rustfs                     | 1.0.0-alpha.89 | 1.0.0-alpha.91   | upstream bump                           |
+| v2ray                      | 5.47.0         | 5.48.0           | v2ray-core package                      |
+| xray                       | 26.2.6         | 26.3.27          | upstream bump                           |
+| agentsview                 | 0.15.0         | 0.19.0           | upstream bump                           |
+| claude                     | 2.1.81         | 2.1.98           | rebuilt on 2026-04-10                   |
+| codex                      | 0.116.0        | 0.119.0-alpha.29 | prerelease chain, rebuilt on 2026-04-10 |
+| maddy                      | 0.8.2          | 0.9.2            | upstream bump                           |
+| genai-toolbox              | 0.27.0         | 1.0.0            | metadata only, renamed to mcp-toolbox   |
+| npgsqlrest                 | 3.11.1         | 3.12.0           | upstream bump                           |
+| postgrest                  | 14.7           | 14.8             | upstream bump                           |
+| sqlcmd                     | 1.9.0          | 1.10.0           | upstream bump                           |
+| opencode                   | 1.2.27         | 1.4.3            | rebuilt on 2026-04-10                   |
+| uv                         | 0.10.12        | 0.11.6           | upstream bump                           |
+| golang                     | 1.26.1         | 1.26.2           | official Go stable                      |
+| nodejs                     | 24.14.0        | 24.14.1          | kept on 24.x policy line                |
+| pgschema                   | 1.7.4          | 1.9.0            | direct-download metadata                |
+| crush                      | 0.51.2         | 0.56.0           | direct-download metadata                |
+| rclone                     | 1.73.2         | 1.73.4           | direct-download metadata                |
+| code                       | 1.112.0        | 1.115.0          | VS Code stable metadata                 |
+| code-server                | 4.112.0        | 4.115.0          | direct-download metadata                |
+| tigerbeetle                | 0.16.77        | 0.16.78          | upstream bump                           |
+| tigerfs                    | 0.5.0          | 0.6.0            | upstream bump                           |
+| sabiql                     | 1.8.2          | 1.10.0           | upstream bump                           |
+| hugo                       | 0.158.0        | 0.160.1          | upstream bump                           |
+| etcd                       | 3.6.9          | 3.6.8            | frozen at 3.6.8; README corrected       |
+| loki                       | 3.6.7          | 3.6.7            | deprecated, kept frozen                 |
+| promtail                   | 3.6.7          | 3.6.7            | deprecated, kept frozen                 |
+| pgflo                      | 0.0.15         | -                | removed                                 |
+
 ## 2026-03-21
 
 | Name                     | Old            | New            | Comment |
@@ -52,8 +101,8 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | mysqld_exporter          | 0.18.0         | 0.19.0         |         |
 | pg_exporter              | 1.2.0          | 1.2.1          |         |
 | pig                      | 1.3.1          | 1.3.2          |         |
-| minio                    | 20260214       | 20260321        |         |
-| mcli                     | 20260213       | 20260321        |         |
+| minio                    | 20260214       | 20260314       |         |
+| mcli                     | 20260213       | 20260313       |         |
 | claude                   | 2.1.68         | 2.1.81         |         |
 
 ## 2026-03-05
@@ -244,17 +293,18 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-01-08
 
-| 名称            | 旧版本      | 新版本       | 备注                     |
-|:--------------|:---------|:----------|:-----------------------|
-| pg_exporter   | `1.1.0`  | `1.1.1`   | new pg_timeline 采集器    |
-| npgsqlrest    |          | `3.3.3`   | new                    |
-| postgrest     |          | `14.3`    | new                    |
-| opencode      |          | `1.0.223` | new                    |
-| code-server   |          | `4.107.0` | new                    |
-| claude        | `2.0.76` | `2.1.1`   | new                    |
-| genai-toolbox | `0.23.0` | `0.24.0`  | remove oracle C driver |
-| golang        |          | `1.25.5`  | new                    |
-| nodejs        |          | `24.12.0` | new                    |
+| Name          | Old    | New      | Comment                   |
+|:--------------|:-------|:---------|:--------------------------|
+| code          | -      | 1.107.0  | new                       |
+| code-server   | -      | 4.107.0  | new                       |
+| golang        | -      | 1.25.5   | new                       |
+| nodejs        | -      | 24.12.0  | new                       |
+| opencode      | -      | 1.0.223  | new                       |
+| pg_exporter   | 1.1.0  | 1.1.1    | new pg_timeline collector |
+| npgsqlrest    | -      | 3.3.3    | new                       |
+| postgrest     | -      | 14.3     | new                       |
+| claude        | 2.0.76 | 2.1.1    | new                       |
+| genai-toolbox | 0.23.0 | 0.24.0   | removed Oracle C driver   |
 
 
 ## 2025-12-25
@@ -285,9 +335,8 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | duckdb            | 1.4.2          | 1.4.3          |          |
 | rclone            | 1.72.0         | 1.72.1         |          |
 | pev2              | 1.17.0         | 1.19.0         |          |
-| pg_exporrter      | 1.0.3          | 1.1.0          |          |
+| pg_exporter       | 1.0.3          | 1.1.0          |          |
 | pig               | 0.7.4          | 0.8.0          |          |
-| rclone            | 1.72.0         | 1.72.1         |          |
 | genai-toolbox     | 0.22.0         | 0.23.0         |          |
 | minio             | 20250907161309 | 20251203120000 | by pgsty |
 
@@ -304,7 +353,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | victoria-metrics        | 0.130.0 | 0.131.0   |         |
 | victoria-logs           | 0.38.0  | 0.40.0    |         |
 | victoria-traces         | -       | 0.5.1     | new     |
-| grafana-victorialogs-ds | 0.22.1  | 0.22.3    |         |
+| grafana-victorialogs-ds | 0.22.1  | 0.22.4    |         |
 | redis_exporter          | 1.80.0  | 1.80.1    |         |
 | mongodb_exporter        | 0.47.1  | 0.47.2    |         |
 | genai-toolbox           | 0.21.0  | 0.22.0    |         |

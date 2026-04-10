@@ -2,7 +2,7 @@
 title: "pg_protobuf"
 linkTitle: "pg_protobuf"
 description: "Protobuf support for PostgreSQL"
-weight: 4260
+weight: 4120
 categories: ["UTIL"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4260** | {{< badge content="pg_protobuf" link="https://github.com/afiskon/pg_protobuf" >}} | {{< ext "pg_protobuf" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4120** | {{< badge content="pg_protobuf" link="https://github.com/afiskon/pg_protobuf" >}} | {{< ext "pg_protobuf" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

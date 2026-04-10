@@ -8,22 +8,48 @@ weight: 300
 
 
 
+## 2026-04-10
+
+| 包名             | 旧版本    | 新版本    | 备注           |
+|:---------------|:-------|:-------|:-------------|
+| timescaledb    | 2.25.2 | 2.26.0 | 正常，PG15-18   |
+| pg_textsearch  | 0.5.0  | 1.0.0  | PG17-18      |
+| pg_clickhouse  | 0.1.5  | 0.1.10 | 正常，PG14-18   |
+| pg_dispatch    | -      | 0.1.5  | 新增，PG14-18   |
+| pg_search      | 0.22.2 | 0.22.6 | 手工下载，PG15-18 |
+| pg_fsql        | -      | 1.1.0  | 新增，PG14-18   |
+| pg_liquid      | -      | 0.1.7  | 新增，PG14-18   |
+| pg_regresql    | -      | 2.0.0  | 新增，PG14-18   |
+| pg_slug_gen    | -      | 1.0.0  | 新增，PG15-18   |
+| pg_stat_ch     | -      | 0.3.3  | 新增，PG16-18   |
+| pg_variables   | -      | 1.2.5  | 新增，PG14-18   |
+| pgcalendar     | -      | 1.1.0  | 新增，PG14-18   |
+| pgclone        | -      | 2.2.0  | 新增，PG14-18   |
+| pgelog         | -      | 1.0.2  | 新增，PG14-18   |
+| pglock         | -      | 1.0.0  | 新增，PG14-18   |
+| pgproto        | -      | 0.2.1  | 新增，PG14-18   |
+| postgresbson   | -      | 2.0.2  | 新增，PG14-18   |
+| rdf_fdw        | -      | 2.4.0  | 新增，PG14-18   |
+| parray_gin     | -      | 1.4.0  | 新增，PG14-18   |
+| pg_store_plans | 1.9    | 1.10   | 升级，PG14-18   |
+
+
 ## 2026-03-21
 
-| 包名                 | 旧版本   | 新版本       | 备注      |
-|:-------------------|:------|:----------|:--------|
-| pg_search          | 0.21.12 | 0.22.2    |         |
-| pg_track_optimizer | 0.9.1 | 0.9.2     |         |   
-| pgcollection       | 1.0.0 | 2.0.0     |         |   
-| pg_ttl_index       | 2.0.0 | 3.0.0     |         |   
-| pg_clickhouse      | 0.1.4 | 0.1.5     |         |
-| pdu                |       | 3.0.25.12 | 新增      |
-| pgdog              |       | 0.1.32    | 新增      |
+| 包名                 | 旧版本     | 新版本       | 备注 |
+|:-------------------|:--------|:----------|:---|
+| pg_search          | 0.21.12 | 0.22.2    |    |
+| pg_track_optimizer | 0.9.1   | 0.9.2     |    |   
+| pgcollection       | 1.0.0   | 2.0.0     |    |   
+| pg_ttl_index       | 2.0.0   | 3.0.0     |    |   
+| pg_clickhouse      | 0.1.4   | 0.1.5     |    |
+| pdu                |         | 3.0.25.12 | 新增 |
+| pgdog              |         | 0.1.32    | 新增 |
 
 
 ## 2026-03-05
 
-Drop PG 13 support for all extensions
+移除了所有扩展对 PG 13 的支持。
 
 | 包名               | 旧版本     | 新版本     | 备注              |
 |:-----------------|:--------|:--------|:----------------|
@@ -112,6 +138,7 @@ Drop PG 13 support for all extensions
 | pg_convert              | 0.0.5  | 0.1.0  |               |
 | pg_timeseries           | 0.1.8  | 0.2.0  |               |
 | biscuit                 | 2.0.1  | 2.2.2  |               |
+| pgmq                    | 1.8.0  | 1.8.1  |               |
 | documentdb              | 0.107  | 0.109  | +pg18, 使用微软版本 |
 | pg_bulkload             | 3.1.22 | 3.1.23 | +pg18         |
 | age                     |   -    | 1.6.0  | +pg18 PGDG    |
@@ -187,9 +214,9 @@ Drop PG 13 support for all extensions
 | pg_enigma              |        | 0.4.0  | vonng patched pgrx version |
 | pg_retry               |        | 1.0.0  | new, pg17-18               |
 | pg_biscuit             |        |  1.0   | new, pg16-18               |
+| pg_weighted_statistics |        | 1.0.0  | new, pg14-18               |
 | pg_stat_monitor        | 2.3.0  | 2.3.1  |                            |
 | pgmq                   | 1.7.0  | 1.8.0  |                            |
-| pg_weighted_statistics |        | 1.0.0  | new, pg14-18               |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
 

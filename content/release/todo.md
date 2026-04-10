@@ -4,14 +4,22 @@ description: PG Extensions in the radar!
 weight: 700
 ---
 
-## DOING
+## TODO
 
-- pg_search 0.21.12 -> 0.22.2
-- pgsentinel 1.4.0 -> 1.4.1
-- pg_track_optimizer 0.9.1 -> 0.9.2
-- pgcollection 1.0.0 -> 2.0.0
-- pg_ttl_index 2.0.0 -> 3.0.0
-- pg_clickhouse: 0.1.4 -> 0.1.5
+请完成下面这些软件包构建 spec 的升级：
+
+1. 更新 spec 里面的版本号和 ChangeLog
+2. 下载相应的软件包，放在本地的 src 和 ~/pgsty/repo/ext/src 里面
+
+- pg_clickhouse: 0.1.5 -> 0.1.6
+- pg_textsearch: 0.5.0 -> 1.0.0
+- pg_store_plan: 1.9 -> 1.10 (DEB)
+- timescaledb 2.25.0 -> 2.26.0
+- pgvector 0.8.1 -> 0.8.2
+- pg_search 0.22.2 -> 0.22.5
+
+3. 尝试用 Docker （el9a）构建新版本。
+
 
 ## TODOLIST
 

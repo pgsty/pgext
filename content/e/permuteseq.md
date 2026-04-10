@@ -2,7 +2,7 @@
 title: "permuteseq"
 linkTitle: "permuteseq"
 description: "Pseudo-randomly permute sequences with a format-preserving encryption on elements"
-weight: 4550
+weight: 4530
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4550** | {{< badge content="permuteseq" link="https://github.com/dverite/permuteseq" >}} | {{< ext "permuteseq" >}} | `1.2.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4530** | {{< badge content="permuteseq" link="https://github.com/dverite/permuteseq" >}} | {{< ext "permuteseq" >}} | `1.2.2` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

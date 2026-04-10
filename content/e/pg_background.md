@@ -2,7 +2,7 @@
 title: "pg_background"
 linkTitle: "pg_background"
 description: "Run SQL queries in the background"
-weight: 1100
+weight: 1110
 categories: ["TIME"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1100** | {{< badge content="pg_background" link="https://github.com/vibhorkum/pg_background" >}} | {{< ext "pg_background" >}} | `1.8` | {{< category "TIME" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **1110** | {{< badge content="pg_background" link="https://github.com/vibhorkum/pg_background" >}} | {{< ext "pg_background" >}} | `1.8` | {{< category "TIME" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
