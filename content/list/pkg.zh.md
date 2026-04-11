@@ -42,7 +42,7 @@ comments: false
 
 | 包 | 版本 | 仓库 | 分类 | RPM | DEB |
 |:---|:-----|:-----|:-----|:-----|:-----|
-| {{< ext "timescaledb" >}} | `2.26.0` | {{< badge content="Link" link="https://github.com/timescale/timescaledb" >}} | {{< category "TIME" >}} | `timescaledb-tsl_$v` | `postgresql-$v-timescaledb-tsl` |
+| {{< ext "timescaledb" >}} | `2.26.2` | {{< badge content="Link" link="https://github.com/timescale/timescaledb" >}} | {{< category "TIME" >}} | `timescaledb-tsl_$v` | `postgresql-$v-timescaledb-tsl` |
 | {{< ext "timescaledb_toolkit" >}} | `1.22.0` | {{< badge content="Link" link="https://github.com/timescale/timescaledb-toolkit" >}} | {{< category "TIME" >}} | `timescaledb-toolkit_$v` | `postgresql-$v-timescaledb-toolkit` |
 | {{< ext "timeseries" "pg_timeseries" >}} | `0.2.0` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_timeseries" >}} | {{< category "TIME" >}} | `pg_timeseries_$v` | `postgresql-$v-pg-timeseries` |
 | {{< ext "periods" >}} | `1.2.3` | {{< badge content="Link" link="https://github.com/xocolatl/periods" >}} | {{< category "TIME" >}} | `periods_$v` | `postgresql-$v-periods` |
@@ -53,7 +53,7 @@ comments: false
 | {{< ext "pg_task" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/RekGRpth/pg_task" >}} | {{< category "TIME" >}} | `pg_task_$v` | `postgresql-$v-pg-task` |
 | {{< ext "pg_later" >}} | `0.4.0` | {{< badge content="Link" link="https://github.com/ChuckHend/pg_later" >}} | {{< category "TIME" >}} | `pg_later_$v` | `postgresql-$v-pg-later` |
 | {{< ext "pg_dispatch" >}} | `0.1.5` | {{< badge content="Link" link="https://github.com/Snehil-Shah/pg_dispatch" >}} | {{< category "TIME" >}} | `pg_dispatch_$v` | `postgresql-$v-pg-dispatch` |
-| {{< ext "pg_background" >}} | `1.9.1` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v` | `postgresql-$v-pg-background` |
+| {{< ext "pg_background" >}} | `1.9.2` | {{< badge content="Link" link="https://github.com/vibhorkum/pg_background" >}} | {{< category "TIME" >}} | `pg_background_$v` | `postgresql-$v-pg-background` |
 | {{< ext "postgis" >}} | `3.6.2` | {{< badge content="Link" link="https://git.osgeo.org/gitea/postgis/postgis" >}} | {{< category "GIS" >}} | `postgis36_$v` | `postgresql-$v-postgis-3` |
 | {{< ext "pgrouting" >}} | `4.0.1` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v` | `postgresql-$v-pgrouting` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v` | `postgresql-$v-pointcloud` |

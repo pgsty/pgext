@@ -18,7 +18,7 @@ PostgreSQL 扩展（481 ext / 404 pkg）归属 16 个分类。
 
 | ID | 扩展/包 | 版本 | 描述 |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.26.0 | 时序数据库扩展插件 |
+| 1000 | {{< alias "timescaledb" >}} | 2.26.2 | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | 时序数据API封装 |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | 为 PERIODs 和 SYSTEM VERSIONING 提供标准 SQL 功能 |
@@ -29,7 +29,7 @@ PostgreSQL 扩展（481 ext / 404 pkg）归属 16 个分类。
 | 1080 | {{< alias "pg_task" >}} | 1.0.0 | 在特定时间点在后台执行SQL命令 |
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | 执行查询，并在稍后异步获取查询结果 |
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | 基于 pg_cron 的异步 SQL 分发器 |
-| 1110 | {{< alias "pg_background" >}} | 1.9.1 | 在后台运行 SQL 查询 |
+| 1110 | {{< alias "pg_background" >}} | 1.9.2 | 在后台运行 SQL 查询 |
 
 ## GIS
 

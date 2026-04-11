@@ -198,84 +198,127 @@ CREATE EXTENSION kafka_fdw;
 ```
 
 
-
-
 ## Usage
 
-> [kafka_fdw: Kafka Foreign Data Wrapper for CSV formatted messages](https://github.com/adjust/kafka_fdw)
+> Syntax:
+>
+> ```sql
+> CREATE EXTENSION kafka_fdw;
+> CREATE SERVER kafka_server FOREIGN DATA WRAPPER kafka_fdw
+>   OPTIONS (brokers 'localhost:9092');
+> ```
+>
+> Source: [README](https://github.com/adjust/kafka_fdw)
 
-### Create Server
+`kafka_fdw` is a foreign data wrapper that exposes Kafka messages as PostgreSQL foreign tables. The upstream README explicitly warns that the project is not yet production ready.
+
+### Server and Mapping
+
+Define a foreign server with the Kafka broker list, then add a user mapping:
 
 ```sql
 CREATE EXTENSION kafka_fdw;
 
-CREATE SERVER kafka_server FOREIGN DATA WRAPPER kafka_fdw
-  OPTIONS (brokers 'localhost:9092');
-```
+CREATE SERVER kafka_server
+FOREIGN DATA WRAPPER kafka_fdw
+OPTIONS (brokers 'localhost:9092');
 
-**Server Options:** `brokers` (required, comma-separated Kafka broker endpoints).
-
-### Create User Mapping
-
-```sql
 CREATE USER MAPPING FOR PUBLIC SERVER kafka_server;
 ```
 
-### Create Foreign Table (CSV Format)
+## Foreign Tables
+
+Kafka foreign tables must declare two metadata columns, one marked with `partition 'true'` and one marked with `offset 'true'`. The remaining columns describe the message payload.
+
+### CSV Messages
 
 ```sql
-CREATE FOREIGN TABLE kafka_csv (
-  part int OPTIONS (partition 'true'),
-  offs bigint OPTIONS (offset 'true'),
-  some_int int,
-  some_text text,
-  some_date date,
-  some_time timestamp
+CREATE FOREIGN TABLE kafka_test (
+    part int OPTIONS (partition 'true'),
+    offs bigint OPTIONS (offset 'true'),
+    some_int int,
+    some_text text,
+    some_date date,
+    some_time timestamp
 )
 SERVER kafka_server
-OPTIONS (format 'csv', topic 'my_topic', batch_size '30', buffer_delay '100');
+OPTIONS (
+    format 'csv',
+    topic 'contrib_regress',
+    batch_size '30',
+    buffer_delay '100'
+);
 ```
 
-Two metadata columns are required: one with `partition 'true'` and one with `offset 'true'`. The remaining columns match the message format.
+For CSV, columns are mapped by position. Upstream notes that schema enforcement depends on the message writer, so strict parsing and junk-handling options matter when input quality is uncertain.
 
-**Table Options:** `format` (`csv` or `json`), `topic` (Kafka topic name), `batch_size`, `buffer_delay` (milliseconds), `strict` (enforce strict schema validation), `ignore_junk` (set malformed columns to NULL).
-
-### Create Foreign Table (JSON Format)
+### JSON Messages
 
 ```sql
-CREATE FOREIGN TABLE kafka_json (
-  part int OPTIONS (partition 'true'),
-  offs bigint OPTIONS (offset 'true'),
-  some_int int OPTIONS (json 'int_val'),
-  some_text text OPTIONS (json 'text_val')
+CREATE FOREIGN TABLE kafka_test_json (
+    part int OPTIONS (partition 'true'),
+    offs bigint OPTIONS (offset 'true'),
+    some_int int OPTIONS (json 'int_val'),
+    some_text text OPTIONS (json 'text_val'),
+    some_date date OPTIONS (json 'date_val'),
+    some_time timestamp OPTIONS (json 'time_val')
 )
 SERVER kafka_server
-OPTIONS (format 'json', topic 'my_json_topic', batch_size '30', buffer_delay '100');
+OPTIONS (
+    format 'json',
+    topic 'contrib_regress_json',
+    batch_size '30',
+    buffer_delay '100'
+);
 ```
 
-Use the `json` column option to map column names to JSON keys.
+For JSON, each column can map to an object key with the `json` option. The current implementation supports JSON objects, not top-level JSON arrays.
 
-### Consuming Messages
+## Querying and Producing
+
+The offset and partition columns are special, and the upstream README recommends specifying them in queries whenever possible:
 
 ```sql
--- Read from a specific partition and offset
-SELECT * FROM kafka_csv WHERE part = 0 AND offs > 1000 LIMIT 60;
+SELECT * FROM kafka_test WHERE part = 0 AND offs > 1000 LIMIT 60;
 
--- Read from multiple partitions
-SELECT * FROM kafka_csv
-WHERE (part = 0 AND offs > 100) OR (part = 1 AND offs > 300);
+SELECT *
+FROM kafka_test
+WHERE (part = 0 AND offs > 100)
+   OR (part = 1 AND offs > 300)
+   OR (part = 3 AND offs > 700);
 ```
 
-Note: The `offset` keyword is reserved in SQL; use double quotes when referencing the offset column in some contexts.
-
-### Producing Messages
+Messages can also be produced with `INSERT` statements. If a partition value is supplied, it is used; otherwise Kafka's builtin partitioner chooses one:
 
 ```sql
--- Insert with explicit partition
-INSERT INTO kafka_csv (part, some_int, some_text)
-  VALUES (0, 42, 'hello from partition 0');
-
--- Insert with auto-partition selection
-INSERT INTO kafka_csv (some_int, some_text)
-  VALUES (42, 'auto-partitioned message');
+INSERT INTO kafka_test(part, some_int, some_text)
+VALUES
+    (0, 5464565, 'some text goes into partition 0'),
+    (NULL, 5464565, 'some text goes into partition selected by kafka');
 ```
+
+## Error Handling
+
+The default behavior is permissive:
+
+- missing trailing columns are treated as `NULL`
+- extra fields are ignored
+- unparsable values still raise errors by default
+
+Relevant table options and helper columns include:
+
+- `strict 'true'` to reject column count mismatches
+- `ignore_junk 'true'` to set malformed values to `NULL`
+- columns marked `junk 'true'` to capture the original payload
+- columns marked `junk_error 'true'` to capture parsing errors
+
+## Build Notes
+
+The extension uses `librdkafka` and the upstream build instructions are the standard:
+
+```bash
+make && make install
+make installcheck
+```
+
+The test setup assumes Kafka on `localhost:9092` and ZooKeeper on `localhost:2181`.

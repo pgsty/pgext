@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1000** | {{< badge content="timescaledb" link="https://github.com/timescale/timescaledb" >}} | {{< ext "timescaledb" >}} | `2.26.0` | {{< category "TIME" >}} | {{< license "Timescale" >}} | {{< language "C" >}} |
+| **1000** | {{< badge content="timescaledb" link="https://github.com/timescale/timescaledb" >}} | {{< ext "timescaledb" >}} | `2.26.2` | {{< category "TIME" >}} | {{< license "Timescale" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -32,9 +32,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `timescaledb` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.0` | {{< bg "18" "timescaledb-tsl_18" "green" >}} {{< bg "17" "timescaledb-tsl_17" "green" >}} {{< bg "16" "timescaledb-tsl_16" "green" >}} {{< bg "15" "timescaledb-tsl_15" "green" >}} {{< bg "14" "timescaledb-tsl_14" "red" >}} | `timescaledb-tsl_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.0` | {{< bg "18" "postgresql-18-timescaledb-tsl" "green" >}} {{< bg "17" "postgresql-17-timescaledb-tsl" "green" >}} {{< bg "16" "postgresql-16-timescaledb-tsl" "green" >}} {{< bg "15" "postgresql-15-timescaledb-tsl" "green" >}} {{< bg "14" "postgresql-14-timescaledb-tsl" "red" >}} | `postgresql-$v-timescaledb-tsl` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `timescaledb` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.2` | {{< bg "18" "timescaledb-tsl_18" "green" >}} {{< bg "17" "timescaledb-tsl_17" "green" >}} {{< bg "16" "timescaledb-tsl_16" "green" >}} {{< bg "15" "timescaledb-tsl_15" "green" >}} {{< bg "14" "timescaledb-tsl_14" "red" >}} | `timescaledb-tsl_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.26.2` | {{< bg "18" "postgresql-18-timescaledb-tsl" "green" >}} {{< bg "17" "postgresql-17-timescaledb-tsl" "green" >}} {{< bg "16" "postgresql-16-timescaledb-tsl" "green" >}} {{< bg "15" "postgresql-15-timescaledb-tsl" "green" >}} {{< bg "14" "postgresql-14-timescaledb-tsl" "red" >}} | `postgresql-$v-timescaledb-tsl` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -484,7 +484,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/timescale/timescaledb" title="Repository" icon="github" subtitle="github.com/timescale/timescaledb" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="timescaledb-2.26.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="timescaledb-2.26.2.tar.gz" >}}
 {{< /cards >}}
 
 
