@@ -1,56 +1,91 @@
 
-> [!NOTE] THIS EXTENSION is built by ParadeDB team and delivered by the PIGSTY repo
-
 ## Usage
 
-https://docs.paradedb.com/documentation/getting-started/quickstart
+> Syntax:
+>
+> ```sql
+> CREATE EXTENSION pg_search;
+> CREATE INDEX search_idx ON mock_items
+> USING bm25 (id, description, category)
+> WITH (key_field='id');
+> SELECT * FROM mock_items WHERE description @@@ 'keyboard';
+> ```
+>
+> Sources: [README](https://github.com/paradedb/paradedb/tree/dev/pg_search), [Quickstart](https://docs.paradedb.com/documentation/getting-started/quickstart), [Install docs](https://docs.paradedb.com/documentation/getting-started/install)
+
+`pg_search` is ParadeDB's full text search extension for PostgreSQL. It provides BM25-based indexing and querying on heap tables, is built on Tantivy, and the current upstream README states support starts at PostgreSQL 15.
+
+## Setup
+
+The upstream installation docs highlight one critical requirement: `pg_search` must be included in `shared_preload_libraries` so its background worker can process index writes.
+
+```ini
+shared_preload_libraries = 'pg_search'
+```
+
+After that:
 
 ```sql
 CREATE EXTENSION pg_search;
-
 ALTER SYSTEM SET paradedb.pg_search_telemetry TO 'off';
+```
 
-CALL paradedb.create_bm25_test_table(
-  schema_name => 'public',
-  table_name => 'mock_items'
-);
+## Creating a BM25 Index
 
-SELECT description, rating, category FROM mock_items LIMIT 3;
+The quickstart demonstrates creating a BM25 index on a heap table, with a unique key field:
 
--- Create a BM25 index (key_field must be UNIQUE, one BM25 index per table)
+```sql
 CREATE INDEX search_idx ON mock_items
 USING bm25 (id, description, category, rating, in_stock, created_at, metadata, weight_range)
 WITH (key_field='id');
+```
 
--- Full-text search with @@@ operator
+The existing docs emphasize that the `key_field` must be unique and that BM25 indexes are the core access method for search queries.
+
+## Querying
+
+The `@@@` operator performs search queries:
+
+```sql
 SELECT description, rating, category
 FROM mock_items
 WHERE description @@@ 'keyboard' AND rating > 2
 ORDER BY rating
 LIMIT 5;
+```
 
--- BM25 relevance scoring
+ParadeDB also documents helper functions for relevance scoring and snippets:
+
+```sql
 SELECT description, paradedb.score(id)
 FROM mock_items
 WHERE description @@@ 'keyboard'
 ORDER BY paradedb.score(id) DESC
 LIMIT 5;
 
--- Highlighting matched terms
 SELECT description, paradedb.snippet(description), paradedb.score(id)
 FROM mock_items
 WHERE description @@@ 'keyboard'
 ORDER BY paradedb.score(id) DESC
 LIMIT 5;
+```
 
--- Exact phrase search (use double quotes inside single quotes)
-SELECT description, rating, category
+Phrase search is supported with quoted expressions:
+
+```sql
+SELECT description
 FROM mock_items
 WHERE description @@@ '"metal keyboard"';
+```
 
--- Configure text fields with tokenizers (e.g., English stemming)
-DROP INDEX search_idx;
+## Text Configuration
+
+The quickstart also shows that text fields can be wrapped with tokenizer configuration, for example English stemming:
+
+```sql
 CREATE INDEX search_idx ON mock_items
 USING bm25 (id, (description::pdb.simple('stemmer=english')), category)
 WITH (key_field='id');
 ```
+
+For deeper setup and operational guidance, the upstream project points to the ParadeDB documentation site as the primary docs surface.

@@ -1,5 +1,4 @@
 
-
 ## 用法
 
 > [pg_uuidv7: 在 PostgreSQL 中创建有效的版本 7 UUID](https://github.com/fboulnois/pg_uuidv7)
@@ -14,7 +13,7 @@ CREATE EXTENSION pg_uuidv7;
 |---|---|
 | `uuid_generate_v7()` | 生成一个新的 UUIDv7 |
 | `uuid_v7_to_timestamptz(uuid)` | 从 UUIDv7 中提取时间戳 |
-| `uuid_timestamptz_to_v7(timestamptz [, bool])` | 将时间戳转换为 UUIDv7（第二个参数设为 `true` 则将随机位清零） |
+| `uuid_timestamptz_to_v7(timestamptz [, bool])` | 将时间戳转换为 UUIDv7，第二个参数设为 `true` 时会将随机位清零 |
 
 ### 示例
 

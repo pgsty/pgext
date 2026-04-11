@@ -1,46 +1,85 @@
 
-
 ## Usage
 
-> [GitHub: CrystallineCore/pg_biscuit](https://github.com/CrystallineCore/pg_biscuit)
+> Syntax:
+>
+> ```sql
+> CREATE EXTENSION biscuit;
+> CREATE INDEX idx_users_name ON users USING biscuit(name);
+> SELECT * FROM users WHERE name LIKE '%john%';
+> ```
+>
+> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/)
 
-`biscuit` (pg_biscuit) is a PostgreSQL extension that provides IAM-like pattern matching with bitmap indexing. It enables efficient matching of permission-style patterns against text values using a specialized bitmap index.
+`biscuit` is a PostgreSQL index access method for fast `LIKE` and `ILIKE` pattern matching, including multi-column searches. The upstream project positions it as a deterministic bitmap index that avoids the false-positive recheck overhead common in trigram-based searches.
 
-## Features
+### Quick Start
 
-- **IAM-like pattern matching**: Supports wildcard pattern matching similar to AWS IAM policy patterns
-- **Bitmap indexing**: Uses bitmap indexes for fast pattern matching queries
-- **Permission evaluation**: Evaluate whether a given action matches a set of permission patterns
-
-## Quick Start
+Create the extension and build a Biscuit index on one or more text columns:
 
 ```sql
-CREATE EXTENSION biscuit CASCADE;  -- requires plpgsql
+CREATE EXTENSION biscuit;
 
--- Create a table with permission patterns
-CREATE TABLE permissions (
-  id serial PRIMARY KEY,
-  pattern text NOT NULL
-);
+CREATE INDEX idx_users_name ON users USING biscuit(name);
 
--- Insert IAM-like patterns
-INSERT INTO permissions (pattern) VALUES
-  ('s3:GetObject'),
-  ('s3:*'),
-  ('ec2:Describe*'),
-  ('iam:Create*');
+CREATE INDEX idx_products_search
+ON products USING biscuit(name, description, category);
 ```
 
-## Pattern Syntax
+Basic wildcard queries work with the index:
 
-Biscuit supports IAM-style wildcard patterns:
+```sql
+SELECT * FROM users WHERE name LIKE '%john%';
+SELECT * FROM users WHERE name NOT LIKE 'a%b%c';
+SELECT COUNT(*) FROM users WHERE name LIKE '%test%';
 
-- `*` matches any sequence of characters
-- `?` matches any single character
-- Exact strings match literally
+SELECT *
+FROM products
+WHERE name LIKE '%widget%'
+  AND description LIKE '%blue%'
+  AND category LIKE 'electronics%'
+LIMIT 10;
+```
 
-## Notes
+## Index Behavior
 
-- Requires the `plpgsql` extension (installed automatically with `CASCADE`)
-- Available for PostgreSQL 16, 17, and 18
-- Licensed under MIT
+Biscuit stores bitmap position indexes for each string and can match both forward and backward character positions. The upstream design highlights:
+
+- positive indexes for characters at exact positions
+- negative indexes for characters counted from the string end
+- case-insensitive variants for `ILIKE`
+- exact-length and minimum-length bitmaps for fast length filtering
+
+For a pattern such as `LIKE 'abc%def'`, Biscuit can intersect prefix and suffix bitmaps plus a minimum-length filter, producing exact matches without a heap recheck phase.
+
+### Pattern Cases
+
+The implementation documents optimized paths for common pattern types:
+
+- exact matches such as `'abc'`
+- prefix patterns such as `'abc%'`
+- suffix patterns such as `'%xyz'`
+- substring patterns such as `'%abc%'`
+- multi-column predicates, where Biscuit reorders predicates by estimated selectivity
+
+## Performance Notes
+
+The upstream README emphasizes bitmap-only evaluation and several execution optimizations, including:
+
+- early termination when an intermediate bitmap becomes empty
+- direct use of roaring bitmaps for sparse and dense cases
+- negative-position lookups for suffix predicates
+- sorted TID output to improve heap access locality
+- special handling for aggregate queries and `LIMIT`
+
+The project README also includes a benchmark setup comparing Biscuit indexes with trigram-based approaches on a 1M-row table.
+
+## Requirements
+
+The current upstream README lists these requirements for source builds:
+
+- PostgreSQL 16 or newer
+- standard build tools such as `gcc`, `make`, and `pg_config`
+- optional CRoaring for improved performance
+
+The project publishes packages on [PGXN](https://pgxn.org/dist/biscuit/) and maintains a dedicated documentation site on Read the Docs.

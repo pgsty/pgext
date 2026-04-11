@@ -1,11 +1,9 @@
 
-
-
 ## 用法
 
 > [pg_ivm: PostgreSQL 增量视图维护](https://github.com/sraoss/pg_ivm)
 
-`pg_ivm` 扩展提供增量视图维护（IVM）功能，通过仅应用增量变更而非完全重算来更新物化视图。视图在基表修改时通过 AFTER 触发器立即更新。
+`pg_ivm` 扩展提供增量视图维护（IVM）功能：通过只计算并应用增量变更，而不是像 `REFRESH MATERIALIZED VIEW` 那样从头重算，从而更新物化视图。视图会在基表被修改时通过 AFTER 触发器立即更新。
 
 ```sql
 CREATE EXTENSION pg_ivm;
@@ -13,7 +11,7 @@ CREATE EXTENSION pg_ivm;
 
 ### 配置
 
-将 `pg_ivm` 添加到预加载库以确保正确维护：
+将 `pg_ivm` 加入预加载库，以便正确维护：
 
 ```ini
 shared_preload_libraries = 'pg_ivm'
@@ -27,7 +25,7 @@ shared_preload_libraries = 'pg_ivm'
 pgivm.create_immv(immv_name text, view_definition text) RETURNS bigint
 ```
 
-创建增量可维护物化视图（IMMV）。触发器会自动创建以保持视图更新。如果可能，会自动创建唯一索引。
+创建一个增量可维护物化视图（IMMV）。系统会自动创建触发器来保持视图更新；如果条件允许，还会自动创建唯一索引。
 
 ```sql
 SELECT pgivm.create_immv('myview', 'SELECT * FROM mytab');
@@ -39,7 +37,7 @@ SELECT pgivm.create_immv('myview', 'SELECT * FROM mytab');
 pgivm.refresh_immv(immv_name text, with_data bool) RETURNS bigint
 ```
 
-完全替换 IMMV 内容。`with_data = false` 时，IMMV 变为未填充状态且触发器被移除。`with_data = true` 时，触发器和索引会重新创建。
+完全替换 IMMV 内容。`with_data = false` 时，IMMV 会变为空集并删除触发器；`with_data = true` 时，会重新创建触发器和索引。
 
 ```sql
 SELECT pgivm.refresh_immv('myview', true);
@@ -51,17 +49,17 @@ SELECT pgivm.refresh_immv('myview', true);
 pgivm.get_immv_def(immv regclass) RETURNS text
 ```
 
-返回 IMMV 的重构 SELECT 命令。
+返回 IMMV 的重建版 `SELECT` 命令。
 
 ### IMMV 元数据目录
 
-`pgivm.pg_ivm_immv` 目录存储 IMMV 信息：
+`pgivm.pg_ivm_immv` 目录保存 IMMV 信息：
 
 | 列 | 类型 | 描述 |
 |----|------|------|
 | `immvrelid` | regclass | IMMV 的 OID |
 | `viewdef` | text | 视图定义的查询树 |
-| `ispopulated` | bool | IMMV 当前是否已填充 |
+| `ispopulated` | bool | 当前 IMMV 是否已填充 |
 
 ### 示例
 
@@ -73,7 +71,7 @@ SELECT pgivm.create_immv('immv_agg',
      FROM pgbench_accounts JOIN pgbench_branches USING(bid) GROUP BY bid');
 ```
 
-基表更新会自动反映：
+基表更新会自动反映到视图中：
 
 ```sql
 UPDATE pgbench_accounts SET abalance = abalance + 1000 WHERE aid = 4112345;
@@ -87,7 +85,7 @@ SELECT immvrelid AS immv, pgivm.get_immv_def(immvrelid) AS def
 FROM pgivm.pg_ivm_immv;
 ```
 
-使用 `DROP TABLE` 删除 IMMV：
+用 `DROP TABLE` 删除 IMMV：
 
 ```sql
 DROP TABLE myview;
@@ -95,7 +93,7 @@ DROP TABLE myview;
 
 ### 禁用/启用维护
 
-在批量修改前禁用即时维护，然后刷新：
+在批量修改前先禁用即时维护，再刷新：
 
 ```sql
 SELECT pgivm.refresh_immv('myview', false);   -- 禁用
@@ -103,7 +101,7 @@ SELECT pgivm.refresh_immv('myview', false);   -- 禁用
 SELECT pgivm.refresh_immv('myview', true);    -- 刷新并重新启用
 ```
 
-### 支持的查询功能
+### 支持的查询特性
 
 - 内连接和外连接（包括自连接）
 - `DISTINCT` 子句

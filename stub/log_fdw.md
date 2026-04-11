@@ -1,73 +1,97 @@
 
-
-
 ## Usage
 
-> [log_fdw: Foreign data wrapper for Postgres log file access](https://github.com/aws/postgresql-logfdw)
+> Syntax:
+>
+> ```sql
+> CREATE EXTENSION log_fdw;
+> CREATE SERVER log_fdw_server FOREIGN DATA WRAPPER log_fdw;
+> SELECT * FROM list_postgres_log_files();
+> ```
+>
+> Source: [README](https://github.com/aws/postgresql-logfdw)
 
-### Create Server
+`log_fdw` is a PostgreSQL foreign data wrapper for reading PostgreSQL log files through SQL. It provides helper functions to list files in the server log directory and to create foreign tables for individual log files.
+
+### Core Functions
+
+The upstream README documents two SQL entry points:
+
+```sql
+create_foreign_table_for_log_file(table_name text, server_name text, log_file_name text)
+list_postgres_log_files()
+```
+
+`list_postgres_log_files()` is a compatibility wrapper around PostgreSQL core's `pg_ls_logdir()`.
+
+## Basic Workflow
+
+Create the extension and a foreign server:
 
 ```sql
 CREATE EXTENSION log_fdw;
-
 CREATE SERVER log_fdw_server FOREIGN DATA WRAPPER log_fdw;
 ```
 
-### List Available Log Files
+List files available in the PostgreSQL log directory:
 
 ```sql
-SELECT * FROM list_postgres_log_files();
+SELECT * FROM list_postgres_log_files() ORDER BY 1 DESC LIMIT 10;
 ```
 
-Returns the file name and size of each log file in the PostgreSQL log directory.
-
-### Create Foreign Table for CSV Logs
+Create foreign tables for CSV logs or plain `.log` files:
 
 ```sql
 SELECT * FROM create_foreign_table_for_log_file(
-  'postgresql_2024_01_15_csv',   -- foreign table name
-  'log_fdw_server',               -- server name
-  'postgresql-2024-01-15.csv'     -- log file name
-);
-```
-
-### Create Foreign Table for Plain Text Logs
-
-```sql
-SELECT * FROM create_foreign_table_for_log_file(
-  'postgresql_2024_01_15_log',
+  'postgresql_2022_11_28_csv',
   'log_fdw_server',
-  'postgresql-2024-01-15.log'
+  'postgresql-2022-11-28.csv'
+);
+
+SELECT * FROM create_foreign_table_for_log_file(
+  'postgresql_2022_11_28_log',
+  'log_fdw_server',
+  'postgresql-2022-11-28.log'
 );
 ```
 
-### Query Log Data
+## Querying
+
+Foreign tables created from plain log files expose a single log-entry style column, while CSV log files expose structured columns such as `log_time`, `error_severity`, `message`, and session metadata.
+
+Typical usage is straightforward:
 
 ```sql
--- Query CSV-format logs (structured columns)
+SELECT * FROM postgresql_2022_11_28_log LIMIT 2;
+
 SELECT log_time, error_severity, message
-FROM postgresql_2024_01_15_csv
+FROM postgresql_2022_11_28_csv
 WHERE error_severity = 'ERROR'
 ORDER BY log_time DESC
 LIMIT 20;
-
--- Query plain text logs
-SELECT * FROM postgresql_2024_01_15_log LIMIT 10;
 ```
 
-### Granting Access to Non-Superusers
+## Privileges
 
-Only superusers can create the extension, but access can be granted:
+Only superusers can create the extension. The README also notes that superusers can delegate access to non-superusers with the minimum required grants, for example:
 
 ```sql
-GRANT pg_monitor TO monitoring_user;
-GRANT CREATE ON SCHEMA public TO monitoring_user;
-GRANT USAGE ON FOREIGN SERVER log_fdw_server TO monitoring_user;
+CREATE ROLE foo;
+GRANT pg_monitor TO foo;
+GRANT CREATE ON SCHEMA bar TO foo;
+GRANT USAGE ON FOREIGN SERVER log_fdw_server TO foo;
 ```
 
-### Functions Reference
+`pg_monitor` is specifically needed when `list_postgres_log_files()` is used, because the underlying `pg_ls_logdir()` function requires it.
 
-| Function | Description |
-|----------|-------------|
-| `list_postgres_log_files()` | List available log files and their sizes |
-| `create_foreign_table_for_log_file(table_name, server_name, file_name)` | Create a foreign table from a log file |
+## Build Notes
+
+The project can be built standalone with PGXS:
+
+```bash
+export USE_PGXS=1
+make
+make install
+```
+
+The source can also be copied into PostgreSQL's `contrib` tree and built there as part of a larger distribution.

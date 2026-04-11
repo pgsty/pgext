@@ -1,10 +1,9 @@
 
-
 ## 用法
 
 > [timestamp9: PostgreSQL 的纳秒精度时间戳类型](https://github.com/optiver/timestamp9)
 
-`timestamp9` 扩展提供了纳秒精度的时间戳类型，以 64 位整数存储（自 UNIX 纪元以来的纳秒数）。
+`timestamp9` 扩展提供纳秒精度的时间戳类型，底层以 64 位整数存储，即自 UNIX 纪元以来的纳秒数。
 
 ```sql
 CREATE EXTENSION timestamp9;
@@ -12,7 +11,7 @@ CREATE EXTENSION timestamp9;
 
 ### 数据类型
 
-`timestamp9` 类型支持从 1970-01-01 到 2262-04-12 的时间戳，精度为纳秒。
+`timestamp9` 支持从 1970-01-01 到 2262-04-12 的时间戳，精度为纳秒。
 
 ### 输入格式
 
@@ -23,7 +22,7 @@ SELECT '2019-09-19 08:30:05'::timestamp9;
 -- 带时区的完整纳秒精度
 SELECT '2019-09-19 08:30:05.123456789 +0200'::timestamp9;
 
--- 从 bigint 转换（自纪元以来的纳秒数）
+-- 从 bigint 转换，自纪元以来的纳秒数
 SELECT 1568878205123456789::bigint::timestamp9;
 ```
 
@@ -32,7 +31,7 @@ SELECT 1568878205123456789::bigint::timestamp9;
 - 与 `timestamp` 和 `timestamptz` 之间的相互转换
 - 与 `date` 之间的相互转换
 
-转换过程中保留纳秒精度。
+转换过程中会保留纳秒精度。
 
 ### 运算符
 

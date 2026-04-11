@@ -1,10 +1,9 @@
 
-
 ## 用法
 
-> [permuteseq: 可扩展的序列伪随机置换](https://github.com/dverite/permuteseq)
+> [permuteseq: 序列的可扩展伪随机置换](https://github.com/dverite/permuteseq)
 
-无需存储历史值，即可生成唯一、非连续、看似随机的数字序列。使用 Feistel 密码与循环行走法实现格式保持加密。
+无需保存历史值，即可生成唯一、非连续、看似随机的数字序列。该扩展使用 Feistel 密码配合循环行走法，实现格式保持加密。
 
 ```sql
 CREATE EXTENSION permuteseq;
@@ -14,10 +13,10 @@ CREATE EXTENSION permuteseq;
 
 | 函数 | 描述 |
 |---|---|
-| `permute_nextval(seq_oid, crypt_key bigint)` | 推进序列并返回序列范围内的加密值 |
-| `reverse_permute(seq_oid, value bigint, crypt_key bigint)` | 从置换后的元素计算出原始值 |
+| `permute_nextval(seq_oid, crypt_key bigint)` | 推进序列并返回落在序列范围内的加密值 |
+| `reverse_permute(seq_oid, value bigint, crypt_key bigint)` | 由置换后的元素反推出原始值 |
 | `range_encrypt_element(clear_val bigint, min_val bigint, max_val bigint, crypt_key bigint)` | 在给定范围内加密一个 bigint |
-| `range_decrypt_element(crypt_val bigint, min_val bigint, max_val bigint, crypt_key bigint)` | 解密先前加密的值 |
+| `range_decrypt_element(crypt_val bigint, min_val bigint, max_val bigint, crypt_key bigint)` | 解密此前加密的值 |
 
 ### 示例
 
@@ -32,7 +31,7 @@ SELECT permute_nextval('s'::regclass, 123456789012345)
 SELECT reverse_permute('s'::regclass, -545, 123456789012345);
 -- -10000
 
--- 在任意范围内加密/解密
+-- 在任意范围内进行加密/解密
 SELECT range_encrypt_element(91919191919, 1e10::bigint, 1e11::bigint, 123456789012345);
 -- 83028080992
 

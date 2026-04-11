@@ -1,65 +1,75 @@
 
-
 ## Usage
 
-> [pg_store_plans: execution plan storage and statistics](https://github.com/ossc-db/pg_store_plans)
+> Syntax:
+>
+> ```sql
+> SELECT * FROM pg_store_plans ORDER BY total_time DESC;
+> SELECT * FROM pg_store_plans_info;
+> ```
+>
+> Sources: [Project page](http://ossc-db.github.io/pg_store_plans/), [Bundled docs](https://github.com/ossc-db/pg_store_plans/blob/master/docs/index.html)
 
-pg_store_plans tracks execution plan statistics for all SQL statements, complementing `pg_stat_statements` with plan-level detail. Joinable via `queryid` on PostgreSQL 14+.
+`pg_store_plans` tracks execution plan statistics for SQL statements, similar in spirit to how `pg_stat_statements` tracks statements. It records plan text, plan hash, timing, row counts, and buffer statistics, and its docs note that `queryid` can be used to join with `pg_stat_statements`.
 
-### Viewing Plan Statistics
+## Configuration
+
+The upstream documentation requires:
+
+```ini
+shared_preload_libraries = 'pg_store_plans'
+compute_query_id = 'on'
+```
+
+`pg_store_plans` needs shared memory, so adding or removing it requires a server restart. If `compute_query_id` is set to `no`, the module is silently disabled.
+
+## Viewing Plan Statistics
+
+The statistics are exposed through the `pg_store_plans` view:
 
 ```sql
--- View tracked plans with statistics
 SELECT queryid, planid, plan, calls, total_time, rows
 FROM pg_store_plans
 ORDER BY total_time DESC;
 
--- Check module status
 SELECT * FROM pg_store_plans_info;
 ```
 
-### Key View Columns
+Important columns documented upstream include:
 
-| Column | Type | Description |
-|--------|------|-------------|
-| `queryid` | bigint | Query ID (joinable with pg_stat_statements) |
-| `planid` | bigint | Plan hash code |
-| `plan` | text | Representative plan text |
-| `calls` | bigint | Execution count |
-| `total_time` | double precision | Total execution time (ms) |
-| `rows` | bigint | Total rows retrieved/affected |
-| `shared_blks_hit` | bigint | Shared buffer hits |
-| `shared_blks_read` | bigint | Shared blocks read |
-| `first_call` | timestamptz | First execution time |
-| `last_call` | timestamptz | Last execution time |
+- `queryid`, the core-generated query ID
+- `planid`, a normalized plan hash
+- `plan`, in the format chosen by `pg_store_plans.plan_format`
+- `calls`, `total_time`, and `rows`
+- buffer statistics such as `shared_blks_hit` and `shared_blks_read`
+- timestamps such as `first_call` and `last_call`
 
-### Functions
+## Helper Functions
 
 ```sql
--- Reset all statistics (superuser only)
 SELECT pg_store_plans_reset();
-
--- Convert plan formats
-SELECT pg_store_plans_textplan(plan);   -- to text
-SELECT pg_store_plans_jsonplan(plan);   -- to JSON
-SELECT pg_store_plans_xmlplan(plan);    -- to XML
-SELECT pg_store_plans_yamlplan(plan);   -- to YAML
-
--- Calculate query hash
+SELECT pg_store_plans_textplan(plan);
+SELECT pg_store_plans_jsonplan(plan);
+SELECT pg_store_plans_xmlplan(plan);
+SELECT pg_store_plans_yamlplan(plan);
 SELECT pg_store_hash_query('SELECT 1');
 ```
 
-### Configuration
+These functions reset statistics, convert stored plans to different output formats, and compute query hashes.
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `pg_store_plans.max` | 1000 | Maximum tracked plans (server start only) |
-| `pg_store_plans.track` | `top` | `top`, `all`, `verbose`, `none` |
-| `pg_store_plans.plan_format` | `text` | `text`, `json`, `xml`, `yaml`, `raw` |
-| `pg_store_plans.min_duration` | 0 | Minimum execution time to track (ms) |
-| `pg_store_plans.log_analyze` | `off` | Include EXPLAIN ANALYZE output |
-| `pg_store_plans.log_buffers` | `off` | Include buffer statistics |
-| `pg_store_plans.log_timing` | `true` | Record actual timings |
-| `pg_store_plans.plan_storage` | `file` | Storage: `file` or `shmem` |
-| `pg_store_plans.max_plan_length` | 5000 | Max bytes for plan text |
-| `pg_store_plans.save` | `on` | Persist stats across restarts |
+## GUCs
+
+The extension documentation describes settings such as:
+
+- `pg_store_plans.max`
+- `pg_store_plans.track`
+- `pg_store_plans.plan_format`
+- `pg_store_plans.min_duration`
+- `pg_store_plans.log_analyze`
+- `pg_store_plans.log_buffers`
+- `pg_store_plans.log_timing`
+- `pg_store_plans.plan_storage`
+- `pg_store_plans.max_plan_length`
+- `pg_store_plans.save`
+
+Together these control collection scope, plan representation, persistence, and storage behavior.

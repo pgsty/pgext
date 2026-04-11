@@ -1,10 +1,9 @@
 
-
 ## 用法
 
 > [pg_protobuf: PostgreSQL 的 Protocol Buffers 支持](https://github.com/afiskon/pg_protobuf)
 
-提供无需 schema 定义即可在 SQL 中直接解码 Protocol Buffer 二进制数据的函数。
+该扩展提供无需 schema 定义即可在 SQL 中直接解码 Protocol Buffer 二进制数据的函数。
 
 ### 函数
 
@@ -57,4 +56,4 @@ SELECT hero_name(x) FROM heroes ORDER BY hero_name(x) LIMIT 10;
 - 不支持修改 Protobuf 数据
 - 枚举值可通过 `protobuf_get_int` 读取
 - 不直接支持无符号类型（PostgreSQL 中没有无符号整数）
-- `*_multi` 函数不支持 `[packed=true]`（可使用 `protobuf_get_bytes*` 替代）
+- `*_multi` 函数不支持 `[packed=true]`（可改用 `protobuf_get_bytes*`）
