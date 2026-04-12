@@ -164,7 +164,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/fraruiz/pglock" title="Repository" icon="github" subtitle="github.com/fraruiz/pglock" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglock-1.0.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pglock-1.0.0.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -162,7 +162,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/valehdba/pgclone" title="Repository" icon="github" subtitle="github.com/valehdba/pgclone" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgclone-2.2.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgclone-3.6.0.tar.gz" >}}
 {{< /cards >}}
 
 

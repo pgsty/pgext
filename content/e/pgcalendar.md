@@ -163,7 +163,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/h4kbas/pgcalendar" title="Repository" icon="github" subtitle="github.com/h4kbas/pgcalendar" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcalendar-1.1.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgcalendar-1.1.0.tar.gz" >}}
 {{< /cards >}}
 
 

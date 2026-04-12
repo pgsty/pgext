@@ -163,7 +163,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/anfiau/pgelog" title="Repository" icon="github" subtitle="github.com/anfiau/pgelog" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgelog-1.0.2.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgelog-1.0.2.tar.gz" >}}
 {{< /cards >}}
 
 

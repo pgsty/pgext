@@ -162,7 +162,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/boringsql/regresql" title="Repository" icon="github" subtitle="github.com/boringsql/regresql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_regresql-2.0.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_regresql-2.0.0.tar.gz" >}}
 {{< /cards >}}
 
 

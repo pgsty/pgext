@@ -161,7 +161,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/michael-golfi/pg_liquid" title="Repository" icon="github" subtitle="github.com/michael-golfi/pg_liquid" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_liquid-0.1.7.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_liquid-0.1.7.tar.gz" >}}
 {{< /cards >}}
 
 

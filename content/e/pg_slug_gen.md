@@ -140,7 +140,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/fernandoolle/pg_slug_gen" title="Repository" icon="github" subtitle="github.com/fernandoolle/pg_slug_gen" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_slug_gen-1.0.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_slug_gen-1.0.0.tar.gz" >}}
 {{< /cards >}}
 
 

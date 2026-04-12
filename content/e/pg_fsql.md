@@ -164,7 +164,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/yurc/pg_fsql" title="Repository" icon="github" subtitle="github.com/yurc/pg_fsql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fsql-1.1.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fsql-1.1.0.tar.gz" >}}
 {{< /cards >}}
 
 

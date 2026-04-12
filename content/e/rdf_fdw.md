@@ -150,7 +150,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/jimjonesbr/rdf_fdw" title="Repository" icon="github" subtitle="github.com/jimjonesbr/rdf_fdw" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rdf_fdw-2.4.0.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="rdf_fdw-2.4.0.tar.gz" >}}
 {{< /cards >}}
 
 

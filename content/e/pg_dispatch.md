@@ -163,7 +163,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/Snehil-Shah/pg_dispatch" title="Repository" icon="github" subtitle="github.com/Snehil-Shah/pg_dispatch" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dispatch-0.1.5.zip" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dispatch-0.1.5.tar.gz" >}}
 {{< /cards >}}
 
 
