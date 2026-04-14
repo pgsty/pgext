@@ -2,7 +2,7 @@
 title: "country"
 linkTitle: "country"
 description: "Country data type, ISO 3166-1"
-weight: 3600
+weight: 3660
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3600** | {{< badge content="country" link="https://github.com/adjust/pg-country" >}} | {{< ext "country" "pg_country" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3660** | {{< badge content="country" link="https://github.com/adjust/pg-country" >}} | {{< ext "country" "pg_country" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

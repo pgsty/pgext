@@ -27,7 +27,7 @@ width: full
 |   **Requires**    | {{< ext "dblink" >}} {{< ext "pg_variables" >}} |
 |   **See Also**    | {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "logerrors" >}} {{< ext "dblink" >}} |
 
-> [!Note] Requires the dblink extension at runtime in addition to pg_variables.
+> [!Note] Release tag 1.0.2 still ships extension SQL version 1.0; requires the dblink extension at runtime in addition to pg_variables.
 
 
 ## Packages
@@ -62,12 +62,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgelog_18` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_18-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_18` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_18-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_18` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_18-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_18-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_18` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_18-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_18-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_18` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_18-1.0.2-1PIGSTY.el10.noarch.rpm) |
-| `pgelog_18` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_18-1.0.2-1PIGSTY.el10.noarch.rpm) |
+| `pgelog_18` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_18-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgelog_18` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.6 KiB | [pgelog_18-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_18-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgelog_18` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.5 KiB | [pgelog_18-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_18-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgelog_18` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_18-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_18-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgelog_18` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_18-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgelog_18` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_18-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_18-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pgelog` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 KiB | [postgresql-18-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-18-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pgelog` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 KiB | [postgresql-18-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-18-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pgelog` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 KiB | [postgresql-18-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgelog/postgresql-18-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb) |
@@ -82,12 +82,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgelog_17` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_17-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_17` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_17-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_17` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_17-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_17-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_17` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_17-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_17-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_17` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_17-1.0.2-1PIGSTY.el10.noarch.rpm) |
-| `pgelog_17` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_17-1.0.2-1PIGSTY.el10.noarch.rpm) |
+| `pgelog_17` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_17-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgelog_17` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.6 KiB | [pgelog_17-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_17-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgelog_17` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.5 KiB | [pgelog_17-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_17-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgelog_17` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_17-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_17-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgelog_17` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_17-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgelog_17` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_17-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_17-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pgelog` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 KiB | [postgresql-17-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-17-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgelog` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 KiB | [postgresql-17-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-17-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgelog` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 KiB | [postgresql-17-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgelog/postgresql-17-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb) |
@@ -102,12 +102,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgelog_16` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_16-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_16` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_16-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_16` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_16-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_16-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_16` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_16-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_16-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_16` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_16-1.0.2-1PIGSTY.el10.noarch.rpm) |
-| `pgelog_16` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_16-1.0.2-1PIGSTY.el10.noarch.rpm) |
+| `pgelog_16` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_16-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgelog_16` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.6 KiB | [pgelog_16-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_16-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgelog_16` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.5 KiB | [pgelog_16-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_16-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgelog_16` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_16-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_16-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgelog_16` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_16-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgelog_16` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_16-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_16-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pgelog` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 KiB | [postgresql-16-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-16-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgelog` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 KiB | [postgresql-16-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-16-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgelog` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 KiB | [postgresql-16-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgelog/postgresql-16-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb) |
@@ -122,12 +122,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgelog_15` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_15-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_15` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_15-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_15` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_15-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_15-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_15` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_15-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_15-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_15` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_15-1.0.2-1PIGSTY.el10.noarch.rpm) |
-| `pgelog_15` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_15-1.0.2-1PIGSTY.el10.noarch.rpm) |
+| `pgelog_15` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_15-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgelog_15` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.6 KiB | [pgelog_15-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_15-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgelog_15` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_15-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_15-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgelog_15` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_15-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_15-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgelog_15` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_15-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgelog_15` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_15-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_15-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pgelog` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 KiB | [postgresql-15-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-15-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgelog` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 KiB | [postgresql-15-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-15-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgelog` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 KiB | [postgresql-15-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgelog/postgresql-15-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb) |
@@ -142,12 +142,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgelog_14` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_14-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_14` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_14-1.0.2-1PIGSTY.el8.noarch.rpm) |
-| `pgelog_14` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_14-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_14-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_14` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_14-1.0.2-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_14-1.0.2-1PIGSTY.el9.noarch.rpm) |
-| `pgelog_14` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_14-1.0.2-1PIGSTY.el10.noarch.rpm) |
-| `pgelog_14` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_14-1.0.2-1PIGSTY.el10.noarch.rpm) |
+| `pgelog_14` | `1.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgelog_14-1.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `pgelog_14` | `1.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 15.6 KiB | [pgelog_14-1.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgelog_14-1.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `pgelog_14` | `1.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 15.6 KiB | [pgelog_14-1.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgelog_14-1.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `pgelog_14` | `1.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 15.5 KiB | [pgelog_14-1.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgelog_14-1.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `pgelog_14` | `1.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgelog_14-1.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `pgelog_14` | `1.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 15.7 KiB | [pgelog_14-1.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgelog_14-1.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pgelog` | `1.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 KiB | [postgresql-14-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-14-pgelog_1.0.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgelog` | `1.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 KiB | [postgresql-14-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgelog/postgresql-14-pgelog_1.0.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pgelog` | `1.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 KiB | [postgresql-14-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgelog/postgresql-14-pgelog_1.0.2-1PIGSTY~trixie_amd64.deb) |

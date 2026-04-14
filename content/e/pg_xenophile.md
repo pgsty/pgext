@@ -2,7 +2,7 @@
 title: "pg_xenophile"
 linkTitle: "pg_xenophile"
 description: "More than the bare necessities for PostgreSQL i18n and l10n."
-weight: 3610
+weight: 3670
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3610** | {{< badge content="pg_xenophile" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< ext "pg_xenophile" >}} | `0.8.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **3670** | {{< badge content="pg_xenophile" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< ext "pg_xenophile" >}} | `0.8.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

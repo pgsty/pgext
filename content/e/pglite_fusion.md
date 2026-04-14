@@ -2,7 +2,7 @@
 title: "pglite_fusion"
 linkTitle: "pglite_fusion"
 description: "Embed an SQLite database in your PostgreSQL table"
-weight: 3540
+weight: 3590
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3540** | {{< badge content="pglite_fusion" link="https://github.com/frectonz/pglite-fusion" >}} | {{< ext "pglite_fusion" >}} | `0.0.6` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **3590** | {{< badge content="pglite_fusion" link="https://github.com/frectonz/pglite-fusion" >}} | {{< ext "pglite_fusion" >}} | `0.0.6` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -62,12 +62,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dispatch_18` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_18` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_18` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_18` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_18` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el10.noarch.rpm) |
-| `pg_dispatch_18` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.4 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el10.noarch.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_18-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `pg_dispatch_18` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.5 KiB | [pg_dispatch_18-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_18-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-dispatch` | `0.1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 KiB | [postgresql-18-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-18-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-dispatch` | `0.1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 KiB | [postgresql-18-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-18-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-dispatch` | `0.1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 KiB | [postgresql-18-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dispatch/postgresql-18-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb) |
@@ -82,12 +82,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dispatch_17` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_17` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_17` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_17` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_17` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el10.noarch.rpm) |
-| `pg_dispatch_17` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.4 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el10.noarch.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_17-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `pg_dispatch_17` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.5 KiB | [pg_dispatch_17-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_17-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-dispatch` | `0.1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 KiB | [postgresql-17-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-17-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-dispatch` | `0.1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 KiB | [postgresql-17-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-17-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-dispatch` | `0.1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 KiB | [postgresql-17-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dispatch/postgresql-17-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb) |
@@ -102,12 +102,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dispatch_16` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_16` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_16` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_16` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_16` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el10.noarch.rpm) |
-| `pg_dispatch_16` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.4 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el10.noarch.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_16-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `pg_dispatch_16` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.5 KiB | [pg_dispatch_16-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_16-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-dispatch` | `0.1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 KiB | [postgresql-16-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-16-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-dispatch` | `0.1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 KiB | [postgresql-16-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-16-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-dispatch` | `0.1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 KiB | [postgresql-16-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dispatch/postgresql-16-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb) |
@@ -122,12 +122,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dispatch_15` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_15` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_15` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_15` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_15` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el10.noarch.rpm) |
-| `pg_dispatch_15` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.4 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el10.noarch.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_15-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `pg_dispatch_15` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.5 KiB | [pg_dispatch_15-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_15-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-pg-dispatch` | `0.1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 KiB | [postgresql-15-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-15-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-dispatch` | `0.1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 KiB | [postgresql-15-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-15-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-dispatch` | `0.1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 KiB | [postgresql-15-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dispatch/postgresql-15-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb) |
@@ -142,12 +142,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_dispatch_14` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_14` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el8.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el8.noarch.rpm) |
-| `pg_dispatch_14` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_14` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el9.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el9.noarch.rpm) |
-| `pg_dispatch_14` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el10.noarch.rpm) |
-| `pg_dispatch_14` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.4 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el10.noarch.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el10.noarch.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el8.x86_64.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el8.aarch64.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.4 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el9.x86_64.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.3 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el9.aarch64.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.5 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_dispatch_14-0.1.5-1PIGSTY.el10.x86_64.rpm) |
+| `pg_dispatch_14` | `0.1.5` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.5 KiB | [pg_dispatch_14-0.1.5-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_dispatch_14-0.1.5-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-pg-dispatch` | `0.1.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 4.0 KiB | [postgresql-14-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-14-pg-dispatch_0.1.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-dispatch` | `0.1.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 4.0 KiB | [postgresql-14-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dispatch/postgresql-14-pg-dispatch_0.1.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-dispatch` | `0.1.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 4.0 KiB | [postgresql-14-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dispatch/postgresql-14-pg-dispatch_0.1.5-1PIGSTY~trixie_amd64.deb) |

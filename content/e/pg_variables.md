@@ -26,6 +26,8 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "session_variable" >}} {{< ext "orafce" >}} {{< ext "plisql" >}} |
 
+> [!Note] Release tag 1.2.5 still ships extension SQL version 1.2.
+
 
 ## Packages
 

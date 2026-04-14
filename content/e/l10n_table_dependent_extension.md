@@ -2,7 +2,7 @@
 title: "l10n_table_dependent_extension"
 linkTitle: "l10n_table_dependent_extension"
 description: "PostgreSQL l10n toolbox"
-weight: 3611
+weight: 3671
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3611** | {{< badge content="l10n_table_dependent_extension" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | `0.8.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **3671** | {{< badge content="l10n_table_dependent_extension" link="https://github.com/bigsmoke/pg_xenophile" >}} | {{< ext "l10n_table_dependent_extension" "pg_xenophile" >}} | `0.8.3` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -7,6 +7,47 @@ weight: 300
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
 
+## 2026-04-14
+
+新增扩展:
+
+| 包名                 | 旧版本    | 新版本      | 备注                                |
+|:-------------------|:-------|:---------|:----------------------------------|
+| block_copy_command | -      | 0.1.5    | new, PG 14-18，pgrx 0.17           |
+| pg_kazsearch       | -      | 2.0.0    | new, PG 16-18，pgrx 0.17           |
+| pg_rrf             | -      | 0.0.3    | new, PG 14-17，pgrx 0.16.1 -> 0.17 |
+| pgmqtt             | -      | 0.1.0    | new, PG 14-18，pgrx 0.16.1 -> 0.17 |
+| pg_when            | -      | 0.1.9    | new, PG 14-18，pgrx 0.17           |
+| provsql            | -      | 1.2.3    | new, PG 14-18                     |
+| pg_isok            | -      | 1.4.1    | new, PG 14-18                     |
+| pg_byteamagic      | -      | 0.2.4    | new, PG 14-18                     |
+| logical_ddl        | -      | 0.1.0    | new, PG 14-18                     |
+| datasketches       | -      | 1.7.0    | new, PG 14-18                     |
+| pg_text_semver     | -      | 1.2.1    | new, PG 14-18                     |
+| external_file      | -      | 1.2      | new, PG 14-18                     |
+| pg_query_rewrite   | -      | 0.0.5    | new, PG 14-18                     |
+| pghydro            | -      | 6.6      | new, PG 14-18                     |
+| pg_datasentinel    | -      | 1.0      | new, PG 15-18                     |
+| onesparse          | -      | 1.0.0    | new, PG 18 only                   |
+| rdkit              | -      | 202503.6 | new, build for el10, u24, d13     |
+| pg_tzf             | 0.2.3  | 0.2.4    | pgrx 0.17.0                       |
+| pg_anon            | 3.0.1  | 3.0.13   | pgrx 0.16.1 ->  0.17.0            |
+| pg_cardano         | 1.1.1  | 1.2.0    | pgrx 0.17.0 ->                    |
+| pg_strict          | 1.0.3  | 1.0.5    | pgrx 0.16.1 ->  0.17.0            |
+| pg_vectorize       | 0.26.0 | 0.26.1   | pgrx 0.16.1 ->  0.17.0            |
+| pglinter           | 1.1.1  | 1.1.2    | pgrx 0.16.1 ->  0.17.0            |
+| pgx_ulid           | 0.2.2  | 0.2.3    | pgrx 0.17.0 ->                    |
+| wrappers           | 0.5.7  | 0.6.0    | pgrx 0.16.1 ->  0.17.0            |
+| pg_trickle         | 0.16.0 | 0.17.0   | pgrx 0.17.0 ->                    |
+| pgclone            | 2.2.0  | 3.6.0    |                                   |
+| pgproto            | 0.2.1  | 0.2.4    |                                   |
+| pg_stat_ch         | 0.3.3  | 0.3.4    |                                   |
+| supautils          | 3.1.0  | 3.2.1    |                                   |
+| ddl_historization  | 0.0.7  | 0.2      |                                   |
+| pg_incremental     | 1.4.1  | 1.5.0    |                                   |
+| pg_failover_slots  | 1.2.0  | 1.2.1    |                                   |
+| rdf_fdw            | 2.4.0  | 2.4.0    | fix README conflict               |
+| pg_slug_gen        | 1.0.0  | 1.0.0    | fix README conflict               |
 
 ## 2026-04-10
 

@@ -6,6 +6,16 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-04-12
+
+| Name      | Old            | New               | Comment                                                         |
+|:----------|:---------------|:------------------|:----------------------------------------------------------------|
+| claude    | 2.1.98         | 2.1.101           | rebuilt on 2026-04-12; Makefile now pulls from versioned bucket |
+| codex     | 0.119.0-alpha.29 | 0.121.0-alpha.2 | prerelease chain, rebuilt on 2026-04-12                         |
+| postgrest | 14.8           | 14.9              | upstream bump                                                   |
+| rainfrog  | 0.3.17         | 0.3.18            | upstream bump                                                   |
+| rustfs    | 1.0.0-alpha.91 | 1.0.0-alpha.93    | upstream bump; switched to versioned release assets             |
+
 ## 2026-04-10
 
 | Name                       | Old            | New              | Comment                                 |

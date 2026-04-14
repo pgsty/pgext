@@ -14,18 +14,18 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 373 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 44 | 纯 SQL 扩展和函数 |
-| {{< language "Rust" >}} | 43 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "C" >}} | 379 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 54 | 纯 SQL 扩展和函数 |
+| {{< language "Rust" >}} | 48 | 使用 pgrx 框架用 Rust 编写的扩展 |
+| {{< language "C++" >}} | 10 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
-| {{< language "C++" >}} | 8 | 使用 C++ 特性和库的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
 
 
 ## C
 
-{{< language "C" >}} {{< badge content="373 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="379 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -127,6 +127,7 @@ weight: 200
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
+| 2980 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3000 | {{< alias "pg_tle" >}} | AWS 可信语言扩展 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |
@@ -160,15 +161,15 @@ weight: 200
 | 3293 | {{< alias "hstore_plpython3u" "plpython3u" >}} | 在 hstore 和 plpython3u 之间转换 |
 | 3500 | {{< alias "prefix" "pg_prefix" >}} | 前缀树数据类型 |
 | 3510 | {{< alias "semver" "pg_semver" >}} | 语义版本号数据类型 |
-| 3520 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
-| 3530 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
-| 3550 | {{< alias "md5hash" >}} | 提供128位MD5的原生数据类型 |
-| 3560 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
-| 3570 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 支持RoaringBitmap数据类型 |
-| 3590 | {{< alias "pg_sphere" "pgsphere" >}} | 球面对象函数、运算符与索引支持 |
-| 3600 | {{< alias "country" "pg_country" >}} | 国家代码数据类型，遵循ISO 3166-1标准 |
-| 3620 | {{< alias "currency" "pg_currency" >}} | 使用1字节表示的货币数据类型 |
-| 3630 | {{< alias "collection" "pgcollection" >}} | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
+| 3550 | {{< alias "unit" "pgunit" >}} | SI 国标单位扩展 |
+| 3570 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
+| 3610 | {{< alias "md5hash" >}} | 提供128位MD5的原生数据类型 |
+| 3620 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
+| 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 支持RoaringBitmap数据类型 |
+| 3650 | {{< alias "pg_sphere" "pgsphere" >}} | 球面对象函数、运算符与索引支持 |
+| 3660 | {{< alias "country" "pg_country" >}} | 国家代码数据类型，遵循ISO 3166-1标准 |
+| 3680 | {{< alias "currency" "pg_currency" >}} | 使用1字节表示的货币数据类型 |
+| 3690 | {{< alias "collection" "pgcollection" >}} | 在PlPGSQL中使用的内存优化高性能集合数据结构 |
 | 3700 | {{< alias "pgmp" >}} | 多精度算术扩展 |
 | 3710 | {{< alias "numeral" >}} | 数值类型扩展 |
 | 3720 | {{< alias "pg_rational" >}} | 使用BIGINT表示的有理数数据类型 |
@@ -207,6 +208,7 @@ weight: 200
 | 4240 | {{< alias "icu_ext" >}} | 访问ICU库提供的函数 |
 | 4250 | {{< alias "pgqr" >}} | 从数据库中直接生成QR二维码 |
 | 4270 | {{< alias "envvar" "pg_envvar" >}} | 获取环境变量的函数 |
+| 4275 | {{< alias "byteamagic" "pg_byteamagic" >}} | 从 PostgreSQL bytea 值检测 MIME 类型与文件格式 |
 | 4280 | {{< alias "floatfile" >}} | 将浮点数组存储到文件中而不是堆表中 |
 | 4300 | {{< alias "pg_readme" >}} | 为模式与扩展生成Markdown文档 |
 | 4301 | {{< alias "pg_readme_test_extension" "pg_readme" >}} | 为模式与扩展生成Markdown文档 |
@@ -261,6 +263,7 @@ weight: 200
 | 4990 | {{< alias "unaccent" >}} | 删除重音的文本搜索字典 |
 | 5010 | {{< alias "pg_repack" >}} | 在线垃圾清理与表膨胀治理 |
 | 5020 | {{< alias "pg_rewrite" >}} | 在线重写整表，不阻塞读写 |
+| 5030 | {{< alias "pg_query_rewrite" >}} | 使用 ProcessUtility hook 重写 SQL 语句 |
 | 5040 | {{< alias "pg_squeeze" >}} | 从关系中删除未使用空间 |
 | 5050 | {{< alias "pg_dirtyread" >}} | 从表中读取尚未垃圾回收的行 |
 | 5060 | {{< alias "pgfincore" >}} | 检查和管理操作系统缓冲区缓存 |
@@ -300,6 +303,7 @@ weight: 200
 | 6250 | {{< alias "pg_store_plans" >}} | 跟踪所有执行的 SQL 语句的计划统计信息 |
 | 6270 | {{< alias "pg_track_optimizer" >}} | 跟踪规划器决策与实际执行的差距 |
 | 6280 | {{< alias "pg_wait_sampling" >}} | 基于采样的等待事件统计 |
+| 6400 | {{< alias "pg_datasentinel" >}} | PostgreSQL 可观测性与活动监控扩展 |
 | 6410 | {{< alias "pgsentinel" >}} | 活跃会话历史 |
 | 6420 | {{< alias "system_stats" >}} | PostgreSQL 的系统统计函数 |
 | 6440 | {{< alias "pgnodemx" >}} | 使用SQL查询获取操作系统指标 |
@@ -323,7 +327,8 @@ weight: 200
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 | 7010 | {{< alias "supautils" >}} | 用于在云环境中确保数据库集群的安全 |
 | 7020 | {{< alias "pgsodium" >}} | 表数据加密存储 TDE |
-| 7030 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
+| 7030 | {{< alias "column_encrypt" >}} | 透明列级加密扩展，提供 encrypted_text 与 encrypted_bytea 类型 |
+| 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7100 | {{< alias "pgaudit" >}} | 提供审计功能 |
 | 7120 | {{< alias "pgauditlogtofile" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
 | 7140 | {{< alias "logerrors" >}} | 用于收集日志文件中消息统计信息的函数 |
@@ -390,10 +395,11 @@ weight: 200
 | 9501 | {{< alias "pglogical_origin" "pglogical" >}} | 用于从 Postgres 9.4 升级时的兼容性虚拟扩展 |
 | 9510 | {{< alias "pglogical_ticker" >}} | pglogical复制延迟以秒计的精确视图 |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 使用 pglogical 执行自动 DDL 部署 |
-| 9530 | {{< alias "pg_failover_slots" >}} | 在Failover过程中保留复制槽 |
-| 9550 | {{< alias "pgactive" >}} | PostgreSQL多主逻辑复制 |
-| 9560 | {{< alias "spock" >}} | PostgreSQL 多主逻辑复制扩展 |
-| 9570 | {{< alias "lolor" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
+| 9530 | {{< alias "logical_ddl" >}} | 在 PostgreSQL 逻辑复制中复制受支持的 DDL 变更 |
+| 9540 | {{< alias "pg_failover_slots" >}} | 在Failover过程中保留复制槽 |
+| 9560 | {{< alias "pgactive" >}} | PostgreSQL多主逻辑复制 |
+| 9570 | {{< alias "spock" >}} | PostgreSQL 多主逻辑复制扩展 |
+| 9580 | {{< alias "lolor" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | 9590 | {{< alias "pgclone" >}} | 在不同环境间克隆 PostgreSQL 数据库、模式、表和函数 |
 | 9630 | {{< alias "wal2json" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9640 | {{< alias "wal2mongo" >}} | 使用逻辑解码捕获MongoDB JSON格式的CDC变更 |
@@ -407,7 +413,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="44 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="54 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -418,14 +424,22 @@ weight: 200
 | 1060 | {{< alias "table_version" >}} | PostgreSQL 版本控制表扩展 |
 | 1100 | {{< alias "pg_dispatch" >}} | 基于 pg_cron 的异步 SQL 分发器 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
+| 1600 | {{< alias "pghydro" >}} | PostgreSQL/PostGIS 排水网络分析核心扩展 |
+| 1601 | {{< alias "pgh_raster" "pghydro" >}} | PgHydro 栅格水文分析扩展 |
+| 1602 | {{< alias "pgh_hgm" "pghydro" >}} | PgHydro 水文地貌分析扩展 |
+| 1603 | {{< alias "pgh_output" "pghydro" >}} | PgHydro 输出与报表扩展 |
+| 1604 | {{< alias "pgh_output_en_au" "pghydro" >}} | PgHydro 澳式英语输出扩展 |
+| 1605 | {{< alias "pgh_output_pt_br" "pghydro" >}} | PgHydro 巴西葡语输出扩展 |
+| 1606 | {{< alias "pgh_consistency" "pghydro" >}} | PgHydro Pfafstetter 一致性检查扩展 |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
 | 2800 | {{< alias "index_advisor" >}} | 查询索引建议器 |
 | 2870 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
 | 2880 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
-| 3580 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
-| 3610 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |
-| 3611 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n 工具包 |
+| 3520 | {{< alias "pg_text_semver" >}} | PostgreSQL 语义版本域类型与比较运算符 |
+| 3640 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
+| 3670 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |
+| 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n 工具包 |
 | 3870 | {{< alias "debversion" >}} | Debian版本号数据类型 |
 | 3890 | {{< alias "pgcalendar" >}} | 为 PostgreSQL 提供循环日程、投影与例外处理的日历扩展 |
 | 4140 | {{< alias "pglock" >}} | 在 PostgreSQL 内实现轻量级分布式锁服务 |
@@ -433,9 +447,11 @@ weight: 200
 | 4180 | {{< alias "pg_html5_email_address" >}} | 验证Email是否符合HTML5规范的扩展 |
 | 4200 | {{< alias "pgsql_tweaks" >}} | 一些日常会用到的便利函数与视图 |
 | 4220 | {{< alias "pg_extra_time" >}} | 一些关于日期与时间的扩展函数 |
+| 4285 | {{< alias "external_file" >}} | 通过 PostgreSQL 函数访问服务器端外部文件 |
 | 4310 | {{< alias "ddl_historization" >}} | 用SQL将所有DDL变更写入到数据库表中 |
 | 4320 | {{< alias "data_historization" >}} | 用SQL将数据变更历史保存到分区表中 |
 | 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
+| 4340 | {{< alias "pg_isok" >}} | 基于查询的数据完整性管理与软告警扩展 |
 | 4470 | {{< alias "sparql" "pgsparql" >}} | 使用SQL查询SPARQL数据源 |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 提取数据库对象的DDL |
 | 5140 | {{< alias "pg_permissions" >}} | 查看对象权限并将其与期望状态进行比较 |
@@ -455,12 +471,12 @@ weight: 200
 | 9250 | {{< alias "pg_dbms_lock" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
-| 9540 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
+| 9550 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | 在PostgreSQL实例间进行表级复制 |
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="43 个扩展" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="48 个扩展" color="gray" icon="cube" >}}
 
 使用 pgrx 框架用 Rust 编写的扩展
 
@@ -468,12 +484,14 @@ weight: 200
 |:---:|:---|:---|
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 | 1090 | {{< alias "pg_later" >}} | 执行查询，并在稍后异步获取查询结果 |
+| 1120 | {{< alias "pg_when" >}} | PostgreSQL 自然语言时间解析扩展 |
 | 1570 | {{< alias "pg_polyline" >}} | Google快速Polyline编码解码扩展 |
 | 1580 | {{< alias "pg_eviltransform" >}} | 基于PostGIS ST_Transform 的 BD09/GCJ02 坐标转换扩展 |
 | 1680 | {{< alias "tzf" "pg_tzf" >}} | 快速根据GPS经纬度坐标查找时区 |
 | 1810 | {{< alias "vchord" >}} | 使用Rust重写的高性能向量扩展 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 在PostgreSQL中封装RAG向量检索服务 |
+| 1845 | {{< alias "pg_rrf" >}} | 混合检索的倒数排序融合函数 |
 | 1860 | {{< alias "pg_summarize" >}} | 使用LLM对文本字段进行总结 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 1890 | {{< alias "pgml" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
@@ -482,6 +500,7 @@ weight: 200
 | 2150 | {{< alias "vchord_bm25" >}} | BM25排序算法 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2190 | {{< alias "pg_pinyin" >}} | PostgreSQL 拼音转写与检索辅助扩展 |
+| 2200 | {{< alias "pg_kazsearch" >}} | PostgreSQL 哈萨克语全文检索扩展 |
 | 2420 | {{< alias "pg_analytics" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
@@ -490,7 +509,7 @@ weight: 200
 | 2860 | {{< alias "pg_trickle" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3040 | {{< alias "plprql" >}} | 在PostgreSQL使用PRQL——管线式关系查询语言 |
-| 3540 | {{< alias "pglite_fusion" >}} | 在PG表中嵌入SQLite数据库作为数据类型 |
+| 3590 | {{< alias "pglite_fusion" >}} | 在PG表中嵌入SQLite数据库作为数据类型 |
 | 4170 | {{< alias "pg_smtp_client" >}} | 使用SMTP从PostgreSQL内发送邮件的客户端扩展 |
 | 4290 | {{< alias "pg_render" >}} | 使用SQL渲染HTML页面 |
 | 4500 | {{< alias "pg_idkit" >}} | 生成各式各样的唯一标识符：UUIDv6, ULID, KSUID |
@@ -502,13 +521,34 @@ weight: 200
 | 5130 | {{< alias "pgdd" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
 | 5830 | {{< alias "pg_strict" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 快速跳转至PEV查阅可视化执行计划 |
-| 7040 | {{< alias "pg_session_jwt" >}} | 使用JWT进行会话认证 |
-| 7050 | {{< alias "anon" "pg_anon" >}} | 数据匿名化处理工具 |
-| 7060 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
-| 7070 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
+| 7060 | {{< alias "pg_session_jwt" >}} | 使用JWT进行会话认证 |
+| 7070 | {{< alias "anon" "pg_anon" >}} | 数据匿名化处理工具 |
+| 7080 | {{< alias "pgsmcrypto" >}} | 为PostgreSQL提供商密算法支持：SM2,SM3,SM4 |
+| 7090 | {{< alias "pg_enigma" >}} | PostgreSQL 加密数据类型 |
 | 7400 | {{< alias "pg_command_fw" >}} | PostgreSQL 的 DDL 与 utility 命令防火墙 |
+| 7405 | {{< alias "block_copy_command" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
 | 8500 | {{< alias "wrappers" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | 8660 | {{< alias "etcd_fdw" >}} | etcd分布式键值存储外部数据包装器 |
+| 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+
+## C++
+
+{{< language "C++" >}} {{< badge content="10 个扩展" color="gray" icon="cube" >}}
+
+使用 C++ 特性和库的扩展
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
+| 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
+| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
+| 2710 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2730 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
+| 2900 | {{< alias "provsql" >}} | PostgreSQL 半环溯源与不确定性管理扩展 |
+| 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
+| 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
+| 4690 | {{< alias "datasketches" >}} | PostgreSQL 近似分析摘要数据结构与聚合函数 |
+| 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 
 ## Data
 
@@ -528,23 +568,6 @@ weight: 200
 | 2277 | {{< alias "hunspell_pt_pt" >}} | Hunspell葡萄牙语全文检索词典 |
 | 2278 | {{< alias "hunspell_ru_ru" >}} | Hunspell俄语全文检索词典 |
 | 2279 | {{< alias "hunspell_ru_ru_aot" >}} | Hunspell俄语全文检索词典（来自AOT.ru小组） |
-
-## C++
-
-{{< language "C++" >}} {{< badge content="8 个扩展" color="gray" icon="cube" >}}
-
-使用 C++ 特性和库的扩展
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
-| 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
-| 2710 | {{< alias "hll" >}} | hyperloglog 数据类型 |
-| 2730 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
-| 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
-| 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
-| 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 
 ## Python
 

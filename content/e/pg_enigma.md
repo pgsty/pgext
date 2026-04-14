@@ -2,7 +2,7 @@
 title: "pg_enigma"
 linkTitle: "pg_enigma"
 description: "Encrypted postgres data type"
-weight: 7070
+weight: 7090
 categories: ["SEC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7070** | {{< badge content="pg_enigma" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< ext "pg_enigma" >}} | `0.5.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **7090** | {{< badge content="pg_enigma" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< ext "pg_enigma" >}} | `0.5.0` | {{< category "SEC" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

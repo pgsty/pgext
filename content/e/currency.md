@@ -2,7 +2,7 @@
 title: "currency"
 linkTitle: "currency"
 description: "Custom PostgreSQL currency type in 1Byte"
-weight: 3620
+weight: 3680
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3620** | {{< badge content="currency" link="https://github.com/adjust/pg-currency" >}} | {{< ext "currency" "pg_currency" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **3680** | {{< badge content="currency" link="https://github.com/adjust/pg-currency" >}} | {{< ext "currency" "pg_currency" >}} | `0.0.3` | {{< category "TYPE" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

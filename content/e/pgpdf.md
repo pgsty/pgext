@@ -2,7 +2,7 @@
 title: "pgpdf"
 linkTitle: "pgpdf"
 description: "PDF type with meta admin & Full-Text Search"
-weight: 3530
+weight: 3570
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3530** | {{< badge content="pgpdf" link="https://github.com/Florents-Tselai/pgpdf" >}} | {{< ext "pgpdf" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **3570** | {{< badge content="pgpdf" link="https://github.com/Florents-Tselai/pgpdf" >}} | {{< ext "pgpdf" >}} | `0.1.0` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -28,7 +28,7 @@ width: full
 |   **Requires**    | {{< ext "plpgsql" >}} |
 |   **See Also**    | {{< ext "plpgsql" >}} {{< ext "pg_readme" >}} {{< ext "schedoc" >}} |
 
-> [!Note] shared_preload_libraries is optional and only needed for session-start GUC availability.
+> [!Note] Release tag 1.1.0 still ships extension SQL version 1.0; shared_preload_libraries is optional and only needed for session-start GUC availability.
 
 
 ## Packages

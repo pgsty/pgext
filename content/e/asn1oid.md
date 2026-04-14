@@ -2,7 +2,7 @@
 title: "asn1oid"
 linkTitle: "asn1oid"
 description: "asn1oid extension"
-weight: 3560
+weight: 3620
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3560** | {{< badge content="asn1oid" link="https://github.com/df7cb/pgsql-asn1oid" >}} | {{< ext "asn1oid" >}} | `1.6` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **3620** | {{< badge content="asn1oid" link="https://github.com/df7cb/pgsql-asn1oid" >}} | {{< ext "asn1oid" >}} | `1.6` | {{< category "TYPE" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

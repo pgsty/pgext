@@ -2,7 +2,7 @@
 title: "db_migrator"
 linkTitle: "db_migrator"
 description: "Tools to migrate other databases to PostgreSQL"
-weight: 9540
+weight: 9550
 categories: ["ETL"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9540** | {{< badge content="db_migrator" link="https://github.com/cybertec-postgresql/db_migrator" >}} | {{< ext "db_migrator" >}} | `1.0.0` | {{< category "ETL" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
+| **9550** | {{< badge content="db_migrator" link="https://github.com/cybertec-postgresql/db_migrator" >}} | {{< ext "db_migrator" >}} | `1.0.0` | {{< category "ETL" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

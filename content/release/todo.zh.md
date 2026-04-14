@@ -4,51 +4,6 @@ description: 需要更新，已经退役的 PG 扩展列表。
 weight: 700
 ---
 
-## 候选列表
-
-### PGXN Recent 缺口（2026-04-04）
-
-基于 [PGXN recent](https://pgxn.org/recent/) 首页核对。当前 recent 首页里有 23 个唯一 dist，其中 12 个尚未被本地扩展目录收录；`pgcollection` 已经通过 `collection` 收录，不算缺失。
-
-#### 建议优先纳入
-
-- [pg_trickle 0.14.0](https://pgxn.org/dist/pg_trickle/) : PG18 原生流式表与增量物化视图，方向很强，但仅支持 PG18，且 Rust 打包复杂度较高
-- [pgproto 0.2.1](https://pgxn.org/dist/pgproto/) : 原生 Protobuf 支持，C 扩展，可作为 `pg_protobuf` 之外的另一条路线
-- [pgclone 2.1.2](https://pgxn.org/dist/pgclone/) : 在数据库会话内克隆库/模式/表/函数，适合 dev/test/stage 场景
-- [pg_stat_ch 0.1.7](https://pgxn.org/dist/pg_stat_ch/) : 将 PostgreSQL 查询遥测导出到 ClickHouse，和现有 `pg_clickhouse` 生态互补
-- [pg_command_fw 0.1.0](https://pgxn.org/dist/pg_command_fw/) : 命令防火墙，拦截 DDL / utility / 危险 builtin，安全场景明确
-
-#### 可加入待办
-
-- [pg_regresql 2.0.0](https://pgxn.org/dist/pg_regresql/) : 规划器相关增强，但上游仓库主体是 `regresql` 工具，需确认 `pg_ext` 子目录的独立打包边界
-- [pg_kazsearch 2.0.0](https://pgxn.org/dist/pg_kazsearch/) : 哈萨克语全文检索词典，区域语言价值明确，但受众较窄
-- [oai_fdw 1.13.0](https://pgxn.org/dist/oai_fdw/) : OAI-PMH FDW，适合学术元数据场景，仍然偏 niche
-- [pg_fsql 1.1.0](https://pgxn.org/dist/pg_fsql/) : SQL 模板引擎，场景偏窄，但构建看起来不复杂
-
-#### 先观察
-
-- [pg_liquid 0.1.7](https://pgxn.org/dist/pg_liquid/) : Datalog / 图查询扩展，方向有意思，但仍是 0.1.x 早期阶段
-- [block_copy_command 0.1.5](https://pgxn.org/dist/block_copy_command/) : 功能过窄，且被 `pg_command_fw` 明显覆盖
-- [fsm_core 1.0.0](https://pgxn.org/dist/fsm_core/) : 仓库形态更像 monorepo / 应用，而不是标准 PG 扩展工程
-
-#### 本轮已排除
-
-- `pgcollection` : 已经通过 `collection` 录入本地扩展目录，当前版本为 `2.0.0`
-
-- pg_ttl_index 0.1.0
-- etcd_fdw 0.0.0
-- convert 0.0.5 -> 0.1.0
-- pg_textsearch 0.1.0 -> 0.4.0
-- pgmq 1.8.0 -> 1.8.1
-- documentdb_extened_rum
-- mobilitydb_datagen
-- pgmq 1.8.1
-- [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
-- [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
-- [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
-- [river](https://github.com/riverqueue/river)
-- omnigres on legacy systems
-- plv8 on el10
 
 ## 最近更新
 
@@ -208,7 +163,6 @@ weight: 700
 ## Debian 独有
 
 - mobilitydb
-- rdkit
 - hstore_pllua
 - hstore_plluau
 - debversion

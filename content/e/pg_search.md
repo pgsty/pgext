@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `paradedb` |
 |   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] bm25 am conflict with pg_textsearch, PG 17+ does not require dynamic loading 
+> [!Note] bm25 am conflicts with pg_textsearch; PG15-16 require shared_preload_libraries while PG17-18 do not.
 
 
 ## Packages
@@ -161,7 +161,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/paradedb/paradedb/tree/dev/pg_search" title="Repository" icon="github" subtitle="github.com/paradedb/paradedb/tree/dev/pg_search" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.22.5.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_search-0.22.6.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -188,6 +188,13 @@ pig install pg_search -v 17;   # install for PG 17
 pig install pg_search -v 16;   # install for PG 16
 pig install pg_search -v 15;   # install for PG 15
 
+```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'pg_search';
 ```
 
 
