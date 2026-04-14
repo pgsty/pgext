@@ -8,74 +8,62 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
 ## 2026-04-14
 
-| Package            | Old    | New      | Comment                           |
-|:-------------------|:-------|:---------|:----------------------------------|
-| block_copy_command | -      | 0.1.5    | new, PG 14-18，pgrx 0.17           |
-| pg_kazsearch       | -      | 2.0.0    | new, PG 16-18，pgrx 0.17           |
-| pg_rrf             | -      | 0.0.3    | new, PG 14-17，pgrx 0.16.1 -> 0.17 |
-| pgmqtt             | -      | 0.1.0    | new, PG 14-18，pgrx 0.16.1 -> 0.17 |
-| pg_when            | -      | 0.1.9    | new, PG 14-18，pgrx 0.17           |
-| provsql            | -      | 1.2.3    | new, PG 14-18                     |
-| pg_isok            | -      | 1.4.1    | new, PG 14-18                     |
-| pg_byteamagic      | -      | 0.2.4    | new, PG 14-18                     |
-| logical_ddl        | -      | 0.1.0    | new, PG 14-18                     |
-| datasketches       | -      | 1.7.0    | new, PG 14-18                     |
-| pg_text_semver     | -      | 1.2.1    | new, PG 14-18                     |
-| external_file      | -      | 1.2      | new, PG 14-18                     |
-| pg_query_rewrite   | -      | 0.0.5    | new, PG 14-18                     |
-| pghydro            | -      | 6.6      | new, PG 14-18                     |
-| pg_datasentinel    | -      | 1.0      | new, PG 15-18                     |
-| onesparse          | -      | 1.0.0    | new, PG 18 only                   |
-| rdkit              | -      |  202503.6 | new, build for el10, u24, d13     |
-| pg_tzf             | 0.2.3  | 0.2.4    | pgrx 0.17.0                       |
-| pg_anon            | 3.0.1  | 3.0.13   | pgrx 0.16.1 ->  0.17.0            |
-| pg_cardano         | 1.1.1  | 1.2.0    | pgrx 0.17.0 ->                    |
-| pg_strict          | 1.0.3  | 1.0.5    | pgrx 0.16.1 ->  0.17.0            |
-| pg_vectorize       | 0.26.0 | 0.26.1   | pgrx 0.16.1 ->  0.17.0            |
-| pglinter           | 1.1.1  | 1.1.2    | pgrx 0.16.1 ->  0.17.0            |
-| pgx_ulid           | 0.2.2  | 0.2.3    | pgrx 0.17.0 ->                    |
-| wrappers           | 0.5.7  | 0.6.0    | pgrx 0.16.1 ->  0.17.0            |
-| pg_trickle         | 0.16.0 | 0.17.0   | pgrx 0.17.0 ->                    |
-| pgclone            | 2.2.0  | 3.6.0    |                                   |
-| pgproto            | 0.2.1  | 0.2.4    |                                   |
-| pg_stat_ch         | 0.3.3  | 0.3.4    |                                   |
-| supautils          | 3.1.0  | 3.2.1    |                                   |
-| ddl_historization  | 0.0.7  | 0.2      |                                   |
-| pg_incremental     | 1.4.1  | 1.5.0    |                                   |
-| pg_failover_slots  | 1.2.0  | 1.2.1    |                                   |
-| rdf_fdw            | 2.4.0  | 2.4.0    | fix README conflict               |
-| pg_slug_gen        | 1.0.0  | 1.0.0    | fix README conflict               |
-
-
-
-## 2026-04-10
-
-| Package        | Old    | New    | Comment                  |
-|:---------------|:-------|:-------|:-------------------------|
-| timescaledb    | 2.25.2 | 2.26.2 | available, PG15-18       |
-| pg_background  | 1.8    | 1.9.2  | upgraded, PG14-18        |
-| pg_ivm         | 1.13   | 1.14   | upgraded, PG14-18        |
-| system_stats   | 3.2    | 4.0    | upgraded, PG14-18        |
-| nominatim_fdw  | 1.1.0  | 1.2    | upgraded, PG14-18        |
-| pg_textsearch  | 0.5.0  | 1.0.0  | PG17-18                  |
-| pg_clickhouse  | 0.1.5  | 0.1.10 | available, PG14-18       |
-| pg_dispatch    | -      | 0.1.5  | new, PG14-18             |
-| pg_search      | 0.22.2 | 0.22.6 | manual download, PG15-18 |
-| pg_fsql        | -      | 1.1.0  | new, PG14-18             |
-| pg_liquid      | -      | 0.1.7  | new, PG14-18             |
-| pg_regresql    | -      | 2.0.0  | new, PG14-18             |
-| pg_slug_gen    | -      | 1.0.0  | new, PG15-18             |
-| pg_stat_ch     | -      | 0.3.3  | new, PG16-18             |
-| pg_variables   | -      | 1.2.5  | new, PG14-18             |
-| pgcalendar     | -      | 1.1.0  | new, PG14-18             |
-| pgclone        | -      | 2.2.0  | new, PG14-18             |
-| pgelog         | -      | 1.0.2  | new, PG14-18             |
-| pglock         | -      | 1.0.0  | new, PG14-18             |
-| pgproto        | -      | 0.2.1  | new, PG14-18             |
-| postgresbson   | -      | 2.0.2  | new, PG14-18             |
-| rdf_fdw        | -      | 2.4.0  | new, PG14-18             |
-| parray_gin     | -      | 1.4.0  | new, PG14-18             |
-| pg_store_plans | 1.9    | 1.10   | upgraded, PG14-18        |
+| Package            | Old    | New      | Comment                              |
+|:-------------------|:-------|:---------|:-------------------------------------|
+| block_copy_command | -      | 0.1.5    | new, PG 14-18, pgrx 0.17.0           |
+| pg_kazsearch       | -      | 2.0.0    | new, PG 16-18, pgrx 0.17.0           |
+| pg_rrf             | -      | 0.0.3    | new, PG 14-17, pgrx 0.16.1 -> 0.17.0 |
+| pgmqtt             | -      | 0.1.0    | new, PG 14-18, pgrx 0.16.1 -> 0.17.0 |
+| pg_when            | -      | 0.1.9    | new, PG 14-18, pgrx 0.17.0           |
+| provsql            | -      | 1.2.3    | new, PG 14-18                        |
+| pg_isok            | -      | 1.4.1    | new, PG 14-18                        |
+| pg_byteamagic      | -      | 0.2.4    | new, PG 14-18                        |
+| logical_ddl        | -      | 0.1.0    | new, PG 14-18                        |
+| datasketches       | -      | 1.7.0    | new, PG 14-18                        |
+| pg_text_semver     | -      | 1.2.1    | new, PG 14-18                        |
+| external_file      | -      | 1.2      | new, PG 14-18                        |
+| pg_query_rewrite   | -      | 0.0.5    | new, PG 14-18                        |
+| pghydro            | -      | 6.6      | new, PG 14-18                        |
+| pg_datasentinel    | -      | 1.0      | new, PG 15-18                        |
+| onesparse          | -      | 1.0.0    | new, PG 18 only                      |
+| rdkit              | -      | 202503.6 | new, PG 14-18                        |
+| pg_dispatch        | -      | 0.1.5    | new, PG 14-18                        |
+| pg_fsql            | -      | 1.1.0    | new, PG 14-18                        |
+| pg_liquid          | -      | 0.1.7    | new, PG 14-18                        |
+| pg_regresql        | -      | 2.0.0    | new, PG 14-18                        |
+| pg_slug_gen        | -      | 1.0.0    | new, PG 15-18                        |
+| pg_stat_ch         | -      | 0.3.4    | new, PG 16-18                        |
+| pg_variables       | -      | 1.2.5    | new, PG 14-18                        |
+| pgcalendar         | -      | 1.1.0    | new, PG 14-18                        |
+| pgclone            | -      | 3.6.0    | new, PG 14-18                        |
+| pgelog             | -      | 1.0.2    | new, PG 14-18                        |
+| pglock             | -      | 1.0.0    | new, PG 14-18                        |
+| pgproto            | -      | 0.2.4    | new, PG 14-18                        |
+| postgresbson       | -      | 2.0.2    | new, PG 14-18                        |
+| rdf_fdw            | -      | 2.4.0    | new, PG 14-18                        |
+| parray_gin         | -      | 1.4.0    | new, PG 14-18                        |
+| timescaledb        | 2.25.2 | 2.26.2   | bump                                 |
+| pg_background      | 1.8    | 1.9.2    | bump                                 |
+| pg_ivm             | 1.13   | 1.14     | bump                                 |
+| system_stats       | 3.2    | 4.0      | bump                                 |
+| nominatim_fdw      | 1.1.0  | 1.2      | bump                                 |
+| pg_textsearch      | 0.5.0  | 1.0.0    | bump                                 |
+| pg_clickhouse      | 0.1.5  | 0.1.10   | bump                                 |
+| pg_search          | 0.22.2 | 0.22.6   | bump                                 |
+| pg_store_plans     | 1.9    | 1.10     | bump                                 |
+| pg_tzf             | 0.2.3  | 0.2.4    | bump, pgrx 0.17.0                    |
+| pg_anon            | 3.0.1  | 3.0.13   | bump, pgrx 0.16.1 -> 0.17.0          |
+| pg_cardano         | 1.1.1  | 1.2.0    | bump, pgrx 0.17.0                    |
+| pg_strict          | 1.0.3  | 1.0.5    | bump, pgrx 0.16.1 -> 0.17.0          |
+| pg_vectorize       | 0.26.0 | 0.26.1   | bump, pgrx 0.16.1 -> 0.17.0          |
+| pglinter           | 1.1.1  | 1.1.2    | bump, pgrx 0.16.1 -> 0.17.0          |
+| pgx_ulid           | 0.2.2  | 0.2.3    | bump, pgrx 0.17.0                    |
+| wrappers           | 0.5.7  | 0.6.0    | bump, pgrx 0.16.1 -> 0.17.0          |
+| pg_trickle         | 0.16.0 | 0.17.0   | bump, pgrx 0.17.0                    |
+| supautils          | 3.1.0  | 3.2.1    | bump                                 |
+| ddl_historization  | 0.0.7  | 0.2      | bump                                 |
+| pg_incremental     | 1.4.1  | 1.5.0    | bump                                 |
+| pg_failover_slots  | 1.2.0  | 1.2.1    | bump                                 |
 
 ## 2026-03-21
 

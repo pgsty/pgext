@@ -10,70 +10,62 @@ weight: 200
 
 ## 2026-04-14
 
-| 包名                 | 旧版本    | 新版本      | 备注                                |
-|:-------------------|:-------|:---------|:----------------------------------|
-| block_copy_command | -      | 0.1.5    | new, PG 14-18，pgrx 0.17           |
-| pg_kazsearch       | -      | 2.0.0    | new, PG 16-18，pgrx 0.17           |
-| pg_rrf             | -      | 0.0.3    | new, PG 14-17，pgrx 0.16.1 -> 0.17 |
-| pgmqtt             | -      | 0.1.0    | new, PG 14-18，pgrx 0.16.1 -> 0.17 |
-| pg_when            | -      | 0.1.9    | new, PG 14-18，pgrx 0.17           |
-| provsql            | -      | 1.2.3    | new, PG 14-18                     |
-| pg_isok            | -      | 1.4.1    | new, PG 14-18                     |
-| pg_byteamagic      | -      | 0.2.4    | new, PG 14-18                     |
-| logical_ddl        | -      | 0.1.0    | new, PG 14-18                     |
-| datasketches       | -      | 1.7.0    | new, PG 14-18                     |
-| pg_text_semver     | -      | 1.2.1    | new, PG 14-18                     |
-| external_file      | -      | 1.2      | new, PG 14-18                     |
-| pg_query_rewrite   | -      | 0.0.5    | new, PG 14-18                     |
-| pghydro            | -      | 6.6      | new, PG 14-18                     |
-| pg_datasentinel    | -      | 1.0      | new, PG 15-18                     |
-| onesparse          | -      | 1.0.0    | new, PG 18 only                   |
-| rdkit              | -      | 202503.6 | new, build for el10, u24, d13     |
-| pg_tzf             | 0.2.3  | 0.2.4    | pgrx 0.17.0                       |
-| pg_anon            | 3.0.1  | 3.0.13   | pgrx 0.16.1 ->  0.17.0            |
-| pg_cardano         | 1.1.1  | 1.2.0    | pgrx 0.17.0 ->                    |
-| pg_strict          | 1.0.3  | 1.0.5    | pgrx 0.16.1 ->  0.17.0            |
-| pg_vectorize       | 0.26.0 | 0.26.1   | pgrx 0.16.1 ->  0.17.0            |
-| pglinter           | 1.1.1  | 1.1.2    | pgrx 0.16.1 ->  0.17.0            |
-| pgx_ulid           | 0.2.2  | 0.2.3    | pgrx 0.17.0 ->                    |
-| wrappers           | 0.5.7  | 0.6.0    | pgrx 0.16.1 ->  0.17.0            |
-| pg_trickle         | 0.16.0 | 0.17.0   | pgrx 0.17.0 ->                    |
-| pgclone            | 2.2.0  | 3.6.0    |                                   |
-| pgproto            | 0.2.1  | 0.2.4    |                                   |
-| pg_stat_ch         | 0.3.3  | 0.3.4    |                                   |
-| supautils          | 3.1.0  | 3.2.1    |                                   |
-| ddl_historization  | 0.0.7  | 0.2      |                                   |
-| pg_incremental     | 1.4.1  | 1.5.0    |                                   |
-| pg_failover_slots  | 1.2.0  | 1.2.1    |                                   |
-| plv8               | 3.2.4  | 3.2.4-2  | fix build for el10                |
-
-## 2026-04-10
-
-| 包名             | 旧版本    | 新版本    | 备注           |
-|:---------------|:-------|:-------|:-------------|
-| timescaledb    | 2.25.2 | 2.26.2 | 正常，PG15-18   |
-| pg_ivm         | 1.13   | 1.14   | 升级，PG14-18   |
-| system_stats   | 3.2    | 4.0    | 升级，PG14-18   |
-| nominatim_fdw  | 1.1.0  | 1.2    | 升级，PG14-18   |
-| pg_textsearch  | 0.5.0  | 1.0.0  | PG17-18      |
-| pg_clickhouse  | 0.1.5  | 0.1.10 | 正常，PG14-18   |
-| pg_dispatch    | -      | 0.1.5  | 新增，PG14-18   |
-| pg_search      | 0.22.2 | 0.22.6 | 手工下载，PG15-18 |
-| pg_fsql        | -      | 1.1.0  | 新增，PG14-18   |
-| pg_liquid      | -      | 0.1.7  | 新增，PG14-18   |
-| pg_regresql    | -      | 2.0.0  | 新增，PG14-18   |
-| pg_slug_gen    | -      | 1.0.0  | 新增，PG15-18   |
-| pg_stat_ch     | -      | 0.3.3  | 新增，PG16-18   |
-| pg_variables   | -      | 1.2.5  | 新增，PG14-18   |
-| pgcalendar     | -      | 1.1.0  | 新增，PG14-18   |
-| pgclone        | -      | 2.2.0  | 新增，PG14-18   |
-| pgelog         | -      | 1.0.2  | 新增，PG14-18   |
-| pglock         | -      | 1.0.0  | 新增，PG14-18   |
-| pgproto        | -      | 0.2.1  | 新增，PG14-18   |
-| postgresbson   | -      | 2.0.2  | 新增，PG14-18   |
-| rdf_fdw        | -      | 2.4.0  | 新增，PG14-18   |
-| parray_gin     | -      | 1.4.0  | 新增，PG14-18   |
-| pg_store_plans | 1.9    | 1.10   | 升级，PG14-18   |
+| 包名                 | 旧版本    | 新版本      | 备注                                     |
+|:-------------------|:-------|:---------|:---------------------------------------|
+| block_copy_command | -      | 0.1.5    | 新增，PG 14-18，Rust/pgrx 0.17.0           |
+| pg_kazsearch       | -      | 2.0.0    | 新增，PG 16-18，Rust/pgrx 0.17.0           |
+| pg_rrf             | -      | 0.0.3    | 新增，PG 14-17，Rust/pgrx 0.16.1 -> 0.17.0 |
+| pgmqtt             | -      | 0.1.0    | 新增，PG 14-18，Rust/pgrx 0.16.1 -> 0.17.0 |
+| pg_when            | -      | 0.1.9    | 新增，PG 14-18，Rust/pgrx 0.17.0           |
+| provsql            | -      | 1.2.3    | 新增，PG 14-18                            |
+| pg_isok            | -      | 1.4.1    | 新增，PG 14-18                            |
+| pg_byteamagic      | -      | 0.2.4    | 新增，PG 14-18                            |
+| logical_ddl        | -      | 0.1.0    | 新增，PG 14-18                            |
+| datasketches       | -      | 1.7.0    | 新增，PG 14-18                            |
+| pg_text_semver     | -      | 1.2.1    | 新增，PG 14-18                            |
+| external_file      | -      | 1.2      | 新增，PG 14-18                            |
+| pg_query_rewrite   | -      | 0.0.5    | 新增，PG 14-18                            |
+| pghydro            | -      | 6.6      | 新增，PG 14-18                            |
+| pg_datasentinel    | -      | 1.0      | 新增，PG 15-18                            |
+| onesparse          | -      | 1.0.0    | 新增，仅 PG 18                             |
+| rdkit              | -      | 202503.6 | 新增，PG 14-18                            |
+| pg_dispatch        | -      | 0.1.5    | 新增，PG 14-18                            |
+| pg_fsql            | -      | 1.1.0    | 新增，PG 14-18                            |
+| pg_liquid          | -      | 0.1.7    | 新增，PG 14-18                            |
+| pg_regresql        | -      | 2.0.0    | 新增，PG 14-18                            |
+| pg_slug_gen        | -      | 1.0.0    | 新增，PG 15-18                            |
+| pg_stat_ch         | -      | 0.3.4    | 新增，PG 16-18                            |
+| pg_variables       | -      | 1.2.5    | 新增，PG 14-18                            |
+| pgcalendar         | -      | 1.1.0    | 新增，PG 14-18                            |
+| pgclone            | -      | 3.6.0    | 新增，PG 14-18                            |
+| pgelog             | -      | 1.0.2    | 新增，PG 14-18                            |
+| pglock             | -      | 1.0.0    | 新增，PG 14-18                            |
+| pgproto            | -      | 0.2.4    | 新增，PG 14-18                            |
+| postgresbson       | -      | 2.0.2    | 新增，PG 14-18                            |
+| rdf_fdw            | -      | 2.4.0    | 新增，PG 14-18                            |
+| parray_gin         | -      | 1.4.0    | 新增，PG 14-18                            |
+| timescaledb        | 2.25.2 | 2.26.2   | 升级                                     |
+| pg_ivm             | 1.13   | 1.14     | 升级                                     |
+| system_stats       | 3.2    | 4.0      | 升级                                     |
+| nominatim_fdw      | 1.1.0  | 1.2      | 升级                                     |
+| pg_textsearch      | 0.5.0  | 1.0.0    | 升级                                     |
+| pg_clickhouse      | 0.1.5  | 0.1.10   | 升级                                     |
+| pg_search          | 0.22.2 | 0.22.6   | 升级                                     |
+| pg_store_plans     | 1.9    | 1.10     | 升级                                     |
+| pg_tzf             | 0.2.3  | 0.2.4    | 升级，Rust/pgrx 0.17.0                    |
+| pg_anon            | 3.0.1  | 3.0.13   | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
+| pg_cardano         | 1.1.1  | 1.2.0    | 升级，Rust/pgrx 0.17.0                    |
+| pg_strict          | 1.0.3  | 1.0.5    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
+| pg_vectorize       | 0.26.0 | 0.26.1   | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
+| pglinter           | 1.1.1  | 1.1.2    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
+| pgx_ulid           | 0.2.2  | 0.2.3    | 升级，Rust/pgrx 0.17.0                    |
+| wrappers           | 0.5.7  | 0.6.0    | 升级，Rust/pgrx 0.16.1 -> 0.17.0          |
+| pg_trickle         | 0.16.0 | 0.17.0   | 升级，Rust/pgrx 0.17.0                    |
+| supautils          | 3.1.0  | 3.2.1    | 升级                                     |
+| ddl_historization  | 0.0.7  | 0.2      | 升级                                     |
+| pg_incremental     | 1.4.1  | 1.5.0    | 升级                                     |
+| pg_failover_slots  | 1.2.0  | 1.2.1    | 升级                                     |
+| plv8               | 3.2.4  | 3.2.4-2  | fix el10 build                         |
 
 
 ## 2026-03-21
