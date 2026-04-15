@@ -552,7 +552,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 1.4.0 | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8660 | {{< alias "etcd_fdw" >}} | 0.0.0 | Foreign data wrapper for etcd |
 | 8670 | {{< alias "informix_fdw" >}} | 0.6.3 | Foreign data wrapper for Informix access |
-| 8680 | {{< alias "nominatim_fdw" >}} | 1.2 | Nominatim Foreign Data Wrapper for PostgreSQL |
+| 8680 | {{< alias "nominatim_fdw" >}} | 1.3 | Nominatim Foreign Data Wrapper for PostgreSQL |
 | 8700 | {{< alias "mongo_fdw" >}} | 5.5.3 | foreign data wrapper for MongoDB access |
 | 8710 | {{< alias "redis_fdw" >}} | 1.0 | Foreign data wrapper for querying a Redis server |
 | 8720 | {{< alias "redis" "pg_redis_pubsub" >}} | 0.0.1 | Send redis pub/sub messages to Redis from PostgreSQL Directly |
@@ -619,7 +619,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9620 | {{< alias "pgmqtt" >}} | 0.1.0 | CDC-to-MQTT broker for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
-| 9650 | {{< alias "decoderbufs" >}} | 3.4.1 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| 9650 | {{< alias "decoderbufs" >}} | 3.5.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | Replication manager for PostgreSQL |

@@ -411,7 +411,7 @@ comments: false
 | {{< ext "pgbouncer_fdw" >}} | `1.4.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pgbouncer_fdw" >}} | {{< category "FDW" >}} | `pgbouncer_fdw_$v` | - |
 | {{< ext "etcd_fdw" >}} | `0.0.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/etcd_fdw" >}} | {{< category "FDW" >}} | `etcd_fdw_$v` | `postgresql-$v-etcd-fdw` |
 | {{< ext "informix_fdw" >}} | `0.6.3` | {{< badge content="Link" link="https://github.com/credativ/informix_fdw" >}} | {{< category "FDW" >}} | `informix_fdw_$v` | - |
-| {{< ext "nominatim_fdw" >}} | `1.2` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | `postgresql-$v-nominatim-fdw` |
+| {{< ext "nominatim_fdw" >}} | `1.3` | {{< badge content="Link" link="https://github.com/jimjonesbr/nominatim_fdw" >}} | {{< category "FDW" >}} | `nominatim_fdw_$v` | `postgresql-$v-nominatim-fdw` |
 | {{< ext "mongo_fdw" >}} | `5.5.3` | {{< badge content="Link" link="https://github.com/EnterpriseDB/mongo_fdw" >}} | {{< category "FDW" >}} | `mongo_fdw_$v` | - |
 | {{< ext "redis_fdw" >}} | `1.0` | {{< badge content="Link" link="https://github.com/pg-redis-fdw/redis_fdw" >}} | {{< category "FDW" >}} | `redis_fdw_$v` | `postgresql-$v-redis-fdw` |
 | {{< ext "redis" "pg_redis_pubsub" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/brettlaforge/pg_redis_pubsub" >}} | {{< category "FDW" >}} | `pg_redis_pubsub_$v` | `postgresql-$v-pg-redis-pubsub` |
@@ -452,7 +452,7 @@ comments: false
 | {{< ext "pgmqtt" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/RayElg/pgmqtt" >}} | {{< category "ETL" >}} | `pgmqtt_$v` | `postgresql-$v-pgmqtt` |
 | {{< ext "wal2json" >}} | `2.6` | {{< badge content="Link" link="https://github.com/eulerto/wal2json" >}} | {{< category "ETL" >}} | `wal2json_$v` | `postgresql-$v-wal2json` |
 | {{< ext "wal2mongo" >}} | `1.0.7` | {{< badge content="Link" link="https://github.com/HighgoSoftware/wal2mongo" >}} | {{< category "ETL" >}} | `wal2mongo_$v` | `postgresql-$v-wal2mongo` |
-| {{< ext "decoderbufs" >}} | `3.4.1` | {{< badge content="Link" link="https://github.com/debezium/postgres-decoderbufs" >}} | {{< category "ETL" >}} | `postgres-decoderbufs_$v` | `postgresql-$v-decoderbufs` |
+| {{< ext "decoderbufs" >}} | `3.5.0` | {{< badge content="Link" link="https://github.com/debezium/postgres-decoderbufs" >}} | {{< category "ETL" >}} | `postgres-decoderbufs_$v` | `postgresql-$v-decoderbufs` |
 | {{< ext "decoder_raw" >}} | `1.0` | {{< badge content="Link" link="https://github.com/michaelpq/pg_plugins/blob/main/decoder_raw/" >}} | {{< category "ETL" >}} | `decoder_raw_$v` | `postgresql-$v-decoder-raw` |
 | {{< ext "mimeo" >}} | `1.5.1` | {{< badge content="Link" link="https://github.com/omniti-labs/mimeo" >}} | {{< category "ETL" >}} | `mimeo_$v` | `postgresql-$v-mimeo` |
 | {{< ext "repmgr" >}} | `5.5.0` | {{< badge content="Link" link="https://github.com/EnterpriseDB/repmgr" >}} | {{< category "ETL" >}} | `repmgr_$v` | `postgresql-$v-repmgr` |

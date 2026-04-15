@@ -1,84 +1,94 @@
-
 ## Usage
 
-> Syntax:
->
-> ```bash
-> regresql init postgres://localhost/mydb
-> regresql add src/sql/
-> regresql update
-> regresql test
-> ```
->
-> Sources: [README](https://github.com/boringsql/regresql), [Product page](https://boringsql.com/products/regresql/)
+> Sources: [extension README](https://github.com/boringSQL/regresql/blob/master/pg_ext/README.md), [control file](https://github.com/boringSQL/regresql/blob/master/pg_ext/pg_regresql.control), [portable stats article](https://boringsql.com/posts/portable-stats/)
 
-`RegreSQL` is documented upstream as a language-agnostic SQL regression testing tool for PostgreSQL, not as a `CREATE EXTENSION`-style in-database module. It discovers `.sql` files, runs them against PostgreSQL, snapshots expected output, and tracks query plan changes.
+`pg_regresql` is a PostgreSQL extension that makes the planner trust catalog statistics from `pg_class` instead of recomputing relation size from physical file blocks. It is the extension part of the RegreSQL project, intended for realistic plan regression testing with injected production statistics.
 
-## Quick Start
+### Problem
 
-The README's basic workflow is:
+The upstream extension README explains that PostgreSQL normally does not fully trust `pg_class.relpages` and `pg_class.reltuples` when estimating relation size. Instead, planner code reads the current physical file size and rescales statistics from that.
+
+That behavior is useful for stale-statistics safety, but it breaks test setups where catalog statistics were intentionally restored from another environment and the local table files are much smaller.
+
+### What It Overrides
+
+`pg_regresql` hooks into `get_relation_info_hook` after `estimate_rel_size()` and replaces planner estimates with catalog values.
+
+| Planner field | Default source | `pg_regresql` source |
+| --- | --- | --- |
+| `rel->pages` | `smgrnblocks()` via table access method | `pg_class.relpages` |
+| `rel->tuples` | density scaled by physical pages | `pg_class.reltuples` |
+| `rel->allvisfrac` | `relallvisible / physical pages` | `pg_class.relallvisible / relpages` |
+| `IndexOptInfo->pages` | `RelationGetNumberOfBlocks()` | `pg_class.relpages` for the index |
+| `IndexOptInfo->tuples` | copied from `rel->tuples` | `pg_class.reltuples` for the index |
+
+### Installation
+
+The upstream README documents three installation paths:
 
 ```bash
-regresql init postgres://localhost/mydb
-regresql discover
-regresql add src/sql/
-regresql update
-regresql test
+sudo pgxn install pg_regresql
 ```
 
-This initializes a test suite, discovers query files, creates plan definitions, captures expected output, and runs regression checks.
+```bash
+make PG_SOURCE=/path/to/postgresql
+make install PG_SOURCE=/path/to/postgresql
+```
 
-## What It Tracks
+```bash
+make USE_PGXS=1
+make install USE_PGXS=1
+```
 
-The upstream docs emphasize:
+The control file ships as `pg_regresql.control` with `default_version = '2.0'` and `module_pathname = '$libdir/pg_regresql'`.
 
-- expected query output snapshots
-- `EXPLAIN` plan baselines
-- sequential scan warnings
-- migration-related query regressions
-- CI-oriented output formats such as `junit`, `json`, `pgtap`, and `github-actions`
+### Activation
 
-## Query Files and Plans
-
-RegreSQL works with normal SQL files and supports multiple queries per file using `-- name:` annotations:
+The extension becomes active when the shared library is loaded:
 
 ```sql
--- name: get-user-by-id
-SELECT * FROM users WHERE id = :id;
+LOAD 'pg_regresql';
+
+EXPLAIN SELECT ...;
 ```
 
-Plan files provide test parameters:
+For a whole test instance, the README recommends:
 
-```yaml
-"1":
-  id: 42
-"2":
-  id: 100
+```conf
+session_preload_libraries = 'pg_regresql'
 ```
 
-## Snapshots and Migrations
+This is the important runtime configuration: package installation alone is not the point; the planner hook only takes effect after the library is loaded for the session or instance.
 
-The tool can build and restore database snapshots and compare query behavior across migrations:
+### Typical Workflow
 
-```bash
-regresql snapshot build
-regresql snapshot restore
-regresql migrate --script db/migrations/001_add_column.sql
+The main use case is plan regression testing with restored production statistics. After injecting catalog statistics into a CI or test database, `pg_regresql` makes the planner use those restored values instead of the tiny local heap size.
+
+The README gives this example:
+
+```sql
+SELECT pg_restore_relation_stats(
+    'schemaname', 'public',
+    'relname', 'test_orders',
+    'relpages', 123513::integer,
+    'reltuples', 50000000::real,
+    'relallvisible', 123513::integer
+);
+
+LOAD 'pg_regresql';
+
+EXPLAIN SELECT * FROM test_orders WHERE created_at > '2024-06-01';
 ```
 
-## Installation
+That pattern is useful for:
 
-The README documents installation via Homebrew or Go:
+- reproducing production plans locally
+- testing schema migrations against realistic plan estimates
+- simulating table growth and index choices
+- improving partition-planning experiments
 
-```bash
-brew tap boringsql/boringsql
-brew install regresql
-```
+### Compatibility
 
-or
-
-```bash
-go install github.com/boringsql/regresql@latest
-```
-
-PostgreSQL client tools such as `pg_dump`, `pg_restore`, and `psql` are required for snapshot commands.
+- PostgreSQL 14 and newer in this repository packaging
+- upstream README notes the hook itself exists since PostgreSQL 8.3
+- intended to coexist with extensions such as `pg_hint_plan` and `hypopg`, though upstream marks that as not yet fully tested

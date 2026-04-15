@@ -1,84 +1,94 @@
-
 ## 用法
 
-> 语法：
->
-> ```bash
-> regresql init postgres://localhost/mydb
-> regresql add src/sql/
-> regresql update
-> regresql test
-> ```
->
-> 来源：[README](https://github.com/boringsql/regresql)，[产品页](https://boringsql.com/products/regresql/)
+> 来源：[扩展 README](https://github.com/boringSQL/regresql/blob/master/pg_ext/README.md)，[控制文件](https://github.com/boringSQL/regresql/blob/master/pg_ext/pg_regresql.control)，[portable stats 文章](https://boringsql.com/posts/portable-stats/)
 
-`RegreSQL` 在上游被定位为一个与语言无关的 PostgreSQL SQL 回归测试工具，而不是数据库内的 `CREATE EXTENSION` 式模块。它会发现 `.sql` 文件、在 PostgreSQL 上执行这些文件、保存期望输出，并跟踪查询计划变化。
+`pg_regresql` 是一个 PostgreSQL 扩展，用来让优化器优先信任 `pg_class` 中的目录统计信息，而不是根据物理文件块数重新估算关系大小。它是 RegreSQL 项目中的扩展部分，主要用于在注入生产统计信息后，复现更接近真实环境的执行计划。
 
-## 快速上手
+### 要解决的问题
 
-README 给出的基本流程是：
+上游扩展 README 指出，PostgreSQL 在估算关系大小时，通常不会完全信任 `pg_class.relpages` 和 `pg_class.reltuples`。规划器会读取当前物理文件大小，并据此重新缩放这些统计值。
+
+这种行为有助于规避陈旧统计信息带来的风险，但在测试环境中会破坏“已从其他环境恢复目录统计信息”的场景，因为本地表文件通常远小于生产环境。
+
+### 它覆盖了什么
+
+`pg_regresql` 通过 `get_relation_info_hook` 在 `estimate_rel_size()` 之后接管规划器估算，并用目录统计值替换默认结果。
+
+| 规划器字段 | 默认来源 | `pg_regresql` 来源 |
+| --- | --- | --- |
+| `rel->pages` | 通过表访问方法调用 `smgrnblocks()` | `pg_class.relpages` |
+| `rel->tuples` | 按物理页数缩放后的密度估算 | `pg_class.reltuples` |
+| `rel->allvisfrac` | `relallvisible / physical pages` | `pg_class.relallvisible / relpages` |
+| `IndexOptInfo->pages` | `RelationGetNumberOfBlocks()` | 索引的 `pg_class.relpages` |
+| `IndexOptInfo->tuples` | 复制自 `rel->tuples` | 索引的 `pg_class.reltuples` |
+
+### 安装
+
+上游 README 给出了三种安装方式：
 
 ```bash
-regresql init postgres://localhost/mydb
-regresql discover
-regresql add src/sql/
-regresql update
-regresql test
+sudo pgxn install pg_regresql
 ```
 
-这会初始化测试套件、发现查询文件、生成计划定义、捕获期望输出，并执行回归检查。
+```bash
+make PG_SOURCE=/path/to/postgresql
+make install PG_SOURCE=/path/to/postgresql
+```
 
-## 跟踪内容
+```bash
+make USE_PGXS=1
+make install USE_PGXS=1
+```
 
-上游文档重点关注：
+控制文件为 `pg_regresql.control`，其中声明了 `default_version = '2.0'` 和 `module_pathname = '$libdir/pg_regresql'`。
 
-- 期望的查询输出快照
-- `EXPLAIN` 计划基线
-- 顺序扫描告警
-- 与迁移相关的查询回归
-- 面向 CI 的输出格式，例如 `junit`、`json`、`pgtap` 和 `github-actions`
+### 启用方式
 
-## 查询文件与计划
-
-RegreSQL 使用普通 SQL 文件，并支持通过 `-- name:` 注释在单个文件中编排多个查询：
+只有在共享库被加载后，这个扩展才会真正接管规划器：
 
 ```sql
--- name: get-user-by-id
-SELECT * FROM users WHERE id = :id;
+LOAD 'pg_regresql';
+
+EXPLAIN SELECT ...;
 ```
 
-计划文件用于提供测试参数：
+如果希望在整个测试实例中启用，README 推荐：
 
-```yaml
-"1":
-  id: 42
-"2":
-  id: 100
+```conf
+session_preload_libraries = 'pg_regresql'
 ```
 
-## 快照与迁移
+这里的关键是运行时加载配置，而不是“装完包就自动生效”；只有在当前会话或实例加载了库之后，规划器 hook 才会起作用。
 
-该工具可以构建和恢复数据库快照，并比较迁移前后的查询行为：
+### 典型工作流
 
-```bash
-regresql snapshot build
-regresql snapshot restore
-regresql migrate --script db/migrations/001_add_column.sql
+它的主要用途是基于已恢复的生产统计信息做执行计划回归测试。在 CI 或测试库中注入目录统计信息后，`pg_regresql` 会强制规划器使用这些恢复值，而不是依赖本地很小的堆表文件大小。
+
+README 给出的示例是：
+
+```sql
+SELECT pg_restore_relation_stats(
+    'schemaname', 'public',
+    'relname', 'test_orders',
+    'relpages', 123513::integer,
+    'reltuples', 50000000::real,
+    'relallvisible', 123513::integer
+);
+
+LOAD 'pg_regresql';
+
+EXPLAIN SELECT * FROM test_orders WHERE created_at > '2024-06-01';
 ```
 
-## 安装
+这种模式适合：
 
-README 说明可通过 Homebrew 或 Go 安装：
+- 在本地复现生产执行计划
+- 用更真实的计划估算测试 schema migration
+- 模拟表增长后的索引与访问路径选择
+- 改进分区规划相关实验
 
-```bash
-brew tap boringsql/boringsql
-brew install regresql
-```
+### 兼容性
 
-或：
-
-```bash
-go install github.com/boringsql/regresql@latest
-```
-
-快照相关命令需要 `pg_dump`、`pg_restore` 和 `psql` 等 PostgreSQL 客户端工具。
+- 在本仓库中打包支持 PostgreSQL 14 及以上版本
+- 上游 README 提到该 hook 自 PostgreSQL 8.3 起就存在
+- 设计上应可与 `pg_hint_plan`、`hypopg` 等扩展共存，但上游说明这一点尚未完整测试
