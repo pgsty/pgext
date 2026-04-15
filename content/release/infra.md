@@ -52,9 +52,10 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | sabiql                     | 1.8.2          | 1.10.0          |                                              |
 | hugo                       | 0.158.0        | 0.160.1         |                                              |
 | etcd                       | 3.6.9          | 3.6.8           | frozen at 3.6.8; README corrected            |
-| pg_exporter                | 1.2.1          | 1.2.2           |                                              |
-| pig                        | 1.3.2          | 1.3.4           |                                              |
+| pg_exporter                | 1.2.1          | 1.2.2           | direct-download metadata                     |
+| pig                        | 1.3.2          | 1.3.4           | direct-download metadata                     |
 | pgflo                      | 0.0.15         | -               | removed                                      |
+
 
 ## 2026-03-21
 

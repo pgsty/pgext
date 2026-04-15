@@ -64,6 +64,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | ddl_historization  | 0.0.7  | 0.2      | bump                                 |
 | pg_incremental     | 1.4.1  | 1.5.0    | bump                                 |
 | pg_failover_slots  | 1.2.0  | 1.2.1    | bump                                 |
+| PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                          |
 
 ## 2026-03-21
 

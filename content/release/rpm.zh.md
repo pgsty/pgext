@@ -66,7 +66,7 @@ weight: 200
 | pg_incremental     | 1.4.1  | 1.5.0    | 升级                                     |
 | pg_failover_slots  | 1.2.0  | 1.2.1    | 升级                                     |
 | plv8               | 3.2.4  | 3.2.4-2  | fix el10 build                         |
-
+| PolarDB            | 15.15  | 17.9.1.0 | PG 15 -> 17                            |
 
 ## 2026-03-21
 

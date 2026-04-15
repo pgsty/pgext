@@ -435,7 +435,7 @@ Examples:
 
   pig ext link 16                      # link pgdg postgresql 16 to /usr/pgsql
   pig ext link /usr/pgsql-16           # link specific pg to /usr/pgsql
-  pig ext link /u01/polardb_pg         # link polardb pg to /usr/pgsql
+  pig ext link /u01/polardb_pg_17      # link polardb pg to /usr/pgsql
   pig ext link null|none|nil|nop|no    # unlink current postgres install
 
 
