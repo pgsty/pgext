@@ -767,7 +767,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		"getPgsqlUtility": func() string {
 			// For el9.aarch64, lock patroni version due to PGDG upstream issues
 			if g.isEL9ARM() {
-				return "patroni-4.1.0 patroni-etcd-4.1.0 pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer"
+				return "patroni-4.1.1 patroni-etcd-4.1.1 pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer"
 			}
 			return g.constants.RPMCommonPkg[5]
 		},
@@ -775,10 +775,10 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			// For el9.aarch64, lock patroni and pgsql-common versions
 			if g.isEL9ARM() {
 				if key == "pgsql-common" {
-					return "patroni-4.1.0 patroni-etcd-4.1.0 pgbouncer pgbackrest pg_exporter pgbackrest_exporter vip-manager"
+					return "patroni-4.1.1 patroni-etcd-4.1.1 pgbouncer pgbackrest pg_exporter pgbackrest_exporter vip-manager"
 				}
 				if key == "patroni" {
-					return "patroni-4.1.0 patroni-etcd-4.1.0"
+					return "patroni-4.1.1 patroni-etcd-4.1.1"
 				}
 			}
 			return rpm
