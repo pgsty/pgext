@@ -14,10 +14,10 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 379 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 381 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 54 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 48 | Extensions written in Rust with the pgrx framework |
-| {{< language "C++" >}} | 10 | Extensions leveraging C++ features and libraries |
+| {{< language "C++" >}} | 11 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="379 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="381 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -68,13 +68,17 @@ The traditional PostgreSQL extension language
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | Hydra Columnar extension |
+| 2450 | {{< alias "storage_engine" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
-| 2700 | {{< alias "age" >}} | AGE graph database extension |
-| 2705 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| 2600 | {{< alias "age" >}} | AGE graph database extension |
+| 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| 2620 | {{< alias "onesparse" "one_sparse" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| 2650 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
+| 2680 | {{< alias "ulak" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
 | 2720 | {{< alias "rum" >}} | RUM index access method |
 | 2740 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
 | 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
@@ -85,7 +89,6 @@ The traditional PostgreSQL extension language
 | 2830 | {{< alias "imgsmlr" >}} | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
-| 2890 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
@@ -127,7 +130,6 @@ The traditional PostgreSQL extension language
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | YAML toolkit |
-| 2980 | {{< alias "onesparse" "one_sparse" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3000 | {{< alias "pg_tle" >}} | Trusted Language Extensions for PostgreSQL |
 | 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |
@@ -433,9 +435,9 @@ Pure SQL extensions and functions
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | Pfafstetter consistency checks for PgHydro |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
+| 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
 | 2800 | {{< alias "index_advisor" >}} | Query index advisor |
-| 2870 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
-| 2880 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 3520 | {{< alias "pg_text_semver" >}} | Semantic version domain and comparison operators for PostgreSQL |
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3670 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
@@ -533,7 +535,7 @@ Extensions written in Rust with the pgrx framework
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="10 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="11 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -547,6 +549,7 @@ Extensions leveraging C++ features and libraries
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and uncertainty management for PostgreSQL |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
+| 4235 | {{< alias "re2" >}} | ClickHouse-compatible regex functions using RE2 |
 | 4690 | {{< alias "datasketches" >}} | Approximate analytics sketches and aggregates for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 

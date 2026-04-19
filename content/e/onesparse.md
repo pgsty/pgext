@@ -2,7 +2,7 @@
 title: "onesparse"
 linkTitle: "onesparse"
 description: "Sparse linear algebra and graph extension for PostgreSQL 18"
-weight: 2980
+weight: 2620
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2980** | {{< badge content="onesparse" link="https://github.com/OneSparse/OneSparse" >}} | {{< ext "onesparse" "one_sparse" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2620** | {{< badge content="onesparse" link="https://github.com/OneSparse/OneSparse" >}} | {{< ext "onesparse" "one_sparse" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

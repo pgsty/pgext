@@ -2,7 +2,7 @@
 title: "pgmb"
 linkTitle: "pgmb"
 description: "A simple PostgreSQL Message Broker system"
-weight: 2870
+weight: 2670
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2870** | {{< badge content="pgmb" link="https://github.com/fraruiz/pgmb" >}} | {{< ext "pgmb" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **2670** | {{< badge content="pgmb" link="https://github.com/fraruiz/pgmb" >}} | {{< ext "pgmb" >}} | `1.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -14,10 +14,10 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 379 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 381 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 54 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 48 | 使用 pgrx 框架用 Rust 编写的扩展 |
-| {{< language "C++" >}} | 10 | 使用 C++ 特性和库的扩展 |
+| {{< language "C++" >}} | 11 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="379 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="381 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -68,13 +68,17 @@ weight: 200
 | 2400 | {{< alias "citus" >}} | Citus 分布式数据库 |
 | 2401 | {{< alias "citus_columnar" "citus" >}} | Citus 列式存储引擎 |
 | 2410 | {{< alias "columnar" "hydra" >}} | 开源列式存储扩展 |
+| 2450 | {{< alias "storage_engine" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
-| 2700 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
-| 2705 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
+| 2600 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
+| 2610 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
+| 2620 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
+| 2650 | {{< alias "pgq" >}} | 通用队列的PG实现 |
+| 2680 | {{< alias "ulak" >}} | 支持可靠异步投递的 PostgreSQL 事务型 Outbox 扩展 |
 | 2720 | {{< alias "rum" >}} | RUM 索引访问方法 |
 | 2740 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
 | 2770 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
@@ -85,7 +89,6 @@ weight: 200
 | 2830 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
 | 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
-| 2890 | {{< alias "pgq" >}} | 通用队列的PG实现 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
@@ -127,7 +130,6 @@ weight: 200
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | Omnigres 通用Worker池 |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | Omnigres XML工具包 |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | Omnigres YAML工具包 |
-| 2980 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3000 | {{< alias "pg_tle" >}} | AWS 可信语言扩展 |
 | 3011 | {{< alias "pljs" >}} | PL/JS 可信过程程序语言 |
@@ -433,9 +435,9 @@ weight: 200
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | PgHydro Pfafstetter 一致性检查扩展 |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 2500 | {{< alias "pg_fkpart" >}} | 按外键实用程序进行表分区的扩展 |
+| 2660 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
+| 2670 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
 | 2800 | {{< alias "index_advisor" >}} | 查询索引建议器 |
-| 2870 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
-| 2880 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 3520 | {{< alias "pg_text_semver" >}} | PostgreSQL 语义版本域类型与比较运算符 |
 | 3640 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
 | 3670 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |
@@ -533,7 +535,7 @@ weight: 200
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="10 个扩展" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="11 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -547,6 +549,7 @@ weight: 200
 | 2900 | {{< alias "provsql" >}} | PostgreSQL 半环溯源与不确定性管理扩展 |
 | 2930 | {{< alias "rdkit" >}} | 在PostgreSQL化学领域数据管理功能 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
+| 4235 | {{< alias "re2" >}} | 使用 RE2 的 ClickHouse 兼容正则函数 |
 | 4690 | {{< alias "datasketches" >}} | PostgreSQL 近似分析摘要数据结构与聚合函数 |
 | 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 

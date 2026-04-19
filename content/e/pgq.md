@@ -2,7 +2,7 @@
 title: "pgq"
 linkTitle: "pgq"
 description: "Generic queue for PostgreSQL"
-weight: 2890
+weight: 2650
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2890** | {{< badge content="pgq" link="https://github.com/pgq/pgq" >}} | {{< ext "pgq" >}} | `3.5.1` | {{< category "FEAT" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+| **2650** | {{< badge content="pgq" link="https://github.com/pgq/pgq" >}} | {{< ext "pgq" >}} | `3.5.1` | {{< category "FEAT" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

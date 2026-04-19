@@ -2,7 +2,7 @@
 title: "pg_liquid"
 linkTitle: "pg_liquid"
 description: "Liquid-inspired Datalog graph query extension for PostgreSQL"
-weight: 2705
+weight: 2610
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2705** | {{< badge content="pg_liquid" link="https://github.com/michael-golfi/pg_liquid" >}} | {{< ext "pg_liquid" >}} | `0.1.7` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2610** | {{< badge content="pg_liquid" link="https://github.com/michael-golfi/pg_liquid" >}} | {{< ext "pg_liquid" >}} | `0.1.7` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

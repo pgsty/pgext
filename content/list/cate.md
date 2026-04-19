@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (504 ext in 421 pkg) categorized into 16 categories.
+PostgreSQL Extensions (507 ext in 424 pkg) categorized into 16 categories.
 
 
 
@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.26.2 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.26.3 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -38,13 +38,13 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.2 | PostGIS geometry and geography spatial types and functions |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.2 | PostGIS topology spatial types and functions |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.2 | PostGIS raster types and functions |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.2 | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.2 | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.2 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.2 | Address Standardizer US dataset example |
+| 1500 | {{< alias "postgis" >}} | 3.6.3 | PostGIS geometry and geography spatial types and functions |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.3 | PostGIS topology spatial types and functions |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.3 | PostGIS raster types and functions |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.3 | PostGIS SFCGAL functions |
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.3 | PostGIS tiger geocoder and reverse geocoder |
+| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.3 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.3 | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | 4.0.1 | pgRouting Extension |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
@@ -92,7 +92,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2100 | {{< alias "pg_search" >}} | 0.22.6 | Full text search for PostgreSQL using BM25 |
+| 2100 | {{< alias "pg_search" >}} | 0.23.0 | Full text search for PostgreSQL using BM25 |
 | 2110 | {{< alias "pgroonga" >}} | 4.0.4 | Use Groonga as index, fast full text search platform for all languages! |
 | 2111 | {{< alias "pgroonga_database" "pgroonga" >}} | 4.0.4 | PGroonga database management module |
 | 2120 | {{< alias "pg_bigm" >}} | 1.2 | create 2-gram (bigram) index for faster full text search. |
@@ -129,7 +129,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.1.10 | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2450 | {{< alias "storage_engine" >}} | 1.0.7 | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.2.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
@@ -144,8 +145,13 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2700 | {{< alias "age" >}} | 1.7.0 | AGE graph database extension |
-| 2705 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| 2600 | {{< alias "age" >}} | 1.7.0 | AGE graph database extension |
+| 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| 2650 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
+| 2660 | {{< alias "pgmq" >}} | 1.11.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2670 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
+| 2680 | {{< alias "ulak" >}} | 0.0.2 | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
 | 2710 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
 | 2720 | {{< alias "rum" >}} | 1.3.15 | RUM index access method |
 | 2730 | {{< alias "pg_ai_query" >}} | 0.1.1 | AI-powered SQL query generation for PostgreSQL |
@@ -162,11 +168,8 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2840 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.17.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| 2870 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
-| 2880 | {{< alias "pgmq" >}} | 1.11.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
-| 2890 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
 | 2900 | {{< alias "provsql" >}} | 1.2.3 | Semiring provenance and uncertainty management for PostgreSQL |
-| 2910 | {{< alias "orioledb" >}} | 1.6 | OrioleDB, the next generation transactional engine |
+| 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
 | 2930 | {{< alias "rdkit" >}} | 202503.6 | Cheminformatics functionality for PostgreSQL. |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | Advanced adapter for Postgres extensions |
@@ -209,7 +212,6 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2977 | {{< alias "omni_worker" "omnigres" >}} | 0.2.1 | Generalized worker pool |
 | 2978 | {{< alias "omni_xml" "omnigres" >}} | 0.1.2 | XML toolkit |
 | 2979 | {{< alias "omni_yaml" "omnigres" >}} | 0.1.0 | YAML toolkit |
-| 2980 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2990 | {{< alias "bloom" >}} | 1.0 | bloom access method - signature file based index |
 
 ## LANG
@@ -315,7 +317,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
 | 4110 | {{< alias "pg_fsql" >}} | 1.1.0 | Recursive SQL template engine with JSONB-driven execution |
 | 4120 | {{< alias "pg_protobuf" >}} | 1.0 | Protobuf support for PostgreSQL |
-| 4130 | {{< alias "pgproto" >}} | 0.2.4 | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
+| 4130 | {{< alias "pgproto" >}} | 0.3.3 | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
 | 4140 | {{< alias "pglock" >}} | 1.0.0 | Lightweight distributed lock service inside PostgreSQL |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | Use jq in Postgres |
 | 4160 | {{< alias "pgjwt" >}} | 0.2.0 | JSON Web Token API for Postgresql |
@@ -325,6 +327,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.2 | Some functions and views for daily usage |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.0.0 | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
+| 4235 | {{< alias "re2" >}} | 0.1.1 | ClickHouse-compatible regex functions using RE2 |
 | 4240 | {{< alias "icu_ext" >}} | 1.10.0 | Access ICU functions |
 | 4250 | {{< alias "pgqr" >}} | 1.0 | QR Code generator from PostgreSQL |
 | 4270 | {{< alias "envvar" "pg_envvar" >}} | 1.0.1 | Fetch the value of an environment variable |
@@ -367,7 +370,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4640 | {{< alias "omnisketch" >}} | 1.0.2 | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | 1.0.1 | Provides ddsketch aggregate function |
 | 4660 | {{< alias "vasco" >}} | 0.1.0 | discover hidden correlations in your data with MIC |
-| 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.0 | XI Correlation Coefficient in Postgres |
+| 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.1 | XI Correlation Coefficient in Postgres |
 | 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 1.0.0 | High-performance weighted statistics functions for sparse data |
 | 4690 | {{< alias "datasketches" >}} | 1.7.0 | Approximate analytics sketches and aggregates for PostgreSQL |
 | 4700 | {{< alias "tdigest" >}} | 1.4.3 | Provides tdigest aggregate function. |
@@ -459,7 +462,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 |:---:|:---|:---|:---|
 | 6000 | {{< alias "pg_profile" >}} | 4.11 | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
-| 6020 | {{< alias "pg_stat_ch" >}} | 0.3.4 | Export PostgreSQL query telemetry to ClickHouse |
+| 6020 | {{< alias "pg_stat_ch" >}} | 0.3.6 | Export PostgreSQL query telemetry to ClickHouse |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.7 | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
@@ -615,7 +618,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9560 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
 | 9570 | {{< alias "spock" >}} | 5.0.5 | Multi-master logical replication extension for PostgreSQL |
 | 9580 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
-| 9590 | {{< alias "pgclone" >}} | 3.6.0 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
+| 9590 | {{< alias "pgclone" >}} | 4.0.0 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | 9620 | {{< alias "pgmqtt" >}} | 0.1.0 | CDC-to-MQTT broker for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |

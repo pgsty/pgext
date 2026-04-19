@@ -2,7 +2,7 @@
 title: "age"
 linkTitle: "age"
 description: "AGE graph database extension"
-weight: 2700
+weight: 2600
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2700** | {{< badge content="age" link="https://github.com/apache/age" >}} | {{< ext "age" >}} | `1.7.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **2600** | {{< badge content="age" link="https://github.com/apache/age" >}} | {{< ext "age" >}} | `1.7.0` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
