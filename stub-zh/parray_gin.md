@@ -1,68 +1,46 @@
-
 ## 用法
 
-> 语法：
->
-> ```sql
-> CREATE EXTENSION parray_gin;
-> CREATE INDEX test_tags_idx ON test_table USING gin (val parray_gin_ops);
-> SELECT * FROM test_table WHERE val @> ARRAY['must','contain'];
-> SELECT * FROM test_table WHERE val @@> ARRAY['what%like%'];
-> ```
->
-> 来源：[README](https://github.com/theirix/parray_gin)，[参考文档](https://github.com/theirix/parray_gin/blob/master/doc/parray_gin.md)
+- 来源：[README](https://github.com/theirix/parray_gin/blob/master/README.md)，[reference doc](https://github.com/theirix/parray_gin/blob/master/doc/parray_gin.md)
 
-`parray_gin` 为 `text[]` 数组提供 GIN 索引和操作符支持，既支持严格匹配，也支持部分匹配。上游文档将其描述为基于 `pg_trgm` 三元组实现的数组索引方案。
+`parray_gin` 为 `text[]` 增加一个 GIN operator class，并提供严格匹配与部分匹配操作符。上游把它描述为基于 `pg_trgm` trigram 分解的数组索引。
 
-## 数组索引
-
-该扩展提供 `parray_gin_ops` 操作符类，可用于 `text[]` 上的 GIN 索引：
+### 创建扩展与索引
 
 ```sql
-CREATE TABLE test_table(id bigserial, val text[]);
-CREATE INDEX test_tags_idx ON test_table USING gin (val parray_gin_ops);
+CREATE EXTENSION parray_gin;
+
+CREATE TABLE test_table (
+  id  bigserial,
+  val text[]
+);
+
+CREATE INDEX test_tags_idx
+ON test_table
+USING gin (val parray_gin_ops);
 ```
 
-参考文档指出，被索引的值和查询都会拆分为 trigrams。由于 GIN 可能返回误命中，操作符匹配后还会进行复核。
+### 可索引操作符
 
-## 操作符
+reference doc 说明 `parray_gin_ops` 支持下列操作符：
 
-### 严格匹配
+- `@>`：严格包含。
+- `<@`：严格被包含。
+- `@@>`：部分包含，数组元素可以使用 `LIKE` 模式。
+- `<@@`：部分被包含。
 
-`@> (text[], text[]) -> bool`
-
-当左侧数组包含右侧数组中的所有元素时返回 `true`。
-
-```sql
-SELECT * FROM test_table WHERE val @> ARRAY['far'];
-```
-
-`<@ (text[], text[]) -> bool`
-
-当左侧数组被右侧数组包含时返回 `true`。
+示例：
 
 ```sql
+SELECT * FROM test_table WHERE val @> ARRAY['must','contain'];
+SELECT * FROM test_table WHERE val @@> ARRAY['what%like%'];
 SELECT * FROM test_table WHERE val <@ ARRAY['galaxy','ago','vader'];
-```
-
-### 部分匹配
-
-`@@> (text[], text[]) -> bool`
-
-当左侧数组以部分匹配方式包含右侧所有项时返回 `true`，例如 `'foobar' ~~ 'foo%'` 或 `'foobar' ~~ '%oo%'`。
-
-```sql
-SELECT * FROM test_table WHERE val @@> ARRAY['%ar%'];
-```
-
-`<@@ (text[], text[]) -> bool`
-
-当左侧数组被右侧所有模式部分匹配包含时返回 `true`。
-
-```sql
 SELECT * FROM test_table WHERE val <@@ ARRAY['%ar%','vader'];
 ```
 
-## 说明
+### 匹配行为
 
-上游文档指出，GIN 可用于 `@>`, `<@`, `@@>` 和 `<@@`。文档还提到，该扩展可用于从 JSON 文本字段中提取出的 JSON 数组，相关场景中曾与 `json_accessors` 扩展配合使用。
+严格匹配要求数组元素完全相等。部分匹配允许 `'foo%'` 或 `'%oo%'` 这类模式。由于 trigram 索引可能返回误命中，文档说明索引查找之后还会做 recheck。
+
+### 注意事项
+
+README 表示支持范围一直到 PostgreSQL 18，而 reference doc 仍写成 9.1-14。两份文档对操作符和 opclass 行为的描述是一致的，但版本说明在上游尚未完全同步。

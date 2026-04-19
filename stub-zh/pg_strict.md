@@ -1,61 +1,50 @@
-
-
 ## 用法
 
-> [pg_strict: 阻止不带 WHERE 子句的危险 UPDATE 和 DELETE](https://github.com/spa5k/pg_strict)
+来源：[README](https://github.com/spa5k/pg_strict/blob/master/README.md)，[Release v1.0.5](https://github.com/spa5k/pg_strict/releases/tag/v1.0.5)，[API source](https://github.com/spa5k/pg_strict/blob/master/src/api.rs)
 
-`pg_strict` 扩展阻止缺少 `WHERE` 子句的 `UPDATE` 和 `DELETE` 语句。它通过 `post_parse_analyze_hook` 在解析/分析阶段运行，为每种语句类型提供三种执行模式。
+`pg_strict` 会阻止或警告缺少 `WHERE` 子句的 `UPDATE` 与 `DELETE` 语句。它通过 `post_parse_analyze_hook` 工作，因此必须从 `shared_preload_libraries` 加载。
 
-### 配置参数
+### 所需设置
 
-| 参数 | 模式 | 描述 |
-|-----------|-------|-------------|
-| `pg_strict.require_where_on_update` | `on`/`warn`/`off` | 对 UPDATE 强制要求 WHERE |
-| `pg_strict.require_where_on_delete` | `on`/`warn`/`off` | 对 DELETE 强制要求 WHERE |
+```sql
+-- postgresql.conf
+shared_preload_libraries = 'pg_strict'
 
-- **`on`**：拒绝不带 WHERE 的语句（抛出错误）
-- **`warn`**：允许但发出警告日志
-- **`off`**：标准 PostgreSQL 行为
+CREATE EXTENSION pg_strict;
+```
 
-### 会话级配置
+### GUCs
+
+- `pg_strict.require_where_on_update`
+- `pg_strict.require_where_on_delete`
+
+每个设置都支持 `off`、`warn` 与 `on`。
 
 ```sql
 SET pg_strict.require_where_on_update = 'on';
 SET pg_strict.require_where_on_delete = 'warn';
 ```
 
-### 持久化配置
+### 辅助函数
 
 ```sql
-ALTER DATABASE postgres SET pg_strict.require_where_on_update = 'on';
-ALTER ROLE app_service SET pg_strict.require_where_on_delete = 'on';
-ALTER ROLE dba_admin SET pg_strict.require_where_on_update = 'off';
+SELECT pg_strict_version();
+SELECT * FROM pg_strict_config();
+
+SELECT pg_strict_check_where_clause('DELETE FROM t', 'DELETE');
+SELECT pg_strict_validate_update('UPDATE t SET x = 1 WHERE id = 42');
+SELECT pg_strict_validate_delete('DELETE FROM t WHERE id = 42');
+
+SELECT pg_strict_enable_update();
+SELECT pg_strict_warn_delete();
+SELECT pg_strict_disable_delete();
 ```
 
-### 事务级覆盖
+- `pg_strict_set_update_mode(mode)` 与 `pg_strict_set_delete_mode(mode)` 提供通用模式设置器。
+- `SET LOCAL` 可用于事务中的一次性 bulk operation。
 
-```sql
-BEGIN;
-SET LOCAL pg_strict.require_where_on_delete = 'off';
-DELETE FROM temp_table;  -- 在此事务中允许
-COMMIT;
-```
+### 注意事项
 
-### API 函数
-
-```sql
-SELECT pg_strict_version();           -- 扩展版本
-SELECT pg_strict_config();            -- 所有设置及其值和描述
-
--- 以编程方式验证查询
-SELECT pg_strict_check_where_clause('DELETE FROM t', 'DELETE');  -- 返回布尔值
-SELECT pg_strict_validate_update('UPDATE t SET x=1');
-SELECT pg_strict_validate_delete('DELETE FROM t');
-
--- 快速模式切换
-SELECT pg_strict_enable_update();     -- 将 update 执行设为 'on'
-SELECT pg_strict_warn_delete();       -- 将 delete 执行设为 'warn'
-SELECT pg_strict_disable_update();    -- 将 update 执行设为 'off'
-```
-
-任何非空 WHERE 条件都被接受（包括 `WHERE false`）。支持 CTE 语句。
+- 它检查的是 `WHERE` 的存在性，而不是语义意图：任何非空 `WHERE` 子句都会满足规则。
+- 仅检查 `UPDATE` 与 `DELETE`。
+- 当前上游版本是 `1.0.5`；Pigsty 关于 `pgrx` 0.17.0 的说明属于打包或构建元数据，不是文档化的用户功能变化。

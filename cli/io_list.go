@@ -1151,17 +1151,10 @@ linkTitle: Pigsty Extension Catalog
 description: >
   Extensions are the soul of PostgreSQL. Pigsty builds, collects, and integrates %d PG ecosystem extensions for out-of-the-box use.
 weight: 20
-outputs:
-  - HTML
-  - print
-cascade:
-  type: docs
-  outputs:
-    - HTML
-    - print
+%s
 ---
 
-`, totalExts))
+`, totalExts, extOverviewOutputsFrontMatter))
 
 	// ══════════════════════════════════════════════════════════════════
 	// Introduction

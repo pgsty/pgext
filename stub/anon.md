@@ -1,76 +1,78 @@
 
-
-
 ## Usage
 
-> [anon: Anonymization & Data Masking for PostgreSQL](https://gitlab.com/dalibo/postgresql_anonymizer/)
+> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)
 
-`postgresql_anonymizer` (extension name: `anon`) masks or replaces personally identifiable information (PII) using a declarative approach. Masking rules are defined directly in the database schema using security labels.
+`anon` applies declarative masking rules with `SECURITY LABEL FOR anon`. The official docs center on three user-facing flows: permanent masking, masked roles, and anonymized dumps.
+
+### Initialize and Declare Rules
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS anon CASCADE;
 SELECT anon.init();
-```
 
-### Declaring Masking Rules
+SECURITY LABEL FOR anon ON COLUMN customer.full_name
+IS 'MASKED WITH FUNCTION anon.dummy_name()';
 
-```sql
-SECURITY LABEL FOR anon ON COLUMN player.name
-  IS 'MASKED WITH FUNCTION anon.fake_last_name()';
+SECURITY LABEL FOR anon ON COLUMN customer.employer
+IS 'MASKED WITH FUNCTION anon.dummy_company_name()';
 
-SECURITY LABEL FOR anon ON COLUMN player.id
-  IS 'MASKED WITH VALUE NULL';
+SECURITY LABEL FOR anon ON COLUMN customer.phone
+IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
 ```
 
 ### Static Masking
 
-Permanently replace PII in the database:
+Static masking rewrites the stored data in place:
 
 ```sql
-SECURITY LABEL FOR anon ON COLUMN customer.full_name
-  IS 'MASKED WITH FUNCTION anon.fake_first_name() || '' '' || anon.fake_last_name()';
-
-SECURITY LABEL FOR anon ON COLUMN customer.birth
-  IS 'MASKED WITH FUNCTION anon.random_date_between(''1920-01-01''::DATE, now())';
-
 SELECT anon.anonymize_database();
--- Also available: anon.anonymize_table(), anon.anonymize_column()
+-- See also: anon.anonymize_table(), anon.anonymize_column()
 ```
+
+The static-masking docs also cover shuffling, noise injection, and parallel masking for larger datasets.
 
 ### Dynamic Masking
 
-Hide PII from specific roles while others see original data:
+Dynamic masking hides values only from roles labeled as masked:
 
 ```sql
-SELECT anon.start_dynamic_masking();
+ALTER DATABASE demo SET session_preload_libraries = 'anon';
+ALTER DATABASE demo SET anon.transparent_dynamic_masking TO true;
 
 CREATE ROLE skynet LOGIN;
 SECURITY LABEL FOR anon ON ROLE skynet IS 'MASKED';
+GRANT pg_read_all_data TO skynet;
 
 SECURITY LABEL FOR anon ON COLUMN people.lastname
-  IS 'MASKED WITH FUNCTION anon.fake_last_name()';
-
-SECURITY LABEL FOR anon ON COLUMN people.phone
-  IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
+IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
 ```
 
-When `skynet` queries the table, masked data is returned automatically.
+When `skynet` queries the table, masked values are returned instead of the originals.
 
-### Anonymous Dumps
+### Anonymous Dumps and Pseudonymization
 
-```bash
-pg_dump_anon.sh -h localhost -p 5432 -U bob bob_db > dump.sql
-```
+The current docs recommend transparent anonymous dumps through a masked role and `pg_dump`. Older helpers `pg_dump_anon.sh` and `pg_dump_anon` are explicitly marked deprecated.
 
-### Common Masking Functions
+For stable key remapping in dumps, the docs call out:
 
-| Function | Description |
-|----------|-------------|
-| `anon.fake_first_name()` | Random first name |
-| `anon.fake_last_name()` | Random last name |
-| `anon.fake_company()` | Random company name |
-| `anon.random_date_between(d1, d2)` | Random date in range |
-| `anon.random_zip()` | Random zip code |
-| `anon.partial(value, prefix, padding, suffix)` | Partial scrambling |
-| `anon.random_string(n)` | Random string of length n |
-| `anon.random_int_between(i1, i2)` | Random integer in range |
+- `anon.pseudo_shift(bigint)`
+- `anon.pseudo_xor(bigint)`
+- `anon.set_shift()`
+
+### Common Functions and Caveats
+
+Common masking helpers in the function catalog include:
+
+- `anon.dummy_first_name()`
+- `anon.dummy_last_name()`
+- `anon.dummy_company_name()`
+- `anon.random_zip()`
+- `anon.random_date_between(date, date)`
+- `anon.partial(value, prefix, mask, suffix)`
+
+Caveats from the official docs:
+
+- dynamic masking needs preload/configuration before masked-role sessions use it
+- static masking destroys the original values
+- pseudonymization is not anonymization

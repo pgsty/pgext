@@ -1,26 +1,35 @@
 ## Usage
 
-- Source: [GitHub repo](https://github.com/bigsmoke/pg_text_semver), [README](https://github.com/bigsmoke/pg_text_semver/blob/master/README.md)
-- `pg_text_semver` implements Semantic Versioning 2.0.0 on top of PostgreSQL `text`, using a `semver` domain and related helper types/functions.
+Source: [README](https://github.com/bigsmoke/pg_text_semver/blob/master/README.md), [META.json](https://github.com/bigsmoke/pg_text_semver/blob/master/META.json), [Tag v1.2.1](https://github.com/bigsmoke/pg_text_semver/tree/v1.2.1)
+
+`pg_text_semver` implements Semantic Versioning 2.0.0 on top of PostgreSQL `text` using a `semver` domain rather than a custom C type.
+
+### Core types and functions
 
 ```sql
 CREATE EXTENSION pg_text_semver;
+
+SELECT '1.2.3'::semver < '2.0.0'::semver;
+SELECT semver_cmp('1.2.3'::semver, '1.2.4'::semver);
+SELECT semver_regexp(true);
+SELECT '1.2.3-alpha.1+build5'::semver::semver_parsed;
 ```
 
-## Core Workflow
+- `semver`: domain over `text` with SemVer validation.
+- `semver_parsed`: parsed composite type that supports sorting and indexing.
+- `semver_prerelease`: domain for prerelease identifiers.
+- `semver_cmp(...)`: comparison function for `semver` and `semver_parsed`.
+- `semver_regexp(include_captures boolean)`: exposes the validation regex.
 
-The README highlights these capabilities:
+### Extra helpers
 
-- compare `semver` values with the usual comparison operators
-- call `semver_cmp(semver, semver)` directly
-- validate and inspect version strings with `semver_regexp()`
-- cast parsed values to `semver_parsed` for sorting and indexing
-- use `semver_prerelease` for prerelease validation and comparison
+The current README also documents PGXN-version-range helpers:
 
-## Examples
+- `meta_pgxn_version_range(text)`
+- `meta_pgxn_version_range_cmp(text, text)`
+- `nonsemver_cmp(text, text, text)`
 
-The upstream README points users to the `test__pg_text_semver()` procedure for concrete examples of the types, operators, and functions. It also notes that the extension ships a separate `semver_parsed` type that can be serialized back to `semver` or `text`.
+### Caveats
 
-## Notes
-
-The README contrasts this project with C-based `semver` extensions: `pg_text_semver` stays on `text`-backed domains and focuses on a simple, spec-oriented implementation.
+- This extension favors a spec-oriented, text-backed implementation over the lower-level C-based alternatives.
+- The upstream README remains the authoritative user-facing reference; the current stub already matched that surface closely, so this refresh mainly aligns it with the documented 1.2.1 helper set.

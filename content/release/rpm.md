@@ -10,18 +10,18 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 | Package           | Old    | New     | Comment                                |
 |:------------------|:-------|:--------|:---------------------------------------|
-| cloudberry        | 2.0.0  | 2.1.0-2 | 升级到 2.1.0，release 2 修复 initdb errno 问题 |
-| cloudberry-backup | -      | 2.1.0-2 | 新增 Cloudberry 备份工具包                    |
-| cloudberry-pxf    | -      | 2.1.0-2 | 新增 Cloudberry PXF 包                    |
-| re2               | -      | 0.1.1   | 新增，PG 16-18                            |
-| storage_engine    | -      | 1.0.7   | 新增，PG 14-18                            |
-| ulak              | -      | 0.0.2   | 新增，PG 14-18                            |
-| orioledb          | beta14 | beta15  | 配套 OriolePG 17.18                      |
-| oriolepg          | 17.16  | 17.18   | 内核补丁集更新                                |
+| cloudberry        | 2.0.0  | 2.1.0-2 | bump to 2.1.0, release 2 fixes initdb errno issue |
+| cloudberry-backup | -      | 2.1.0-2 | new companion package                    |
+| cloudberry-pxf    | -      | 2.1.0-2 | new companion package                    |
+| re2               | -      | 0.1.1   | new, PG 16-18                            |
+| storage_engine    | -      | 1.0.7   | new, PG 14-18                            |
+| ulak              | -      | 0.0.2   | new, PG 14-18                            |
+| orioledb          | beta14 | beta15  | paired with OriolePG 17.18              |
+| oriolepg          | 17.16  | 17.18   | kernel patchset update                   |
 | pg_clickhouse     | 0.1.10 | 0.2.0   |                                        |
 | pg_search         | 0.22.6 | 0.23.0  |                                        |
-| pg_stat_ch        | 0.3.4  | 0.3.6   | 仅支持 EL9+                               |
-| pg_trickle        | 0.17.0 | 0.20.0  | 仅支持 PG 18                              |
+| pg_stat_ch        | 0.3.4  | 0.3.6   | EL9+ only                               |
+| pg_trickle        | 0.17.0 | 0.20.0  | PG 18 only                              |
 | pgclone           | 3.6.0  | 4.0.0   |                                        |
 | pgproto           | 0.2.4  | 0.3.3   |                                        |
 | pgxicor           | 0.1.0  | 0.1.1   |                                        |

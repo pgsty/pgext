@@ -1,26 +1,35 @@
 ## 用法
 
-- 来源: [GitHub 仓库](https://github.com/bigsmoke/pg_text_semver), [README](https://github.com/bigsmoke/pg_text_semver/blob/master/README.md)
-- `pg_text_semver` 在 PostgreSQL `text` 之上实现了语义化版本规范 2.0.0，使用 `semver` 域以及相关辅助类型和函数。
+来源：[README](https://github.com/bigsmoke/pg_text_semver/blob/master/README.md)，[META.json](https://github.com/bigsmoke/pg_text_semver/blob/master/META.json)，[Tag v1.2.1](https://github.com/bigsmoke/pg_text_semver/tree/v1.2.1)
+
+`pg_text_semver` 在 PostgreSQL `text` 之上实现 Semantic Versioning 2.0.0，并使用 `semver` domain，而不是自定义 C type。
+
+### 核心类型与函数
 
 ```sql
 CREATE EXTENSION pg_text_semver;
+
+SELECT '1.2.3'::semver < '2.0.0'::semver;
+SELECT semver_cmp('1.2.3'::semver, '1.2.4'::semver);
+SELECT semver_regexp(true);
+SELECT '1.2.3-alpha.1+build5'::semver::semver_parsed;
 ```
 
-## 核心流程
+- `semver`：基于 `text` 的 domain，并带有 SemVer 校验。
+- `semver_parsed`：用于排序与索引的解析后 composite type。
+- `semver_prerelease`：用于 prerelease 标识符的 domain。
+- `semver_cmp(...)`：`semver` 与 `semver_parsed` 的比较函数。
+- `semver_regexp(include_captures boolean)`：暴露校验 regex。
 
-README 强调了以下能力：
+### 额外辅助函数
 
-- 使用常规比较运算符比较 `semver` 值
-- 直接调用 `semver_cmp(semver, semver)`
-- 使用 `semver_regexp()` 校验并检查版本字符串
-- 将解析后的值转换为 `semver_parsed` 以便排序和建索引
-- 使用 `semver_prerelease` 进行预发布版本校验和比较
+当前 README 还记录了 PGXN version range 辅助函数：
 
-## 示例
+- `meta_pgxn_version_range(text)`
+- `meta_pgxn_version_range_cmp(text, text)`
+- `nonsemver_cmp(text, text, text)`
 
-上游 README 会引导读者查看 `test__pg_text_semver()` 过程，以获取类型、运算符和函数的具体示例。它还说明该扩展提供独立的 `semver_parsed` 类型，可序列化回 `semver` 或 `text`。
+### 注意事项
 
-## 备注
-
-README 将本项目与基于 C 的 `semver` 扩展作了对比：`pg_text_semver` 始终基于 `text` 域实现，重点是一个简洁、贴近规范的实现。
+- 该扩展更偏向规范导向、基于 `text` 的实现，而不是较低层的 C-based alternatives。
+- 上游 README 仍然是权威用户参考；这次刷新主要是使内容与文档中的 1.2.1 helper set 对齐。

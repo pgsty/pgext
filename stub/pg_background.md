@@ -1,126 +1,58 @@
-
-
 ## Usage
 
-> [pg_background: Execute SQL in background worker processes](https://github.com/vibhorkum/pg_background)
+Sources: [official README](https://github.com/vibhorkum/pg_background/blob/master/README.md), [v1.9.2 release](https://github.com/vibhorkum/pg_background/releases/tag/v1.9.2)
 
-Execute arbitrary SQL commands in **background worker processes** within PostgreSQL. Unlike `dblink` (which creates a separate connection), `pg_background` workers run **inside** the database server in **independent transactions**.
-
-**Use Cases:**
-- Background maintenance (VACUUM, ANALYZE, REINDEX)
-- Asynchronous audit logging
-- Long-running ETL pipelines
-- Independent notification delivery
-- Parallel query patterns
-
-### Quick Start (V2 API)
+`pg_background` executes SQL in PostgreSQL background worker processes. The worker runs inside the server and uses its own transaction, which makes it useful for asynchronous maintenance, autonomous side effects, and long-running tasks that should not block the caller.
 
 ```sql
 CREATE EXTENSION pg_background;
 
--- Launch a background job
 SELECT * FROM pg_background_launch_v2(
-  'SELECT count(*) FROM large_table'
-) AS handle;
---   pid  |      cookie
--- -------+-------------------
---  12345 | 1234567890123456
+  'SELECT count(*) FROM large_table',
+  65536,
+  'count-large-table'
+) AS h;
 
--- Retrieve results (one-time consumption)
-SELECT * FROM pg_background_result_v2(12345, 1234567890123456) AS (count BIGINT);
-
--- Fire-and-forget (no result needed)
-SELECT * FROM pg_background_submit_v2(
-  'INSERT INTO audit_log (ts, event) VALUES (now(), ''system_check'')'
-) AS handle;
+SELECT * FROM pg_background_result_v2(h.pid, h.cookie) AS (count bigint);
 ```
 
+### Core API
 
-## V2 API Reference
+- `pg_background_launch_v2(sql, queue_size, label)` launches a tracked worker and returns `(pid, cookie)`.
+- `pg_background_submit_v2(sql, queue_size, label)` is fire-and-forget for side-effect SQL.
+- `pg_background_result_v2(pid, cookie)` consumes the worker result set once.
+- `pg_background_wait_v2(...)` and `pg_background_wait_v2_timeout(...)` wait for completion.
+- `pg_background_cancel_v2(...)` stops execution; `pg_background_detach_v2(...)` stops tracking but lets work continue.
+- `pg_background_list_v2()`, `pg_background_stats_v2()`, and `pg_background_get_progress_v2(...)` expose worker state and progress.
 
-| Function | Returns | Description |
-|----------|---------|-------------|
-| `pg_background_launch_v2(sql, queue_size)` | `pg_background_handle` | Launch worker, return cookie-protected handle |
-| `pg_background_submit_v2(sql, queue_size)` | `pg_background_handle` | Fire-and-forget (no result consumption) |
-| `pg_background_result_v2(pid, cookie)` | `SETOF record` | Retrieve results (one-time consumption) |
-| `pg_background_detach_v2(pid, cookie)` | `void` | Stop tracking worker (worker continues) |
-| `pg_background_cancel_v2(pid, cookie)` | `void` | Request cancellation |
-| `pg_background_cancel_v2_grace(pid, cookie, grace_ms)` | `void` | Cancel with grace period |
-| `pg_background_wait_v2(pid, cookie)` | `void` | Block until worker completes |
-| `pg_background_wait_v2_timeout(pid, cookie, timeout_ms)` | `bool` | Wait with timeout |
-| `pg_background_list_v2()` | `SETOF record` | List known workers in current session |
-| `pg_background_stats_v2()` | `pg_background_stats` | Session statistics (v1.8+) |
-| `pg_background_progress(pct, msg)` | `void` | Report progress from worker (v1.8+) |
-| `pg_background_get_progress_v2(pid, cookie)` | `pg_background_progress` | Get worker progress (v1.8+) |
+### Typical Patterns
 
-### Cancel vs Detach
-
-| Operation | Stops Execution | Removes Tracking |
-|-----------|-----------------|------------------|
-| `cancel_v2()` | Yes (best-effort) | No |
-| `detach_v2()` | No | Yes |
-
-- Use **`cancel_v2()`** to **stop work** (terminate execution, prevent commit)
-- Use **`detach_v2()`** to **stop tracking** (free bookkeeping while worker continues)
-
-### Worker Lifecycle
+Run maintenance without holding the client session open:
 
 ```sql
--- Cancel a running job
-SELECT pg_background_cancel_v2(pid, cookie);
-
--- Wait for completion
-SELECT pg_background_wait_v2(pid, cookie);
-
--- Wait with timeout (returns true if completed)
-SELECT pg_background_wait_v2_timeout(pid, cookie, 5000);
-
--- List active workers
-SELECT * FROM pg_background_list_v2() AS (
-  pid int4, cookie int8, launched_at timestamptz,
-  user_id oid, queue_size int4, state text,
-  sql_preview text, last_error text, consumed bool
+SELECT * FROM pg_background_submit_v2(
+  'VACUUM (ANALYZE) public.events',
+  65536,
+  'vacuum-events'
 );
 ```
 
-Worker states: `running`, `stopped`, `canceled`, `error`
-
-### Progress Reporting (v1.8+)
+Use an autonomous side effect from application SQL:
 
 ```sql
--- From within worker SQL
-SELECT pg_background_progress(50, 'Halfway done');
-
--- From launcher (check progress)
-SELECT * FROM pg_background_get_progress_v2(pid, cookie);
+SELECT * FROM pg_background_submit_v2(
+  $$INSERT INTO audit_log(ts, event) VALUES (clock_timestamp(), 'job queued')$$
+);
 ```
 
+### GUCs And Security
 
-## GUC Settings (v1.8+)
+- `pg_background.max_workers` limits concurrent workers per session.
+- `pg_background.default_queue_size` controls the shared-memory queue size.
+- `pg_background.worker_timeout` sets an execution timeout; `0` means no limit.
+- The extension creates a dedicated `pg_background_worker` NOLOGIN role and ships helper functions to grant or revoke execution privileges.
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `pg_background.max_workers` | 16 | Max concurrent workers per session |
-| `pg_background.default_queue_size` | 65536 | Default shared memory queue size |
-| `pg_background.worker_timeout` | 0 | Worker execution timeout (0 = no limit) |
+### Caveats
 
-
-## V1 API (Legacy)
-
-The v1 API is retained for backward compatibility but lacks cookie-based PID reuse protection:
-
-```sql
-SELECT pg_background_launch('VACUUM VERBOSE my_table') AS pid \gset
-SELECT * FROM pg_background_result(:pid) AS (result TEXT);
-SELECT pg_background_detach(:pid);
-```
-
-The V2 API is recommended for production use due to cookie-based PID reuse protection.
-
-
-## Security Model
-
-- Extension is installed by superusers, with **no PUBLIC grants** by default
-- A dedicated `pg_background_worker` NOLOGIN role is created
-- Helper functions manage privileges: `grant_pg_background_privileges(role, include_v1)`
-- Workers execute as the **launching user** (not superuser)
+- Prefer the V2 API. The older V1 API is still present for compatibility but lacks cookie-based PID reuse protection.
+- The `v1.9.2` release is a binary-only patch for assert-enabled PostgreSQL builds. The SQL extension version remains `1.9`, so there is no new SQL upgrade script or user-facing function delta from `1.9.1`.

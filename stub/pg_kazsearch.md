@@ -1,34 +1,22 @@
 ## Usage
-> Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md) and [project repo](https://github.com/darkhanakh/pg-kazsearch).
 
-`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language.
-The upstream README describes it as a Rust extension built with `pgrx` that plugs into PostgreSQL's text search pipeline.
+Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md), [releases](https://github.com/darkhanakh/pg-kazsearch/releases)
 
-It creates a ready-to-use configuration named `kazakh_cfg` and the supporting dictionary `pg_kazsearch_dict`.
+`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language. The README says it creates a ready-to-use text search configuration `kazakh_cfg` and dictionary `pg_kazsearch_dict`.
 
-### Quick Start
+### Quick start
 
 ```sql
 CREATE EXTENSION pg_kazsearch;
 
-SELECT to_tsvector('kazakh_cfg', 'президенттің жарлығы');
--- 'жарлық':2 'президент':1
-
 SELECT ts_lexize('pg_kazsearch_dict', 'алмаларымыздағы');
 -- {алма}
+
+SELECT to_tsvector('kazakh_cfg', 'президенттің жарлығы');
+-- 'жарлық':2 'президент':1
 ```
 
-### Use Cases
-
-The README shows the extension being used for:
-
-- stemming individual Kazakh words
-- building `tsvector` values with `to_tsvector('kazakh_cfg', ...)`
-- adding generated `tsvector` columns to a table
-- indexing those columns with GIN
-- searching with `websearch_to_tsquery('kazakh_cfg', ...)`
-
-Example table workflow:
+### Add Kazakh FTS to a table
 
 ```sql
 ALTER TABLE articles ADD COLUMN fts tsvector
@@ -39,7 +27,8 @@ ALTER TABLE articles ADD COLUMN fts tsvector
 
 CREATE INDEX idx_fts ON articles USING GIN (fts);
 
-SELECT title FROM articles
+SELECT title
+FROM articles
 WHERE fts @@ websearch_to_tsquery('kazakh_cfg', 'президенттің жарлығы')
 ORDER BY ts_rank_cd(fts, websearch_to_tsquery('kazakh_cfg', 'президенттің жарлығы')) DESC
 LIMIT 10;
@@ -47,18 +36,19 @@ LIMIT 10;
 
 ### Tuning
 
-Penalty weights are adjustable at runtime:
+The README documents runtime dictionary tuning without restart:
 
 ```sql
-ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict (w_deriv = 3.5, w_short_char = 100.0);
+ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
+  (w_deriv = 3.5, w_short_char = 100.0);
 ```
 
-### Deployment
+### Release and packaging notes
 
-The README documents three supported paths:
+- Upstream release `v2.0.0` introduced the current Rust / `pgrx` architecture.
+- Upstream release `v2.1.0` adds an Elasticsearch plugin alongside the PostgreSQL extension; the PostgreSQL SQL usage in the README is unchanged.
+- The repository README publishes Debian packages as `2.x` releases, while this project's CSV note separately tracks the extension control version.
 
-- pre-built Debian/Ubuntu packages
-- a Docker image based on `ghcr.io/darkhanakh/pg-kazsearch`
-- source builds with `cargo pgrx install`
+### Caveat
 
-The repository metadata in this project matches PostgreSQL 16-18.
+The PostgreSQL-facing docs are concise and focused on stemming plus FTS usage. For this stub, avoid inferring extra SQL objects beyond `kazakh_cfg`, `pg_kazsearch_dict`, and the documented examples above.

@@ -1,38 +1,19 @@
 
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_stat_ch;
-> SELECT pg_stat_ch_version();
-> SELECT * FROM pg_stat_ch_stats();
-> ```
->
-> Sources: [README](https://github.com/ClickHouse/pg_stat_ch), [Blog post](https://clickhouse.com/blog/pg_stat_ch-postgres-extension-stats-to-clickhouse)
+Sources: [README](https://github.com/ClickHouse/pg_stat_ch/blob/main/README.md), [release 0.3.6](https://github.com/ClickHouse/pg_stat_ch/releases/tag/v0.3.6)
 
-`pg_stat_ch` captures per-query execution telemetry in PostgreSQL and exports raw events to ClickHouse in real time. The upstream project contrasts this with `pg_stat_statements`: instead of aggregating inside PostgreSQL, it sends raw events to ClickHouse for downstream analysis.
+`pg_stat_ch` captures per-query PostgreSQL execution telemetry and exports raw events to ClickHouse through a shared-memory queue and background worker. The upstream project positions it as a raw-event alternative to `pg_stat_statements`, with aggregation and dashboards handled in ClickHouse instead of PostgreSQL.
 
-## Architecture
-
-The README describes a single pipeline:
-
-```text
-PostgreSQL hooks -> shared memory queue -> background worker -> ClickHouse
+```sql
+CREATE EXTENSION pg_stat_ch;
 ```
 
-Design goals called out upstream include:
+### Required Setup
 
-- no network I/O on the query path
-- bounded memory via a fixed-size ring buffer
-- raw event export instead of local aggregation
-- graceful degradation when the queue overflows or ClickHouse is unavailable
+`pg_stat_ch` must be preloaded and pointed at a ClickHouse database:
 
-## Setup
-
-The extension must be preloaded and configured with ClickHouse connection settings:
-
-```ini
+```conf
 shared_preload_libraries = 'pg_stat_ch'
 track_io_timing = on
 
@@ -43,33 +24,38 @@ pg_stat_ch.clickhouse_use_tls = on
 pg_stat_ch.clickhouse_skip_tls_verify = off
 ```
 
-After PostgreSQL restart and ClickHouse schema setup:
+The README says PostgreSQL 16, 17, and 18 are fully supported; the latest release is `0.3.6` from April 15, 2026.
+
+### SQL API
+
+- `pg_stat_ch_version()` returns the extension version.
+- `pg_stat_ch_stats()` exposes queue and exporter counters.
+- `pg_stat_ch_reset()` clears queue counters.
+- `pg_stat_ch_flush()` triggers an immediate export flush.
 
 ```sql
-CREATE EXTENSION pg_stat_ch;
+SELECT pg_stat_ch_version();
+SELECT * FROM pg_stat_ch_stats();
+SELECT pg_stat_ch_flush();
 ```
 
-## SQL API
+### Important GUCs
 
-The README documents these SQL functions:
+- `pg_stat_ch.enabled` toggles collection.
+- `pg_stat_ch.queue_capacity` and `pg_stat_ch.string_area_size` size the shared-memory buffers.
+- `pg_stat_ch.flush_interval_ms` and `pg_stat_ch.batch_max` control exporter cadence and batch size.
+- `pg_stat_ch.log_min_elevel` controls which errors are captured.
 
-- `pg_stat_ch_version()`
-- `pg_stat_ch_stats()`
-- `pg_stat_ch_reset()`
+### What Gets Captured
 
-`pg_stat_ch_stats()` exposes queue and exporter counters so you can verify that events are being captured and flushed.
+- Query timing, row counts, buffer usage, WAL usage, and CPU time.
+- DML, DDL, and utility statements.
+- SQLSTATE and error levels.
+- JIT metrics on PostgreSQL 15+.
+- Parallel worker stats on PostgreSQL 18+.
+- Application name, client IP, and query text up to the upstream truncation limit.
 
-## What Gets Captured
+### Caveats
 
-The current README lists support for:
-
-- query timing and row counts
-- buffer usage and WAL usage
-- CPU time
-- DML, DDL, and utility statements
-- SQLSTATE and error levels
-- JIT instrumentation on PostgreSQL 15+
-- parallel worker statistics on PostgreSQL 18+
-- client context such as application name and client IP
-
-The project currently states full support for PostgreSQL 16, 17, and 18.
+- The design intentionally drops events on queue overflow instead of blocking the foreground query path.
+- ClickHouse schema creation is a required part of setup; upstream quickstart scripts preload it automatically, but manual deployments must load the schema separately.

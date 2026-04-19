@@ -1,28 +1,19 @@
-
 ## 用法
 
-> 语法：
->
-> ```sql
-> CREATE EXTENSION pg_variables;
-> SELECT pgv_set('vars', 'int1', 101);
-> SELECT pgv_get('vars', 'int1', NULL::int);
-> ```
->
-> 来源：[README](https://github.com/postgrespro/pg_variables)
+- 来源：[README](https://github.com/postgrespro/pg_variables/blob/master/README.md)，[repository tags](https://github.com/postgrespro/pg_variables/tags)，[control file](https://github.com/postgrespro/pg_variables/blob/master/pg_variables.control)
 
-`pg_variables` 为 PostgreSQL 提供会话级变量。变量按 package 分组，只在当前会话中可见，并且可以配置为事务性或非事务性。
+`pg_variables` 提供按名称 package 分组的会话级变量。变量只存在于当前 session；除非创建时指定 `is_transactional := true`，否则默认不参与事务。
 
-## 基本行为
-
-默认情况下，变量不是事务性的，不会受 `BEGIN`、`COMMIT` 或 `ROLLBACK` 影响。`pgv_set()` 的可选参数 `is_transactional` 可以改变这一行为。
+### 基本读写
 
 ```sql
+CREATE EXTENSION pg_variables;
+
 SELECT pgv_set('vars', 'int1', 101);
 SELECT pgv_get('vars', 'int1', NULL::int);
 ```
 
-事务性示例：
+事务性变量会参与 savepoint 和 rollback：
 
 ```sql
 BEGIN;
@@ -31,50 +22,30 @@ SAVEPOINT sp1;
 SELECT pgv_set('vars', 'trans_int', 102, true);
 ROLLBACK TO sp1;
 COMMIT;
-SELECT pgv_get('vars', 'trans_int', NULL::int);
 ```
 
-## Package
+### 核心 API
 
-变量按 package 分组，因此可以在同一会话中并存多个命名变量，也可以一次性删除整组变量。README 说明空 package 会自动删除。
+README 记录了通用标量与数组 API：
 
-## 核心函数
+- `pgv_set(package, name, value, is_transactional default false)`
+- `pgv_get(package, name, NULL::type, strict default true)`
 
-### 标量与数组变量
-
-通用 API 如下：
-
-```sql
-pgv_set(package text, name text, value anynonarray, is_transactional bool default false)
-pgv_get(package text, name text, var_type anynonarray, strict bool default true)
-
-pgv_set(package text, name text, value anyarray, is_transactional bool default false)
-pgv_get(package text, name text, var_type anyarray, strict bool default true)
-```
-
-`pgv_get()` 会同时检查变量是否存在及其类型。如果 package 或变量缺失，行为取决于 `strict`。
-
-### 记录集合
-
-README 还记录了面向 record 的操作：
+同时也记录了面向 record 的 API：
 
 - `pgv_insert()`
 - `pgv_update()`
 - `pgv_delete()`
 - `pgv_select()`
 
-这些函数用于操作存放在某个 package 和变量名下的记录集合。
+常用的管理辅助函数包括 `pgv_exists()`、`pgv_remove()`、`pgv_free()`、`pgv_list()` 和 `pgv_stats()`。
 
-## 已废弃的辅助函数
+### 错误与 strict 行为
 
-项目仍保留一些旧的类型专用辅助函数，例如：
+`pgv_get()` 会同时检查变量是否存在以及类型是否匹配。README 展示了 package 不存在、变量不存在或类型不匹配时会抛错；如果指定 `strict := false`，则在值缺失时返回 `NULL`。
 
-- `pgv_set_int()` / `pgv_get_int()`
-- `pgv_set_text()` / `pgv_get_text()`
-- `pgv_set_numeric()` / `pgv_get_numeric()`
-- `pgv_set_timestamp()` / `pgv_get_timestamp()`
-- `pgv_set_timestamptz()` / `pgv_get_timestamptz()`
-- `pgv_set_date()` / `pgv_get_date()`
-- `pgv_set_jsonb()` / `pgv_get_jsonb()`
+### 已废弃辅助函数与版本说明
 
-README 将这些函数标记为已废弃，建议改用通用的 `pgv_set()` / `pgv_get()` API。
+上游仍然提供一些已废弃的类型专用辅助函数，例如 `pgv_set_int()` / `pgv_get_int()` 和 `pgv_set_jsonb()` / `pgv_get_jsonb()`，但推荐使用通用的 `pgv_set()` / `pgv_get()`。
+
+仓库 tag 已到 `v1.2.5`，而当前 `pg_variables.control` 仍声明 `default_version = '1.2'`。这与打包说明一致，即 release tag 已前进，但 SQL 扩展版本字符串没有同步变更。

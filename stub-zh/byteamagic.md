@@ -1,23 +1,33 @@
 ## 用法
 
-> 来源: [GitHub 仓库](https://github.com/nmandery/pg_byteamagic), [byteamagic 文档](https://raw.githubusercontent.com/nmandery/pg_byteamagic/master/doc/byteamagic.md)
-> 扩展名: `byteamagic`
-> CSV 中的包条目是 `pg_byteamagic`；上游扩展名是 `byteamagic`。
+来源: [official repo](https://github.com/nmandery/pg_byteamagic), [official doc](https://raw.githubusercontent.com/nmandery/pg_byteamagic/master/doc/byteamagic.md)
 
-`byteamagic` 使用 `libmagic` 分析 PostgreSQL 中的 `bytea` 值，用于识别 MIME 类型和文件类型文本。
+`byteamagic` 会对 `bytea` 值运行 `libmagic`，因此 PostgreSQL 可以识别数据库中 blob 的 MIME 类型或人类可读文件类型。包名是 `pg_byteamagic`，但扩展名是 `byteamagic`。
 
 ```sql
 CREATE EXTENSION byteamagic;
-SELECT byteamagic_mime(data);
-SELECT byteamagic_text(data);
+
+SELECT byteamagic_mime(data) FROM files;
+SELECT byteamagic_text(data) FROM files;
 ```
 
 ### 函数
 
-- `byteamagic_mime(bytea)` 返回 MIME 类型文本，行为与 `file --mime-type` 一致。
-- `byteamagic_text(bytea)` 返回人类可读的文件类型描述，行为与 `file` 一致。
+- `byteamagic_mime(bytea) returns text`: 返回 MIME 类型，对应 `file --mime-type`。
+- `byteamagic_text(bytea) returns text`: 返回描述性的文件类型文本，对应 `file`。
 
-### 说明
+### 常见用法
 
-- 该扩展需要 PostgreSQL 开发头文件和 `libmagic` 开发包。
-- 适用于将文件或 blob 以 `bytea` 形式存储，并需要在数据库内进行类型识别的场景。
+```sql
+SELECT
+  id,
+  byteamagic_mime(blob) AS mime,
+  byteamagic_text(blob) AS kind
+FROM uploads;
+```
+
+### 注意事项
+
+- 它只检查 `bytea` 内容；没有运算符、自定义类型或额外的 SQL 管理对象。
+- 构建或安装需要 PostgreSQL 开发头文件，以及系统 `libmagic` 开发包。
+- 上游文档非常简略；当前面向用户的行为与长期存在的文档页一致。

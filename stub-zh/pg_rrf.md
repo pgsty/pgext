@@ -1,8 +1,8 @@
 ## 用法
-> 来源: [README](https://github.com/yuiseki/pg_rrf/blob/main/README.md) 和 [项目仓库](https://github.com/yuiseki/pg_rrf)。
 
-`pg_rrf` 提供互惠排名融合（Reciprocal Rank Fusion，RRF）函数，用于混合检索场景下的分数融合。
-它的重点是合并多个有序候选列表，而不需要手写 `FULL OUTER JOIN` / `COALESCE` 之类的连接逻辑。
+> 来源：[README](https://github.com/yuiseki/pg_rrf/blob/main/README.md), [v0.0.3 release](https://github.com/yuiseki/pg_rrf/releases/tag/v0.0.3)
+
+`pg_rrf` 提供用于混合检索分数融合的 Reciprocal Rank Fusion 函数。它的目标是把多个有序候选列表合并起来，而不需要手写 `FULL OUTER JOIN` / `COALESCE` 这类拼接逻辑。
 
 ### 核心函数
 
@@ -11,11 +11,11 @@
 - `rrf_fuse(ids_a bigint[], ids_b bigint[], k int default 60)`
 - `rrfn(ranks bigint[], k int)`
 
-README 还说明了这些分数辅助函数的行为：
+`v0.0.3` release 明确新增了 `rrfn`，同时保留 `rrf` 和 `rrf3` 作为兼容包装器。README 记录的分数行为也很直接：
 
-- 缺失的排名会被忽略
+- 缺失排名会被忽略
 - `<= 0` 的排名会被忽略
-- `k <= 0` 时会报错
+- `k <= 0` 会报错
 
 ### 示例
 
@@ -32,7 +32,7 @@ ORDER BY score DESC;
 
 ### 混合检索模式
 
-上游 README 将 `rrf_fuse` 作为手工融合查询的替代方案：
+上游 README 把 `rrf_fuse` 作为手工融合查询的替代方案：
 
 ```sql
 WITH fused AS (
@@ -50,9 +50,6 @@ ORDER BY fused.score DESC
 LIMIT 20;
 ```
 
-### 需求
+### 说明
 
-- PostgreSQL 14-17
-- Docker 和 Docker Compose v2
-
-README 说明构建与测试流程都在 Docker 中运行，因此该包工作流不依赖本地 PostgreSQL 或 Rust 工具链。
+README 目标版本是 PostgreSQL 14-17，并记录了基于 Docker 的构建与测试流程。扩展接口刻意保持很小：核心是分数辅助函数，以及覆盖常见双列表混合检索场景的 `rrf_fuse`。

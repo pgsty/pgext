@@ -1,81 +1,68 @@
-
 ## 用法
 
-> 语法：
->
-> ```sql
-> CREATE EXTENSION pgproto;
-> INSERT INTO pb_schemas (name, data) VALUES ('MySchema', '\x...');
-> CREATE TABLE items (id serial PRIMARY KEY, data protobuf);
-> SELECT data #> '{Outer, inner, id}'::text[] FROM items;
-> ```
->
-> 来源：[README](https://github.com/Apaezmx/pgproto)
+来源：[README](https://github.com/Apaezmx/pgproto/blob/main/README.md), [release 0.3.3](https://github.com/Apaezmx/pgproto/releases/tag/v0.3.3), [pgproto.control](https://github.com/Apaezmx/pgproto/blob/main/pgproto.control)
 
-`pgproto` 为 PostgreSQL 增加了原生 Protocol Buffers 支持。它提供 `protobuf` 类型、运行时 schema 注册、嵌套字段提取、更新辅助函数，以及面向 protobuf 载荷的索引支持。
-
-## 配置
-
-启用扩展：
+`pgproto` 增加了 `protobuf` 类型，用于存储二进制 Protocol Buffers，并提供感知 schema 的提取与更新辅助函数。上游最新 release 是 `0.3.3`，而扩展 control 文件声明的 SQL 默认版本为 `1.0`。
 
 ```sql
 CREATE EXTENSION pgproto;
 ```
 
-通过加载 `FileDescriptorSet` blob 注册 protobuf schema：
+### 基本工作流
+
+先注册 `FileDescriptorSet`，让扩展能够解释消息布局：
 
 ```sql
 INSERT INTO pb_schemas (name, data) VALUES ('MySchema', '\x...');
 ```
 
-使用自定义 `protobuf` 类型创建表：
+再把 protobuf payload 存入 `protobuf` 列：
 
 ```sql
 CREATE TABLE items (
-    id SERIAL PRIMARY KEY,
-    data protobuf
+  id serial PRIMARY KEY,
+  data protobuf
 );
 ```
 
-## 查询
+### 查询
 
-README 强调可以用 PostgreSQL 风格的操作符进行嵌套字段提取：
+对嵌套字段使用 PostgreSQL 风格路径操作符：
 
 ```sql
 SELECT data #> '{Outer, inner, id}'::text[] FROM items;
 SELECT data #> '{Outer, tags, mykey}'::text[] FROM items;
 ```
 
-它还提到 `->` 和 `#>` 等自定义操作符可用于按 schema 进行导航。
+README 将 `->` 与 `#>` 作为导航嵌套字段、repeated 字段与 map 字段的主要操作符。
 
-## 修改函数
+### 更新与合并
 
-`pgproto` 提供若干纯函数，会返回一个新的 protobuf 值：
+写辅助函数都是纯函数，会返回新的 protobuf 值：
 
 - `pb_set(...)`
 - `pb_insert(...)`
 - `pb_delete(...)`
-
-由于它们返回的是修改后的值，而不是原地变更，因此通常会在 `UPDATE` 语句中使用：
+- `||` 用于合并两个同类型消息
 
 ```sql
 UPDATE items SET data = pb_set(data, ARRAY['Outer', 'a'], '42');
 UPDATE items SET data = pb_insert(data, ARRAY['Outer', 'scores', '0'], '100');
 UPDATE items SET data = pb_delete(data, ARRAY['Outer', 'a']);
+UPDATE items SET data = data || other_data;
 ```
 
-`||` 操作符用于合并两个同类型的 protobuf 消息。
+### 索引与 Schema 演进
 
-## 索引
-
-README 记录了对提取字段做 B-tree 表达式索引的方法：
+可以对提取字段建立表达式索引：
 
 ```sql
 CREATE INDEX idx_pb_id ON items ((data #> '{Outer, inner, id}'::text[]));
 ```
 
-项目还宣称支持 GIN 索引以服务查询场景。
+README 也把 schema 演进作为一等场景：新增字段向后兼容，已废弃字段在旧 payload 中仍可读取，而用 `ON CONFLICT` 重新注册 schema 是预期更新路径。
 
-## 说明
+### 注意事项
 
-上游 README 将 `pgproto` 定位为比 JSONB 更节省存储空间的 protobuf 原生载荷方案，并强调 protobuf schema 演进、枚举、`oneof` 以及 map/repeated 字段访问都可支持。
+- `pgproto` 依赖已注册的运行时 schema；没有 descriptor set 时，路径提取无法解释 payload。
+- 更新辅助函数不会原地修改值，因此必须在 `UPDATE ... SET data = ...` 里使用。

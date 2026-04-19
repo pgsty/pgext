@@ -3,7 +3,7 @@
 
 ## Usage
 
-> [pglinter: PostgreSQL Linting and Analysis Extension](https://github.com/pmpetit/pglinter)
+> Sources: [README](https://github.com/pmpetit/pglinter/blob/main/README.md), [1.1.2 release](https://github.com/pmpetit/pglinter/releases/tag/1.1.2)
 
 pglinter analyzes your database for potential issues, performance problems, and best practice violations. It outputs results in SARIF 2.1.0 format.
 
@@ -37,10 +37,14 @@ SELECT pglinter.export_rules_to_yaml();                -- Export rules to YAML
 SELECT pglinter.import_rules_from_yaml('yaml...');     -- Import rules from YAML
 ```
 
-### Available Rules
+### Rule Families
 
 **Base (B-series):** B001 tables without PK, B002 redundant indexes, B003 missing FK indexes, B004 unused indexes, B005 uppercase names, B006 unused tables, B007 cross-schema FKs, B008 FK type mismatches, B009 shared trigger functions, B010 reserved keywords, B011 multiple owners per schema.
 
 **Cluster (C-series):** C002 insecure pg_hba.conf entries, C003 MD5 password encryption.
 
 **Schema (S-series):** S001 no default role grants, S002 env prefixes/suffixes, S003 unsecured public schema, S004 system role ownership, S005 multiple owners per schema.
+
+### Release Delta
+
+The `1.1.2` release adds rule `B013` for row-by-row processing triggers without a `WHERE` clause. The README has not yet been updated with that rule, so treat the release note as the authoritative delta from `1.1.1`.

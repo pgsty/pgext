@@ -1,13 +1,10 @@
-
 ## 用法
 
-> [README](https://github.com/jimjonesbr/nominatim_fdw) | [Nominatim API](https://nominatim.org/)
+来源：[README](https://github.com/jimjonesbr/nominatim_fdw/blob/master/README.md)，[Nominatim API](https://nominatim.org/)
 
-`nominatim_fdw` 是一个 PostgreSQL 风格的 FDW 扩展，用于从 SQL 中调用 Nominatim 地理编码服务。该扩展围绕函数而不是外部表组织，并映射到 Nominatim 的 `search`、`reverse` 和 `lookup` 端点。
+`nominatim_fdw` 是一个面向 Nominatim 地理编码服务的 PostgreSQL foreign data wrapper。上游通过映射到 Nominatim `search`、`reverse` 和 `lookup` 端点的 SQL 函数暴露它，而不是通过 foreign tables。
 
-## 服务器配置
-
-先创建扩展，再定义一个指向 Nominatim 端点的服务器：
+### 创建服务器
 
 ```sql
 CREATE EXTENSION nominatim_fdw;
@@ -17,23 +14,15 @@ FOREIGN DATA WRAPPER nominatim_fdw
 OPTIONS (url 'https://nominatim.openstreetmap.org');
 ```
 
-README 记录的服务器选项包括：
+上游记录的 server 选项包括：
 
-- `url`，必填的端点 URL
+- `url`（必填）
 - `http_proxy`
-- `connect_timeout`，默认 `300`
-- `max_connect_retry`，默认 `3`
-- `max_connect_redirect`，其中 `0` 表示无限重定向
+- `connect_timeout`
+- `max_connect_retry`
+- `max_connect_redirect`
 
-服务器选项可通过 `ALTER SERVER` 修改：
-
-```sql
-ALTER SERVER osm OPTIONS (ADD max_connect_retry '5');
-ALTER SERVER osm OPTIONS (SET url 'https://a.new.url');
-ALTER SERVER osm OPTIONS (DROP http_proxy);
-```
-
-代理凭据应放在用户映射中，而不是服务器定义中：
+代理凭据应写在 user mapping 中：
 
 ```sql
 CREATE USER MAPPING FOR pguser
@@ -41,11 +30,9 @@ SERVER osm
 OPTIONS (proxy_user 'myuser', proxy_password 'mysecret');
 ```
 
-## 地理编码函数
+### 地理编码函数
 
-### 搜索
-
-`nominatim_search` 同时支持结构化查询和自由格式查询：
+#### 结构化或自由格式搜索
 
 ```sql
 SELECT osm_id, ref, lon, lat, boundingbox
@@ -63,7 +50,7 @@ FROM nominatim_search(
 );
 ```
 
-### 反向地理编码
+#### 反向查询
 
 ```sql
 SELECT osm_id, display_name, boundingbox
@@ -76,7 +63,7 @@ FROM nominatim_reverse(
 );
 ```
 
-### OSM 对象查找
+#### OSM 对象查找
 
 ```sql
 SELECT osm_id, display_name
@@ -86,14 +73,10 @@ FROM nominatim_lookup(
 );
 ```
 
-README 说明查找 ID 使用 OSM 类型前缀，例如 `N` 表示 node、`W` 表示 way、`R` 表示 relation。
+README 说明 OSM ID 需要带类型前缀，例如 `N` 表示 node、`W` 表示 way、`R` 表示 relation。
 
-## 说明
+### 说明
 
-当前上游 README 列出的依赖要求包括：
-
-- PostgreSQL 12 或更高版本
-- `libxml2` 2.5.0 或更高版本
-- `libcurl` 7.74.0 或更高版本
-
-该扩展还暴露 `nominatim_fdw_version()` 用于版本检查，并支持通过 `ALTER EXTENSION nominatim_fdw UPDATE` 进行升级。
+- 上游要求 PostgreSQL 12+、`libxml2` 2.5.0+、`libcurl` 7.74.0+。
+- 扩展暴露 `nominatim_fdw_version()` 用于查看版本。
+- 当前 README 文档示例已使用 `CREATE EXTENSION ... WITH VERSION '1.3'` 与 `ALTER EXTENSION ... UPDATE TO '1.3'`，说明上游已超出这次 `1.2` 刷新目标。

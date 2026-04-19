@@ -1,43 +1,50 @@
 ## Usage
-- GitHub Repo: [`RayElg/pgmqtt`](https://github.com/RayElg/pgmqtt)
-- README: [RayElg/pgmqtt/blob/main/README.md](https://github.com/RayElg/pgmqtt/blob/main/README.md)
 
-`pgmqtt` is a `pgrx`-based PostgreSQL extension that turns CDC into an MQTT broker. Database changes can be published to MQTT topics through SQL-defined mappings, and MQTT publishes can be written back into PostgreSQL tables.
+Sources: [official README](https://github.com/RayElg/pgmqtt/blob/main/README.md), [official repo](https://github.com/RayElg/pgmqtt)
 
-The README's quickstart requires `wal_level = logical` so CDC events can be captured correctly.
+`pgmqtt` is a `pgrx` extension that embeds an MQTT broker into PostgreSQL and uses change data capture to turn table changes into MQTT messages. It also supports inbound topic mappings so MQTT publishes can insert rows into PostgreSQL tables.
+
+```sql
+CREATE EXTENSION pgmqtt;
+```
 
 ### Outbound Mapping
 
+Publish table changes to topics:
+
 ```sql
 SELECT pgmqtt_add_outbound_mapping(
-    'public',
-    'my_table',
-    'topics/{{ op | lower }}',
-    '{{ columns | tojson }}'
+  'public',
+  'my_table',
+  'topics/{{ op | lower }}',
+  '{{ columns | tojson }}'
 );
 ```
 
-With this mapping, `INSERT`, `UPDATE`, and `DELETE` on the table are published as MQTT messages. Subscribers to `topics/insert`, `topics/update`, or `topics/delete` receive JSON payloads.
+With that mapping, `INSERT`, `UPDATE`, and `DELETE` publish JSON payloads to topics such as `topics/insert`.
 
 ### Inbound Mapping
 
+Insert rows from MQTT publishes:
+
 ```sql
 SELECT pgmqtt_add_inbound_mapping(
-    'sensor/{site_id}/temperature',
-    'sensor_readings',
-    '{"site_id": "{site_id}", "value": "$.temperature"}'::jsonb
+  'sensor/{site_id}/temperature',
+  'sensor_readings',
+  '{"site_id": "{site_id}", "value": "$.temperature"}'::jsonb
 );
 ```
 
-When a client publishes to `sensor/site-1/temperature` with payload `{"temperature": 22.5}`, the README says a row is inserted into `sensor_readings` with the extracted values.
+Publishing `{"temperature": 22.5}` to `sensor/site-1/temperature` inserts a row into `sensor_readings`.
 
-### Client Examples
+### MQTT Client Examples
 
 ```bash
 mosquitto_sub -h localhost -t 'topics/#'
 mosquitto_pub -h localhost -t 'sensor/site-1/temperature' -m '{"temperature": 22.5}'
 ```
 
-### Scope
+### Caveats
 
-The upstream README covers the broker model, the outbound/inbound mapping examples, and basic MQTT client usage. It does not document a separate project homepage, so this stub stays at README scope.
+- The README requires `wal_level = logical`; without logical decoding the CDC side will not work.
+- Upstream documentation is currently README-level only, so the documented SQL surface is limited to the inbound and outbound mapping workflow.

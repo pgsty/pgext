@@ -1,21 +1,25 @@
 
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_fsql;
-> INSERT INTO fsql.templates (path, cmd, body)
-> VALUES ('user_count', 'exec',
->         'SELECT jsonb_build_object(''total'', count(*)) FROM users WHERE status = {d[status]!r}');
-> SELECT fsql.run('user_count', '{"status":"active"}');
-> ```
->
-> Source: [README](https://github.com/yurc/pg_fsql)
+> Sources: [README](https://github.com/yurc/pg_fsql/blob/main/README.md), [control file](https://raw.githubusercontent.com/yurc/pg_fsql/main/pg_fsql.control)
 
 `pg_fsql` is a recursive SQL template engine for PostgreSQL. It combines a C-based placeholder renderer with PL/pgSQL template execution, hierarchical template composition, and optional SPI plan caching. The upstream project emphasizes that it does not require superuser privileges.
 
-## Core Objects
+### Quick Start
+
+```sql
+CREATE EXTENSION pg_fsql;
+
+INSERT INTO fsql.templates (path, cmd, body)
+VALUES ('user_count', 'exec',
+        'SELECT jsonb_build_object(''total'', count(*))
+         FROM users WHERE status = {d[status]!r}');
+
+SELECT fsql.run('user_count', '{"status":"active"}');
+SELECT fsql.render('user_count', '{"status":"active"}');
+```
+
+### Catalog Tables
 
 The extension installs two main catalog tables:
 
@@ -36,7 +40,7 @@ fsql.params (
 
 `path` is dot-separated and defines the template hierarchy.
 
-## Template Commands
+### Commands and Placeholders
 
 The README documents six command types:
 
@@ -47,8 +51,6 @@ The README documents six command types:
 - `map` to collect children into a JSON object
 - `NULL` for text fragments inserted into parents
 
-## Placeholders
-
 The renderer supports placeholders such as:
 
 - `{d[key]}`
@@ -58,7 +60,7 @@ The renderer supports placeholders such as:
 
 The special key `_self` injects the full input JSON object.
 
-## Public API
+### Public API
 
 The upstream public functions include:
 
@@ -70,7 +72,7 @@ The upstream public functions include:
 - `fsql.depends_on(path)` to inspect dependencies
 - `fsql.clear_cache()` to free cached SPI plans
 
-## Example
+### Hierarchical Example
 
 ```sql
 INSERT INTO fsql.templates (path, cmd, body) VALUES
@@ -85,6 +87,6 @@ SELECT fsql.run('report', '{"city":"Moscow"}');
 SELECT fsql.render('report', '{"city":"Moscow"}');
 ```
 
-## Requirements
+### Notes
 
-The README lists PostgreSQL 14+, `plpgsql`, and standard build dependencies such as `gcc`, `make`, and PostgreSQL server development headers.
+The README lists PostgreSQL 14+ and `plpgsql`. The control file currently declares SQL extension version `1.0`, even though the package task tracks release `1.1.0`. No official release notes were published in the repository; the user-facing README still documents the same core API and behavior.

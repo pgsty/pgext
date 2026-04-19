@@ -1,39 +1,31 @@
-
-
 ## 用法
 
-> [ddl_historization: 跟踪 PostgreSQL 数据库中的所有 DDL 变更](https://github.com/rodo/pg_ddl_historization)
+来源：[README](https://github.com/rodo/pg_ddl_historization/blob/master/README.md)，[releases](https://github.com/rodo/pg_ddl_historization/releases)
 
-将数据库上所有的 DDL 变更（CREATE、ALTER、DROP 等）记录到历史化表中，用于审计和跟踪。
+`ddl_historization` 是一个 PostgreSQL 扩展，用于把数据库中的 DDL 变更记录到历史化表中。上游 README 说明可通过 `make install`、`pgxn install ddl_historization`，以及 AWS RDS 上的 `pg_tle` 路径完成安装。
 
-### 安装
+### 启用日志
 
 ```sql
 CREATE EXTENSION ddl_historization;
 ```
 
-该扩展安装事件触发器，自动捕获 DDL 语句并将其存储在历史化表中。
+README 将该扩展描述为使用 PostgreSQL event trigger 对数据库中的 DDL 变更做历史化记录。
 
-### 查询 DDL 历史
+### 上游当前文档
 
-安装后，所有 DDL 变更会自动记录。查询历史表以查看已发生的变更：
+- 集群本地安装：`make install`
+- PGXN 安装：`pgxn install ddl_historization`
+- AWS RDS / `pg_tle`：用 `make pgtle` 构建 `pgtle.ddl_historization-0.3.sql`
+- 测试套件：使用 pgTAP 的 `make test`
 
-```sql
-SELECT * FROM ddl_history ORDER BY ddl_date DESC;
-```
+### 值得关注的发布说明
 
-### 与 pg_tle 集成
-
-在 AWS RDS 环境中，可以通过 `pg_tle` 部署该扩展：
-
-```sql
--- 构建 pg_tle 部署文件
--- $ make pgtle
--- 然后在实例上执行 pgtle.ddl_historization-0.3.sql
-```
+- `0.2` 是这次刷新任务要求对应的版本。
+- `0.0.4` 的发布说明提到新增了启动和停止日志记录的函数。
+- `0.0.6` 的发布说明提到新增了 `ddl_history_column` 表。
+- `0.0.7` 的发布说明提到修复了与外键相关的日志记录问题。
 
 ### 注意事项
 
-- DDL 语句通过 PostgreSQL 事件触发器捕获
-- 支持 `CREATE`、`ALTER`、`DROP` 及其他 DDL 命令
-- 被 `schedoc` 扩展用作依赖项，用于模式文档化
+当前上游 README 仍较简略，没有给出 start/stop logging 函数的精确 SQL 签名，也没有完整说明后续版本新增历史化表的 schema。除非 README 或发布说明更明确，否则这里应保持保守描述。

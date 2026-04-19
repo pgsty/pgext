@@ -1,27 +1,22 @@
-
-
-
 ## 用法
 
-> [pg_incremental: PostgreSQL 中的增量数据处理](https://github.com/CrunchyData/pg_incremental)
+- 来源：[README](https://github.com/CrunchyData/pg_incremental/blob/main/README.md)，[v1.5.0 release](https://github.com/CrunchyData/pg_incremental/releases/tag/v1.5.0)
 
-`pg_incremental` 扩展在 PostgreSQL 中提供快速、可靠的增量批处理流水线。它定义参数化查询，为新数据周期性执行，确保恰好一次投递。
+`pg_incremental` 为 append-only table 和 file feed 定义 exactly-once 增量流水线。上游文档记录了三类 pipeline：sequence、time-interval 和 file-list。
+
+### 安装与调度模型
+
+上游 README 仍然使用基于 `pg_cron` 的调度模型，并通过下面的方式安装：
 
 ```sql
-CREATE EXTENSION pg_incremental CASCADE;  -- 依赖 pg_cron
+CREATE EXTENSION pg_incremental CASCADE;
 ```
 
-### 流水线类型
+除非显式指定 `execute_immediately := false`，否则 pipeline 会在创建时立刻运行一次，之后继续按 `pg_cron` 调度执行。README 还说明，即使没有新数据，每次调度执行也会出现在 `cron.job_run_details` 中。
 
-共有三种类型的流水线：
+### Sequence Pipelines
 
-- **序列流水线** -- 处理来自表的序列值范围
-- **时间间隔流水线** -- 在时间间隔过后处理时间范围
-- **文件列表流水线** -- 处理文件列表函数返回的新文件
-
-### 序列流水线
-
-创建一个使用序列增量聚合新行的流水线：
+sequence pipeline 用于处理可安全消费的序列值范围：
 
 ```sql
 SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
@@ -30,53 +25,32 @@ SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
   FROM events
   WHERE event_id BETWEEN $1 AND $2
   GROUP BY 1
-  ON CONFLICT (day) DO UPDATE SET event_count = events_agg.event_count + excluded.event_count
+  ON CONFLICT (day) DO UPDATE
+  SET event_count = events_agg.event_count + excluded.event_count
 $$);
 ```
 
-`$1` 和 `$2` 被设置为可以安全处理的最小和最大序列值。
+README 记录了 `max_batch_size`，可用于限制每次运行处理的 sequence ID 数量。
 
-带批次大小限制：
+### Time-Interval Pipelines
 
-```sql
-SELECT incremental.create_sequence_pipeline(
-  'event-aggregation', 'events',
-  $$ ... $$,
-  schedule := '* * * * *',
-  max_batch_size := 10000
-);
-```
-
-### 时间间隔流水线
-
-按固定时间间隔处理数据：
+当命令希望把 `$1` 和 `$2` 作为时间区间边界接收时，可以使用时间窗口：
 
 ```sql
 SELECT incremental.create_time_interval_pipeline('event-aggregation', '1 day', $$
   INSERT INTO events_agg
-  SELECT event_time::date, count(distinct event_id)
+  SELECT event_time::date, count(DISTINCT event_id)
   FROM events
   WHERE event_time >= $1 AND event_time < $2
   GROUP BY 1
 $$);
 ```
 
-`$1` 和 `$2` 被设置为时间范围的起始和结束（不包含）。
+对于导出类任务，README 记录了 `batched := false`，这样每个时间区间都会单独执行。
 
-按间隔执行（例如每日导出）：
+### File-List Pipelines
 
-```sql
-SELECT incremental.create_time_interval_pipeline('event-export',
-  time_interval := '1 day',
-  batched := false,
-  start_time := '2024-11-01',
-  command := $$ SELECT export_events($1, $2) $$
-);
-```
-
-### 文件列表流水线
-
-在新文件出现时处理它们：
+file-list pipeline 用于处理新发现的文件：
 
 ```sql
 SELECT incremental.create_file_list_pipeline('event-import', 's3://mybucket/events/*.csv', $$
@@ -84,27 +58,15 @@ SELECT incremental.create_file_list_pipeline('event-import', 's3://mybucket/even
 $$);
 ```
 
-### 管理函数
+v1.5.0 release 为 file-list pipeline 增加了 `max_batches_per_run`。README 还记录了 `incremental.skip_file()`，可将坏文件永久标记为已处理。
 
-| 函数 | 描述 |
-|------|------|
-| `incremental.execute_pipeline(name)` | 手动执行流水线（仅在有新数据时） |
-| `incremental.reset_pipeline(name)` | 重置流水线，从头开始重新处理 |
-| `incremental.drop_pipeline(name)` | 删除流水线 |
-| `incremental.skip_file(pipeline, path)` | 在文件列表流水线中跳过有问题的文件 |
+### 运维与监控
 
-### 监控
+README 记录了以下接口：
 
-```sql
-SELECT * FROM incremental.sequence_pipelines;
-SELECT * FROM incremental.time_interval_pipelines;
-SELECT * FROM incremental.processed_files;
-```
+- `CALL incremental.execute_pipeline(name)`：若存在新工作则执行一次。
+- `SELECT incremental.reset_pipeline(name)`：重置进度。
+- `SELECT incremental.drop_pipeline(name)`：删除 pipeline。
+- `incremental.sequence_pipelines`、`incremental.time_interval_pipelines`、`incremental.file_list_pipelines` 与 `incremental.processed_files` 等视图和表。
 
-通过 pg_cron 检查作业结果：
-
-```sql
-SELECT jobname, start_time, status, return_message
-FROM cron.job_run_details JOIN cron.job USING (jobid)
-WHERE jobname LIKE 'pipeline:%' ORDER BY 1 DESC LIMIT 5;
-```
+v1.5.0 release note 还提到修复了在未安装 `pg_cron` 环境下的 `DROP EXTENSION` 问题。

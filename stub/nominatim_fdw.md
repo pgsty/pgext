@@ -1,21 +1,11 @@
 
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION nominatim_fdw;
-> CREATE SERVER osm FOREIGN DATA WRAPPER nominatim_fdw
->   OPTIONS (url 'https://nominatim.openstreetmap.org');
-> ```
->
-> Sources: [README](https://github.com/jimjonesbr/nominatim_fdw), [Nominatim API](https://nominatim.org/)
+Sources: [README](https://github.com/jimjonesbr/nominatim_fdw/blob/master/README.md), [Nominatim API](https://nominatim.org/)
 
-`nominatim_fdw` is a PostgreSQL FDW-style extension for calling Nominatim geocoding services from SQL. The extension is organized around functions rather than foreign tables and maps to Nominatim's `search`, `reverse`, and `lookup` endpoints.
+`nominatim_fdw` is a PostgreSQL foreign data wrapper for Nominatim geocoding services. Upstream exposes it through SQL functions mapped to the Nominatim `search`, `reverse`, and `lookup` endpoints rather than through foreign tables.
 
-## Server Setup
-
-Create the extension and define a server pointing at a Nominatim endpoint:
+### Create a server
 
 ```sql
 CREATE EXTENSION nominatim_fdw;
@@ -25,23 +15,15 @@ FOREIGN DATA WRAPPER nominatim_fdw
 OPTIONS (url 'https://nominatim.openstreetmap.org');
 ```
 
-The README documents these server options:
+Documented server options:
 
-- `url` as the required endpoint URL
+- `url` (required)
 - `http_proxy`
-- `connect_timeout` with default `300`
-- `max_connect_retry` with default `3`
-- `max_connect_redirect` where `0` means unlimited redirects
+- `connect_timeout`
+- `max_connect_retry`
+- `max_connect_redirect`
 
-Server options can be changed with `ALTER SERVER`:
-
-```sql
-ALTER SERVER osm OPTIONS (ADD max_connect_retry '5');
-ALTER SERVER osm OPTIONS (SET url 'https://a.new.url');
-ALTER SERVER osm OPTIONS (DROP http_proxy);
-```
-
-Proxy credentials belong in a user mapping, not in the server definition:
+Proxy credentials belong in a user mapping:
 
 ```sql
 CREATE USER MAPPING FOR pguser
@@ -49,11 +31,9 @@ SERVER osm
 OPTIONS (proxy_user 'myuser', proxy_password 'mysecret');
 ```
 
-## Geocoding Functions
+### Geocoding functions
 
-### Search
-
-`nominatim_search` supports both structured and free-form queries:
+Structured or free-form search:
 
 ```sql
 SELECT osm_id, ref, lon, lat, boundingbox
@@ -71,7 +51,7 @@ FROM nominatim_search(
 );
 ```
 
-### Reverse Geocoding
+Reverse lookup:
 
 ```sql
 SELECT osm_id, display_name, boundingbox
@@ -84,7 +64,7 @@ FROM nominatim_reverse(
 );
 ```
 
-### OSM Object Lookup
+OSM object lookup:
 
 ```sql
 SELECT osm_id, display_name
@@ -94,14 +74,10 @@ FROM nominatim_lookup(
 );
 ```
 
-The README notes that lookup IDs use OSM type prefixes such as `N` for nodes, `W` for ways, and `R` for relations.
+The README notes OSM ID prefixes such as `N` for nodes, `W` for ways, and `R` for relations.
 
-## Notes
+### Notes
 
-The current upstream README lists these requirements:
-
-- PostgreSQL 12 or newer
-- `libxml2` 2.5.0 or newer
-- `libcurl` 7.74.0 or newer
-
-The extension also exposes `nominatim_fdw_version()` for version checks and supports extension upgrades through `ALTER EXTENSION nominatim_fdw UPDATE`.
+- Upstream documents PostgreSQL 12+, `libxml2` 2.5.0+, and `libcurl` 7.74.0+.
+- The extension exposes `nominatim_fdw_version()`.
+- The current README documents `CREATE EXTENSION ... WITH VERSION '1.3'` and `ALTER EXTENSION ... UPDATE TO '1.3'`, so upstream has moved past the requested `1.2` refresh target.

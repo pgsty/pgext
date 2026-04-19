@@ -1,5 +1,5 @@
 ## Usage
-> Sources: [README](https://github.com/yuiseki/pg_rrf/blob/main/README.md) and [project repo](https://github.com/yuiseki/pg_rrf).
+> Sources: [README](https://github.com/yuiseki/pg_rrf/blob/main/README.md), [v0.0.3 release](https://github.com/yuiseki/pg_rrf/releases/tag/v0.0.3)
 
 `pg_rrf` provides Reciprocal Rank Fusion functions for hybrid search score fusion.
 It is focused on combining ranked candidate lists without hand-written `FULL OUTER JOIN` / `COALESCE` plumbing.
@@ -11,7 +11,7 @@ It is focused on combining ranked candidate lists without hand-written `FULL OUT
 - `rrf_fuse(ids_a bigint[], ids_b bigint[], k int default 60)`
 - `rrfn(ranks bigint[], k int)`
 
-The README also documents the behavior of the score helpers:
+The `v0.0.3` release explicitly adds `rrfn` while keeping `rrf` and `rrf3` as compatibility wrappers. The README documents the same score behavior:
 
 - missing ranks are ignored
 - ranks `<= 0` are ignored
@@ -50,9 +50,6 @@ ORDER BY fused.score DESC
 LIMIT 20;
 ```
 
-### Requirements
+### Notes
 
-- PostgreSQL 14-17
-- Docker and Docker Compose v2
-
-The README says the build and test flow runs in Docker, so local PostgreSQL and Rust toolchains are not required for the package workflow.
+The README targets PostgreSQL 14-17 and documents Docker-based build and test flows. The extension surface remains intentionally small: score helpers plus `rrf_fuse` for the common two-list hybrid-search pattern.

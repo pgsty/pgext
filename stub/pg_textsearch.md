@@ -1,14 +1,13 @@
 
-
 ## Usage
 
-> [pg_textsearch: Modern ranked text search for PostgreSQL with BM25](https://github.com/timescale/pg_textsearch)
+Sources: [README](https://github.com/timescale/pg_textsearch/blob/main/README.md), [release notes](https://github.com/timescale/pg_textsearch/releases), [Timescale changelog](https://github.com/timescale/docs/blob/latest/about/changelog.md)
 
-Modern ranked text search using BM25 scoring with Block-Max WAND optimization. Simple syntax, fast top-k queries, parallel index builds, and partitioned table support.
+`pg_textsearch` provides BM25-ranked full-text search for PostgreSQL with a `bm25` access method and the `<@>` scoring operator. Upstream marks `v1.0.0` as production ready.
 
-Add to `shared_preload_libraries`:
+### Enable the extension
 
-```
+```ini
 shared_preload_libraries = 'pg_textsearch'
 ```
 
@@ -16,80 +15,52 @@ shared_preload_libraries = 'pg_textsearch'
 CREATE EXTENSION pg_textsearch;
 ```
 
-### Quick Start
+### Build a BM25 index and query it
 
 ```sql
 CREATE TABLE documents (id bigserial PRIMARY KEY, content text);
-INSERT INTO documents (content) VALUES
-    ('PostgreSQL is a powerful database system'),
-    ('BM25 is an effective ranking function'),
-    ('Full text search with custom scoring');
 
--- Create a BM25 index
-CREATE INDEX docs_idx ON documents USING bm25(content) WITH (text_config='english');
+CREATE INDEX docs_idx
+ON documents USING bm25(content)
+WITH (text_config = 'english');
 
--- Query using the <@> operator (returns negative BM25 score, lower = better match)
-SELECT * FROM documents
+SELECT *
+FROM documents
 ORDER BY content <@> 'database system'
 LIMIT 5;
 ```
 
-### Querying
+The README notes that `<@>` returns the negative BM25 score, so lower values are better matches.
+
+### Explicit queries and index options
 
 ```sql
--- Auto-detect index from column
-SELECT * FROM documents
-ORDER BY content <@> 'database system'
+SELECT *
+FROM documents
+ORDER BY content <@> to_bm25query('database system', 'docs_idx')
 LIMIT 5;
 
--- Explicit index specification
-SELECT * FROM documents
-WHERE content <@> to_bm25query('database system', 'docs_idx') < -1.0;
-```
-
-### Filtering
-
-**Pre-filtering** reduces rows before scoring (best with selective filters):
-
-```sql
-CREATE INDEX ON documents (category_id);
-SELECT * FROM documents
-WHERE category_id = 123
-ORDER BY content <@> 'search terms'
-LIMIT 10;
-```
-
-**Post-filtering** applies BM25 scan first, then filters:
-
-```sql
-SELECT * FROM documents
-WHERE content <@> to_bm25query('search terms', 'docs_idx') < -5.0
-ORDER BY content <@> 'search terms'
-LIMIT 10;
-```
-
-### Index Options
-
-| Option | Default | Description |
-|--------|---------|-------------|
-| `text_config` | (required) | PostgreSQL text search configuration |
-| `k1` | 1.2 | Term frequency saturation parameter |
-| `b` | 0.75 | Length normalization parameter |
-
-```sql
 CREATE INDEX ON documents USING bm25(content)
-  WITH (text_config='english', k1=1.5, b=0.8);
-
--- Language-specific configurations
-CREATE INDEX ON french_docs USING bm25(content) WITH (text_config='french');
-CREATE INDEX ON german_docs USING bm25(content) WITH (text_config='german');
+WITH (text_config = 'english', k1 = 1.5, b = 0.8);
 ```
 
-### Data Types
+The README also documents expression indexes, partial indexes, and multilingual partial indexes.
 
-**bm25query** — represents queries for BM25 scoring:
+### Useful functions and GUCs
 
 ```sql
-SELECT to_bm25query('search query text', 'docs_idx');
--- docs_idx:search query text
+SELECT bm25_force_merge('docs_idx');
 ```
+
+Documented GUCs in current upstream docs include:
+
+- `pg_textsearch.default_limit`
+- `pg_textsearch.segments_per_level`
+- `pg_textsearch.memory_limit`
+- `pg_textsearch.log_scores`
+
+### Caveats
+
+- `pg_textsearch` currently supports PostgreSQL 17 and 18 upstream.
+- Inside PL/pgSQL and stored procedures, the implicit `text <@> 'query'` form does not use planner hooks; upstream says to use `to_bm25query()` with an explicit index name there.
+- `v1.0.0` adds the production-ready status, `bm25_force_merge()`, and newer GUCs documented in the official changelog and README.

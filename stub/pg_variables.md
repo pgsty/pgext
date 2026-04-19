@@ -1,28 +1,19 @@
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_variables;
-> SELECT pgv_set('vars', 'int1', 101);
-> SELECT pgv_get('vars', 'int1', NULL::int);
-> ```
->
-> Source: [README](https://github.com/postgrespro/pg_variables)
+- Sources: [README](https://github.com/postgrespro/pg_variables/blob/master/README.md), [repository tags](https://github.com/postgrespro/pg_variables/tags), [control file](https://github.com/postgrespro/pg_variables/blob/master/pg_variables.control)
 
-`pg_variables` provides session-wide variables for PostgreSQL. Variables are grouped into packages, live only for the current session, and can be configured as transactional or non-transactional.
+`pg_variables` provides session-scoped variables grouped into named packages. Variables live only in the current session and are non-transactional by default unless created with `is_transactional := true`.
 
-## Basic Behavior
-
-By default, variables are not transactional and are not affected by `BEGIN`, `COMMIT`, or `ROLLBACK`. The optional `is_transactional` argument on `pgv_set()` changes that behavior.
+### Basic Set And Get
 
 ```sql
+CREATE EXTENSION pg_variables;
+
 SELECT pgv_set('vars', 'int1', 101);
 SELECT pgv_get('vars', 'int1', NULL::int);
 ```
 
-Transactional example:
+Transactional variables participate in savepoints and rollbacks:
 
 ```sql
 BEGIN;
@@ -31,50 +22,30 @@ SAVEPOINT sp1;
 SELECT pgv_set('vars', 'trans_int', 102, true);
 ROLLBACK TO sp1;
 COMMIT;
-SELECT pgv_get('vars', 'trans_int', NULL::int);
 ```
 
-## Packages
+### Core APIs
 
-Variables are grouped into packages so multiple named variables can coexist and whole groups can be removed together. The README notes that empty packages are deleted automatically.
+The README documents generic scalar and array APIs:
 
-## Core Functions
+- `pgv_set(package, name, value, is_transactional default false)`
+- `pgv_get(package, name, NULL::type, strict default true)`
 
-### Scalar and Array Variables
-
-The generic API is:
-
-```sql
-pgv_set(package text, name text, value anynonarray, is_transactional bool default false)
-pgv_get(package text, name text, var_type anynonarray, strict bool default true)
-
-pgv_set(package text, name text, value anyarray, is_transactional bool default false)
-pgv_get(package text, name text, var_type anyarray, strict bool default true)
-```
-
-`pgv_get()` checks both existence and type. If the package or variable is missing, behavior depends on `strict`.
-
-### Record Collections
-
-The README also documents record-oriented operations such as:
+It also documents record-oriented APIs:
 
 - `pgv_insert()`
 - `pgv_update()`
 - `pgv_delete()`
 - `pgv_select()`
 
-These functions work with collections of records stored under a package and variable name.
+Useful administration helpers include `pgv_exists()`, `pgv_remove()`, `pgv_free()`, `pgv_list()`, and `pgv_stats()`.
 
-## Deprecated Helpers
+### Error And Strictness Behavior
 
-The project still ships older type-specific helpers like:
+`pgv_get()` checks both existence and type. The README shows that missing packages, missing variables, or mismatched types raise errors unless `strict := false`, in which case `NULL` is returned for missing values.
 
-- `pgv_set_int()` / `pgv_get_int()`
-- `pgv_set_text()` / `pgv_get_text()`
-- `pgv_set_numeric()` / `pgv_get_numeric()`
-- `pgv_set_timestamp()` / `pgv_get_timestamp()`
-- `pgv_set_timestamptz()` / `pgv_get_timestamptz()`
-- `pgv_set_date()` / `pgv_get_date()`
-- `pgv_set_jsonb()` / `pgv_get_jsonb()`
+### Deprecated Helpers And Version Note
 
-The README labels these as deprecated in favor of the generic `pgv_set()` / `pgv_get()` API.
+Upstream still ships deprecated type-specific helpers such as `pgv_set_int()` / `pgv_get_int()` and `pgv_set_jsonb()` / `pgv_get_jsonb()`, but recommends the generic `pgv_set()` / `pgv_get()` API.
+
+The repository tag is `v1.2.5`, while the current `pg_variables.control` file still declares `default_version = '1.2'`. That matches the packaging note that the release tag advanced without changing the SQL extension version string.

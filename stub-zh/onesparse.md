@@ -1,8 +1,8 @@
 ## 用法
-> 来源: [主页](https://onesparse.github.io/OneSparse/)、[入门文档](https://onesparse.github.io/OneSparse/docs.html)、[Matrix](https://onesparse.github.io/OneSparse/test_matrix_header.html)、[Vector](https://onesparse.github.io/OneSparse/test_vector_header.html) 和 [Algorithms](https://onesparse.github.io/OneSparse/test_examples_header.html)。
 
-OneSparse 是一个将 SuiteSparse:GraphBLAS 绑定到 PostgreSQL 的扩展，并以新类型、函数和运算符的形式提供稀疏线性代数与图算法能力。
-文档将 `matrix` 视为核心类型，`vector` 和 `scalar` 都建立在同一模型之上。
+> 来源：[homepage](https://onesparse.com/), [release v1.0.0](https://github.com/OneSparse/OneSparse/releases/tag/v1.0.0), [control file at v1.0.0](https://raw.githubusercontent.com/OneSparse/OneSparse/v1.0.0/onesparse.control), [intro docs](https://onesparse.com/docs.html), [matrix docs](https://onesparse.com/test_matrix_header.html), [vector docs](https://onesparse.com/test_vector_header.html), [algorithm examples](https://onesparse.com/test_examples_header.html)
+
+OneSparse 是一个把 SuiteSparse:GraphBLAS 绑定进 Postgres 的 PostgreSQL 扩展，它把稀疏线性代数和图算法暴露为新的类型、函数与运算符。文档将 `matrix` 视为核心类型，`vector` 和 `scalar` 建立在同一模型之上。`v1.0.0` release 已存在，但该标签下的 extension control file 仍声明 SQL `default_version = '0.1.0'`。
 
 ### 核心设置
 
@@ -15,12 +15,11 @@ SELECT 'int32'::vector;
 SELECT 'int32:42'::scalar;
 ```
 
-入门文档指出，OneSparse 将 API 放在 `onesparse` 模式中，matrix 和 vector 页面也展示了同样的 `search_path` 交互方式。
+文档站点按 `matrix`、`vector` 和 `scalar` 组织 API，交互示例主要依赖类型转换和构造器。
 
-### 矩阵与向量
+### Matrix 与 Vector
 
-Matrix 页面展示了常见的矩阵操作，例如构造、打印、绘制、调整大小、类型转换和聚合。
-Vector 页面展示了对应的向量 API，包括 `nvals`、`size`、`set_element`、`get_element`、`eadd`、`emult`、`reduce_scalar`、`choose` 和 `apply`。
+`matrix` 页面展示了构造、`print()`、`draw()`、赋值、提取、`cast_to()`、调整大小和聚合等常见操作。`vector` 页面记录了对应的向量 API，包括 `nvals()`, `size()`, `eadd()`, `emult()`, `reduce_scalar()`, `choose()` 和 `apply()`。
 
 ```sql
 SELECT print('int32(4:4)'::matrix);
@@ -31,14 +30,13 @@ SELECT reduce_scalar('int32[0:1 1:2 2:3]'::vector, 'plus_monoid_int32');
 
 ### 图算法
 
-入门文档使用 Matrix Market 文件和随机图来演示图算法。
-它重点介绍了以下算法：
+示例页使用 Matrix Market 输入与 `draw(...)` 图形可视化。文档列出的图算法包括：
 
-- `bfs(graph, 1)`，用于层级和父节点 BFS
+- `bfs(graph, 1)`，用于 level 和 parent BFS
 - `sssp(cast_to(graph, 'int32'), 1::bigint, 1)`，用于单源最短路径
-- `pagerank(graph)`，用于按链接结构对顶点排序
-- `triangle_centrality(graph)`，用于基于三角形的中心性分析
-- `betweenness(graph, ARRAY[...])` 和 `square_clustering(graph)`，用于更多图分析
+- `pagerank(graph)`，用于按链接结构给顶点排序
+- `triangle_centrality(graph)`，用于基于三角形的中心性
+- `betweenness(graph, ARRAY[...])` 和 `square_clustering(graph)`，用于补充图分析
 
 文档中的代表性示例：
 
@@ -47,8 +45,4 @@ SELECT draw(triu(graph), (SELECT level FROM bfs(graph, 1)), false, false, true, 
 FROM karate;
 ```
 
-同一指南还展示了使用 `mmread(...)` 加载图，以及使用 `draw(...)` 进行图可视化。
-
-### 范围
-
-这套文档覆盖面很广。本 stub 只提炼了核心接口，以及在入门、矩阵、向量和算法页面中反复出现的主要示例，而不重复完整的 GraphBLAS 能力清单。
+同一份指南还展示了使用 `mmread('/home/postgres/onesparse/demo/karate.mtx')` 加载图。

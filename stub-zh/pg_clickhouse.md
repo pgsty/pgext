@@ -1,35 +1,14 @@
-
 ## 用法
 
-> [pg_clickhouse: PostgreSQL 的 ClickHouse 集成](https://github.com/ClickHouse/pg_clickhouse)
+来源：[README](https://github.com/ClickHouse/pg_clickhouse/blob/master/README.md)，[reference](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/pg_clickhouse.md)，[tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/tutorial.md)，[v0.2.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.2.0)
 
-`pg_clickhouse` 允许直接从 PostgreSQL 向 ClickHouse 执行分析查询，而无需重写 SQL。它支持 PostgreSQL 13+ 和 ClickHouse v23+。
+`pg_clickhouse` 通过 `clickhouse_fdw` foreign data wrapper 在 PostgreSQL 中直接执行 ClickHouse 分析查询。上游文档说明它支持 PostgreSQL 13+ 与 ClickHouse 23+。
 
-## 入门
-
-上游建议的起步方式主要有两种：
-
-- 使用已发布的 Docker 镜像 `ghcr.io/clickhouse/pg_clickhouse:18`
-- 通过 `make` / `make install` 从源码构建，或从 PGXN 安装
-
-安装完成后启用扩展：
+### 将 PostgreSQL 连接到 ClickHouse
 
 ```sql
 CREATE EXTENSION pg_clickhouse;
-```
 
-也可以安装到指定 schema：
-
-```sql
-CREATE SCHEMA ch;
-CREATE EXTENSION pg_clickhouse WITH SCHEMA ch;
-```
-
-## 连接 ClickHouse
-
-参考文档展示的标准流程如下：
-
-```sql
 CREATE SERVER taxi_srv
 FOREIGN DATA WRAPPER clickhouse_fdw
 OPTIONS (driver 'binary', host 'localhost', dbname 'taxi');
@@ -42,28 +21,36 @@ CREATE SCHEMA taxi;
 IMPORT FOREIGN SCHEMA taxi FROM SERVER taxi_srv INTO taxi;
 ```
 
-文档中列出的服务器选项包括：
+上游记录的 server 选项包括：
 
-- `driver`，必填，可选 `binary` 或 `http`
-- `dbname`
-- `fetch_size`
+- `driver`：必填，取值为 `binary` 或 `http`
 - `host`
 - `port`
+- `dbname`
+- `fetch_size`：HTTP 流式批大小，`0` 表示禁用流式
 
-## 文档重点
+user mapping 选项包括：
 
-README 将 pg_clickhouse 的核心定位为面向分析工作负载的透明下推：
+- `user`
+- `password`
 
-- 教程会带你把 PostgreSQL 连接到 ClickHouse 示例数据库，并查询导入后的表
-- 参考文档会说明扩展生命周期命令、外部服务器选项以及扩展暴露的 SQL 对象
+### 常见操作
 
-项目 README 还给出了 TPC-H 基准示例，说明在什么情况下查询下推能显著缩短耗时。
+```sql
+ALTER EXTENSION pg_clickhouse UPDATE;
+ALTER EXTENSION pg_clickhouse UPDATE TO '0.2';
+DROP SERVER taxi_srv CASCADE;
+```
 
-## 运行说明
+`IMPORT FOREIGN SCHEMA` 还支持 `LIMIT TO (...)` 与 `EXCEPT (...)`。参考文档特别提醒：导入的 mixed-case 标识符会在 PostgreSQL 中带双引号，查询时也必须显式加引号。
 
-参考文档把版本分成两层：
+### 版本与下推说明
 
-- 库版本，可通过 `pgch_version()` 或 `pg_get_loaded_modules()` 查看
-- 扩展版本，由 PostgreSQL 系统目录和扩展升级脚本跟踪
+- 参考文档区分库版本和扩展版本；`pgch_version()` 是在 `v0.2.0` 中加入的。
+- 仅补丁级别的发布可能只更新库文件，不需要执行 `ALTER EXTENSION`。
+- `v0.2.0` 增加了数组、正则函数、`split_part()`、数组运算符与当前日期/时间表达式的更多下推能力，以及 `pg_clickhouse.pushdown_regex` 设置。
 
-小版本和大版本升级时，可能需要执行 `ALTER EXTENSION pg_clickhouse UPDATE`。
+### 注意事项
+
+- 上游将它定位为分析优先的扩展，路线图里更广泛的 DML 支持仍属于后续工作。
+- 若需要完整示例，应按官方 tutorial 创建 ClickHouse `taxi` 数据库，通过 `IMPORT FOREIGN SCHEMA` 导入，再查询生成的 foreign tables。

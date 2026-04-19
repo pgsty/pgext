@@ -1,45 +1,63 @@
 ## 用法
 
-> 来源: [README](https://raw.githubusercontent.com/apache/datasketches-postgresql/master/README.md), [Apache DataSketches 网站](https://datasketches.apache.org)
-> PostgreSQL 扩展，用于近似分析草图与聚合。
+来源：[README](https://github.com/apache/datasketches-postgresql/blob/master/README.md), [latest release 1.7.0](https://github.com/apache/datasketches-postgresql/releases/tag/1.7.0), [Apache DataSketches](https://datasketches.apache.org/)
+
+`datasketches` 为 PostgreSQL 增加近似分析 sketch 类型与聚合。上游 README 列出 CPC、HLL、Theta、Array Of Doubles、KLL、Quantiles 与 Frequent Strings sketch；GitHub 最新正式 release 为 `1.7.0`，默认分支已经推进到 `1.8.0-SNAPSHOT`。
 
 ```sql
 CREATE EXTENSION datasketches;
 ```
 
-该扩展支持 CPC、HLL、Theta、Array Of Doubles、KLL、Quantiles 以及 Frequent Strings 草图。
+### 核心 Sketch 家族
 
-### 草图类型
+- `cpc_sketch` 与 `hll_sketch` 用于近似去重计数。
+- `theta_sketch` 用于去重计数，并支持 union、intersection、A-not-B 等集合运算。
+- `aod_sketch` 用于按标识符维护 double 数组形式的 tuple 指标。
+- `kll_*_sketch` 与 `quantiles_*_sketch` 用于分位数、rank、PMF 与 CDF。
+- `frequent_strings_sketch` 用于检测 high-hitter。
 
-- CPC 用于紧凑的去重计数。
-- HLL 用于 HyperLogLog 风格的去重计数。
-- Theta 用于去重计数，并支持 union、intersection 和 A-not-B 等集合运算。
-- Array Of Doubles 用于每个键对应一个 double 数组的 tuple sketch。
-- KLL 用于分位数、排名、PMF 和 CDF 估计。
-- Quantiles 草图用于分布估计。
-- Frequent strings 用于按计数或权重追踪最重项。
+### 常见模式
 
-### 示例
+从原始值构建 sketch：
 
 ```sql
-SELECT cpc_sketch_to_string(cpc_sketch_build(1));
-SELECT cpc_sketch_distinct(id) FROM random_ints_100m;
-SELECT cpc_sketch_get_estimate(cpc_sketch_union(sketch)) FROM cpc_sketch_test;
-SELECT theta_sketch_get_estimate(theta_sketch_union(sketch)) FROM theta_sketch_test;
-SELECT theta_sketch_get_estimate(theta_sketch_intersection(sketch1, sketch2)) FROM theta_set_op_test;
-SELECT hll_sketch_get_estimate(hll_sketch_union(sketch)) FROM hll_sketch_test;
-SELECT hll_sketch_get_estimate(hll_sketch_union(hll_sketch_build(1), hll_sketch_build(2)));
-SELECT kll_float_sketch_get_quantile(kll_float_sketch_merge(sketch), 0.5) FROM kll_float_sketch_test;
-SELECT frequent_strings_sketch_result_no_false_negatives(frequent_strings_sketch_build(9, value), 1000000) FROM zipf_1p1_8k_100m;
+SELECT cpc_sketch_build(1);
+SELECT kll_float_sketch_build(value) FROM normal;
 ```
 
-### 核心操作
+使用一次性近似聚合：
 
-- 使用 `*_sketch_build(...)` 构建草图。
-- 使用 `*_sketch_union(...)`、`*_sketch_merge(...)` 以及各类草图特定的集合运算辅助函数进行合并或聚合。
-- 使用 `*_sketch_get_estimate(...)` 以及 `kll_float_sketch_get_quantile(...)` 等函数读取估计值。
+```sql
+SELECT cpc_sketch_distinct(id) FROM random_ints_100m;
+```
 
-### 说明
+在分组或 cube 维度之间合并 sketch：
 
-- README 说明该扩展面向 PostgreSQL 9.6 及以上版本，并依赖 Boost 1.75 和 DataSketches C++ core 5.0.0 或更高版本。
-- 上游示例强调的是面向数据立方体的增量分析，而不是普通聚合的精确替代品。
+```sql
+SELECT cpc_sketch_get_estimate(cpc_sketch_union(sketch)) FROM cpc_sketch_test;
+SELECT hll_sketch_get_estimate(hll_sketch_union(sketch)) FROM hll_sketch_test;
+SELECT kll_float_sketch_get_quantile(kll_float_sketch_merge(sketch), 0.5)
+FROM kll_float_sketch_test;
+```
+
+对 Theta sketch 执行集合运算：
+
+```sql
+SELECT theta_sketch_get_estimate(theta_sketch_intersection(sketch1, sketch2))
+FROM theta_set_op_test;
+```
+
+查找超过阈值的高频项：
+
+```sql
+SELECT frequent_strings_sketch_result_no_false_negatives(
+  frequent_strings_sketch_build(9, value),
+  1000000
+)
+FROM zipf_1p1_8k_100m;
+```
+
+### 注意事项
+
+- 上游文档要求 PostgreSQL 9.6+，并依赖 Boost 1.75.0 与 DataSketches C++ core 5.0.0 或更高版本。
+- 这些结构是可跨维度合并的近似结构，不是 `COUNT(DISTINCT ...)` 或精确直方图的直接替代。

@@ -1,52 +1,55 @@
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_liquid;
-> SELECT liquid.query('Edge("a","b"). Edge("b","c"). Path(X,Y) :- Edge(X,Y). Path(X,Y) :- Edge(X,Z), Path(Z,Y). Path("a",Y)?');
-> ```
->
-> Sources: [README](https://github.com/michael-golfi/pg_liquid), [Docs site](https://michael-golfi.github.io/pg_liquid/)
+Source: [Docs site](https://michael-golfi.github.io/pg_liquid/), [README](https://github.com/michael-golfi/pg_liquid/blob/main/README.md), [Release v0.1.7](https://github.com/michael-golfi/pg_liquid/releases/tag/v0.1.7), [SQL install script](https://github.com/michael-golfi/pg_liquid/blob/main/sql/pg_liquid--0.1.7.sql)
 
-`pg_liquid` maps the Liquid blog language and data model onto native PostgreSQL storage and execution. The extension exposes SQL entry points for running Liquid-style programs, querying as a principal, and managing row normalizers that project relational rows into Liquid compounds.
+`pg_liquid` brings Liquid-style graph and compound queries into PostgreSQL. It stores graph state in the `liquid` schema and exposes SQL entry points for plain queries, principal-bound queries, and least-privilege reads.
 
-## Core Functions
-
-The upstream README lists these main functions:
-
-- `liquid.query(program text)`
-- `liquid.query_as(principal text, program text)`
-- `liquid.read_as(principal text, program text)`
-
-These support plain execution, principal-aware querying, and CLS-aware reads.
-
-## Language Features
-
-The current README says supported program features include:
-
-- `%` comments
-- assertions and rule definitions terminated with `.`
-- one terminal `?` query
-- `Edge(...)`
-- named compounds such as `Type@(cid=..., role=...)`
-- query-local recursive rules
-
-## Example Shape
-
-Programs are passed as text and can define facts, rules, and a final query:
+### Core query surface
 
 ```sql
-SELECT liquid.query($$
+CREATE EXTENSION pg_liquid;
+
+SELECT *
+FROM liquid.query($$
   Edge("a","b").
   Edge("b","c").
   Path(X,Y) :- Edge(X,Y).
   Path(X,Y) :- Edge(X,Z), Path(Z,Y).
   Path("a",Y)?
-$$);
+$$) AS t(y text);
 ```
 
-## Notes
+- `liquid.query(program text)`: executes Liquid facts, rules, and one terminal query.
+- `liquid.query_as(principal text, program text)`: principal-bound execution.
+- `liquid.read_as(principal text, program text)`: least-privilege read wrapper; intended for application-facing reads.
 
-The project README points to the VitePress documentation site as the main documentation surface and notes that operational rollout details are also documented there. The extension is currently published as PGXN package version `0.1.1` and validated against PostgreSQL 14 through 18.
+### Language and modeling features
+
+- facts and rules terminated by `.`
+- one terminal `?` query per program
+- graph edges via `Edge(...)`
+- typed compounds such as `Type@(role=value, ...)`
+- query-local recursive rules
+- built-in policy compounds such as `CompoundReadByRole` and `liquid/acts_for`
+
+### Row normalizers
+
+```sql
+SELECT liquid.create_row_normalizer(
+  'account_profiles'::regclass,
+  'account_profile_normalizer',
+  'AccountProfile',
+  '{"account_id":"id","display_name":"display_name","tier":"tier"}'::jsonb,
+  true
+);
+```
+
+- `liquid.create_row_normalizer(...)`: projects relational rows into Liquid compounds.
+- `liquid.rebuild_row_normalizer(...)`: regenerates bindings after table changes.
+- `liquid.drop_row_normalizer(...)`: removes the normalizer and optionally purges generated bindings.
+
+### Caveats
+
+- Upstream validates the extension on PostgreSQL 14 through 18.
+- `query_as` and `read_as` are revoked from `PUBLIC` in the shipped SQL; grant them deliberately.
+- `read_as(...)` is the safer application entry point when clients should not assert new facts.

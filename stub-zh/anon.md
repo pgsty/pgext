@@ -1,75 +1,78 @@
 
-
 ## 用法
 
-> [anon: PostgreSQL 匿名化与数据脱敏](https://gitlab.com/dalibo/postgresql_anonymizer/)
+> 来源：[overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)
 
-`postgresql_anonymizer`（扩展名：`anon`）使用声明式方法对个人身份信息（PII）进行脱敏或替换。脱敏规则直接通过安全标签在数据库模式中定义。
+`anon` 通过 `SECURITY LABEL FOR anon` 以声明式方式定义脱敏规则。官方文档主要围绕三条用户侧流程展开：永久脱敏、masked role，以及匿名导出。
+
+### 初始化与声明规则
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS anon CASCADE;
 SELECT anon.init();
-```
 
-### 声明脱敏规则
+SECURITY LABEL FOR anon ON COLUMN customer.full_name
+IS 'MASKED WITH FUNCTION anon.dummy_name()';
 
-```sql
-SECURITY LABEL FOR anon ON COLUMN player.name
-  IS 'MASKED WITH FUNCTION anon.fake_last_name()';
+SECURITY LABEL FOR anon ON COLUMN customer.employer
+IS 'MASKED WITH FUNCTION anon.dummy_company_name()';
 
-SECURITY LABEL FOR anon ON COLUMN player.id
-  IS 'MASKED WITH VALUE NULL';
+SECURITY LABEL FOR anon ON COLUMN customer.phone
+IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
 ```
 
 ### 静态脱敏
 
-永久替换数据库中的 PII：
+静态脱敏会直接原地改写已存储的数据：
 
 ```sql
-SECURITY LABEL FOR anon ON COLUMN customer.full_name
-  IS 'MASKED WITH FUNCTION anon.fake_first_name() || '' '' || anon.fake_last_name()';
-
-SECURITY LABEL FOR anon ON COLUMN customer.birth
-  IS 'MASKED WITH FUNCTION anon.random_date_between(''1920-01-01''::DATE, now())';
-
 SELECT anon.anonymize_database();
--- 也可使用：anon.anonymize_table()、anon.anonymize_column()
+-- See also: anon.anonymize_table(), anon.anonymize_column()
 ```
+
+静态脱敏文档还覆盖了 `shuffling`、噪声注入，以及面向更大数据集的并行脱敏。
 
 ### 动态脱敏
 
-对特定角色隐藏 PII，其他角色可见原始数据：
+动态脱敏只会对被标记为 masked 的角色隐藏值：
 
 ```sql
-SELECT anon.start_dynamic_masking();
+ALTER DATABASE demo SET session_preload_libraries = 'anon';
+ALTER DATABASE demo SET anon.transparent_dynamic_masking TO true;
 
 CREATE ROLE skynet LOGIN;
 SECURITY LABEL FOR anon ON ROLE skynet IS 'MASKED';
+GRANT pg_read_all_data TO skynet;
 
 SECURITY LABEL FOR anon ON COLUMN people.lastname
-  IS 'MASKED WITH FUNCTION anon.fake_last_name()';
-
-SECURITY LABEL FOR anon ON COLUMN people.phone
-  IS 'MASKED WITH FUNCTION anon.partial(phone, 2, $$******$$, 2)';
+IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
 ```
 
-当 `skynet` 查询该表时，会自动返回脱敏后的数据。
+当 `skynet` 查询该表时，返回的是脱敏值而不是原始值。
 
-### 匿名导出
+### 匿名导出与假名化
 
-```bash
-pg_dump_anon.sh -h localhost -p 5432 -U bob bob_db > dump.sql
-```
+当前文档推荐通过 masked role 配合 `pg_dump` 进行透明匿名导出。旧的辅助脚本 `pg_dump_anon.sh` 和 `pg_dump_anon` 已被明确标记为 deprecated。
 
-### 常用脱敏函数
+对于导出中的稳定键重映射，文档特别列出了：
 
-| 函数 | 描述 |
-|----------|-------------|
-| `anon.fake_first_name()` | 随机名字 |
-| `anon.fake_last_name()` | 随机姓氏 |
-| `anon.fake_company()` | 随机公司名 |
-| `anon.random_date_between(d1, d2)` | 范围内随机日期 |
-| `anon.random_zip()` | 随机邮政编码 |
-| `anon.partial(value, prefix, padding, suffix)` | 部分混淆 |
-| `anon.random_string(n)` | 长度为 n 的随机字符串 |
-| `anon.random_int_between(i1, i2)` | 范围内随机整数 |
+- `anon.pseudo_shift(bigint)`
+- `anon.pseudo_xor(bigint)`
+- `anon.set_shift()`
+
+### 常用函数与注意事项
+
+函数目录中常见的 masking helper 包括：
+
+- `anon.dummy_first_name()`
+- `anon.dummy_last_name()`
+- `anon.dummy_company_name()`
+- `anon.random_zip()`
+- `anon.random_date_between(date, date)`
+- `anon.partial(value, prefix, mask, suffix)`
+
+官方文档中的注意事项：
+
+- dynamic masking 在 masked-role 会话使用前需要完成 preload 和相关配置
+- static masking 会销毁原始值
+- pseudonymization 不等于 anonymization

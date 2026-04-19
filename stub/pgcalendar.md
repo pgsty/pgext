@@ -1,40 +1,17 @@
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pgcalendar;
-> INSERT INTO pgcalendar.events (name, description, category)
-> VALUES ('Daily Standup', 'Team daily standup meeting', 'meeting');
-> SELECT * FROM pgcalendar.get_event_projections(1, '2024-01-01'::date, '2024-01-07'::date);
-> ```
->
-> Source: [README](https://github.com/h4kbas/pgcalendar)
+Sources: [README](https://github.com/h4kbas/pgcalendar/blob/master/README.md), [repo](https://github.com/h4kbas/pgcalendar)
 
-`pgcalendar` is a recurring calendar extension for PostgreSQL. It models events, schedules, exceptions, and projections, and generates calendar occurrences across arbitrary date ranges.
+`pgcalendar` is a recurring calendar extension for PostgreSQL. The upstream README models recurring schedules with four main pieces: `events`, `schedules`, `exceptions`, and generated projections.
 
-## Data Model
-
-The README describes four main concepts:
-
-- `events` as logical objects such as meetings or tasks
-- `schedules` as non-overlapping recurrence definitions
-- `exceptions` as per-occurrence cancellations or modifications
-- `projections` as the actual generated calendar occurrences
-
-## Quick Start
-
-Create an event:
+### Create events and schedules
 
 ```sql
+CREATE EXTENSION pgcalendar;
+
 INSERT INTO pgcalendar.events (name, description, category)
 VALUES ('Daily Standup', 'Team daily standup meeting', 'meeting');
-```
 
-Create a schedule:
-
-```sql
 INSERT INTO pgcalendar.schedules (
     event_id, start_date, end_date, recurrence_type, recurrence_interval
 ) VALUES (
@@ -42,26 +19,23 @@ INSERT INTO pgcalendar.schedules (
 );
 ```
 
-Get projections:
+The README shows `daily`, `weekly`, `monthly`, and `yearly` recurrences, with extra columns such as `recurrence_day_of_week`, `recurrence_day_of_month`, and `recurrence_month` depending on the recurrence type.
+
+### Query projections
 
 ```sql
 SELECT * FROM pgcalendar.get_event_projections(
     1, '2024-01-01'::date, '2024-01-07'::date
 );
+
+SELECT * FROM pgcalendar.get_events_detailed(
+    '2024-01-01'::date, '2024-01-31'::date
+);
 ```
 
-## Recurrence Types
+The README also uses the `pgcalendar.event_calendar` view as a quick verification target.
 
-The README shows schedule examples for:
-
-- daily recurrence
-- weekly recurrence with `recurrence_day_of_week`
-- monthly recurrence with `recurrence_day_of_month`
-- yearly recurrence with `recurrence_month` and `recurrence_day_of_month`
-
-## Exceptions
-
-Exceptions can cancel or modify a single occurrence:
+### Exceptions and schedule transitions
 
 ```sql
 INSERT INTO pgcalendar.exceptions (
@@ -69,18 +43,20 @@ INSERT INTO pgcalendar.exceptions (
 ) VALUES (
     1, '2024-01-15', 'cancelled', 'Holiday - meeting cancelled'
 );
+
+SELECT pgcalendar.transition_event_schedule(
+    p_event_id := 1,
+    p_new_start_date := '2024-01-15 09:00:00',
+    p_new_end_date := '2024-01-31 23:59:59',
+    p_recurrence_type := 'weekly',
+    p_recurrence_interval := 2,
+    p_recurrence_day_of_week := 1,
+    p_description := 'Changed to bi-weekly schedule'
+);
 ```
 
-Modified occurrences can also change date and time.
+Use `pgcalendar.check_schedule_overlap(...)` before adding a new schedule when you need to verify that date ranges do not overlap.
 
-## Functions and Views
+### Caveat
 
-The README documents:
-
-- `get_event_projections(event_id, start_date, end_date)`
-- `get_events_detailed(start_date, end_date)`
-- `transition_event_schedule(...)`
-- `check_schedule_overlap(event_id, start_date, end_date)`
-- `pgcalendar.event_calendar`
-
-`transition_event_schedule(...)` safely switches an event to a new schedule definition, while `check_schedule_overlap(...)` validates that new schedules do not overlap existing ones.
+The upstream README is the only user-facing documentation currently published. It gives clear table and function examples, but it does not add separate versioned release notes for user-visible SQL changes.

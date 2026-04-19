@@ -1,8 +1,8 @@
 ## Usage
-> Sources: [homepage](https://onesparse.github.io/OneSparse/), [intro docs](https://onesparse.github.io/OneSparse/docs.html), [Matrix](https://onesparse.github.io/OneSparse/test_matrix_header.html), [Vector](https://onesparse.github.io/OneSparse/test_vector_header.html), and [Algorithms](https://onesparse.github.io/OneSparse/test_examples_header.html).
+> Sources: [homepage](https://onesparse.com/), [release v1.0.0](https://github.com/OneSparse/OneSparse/releases/tag/v1.0.0), [control file at v1.0.0](https://raw.githubusercontent.com/OneSparse/OneSparse/v1.0.0/onesparse.control), [intro docs](https://onesparse.com/docs.html), [matrix docs](https://onesparse.com/test_matrix_header.html), [vector docs](https://onesparse.com/test_vector_header.html), [algorithm examples](https://onesparse.com/test_examples_header.html)
 
 OneSparse is a PostgreSQL extension that binds SuiteSparse:GraphBLAS into Postgres and exposes sparse linear algebra and graph algorithms as new types, functions, and operators.
-The docs treat `matrix` as the core type, with `vector` and `scalar` built on top of the same model.
+The docs treat `matrix` as the core type, with `vector` and `scalar` built on top of the same model. The `v1.0.0` release exists, while the extension control file at that tag still declares SQL `default_version = '0.1.0'`.
 
 ### Core Setup
 
@@ -15,12 +15,11 @@ SELECT 'int32'::vector;
 SELECT 'int32:42'::scalar;
 ```
 
-The intro docs note that OneSparse keeps its API in the `onesparse` schema, and the matrix/vector pages show the same `search_path` pattern for interactive use.
+The docs site organizes the API around `matrix`, `vector`, and `scalar`, with interactive examples using casts and constructors.
 
 ### Matrix and Vector
 
-The matrix page shows common operations such as constructing, printing, drawing, resizing, casting, and aggregating matrices.
-The vector page shows the matching vector API, including `nvals`, `size`, `set_element`, `get_element`, `eadd`, `emult`, `reduce_scalar`, `choose`, and `apply`.
+The matrix page shows common operations such as construction, `print()`, `draw()`, assignment, extraction, `cast_to()`, resize, and aggregation. The vector page documents the matching vector API including `nvals()`, `size()`, `eadd()`, `emult()`, `reduce_scalar()`, `choose()`, and `apply()`.
 
 ```sql
 SELECT print('int32(4:4)'::matrix);
@@ -31,8 +30,7 @@ SELECT reduce_scalar('int32[0:1 1:2 2:3]'::vector, 'plus_monoid_int32');
 
 ### Graph Algorithms
 
-The getting-started docs use graph examples built from Matrix Market files and random graphs.
-They highlight these algorithms:
+The examples page uses Matrix Market input and graph visualization with `draw(...)`. The documented graph algorithms include:
 
 - `bfs(graph, 1)` for level and parent BFS
 - `sssp(cast_to(graph, 'int32'), 1::bigint, 1)` for single-source shortest path
@@ -47,8 +45,4 @@ SELECT draw(triu(graph), (SELECT level FROM bfs(graph, 1)), false, false, true, 
 FROM karate;
 ```
 
-The same guide also shows graph loading with `mmread(...)` and graph visualization with `draw(...)`.
-
-### Scope
-
-The documentation set is broad. This stub captures the core interface and the main examples that repeat across the intro, matrix, vector, and algorithms pages, without reproducing the full GraphBLAS catalog.
+The same guide shows loading a graph with `mmread('/home/postgres/onesparse/demo/karate.mtx')`.

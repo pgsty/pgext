@@ -1,114 +1,70 @@
-
-
-
 ## Usage
 
-> [pg_ivm: Incremental View Maintenance for PostgreSQL](https://github.com/sraoss/pg_ivm)
+Sources: [README](https://github.com/sraoss/pg_ivm/blob/master/README.md), [release 1.14](https://github.com/sraoss/pg_ivm/releases/tag/v1.14)
 
-The `pg_ivm` extension provides Incremental View Maintenance (IVM), updating materialized views by applying only incremental changes rather than recomputing from scratch. Views are updated immediately in AFTER triggers when base tables are modified.
+`pg_ivm` provides immediate Incremental View Maintenance for PostgreSQL materialized views. Instead of recomputing the whole view, it applies deltas in `AFTER` triggers and stores metadata in the `pgivm` schema.
 
 ```sql
 CREATE EXTENSION pg_ivm;
 ```
 
-### Configuration
+### Required Setup
 
-Add `pg_ivm` to preload libraries for correct maintenance:
+Upstream says `pg_ivm` should be preloaded so IMMVs are maintained correctly:
 
-```ini
+```conf
 shared_preload_libraries = 'pg_ivm'
+session_preload_libraries = 'pg_ivm'
 ```
 
-### Functions
+The current README says the extension is compatible with PostgreSQL 13 through 18, and the latest GitHub release is `1.14` dated March 31, 2026.
 
-#### create_immv
+### Main Functions
+
+- `pgivm.create_immv(name, query)` creates an incrementally maintainable materialized view (IMMV), its maintenance triggers, and a unique index when possible.
+- `pgivm.refresh_immv(name, with_data)` fully refreshes the IMMV and can disable or re-enable maintenance.
+- `pgivm.get_immv_def(regclass)` reconstructs the stored `SELECT` definition.
+- `pgivm.pg_ivm_immv` stores IMMV metadata including `immvrelid`, `viewdef`, `ispopulated`, and `lastivmupdate`.
+
+### Common Patterns
+
+Create an IMMV:
 
 ```sql
-pgivm.create_immv(immv_name text, view_definition text) RETURNS bigint
+SELECT pgivm.create_immv(
+  'immv_agg',
+  'SELECT bid, count(*), sum(abalance), avg(abalance)
+   FROM pgbench_accounts JOIN pgbench_branches USING(bid)
+   GROUP BY bid'
+);
 ```
 
-Creates an Incrementally Maintainable Materialized View (IMMV). Triggers are automatically created to keep the view updated. A unique index is created automatically if possible.
-
-```sql
-SELECT pgivm.create_immv('myview', 'SELECT * FROM mytab');
-```
-
-#### refresh_immv
-
-```sql
-pgivm.refresh_immv(immv_name text, with_data bool) RETURNS bigint
-```
-
-Completely replaces IMMV contents. With `with_data = false`, the IMMV becomes unpopulated and triggers are dropped. With `with_data = true`, triggers and indexes are recreated.
-
-```sql
-SELECT pgivm.refresh_immv('myview', true);
-```
-
-#### get_immv_def
-
-```sql
-pgivm.get_immv_def(immv regclass) RETURNS text
-```
-
-Returns the reconstructed SELECT command for an IMMV.
-
-### IMMV Metadata Catalog
-
-The `pgivm.pg_ivm_immv` catalog stores IMMV information:
-
-| Column | Type | Description |
-|--------|------|-------------|
-| `immvrelid` | regclass | OID of the IMMV |
-| `viewdef` | text | Query tree for the view definition |
-| `ispopulated` | bool | Whether IMMV is currently populated |
-
-### Examples
-
-Create an IMMV with aggregates:
-
-```sql
-SELECT pgivm.create_immv('immv_agg',
-    'SELECT bid, count(*), sum(abalance), avg(abalance)
-     FROM pgbench_accounts JOIN pgbench_branches USING(bid) GROUP BY bid');
-```
-
-Updates to base tables are reflected automatically:
+Query the maintained result after base-table changes:
 
 ```sql
 UPDATE pgbench_accounts SET abalance = abalance + 1000 WHERE aid = 4112345;
-SELECT * FROM immv_agg WHERE bid = 42;  -- aggregates updated automatically
+SELECT * FROM immv_agg WHERE bid = 42;
 ```
 
-List all IMMVs:
+Inspect or refresh IMMVs:
 
 ```sql
-SELECT immvrelid AS immv, pgivm.get_immv_def(immvrelid) AS def
+SELECT immvrelid AS immv, pgivm.get_immv_def(immvrelid)
 FROM pgivm.pg_ivm_immv;
+
+SELECT pgivm.refresh_immv('immv_agg', true);
 ```
 
-Drop an IMMV with `DROP TABLE`:
+Pause maintenance for bulk work, then rebuild:
 
 ```sql
-DROP TABLE myview;
+SELECT pgivm.refresh_immv('myview', false);
+-- bulk changes
+SELECT pgivm.refresh_immv('myview', true);
 ```
 
-### Disable/Enable Maintenance
+### Caveats
 
-Disable immediate maintenance before bulk modifications, then refresh:
-
-```sql
-SELECT pgivm.refresh_immv('myview', false);   -- disable
--- ... bulk modifications ...
-SELECT pgivm.refresh_immv('myview', true);    -- refresh and re-enable
-```
-
-### Supported Query Features
-
-- Inner and outer joins (including self-join)
-- `DISTINCT` clause
-- Aggregate functions: `count`, `sum`, `avg`, `min`, `max`
-- Simple subqueries in `FROM` clause
-- `EXISTS` subqueries in `WHERE` clause
-- Simple CTEs (`WITH` queries)
-- `GROUP BY` clause
+- Upstream only supports a restricted subset of view definitions: joins, `DISTINCT`, simple subqueries/CTEs, and built-in aggregates `count`, `sum`, `avg`, `min`, and `max`.
+- Unsupported constructs include `HAVING`, window functions, `ORDER BY`, `LIMIT/OFFSET`, `UNION`/`INTERSECT`/`EXCEPT`, `DISTINCT ON`, and user-defined aggregates.
+- Efficient maintenance depends on having a suitable unique index; `create_immv` creates one automatically only when the definition allows it.

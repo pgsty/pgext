@@ -1,33 +1,38 @@
 ## 用法
 
-- 来源: [GitHub 仓库](https://github.com/darold/external_file), [README](https://github.com/darold/external_file/blob/master/README.md)
-- `external_file` 提供通过 PostgreSQL 扩展访问外部文件的能力，类似 Oracle BFILE 风格的定位器。
+来源：[README](https://github.com/darold/external_file/blob/master/README.md)，[Release v1.2](https://github.com/darold/external_file/releases/tag/v1.2)
+
+`external_file` 将文件定位符存储为 `(directory, filename)` 对，并通过 PostgreSQL `lo_*` 辅助函数访问服务器端文件，而不是直接读取文件。
+
+### 基本流程
 
 ```sql
 CREATE EXTENSION external_file;
-```
 
-README 说明对象默认创建在 `external_file` 模式中，且创建扩展需要 PostgreSQL 超级用户权限。
-
-## 核心流程
-
-该扩展使用“目录别名 + 文件名”来标识外部文件。上游 README 展示的流程如下：
-
-```sql
 INSERT INTO directories(directory_name, directory_path)
 VALUES ('temporary', '/tmp/');
 
 INSERT INTO directory_roles(directory_name, directory_role, directory_read, directory_write)
-VALUES ('temporary', 'a_role', true, false);
+VALUES ('temporary', 'app_reader', true, false);
 
-SELECT writeEfile('\x48656c6c6f2c0a0a596f75206172652072656164696e67206120746578742066696c652e0a0a526567617264732c0a',
-                  ('temporary', 'blahblah.txt'));
-SELECT readefile(the_file) FROM efile_test;
-SELECT copyefile(('temporary', 'blahblah.txt'), ('temporary', 'copy_blahblah.txt'));
+SELECT writeEfile('\x48656c6c6f0a', ('temporary', 'hello.txt'));
+SELECT readEfile(efilename('temporary', 'hello.txt'));
+SELECT copyEfile(('temporary', 'hello.txt'), ('temporary', 'hello-copy.txt'));
 ```
 
-主要导出辅助函数包括 `efilename`、`readEfile`、`writeEfile`、`copyEfile` 和 `getEfilePath`。
+### 核心对象
 
-## 备注
+- `directories`：将别名映射到服务器上的目录路径。
+- `directory_roles`：为角色授予该别名的读写权限。
+- `efilename(directory, filename)`：构造一个 `efile` 定位符。
+- `readEfile(efile)`：将目标文件读取为 `bytea`。
+- `writeEfile(bytea, efile)`：将 `bytea` 写入目标文件。
+- `copyEfile(src, dest)`：将一个外部文件复制到另一个外部文件。
+- `getEfilePath(efile, need_read, need_write)`：解析完整路径并检查访问权限。
 
-该扩展不会直接读取服务器文件系统上的文件。它通过服务器端 `lo_*` 系列函数访问文件，并通过目录表和角色表控制访问权限。
+### 注意事项
+
+- 创建扩展需要 PostgreSQL superuser。
+- 上游默认会在 `external_file` schema 中创建全部对象。
+- PostgreSQL 的 OS user 仍然需要对目标目录具备文件系统读写权限。
+- 文件名不能包含 `/` 或 `\`；访问必须通过目录表进行受控中介。

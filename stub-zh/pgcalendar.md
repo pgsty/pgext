@@ -1,40 +1,17 @@
-
 ## 用法
 
-> 语法：
->
-> ```sql
-> CREATE EXTENSION pgcalendar;
-> INSERT INTO pgcalendar.events (name, description, category)
-> VALUES ('Daily Standup', 'Team daily standup meeting', 'meeting');
-> SELECT * FROM pgcalendar.get_event_projections(1, '2024-01-01'::date, '2024-01-07'::date);
-> ```
->
-> 来源：[README](https://github.com/h4kbas/pgcalendar)
+来源：[README](https://github.com/h4kbas/pgcalendar/blob/master/README.md)，[repo](https://github.com/h4kbas/pgcalendar)
 
-`pgcalendar` 是一个用于 PostgreSQL 的循环日历扩展。它建模事件、日程、例外和投影，并可在任意日期范围内生成日历发生实例。
+`pgcalendar` 是一个 PostgreSQL 循环日历扩展。上游 README 用四个核心对象来建模循环日程：`events`、`schedules`、`exceptions` 和生成出来的 projections。
 
-## 数据模型
-
-README 描述了四个核心概念：
-
-- `events`，表示会议或任务等逻辑对象
-- `schedules`，表示生成投影的非重叠循环定义
-- `exceptions`，表示单次发生的取消或修改
-- `projections`，表示实际生成出来的日历发生实例
-
-## 快速开始
-
-创建事件：
+### 创建事件和日程
 
 ```sql
+CREATE EXTENSION pgcalendar;
+
 INSERT INTO pgcalendar.events (name, description, category)
 VALUES ('Daily Standup', 'Team daily standup meeting', 'meeting');
-```
 
-创建日程：
-
-```sql
 INSERT INTO pgcalendar.schedules (
     event_id, start_date, end_date, recurrence_type, recurrence_interval
 ) VALUES (
@@ -42,26 +19,23 @@ INSERT INTO pgcalendar.schedules (
 );
 ```
 
-获取投影：
+README 展示了 `daily`、`weekly`、`monthly` 和 `yearly` 四类循环，并会根据类型使用 `recurrence_day_of_week`、`recurrence_day_of_month`、`recurrence_month` 等额外列。
+
+### 查询投影
 
 ```sql
 SELECT * FROM pgcalendar.get_event_projections(
     1, '2024-01-01'::date, '2024-01-07'::date
 );
+
+SELECT * FROM pgcalendar.get_events_detailed(
+    '2024-01-01'::date, '2024-01-31'::date
+);
 ```
 
-## 循环类型
+README 还把 `pgcalendar.event_calendar` 视图作为快速核验结果的入口。
 
-README 展示了以下日程示例：
-
-- 每日循环
-- 每周循环，带 `recurrence_day_of_week`
-- 每月循环，带 `recurrence_day_of_month`
-- 每年循环，带 `recurrence_month` 和 `recurrence_day_of_month`
-
-## 例外
-
-例外可以取消或修改某次发生：
+### 例外与日程切换
 
 ```sql
 INSERT INTO pgcalendar.exceptions (
@@ -69,18 +43,20 @@ INSERT INTO pgcalendar.exceptions (
 ) VALUES (
     1, '2024-01-15', 'cancelled', 'Holiday - meeting cancelled'
 );
+
+SELECT pgcalendar.transition_event_schedule(
+    p_event_id := 1,
+    p_new_start_date := '2024-01-15 09:00:00',
+    p_new_end_date := '2024-01-31 23:59:59',
+    p_recurrence_type := 'weekly',
+    p_recurrence_interval := 2,
+    p_recurrence_day_of_week := 1,
+    p_description := 'Changed to bi-weekly schedule'
+);
 ```
 
-也可以修改日期和时间。
+如果需要在新增日程前确认日期范围不重叠，可以先调用 `pgcalendar.check_schedule_overlap(...)`。
 
-## 函数与视图
+### 注意事项
 
-README 文档中包括：
-
-- `get_event_projections(event_id, start_date, end_date)`
-- `get_events_detailed(start_date, end_date)`
-- `transition_event_schedule(...)`
-- `check_schedule_overlap(event_id, start_date, end_date)`
-- `pgcalendar.event_calendar`
-
-其中 `transition_event_schedule(...)` 用于安全切换事件的日程配置，`check_schedule_overlap(...)` 用于验证新日程不会与现有日程冲突。
+目前上游唯一公开的用户文档就是 README。它已经给出了较完整的表结构和函数示例，但没有另外维护按版本划分的用户可见 SQL 变更说明。

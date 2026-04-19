@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestOverviewPagesDisableRSSOutputs(t *testing.T) {
+func TestOverviewPagesOnlyEmitHTMLOutput(t *testing.T) {
 	t.Run("cc", func(t *testing.T) {
 		dir := t.TempDir()
 		path := filepath.Join(dir, "_index.md")
@@ -25,8 +25,11 @@ func TestOverviewPagesDisableRSSOutputs(t *testing.T) {
 		}
 
 		text := string(content)
-		if !strings.Contains(text, "outputs:\n  - HTML\n  - print\ncascade:\n  type: docs\n  outputs:\n    - HTML\n    - print\n") {
-			t.Fatalf("cc overview front matter missing outputs config:\n%s", text)
+		if !strings.Contains(text, extOverviewOutputsFrontMatter) {
+			t.Fatalf("cc overview front matter missing HTML-only outputs config:\n%s", text)
+		}
+		if strings.Contains(text, "print") {
+			t.Fatalf("cc overview front matter must not enable print output:\n%s", text)
 		}
 	})
 
@@ -47,8 +50,11 @@ func TestOverviewPagesDisableRSSOutputs(t *testing.T) {
 		}
 
 		text := string(content)
-		if !strings.Contains(text, "outputs:\n  - HTML\n  - print\ncascade:\n  type: docs\n  outputs:\n    - HTML\n    - print\n") {
-			t.Fatalf("io overview front matter missing outputs config:\n%s", text)
+		if !strings.Contains(text, extOverviewOutputsFrontMatter) {
+			t.Fatalf("io overview front matter missing HTML-only outputs config:\n%s", text)
+		}
+		if strings.Contains(text, "print") {
+			t.Fatalf("io overview front matter must not enable print output:\n%s", text)
 		}
 	})
 }

@@ -1,12 +1,10 @@
 ## 用法
-- GitHub 仓库: [`rustwizard/block_copy_command`](https://github.com/rustwizard/block_copy_command)
-- README: [rustwizard/block_copy_command/blob/master/README.md](https://github.com/rustwizard/block_copy_command/blob/master/README.md)
 
-`block_copy_command` 通过安装 `ProcessUtility` hook，在整个集群范围内拦截 `COPY` 命令。它通过 `shared_preload_libraries` 加载，而 `CREATE EXTENSION` 只是在每个数据库中登记扩展元数据。
+- 来源：[README](https://github.com/rustwizard/block_copy_command/blob/master/README.md)
 
-这个扩展适用于希望默认禁止非超级用户执行 `COPY TO` 和 `COPY FROM`，同时仍可通过 GUC 和审计表进行更细粒度控制的部署场景。
+`block_copy_command` 安装一个 `ProcessUtility` hook 来拦截 `COPY` 语句。库一旦加载，该 hook 就会在整个集群范围内生效，而 `CREATE EXTENSION` 只是在某个数据库中登记元数据。
 
-### 安装与启用
+### 启用扩展
 
 ```conf
 shared_preload_libraries = 'block_copy_command'
@@ -16,11 +14,11 @@ shared_preload_libraries = 'block_copy_command'
 CREATE EXTENSION block_copy_command;
 ```
 
-README 指出，一旦库被加载，这个 hook 就会对整个集群生效。
+上游 README 标明支持 PostgreSQL 13-18。
 
-### 拦截规则
+### 阻断规则
 
-默认情况下，非超级用户无法执行 `COPY`。
+默认情况下，非超级用户不能执行 `COPY TO` 或 `COPY FROM`：
 
 ```sql
 COPY my_table TO STDOUT;
@@ -28,24 +26,24 @@ COPY my_table FROM STDIN;
 COPY (SELECT * FROM my_table) TO '/tmp/out.csv';
 ```
 
-超级用户默认可以绕过拦截，除非它们被列入 `block_copy_command.blocked_roles`，或者启用了 `block_copy_command.block_program`。`COPY ... PROGRAM` 默认对所有用户都被阻止。
+文档给出的优先级如下：
 
-### 配置项
+- `block_copy_command.blocked_roles`：始终阻断，即使是超级用户。
+- `block_copy_command.block_program = on`：对所有用户阻断 `COPY ... PROGRAM`。
+- `block_copy_command.enabled = off`：允许不在 `blocked_roles` 中的角色执行 `COPY`。
+- 其他情况下，超级用户可以绕过方向阻断。
+- `block_copy_command.block_to` 和 `block_copy_command.block_from` 控制对非超级用户的导出/导入阻断。
 
-- `block_copy_command.enabled` 控制是否拦截非超级用户。
-- `block_copy_command.block_to` 控制是否阻止 `COPY TO`。
-- `block_copy_command.block_from` 控制是否阻止 `COPY FROM`。
-- `block_copy_command.block_program` 阻止所有用户执行 `COPY TO/FROM PROGRAM`。
-- `block_copy_command.hint` 会为被阻止的命令附加自定义 `HINT:`。
-- `block_copy_command.blocked_roles` 会永久阻止指定角色，包括超级用户。
-- `block_copy_command.audit_log_enabled` 控制是否将拦截到的 `COPY` 事件写入 `block_copy_command.audit_log`。
+### 主要配置
 
-### 审计日志
+- `block_copy_command.enabled`：非超级用户阻断的总开关。
+- `block_copy_command.block_to`：阻断 `COPY TO`。
+- `block_copy_command.block_from`：阻断 `COPY FROM`。
+- `block_copy_command.block_program`：对所有用户阻断 `COPY TO/FROM PROGRAM`。
+- `block_copy_command.hint`：为被阻止的错误追加自定义 `HINT`。
+- `block_copy_command.blocked_roles`：以逗号分隔的始终阻断角色列表。
+- `block_copy_command.audit_log_enabled`：将拦截事件写入审计表。
 
-扩展会把被拦截的 `COPY` 活动记录到 `block_copy_command.audit_log`，并将被阻止事件以 `LOG` 级别写入 PostgreSQL 服务器日志。
+### 审计与注意事项
 
-README 中常见的监控查询包括查看最近事件、筛选被阻止事件，以及按用户分组统计。
-
-### 范围
-
-上游 README 已经覆盖了需求、启用方式、拦截行为、主要 GUC、审计表和测试覆盖，因此这个 stub 不需要额外的项目主页或文档站内容。
+无论命令最终被允许还是被阻止，扩展都会进行拦截；同时它还定义了 `block_copy_command.audit_log`，并会把被阻止事件写入服务器日志。README 特别说明了一个重要 caveat：被阻止事件的审计行是在抛错前插入的，因此会随着事务一起回滚。实际使用时，PostgreSQL 服务器日志才是被阻止 `COPY` 尝试的权威记录。

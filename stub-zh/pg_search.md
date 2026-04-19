@@ -1,83 +1,66 @@
-
-> [!NOTE] 此扩展由 ParadeDB 团队开发，通过 PIGSTY 仓库分发
-
 ## 用法
 
-> [README](https://github.com/paradedb/paradedb/tree/dev/pg_search) | [Quickstart](https://docs.paradedb.com/documentation/getting-started/quickstart) | [Install docs](https://docs.paradedb.com/documentation/getting-started/install)
+- 来源：[ParadeDB extension install docs](https://docs.paradedb.com/deploy/self-hosted/extension)，[quickstart](https://docs.paradedb.com/documentation/getting-started/quickstart)，[v0.23.0 release](https://github.com/paradedb/paradedb/releases/tag/v0.23.0)，[pg_search README](https://github.com/paradedb/paradedb/blob/dev/pg_search/README.md)
 
-`pg_search` 是 ParadeDB 为 PostgreSQL 提供的全文检索扩展。它基于 Tantivy，为堆表提供 BM25 索引和查询能力。当前上游文档说明，它支持 PostgreSQL 15 及以上版本。
+`pg_search` 是 ParadeDB 提供的、基于 BM25 的 PostgreSQL 搜索扩展。上游 README 说明支持从 PostgreSQL 15 开始，而 v0.23.0 的自托管安装文档仍要求在 `CREATE EXTENSION` 之前先 preload 该库。
 
-## 入门
+### 启用并创建扩展
 
-安装文档强调一个关键要求：必须把 `pg_search` 加入 `shared_preload_libraries`，这样后台工作进程才能处理索引写入。
-
-```ini
+```conf
 shared_preload_libraries = 'pg_search'
 ```
 
-随后启用扩展：
-
 ```sql
 CREATE EXTENSION pg_search;
-ALTER SYSTEM SET paradedb.pg_search_telemetry TO 'off';
 ```
 
-## 创建 BM25 索引
+v0.23.0 的自托管扩展文档说明提供了面向 Postgres 15+ 的预编译二进制包。
 
-Quickstart 展示了在堆表上创建 BM25 索引的方式，且需要唯一键字段：
+### 创建 BM25 索引
+
+quickstart 示例使用 `bm25` access method，并要求指定唯一键字段：
 
 ```sql
 CREATE INDEX search_idx ON mock_items
-USING bm25 (id, description, category, rating, in_stock, created_at, metadata, weight_range)
-WITH (key_field='id');
+USING bm25 (id, description, category, rating)
+WITH (key_field = 'id');
 ```
 
-现有文档强调，`key_field` 必须唯一，BM25 索引是搜索查询的核心访问方法。
+v0.23.0 release 还提到，现在可以按字段调节 BM25 的 `k1` 和 `b` 参数。
 
-## 查询
+### 查询操作符与辅助函数
 
-`@@@` 操作符用于执行搜索查询：
+当前 quickstart 使用以下查询操作符：
+
+- `|||`：析取匹配，等价于 `term1 OR term2`。
+- `&&&`：合取匹配，等价于 `term1 AND term2`。
+
+示例：
 
 ```sql
-SELECT description, rating, category
+SELECT description, rating
 FROM mock_items
-WHERE description @@@ 'keyboard' AND rating > 2
+WHERE description ||| 'running shoes'
 ORDER BY rating
 LIMIT 5;
 ```
 
-ParadeDB 还提供用于相关性评分和摘要高亮的辅助函数：
-
 ```sql
-SELECT description, paradedb.score(id)
+SELECT description, pdb.score(id)
 FROM mock_items
-WHERE description @@@ 'keyboard'
-ORDER BY paradedb.score(id) DESC
-LIMIT 5;
-
-SELECT description, paradedb.snippet(description), paradedb.score(id)
-FROM mock_items
-WHERE description @@@ 'keyboard'
-ORDER BY paradedb.score(id) DESC
+WHERE description &&& 'running shoes'
+ORDER BY score DESC
 LIMIT 5;
 ```
 
-短语搜索支持用引号包裹表达式：
-
 ```sql
-SELECT description
+SELECT description, pdb.snippet(description), pdb.score(id)
 FROM mock_items
-WHERE description @@@ '"metal keyboard"';
+WHERE description ||| 'running shoes'
+ORDER BY score DESC
+LIMIT 5;
 ```
 
-## 文本配置
+### 说明
 
-Quickstart 还展示了如何为文本字段配置分词器，例如英文词干提取：
-
-```sql
-CREATE INDEX search_idx ON mock_items
-USING bm25 (id, (description::pdb.simple('stemmer=english')), category)
-WITH (key_field='id');
-```
-
-更深入的部署和运行说明请参考上游 ParadeDB 文档站，它是该项目的主文档入口。
+开发分支 README 已把安装和用法细节指向官方文档站，而不是在 README 中内联维护 SQL 细节。因此，对当前 `pg_search` 语法而言，quickstart 才是最权威的用法来源；它反映的是 0.20 之后的 API，而不是一些次级资料里仍能看到的旧 `@@@` 示例。

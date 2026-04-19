@@ -1,81 +1,69 @@
 
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pgproto;
-> INSERT INTO pb_schemas (name, data) VALUES ('MySchema', '\x...');
-> CREATE TABLE items (id serial PRIMARY KEY, data protobuf);
-> SELECT data #> '{Outer, inner, id}'::text[] FROM items;
-> ```
->
-> Source: [README](https://github.com/Apaezmx/pgproto)
+Sources: [README](https://github.com/Apaezmx/pgproto/blob/main/README.md), [release 0.3.3](https://github.com/Apaezmx/pgproto/releases/tag/v0.3.3), [pgproto.control](https://github.com/Apaezmx/pgproto/blob/main/pgproto.control)
 
-`pgproto` adds native Protocol Buffers support to PostgreSQL. It provides a `protobuf` type, runtime schema registration, nested field extraction, update helpers, and indexing support for schema-aware access to protobuf payloads.
-
-## Setup
-
-Enable the extension:
+`pgproto` adds a `protobuf` type for storing binary Protocol Buffers with schema-aware extraction and update helpers. The latest upstream release is `0.3.3`, while the extension control file advertises SQL default version `1.0`.
 
 ```sql
 CREATE EXTENSION pgproto;
 ```
 
-Register protobuf schemas by loading `FileDescriptorSet` blobs:
+### Basic Workflow
+
+Register a `FileDescriptorSet` so the extension can interpret message layouts:
 
 ```sql
 INSERT INTO pb_schemas (name, data) VALUES ('MySchema', '\x...');
 ```
 
-Create a table using the custom `protobuf` type:
+Store protobuf payloads in a `protobuf` column:
 
 ```sql
 CREATE TABLE items (
-    id SERIAL PRIMARY KEY,
-    data protobuf
+  id serial PRIMARY KEY,
+  data protobuf
 );
 ```
 
-## Querying
+### Querying
 
-The README highlights nested field extraction with PostgreSQL-style operators:
+Use PostgreSQL-style path operators for nested fields:
 
 ```sql
 SELECT data #> '{Outer, inner, id}'::text[] FROM items;
 SELECT data #> '{Outer, tags, mykey}'::text[] FROM items;
 ```
 
-It also mentions custom operators such as `->` and `#>` for schema-aware navigation.
+The README highlights `->` and `#>` as the primary navigation operators for nested, repeated, and map fields.
 
-## Modification Functions
+### Updates and Merge
 
-`pgproto` includes pure functions that return a new protobuf value:
+The write helpers are pure functions that return a new protobuf value:
 
 - `pb_set(...)`
 - `pb_insert(...)`
 - `pb_delete(...)`
-
-Because they return modified values rather than mutating in place, they are normally used in `UPDATE` statements:
+- `||` to merge two messages of the same type
 
 ```sql
 UPDATE items SET data = pb_set(data, ARRAY['Outer', 'a'], '42');
 UPDATE items SET data = pb_insert(data, ARRAY['Outer', 'scores', '0'], '100');
 UPDATE items SET data = pb_delete(data, ARRAY['Outer', 'a']);
+UPDATE items SET data = data || other_data;
 ```
 
-The `||` operator merges two protobuf messages of the same type.
+### Indexing and Evolution
 
-## Indexing
-
-The README documents B-tree expression indexes on extracted fields:
+Expression indexes work on extracted fields:
 
 ```sql
 CREATE INDEX idx_pb_id ON items ((data #> '{Outer, inner, id}'::text[]));
 ```
 
-The project also advertises GIN support for retrieval workflows.
+The README also documents schema evolution as a first-class use case: adding fields is backward-compatible, deprecated fields remain readable if present in older payloads, and re-registering schemas with `ON CONFLICT` is the expected update path.
 
-## Notes
+### Caveats
 
-The upstream README positions `pgproto` as more storage-efficient than JSONB for protobuf-native payloads and highlights protobuf schema evolution, enums, `oneof`, and map/repeated field access as supported use cases.
+- `pgproto` relies on registered runtime schemas; without the descriptor set, path-based extraction cannot interpret the payload.
+- The update helpers do not mutate in place, so they need to be used in `UPDATE ... SET data = ...`.

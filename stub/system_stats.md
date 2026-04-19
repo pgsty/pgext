@@ -1,61 +1,40 @@
-
-
 ## Usage
 
-> [system_stats: system-level statistics for PostgreSQL](https://github.com/EnterpriseDB/system_stats)
+Source: [README](https://github.com/EnterpriseDB/system_stats/blob/master/README.md), [Release v4.0](https://github.com/EnterpriseDB/system_stats/releases/tag/v4.0), [SQL install script](https://github.com/EnterpriseDB/system_stats/blob/master/system_stats--4.0.sql)
 
-system_stats provides SQL functions to access OS-level statistics for monitoring. Supports Linux, macOS, and Windows.
+`system_stats` exposes operating-system metrics through SQL functions. It supports Linux, macOS, and Windows, returning `NULL` for fields that are not meaningful on the current platform.
 
-### Functions
+### Main functions
 
 ```sql
--- Operating system info (name, version, hostname, uptime, etc.)
+CREATE EXTENSION system_stats;
+
 SELECT * FROM pg_sys_os_info();
-
--- CPU info (vendor, model, cores, clock speed, cache sizes)
 SELECT * FROM pg_sys_cpu_info();
-
--- CPU usage (user, system, idle, iowait percentages)
 SELECT * FROM pg_sys_cpu_usage_info();
-
--- Memory info (total, used, free, swap, cache in bytes)
 SELECT * FROM pg_sys_memory_info();
-
--- Disk I/O analysis (reads, writes, bytes, time per device)
 SELECT * FROM pg_sys_io_analysis_info();
-
--- Disk info (filesystem, mount point, total/used/available space)
 SELECT * FROM pg_sys_disk_info();
-
--- Load average (1, 5, 10, 15 minute intervals)
 SELECT * FROM pg_sys_load_avg_info();
-
--- Process info (total, running, sleeping, stopped, zombie counts)
 SELECT * FROM pg_sys_process_info();
-
--- Network info (interface, IP, bytes/packets sent/received, errors)
 SELECT * FROM pg_sys_network_info();
-
--- Per-process CPU and memory usage
 SELECT * FROM pg_sys_cpu_memory_by_process();
 ```
 
-### Security
+These functions cover OS identity, CPU inventory and usage, memory, block-device I/O, disks, load average, process counts, network interfaces, and per-process CPU and memory usage.
 
-Access is restricted to superusers and members of the `monitor_system_stats` role:
+### Access control
 
 ```sql
--- Grant access to a monitoring user
 GRANT monitor_system_stats TO nagios;
-
--- Or grant per-function to pg_monitor
 GRANT EXECUTE ON FUNCTION pg_sys_os_info() TO pg_monitor;
 ```
 
-### Example: System Overview
+- The extension creates a `monitor_system_stats` role and grants execution on the shipped functions to that role.
+- Functions are revoked from `PUBLIC`.
 
-```sql
-SELECT * FROM pg_sys_load_avg_info();  -- load averages
-SELECT memfree, memused, swapfree FROM pg_sys_memory_info();  -- memory
-SELECT * FROM pg_sys_cpu_usage_info();  -- CPU usage breakdown
-```
+### Caveats
+
+- The `monitor_system_stats` role is not dropped automatically when the extension is removed.
+- macOS cannot expose full per-process details for processes owned by other users; those rows may contain only PID and process name.
+- Current v4.0 upstream docs keep the same user-facing function family and security model; the refresh here mainly aligns names, privileges, and platform notes with the current README and SQL script.

@@ -1,56 +1,65 @@
-
 ## Usage
 
-Create a table and turn it into hypertable
+Source: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB changelog](https://github.com/timescale/docs/blob/latest/about/changelog.md), [create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/), [CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/), [continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/), [add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/), [add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
+
+`timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize hypertables, continuous aggregates, automation jobs, and moving older chunks into the columnstore.
+
+### Hypertables
 
 ```sql
-DROP TABLE IF EXISTS ts_test;
-CREATE TABLE ts_test
-(
-    ts TIMESTAMPTZ NOT NULL,
-    id BIGINT,
-    v  INTEGER -- payload
-);
-SELECT create_hypertable('ts_test', by_range('ts'));
+CREATE EXTENSION timescaledb;
 
-INSERT INTO ts_test
-    SELECT now() + (i || ' seconds')::INTERVAL, i, i % 100
-    FROM generate_series(1, 1000000) i;
+CREATE TABLE ts_test (
+  ts timestamptz NOT NULL,
+  id bigint,
+  v integer
+);
+
+SELECT create_hypertable('ts_test', by_range('ts'));
 ```
 
-Continuous Agg Example:
+- `create_hypertable()` still works, but the API docs mark it as old since TimescaleDB 2.20.0 and point new users toward `CREATE TABLE ... WITH (...)`.
+- The current README also shows the newer pattern: `CREATE TABLE ... WITH (tsdb.hypertable)`.
+
+### Continuous aggregates and jobs
 
 ```sql
 CREATE MATERIALIZED VIEW ts_hourly
 WITH (timescaledb.continuous) AS
-  SELECT time_bucket('1 hour', ts) AS bucket,
-         count(*) AS cnt,
-         avg(v)   AS avg_v
-  FROM ts_test
-  GROUP BY bucket;
+SELECT time_bucket('1 hour', ts) AS bucket,
+       count(*) AS cnt,
+       avg(v)   AS avg_v
+FROM ts_test
+GROUP BY bucket;
 
--- Add a refresh policy to keep the continuous aggregate up to date
-SELECT add_continuous_aggregate_policy('ts_hourly',
-    start_offset    => INTERVAL '3 hours',
-    end_offset      => INTERVAL '1 hour',
-    schedule_interval => INTERVAL '1 hour');
+SELECT add_continuous_aggregate_policy(
+  'ts_hourly',
+  start_offset => INTERVAL '3 hours',
+  end_offset => INTERVAL '1 hour',
+  schedule_interval => INTERVAL '1 hour'
+);
+
+SELECT add_job('user_defined_action', '1h');
 ```
 
-Job Scheduling Example:
+- Continuous aggregates require `time_bucket(...)` on the hypertable's time dimension.
+- In TimescaleDB 2.13 and later, real-time aggregates are disabled by default unless configured otherwise.
 
-```sql
-SELECT add_job('SELECT 1','1h', initial_start => now()::timestamptz);
-```
-
-Compression Example:
+### Columnstore
 
 ```sql
 ALTER TABLE ts_test SET (
-    timescaledb.compress,
-    timescaledb.compress_segmentby = 'id',
-    timescaledb.compress_orderby = 'ts'
+  timescaledb.enable_columnstore,
+  timescaledb.orderby = 'ts DESC'
 );
 
--- Add a compression policy to compress chunks older than 1 day
-SELECT add_compression_policy('ts_test', INTERVAL '1 day');
+CALL add_columnstore_policy('ts_test', after => INTERVAL '1 day');
 ```
+
+- The docs treat `add_columnstore_policy()` and `convert_to_columnstore()` as the current APIs.
+- Older compression functions such as `add_compression_policy()` are documented as old APIs replaced by the columnstore interface.
+
+### Caveats
+
+- Upstream tags include `2.26.3`, but the public changelog and visible release notes currently document the `2.26` line mainly through `2.26.0` and `2.26.2`; those notes describe performance and bug-fix work rather than a fundamentally different usage surface.
+- The 2.26 changelog highlights faster columnstore queries, better compressed-data filtering, and chunk-exclusion improvements, so this refresh focuses on current documented APIs instead of patch-level internals.

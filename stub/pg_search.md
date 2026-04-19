@@ -1,91 +1,62 @@
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_search;
-> CREATE INDEX search_idx ON mock_items
-> USING bm25 (id, description, category)
-> WITH (key_field='id');
-> SELECT * FROM mock_items WHERE description @@@ 'keyboard';
-> ```
->
-> Sources: [README](https://github.com/paradedb/paradedb/tree/dev/pg_search), [Quickstart](https://docs.paradedb.com/documentation/getting-started/quickstart), [Install docs](https://docs.paradedb.com/documentation/getting-started/install)
+- Sources: [ParadeDB extension install docs](https://docs.paradedb.com/deploy/self-hosted/extension), [quickstart](https://docs.paradedb.com/documentation/getting-started/quickstart), [v0.23.0 release](https://github.com/paradedb/paradedb/releases/tag/v0.23.0), [pg_search README](https://github.com/paradedb/paradedb/blob/dev/pg_search/README.md)
 
-`pg_search` is ParadeDB's full text search extension for PostgreSQL. It provides BM25-based indexing and querying on heap tables, is built on Tantivy, and the current upstream README states support starts at PostgreSQL 15.
+`pg_search` is ParadeDB's BM25-based search extension for PostgreSQL. The upstream README says support starts at PostgreSQL 15, and the v0.23.0 self-hosted install docs still require preloading the library before `CREATE EXTENSION`.
 
-## Setup
+### Enable And Create The Extension
 
-The upstream installation docs highlight one critical requirement: `pg_search` must be included in `shared_preload_libraries` so its background worker can process index writes.
-
-```ini
+```conf
 shared_preload_libraries = 'pg_search'
 ```
 
-After that:
-
 ```sql
 CREATE EXTENSION pg_search;
-ALTER SYSTEM SET paradedb.pg_search_telemetry TO 'off';
 ```
 
-## Creating a BM25 Index
+The self-hosted extension docs for v0.23.0 describe prebuilt binaries for Postgres 15+.
 
-The quickstart demonstrates creating a BM25 index on a heap table, with a unique key field:
+### Create A BM25 Index
+
+Quickstart examples use the `bm25` access method with a unique key field:
 
 ```sql
 CREATE INDEX search_idx ON mock_items
-USING bm25 (id, description, category, rating, in_stock, created_at, metadata, weight_range)
-WITH (key_field='id');
+USING bm25 (id, description, category, rating)
+WITH (key_field = 'id');
 ```
 
-The existing docs emphasize that the `key_field` must be unique and that BM25 indexes are the core access method for search queries.
+The v0.23.0 release also notes newly tunable BM25 `k1` and `b` parameters per field.
 
-## Querying
+### Query Operators And Helpers
 
-The `@@@` operator performs search queries:
+The current quickstart uses these query operators:
+
+- `|||`: match disjunction, equivalent to `term1 OR term2`.
+- `&&&`: match conjunction, equivalent to `term1 AND term2`.
+
+Examples:
 
 ```sql
-SELECT description, rating, category
+SELECT description, rating
 FROM mock_items
-WHERE description @@@ 'keyboard' AND rating > 2
+WHERE description ||| 'running shoes'
 ORDER BY rating
 LIMIT 5;
-```
 
-ParadeDB also documents helper functions for relevance scoring and snippets:
-
-```sql
-SELECT description, paradedb.score(id)
+SELECT description, pdb.score(id)
 FROM mock_items
-WHERE description @@@ 'keyboard'
-ORDER BY paradedb.score(id) DESC
+WHERE description &&& 'running shoes'
+ORDER BY score DESC
 LIMIT 5;
 
-SELECT description, paradedb.snippet(description), paradedb.score(id)
+SELECT description, pdb.snippet(description), pdb.score(id)
 FROM mock_items
-WHERE description @@@ 'keyboard'
-ORDER BY paradedb.score(id) DESC
+WHERE description ||| 'running shoes'
+ORDER BY score DESC
 LIMIT 5;
 ```
 
-Phrase search is supported with quoted expressions:
+### Notes
 
-```sql
-SELECT description
-FROM mock_items
-WHERE description @@@ '"metal keyboard"';
-```
-
-## Text Configuration
-
-The quickstart also shows that text fields can be wrapped with tokenizer configuration, for example English stemming:
-
-```sql
-CREATE INDEX search_idx ON mock_items
-USING bm25 (id, (description::pdb.simple('stemmer=english')), category)
-WITH (key_field='id');
-```
-
-For deeper setup and operational guidance, the upstream project points to the ParadeDB documentation site as the primary docs surface.
+The development README points users to the docs site for installation and usage instead of documenting SQL details inline. The quickstart is therefore the authoritative usage surface for current `pg_search` syntax, and it reflects the post-0.20 API rather than the older `@@@` examples still found in some secondary materials.

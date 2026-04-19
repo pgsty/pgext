@@ -1,29 +1,53 @@
 ## 用法
 
-- 来源: [Codeberg 仓库](https://codeberg.org/kop/pg_isok), [文档首页](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/index.html), [文档源文件](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/isok.xml)
-- Isok 是面向 PostgreSQL 的查询中心型监控扩展。它关注的是相较于先前已见过的可疑数据模式的变化，而不仅仅是某些行是否存在。
+来源: [official repo](https://codeberg.org/kop/pg_isok), [official docs home](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/index.html), [official reference source](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/isok.xml)
+
+`pg_isok` 是一个基于查询的数据完整性与监控扩展。它不会只报告当前看起来可疑的行，而是保存先前结果，并在后续运行时聚焦于尚未解决或尚未延期的变化。
 
 ```sql
 CREATE SCHEMA isok;
 CREATE EXTENSION pg_isok SCHEMA isok;
+
+SELECT *
+FROM isok.run_isok_queries()
+AS problems;
 ```
 
-## 核心流程
+### 核心对象
 
-该扩展围绕两张表展开：
+- `ISOK_QUERIES`：存储监控查询及其执行设置。
+- `ISOK_RESULTS`：存储被报告的行，以及它们是否已解决或已延期。
+- `run_isok_queries()`：运行所有启用的检查。
+- `run_isok_queries($$VALUES ('check_name')$$)`：只运行指定的检查。
 
-- `ISOK_QUERIES` 存储监控查询
-- `ISOK_RESULTS` 存储发现的问题及其处理状态
+### 典型流程
 
-通过 `run_isok_queries()` 运行监控：
+运行一个具名检查：
 
 ```sql
-SELECT * FROM run_isok_queries();
-SELECT * FROM run_isok_queries($$VALUES ('new_countries')$$) AS problems;
+SELECT *
+FROM isok.run_isok_queries($$VALUES ('new_countries')$$)
+AS problems;
 ```
 
-`ISOK_RESULTS` 中的行可以标记为已解决或延后，因此后续运行不再将其报告为活动问题。
+通过更新 `ISOK_RESULTS` 接受或推迟一个已知告警：
 
-## 备注
+```sql
+UPDATE isok.isok_results
+SET deferred_to = 'infinity'
+WHERE iqname = 'new_countries';
+```
 
-文档将 Isok 描述为一种“软触发器”风格的数据清理与完整性审查工具。它可在 PostgreSQL 10 及以上版本安装，并且在受管环境中可按纯 SQL 方式构建。
+当某个条件不再需要关注时使用 `resolved`；当它应该隐藏到将来某个时间时使用 `deferred_to`。
+
+### 适用场景
+
+- 导入后的数据清理
+- 监控不常见但有时可接受的模式
+- “软触发器”式的审查流程，即硬约束过于严格时的替代方案
+
+### 注意事项
+
+- 上游建议将它安装在独立 schema 中，并在调用时显式带上 schema。
+- 文档将其描述为纯 SQL 扩展，这在受管 PostgreSQL 服务限制 C 扩展时很有价值。
+- 本仓库的包元数据显示 `superuser=false`，但上游并未把它记录为 trusted extension；应保守对待安装权限。
