@@ -6,6 +6,27 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-04-19
+
+| Package           | Old    | New    | Comment                                  |
+|:------------------|:-------|:-------|:-----------------------------------------|
+| cloudberry        | 2.0.0  | 2.1.0  | bump, split backup and PXF subpackages   |
+| cloudberry-backup | -      | 2.1.0  | new companion package                    |
+| cloudberry-pxf    | -      | 2.1.0  | new companion package                    |
+| oriolepg          | 17.16  | 17.18  | kernel update for orioledb beta15 / 1.7  |
+| orioledb          | 1.6    | 1.7    | bump, paired with oriolepg 17.18         |
+| timescaledb       | 2.26.2 | 2.26.3 | bump                                     |
+| pg_search         | 0.22.6 | 0.23.0 | bump                                     |
+| pg_trickle        | 0.17.0 | 0.20.0 | bump, PG 18 only                         |
+| pg_clickhouse     | 0.1.10 | 0.2.0  | bump                                     |
+| pg_stat_ch        | 0.3.4  | 0.3.6  | bump, PG 16-18                           |
+| pgclone           | 3.6.0  | 4.0.0  | bump                                     |
+| pgproto           | 0.2.4  | 0.3.3  | bump                                     |
+| pgxicor           | 0.1.0  | 0.1.1  | bump                                     |
+| storage_engine    | -      | 1.0.7  | new, PG 14-18                            |
+| re2               | -      | 0.1.1  | new, PG 16-18                            |
+| ulak              | -      | 0.0.2  | new, PG 14-18                            |
+
 ## 2026-04-14
 
 | Package            | Old    | New      | Comment                              |

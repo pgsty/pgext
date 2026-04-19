@@ -6,30 +6,31 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-04-18
+## 2026-04-19
 
-| Name                       | Old            | New             | Comment                                      |
-|:---------------------------|:---------------|:----------------|:---------------------------------------------|
-| victoria-logs              | 1.49.0         | 1.50.0          |                                                     |
-| vlagent                    | 1.49.0         | 1.50.0          | bundled with VictoriaLogs                           |
-| vlogscli                   | 1.49.0         | 1.50.0          | bundled with VictoriaLogs                           |
-| victoria-traces            | 0.8.0          | 0.8.1           |                                                     |
-| dblab                      | 0.37.1         | 0.38.0          |                                                     |
-| grafana-victoriametrics-ds | 0.23.4         | 0.24.0          |                                                     |
-| grafana-plugins            | 12.3.0         | 13.0.0          | noarch plugin bundle, manually consolidated         |
-| garage                     | 2.2.0          | 2.3.0           |                                                     |
-| rustfs                     | 1.0.0-alpha.93 | 1.0.0-alpha.94  |                                                     |
-| claude                     | 2.1.107        | 2.1.114         | rebuilt via versioned release template to latest stable |
-| codex                      | 0.121.0-alpha.7 | 0.121.0        | promoted to stable release; rebuilt                 |
-| genai-toolbox              | 1.0.0          | 1.1.0           | external build artifacts synced from genai-toolbox  |
-| postgrest                  | 14.9           | 14.10           |                                                     |
-| opencode                   | 1.4.3          | 1.4.11          | switched to versioned tarball cache and rebuilt     |
-| uv                         | 0.11.6         | 0.11.7          |                                                     |
-| nodejs                     | 24.14.1        | 24.15.0         | kept on 24.x line                                   |
-| minio                      | 20260325000000 | 20260417000000  | direct-download metadata; pgsty fork build refresh  |
-| mcli                       | 20260321000000 | 20260417000000  | direct-download metadata; pgsty fork build refresh  |
-| sabiql                     | 1.10.0         | 1.11.0          |                                                     |
-| etcd                       | 3.6.8          | 3.6.10          | EL only bump to 3.6.10; APT deferred                |
+| Name                       | Old             | New            | Comment                                                             |
+|:---------------------------|:----------------|:---------------|:--------------------------------------------------------------------|
+| victoria-logs              | 1.49.0          | 1.50.0         |                                                                     |
+| vlagent                    | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                                           |
+| vlogscli                   | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                                           |
+| victoria-traces            | 0.8.0           | 0.8.1          |                                                                     |
+| dblab                      | 0.37.1          | 0.38.0         |                                                                     |
+| grafana-victoriametrics-ds | 0.23.4          | 0.24.0         |                                                                     |
+| grafana-plugins            | 12.3.0          | 13.0.0         | noarch plugin bundle, manually consolidated                         |
+| garage                     | 2.2.0           | 2.3.0          |                                                                     |
+| rustfs                     | 1.0.0-alpha.93  | 1.0.0-alpha.94 |                                                                     |
+| claude                     | 2.1.107         | 2.1.114        | rebuilt via versioned release template to latest stable             |
+| codex                      | 0.121.0-alpha.7 | 0.121.0        | promoted to stable release; rebuilt                                 |
+| genai-toolbox              | 1.0.0           | 1.1.0          | external build artifacts synced from genai-toolbox                  |
+| postgrest                  | 14.9            | 14.10          |                                                                     |
+| opencode                   | 1.4.3           | 1.4.11         | switched to versioned tarball cache and rebuilt                     |
+| uv                         | 0.11.6          | 0.11.7         |                                                                     |
+| nodejs                     | 24.14.1         | 24.15.0        | kept on 24.x line                                                   |
+| minio                      | 20260325000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
+| mcli                       | 20260321000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
+| sabiql                     | 1.10.0          | 1.11.0         |                                                                     |
+| etcd                       | 3.6.8           | 3.6.10         | EL only bump to 3.6.10; APT deferred (after patroni 4.1.1 released) |
+| pig                        | 1.3.4           | 1.4.0          |                                                                     |
 
 ## 2026-04-14
 

@@ -20,10 +20,13 @@ weight: 800
 
 ## PIG Releases
 
-The latest stable version of `pig` is [v1.3.4](https://github.com/pgsty/pig/releases/tag/v1.3.4)
+The latest stable version of `pig` is [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0)
+
+507 extensions, pgrx 0.18.0, more building specs.
 
 |           Version           |    Date    | Summary                                                            |                           GitHub                           |
 |:---------------------------:|:----------:|--------------------------------------------------------------------|:----------------------------------------------------------:|
+| [v1.4.0](/release/pig#v140) | 2026-04-19 | 507 extensions, pgrx 0.18.0, more building specs                   | [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0) |
 | [v1.3.4](/release/pig#v134) | 2026-04-14 | 504 extensions                                                     | [v1.3.4](https://github.com/pgsty/pig/releases/tag/v1.3.4) |
 | [v1.3.3](/release/pig#v133) | 2026-04-10 | 481 extensions and Go 1.26.2 update                                | [v1.3.3](https://github.com/pgsty/pig/releases/tag/v1.3.3) |
 | [v1.3.2](/release/pig#v132) | 2026-03-23 | Routine metadata refresh, new `pg tune`, new build aliases         | [v1.3.2](https://github.com/pgsty/pig/releases/tag/v1.3.2) |
