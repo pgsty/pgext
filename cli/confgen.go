@@ -13,6 +13,17 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
+const el9ARMPatroniVersion = "4.1.2"
+
+func el9ARMPatroniPackages(extra ...string) string {
+	packages := []string{
+		fmt.Sprintf("patroni-%s", el9ARMPatroniVersion),
+		fmt.Sprintf("patroni-etcd-%s", el9ARMPatroniVersion),
+	}
+	packages = append(packages, extra...)
+	return strings.Join(packages, " ")
+}
+
 // GeneratePigstyConfig generates Pigsty configuration for a specific OS
 func GeneratePigstyConfig(osName string, outputDir string, dryRun bool, verbose bool) error {
 	// Parse OS name (e.g., "el9.x86_64" -> osCode="el9", arch="x86_64")
@@ -767,7 +778,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		"getPgsqlUtility": func() string {
 			// For el9.aarch64, lock patroni version due to PGDG upstream issues
 			if g.isEL9ARM() {
-				return "patroni-4.1.1 patroni-etcd-4.1.1 pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer"
+				return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pgbadger", "pg_timetable", "pgFormatter", "pg_filedump", "pgxnclient", "timescaledb-tools", "timescaledb-event-streamer")
 			}
 			return g.constants.RPMCommonPkg[5]
 		},
@@ -775,10 +786,10 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			// For el9.aarch64, lock patroni and pgsql-common versions
 			if g.isEL9ARM() {
 				if key == "pgsql-common" {
-					return "patroni-4.1.1 patroni-etcd-4.1.1 pgbouncer pgbackrest pg_exporter pgbackrest_exporter vip-manager"
+					return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pg_exporter", "pgbackrest_exporter", "vip-manager")
 				}
 				if key == "patroni" {
-					return "patroni-4.1.1 patroni-etcd-4.1.1"
+					return el9ARMPatroniPackages()
 				}
 			}
 			return rpm
