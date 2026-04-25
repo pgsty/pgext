@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.9.1" "postgresql-18-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-17-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-16-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-15-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-14-squeeze : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.9.1" "postgresql-18-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-17-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-16-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-15-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-14-squeeze : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.9.1" "postgresql-18-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-17-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-16-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-15-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-14-squeeze : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.9.1" "postgresql-18-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-17-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-16-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-15-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-14-squeeze : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.9.1" "postgresql-18-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-17-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-16-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-15-squeeze : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.9.1" "postgresql-14-squeeze : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -74,6 +76,8 @@ width: full
 | `postgresql-18-squeeze` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 113.3 KiB | [postgresql-18-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-18-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-squeeze` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 115.4 KiB | [postgresql-18-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-18-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-squeeze` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 110.8 KiB | [postgresql-18-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-18-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-squeeze` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 113.9 KiB | [postgresql-18-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-18-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-squeeze` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 109.3 KiB | [postgresql-18-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-18-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -108,6 +112,8 @@ width: full
 | `postgresql-17-squeeze` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 133.7 KiB | [postgresql-17-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-17-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-squeeze` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 115.3 KiB | [postgresql-17-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-17-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-squeeze` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 110.7 KiB | [postgresql-17-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-17-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-squeeze` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 113.9 KiB | [postgresql-17-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-17-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-squeeze` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 109.3 KiB | [postgresql-17-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-17-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -146,6 +152,8 @@ width: full
 | `postgresql-16-squeeze` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 131.7 KiB | [postgresql-16-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-16-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-squeeze` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 115.0 KiB | [postgresql-16-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-16-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-squeeze` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 110.4 KiB | [postgresql-16-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-16-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-squeeze` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 113.6 KiB | [postgresql-16-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-16-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-squeeze` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 109.1 KiB | [postgresql-16-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-16-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -188,6 +196,8 @@ width: full
 | `postgresql-15-squeeze` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 132.7 KiB | [postgresql-15-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-15-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-squeeze` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 115.2 KiB | [postgresql-15-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-15-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-squeeze` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 110.6 KiB | [postgresql-15-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-15-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-squeeze` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 113.9 KiB | [postgresql-15-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-15-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-squeeze` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 109.3 KiB | [postgresql-15-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-15-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -232,6 +242,8 @@ width: full
 | `postgresql-14-squeeze` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 132.5 KiB | [postgresql-14-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-14-squeeze_1.9.1-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-squeeze` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 115.6 KiB | [postgresql-14-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-14-squeeze_1.9.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-squeeze` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 110.8 KiB | [postgresql-14-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-14-squeeze_1.9.1-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-squeeze` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 114.2 KiB | [postgresql-14-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-14-squeeze_1.9.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-squeeze` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 109.7 KiB | [postgresql-14-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-squeeze/postgresql-14-squeeze_1.9.1-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

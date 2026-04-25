@@ -55,6 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.14" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.14" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.14" "postgresql-18-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-17-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-16-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-15-pg-ivm : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.14" "postgresql-14-pg-ivm : AVAIL 2" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.13" "postgresql-18-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-17-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-16-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-15-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-14-pg-ivm : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.13" "postgresql-18-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-17-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-16-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-15-pg-ivm : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.13" "postgresql-14-pg-ivm : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -102,6 +104,8 @@ width: full
 | `postgresql-18-pg-ivm` | `1.13` | [u24.x86_64](/os/u24.x86_64) | pgdg | 118.7 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-ivm` | `1.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 123.0 KiB | [postgresql-18-pg-ivm_1.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.14-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-ivm` | `1.13` | [u24.aarch64](/os/u24.aarch64) | pgdg | 114.9 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.1 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-18-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -158,6 +162,8 @@ width: full
 | `postgresql-17-pg-ivm` | `1.13` | [u24.x86_64](/os/u24.x86_64) | pgdg | 118.3 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-ivm` | `1.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 122.8 KiB | [postgresql-17-pg-ivm_1.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.14-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-ivm` | `1.13` | [u24.aarch64](/os/u24.aarch64) | pgdg | 114.7 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 116.8 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-17-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -218,6 +224,8 @@ width: full
 | `postgresql-16-pg-ivm` | `1.13` | [u24.x86_64](/os/u24.x86_64) | pgdg | 118.1 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-ivm` | `1.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 122.7 KiB | [postgresql-16-pg-ivm_1.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.14-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-ivm` | `1.13` | [u24.aarch64](/os/u24.aarch64) | pgdg | 114.7 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.0 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.5 KiB | [postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-16-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -298,6 +306,8 @@ width: full
 | `postgresql-15-pg-ivm` | `1.13` | [u24.x86_64](/os/u24.x86_64) | pgdg | 118.3 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-ivm` | `1.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 123.0 KiB | [postgresql-15-pg-ivm_1.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.14-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-ivm` | `1.13` | [u24.aarch64](/os/u24.aarch64) | pgdg | 115.2 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 117.1 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 113.6 KiB | [postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-15-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -385,6 +395,8 @@ width: full
 | `postgresql-14-pg-ivm` | `1.13` | [u24.x86_64](/os/u24.x86_64) | pgdg | 208.9 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-ivm` | `1.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 216.0 KiB | [postgresql-14-pg-ivm_1.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.14-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-ivm` | `1.13` | [u24.aarch64](/os/u24.aarch64) | pgdg | 202.0 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-ivm` | `1.13` | [u26.x86_64](/os/u26.x86_64) | pgdg | 206.0 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-ivm` | `1.13` | [u26.aarch64](/os/u26.aarch64) | pgdg | 198.6 KiB | [postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-ivm/postgresql-14-pg-ivm_1.13-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

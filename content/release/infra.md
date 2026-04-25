@@ -6,6 +6,25 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-04-25
+
+| Name                  | Old     | New     | Comment                                      |
+|:----------------------|:--------|:--------|:---------------------------------------------|
+| grafana               | 13.0.0  | 13.0.1  | direct-download metadata refresh             |
+| vector                | 0.54.0  | 0.55.0  | direct-download metadata refresh             |
+| keepalived_exporter   | 1.7.0   | 1.7.1   |                                              |
+| seaweedfs             | 4.20    | 4.21    |                                              |
+| tigerbeetle           | 0.17.0  | 0.17.1  |                                              |
+| agentsview            | 0.22.2  | 0.25.0  |                                              |
+| claude                | 2.1.114 | 2.1.119 | downloaded through 8118 proxy and verified   |
+| codex                 | 0.121.0 | 0.125.0 |                                              |
+| stalwart              | 0.15.5  | 0.16.0  |                                              |
+| opencode              | 1.4.11  | 1.14.24 |                                              |
+| crush                 | 0.57.0  | 0.62.1  | direct-download metadata refresh             |
+| rclone                | 1.73.4  | 1.73.5  | direct-download metadata refresh             |
+| code-server           | 4.115.0 | 4.117.0 | direct-download metadata refresh             |
+| pig                   | 1.4.0   | 1.4.1   | metadata only; artifacts handled separately  |
+
 ## 2026-04-19
 
 | Name                       | Old             | New            | Comment                                                             |
@@ -29,7 +48,7 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | minio                      | 20260325000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
 | mcli                       | 20260321000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
 | sabiql                     | 1.10.0          | 1.11.0         |                                                                     |
-| etcd                       | 3.6.8           | 3.6.10         | EL only bump to 3.6.10; APT deferred (after patroni 4.1.1 released) |
+| etcd                       | 3.6.8           | 3.6.10         | unified package version                                      |
 | pig                        | 1.3.4           | 1.4.0          |                                                                     |
 
 ## 2026-04-14

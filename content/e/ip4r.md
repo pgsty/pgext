@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.4.2" "postgresql-18-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-17-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-16-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-15-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-14-ip4r : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.4.2" "postgresql-18-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-17-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-16-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-15-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-14-ip4r : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.4.2" "postgresql-18-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-17-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-16-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-15-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-14-ip4r : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.4.2" "postgresql-18-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-17-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-16-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-15-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-14-ip4r : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.4.2" "postgresql-18-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-17-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-16-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-15-ip4r : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.4.2" "postgresql-14-ip4r : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -74,6 +76,8 @@ width: full
 | `postgresql-18-ip4r` | `2.4.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 176.4 KiB | [postgresql-18-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-18-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-ip4r` | `2.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 176.9 KiB | [postgresql-18-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-18-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-ip4r` | `2.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 171.9 KiB | [postgresql-18-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-18-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-ip4r` | `2.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 174.5 KiB | [postgresql-18-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-18-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-ip4r` | `2.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 170.8 KiB | [postgresql-18-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-18-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -94,6 +98,8 @@ width: full
 | `postgresql-17-ip4r` | `2.4.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 189.6 KiB | [postgresql-17-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-17-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-ip4r` | `2.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 176.8 KiB | [postgresql-17-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-17-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-ip4r` | `2.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 171.7 KiB | [postgresql-17-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-17-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-ip4r` | `2.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 174.6 KiB | [postgresql-17-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-17-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-ip4r` | `2.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 170.3 KiB | [postgresql-17-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-17-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -114,6 +120,8 @@ width: full
 | `postgresql-16-ip4r` | `2.4.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 189.4 KiB | [postgresql-16-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-16-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-ip4r` | `2.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 176.9 KiB | [postgresql-16-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-16-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-ip4r` | `2.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 171.9 KiB | [postgresql-16-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-16-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-ip4r` | `2.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 175.0 KiB | [postgresql-16-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-16-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-ip4r` | `2.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 170.3 KiB | [postgresql-16-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-16-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -138,6 +146,8 @@ width: full
 | `postgresql-15-ip4r` | `2.4.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 187.5 KiB | [postgresql-15-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-15-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-ip4r` | `2.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 175.0 KiB | [postgresql-15-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-15-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-ip4r` | `2.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 170.2 KiB | [postgresql-15-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-15-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-ip4r` | `2.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 172.9 KiB | [postgresql-15-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-15-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-ip4r` | `2.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 169.3 KiB | [postgresql-15-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-15-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -161,6 +171,8 @@ width: full
 | `postgresql-14-ip4r` | `2.4.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 187.4 KiB | [postgresql-14-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-14-ip4r_2.4.2-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-ip4r` | `2.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 175.0 KiB | [postgresql-14-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-14-ip4r_2.4.2-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-ip4r` | `2.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 170.2 KiB | [postgresql-14-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-14-ip4r_2.4.2-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-ip4r` | `2.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 173.5 KiB | [postgresql-14-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-14-ip4r_2.4.2-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-ip4r` | `2.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 168.7 KiB | [postgresql-14-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/ip4r/postgresql-14-ip4r_2.4.2-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

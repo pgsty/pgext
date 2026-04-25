@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 2" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -120,6 +122,10 @@ width: full
 | `postgresql-18-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.1 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.4 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.3 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.3 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-pg-background` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -189,6 +195,10 @@ width: full
 | `postgresql-17-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.0 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.0 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.3 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.3 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-pg-background` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -258,6 +268,10 @@ width: full
 | `postgresql-16-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.3 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-pg-background` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.2 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -331,6 +345,10 @@ width: full
 | `postgresql-15-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.3 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.3 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 58.1 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.4 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-pg-background` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.3 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -400,6 +418,10 @@ width: full
 | `postgresql-14-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 82.0 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 90.9 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 81.8 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 83.2 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 82.9 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 81.1 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-pg-background` | `1.9.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.9 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

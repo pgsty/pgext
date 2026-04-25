@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.2" "postgresql-18-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-17-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-16-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-15-q3c : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.2" "postgresql-14-q3c : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -85,6 +87,8 @@ width: full
 | `postgresql-18-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 153.4 KiB | [postgresql-18-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 127.0 KiB | [postgresql-18-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 155.2 KiB | [postgresql-18-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-q3c` | `2.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 143.8 KiB | [postgresql-18-q3c_2.0.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-q3c` | `2.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 148.8 KiB | [postgresql-18-q3c_2.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-18-q3c_2.0.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-17-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 136.8 KiB | [postgresql-17-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 126.9 KiB | [postgresql-17-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 148.9 KiB | [postgresql-17-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-q3c` | `2.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 140.4 KiB | [postgresql-17-q3c_2.0.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-q3c` | `2.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 150.2 KiB | [postgresql-17-q3c_2.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-17-q3c_2.0.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -149,6 +155,8 @@ width: full
 | `postgresql-16-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 158.2 KiB | [postgresql-16-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 126.7 KiB | [postgresql-16-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 154.6 KiB | [postgresql-16-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-q3c` | `2.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 133.2 KiB | [postgresql-16-q3c_2.0.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-q3c` | `2.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 165.8 KiB | [postgresql-16-q3c_2.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-16-q3c_2.0.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -181,6 +189,8 @@ width: full
 | `postgresql-15-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 162.2 KiB | [postgresql-15-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 158.2 KiB | [postgresql-15-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 153.8 KiB | [postgresql-15-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-q3c` | `2.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 156.5 KiB | [postgresql-15-q3c_2.0.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-q3c` | `2.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 141.0 KiB | [postgresql-15-q3c_2.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-15-q3c_2.0.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -213,6 +223,8 @@ width: full
 | `postgresql-14-q3c` | `2.0.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 162.5 KiB | [postgresql-14-q3c_2.0.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-q3c` | `2.0.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 145.2 KiB | [postgresql-14-q3c_2.0.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-q3c` | `2.0.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 147.0 KiB | [postgresql-14-q3c_2.0.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-q3c` | `2.0.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 135.5 KiB | [postgresql-14-q3c_2.0.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-q3c` | `2.0.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 137.1 KiB | [postgresql-14-q3c_2.0.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-q3c/postgresql-14-q3c_2.0.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

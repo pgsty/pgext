@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.8.0" "postgresql-18-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-17-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-16-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-15-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-14-oracle-fdw : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.8.0" "postgresql-18-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-17-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-16-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-15-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-14-oracle-fdw : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.8.0" "postgresql-18-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-17-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-16-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-15-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-14-oracle-fdw : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.8.0" "postgresql-18-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-17-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-16-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-15-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-14-oracle-fdw : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.8.0" "postgresql-18-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-17-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-16-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-15-oracle-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.0" "postgresql-14-oracle-fdw : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -81,6 +83,8 @@ width: full
 | `postgresql-18-oracle-fdw` | `2.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 67.7 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-oracle-fdw` | `2.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 73.4 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-oracle-fdw` | `2.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 67.7 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.5 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.7 KiB | [postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-18-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -114,6 +118,8 @@ width: full
 | `postgresql-17-oracle-fdw` | `2.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 67.6 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-oracle-fdw` | `2.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 73.7 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-oracle-fdw` | `2.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 67.7 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.4 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.7 KiB | [postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-17-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -151,6 +157,8 @@ width: full
 | `postgresql-16-oracle-fdw` | `2.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 67.7 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-oracle-fdw` | `2.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 73.9 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-oracle-fdw` | `2.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 67.8 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.5 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 67.8 KiB | [postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-16-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -194,6 +202,8 @@ width: full
 | `postgresql-15-oracle-fdw` | `2.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 69.6 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.5 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-oracle-fdw` | `2.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 69.6 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 76.0 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.6 KiB | [postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-15-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -238,6 +248,8 @@ width: full
 | `postgresql-14-oracle-fdw` | `2.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 70.0 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.9 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-oracle-fdw` | `2.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 69.9 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-oracle-fdw` | `2.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 76.4 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-oracle-fdw` | `2.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 69.9 KiB | [postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/oracle-fdw/postgresql-14-oracle-fdw_2.8.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

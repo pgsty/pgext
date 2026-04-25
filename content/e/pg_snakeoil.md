@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4" "postgresql-18-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-17-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-16-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-15-snakeoil : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4" "postgresql-14-snakeoil : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-snakeoil` | `1.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 16.4 KiB | [postgresql-18-snakeoil_1.4-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-snakeoil` | `1.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 16.9 KiB | [postgresql-18-snakeoil_1.4-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-snakeoil` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-18-snakeoil_1.4-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-snakeoil` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 16.9 KiB | [postgresql-18-snakeoil_1.4-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-snakeoil` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.6 KiB | [postgresql-18-snakeoil_1.4-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-18-snakeoil_1.4-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -105,6 +109,8 @@ width: full
 | `postgresql-17-snakeoil` | `1.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 17.0 KiB | [postgresql-17-snakeoil_1.4-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-snakeoil` | `1.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 16.9 KiB | [postgresql-17-snakeoil_1.4-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-snakeoil` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-17-snakeoil_1.4-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-snakeoil` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.0 KiB | [postgresql-17-snakeoil_1.4-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-snakeoil` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.7 KiB | [postgresql-17-snakeoil_1.4-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-17-snakeoil_1.4-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -131,6 +137,8 @@ width: full
 | `postgresql-16-snakeoil` | `1.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 17.0 KiB | [postgresql-16-snakeoil_1.4-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-snakeoil` | `1.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 16.9 KiB | [postgresql-16-snakeoil_1.4-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-snakeoil` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.4 KiB | [postgresql-16-snakeoil_1.4-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-snakeoil` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.0 KiB | [postgresql-16-snakeoil_1.4-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-snakeoil` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.7 KiB | [postgresql-16-snakeoil_1.4-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-16-snakeoil_1.4-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-15-snakeoil` | `1.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 17.2 KiB | [postgresql-15-snakeoil_1.4-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-snakeoil` | `1.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 17.0 KiB | [postgresql-15-snakeoil_1.4-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-snakeoil` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.5 KiB | [postgresql-15-snakeoil_1.4-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-snakeoil` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.1 KiB | [postgresql-15-snakeoil_1.4-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-snakeoil` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-15-snakeoil_1.4-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-15-snakeoil_1.4-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -183,6 +193,8 @@ width: full
 | `postgresql-14-snakeoil` | `1.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 17.1 KiB | [postgresql-14-snakeoil_1.4-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-snakeoil` | `1.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 17.0 KiB | [postgresql-14-snakeoil_1.4-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-snakeoil` | `1.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 16.5 KiB | [postgresql-14-snakeoil_1.4-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-snakeoil` | `1.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 17.1 KiB | [postgresql-14-snakeoil_1.4-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-snakeoil` | `1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-14-snakeoil_1.4-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-snakeoil/postgresql-14-snakeoil_1.4-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

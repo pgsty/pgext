@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.20220917" "postgresql-18-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-17-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-16-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-15-plsh : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.20220917" "postgresql-14-plsh : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-plsh` | `1.20220917` | [u22.aarch64](/os/u22.aarch64) | pgdg | 28.7 KiB | [postgresql-18-plsh_1.20220917-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-plsh` | `1.20220917` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.6 KiB | [postgresql-18-plsh_1.20220917-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.2 KiB | [postgresql-18-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.8 KiB | [postgresql-18-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-18-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-18-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-plsh` | `1.20220917` | [u22.aarch64](/os/u22.aarch64) | pgdg | 33.2 KiB | [postgresql-17-plsh_1.20220917-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-plsh` | `1.20220917` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.6 KiB | [postgresql-17-plsh_1.20220917-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.2 KiB | [postgresql-17-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.7 KiB | [postgresql-17-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-17-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-17-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -113,6 +119,8 @@ width: full
 | `postgresql-16-plsh` | `1.20220917` | [u22.aarch64](/os/u22.aarch64) | pgdg | 32.8 KiB | [postgresql-16-plsh_1.20220917-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-plsh` | `1.20220917` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.6 KiB | [postgresql-16-plsh_1.20220917-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 27.1 KiB | [postgresql-16-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.7 KiB | [postgresql-16-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.3 KiB | [postgresql-16-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-16-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +141,8 @@ width: full
 | `postgresql-15-plsh` | `1.20220917` | [u22.aarch64](/os/u22.aarch64) | pgdg | 32.6 KiB | [postgresql-15-plsh_1.20220917-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-plsh` | `1.20220917` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.3 KiB | [postgresql-15-plsh_1.20220917-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.9 KiB | [postgresql-15-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.5 KiB | [postgresql-15-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.0 KiB | [postgresql-15-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-15-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -154,6 +164,8 @@ width: full
 | `postgresql-14-plsh` | `1.20220917` | [u22.aarch64](/os/u22.aarch64) | pgdg | 32.5 KiB | [postgresql-14-plsh_1.20220917-4.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-plsh` | `1.20220917` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.2 KiB | [postgresql-14-plsh_1.20220917-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-plsh` | `1.20220917` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.8 KiB | [postgresql-14-plsh_1.20220917-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-plsh` | `1.20220917` | [u26.x86_64](/os/u26.x86_64) | pgdg | 27.5 KiB | [postgresql-14-plsh_1.20220917-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-plsh` | `1.20220917` | [u26.aarch64](/os/u26.aarch64) | pgdg | 27.0 KiB | [postgresql-14-plsh_1.20220917-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plsh/postgresql-14-plsh_1.20220917-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

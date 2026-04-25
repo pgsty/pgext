@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-tdigest` | `1.4.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 57.0 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-tdigest` | `1.4.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 57.7 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-tdigest` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 56.9 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.3 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -97,6 +101,8 @@ width: full
 | `postgresql-17-tdigest` | `1.4.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 59.3 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-tdigest` | `1.4.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 57.6 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-tdigest` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 56.9 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -117,6 +123,8 @@ width: full
 | `postgresql-16-tdigest` | `1.4.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 59.3 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-tdigest` | `1.4.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 57.6 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-tdigest` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 56.9 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -141,6 +149,8 @@ width: full
 | `postgresql-15-tdigest` | `1.4.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 59.5 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-tdigest` | `1.4.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 57.6 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-tdigest` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 56.9 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.7 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -165,6 +175,8 @@ width: full
 | `postgresql-14-tdigest` | `1.4.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 59.4 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-tdigest` | `1.4.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 57.5 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-tdigest` | `1.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 56.9 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-tdigest` | `1.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 57.2 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-14-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

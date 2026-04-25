@@ -56,6 +56,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.6.7" "postgresql-18-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-17-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-16-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-15-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-14-cron : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.6.7" "postgresql-18-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-17-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-16-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-15-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-14-cron : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.6.7" "postgresql-18-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-17-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-16-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-15-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-14-cron : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.6.7" "postgresql-18-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-17-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-16-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-15-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-14-cron : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.6.7" "postgresql-18-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-17-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-16-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-15-cron : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.7" "postgresql-14-cron : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -77,6 +79,8 @@ width: full
 | `postgresql-18-cron` | `1.6.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 86.1 KiB | [postgresql-18-cron_1.6.7-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-cron` | `1.6.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.7 KiB | [postgresql-18-cron_1.6.7-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-cron` | `1.6.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 84.6 KiB | [postgresql-18-cron_1.6.7-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-cron` | `1.6.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 86.5 KiB | [postgresql-18-cron_1.6.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.7 KiB | [postgresql-18-cron_1.6.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-18-cron_1.6.7-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -107,6 +111,8 @@ width: full
 | `postgresql-17-cron` | `1.6.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 97.9 KiB | [postgresql-17-cron_1.6.7-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-cron` | `1.6.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.6 KiB | [postgresql-17-cron_1.6.7-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-cron` | `1.6.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 84.5 KiB | [postgresql-17-cron_1.6.7-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-cron` | `1.6.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 86.6 KiB | [postgresql-17-cron_1.6.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.6 KiB | [postgresql-17-cron_1.6.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-17-cron_1.6.7-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -153,6 +159,8 @@ width: full
 | `postgresql-16-cron` | `1.6.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 97.5 KiB | [postgresql-16-cron_1.6.7-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-cron` | `1.6.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 87.4 KiB | [postgresql-16-cron_1.6.7-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-cron` | `1.6.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 84.5 KiB | [postgresql-16-cron_1.6.7-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-cron` | `1.6.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 86.6 KiB | [postgresql-16-cron_1.6.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 83.6 KiB | [postgresql-16-cron_1.6.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-16-cron_1.6.7-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -211,6 +219,8 @@ width: full
 | `postgresql-15-cron` | `1.6.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 100.0 KiB | [postgresql-15-cron_1.6.7-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-cron` | `1.6.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 88.9 KiB | [postgresql-15-cron_1.6.7-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-cron` | `1.6.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 86.4 KiB | [postgresql-15-cron_1.6.7-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-cron` | `1.6.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 87.1 KiB | [postgresql-15-cron_1.6.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 85.0 KiB | [postgresql-15-cron_1.6.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-15-cron_1.6.7-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -271,6 +281,8 @@ width: full
 | `postgresql-14-cron` | `1.6.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 99.8 KiB | [postgresql-14-cron_1.6.7-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-cron` | `1.6.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 88.9 KiB | [postgresql-14-cron_1.6.7-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-cron` | `1.6.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 86.4 KiB | [postgresql-14-cron_1.6.7-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-cron` | `1.6.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 87.0 KiB | [postgresql-14-cron_1.6.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-cron` | `1.6.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 84.8 KiB | [postgresql-14-cron_1.6.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-cron/postgresql-14-cron_1.6.7-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

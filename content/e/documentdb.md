@@ -55,6 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.109" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-15-documentdb : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-documentdb : MISS 0" "red" >}}      |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.109" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-15-documentdb : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-documentdb : MISS 0" "red" >}}      |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.109" "postgresql-18-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-17-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-16-documentdb : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.109" "postgresql-15-documentdb : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-documentdb : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.108" "postgresql-18-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-17-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-16-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-15-documentdb : AVAIL 1" "blue" >}} |      {{< bg "MISS" "postgresql-14-documentdb : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.108" "postgresql-18-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-17-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-16-documentdb : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.108" "postgresql-15-documentdb : AVAIL 1" "blue" >}} |      {{< bg "MISS" "postgresql-14-documentdb : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15" >}}
@@ -78,6 +80,8 @@ width: full
 | `postgresql-18-documentdb` | `0.109` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.1 MiB | [postgresql-18-documentdb_0.109-0PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/documentdb/postgresql-18-documentdb_0.109-0PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-documentdb` | `0.109` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.1 MiB | [postgresql-18-documentdb_0.109-0PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-18-documentdb_0.109-0PIGSTY~noble_amd64.deb) |
 | `postgresql-18-documentdb` | `0.109` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.0 MiB | [postgresql-18-documentdb_0.109-0PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-18-documentdb_0.109-0PIGSTY~noble_arm64.deb) |
+| `postgresql-18-documentdb` | `0.108` | [u26.x86_64](/os/u26.x86_64) | pgdg | 4.5 MiB | [postgresql-18-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-18-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-documentdb` | `0.108` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.3 MiB | [postgresql-18-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-18-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -100,6 +104,8 @@ width: full
 | `postgresql-17-documentdb` | `0.109` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.5 MiB | [postgresql-17-documentdb_0.109-0PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/documentdb/postgresql-17-documentdb_0.109-0PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-documentdb` | `0.109` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.1 MiB | [postgresql-17-documentdb_0.109-0PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-17-documentdb_0.109-0PIGSTY~noble_amd64.deb) |
 | `postgresql-17-documentdb` | `0.109` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.0 MiB | [postgresql-17-documentdb_0.109-0PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-17-documentdb_0.109-0PIGSTY~noble_arm64.deb) |
+| `postgresql-17-documentdb` | `0.108` | [u26.x86_64](/os/u26.x86_64) | pgdg | 4.5 MiB | [postgresql-17-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-17-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-documentdb` | `0.108` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.3 MiB | [postgresql-17-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-17-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -122,6 +128,8 @@ width: full
 | `postgresql-16-documentdb` | `0.109` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.5 MiB | [postgresql-16-documentdb_0.109-0PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/documentdb/postgresql-16-documentdb_0.109-0PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-documentdb` | `0.109` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.1 MiB | [postgresql-16-documentdb_0.109-0PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-16-documentdb_0.109-0PIGSTY~noble_amd64.deb) |
 | `postgresql-16-documentdb` | `0.109` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.0 MiB | [postgresql-16-documentdb_0.109-0PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-16-documentdb_0.109-0PIGSTY~noble_arm64.deb) |
+| `postgresql-16-documentdb` | `0.108` | [u26.x86_64](/os/u26.x86_64) | pgdg | 4.5 MiB | [postgresql-16-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-16-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-documentdb` | `0.108` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.3 MiB | [postgresql-16-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-16-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -144,6 +152,8 @@ width: full
 | `postgresql-15-documentdb` | `0.109` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.5 MiB | [postgresql-15-documentdb_0.109-0PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/documentdb/postgresql-15-documentdb_0.109-0PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-documentdb` | `0.109` | [u24.x86_64](/os/u24.x86_64) | pigsty | 5.2 MiB | [postgresql-15-documentdb_0.109-0PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-15-documentdb_0.109-0PIGSTY~noble_amd64.deb) |
 | `postgresql-15-documentdb` | `0.109` | [u24.aarch64](/os/u24.aarch64) | pigsty | 5.1 MiB | [postgresql-15-documentdb_0.109-0PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/documentdb/postgresql-15-documentdb_0.109-0PIGSTY~noble_arm64.deb) |
+| `postgresql-15-documentdb` | `0.108` | [u26.x86_64](/os/u26.x86_64) | pgdg | 4.5 MiB | [postgresql-15-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-15-documentdb_0.108-0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-documentdb` | `0.108` | [u26.aarch64](/os/u26.aarch64) | pgdg | 4.4 MiB | [postgresql-15-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/d/documentdb/postgresql-15-documentdb_0.108-0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

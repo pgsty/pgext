@@ -223,6 +223,10 @@ func (g *OSGenerator) generateOSFrontmatter(osInfo *OSInfo, locale string) strin
 		weight = 930
 	case "u24.aarch64":
 		weight = 931
+	case "u26.x86_64":
+		weight = 940
+	case "u26.aarch64":
+		weight = 941
 	}
 
 	isZh := locale == "zh"

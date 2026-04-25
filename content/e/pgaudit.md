@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-pgaudit` | `18.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 47.9 KiB | [postgresql-18-pgaudit_18.0-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pgaudit` | `18.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 47.3 KiB | [postgresql-18-pgaudit_18.0-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgaudit` | `18.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 46.5 KiB | [postgresql-18-pgaudit_18.0-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pgaudit` | `18.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 47.1 KiB | [postgresql-18-pgaudit_18.0-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgaudit` | `18.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 46.7 KiB | [postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -99,6 +103,8 @@ width: full
 | `postgresql-17-pgaudit` | `17.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 52.0 KiB | [postgresql-17-pgaudit_17.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pgaudit` | `17.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 46.2 KiB | [postgresql-17-pgaudit_17.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pgaudit` | `17.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.9 KiB | [postgresql-17-pgaudit_17.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pgaudit` | `17.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 46.2 KiB | [postgresql-17-pgaudit_17.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgaudit` | `17.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.9 KiB | [postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -123,6 +129,8 @@ width: full
 | `postgresql-16-pgaudit` | `16.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 50.7 KiB | [postgresql-16-pgaudit_16.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pgaudit` | `16.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 45.3 KiB | [postgresql-16-pgaudit_16.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pgaudit` | `16.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 45.0 KiB | [postgresql-16-pgaudit_16.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pgaudit` | `16.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.5 KiB | [postgresql-16-pgaudit_16.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgaudit` | `16.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.0 KiB | [postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -149,6 +157,8 @@ width: full
 | `postgresql-15-pgaudit` | `1.7.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 49.5 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pgaudit` | `1.7.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 44.3 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pgaudit` | `1.7.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pgaudit` | `1.7.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.2 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgaudit` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -175,6 +185,8 @@ width: full
 | `postgresql-14-pgaudit` | `1.6.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 48.7 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pgaudit` | `1.6.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 44.2 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgaudit` | `1.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.6 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pgaudit` | `1.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.2 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgaudit` | `1.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.6/postgresql-14-pgaudit_1.6.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

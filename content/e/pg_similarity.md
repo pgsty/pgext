@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-similarity` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 96.2 KiB | [postgresql-18-similarity_1.0-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-similarity` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 97.5 KiB | [postgresql-18-similarity_1.0-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-similarity` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.9 KiB | [postgresql-18-similarity_1.0-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-similarity` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.3 KiB | [postgresql-18-similarity_1.0-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-18-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -101,6 +105,8 @@ width: full
 | `postgresql-17-similarity` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 101.5 KiB | [postgresql-17-similarity_1.0-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-similarity` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 97.6 KiB | [postgresql-17-similarity_1.0-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-similarity` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 95.0 KiB | [postgresql-17-similarity_1.0-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-similarity` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-17-similarity_1.0-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-17-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -123,6 +129,8 @@ width: full
 | `postgresql-16-similarity` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 101.5 KiB | [postgresql-16-similarity_1.0-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-similarity` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 97.5 KiB | [postgresql-16-similarity_1.0-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-similarity` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 95.1 KiB | [postgresql-16-similarity_1.0-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-similarity` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.3 KiB | [postgresql-16-similarity_1.0-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-16-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -145,6 +153,8 @@ width: full
 | `postgresql-15-similarity` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 103.0 KiB | [postgresql-15-similarity_1.0-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-similarity` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.3 KiB | [postgresql-15-similarity_1.0-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-similarity` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 96.4 KiB | [postgresql-15-similarity_1.0-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-similarity` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 97.9 KiB | [postgresql-15-similarity_1.0-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.7 KiB | [postgresql-15-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -167,6 +177,8 @@ width: full
 | `postgresql-14-similarity` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 102.8 KiB | [postgresql-14-similarity_1.0-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-14-similarity_1.0-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-similarity` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.3 KiB | [postgresql-14-similarity_1.0-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-14-similarity_1.0-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-similarity` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 96.4 KiB | [postgresql-14-similarity_1.0-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-14-similarity_1.0-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-similarity` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 97.9 KiB | [postgresql-14-similarity_1.0-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-14-similarity_1.0-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.6 KiB | [postgresql-14-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-14-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

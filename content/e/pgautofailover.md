@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-auto-failover : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.2" "postgresql-18-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-auto-failover : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-auto-failover : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.2" "postgresql-18-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-auto-failover : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.2" "postgresql-18-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-17-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-16-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-15-auto-failover : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.2" "postgresql-14-auto-failover : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -68,6 +70,8 @@ width: full
 | `postgresql-18-auto-failover` | `2.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 374.1 KiB | [postgresql-18-auto-failover_2.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-auto-failover` | `2.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 369.2 KiB | [postgresql-18-auto-failover_2.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-auto-failover` | `2.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 364.7 KiB | [postgresql-18-auto-failover_2.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-auto-failover` | `2.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 368.7 KiB | [postgresql-18-auto-failover_2.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-auto-failover` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 364.4 KiB | [postgresql-18-auto-failover_2.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-18-auto-failover_2.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -88,6 +92,8 @@ width: full
 | `postgresql-17-auto-failover` | `2.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 388.7 KiB | [postgresql-17-auto-failover_2.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-17-auto-failover_2.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-auto-failover` | `2.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 364.9 KiB | [postgresql-17-auto-failover_2.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-17-auto-failover_2.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-auto-failover` | `2.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 362.5 KiB | [postgresql-17-auto-failover_2.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-17-auto-failover_2.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-auto-failover` | `2.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 366.9 KiB | [postgresql-17-auto-failover_2.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-17-auto-failover_2.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-auto-failover` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 361.7 KiB | [postgresql-17-auto-failover_2.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-17-auto-failover_2.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -112,6 +118,8 @@ width: full
 | `postgresql-16-auto-failover` | `2.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 383.4 KiB | [postgresql-16-auto-failover_2.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-16-auto-failover_2.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-auto-failover` | `2.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 358.7 KiB | [postgresql-16-auto-failover_2.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-16-auto-failover_2.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-auto-failover` | `2.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 356.6 KiB | [postgresql-16-auto-failover_2.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-16-auto-failover_2.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-auto-failover` | `2.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 360.7 KiB | [postgresql-16-auto-failover_2.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-16-auto-failover_2.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-auto-failover` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 357.7 KiB | [postgresql-16-auto-failover_2.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-16-auto-failover_2.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -140,6 +148,8 @@ width: full
 | `postgresql-15-auto-failover` | `2.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 388.1 KiB | [postgresql-15-auto-failover_2.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-15-auto-failover_2.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-auto-failover` | `2.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 360.6 KiB | [postgresql-15-auto-failover_2.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-15-auto-failover_2.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-auto-failover` | `2.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 357.6 KiB | [postgresql-15-auto-failover_2.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-15-auto-failover_2.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-auto-failover` | `2.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 363.0 KiB | [postgresql-15-auto-failover_2.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-15-auto-failover_2.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-auto-failover` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 357.8 KiB | [postgresql-15-auto-failover_2.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-15-auto-failover_2.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -171,6 +181,8 @@ width: full
 | `postgresql-14-auto-failover` | `2.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 382.8 KiB | [postgresql-14-auto-failover_2.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-14-auto-failover_2.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-auto-failover` | `2.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 354.8 KiB | [postgresql-14-auto-failover_2.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-14-auto-failover_2.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-auto-failover` | `2.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 350.8 KiB | [postgresql-14-auto-failover_2.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-14-auto-failover_2.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-auto-failover` | `2.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 357.2 KiB | [postgresql-14-auto-failover_2.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-14-auto-failover_2.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-auto-failover` | `2.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 353.5 KiB | [postgresql-14-auto-failover_2.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-auto-failover/postgresql-14-auto-failover_2.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

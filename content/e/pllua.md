@@ -57,6 +57,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.12" "postgresql-18-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-17-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-16-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-15-pllua : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.12" "postgresql-14-pllua : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -72,6 +74,8 @@ width: full
 | `postgresql-18-pllua` | `2.0.12` | [u22.aarch64](/os/u22.aarch64) | pgdg | 341.8 KiB | [postgresql-18-pllua_2.0.12-7.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pllua` | `2.0.12` | [u24.x86_64](/os/u24.x86_64) | pgdg | 347.6 KiB | [postgresql-18-pllua_2.0.12-7.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.4 KiB | [postgresql-18-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 345.1 KiB | [postgresql-18-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 332.1 KiB | [postgresql-18-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-18-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -92,6 +96,8 @@ width: full
 | `postgresql-17-pllua` | `2.0.12` | [u22.aarch64](/os/u22.aarch64) | pgdg | 379.2 KiB | [postgresql-17-pllua_2.0.12-7.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pllua` | `2.0.12` | [u24.x86_64](/os/u24.x86_64) | pgdg | 347.0 KiB | [postgresql-17-pllua_2.0.12-7.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.0 KiB | [postgresql-17-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 344.7 KiB | [postgresql-17-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 331.5 KiB | [postgresql-17-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-17-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -112,6 +118,8 @@ width: full
 | `postgresql-16-pllua` | `2.0.12` | [u22.aarch64](/os/u22.aarch64) | pgdg | 377.5 KiB | [postgresql-16-pllua_2.0.12-7.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pllua` | `2.0.12` | [u24.x86_64](/os/u24.x86_64) | pgdg | 347.1 KiB | [postgresql-16-pllua_2.0.12-7.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 335.1 KiB | [postgresql-16-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 344.8 KiB | [postgresql-16-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 331.8 KiB | [postgresql-16-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-16-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -132,6 +140,8 @@ width: full
 | `postgresql-15-pllua` | `2.0.12` | [u22.aarch64](/os/u22.aarch64) | pgdg | 380.0 KiB | [postgresql-15-pllua_2.0.12-7.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pllua` | `2.0.12` | [u24.x86_64](/os/u24.x86_64) | pgdg | 348.7 KiB | [postgresql-15-pllua_2.0.12-7.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 337.2 KiB | [postgresql-15-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 346.1 KiB | [postgresql-15-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.7 KiB | [postgresql-15-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-15-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -151,6 +161,8 @@ width: full
 | `postgresql-14-pllua` | `2.0.12` | [u22.aarch64](/os/u22.aarch64) | pgdg | 375.8 KiB | [postgresql-14-pllua_2.0.12-7.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pllua` | `2.0.12` | [u24.x86_64](/os/u24.x86_64) | pgdg | 348.9 KiB | [postgresql-14-pllua_2.0.12-7.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pllua` | `2.0.12` | [u24.aarch64](/os/u24.aarch64) | pgdg | 336.7 KiB | [postgresql-14-pllua_2.0.12-7.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pllua` | `2.0.12` | [u26.x86_64](/os/u26.x86_64) | pgdg | 346.3 KiB | [postgresql-14-pllua_2.0.12-7.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pllua` | `2.0.12` | [u26.aarch64](/os/u26.aarch64) | pgdg | 333.1 KiB | [postgresql-14-pllua_2.0.12-7.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pllua/postgresql-14-pllua_2.0.12-7.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -55,6 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.15" "postgresql-18-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-17-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-16-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-15-rum : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.15" "postgresql-14-rum : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -76,6 +78,8 @@ width: full
 | `postgresql-18-rum` | `1.3.15` | [u22.aarch64](/os/u22.aarch64) | pgdg | 232.1 KiB | [postgresql-18-rum_1.3.15-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [u24.x86_64](/os/u24.x86_64) | pgdg | 234.3 KiB | [postgresql-18-rum_1.3.15-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 226.3 KiB | [postgresql-18-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 232.5 KiB | [postgresql-18-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 223.8 KiB | [postgresql-18-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-18-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -102,6 +106,8 @@ width: full
 | `postgresql-17-rum` | `1.3.15` | [u22.aarch64](/os/u22.aarch64) | pgdg | 257.4 KiB | [postgresql-17-rum_1.3.15-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-rum` | `1.3.15` | [u24.x86_64](/os/u24.x86_64) | pgdg | 235.0 KiB | [postgresql-17-rum_1.3.15-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 227.0 KiB | [postgresql-17-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 233.0 KiB | [postgresql-17-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 224.1 KiB | [postgresql-17-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-17-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -132,6 +138,8 @@ width: full
 | `postgresql-16-rum` | `1.3.15` | [u22.aarch64](/os/u22.aarch64) | pgdg | 256.7 KiB | [postgresql-16-rum_1.3.15-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-rum` | `1.3.15` | [u24.x86_64](/os/u24.x86_64) | pgdg | 234.9 KiB | [postgresql-16-rum_1.3.15-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 226.9 KiB | [postgresql-16-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 232.8 KiB | [postgresql-16-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 224.1 KiB | [postgresql-16-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-16-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -156,6 +164,8 @@ width: full
 | `postgresql-15-rum` | `1.3.15` | [u22.aarch64](/os/u22.aarch64) | pgdg | 316.2 KiB | [postgresql-15-rum_1.3.15-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-rum` | `1.3.15` | [u24.x86_64](/os/u24.x86_64) | pgdg | 288.9 KiB | [postgresql-15-rum_1.3.15-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 279.2 KiB | [postgresql-15-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 287.3 KiB | [postgresql-15-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 276.8 KiB | [postgresql-15-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-15-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -181,6 +191,8 @@ width: full
 | `postgresql-14-rum` | `1.3.15` | [u22.aarch64](/os/u22.aarch64) | pgdg | 314.5 KiB | [postgresql-14-rum_1.3.15-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-rum` | `1.3.15` | [u24.x86_64](/os/u24.x86_64) | pgdg | 287.2 KiB | [postgresql-14-rum_1.3.15-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-rum` | `1.3.15` | [u24.aarch64](/os/u24.aarch64) | pgdg | 277.8 KiB | [postgresql-14-rum_1.3.15-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-rum` | `1.3.15` | [u26.x86_64](/os/u26.x86_64) | pgdg | 284.9 KiB | [postgresql-14-rum_1.3.15-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-rum` | `1.3.15` | [u26.aarch64](/os/u26.aarch64) | pgdg | 274.7 KiB | [postgresql-14-rum_1.3.15-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-rum/postgresql-14-rum_1.3.15-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

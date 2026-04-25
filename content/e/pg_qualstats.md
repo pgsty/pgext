@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.1.3" "postgresql-18-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-17-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-16-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-15-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-14-pg-qualstats : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.1.3" "postgresql-18-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-17-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-16-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-15-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-14-pg-qualstats : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.1.3" "postgresql-18-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-17-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-16-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-15-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-14-pg-qualstats : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.1.3" "postgresql-18-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-17-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-16-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-15-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-14-pg-qualstats : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.3" "postgresql-18-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-17-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-16-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-15-pg-qualstats : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.3" "postgresql-14-pg-qualstats : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-pg-qualstats` | `2.1.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 54.8 KiB | [postgresql-18-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-18-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-qualstats` | `2.1.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 54.1 KiB | [postgresql-18-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-18-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-qualstats` | `2.1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.1 KiB | [postgresql-18-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-18-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-qualstats` | `2.1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 53.5 KiB | [postgresql-18-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-18-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-qualstats` | `2.1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.5 KiB | [postgresql-18-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-18-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-pg-qualstats` | `2.1.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 58.9 KiB | [postgresql-17-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-17-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-qualstats` | `2.1.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 54.3 KiB | [postgresql-17-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-17-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-qualstats` | `2.1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.3 KiB | [postgresql-17-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-17-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-qualstats` | `2.1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 53.6 KiB | [postgresql-17-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-17-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-qualstats` | `2.1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.6 KiB | [postgresql-17-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-17-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -121,6 +127,8 @@ width: full
 | `postgresql-16-pg-qualstats` | `2.1.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 58.8 KiB | [postgresql-16-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-16-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-qualstats` | `2.1.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 54.2 KiB | [postgresql-16-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-16-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-qualstats` | `2.1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.3 KiB | [postgresql-16-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-16-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-qualstats` | `2.1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 53.6 KiB | [postgresql-16-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-16-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-qualstats` | `2.1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.7 KiB | [postgresql-16-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-16-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -149,6 +157,8 @@ width: full
 | `postgresql-15-pg-qualstats` | `2.1.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 58.8 KiB | [postgresql-15-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-15-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-qualstats` | `2.1.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 54.3 KiB | [postgresql-15-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-15-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-qualstats` | `2.1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.3 KiB | [postgresql-15-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-15-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-qualstats` | `2.1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 53.7 KiB | [postgresql-15-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-15-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-qualstats` | `2.1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.7 KiB | [postgresql-15-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-15-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -178,6 +188,8 @@ width: full
 | `postgresql-14-pg-qualstats` | `2.1.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 59.5 KiB | [postgresql-14-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-14-pg-qualstats_2.1.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-qualstats` | `2.1.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 54.6 KiB | [postgresql-14-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-14-pg-qualstats_2.1.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-qualstats` | `2.1.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.7 KiB | [postgresql-14-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-14-pg-qualstats_2.1.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-qualstats` | `2.1.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 54.1 KiB | [postgresql-14-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-14-pg-qualstats_2.1.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-qualstats` | `2.1.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.2 KiB | [postgresql-14-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-qualstats/postgresql-14-pg-qualstats_2.1.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

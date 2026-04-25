@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.2.0" "postgresql-18-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-17-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-16-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-15-pgfaceting : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.2.0" "postgresql-14-pgfaceting : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
 | `postgresql-18-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-18-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+| `postgresql-18-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-18-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -103,6 +107,8 @@ width: full
 | `postgresql-17-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
 | `postgresql-17-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-17-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+| `postgresql-17-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-17-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -127,6 +133,8 @@ width: full
 | `postgresql-16-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
 | `postgresql-16-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-16-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+| `postgresql-16-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-16-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -151,6 +159,8 @@ width: full
 | `postgresql-15-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
 | `postgresql-15-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-15-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+| `postgresql-15-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-15-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -175,6 +185,8 @@ width: full
 | `postgresql-14-pgfaceting` | `0.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg22.04+1_all.deb) |
 | `postgresql-14-pgfaceting` | `0.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
 | `postgresql-14-pgfaceting` | `0.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg24.04+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
+| `postgresql-14-pgfaceting` | `0.2.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.7 KiB | [postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfaceting/postgresql-14-pgfaceting_0.2.0-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

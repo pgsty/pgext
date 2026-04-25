@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 5.4.3" "postgresql-18-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-17-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-16-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-15-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-14-partman : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 5.4.3" "postgresql-18-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-17-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-16-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-15-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-14-partman : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 5.4.3" "postgresql-18-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-17-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-16-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-15-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-14-partman : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 5.4.3" "postgresql-18-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-17-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-16-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-15-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-14-partman : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 5.4.3" "postgresql-18-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-17-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-16-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-15-partman : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.4.3" "postgresql-14-partman : AVAIL 2" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -119,6 +121,10 @@ width: full
 | `postgresql-18-partman` | `5.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 230.5 KiB | [postgresql-18-partman_5.4.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-partman` | `5.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.4 KiB | [postgresql-18-partman_5.4.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.3-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-partman` | `5.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.2 KiB | [postgresql-18-partman_5.4.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-partman` | `5.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.3 KiB | [postgresql-18-partman_5.4.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-partman` | `5.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.7 KiB | [postgresql-18-partman_5.4.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.0 KiB | [postgresql-18-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.4 KiB | [postgresql-18-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-18-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -203,6 +209,10 @@ width: full
 | `postgresql-17-partman` | `5.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 230.4 KiB | [postgresql-17-partman_5.4.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-partman` | `5.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.3 KiB | [postgresql-17-partman_5.4.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.3-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-partman` | `5.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.1 KiB | [postgresql-17-partman_5.4.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-partman` | `5.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.2 KiB | [postgresql-17-partman_5.4.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-partman` | `5.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.6 KiB | [postgresql-17-partman_5.4.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-17-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-17-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-17-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -303,6 +313,10 @@ width: full
 | `postgresql-16-partman` | `5.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 230.3 KiB | [postgresql-16-partman_5.4.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-partman` | `5.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.3 KiB | [postgresql-16-partman_5.4.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.3-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-partman` | `5.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.1 KiB | [postgresql-16-partman_5.4.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-partman` | `5.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.2 KiB | [postgresql-16-partman_5.4.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-partman` | `5.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.6 KiB | [postgresql-16-partman_5.4.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-16-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-16-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-16-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -417,6 +431,10 @@ width: full
 | `postgresql-15-partman` | `5.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 230.2 KiB | [postgresql-15-partman_5.4.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-partman` | `5.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.3 KiB | [postgresql-15-partman_5.4.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.3-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-partman` | `5.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.0 KiB | [postgresql-15-partman_5.4.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-partman` | `5.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.2 KiB | [postgresql-15-partman_5.4.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-partman` | `5.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.5 KiB | [postgresql-15-partman_5.4.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-15-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-15-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-15-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -537,6 +555,10 @@ width: full
 | `postgresql-14-partman` | `5.4.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 230.3 KiB | [postgresql-14-partman_5.4.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-partman` | `5.4.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.3 KiB | [postgresql-14-partman_5.4.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.3-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-partman` | `5.4.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 230.0 KiB | [postgresql-14-partman_5.4.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-partman` | `5.4.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.1 KiB | [postgresql-14-partman_5.4.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-partman` | `5.4.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 230.6 KiB | [postgresql-14-partman_5.4.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-partman` | `5.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 229.9 KiB | [postgresql-14-partman_5.4.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.3-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-partman` | `5.4.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 230.3 KiB | [postgresql-14-partman_5.4.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-partman/postgresql-14-partman_5.4.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

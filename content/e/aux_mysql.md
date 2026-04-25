@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-14 : FORK 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-14 : FORK 0" "red" >}}      |
 
 
 {{< tabs items="PG14" >}}

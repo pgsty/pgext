@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 0.3.0" "postgresql-18-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-17-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-16-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-15-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-14-pg-rrule : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 0.3.0" "postgresql-18-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-17-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-16-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-15-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-14-pg-rrule : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.3.0" "postgresql-18-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-17-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-16-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-15-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-14-pg-rrule : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.3.0" "postgresql-18-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-17-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-16-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-15-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-14-pg-rrule : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.3.0" "postgresql-18-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-17-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-16-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-15-pg-rrule : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.3.0" "postgresql-14-pg-rrule : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-pg-rrule` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 23.5 KiB | [postgresql-18-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-18-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-rrule` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 24.4 KiB | [postgresql-18-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-18-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-rrule` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 24.1 KiB | [postgresql-18-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-18-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-rrule` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.1 KiB | [postgresql-18-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-18-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-rrule` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.7 KiB | [postgresql-18-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-18-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -95,6 +99,8 @@ width: full
 | `postgresql-17-pg-rrule` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 25.1 KiB | [postgresql-17-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-17-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-rrule` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 24.4 KiB | [postgresql-17-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-17-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-rrule` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 24.1 KiB | [postgresql-17-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-17-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-rrule` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.2 KiB | [postgresql-17-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-17-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-rrule` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.8 KiB | [postgresql-17-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-17-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -115,6 +121,8 @@ width: full
 | `postgresql-16-pg-rrule` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 25.1 KiB | [postgresql-16-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-16-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-rrule` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 24.4 KiB | [postgresql-16-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-16-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-rrule` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 24.1 KiB | [postgresql-16-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-16-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-rrule` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.2 KiB | [postgresql-16-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-16-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-rrule` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.8 KiB | [postgresql-16-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-16-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -135,6 +143,8 @@ width: full
 | `postgresql-15-pg-rrule` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 24.6 KiB | [postgresql-15-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-15-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-rrule` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 24.5 KiB | [postgresql-15-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-15-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-rrule` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 24.3 KiB | [postgresql-15-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-15-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-rrule` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.3 KiB | [postgresql-15-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-15-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-rrule` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.9 KiB | [postgresql-15-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-15-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -155,6 +165,8 @@ width: full
 | `postgresql-14-pg-rrule` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 24.6 KiB | [postgresql-14-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-14-pg-rrule_0.3.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-rrule` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 24.5 KiB | [postgresql-14-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-14-pg-rrule_0.3.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-rrule` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 24.2 KiB | [postgresql-14-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-14-pg-rrule_0.3.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-rrule` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 24.4 KiB | [postgresql-14-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-14-pg-rrule_0.3.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-rrule` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 24.7 KiB | [postgresql-14-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rrule/postgresql-14-pg-rrule_0.3.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

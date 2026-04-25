@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.19" "postgresql-18-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-17-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-16-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-15-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-14-pgextwlist : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.19" "postgresql-18-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-17-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-16-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-15-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-14-pgextwlist : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.19" "postgresql-18-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-17-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-16-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-15-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-14-pgextwlist : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.19" "postgresql-18-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-17-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-16-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-15-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-14-pgextwlist : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.19" "postgresql-18-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-17-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-16-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-15-pgextwlist : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.19" "postgresql-14-pgextwlist : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -81,6 +83,8 @@ width: full
 | `postgresql-18-pgextwlist` | `1.19` | [u22.aarch64](/os/u22.aarch64) | pgdg | 29.3 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pgextwlist` | `1.19` | [u24.x86_64](/os/u24.x86_64) | pgdg | 29.2 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgextwlist` | `1.19` | [u24.aarch64](/os/u24.aarch64) | pgdg | 28.6 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.1 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.6 KiB | [postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-18-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -107,6 +111,8 @@ width: full
 | `postgresql-17-pgextwlist` | `1.19` | [u22.aarch64](/os/u22.aarch64) | pgdg | 37.6 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pgextwlist` | `1.19` | [u24.x86_64](/os/u24.x86_64) | pgdg | 29.2 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pgextwlist` | `1.19` | [u24.aarch64](/os/u24.aarch64) | pgdg | 28.6 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.1 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.7 KiB | [postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-17-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +139,8 @@ width: full
 | `postgresql-16-pgextwlist` | `1.19` | [u22.aarch64](/os/u22.aarch64) | pgdg | 37.0 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pgextwlist` | `1.19` | [u24.x86_64](/os/u24.x86_64) | pgdg | 29.2 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pgextwlist` | `1.19` | [u24.aarch64](/os/u24.aarch64) | pgdg | 28.6 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.2 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.7 KiB | [postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-16-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -159,6 +167,8 @@ width: full
 | `postgresql-15-pgextwlist` | `1.19` | [u22.aarch64](/os/u22.aarch64) | pgdg | 36.8 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pgextwlist` | `1.19` | [u24.x86_64](/os/u24.x86_64) | pgdg | 29.0 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pgextwlist` | `1.19` | [u24.aarch64](/os/u24.aarch64) | pgdg | 28.5 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 29.0 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.6 KiB | [postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-15-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -185,6 +195,8 @@ width: full
 | `postgresql-14-pgextwlist` | `1.19` | [u22.aarch64](/os/u22.aarch64) | pgdg | 36.8 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pgextwlist` | `1.19` | [u24.x86_64](/os/u24.x86_64) | pgdg | 29.0 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgextwlist` | `1.19` | [u24.aarch64](/os/u24.aarch64) | pgdg | 28.4 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pgextwlist` | `1.19` | [u26.x86_64](/os/u26.x86_64) | pgdg | 28.9 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgextwlist` | `1.19` | [u26.aarch64](/os/u26.aarch64) | pgdg | 28.5 KiB | [postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgextwlist/postgresql-14-pgextwlist_1.19-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

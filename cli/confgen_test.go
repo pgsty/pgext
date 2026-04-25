@@ -224,12 +224,12 @@ func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
 
 func TestDebTemplateUbuntuRepoSuffixesMatchRepoName(t *testing.T) {
 	required := []string{
-		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates",
-		"name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-backports",
-		"name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-security",
-		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-updates",
-		"name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-backports",
-		"name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security",
+		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates",
+		"name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-backports",
+		"name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-security",
+		"name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-updates",
+		"name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-backports",
+		"name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security",
 	}
 	for _, fragment := range required {
 		if !strings.Contains(debTemplate, fragment) {

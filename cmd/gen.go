@@ -811,7 +811,7 @@ based on the availability data in the pgext database.`,
 			// Use provided OS arguments
 			osList = args
 		} else {
-			// Default: generate for all 14 supported OS
+			// Default: generate for all supported OS
 			osList = []string{
 				"el8.x86_64", "el8.aarch64",
 				"el9.x86_64", "el9.aarch64",
@@ -820,6 +820,7 @@ based on the availability data in the pgext database.`,
 				"d13.x86_64", "d13.aarch64",
 				"u22.x86_64", "u22.aarch64",
 				"u24.x86_64", "u24.aarch64",
+				"u26.x86_64", "u26.aarch64",
 			}
 			if !verbose {
 				fmt.Printf("Generating configuration for all %d supported OS...\n", len(osList))

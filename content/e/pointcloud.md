@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.5" "postgresql-18-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-17-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-16-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-15-pointcloud : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2.5" "postgresql-14-pointcloud : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-pointcloud` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 94.8 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 96.1 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pointcloud` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.2 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 95.8 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.6 KiB | [postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-18-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -95,6 +99,8 @@ width: full
 | `postgresql-17-pointcloud` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 104.2 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 96.0 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pointcloud` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.2 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.1 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-17-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -115,6 +121,8 @@ width: full
 | `postgresql-16-pointcloud` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 104.2 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 96.1 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pointcloud` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.2 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.0 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.7 KiB | [postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-16-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -135,6 +143,8 @@ width: full
 | `postgresql-15-pointcloud` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 104.4 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 96.4 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pointcloud` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.5 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.1 KiB | [postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-15-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -155,6 +165,8 @@ width: full
 | `postgresql-14-pointcloud` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 104.5 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 96.4 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pointcloud` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 94.5 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pointcloud` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 96.2 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pointcloud` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 94.0 KiB | [postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpointcloud/postgresql-14-pointcloud_1.2.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

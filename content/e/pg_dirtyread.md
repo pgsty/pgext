@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.7" "postgresql-18-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-17-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-16-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-15-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-14-dirtyread : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.7" "postgresql-18-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-17-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-16-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-15-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-14-dirtyread : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.7" "postgresql-18-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-17-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-16-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-15-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-14-dirtyread : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.7" "postgresql-18-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-17-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-16-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-15-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-14-dirtyread : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.7" "postgresql-18-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-17-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-16-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-15-dirtyread : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.7" "postgresql-14-dirtyread : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-dirtyread` | `2.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 21.4 KiB | [postgresql-18-dirtyread_2.7-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-dirtyread` | `2.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 21.2 KiB | [postgresql-18-dirtyread_2.7-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-dirtyread` | `2.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.9 KiB | [postgresql-18-dirtyread_2.7-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.3 KiB | [postgresql-18-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.8 KiB | [postgresql-18-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-18-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-dirtyread` | `2.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 25.3 KiB | [postgresql-17-dirtyread_2.7-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-dirtyread` | `2.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 21.1 KiB | [postgresql-17-dirtyread_2.7-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-dirtyread` | `2.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.8 KiB | [postgresql-17-dirtyread_2.7-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.1 KiB | [postgresql-17-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.7 KiB | [postgresql-17-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-17-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -113,6 +119,8 @@ width: full
 | `postgresql-16-dirtyread` | `2.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 24.9 KiB | [postgresql-16-dirtyread_2.7-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-dirtyread` | `2.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 21.1 KiB | [postgresql-16-dirtyread_2.7-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-dirtyread` | `2.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.8 KiB | [postgresql-16-dirtyread_2.7-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.1 KiB | [postgresql-16-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.7 KiB | [postgresql-16-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-16-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +141,8 @@ width: full
 | `postgresql-15-dirtyread` | `2.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 25.0 KiB | [postgresql-15-dirtyread_2.7-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-dirtyread` | `2.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 21.1 KiB | [postgresql-15-dirtyread_2.7-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-dirtyread` | `2.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.9 KiB | [postgresql-15-dirtyread_2.7-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.2 KiB | [postgresql-15-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.9 KiB | [postgresql-15-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-15-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -153,6 +163,8 @@ width: full
 | `postgresql-14-dirtyread` | `2.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 25.0 KiB | [postgresql-14-dirtyread_2.7-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-dirtyread` | `2.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 21.1 KiB | [postgresql-14-dirtyread_2.7-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-dirtyread` | `2.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 20.8 KiB | [postgresql-14-dirtyread_2.7-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-dirtyread` | `2.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 21.2 KiB | [postgresql-14-dirtyread_2.7-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-dirtyread` | `2.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 20.9 KiB | [postgresql-14-dirtyread_2.7-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-dirtyread/postgresql-14-dirtyread_2.7-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.5" "postgresql-18-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-17-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-16-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-15-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-14-toastinfo : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.5" "postgresql-18-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-17-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-16-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-15-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-14-toastinfo : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5" "postgresql-18-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-17-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-16-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-15-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-14-toastinfo : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5" "postgresql-18-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-17-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-16-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-15-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-14-toastinfo : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5" "postgresql-18-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-17-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-16-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-15-toastinfo : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5" "postgresql-14-toastinfo : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-toastinfo` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.5 KiB | [postgresql-18-toastinfo_1.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-toastinfo` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.7 KiB | [postgresql-18-toastinfo_1.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-toastinfo` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.6 KiB | [postgresql-18-toastinfo_1.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-toastinfo` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.9 KiB | [postgresql-18-toastinfo_1.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-18-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-toastinfo` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.8 KiB | [postgresql-17-toastinfo_1.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-toastinfo` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.7 KiB | [postgresql-17-toastinfo_1.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-toastinfo` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.6 KiB | [postgresql-17-toastinfo_1.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-toastinfo` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.9 KiB | [postgresql-17-toastinfo_1.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-17-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -113,6 +119,8 @@ width: full
 | `postgresql-16-toastinfo` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.8 KiB | [postgresql-16-toastinfo_1.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-toastinfo` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.7 KiB | [postgresql-16-toastinfo_1.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-toastinfo` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.6 KiB | [postgresql-16-toastinfo_1.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-toastinfo` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.9 KiB | [postgresql-16-toastinfo_1.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-16-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +141,8 @@ width: full
 | `postgresql-15-toastinfo` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 13.0 KiB | [postgresql-15-toastinfo_1.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-toastinfo` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.7 KiB | [postgresql-15-toastinfo_1.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-toastinfo` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.7 KiB | [postgresql-15-toastinfo_1.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-toastinfo` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.9 KiB | [postgresql-15-toastinfo_1.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-15-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -153,6 +163,8 @@ width: full
 | `postgresql-14-toastinfo` | `1.5` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.9 KiB | [postgresql-14-toastinfo_1.5-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-toastinfo` | `1.5` | [u24.x86_64](/os/u24.x86_64) | pgdg | 12.7 KiB | [postgresql-14-toastinfo_1.5-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-toastinfo` | `1.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 12.6 KiB | [postgresql-14-toastinfo_1.5-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-toastinfo` | `1.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.8 KiB | [postgresql-14-toastinfo_1.5-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-toastinfo` | `1.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 13.1 KiB | [postgresql-14-toastinfo_1.5-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.5-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

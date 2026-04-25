@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.1.7" "postgresql-18-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-17-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-16-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-15-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-14-show-plans : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.1.7" "postgresql-18-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-17-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-16-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-15-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-14-show-plans : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.1.7" "postgresql-18-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-17-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-16-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-15-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-14-show-plans : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.1.7" "postgresql-18-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-17-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-16-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-15-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-14-show-plans : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.7" "postgresql-18-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-17-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-16-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-15-show-plans : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.7" "postgresql-14-show-plans : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-show-plans` | `2.1.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 23.0 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-show-plans` | `2.1.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 23.3 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-show-plans` | `2.1.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 23.1 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.3 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.6 KiB | [postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-18-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -103,6 +107,8 @@ width: full
 | `postgresql-17-show-plans` | `2.1.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 26.3 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-show-plans` | `2.1.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 23.4 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-show-plans` | `2.1.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 23.0 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-17-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-16-show-plans` | `2.1.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 26.2 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-show-plans` | `2.1.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 23.4 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-show-plans` | `2.1.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 23.0 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-16-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -171,6 +179,8 @@ width: full
 | `postgresql-15-show-plans` | `2.1.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 26.3 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-show-plans` | `2.1.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 23.4 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-show-plans` | `2.1.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 23.0 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.4 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.7 KiB | [postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-15-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -205,6 +215,8 @@ width: full
 | `postgresql-14-show-plans` | `2.1.7` | [u22.aarch64](/os/u22.aarch64) | pgdg | 26.0 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-show-plans` | `2.1.7` | [u24.x86_64](/os/u24.x86_64) | pgdg | 23.2 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-show-plans` | `2.1.7` | [u24.aarch64](/os/u24.aarch64) | pgdg | 22.9 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-show-plans` | `2.1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 23.1 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-show-plans` | `2.1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 22.4 KiB | [postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-show-plans/postgresql-14-show-plans_2.1.7-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

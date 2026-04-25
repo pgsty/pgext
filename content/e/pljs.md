@@ -55,6 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -84,6 +86,8 @@ width: full
 | `postgresql-18-pljs` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 432.1 KiB | [postgresql-18-pljs_1.0.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 376.9 KiB | [postgresql-18-pljs_1.0.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 422.6 KiB | [postgresql-18-pljs_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pljs` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 429.2 KiB | [postgresql-18-pljs_1.0.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 381.4 KiB | [postgresql-18-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -112,6 +116,8 @@ width: full
 | `postgresql-17-pljs` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 431.6 KiB | [postgresql-17-pljs_1.0.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 375.8 KiB | [postgresql-17-pljs_1.0.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 422.4 KiB | [postgresql-17-pljs_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pljs` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 428.9 KiB | [postgresql-17-pljs_1.0.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 382.0 KiB | [postgresql-17-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -140,6 +146,8 @@ width: full
 | `postgresql-16-pljs` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 431.7 KiB | [postgresql-16-pljs_1.0.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 375.9 KiB | [postgresql-16-pljs_1.0.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 422.5 KiB | [postgresql-16-pljs_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pljs` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 428.7 KiB | [postgresql-16-pljs_1.0.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 381.6 KiB | [postgresql-16-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -168,6 +176,8 @@ width: full
 | `postgresql-15-pljs` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 432.0 KiB | [postgresql-15-pljs_1.0.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 376.5 KiB | [postgresql-15-pljs_1.0.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 423.0 KiB | [postgresql-15-pljs_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pljs` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 429.3 KiB | [postgresql-15-pljs_1.0.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 382.3 KiB | [postgresql-15-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -196,6 +206,8 @@ width: full
 | `postgresql-14-pljs` | `1.0.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 432.2 KiB | [postgresql-14-pljs_1.0.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-14-pljs_1.0.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 376.6 KiB | [postgresql-14-pljs_1.0.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-14-pljs_1.0.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pljs` | `1.0.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 423.0 KiB | [postgresql-14-pljs_1.0.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pljs/postgresql-14-pljs_1.0.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pljs` | `1.0.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 429.6 KiB | [postgresql-14-pljs_1.0.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-14-pljs_1.0.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 382.6 KiB | [postgresql-14-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-14-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

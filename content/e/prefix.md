@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -87,6 +89,10 @@ width: full
 | `postgresql-18-prefix` | `1.2.10` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.2 KiB | [postgresql-18-prefix_1.2.10-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.10-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-prefix` | `1.2.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-18-prefix_1.2.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.11-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-prefix` | `1.2.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-18-prefix_1.2.10-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.10-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-prefix` | `1.2.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.2 KiB | [postgresql-18-prefix_1.2.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-prefix` | `1.2.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.4 KiB | [postgresql-18-prefix_1.2.10-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.10-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-prefix` | `1.2.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.1 KiB | [postgresql-18-prefix_1.2.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.11-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.3 KiB | [postgresql-18-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -121,6 +127,10 @@ width: full
 | `postgresql-17-prefix` | `1.2.10` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.2 KiB | [postgresql-17-prefix_1.2.10-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.10-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-prefix` | `1.2.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-17-prefix_1.2.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.11-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-prefix` | `1.2.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.3 KiB | [postgresql-17-prefix_1.2.10-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.10-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-prefix` | `1.2.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.3 KiB | [postgresql-17-prefix_1.2.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-prefix` | `1.2.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.5 KiB | [postgresql-17-prefix_1.2.10-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.10-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-prefix` | `1.2.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.2 KiB | [postgresql-17-prefix_1.2.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.11-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-17-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -155,6 +165,10 @@ width: full
 | `postgresql-16-prefix` | `1.2.10` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.2 KiB | [postgresql-16-prefix_1.2.10-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.10-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-prefix` | `1.2.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.3 KiB | [postgresql-16-prefix_1.2.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.11-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-prefix` | `1.2.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.3 KiB | [postgresql-16-prefix_1.2.10-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.10-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-prefix` | `1.2.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.3 KiB | [postgresql-16-prefix_1.2.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-prefix` | `1.2.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.5 KiB | [postgresql-16-prefix_1.2.10-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.10-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-prefix` | `1.2.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.2 KiB | [postgresql-16-prefix_1.2.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.11-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-16-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -193,6 +207,10 @@ width: full
 | `postgresql-15-prefix` | `1.2.10` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.2 KiB | [postgresql-15-prefix_1.2.10-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.10-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-prefix` | `1.2.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-15-prefix_1.2.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.11-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-prefix` | `1.2.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.3 KiB | [postgresql-15-prefix_1.2.10-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.10-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-prefix` | `1.2.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.2 KiB | [postgresql-15-prefix_1.2.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-prefix` | `1.2.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.6 KiB | [postgresql-15-prefix_1.2.10-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.10-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-prefix` | `1.2.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.1 KiB | [postgresql-15-prefix_1.2.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.11-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-15-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -230,6 +248,10 @@ width: full
 | `postgresql-14-prefix` | `1.2.10` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.2 KiB | [postgresql-14-prefix_1.2.10-4.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.10-4.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-prefix` | `1.2.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-14-prefix_1.2.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.11-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-prefix` | `1.2.10` | [u24.aarch64](/os/u24.aarch64) | pgdg | 39.2 KiB | [postgresql-14-prefix_1.2.10-4.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.10-4.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-prefix` | `1.2.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.2 KiB | [postgresql-14-prefix_1.2.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-prefix` | `1.2.10` | [u26.x86_64](/os/u26.x86_64) | pgdg | 40.5 KiB | [postgresql-14-prefix_1.2.10-4.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.10-4.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-prefix` | `1.2.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.1 KiB | [postgresql-14-prefix_1.2.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.11-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-14-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-14-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

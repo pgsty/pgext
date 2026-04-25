@@ -55,6 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
 
 
 {{< tabs items="PG17" >}}

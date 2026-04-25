@@ -56,6 +56,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.3" "postgresql-18-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-17-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-16-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-15-h3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.2.3" "postgresql-14-h3 : AVAIL 2" "blue" >}} |
 
 
 ## Source

@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.20190509" "postgresql-18-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-17-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-16-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-15-pgpcre : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.20190509" "postgresql-14-pgpcre : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-pgpcre` | `0.20190509` | [u22.aarch64](/os/u22.aarch64) | pgdg | 18.0 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pgpcre` | `0.20190509` | [u24.x86_64](/os/u24.x86_64) | pgdg | 18.2 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-18-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -107,6 +111,8 @@ width: full
 | `postgresql-17-pgpcre` | `0.20190509` | [u22.aarch64](/os/u22.aarch64) | pgdg | 18.6 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pgpcre` | `0.20190509` | [u24.x86_64](/os/u24.x86_64) | pgdg | 18.1 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-17-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-16-pgpcre` | `0.20190509` | [u22.aarch64](/os/u22.aarch64) | pgdg | 18.6 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pgpcre` | `0.20190509` | [u24.x86_64](/os/u24.x86_64) | pgdg | 18.1 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-16-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -163,6 +171,8 @@ width: full
 | `postgresql-15-pgpcre` | `0.20190509` | [u22.aarch64](/os/u22.aarch64) | pgdg | 18.6 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pgpcre` | `0.20190509` | [u24.x86_64](/os/u24.x86_64) | pgdg | 18.1 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.2 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-15-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -191,6 +201,8 @@ width: full
 | `postgresql-14-pgpcre` | `0.20190509` | [u22.aarch64](/os/u22.aarch64) | pgdg | 18.5 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pgpcre` | `0.20190509` | [u24.x86_64](/os/u24.x86_64) | pgdg | 18.1 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgpcre` | `0.20190509` | [u24.aarch64](/os/u24.aarch64) | pgdg | 18.1 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pgpcre` | `0.20190509` | [u26.x86_64](/os/u26.x86_64) | pgdg | 18.1 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgpcre` | `0.20190509` | [u26.aarch64](/os/u26.aarch64) | pgdg | 18.2 KiB | [postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgpcre/postgresql-14-pgpcre_0.20190509-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

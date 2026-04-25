@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 407.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.4 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 404.0 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 427.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.3 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 404.0 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -113,6 +119,8 @@ width: full
 | `postgresql-16-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 427.1 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 406.4 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 401.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 405.0 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.3 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +141,8 @@ width: full
 | `postgresql-15-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 428.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 404.9 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.1 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 402.5 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 399.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -153,6 +163,8 @@ width: full
 | `postgresql-14-pgsphere` | `1.5.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 428.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pgsphere` | `1.5.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 405.1 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgsphere` | `1.5.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 402.0 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 402.4 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 399.7 KiB | [postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-14-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

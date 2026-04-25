@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.1.0" "postgresql-18-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-17-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-16-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-15-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-14-pg-rewrite : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.1.0" "postgresql-18-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-17-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-16-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-15-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-14-pg-rewrite : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.1.0" "postgresql-18-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-17-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-16-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-15-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-14-pg-rewrite : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.1.0" "postgresql-18-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-17-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-16-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-15-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-14-pg-rewrite : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.0" "postgresql-18-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-17-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-16-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-15-pg-rewrite : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.0" "postgresql-14-pg-rewrite : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-pg-rewrite` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 74.0 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-rewrite` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 76.3 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-rewrite` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 71.6 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-rewrite` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 75.3 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 71.3 KiB | [postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-18-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -109,6 +113,8 @@ width: full
 | `postgresql-17-pg-rewrite` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 85.8 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-rewrite` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.7 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-rewrite` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 70.9 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-rewrite` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.4 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.7 KiB | [postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-17-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -141,6 +147,8 @@ width: full
 | `postgresql-16-pg-rewrite` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 85.0 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-rewrite` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.4 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-rewrite` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 70.8 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-rewrite` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.5 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.6 KiB | [postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-16-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -173,6 +181,8 @@ width: full
 | `postgresql-15-pg-rewrite` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 84.5 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-rewrite` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.2 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-rewrite` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 70.6 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-rewrite` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.1 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.2 KiB | [postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-15-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -205,6 +215,8 @@ width: full
 | `postgresql-14-pg-rewrite` | `2.1.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 84.9 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-rewrite` | `2.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 75.4 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-rewrite` | `2.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 71.1 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-rewrite` | `2.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 74.6 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-rewrite` | `2.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 70.4 KiB | [postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-rewrite/postgresql-14-pg-rewrite_2.1.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

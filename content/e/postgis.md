@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 3.6.3" "postgresql-18-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-17-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-16-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-15-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-14-postgis-3 : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 3.6.3" "postgresql-18-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-17-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-16-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-15-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-14-postgis-3 : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 3.6.3" "postgresql-18-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-17-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-16-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-15-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-14-postgis-3 : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 3.6.3" "postgresql-18-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-17-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-16-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-15-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-14-postgis-3 : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 3.6.3" "postgresql-18-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-17-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-16-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-15-postgis-3 : AVAIL 2" "blue" >}} | {{< bg "PGDG 3.6.3" "postgresql-14-postgis-3 : AVAIL 2" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -106,6 +108,10 @@ width: full
 | `postgresql-18-postgis-3` | `3.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 3.4 MiB | [postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-postgis-3` | `3.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-postgis-3` | `3.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-postgis-3` | `3.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.5 MiB | [postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-postgis-3` | `3.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.5 MiB | [postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-postgis-3` | `3.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-18-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -157,6 +163,10 @@ width: full
 | `postgresql-17-postgis-3` | `3.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 3.4 MiB | [postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-postgis-3` | `3.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.6 MiB | [postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-postgis-3` | `3.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.6 MiB | [postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-postgis-3` | `3.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.5 MiB | [postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-postgis-3` | `3.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.5 MiB | [postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-postgis-3` | `3.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.7 MiB | [postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-17-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -208,6 +218,10 @@ width: full
 | `postgresql-16-postgis-3` | `3.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 3.4 MiB | [postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-postgis-3` | `3.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-postgis-3` | `3.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-postgis-3` | `3.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.4 MiB | [postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-postgis-3` | `3.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.4 MiB | [postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-postgis-3` | `3.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.6 MiB | [postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-16-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -259,6 +273,10 @@ width: full
 | `postgresql-15-postgis-3` | `3.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 3.3 MiB | [postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-postgis-3` | `3.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.4 MiB | [postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-postgis-3` | `3.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.4 MiB | [postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-postgis-3` | `3.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.4 MiB | [postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-postgis-3` | `3.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.4 MiB | [postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.5 MiB | [postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-postgis-3` | `3.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.5 MiB | [postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-15-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -310,6 +328,10 @@ width: full
 | `postgresql-14-postgis-3` | `3.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 3.3 MiB | [postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-postgis-3` | `3.6.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-postgis-3` | `3.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-postgis-3` | `3.6.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.3 MiB | [postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-postgis-3` | `3.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 3.3 MiB | [postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-postgis-3` | `3.6.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.3+dfsg-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-postgis-3` | `3.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 5.4 MiB | [postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgis/postgresql-14-postgis-3_3.6.2+dfsg-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

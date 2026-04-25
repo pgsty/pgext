@@ -80,7 +80,7 @@ COMMENT ON COLUMN pgext.os.os IS 'Unique OS identifier combining code and archit
 COMMENT ON COLUMN pgext.os.active IS 'Whether this OS distribution is actively supported and receives updates';
 COMMENT ON COLUMN pgext.os.os_type IS 'Package manager type: rpm for RedHat/CentOS/Rocky, deb for Debian/Ubuntu';
 COMMENT ON COLUMN pgext.os.os_mark IS 'Short OS marker for identification (e.g., el9i for EL9 x86, u24a for Ubuntu 24 ARM)';
-COMMENT ON COLUMN pgext.os.os_code IS 'OS version code using 3-4 char format (el7/el8/el9/el10, u20/u22/u24, d11/d12/d13)';
+COMMENT ON COLUMN pgext.os.os_code IS 'OS version code using 3-4 char format (el7/el8/el9/el10, u20/u22/u24/u26, d11/d12/d13)';
 COMMENT ON COLUMN pgext.os.os_major IS 'Major version number as integer (e.g., 9 for EL9, 24 for Ubuntu 24.04)';
 COMMENT ON COLUMN pgext.os.os_arch IS 'CPU architecture: x86_64 for Intel/AMD 64-bit, aarch64 for ARM 64-bit';
 COMMENT ON COLUMN pgext.os.os_vendor IS 'Operating system vendor/family: EL (Enterprise Linux), Debian, Ubuntu';
@@ -136,7 +136,7 @@ COMMENT ON COLUMN pgext.repository.id IS 'Unique repository identifier in format
 COMMENT ON COLUMN pgext.repository.os IS 'Operating system platform identifier, reference pgext.os';
 COMMENT ON COLUMN pgext.repository.org IS 'Repository organization/maintainer: pgdg (PostgreSQL Global Development Group), pigsty (Pigsty Project), epel (Extra Packages for Enterprise Linux)';
 COMMENT ON COLUMN pgext.repository.type IS 'Package manager type: rpm for YUM/DNF repositories (RedHat-based), deb for APT repositories (Debian-based)';
-COMMENT ON COLUMN pgext.repository.os_code IS 'Operating system version code in 3-character format: el7/el8/el9 (Enterprise Linux), u20/u22/u24 (Ubuntu), d11/d12 (Debian)';
+COMMENT ON COLUMN pgext.repository.os_code IS 'Operating system version code in 3-4 character format: el7/el8/el9/el10 (Enterprise Linux), u20/u22/u24/u26 (Ubuntu), d11/d12/d13 (Debian)';
 COMMENT ON COLUMN pgext.repository.os_arch IS 'CPU architecture: x86_64 (Intel/AMD 64-bit) or aarch64 (ARM 64-bit), often simplified as amd or arm';
 COMMENT ON COLUMN pgext.repository.default_url IS 'Base URL for default/upstream repository (e.g., https://download.postgresql.org/pub/repos/)';
 COMMENT ON COLUMN pgext.repository.default_meta IS 'Full URL to repository metadata file: repodata/repomd.xml for YUM, Packages(.gz) for APT';

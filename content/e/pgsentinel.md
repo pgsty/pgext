@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.4.1" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.4.1" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.4.1" "postgresql-18-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pgsentinel : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pgsentinel : AVAIL 3" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.4.1" "postgresql-18-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pgsentinel : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4.1" "postgresql-18-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-17-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-16-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-15-pgsentinel : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "postgresql-14-pgsentinel : AVAIL 2" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -101,6 +103,10 @@ width: full
 | `postgresql-18-pgsentinel` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.0 KiB | [postgresql-18-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.4 KiB | [postgresql-18-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 42.1 KiB | [postgresql-18-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pgsentinel` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.1 KiB | [postgresql-18-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgsentinel` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.8 KiB | [postgresql-18-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgsentinel` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-18-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-pgsentinel` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.7 KiB | [postgresql-18-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-18-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -155,6 +161,10 @@ width: full
 | `postgresql-17-pgsentinel` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.1 KiB | [postgresql-17-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.4 KiB | [postgresql-17-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 42.1 KiB | [postgresql-17-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pgsentinel` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.2 KiB | [postgresql-17-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgsentinel` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-17-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgsentinel` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.1 KiB | [postgresql-17-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-pgsentinel` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.8 KiB | [postgresql-17-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-17-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -209,6 +219,10 @@ width: full
 | `postgresql-16-pgsentinel` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.0 KiB | [postgresql-16-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.4 KiB | [postgresql-16-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 42.0 KiB | [postgresql-16-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pgsentinel` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.2 KiB | [postgresql-16-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgsentinel` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.9 KiB | [postgresql-16-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgsentinel` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.1 KiB | [postgresql-16-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-pgsentinel` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.7 KiB | [postgresql-16-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-16-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -263,6 +277,10 @@ width: full
 | `postgresql-15-pgsentinel` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 44.1 KiB | [postgresql-15-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.5 KiB | [postgresql-15-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 42.2 KiB | [postgresql-15-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pgsentinel` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.2 KiB | [postgresql-15-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgsentinel` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.0 KiB | [postgresql-15-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgsentinel` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.2 KiB | [postgresql-15-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-pgsentinel` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.8 KiB | [postgresql-15-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-15-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -317,6 +335,10 @@ width: full
 | `postgresql-14-pgsentinel` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.8 KiB | [postgresql-14-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 43.2 KiB | [postgresql-14-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgsentinel` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.8 KiB | [postgresql-14-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pgsentinel` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 45.0 KiB | [postgresql-14-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgsentinel` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 44.7 KiB | [postgresql-14-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgsentinel` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-14-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.1-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-pgsentinel` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.6 KiB | [postgresql-14-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsentinel/postgresql-14-pgsentinel_1.4.0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

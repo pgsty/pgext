@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.3" "postgresql-18-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-17-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-16-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-repack : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-14-repack : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -79,6 +81,8 @@ width: full
 | `postgresql-18-repack` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 97.6 KiB | [postgresql-18-repack_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-repack` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 98.9 KiB | [postgresql-18-repack_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-repack` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 96.8 KiB | [postgresql-18-repack_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.4 KiB | [postgresql-18-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.2 KiB | [postgresql-18-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-18-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -109,6 +113,8 @@ width: full
 | `postgresql-17-repack` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 102.5 KiB | [postgresql-17-repack_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-repack` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.1 KiB | [postgresql-17-repack_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-repack` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 96.8 KiB | [postgresql-17-repack_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.4 KiB | [postgresql-17-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.3 KiB | [postgresql-17-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-17-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -139,6 +145,8 @@ width: full
 | `postgresql-16-repack` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 102.8 KiB | [postgresql-16-repack_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-repack` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.2 KiB | [postgresql-16-repack_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-repack` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 97.0 KiB | [postgresql-16-repack_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.5 KiB | [postgresql-16-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.9 KiB | [postgresql-16-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-16-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -173,6 +181,8 @@ width: full
 | `postgresql-15-repack` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 102.7 KiB | [postgresql-15-repack_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-repack` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.5 KiB | [postgresql-15-repack_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-repack` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 97.2 KiB | [postgresql-15-repack_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 99.9 KiB | [postgresql-15-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.8 KiB | [postgresql-15-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-15-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -209,6 +219,8 @@ width: full
 | `postgresql-14-repack` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 101.2 KiB | [postgresql-14-repack_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-repack` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 99.0 KiB | [postgresql-14-repack_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-repack` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 96.8 KiB | [postgresql-14-repack_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-repack` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 98.9 KiB | [postgresql-14-repack_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-repack` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 97.6 KiB | [postgresql-14-repack_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-repack/postgresql-14-repack_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

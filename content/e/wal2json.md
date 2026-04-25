@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.6" "postgresql-18-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-17-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-16-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-15-wal2json : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.6" "postgresql-14-wal2json : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -77,6 +79,8 @@ width: full
 | `postgresql-18-wal2json` | `2.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 54.9 KiB | [postgresql-18-wal2json_2.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-wal2json` | `2.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 56.1 KiB | [postgresql-18-wal2json_2.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-wal2json` | `2.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.9 KiB | [postgresql-18-wal2json_2.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-wal2json` | `2.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 55.8 KiB | [postgresql-18-wal2json_2.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-wal2json` | `2.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.7 KiB | [postgresql-18-wal2json_2.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-18-wal2json_2.6-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -97,6 +101,8 @@ width: full
 | `postgresql-17-wal2json` | `2.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 61.4 KiB | [postgresql-17-wal2json_2.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-wal2json` | `2.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 55.9 KiB | [postgresql-17-wal2json_2.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-wal2json` | `2.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.8 KiB | [postgresql-17-wal2json_2.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-wal2json` | `2.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 55.7 KiB | [postgresql-17-wal2json_2.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-wal2json` | `2.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.7 KiB | [postgresql-17-wal2json_2.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-17-wal2json_2.6-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -120,6 +126,8 @@ width: full
 | `postgresql-16-wal2json` | `2.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 61.1 KiB | [postgresql-16-wal2json_2.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-wal2json` | `2.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 56.0 KiB | [postgresql-16-wal2json_2.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-wal2json` | `2.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.8 KiB | [postgresql-16-wal2json_2.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-wal2json` | `2.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 55.8 KiB | [postgresql-16-wal2json_2.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-wal2json` | `2.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.7 KiB | [postgresql-16-wal2json_2.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-16-wal2json_2.6-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -145,6 +153,8 @@ width: full
 | `postgresql-15-wal2json` | `2.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 61.5 KiB | [postgresql-15-wal2json_2.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-wal2json` | `2.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 56.6 KiB | [postgresql-15-wal2json_2.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-wal2json` | `2.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 54.1 KiB | [postgresql-15-wal2json_2.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-wal2json` | `2.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 55.9 KiB | [postgresql-15-wal2json_2.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-wal2json` | `2.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.8 KiB | [postgresql-15-wal2json_2.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-15-wal2json_2.6-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -171,6 +181,8 @@ width: full
 | `postgresql-14-wal2json` | `2.6` | [u22.aarch64](/os/u22.aarch64) | pgdg | 61.5 KiB | [postgresql-14-wal2json_2.6-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-wal2json` | `2.6` | [u24.x86_64](/os/u24.x86_64) | pgdg | 56.2 KiB | [postgresql-14-wal2json_2.6-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-wal2json` | `2.6` | [u24.aarch64](/os/u24.aarch64) | pgdg | 53.7 KiB | [postgresql-14-wal2json_2.6-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-wal2json` | `2.6` | [u26.x86_64](/os/u26.x86_64) | pgdg | 55.4 KiB | [postgresql-14-wal2json_2.6-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-wal2json` | `2.6` | [u26.aarch64](/os/u26.aarch64) | pgdg | 53.4 KiB | [postgresql-14-wal2json_2.6-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/w/wal2json/postgresql-14-wal2json_2.6-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

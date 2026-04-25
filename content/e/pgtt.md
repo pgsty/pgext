@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 4.4" "postgresql-18-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-17-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-16-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-15-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-14-pgtt : AVAIL 2" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 4.4" "postgresql-18-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-17-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-16-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-15-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-14-pgtt : AVAIL 2" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.4" "postgresql-18-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-17-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-16-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-15-pgtt : AVAIL 2" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-14-pgtt : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.4" "postgresql-18-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-17-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-16-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-15-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-14-pgtt : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.4" "postgresql-18-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-17-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-16-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-15-pgtt : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.4" "postgresql-14-pgtt : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -74,6 +76,8 @@ width: full
 | `postgresql-18-pgtt` | `4.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 52.9 KiB | [postgresql-18-pgtt_4.4-2.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.4-2.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pgtt` | `4.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 53.6 KiB | [postgresql-18-pgtt_4.4-2.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.4-2.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgtt` | `4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 51.9 KiB | [postgresql-18-pgtt_4.4-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.4-2.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pgtt` | `4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 52.7 KiB | [postgresql-18-pgtt_4.4-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.4-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgtt` | `4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.5 KiB | [postgresql-18-pgtt_4.4-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-18-pgtt_4.4-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -116,6 +120,8 @@ width: full
 | `postgresql-17-pgtt` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 49.4 KiB | [postgresql-17-pgtt_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-17-pgtt_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pgtt` | `4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 51.8 KiB | [postgresql-17-pgtt_4.4-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.4-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgtt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.3 KiB | [postgresql-17-pgtt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-17-pgtt_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pgtt` | `4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 52.7 KiB | [postgresql-17-pgtt_4.4-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.4-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgtt` | `4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.4 KiB | [postgresql-17-pgtt_4.4-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-17-pgtt_4.4-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -166,6 +172,8 @@ width: full
 | `postgresql-16-pgtt` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 49.6 KiB | [postgresql-16-pgtt_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-16-pgtt_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pgtt` | `4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 52.0 KiB | [postgresql-16-pgtt_4.4-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.4-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgtt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 48.4 KiB | [postgresql-16-pgtt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-16-pgtt_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pgtt` | `4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 52.9 KiB | [postgresql-16-pgtt_4.4-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.4-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgtt` | `4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 51.7 KiB | [postgresql-16-pgtt_4.4-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-16-pgtt_4.4-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -224,6 +232,8 @@ width: full
 | `postgresql-15-pgtt` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 50.4 KiB | [postgresql-15-pgtt_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-15-pgtt_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pgtt` | `4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 52.6 KiB | [postgresql-15-pgtt_4.4-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.4-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgtt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 49.4 KiB | [postgresql-15-pgtt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-15-pgtt_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pgtt` | `4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 54.3 KiB | [postgresql-15-pgtt_4.4-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.4-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgtt` | `4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.3 KiB | [postgresql-15-pgtt_4.4-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-15-pgtt_4.4-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -285,6 +295,8 @@ width: full
 | `postgresql-14-pgtt` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 50.4 KiB | [postgresql-14-pgtt_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-14-pgtt_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pgtt` | `4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 52.6 KiB | [postgresql-14-pgtt_4.4-2.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.4-2.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgtt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 49.4 KiB | [postgresql-14-pgtt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgtt/postgresql-14-pgtt_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pgtt` | `4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 54.2 KiB | [postgresql-14-pgtt_4.4-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.4-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgtt` | `4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 52.3 KiB | [postgresql-14-pgtt_4.4-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgtt/postgresql-14-pgtt_4.4-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

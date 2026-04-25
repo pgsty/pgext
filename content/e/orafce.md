@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -113,6 +115,12 @@ width: full
 | `postgresql-18-orafce` | `4.16.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.9 KiB | [postgresql-18-orafce_4.16.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-orafce` | `4.16.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.8 KiB | [postgresql-18-orafce_4.16.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.4-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-orafce` | `4.16.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 355.0 KiB | [postgresql-18-orafce_4.16.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-orafce` | `4.16.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 357.8 KiB | [postgresql-18-orafce_4.16.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-orafce` | `4.16.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.6 KiB | [postgresql-18-orafce_4.16.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-orafce` | `4.16.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.8 KiB | [postgresql-18-orafce_4.16.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.4 KiB | [postgresql-18-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.7 KiB | [postgresql-18-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-18-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -205,6 +213,12 @@ width: full
 | `postgresql-17-orafce` | `4.16.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.4 KiB | [postgresql-17-orafce_4.16.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-orafce` | `4.16.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.4 KiB | [postgresql-17-orafce_4.16.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.4-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-orafce` | `4.16.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 355.0 KiB | [postgresql-17-orafce_4.16.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-orafce` | `4.16.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.0 KiB | [postgresql-17-orafce_4.16.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-orafce` | `4.16.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.5 KiB | [postgresql-17-orafce_4.16.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-orafce` | `4.16.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.0 KiB | [postgresql-17-orafce_4.16.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-17-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 352.0 KiB | [postgresql-17-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.1 KiB | [postgresql-17-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -333,6 +347,12 @@ width: full
 | `postgresql-16-orafce` | `4.16.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.4 KiB | [postgresql-16-orafce_4.16.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-orafce` | `4.16.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.5 KiB | [postgresql-16-orafce_4.16.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.4-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-orafce` | `4.16.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 354.9 KiB | [postgresql-16-orafce_4.16.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-orafce` | `4.16.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.0 KiB | [postgresql-16-orafce_4.16.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-orafce` | `4.16.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.5 KiB | [postgresql-16-orafce_4.16.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-orafce` | `4.16.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 358.2 KiB | [postgresql-16-orafce_4.16.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 350.9 KiB | [postgresql-16-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.5 KiB | [postgresql-16-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-16-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -461,6 +481,12 @@ width: full
 | `postgresql-15-orafce` | `4.16.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 358.5 KiB | [postgresql-15-orafce_4.16.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-orafce` | `4.16.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 358.2 KiB | [postgresql-15-orafce_4.16.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.4-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-orafce` | `4.16.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 358.5 KiB | [postgresql-15-orafce_4.16.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-orafce` | `4.16.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 363.5 KiB | [postgresql-15-orafce_4.16.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-orafce` | `4.16.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 364.1 KiB | [postgresql-15-orafce_4.16.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-orafce` | `4.16.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 363.1 KiB | [postgresql-15-orafce_4.16.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 355.4 KiB | [postgresql-15-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 356.1 KiB | [postgresql-15-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 356.3 KiB | [postgresql-15-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -589,6 +615,12 @@ width: full
 | `postgresql-14-orafce` | `4.16.5` | [u24.aarch64](/os/u24.aarch64) | pgdg | 361.0 KiB | [postgresql-14-orafce_4.16.5-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.5-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-orafce` | `4.16.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 361.3 KiB | [postgresql-14-orafce_4.16.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.4-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-orafce` | `4.16.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 361.4 KiB | [postgresql-14-orafce_4.16.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-orafce` | `4.16.5` | [u26.x86_64](/os/u26.x86_64) | pgdg | 365.9 KiB | [postgresql-14-orafce_4.16.5-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.5-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-orafce` | `4.16.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 366.7 KiB | [postgresql-14-orafce_4.16.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-orafce` | `4.16.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 366.0 KiB | [postgresql-14-orafce_4.16.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-orafce` | `4.16.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 358.1 KiB | [postgresql-14-orafce_4.16.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.5-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-orafce` | `4.16.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 358.9 KiB | [postgresql-14-orafce_4.16.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.4-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 359.2 KiB | [postgresql-14-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-14-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

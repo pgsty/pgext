@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgmq` |
 |    **Need By**    | {{< ext "pg_later" >}} {{< ext "vectorize" >}} |
-|   **See Also**    | {{< ext "kafka_fdw" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_net" >}} {{< ext "pg_background" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} |
+|   **See Also**    | {{< ext "kafka_fdw" >}} {{< ext "pg_task" >}} {{< ext "pg_net" >}} {{< ext "pg_background" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} |
 
 
 ## Packages
@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-18-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-17-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-16-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-15-pgmq : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.11.0" "postgresql-14-pgmq : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgmq : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgmq : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgmq : MISS 0" "red" >}}      |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}

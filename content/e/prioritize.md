@@ -54,6 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.0.4" "postgresql-18-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-17-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-16-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-15-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-14-prioritize : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.0.4" "postgresql-18-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-17-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-16-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-15-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-14-prioritize : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.0.4" "postgresql-18-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-17-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-16-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-15-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-14-prioritize : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.0.4" "postgresql-18-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-17-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-16-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-15-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-14-prioritize : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.4" "postgresql-18-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-17-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-16-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-15-prioritize : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.4" "postgresql-14-prioritize : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-prioritize` | `1.0.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.1 KiB | [postgresql-18-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-18-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-prioritize` | `1.0.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 11.8 KiB | [postgresql-18-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-18-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-prioritize` | `1.0.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 11.7 KiB | [postgresql-18-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-18-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-prioritize` | `1.0.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.0 KiB | [postgresql-18-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-18-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-prioritize` | `1.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.0 KiB | [postgresql-18-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-18-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -95,6 +99,8 @@ width: full
 | `postgresql-17-prioritize` | `1.0.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.4 KiB | [postgresql-17-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-17-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-prioritize` | `1.0.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 11.8 KiB | [postgresql-17-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-17-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-prioritize` | `1.0.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 11.7 KiB | [postgresql-17-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-17-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-prioritize` | `1.0.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.0 KiB | [postgresql-17-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-17-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-prioritize` | `1.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 11.9 KiB | [postgresql-17-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-17-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -115,6 +121,8 @@ width: full
 | `postgresql-16-prioritize` | `1.0.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.3 KiB | [postgresql-16-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-16-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-prioritize` | `1.0.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 11.8 KiB | [postgresql-16-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-16-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-prioritize` | `1.0.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 11.7 KiB | [postgresql-16-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-16-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-prioritize` | `1.0.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.0 KiB | [postgresql-16-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-16-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-prioritize` | `1.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 11.9 KiB | [postgresql-16-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-16-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -135,6 +143,8 @@ width: full
 | `postgresql-15-prioritize` | `1.0.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.4 KiB | [postgresql-15-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-15-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-prioritize` | `1.0.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 11.8 KiB | [postgresql-15-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-15-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-prioritize` | `1.0.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 11.7 KiB | [postgresql-15-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-15-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-prioritize` | `1.0.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 12.0 KiB | [postgresql-15-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-15-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-prioritize` | `1.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 12.0 KiB | [postgresql-15-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-15-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -154,6 +164,8 @@ width: full
 | `postgresql-14-prioritize` | `1.0.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 12.3 KiB | [postgresql-14-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-14-prioritize_1.0.4-13.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-prioritize` | `1.0.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 11.8 KiB | [postgresql-14-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-14-prioritize_1.0.4-13.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-prioritize` | `1.0.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 11.7 KiB | [postgresql-14-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-14-prioritize_1.0.4-13.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-prioritize` | `1.0.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 11.9 KiB | [postgresql-14-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-14-prioritize_1.0.4-13.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-prioritize` | `1.0.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 11.9 KiB | [postgresql-14-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-prioritize/postgresql-14-prioritize_1.0.4-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

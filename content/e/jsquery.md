@@ -52,6 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2" "postgresql-18-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-17-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-16-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-15-jsquery : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.2" "postgresql-14-jsquery : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,6 +75,8 @@ width: full
 | `postgresql-18-jsquery` | `1.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 120.5 KiB | [postgresql-18-jsquery_1.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-jsquery` | `1.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 122.2 KiB | [postgresql-18-jsquery_1.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.9 KiB | [postgresql-18-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.6 KiB | [postgresql-18-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.2 KiB | [postgresql-18-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-18-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -93,6 +97,8 @@ width: full
 | `postgresql-17-jsquery` | `1.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 127.8 KiB | [postgresql-17-jsquery_1.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-jsquery` | `1.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 122.3 KiB | [postgresql-17-jsquery_1.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.8 KiB | [postgresql-17-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.7 KiB | [postgresql-17-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.2 KiB | [postgresql-17-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-17-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -113,6 +119,8 @@ width: full
 | `postgresql-16-jsquery` | `1.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 127.6 KiB | [postgresql-16-jsquery_1.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-jsquery` | `1.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 122.1 KiB | [postgresql-16-jsquery_1.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 119.5 KiB | [postgresql-16-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 121.3 KiB | [postgresql-16-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 118.0 KiB | [postgresql-16-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-16-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -133,6 +141,8 @@ width: full
 | `postgresql-15-jsquery` | `1.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 129.5 KiB | [postgresql-15-jsquery_1.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-jsquery` | `1.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 124.2 KiB | [postgresql-15-jsquery_1.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 121.2 KiB | [postgresql-15-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.3 KiB | [postgresql-15-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.7 KiB | [postgresql-15-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-15-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -153,6 +163,8 @@ width: full
 | `postgresql-14-jsquery` | `1.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 129.3 KiB | [postgresql-14-jsquery_1.2-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-jsquery` | `1.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 124.2 KiB | [postgresql-14-jsquery_1.2-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-jsquery` | `1.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 121.3 KiB | [postgresql-14-jsquery_1.2-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-jsquery` | `1.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 123.2 KiB | [postgresql-14-jsquery_1.2-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-jsquery` | `1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 119.6 KiB | [postgresql-14-jsquery_1.2-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/j/jsquery/postgresql-14-jsquery_1.2-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

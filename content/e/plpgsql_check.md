@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.8.11" "postgresql-18-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-17-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-16-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-15-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-14-plpgsql-check : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.8.11" "postgresql-18-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-17-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-16-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-15-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-14-plpgsql-check : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.8.11" "postgresql-18-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-17-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-16-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-15-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-14-plpgsql-check : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.8.11" "postgresql-18-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-17-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-16-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-15-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-14-plpgsql-check : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.8.11" "postgresql-18-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-17-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-16-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-15-plpgsql-check : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.8.11" "postgresql-14-plpgsql-check : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -104,6 +106,8 @@ width: full
 | `postgresql-18-plpgsql-check` | `2.8.11` | [u22.aarch64](/os/u22.aarch64) | pgdg | 291.1 KiB | [postgresql-18-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-18-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-plpgsql-check` | `2.8.11` | [u24.x86_64](/os/u24.x86_64) | pgdg | 291.9 KiB | [postgresql-18-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-18-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-plpgsql-check` | `2.8.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 280.7 KiB | [postgresql-18-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-18-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-plpgsql-check` | `2.8.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 290.6 KiB | [postgresql-18-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-18-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-plpgsql-check` | `2.8.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 278.6 KiB | [postgresql-18-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-18-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -176,6 +180,8 @@ width: full
 | `postgresql-17-plpgsql-check` | `2.8.11` | [u22.aarch64](/os/u22.aarch64) | pgdg | 361.6 KiB | [postgresql-17-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-17-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-plpgsql-check` | `2.8.11` | [u24.x86_64](/os/u24.x86_64) | pgdg | 291.7 KiB | [postgresql-17-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-17-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-plpgsql-check` | `2.8.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 280.4 KiB | [postgresql-17-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-17-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-plpgsql-check` | `2.8.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 290.4 KiB | [postgresql-17-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-17-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-plpgsql-check` | `2.8.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 278.3 KiB | [postgresql-17-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-17-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -304,6 +310,8 @@ width: full
 | `postgresql-16-plpgsql-check` | `2.8.11` | [u22.aarch64](/os/u22.aarch64) | pgdg | 356.1 KiB | [postgresql-16-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-16-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-plpgsql-check` | `2.8.11` | [u24.x86_64](/os/u24.x86_64) | pgdg | 291.8 KiB | [postgresql-16-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-16-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-plpgsql-check` | `2.8.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 280.5 KiB | [postgresql-16-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-16-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-plpgsql-check` | `2.8.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 290.4 KiB | [postgresql-16-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-16-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-plpgsql-check` | `2.8.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 278.7 KiB | [postgresql-16-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-16-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -462,6 +470,8 @@ width: full
 | `postgresql-15-plpgsql-check` | `2.8.11` | [u22.aarch64](/os/u22.aarch64) | pgdg | 359.5 KiB | [postgresql-15-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-15-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-plpgsql-check` | `2.8.11` | [u24.x86_64](/os/u24.x86_64) | pgdg | 295.1 KiB | [postgresql-15-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-15-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-plpgsql-check` | `2.8.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 283.9 KiB | [postgresql-15-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-15-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-plpgsql-check` | `2.8.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 293.5 KiB | [postgresql-15-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-15-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-plpgsql-check` | `2.8.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 281.9 KiB | [postgresql-15-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-15-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -637,6 +647,8 @@ width: full
 | `postgresql-14-plpgsql-check` | `2.8.11` | [u22.aarch64](/os/u22.aarch64) | pgdg | 343.0 KiB | [postgresql-14-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-14-plpgsql-check_2.8.11-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-plpgsql-check` | `2.8.11` | [u24.x86_64](/os/u24.x86_64) | pgdg | 295.2 KiB | [postgresql-14-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-14-plpgsql-check_2.8.11-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-plpgsql-check` | `2.8.11` | [u24.aarch64](/os/u24.aarch64) | pgdg | 283.4 KiB | [postgresql-14-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-14-plpgsql-check_2.8.11-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-plpgsql-check` | `2.8.11` | [u26.x86_64](/os/u26.x86_64) | pgdg | 293.4 KiB | [postgresql-14-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-14-plpgsql-check_2.8.11-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-plpgsql-check` | `2.8.11` | [u26.aarch64](/os/u26.aarch64) | pgdg | 281.6 KiB | [postgresql-14-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plpgsql-check/postgresql-14-plpgsql-check_2.8.11-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

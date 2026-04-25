@@ -53,6 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-17-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.2" "postgresql-16-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-pg-hint-plan : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-17-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.2" "postgresql-16-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-pg-hint-plan : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-17-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.2" "postgresql-16-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-pg-hint-plan : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-17-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.2" "postgresql-16-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-pg-hint-plan : AVAIL 1" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.8.0" "postgresql-18-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-17-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.2" "postgresql-16-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.3" "postgresql-15-pg-hint-plan : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.4" "postgresql-14-pg-hint-plan : AVAIL 1" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -74,6 +76,8 @@ width: full
 | `postgresql-18-pg-hint-plan` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 129.8 KiB | [postgresql-18-pg-hint-plan_1.8.0-3.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-18/postgresql-18-pg-hint-plan_1.8.0-3.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-hint-plan` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 131.7 KiB | [postgresql-18-pg-hint-plan_1.8.0-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-18/postgresql-18-pg-hint-plan_1.8.0-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-hint-plan` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 128.0 KiB | [postgresql-18-pg-hint-plan_1.8.0-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-18/postgresql-18-pg-hint-plan_1.8.0-3.pgdg24.04+1_arm64.deb) |
+| `postgresql-18-pg-hint-plan` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 130.1 KiB | [postgresql-18-pg-hint-plan_1.8.0-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-18/postgresql-18-pg-hint-plan_1.8.0-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pg-hint-plan` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 126.0 KiB | [postgresql-18-pg-hint-plan_1.8.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-18/postgresql-18-pg-hint-plan_1.8.0-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -100,6 +104,8 @@ width: full
 | `postgresql-17-pg-hint-plan` | `1.7.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 137.2 KiB | [postgresql-17-pg-hint-plan_1.7.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-17/postgresql-17-pg-hint-plan_1.7.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-hint-plan` | `1.7.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 126.7 KiB | [postgresql-17-pg-hint-plan_1.7.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-17/postgresql-17-pg-hint-plan_1.7.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-hint-plan` | `1.7.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 123.4 KiB | [postgresql-17-pg-hint-plan_1.7.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-17/postgresql-17-pg-hint-plan_1.7.1-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-hint-plan` | `1.7.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 125.2 KiB | [postgresql-17-pg-hint-plan_1.7.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-17/postgresql-17-pg-hint-plan_1.7.1-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pg-hint-plan` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 121.6 KiB | [postgresql-17-pg-hint-plan_1.7.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-17/postgresql-17-pg-hint-plan_1.7.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -130,6 +136,8 @@ width: full
 | `postgresql-16-pg-hint-plan` | `1.6.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 114.4 KiB | [postgresql-16-pg-hint-plan_1.6.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-16/postgresql-16-pg-hint-plan_1.6.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-hint-plan` | `1.6.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 104.4 KiB | [postgresql-16-pg-hint-plan_1.6.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-16/postgresql-16-pg-hint-plan_1.6.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-hint-plan` | `1.6.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 101.7 KiB | [postgresql-16-pg-hint-plan_1.6.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-16/postgresql-16-pg-hint-plan_1.6.2-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-hint-plan` | `1.6.2` | [u26.x86_64](/os/u26.x86_64) | pgdg | 103.3 KiB | [postgresql-16-pg-hint-plan_1.6.2-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-16/postgresql-16-pg-hint-plan_1.6.2-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pg-hint-plan` | `1.6.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 100.0 KiB | [postgresql-16-pg-hint-plan_1.6.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-16/postgresql-16-pg-hint-plan_1.6.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -160,6 +168,8 @@ width: full
 | `postgresql-15-pg-hint-plan` | `1.5.3` | [u22.aarch64](/os/u22.aarch64) | pgdg | 114.0 KiB | [postgresql-15-pg-hint-plan_1.5.3-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-15/postgresql-15-pg-hint-plan_1.5.3-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-hint-plan` | `1.5.3` | [u24.x86_64](/os/u24.x86_64) | pgdg | 104.4 KiB | [postgresql-15-pg-hint-plan_1.5.3-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-15/postgresql-15-pg-hint-plan_1.5.3-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-hint-plan` | `1.5.3` | [u24.aarch64](/os/u24.aarch64) | pgdg | 101.4 KiB | [postgresql-15-pg-hint-plan_1.5.3-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-15/postgresql-15-pg-hint-plan_1.5.3-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-hint-plan` | `1.5.3` | [u26.x86_64](/os/u26.x86_64) | pgdg | 103.1 KiB | [postgresql-15-pg-hint-plan_1.5.3-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-15/postgresql-15-pg-hint-plan_1.5.3-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pg-hint-plan` | `1.5.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.5 KiB | [postgresql-15-pg-hint-plan_1.5.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-15/postgresql-15-pg-hint-plan_1.5.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
 {{< tab >}}
@@ -190,6 +200,8 @@ width: full
 | `postgresql-14-pg-hint-plan` | `1.4.4` | [u22.aarch64](/os/u22.aarch64) | pgdg | 113.5 KiB | [postgresql-14-pg-hint-plan_1.4.4-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-14/postgresql-14-pg-hint-plan_1.4.4-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-hint-plan` | `1.4.4` | [u24.x86_64](/os/u24.x86_64) | pgdg | 104.4 KiB | [postgresql-14-pg-hint-plan_1.4.4-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-14/postgresql-14-pg-hint-plan_1.4.4-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-hint-plan` | `1.4.4` | [u24.aarch64](/os/u24.aarch64) | pgdg | 101.1 KiB | [postgresql-14-pg-hint-plan_1.4.4-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-14/postgresql-14-pg-hint-plan_1.4.4-1.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-hint-plan` | `1.4.4` | [u26.x86_64](/os/u26.x86_64) | pgdg | 102.9 KiB | [postgresql-14-pg-hint-plan_1.4.4-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-14/postgresql-14-pg-hint-plan_1.4.4-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pg-hint-plan` | `1.4.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.3 KiB | [postgresql-14-pg-hint-plan_1.4.4-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-hint-plan-14/postgresql-14-pg-hint-plan_1.4.4-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
