@@ -747,12 +747,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 				// RPM systems use bind-utils
 				return g.constants.RPMCommonPkg[4]
 			}
-			// DEB systems - check for Debian 13 special case
-			if g.osCode == "d13" {
-				// Debian 13 renamed dnsutils to bind9-dnsutils
-				return strings.ReplaceAll(g.constants.DEBCommonPkg[4], "dnsutils", "bind9-dnsutils")
-			}
-			// Other DEB systems use standard dnsutils
+			// DEB systems use bind9-dnsutils
 			return g.constants.DEBCommonPkg[4]
 		},
 		"getDNSPackage": func() string {
@@ -760,12 +755,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			if g.isRPM() {
 				return "bind-utils"
 			}
-			if g.osCode == "d13" {
-				// Debian 13 renamed dnsutils to bind9-dnsutils
-				return "bind9-dnsutils"
-			}
-			// Other DEB systems use dnsutils
-			return "dnsutils"
+			return "bind9-dnsutils"
 		},
 		"getDockerRepo": func() string {
 			// For el10, use RHEL repositories instead of CentOS
@@ -870,7 +860,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 3: node-package1
 			"lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony cron uv",
 			// 4: node-package2
-			"netcat-openbsd socat net-tools ipvsadm dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client",
+			"netcat-openbsd socat net-tools ipvsadm bind9-dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client",
 			// 5: pgsql-utility
 			"patroni python3-etcd pgbouncer pgbackrest pgbadger pg-timetable pgformatter postgresql-filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
@@ -933,7 +923,6 @@ func GetConfigConstants() *ConfigConstants {
 			"d11":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d12":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
 			"d13":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass tnftp linux-perf",
-			"u20":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
 			"u22":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
 			"u24":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
 			"u26":  "ansible python3 python3-requests python3-jmespath dpkg-dev sshpass ftp linux-tools-generic",
@@ -1137,42 +1126,40 @@ pg_home_map:
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:
-  - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [11,12,13,20,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty ./' }}
-  - { name: pigsty-pgsql   ,description: 'Pigsty PgSQL'       ,module: pgsql   ,releases: [11,12,13,20,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/pgsql/${distro_codename} ${distro_codename} main', china: 'https://repo.pigsty.cc/apt/pgsql/${distro_codename} ${distro_codename} main' }}
-  - { name: pigsty-infra   ,description: 'Pigsty Infra'       ,module: infra   ,releases: [11,12,13,20,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/infra/ generic main' ,china: 'https://repo.pigsty.cc/apt/infra/ generic main' }}
-  - { name: nginx          ,description: 'Nginx'              ,module: nginx   ,releases: [11,12,13,20,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://nginx.org/packages/${distro_name} ${distro_codename} nginx' }}
-  - { name: docker-ce      ,description: 'Docker'             ,module: infra   ,releases: [11,12,13,20,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/${distro_name} ${distro_codename} stable'                               ,china: 'https://mirrors.aliyun.com/docker-ce/linux/${distro_name} ${distro_codename} stable' }}
+  - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty ./' }}
+  - { name: pigsty-pgsql   ,description: 'Pigsty PgSQL'       ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/pgsql/${distro_codename} ${distro_codename} main', china: 'https://repo.pigsty.cc/apt/pgsql/${distro_codename} ${distro_codename} main' }}
+  - { name: pigsty-infra   ,description: 'Pigsty Infra'       ,module: infra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/infra/ generic main' ,china: 'https://repo.pigsty.cc/apt/infra/ generic main' }}
+  - { name: nginx          ,description: 'Nginx'              ,module: nginx   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://nginx.org/packages/${distro_name} ${distro_codename} nginx' }}
+  - { name: docker-ce      ,description: 'Docker'             ,module: infra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/${distro_name} ${distro_codename} stable'                               ,china: 'https://mirrors.aliyun.com/docker-ce/linux/${distro_name} ${distro_codename} stable' }}
   - { name: base           ,description: 'Debian Basic'       ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename} main non-free-firmware'                                  ,china: 'https://mirrors.aliyun.com/debian/ ${distro_codename} main non-free-firmware' }}
   - { name: updates        ,description: 'Debian Updates'     ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename}-updates main non-free-firmware'                          ,china: 'https://mirrors.aliyun.com/debian/ ${distro_codename}-updates main non-free-firmware' }}
   - { name: security       ,description: 'Debian Security'    ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://security.debian.org/debian-security ${distro_codename}-security main non-free-firmware'            ,china: 'https://mirrors.aliyun.com/debian-security/ ${distro_codename}-security main non-free-firmware' }}
-  - { name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}           main universe multiverse restricted' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}           main restricted universe multiverse' }}
-  - { name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates   main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-updates   main restricted universe multiverse' }}
-  - { name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-backports main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-backports main restricted universe multiverse' }}
-  - { name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-security  main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-security  main restricted universe multiverse' }}
-  - { name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}             main universe multiverse restricted' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}           main restricted universe multiverse' }}
-  - { name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-updates     main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-updates   main restricted universe multiverse' }}
-  - { name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-backports   main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-backports main restricted universe multiverse' }}
-  - { name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         20,22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security    main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-security  main restricted universe multiverse' }}
-  - { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,   22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg main' }}
-  - { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,   22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19' }}
-  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/${distro_name}/ ${distro_codename} main' }}
-  - { name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   20,22   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/citusdata/community/${distro_name}/ ${distro_codename} main' } }
-  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/percona ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/percona ${distro_codename} main' ,origin: 'http://repo.percona.com/ppg-18.3/apt ${distro_codename} main' }}
-  - { name: wiltondb       ,description: 'WiltonDB'           ,module: mssql   ,releases: [         20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/mssql/ ${distro_codename} main'  ,china: 'https://repo.pigsty.cc/apt/mssql/ ${distro_codename} main'  ,origin: 'https://ppa.launchpadcontent.net/wiltondb/wiltondb/ubuntu/ ${distro_codename} main'  }}
+  - { name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}           main universe multiverse restricted' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}           main restricted universe multiverse' }}
+  - { name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-updates   main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-updates   main restricted universe multiverse' }}
+  - { name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-backports main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-backports main restricted universe multiverse' }}
+  - { name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         22,24,26] ,arch: [x86_64         ] ,baseurl: { default: 'https://mirrors.edge.kernel.org/ubuntu/ ${distro_codename}-security  main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu/ ${distro_codename}-security  main restricted universe multiverse' }}
+  - { name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}             main universe multiverse restricted' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}           main restricted universe multiverse' }}
+  - { name: updates        ,description: 'Ubuntu Updates'     ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-updates     main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-updates   main restricted universe multiverse' }}
+  - { name: backports      ,description: 'Ubuntu Backports'   ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-backports   main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-backports main restricted universe multiverse' }}
+  - { name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security    main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-security  main restricted universe multiverse' }}
+  - { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg main' }}
+  - { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19' }}
+  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/${distro_name}/ ${distro_codename} main' }}
+  - { name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   22      ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/citusdata/community/${distro_name}/ ${distro_codename} main' } }
+  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/percona ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/percona ${distro_codename} main' }}
   - { name: groonga        ,description: 'Groonga Debian'     ,module: groonga ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/debian/ ${distro_codename} main' }}
-  - { name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/groonga/ppa/ubuntu/ ${distro_codename} main' }}
-  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools', china: 'https://mirrors.tuna.tsinghua.edu.cn/mysql/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools' }}
-  - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [11,12,   20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse', china: 'https://mirrors.aliyun.com/mongodb/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' }}
-  - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.redis.io/deb ${distro_codename} main' }}
-  - { name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.llvm.org/${distro_codename}/ llvm-toolchain-${distro_codename} main' ,china: 'https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/${distro_codename}/ llvm-toolchain-${distro_codename} main' }}  
-  - { name: haproxyd       ,description: 'Haproxy Debian'     ,module: haproxy ,releases: [11,12            ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://haproxy.debian.net/ ${distro_codename}-backports-3.1 main' }}
-  - { name: haproxyu       ,description: 'Haproxy Ubuntu'     ,module: haproxy ,releases: [         20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/vbernat/haproxy-3.1/ubuntu/ ${distro_codename} main' }}
-  - { name: grafana        ,description: 'Grafana'            ,module: grafana ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://apt.grafana.com stable main' ,china: 'https://mirrors.aliyun.com/grafana/apt/ stable main' }}
-  - { name: kubernetes     ,description: 'Kubernetes'         ,module: kube    ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /', china: 'https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.33/deb/ /' }}
-  - { name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ee/${distro_name}/ ${distro_codename} main' }}
-  - { name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ce/${distro_name}/ ${distro_codename} main' }}
-  - { name: clickhouse     ,description: 'ClickHouse'         ,module: click   ,releases: [11,12,13,20,22,24] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.clickhouse.com/deb/ stable main', china: 'https://mirrors.aliyun.com/clickhouse/deb/ stable main' }}
-
+  - { name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/groonga/ppa/ubuntu/ ${distro_codename} main' }}
+  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   22,24   ] ,arch: [x86_64         ] ,baseurl: { default: 'https://repo.mysql.com/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools'        ,china: 'https://mirrors.tuna.tsinghua.edu.cn/mysql/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools' }}
+  - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' ,china: 'https://mirrors.aliyun.com/mongodb/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' }}
+  - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.redis.io/deb ${distro_codename} main' }}
+  - { name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.llvm.org/${distro_codename}/ llvm-toolchain-${distro_codename} main' ,china: 'https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/${distro_codename}/ llvm-toolchain-${distro_codename} main' }}
+  - { name: haproxyd       ,description: 'Haproxy Debian'     ,module: haproxy ,releases: [   12            ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://haproxy.debian.net/ ${distro_codename}-backports-3.2 main' }}
+  - { name: haproxyu       ,description: 'Haproxy Ubuntu'     ,module: haproxy ,releases: [            24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu/ ${distro_codename} main' }}
+  - { name: grafana        ,description: 'Grafana'            ,module: grafana ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://apt.grafana.com stable main' ,china: 'https://mirrors.aliyun.com/grafana/apt/ stable main' }}
+  - { name: kubernetes     ,description: 'Kubernetes'         ,module: kube    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /', china: 'https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.33/deb/ /' }}
+  - { name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ee/${distro_name}/ ${distro_codename} main' }}
+  - { name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ce/${distro_name}/ ${distro_codename} main' }}
+  - { name: clickhouse     ,description: 'ClickHouse'         ,module: click   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.clickhouse.com/deb/ stable main', china: 'https://mirrors.aliyun.com/clickhouse/deb/ stable main' }}
 
 # package alias map to simplify package download & installation
 package_map:
