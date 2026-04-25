@@ -244,34 +244,22 @@ shared_preload_libraries = 'pg_store_plans';
 CREATE EXTENSION pg_store_plans;
 ```
 
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> SELECT * FROM pg_store_plans ORDER BY total_time DESC;
-> SELECT * FROM pg_store_plans_info;
-> ```
->
-> Sources: [Project page](http://ossc-db.github.io/pg_store_plans/), [Bundled docs](https://github.com/ossc-db/pg_store_plans/blob/master/docs/index.html)
+Sources: [official docs](https://ossc-db.github.io/pg_store_plans/), [repo](https://github.com/ossc-db/pg_store_plans), [1.10 release notes](https://github.com/ossc-db/pg_store_plans/releases/tag/1.10)
 
-`pg_store_plans` tracks execution plan statistics for SQL statements, similar in spirit to how `pg_stat_statements` tracks statements. It records plan text, plan hash, timing, row counts, and buffer statistics, and its docs note that `queryid` can be used to join with `pg_stat_statements`.
+`pg_store_plans` tracks execution plan statistics for SQL statements, similar to how `pg_stat_statements` tracks statement statistics. The upstream `1.10` release note says this version adds PostgreSQL 18 support; the documented SQL surface is otherwise the same as current docs.
 
-## Configuration
-
-The upstream documentation requires:
+### Required server settings
 
 ```ini
 shared_preload_libraries = 'pg_store_plans'
 compute_query_id = 'on'
 ```
 
-`pg_store_plans` needs shared memory, so adding or removing it requires a server restart. If `compute_query_id` is set to `no`, the module is silently disabled.
+`pg_store_plans` requires shared memory, so adding or removing it needs a server restart. The docs say it is silently disabled if `compute_query_id` is `no`.
 
-## Viewing Plan Statistics
-
-The statistics are exposed through the `pg_store_plans` view:
+### Inspect stored plans
 
 ```sql
 SELECT queryid, planid, plan, calls, total_time, rows
@@ -281,41 +269,37 @@ ORDER BY total_time DESC;
 SELECT * FROM pg_store_plans_info;
 ```
 
-Important columns documented upstream include:
+The docs describe `queryid` as the join key for `pg_stat_statements`, and `pg_store_plans_info` as a one-row view that exposes module-level stats such as `dealloc` and `stats_reset`.
 
-- `queryid`, the core-generated query ID
-- `planid`, a normalized plan hash
-- `plan`, in the format chosen by `pg_store_plans.plan_format`
-- `calls`, `total_time`, and `rows`
-- buffer statistics such as `shared_blks_hit` and `shared_blks_read`
-- timestamps such as `first_call` and `last_call`
-
-## Helper Functions
+### Helper functions
 
 ```sql
 SELECT pg_store_plans_reset();
+SELECT pg_store_hash_query('SELECT 1');
 SELECT pg_store_plans_textplan(plan);
 SELECT pg_store_plans_jsonplan(plan);
 SELECT pg_store_plans_xmlplan(plan);
 SELECT pg_store_plans_yamlplan(plan);
-SELECT pg_store_hash_query('SELECT 1');
 ```
 
-These functions reset statistics, convert stored plans to different output formats, and compute query hashes.
+`pg_store_plans_*plan()` is useful when `pg_store_plans.plan_format = 'raw'`.
 
-## GUCs
-
-The extension documentation describes settings such as:
+### Key GUCs
 
 - `pg_store_plans.max`
 - `pg_store_plans.track`
+- `pg_store_plans.max_plan_length`
+- `pg_store_plans.plan_storage`
 - `pg_store_plans.plan_format`
 - `pg_store_plans.min_duration`
 - `pg_store_plans.log_analyze`
 - `pg_store_plans.log_buffers`
 - `pg_store_plans.log_timing`
-- `pg_store_plans.plan_storage`
-- `pg_store_plans.max_plan_length`
 - `pg_store_plans.save`
 
-Together these control collection scope, plan representation, persistence, and storage behavior.
+The docs describe `plan_storage` as `file` or `shmem`, and `plan_format` as `text`, `json`, `xml`, `yaml`, or `raw`.
+
+### Caveats
+
+- Non-superusers cannot see `plan`, `queryid`, or `planid` for statements executed by other users.
+- `pg_store_plans` and `pg_stat_statements` maintain entries independently, so low-frequency rows may not always have a matching peer.

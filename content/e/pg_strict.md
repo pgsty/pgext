@@ -206,65 +206,53 @@ shared_preload_libraries = 'pg_strict';
 CREATE EXTENSION pg_strict;
 ```
 
-
-
-
 ## Usage
 
-> [pg_strict: Prevent dangerous UPDATE and DELETE without WHERE clause](https://github.com/spa5k/pg_strict)
+Source: [README](https://github.com/spa5k/pg_strict/blob/master/README.md), [Release v1.0.5](https://github.com/spa5k/pg_strict/releases/tag/v1.0.5), [API source](https://github.com/spa5k/pg_strict/blob/master/src/api.rs)
 
-The `pg_strict` extension blocks `UPDATE` and `DELETE` statements that lack a `WHERE` clause. It operates at the parse/analyze stage via `post_parse_analyze_hook`, providing three enforcement modes per statement type.
+`pg_strict` blocks or warns on `UPDATE` and `DELETE` statements that omit a `WHERE` clause. It installs a `post_parse_analyze_hook`, so it must be loaded from `shared_preload_libraries`.
 
-### Configuration Parameters
+### Required setup
 
-| Parameter | Modes | Description |
-|-----------|-------|-------------|
-| `pg_strict.require_where_on_update` | `on`/`warn`/`off` | Enforce WHERE on UPDATE |
-| `pg_strict.require_where_on_delete` | `on`/`warn`/`off` | Enforce WHERE on DELETE |
+```sql
+-- postgresql.conf
+shared_preload_libraries = 'pg_strict'
 
-- **`on`**: Reject statements without WHERE (raises error)
-- **`warn`**: Allow but emit a warning log
-- **`off`**: Standard PostgreSQL behavior
+CREATE EXTENSION pg_strict;
+```
 
-### Session-Level Configuration
+### GUCs
+
+- `pg_strict.require_where_on_update`
+- `pg_strict.require_where_on_delete`
+
+Each setting supports `off`, `warn`, and `on`.
 
 ```sql
 SET pg_strict.require_where_on_update = 'on';
 SET pg_strict.require_where_on_delete = 'warn';
 ```
 
-### Persistent Configuration
+### Helper functions
 
 ```sql
-ALTER DATABASE postgres SET pg_strict.require_where_on_update = 'on';
-ALTER ROLE app_service SET pg_strict.require_where_on_delete = 'on';
-ALTER ROLE dba_admin SET pg_strict.require_where_on_update = 'off';
+SELECT pg_strict_version();
+SELECT * FROM pg_strict_config();
+
+SELECT pg_strict_check_where_clause('DELETE FROM t', 'DELETE');
+SELECT pg_strict_validate_update('UPDATE t SET x = 1 WHERE id = 42');
+SELECT pg_strict_validate_delete('DELETE FROM t WHERE id = 42');
+
+SELECT pg_strict_enable_update();
+SELECT pg_strict_warn_delete();
+SELECT pg_strict_disable_delete();
 ```
 
-### Transactional Override
+- `pg_strict_set_update_mode(mode)` and `pg_strict_set_delete_mode(mode)` provide generic mode setters.
+- `SET LOCAL` works for one-off bulk operations inside a transaction.
 
-```sql
-BEGIN;
-SET LOCAL pg_strict.require_where_on_delete = 'off';
-DELETE FROM temp_table;  -- allowed within this transaction
-COMMIT;
-```
+### Caveats
 
-### API Functions
-
-```sql
-SELECT pg_strict_version();           -- extension version
-SELECT pg_strict_config();            -- all settings with values and descriptions
-
--- Validate queries programmatically
-SELECT pg_strict_check_where_clause('DELETE FROM t', 'DELETE');  -- returns boolean
-SELECT pg_strict_validate_update('UPDATE t SET x=1');
-SELECT pg_strict_validate_delete('DELETE FROM t');
-
--- Quick mode toggles
-SELECT pg_strict_enable_update();     -- set update enforcement to 'on'
-SELECT pg_strict_warn_delete();       -- set delete enforcement to 'warn'
-SELECT pg_strict_disable_update();    -- set update enforcement to 'off'
-```
-
-Any non-null WHERE condition is accepted (including `WHERE false`). CTE statements are supported.
+- Enforcement is presence-based, not intent-based: any non-null `WHERE` clause satisfies the rule.
+- Only `UPDATE` and `DELETE` are checked.
+- Current upstream release is `1.0.5`; the Pigsty note about `pgrx` 0.17.0 is packaging/build metadata, not a documented user-facing feature change.

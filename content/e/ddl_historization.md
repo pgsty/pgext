@@ -200,42 +200,34 @@ CREATE EXTENSION ddl_historization CASCADE; -- requires plpgsql
 ```
 
 
-
-
 ## Usage
 
-> [ddl_historization: Track all DDL changes in a PostgreSQL database](https://github.com/rodo/pg_ddl_historization)
+Sources: [README](https://github.com/rodo/pg_ddl_historization/blob/master/README.md), [releases](https://github.com/rodo/pg_ddl_historization/releases)
 
-Records all DDL changes (CREATE, ALTER, DROP, etc.) made on a database into a historization table for auditing and tracking purposes.
+`ddl_historization` is a PostgreSQL extension that records database DDL changes in a historization table. The upstream README documents installation via `make install`, `pgxn install ddl_historization`, and an AWS RDS path via `pg_tle`.
 
-### Setup
+### Enable logging
 
 ```sql
 CREATE EXTENSION ddl_historization;
 ```
 
-The extension installs event triggers that automatically capture DDL statements and store them in the historization table.
+The README describes the extension as using PostgreSQL event triggers to historize DDL changes made in the database.
 
-### Querying DDL History
+### What upstream currently documents
 
-After installation, all DDL changes are logged automatically. Query the history table to see what changes have been made:
+- Cluster-local install: `make install`
+- PGXN install: `pgxn install ddl_historization`
+- AWS RDS / `pg_tle`: build `pgtle.ddl_historization-0.3.sql` with `make pgtle`
+- Test suite: `make test` with pgTAP
 
-```sql
-SELECT * FROM ddl_history ORDER BY ddl_date DESC;
-```
+### Release notes worth knowing
 
-### Integration with pg_tle
+- Release `0.2` is the version requested by this refresh task.
+- Release `0.0.4` says it added functions to start and stop logging.
+- Release `0.0.6` says it added a `ddl_history_column` table.
+- Release `0.0.7` says it fixed a foreign-key related logging bug.
 
-For AWS RDS environments, the extension can be deployed via `pg_tle`:
+### Caveat
 
-```sql
--- Build the pg_tle deployment file
--- $ make pgtle
--- Then execute pgtle.ddl_historization-0.3.sql on your instance
-```
-
-### Notes
-
-- DDL statements are captured via PostgreSQL event triggers
-- Works with `CREATE`, `ALTER`, `DROP`, and other DDL commands
-- Used as a dependency by the `schedoc` extension for schema documentation
+The current upstream README is minimal and does not document the exact SQL signatures for the start/stop logging functions or the schema of the historization tables added in later releases. Keep this stub conservative unless the upstream README or release notes become more explicit.

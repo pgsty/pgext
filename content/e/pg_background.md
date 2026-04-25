@@ -40,20 +40,20 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 5" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 5" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 5" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-18-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-17-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-16-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-15-pg-background : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.9.2" "postgresql-14-pg-background : AVAIL 2" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 7" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 7" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 7" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_16 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_15 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 1.9.2" "pg_background_14 : AVAIL 6" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.9.2" "postgresql-18-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-17-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-16-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-15-pg-background : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.9.2" "postgresql-14-pg-background : AVAIL 3" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -62,48 +62,62 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_background_18` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 56.3 KiB | [pg_background_18-1.9.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_background_18-1.9.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_background_18` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.4 KiB | [pg_background_18-1.9.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_background_18-1.9.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_18` | `1.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.1 KiB | [pg_background_18-1.9.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_background_18-1.9.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_18` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pg_background_18-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_background_18-1.6-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_18` | `1.5` | [el8.x86_64](/os/el8.x86_64) | pgdg | 22.5 KiB | [pg_background_18-1.5-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_background_18-1.5-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_18` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 55.2 KiB | [pg_background_18-1.9.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_background_18-1.9.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_background_18` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.1 KiB | [pg_background_18-1.9.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_background_18-1.9.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_18` | `1.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pg_background_18-1.9.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_background_18-1.9.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_18` | `1.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.8 KiB | [pg_background_18-1.8-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_background_18-1.8-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_18` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.7 KiB | [pg_background_18-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_background_18-1.6-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_18` | `1.5` | [el8.aarch64](/os/el8.aarch64) | pgdg | 22.0 KiB | [pg_background_18-1.5-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_background_18-1.5-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_18` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.3 KiB | [pg_background_18-1.9.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_background_18-1.9.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_background_18` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.3 KiB | [pg_background_18-1.9.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_background_18-1.9.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_18` | `1.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.0 KiB | [pg_background_18-1.9.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_background_18-1.9.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_18` | `1.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.5 KiB | [pg_background_18-1.8-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_background_18-1.8-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_18` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 41.3 KiB | [pg_background_18-1.6-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_background_18-1.6-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_18` | `1.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.7 KiB | [pg_background_18-1.5-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_background_18-1.5-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_18` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.3 KiB | [pg_background_18-1.9.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_background_18-1.9.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_background_18` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.4 KiB | [pg_background_18-1.9.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_background_18-1.9.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_18` | `1.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pg_background_18-1.9.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_background_18-1.9.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_18` | `1.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 45.4 KiB | [pg_background_18-1.8-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_background_18-1.8-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_18` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.3 KiB | [pg_background_18-1.6-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_background_18-1.6-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_18` | `1.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.0 KiB | [pg_background_18-1.5-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_background_18-1.5-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_18` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 55.5 KiB | [pg_background_18-1.9.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_background_18-1.9.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_background_18` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.5 KiB | [pg_background_18-1.9.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_background_18-1.9.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_18` | `1.9.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.2 KiB | [pg_background_18-1.9.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_background_18-1.9.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_18` | `1.8` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.8 KiB | [pg_background_18-1.8-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_background_18-1.8-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_18` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 41.6 KiB | [pg_background_18-1.6-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_background_18-1.6-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_18` | `1.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.1 KiB | [pg_background_18-1.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_background_18-1.5-1PGDG.rhel10.x86_64.rpm) |
 | `pg_background_18` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.7 KiB | [pg_background_18-1.9.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_background_18-1.9.2-1PIGSTY.el10.aarch64.rpm) |
+| `pg_background_18` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.8 KiB | [pg_background_18-1.9.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_background_18-1.9.2-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_18` | `1.9.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.5 KiB | [pg_background_18-1.9.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_background_18-1.9.1-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_18` | `1.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 45.9 KiB | [pg_background_18-1.8-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_background_18-1.8-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_18` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 40.7 KiB | [pg_background_18-1.6-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_background_18-1.6-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_18` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.6 KiB | [pg_background_18-1.5-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_background_18-1.5-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.9 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 89.2 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.6 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 57.0 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg12+1_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.4 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.8 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.7 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg13+1_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 89.3 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.7 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.3 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg13+1_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.9 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.2 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 59.7 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 94.9 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 59.8 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 58.0 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 93.6 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 58.1 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.8 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 92.0 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.7 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-18-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-18-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.1 KiB | [postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-18-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
 
@@ -113,52 +127,66 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_background_17` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 56.3 KiB | [pg_background_17-1.9.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_background_17-1.9.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_background_17` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.4 KiB | [pg_background_17-1.9.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_background_17-1.9.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_17` | `1.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.1 KiB | [pg_background_17-1.9.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_background_17-1.9.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_17` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.9 KiB | [pg_background_17-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_background_17-1.6-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_17` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 21.9 KiB | [pg_background_17-1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_background_17-1.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_17` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 20.1 KiB | [pg_background_17-1.2-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_background_17-1.2-2PGDG.rhel8.x86_64.rpm) |
 | `pg_background_17` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 55.1 KiB | [pg_background_17-1.9.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_background_17-1.9.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_background_17` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.1 KiB | [pg_background_17-1.9.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.9.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_17` | `1.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.9 KiB | [pg_background_17-1.9.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.9.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_17` | `1.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.8 KiB | [pg_background_17-1.8-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.8-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_17` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.7 KiB | [pg_background_17-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.6-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_17` | `1.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.3 KiB | [pg_background_17-1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_17` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.6 KiB | [pg_background_17-1.2-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_background_17-1.2-2PGDG.rhel8.aarch64.rpm) |
 | `pg_background_17` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.5 KiB | [pg_background_17-1.9.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_background_17-1.9.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_background_17` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.1 KiB | [pg_background_17-1.9.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.9.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_17` | `1.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.9 KiB | [pg_background_17-1.9.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.9.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_17` | `1.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.4 KiB | [pg_background_17-1.8-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.8-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_17` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 41.3 KiB | [pg_background_17-1.6-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.6-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_17` | `1.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.3 KiB | [pg_background_17-1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_17` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 20.5 KiB | [pg_background_17-1.2-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_background_17-1.2-2PGDG.rhel9.x86_64.rpm) |
 | `pg_background_17` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.3 KiB | [pg_background_17-1.9.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_background_17-1.9.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_background_17` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.3 KiB | [pg_background_17-1.9.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.9.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_17` | `1.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pg_background_17-1.9.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.9.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_17` | `1.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 45.4 KiB | [pg_background_17-1.8-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.8-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_17` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.3 KiB | [pg_background_17-1.6-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.6-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_17` | `1.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.6 KiB | [pg_background_17-1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.3-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_17` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.9 KiB | [pg_background_17-1.2-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_background_17-1.2-2PGDG.rhel9.aarch64.rpm) |
 | `pg_background_17` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 55.4 KiB | [pg_background_17-1.9.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_background_17-1.9.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_background_17` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.3 KiB | [pg_background_17-1.9.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_background_17-1.9.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_17` | `1.9.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.1 KiB | [pg_background_17-1.9.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_background_17-1.9.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_17` | `1.8` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.8 KiB | [pg_background_17-1.8-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_background_17-1.8-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_17` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 41.6 KiB | [pg_background_17-1.6-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_background_17-1.6-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_17` | `1.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.8 KiB | [pg_background_17-1.3-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_background_17-1.3-3PGDG.rhel10.x86_64.rpm) |
 | `pg_background_17` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.7 KiB | [pg_background_17-1.9.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_background_17-1.9.2-1PIGSTY.el10.aarch64.rpm) |
+| `pg_background_17` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.8 KiB | [pg_background_17-1.9.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_background_17-1.9.2-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_17` | `1.9.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.6 KiB | [pg_background_17-1.9.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_background_17-1.9.1-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_17` | `1.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 45.9 KiB | [pg_background_17-1.8-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_background_17-1.8-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_17` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 40.7 KiB | [pg_background_17-1.6-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_background_17-1.6-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_17` | `1.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.3 KiB | [pg_background_17-1.3-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_background_17-1.3-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.5 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 89.0 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.4 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 57.0 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg12+1_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.5 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.7 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.7 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg13+1_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 89.1 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.4 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.1 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg13+1_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.8 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.1 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.8 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 100.2 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.7 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 63.1 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 98.6 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 62.9 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.7 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 92.0 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.6 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.0 KiB | [postgresql-17-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-17-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.0 KiB | [postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-17-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
 
@@ -168,52 +196,66 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_background_16` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 56.2 KiB | [pg_background_16-1.9.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_background_16-1.9.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_background_16` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.3 KiB | [pg_background_16-1.9.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_background_16-1.9.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_16` | `1.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.1 KiB | [pg_background_16-1.9.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_background_16-1.9.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_16` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pg_background_16-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_background_16-1.6-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_16` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 21.9 KiB | [pg_background_16-1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_background_16-1.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_16` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.7 KiB | [pg_background_16-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_background_16-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_16` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 55.1 KiB | [pg_background_16-1.9.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_background_16-1.9.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_background_16` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.1 KiB | [pg_background_16-1.9.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.9.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_16` | `1.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.8 KiB | [pg_background_16-1.9.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.9.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_16` | `1.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.7 KiB | [pg_background_16-1.8-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.8-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_16` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.7 KiB | [pg_background_16-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.6-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_16` | `1.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.3 KiB | [pg_background_16-1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_16` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.2 KiB | [pg_background_16-1.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_background_16-1.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_16` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.2 KiB | [pg_background_16-1.9.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_background_16-1.9.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_background_16` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.1 KiB | [pg_background_16-1.9.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.9.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_16` | `1.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.9 KiB | [pg_background_16-1.9.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.9.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_16` | `1.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.4 KiB | [pg_background_16-1.8-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.8-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_16` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 41.2 KiB | [pg_background_16-1.6-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.6-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_16` | `1.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.3 KiB | [pg_background_16-1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_16` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.9 KiB | [pg_background_16-1.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_background_16-1.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_16` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.4 KiB | [pg_background_16-1.9.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_background_16-1.9.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_background_16` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.3 KiB | [pg_background_16-1.9.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.9.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_16` | `1.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pg_background_16-1.9.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.9.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_16` | `1.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 45.3 KiB | [pg_background_16-1.8-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.8-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_16` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.3 KiB | [pg_background_16-1.6-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.6-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_16` | `1.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.6 KiB | [pg_background_16-1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.3-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_16` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.2 KiB | [pg_background_16-1.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_background_16-1.2-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_16` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 55.4 KiB | [pg_background_16-1.9.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_background_16-1.9.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_background_16` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.3 KiB | [pg_background_16-1.9.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_background_16-1.9.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_16` | `1.9.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.2 KiB | [pg_background_16-1.9.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_background_16-1.9.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_16` | `1.8` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [pg_background_16-1.8-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_background_16-1.8-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_16` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 41.7 KiB | [pg_background_16-1.6-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_background_16-1.6-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_16` | `1.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.8 KiB | [pg_background_16-1.3-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_background_16-1.3-3PGDG.rhel10.x86_64.rpm) |
 | `pg_background_16` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.7 KiB | [pg_background_16-1.9.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_background_16-1.9.2-1PIGSTY.el10.aarch64.rpm) |
+| `pg_background_16` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.8 KiB | [pg_background_16-1.9.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_background_16-1.9.2-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_16` | `1.9.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.5 KiB | [pg_background_16-1.9.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_background_16-1.9.1-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_16` | `1.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 45.9 KiB | [pg_background_16-1.8-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_background_16-1.8-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_16` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 40.7 KiB | [pg_background_16-1.6-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_background_16-1.6-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_16` | `1.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pg_background_16-1.3-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_background_16-1.3-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.8 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 89.2 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.4 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.9 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg12+1_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.4 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.8 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.5 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg13+1_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 89.0 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.4 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg13+1_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.7 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.1 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.8 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 100.1 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.6 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 63.0 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 98.5 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 62.9 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.5 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 91.9 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.7 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-16-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-16-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-16-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
 
@@ -223,12 +265,14 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_background_15` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 56.3 KiB | [pg_background_15-1.9.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_background_15-1.9.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_background_15` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.3 KiB | [pg_background_15-1.9.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.9.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_15` | `1.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.1 KiB | [pg_background_15-1.9.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.9.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_15` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pg_background_15-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.6-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_15` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 21.9 KiB | [pg_background_15-1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_15` | `1.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 19.6 KiB | [pg_background_15-1.2-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.2-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 39.3 KiB | [pg_background_15-1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_background_15-1.0-1.rhel8.x86_64.rpm) |
 | `pg_background_15` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 55.1 KiB | [pg_background_15-1.9.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_background_15-1.9.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_background_15` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.1 KiB | [pg_background_15-1.9.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.9.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_15` | `1.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.8 KiB | [pg_background_15-1.9.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.9.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_15` | `1.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.7 KiB | [pg_background_15-1.8-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.8-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_15` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.7 KiB | [pg_background_15-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.6-1PGDG.rhel8.10.aarch64.rpm) |
@@ -236,6 +280,7 @@ width: full
 | `pg_background_15` | `1.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 19.2 KiB | [pg_background_15-1.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 38.7 KiB | [pg_background_15-1.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_background_15-1.0-1.rhel8.aarch64.rpm) |
 | `pg_background_15` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.2 KiB | [pg_background_15-1.9.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_background_15-1.9.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_background_15` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.1 KiB | [pg_background_15-1.9.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.9.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_15` | `1.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.9 KiB | [pg_background_15-1.9.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.9.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_15` | `1.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.4 KiB | [pg_background_15-1.8-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.8-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_15` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 41.2 KiB | [pg_background_15-1.6-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.6-1PGDG.rhel9.7.x86_64.rpm) |
@@ -243,6 +288,7 @@ width: full
 | `pg_background_15` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.9 KiB | [pg_background_15-1.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 40.6 KiB | [pg_background_15-1.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_background_15-1.0-1.rhel9.x86_64.rpm) |
 | `pg_background_15` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.3 KiB | [pg_background_15-1.9.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_background_15-1.9.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_background_15` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.3 KiB | [pg_background_15-1.9.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.9.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_15` | `1.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.1 KiB | [pg_background_15-1.9.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.9.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_15` | `1.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 45.4 KiB | [pg_background_15-1.8-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.8-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_15` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.3 KiB | [pg_background_15-1.6-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.6-1PGDG.rhel9.7.aarch64.rpm) |
@@ -250,29 +296,39 @@ width: full
 | `pg_background_15` | `1.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 19.1 KiB | [pg_background_15-1.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.2-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 39.7 KiB | [pg_background_15-1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_background_15-1.0-1.rhel9.aarch64.rpm) |
 | `pg_background_15` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 55.4 KiB | [pg_background_15-1.9.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_background_15-1.9.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_background_15` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.4 KiB | [pg_background_15-1.9.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_background_15-1.9.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_15` | `1.9.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.2 KiB | [pg_background_15-1.9.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_background_15-1.9.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_15` | `1.8` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.8 KiB | [pg_background_15-1.8-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_background_15-1.8-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_15` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 41.8 KiB | [pg_background_15-1.6-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_background_15-1.6-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_15` | `1.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.8 KiB | [pg_background_15-1.3-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_background_15-1.3-3PGDG.rhel10.x86_64.rpm) |
 | `pg_background_15` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.8 KiB | [pg_background_15-1.9.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_background_15-1.9.2-1PIGSTY.el10.aarch64.rpm) |
+| `pg_background_15` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.8 KiB | [pg_background_15-1.9.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_background_15-1.9.2-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_15` | `1.9.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.6 KiB | [pg_background_15-1.9.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_background_15-1.9.1-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_15` | `1.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 45.9 KiB | [pg_background_15-1.8-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_background_15-1.8-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_15` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 40.7 KiB | [pg_background_15-1.6-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_background_15-1.6-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_15` | `1.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.3 KiB | [pg_background_15-1.3-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_background_15-1.3-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.5 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 89.1 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 58.4 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.9 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg12+1_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.4 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 56.8 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.5 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg13+1_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 89.3 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 58.5 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.3 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg13+1_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.7 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 57.2 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.7 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 100.1 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 64.6 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 63.0 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 98.5 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 62.9 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.8 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 91.9 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 58.7 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.3 KiB | [postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 91.1 KiB | [postgresql-15-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-15-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 57.2 KiB | [postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-15-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
 
@@ -282,52 +338,66 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_background_14` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 56.2 KiB | [pg_background_14-1.9.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_background_14-1.9.2-1PIGSTY.el8.x86_64.rpm) |
+| `pg_background_14` | `1.9.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.3 KiB | [pg_background_14-1.9.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_background_14-1.9.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_14` | `1.9.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 55.1 KiB | [pg_background_14-1.9.1-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_background_14-1.9.1-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_14` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pg_background_14-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_background_14-1.6-1PGDG.rhel8.10.x86_64.rpm) |
 | `pg_background_14` | `1.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 21.9 KiB | [pg_background_14-1.3-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_background_14-1.3-1PGDG.rhel8.x86_64.rpm) |
 | `pg_background_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 39.6 KiB | [pg_background_14-1.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_background_14-1.0-1.rhel8.x86_64.rpm) |
 | `pg_background_14` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 55.1 KiB | [pg_background_14-1.9.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_background_14-1.9.2-1PIGSTY.el8.aarch64.rpm) |
+| `pg_background_14` | `1.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 54.0 KiB | [pg_background_14-1.9.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.9.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_14` | `1.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.8 KiB | [pg_background_14-1.9.1-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.9.1-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_14` | `1.8` | [el8.aarch64](/os/el8.aarch64) | pgdg | 45.6 KiB | [pg_background_14-1.8-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.8-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_14` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 40.6 KiB | [pg_background_14-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.6-1PGDG.rhel8.10.aarch64.rpm) |
 | `pg_background_14` | `1.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.2 KiB | [pg_background_14-1.3-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.3-1PGDG.rhel8.aarch64.rpm) |
 | `pg_background_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 38.6 KiB | [pg_background_14-1.0-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_background_14-1.0-1.rhel8.aarch64.rpm) |
 | `pg_background_14` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 55.2 KiB | [pg_background_14-1.9.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_background_14-1.9.2-1PIGSTY.el9.x86_64.rpm) |
+| `pg_background_14` | `1.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 54.3 KiB | [pg_background_14-1.9.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.9.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_14` | `1.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 53.9 KiB | [pg_background_14-1.9.1-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.9.1-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_14` | `1.8` | [el9.x86_64](/os/el9.x86_64) | pgdg | 46.3 KiB | [pg_background_14-1.8-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.8-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_14` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 41.2 KiB | [pg_background_14-1.6-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.6-1PGDG.rhel9.7.x86_64.rpm) |
 | `pg_background_14` | `1.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.2 KiB | [pg_background_14-1.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.3-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_14` | `1.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 19.9 KiB | [pg_background_14-1.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_background_14-1.2-1PGDG.rhel9.x86_64.rpm) |
 | `pg_background_14` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 54.2 KiB | [pg_background_14-1.9.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_background_14-1.9.2-1PIGSTY.el9.aarch64.rpm) |
+| `pg_background_14` | `1.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.3 KiB | [pg_background_14-1.9.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.9.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_14` | `1.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.0 KiB | [pg_background_14-1.9.1-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.9.1-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_14` | `1.8` | [el9.aarch64](/os/el9.aarch64) | pgdg | 45.4 KiB | [pg_background_14-1.8-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.8-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_14` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.3 KiB | [pg_background_14-1.6-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.6-1PGDG.rhel9.7.aarch64.rpm) |
 | `pg_background_14` | `1.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.6 KiB | [pg_background_14-1.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.3-1PGDG.rhel9.aarch64.rpm) |
 | `pg_background_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 39.5 KiB | [pg_background_14-1.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_background_14-1.0-1.rhel9.aarch64.rpm) |
 | `pg_background_14` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 55.4 KiB | [pg_background_14-1.9.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_background_14-1.9.2-1PIGSTY.el10.x86_64.rpm) |
+| `pg_background_14` | `1.9.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.4 KiB | [pg_background_14-1.9.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_background_14-1.9.2-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_14` | `1.9.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 54.2 KiB | [pg_background_14-1.9.1-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_background_14-1.9.1-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_14` | `1.8` | [el10.x86_64](/os/el10.x86_64) | pgdg | 46.7 KiB | [pg_background_14-1.8-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_background_14-1.8-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_14` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 41.6 KiB | [pg_background_14-1.6-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_background_14-1.6-1PGDG.rhel10.1.x86_64.rpm) |
 | `pg_background_14` | `1.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.8 KiB | [pg_background_14-1.3-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_background_14-1.3-3PGDG.rhel10.x86_64.rpm) |
 | `pg_background_14` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 54.7 KiB | [pg_background_14-1.9.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_background_14-1.9.2-1PIGSTY.el10.aarch64.rpm) |
+| `pg_background_14` | `1.9.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.8 KiB | [pg_background_14-1.9.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_background_14-1.9.2-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_14` | `1.9.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 53.5 KiB | [pg_background_14-1.9.1-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_background_14-1.9.1-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_14` | `1.8` | [el10.aarch64](/os/el10.aarch64) | pgdg | 45.9 KiB | [pg_background_14-1.8-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_background_14-1.8-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_14` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 40.7 KiB | [pg_background_14-1.6-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_background_14-1.6-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_background_14` | `1.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pg_background_14-1.3-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_background_14-1.3-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 83.2 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 88.9 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 83.1 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg12+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pgdg | 81.7 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg12+1_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 87.2 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 81.5 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg12+1_arm64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pgdg | 83.4 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg13+1_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 89.0 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 83.1 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg13+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pgdg | 82.0 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg13+1_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 87.6 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 82.0 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg13+1_arm64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pgdg | 89.6 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 100.0 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 89.4 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pgdg | 87.8 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 98.4 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 87.7 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pgdg | 83.3 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 91.8 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 83.2 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pgdg | 82.0 KiB | [postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 90.9 KiB | [postgresql-14-pg-background_1.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-background/postgresql-14-pg-background_1.9.2-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-background` | `1.9.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 81.8 KiB | [postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-background/postgresql-14-pg-background_1.9.1-1.pgdg24.04+1_arm64.deb) |
 
@@ -374,129 +444,61 @@ pig install pg_background -v 14;   # install for PG 14
 CREATE EXTENSION pg_background;
 ```
 
-
-
 ## Usage
 
-> [pg_background: Execute SQL in background worker processes](https://github.com/vibhorkum/pg_background)
+Sources: [official README](https://github.com/vibhorkum/pg_background/blob/master/README.md), [v1.9.2 release](https://github.com/vibhorkum/pg_background/releases/tag/v1.9.2)
 
-Execute arbitrary SQL commands in **background worker processes** within PostgreSQL. Unlike `dblink` (which creates a separate connection), `pg_background` workers run **inside** the database server in **independent transactions**.
-
-**Use Cases:**
-- Background maintenance (VACUUM, ANALYZE, REINDEX)
-- Asynchronous audit logging
-- Long-running ETL pipelines
-- Independent notification delivery
-- Parallel query patterns
-
-### Quick Start (V2 API)
+`pg_background` executes SQL in PostgreSQL background worker processes. The worker runs inside the server and uses its own transaction, which makes it useful for asynchronous maintenance, autonomous side effects, and long-running tasks that should not block the caller.
 
 ```sql
 CREATE EXTENSION pg_background;
 
--- Launch a background job
 SELECT * FROM pg_background_launch_v2(
-  'SELECT count(*) FROM large_table'
-) AS handle;
---   pid  |      cookie
--- -------+-------------------
---  12345 | 1234567890123456
+  'SELECT count(*) FROM large_table',
+  65536,
+  'count-large-table'
+) AS h;
 
--- Retrieve results (one-time consumption)
-SELECT * FROM pg_background_result_v2(12345, 1234567890123456) AS (count BIGINT);
-
--- Fire-and-forget (no result needed)
-SELECT * FROM pg_background_submit_v2(
-  'INSERT INTO audit_log (ts, event) VALUES (now(), ''system_check'')'
-) AS handle;
+SELECT * FROM pg_background_result_v2(h.pid, h.cookie) AS (count bigint);
 ```
 
+### Core API
 
-## V2 API Reference
+- `pg_background_launch_v2(sql, queue_size, label)` launches a tracked worker and returns `(pid, cookie)`.
+- `pg_background_submit_v2(sql, queue_size, label)` is fire-and-forget for side-effect SQL.
+- `pg_background_result_v2(pid, cookie)` consumes the worker result set once.
+- `pg_background_wait_v2(...)` and `pg_background_wait_v2_timeout(...)` wait for completion.
+- `pg_background_cancel_v2(...)` stops execution; `pg_background_detach_v2(...)` stops tracking but lets work continue.
+- `pg_background_list_v2()`, `pg_background_stats_v2()`, and `pg_background_get_progress_v2(...)` expose worker state and progress.
 
-| Function | Returns | Description |
-|----------|---------|-------------|
-| `pg_background_launch_v2(sql, queue_size)` | `pg_background_handle` | Launch worker, return cookie-protected handle |
-| `pg_background_submit_v2(sql, queue_size)` | `pg_background_handle` | Fire-and-forget (no result consumption) |
-| `pg_background_result_v2(pid, cookie)` | `SETOF record` | Retrieve results (one-time consumption) |
-| `pg_background_detach_v2(pid, cookie)` | `void` | Stop tracking worker (worker continues) |
-| `pg_background_cancel_v2(pid, cookie)` | `void` | Request cancellation |
-| `pg_background_cancel_v2_grace(pid, cookie, grace_ms)` | `void` | Cancel with grace period |
-| `pg_background_wait_v2(pid, cookie)` | `void` | Block until worker completes |
-| `pg_background_wait_v2_timeout(pid, cookie, timeout_ms)` | `bool` | Wait with timeout |
-| `pg_background_list_v2()` | `SETOF record` | List known workers in current session |
-| `pg_background_stats_v2()` | `pg_background_stats` | Session statistics (v1.8+) |
-| `pg_background_progress(pct, msg)` | `void` | Report progress from worker (v1.8+) |
-| `pg_background_get_progress_v2(pid, cookie)` | `pg_background_progress` | Get worker progress (v1.8+) |
+### Typical Patterns
 
-### Cancel vs Detach
-
-| Operation | Stops Execution | Removes Tracking |
-|-----------|-----------------|------------------|
-| `cancel_v2()` | Yes (best-effort) | No |
-| `detach_v2()` | No | Yes |
-
-- Use **`cancel_v2()`** to **stop work** (terminate execution, prevent commit)
-- Use **`detach_v2()`** to **stop tracking** (free bookkeeping while worker continues)
-
-### Worker Lifecycle
+Run maintenance without holding the client session open:
 
 ```sql
--- Cancel a running job
-SELECT pg_background_cancel_v2(pid, cookie);
-
--- Wait for completion
-SELECT pg_background_wait_v2(pid, cookie);
-
--- Wait with timeout (returns true if completed)
-SELECT pg_background_wait_v2_timeout(pid, cookie, 5000);
-
--- List active workers
-SELECT * FROM pg_background_list_v2() AS (
-  pid int4, cookie int8, launched_at timestamptz,
-  user_id oid, queue_size int4, state text,
-  sql_preview text, last_error text, consumed bool
+SELECT * FROM pg_background_submit_v2(
+  'VACUUM (ANALYZE) public.events',
+  65536,
+  'vacuum-events'
 );
 ```
 
-Worker states: `running`, `stopped`, `canceled`, `error`
-
-### Progress Reporting (v1.8+)
+Use an autonomous side effect from application SQL:
 
 ```sql
--- From within worker SQL
-SELECT pg_background_progress(50, 'Halfway done');
-
--- From launcher (check progress)
-SELECT * FROM pg_background_get_progress_v2(pid, cookie);
+SELECT * FROM pg_background_submit_v2(
+  $$INSERT INTO audit_log(ts, event) VALUES (clock_timestamp(), 'job queued')$$
+);
 ```
 
+### GUCs And Security
 
-## GUC Settings (v1.8+)
+- `pg_background.max_workers` limits concurrent workers per session.
+- `pg_background.default_queue_size` controls the shared-memory queue size.
+- `pg_background.worker_timeout` sets an execution timeout; `0` means no limit.
+- The extension creates a dedicated `pg_background_worker` NOLOGIN role and ships helper functions to grant or revoke execution privileges.
 
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `pg_background.max_workers` | 16 | Max concurrent workers per session |
-| `pg_background.default_queue_size` | 65536 | Default shared memory queue size |
-| `pg_background.worker_timeout` | 0 | Worker execution timeout (0 = no limit) |
+### Caveats
 
-
-## V1 API (Legacy)
-
-The v1 API is retained for backward compatibility but lacks cookie-based PID reuse protection:
-
-```sql
-SELECT pg_background_launch('VACUUM VERBOSE my_table') AS pid \gset
-SELECT * FROM pg_background_result(:pid) AS (result TEXT);
-SELECT pg_background_detach(:pid);
-```
-
-The V2 API is recommended for production use due to cookie-based PID reuse protection.
-
-
-## Security Model
-
-- Extension is installed by superusers, with **no PUBLIC grants** by default
-- A dedicated `pg_background_worker` NOLOGIN role is created
-- Helper functions manage privileges: `grant_pg_background_privileges(role, include_v1)`
-- Workers execute as the **launching user** (not superuser)
+- Prefer the V2 API. The older V1 API is still present for compatibility but lacks cookie-based PID reuse protection.
+- The `v1.9.2` release is a binary-only patch for assert-enabled PostgreSQL builds. The SQL extension version remains `1.9`, so there is no new SQL upgrade script or user-facing function delta from `1.9.1`.

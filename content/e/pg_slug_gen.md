@@ -176,82 +176,66 @@ pig install pg_slug_gen -v 15;   # install for PG 15
 CREATE EXTENSION pg_slug_gen;
 ```
 
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION pg_slug_gen;
-> SELECT gen_random_slug();
-> SELECT gen_random_slug(13);
-> ```
->
-> Source: [PGXN release README](https://pgxn.org/dist/pg_slug_gen/1.0.0/)
+Sources: [official PGXN release page](https://pgxn.org/dist/pg_slug_gen/), [official release README](https://api.pgxn.org/src/pg_slug_gen/pg_slug_gen-1.0.0/README.md), [official release SQL](https://api.pgxn.org/src/pg_slug_gen/pg_slug_gen-1.0.0/sql/pg_slug_gen--1.0.sql), [official release metadata](https://api.pgxn.org/src/pg_slug_gen/pg_slug_gen-1.0.0/META.json)
 
-`pg_slug_gen` generates timestamp-based slugs using cryptographic randomness. The PGXN release README describes it as a PostgreSQL extension that maps timestamp digits into letter buckets and inserts a hyphen in the middle, producing URL-friendly slugs.
-
-## Function
-
-The documented SQL function is:
+`pg_slug_gen` generates timestamp-based slugs with cryptographic randomness. The official 1.0.0 release describes it as a secure, URL-friendly short ID generator where the requested length selects the timestamp precision.
 
 ```sql
-gen_random_slug(slug_length int DEFAULT 16) RETURNS text
+CREATE EXTENSION pg_slug_gen;
+
+SELECT gen_random_slug();
+SELECT gen_random_slug(13);
 ```
 
-The README shows these interfaces:
+### Function
 
-```sql
-gen_random_slug()      -- default: 16 (microseconds)
-gen_random_slug(10)    -- seconds
-gen_random_slug(13)    -- milliseconds
-gen_random_slug(16)    -- microseconds
-gen_random_slug(19)    -- nanoseconds
-```
+- `gen_random_slug(slug_length int DEFAULT 16) returns text`
 
-## Precision and Length
+The release SQL comment and README document these supported values:
 
-The release README maps precision to timestamp digits and maximum collision-free throughput:
+- `10`: seconds
+- `13`: milliseconds
+- `16`: microseconds, also the default
+- `19`: nanoseconds
 
-- `10` digits for seconds, up to 1 insert per second
-- `13` digits for milliseconds, up to 1,000 inserts per second
-- `16` digits for microseconds, up to 1,000,000 inserts per second
-- `19` digits for nanoseconds, up to 1 billion inserts per second
+### Precision And Format
 
-The slug includes a midpoint hyphen:
+Each precision maps to a timestamp width and a fixed slug shape:
 
-- seconds: `5-5` pattern, 11 characters total
-- milliseconds: `6-7` pattern, 14 characters
-- microseconds: `8-8` pattern, 17 characters
-- nanoseconds: `9-10` pattern, 20 characters
+- `10` digits: `5-5` format, 11 characters total
+- `13` digits: `6-7` format, 14 characters total
+- `16` digits: `8-8` format, 17 characters total
+- `19` digits: `9-10` format, 20 characters total
 
-## Examples
+The README states the collision-free window is bounded by timestamp precision: at most 1 insert per second, millisecond, microsecond, or nanosecond respectively.
+
+### Examples
 
 ```sql
 SELECT gen_random_slug();
 SELECT gen_random_slug(10);
-SELECT gen_random_slug(13);
 SELECT gen_random_slug(16);
-SELECT gen_random_slug(19);
-```
 
-As a table default:
-
-```sql
 CREATE TABLE products (
-    id serial PRIMARY KEY,
-    name text NOT NULL,
-    slug text DEFAULT gen_random_slug() UNIQUE
+  id serial PRIMARY KEY,
+  name text NOT NULL,
+  slug text DEFAULT gen_random_slug() UNIQUE
 );
 ```
 
-## How It Works
+### How It Works
 
-The release README describes the algorithm as:
+The official README describes this algorithm:
 
-1. take the current timestamp at the chosen precision
-2. map each digit to a QWERTY-based character bucket
-3. choose one random character from that bucket using `pg_strong_random()`
-4. insert a hyphen at the midpoint
+- take the current timestamp at the chosen precision
+- map each digit to a QWERTY-based character bucket
+- choose one random character from that bucket with `pg_strong_random()`
+- insert a hyphen at the midpoint
 
-The README also notes that same-timestamp collisions remain possible, but with microsecond precision the probability is stated as roughly 1 in 10 million.
+### Caveats
+
+- This is a secure short-ID generator, not a text transliteration or title-to-URL slugifier.
+- Same-timestamp collisions are still possible; upstream only claims uniqueness when inserts do not exceed one per chosen time unit.
+- The official release metadata still points to `https://github.com/fernandoolle/pg_slug_gen`, but that repo URL currently returns 404.

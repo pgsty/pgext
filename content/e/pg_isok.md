@@ -196,30 +196,54 @@ CREATE EXTENSION pg_isok;
 
 ## Usage
 
-- Source: [Codeberg repo](https://codeberg.org/kop/pg_isok), [documentation home](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/index.html), [doc source](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/isok.xml)
-- Isok is a query-centered monitoring extension for PostgreSQL. It reports changes to previously seen questionable data patterns, not just the existence of the rows.
+Sources: [official repo](https://codeberg.org/kop/pg_isok), [official docs home](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/index.html), [official reference source](https://codeberg.org/kop/pg_isok/src/branch/main/doc_src/isok.xml)
+
+`pg_isok` is a query-based data integrity and monitoring extension. Instead of only reporting rows that currently look questionable, it stores prior results and focuses later runs on unresolved or undeferred changes.
 
 ```sql
 CREATE SCHEMA isok;
 CREATE EXTENSION pg_isok SCHEMA isok;
+
+SELECT *
+FROM isok.run_isok_queries()
+AS problems;
 ```
 
-## Core Workflow
+### Core Objects
 
-The extension centers on two tables:
+- `ISOK_QUERIES` stores the monitoring queries and their execution settings.
+- `ISOK_RESULTS` stores the reported rows, including whether they were resolved or deferred.
+- `run_isok_queries()` runs every active check.
+- `run_isok_queries($$VALUES ('check_name')$$)` runs only selected checks.
 
-- `ISOK_QUERIES`, which stores the monitoring queries
-- `ISOK_RESULTS`, which stores the discovered issues and their resolution state
+### Typical Workflow
 
-Run the monitor with `run_isok_queries()`:
+Run one named check:
 
 ```sql
-SELECT * FROM run_isok_queries();
-SELECT * FROM run_isok_queries($$VALUES ('new_countries')$$) AS problems;
+SELECT *
+FROM isok.run_isok_queries($$VALUES ('new_countries')$$)
+AS problems;
 ```
 
-Rows in `ISOK_RESULTS` can be resolved or deferred so later runs no longer report them as active problems.
+Accept or postpone a known warning by updating `ISOK_RESULTS`:
 
-## Notes
+```sql
+UPDATE isok.isok_results
+SET deferred_to = 'infinity'
+WHERE iqname = 'new_countries';
+```
 
-The documentation describes Isok as a "soft trigger" style tool for data cleanup and integrity review. It installs on PostgreSQL 10 or later and can be built as pure SQL for managed environments.
+Use `resolved` when the condition is no longer a concern, or `deferred_to` when it should stay hidden until a later date.
+
+### Where It Fits
+
+- data cleanup after imports
+- monitoring unusual but sometimes acceptable patterns
+- "soft trigger" style review workflows where hard constraints are too strict
+
+### Caveats
+
+- Upstream recommends installing it in a dedicated schema and qualifying calls accordingly.
+- The docs describe it as pure SQL, which is useful on managed PostgreSQL services where C extensions may be restricted.
+- The package metadata in this repo says `superuser=false`, but this is not documented upstream as a trusted extension; treat installation privileges conservatively.

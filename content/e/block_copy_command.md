@@ -202,14 +202,12 @@ CREATE EXTENSION block_copy_command;
 ```
 
 ## Usage
-- GitHub Repo: [`rustwizard/block_copy_command`](https://github.com/rustwizard/block_copy_command)
-- README: [rustwizard/block_copy_command/blob/master/README.md](https://github.com/rustwizard/block_copy_command/blob/master/README.md)
 
-`block_copy_command` blocks `COPY` commands cluster-wide by installing a `ProcessUtility` hook. It is loaded with `shared_preload_libraries`, and `CREATE EXTENSION` only registers the extension metadata in each database.
+- Source: [README](https://github.com/rustwizard/block_copy_command/blob/master/README.md)
 
-This extension is intended for deployments that want to stop `COPY TO` and `COPY FROM` by default for non-superusers, while still allowing finer-grained policy through GUCs and an audit table.
+`block_copy_command` installs a `ProcessUtility` hook that intercepts `COPY` statements. The hook is cluster-wide once the library is loaded, while `CREATE EXTENSION` only registers metadata in a database.
 
-### Setup
+### Enable It
 
 ```conf
 shared_preload_libraries = 'block_copy_command'
@@ -219,11 +217,11 @@ shared_preload_libraries = 'block_copy_command'
 CREATE EXTENSION block_copy_command;
 ```
 
-The README says the hook becomes active for the whole cluster as soon as the library is loaded.
+The upstream README lists PostgreSQL 13-18 support.
 
 ### Blocking Rules
 
-By default, non-superusers are blocked from running `COPY`.
+By default, non-superusers cannot run `COPY TO` or `COPY FROM`:
 
 ```sql
 COPY my_table TO STDOUT;
@@ -231,24 +229,24 @@ COPY my_table FROM STDIN;
 COPY (SELECT * FROM my_table) TO '/tmp/out.csv';
 ```
 
-Superusers bypass the block unless they are listed in `block_copy_command.blocked_roles` or `block_copy_command.block_program` is enabled. `COPY ... PROGRAM` is blocked for everyone by default.
+Priority is documented as:
 
-### Settings
+- `block_copy_command.blocked_roles`: always blocked, even superusers.
+- `block_copy_command.block_program = on`: blocks `COPY ... PROGRAM` for everyone.
+- `block_copy_command.enabled = off`: allows `COPY` for roles not in `blocked_roles`.
+- Superusers otherwise bypass direction blocking.
+- `block_copy_command.block_to` and `block_copy_command.block_from` control export/import blocking for non-superusers.
 
-- `block_copy_command.enabled` toggles blocking for non-superusers.
-- `block_copy_command.block_to` controls whether `COPY TO` is blocked.
-- `block_copy_command.block_from` controls whether `COPY FROM` is blocked.
-- `block_copy_command.block_program` blocks `COPY TO/FROM PROGRAM` for all users.
-- `block_copy_command.hint` appends a custom `HINT:` to blocked commands.
-- `block_copy_command.blocked_roles` permanently blocks named roles, including superusers.
-- `block_copy_command.audit_log_enabled` controls whether intercepted `COPY` events are written to `block_copy_command.audit_log`.
+### Main Settings
 
-### Audit Log
+- `block_copy_command.enabled`: master switch for non-superuser blocking.
+- `block_copy_command.block_to`: block `COPY TO`.
+- `block_copy_command.block_from`: block `COPY FROM`.
+- `block_copy_command.block_program`: block `COPY TO/FROM PROGRAM` for all users.
+- `block_copy_command.hint`: append a custom `HINT` to blocked-command errors.
+- `block_copy_command.blocked_roles`: comma-separated always-blocked roles.
+- `block_copy_command.audit_log_enabled`: write intercepted events to the audit table.
 
-The extension records intercepted `COPY` activity in `block_copy_command.audit_log` and also writes blocked events to the PostgreSQL server log at `LOG` level.
+### Audit And Caveats
 
-Typical monitoring queries from the README include listing recent events, filtering blocked events, and grouping by user.
-
-### Scope
-
-The upstream README covers requirements, enablement, blocking behavior, the main GUCs, the audit table, and test coverage. No separate project homepage or docs site was needed for this stub.
+Allowed and blocked attempts are intercepted, and the extension defines `block_copy_command.audit_log` plus server-log entries for blocked events. The README notes one important caveat: blocked audit rows are inserted before the error is raised, so they are rolled back with the transaction. In practice, PostgreSQL server logs are the authoritative record for blocked `COPY` attempts.

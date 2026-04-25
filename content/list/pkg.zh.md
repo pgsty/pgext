@@ -137,9 +137,9 @@ comments: false
 | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< category "FEAT" >}} | `pg_plan_filter_$v` | `postgresql-$v-pg-plan-filter` |
 | {{< ext "pg_variables" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/postgrespro/pg_variables" >}} | {{< category "FEAT" >}} | `pg_variables_$v` | `postgresql-$v-pg-variables` |
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v` | `postgresql-$v-imgsmlr` |
-| {{< ext "pg_ivm" >}} | `1.13` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v` | `postgresql-$v-pg-ivm` |
+| {{< ext "pg_ivm" >}} | `1.14` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v` | `postgresql-$v-pg-ivm` |
 | {{< ext "pg_incremental" >}} | `1.5.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v` | `postgresql-$v-pg-incremental` |
-| {{< ext "pg_trickle" >}} | `0.17.0` | {{< badge content="Link" link="https://github.com/grove/pg-trickle" >}} | {{< category "FEAT" >}} | `pg_trickle_$v` | `postgresql-$v-pg-trickle` |
+| {{< ext "pg_trickle" >}} | `0.20.0` | {{< badge content="Link" link="https://github.com/grove/pg-trickle" >}} | {{< category "FEAT" >}} | `pg_trickle_$v` | `postgresql-$v-pg-trickle` |
 | {{< ext "provsql" >}} | `1.2.3` | {{< badge content="Link" link="https://github.com/PierreSenellart/provsql" >}} | {{< category "FEAT" >}} | `provsql_$v` | `postgresql-$v-provsql` |
 | {{< ext "orioledb" >}} | `1.7` | {{< badge content="Link" link="https://github.com/orioledb/orioledb" >}} | {{< category "FEAT" >}} | `orioledb_$v` | `oriolepg-$v-orioledb` |
 | {{< ext "pg_cardano" >}} | `1.2.0` | {{< badge content="Link" link="https://github.com/Fell-x27/pg_cardano" >}} | {{< category "FEAT" >}} | `pg_cardano_$v` | `postgresql-$v-pg-cardano` |
@@ -167,7 +167,7 @@ comments: false
 | {{< ext "plperlu" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/plperl.html" >}} | {{< category "LANG" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "plpgsql" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/plpgsql.html" >}} | {{< category "LANG" >}} | `postgresql$v-contrib` | `postgresql-$v` |
 | {{< ext "plpython3u" >}} | `1.0` | {{< badge content="Link" link="https://www.postgresql.org/docs/current/plpython.html" >}} | {{< category "LANG" >}} | `postgresql$v-contrib` | `postgresql-$v` |
-| {{< ext "prefix" "pg_prefix" >}} | `1.2.10` | {{< badge content="Link" link="https://github.com/dimitri/prefix" >}} | {{< category "TYPE" >}} | `prefix_$v` | `postgresql-$v-prefix` |
+| {{< ext "prefix" "pg_prefix" >}} | `1.2.11` | {{< badge content="Link" link="https://github.com/dimitri/prefix" >}} | {{< category "TYPE" >}} | `prefix_$v` | `postgresql-$v-prefix` |
 | {{< ext "semver" "pg_semver" >}} | `0.41.0` | {{< badge content="Link" link="https://github.com/theory/pg-semver" >}} | {{< category "TYPE" >}} | `semver_$v` | `postgresql-$v-semver` |
 | {{< ext "pg_text_semver" >}} | `1.2.1` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_text_semver" >}} | {{< category "TYPE" >}} | `pg_text_semver_$v` | `postgresql-$v-pg-text-semver` |
 | {{< ext "unit" "pgunit" >}} | `7.10` | {{< badge content="Link" link="https://github.com/df7cb/postgresql-unit" >}} | {{< category "TYPE" >}} | `postgresql-unit_$v` | `postgresql-$v-unit` |
@@ -385,7 +385,7 @@ comments: false
 | {{< ext "logerrors" >}} | `2.1.5` | {{< badge content="Link" link="https://github.com/munakoiso/logerrors" >}} | {{< category "SEC" >}} | `logerrors_$v` | `postgresql-$v-logerrors` |
 | {{< ext "pg_auth_mon" >}} | `3.0` | {{< badge content="Link" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< category "SEC" >}} | `pg_auth_mon_$v` | `postgresql-$v-pg-auth-mon` |
 | {{< ext "pg_jobmon" >}} | `1.4.1` | {{< badge content="Link" link="https://github.com/omniti-labs/pg_jobmon" >}} | {{< category "SEC" >}} | `pg_jobmon_$v` | `postgresql-$v-pg-jobmon` |
-| {{< ext "credcheck" >}} | `4.6` | {{< badge content="Link" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< category "SEC" >}} | `credcheck_$v` | `postgresql-$v-credcheck` |
+| {{< ext "credcheck" >}} | `4.7` | {{< badge content="Link" link="https://github.com/MigOpsRepos/credcheck" >}} | {{< category "SEC" >}} | `credcheck_$v` | `postgresql-$v-credcheck` |
 | {{< ext "pgcryptokey" >}} | `0.85` | {{< badge content="Link" link="https://momjian.us/download/pgcryptokey/" >}} | {{< category "SEC" >}} | `pgcryptokey_$v` | `postgresql-$v-pgcryptokey` |
 | {{< ext "pg_pwhash" >}} | `1.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/pg_pwhash" >}} | {{< category "SEC" >}} | `pg_pwhash_$v` | `postgresql-$v-pg-pwhash` |
 | {{< ext "login_hook" >}} | `1.7` | {{< badge content="Link" link="https://github.com/splendiddata/login_hook" >}} | {{< category "SEC" >}} | `login_hook_$v` | `postgresql-$v-login-hook` |
@@ -435,7 +435,7 @@ comments: false
 | {{< ext "ivorysql_ora" "ivorysql" >}} | `1.0` | {{< badge content="Link" link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" >}} | {{< category "SIM" >}} | `ivorysql5` | `ivorysql-5` |
 | {{< ext "pg_dbms_metadata" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_metadata" >}} | {{< category "SIM" >}} | `pg_dbms_metadata_$v` | - |
 | {{< ext "pg_dbms_lock" >}} | `1.0` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_lock" >}} | {{< category "SIM" >}} | `pg_dbms_lock_$v` | - |
-| {{< ext "pg_dbms_job" >}} | `1.5` | {{< badge content="Link" link="https://github.com/MigOpsRepos/pg_dbms_job" >}} | {{< category "SIM" >}} | `pg_dbms_job_$v` | - |
+| {{< ext "pg_dbms_job" >}} | `2.0` | {{< badge content="Link" link="https://github.com/MigOpsRepos/pg_dbms_job" >}} | {{< category "SIM" >}} | `pg_dbms_job_$v` | - |
 | {{< ext "pg_dbms_errlog" >}} | `2.2` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_errlog" >}} | {{< category "SIM" >}} | `pg_dbms_errlog_$v` | - |
 | {{< ext "pg_utl_smtp" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/hexacluster/pg_utl_smtp" >}} | {{< category "SIM" >}} | `pg_utl_smtp_$v` | `postgresql-$v-utl-smtp` |
 | {{< ext "babelfishpg_common" "babelfish" >}} | `5.5.0` | {{< badge content="Link" link="https://babelfishpg.org/" >}} | {{< category "SIM" >}} | `babelfish_$v` | `babelfishpg-$v-babelfish` |

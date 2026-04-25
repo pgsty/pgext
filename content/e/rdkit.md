@@ -193,49 +193,50 @@ CREATE EXTENSION rdkit;
 
 ## Usage
 
-> Sources: [GitHub README](https://raw.githubusercontent.com/rdkit/rdkit/master/README.md), [Cartridge docs](https://www.rdkit.org/docs/Cartridge.html), [project site](https://www.rdkit.org)
-> RDKit provides a PostgreSQL cartridge for cheminformatics storage, search, fingerprints, and descriptors.
+- Sources: [project README](https://github.com/rdkit/rdkit/blob/master/README.md), [cartridge docs](https://www.rdkit.org/docs/Cartridge.html), [2025.03.6 release](https://github.com/rdkit/rdkit/releases/tag/Release_2025.03.6)
+
+RDKit ships a PostgreSQL cartridge for cheminformatics storage, search, fingerprints, and descriptors. The cartridge docs remain the main upstream usage reference; the 2025.03.6 release notes do not call out cartridge-specific user-facing changes.
+
+### Create The Extension
 
 ```sql
 CREATE EXTENSION rdkit;
 ```
 
-The cartridge adds molecular types and operators for substructure search, exact match, similarity search, fingerprint generation, and many descriptor functions.
+The cartridge adds chemistry-specific types including `mol`, `bfp`, and `sfp`.
 
-### Core Types
+### Core Search Operators
 
-- `mol` for molecule and query molecule values.
-- `bfp` for bit-vector fingerprints.
-- `sfp` for sparse count fingerprints.
+The cartridge documentation covers:
 
-### Search Operators
+- `@>` and `<@` for substructure matching.
+- `@=` for exact molecular equality.
+- `%`, `<%>`, and `<#>` style fingerprint similarity and KNN operators for similarity search.
 
-- `@>` checks whether the right-hand molecule is a substructure of the left-hand molecule.
-- `<@` performs the reverse substructure check.
-- `@=` checks exact molecular equality.
-- `#` is the Dice similarity threshold operator.
-- `<%>` supports Tanimoto KNN searches.
-- `<#>` supports Dice KNN searches.
+These are typically combined with GiST indexes over fingerprint columns.
 
-### Fingerprints
+### Fingerprints And Similarity
 
-- `morgan_fp` and `morganbv_fp` for Morgan fingerprints.
-- `featmorgan_fp` and `featmorganbv_fp` for feature-based Morgan fingerprints.
-- `rdkit_fp` for hashed RDKit fingerprints.
-- `atompair_fp`, `atompairbv_fp`, `torsion_fp`, and `torsionbv_fp`.
-- `layered_fp` and `maccs_fp`.
+Common fingerprint functions documented for SQL usage include `morgan_fp`, `morganbv_fp`, `featmorgan_fp`, `rdkit_fp`, `atompair_fp`, `torsion_fp`, `layered_fp`, and `maccs_fp`.
 
-### Descriptor Examples
+Example from the cartridge docs:
 
 ```sql
-SELECT is_valid_smiles('c1ccccc1');
-SELECT tanimoto_sml(morganbv_fp('c1ccccc1'::mol), morganbv_fp('c1ccccc1O'::mol));
-SELECT mol_amw('c1ccccc1'::mol);
-SELECT mol_hba('c1ccccc1O'::mol);
-SELECT mol_numrings('c1ccccc1'::mol);
+SELECT tanimoto_sml(
+  morganbv_fp('c1ccccc1'::mol),
+  morganbv_fp('c1ccccc1O'::mol)
+);
 ```
 
-### Notes
+### Descriptors And Validation
 
-- The docs describe additional molecule-validation helpers such as `is_valid_smiles`, `is_valid_ctab`, and `is_valid_smarts`.
-- The cartridge also exposes many additional descriptor and fingerprint size GUCs, but the stub keeps only the core user-facing entry points.
+The cartridge docs also expose validation and descriptor helpers such as:
+
+- `is_valid_smiles()`
+- `is_valid_ctab()`
+- `is_valid_smarts()`
+- `mol_amw()`
+- `mol_hba()`
+- `mol_numrings()`
+
+These functions are the main user-facing surface for SQL analytics on molecular structures.

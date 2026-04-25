@@ -46,14 +46,14 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_15 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_14 : AVAIL 4" "green" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_14 : AVAIL 2" "green" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "pg_failover_slots_14 : AVAIL 2" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 2" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.2.1" "postgresql-18-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-17-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-16-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-15-pg-failover-slots : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.2.1" "postgresql-14-pg-failover-slots : AVAIL 3" "blue" >}} |
 
 
 {{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
@@ -73,20 +73,28 @@ width: full
 | `pg_failover_slots_18` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.5 KiB | [pg_failover_slots_18-1.2.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_failover_slots_18-1.2.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_failover_slots_18` | `1.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 25.3 KiB | [pg_failover_slots_18-1.2.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_failover_slots_18-1.2.1-1PIGSTY.el10.aarch64.rpm) |
 | `pg_failover_slots_18` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 25.1 KiB | [pg_failover_slots_18-1.2.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_failover_slots_18-1.2.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.5 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 38.4 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.3 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.8 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 37.8 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.7 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 38.7 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.8 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.9 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 38.0 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.9 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 40.1 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.5 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 39.9 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 38.9 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 40.6 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 38.8 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.5 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-18-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.8 KiB | [postgresql-18-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 39.8 KiB | [postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pg-failover-slots` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.8 KiB | [postgresql-18-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-18-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb) |
 
@@ -107,20 +115,28 @@ width: full
 | `pg_failover_slots_17` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.6 KiB | [pg_failover_slots_17-1.1.0-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_failover_slots_17-1.1.0-3PGDG.rhel10.x86_64.rpm) |
 | `pg_failover_slots_17` | `1.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 25.3 KiB | [pg_failover_slots_17-1.2.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_failover_slots_17-1.2.1-1PIGSTY.el10.aarch64.rpm) |
 | `pg_failover_slots_17` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 25.2 KiB | [pg_failover_slots_17-1.1.0-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_failover_slots_17-1.1.0-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.5 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 38.5 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.4 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.8 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 37.8 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.6 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 38.6 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.5 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.9 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 38.0 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.8 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 44.3 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 45.8 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 44.2 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 43.4 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 45.1 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 43.3 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.7 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.6 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-17-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.9 KiB | [postgresql-17-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 39.7 KiB | [postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pg-failover-slots` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.7 KiB | [postgresql-17-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-17-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb) |
 
@@ -145,20 +161,28 @@ width: full
 | `pg_failover_slots_16` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.6 KiB | [pg_failover_slots_16-1.1.0-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_failover_slots_16-1.1.0-3PGDG.rhel10.x86_64.rpm) |
 | `pg_failover_slots_16` | `1.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 25.3 KiB | [pg_failover_slots_16-1.2.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_failover_slots_16-1.2.1-1PIGSTY.el10.aarch64.rpm) |
 | `pg_failover_slots_16` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 25.2 KiB | [pg_failover_slots_16-1.1.0-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_failover_slots_16-1.1.0-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.5 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 38.4 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.3 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 37.8 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.7 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 38.7 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.5 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 39.0 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 37.9 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.8 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.8 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.3 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.7 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 42.0 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.6 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 41.9 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.4 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.4 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-16-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.9 KiB | [postgresql-16-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 39.7 KiB | [postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pg-failover-slots` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.7 KiB | [postgresql-16-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-16-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb) |
 
@@ -187,20 +211,28 @@ width: full
 | `pg_failover_slots_15` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.7 KiB | [pg_failover_slots_15-1.1.0-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_failover_slots_15-1.1.0-3PGDG.rhel10.x86_64.rpm) |
 | `pg_failover_slots_15` | `1.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 25.3 KiB | [pg_failover_slots_15-1.2.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_failover_slots_15-1.2.1-1PIGSTY.el10.aarch64.rpm) |
 | `pg_failover_slots_15` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 25.5 KiB | [pg_failover_slots_15-1.1.0-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_failover_slots_15-1.1.0-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.6 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 38.6 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.5 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 37.8 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.7 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 38.7 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.8 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 39.0 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 37.9 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.8 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.9 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.3 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.7 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 41.9 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.6 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 41.8 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.7 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.5 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-15-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.8 KiB | [postgresql-15-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 39.8 KiB | [postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pg-failover-slots` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.7 KiB | [postgresql-15-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-15-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb) |
 
@@ -229,20 +261,28 @@ width: full
 | `pg_failover_slots_14` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 25.7 KiB | [pg_failover_slots_14-1.1.0-3PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_failover_slots_14-1.1.0-3PGDG.rhel10.x86_64.rpm) |
 | `pg_failover_slots_14` | `1.2.1` | [el10.aarch64](/os/el10.aarch64) | pigsty | 25.3 KiB | [pg_failover_slots_14-1.2.1-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_failover_slots_14-1.2.1-1PIGSTY.el10.aarch64.rpm) |
 | `pg_failover_slots_14` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 25.5 KiB | [pg_failover_slots_14-1.1.0-3PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_failover_slots_14-1.1.0-3PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.6 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 38.5 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 39.4 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg12+1_amd64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg12+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 37.7 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pgdg | 38.7 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg12+1_arm64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.7 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg13+1_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 38.7 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~trixie_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pgdg | 39.6 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg13+1_amd64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.8 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg13+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 37.8 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [d13.aarch64](/os/d13.aarch64) | pgdg | 38.8 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg13+1_arm64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.7 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg22.04+1_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.2 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u22.x86_64](/os/u22.x86_64) | pgdg | 42.6 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg22.04+1_amd64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 41.8 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.5 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u22.aarch64](/os/u22.aarch64) | pgdg | 41.7 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg22.04+1_arm64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.6 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.5 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 39.5 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg24.04+1_amd64.deb) |
+| `postgresql-14-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.8 KiB | [postgresql-14-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 39.8 KiB | [postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.1-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pg-failover-slots` | `1.2.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 38.6 KiB | [postgresql-14-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-failover-slots/postgresql-14-pg-failover-slots_1.2.0-1.pgdg24.04+1_arm64.deb) |
 
@@ -295,74 +335,51 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
-
 ## Usage
 
-> [pg_failover_slots: PG Failover Slots extension](https://github.com/EnterpriseDB/pg_failover_slots)
+Sources: [README](https://github.com/EnterpriseDB/pg_failover_slots/blob/master/README.md), [releases](https://github.com/EnterpriseDB/pg_failover_slots/releases)
 
-Makes logical replication slots usable across a physical failover by synchronizing slot state from primary to standby.
+`pg_failover_slots` keeps logical replication slots usable across failover by synchronizing slot definitions and positions from a primary to a standby.
 
-### Enabling
-
-Add to `postgresql.conf` on both primary and standby:
+### Enable it on both nodes
 
 ```ini
 shared_preload_libraries = 'pg_failover_slots'
 ```
 
-Required settings on standby:
+Required standby settings from the README:
 
 ```ini
 hot_standby_feedback = on
-primary_slot_name = 'my_physical_slot'  -- must be non-empty
+primary_slot_name = 'my_physical_slot'
 ```
 
-### Configuration Options
+### Main configuration
 
 ```ini
-# Which slots to synchronize (default: all logical slots)
 pg_failover_slots.synchronize_slot_names = 'name_like:%'
-
-# Synchronize specific slots
-pg_failover_slots.synchronize_slot_names = 'my_slot,plugin:test_decoding'
-
-# Drop extra slots on standby not found on primary (default: true)
 pg_failover_slots.drop_extra_slots = true
-
-# Connection string to primary (default: uses primary_conninfo)
 pg_failover_slots.primary_dsn = 'host=primary dbname=mydb'
-
-# Ensure physical standbys receive data before logical consumers
 pg_failover_slots.standby_slot_names = 'standby_physical_slot'
-
-# How many standby slots must confirm (default: -1 = all)
 pg_failover_slots.standby_slots_min_confirmed = -1
-
-# Sync interval in ms (default: 60000)
 pg_failover_slots.worker_nap_time = 60000
+pg_failover_slots.maintenance_db = 'postgres'
 ```
 
-### Checking Standby Readiness
+The README documents `synchronize_slot_names` filters by exact slot name, `LIKE` pattern, or plugin name.
 
-Verify all logical slots are synchronized before failover:
+### Check standby readiness before failover
 
 ```sql
--- On standby: all slots should show active = false
-SELECT slot_name, active FROM pg_replication_slots WHERE slot_type = 'logical';
-
---  slot_name        | active
--- ------------------+--------
---  regression_slot1 | f        -- synchronized, ready
---  regression_slot2 | f        -- synchronized, ready
---  regression_slot3 | t        -- still syncing, NOT ready
+SELECT slot_name, active
+FROM pg_replication_slots
+WHERE slot_type = 'logical';
 ```
 
-When all slots show `active = false`, the standby is safe for failover.
+On the standby, logical slots are ready only when they exist and show `active = false`. The README says `active = true` means a slot is still being initialized.
 
-### Key Behaviors
+### Notes
 
-- Copies missing replication slots from primary to standby
-- Removes extra slots on standby not found on primary
-- Periodically synchronizes slot positions
-- `standby_slot_names` provides a synchronous replication barrier to prevent data loss on failover
-- Requires PostgreSQL 11 or higher
+- PostgreSQL 11+ is required upstream.
+- `v1.2.1` is a bug-fix release; no new user-facing SQL or GUC surface was added there.
+- `v1.2.0` added PostgreSQL 18 support and clarified `drop_extra_slots` behavior.

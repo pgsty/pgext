@@ -200,60 +200,41 @@ pig install pg_dispatch -v 14;   # install for PG 14
 CREATE EXTENSION pg_dispatch CASCADE; -- requires pgcrypto, pg_cron
 ```
 
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION "Snehil_Shah@pg_dispatch";
-> SELECT pgdispatch.fire('SELECT pg_sleep(40);');
-> SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
-> ```
->
-> Sources: [README](https://github.com/Snehil-Shah/pg_dispatch), [database.dev page](https://database.dev/Snehil_Shah/pg_dispatch)
+Source: [README](https://github.com/Snehil-Shah/pg_dispatch/blob/master/README.md), [database.dev page](https://database.dev/Snehil_Shah/pg_dispatch)
 
-`pg_dispatch` is an asynchronous SQL dispatcher for PostgreSQL. It is designed as a TLE-compatible alternative to `pg_later`, built on top of `pg_cron`, so it can be used in environments such as Supabase and AWS RDS.
+`pg_dispatch` is a TLE-compatible async SQL dispatcher built on `pg_cron`. It is intended for deferring side effects out of the caller's main transaction in sandboxed environments such as RDS or Supabase.
 
-## Prerequisites
+### Requirements and install
 
-The upstream README lists:
-
-- PostgreSQL 13 or newer
-- `pg_cron` 1.5.0 or newer
+- PostgreSQL 13+
+- `pg_cron` 1.5.0+
 - `pgcrypto`
-
-## Installation
-
-The documented TLE installation path is:
 
 ```sql
 SELECT dbdev.install(Snehil_Shah@pg_dispatch);
 CREATE EXTENSION "Snehil_Shah@pg_dispatch";
 ```
 
-The README warns that the extension installs into the `pgdispatch` schema and can collide with an existing schema of the same name.
+The extension installs into the `pgdispatch` schema.
 
-## Functions
-
-### `pgdispatch.fire(command text)`
-
-Dispatch an SQL command for asynchronous execution:
+### Main functions
 
 ```sql
 SELECT pgdispatch.fire('SELECT pg_sleep(40);');
-```
-
-### `pgdispatch.snooze(command text, delay interval)`
-
-Dispatch a delayed SQL command:
-
-```sql
 SELECT pgdispatch.snooze('SELECT pg_sleep(20);', '20 seconds');
 ```
 
-The README notes that the delay is scheduled asynchronously and does not block the caller's main transaction.
+- `pgdispatch.fire(command text)`: enqueue SQL for immediate async execution.
+- `pgdispatch.snooze(command text, delay interval)`: enqueue SQL for delayed async execution.
 
-## Use Cases
+### Typical use
 
-The project positions itself for database-native async side effects, especially in PL/pgSQL or trigger-based workflows. Its example use case is moving expensive notification or analytics work out of an `AFTER INSERT` trigger so the main RPC or application request can return sooner.
+The official README positions `pg_dispatch` for PL/pgSQL or trigger-based workflows where a foreground RPC should commit quickly while notifications, analytics updates, or other expensive SQL run later in a separate transaction.
+
+### Caveats
+
+- The runtime dependency on `pgcrypto` is in addition to `pg_cron`.
+- The `delay` argument truncates to seconds precision.
+- The project documents TLE/database.dev installation first; manual PGXN installation is also linked from the README.

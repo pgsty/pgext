@@ -176,30 +176,25 @@ pig install pg_incremental -v 16;   # install for PG 16
 CREATE EXTENSION pg_incremental;
 ```
 
-
-
-
 ## Usage
 
-> [pg_incremental: Incremental Data Processing in PostgreSQL](https://github.com/CrunchyData/pg_incremental)
+- Sources: [README](https://github.com/CrunchyData/pg_incremental/blob/main/README.md), [v1.5.0 release](https://github.com/CrunchyData/pg_incremental/releases/tag/v1.5.0)
 
-The `pg_incremental` extension provides fast, reliable incremental batch processing pipelines in PostgreSQL. It defines parameterized queries that execute periodically for new data, ensuring exactly-once delivery.
+`pg_incremental` defines exactly-once incremental pipelines for append-only tables and file feeds. Upstream documents three pipeline types: sequence, time-interval, and file-list.
+
+### Install And Scheduling Model
+
+The upstream README still documents `pg_cron`-backed scheduling and installs with:
 
 ```sql
-CREATE EXTENSION pg_incremental CASCADE;  -- depends on pg_cron
+CREATE EXTENSION pg_incremental CASCADE;
 ```
 
-### Pipeline Types
+Pipelines run immediately when created unless `execute_immediately := false`, then continue on a `pg_cron` schedule. The README notes that each scheduled execution appears in `cron.job_run_details` even when no new data is available.
 
-There are three types of pipelines:
+### Sequence Pipelines
 
-- **Sequence pipelines** -- Process ranges of sequence values from a table
-- **Time interval pipelines** -- Process time ranges after intervals pass
-- **File list pipelines** -- Process new files from a file listing function
-
-### Sequence Pipeline
-
-Create a pipeline that incrementally aggregates new rows using a sequence:
+Use sequence pipelines to process safe ranges of sequence values:
 
 ```sql
 SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
@@ -208,53 +203,32 @@ SELECT incremental.create_sequence_pipeline('event-aggregation', 'events', $$
   FROM events
   WHERE event_id BETWEEN $1 AND $2
   GROUP BY 1
-  ON CONFLICT (day) DO UPDATE SET event_count = events_agg.event_count + excluded.event_count
+  ON CONFLICT (day) DO UPDATE
+  SET event_count = events_agg.event_count + excluded.event_count
 $$);
 ```
 
-`$1` and `$2` are set to the lowest and highest sequence values that can be safely processed.
+The README documents `max_batch_size` for limiting how many sequence IDs are processed per run.
 
-With batch size limiting:
+### Time-Interval Pipelines
 
-```sql
-SELECT incremental.create_sequence_pipeline(
-  'event-aggregation', 'events',
-  $$ ... $$,
-  schedule := '* * * * *',
-  max_batch_size := 10000
-);
-```
-
-### Time Interval Pipeline
-
-Process data in fixed time intervals:
+Use time windows when the command should receive `$1` and `$2` as a passed interval:
 
 ```sql
 SELECT incremental.create_time_interval_pipeline('event-aggregation', '1 day', $$
   INSERT INTO events_agg
-  SELECT event_time::date, count(distinct event_id)
+  SELECT event_time::date, count(DISTINCT event_id)
   FROM events
   WHERE event_time >= $1 AND event_time < $2
   GROUP BY 1
 $$);
 ```
 
-`$1` and `$2` are set to the start and end (exclusive) of the time range.
+For export-style jobs, the README documents `batched := false` so each interval runs separately.
 
-For per-interval execution (e.g., daily exports):
+### File-List Pipelines
 
-```sql
-SELECT incremental.create_time_interval_pipeline('event-export',
-  time_interval := '1 day',
-  batched := false,
-  start_time := '2024-11-01',
-  command := $$ SELECT export_events($1, $2) $$
-);
-```
-
-### File List Pipeline
-
-Process new files as they appear:
+Use file-list pipelines to process newly discovered files:
 
 ```sql
 SELECT incremental.create_file_list_pipeline('event-import', 's3://mybucket/events/*.csv', $$
@@ -262,27 +236,15 @@ SELECT incremental.create_file_list_pipeline('event-import', 's3://mybucket/even
 $$);
 ```
 
-### Management Functions
+The v1.5.0 release adds `max_batches_per_run` to file-list pipelines. The README documents `incremental.skip_file()` for permanently marking a bad file as processed.
 
-| Function | Description |
-|----------|-------------|
-| `incremental.execute_pipeline(name)` | Manually execute a pipeline (only if new data exists) |
-| `incremental.reset_pipeline(name)` | Reset pipeline to reprocess from the beginning |
-| `incremental.drop_pipeline(name)` | Remove a pipeline |
-| `incremental.skip_file(pipeline, path)` | Skip a faulty file in a file list pipeline |
+### Operations And Monitoring
 
-### Monitoring
+The README documents:
 
-```sql
-SELECT * FROM incremental.sequence_pipelines;
-SELECT * FROM incremental.time_interval_pipelines;
-SELECT * FROM incremental.processed_files;
-```
+- `CALL incremental.execute_pipeline(name)`: run once if new work exists.
+- `SELECT incremental.reset_pipeline(name)`: reset progress.
+- `SELECT incremental.drop_pipeline(name)`: remove a pipeline.
+- Views and tables such as `incremental.sequence_pipelines`, `incremental.time_interval_pipelines`, `incremental.file_list_pipelines`, and `incremental.processed_files`.
 
-Check job outcomes via pg_cron:
-
-```sql
-SELECT jobname, start_time, status, return_message
-FROM cron.job_run_details JOIN cron.job USING (jobid)
-WHERE jobname LIKE 'pipeline:%' ORDER BY 1 DESC LIMIT 5;
-```
+The v1.5.0 release note also calls out a `DROP EXTENSION` fix for environments where `pg_cron` is not present.

@@ -165,9 +165,9 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | filter statements by their execution plans. |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
-| 2840 | {{< alias "pg_ivm" >}} | 1.13 | incremental view maintenance on PostgreSQL |
+| 2840 | {{< alias "pg_ivm" >}} | 1.14 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
-| 2860 | {{< alias "pg_trickle" >}} | 0.17.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| 2860 | {{< alias "pg_trickle" >}} | 0.20.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2900 | {{< alias "provsql" >}} | 1.2.3 | Semiring provenance and uncertainty management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
@@ -261,7 +261,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.10 | Prefix Range module for PostgreSQL |
+| 3500 | {{< alias "prefix" "pg_prefix" >}} | 1.2.11 | Prefix Range module for PostgreSQL |
 | 3510 | {{< alias "semver" "pg_semver" >}} | 0.41.0 | Semantic version data type |
 | 3520 | {{< alias "pg_text_semver" >}} | 1.2.1 | Semantic version domain and comparison operators for PostgreSQL |
 | 3550 | {{< alias "unit" "pgunit" >}} | 7.10 | SI units extension |
@@ -519,7 +519,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
-| 7310 | {{< alias "credcheck" >}} | 4.6 | credcheck - postgresql plain text credential checker |
+| 7310 | {{< alias "credcheck" >}} | 4.7 | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | Advanced password hashing methods for PostgreSQL |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
@@ -591,7 +591,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 1.0 | Support GB18030-2022 and UTF-8 conversion |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
-| 9260 | {{< alias "pg_dbms_job" >}} | 1.5 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
+| 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 5.5.0 | SQL Server Transact SQL Datatype Support |

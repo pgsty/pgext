@@ -199,71 +199,49 @@ pig install parray_gin -v 14;   # install for PG 14
 CREATE EXTENSION parray_gin;
 ```
 
-
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION parray_gin;
-> CREATE INDEX test_tags_idx ON test_table USING gin (val parray_gin_ops);
-> SELECT * FROM test_table WHERE val @> ARRAY['must','contain'];
-> SELECT * FROM test_table WHERE val @@> ARRAY['what%like%'];
-> ```
->
-> Sources: [README](https://github.com/theirix/parray_gin), [Reference](https://github.com/theirix/parray_gin/blob/master/doc/parray_gin.md)
+- Sources: [README](https://github.com/theirix/parray_gin/blob/master/README.md), [reference doc](https://github.com/theirix/parray_gin/blob/master/doc/parray_gin.md)
 
-`parray_gin` adds GIN indexing and operators for `text[]` arrays with both strict and partial matching. The upstream docs describe it as trigram-based array indexing built on `pg_trgm`'s trigram implementation.
+`parray_gin` adds a GIN operator class for `text[]` plus strict and partial-match operators. Upstream describes it as trigram-based array indexing built on `pg_trgm` trigram decomposition.
 
-## Indexing Arrays
-
-The extension provides the `parray_gin_ops` operator class for GIN indexes on text arrays:
+### Create The Extension And Index
 
 ```sql
-CREATE TABLE test_table(id bigserial, val text[]);
-CREATE INDEX test_tags_idx ON test_table USING gin (val parray_gin_ops);
+CREATE EXTENSION parray_gin;
+
+CREATE TABLE test_table (
+  id  bigserial,
+  val text[]
+);
+
+CREATE INDEX test_tags_idx
+ON test_table
+USING gin (val parray_gin_ops);
 ```
 
-According to the reference docs, indexed values and queries are split into trigrams. Because the trigram index can return false positives, operator matches are rechecked after index lookup.
+### Indexed Operators
 
-## Operators
+The reference doc says `parray_gin_ops` can support these operators:
 
-### Strict Matching
+- `@>`: strict contains.
+- `<@`: strict contained-by.
+- `@@>`: partial contains, where array elements may use `LIKE` patterns.
+- `<@@`: partial contained-by.
 
-`@> (text[], text[]) -> bool`
-
-Returns true when the left-hand array contains all items from the right-hand array.
-
-```sql
-SELECT * FROM test_table WHERE val @> ARRAY['far'];
-```
-
-`<@ (text[], text[]) -> bool`
-
-Returns true when the left-hand array is contained by the right-hand array.
+Examples:
 
 ```sql
+SELECT * FROM test_table WHERE val @> ARRAY['must','contain'];
+SELECT * FROM test_table WHERE val @@> ARRAY['what%like%'];
 SELECT * FROM test_table WHERE val <@ ARRAY['galaxy','ago','vader'];
-```
-
-### Partial Matching
-
-`@@> (text[], text[]) -> bool`
-
-Returns true when the left-hand array contains all right-hand items using partial matching, for example `'foobar' ~~ 'foo%'` or `'foobar' ~~ '%oo%'`.
-
-```sql
-SELECT * FROM test_table WHERE val @@> ARRAY['%ar%'];
-```
-
-`<@@ (text[], text[]) -> bool`
-
-Returns true when the left-hand array is contained by the right-hand patterns using partial matching.
-
-```sql
 SELECT * FROM test_table WHERE val <@@ ARRAY['%ar%','vader'];
 ```
 
-## Notes
+### Matching Behavior
 
-The upstream docs say GIN can be used with `@>`, `<@`, `@@>`, and `<@@`. They also mention successful use on JSON arrays extracted from JSON text fields via the `json_accessors` extension.
+Strict matching requires array-item equality. Partial matching allows patterns such as `'foo%'` or `'%oo%'`. Because the trigram index can return false positives, the docs note that matches are rechecked after index lookup.
+
+### Caveats
+
+The README says support extends through PostgreSQL 18, while the reference document still says 9.1-14. The operator and opclass behavior is consistent across both docs, but the version note is not fully synchronized upstream.
