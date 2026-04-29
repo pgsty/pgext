@@ -1,5 +1,4 @@
 baseURL: 'https://pgext.cloud/'
-locale: 'en'
 title: 'PGEXT.CLOUD'
 
 enableRobotsTXT: true
