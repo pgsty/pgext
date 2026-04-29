@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-jsonschema : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-jsonschema : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-jsonschema : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-jsonschema : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-jsonschema : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pg-jsonschema` | `0.3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.1 MiB | [postgresql-18-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-jsonschema/postgresql-18-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-17-pg-jsonschema` | `0.3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.1 MiB | [postgresql-17-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-jsonschema/postgresql-17-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-pg-jsonschema` | `0.3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.1 MiB | [postgresql-16-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-jsonschema/postgresql-16-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -139,7 +139,7 @@ width: full
 | `postgresql-15-pg-jsonschema` | `0.3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.1 MiB | [postgresql-15-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-jsonschema/postgresql-15-pg-jsonschema_0.3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

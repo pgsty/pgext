@@ -60,8 +60,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-emaj : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-emaj : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-emaj : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-emaj : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-emaj : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,7 +81,7 @@ width: full
 | `postgresql-18-emaj` | `4.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 193.9 KiB | [postgresql-18-emaj_4.7.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-18-emaj_4.7.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,7 +117,7 @@ width: full
 | `postgresql-17-emaj` | `4.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 193.9 KiB | [postgresql-17-emaj_4.7.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-17-emaj_4.7.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -173,7 +173,7 @@ width: full
 | `postgresql-16-emaj` | `4.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 193.8 KiB | [postgresql-16-emaj_4.7.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-16-emaj_4.7.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -233,7 +233,7 @@ width: full
 | `postgresql-15-emaj` | `4.7.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 194.0 KiB | [postgresql-15-emaj_4.7.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/e/emaj/postgresql-15-emaj_4.7.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

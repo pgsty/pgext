@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.2.5" "postgresql-18-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-17-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-16-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-15-plprofiler : AVAIL 1" "blue" >}} | {{< bg "PGDG 4.2.5" "postgresql-14-plprofiler : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -83,7 +83,7 @@ width: full
 | `postgresql-18-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-18-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -110,7 +110,7 @@ width: full
 | `postgresql-17-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-17-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,7 +137,7 @@ width: full
 | `postgresql-16-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 43.9 KiB | [postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-16-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -172,7 +172,7 @@ width: full
 | `postgresql-15-plprofiler` | `4.2.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.1 KiB | [postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/plprofiler/postgresql-15-plprofiler_4.2.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

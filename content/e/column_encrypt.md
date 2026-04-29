@@ -60,8 +60,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-column-encrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-column-encrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-column-encrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-column-encrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-column-encrypt : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,7 +81,7 @@ width: full
 | `postgresql-18-column-encrypt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.5 KiB | [postgresql-18-column-encrypt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/column-encrypt/postgresql-18-column-encrypt_4.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,7 +101,7 @@ width: full
 | `postgresql-17-column-encrypt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.7 KiB | [postgresql-17-column-encrypt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/column-encrypt/postgresql-17-column-encrypt_4.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,7 +121,7 @@ width: full
 | `postgresql-16-column-encrypt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.5 KiB | [postgresql-16-column-encrypt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/column-encrypt/postgresql-16-column-encrypt_4.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -141,7 +141,7 @@ width: full
 | `postgresql-15-column-encrypt` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.2 KiB | [postgresql-15-column-encrypt_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/column-encrypt/postgresql-15-column-encrypt_4.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

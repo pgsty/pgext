@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-14 : FORK 0" "red" >}}      |
 
 
-{{< tabs items="PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

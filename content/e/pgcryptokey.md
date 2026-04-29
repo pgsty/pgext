@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgcryptokey : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgcryptokey : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,7 +80,7 @@ width: full
 | `postgresql-18-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-18-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-18-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -106,7 +106,7 @@ width: full
 | `postgresql-17-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-17-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-17-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -132,7 +132,7 @@ width: full
 | `postgresql-16-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-16-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-16-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -158,7 +158,7 @@ width: full
 | `postgresql-15-pgcryptokey` | `0.85` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.4 KiB | [postgresql-15-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgcryptokey/postgresql-15-pgcryptokey_0.85-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

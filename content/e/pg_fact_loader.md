@@ -57,8 +57,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-fact-loader : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -70,7 +70,7 @@ width: full
 | `pg_fact_loader_18` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 35.0 KiB | [pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -94,7 +94,7 @@ width: full
 | `postgresql-17-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -144,7 +144,7 @@ width: full
 | `postgresql-15-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

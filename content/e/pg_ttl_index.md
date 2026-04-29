@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-ttl-index : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-ttl-index : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-ttl-index : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-ttl-index : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-ttl-index : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-18-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-18-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-17-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-17-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-17-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-ttl-index` | `3.0.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.5 KiB | [postgresql-16-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/ttl-index/postgresql-16-ttl-index_3.0.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

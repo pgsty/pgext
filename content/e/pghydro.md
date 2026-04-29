@@ -60,8 +60,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pghydro : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pghydro : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pghydro : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pghydro : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pghydro : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,7 +81,7 @@ width: full
 | `postgresql-18-pghydro` | `6.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 135.7 KiB | [postgresql-18-pghydro_6.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pghydro/postgresql-18-pghydro_6.6-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,7 +101,7 @@ width: full
 | `postgresql-17-pghydro` | `6.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 135.7 KiB | [postgresql-17-pghydro_6.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pghydro/postgresql-17-pghydro_6.6-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -121,7 +121,7 @@ width: full
 | `postgresql-16-pghydro` | `6.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 135.8 KiB | [postgresql-16-pghydro_6.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pghydro/postgresql-16-pghydro_6.6-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -141,7 +141,7 @@ width: full
 | `postgresql-15-pghydro` | `6.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 135.7 KiB | [postgresql-15-pghydro_6.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pghydro/postgresql-15-pghydro_6.6-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

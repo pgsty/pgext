@@ -6,6 +6,23 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-04-25
+
+| Package        | Old    | New    | Comment                         |
+|:---------------|:-------|:-------|:--------------------------------|
+| documentdb     | 0.109  | 0.110  | bump to upstream, PG 15-18      |
+| pg_trickle     | 0.20.0 | 0.31.0 | bump, PG 18 only, pgrx 0.18.0   |
+| pg_search      | 0.23.0 | 0.23.1 | bump, PG 15-18, pgrx 0.18.0     |
+| pg_ivm         | 1.13   | 1.14   | bump, PG 14-18                  |
+| prefix         | 1.2.10 | 1.2.11 | bump, PG 14-18, PGDG            |
+| credcheck      | 4.6    | 4.7    | bump, PG 14-18, PGDG            |
+| pg_dbms_job    | 1.5    | 2.0    | bump, PG 14-18, PGDG            |
+| storage_engine | 1.0.7  | 1.2.3  | bump, PG 14-18                  |
+| pgmq           | 1.11.0 | 1.11.1 | bump, PG 14-18                  |
+| parray_gin     | 1.4.0  | 1.5.0  | bump, PG 14-18                  |
+| rdf_fdw        | 2.4.0  | 2.5.0  | bump, PG 14-18                  |
+| pg_accumulator | -      | 1.1.3  | new, PG 14-18                   |
+
 ## 2026-04-19
 
 | Package           | Old    | New     | Comment                                |

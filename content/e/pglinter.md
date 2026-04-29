@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pglinter : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pglinter : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pglinter : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pglinter : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pglinter : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pglinter` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 418.6 KiB | [postgresql-18-pglinter_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-18-pglinter_1.1.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-17-pglinter` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 417.7 KiB | [postgresql-17-pglinter_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-17-pglinter_1.1.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-pglinter` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 417.6 KiB | [postgresql-16-pglinter_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-16-pglinter_1.1.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -139,7 +139,7 @@ width: full
 | `postgresql-15-pglinter` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 418.2 KiB | [postgresql-15-pglinter_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pglinter/postgresql-15-pglinter_1.1.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

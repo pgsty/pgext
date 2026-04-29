@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-analytics : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-analytics : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -76,7 +76,7 @@ width: full
 | `postgresql-17-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-17-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-17-pg-analytics/postgresql-17-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -92,7 +92,7 @@ width: full
 | `postgresql-16-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-16-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-16-pg-analytics/postgresql-16-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -108,7 +108,7 @@ width: full
 | `postgresql-15-pg-analytics` | `0.3.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.2 MiB | [postgresql-15-pg-analytics_0.3.7_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-15-pg-analytics/postgresql-15-pg-analytics_0.3.7_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

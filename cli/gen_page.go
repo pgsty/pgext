@@ -642,12 +642,6 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 	}
 	sort.Sort(sort.Reverse(sort.IntSlice(pgVersions)))
 
-	// Generate tab items
-	tabItems := make([]string, len(pgVersions))
-	for i, pg := range pgVersions {
-		tabItems[i] = fmt.Sprintf("PG%d", pg)
-	}
-
 	var b strings.Builder
 	b.WriteString("\n")
 
@@ -656,10 +650,11 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 	for _, pg := range pgVersions {
 		pkgList := pgGroups[pg]
 
-		tab := "\n{{< tab >}}\n\n"
+		var body strings.Builder
+		body.WriteString("\n")
 		if len(pkgList) > 0 {
-			tab += "| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |\n"
-			tab += "|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|\n"
+			body.WriteString("| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |\n")
+			body.WriteString("|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|\n")
 
 			// Packages are already sorted by os_major ASC, version DESC, file DESC from SQL
 			for _, pkg := range pkgList {
@@ -675,17 +670,16 @@ func (g *ExtensionGenerator) generatePackageDetailsTabs(extName string, packages
 					fileName = filepath.Base(url)
 				}
 
-				tab += fmt.Sprintf("| `%s` | `%s` | [%s](/os/%s) | %s | %s | [%s](%s) |\n",
-					pkg.Name, pkg.Version, pkg.OS, pkg.OS, org, sizeStr, fileName, url)
+				body.WriteString(fmt.Sprintf("| `%s` | `%s` | [%s](/os/%s) | %s | %s | [%s](%s) |\n",
+					pkg.Name, pkg.Version, pkg.OS, pkg.OS, org, sizeStr, fileName, url))
 			}
 		} else {
-			tab += "*No packages available for this PostgreSQL version.*\n"
+			body.WriteString("*No packages available for this PostgreSQL version.*\n")
 		}
-		tab += "\n{{< /tab >}}"
-		tabContent += tab
+		tabContent += TabShortcode(fmt.Sprintf("PG%d", pg), body.String())
 	}
 
-	b.WriteString(TabsShortcode(tabItems, tabContent))
+	b.WriteString(TabsShortcode(tabContent))
 	b.WriteString("\n")
 
 	return b.String()

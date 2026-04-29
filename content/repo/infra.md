@@ -24,15 +24,15 @@ You can check the [**Release - Infra Changelog**](/release/infra) for the latest
 
 You can add the `pigsty-infra` repo with the [`pig`](/pig) CLI tool, it will automatically choose from `apt/yum/dnf`.
 
-{{< tabs items="Default,Mirror,Hint" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" >}}
 ```bash tab="default"
 curl https://repo.pigsty.io/pig | bash  # download and install the pig CLI tool
 pig repo add infra                      # add pigsty-infra repo file to your system
 pig repo update                         # update local repo cache with apt / dnf
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="mirror"
 # use when in mainland china or cloudflare is down
 curl https://repo.pigsty.cc/pig | bash  # install pig from china CDN mirror 
@@ -40,7 +40,7 @@ pig repo add infra                      # add pigsty-infra repo file to your sys
 pig repo update                         # update local repo cache with apt / dnf
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Hint" >}}
 ```bash tab="hint"
 # you can manage infra repo with these commands:
 pig repo add infra -u       # add repo file, and update cache
@@ -63,8 +63,8 @@ You can also use this repo directly without the `pig` CLI tool, by add them to y
 
 On **Debian / Ubuntu** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and APT repo file manually with:
 
-{{< tabs items="Default,Mirror,NoKey" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" >}}
 ```bash tab="default"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures, or just trust
 curl -fsSL https://repo.pigsty.io/key | sudo gpg --dearmor -o /etc/apt/keyrings/pigsty.gpg
@@ -80,7 +80,7 @@ EOF
 sudo apt update
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="mirror"
 # use when in mainland china or cloudflare is down
 # Add Pigsty's GPG public key to your system keychain to verify package signatures, or just trust
@@ -97,7 +97,7 @@ EOF
 sudo apt update
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="NoKey" >}}
 ```bash tab="nokey"
 # If you don't want to trust any GPG key, just trust the repo directly
 distro_codename=$(lsb_release -cs)
@@ -117,8 +117,8 @@ sudo apt update
 
 On **RHEL** compatible Linux distros, you can add the [GPG Key](/repo/gpg) and Yum repo file manually with:
 
-{{< tabs items="Default,Mirror,NoKey" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" >}}
 ```bash tab="default"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
 curl -fsSL https://repo.pigsty.io/key | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-pigsty >/dev/null
@@ -140,7 +140,7 @@ EOF
 sudo yum makecache;
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="mirror"
 # use when in mainland china or cloudflare is down
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
@@ -163,7 +163,7 @@ EOF
 sudo yum makecache;
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="NoKey" >}}
 ```bash tab="nokey"
 # If you don't want to trust any GPG key, just trust the repo directly
 sudo tee /etc/yum.repos.d/pigsty-infra.repo > /dev/null <<-'EOF'

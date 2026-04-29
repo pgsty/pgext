@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (507 ext in 424 pkg) categorized into 16 categories.
+PostgreSQL Extensions (508 ext in 425 pkg) categorized into 16 categories.
 
 
 
@@ -129,7 +129,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2450 | {{< alias "storage_engine" >}} | 1.0.7 | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 2450 | {{< alias "storage_engine" >}} | 1.2.3 | colcompress and rowcompress Table Access Methods with vectorized execution |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.2.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
@@ -149,7 +149,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2610 | {{< alias "pg_liquid" >}} | 0.1.7 | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | 1.0.0 | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2650 | {{< alias "pgq" >}} | 3.5.1 | Generic queue for PostgreSQL |
-| 2660 | {{< alias "pgmq" >}} | 1.11.0 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
+| 2660 | {{< alias "pgmq" >}} | 1.11.1 | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | 1.0.0 | A simple PostgreSQL Message Broker system |
 | 2680 | {{< alias "ulak" >}} | 0.0.2 | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
 | 2710 | {{< alias "hll" >}} | 2.19 | type for storing hyperloglog data |
@@ -167,7 +167,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | 1.14 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
-| 2860 | {{< alias "pg_trickle" >}} | 0.20.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| 2860 | {{< alias "pg_trickle" >}} | 0.31.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2900 | {{< alias "provsql" >}} | 1.2.3 | Semiring provenance and uncertainty management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
@@ -387,8 +387,9 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4810 | {{< alias "base62" "pg_base62" >}} | 0.0.1 | Base62 extension for PostgreSQL |
 | 4830 | {{< alias "pg_base58" >}} | 0.0.1 | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 1.0.1 | Financial aggregate functions |
+| 4845 | {{< alias "pg_accumulator" >}} | 1.1.3 | Accumulation registers for balance and turnover tracking in PostgreSQL |
 | 4850 | {{< alias "convert" "pg_convert" >}} | 0.1.0 | conversion functions for spatial, routing and other specialized uses |
-| 4860 | {{< alias "parray_gin" >}} | 1.4.0 | GIN index operator class and partial-match operators for text arrays |
+| 4860 | {{< alias "parray_gin" >}} | 1.5.0 | GIN index operator class and partial-match operators for text arrays |
 | 4880 | {{< alias "refint" >}} | 1.0 | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | 1.0 | functions for autoincrementing fields |
 | 4882 | {{< alias "insert_username" >}} | 1.0 | functions for tracking who changed a table |
@@ -562,7 +563,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | kafka Foreign Data Wrapper for CSV formatted messages |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.3.3 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.1 | Foreign data wrapper for Firebird |
-| 8760 | {{< alias "rdf_fdw" >}} | 2.4.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8760 | {{< alias "rdf_fdw" >}} | 2.5.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.4 | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |
@@ -575,10 +576,10 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.109 | API surface for DocumentDB for PostgreSQL |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.109 | Core API surface for DocumentDB for PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.109 | Multi-Node API surface for DocumentDB |
-| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.109 | DocumentDB Extended RUM index access method |
+| 9000 | {{< alias "documentdb" >}} | 0.110 | API surface for DocumentDB for PostgreSQL |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.110 | Core API surface for DocumentDB on PostgreSQL |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.110 | Multi-Node API surface for DocumentDB |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.110 | DocumentDB Extended RUM index access method |
 | 9100 | {{< alias "orafce" >}} | 4.16.5 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |

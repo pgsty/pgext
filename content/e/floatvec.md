@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-floatvec : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-floatvec : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-floatvec : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-floatvec : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-floatvec : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,7 +77,7 @@ width: full
 | `postgresql-18-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.7 KiB | [postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-18-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,7 +97,7 @@ width: full
 | `postgresql-17-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.6 KiB | [postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-17-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,7 +117,7 @@ width: full
 | `postgresql-16-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 26.6 KiB | [postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-16-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,7 +137,7 @@ width: full
 | `postgresql-15-floatvec` | `1.1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatvec/postgresql-15-floatvec_1.1.1-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

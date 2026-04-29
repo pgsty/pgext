@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wrappers : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wrappers : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-wrappers` | `0.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 138.6 KiB | [postgresql-18-wrappers_0.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-18-wrappers_0.6.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-17-wrappers` | `0.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 138.6 KiB | [postgresql-17-wrappers_0.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-17-wrappers_0.6.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-wrappers` | `0.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 138.6 KiB | [postgresql-16-wrappers_0.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-16-wrappers_0.6.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -139,7 +139,7 @@ width: full
 | `postgresql-15-wrappers` | `0.6.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 138.6 KiB | [postgresql-15-wrappers_0.6.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wrappers/postgresql-15-wrappers_0.6.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pljs : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pljs : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -90,7 +90,7 @@ width: full
 | `postgresql-18-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 381.4 KiB | [postgresql-18-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-18-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -120,7 +120,7 @@ width: full
 | `postgresql-17-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 382.0 KiB | [postgresql-17-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-17-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -150,7 +150,7 @@ width: full
 | `postgresql-16-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 381.6 KiB | [postgresql-16-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-16-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -180,7 +180,7 @@ width: full
 | `postgresql-15-pljs` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 382.3 KiB | [postgresql-15-pljs_1.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pljs/postgresql-15-pljs_1.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

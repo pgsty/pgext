@@ -21,13 +21,13 @@ pig install -v 18 -y pg18 pg_duckdb vector     # Install PG 18 core, pg_duckdb, 
 
 [**Install**](/pig/install/) `pig` with a single command:
 
-{{< tabs items="Default,Mirror" defaultIndex="1" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" >}}
 ```bash
 curl -fsSL https://repo.pigsty.io/pig | bash     # Install from Cloudflare
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Mirror" selected=true >}}
 ```bash
 curl -fsSL https://repo.pigsty.cc/pig | bash     # Install from China CDN mirror
 ```

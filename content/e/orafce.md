@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 4.16.5" "postgresql-18-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-17-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-16-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-15-orafce : AVAIL 3" "blue" >}} | {{< bg "PGDG 4.16.5" "postgresql-14-orafce : AVAIL 3" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,7 +123,7 @@ width: full
 | `postgresql-18-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-18-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-18-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -221,7 +221,7 @@ width: full
 | `postgresql-17-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.1 KiB | [postgresql-17-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-17-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -355,7 +355,7 @@ width: full
 | `postgresql-16-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 351.3 KiB | [postgresql-16-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-16-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -489,7 +489,7 @@ width: full
 | `postgresql-15-orafce` | `4.16.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 356.3 KiB | [postgresql-15-orafce_4.16.3-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/o/orafce/postgresql-15-orafce_4.16.3-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

@@ -24,13 +24,13 @@ weight: 100
 
 [Install](/pig/install) `pig` with a single command
 
-{{< tabs items="Default,Mirror" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" >}}
 ```bash tab="Default"
 curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
 ```
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="Mirror"
 curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
 ```

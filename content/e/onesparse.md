@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-onesparse : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-onesparse : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-onesparse : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-onesparse : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-onesparse : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

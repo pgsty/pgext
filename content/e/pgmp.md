@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.5" "postgresql-18-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-17-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-16-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-15-pgmp : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0.5" "postgresql-14-pgmp : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,7 +81,7 @@ width: full
 | `postgresql-18-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.9 KiB | [postgresql-18-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-18-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -103,7 +103,7 @@ width: full
 | `postgresql-17-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.9 KiB | [postgresql-17-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-17-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,7 +125,7 @@ width: full
 | `postgresql-16-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.8 KiB | [postgresql-16-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-16-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,7 +147,7 @@ width: full
 | `postgresql-15-pgmp` | `1.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 99.5 KiB | [postgresql-15-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-pgmp/postgresql-15-pgmp_1.0.5-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

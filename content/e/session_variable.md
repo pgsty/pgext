@@ -57,8 +57,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-session-variable : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-session-variable : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-session-variable : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-session-variable : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-session-variable : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,7 +78,7 @@ width: full
 | `postgresql-18-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.5 KiB | [postgresql-18-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-18-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,7 +98,7 @@ width: full
 | `postgresql-17-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.5 KiB | [postgresql-17-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-17-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -118,7 +118,7 @@ width: full
 | `postgresql-16-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 KiB | [postgresql-16-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-16-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -138,7 +138,7 @@ width: full
 | `postgresql-15-session-variable` | `3.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.9 KiB | [postgresql-15-session-variable_3.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/session-variable/postgresql-15-session-variable_3.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

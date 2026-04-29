@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.1.4" "postgresql-18-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-17-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-16-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-15-first-last-agg : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.1.4" "postgresql-14-first-last-agg : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-first-last-agg` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.9 KiB | [postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-18-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,7 +101,7 @@ width: full
 | `postgresql-17-first-last-agg` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.9 KiB | [postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-17-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,7 +123,7 @@ width: full
 | `postgresql-16-first-last-agg` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.9 KiB | [postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-16-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,7 +145,7 @@ width: full
 | `postgresql-15-first-last-agg` | `0.1.4` | [u26.aarch64](/os/u26.aarch64) | pgdg | 8.9 KiB | [postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/f/first-last-agg/postgresql-15-first-last-agg_0.1.4-4-gd63ea3b-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

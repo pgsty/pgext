@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.5" "postgresql-18-tds-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-17-tds-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-16-tds-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-15-tds-fdw : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "postgresql-14-tds-fdw : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-tds-fdw` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 106.4 KiB | [postgresql-18-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tds-fdw/postgresql-18-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,7 +107,7 @@ width: full
 | `postgresql-17-tds-fdw` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 105.9 KiB | [postgresql-17-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tds-fdw/postgresql-17-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -141,7 +141,7 @@ width: full
 | `postgresql-16-tds-fdw` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 106.0 KiB | [postgresql-16-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tds-fdw/postgresql-16-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -173,7 +173,7 @@ width: full
 | `postgresql-15-tds-fdw` | `2.0.5` | [u26.aarch64](/os/u26.aarch64) | pgdg | 106.0 KiB | [postgresql-15-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tds-fdw/postgresql-15-tds-fdw_2.0.5-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

@@ -32,8 +32,8 @@ Together, they can provide up to [481 PostgreSQL Extensions](https://ext.pgsty.c
 
 You can enable the pigsty [infra](/repo/infra) & [pgsql](/repo/pgsql) repo with the [pig](/pig/) CLI tool:
 
-{{< tabs items="Default,Mirror" defaultIndex="0" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="Default" selected=true >}}
 
 ```bash tab="pig"
 curl https://repo.pigsty.io/pig | bash      # download and install the pig CLI tool
@@ -42,7 +42,7 @@ pig repo add all -u                         # add linux, pgdg, pigsty repo and u
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="Mirror" >}}
 
 ```bash tab="pig"
 curl https://repo.pigsty.cc/pig | bash      # download from mirror site
@@ -56,8 +56,8 @@ pig repo add -u                             # add linux, pgdg, pigsty repo and u
 
 You can also add these repo to your system [manually](#manual-install) with default `apt`, `dnf`, `yum` approach.
 
-{{< tabs items="APT,DNF/YUM" defaultIndex="0" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="APT" selected=true >}}
 
 ```bash tab="apt"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures
@@ -76,7 +76,7 @@ sudo apt update
 
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="DNF/YUM" >}}
 
 ```bash tab="yum"
 # Add Pigsty's GPG public key to your system keychain to verify package signatures

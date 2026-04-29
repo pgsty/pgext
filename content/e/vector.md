@@ -57,8 +57,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 0.8.2" "postgresql-18-pgvector : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.8.2" "postgresql-17-pgvector : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.8.2" "postgresql-16-pgvector : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.8.2" "postgresql-15-pgvector : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.8.2" "postgresql-14-pgvector : AVAIL 2" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-18-pgvector` | `0.8.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 222.2 KiB | [postgresql-18-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-18-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -147,7 +147,7 @@ width: full
 | `postgresql-17-pgvector` | `0.8.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 222.1 KiB | [postgresql-17-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-17-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -235,7 +235,7 @@ width: full
 | `postgresql-16-pgvector` | `0.8.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 221.6 KiB | [postgresql-16-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-16-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -331,7 +331,7 @@ width: full
 | `postgresql-15-pgvector` | `0.8.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 225.1 KiB | [postgresql-15-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-15-pgvector_0.8.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

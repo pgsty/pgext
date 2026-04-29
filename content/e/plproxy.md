@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.11.0" "postgresql-18-plproxy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.11.0" "postgresql-17-plproxy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.11.0" "postgresql-16-plproxy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.11.0" "postgresql-15-plproxy : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.11.0" "postgresql-14-plproxy : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -83,7 +83,7 @@ width: full
 | `postgresql-18-plproxy` | `2.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 127.1 KiB | [postgresql-18-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plproxy/postgresql-18-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -109,7 +109,7 @@ width: full
 | `postgresql-17-plproxy` | `2.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 127.1 KiB | [postgresql-17-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plproxy/postgresql-17-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -131,7 +131,7 @@ width: full
 | `postgresql-16-plproxy` | `2.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 127.2 KiB | [postgresql-16-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plproxy/postgresql-16-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -161,7 +161,7 @@ width: full
 | `postgresql-15-plproxy` | `2.11.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 130.0 KiB | [postgresql-15-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-plproxy/postgresql-15-plproxy_2.11.0-13.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

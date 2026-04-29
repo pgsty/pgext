@@ -57,8 +57,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-liquid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-liquid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-liquid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-liquid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-liquid : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,7 +78,7 @@ width: full
 | `postgresql-18-pg-liquid` | `0.1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 402.7 KiB | [postgresql-18-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-liquid/postgresql-18-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,7 +98,7 @@ width: full
 | `postgresql-17-pg-liquid` | `0.1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 401.5 KiB | [postgresql-17-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-liquid/postgresql-17-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -118,7 +118,7 @@ width: full
 | `postgresql-16-pg-liquid` | `0.1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 391.3 KiB | [postgresql-16-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-liquid/postgresql-16-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -138,7 +138,7 @@ width: full
 | `postgresql-15-pg-liquid` | `0.1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 391.8 KiB | [postgresql-15-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-liquid/postgresql-15-pg-liquid_0.1.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

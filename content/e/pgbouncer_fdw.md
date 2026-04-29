@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -69,7 +69,7 @@ width: full
 | `pgbouncer_fdw_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -93,7 +93,7 @@ width: full
 | `pgbouncer_fdw_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,7 +125,7 @@ width: full
 | `pgbouncer_fdw_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -157,7 +157,7 @@ width: full
 | `pgbouncer_fdw_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

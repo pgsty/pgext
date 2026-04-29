@@ -60,8 +60,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-net : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-net : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-net : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-net : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-net : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -85,7 +85,7 @@ width: full
 | `postgresql-18-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -125,7 +125,7 @@ width: full
 | `postgresql-17-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -173,7 +173,7 @@ width: full
 | `postgresql-16-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -221,7 +221,7 @@ width: full
 | `postgresql-15-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.2 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

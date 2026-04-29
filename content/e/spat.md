@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG17" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

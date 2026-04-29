@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.7.0" "postgresql-18-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.0" "postgresql-17-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-16-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-15-age : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.0" "postgresql-14-age : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -90,7 +90,7 @@ width: full
 | `postgresql-18-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 656.3 KiB | [postgresql-18-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18-age/postgresql-18-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -120,7 +120,7 @@ width: full
 | `postgresql-17-age` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 655.3 KiB | [postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17-age/postgresql-17-age_1.7.0~rc0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -142,7 +142,7 @@ width: full
 | `postgresql-16-age` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 654.0 KiB | [postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-16-age/postgresql-16-age_1.6.0~rc0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -164,7 +164,7 @@ width: full
 | `postgresql-15-age` | `1.6.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 658.2 KiB | [postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-15-age/postgresql-15-age_1.6.0~rc0-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

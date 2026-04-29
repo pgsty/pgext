@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wal2mongo : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,7 +77,7 @@ width: full
 | `postgresql-16-wal2mongo` | `1.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.2 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,7 +97,7 @@ width: full
 | `postgresql-15-wal2mongo` | `1.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

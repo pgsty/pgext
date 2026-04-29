@@ -53,8 +53,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-pg-pwhash : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-pg-pwhash : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -76,7 +76,7 @@ width: full
 | `postgresql-18-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-18-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,7 +98,7 @@ width: full
 | `postgresql-17-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-17-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -120,7 +120,7 @@ width: full
 | `postgresql-16-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.5 KiB | [postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-16-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -142,7 +142,7 @@ width: full
 | `postgresql-15-pg-pwhash` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 55.9 KiB | [postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-pwhash/postgresql-15-pg-pwhash_1.0-2.pgdg26.04+3_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

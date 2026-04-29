@@ -55,8 +55,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -68,7 +68,7 @@ width: full
 | `postgresql_faker_18` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,7 +80,7 @@ width: full
 | `postgresql_faker_17` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_17-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/postgresql_faker_17-0.5.3-7PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -92,7 +92,7 @@ width: full
 | `postgresql_faker_16` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_16-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/postgresql_faker_16-0.5.3-7PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -104,7 +104,7 @@ width: full
 | `postgresql_faker_15` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_15-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/postgresql_faker_15-0.5.3-7PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

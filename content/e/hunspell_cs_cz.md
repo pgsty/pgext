@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-hunspell-cs-cz : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hunspell-cs-cz : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hunspell-cs-cz : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hunspell-cs-cz : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hunspell-cs-cz : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -77,7 +77,7 @@ width: full
 | `postgresql-18-hunspell-cs-cz` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 521.9 KiB | [postgresql-18-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-cs-cz/postgresql-18-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,7 +97,7 @@ width: full
 | `postgresql-17-hunspell-cs-cz` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 521.5 KiB | [postgresql-17-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-cs-cz/postgresql-17-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -117,7 +117,7 @@ width: full
 | `postgresql-16-hunspell-cs-cz` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 522.0 KiB | [postgresql-16-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-cs-cz/postgresql-16-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,7 +137,7 @@ width: full
 | `postgresql-15-hunspell-cs-cz` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 521.5 KiB | [postgresql-15-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-cs-cz/postgresql-15-hunspell-cs-cz_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

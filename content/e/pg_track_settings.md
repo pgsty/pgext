@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.1.2" "postgresql-18-pg-track-settings : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.2" "postgresql-17-pg-track-settings : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.2" "postgresql-16-pg-track-settings : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.2" "postgresql-15-pg-track-settings : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.1.2" "postgresql-14-pg-track-settings : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pg-track-settings` | `2.1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.1 KiB | [postgresql-18-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-track-settings/postgresql-18-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,7 +101,7 @@ width: full
 | `postgresql-17-pg-track-settings` | `2.1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.1 KiB | [postgresql-17-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-track-settings/postgresql-17-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,7 +123,7 @@ width: full
 | `postgresql-16-pg-track-settings` | `2.1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.1 KiB | [postgresql-16-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-track-settings/postgresql-16-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -149,7 +149,7 @@ width: full
 | `postgresql-15-pg-track-settings` | `2.1.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 9.1 KiB | [postgresql-15-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-track-settings/postgresql-15-pg-track-settings_2.1.2-5.pgdg26.04+1_all.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

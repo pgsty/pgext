@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.2.11" "postgresql-18-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-17-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-16-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-15-prefix : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.2.11" "postgresql-14-prefix : AVAIL 2" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -95,7 +95,7 @@ width: full
 | `postgresql-18-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.3 KiB | [postgresql-18-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-18-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -133,7 +133,7 @@ width: full
 | `postgresql-17-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-17-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-17-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -171,7 +171,7 @@ width: full
 | `postgresql-16-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-16-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-16-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -213,7 +213,7 @@ width: full
 | `postgresql-15-prefix` | `1.2.10` | [u26.aarch64](/os/u26.aarch64) | pgdg | 39.5 KiB | [postgresql-15-prefix_1.2.10-4.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/prefix/postgresql-15-prefix_1.2.10-4.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -259,7 +259,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/dimitri/prefix" title="Repository" icon="github" subtitle="github.com/dimitri/prefix" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="prefix-1.2.10.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="prefix-1.2.11.tar.gz" >}}
 {{< /cards >}}
 
 

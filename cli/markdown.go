@@ -203,14 +203,13 @@ func CardShortcode(title, subtitle, link, icon string) string {
 }
 
 // TabsShortcode generates tabs container
-func TabsShortcode(items []string, content string) string {
-	itemList := strings.Join(items, ",")
-	return fmt.Sprintf(`{{< tabs items="%s" >}}%s{{< /tabs >}}`, itemList, content)
+func TabsShortcode(content string) string {
+	return fmt.Sprintf(`{{< tabs >}}%s{{< /tabs >}}`, content)
 }
 
 // TabShortcode generates individual tab content
-func TabShortcode(content string) string {
-	return fmt.Sprintf("\n{{< tab >}}\n%s\n{{< /tab >}}", content)
+func TabShortcode(name, content string) string {
+	return fmt.Sprintf("\n{{< tab name=%q >}}\n%s\n{{< /tab >}}", name, content)
 }
 
 // TripleQuote wraps content in triple backticks (```) for code blocks

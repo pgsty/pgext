@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-track-optimizer : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-track-optimizer : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-track-optimizer : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-track-optimizer : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-track-optimizer : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pg-track-optimizer` | `0.9.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 60.3 KiB | [postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-track-optimizer/postgresql-18-pg-track-optimizer_0.9.2-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

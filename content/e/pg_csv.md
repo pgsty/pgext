@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0.2" "postgresql-18-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-17-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-16-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-15-pg-csv : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.0.2" "postgresql-14-pg-csv : AVAIL 2" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -97,7 +97,7 @@ width: full
 | `postgresql-18-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.9 KiB | [postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-18-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -137,7 +137,7 @@ width: full
 | `postgresql-17-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-17-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -177,7 +177,7 @@ width: full
 | `postgresql-16-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 16.8 KiB | [postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-16-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -217,7 +217,7 @@ width: full
 | `postgresql-15-pg-csv` | `1.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 17.0 KiB | [postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-csv/postgresql-15-pg-csv_1.0.1-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

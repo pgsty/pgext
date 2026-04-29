@@ -57,8 +57,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-plv8 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-plv8 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-plv8 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-plv8 : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-plv8 : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -78,7 +78,7 @@ width: full
 | `postgresql-18-plv8` | `3.2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.6 MiB | [postgresql-18-plv8_3.2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plv8/postgresql-18-plv8_3.2.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -98,7 +98,7 @@ width: full
 | `postgresql-17-plv8` | `3.2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.6 MiB | [postgresql-17-plv8_3.2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plv8/postgresql-17-plv8_3.2.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -118,7 +118,7 @@ width: full
 | `postgresql-16-plv8` | `3.2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.6 MiB | [postgresql-16-plv8_3.2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plv8/postgresql-16-plv8_3.2.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -138,7 +138,7 @@ width: full
 | `postgresql-15-plv8` | `3.2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.6 MiB | [postgresql-15-plv8_3.2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/plv8/postgresql-15-plv8_3.2.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

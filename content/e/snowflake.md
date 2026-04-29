@@ -59,8 +59,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
 
 
-{{< tabs items="PG17" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

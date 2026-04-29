@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-datasentinel : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-datasentinel : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-datasentinel : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-datasentinel : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-datasentinel : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pg-datasentinel` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.2 KiB | [postgresql-18-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-datasentinel/postgresql-18-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -99,7 +99,7 @@ width: full
 | `postgresql-17-pg-datasentinel` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.3 KiB | [postgresql-17-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-datasentinel/postgresql-17-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -119,7 +119,7 @@ width: full
 | `postgresql-16-pg-datasentinel` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.3 KiB | [postgresql-16-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-datasentinel/postgresql-16-pg-datasentinel_1.0-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

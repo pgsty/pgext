@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-tdigest : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-tdigest : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.9 KiB | [postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-18-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -105,7 +105,7 @@ width: full
 | `postgresql-17-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-17-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -127,7 +127,7 @@ width: full
 | `postgresql-16-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.8 KiB | [postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-16-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -153,7 +153,7 @@ width: full
 | `postgresql-15-tdigest` | `1.4.3` | [u26.aarch64](/os/u26.aarch64) | pgdg | 56.7 KiB | [postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/tdigest/postgresql-15-tdigest_1.4.3-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

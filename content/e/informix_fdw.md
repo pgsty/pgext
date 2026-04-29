@@ -52,8 +52,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "informix_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "informix_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "informix_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "informix_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "informix_fdw : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -62,7 +62,7 @@ width: full
 | `informix_fdw_18` | `0.6.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 60.6 KiB | [informix_fdw_18-0.6.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/informix_fdw_18-0.6.3-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -71,7 +71,7 @@ width: full
 | `informix_fdw_17` | `0.6.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 60.5 KiB | [informix_fdw_17-0.6.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/informix_fdw_17-0.6.3-1PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -82,7 +82,7 @@ width: full
 | `informix_fdw_16` | `0.6.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 60.2 KiB | [informix_fdw_16-0.6.2-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/informix_fdw_16-0.6.2-2PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -93,7 +93,7 @@ width: full
 | `informix_fdw_15` | `0.6.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 64.4 KiB | [informix_fdw_15-0.6.2-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/informix_fdw_15-0.6.2-2PGDG.rhel10.x86_64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

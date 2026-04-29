@@ -14,7 +14,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 381 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 382 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 54 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 48 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 11 | 使用 C++ 特性和库的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="381 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="382 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -247,6 +247,7 @@ weight: 200
 | 4800 | {{< alias "base36" "pg_base36" >}} | Base36编码解码扩展 |
 | 4810 | {{< alias "base62" "pg_base62" >}} | Base62编码解码扩展 |
 | 4840 | {{< alias "financial" "pg_financial" >}} | 金融领域聚合函数 |
+| 4845 | {{< alias "pg_accumulator" >}} | PostgreSQL 中用于余额与周转跟踪的累积寄存器 |
 | 4860 | {{< alias "parray_gin" >}} | 为 text[] 提供部分匹配运算符与 GIN 索引支持 |
 | 4880 | {{< alias "refint" >}} | 实现引用完整性的函数 |
 | 4881 | {{< alias "autoinc" >}} | 用于自动递增字段的函数 |

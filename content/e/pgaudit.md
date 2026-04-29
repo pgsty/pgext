@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 18.0" "postgresql-18-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 17.1" "postgresql-17-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 16.1" "postgresql-16-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.7.1" "postgresql-15-pgaudit : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.6.3" "postgresql-14-pgaudit : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -81,7 +81,7 @@ width: full
 | `postgresql-18-pgaudit` | `18.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 46.7 KiB | [postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-18/postgresql-18-pgaudit_18.0-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -107,7 +107,7 @@ width: full
 | `postgresql-17-pgaudit` | `17.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.9 KiB | [postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-17/postgresql-17-pgaudit_17.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -133,7 +133,7 @@ width: full
 | `postgresql-16-pgaudit` | `16.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 45.0 KiB | [postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-16/postgresql-16-pgaudit_16.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -161,7 +161,7 @@ width: full
 | `postgresql-15-pgaudit` | `1.7.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 44.0 KiB | [postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgaudit-1.7/postgresql-15-pgaudit_1.7.1-2.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

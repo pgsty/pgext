@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.0" "postgresql-18-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-17-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-16-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-15-similarity : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "postgresql-14-similarity : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -85,7 +85,7 @@ width: full
 | `postgresql-18-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-18-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-18-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -109,7 +109,7 @@ width: full
 | `postgresql-17-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-17-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-17-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -133,7 +133,7 @@ width: full
 | `postgresql-16-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.8 KiB | [postgresql-16-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-16-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -157,7 +157,7 @@ width: full
 | `postgresql-15-similarity` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.7 KiB | [postgresql-15-similarity_1.0-9.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-similarity/postgresql-15-similarity_1.0-9.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

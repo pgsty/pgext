@@ -14,7 +14,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 381 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 382 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 54 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 48 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 11 | Extensions leveraging C++ features and libraries |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="381 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="382 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -247,6 +247,7 @@ The traditional PostgreSQL extension language
 | 4800 | {{< alias "base36" "pg_base36" >}} | Integer Base36 types |
 | 4810 | {{< alias "base62" "pg_base62" >}} | Base62 extension for PostgreSQL |
 | 4840 | {{< alias "financial" "pg_financial" >}} | Financial aggregate functions |
+| 4845 | {{< alias "pg_accumulator" >}} | Accumulation registers for balance and turnover tracking in PostgreSQL |
 | 4860 | {{< alias "parray_gin" >}} | GIN index operator class and partial-match operators for text arrays |
 | 4880 | {{< alias "refint" >}} | functions for implementing referential integrity (obsolete) |
 | 4881 | {{< alias "autoinc" >}} | functions for autoincrementing fields |
@@ -372,7 +373,7 @@ The traditional PostgreSQL extension language
 | 8980 | {{< alias "file_fdw" >}} | foreign-data wrapper for flat file access |
 | 8990 | {{< alias "postgres_fdw" >}} | foreign-data wrapper for remote PostgreSQL servers |
 | 9000 | {{< alias "documentdb" >}} | API surface for DocumentDB for PostgreSQL |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB for PostgreSQL |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB on PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB Extended RUM index access method |
 | 9100 | {{< alias "orafce" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |

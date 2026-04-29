@@ -55,8 +55,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -68,7 +68,7 @@ width: full
 | `mongo_fdw_18` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.2 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/mongo_fdw_18-5.5.3-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -80,7 +80,7 @@ width: full
 | `mongo_fdw_17` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.1 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/mongo_fdw_17-5.5.3-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -96,7 +96,7 @@ width: full
 | `mongo_fdw_16` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.1 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/mongo_fdw_16-5.5.3-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -116,7 +116,7 @@ width: full
 | `mongo_fdw_15` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 54.4 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/mongo_fdw_15-5.5.3-2PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

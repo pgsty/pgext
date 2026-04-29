@@ -11,15 +11,15 @@ breadcrumbs: false
 
 The simplest way to install `pig` is to run the following installation script:
 
-{{< tabs items="Default,Mirror" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="Default" >}}
 ```bash tab="Default"
 curl -fsSL https://repo.pigsty.io/pig | bash     # via Cloudflare
 ```
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="Mirror"
 curl -fsSL https://repo.pigsty.cc/pig | bash     # via China Mirror
 ```
@@ -34,15 +34,15 @@ It downloads the latest `pig` RPM / DEB from the pigsty [repo](/repo/) and insta
 
 You can install specific version of pig, just pass it as cli arg:
 
-{{< tabs items="Default,Mirror" >}}
+{{< tabs >}}
 
-{{< tab >}}
+{{< tab name="Default" >}}
 ```bash tab="Default"
 curl -fsSL https://repo.pigsty.io/pig | bash -s 1.0.0    # via Cloudflare
 ```
 {{< /tab >}}
 
-{{< tab >}}
+{{< tab name="Mirror" >}}
 ```bash tab="Mirror"
 curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.0.0    # via China Mirror
 ```

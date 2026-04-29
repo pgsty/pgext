@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.10.0" "postgresql-18-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-17-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-16-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-15-icu-ext : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.10.0" "postgresql-14-icu-ext : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -85,7 +85,7 @@ width: full
 | `postgresql-18-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-18-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-18-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -113,7 +113,7 @@ width: full
 | `postgresql-17-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-17-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-17-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -141,7 +141,7 @@ width: full
 | `postgresql-16-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.6 KiB | [postgresql-16-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-16-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -169,7 +169,7 @@ width: full
 | `postgresql-15-icu-ext` | `1.10.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 91.7 KiB | [postgresql-15-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/i/icu-ext/postgresql-15-icu-ext_1.10.0-3.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

@@ -58,8 +58,8 @@ width: full
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "oriolepg-18-orioledb : FORK 0" "red" >}}      |      {{< bg "MISS" "oriolepg-17-orioledb : FORK 0" "red" >}}      |      {{< bg "MISS" "oriolepg-16-orioledb : FORK 0" "red" >}}      |      {{< bg "MISS" "oriolepg-15-orioledb : FORK 0" "red" >}}      |      {{< bg "MISS" "oriolepg-14-orioledb : FORK 0" "red" >}}      |
 
 
-{{< tabs items="PG17" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|

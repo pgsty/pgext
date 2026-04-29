@@ -56,8 +56,8 @@ width: full
 | {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.5.2" "postgresql-18-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-17-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-16-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-15-pgsphere : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.5.2" "postgresql-14-pgsphere : AVAIL 1" "blue" >}} |
 
 
-{{< tabs items="PG18,PG17,PG16,PG15,PG14" >}}
-{{< tab >}}
+{{< tabs >}}
+{{< tab name="PG18" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -79,7 +79,7 @@ width: full
 | `postgresql-18-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.2 KiB | [postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-18-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -101,7 +101,7 @@ width: full
 | `postgresql-17-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.1 KiB | [postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-17-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -123,7 +123,7 @@ width: full
 | `postgresql-16-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 400.3 KiB | [postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-16-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
@@ -145,7 +145,7 @@ width: full
 | `postgresql-15-pgsphere` | `1.5.2` | [u26.aarch64](/os/u26.aarch64) | pgdg | 399.2 KiB | [postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgsphere/postgresql-15-pgsphere_1.5.2-1.pgdg26.04+1_arm64.deb) |
 
 {{< /tab >}}
-{{< tab >}}
+{{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
