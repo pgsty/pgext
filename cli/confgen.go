@@ -728,7 +728,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"getNodePackage1": func() string {
 			// el10 doesn't have flamegraph package
-			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf"
+			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf"
 			if g.osCode == "el10" {
 				return basePkgs + " chkconfig uv"
 			}
@@ -749,13 +749,6 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			}
 			// DEB systems use bind9-dnsutils
 			return g.constants.DEBCommonPkg[4]
-		},
-		"getDNSPackage": func() string {
-			// Return the appropriate DNS utilities package name
-			if g.isRPM() {
-				return "bind-utils"
-			}
-			return "bind9-dnsutils"
 		},
 		"getDockerRepo": func() string {
 			// For el10, use RHEL repositories instead of CentOS
@@ -843,7 +836,7 @@ func GetConfigConstants() *ConfigConstants {
 			// 2: extra-modules
 			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
 			// 3: node-package1
-			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync tcpdump perf flamegraph chkconfig uv",
+			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf flamegraph chkconfig uv",
 			// 4: node-package2
 			"netcat socat ftp net-tools ipvsadm bind-utils telnet audit ca-certificates readline vim-minimal keepalived openssl openssh-server openssh-clients chrony cronie",
 			// 5: pgsql-utility
@@ -908,7 +901,6 @@ func GetConfigConstants() *ConfigConstants {
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"greenplum", "open-source-greenplum-db-7", ""},
 			{"cloudberry", "cloudberry", "cloudberry"},
-			{"wiltondb", "wiltondb", "wiltondb"},
 			{"percona-core", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18"},
 			{"percona-main", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18,percona-postgis35_18,percona-postgis35_18-client,percona-postgis35_18-utils,percona-pgvector_18,percona-wal2json18,percona-pg_repack18,percona-pgaudit18,percona-pgaudit18_set_user,percona-pg_stat_monitor18,percona-pg_gather", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18 percona-postgresql-18-postgis-3 percona-postgresql-18-pgvector percona-postgresql-18-wal2json percona-postgresql-18-repack percona-postgresql-18-pgaudit percona-pgaudit18-set-user percona-pg-stat-monitor18 percona-pg-gather"},
 		},
@@ -954,7 +946,7 @@ repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump
+  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,acl,tcpdump
   - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cronie,pig,uv
   - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector
 
@@ -1005,7 +997,6 @@ repo_upstream_default:
   - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.3/yum/release/$releasever/RPMS/$basearch'  }}
-  - { name: wiltondb       ,description: 'WiltonDB'           ,module: mssql   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/mssql/el$releasever.$basearch', china: 'https://repo.pigsty.cc/yum/mssql/el$releasever.$basearch' , origin: 'https://download.copr.fedorainfracloud.org/results/wiltondb/wiltondb/epel-$releasever-$basearch/' }}
   - { name: groonga        ,description: 'Groonga'            ,module: groonga ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }}
   - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
   - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' ,china: 'https://mirrors.aliyun.com/mongodb/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' }}
@@ -1103,7 +1094,7 @@ repo_extra_packages_default: [ pgsql-main ]
 node_packages_default:
   - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
   - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cron,pig,uv
-  - zlib1g,acl,{{ getDNSPackage }},libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
+  - zlib1g,acl,bind9-dnsutils,libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:

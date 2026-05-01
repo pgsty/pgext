@@ -157,7 +157,7 @@ func TestEL9ARMPatroniVersionLockUsesCurrentVersion(t *testing.T) {
 	}
 }
 
-func TestDebDNSPackageUsesBind9DNSUtils(t *testing.T) {
+func TestDebNodePackage2UsesBind9DNSUtils(t *testing.T) {
 	for _, osCode := range []string{"d12", "d13", "u22", "u24", "u26"} {
 		t.Run(osCode, func(t *testing.T) {
 			g := &PigstyConfigGenerator{
@@ -165,10 +165,6 @@ func TestDebDNSPackageUsesBind9DNSUtils(t *testing.T) {
 				constants: GetConfigConstants(),
 			}
 			funcs := g.getFuncMap()
-
-			if got := funcs["getDNSPackage"].(func() string)(); got != "bind9-dnsutils" {
-				t.Fatalf("getDNSPackage() = %q, want %q", got, "bind9-dnsutils")
-			}
 
 			packages := strings.Fields(funcs["getNodePackage2"].(func() string)())
 			hasBind9DNSUtils := false
@@ -187,7 +183,7 @@ func TestDebDNSPackageUsesBind9DNSUtils(t *testing.T) {
 	}
 }
 
-func TestRPMDNSPackageUsesBindUtils(t *testing.T) {
+func TestRPMNodePackage2UsesBindUtils(t *testing.T) {
 	for _, osCode := range []string{"el8", "el9", "el10"} {
 		t.Run(osCode, func(t *testing.T) {
 			g := &PigstyConfigGenerator{
@@ -195,10 +191,6 @@ func TestRPMDNSPackageUsesBindUtils(t *testing.T) {
 				constants: GetConfigConstants(),
 			}
 			funcs := g.getFuncMap()
-
-			if got := funcs["getDNSPackage"].(func() string)(); got != "bind-utils" {
-				t.Fatalf("getDNSPackage() = %q, want %q", got, "bind-utils")
-			}
 
 			packages := strings.Fields(funcs["getNodePackage2"].(func() string)())
 			hasBindUtils := false
@@ -214,6 +206,65 @@ func TestRPMDNSPackageUsesBindUtils(t *testing.T) {
 				t.Fatalf("node-package2 missing bind-utils: %q", strings.Join(packages, " "))
 			}
 		})
+	}
+}
+
+func TestRPMNodePackage1IncludesACL(t *testing.T) {
+	constants := GetConfigConstants()
+	if !containsToken(constants.RPMCommonPkg[3], "acl") {
+		t.Fatalf("RPMCommonPkg node-package1 missing acl: %q", constants.RPMCommonPkg[3])
+	}
+
+	for _, osCode := range []string{"el8", "el9", "el10"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{
+				osName:    osCode + ".x86_64",
+				osCode:    osCode,
+				arch:      "x86_64",
+				constants: constants,
+			}
+			funcs := g.getFuncMap()
+
+			nodePackage1 := funcs["getNodePackage1"].(func() string)()
+			if !containsToken(nodePackage1, "acl") {
+				t.Fatalf("node-package1 missing acl: %q", nodePackage1)
+			}
+		})
+	}
+
+	g := &PigstyConfigGenerator{
+		osName:    "el9.x86_64",
+		osCode:    "el9",
+		arch:      "x86_64",
+		constants: constants,
+	}
+	tmpl := template.Must(template.New("rpm").Funcs(g.getFuncMap()).Parse(rpmTemplate))
+	data := map[string]interface{}{
+		"OSName":       g.osName,
+		"OSCode":       g.osCode,
+		"Arch":         g.arch,
+		"Constants":    g.constants,
+		"Extensions":   map[string]*ExtensionData{},
+		"PGVersions":   []int{18, 17, 16, 15, 14},
+		"CategoryExts": map[string]CategoryPkgList{},
+		"Categories":   []string{},
+		"ExtMappings":  []ExtensionMapping{},
+	}
+
+	var buf bytes.Buffer
+	if err := tmpl.Execute(&buf, data); err != nil {
+		t.Fatal(err)
+	}
+	rendered := buf.String()
+
+	required := []string{
+		"rsync,acl,tcpdump",
+		"node-package1:           \"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf flamegraph chkconfig uv\"",
+	}
+	for _, fragment := range required {
+		if !strings.Contains(rendered, fragment) {
+			t.Fatalf("rendered RPM config missing expected fragment: %q", fragment)
+		}
 	}
 }
 
@@ -257,6 +308,15 @@ func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 			t.Fatalf("rendered DEB config contains legacy dnsutils token: %q", line)
 		}
 	}
+}
+
+func containsToken(s, token string) bool {
+	for _, field := range strings.Fields(s) {
+		if field == token {
+			return true
+		}
+	}
+	return false
 }
 
 func TestConfigConstantsIncludeBabelfishAlias(t *testing.T) {
