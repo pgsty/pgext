@@ -18,6 +18,10 @@ weight: 300
 | pg_savior        | 0.0.1  | 0.1.0  | PGXN 更新，防误删/高风险 DDL/DML hook，需 preload 或 LOAD             |
 | pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 全文搜索更新，PG 17-18，需 shared_preload_libraries |
 | pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx 更新，仅 PG 18                                      |
+| pgedge           | 17.9   | 18.3   | 针对 18 重新构建                                                |
+| spock            | 5.0.5  | 5.0.6  | 针对 18 重新构建                                                |
+| lolor            | 1.2.2  | 1.2.2  | 针对 18 重新构建                                                |
+| snowflake        | 2.4    | 2.4    | 针对 18 重新构建                                                |
 
 已完成 Debian 12/13 与 Ubuntu 22.04/24.04/26.04 在 amd64 和 arm64 上的构建。
 

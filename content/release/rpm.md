@@ -18,6 +18,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pg_savior        | 0.0.1  | 0.1.0  | DDL/DML safety hook, preload or LOAD                        |
 | pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 full-text search, PG 17-18, requires preload |
 | pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx bump, PG 18 only                                  |
+| pgedge           | 17.9   | 18.3   | rebuilt for PG 18                                           |
+| spock            | 5.0.5  | 5.0.6  | rebuilt for PG 18                                           |
+| lolor            | 1.2.2  | 1.2.2  | rebuilt for PG 18                                           |
+| snowflake        | 2.4    | 2.4    | rebuilt for PG 18                                           |
 
 ## 2026-04-25
 
@@ -38,24 +42,24 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
 ## 2026-04-19
 
-| Package           | Old    | New     | Comment                                |
-|:------------------|:-------|:--------|:---------------------------------------|
+| Package           | Old    | New     | Comment                                           |
+|:------------------|:-------|:--------|:--------------------------------------------------|
 | cloudberry        | 2.0.0  | 2.1.0-2 | bump to 2.1.0, release 2 fixes initdb errno issue |
-| cloudberry-backup | -      | 2.1.0-2 | new companion package                    |
-| cloudberry-pxf    | -      | 2.1.0-2 | new companion package                    |
-| re2               | -      | 0.1.1   | new, PG 16-18                            |
-| storage_engine    | -      | 1.0.7   | new, PG 14-18                            |
-| ulak              | -      | 0.0.2   | new, PG 14-18                            |
-| orioledb          | beta14 | beta15  | paired with OriolePG 17.18              |
-| oriolepg          | 17.16  | 17.18   | kernel patchset update                   |
-| pg_clickhouse     | 0.1.10 | 0.2.0   |                                        |
-| pg_search         | 0.22.6 | 0.23.0  |                                        |
-| pg_stat_ch        | 0.3.4  | 0.3.6   | EL9+ only                               |
-| pg_trickle        | 0.17.0 | 0.20.0  | PG 18 only                              |
-| pgclone           | 3.6.0  | 4.0.0   |                                        |
-| pgproto           | 0.2.4  | 0.3.3   |                                        |
-| pgxicor           | 0.1.0  | 0.1.1   |                                        |
-| timescaledb       | 2.26.2 | 2.26.3  |                                        |
+| cloudberry-backup | -      | 2.1.0-2 | new companion package                             |
+| cloudberry-pxf    | -      | 2.1.0-2 | new companion package                             |
+| re2               | -      | 0.1.1   | new, PG 16-18                                     |
+| storage_engine    | -      | 1.0.7   | new, PG 14-18                                     |
+| ulak              | -      | 0.0.2   | new, PG 14-18                                     |
+| orioledb          | beta14 | beta15  | paired with OriolePG 17.18                        |
+| oriolepg          | 17.16  | 17.18   | kernel patchset update                            |
+| pg_clickhouse     | 0.1.10 | 0.2.0   |                                                   |
+| pg_search         | 0.22.6 | 0.23.0  |                                                   |
+| pg_stat_ch        | 0.3.4  | 0.3.6   | EL9+ only                                         |
+| pg_trickle        | 0.17.0 | 0.20.0  | PG 18 only                                        |
+| pgclone           | 3.6.0  | 4.0.0   |                                                   |
+| pgproto           | 0.2.4  | 0.3.3   |                                                   |
+| pgxicor           | 0.1.0  | 0.1.1   |                                                   |
+| timescaledb       | 2.26.2 | 2.26.3  |                                                   |
 
 ## 2026-04-14
 

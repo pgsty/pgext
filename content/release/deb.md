@@ -18,6 +18,10 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | pg_savior        | 0.0.1  | 0.1.0  | PGXN update, high-risk DDL/DML hook, preload or LOAD required                       |
 | pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 full-text search update, PG 17-18, shared_preload_libraries required |
 | pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx update, PG 18 only                                                        |
+| pgedge           | 17.9   | 18.3   | rebuilt for PG 18                                                                   |
+| spock            | 5.0.5  | 5.0.6  | rebuilt for PG 18                                                                   |
+| lolor            | 1.2.2  | 1.2.2  | rebuilt for PG 18                                                                   |
+| snowflake        | 2.4    | 2.4    | rebuilt for PG 18                                                                   |
 
 Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 

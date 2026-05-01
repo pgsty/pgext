@@ -19,6 +19,10 @@ weight: 200
 | pg_savior        | 0.0.1  | 0.1.0  | 高风险 DDL/DML 防护 hook，需 preload 或 LOAD        |
 | pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 全文搜索扩展更新，PG 17-18，需 preload  |
 | pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx 更新，仅支持 PG 18                      |
+| pgedge           | 17.9   | 18.3   | 针对 18 重新构建                                  |
+| spock            | 5.0.5  | 5.0.6  | 针对 18 重新构建                                  |
+| lolor            | 1.2.2  | 1.2.2  | 针对 18 重新构建                                  |
+| snowflake        | 2.4    | 2.4    | 针对 18 重新构建                                  |
 
 ## 2026-04-25
 
