@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-18-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-17-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-temporal-tables : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-18-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-17-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-temporal-tables : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-18-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-17-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-temporal-tables : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-temporal-tables : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-temporal-tables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-temporal-tables : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-18-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-17-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-temporal-tables : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-18-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-17-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-16-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-15-temporal-tables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.2" "postgresql-14-temporal-tables : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-temporal-tables` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.3 KiB | [postgresql-18-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/temporal-tables/postgresql-18-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-temporal-tables` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.7 KiB | [postgresql-18-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-18-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-temporal-tables` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.2 KiB | [postgresql-18-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-18-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-temporal-tables` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-18-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-18-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-temporal-tables` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-18-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-18-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -101,6 +103,8 @@ width: full
 | `postgresql-17-temporal-tables` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 30.8 KiB | [postgresql-17-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/temporal-tables/postgresql-17-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-temporal-tables` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.6 KiB | [postgresql-17-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-17-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-temporal-tables` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.2 KiB | [postgresql-17-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-17-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-temporal-tables` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-17-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-17-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-temporal-tables` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-17-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-17-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -127,6 +131,8 @@ width: full
 | `postgresql-16-temporal-tables` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 30.4 KiB | [postgresql-16-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/temporal-tables/postgresql-16-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-temporal-tables` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.6 KiB | [postgresql-16-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-16-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-temporal-tables` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.2 KiB | [postgresql-16-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-16-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-temporal-tables` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-16-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-16-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-temporal-tables` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-16-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-16-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -153,6 +159,8 @@ width: full
 | `postgresql-15-temporal-tables` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 30.5 KiB | [postgresql-15-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/temporal-tables/postgresql-15-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-temporal-tables` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.7 KiB | [postgresql-15-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-15-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-temporal-tables` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.2 KiB | [postgresql-15-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-15-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-temporal-tables` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.0 KiB | [postgresql-15-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-15-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-temporal-tables` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.5 KiB | [postgresql-15-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-15-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -179,6 +187,8 @@ width: full
 | `postgresql-14-temporal-tables` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 28.4 KiB | [postgresql-14-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/t/temporal-tables/postgresql-14-temporal-tables_1.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-temporal-tables` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.7 KiB | [postgresql-14-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-14-temporal-tables_1.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-temporal-tables` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.2 KiB | [postgresql-14-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/t/temporal-tables/postgresql-14-temporal-tables_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-temporal-tables` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-14-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-14-temporal-tables_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-temporal-tables` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.4 KiB | [postgresql-14-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/t/temporal-tables/postgresql-14-temporal-tables_1.2.2-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

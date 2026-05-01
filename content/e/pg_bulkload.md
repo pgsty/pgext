@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-18-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-17-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-16-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-15-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-14-pg-bulkload : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-18-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-17-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-16-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-15-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-14-pg-bulkload : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-18-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-17-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-16-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-15-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-14-pg-bulkload : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-bulkload : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-bulkload : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-bulkload : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-18-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-17-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-16-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-15-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-14-pg-bulkload : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-18-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-17-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-16-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-15-pg-bulkload : AVAIL 1" "green" >}} | {{< bg "PIGSTY 3.1.23" "postgresql-14-pg-bulkload : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -83,6 +83,8 @@ width: full
 | `postgresql-18-pg-bulkload` | `3.1.23` | [u22.aarch64](/os/u22.aarch64) | pigsty | 244.7 KiB | [postgresql-18-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-bulkload/postgresql-18-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-bulkload` | `3.1.23` | [u24.x86_64](/os/u24.x86_64) | pigsty | 240.8 KiB | [postgresql-18-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-18-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-bulkload` | `3.1.23` | [u24.aarch64](/os/u24.aarch64) | pigsty | 237.2 KiB | [postgresql-18-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-18-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-bulkload` | `3.1.23` | [u26.x86_64](/os/u26.x86_64) | pigsty | 239.9 KiB | [postgresql-18-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-18-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-bulkload` | `3.1.23` | [u26.aarch64](/os/u26.aarch64) | pigsty | 235.4 KiB | [postgresql-18-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-18-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -105,6 +107,8 @@ width: full
 | `postgresql-17-pg-bulkload` | `3.1.23` | [u22.aarch64](/os/u22.aarch64) | pigsty | 291.9 KiB | [postgresql-17-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-bulkload/postgresql-17-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-bulkload` | `3.1.23` | [u24.x86_64](/os/u24.x86_64) | pigsty | 240.0 KiB | [postgresql-17-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-17-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-bulkload` | `3.1.23` | [u24.aarch64](/os/u24.aarch64) | pigsty | 236.5 KiB | [postgresql-17-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-17-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-bulkload` | `3.1.23` | [u26.x86_64](/os/u26.x86_64) | pigsty | 238.9 KiB | [postgresql-17-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-17-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-bulkload` | `3.1.23` | [u26.aarch64](/os/u26.aarch64) | pigsty | 234.6 KiB | [postgresql-17-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-17-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -131,6 +135,8 @@ width: full
 | `postgresql-16-pg-bulkload` | `3.1.23` | [u22.aarch64](/os/u22.aarch64) | pigsty | 289.6 KiB | [postgresql-16-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-bulkload/postgresql-16-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-bulkload` | `3.1.23` | [u24.x86_64](/os/u24.x86_64) | pigsty | 241.3 KiB | [postgresql-16-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-16-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-bulkload` | `3.1.23` | [u24.aarch64](/os/u24.aarch64) | pigsty | 236.8 KiB | [postgresql-16-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-16-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-bulkload` | `3.1.23` | [u26.x86_64](/os/u26.x86_64) | pigsty | 240.2 KiB | [postgresql-16-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-16-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-bulkload` | `3.1.23` | [u26.aarch64](/os/u26.aarch64) | pigsty | 234.9 KiB | [postgresql-16-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-16-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -160,6 +166,8 @@ width: full
 | `postgresql-15-pg-bulkload` | `3.1.23` | [u22.aarch64](/os/u22.aarch64) | pigsty | 291.0 KiB | [postgresql-15-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-bulkload/postgresql-15-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-bulkload` | `3.1.23` | [u24.x86_64](/os/u24.x86_64) | pigsty | 241.8 KiB | [postgresql-15-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-15-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-bulkload` | `3.1.23` | [u24.aarch64](/os/u24.aarch64) | pigsty | 237.4 KiB | [postgresql-15-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-15-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-bulkload` | `3.1.23` | [u26.x86_64](/os/u26.x86_64) | pigsty | 240.7 KiB | [postgresql-15-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-15-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-bulkload` | `3.1.23` | [u26.aarch64](/os/u26.aarch64) | pigsty | 235.7 KiB | [postgresql-15-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-15-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -192,6 +200,8 @@ width: full
 | `postgresql-14-pg-bulkload` | `3.1.23` | [u22.aarch64](/os/u22.aarch64) | pigsty | 289.9 KiB | [postgresql-14-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-bulkload/postgresql-14-pg-bulkload_3.1.23-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-bulkload` | `3.1.23` | [u24.x86_64](/os/u24.x86_64) | pigsty | 240.1 KiB | [postgresql-14-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-14-pg-bulkload_3.1.23-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-bulkload` | `3.1.23` | [u24.aarch64](/os/u24.aarch64) | pigsty | 235.7 KiB | [postgresql-14-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-bulkload/postgresql-14-pg-bulkload_3.1.23-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-bulkload` | `3.1.23` | [u26.x86_64](/os/u26.x86_64) | pigsty | 239.2 KiB | [postgresql-14-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-14-pg-bulkload_3.1.23-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-bulkload` | `3.1.23` | [u26.aarch64](/os/u26.aarch64) | pigsty | 234.6 KiB | [postgresql-14-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-bulkload/postgresql-14-pg-bulkload_3.1.23-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

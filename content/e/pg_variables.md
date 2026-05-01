@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-18-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-17-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-16-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-15-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-14-pg-variables : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-18-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-17-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-16-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-15-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-14-pg-variables : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-18-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-17-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-16-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-15-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-14-pg-variables : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-variables : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-variables : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-variables : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-18-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-17-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-16-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-15-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-14-pg-variables : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-18-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-17-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-16-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-15-pg-variables : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.5" "postgresql-14-pg-variables : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-pg-variables` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 65.4 KiB | [postgresql-18-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-variables/postgresql-18-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-variables` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 63.1 KiB | [postgresql-18-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-18-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-variables` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.4 KiB | [postgresql-18-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-18-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-variables` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.6 KiB | [postgresql-18-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-18-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-variables` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.2 KiB | [postgresql-18-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-18-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-pg-variables` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 71.0 KiB | [postgresql-17-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-variables/postgresql-17-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-variables` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.9 KiB | [postgresql-17-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-17-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-variables` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.6 KiB | [postgresql-17-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-17-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-variables` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.6 KiB | [postgresql-17-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-17-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-variables` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.2 KiB | [postgresql-17-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-17-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-16-pg-variables` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 70.6 KiB | [postgresql-16-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-variables/postgresql-16-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-variables` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.8 KiB | [postgresql-16-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-16-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-variables` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.6 KiB | [postgresql-16-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-16-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-variables` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.5 KiB | [postgresql-16-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-16-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-variables` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.2 KiB | [postgresql-16-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-16-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-15-pg-variables` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 71.0 KiB | [postgresql-15-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-variables/postgresql-15-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-variables` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.6 KiB | [postgresql-15-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-15-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-variables` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.2 KiB | [postgresql-15-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-15-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-variables` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.7 KiB | [postgresql-15-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-15-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-variables` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.9 KiB | [postgresql-15-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-15-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-14-pg-variables` | `1.2.5` | [u22.aarch64](/os/u22.aarch64) | pigsty | 71.1 KiB | [postgresql-14-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-variables/postgresql-14-pg-variables_1.2.5-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-variables` | `1.2.5` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.8 KiB | [postgresql-14-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-14-pg-variables_1.2.5-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-variables` | `1.2.5` | [u24.aarch64](/os/u24.aarch64) | pigsty | 63.4 KiB | [postgresql-14-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-variables/postgresql-14-pg-variables_1.2.5-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-variables` | `1.2.5` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.6 KiB | [postgresql-14-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-14-pg-variables_1.2.5-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-variables` | `1.2.5` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.0 KiB | [postgresql-14-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-variables/postgresql-14-pg-variables_1.2.5-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

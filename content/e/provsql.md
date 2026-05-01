@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-14-provsql : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-14-provsql : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-provsql : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-provsql : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-provsql : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.3" "postgresql-14-provsql : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-provsql` | `1.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 268.6 KiB | [postgresql-18-provsql_1.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-18-provsql_1.2.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-provsql` | `1.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 297.9 KiB | [postgresql-18-provsql_1.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.2.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-provsql` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 279.5 KiB | [postgresql-18-provsql_1.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.2.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-provsql` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 306.6 KiB | [postgresql-18-provsql_1.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.2.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-provsql` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 284.2 KiB | [postgresql-18-provsql_1.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.2.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-provsql` | `1.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 268.4 KiB | [postgresql-17-provsql_1.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-17-provsql_1.2.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-provsql` | `1.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 298.5 KiB | [postgresql-17-provsql_1.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.2.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-provsql` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 279.4 KiB | [postgresql-17-provsql_1.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.2.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-provsql` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 306.3 KiB | [postgresql-17-provsql_1.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.2.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-provsql` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 284.7 KiB | [postgresql-17-provsql_1.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.2.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-provsql` | `1.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 268.7 KiB | [postgresql-16-provsql_1.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-16-provsql_1.2.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-provsql` | `1.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 300.0 KiB | [postgresql-16-provsql_1.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.2.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-provsql` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 280.1 KiB | [postgresql-16-provsql_1.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.2.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-provsql` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 306.5 KiB | [postgresql-16-provsql_1.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.2.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-provsql` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 284.7 KiB | [postgresql-16-provsql_1.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.2.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-provsql` | `1.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 302.6 KiB | [postgresql-15-provsql_1.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-15-provsql_1.2.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-provsql` | `1.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 331.6 KiB | [postgresql-15-provsql_1.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.2.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-provsql` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 314.0 KiB | [postgresql-15-provsql_1.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.2.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-provsql` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 336.9 KiB | [postgresql-15-provsql_1.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.2.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-provsql` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 316.3 KiB | [postgresql-15-provsql_1.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.2.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-provsql` | `1.2.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 303.2 KiB | [postgresql-14-provsql_1.2.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.2.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-provsql` | `1.2.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 330.3 KiB | [postgresql-14-provsql_1.2.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.2.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-provsql` | `1.2.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 312.5 KiB | [postgresql-14-provsql_1.2.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.2.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-provsql` | `1.2.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 336.8 KiB | [postgresql-14-provsql_1.2.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.2.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-provsql` | `1.2.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 315.7 KiB | [postgresql-14-provsql_1.2.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.2.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

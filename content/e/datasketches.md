@@ -49,8 +49,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-datasketches : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-datasketches : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-datasketches : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-18-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-17-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-16-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-15-datasketches : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.7.0" "postgresql-14-datasketches : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -72,6 +72,8 @@ width: full
 | `postgresql-18-datasketches` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1020.8 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-datasketches` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 977.8 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.3 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.7 KiB | [postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-18-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -92,6 +94,8 @@ width: full
 | `postgresql-17-datasketches` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.1 MiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-datasketches` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 977.8 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.2 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.5 KiB | [postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-17-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -112,6 +116,8 @@ width: full
 | `postgresql-16-datasketches` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.1 MiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-datasketches` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 977.8 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 991.2 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 945.1 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 951.5 KiB | [postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-16-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -132,6 +138,8 @@ width: full
 | `postgresql-15-datasketches` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.1 MiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-datasketches` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 984.6 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 998.8 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 951.8 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 957.7 KiB | [postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-15-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -152,6 +160,8 @@ width: full
 | `postgresql-14-datasketches` | `1.7.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.1 MiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-datasketches` | `1.7.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 984.5 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-datasketches` | `1.7.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 998.7 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-datasketches` | `1.7.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 951.7 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-datasketches` | `1.7.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 957.5 KiB | [postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/datasketches/postgresql-14-datasketches_1.7.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

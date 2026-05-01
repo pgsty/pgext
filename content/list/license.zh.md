@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 227 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 228 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 85 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 80 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 81 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 31 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD 2-Clause" >}} | 15 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -42,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="227 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="228 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -124,10 +124,11 @@ weight: 300
 | 3730 | {{< alias "uint" "pguint" >}} | 无符号整型数据类型 |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
-| 3820 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
-| 3840 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
-| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
-| 3870 | {{< alias "debversion" >}} | Debian版本号数据类型 |
+| 3770 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
+| 3790 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
+| 3820 | {{< alias "debversion" >}} | Debian版本号数据类型 |
+| 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
 | 3920 | {{< alias "chkpass" >}} | 数据类型：自动加密的密码 |
 | 3930 | {{< alias "isn" >}} | 用于国际产品编号标准的数据类型 |
 | 3940 | {{< alias "seg" >}} | 表示线段或浮点间隔的数据类型 |
@@ -376,7 +377,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="80 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="81 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -408,7 +409,7 @@ weight: 300
 | 3590 | {{< alias "pglite_fusion" >}} | 在PG表中嵌入SQLite数据库作为数据类型 |
 | 3680 | {{< alias "currency" "pg_currency" >}} | 使用1字节表示的货币数据类型 |
 | 3720 | {{< alias "pg_rational" >}} | 使用BIGINT表示的有理数数据类型 |
-| 3830 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
+| 3850 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
 | 3880 | {{< alias "pg_rrule" >}} | 日历重复规则RRULE数据类型 |
 | 3890 | {{< alias "pgcalendar" >}} | 为 PostgreSQL 提供循环日程、投影与例外处理的日历扩展 |
 | 3900 | {{< alias "timestamp9" >}} | 纳秒分辨率时间戳 |
@@ -438,6 +439,7 @@ weight: 300
 | 4830 | {{< alias "pg_base58" >}} | Base58 编码/解码函数 |
 | 4850 | {{< alias "convert" "pg_convert" >}} | 用于空间里程等的公英制转换函数 |
 | 5130 | {{< alias "pgdd" >}} | 提供通过标准SQL查询数据库目录集簇的能力 |
+| 5250 | {{< alias "pg_pathcheck" >}} | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
 | 5830 | {{< alias "pg_strict" >}} | 防止不带WHERE条件的危险UPDATE和DELETE操作 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
 | 6270 | {{< alias "pg_track_optimizer" >}} | 跟踪规划器决策与实际执行的差距 |
@@ -550,7 +552,7 @@ weight: 300
 | 1040 | {{< alias "temporal_tables" >}} | 时态表功能支持 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 3610 | {{< alias "md5hash" >}} | 提供128位MD5的原生数据类型 |
-| 3860 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
+| 3810 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
 | 4275 | {{< alias "byteamagic" "pg_byteamagic" >}} | 从 PostgreSQL bytea 值检测 MIME 类型与文件格式 |
 | 4430 | {{< alias "xxhash" "pg_xxhash" >}} | xxhash哈希函数包 |
 | 4460 | {{< alias "pguecc" "pg_ecdsa" >}} | PostgreSQL的uECC绑定，椭圆曲线加解密函数包 |

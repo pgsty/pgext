@@ -163,7 +163,7 @@ width: full
 | `postgresql-14-rdf-fdw` | `2.5.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 369.9 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-rdf-fdw` | `2.5.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 341.7 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-rdf-fdw` | `2.5.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 338.0 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-rdf-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 340.1 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-rdf-fdw` | `2.5.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 340.0 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-rdf-fdw` | `2.5.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 335.4 KiB | [postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/rdf-fdw/postgresql-14-rdf-fdw_2.5.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}

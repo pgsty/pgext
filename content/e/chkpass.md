@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-chkpass : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-chkpass : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-chkpass : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-chkpass : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-chkpass : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-chkpass` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.8 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-chkpass` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.5 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.8 KiB | [postgresql-18-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-18-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-chkpass` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.0 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-chkpass` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-17-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-17-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-chkpass` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.0 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-chkpass` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-16-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-16-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-chkpass` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.0 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-chkpass` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-15-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-15-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-chkpass` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.0 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-chkpass` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.1 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-chkpass` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.2 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-chkpass` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-chkpass` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.7 KiB | [postgresql-14-chkpass_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/chkpass/postgresql-14-chkpass_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-18-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-17-pg-stat-ch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.6" "postgresql-16-pg-stat-ch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-pg-stat-ch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-stat-ch : MISS 0" "red" >}}      |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.1 MiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 716.9 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 683.3 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 734.0 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 717.7 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -93,6 +95,8 @@ width: full
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.1 MiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 716.7 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 683.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 735.5 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 719.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -111,6 +115,8 @@ width: full
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u22.aarch64](/os/u22.aarch64) | pigsty | 5.1 MiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u24.x86_64](/os/u24.x86_64) | pigsty | 716.4 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [u24.aarch64](/os/u24.aarch64) | pigsty | 681.9 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-stat-ch` | `0.3.6` | [u26.x86_64](/os/u26.x86_64) | pigsty | 733.9 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-stat-ch` | `0.3.6` | [u26.aarch64](/os/u26.aarch64) | pigsty | 717.6 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

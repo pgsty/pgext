@@ -54,7 +54,7 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hydra : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.1.2" "postgresql-16-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-15-hydra : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1.2" "postgresql-14-hydra : AVAIL 1" "green" >}} |
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hydra : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hydra : MISS 0" "red" >}}      |
 
 
@@ -77,6 +77,7 @@ width: full
 | `postgresql-16-hydra` | `1.1.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 425.2 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-hydra` | `1.1.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 359.9 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 363.6 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 358.0 KiB | [postgresql-16-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-16-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -97,6 +98,7 @@ width: full
 | `postgresql-15-hydra` | `1.1.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 443.4 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-hydra` | `1.1.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 377.5 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 381.2 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 375.7 KiB | [postgresql-15-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-15-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -117,6 +119,7 @@ width: full
 | `postgresql-14-hydra` | `1.1.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 444.9 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-hydra` | `1.1.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 378.5 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-hydra` | `1.1.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 382.5 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-hydra` | `1.1.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 376.6 KiB | [postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hydra/postgresql-14-hydra_1.1.2-1PIGSTY~resolute_amd64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

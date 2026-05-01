@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-ddlx : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-ddlx : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-ddlx : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.30" "postgresql-18-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-17-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-16-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-15-ddlx : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.30" "postgresql-14-ddlx : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-ddlx` | `0.30` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.0 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-ddlx` | `0.30` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.9 KiB | [postgresql-18-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-18-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -105,6 +107,8 @@ width: full
 | `postgresql-17-ddlx` | `0.30` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.0 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-ddlx` | `0.30` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.9 KiB | [postgresql-17-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-17-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -147,6 +151,8 @@ width: full
 | `postgresql-16-ddlx` | `0.30` | [u22.aarch64](/os/u22.aarch64) | pigsty | 26.0 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-ddlx` | `0.30` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.8 KiB | [postgresql-16-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-16-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -197,6 +203,8 @@ width: full
 | `postgresql-15-ddlx` | `0.30` | [u22.aarch64](/os/u22.aarch64) | pigsty | 25.9 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-ddlx` | `0.30` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.8 KiB | [postgresql-15-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-15-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -247,6 +255,8 @@ width: full
 | `postgresql-14-ddlx` | `0.30` | [u22.aarch64](/os/u22.aarch64) | pigsty | 25.8 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-ddlx` | `0.30` | [u24.x86_64](/os/u24.x86_64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-ddlx` | `0.30` | [u24.aarch64](/os/u24.aarch64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-ddlx` | `0.30` | [u26.x86_64](/os/u26.x86_64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-ddlx` | `0.30` | [u26.aarch64](/os/u26.aarch64) | pigsty | 25.6 KiB | [postgresql-14-ddlx_0.30-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/d/ddlx/postgresql-14-ddlx_0.30-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

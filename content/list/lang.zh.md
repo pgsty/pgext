@@ -14,7 +14,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 382 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 384 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 54 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 48 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 11 | 使用 C++ 特性和库的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="382 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="384 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -178,11 +178,12 @@ weight: 200
 | 3730 | {{< alias "uint" "pguint" >}} | 无符号整型数据类型 |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 原生128位无符号整型数据类型 |
 | 3750 | {{< alias "hashtypes" >}} | 包括SHA1，MD5在内的多种哈希数据类型 |
-| 3820 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
-| 3830 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
-| 3840 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
-| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
-| 3860 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
+| 3770 | {{< alias "ip4r" >}} | PostgreSQL 的 IPv4/v6 和 IPv4/v6 范围索引类型 |
+| 3790 | {{< alias "uri" "pg_uri" >}} | URI数据类型 |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email地址数据类型 |
+| 3810 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
+| 3850 | {{< alias "pg_duration" >}} | 用于表示时间段的强化数据类型 |
+| 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat 日期类型与公历/尼泊尔历转换函数 |
 | 3880 | {{< alias "pg_rrule" >}} | 日历重复规则RRULE数据类型 |
 | 3900 | {{< alias "timestamp9" >}} | 纳秒分辨率时间戳 |
 | 3910 | {{< alias "pgbson" >}} | 为 PostgreSQL 提供 BSON 数据类型、比较与访问函数 |
@@ -282,6 +283,7 @@ weight: 200
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 一些超级实用的作弊函数 |
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL文件IO函数包 |
 | 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
+| 5250 | {{< alias "pg_pathcheck" >}} | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
 | 5820 | {{< alias "safeupdate" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
@@ -443,7 +445,7 @@ weight: 200
 | 3640 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
 | 3670 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n 工具包 |
-| 3870 | {{< alias "debversion" >}} | Debian版本号数据类型 |
+| 3820 | {{< alias "debversion" >}} | Debian版本号数据类型 |
 | 3890 | {{< alias "pgcalendar" >}} | 为 PostgreSQL 提供循环日程、投影与例外处理的日历扩展 |
 | 4140 | {{< alias "pglock" >}} | 在 PostgreSQL 内实现轻量级分布式锁服务 |
 | 4160 | {{< alias "pgjwt" >}} | JSON Web Token API 的PG实现 (supabase) |

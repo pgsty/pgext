@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-ru-ru : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-ru-ru : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-ru-ru : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hunspell-ru-ru : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-hunspell-ru-ru : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-hunspell-ru-ru : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-ru-ru : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-hunspell-ru-ru : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-hunspell-ru-ru : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-hunspell-ru-ru` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 484.8 KiB | [postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-ru-ru/postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-hunspell-ru-ru` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 485.3 KiB | [postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-hunspell-ru-ru` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 485.3 KiB | [postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-hunspell-ru-ru` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 484.2 KiB | [postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-hunspell-ru-ru` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 484.2 KiB | [postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-18-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-hunspell-ru-ru` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 484.8 KiB | [postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-ru-ru/postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-hunspell-ru-ru` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 484.8 KiB | [postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-hunspell-ru-ru` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 484.8 KiB | [postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-hunspell-ru-ru` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 484.5 KiB | [postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-hunspell-ru-ru` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 484.5 KiB | [postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-17-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-hunspell-ru-ru` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 484.8 KiB | [postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-ru-ru/postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-hunspell-ru-ru` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 485.4 KiB | [postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-hunspell-ru-ru` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 485.4 KiB | [postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-hunspell-ru-ru` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 484.3 KiB | [postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-hunspell-ru-ru` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 484.3 KiB | [postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-16-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-hunspell-ru-ru` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 485.1 KiB | [postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-ru-ru/postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-hunspell-ru-ru` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 484.9 KiB | [postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-hunspell-ru-ru` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 484.9 KiB | [postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-hunspell-ru-ru` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 484.7 KiB | [postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-hunspell-ru-ru` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 484.7 KiB | [postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-15-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-hunspell-ru-ru` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 485.3 KiB | [postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hunspell-ru-ru/postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-hunspell-ru-ru` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 485.7 KiB | [postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-hunspell-ru-ru` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 485.7 KiB | [postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hunspell-ru-ru/postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-hunspell-ru-ru` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 484.8 KiB | [postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-hunspell-ru-ru` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 484.8 KiB | [postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hunspell-ru-ru/postgresql-14-hunspell-ru-ru_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

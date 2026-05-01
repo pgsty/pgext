@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-18-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-17-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-16-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-15-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-14-lower-quantile : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-18-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-17-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-16-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-15-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-14-lower-quantile : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-18-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-17-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-16-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-15-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-14-lower-quantile : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-lower-quantile : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-lower-quantile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-lower-quantile : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-18-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-17-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-16-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-15-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-14-lower-quantile : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-18-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-17-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-16-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-15-lower-quantile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.3" "postgresql-14-lower-quantile : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-lower-quantile` | `1.0.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.3 KiB | [postgresql-18-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lower-quantile/postgresql-18-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-lower-quantile` | `1.0.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.9 KiB | [postgresql-18-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-18-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-lower-quantile` | `1.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-18-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-18-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-lower-quantile` | `1.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.8 KiB | [postgresql-18-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-18-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-lower-quantile` | `1.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.6 KiB | [postgresql-18-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-18-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-lower-quantile` | `1.0.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 17.3 KiB | [postgresql-17-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lower-quantile/postgresql-17-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-lower-quantile` | `1.0.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 17.2 KiB | [postgresql-17-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-17-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-lower-quantile` | `1.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.9 KiB | [postgresql-17-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-17-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-lower-quantile` | `1.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 17.3 KiB | [postgresql-17-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-17-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-lower-quantile` | `1.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.2 KiB | [postgresql-17-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-17-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-lower-quantile` | `1.0.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 17.1 KiB | [postgresql-16-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lower-quantile/postgresql-16-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-lower-quantile` | `1.0.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.9 KiB | [postgresql-16-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-16-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-lower-quantile` | `1.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-16-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-16-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-lower-quantile` | `1.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.9 KiB | [postgresql-16-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-16-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-lower-quantile` | `1.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.7 KiB | [postgresql-16-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-16-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-lower-quantile` | `1.0.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 17.0 KiB | [postgresql-15-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lower-quantile/postgresql-15-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-lower-quantile` | `1.0.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.9 KiB | [postgresql-15-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-15-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-lower-quantile` | `1.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-15-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-15-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-lower-quantile` | `1.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.9 KiB | [postgresql-15-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-15-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-lower-quantile` | `1.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.8 KiB | [postgresql-15-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-15-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-lower-quantile` | `1.0.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 17.0 KiB | [postgresql-14-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lower-quantile/postgresql-14-lower-quantile_1.0.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-lower-quantile` | `1.0.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.8 KiB | [postgresql-14-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-14-lower-quantile_1.0.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-lower-quantile` | `1.0.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.5 KiB | [postgresql-14-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lower-quantile/postgresql-14-lower-quantile_1.0.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-lower-quantile` | `1.0.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.9 KiB | [postgresql-14-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-14-lower-quantile_1.0.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-lower-quantile` | `1.0.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.7 KiB | [postgresql-14-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lower-quantile/postgresql-14-lower-quantile_1.0.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

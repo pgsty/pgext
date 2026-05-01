@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-firebird-fdw : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-firebird-fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-firebird-fdw : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-18-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-17-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-16-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-15-firebird-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.1" "postgresql-14-firebird-fdw : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -79,6 +79,8 @@ width: full
 | `postgresql-18-firebird-fdw` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 148.2 KiB | [postgresql-18-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-18-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-firebird-fdw` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 143.9 KiB | [postgresql-18-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-18-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-firebird-fdw` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 143.1 KiB | [postgresql-18-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-18-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-firebird-fdw` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 142.9 KiB | [postgresql-18-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-18-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-firebird-fdw` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 141.1 KiB | [postgresql-18-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-18-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -101,6 +103,8 @@ width: full
 | `postgresql-17-firebird-fdw` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 167.8 KiB | [postgresql-17-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-17-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-firebird-fdw` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 143.6 KiB | [postgresql-17-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-17-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-firebird-fdw` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 142.7 KiB | [postgresql-17-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-17-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-firebird-fdw` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 142.4 KiB | [postgresql-17-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-17-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-firebird-fdw` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 140.7 KiB | [postgresql-17-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-17-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -124,6 +128,8 @@ width: full
 | `postgresql-16-firebird-fdw` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 167.5 KiB | [postgresql-16-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-16-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-firebird-fdw` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 143.5 KiB | [postgresql-16-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-16-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-firebird-fdw` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 142.8 KiB | [postgresql-16-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-16-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-firebird-fdw` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 142.6 KiB | [postgresql-16-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-16-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-firebird-fdw` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 140.4 KiB | [postgresql-16-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-16-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -148,6 +154,8 @@ width: full
 | `postgresql-15-firebird-fdw` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 168.6 KiB | [postgresql-15-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-15-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-firebird-fdw` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 144.7 KiB | [postgresql-15-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-15-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-firebird-fdw` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 143.5 KiB | [postgresql-15-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-15-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-firebird-fdw` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 143.3 KiB | [postgresql-15-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-15-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-firebird-fdw` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 141.6 KiB | [postgresql-15-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-15-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -178,6 +186,8 @@ width: full
 | `postgresql-14-firebird-fdw` | `1.4.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 167.9 KiB | [postgresql-14-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-firebird-fdw` | `1.4.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 144.7 KiB | [postgresql-14-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-firebird-fdw` | `1.4.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 143.9 KiB | [postgresql-14-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-firebird-fdw` | `1.4.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 143.3 KiB | [postgresql-14-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-firebird-fdw` | `1.4.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 141.7 KiB | [postgresql-14-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/firebird-fdw/postgresql-14-firebird-fdw_1.4.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

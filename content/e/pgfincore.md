@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.3.1" "postgresql-18-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-17-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-16-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-15-pgfincore : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.3.1" "postgresql-14-pgfincore : AVAIL 2" "blue" >}} |
 
 
 {{< tabs >}}
@@ -78,7 +78,9 @@ width: full
 | `postgresql-18-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.4 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.7 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 26.9 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.6 KiB | [postgresql-18-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 26.2 KiB | [postgresql-18-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.2 KiB | [postgresql-18-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-18-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -100,7 +102,9 @@ width: full
 | `postgresql-17-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.1 KiB | [postgresql-17-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.3 KiB | [postgresql-17-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 26.7 KiB | [postgresql-17-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.4 KiB | [postgresql-17-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 26.2 KiB | [postgresql-17-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.3 KiB | [postgresql-17-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-17-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -122,7 +126,9 @@ width: full
 | `postgresql-16-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.1 KiB | [postgresql-16-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.3 KiB | [postgresql-16-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 26.7 KiB | [postgresql-16-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.4 KiB | [postgresql-16-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 26.2 KiB | [postgresql-16-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.3 KiB | [postgresql-16-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-16-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -146,7 +152,9 @@ width: full
 | `postgresql-15-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.1 KiB | [postgresql-15-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.3 KiB | [postgresql-15-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 26.7 KiB | [postgresql-15-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.4 KiB | [postgresql-15-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 26.3 KiB | [postgresql-15-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.3 KiB | [postgresql-15-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-15-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -171,7 +179,9 @@ width: full
 | `postgresql-14-pgfincore` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 27.1 KiB | [postgresql-14-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-3.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pgfincore` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 26.3 KiB | [postgresql-14-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-3.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 26.6 KiB | [postgresql-14-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-3.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 26.4 KiB | [postgresql-14-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 26.2 KiB | [postgresql-14-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-3.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-pgfincore` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 26.3 KiB | [postgresql-14-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgfincore/postgresql-14-pgfincore_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -53,8 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 1" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 1" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 1" "blue" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 1" "blue" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 2" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 1.1.0" "postgresql-18-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-17-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-16-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-15-roaringbitmap : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.1.0" "postgresql-14-roaringbitmap : AVAIL 2" "blue" >}} |
 
 
 {{< tabs >}}
@@ -95,7 +95,9 @@ width: full
 | `postgresql-18-roaringbitmap` | `1.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 409.3 KiB | [postgresql-18-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-18-roaringbitmap` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 378.1 KiB | [postgresql-18-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-18-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 406.0 KiB | [postgresql-18-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 428.7 KiB | [postgresql-18-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 373.1 KiB | [postgresql-18-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 398.9 KiB | [postgresql-18-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-18-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -141,7 +143,9 @@ width: full
 | `postgresql-17-roaringbitmap` | `1.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 410.4 KiB | [postgresql-17-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-roaringbitmap` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 378.1 KiB | [postgresql-17-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-17-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 405.7 KiB | [postgresql-17-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 428.5 KiB | [postgresql-17-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 373.7 KiB | [postgresql-17-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 398.7 KiB | [postgresql-17-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-17-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -187,7 +191,9 @@ width: full
 | `postgresql-16-roaringbitmap` | `1.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 410.3 KiB | [postgresql-16-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-roaringbitmap` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 379.1 KiB | [postgresql-16-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-16-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 405.7 KiB | [postgresql-16-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 428.5 KiB | [postgresql-16-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 373.6 KiB | [postgresql-16-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 398.7 KiB | [postgresql-16-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-16-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -233,7 +239,9 @@ width: full
 | `postgresql-15-roaringbitmap` | `1.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 462.4 KiB | [postgresql-15-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-roaringbitmap` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 422.1 KiB | [postgresql-15-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-15-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 460.1 KiB | [postgresql-15-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 487.9 KiB | [postgresql-15-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 418.3 KiB | [postgresql-15-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 451.1 KiB | [postgresql-15-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-15-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -279,7 +287,9 @@ width: full
 | `postgresql-14-roaringbitmap` | `1.1.0` | [u24.x86_64](/os/u24.x86_64) | pgdg | 462.1 KiB | [postgresql-14-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-roaringbitmap` | `1.1.0` | [u24.aarch64](/os/u24.aarch64) | pgdg | 421.9 KiB | [postgresql-14-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1.pgdg24.04+1_arm64.deb) |
 | `postgresql-14-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pgdg | 459.9 KiB | [postgresql-14-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-roaringbitmap` | `1.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 487.9 KiB | [postgresql-14-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pgdg | 419.0 KiB | [postgresql-14-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-roaringbitmap` | `1.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 451.3 KiB | [postgresql-14-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/r/roaringbitmap/postgresql-14-roaringbitmap_1.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

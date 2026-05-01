@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-14-pg-task : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-14-pg-task : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-14-pg-task : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-task : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-task : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-task : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-14-pg-task : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-18-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-17-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-16-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-15-pg-task : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.1.12" "postgresql-14-pg-task : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-pg-task` | `2.1.12` | [u22.aarch64](/os/u22.aarch64) | pigsty | 190.4 KiB | [postgresql-18-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-18-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-task` | `2.1.12` | [u24.x86_64](/os/u24.x86_64) | pigsty | 193.1 KiB | [postgresql-18-pg-task_2.1.12-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-18-pg-task_2.1.12-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-task` | `2.1.12` | [u24.aarch64](/os/u24.aarch64) | pigsty | 183.7 KiB | [postgresql-18-pg-task_2.1.12-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-18-pg-task_2.1.12-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-task` | `2.1.12` | [u26.x86_64](/os/u26.x86_64) | pigsty | 189.7 KiB | [postgresql-18-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-18-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-task` | `2.1.12` | [u26.aarch64](/os/u26.aarch64) | pigsty | 183.6 KiB | [postgresql-18-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-18-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-pg-task` | `2.1.12` | [u22.aarch64](/os/u22.aarch64) | pigsty | 219.4 KiB | [postgresql-17-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-17-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-task` | `2.1.12` | [u24.x86_64](/os/u24.x86_64) | pigsty | 193.9 KiB | [postgresql-17-pg-task_2.1.12-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-17-pg-task_2.1.12-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-task` | `2.1.12` | [u24.aarch64](/os/u24.aarch64) | pigsty | 184.0 KiB | [postgresql-17-pg-task_2.1.12-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-17-pg-task_2.1.12-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-task` | `2.1.12` | [u26.x86_64](/os/u26.x86_64) | pigsty | 190.1 KiB | [postgresql-17-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-17-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-task` | `2.1.12` | [u26.aarch64](/os/u26.aarch64) | pigsty | 183.8 KiB | [postgresql-17-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-17-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -121,6 +125,8 @@ width: full
 | `postgresql-16-pg-task` | `2.1.12` | [u22.aarch64](/os/u22.aarch64) | pigsty | 216.6 KiB | [postgresql-16-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-16-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-task` | `2.1.12` | [u24.x86_64](/os/u24.x86_64) | pigsty | 193.1 KiB | [postgresql-16-pg-task_2.1.12-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-16-pg-task_2.1.12-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-task` | `2.1.12` | [u24.aarch64](/os/u24.aarch64) | pigsty | 183.2 KiB | [postgresql-16-pg-task_2.1.12-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-16-pg-task_2.1.12-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-task` | `2.1.12` | [u26.x86_64](/os/u26.x86_64) | pigsty | 189.2 KiB | [postgresql-16-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-16-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-task` | `2.1.12` | [u26.aarch64](/os/u26.aarch64) | pigsty | 182.9 KiB | [postgresql-16-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-16-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -145,6 +151,8 @@ width: full
 | `postgresql-15-pg-task` | `2.1.12` | [u22.aarch64](/os/u22.aarch64) | pigsty | 229.2 KiB | [postgresql-15-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-15-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-task` | `2.1.12` | [u24.x86_64](/os/u24.x86_64) | pigsty | 202.5 KiB | [postgresql-15-pg-task_2.1.12-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-15-pg-task_2.1.12-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-task` | `2.1.12` | [u24.aarch64](/os/u24.aarch64) | pigsty | 195.6 KiB | [postgresql-15-pg-task_2.1.12-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-15-pg-task_2.1.12-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-task` | `2.1.12` | [u26.x86_64](/os/u26.x86_64) | pigsty | 199.5 KiB | [postgresql-15-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-15-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-task` | `2.1.12` | [u26.aarch64](/os/u26.aarch64) | pigsty | 195.0 KiB | [postgresql-15-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-15-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -169,6 +177,8 @@ width: full
 | `postgresql-14-pg-task` | `2.1.12` | [u22.aarch64](/os/u22.aarch64) | pigsty | 224.7 KiB | [postgresql-14-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-task/postgresql-14-pg-task_2.1.12-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-task` | `2.1.12` | [u24.x86_64](/os/u24.x86_64) | pigsty | 201.8 KiB | [postgresql-14-pg-task_2.1.12-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-14-pg-task_2.1.12-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-task` | `2.1.12` | [u24.aarch64](/os/u24.aarch64) | pigsty | 195.2 KiB | [postgresql-14-pg-task_2.1.12-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-task/postgresql-14-pg-task_2.1.12-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-task` | `2.1.12` | [u26.x86_64](/os/u26.x86_64) | pigsty | 198.9 KiB | [postgresql-14-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-14-pg-task_2.1.12-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-task` | `2.1.12` | [u26.aarch64](/os/u26.aarch64) | pigsty | 194.6 KiB | [postgresql-14-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-task/postgresql-14-pg-task_2.1.12-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

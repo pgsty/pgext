@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-smlar : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-smlar : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-smlar : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-smlar : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-smlar : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-smlar : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-smlar : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-smlar : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-smlar : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-smlar` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 76.1 KiB | [postgresql-18-smlar_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/smlar/postgresql-18-smlar_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-smlar` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 75.4 KiB | [postgresql-18-smlar_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-18-smlar_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-smlar` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.9 KiB | [postgresql-18-smlar_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-18-smlar_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-smlar` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.7 KiB | [postgresql-18-smlar_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-18-smlar_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-smlar` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.2 KiB | [postgresql-18-smlar_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-18-smlar_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-smlar` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 84.4 KiB | [postgresql-17-smlar_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/smlar/postgresql-17-smlar_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-smlar` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 75.4 KiB | [postgresql-17-smlar_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-17-smlar_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-smlar` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.9 KiB | [postgresql-17-smlar_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-17-smlar_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-smlar` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.6 KiB | [postgresql-17-smlar_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-17-smlar_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-smlar` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.1 KiB | [postgresql-17-smlar_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-17-smlar_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-16-smlar` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 84.2 KiB | [postgresql-16-smlar_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/smlar/postgresql-16-smlar_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-smlar` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 75.3 KiB | [postgresql-16-smlar_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-16-smlar_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-smlar` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.9 KiB | [postgresql-16-smlar_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-16-smlar_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-smlar` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.6 KiB | [postgresql-16-smlar_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-16-smlar_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-smlar` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 74.1 KiB | [postgresql-16-smlar_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-16-smlar_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-15-smlar` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 84.6 KiB | [postgresql-15-smlar_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/smlar/postgresql-15-smlar_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-smlar` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 75.0 KiB | [postgresql-15-smlar_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-15-smlar_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-smlar` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.4 KiB | [postgresql-15-smlar_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-15-smlar_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-smlar` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.6 KiB | [postgresql-15-smlar_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-15-smlar_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-smlar` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 73.7 KiB | [postgresql-15-smlar_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-15-smlar_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-14-smlar` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 84.5 KiB | [postgresql-14-smlar_1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/smlar/postgresql-14-smlar_1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-smlar` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 75.0 KiB | [postgresql-14-smlar_1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-14-smlar_1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-smlar` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 74.4 KiB | [postgresql-14-smlar_1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/smlar/postgresql-14-smlar_1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-smlar` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 74.5 KiB | [postgresql-14-smlar_1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-14-smlar_1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-smlar` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 73.6 KiB | [postgresql-14-smlar_1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/smlar/postgresql-14-smlar_1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

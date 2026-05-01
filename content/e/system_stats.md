@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.0" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.0" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.0" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-system-stats : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-system-stats : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-system-stats : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.0" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.0" "postgresql-18-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-17-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-16-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-15-system-stats : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0" "postgresql-14-system-stats : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -87,6 +87,8 @@ width: full
 | `postgresql-18-system-stats` | `4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 70.2 KiB | [postgresql-18-system-stats_4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/system-stats/postgresql-18-system-stats_4.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-system-stats` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 70.0 KiB | [postgresql-18-system-stats_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-18-system-stats_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-system-stats` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.4 KiB | [postgresql-18-system-stats_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-18-system-stats_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-system-stats` | `4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 69.7 KiB | [postgresql-18-system-stats_4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-18-system-stats_4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-system-stats` | `4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.9 KiB | [postgresql-18-system-stats_4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-18-system-stats_4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -119,6 +121,8 @@ width: full
 | `postgresql-17-system-stats` | `4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 77.3 KiB | [postgresql-17-system-stats_4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/system-stats/postgresql-17-system-stats_4.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-system-stats` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 69.9 KiB | [postgresql-17-system-stats_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-17-system-stats_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-system-stats` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.2 KiB | [postgresql-17-system-stats_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-17-system-stats_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-system-stats` | `4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 69.5 KiB | [postgresql-17-system-stats_4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-17-system-stats_4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-system-stats` | `4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.8 KiB | [postgresql-17-system-stats_4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-17-system-stats_4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -155,6 +159,8 @@ width: full
 | `postgresql-16-system-stats` | `4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 77.2 KiB | [postgresql-16-system-stats_4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/system-stats/postgresql-16-system-stats_4.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-system-stats` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 69.9 KiB | [postgresql-16-system-stats_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-16-system-stats_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-system-stats` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 69.2 KiB | [postgresql-16-system-stats_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-16-system-stats_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-system-stats` | `4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 69.5 KiB | [postgresql-16-system-stats_4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-16-system-stats_4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-system-stats` | `4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 68.8 KiB | [postgresql-16-system-stats_4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-16-system-stats_4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -195,6 +201,8 @@ width: full
 | `postgresql-15-system-stats` | `4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 79.0 KiB | [postgresql-15-system-stats_4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/system-stats/postgresql-15-system-stats_4.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-system-stats` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 71.4 KiB | [postgresql-15-system-stats_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-15-system-stats_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-system-stats` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 70.6 KiB | [postgresql-15-system-stats_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-15-system-stats_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-system-stats` | `4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 70.8 KiB | [postgresql-15-system-stats_4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-15-system-stats_4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-system-stats` | `4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 70.4 KiB | [postgresql-15-system-stats_4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-15-system-stats_4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -234,6 +242,8 @@ width: full
 | `postgresql-14-system-stats` | `4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 78.7 KiB | [postgresql-14-system-stats_4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/system-stats/postgresql-14-system-stats_4.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-system-stats` | `4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 71.2 KiB | [postgresql-14-system-stats_4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-14-system-stats_4.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-system-stats` | `4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 70.4 KiB | [postgresql-14-system-stats_4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/system-stats/postgresql-14-system-stats_4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-system-stats` | `4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 70.7 KiB | [postgresql-14-system-stats_4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-14-system-stats_4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-system-stats` | `4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 70.1 KiB | [postgresql-14-system-stats_4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/system-stats/postgresql-14-system-stats_4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vasco : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-vasco : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-vasco : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-vasco : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-vasco : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 54.1 KiB | [postgresql-18-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-18-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 54.2 KiB | [postgresql-18-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-18-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 53.1 KiB | [postgresql-18-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-18-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 53.9 KiB | [postgresql-18-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-18-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 52.9 KiB | [postgresql-18-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-18-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 56.3 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 54.3 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 53.0 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 54.0 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.0 KiB | [postgresql-17-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-17-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 56.3 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 54.3 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 53.0 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 54.0 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 53.0 KiB | [postgresql-16-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-16-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 58.5 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 56.0 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 55.7 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 56.0 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 55.4 KiB | [postgresql-15-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-15-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-vasco` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 58.5 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-vasco` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 56.0 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-vasco` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 55.6 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-vasco` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 56.0 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-vasco` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 55.4 KiB | [postgresql-14-vasco_0.1.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/v/vasco/postgresql-14-vasco_0.1.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

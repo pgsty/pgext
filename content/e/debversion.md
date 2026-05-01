@@ -2,7 +2,7 @@
 title: "debversion"
 linkTitle: "debversion"
 description: "Debian version number data type"
-weight: 3870
+weight: 3820
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3870** | {{< badge content="debversion" link="https://github.com/ATIX-AG/postgresql-debversion-evr" >}} | {{< ext "debversion" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **3820** | {{< badge content="debversion" link="https://github.com/ATIX-AG/postgresql-debversion-evr" >}} | {{< ext "debversion" >}} | `1.2.0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

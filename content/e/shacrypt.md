@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-shacrypt : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-shacrypt : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-shacrypt : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.1" "postgresql-18-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-17-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-16-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-15-shacrypt : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.1" "postgresql-14-shacrypt : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-shacrypt` | `1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.4 KiB | [postgresql-18-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-18-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-shacrypt` | `1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 KiB | [postgresql-18-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-18-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-shacrypt` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.4 KiB | [postgresql-18-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-18-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-shacrypt` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.0 KiB | [postgresql-18-shacrypt_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-18-shacrypt_1.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-shacrypt` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.4 KiB | [postgresql-18-shacrypt_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-18-shacrypt_1.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-shacrypt` | `1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-shacrypt` | `1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-shacrypt` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-shacrypt` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.0 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-shacrypt` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.4 KiB | [postgresql-17-shacrypt_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-17-shacrypt_1.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-shacrypt` | `1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-shacrypt` | `1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-shacrypt` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-shacrypt` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.0 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-shacrypt` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.4 KiB | [postgresql-16-shacrypt_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-16-shacrypt_1.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-shacrypt` | `1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-shacrypt` | `1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-shacrypt` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.4 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-shacrypt` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.2 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-shacrypt` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.6 KiB | [postgresql-15-shacrypt_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-15-shacrypt_1.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-shacrypt` | `1.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-shacrypt` | `1.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-shacrypt` | `1.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.4 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-shacrypt` | `1.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 32.2 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-shacrypt` | `1.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 31.6 KiB | [postgresql-14-shacrypt_1.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgres-shacrypt/postgresql-14-shacrypt_1.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

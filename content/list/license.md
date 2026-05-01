@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 227 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 228 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 85 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 80 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 81 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 31 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD 2-Clause" >}} | 15 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -42,7 +42,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="227 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="228 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -124,10 +124,11 @@ PostgreSQL extension categorized by license.
 | 3730 | {{< alias "uint" "pguint" >}} | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
-| 3820 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
-| 3840 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
-| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
-| 3870 | {{< alias "debversion" >}} | Debian version number data type |
+| 3770 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
+| 3790 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
+| 3820 | {{< alias "debversion" >}} | Debian version number data type |
+| 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat date type and AD/BS conversion functions |
 | 3920 | {{< alias "chkpass" >}} | data type for auto-encrypted passwords |
 | 3930 | {{< alias "isn" >}} | data types for international product numbering standards |
 | 3940 | {{< alias "seg" >}} | data type for representing line segments or floating-point intervals |
@@ -376,7 +377,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="80 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="81 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -408,7 +409,7 @@ PostgreSQL extension categorized by license.
 | 3590 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
 | 3680 | {{< alias "currency" "pg_currency" >}} | Custom PostgreSQL currency type in 1Byte |
 | 3720 | {{< alias "pg_rational" >}} | bigint fractions |
-| 3830 | {{< alias "pg_duration" >}} | data type for representing durations |
+| 3850 | {{< alias "pg_duration" >}} | data type for representing durations |
 | 3880 | {{< alias "pg_rrule" >}} | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "pgcalendar" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | timestamp nanosecond resolution |
@@ -438,6 +439,7 @@ PostgreSQL extension categorized by license.
 | 4830 | {{< alias "pg_base58" >}} | Base58 Encoder/Decoder Extension for PostgreSQL |
 | 4850 | {{< alias "convert" "pg_convert" >}} | conversion functions for spatial, routing and other specialized uses |
 | 5130 | {{< alias "pgdd" >}} | Introspect pg data dictionary via standard SQL |
+| 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
 | 5830 | {{< alias "pg_strict" >}} | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
 | 6270 | {{< alias "pg_track_optimizer" >}} | Track planning decisions in comparison with execution reality |
@@ -550,7 +552,7 @@ PostgreSQL extension categorized by license.
 | 1040 | {{< alias "temporal_tables" >}} | temporal tables |
 | 1560 | {{< alias "geoip" >}} | IP-based geolocation query |
 | 3610 | {{< alias "md5hash" >}} | type for storing 128-bit binary data inline |
-| 3860 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
+| 3810 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
 | 4275 | {{< alias "byteamagic" "pg_byteamagic" >}} | Detect MIME types and file formats from PostgreSQL bytea values |
 | 4430 | {{< alias "xxhash" "pg_xxhash" >}} | xxhash functions for PostgreSQL |
 | 4460 | {{< alias "pguecc" "pg_ecdsa" >}} | uECC bindings for Postgres |

@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-spat : MISS 0" "red" >}}      | {{< bg "PIGSTY 0.1.0" "postgresql-17-spat : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-spat : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-spat : MISS 0" "red" >}}      |
 
 
 {{< tabs >}}
@@ -73,6 +73,8 @@ width: full
 | `postgresql-17-spat` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.8 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 47.7 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-spat` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 47.6 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-spat` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.2 KiB | [postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/spat/postgresql-17-spat_0.1.0a4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -2,7 +2,7 @@
 title: "emailaddr"
 linkTitle: "emailaddr"
 description: "Email address type for PostgreSQL"
-weight: 3850
+weight: 3800
 categories: ["TYPE"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3850** | {{< badge content="emailaddr" link="https://github.com/petere/pgemailaddr" >}} | {{< ext "emailaddr" "pg_emailaddr" >}} | `0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **3800** | {{< badge content="emailaddr" link="https://github.com/petere/pgemailaddr" >}} | {{< ext "emailaddr" "pg_emailaddr" >}} | `0` | {{< category "TYPE" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0" "postgresql-18-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-17-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-16-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-15-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-14-pg-emailaddr : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0" "postgresql-18-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-17-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-16-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-15-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-14-pg-emailaddr : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0" "postgresql-18-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-17-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-16-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-15-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-14-pg-emailaddr : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-emailaddr : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-emailaddr : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-emailaddr : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0" "postgresql-18-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-17-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-16-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-15-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-14-pg-emailaddr : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0" "postgresql-18-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-17-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-16-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-15-pg-emailaddr : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0" "postgresql-14-pg-emailaddr : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-pg-emailaddr` | `0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 12.7 KiB | [postgresql-18-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-emailaddr/postgresql-18-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-emailaddr` | `0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.0 KiB | [postgresql-18-pg-emailaddr_0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-18-pg-emailaddr_0-2PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-emailaddr` | `0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 KiB | [postgresql-18-pg-emailaddr_0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-18-pg-emailaddr_0-2PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-emailaddr` | `0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.0 KiB | [postgresql-18-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-18-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-emailaddr` | `0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-18-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-18-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-pg-emailaddr` | `0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.0 KiB | [postgresql-17-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-emailaddr/postgresql-17-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-emailaddr` | `0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.0 KiB | [postgresql-17-pg-emailaddr_0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-17-pg-emailaddr_0-2PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-emailaddr` | `0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 KiB | [postgresql-17-pg-emailaddr_0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-17-pg-emailaddr_0-2PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-emailaddr` | `0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.0 KiB | [postgresql-17-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-17-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-emailaddr` | `0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-17-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-17-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-16-pg-emailaddr` | `0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.0 KiB | [postgresql-16-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-emailaddr/postgresql-16-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-emailaddr` | `0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.0 KiB | [postgresql-16-pg-emailaddr_0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-16-pg-emailaddr_0-2PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-emailaddr` | `0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 KiB | [postgresql-16-pg-emailaddr_0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-16-pg-emailaddr_0-2PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-emailaddr` | `0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.0 KiB | [postgresql-16-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-16-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-emailaddr` | `0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-16-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-16-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-15-pg-emailaddr` | `0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.0 KiB | [postgresql-15-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-emailaddr/postgresql-15-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-emailaddr` | `0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.0 KiB | [postgresql-15-pg-emailaddr_0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-15-pg-emailaddr_0-2PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-emailaddr` | `0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 KiB | [postgresql-15-pg-emailaddr_0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-15-pg-emailaddr_0-2PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-emailaddr` | `0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.0 KiB | [postgresql-15-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-15-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-emailaddr` | `0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-15-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-15-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-14-pg-emailaddr` | `0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 13.0 KiB | [postgresql-14-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-emailaddr/postgresql-14-pg-emailaddr_0-2PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-emailaddr` | `0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 13.0 KiB | [postgresql-14-pg-emailaddr_0-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-14-pg-emailaddr_0-2PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-emailaddr` | `0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 13.0 KiB | [postgresql-14-pg-emailaddr_0-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-emailaddr/postgresql-14-pg-emailaddr_0-2PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-emailaddr` | `0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 13.0 KiB | [postgresql-14-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-14-pg-emailaddr_0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-emailaddr` | `0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 13.2 KiB | [postgresql-14-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-emailaddr/postgresql-14-pg-emailaddr_0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

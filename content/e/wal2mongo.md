@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.7" "postgresql-16-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-15-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-14-wal2mongo : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.7" "postgresql-16-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-15-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-14-wal2mongo : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.7" "postgresql-16-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-15-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-14-wal2mongo : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wal2mongo : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-wal2mongo : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.7" "postgresql-16-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-15-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-14-wal2mongo : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-wal2mongo : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-wal2mongo : MISS 0" "red" >}}      | {{< bg "PIGSTY 1.0.7" "postgresql-16-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-15-wal2mongo : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0.7" "postgresql-14-wal2mongo : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-16-wal2mongo` | `1.0.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 39.1 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-wal2mongo` | `1.0.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 35.3 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-wal2mongo` | `1.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.2 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-wal2mongo` | `1.0.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.5 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-wal2mongo` | `1.0.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 35.0 KiB | [postgresql-16-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-16-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-15-wal2mongo` | `1.0.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 38.7 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-wal2mongo` | `1.0.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 35.1 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-wal2mongo` | `1.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 35.0 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-wal2mongo` | `1.0.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.2 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-wal2mongo` | `1.0.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 34.7 KiB | [postgresql-15-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-15-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-14-wal2mongo` | `1.0.7` | [u22.aarch64](/os/u22.aarch64) | pigsty | 38.6 KiB | [postgresql-14-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/w/wal2mongo/postgresql-14-wal2mongo_1.0.7-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-wal2mongo` | `1.0.7` | [u24.x86_64](/os/u24.x86_64) | pigsty | 35.1 KiB | [postgresql-14-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-14-wal2mongo_1.0.7-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-wal2mongo` | `1.0.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 34.9 KiB | [postgresql-14-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/w/wal2mongo/postgresql-14-wal2mongo_1.0.7-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-wal2mongo` | `1.0.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 35.1 KiB | [postgresql-14-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-14-wal2mongo_1.0.7-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-wal2mongo` | `1.0.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 34.7 KiB | [postgresql-14-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/w/wal2mongo/postgresql-14-wal2mongo_1.0.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

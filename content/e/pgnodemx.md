@@ -53,8 +53,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 2" "blue" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 2" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PGDG 2.0.1" "postgresql-18-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pgnodemx : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pgnodemx : AVAIL 3" "blue" >}} |
 
 
 {{< tabs >}}
@@ -100,8 +100,10 @@ width: full
 | `postgresql-18-pgnodemx` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 87.7 KiB | [postgresql-18-pgnodemx_1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-18-pgnodemx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 93.9 KiB | [postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-18-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 81.6 KiB | [postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-18-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 87.4 KiB | [postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-18-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.1 KiB | [postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-18-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.4 KiB | [postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
+| `postgresql-18-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-18-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -146,8 +148,10 @@ width: full
 | `postgresql-17-pgnodemx` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 87.7 KiB | [postgresql-17-pgnodemx_1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-17-pgnodemx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 94.2 KiB | [postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-17-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 81.6 KiB | [postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-17-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 87.3 KiB | [postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-17-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.0 KiB | [postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-17-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.5 KiB | [postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
+| `postgresql-17-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-17-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -192,8 +196,10 @@ width: full
 | `postgresql-16-pgnodemx` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 87.7 KiB | [postgresql-16-pgnodemx_1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-16-pgnodemx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 94.1 KiB | [postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-16-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 81.5 KiB | [postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-16-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 87.3 KiB | [postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-16-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.0 KiB | [postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-16-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 80.5 KiB | [postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
+| `postgresql-16-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 87.5 KiB | [postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-16-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -238,8 +244,10 @@ width: full
 | `postgresql-15-pgnodemx` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 89.5 KiB | [postgresql-15-pgnodemx_1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-15-pgnodemx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 95.8 KiB | [postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-15-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 83.1 KiB | [postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-15-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 89.0 KiB | [postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-15-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 95.1 KiB | [postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-15-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 82.2 KiB | [postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
+| `postgresql-15-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 89.4 KiB | [postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-15-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -284,8 +292,10 @@ width: full
 | `postgresql-14-pgnodemx` | `1.7` | [u24.aarch64](/os/u24.aarch64) | pigsty | 89.1 KiB | [postgresql-14-pgnodemx_1.7-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-1PIGSTY~noble_arm64.deb) |
 | `postgresql-14-pgnodemx` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pgdg | 94.6 KiB | [postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_amd64.deb) |
 | `postgresql-14-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pgdg | 82.8 KiB | [postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_amd64.deb) |
+| `postgresql-14-pgnodemx` | `1.7` | [u26.x86_64](/os/u26.x86_64) | pigsty | 88.7 KiB | [postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_amd64.deb) |
 | `postgresql-14-pgnodemx` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pgdg | 93.6 KiB | [postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_2.0.1-1.pgdg26.04+1_arm64.deb) |
 | `postgresql-14-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pgdg | 81.8 KiB | [postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-2.pgdg26.04+1_arm64.deb) |
+| `postgresql-14-pgnodemx` | `1.7` | [u26.aarch64](/os/u26.aarch64) | pigsty | 89.0 KiB | [postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgnodemx/postgresql-14-pgnodemx_1.7-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

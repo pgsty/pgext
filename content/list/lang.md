@@ -14,7 +14,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 382 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 384 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 54 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 48 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 11 | Extensions leveraging C++ features and libraries |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="382 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="384 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -178,11 +178,12 @@ The traditional PostgreSQL extension language
 | 3730 | {{< alias "uint" "pguint" >}} | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | sha1, md5 and other data types for PostgreSQL |
-| 3820 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
-| 3830 | {{< alias "pg_duration" >}} | data type for representing durations |
-| 3840 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
-| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
-| 3860 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
+| 3770 | {{< alias "ip4r" >}} | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
+| 3790 | {{< alias "uri" "pg_uri" >}} | URI Data type for PostgreSQL |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | Email address type for PostgreSQL |
+| 3810 | {{< alias "acl" "pg_acl" >}} | ACL Data type |
+| 3850 | {{< alias "pg_duration" >}} | data type for representing durations |
+| 3860 | {{< alias "pg_bikram_sambat" >}} | Bikram Sambat date type and AD/BS conversion functions |
 | 3880 | {{< alias "pg_rrule" >}} | RRULE field type for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | timestamp nanosecond resolution |
 | 3910 | {{< alias "pgbson" >}} | BSON data type and accessor functions for PostgreSQL |
@@ -282,6 +283,7 @@ The traditional PostgreSQL extension language
 | 5220 | {{< alias "pg_cheat_funcs" >}} | Provides cheat (but useful) functions |
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL File I/O Functions |
 | 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
+| 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
@@ -443,7 +445,7 @@ Pure SQL extensions and functions
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3670 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |
 | 3671 | {{< alias "l10n_table_dependent_extension" "pg_xenophile" >}} | PostgreSQL l10n toolbox |
-| 3870 | {{< alias "debversion" >}} | Debian version number data type |
+| 3820 | {{< alias "debversion" >}} | Debian version number data type |
 | 3890 | {{< alias "pgcalendar" >}} | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 4140 | {{< alias "pglock" >}} | Lightweight distributed lock service inside PostgreSQL |
 | 4160 | {{< alias "pgjwt" >}} | JSON Web Token API for Postgresql |

@@ -52,8 +52,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-floatfile : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-floatfile : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-floatfile : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-18-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-17-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-16-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-15-floatfile : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.1" "postgresql-14-floatfile : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +75,8 @@ width: full
 | `postgresql-18-floatfile` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 45.9 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-floatfile` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 46.9 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-18-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +97,8 @@ width: full
 | `postgresql-17-floatfile` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 47.2 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-floatfile` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 46.8 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-17-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +119,8 @@ width: full
 | `postgresql-16-floatfile` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 47.2 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-floatfile` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 46.8 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.8 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.3 KiB | [postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-16-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +141,8 @@ width: full
 | `postgresql-15-floatfile` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 47.4 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-floatfile` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 46.6 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.6 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.6 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.2 KiB | [postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-15-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +163,8 @@ width: full
 | `postgresql-14-floatfile` | `1.3.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 47.4 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-floatfile` | `1.3.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 46.6 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-floatfile` | `1.3.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 45.5 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-floatfile` | `1.3.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 46.5 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-floatfile` | `1.3.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 46.2 KiB | [postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/f/floatfile/postgresql-14-floatfile_1.3.1-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

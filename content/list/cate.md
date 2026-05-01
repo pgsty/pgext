@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (508 ext in 425 pkg) categorized into 16 categories.
+PostgreSQL Extensions (510 ext in 427 pkg) categorized into 16 categories.
 
 
 
@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.26.3 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.26.4 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -101,7 +101,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | IAM-LIKE pattern matching with bitmap indexing |
-| 2180 | {{< alias "pg_textsearch" >}} | 1.0.0 | Full-text search with BM25 ranking |
+| 2180 | {{< alias "pg_textsearch" >}} | 1.1.0 | Full-text search with BM25 ranking |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.2 | Pinyin romanization and search helpers for PostgreSQL |
 | 2200 | {{< alias "pg_kazsearch" >}} | 0.1.0 | Kazakh full-text search extension for PostgreSQL |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
@@ -129,7 +129,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2450 | {{< alias "storage_engine" >}} | 1.2.3 | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 2450 | {{< alias "storage_engine" >}} | 1.3.4 | colcompress and rowcompress Table Access Methods with vectorized execution |
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.2.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
@@ -167,7 +167,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | 1.14 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
-| 2860 | {{< alias "pg_trickle" >}} | 0.31.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| 2860 | {{< alias "pg_trickle" >}} | 0.40.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2900 | {{< alias "provsql" >}} | 1.2.3 | Semiring provenance and uncertainty management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
@@ -283,12 +283,13 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3730 | {{< alias "uint" "pguint" >}} | 1.20250815 | unsigned integer types |
 | 3740 | {{< alias "uint128" "pg_uint128" >}} | 1.2.0 | Native uint128 type |
 | 3750 | {{< alias "hashtypes" >}} | 0.1.5 | sha1, md5 and other data types for PostgreSQL |
-| 3820 | {{< alias "ip4r" >}} | 2.4.2 | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
-| 3830 | {{< alias "pg_duration" >}} | 1.0.2 | data type for representing durations |
-| 3840 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI Data type for PostgreSQL |
-| 3850 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email address type for PostgreSQL |
-| 3860 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL Data type |
-| 3870 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
+| 3770 | {{< alias "ip4r" >}} | 2.4.2 | IPv4/v6 and IPv4/v6 range index type for PostgreSQL |
+| 3790 | {{< alias "uri" "pg_uri" >}} | 1.20251029 | URI Data type for PostgreSQL |
+| 3800 | {{< alias "emailaddr" "pg_emailaddr" >}} | 0 | Email address type for PostgreSQL |
+| 3810 | {{< alias "acl" "pg_acl" >}} | 1.0.4 | ACL Data type |
+| 3820 | {{< alias "debversion" >}} | 1.2.0 | Debian version number data type |
+| 3850 | {{< alias "pg_duration" >}} | 1.0.2 | data type for representing durations |
+| 3860 | {{< alias "pg_bikram_sambat" >}} | 0.1.0 | Bikram Sambat date type and AD/BS conversion functions |
 | 3880 | {{< alias "pg_rrule" >}} | 0.3.0 | RRULE field type for PostgreSQL |
 | 3890 | {{< alias "pgcalendar" >}} | 1.1.0 | Recurring calendar, schedule, and exception management for PostgreSQL |
 | 3900 | {{< alias "timestamp9" >}} | 1.4.0 | timestamp nanosecond resolution |
@@ -317,7 +318,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
 | 4110 | {{< alias "pg_fsql" >}} | 1.1.0 | Recursive SQL template engine with JSONB-driven execution |
 | 4120 | {{< alias "pg_protobuf" >}} | 1.0 | Protobuf support for PostgreSQL |
-| 4130 | {{< alias "pgproto" >}} | 0.3.3 | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
+| 4130 | {{< alias "pgproto" >}} | 0.5.0 | Native Protobuf parsing, mutation, indexing, and JSON conversion support |
 | 4140 | {{< alias "pglock" >}} | 1.0.0 | Lightweight distributed lock service inside PostgreSQL |
 | 4150 | {{< alias "pgjq" >}} | 0.1.0 | Use jq in Postgres |
 | 4160 | {{< alias "pgjwt" >}} | 0.2.0 | JSON Web Token API for Postgresql |
@@ -436,7 +437,8 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 1.0 | Provides cheat (but useful) functions |
 | 5230 | {{< alias "fio" "pg_fio" >}} | 1.0 | PostgreSQL File I/O Functions |
 | 5240 | {{< alias "qos" "pg_qos" >}} | 1.0 | QoS resource governor extension for PostgreSQL sessions and queries |
-| 5810 | {{< alias "pg_savior" >}} | 0.0.1 | Postgres extension to save OOPS mistakes |
+| 5250 | {{< alias "pg_pathcheck" >}} | 0.9.1 | Validate planner Path trees for freed or corrupt memory |
+| 5810 | {{< alias "pg_savior" >}} | 0.1.0 | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | Require criteria for UPDATE and DELETE |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.5 | Prevent dangerous UPDATE and DELETE without WHERE clause |
 | 5850 | {{< alias "pg_drop_events" >}} | 0.1.0 | logs transaction ids of drop table, drop column, drop materialized view statements |
