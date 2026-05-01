@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `ulak` |
 
-> [!Note] preload required
+> [!Note] preload required; rm README from RPM/DEB
 
 
 ## Packages
@@ -63,12 +63,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ulak_18` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 108.1 KiB | [ulak_18-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_18-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `ulak_18` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.4 KiB | [ulak_18-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_18-0.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `ulak_18` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 104.6 KiB | [ulak_18-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_18-0.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `ulak_18` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 107.7 KiB | [ulak_18-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_18-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `ulak_18` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.0 KiB | [ulak_18-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_18-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `ulak_18` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 105.3 KiB | [ulak_18-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_18-0.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `ulak_18` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 104.3 KiB | [ulak_18-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_18-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `ulak_18` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 104.9 KiB | [ulak_18-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_18-0.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `ulak_18` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.6 KiB | [ulak_18-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_18-0.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `ulak_18` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.5 KiB | [ulak_18-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_18-0.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `ulak_18` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.3 KiB | [ulak_18-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_18-0.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-ulak` | `0.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 273.7 KiB | [postgresql-18-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-18-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-ulak` | `0.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 266.9 KiB | [postgresql-18-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-18-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-ulak` | `0.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 298.2 KiB | [postgresql-18-ulak_0.0.2-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/ulak/postgresql-18-ulak_0.0.2-2PIGSTY~trixie_amd64.deb) |
@@ -85,12 +85,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ulak_17` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 108.1 KiB | [ulak_17-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_17-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `ulak_17` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.4 KiB | [ulak_17-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_17-0.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `ulak_17` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 105.1 KiB | [ulak_17-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_17-0.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `ulak_17` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 104.3 KiB | [ulak_17-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_17-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `ulak_17` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.0 KiB | [ulak_17-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_17-0.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `ulak_17` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.6 KiB | [ulak_17-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_17-0.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `ulak_17` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 107.7 KiB | [ulak_17-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_17-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `ulak_17` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.0 KiB | [ulak_17-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_17-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `ulak_17` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 105.4 KiB | [ulak_17-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_17-0.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `ulak_17` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 104.2 KiB | [ulak_17-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_17-0.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `ulak_17` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.5 KiB | [ulak_17-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_17-0.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `ulak_17` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.4 KiB | [ulak_17-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_17-0.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-ulak` | `0.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 273.9 KiB | [postgresql-17-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-17-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-ulak` | `0.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 266.8 KiB | [postgresql-17-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-17-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-ulak` | `0.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 298.2 KiB | [postgresql-17-ulak_0.0.2-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/ulak/postgresql-17-ulak_0.0.2-2PIGSTY~trixie_amd64.deb) |
@@ -107,12 +107,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ulak_16` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 108.1 KiB | [ulak_16-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_16-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `ulak_16` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.3 KiB | [ulak_16-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_16-0.0.2-1PIGSTY.el8.aarch64.rpm) |
-| `ulak_16` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 105.1 KiB | [ulak_16-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_16-0.0.2-1PIGSTY.el9.x86_64.rpm) |
+| `ulak_16` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 107.7 KiB | [ulak_16-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_16-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `ulak_16` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 105.9 KiB | [ulak_16-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_16-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `ulak_16` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 105.4 KiB | [ulak_16-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_16-0.0.2-1PIGSTY.el9.x86_64.rpm) |
 | `ulak_16` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 104.3 KiB | [ulak_16-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_16-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `ulak_16` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.0 KiB | [ulak_16-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_16-0.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `ulak_16` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.6 KiB | [ulak_16-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_16-0.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `ulak_16` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 105.5 KiB | [ulak_16-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_16-0.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `ulak_16` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 104.4 KiB | [ulak_16-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_16-0.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-ulak` | `0.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 273.7 KiB | [postgresql-16-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-16-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-ulak` | `0.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 267.0 KiB | [postgresql-16-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-16-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-ulak` | `0.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 298.3 KiB | [postgresql-16-ulak_0.0.2-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/ulak/postgresql-16-ulak_0.0.2-2PIGSTY~trixie_amd64.deb) |
@@ -129,12 +129,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ulak_15` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 112.1 KiB | [ulak_15-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_15-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `ulak_15` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.9 KiB | [ulak_15-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_15-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `ulak_15` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 111.6 KiB | [ulak_15-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_15-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `ulak_15` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.4 KiB | [ulak_15-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_15-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `ulak_15` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 115.0 KiB | [ulak_15-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_15-0.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `ulak_15` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.7 KiB | [ulak_15-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_15-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `ulak_15` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.7 KiB | [ulak_15-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_15-0.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `ulak_15` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 115.2 KiB | [ulak_15-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_15-0.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `ulak_15` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.2 KiB | [ulak_15-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_15-0.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `ulak_15` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.4 KiB | [ulak_15-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_15-0.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `ulak_15` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 115.0 KiB | [ulak_15-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_15-0.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-ulak` | `0.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 277.7 KiB | [postgresql-15-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-15-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-ulak` | `0.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 270.1 KiB | [postgresql-15-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-15-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-ulak` | `0.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 302.2 KiB | [postgresql-15-ulak_0.0.2-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/ulak/postgresql-15-ulak_0.0.2-2PIGSTY~trixie_amd64.deb) |
@@ -151,12 +151,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `ulak_14` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 112.0 KiB | [ulak_14-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_14-0.0.2-1PIGSTY.el8.x86_64.rpm) |
-| `ulak_14` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.8 KiB | [ulak_14-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_14-0.0.2-1PIGSTY.el8.aarch64.rpm) |
+| `ulak_14` | `0.0.2` | [el8.x86_64](/os/el8.x86_64) | pigsty | 111.6 KiB | [ulak_14-0.0.2-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/ulak_14-0.0.2-1PIGSTY.el8.x86_64.rpm) |
+| `ulak_14` | `0.0.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 109.3 KiB | [ulak_14-0.0.2-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/ulak_14-0.0.2-1PIGSTY.el8.aarch64.rpm) |
 | `ulak_14` | `0.0.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 114.9 KiB | [ulak_14-0.0.2-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/ulak_14-0.0.2-1PIGSTY.el9.x86_64.rpm) |
-| `ulak_14` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.8 KiB | [ulak_14-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_14-0.0.2-1PIGSTY.el9.aarch64.rpm) |
-| `ulak_14` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.7 KiB | [ulak_14-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_14-0.0.2-1PIGSTY.el10.x86_64.rpm) |
-| `ulak_14` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 115.2 KiB | [ulak_14-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_14-0.0.2-1PIGSTY.el10.aarch64.rpm) |
+| `ulak_14` | `0.0.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 114.4 KiB | [ulak_14-0.0.2-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/ulak_14-0.0.2-1PIGSTY.el9.aarch64.rpm) |
+| `ulak_14` | `0.0.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.5 KiB | [ulak_14-0.0.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/ulak_14-0.0.2-1PIGSTY.el10.x86_64.rpm) |
+| `ulak_14` | `0.0.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 115.0 KiB | [ulak_14-0.0.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/ulak_14-0.0.2-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-ulak` | `0.0.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 277.1 KiB | [postgresql-14-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-14-ulak_0.0.2-2PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-ulak` | `0.0.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 270.0 KiB | [postgresql-14-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/u/ulak/postgresql-14-ulak_0.0.2-2PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-ulak` | `0.0.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 301.8 KiB | [postgresql-14-ulak_0.0.2-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/u/ulak/postgresql-14-ulak_0.0.2-2PIGSTY~trixie_amd64.deb) |

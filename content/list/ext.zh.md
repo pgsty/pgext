@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 510 | 155 | 338 | 71 | 0 | 487 | 494 | 484 | 478 | 462 |
-| **EL** | 505 | 150 | 338 | 71 | 5 | 478 | 488 | 479 | 472 | 456 |
-| **Debian** | 495 | 107 | 317 | 71 | 15 | 472 | 480 | 469 | 462 | 446 |
+| **ALL** | 510 | 155 | 338 | 71 | 0 | 490 | 491 | 484 | 478 | 462 |
+| **EL** | 505 | 150 | 338 | 71 | 5 | 481 | 485 | 479 | 472 | 456 |
+| **Debian** | 495 | 107 | 317 | 71 | 15 | 475 | 477 | 469 | 462 | 446 |
 
 ## 分类
 
@@ -322,7 +322,7 @@ comments: false
 | {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 生成带时间戳的加密安全短标识 |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 生成连续生成的UUID |
 | {{< ext "typeid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PG原生TypeID类型与函数 |
-| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
+| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | top-n JSONB 的类型 |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Quantile聚合函数 |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Lower Quantile 聚合函数 |
@@ -536,8 +536,8 @@ comments: false
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | 在Failover过程中保留复制槽 |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | PostgreSQL多主逻辑复制 |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | PostgreSQL 多主逻辑复制扩展 |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | PostgreSQL 多主逻辑复制扩展 |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | 让 PostgreSQL 大对象兼容逻辑复制的扩展 |
 | {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 在不同环境间克隆 PostgreSQL 数据库、模式、表和函数 |
 | {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |

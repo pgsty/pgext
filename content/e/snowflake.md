@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `snowflake` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "snowflake_18" "red" >}} {{< bg "17" "snowflake_17" "green" >}} {{< bg "16" "snowflake_16" "red" >}} {{< bg "15" "snowflake_15" "red" >}} {{< bg "14" "snowflake_14" "red" >}} | `snowflake_$v` | `pgedge_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "pgedge-18-snowflake" "red" >}} {{< bg "17" "pgedge-17-snowflake" "green" >}} {{< bg "16" "pgedge-16-snowflake" "red" >}} {{< bg "15" "pgedge-15-snowflake" "red" >}} {{< bg "14" "pgedge-14-snowflake" "red" >}} | `pgedge-$v-snowflake` | `pgedge-$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `snowflake` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "snowflake_18" "green" >}} {{< bg "17" "snowflake_17" "red" >}} {{< bg "16" "snowflake_16" "red" >}} {{< bg "15" "snowflake_15" "red" >}} {{< bg "14" "snowflake_14" "red" >}} | `snowflake_$v` | `pgedge_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "pgedge-18-snowflake" "green" >}} {{< bg "17" "pgedge-17-snowflake" "red" >}} {{< bg "16" "pgedge-16-snowflake" "red" >}} {{< bg "15" "pgedge-15-snowflake" "red" >}} {{< bg "14" "pgedge-14-snowflake" "red" >}} | `pgedge-$v-snowflake` | `pgedge-$v` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -47,19 +47,35 @@ width: full
 | {{< os "el9.aarch64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
 | {{< os "el10.x86_64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
 | {{< os "el10.aarch64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgedge-18-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
 
 
 {{< tabs >}}
+{{< tab name="PG18" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgedge-18-snowflake` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.3 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.1 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.3 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.1 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.8 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.5 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.7 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~noble_amd64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.4 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~noble_arm64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.8 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-18-snowflake` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.6 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~resolute_arm64.deb) |
+
+{{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -107,7 +123,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install snowflake;		# install via package name, for the active PG version
 
-pig install snowflake -v 17;   # install for PG 17
+pig install snowflake -v 18;   # install for PG 18
 
 ```
 

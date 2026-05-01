@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 510 | 155 | 338 | 71 | 0 | 487 | 494 | 484 | 478 | 462 |
-| **EL** | 505 | 150 | 338 | 71 | 5 | 478 | 488 | 479 | 472 | 456 |
-| **Debian** | 495 | 107 | 317 | 71 | 15 | 472 | 480 | 469 | 462 | 446 |
+| **ALL** | 510 | 155 | 338 | 71 | 0 | 490 | 491 | 484 | 478 | 462 |
+| **EL** | 505 | 150 | 338 | 71 | 5 | 481 | 485 | 479 | 472 | 456 |
+| **Debian** | 495 | 107 | 317 | 71 | 15 | 475 | 477 | 469 | 462 | 446 |
 
 ## Categories
 
@@ -322,7 +322,7 @@ There are 510 available PostgreSQL extensions:
 | {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | Generate cryptographically secure timestamp-based slugs |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | generator of sequential UUIDs |
 | {{< ext "typeid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Allows to use TypeIDs in Postgres natively |
-| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
+| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | type for top-n JSONB |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Quantile aggregation function |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Lower quantile aggregate function |
@@ -536,8 +536,8 @@ There are 510 available PostgreSQL extensions:
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | PG Failover Slots extension |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Tools to migrate other databases to PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | Active-Active Replication Extension for PostgreSQL |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Multi-master logical replication extension for PostgreSQL |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Multi-master logical replication extension for PostgreSQL |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | CDC-to-MQTT broker for PostgreSQL |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | Changing data capture in JSON format |

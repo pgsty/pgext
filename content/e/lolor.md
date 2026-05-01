@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `lolor` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "lolor_18" "red" >}} {{< bg "17" "lolor_17" "green" >}} {{< bg "16" "lolor_16" "red" >}} {{< bg "15" "lolor_15" "red" >}} {{< bg "14" "lolor_14" "red" >}} | `lolor_$v` | `pgedge_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "pgedge-18-lolor" "red" >}} {{< bg "17" "pgedge-17-lolor" "green" >}} {{< bg "16" "pgedge-16-lolor" "red" >}} {{< bg "15" "pgedge-15-lolor" "red" >}} {{< bg "14" "pgedge-14-lolor" "red" >}} | `pgedge-$v-lolor` | `pgedge-$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `lolor` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "lolor_18" "green" >}} {{< bg "17" "lolor_17" "red" >}} {{< bg "16" "lolor_16" "red" >}} {{< bg "15" "lolor_15" "red" >}} {{< bg "14" "lolor_14" "red" >}} | `lolor_$v` | `pgedge_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.2.2` | {{< bg "18" "pgedge-18-lolor" "green" >}} {{< bg "17" "pgedge-17-lolor" "red" >}} {{< bg "16" "pgedge-16-lolor" "red" >}} {{< bg "15" "pgedge-15-lolor" "red" >}} {{< bg "14" "pgedge-14-lolor" "red" >}} | `pgedge-$v-lolor` | `pgedge-$v` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -47,19 +47,35 @@ width: full
 | {{< os "el9.aarch64" >}} |      {{< bg "MISS" "lolor_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "lolor_17 : FORK 1" >}}      |      {{< bg "MISS" "lolor_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_14 : FORK 0" "red" >}}      |
 | {{< os "el10.x86_64" >}} |      {{< bg "MISS" "lolor_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "lolor_17 : FORK 1" >}}      |      {{< bg "MISS" "lolor_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_14 : FORK 0" "red" >}}      |
 | {{< os "el10.aarch64" >}} |      {{< bg "MISS" "lolor_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "lolor_17 : FORK 1" >}}      |      {{< bg "MISS" "lolor_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "lolor_14 : FORK 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgedge-18-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "PIGSTY 1.2.2" "pgedge-17-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "PIGSTY 1.2.2" "pgedge-18-lolor : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-lolor : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-lolor : FORK 0" "red" >}}      |
 
 
 {{< tabs >}}
+{{< tab name="PG18" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgedge-18-lolor` | `1.2.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.6 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 15.9 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.7 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 15.9 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 18.1 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 17.3 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 17.8 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~noble_amd64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 17.1 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~noble_arm64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 18.1 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-18-lolor` | `1.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 17.6 KiB | [pgedge-18-lolor_1.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/l/lolor/pgedge-18-lolor_1.2.2-1PIGSTY~resolute_arm64.deb) |
+
+{{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
@@ -107,7 +123,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install lolor;		# install via package name, for the active PG version
 
-pig install lolor -v 17;   # install for PG 17
+pig install lolor -v 18;   # install for PG 18
 
 ```
 

@@ -619,7 +619,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9540 | {{< alias "pg_failover_slots" >}} | 1.2.1 | PG Failover Slots extension |
 | 9550 | {{< alias "db_migrator" >}} | 1.0.0 | Tools to migrate other databases to PostgreSQL |
 | 9560 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
-| 9570 | {{< alias "spock" >}} | 5.0.5 | Multi-master logical replication extension for PostgreSQL |
+| 9570 | {{< alias "spock" >}} | 5.0.6 | Multi-master logical replication extension for PostgreSQL |
 | 9580 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9590 | {{< alias "pgclone" >}} | 4.0.0 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | 9620 | {{< alias "pgmqtt" >}} | 0.1.0 | CDC-to-MQTT broker for PostgreSQL |

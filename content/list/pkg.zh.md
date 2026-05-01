@@ -11,9 +11,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 363 | 139 | 277 | 0 | 0 | 345 | 356 | 347 | 342 | 332 |
-| **EL** | 361 | 137 | 277 | 0 | 63 | 340 | 353 | 345 | 339 | 329 |
-| **Debian** | 348 | 92 | 256 | 0 | 76 | 330 | 342 | 332 | 326 | 316 |
+| **ALL** | 363 | 139 | 277 | 0 | 0 | 348 | 353 | 347 | 342 | 332 |
+| **EL** | 361 | 137 | 277 | 0 | 63 | 343 | 350 | 345 | 339 | 329 |
+| **Debian** | 348 | 92 | 256 | 0 | 76 | 333 | 339 | 332 | 326 | 316 |
 
 ## 分类
 
@@ -452,7 +452,7 @@ comments: false
 | {{< ext "pg_failover_slots" >}} | `1.2.1` | {{< badge content="Link" link="https://github.com/EnterpriseDB/pg_failover_slots" >}} | {{< category "ETL" >}} | `pg_failover_slots_$v` | `postgresql-$v-pg-failover-slots` |
 | {{< ext "db_migrator" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/cybertec-postgresql/db_migrator" >}} | {{< category "ETL" >}} | `db_migrator_$v` | `postgresql-$v-db-migrator` |
 | {{< ext "pgactive" >}} | `2.1.7` | {{< badge content="Link" link="https://github.com/aws/pgactive" >}} | {{< category "ETL" >}} | `pgactive_$v` | `postgresql-$v-pgactive` |
-| {{< ext "spock" >}} | `5.0.5` | {{< badge content="Link" link="https://github.com/pgEdge/spock" >}} | {{< category "ETL" >}} | `spock_$v` | `pgedge-$v-spock` |
+| {{< ext "spock" >}} | `5.0.6` | {{< badge content="Link" link="https://github.com/pgEdge/spock" >}} | {{< category "ETL" >}} | `spock_$v` | `pgedge-$v-spock` |
 | {{< ext "lolor" >}} | `1.2.2` | {{< badge content="Link" link="https://github.com/pgEdge/lolor" >}} | {{< category "ETL" >}} | `lolor_$v` | `pgedge-$v-lolor` |
 | {{< ext "pgclone" >}} | `4.0.0` | {{< badge content="Link" link="https://github.com/valehdba/pgclone" >}} | {{< category "ETL" >}} | `pgclone_$v` | `postgresql-$v-pgclone` |
 | {{< ext "pgmqtt" >}} | `0.1.0` | {{< badge content="Link" link="https://github.com/RayElg/pgmqtt" >}} | {{< category "ETL" >}} | `pgmqtt_$v` | `postgresql-$v-pgmqtt` |

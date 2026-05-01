@@ -33,8 +33,8 @@ weight: 300
 | {{< license "BSD-3-Clause" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "BSD-2-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Elastic License 2.0" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "BSD-2-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -722,18 +722,6 @@ weight: 300
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 
-## BSD-2-Clause
-
-
-
-| {{< license "BSD-2-Clause" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 3230 | {{< alias "pg_regresql" >}} | 用 pg_class 统计信息替代物理文件大小参与查询规划 |
-
 ## Elastic License 2.0
 
 
@@ -745,4 +733,16 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+
+## BSD-2-Clause
+
+
+
+| {{< license "BSD-2-Clause" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 3230 | {{< alias "pg_regresql" >}} | 用 pg_class 统计信息替代物理文件大小参与查询规划 |
 
