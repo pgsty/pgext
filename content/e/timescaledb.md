@@ -563,7 +563,7 @@ CREATE EXTENSION timescaledb;
 
 ## Usage
 
-Source: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB changelog](https://github.com/timescale/docs/blob/latest/about/changelog.md), [create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/), [CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/), [continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/), [add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/), [add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
+Source: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.26.4 release](https://github.com/timescale/timescaledb/releases/tag/2.26.4), [create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/), [CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/), [continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/), [add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/), [add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
 
 `timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize hypertables, continuous aggregates, automation jobs, and moving older chunks into the columnstore.
 
@@ -624,5 +624,5 @@ CALL add_columnstore_policy('ts_test', after => INTERVAL '1 day');
 
 ### Caveats
 
-- Upstream tags include `2.26.3`, but the public changelog and visible release notes currently document the `2.26` line mainly through `2.26.0` and `2.26.2`; those notes describe performance and bug-fix work rather than a fundamentally different usage surface.
-- The 2.26 changelog highlights faster columnstore queries, better compressed-data filtering, and chunk-exclusion improvements, so this refresh focuses on current documented APIs instead of patch-level internals.
+- TimescaleDB 2.26.4 is a bug-fix release over 2.26.3; the release notes recommend upgrading but do not add a new SQL usage surface for hypertables, continuous aggregates, jobs, or columnstore.
+- Relevant 2.26.4 fixes touch continuous aggregate planning and refresh, runtime chunk exclusion, background worker restart after restore, sparse indexes on `orderby`, and compressed chunk merge safety. Keep using the documented APIs above rather than changing SQL for the patch release itself.

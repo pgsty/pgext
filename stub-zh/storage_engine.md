@@ -1,6 +1,6 @@
 ## 用法
 
-来源：[README](https://github.com/saulojb/storage_engine/blob/main/README.md), [release 1.0.7](https://github.com/saulojb/storage_engine/releases/tag/v1.0.7), [META.json](https://github.com/saulojb/storage_engine/blob/main/META.json)
+来源：[README](https://github.com/saulojb/storage_engine/blob/main/README.md)，[release 1.3.4](https://github.com/saulojb/storage_engine/releases/tag/v1.3.4)，[PGXN 1.3.4](https://pgxn.org/dist/storage_engine/1.3.4/)，[PGXN changelog](https://pgxn.org/dist/storage_engine/1.3.4/CHANGELOG.html)，[META.json](https://github.com/saulojb/storage_engine/blob/main/META.json)
 
 `storage_engine` 在 `engine` schema 中提供两种 PostgreSQL table access method：
 
@@ -35,7 +35,9 @@ CREATE TABLE logs (
 上游文档列出的 session 级 GUC 包括：
 
 - `storage_engine.enable_parallel_execution`
+- `storage_engine.min_parallel_processes`
 - `storage_engine.enable_vectorization`
+- `storage_engine.enable_custom_scan`
 - `storage_engine.enable_column_cache`
 - `storage_engine.enable_columnar_index_scan`
 - `storage_engine.enable_dml`
@@ -45,9 +47,13 @@ CREATE TABLE logs (
 
 README 说明这些 GUC 会在库被加载后可见；如果希望每个 session 一开始就可用，可把 `storage_engine` 加入 `shared_preload_libraries`。
 
+### 类型与操作符
+
+`engine.uint8` 为需要完整 `0` 到 `2^64 - 1` 范围的 `colcompress` 工作负载存储无符号 64 位值。上游文档列出了 comparison operators（`=`、`<>`、`<`、`<=`、`>`、`>=`）、B-tree 与 hash opclasses、与 `bigint`、`numeric`、`text` 的双向 casts，以及 `engine.min`、`engine.max`、`engine.sum` aggregates。
+
 ### 常用管理函数
 
-#### 用于 `colcompress` 表
+用于 `colcompress` 表：
 
 ```sql
 SELECT engine.alter_colcompress_table_set(
@@ -58,10 +64,13 @@ SELECT engine.alter_colcompress_table_set(
 );
 
 SELECT engine.colcompress_merge('events');
-SELECT engine.colcompress_repack('events');
+CALL engine.colcompress_repack('events');
+CALL engine.colcompress_repack('events', 0.7);
 ```
 
-#### 用于 `rowcompress` 表
+在 1.3.4 中，`engine.colcompress_repack(table_name regclass, min_fill_ratio float8 DEFAULT 0.9)` 是用于 `colcompress` 表在线逐 stripe defragmentation 的 procedure。它会 repack live-row ratio 低于阈值的 stripes。需要按 `orderby` key 做旧式 full-table rewrite 和全局排序时，使用 `engine.colcompress_merge()`。
+
+用于 `rowcompress` 表：
 
 ```sql
 SELECT engine.alter_rowcompress_table_set(
@@ -82,6 +91,8 @@ SELECT engine.rowcompress_repack('logs');
 
 ### 注意事项
 
+- 使用 `ALTER EXTENSION storage_engine UPDATE TO '1.3.4';` 升级已有安装。
+- 旧的 `FUNCTION engine.colcompress_repack(regclass)` alias 在 1.3.4 中已移除。已有调用方应改用 `CALL engine.colcompress_repack('table')` 做 stripe defragmentation，或用 `SELECT engine.colcompress_merge('table')` 执行旧的 full rewrite 行为。
 - `colcompress` 与 `rowcompress` 都不支持 foreign key 或 `AFTER ROW` triggers。
 - 不支持 `VACUUM FULL`，也不支持 `CREATE UNLOGGED TABLE ... USING colcompress`；上游建议改用扩展自带的 repack 函数。
-- 在 `colcompress` 上，`orderby` 与 B-tree index 组合可能禁用 sort-on-write 路径；如果全局顺序重要，请在装载数据后运行 `engine.colcompress_merge()`。
+- 在 `colcompress` 上，`orderby` 与 B-tree index 组合可能禁用 sort-on-write 路径，而 ordered columns 上的 B-tree indexes 可能让 range query 失去 stripe pruning 收益。全局顺序重要时，请在装载数据后运行 `engine.colcompress_merge()`；分析型表优先使用 `index_scan => false`。
