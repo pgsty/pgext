@@ -20,13 +20,12 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0)。
-
-507 个扩展，pgrx 0.18.0，更多构建规格。
+当前 `pig` 最新稳定版本为：[v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1)。
 
 | 版本                             |     日期     | 摘要                                     |                           GitHub                           |
 |:-------------------------------|:----------:|----------------------------------------|:----------------------------------------------------------:|
-| [v1.4.0](/zh/release/pig#v140) | 2026-04-19 | 507 个扩展，pgrx 0.18.0，更多构建规格            | [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0) |
+| [v1.4.1](/zh/release/pig#v141) | 2026-04-25 | 510 个扩展，支持 Ubuntu 26.04，仓库校准           | [v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1) |
+| [v1.4.0](/zh/release/pig#v140) | 2026-04-19 | 507 个扩展，pgrx 0.18.0，更多构建规格             | [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0) |
 | [v1.3.4](/zh/release/pig#v134) | 2026-04-14 | 扩展增至 504                               | [v1.3.4](https://github.com/pgsty/pig/releases/tag/v1.3.4) |
 | [v1.3.3](/zh/release/pig#v133) | 2026-04-10 | 481 扩展与 Go 1.26.2 更新                   | [v1.3.3](https://github.com/pgsty/pig/releases/tag/v1.3.3) |
 | [v1.3.2](/zh/release/pig#v132) | 2026-03-23 | 例行元数据更新，新增 `pg tune` 与构建别名             | [v1.3.2](https://github.com/pgsty/pig/releases/tag/v1.3.2) |

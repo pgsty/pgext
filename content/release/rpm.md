@@ -6,6 +6,19 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-05-01
+
+| Package          | Old    | New    | Comment                                                     |
+|:-----------------|:-------|:-------|:------------------------------------------------------------|
+| pg_pathcheck     | -      | 0.9.1  | new, PG 17-18, requires preload                             |
+| pg_bikram_sambat | -      | 0.1.0  | new, Bikram Sambat date type and AD/BS conversion           |
+| timescaledb      | 2.26.3 | 2.26.4 | TimescaleDB TSL minor update                                |
+| storage_engine   | 1.2.3  | 1.3.4  | PGXN bump, table access method for row/column compression   |
+| pgproto          | 0.3.3  | 0.5.0  | PGXN bump, native Protobuf support                          |
+| pg_savior        | 0.0.1  | 0.1.0  | DDL/DML safety hook, preload or LOAD                        |
+| pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 full-text search, PG 17-18, requires preload |
+| pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx bump, PG 18 only                                  |
+
 ## 2026-04-25
 
 | Package        | Old    | New    | Comment                         |

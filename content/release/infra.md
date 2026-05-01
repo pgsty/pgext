@@ -6,33 +6,35 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-04-30
+## 2026-05-01
 
-| Name                      | Old            | New           | Comment                                      |
-|:--------------------------|:---------------|:--------------|:---------------------------------------------|
-| prometheus                | 3.11.2         | 3.11.3        |                                              |
-| alertmanager              | 0.32.0         | 0.32.1        |                                              |
-| victoria-metrics          | 1.140.0        | 1.142.0       |                                              |
-| victoria-metrics-cluster  | 1.140.0        | 1.142.0       | bundled with VictoriaMetrics                 |
-| vmutils                   | 1.140.0        | 1.142.0       | bundled with VictoriaMetrics                 |
-| victoria-traces           | 0.8.1          | 0.8.2         |                                              |
-| tigerbeetle               | 0.17.1         | 0.17.2        |                                              |
-| loki                      | 3.6.7          | 3.6.7         | obsolete; kept frozen                        |
-| promtail                  | 3.6.7          | 3.6.7         | obsolete; kept frozen                        |
-| logcli                    | 3.6.7          | 3.6.7         | obsolete; kept frozen with Loki              |
-| hugo                      | 0.160.1        | 0.161.1       |                                              |
-| seaweedfs                 | 4.21           | 4.22          |                                              |
-| rustfs                    | 1.0.0-alpha.94 | 1.0.0-beta.1  | prerelease line                              |
-| sabiql                    | 1.11.0         | 1.11.1        |                                              |
-| timescaledb-tools         | 0.18.2         | 0.19.0        | rebuilt timescaledb-tune Linux binaries      |
-| agentsview                | 0.25.0         | 0.26.0        |                                              |
-| claude                    | 2.1.119        | 2.1.123       | downloaded through 8118 proxy and verified   |
-| stalwart                  | 0.16.0         | 0.16.2        |                                              |
-| opencode                  | 1.14.24        | 1.14.30       |                                              |
-| uv                        | 0.11.7         | 0.11.8        |                                              |
-| vip-manager               | 4.0.0          | 4.2.0         | direct-download metadata refresh             |
-| crush                     | 0.62.1         | 0.64.0        | direct-download metadata refresh             |
-| code                      | 1.115.0        | 1.118.1       | direct-download metadata refresh             |
+| Name                     | Old            | New      | Comment                                    |
+|:-------------------------|:---------------|:---------|:-------------------------------------------|
+| prometheus               | 3.11.2         | 3.11.3   |                                            |
+| alertmanager             | 0.32.0         | 0.32.1   |                                            |
+| victoria-metrics         | 1.140.0        | 1.142.0  |                                            |
+| victoria-metrics-cluster | 1.140.0        | 1.142.0  | bundled with VictoriaMetrics               |
+| vmutils                  | 1.140.0        | 1.142.0  | bundled with VictoriaMetrics               |
+| victoria-traces          | 0.8.1          | 0.8.2    |                                            |
+| tigerbeetle              | 0.17.1         | 0.17.2   |                                            |
+| loki                     | 3.6.7          | 3.6.7    | obsolete; kept frozen                      |
+| promtail                 | 3.6.7          | 3.6.7    | obsolete; kept frozen                      |
+| logcli                   | 3.6.7          | 3.6.7    | obsolete; kept frozen with Loki            |
+| hugo                     | 0.160.1        | 0.161.1  |                                            |
+| seaweedfs                | 4.21           | 4.22     |                                            |
+| rustfs                   | 1.0.0-alpha.94 | 1.0.0-b1 | prerelease line                            |
+| sabiql                   | 1.11.0         | 1.11.1   |                                            |
+| timescaledb-tools        | 0.18.2         | 0.19.0   | rebuilt timescaledb-tune Linux binaries    |
+| agentsview               | 0.25.0         | 0.26.0   |                                            |
+| claude                   | 2.1.119        | 2.1.123  | downloaded through 8118 proxy and verified |
+| stalwart                 | 0.16.0         | 0.16.2   |                                            |
+| opencode                 | 1.14.24        | 1.14.30  |                                            |
+| uv                       | 0.11.7         | 0.11.8   |                                            |
+| vip-manager              | 4.0.0          | 4.2.0    | direct-download metadata refresh           |
+| crush                    | 0.62.1         | 0.64.0   | direct-download metadata refresh           |
+| code                     | 1.115.0        | 1.118.1  | direct-download metadata refresh           |
+| pig                      | 1.4.0          | 1.4.1    | metadata only                              |
+
 
 ## 2026-04-25
 
@@ -51,33 +53,32 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | crush                 | 0.57.0  | 0.62.1  | direct-download metadata refresh             |
 | rclone                | 1.73.4  | 1.73.5  | direct-download metadata refresh             |
 | code-server           | 4.115.0 | 4.117.0 | direct-download metadata refresh             |
-| pig                   | 1.4.0   | 1.4.1   | metadata only; artifacts handled separately  |
 
 ## 2026-04-19
 
-| Name                       | Old             | New            | Comment                                                             |
-|:---------------------------|:----------------|:---------------|:--------------------------------------------------------------------|
-| victoria-logs              | 1.49.0          | 1.50.0         |                                                                     |
-| vlagent                    | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                                           |
-| vlogscli                   | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                                           |
-| victoria-traces            | 0.8.0           | 0.8.1          |                                                                     |
-| dblab                      | 0.37.1          | 0.38.0         |                                                                     |
-| grafana-victoriametrics-ds | 0.23.4          | 0.24.0         |                                                                     |
-| grafana-plugins            | 12.3.0          | 13.0.0         | noarch plugin bundle, manually consolidated                         |
-| garage                     | 2.2.0           | 2.3.0          |                                                                     |
-| rustfs                     | 1.0.0-alpha.93  | 1.0.0-alpha.94 |                                                                     |
-| claude                     | 2.1.107         | 2.1.114        | rebuilt via versioned release template to latest stable             |
-| codex                      | 0.121.0-alpha.7 | 0.121.0        | promoted to stable release; rebuilt                                 |
-| genai-toolbox              | 1.0.0           | 1.1.0          | external build artifacts synced from genai-toolbox                  |
-| postgrest                  | 14.9            | 14.10          |                                                                     |
-| opencode                   | 1.4.3           | 1.4.11         | switched to versioned tarball cache and rebuilt                     |
-| uv                         | 0.11.6          | 0.11.7         |                                                                     |
-| nodejs                     | 24.14.1         | 24.15.0        | kept on 24.x line                                                   |
-| minio                      | 20260325000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
-| mcli                       | 20260321000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh                  |
-| sabiql                     | 1.10.0          | 1.11.0         |                                                                     |
-| etcd                       | 3.6.8           | 3.6.10         | unified package version                                      |
-| pig                        | 1.3.4           | 1.4.0          |                                                                     |
+| Name                       | Old             | New            | Comment                                                 |
+|:---------------------------|:----------------|:---------------|:--------------------------------------------------------|
+| victoria-logs              | 1.49.0          | 1.50.0         |                                                         |
+| vlagent                    | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                               |
+| vlogscli                   | 1.49.0          | 1.50.0         | bundled with VictoriaLogs                               |
+| victoria-traces            | 0.8.0           | 0.8.1          |                                                         |
+| dblab                      | 0.37.1          | 0.38.0         |                                                         |
+| grafana-victoriametrics-ds | 0.23.4          | 0.24.0         |                                                         |
+| grafana-plugins            | 12.3.0          | 13.0.0         | noarch plugin bundle, manually consolidated             |
+| garage                     | 2.2.0           | 2.3.0          |                                                         |
+| rustfs                     | 1.0.0-alpha.93  | 1.0.0-alpha.94 |                                                         |
+| claude                     | 2.1.107         | 2.1.114        | rebuilt via versioned release template to latest stable |
+| codex                      | 0.121.0-alpha.7 | 0.121.0        | promoted to stable release; rebuilt                     |
+| genai-toolbox              | 1.0.0           | 1.1.0          | external build artifacts synced from genai-toolbox      |
+| postgrest                  | 14.9            | 14.10          |                                                         |
+| opencode                   | 1.4.3           | 1.4.11         | switched to versioned tarball cache and rebuilt         |
+| uv                         | 0.11.6          | 0.11.7         |                                                         |
+| nodejs                     | 24.14.1         | 24.15.0        | kept on 24.x line                                       |
+| minio                      | 20260325000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh      |
+| mcli                       | 20260321000000  | 20260417000000 | direct-download metadata; pgsty fork build refresh      |
+| sabiql                     | 1.10.0          | 1.11.0         |                                                         |
+| etcd                       | 3.6.8           | 3.6.10         | unified package version                                 |
+| pig                        | 1.3.4           | 1.4.0          |                                                         |
 
 ## 2026-04-14
 

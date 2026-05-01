@@ -7,22 +7,35 @@ weight: 200
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
 
+## 2026-05-01
+
+| 包名               | 旧版本    | 新版本    | 备注                                          |
+|:-----------------|:-------|:-------|:--------------------------------------------|
+| pg_pathcheck     | -      | 0.9.1  | 新增，PG 17-18，需通过 shared_preload_libraries 加载 |
+| pg_bikram_sambat | -      | 0.1.0  | 新增，尼泊尔 Bikram Sambat 日期类型与 AD/BS 转换函数       |
+| timescaledb      | 2.26.3 | 2.26.4 | TimescaleDB TSL 小版本更新                       |
+| storage_engine   | 1.2.3  | 1.3.4  | PGXN 更新，列式/行压缩 table access method          |
+| pgproto          | 0.3.3  | 0.5.0  | PGXN 更新，原生 Protobuf 支持                      |
+| pg_savior        | 0.0.1  | 0.1.0  | 高风险 DDL/DML 防护 hook，需 preload 或 LOAD        |
+| pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 全文搜索扩展更新，PG 17-18，需 preload  |
+| pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx 更新，仅支持 PG 18                      |
+
 ## 2026-04-25
 
-| 包名             | 旧版本    | 新版本    | 备注                         |
-|:---------------|:-------|:-------|:---------------------------|
-| documentdb     | 0.109  | 0.110  | 升级到上游版本，PG 15-18       |
-| pg_trickle     | 0.20.0 | 0.31.0 | 升级，仅 PG 18，pgrx 0.18.0   |
+| 包名             | 旧版本    | 新版本    | 备注                      |
+|:---------------|:-------|:-------|:------------------------|
+| documentdb     | 0.109  | 0.110  | 升级到上游版本，PG 15-18        |
+| pg_trickle     | 0.20.0 | 0.31.0 | 升级，仅 PG 18，pgrx 0.18.0  |
 | pg_search      | 0.23.0 | 0.23.1 | 升级，PG 15-18，pgrx 0.18.0 |
-| pg_ivm         | 1.13   | 1.14   | 升级，PG 14-18                |
-| prefix         | 1.2.10 | 1.2.11 | 升级，PG 14-18，PGDG          |
-| credcheck      | 4.6    | 4.7    | 升级，PG 14-18，PGDG          |
-| pg_dbms_job    | 1.5    | 2.0    | 升级，PG 14-18，PGDG          |
-| storage_engine | 1.0.7  | 1.2.3  | 升级，PG 14-18                |
-| pgmq           | 1.11.0 | 1.11.1 | 升级，PG 14-18                |
-| parray_gin     | 1.4.0  | 1.5.0  | 升级，PG 14-18                |
-| rdf_fdw        | 2.4.0  | 2.5.0  | 升级，PG 14-18                |
-| pg_accumulator | -      | 1.1.3  | 新增，PG 14-18                |
+| pg_ivm         | 1.13   | 1.14   | 升级，PG 14-18             |
+| prefix         | 1.2.10 | 1.2.11 | 升级，PG 14-18，PGDG        |
+| credcheck      | 4.6    | 4.7    | 升级，PG 14-18，PGDG        |
+| pg_dbms_job    | 1.5    | 2.0    | 升级，PG 14-18，PGDG        |
+| storage_engine | 1.0.7  | 1.2.3  | 升级，PG 14-18             |
+| pgmq           | 1.11.0 | 1.11.1 | 升级，PG 14-18             |
+| parray_gin     | 1.4.0  | 1.5.0  | 升级，PG 14-18             |
+| rdf_fdw        | 2.4.0  | 2.5.0  | 升级，PG 14-18             |
+| pg_accumulator | -      | 1.1.3  | 新增，PG 14-18             |
 
 ## 2026-04-19
 

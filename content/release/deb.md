@@ -6,6 +6,21 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-05-01
+
+| Package          | Old    | New    | Comment                                                                             |
+|:-----------------|:-------|:-------|:------------------------------------------------------------------------------------|
+| pg_pathcheck     | -      | 0.9.1  | new planner Path diagnostics module, PG 17-18, shared_preload_libraries required    |
+| pg_bikram_sambat | -      | 0.1.0  | new Bikram Sambat date type and AD/BS conversions                                   |
+| timescaledb      | 2.26.3 | 2.26.4 | TSL minor update                                                                    |
+| storage_engine   | 1.2.3  | 1.3.4  | PGXN update, columnar and row-compressed table access methods                       |
+| pgproto          | 0.3.3  | 0.5.0  | PGXN update, native Protobuf support, C/PGXS build                                  |
+| pg_savior        | 0.0.1  | 0.1.0  | PGXN update, high-risk DDL/DML hook, preload or LOAD required                       |
+| pg_textsearch    | 1.0.0  | 1.1.0  | Timescale BM25 full-text search update, PG 17-18, shared_preload_libraries required |
+| pg_trickle       | 0.31.0 | 0.40.0 | Rust/pgrx update, PG 18 only                                                        |
+
+Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
+
 ## 2026-04-25
 
 | Package        | Old    | New    | Comment                         |
