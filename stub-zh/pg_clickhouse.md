@@ -1,10 +1,10 @@
 ## 用法
 
-来源：[README](https://github.com/ClickHouse/pg_clickhouse/blob/master/README.md)，[reference](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/pg_clickhouse.md)，[tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/tutorial.md)，[v0.2.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.2.0)
+来源：[README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.0), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
 
-`pg_clickhouse` 通过 `clickhouse_fdw` foreign data wrapper 在 PostgreSQL 中直接执行 ClickHouse 分析查询。上游文档说明它支持 PostgreSQL 13+ 与 ClickHouse 23+。
+`pg_clickhouse` 通过 `clickhouse_fdw` foreign data wrapper 在 PostgreSQL 中运行 ClickHouse 分析查询。上游文档说明支持 PostgreSQL 13+ 和 ClickHouse 23+；Pigsty 打包版本为 0.3.0，覆盖 PostgreSQL 14-18。
 
-### 将 PostgreSQL 连接到 ClickHouse
+### 连接 PostgreSQL 与 ClickHouse
 
 ```sql
 CREATE EXTENSION pg_clickhouse;
@@ -21,15 +21,15 @@ CREATE SCHEMA taxi;
 IMPORT FOREIGN SCHEMA taxi FROM SERVER taxi_srv INTO taxi;
 ```
 
-上游记录的 server 选项包括：
+上游文档中的服务器选项：
 
-- `driver`：必填，取值为 `binary` 或 `http`
+- `driver`：必填，`binary` 或 `http`
 - `host`
 - `port`
 - `dbname`
-- `fetch_size`：HTTP 流式批大小，`0` 表示禁用流式
+- `fetch_size`：HTTP streaming batch size；`0` 表示禁用 streaming
 
-user mapping 选项包括：
+用户映射选项：
 
 - `user`
 - `password`
@@ -38,19 +38,40 @@ user mapping 选项包括：
 
 ```sql
 ALTER EXTENSION pg_clickhouse UPDATE;
-ALTER EXTENSION pg_clickhouse UPDATE TO '0.2';
+ALTER EXTENSION pg_clickhouse UPDATE TO '0.3';
+SELECT pgch_version();
 DROP SERVER taxi_srv CASCADE;
 ```
 
-`IMPORT FOREIGN SCHEMA` 还支持 `LIMIT TO (...)` 与 `EXCEPT (...)`。参考文档特别提醒：导入的 mixed-case 标识符会在 PostgreSQL 中带双引号，查询时也必须显式加引号。
+`IMPORT FOREIGN SCHEMA` 也支持 `LIMIT TO (...)` 和 `EXCEPT (...)`。reference 提醒：导入的 mixed-case 标识符会在 PostgreSQL 中加双引号，查询时也必须带引号。
+
+### 查询和写入说明
+
+`SELECT`、`EXPLAIN`、prepared statements、`INSERT` 和 `COPY` 可用于 `pg_clickhouse` foreign tables。使用 `EXPLAIN (VERBOSE)` 查看将发送到 ClickHouse 的远端 SQL。
+
+```sql
+EXPLAIN (VERBOSE)
+SELECT node_id, count(*)
+FROM logs
+GROUP BY node_id;
+
+INSERT INTO nodes(node_id, name, region, arch, os)
+VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
+```
+
+文档说明可以向 foreign table 执行 `COPY`，但上游也指出它当前使用 `INSERT` 语句，因为 FDW batch insertion 仍是未来工作。
 
 ### 版本与下推说明
 
-- 参考文档区分库版本和扩展版本；`pgch_version()` 是在 `v0.2.0` 中加入的。
-- 仅补丁级别的发布可能只更新库文件，不需要执行 `ALTER EXTENSION`。
-- `v0.2.0` 增加了数组、正则函数、`split_part()`、数组运算符与当前日期/时间表达式的更多下推能力，以及 `pg_clickhouse.pushdown_regex` 设置。
+- reference 记录了独立的 library version 和 extension version；`pgch_version()` 报告已加载的 library version。
+- patch-only release 只更新库，不要求 `ALTER EXTENSION`。
+- release `v0.3.0` 使用 SQL version `0.3`；运行 `ALTER EXTENSION pg_clickhouse UPDATE TO '0.3'` 可应用其 SQL 层权限变更。
+- release `v0.3.0` 增加了对 `re2` 函数、`soundex()`、双参数 `levenshtein()`、兼容的 `to_char(timestamp[tz], fmt)`、部分内置函数，以及 JSON/JSONB path 操作的下推。
+- ClickHouse `JSON` 映射到 PostgreSQL `jsonb` 或 `json`；binary driver 的 `JSON` 映射要求 ClickHouse 24.10 或之后版本。
+- `pg_clickhouse.pushdown_regex` 控制内置 PostgreSQL regex 下推。上游建议，如果 regex 工作应直接下推，可以考虑 `re2` 扩展。
 
 ### 注意事项
 
-- 上游将它定位为分析优先的扩展，路线图里更广泛的 DML 支持仍属于后续工作。
-- 若需要完整示例，应按官方 tutorial 创建 ClickHouse `taxi` 数据库，通过 `IMPORT FOREIGN SCHEMA` 导入，再查询生成的 foreign tables。
+- 在 0.3.0 中，`clickhouse_raw_query(text, text)` 不再允许 `PUBLIC` 执行；只授予确实需要 ad-hoc ClickHouse 查询的角色。
+- 上游将该扩展定位为 analytics-first；轻量 `DELETE` 和 `UPDATE` 支持仍在 roadmap 中。
+- 完整示例请参考官方 tutorial，其中会创建 ClickHouse `taxi` 数据库，通过 `IMPORT FOREIGN SCHEMA` 导入，并查询生成的 foreign tables。

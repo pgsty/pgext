@@ -1,8 +1,8 @@
 ## 用法
 
-来源：[README](https://github.com/EnterpriseDB/system_stats/blob/master/README.md)，[Release v4.0](https://github.com/EnterpriseDB/system_stats/releases/tag/v4.0)，[SQL install script](https://github.com/EnterpriseDB/system_stats/blob/master/system_stats--4.0.sql)
+来源：[README](https://github.com/EnterpriseDB/system_stats/blob/master/README.md), [Release v4.0](https://github.com/EnterpriseDB/system_stats/releases/tag/v4.0), [SQL install script](https://github.com/EnterpriseDB/system_stats/blob/master/system_stats--4.0.sql)
 
-`system_stats` 通过 SQL 函数暴露操作系统指标。它支持 Linux、macOS 与 Windows，对于当前平台无意义的字段会返回 `NULL`。
+`system_stats` 通过 SQL 函数暴露操作系统指标。它支持 Linux、macOS 和 Windows；对于当前平台没有意义的字段，会返回 `NULL`。
 
 ### 主要函数
 
@@ -21,7 +21,7 @@ SELECT * FROM pg_sys_network_info();
 SELECT * FROM pg_sys_cpu_memory_by_process();
 ```
 
-这些函数覆盖 OS identity、CPU inventory 与 usage、memory、block-device I/O、disks、load average、process counts、network interfaces，以及 per-process CPU 与 memory usage。
+这些函数覆盖 OS identity、CPU inventory and usage、memory、block-device I/O、disks、load average、process counts、network interfaces，以及 per-process CPU and memory usage。
 
 ### 访问控制
 
@@ -30,11 +30,12 @@ GRANT monitor_system_stats TO nagios;
 GRANT EXECUTE ON FUNCTION pg_sys_os_info() TO pg_monitor;
 ```
 
-- 该扩展会创建 `monitor_system_stats` role，并将内置函数的执行权限授予该 role。
-- 所有函数都会从 `PUBLIC` 撤销。
+- 扩展会创建 `monitor_system_stats` role，并把随扩展提供的函数执行权授予该 role。
+- 函数会从 `PUBLIC` 撤销权限。
 
 ### 注意事项
 
-- 删除扩展时不会自动删除 `monitor_system_stats` role。
-- 在 macOS 上，系统无法暴露其他用户拥有进程的完整 per-process 细节；这些行可能只包含 PID 与进程名。
-- 当前 v4.0 上游文档保持相同的用户函数族和安全模型；这次刷新主要是使名称、权限和平台说明与当前 README 和 SQL script 对齐。
+- 删除扩展时，`monitor_system_stats` role 不会自动删除。
+- macOS 无法暴露其他用户拥有进程的完整 per-process details；这些行可能只包含 PID 和 process name。
+- Pigsty metadata 跟踪 `system_stats` 4.0，覆盖 PostgreSQL 14-18；RPM 和 DEB 包名不同（`system_stats_$v` vs. `postgresql-$v-system-stats`）。
+- 当前 v4.0 上游文档保留了相同的用户侧函数家族和安全模型；本次刷新主要是让名称、权限和平台说明与当前 README 和 SQL script 对齐。

@@ -1,10 +1,10 @@
 ## 用法
 
-来源：[README](https://github.com/spa5k/pg_strict/blob/master/README.md)，[Release v1.0.5](https://github.com/spa5k/pg_strict/releases/tag/v1.0.5)，[API source](https://github.com/spa5k/pg_strict/blob/master/src/api.rs)
+来源：[README](https://github.com/spa5k/pg_strict/blob/master/README.md), [Release v1.0.5](https://github.com/spa5k/pg_strict/releases/tag/v1.0.5), [API source](https://github.com/spa5k/pg_strict/blob/master/src/api.rs)
 
-`pg_strict` 会阻止或警告缺少 `WHERE` 子句的 `UPDATE` 与 `DELETE` 语句。它通过 `post_parse_analyze_hook` 工作，因此必须从 `shared_preload_libraries` 加载。
+`pg_strict` 会阻断或警告省略 `WHERE` 子句的 `UPDATE` 和 `DELETE` 语句。它安装 `post_parse_analyze_hook`，因此必须通过 `shared_preload_libraries` 加载。
 
-### 所需设置
+### 必要设置
 
 ```sql
 -- postgresql.conf
@@ -13,12 +13,12 @@ shared_preload_libraries = 'pg_strict'
 CREATE EXTENSION pg_strict;
 ```
 
-### GUCs
+### GUC
 
 - `pg_strict.require_where_on_update`
 - `pg_strict.require_where_on_delete`
 
-每个设置都支持 `off`、`warn` 与 `on`。
+每个设置都支持 `off`、`warn` 和 `on`。
 
 ```sql
 SET pg_strict.require_where_on_update = 'on';
@@ -40,11 +40,12 @@ SELECT pg_strict_warn_delete();
 SELECT pg_strict_disable_delete();
 ```
 
-- `pg_strict_set_update_mode(mode)` 与 `pg_strict_set_delete_mode(mode)` 提供通用模式设置器。
-- `SET LOCAL` 可用于事务中的一次性 bulk operation。
+- `pg_strict_set_update_mode(mode)` 和 `pg_strict_set_delete_mode(mode)` 提供通用模式设置函数。
+- `SET LOCAL` 可在事务内用于一次性批量操作。
 
 ### 注意事项
 
-- 它检查的是 `WHERE` 的存在性，而不是语义意图：任何非空 `WHERE` 子句都会满足规则。
-- 仅检查 `UPDATE` 与 `DELETE`。
-- 当前上游版本是 `1.0.5`；Pigsty 关于 `pgrx` 0.17.0 的说明属于打包或构建元数据，不是文档化的用户功能变化。
+- Enforcement 只检查是否存在 `WHERE`，不判断意图：任何非空 `WHERE` 子句都满足规则。
+- 只检查 `UPDATE` 和 `DELETE`。
+- 当前上游 release 是 `1.0.5`；上游文档记录 PostgreSQL 13 到 18，而 `db/extension.csv` 中的 Pigsty package row 覆盖 PostgreSQL 14 到 18。
+- Pigsty 关于 `pgrx` 0.17.0 的备注是 packaging/build metadata，不是文档化的用户侧功能变化。

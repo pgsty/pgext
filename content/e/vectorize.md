@@ -57,7 +57,7 @@ width: full
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-vectorize : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-vectorize : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-vectorize : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-18-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-17-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-16-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-15-pg-vectorize : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.26.1" "postgresql-14-pg-vectorize : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -79,6 +79,7 @@ width: full
 | `postgresql-18-pg-vectorize` | `0.26.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 6.4 MiB | [postgresql-18-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-vectorize` | `0.26.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.7 MiB | [postgresql-18-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-vectorize` | `0.26.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.4 MiB | [postgresql-18-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-vectorize` | `0.26.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.4 MiB | [postgresql-18-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-18-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -99,6 +100,7 @@ width: full
 | `postgresql-17-pg-vectorize` | `0.26.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 6.4 MiB | [postgresql-17-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-vectorize` | `0.26.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.7 MiB | [postgresql-17-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-vectorize` | `0.26.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.4 MiB | [postgresql-17-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-vectorize` | `0.26.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.4 MiB | [postgresql-17-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-17-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -119,6 +121,7 @@ width: full
 | `postgresql-16-pg-vectorize` | `0.26.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 6.4 MiB | [postgresql-16-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-vectorize` | `0.26.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.7 MiB | [postgresql-16-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-vectorize` | `0.26.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.4 MiB | [postgresql-16-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-vectorize` | `0.26.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.4 MiB | [postgresql-16-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-16-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -139,6 +142,7 @@ width: full
 | `postgresql-15-pg-vectorize` | `0.26.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 6.4 MiB | [postgresql-15-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-vectorize` | `0.26.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.7 MiB | [postgresql-15-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-vectorize` | `0.26.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.4 MiB | [postgresql-15-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-vectorize` | `0.26.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.4 MiB | [postgresql-15-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-15-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -159,6 +163,7 @@ width: full
 | `postgresql-14-pg-vectorize` | `0.26.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 6.4 MiB | [postgresql-14-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-vectorize` | `0.26.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 6.7 MiB | [postgresql-14-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-vectorize` | `0.26.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 6.4 MiB | [postgresql-14-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-vectorize` | `0.26.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 6.4 MiB | [postgresql-14-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-vectorize/postgresql-14-pg-vectorize_0.26.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

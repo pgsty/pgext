@@ -7,14 +7,14 @@ categories: ["FUNC"]
 width: full
 ---
 
-[**pg_slug_gen**](https://github.com/fernandoolle/pg_slug_gen) : Generate cryptographically secure timestamp-based slugs
+[**pg_slug_gen**](https://github.com/nandoolle/pg_slug_gen) : Generate cryptographically secure timestamp-based slugs
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4550** | {{< badge content="pg_slug_gen" link="https://github.com/fernandoolle/pg_slug_gen" >}} | {{< ext "pg_slug_gen" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4550** | {{< badge content="pg_slug_gen" link="https://github.com/nandoolle/pg_slug_gen" >}} | {{< ext "pg_slug_gen" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -149,7 +149,7 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/fernandoolle/pg_slug_gen" title="Repository" icon="github" subtitle="github.com/fernandoolle/pg_slug_gen" >}}
+{{< card link="https://github.com/nandoolle/pg_slug_gen" title="Repository" icon="github" subtitle="github.com/nandoolle/pg_slug_gen" >}}
 {{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_slug_gen-1.0.0.tar.gz" >}}
 {{< /cards >}}
 

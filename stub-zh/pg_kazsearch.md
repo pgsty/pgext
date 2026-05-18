@@ -1,8 +1,8 @@
 ## 用法
 
-来源：[README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md)，[releases](https://github.com/darkhanakh/pg-kazsearch/releases)
+来源：[README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md), [v2.0.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.0.0), [v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
 
-`pg_kazsearch` 是一个面向哈萨克语的 PostgreSQL 全文检索扩展。README 说明它会创建可直接使用的文本搜索配置 `kazakh_cfg` 和词典 `pg_kazsearch_dict`。
+`pg_kazsearch` 是面向哈萨克语的 PostgreSQL full-text search 扩展。README 说明它支持 PostgreSQL 16-18，并创建可直接使用的 text search configuration `kazakh_cfg` 和 dictionary `pg_kazsearch_dict`。
 
 ### 快速开始
 
@@ -16,7 +16,7 @@ SELECT to_tsvector('kazakh_cfg', 'президенттің жарлығы');
 -- 'жарлық':2 'президент':1
 ```
 
-### 为表添加哈萨克语 FTS
+### 将哈萨克语 FTS 添加到表
 
 ```sql
 ALTER TABLE articles ADD COLUMN fts tsvector
@@ -36,19 +36,19 @@ LIMIT 10;
 
 ### 调优
 
-README 说明词典参数可以在运行时调整，无需重启：
+README 记录了无需重启的运行时 dictionary 调优：
 
 ```sql
 ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
   (w_deriv = 3.5, w_short_char = 100.0);
 ```
 
-### 发布与打包说明
+### Release 与打包说明
 
-- 上游 `v2.0.0` 引入了当前基于 Rust / `pgrx` 的架构。
-- 上游 `v2.1.0` 在 PostgreSQL 扩展之外新增了 Elasticsearch 插件，但 README 中的 PostgreSQL SQL 用法没有变化。
-- 仓库 README 发布 Debian `2.x` 软件包，而本项目的 CSV 说明会单独跟踪 extension control version。
+- 本项目 CSV 跟踪 extension control version `0.1.0`、package/source version `2.0.0`、`pgrx` `0.17.0`，以及 PostgreSQL versions 16-18。
+- 上游 release `v2.0.0` 引入了当前 Rust / `pgrx` PostgreSQL extension 打包。
+- 上游 release `v2.1.0` 在 PostgreSQL extension 之外增加了 Elasticsearch plugin；README 中的 PostgreSQL SQL 用法未改变。
 
 ### 注意事项
 
-面向 PostgreSQL 的文档目前较简洁，重点只覆盖词干提取与全文检索用法。这里不要推断 README 未明确列出的额外 SQL 对象，保守限定在 `kazakh_cfg`、`pg_kazsearch_dict` 和上面给出的示例。
+面向 PostgreSQL 的文档很简洁，重点是 stemming 和 FTS 用法。此 stub 避免推断除 `kazakh_cfg`、`pg_kazsearch_dict` 以及上面文档化示例以外的 SQL 对象。

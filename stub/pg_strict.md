@@ -47,4 +47,5 @@ SELECT pg_strict_disable_delete();
 
 - Enforcement is presence-based, not intent-based: any non-null `WHERE` clause satisfies the rule.
 - Only `UPDATE` and `DELETE` are checked.
-- Current upstream release is `1.0.5`; the Pigsty note about `pgrx` 0.17.0 is packaging/build metadata, not a documented user-facing feature change.
+- Current upstream release is `1.0.5`; upstream documents PostgreSQL 13 through 18, while the Pigsty package row in `db/extension.csv` covers PostgreSQL 14 through 18.
+- The Pigsty note about `pgrx` 0.17.0 is packaging/build metadata, not a documented user-facing feature change.

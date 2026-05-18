@@ -1,8 +1,8 @@
 ## Usage
 
-Source: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.26.4 release](https://github.com/timescale/timescaledb/releases/tag/2.26.4), [create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/), [CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/), [continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/), [add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/), [add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
+Sources: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.27.0 release](https://github.com/timescale/timescaledb/releases/tag/2.27.0), [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/), [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/), [continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/), [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/), [GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
-`timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize hypertables, continuous aggregates, automation jobs, and moving older chunks into the columnstore.
+`timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize `CREATE TABLE ... WITH (tsdb.hypertable)`, continuous aggregates, automation jobs, and moving chunks into the columnstore.
 
 ### Hypertables
 
@@ -13,13 +13,26 @@ CREATE TABLE ts_test (
   ts timestamptz NOT NULL,
   id bigint,
   v integer
+) WITH (
+  tsdb.hypertable,
+  tsdb.orderby = 'ts DESC'
 );
-
-SELECT create_hypertable('ts_test', by_range('ts'));
 ```
 
-- `create_hypertable()` still works, but the API docs mark it as old since TimescaleDB 2.20.0 and point new users toward `CREATE TABLE ... WITH (...)`.
-- The current README also shows the newer pattern: `CREATE TABLE ... WITH (tsdb.hypertable)`.
+To convert an existing PostgreSQL table, use the generalized hypertable API:
+
+```sql
+CREATE TABLE ts_existing (
+  ts timestamptz NOT NULL,
+  id bigint,
+  v integer
+);
+SELECT create_hypertable('ts_existing', by_range('ts'));
+```
+
+- `CREATE TABLE ... WITH (tsdb.hypertable)` has been documented since TimescaleDB 2.20.0 and is the best-practice path for new hypertables.
+- For TimescaleDB 2.23.0 and later, the first `TIMESTAMP` or `TIMESTAMPTZ` column is selected automatically as the partition column unless more than one candidate makes the choice ambiguous.
+- `create_hypertable()` still works for converting existing tables.
 
 ### Continuous aggregates and jobs
 
@@ -43,23 +56,42 @@ SELECT add_job('user_defined_action', '1h');
 ```
 
 - Continuous aggregates require `time_bucket(...)` on the hypertable's time dimension.
-- In TimescaleDB 2.13 and later, real-time aggregates are disabled by default unless configured otherwise.
+- The continuous aggregate `WITH` clause supports `timescaledb.materialized_only`; the current API default is `TRUE`, so real-time aggregation is not enabled unless configured otherwise.
 
 ### Columnstore
 
 ```sql
-ALTER TABLE ts_test SET (
-  timescaledb.enable_columnstore,
-  timescaledb.orderby = 'ts DESC'
+CREATE TABLE crypto_ticks (
+  "time" timestamptz,
+  symbol text,
+  price double precision,
+  day_volume numeric
+) WITH (
+  tsdb.hypertable,
+  tsdb.segmentby = 'symbol',
+  tsdb.orderby = 'time DESC'
 );
 
-CALL add_columnstore_policy('ts_test', after => INTERVAL '1 day');
+CALL add_columnstore_policy('crypto_ticks', after => INTERVAL '60 days');
 ```
 
-- The docs treat `add_columnstore_policy()` and `convert_to_columnstore()` as the current APIs.
-- Older compression functions such as `add_compression_policy()` are documented as old APIs replaced by the columnstore interface.
+- `CREATE TABLE ... WITH (tsdb.hypertable)` enables columnstore by default unless `tsdb.columnstore = false`.
+- `add_columnstore_policy()` replaces the older `add_compression_policy()` API and requires either `after` or `created_before`, not both.
+- Bloom filters are enabled by default for new columnstore chunks. Existing chunks need recompression before they have bloom indexes.
+
+### Relevant GUCs
+
+```sql
+SET timescaledb.enable_direct_compress_insert = on;
+SET timescaledb.enable_cagg_rewrites = on;
+SET timescaledb.enable_columnar_scan_filter_pushdown = on;
+```
+
+`timescaledb.enable_direct_compress_insert` and `timescaledb.enable_direct_compress_copy` enable tech-preview direct compression during ingestion. TimescaleDB 2.27.0 adds `timescaledb.enable_cagg_rewrites` and `timescaledb.cagg_rewrites_debug_info`, and documents `timescaledb.enable_columnar_scan_filter_pushdown` as enabled by default.
 
 ### Caveats
 
-- TimescaleDB 2.26.4 is a bug-fix release over 2.26.3; the release notes recommend upgrading but do not add a new SQL usage surface for hypertables, continuous aggregates, jobs, or columnstore.
-- Relevant 2.26.4 fixes touch continuous aggregate planning and refresh, runtime chunk exclusion, background worker restart after restore, sparse indexes on `orderby`, and compressed chunk merge safety. Keep using the documented APIs above rather than changing SQL for the patch release itself.
+- This project's CSV tracks TimescaleDB `2.27.0` for PostgreSQL 15-18.
+- TimescaleDB 2.27.0 adds Hypercore columnstore performance work: vectorized filters, bloom-filter pruning for `UPDATE`/`DELETE` equality predicates, and bloom-filter pruning for `UPSERT`.
+- The 2.27.0 release notes list backward-incompatible upgrade caveats for affected compressed `int2` bloom sparse indexes and for composite bloom metadata generated by v2.26.
+- The 2.27.0 release notes announce that the June 2026 TimescaleDB release is planned to be the last version supporting PostgreSQL 15.

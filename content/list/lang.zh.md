@@ -14,7 +14,7 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 384 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "C" >}} | 385 | 传统的 PostgreSQL 扩展开发语言 |
 | {{< language "SQL" >}} | 54 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 48 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 11 | 使用 C++ 特性和库的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="384 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="385 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -63,6 +63,7 @@ weight: 200
 | 2130 | {{< alias "zhparser" >}} | 中文分词，全文搜索解析器 |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 使用IAM的高性能文本模式匹配 |
 | 2180 | {{< alias "pg_textsearch" >}} | 带有BM25排序的全文搜索扩展 |
+| 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | 2380 | {{< alias "fuzzystrmatch" >}} | 确定字符串之间的相似性和距离 |
 | 2390 | {{< alias "pg_trgm" >}} | 文本相似度测量函数与模糊检索 |
 | 2400 | {{< alias "citus" >}} | Citus 分布式数据库 |

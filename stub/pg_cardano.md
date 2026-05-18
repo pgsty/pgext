@@ -1,6 +1,6 @@
 ## Usage
 
-Sources: [README](https://github.com/Fell-x27/pg_cardano/blob/master/README.md), [Cargo.toml version 1.2.0](https://github.com/Fell-x27/pg_cardano/blob/master/Cargo.toml)
+Sources: [README](https://github.com/Fell-x27/pg_cardano/blob/master/README.md), [Cargo.toml version 1.2.0](https://github.com/Fell-x27/pg_cardano/blob/master/Cargo.toml), [releases page](https://github.com/Fell-x27/pg_cardano/releases)
 
 `pg_cardano` is a Rust extension for Cardano-oriented binary and crypto utilities inside PostgreSQL. The upstream repo does not publish GitHub releases or tags, but the current crate version on the default branch is `1.2.0`.
 
@@ -66,5 +66,6 @@ SELECT cardano.tools_shelley_addr_get_type('addr_test1vp6p2fgl...');
 
 ### Caveats
 
-- Upstream documents PostgreSQL 12+ and Linux builds via `pgrx`; the crate features currently target PostgreSQL 15 through 18, with `pg18` as the default feature.
+- Upstream documents PostgreSQL 12+ and Linux builds via `pgrx`, but the current crate features and this repo's package matrix target PostgreSQL 15 through 18, with `pg18` as the default feature.
+- This repo packages `pg_cardano` 1.2.0 with `pgrx` 0.17.0 and the PG18 fix noted in `extension.csv`.
 - The simple CBOR helpers are intentionally lossy for some CBOR constructs; use the `*_ext` functions when exact structural round-tripping matters.

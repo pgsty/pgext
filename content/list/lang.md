@@ -14,7 +14,7 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 384 | The traditional PostgreSQL extension language |
+| {{< language "C" >}} | 385 | The traditional PostgreSQL extension language |
 | {{< language "SQL" >}} | 54 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 48 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 11 | Extensions leveraging C++ features and libraries |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="384 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="385 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -63,6 +63,7 @@ The traditional PostgreSQL extension language
 | 2130 | {{< alias "zhparser" >}} | a parser for full-text search of Chinese |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | Full-text search with BM25 ranking |
+| 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
 | 2380 | {{< alias "fuzzystrmatch" >}} | determine similarities and distance between strings |
 | 2390 | {{< alias "pg_trgm" >}} | text similarity measurement and index searching based on trigrams |
 | 2400 | {{< alias "citus" >}} | Distributed PostgreSQL as an extension |

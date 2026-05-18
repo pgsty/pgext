@@ -6,6 +6,38 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+
+## 2026-05-11
+
+| Name                       | Old      | New      | Comment                                    |
+|:---------------------------|:---------|:---------|:-------------------------------------------|
+| victoria-metrics         | 1.142.0  | 1.143.0  |                                                |
+| victoria-metrics-cluster | 1.142.0  | 1.143.0  | VictoriaMetrics companion package              |
+| vmutils                  | 1.142.0  | 1.143.0  | VictoriaMetrics companion package              |
+| mongodb_exporter         | 0.50.0   | 0.51.0   |                                                |
+| redis_exporter           | 1.82.0   | 1.83.0   |                                                |
+| etcd                     | 3.6.10   | 3.6.11   |                                                |
+| pgstream                 | 1.0.1    | 1.0.2    |                                                |
+| seaweedfs                | 4.22     | 4.23     |                                                |
+| rustfs                   | 1.0.0-b1 | 1.0.0-b2 | Prerelease line                                |
+| tigerbeetle              | 0.17.2   | 0.17.4   |                                                |
+| sabiql                   | 1.11.1   | 1.12.2   |                                                |
+| agentsview               | 0.26.0   | 0.29.0   |                                                |
+| claude                   | 2.1.123  | 2.1.138  | Downloaded through the 8118 proxy and verified |
+| codex                    | 0.125.0  | 0.130.0  |                                                |
+| stalwart                 | 0.16.2   | 0.16.4   |                                                |
+| maddy                    | 0.9.3    | 0.9.4    |                                                |
+| npgsqlrest               | 3.12.0   | 3.15.1   |                                                |
+| postgrest                | 14.10    | 14.11    |                                                |
+| opencode                 | 1.14.30  | 1.14.48  |                                                |
+| uv                       | 0.11.8   | 0.11.13  |                                                |
+| golang                   | 1.26.2   | 1.26.3   |                                                |
+| crush                    | 0.64.0   | 0.66.1   | Direct-download artifact refresh               |
+| rclone                   | 1.73.5   | 1.74.1   | Direct-download artifact refresh               |
+| code-server              | 4.117.0  | 4.118.0  | Direct-download artifact refresh               |
+| cloudflared              | 2026.2.0 | 2026.3.0 | Direct-download artifact refresh               |
+
+
 ## 2026-05-01
 
 | Name                     | Old            | New      | Comment                                    |

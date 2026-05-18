@@ -9,9 +9,9 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 510 | 155 | 338 | 71 | 0 | 490 | 491 | 484 | 478 | 462 |
-| **EL** | 505 | 150 | 338 | 71 | 5 | 481 | 485 | 479 | 472 | 456 |
-| **Debian** | 495 | 107 | 317 | 71 | 15 | 475 | 477 | 469 | 462 | 446 |
+| **ALL** | 511 | 155 | 339 | 71 | 0 | 491 | 492 | 484 | 478 | 461 |
+| **EL** | 506 | 150 | 339 | 71 | 5 | 482 | 486 | 479 | 472 | 455 |
+| **Debian** | 496 | 107 | 318 | 71 | 15 | 476 | 478 | 469 | 462 | 445 |
 
 ## 分类
 
@@ -20,7 +20,7 @@ comments: false
 | {{< category time >}} | 13 | {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "table_version" >}} {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_later" >}} {{< ext "pg_dispatch" >}} {{< ext "pg_background" >}} {{< ext "pg_when" >}} |
 | {{< category gis >}} | 29 | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} {{< ext "pointcloud_postgis" >}} {{< ext "h3" >}} {{< ext "h3_postgis" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} {{< ext "mobilitydb" >}} {{< ext "mobilitydb_datagen" >}} {{< ext "tzf" >}} {{< ext "earthdistance" >}} |
 | {{< category rag >}} | 11 | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_similarity" >}} {{< ext "pg_rrf" >}} {{< ext "smlar" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} |
-| {{< category fts >}} | 24 | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tokenizer" >}} {{< ext "biscuit" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_pinyin" >}} {{< ext "pg_kazsearch" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" >}} {{< ext "hunspell_en_us" >}} {{< ext "hunspell_fr" >}} {{< ext "hunspell_ne_np" >}} {{< ext "hunspell_nl_nl" >}} {{< ext "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" >}} {{< ext "hunspell_ru_ru_aot" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} |
+| {{< category fts >}} | 25 | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tokenizer" >}} {{< ext "biscuit" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_pinyin" >}} {{< ext "pg_kazsearch" >}} {{< ext "psql_bm25s" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" >}} {{< ext "hunspell_en_us" >}} {{< ext "hunspell_fr" >}} {{< ext "hunspell_ne_np" >}} {{< ext "hunspell_nl_nl" >}} {{< ext "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" >}} {{< ext "hunspell_ru_ru_aot" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} |
 | {{< category olap >}} | 15 | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "pg_clickhouse" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_fkpart" >}} {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "pg_strom" >}} {{< ext "tablefunc" >}} |
 | {{< category feat >}} | 68 | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "pgq" >}} {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_ai_query" >}} {{< ext "pg_ttl_index" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "plan_filter" >}} {{< ext "pg_variables" >}} {{< ext "imgsmlr" >}} {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "pg_trickle" >}} {{< ext "provsql" >}} {{< ext "orioledb" >}} {{< ext "pg_cardano" >}} {{< ext "rdkit" >}} {{< ext "omni" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_cloudevents" >}} {{< ext "omni_containers" >}} {{< ext "omni_credentials" >}} {{< ext "omni_csv" >}} {{< ext "omni_datasets" >}} {{< ext "omni_email" >}} {{< ext "omni_http" >}} {{< ext "omni_httpc" >}} {{< ext "omni_httpd" >}} {{< ext "omni_id" >}} {{< ext "omni_json" >}} {{< ext "omni_kube" >}} {{< ext "omni_ledger" >}} {{< ext "omni_manifest" >}} {{< ext "omni_mimetypes" >}} {{< ext "omni_os" >}} {{< ext "omni_polyfill" >}} {{< ext "omni_python" >}} {{< ext "omni_regex" >}} {{< ext "omni_rest" >}} {{< ext "omni_schema" >}} {{< ext "omni_seq" >}} {{< ext "omni_service" >}} {{< ext "omni_session" >}} {{< ext "omni_shmem" >}} {{< ext "omni_sql" >}} {{< ext "omni_sqlite" >}} {{< ext "omni_test" >}} {{< ext "omni_txn" >}} {{< ext "omni_types" >}} {{< ext "omni_var" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "omni_web" >}} {{< ext "omni_worker" >}} {{< ext "omni_xml" >}} {{< ext "omni_yaml" >}} {{< ext "bloom" >}} |
 | {{< category lang >}} | 34 | {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} {{< ext "plprql" >}} {{< ext "pldbgapi" >}} {{< ext "plpgsql_check" >}} {{< ext "plprofiler" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "pgtap" >}} {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_regresql" >}} {{< ext "pltcl" >}} {{< ext "pltclu" >}} {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "hstore_plperl" >}} {{< ext "jsonb_plperl" >}} {{< ext "plperlu" >}} {{< ext "bool_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "plpgsql" >}} {{< ext "plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
@@ -36,7 +36,7 @@ comments: false
 
 ## 扩展列表
 
-共有 510 个可用的 PostgreSQL 扩展：
+共有 511 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 描述 |
 |:----------|:------------|:---------:|:--------------|
@@ -105,6 +105,7 @@ comments: false
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 带有BM25排序的全文搜索扩展 |
 | {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | PostgreSQL 拼音转写与检索辅助扩展 |
 | {{< ext "pg_kazsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL 哈萨克语全文检索扩展 |
+| {{< ext "psql_bm25s" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Hunspell捷克语全文检索词典 |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Hunspell德语全文检索词典 |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | Hunspell英语全文检索词典 |
@@ -123,7 +124,7 @@ comments: false
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | PostgreSQL列式存储表 |
-| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
+| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | DuckDB 外部数据源包装器 |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |

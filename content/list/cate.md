@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (510 ext in 427 pkg) categorized into 16 categories.
+PostgreSQL Extensions (511 ext in 428 pkg) categorized into 16 categories.
 
 
 
@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.26.4 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.27.0 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.22.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.0 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -101,9 +101,10 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
 | 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.2.2 | IAM-LIKE pattern matching with bitmap indexing |
-| 2180 | {{< alias "pg_textsearch" >}} | 1.1.0 | Full-text search with BM25 ranking |
+| 2180 | {{< alias "pg_textsearch" >}} | 1.2.0 | Full-text search with BM25 ranking |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.2 | Pinyin romanization and search helpers for PostgreSQL |
 | 2200 | {{< alias "pg_kazsearch" >}} | 0.1.0 | Kazakh full-text search extension for PostgreSQL |
+| 2210 | {{< alias "psql_bm25s" >}} | 0.4.13 | PostgreSQL extension for BM25-family lexical retrieval |
 | 2270 | {{< alias "hunspell_cs_cz" >}} | 1.0 | Czech Hunspell Dictionary |
 | 2271 | {{< alias "hunspell_de_de" >}} | 1.0 | German Hunspell Dictionary |
 | 2272 | {{< alias "hunspell_en_us" >}} | 1.0 | en_US Hunspell Dictionary |
@@ -129,8 +130,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
 | 2440 | {{< alias "pg_mooncake" >}} | 0.2.0 | Columnstore Table in Postgres |
-| 2450 | {{< alias "storage_engine" >}} | 1.3.4 | colcompress and rowcompress Table Access Methods with vectorized execution |
-| 2460 | {{< alias "pg_clickhouse" >}} | 0.2.0 | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2450 | {{< alias "storage_engine" >}} | 2.3.0 | colcompress and rowcompress Table Access Methods with vectorized execution |
+| 2460 | {{< alias "pg_clickhouse" >}} | 0.3.0 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
@@ -168,7 +169,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2840 | {{< alias "pg_ivm" >}} | 1.14 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.40.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
-| 2900 | {{< alias "provsql" >}} | 1.2.3 | Semiring provenance and uncertainty management for PostgreSQL |
+| 2900 | {{< alias "provsql" >}} | 1.4.0 | Semiring provenance and uncertainty management for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
 | 2930 | {{< alias "rdkit" >}} | 202503.6 | Cheminformatics functionality for PostgreSQL. |
@@ -228,7 +229,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3030 | {{< alias "plluau" "pllua" >}} | 2.0.12 | Lua as an untrusted procedural language |
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
-| 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.9 | server-side support for debugging PL/pgSQL functions |
+| 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
 | 3060 | {{< alias "plpgsql_check" >}} | 2.8.11 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
@@ -621,7 +622,7 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9560 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
 | 9570 | {{< alias "spock" >}} | 5.0.6 | Multi-master logical replication extension for PostgreSQL |
 | 9580 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
-| 9590 | {{< alias "pgclone" >}} | 4.0.0 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
+| 9590 | {{< alias "pgclone" >}} | 4.3.2 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | 9620 | {{< alias "pgmqtt" >}} | 0.1.0 | CDC-to-MQTT broker for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |

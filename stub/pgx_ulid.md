@@ -3,13 +3,12 @@
 
 Sources: [README](https://github.com/pksunkara/pgx_ulid/blob/master/README.md), [releases](https://github.com/pksunkara/pgx_ulid/releases)
 
-`pgx_ulid` provides a native `ulid` type, generators, and casts to and from `timestamp` and `uuid`. The README documents binary storage and monotonic ULID support.
+`pgx_ulid` provides a native `ulid` type, generators, and casts to and from `timestamp` and `uuid`. The README documents binary storage and monotonic ULID support. The pgext catalog tracks package and extension name `pgx_ulid`, version `0.2.3`, for PostgreSQL 14-18.
 
 ### Enable the extension
 
 ```sql
-CREATE EXTENSION ulid;
--- or CREATE EXTENSION pgx_ulid; if installed manually under that name
+CREATE EXTENSION pgx_ulid;
 ```
 
 ### Generate ULIDs
@@ -56,4 +55,5 @@ The README also documents casts between `ulid` and `uuid`.
 
 - Monotonic ULIDs use shared memory plus an LWLock to keep the last generated value.
 - The README notes that monotonic generation can theoretically overflow and raise an error, although it treats this as negligible in practice.
-- Release `v0.2.3` is current upstream as of 2026-04-19, but upstream did not publish separate user-facing release notes for it.
+- The upstream README also shows `CREATE EXTENSION ulid`; this stub follows `db/extension.csv`, where the package and lead extension are both `pgx_ulid`.
+- The GitHub release page lists `v0.2.3` as latest and only labels it `Release 0.2.3`, with no separate user-facing release notes.

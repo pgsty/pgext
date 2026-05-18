@@ -1,9 +1,9 @@
 
 ## Usage
 
-> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)
+> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/), [release 3.0.13](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.0.13)
 
-`anon` applies declarative masking rules with `SECURITY LABEL FOR anon`. The official docs center on three user-facing flows: permanent masking, masked roles, and anonymized dumps.
+`anon` applies declarative masking rules with `SECURITY LABEL FOR anon`. The official docs describe six masking methods: anonymous dumps, static masking, dynamic masking, replica masking, masking views, and masking data wrappers.
 
 ### Initialize and Declare Rules
 
@@ -28,9 +28,10 @@ Static masking rewrites the stored data in place:
 ```sql
 SELECT anon.anonymize_database();
 -- See also: anon.anonymize_table(), anon.anonymize_column()
+-- For larger databases: anon.anonymize_database_parallel(worker_count)
 ```
 
-The static-masking docs also cover shuffling, noise injection, and parallel masking for larger datasets.
+The static-masking docs also cover shuffling, noise injection, and parallel masking for larger datasets. Parallel static masking is bounded by `anon.max_bg_workers` and the server's `max_worker_processes`.
 
 ### Dynamic Masking
 
@@ -53,6 +54,8 @@ When `skynet` queries the table, masked values are returned instead of the origi
 ### Anonymous Dumps and Pseudonymization
 
 The current docs recommend transparent anonymous dumps through a masked role and `pg_dump`. Older helpers `pg_dump_anon.sh` and `pg_dump_anon` are explicitly marked deprecated.
+
+For PostgreSQL 17 and later, the dump example uses `--exclude-extension="anon"` with `--no-security-labels`; older `pg_dump` versions need another extension-selection approach such as `--extension plpgsql`.
 
 For stable key remapping in dumps, the docs call out:
 

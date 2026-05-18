@@ -18,7 +18,7 @@ weight: 300
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 228 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 85 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "Apache-2.0" >}} | 86 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 81 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 31 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -33,8 +33,8 @@ weight: 300
 | {{< license "BSD-3-Clause" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "Elastic License 2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "BSD-2-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Elastic License 2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -281,7 +281,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="85 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="86 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -292,6 +292,7 @@ weight: 300
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
+| 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | 2600 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
@@ -722,18 +723,6 @@ weight: 300
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 
-## Elastic License 2.0
-
-
-
-| {{< license "Elastic License 2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
-
 ## BSD-2-Clause
 
 
@@ -745,4 +734,16 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 3230 | {{< alias "pg_regresql" >}} | 用 pg_class 统计信息替代物理文件大小参与查询规划 |
+
+## Elastic License 2.0
+
+
+
+| {{< license "Elastic License 2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 

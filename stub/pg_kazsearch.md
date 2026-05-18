@@ -1,8 +1,8 @@
 ## Usage
 
-Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md), [releases](https://github.com/darkhanakh/pg-kazsearch/releases)
+Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md), [v2.0.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.0.0), [v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
 
-`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language. The README says it creates a ready-to-use text search configuration `kazakh_cfg` and dictionary `pg_kazsearch_dict`.
+`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language. The README says it supports PostgreSQL 16-18 and creates a ready-to-use text search configuration `kazakh_cfg` and dictionary `pg_kazsearch_dict`.
 
 ### Quick start
 
@@ -45,9 +45,9 @@ ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
 
 ### Release and packaging notes
 
-- Upstream release `v2.0.0` introduced the current Rust / `pgrx` architecture.
+- This project's CSV tracks extension control version `0.1.0`, package/source version `2.0.0`, `pgrx` `0.17.0`, and PostgreSQL versions 16-18.
+- Upstream release `v2.0.0` introduced the current Rust / `pgrx` PostgreSQL extension packaging.
 - Upstream release `v2.1.0` adds an Elasticsearch plugin alongside the PostgreSQL extension; the PostgreSQL SQL usage in the README is unchanged.
-- The repository README publishes Debian packages as `2.x` releases, while this project's CSV note separately tracks the extension control version.
 
 ### Caveat
 

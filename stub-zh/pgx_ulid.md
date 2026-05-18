@@ -1,14 +1,13 @@
 ## 用法
 
-来源：[README](https://github.com/pksunkara/pgx_ulid/blob/master/README.md)，[releases](https://github.com/pksunkara/pgx_ulid/releases)
+来源：[README](https://github.com/pksunkara/pgx_ulid/blob/master/README.md), [releases](https://github.com/pksunkara/pgx_ulid/releases)
 
-`pgx_ulid` 提供原生 `ulid` 类型、生成函数，以及与 `timestamp` 和 `uuid` 之间的类型转换。README 说明它以二进制形式存储，并支持 monotonic ULID。
+`pgx_ulid` 提供原生 `ulid` 类型、生成器，以及与 `timestamp` 和 `uuid` 的双向 casts。README 记录了二进制存储和 monotonic ULID 支持。pgext catalog 记录 package 和 extension 名均为 `pgx_ulid`，版本 `0.2.3`，覆盖 PostgreSQL 14-18。
 
 ### 启用扩展
 
 ```sql
-CREATE EXTENSION ulid;
--- or CREATE EXTENSION pgx_ulid; if installed manually under that name
+CREATE EXTENSION pgx_ulid;
 ```
 
 ### 生成 ULID
@@ -24,7 +23,7 @@ SELECT gen_monotonic_ulid();
 shared_preload_libraries = 'pgx_ulid'
 ```
 
-README 明确说明，这个 preload 要求只影响 `gen_monotonic_ulid()`；扩展的其余部分无需预加载即可使用。
+README 明确说明该 preload 要求只影响 `gen_monotonic_ulid()`；扩展其他功能无需 preload。
 
 ### 将 `ulid` 用作主键
 
@@ -38,7 +37,7 @@ SELECT * FROM users
 WHERE id = '01ARZ3NDEKTSV4RRFFQ69G5FAV';
 ```
 
-### 类型转换与范围查询
+### Casts 与范围查询
 
 ```sql
 ALTER TABLE users
@@ -49,10 +48,11 @@ WHERE id BETWEEN '2023-09-15'::timestamp::ulid
             AND '2023-09-16'::timestamp::ulid;
 ```
 
-README 还记录了 `ulid` 与 `uuid` 之间的双向 cast。
+README 还记录了 `ulid` 与 `uuid` 之间的 casts。
 
 ### 注意事项
 
-- Monotonic ULID 通过 shared memory 和 LWLock 维护最近一次生成的值。
-- README 提到 monotonic 生成在理论上可能发生溢出并报错，但实践中可视为极小概率事件。
-- 截至 2026-04-19，上游当前版本为 `v0.2.3`，但没有单独发布该版本的面向用户说明。
+- Monotonic ULIDs 使用 shared memory 和 LWLock 来保存上一次生成的值。
+- README 提到 monotonic generation 理论上可能 overflow 并抛出错误，虽然它认为实践中可忽略。
+- 上游 README 也展示 `CREATE EXTENSION ulid`；此 stub 遵循 `db/extension.csv`，其中 package 和 lead extension 都是 `pgx_ulid`。
+- GitHub release page 将 `v0.2.3` 列为最新，且只标为 `Release 0.2.3`，没有单独用户侧 release notes。

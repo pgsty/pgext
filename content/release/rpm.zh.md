@@ -6,6 +6,17 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-05-15
+
+| 包名             | 旧版本    | 新版本    | 备注                                      |
+|:---------------|:-------|:-------|:----------------------------------------|
+| psql_bm25s     | -      | 0.4.13 | 新增 BM25 词法检索扩展，PG 17-18                 |
+| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL 小版本更新，PG 15-18         |
+| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 全文搜索扩展更新，PG 17-18      |
+| pgclone        | 4.0.0  | 4.3.2  | PGXN 更新，PG 14-18                        |
+| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x 更新，PG 15-18                    |
+| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN 更新，ClickHouse 查询集成                 |
+| provsql        | 1.2.3  | 1.4.0  | PGXN 更新，数据溯源与不确定性管理引擎                 |
 
 ## 2026-05-01
 

@@ -18,7 +18,7 @@ PostgreSQL extension categorized by license.
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
 | {{< license "PostgreSQL" >}} | 228 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 85 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "Apache-2.0" >}} | 86 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 81 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 31 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
@@ -33,8 +33,8 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD-3-Clause" >}} | 2 | [License Text](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "BSD-2-Clause" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "Elastic License 2.0" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "BSD-2-Clause" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
 
@@ -281,7 +281,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="85 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="86 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -292,6 +292,7 @@ PostgreSQL extension categorized by license.
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
+| 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
 | 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2600 | {{< alias "age" >}} | AGE graph database extension |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
@@ -722,18 +723,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
 
-## BSD-2-Clause
-
-
-
-| {{< license "BSD-2-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 3230 | {{< alias "pg_regresql" >}} | Trust pg_class statistics for planning instead of physical relation size |
-
 ## Elastic License 2.0
 
 
@@ -745,4 +734,16 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
+
+## BSD-2-Clause
+
+
+
+| {{< license "BSD-2-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 3230 | {{< alias "pg_regresql" >}} | Trust pg_class statistics for planning instead of physical relation size |
 

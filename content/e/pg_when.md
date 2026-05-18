@@ -50,7 +50,7 @@ width: full
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-when : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-when : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-when : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-18-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-17-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-16-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-15-pg-when : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.9" "postgresql-14-pg-when : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -72,6 +72,7 @@ width: full
 | `postgresql-18-pg-when` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 298.4 KiB | [postgresql-18-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-when/postgresql-18-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-when` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 403.4 KiB | [postgresql-18-pg-when_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-18-pg-when_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-when` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 296.1 KiB | [postgresql-18-pg-when_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-18-pg-when_0.1.9-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-when` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 297.6 KiB | [postgresql-18-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-18-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -92,6 +93,7 @@ width: full
 | `postgresql-17-pg-when` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 298.5 KiB | [postgresql-17-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-when/postgresql-17-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-when` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 403.5 KiB | [postgresql-17-pg-when_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-17-pg-when_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-when` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 296.1 KiB | [postgresql-17-pg-when_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-17-pg-when_0.1.9-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-when` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 297.2 KiB | [postgresql-17-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-17-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -112,6 +114,7 @@ width: full
 | `postgresql-16-pg-when` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 298.4 KiB | [postgresql-16-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-when/postgresql-16-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-when` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 403.2 KiB | [postgresql-16-pg-when_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-16-pg-when_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-when` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 296.1 KiB | [postgresql-16-pg-when_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-16-pg-when_0.1.9-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-when` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 297.2 KiB | [postgresql-16-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-16-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -132,6 +135,7 @@ width: full
 | `postgresql-15-pg-when` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 298.6 KiB | [postgresql-15-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-when/postgresql-15-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-when` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 403.3 KiB | [postgresql-15-pg-when_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-15-pg-when_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-when` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 296.1 KiB | [postgresql-15-pg-when_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-15-pg-when_0.1.9-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-when` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 297.2 KiB | [postgresql-15-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-15-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -152,6 +156,7 @@ width: full
 | `postgresql-14-pg-when` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 298.4 KiB | [postgresql-14-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-when/postgresql-14-pg-when_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-when` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 403.2 KiB | [postgresql-14-pg-when_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-14-pg-when_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-when` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 296.1 KiB | [postgresql-14-pg-when_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-when/postgresql-14-pg-when_0.1.9-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-when` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 297.2 KiB | [postgresql-14-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-when/postgresql-14-pg-when_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

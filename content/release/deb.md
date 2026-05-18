@@ -6,6 +6,18 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-05-15
+
+| Package        | Old    | New    | Comment                                        |
+|:---------------|:-------|:-------|:-----------------------------------------------|
+| psql_bm25s     | -      | 0.4.13 | new BM25 lexical retrieval extension, PG 17-18 |
+| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL minor update, PG 15-18         |
+| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 full-text search, PG 17-18      |
+| pgclone        | 4.0.0  | 4.3.2  | PGXN bump, PG 14-18                            |
+| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x bump, PG 15-18                        |
+| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN bump, ClickHouse query integration        |
+| provsql        | 1.2.3  | 1.4.0  | PGXN bump, provenance and uncertainty engine   |
+
 ## 2026-05-01
 
 | Package          | Old    | New    | Comment                                                                             |

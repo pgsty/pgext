@@ -1,8 +1,8 @@
 ## 用法
 
-来源：[README](https://github.com/timescale/timescaledb/blob/main/README.md)，[TimescaleDB 2.26.4 release](https://github.com/timescale/timescaledb/releases/tag/2.26.4)，[create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/)，[CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/)，[continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/)，[add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/)，[add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
+来源：[README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.27.0 release](https://github.com/timescale/timescaledb/releases/tag/2.27.0), [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/), [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/), [continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/), [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/), [GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
-`timescaledb` 是 PostgreSQL 的时序与事件分析扩展。当前文档重点强调 hypertables、continuous aggregates、automation jobs，以及将较旧 chunks 移入 columnstore。
+`timescaledb` 是用于 time-series 和 event analytics 的 PostgreSQL 扩展。当前文档强调 `CREATE TABLE ... WITH (tsdb.hypertable)`、continuous aggregates、automation jobs，以及将 chunks 移入 columnstore。
 
 ### Hypertables
 
@@ -13,13 +13,26 @@ CREATE TABLE ts_test (
   ts timestamptz NOT NULL,
   id bigint,
   v integer
+) WITH (
+  tsdb.hypertable,
+  tsdb.orderby = 'ts DESC'
 );
-
-SELECT create_hypertable('ts_test', by_range('ts'));
 ```
 
-- `create_hypertable()` 仍可使用，但 API 文档从 TimescaleDB 2.20.0 起将其标记为 old，并建议新用户转向 `CREATE TABLE ... WITH (...)`。
-- 当前 README 也展示了更新模式：`CREATE TABLE ... WITH (tsdb.hypertable)`。
+转换已有 PostgreSQL 表时，使用 generalized hypertable API：
+
+```sql
+CREATE TABLE ts_existing (
+  ts timestamptz NOT NULL,
+  id bigint,
+  v integer
+);
+SELECT create_hypertable('ts_existing', by_range('ts'));
+```
+
+- `CREATE TABLE ... WITH (tsdb.hypertable)` 自 TimescaleDB 2.20.0 起有文档记录，是新建 hypertable 的 best-practice 路径。
+- TimescaleDB 2.23.0 及之后版本中，如果只有一个候选项，第一个 `TIMESTAMP` 或 `TIMESTAMPTZ` 列会自动选为 partition column；多个候选项会使选择变得 ambiguous。
+- `create_hypertable()` 仍可用于转换已有表。
 
 ### Continuous aggregates 与 jobs
 
@@ -42,24 +55,43 @@ SELECT add_continuous_aggregate_policy(
 SELECT add_job('user_defined_action', '1h');
 ```
 
-- Continuous aggregates 要求在 hypertable 的时间维度上使用 `time_bucket(...)`。
-- TimescaleDB 2.13 及以后，real-time aggregates 默认关闭，除非另行配置。
+- Continuous aggregates 要求在 hypertable 的 time dimension 上使用 `time_bucket(...)`。
+- Continuous aggregate 的 `WITH` 子句支持 `timescaledb.materialized_only`；当前 API 默认值是 `TRUE`，因此除非另行配置，否则不会启用 real-time aggregation。
 
 ### Columnstore
 
 ```sql
-ALTER TABLE ts_test SET (
-  timescaledb.enable_columnstore,
-  timescaledb.orderby = 'ts DESC'
+CREATE TABLE crypto_ticks (
+  "time" timestamptz,
+  symbol text,
+  price double precision,
+  day_volume numeric
+) WITH (
+  tsdb.hypertable,
+  tsdb.segmentby = 'symbol',
+  tsdb.orderby = 'time DESC'
 );
 
-CALL add_columnstore_policy('ts_test', after => INTERVAL '1 day');
+CALL add_columnstore_policy('crypto_ticks', after => INTERVAL '60 days');
 ```
 
-- 文档将 `add_columnstore_policy()` 与 `convert_to_columnstore()` 作为当前 API。
-- 较早的压缩函数如 `add_compression_policy()` 已被文档标记为 old API，并由 columnstore 接口取代。
+- `CREATE TABLE ... WITH (tsdb.hypertable)` 默认启用 columnstore，除非设置 `tsdb.columnstore = false`。
+- `add_columnstore_policy()` 替代较旧的 `add_compression_policy()` API，并要求 `after` 或 `created_before` 二选一，不能同时使用。
+- Bloom filters 对新的 columnstore chunks 默认启用。已有 chunks 需要 recompression 后才会拥有 bloom indexes。
+
+### 相关 GUC
+
+```sql
+SET timescaledb.enable_direct_compress_insert = on;
+SET timescaledb.enable_cagg_rewrites = on;
+SET timescaledb.enable_columnar_scan_filter_pushdown = on;
+```
+
+`timescaledb.enable_direct_compress_insert` 和 `timescaledb.enable_direct_compress_copy` 会启用 ingestion 期间 tech-preview direct compression。TimescaleDB 2.27.0 增加 `timescaledb.enable_cagg_rewrites` 和 `timescaledb.cagg_rewrites_debug_info`，并记录 `timescaledb.enable_columnar_scan_filter_pushdown` 默认启用。
 
 ### 注意事项
 
-- TimescaleDB 2.26.4 是 2.26.3 之上的 bug-fix release；release notes 建议升级，但没有为 hypertables、continuous aggregates、jobs 或 columnstore 增加新的 SQL 使用接口。
-- 相关 2.26.4 修复涉及 continuous aggregate 规划与刷新、运行时 chunk exclusion、restore 后 background worker 重启、`orderby` 上的 sparse indexes，以及 compressed chunk merge safety。继续使用上述文档 API，不需要因该 patch release 本身修改 SQL。
+- 本项目 CSV 跟踪 TimescaleDB `2.27.0`，覆盖 PostgreSQL 15-18。
+- TimescaleDB 2.27.0 增加 Hypercore columnstore 性能工作：vectorized filters、用于 `UPDATE`/`DELETE` equality predicates 的 bloom-filter pruning，以及用于 `UPSERT` 的 bloom-filter pruning。
+- 2.27.0 release notes 为受影响的 compressed `int2` bloom sparse indexes 和 v2.26 生成的 composite bloom metadata 列出 backward-incompatible upgrade caveats。
+- 2.27.0 release notes 宣布计划在 2026 年 6 月的 TimescaleDB release 后停止支持 PostgreSQL 15。

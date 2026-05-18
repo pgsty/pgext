@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-There are 510 available PostgreSQL extensions:
+There are 511 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -75,6 +75,7 @@ There are 510 available PostgreSQL extensions:
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full-text search with BM25 ranking |
 | {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | Pinyin romanization and search helpers for PostgreSQL |
 | {{< ext "pg_kazsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | Kazakh full-text search extension for PostgreSQL |
+| {{< ext "psql_bm25s" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL extension for BM25-family lexical retrieval |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Czech Hunspell Dictionary |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | German Hunspell Dictionary |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | en_US Hunspell Dictionary |
@@ -93,7 +94,7 @@ There are 510 available PostgreSQL extensions:
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Postgres for analytics, powered by DuckDB |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Embedded in Postgres |
 | {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
-| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
+| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "OLAP" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | copy data between Postgres and Parquet |

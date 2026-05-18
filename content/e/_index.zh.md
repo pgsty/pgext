@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-共有 510 个可用的 PostgreSQL 扩展：
+共有 511 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -75,6 +75,7 @@ weight: 900
 | {{< ext "pg_textsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | 带有BM25排序的全文搜索扩展 |
 | {{< ext "pg_pinyin" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL 拼音转写与检索辅助扩展 |
 | {{< ext "pg_kazsearch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL 哈萨克语全文检索扩展 |
+| {{< ext "psql_bm25s" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FTS" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | {{< ext "hunspell_cs_cz" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell捷克语全文检索词典 |
 | {{< ext "hunspell_de_de" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell德语全文检索词典 |
 | {{< ext "hunspell_en_us" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "FTS" >}} | Hunspell英语全文检索词典 |
@@ -93,7 +94,7 @@ weight: 900
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | {{< category "OLAP" >}} | PostgreSQL列式存储表 |
-| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
+| {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "OLAP" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB 外部数据源包装器 |
 | {{< ext "pg_parquet" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
