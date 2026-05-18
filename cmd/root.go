@@ -96,18 +96,12 @@ func setupLogging() error {
 
 // initDatabase initializes the database connection
 func initDatabase(cmd *cobra.Command, args []string) error {
-	if dbURL == "" {
-		dbURL = os.Getenv("PGURL")
-	}
-	if dbURL == "" {
-		dbURL = "postgres:///"
-	}
-
 	if err := cli.InitDB(dbURL); err != nil {
 		return fmt.Errorf("failed to connect to database: %w", err)
 	}
 
-	logrus.Debugf("Connected to database: %s", cli.SanitizeURL(dbURL))
+	dbURL = cli.PGURL
+	logrus.Debugf("Connected to database: %s", cli.SanitizeURL(cli.PGURL))
 	return nil
 }
 

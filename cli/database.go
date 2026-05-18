@@ -5,6 +5,7 @@ package cli
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"os"
 	"strconv"
@@ -16,8 +17,9 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/sirupsen/logrus"
-	"database/sql"
 )
+
+const defaultPGURL = "postgres:///data"
 
 var (
 	// DB is the global database connection pool
@@ -30,19 +32,7 @@ var (
 func InitDB(pgurl string) error {
 	ctx := context.Background()
 
-	if pgurl == "" {
-		// Check environment variable
-		if envURL := os.Getenv("PGURL"); envURL != "" {
-			pgurl = envURL
-		} else {
-			pgurl = "postgres:///" // Default to local socket
-		}
-	}
-
-	// If pgurl is a simple database name (no postgres:// prefix), construct connection string
-	if pgurl != "" && pgurl != "postgres:///" && !hasScheme(pgurl) {
-		pgurl = "postgres:///" + pgurl
-	}
+	pgurl = ResolvePGURL(pgurl)
 
 	PGURL = pgurl
 
@@ -79,6 +69,23 @@ func InitDB(pgurl string) error {
 		dbSummary, config.MinConns, config.MaxConns)
 
 	return nil
+}
+
+// ResolvePGURL resolves CLI/env/default database input into a pgx connection string.
+func ResolvePGURL(pgurl string) string {
+	if pgurl == "" {
+		if envURL := os.Getenv("PGURL"); envURL != "" {
+			pgurl = envURL
+		} else {
+			pgurl = defaultPGURL
+		}
+	}
+
+	if isSimpleDatabaseName(pgurl) {
+		return "postgres:///" + pgurl
+	}
+
+	return pgurl
 }
 
 // CloseDB closes the database connection pool
@@ -138,6 +145,14 @@ func Begin(ctx context.Context) (pgx.Tx, error) {
 // hasScheme checks if a string has a URL scheme (postgres://, postgresql://)
 func hasScheme(s string) bool {
 	return strings.HasPrefix(s, "postgres://") || strings.HasPrefix(s, "postgresql://")
+}
+
+func isSimpleDatabaseName(s string) bool {
+	return !hasScheme(s) && !isKeywordValueConnection(s)
+}
+
+func isKeywordValueConnection(s string) bool {
+	return strings.Contains(s, "=")
 }
 
 // getDBSummary returns a human-readable connection summary (database@host)

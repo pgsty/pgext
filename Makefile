@@ -9,7 +9,7 @@
 VERSION=v0.7.2
 default: v d
 
-PGURL="postgres:///vonng"
+PGURL="postgres:///data"
 
 # run next dev server (3000)
 d: dev
@@ -59,6 +59,7 @@ dump:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.category   ORDER BY id)       TO STDOUT CSV HEADER;"  > db/category.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.repository ORDER BY id)       TO STDOUT CSV HEADER;"  > db/repository.csv
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.extension  ORDER BY id)       TO STDOUT CSV HEADER;"  > db/extension.csv
+	psql $(PGURL) -c "COPY (SELECT * FROM pgext.universe  ORDER BY id)       TO STDOUT CSV HEADER;"  > db/universe.csv
 load:
 	cat db/pg.csv         | psql $(PGURL) -c "COPY pgext.pg         FROM STDIN CSV HEADER;"
 	cat db/os.csv         | psql $(PGURL) -c "COPY pgext.os         FROM STDIN CSV HEADER;"
