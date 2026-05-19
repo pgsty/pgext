@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PostgreSQL Slonik">
+  <defs>
+    <linearGradient id="body" x1="26" y1="18" x2="100" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7fc8ff"/>
+      <stop offset="0.55" stop-color="#336791"/>
+      <stop offset="1" stop-color="#18334f"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="36" y1="24" x2="72" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a9dcff"/>
+      <stop offset="1" stop-color="#2d5f89"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#body)" stroke="#eef8ff" stroke-width="5" stroke-linejoin="round" d="M68 12c-21 0-39 14-45 35-5 18 2 38 18 49l-5 15c-1 4 3 7 7 5l18-9c4 1 8 2 12 2 25 0 45-20 45-45 0-30-21-52-50-52Z"/>
+  <path fill="url(#ear)" stroke="#eef8ff" stroke-width="5" stroke-linejoin="round" d="M39 35c-15 9-20 27-12 41 8 13 25 15 37 6 10-8 11-25 1-37-7-9-16-14-26-10Z"/>
+  <path fill="#f2fbff" stroke="#16344f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M80 45c10-3 19 2 23 11 5 11 1 25-10 31-8 5-18 3-23-5-5-9-2-22 7-29"/>
+  <path fill="none" stroke="#16344f" stroke-width="7" stroke-linecap="round" d="M81 66c14 1 24 11 26 25 2 15-7 26-21 28"/>
+  <path fill="none" stroke="#eef8ff" stroke-width="3" stroke-linecap="round" d="M82 66c13 1 22 11 24 24 2 13-7 24-19 27"/>
+  <circle cx="76" cy="40" r="5" fill="#10263d"/>
+  <circle cx="78" cy="38" r="1.7" fill="#fff"/>
+  <path fill="none" stroke="#10263d" stroke-width="4" stroke-linecap="round" d="M55 87c8 5 20 6 29 1"/>
+</svg>
