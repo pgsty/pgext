@@ -224,8 +224,6 @@ shared_preload_libraries = 'block_copy_command'
 CREATE EXTENSION block_copy_command;
 ```
 
-The upstream README lists PostgreSQL 13-18 support.
-
 ### Blocking Rules
 
 By default, non-superusers cannot run `COPY TO` or `COPY FROM`:

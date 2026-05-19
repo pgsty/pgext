@@ -203,7 +203,7 @@ CREATE EXTENSION pg_when;
 
 ## Usage
 
-Sources: [official README](https://github.com/frectonz/pg-when/blob/main/README.md), [official repo](https://github.com/frectonz/pg-when)
+Sources: [README](https://github.com/frectonz/pg-when/blob/main/README.md), [Cargo.toml version 0.1.9](https://github.com/frectonz/pg-when/blob/main/Cargo.toml), [META.json](https://github.com/frectonz/pg-when/blob/main/META.json)
 
 `pg-when` parses a constrained natural-language time expression and returns either a PostgreSQL timestamp with time zone or Unix epoch values at different resolutions.
 
@@ -249,4 +249,5 @@ SELECT when_is('December 31, 2026 at evening');
 ### Caveats
 
 - The extension is aimed at the documented grammar above, not arbitrary English.
-- Upstream distributes ready-made Docker images for PostgreSQL 13 through 18, but the stub should focus on SQL usage rather than container setup.
+- Upstream still lists source/runtime support and Docker image examples from PostgreSQL 13 through 18, but this repo's package matrix is PostgreSQL 14 through 18 only; do not assume Pigsty packages for PostgreSQL 13.
+- Upstream `Cargo.toml` currently pins `pgrx` 0.15.0; this repo's package metadata records a manual `pgrx` 0.17.0 upgrade.

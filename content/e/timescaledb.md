@@ -39,12 +39,12 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 13" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 32" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 38" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 37" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 35" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 13" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 31" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 37" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 45" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 29" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 13" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 22" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 22" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 22" "green" >}} |      {{< bg "MISS" "timescaledb-tsl_14 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 2" "green" >}} |      {{< bg "MISS" "timescaledb-tsl_14 : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 12" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 31" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 37" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 36" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 35" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 12" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 30" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 36" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 44" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 29" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.19.3" "timescaledb-tsl_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 12" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 21" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 21" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 21" "green" >}} |      {{< bg "MISS" "timescaledb-tsl_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "timescaledb-tsl_15 : AVAIL 1" "green" >}} |      {{< bg "MISS" "timescaledb-tsl_14 : MISS 0" "red" >}}      |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-18-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-17-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-16-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-15-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.19.3" "postgresql-14-timescaledb-tsl : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-18-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-17-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-16-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-15-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.19.3" "postgresql-14-timescaledb-tsl : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-18-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-17-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-16-timescaledb-tsl : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.27.0" "postgresql-15-timescaledb-tsl : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-timescaledb-tsl : MISS 0" "red" >}}      |
@@ -64,7 +64,6 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `timescaledb-tsl_18` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 840.5 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_18-2.27.0-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 768.2 KiB | [timescaledb-tsl_18-2.27.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.27.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 825.1 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_18-2.26.4-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 753.8 KiB | [timescaledb-tsl_18-2.26.4-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.26.4-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 750.8 KiB | [timescaledb-tsl_18-2.26.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.26.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 751.5 KiB | [timescaledb-tsl_18-2.26.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.26.2-1PGDG.rhel8.10.x86_64.rpm) |
@@ -76,10 +75,8 @@ width: full
 | `timescaledb-tsl_18` | `2.23.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 733.6 KiB | [timescaledb-tsl_18-2.23.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.23.1-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.23.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 733.3 KiB | [timescaledb-tsl_18-2.23.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-8-x86_64/timescaledb-tsl_18-2.23.0-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 771.3 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_18-2.27.0-1PIGSTY.el8.aarch64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 756.3 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_18-2.26.4-1PIGSTY.el8.aarch64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 763.1 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_18-2.27.0-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 746.1 KiB | [timescaledb-tsl_18-2.27.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.27.0-1PGDG.rhel9.7.x86_64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 748.0 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_18-2.26.4-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 729.6 KiB | [timescaledb-tsl_18-2.26.4-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.26.4-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 728.1 KiB | [timescaledb-tsl_18-2.26.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.26.3-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 727.4 KiB | [timescaledb-tsl_18-2.26.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.26.2-1PGDG.rhel9.7.x86_64.rpm) |
@@ -91,10 +88,8 @@ width: full
 | `timescaledb-tsl_18` | `2.23.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 719.4 KiB | [timescaledb-tsl_18-2.23.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.23.1-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.23.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 715.8 KiB | [timescaledb-tsl_18-2.23.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-9-x86_64/timescaledb-tsl_18-2.23.0-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 727.0 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_18-2.27.0-1PIGSTY.el9.aarch64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 709.8 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_18-2.26.4-1PIGSTY.el9.aarch64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 790.7 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_18-2.27.0-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 770.3 KiB | [timescaledb-tsl_18-2.27.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.27.0-1PGDG.rhel10.1.x86_64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 779.8 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_18-2.26.4-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 758.4 KiB | [timescaledb-tsl_18-2.26.4-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.26.4-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 754.5 KiB | [timescaledb-tsl_18-2.26.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.26.3-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.26.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 757.5 KiB | [timescaledb-tsl_18-2.26.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.26.2-1PGDG.rhel10.1.x86_64.rpm) |
@@ -106,7 +101,6 @@ width: full
 | `timescaledb-tsl_18` | `2.23.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 743.3 KiB | [timescaledb-tsl_18-2.23.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.23.1-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.23.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 741.3 KiB | [timescaledb-tsl_18-2.23.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-10-x86_64/timescaledb-tsl_18-2.23.0-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_18` | `2.27.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 741.7 KiB | [timescaledb-tsl_18-2.27.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_18-2.27.0-1PIGSTY.el10.aarch64.rpm) |
-| `timescaledb-tsl_18` | `2.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 728.2 KiB | [timescaledb-tsl_18-2.26.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_18-2.26.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-timescaledb-tsl` | `2.27.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 749.0 KiB | [postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-timescaledb-tsl` | `2.27.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 685.8 KiB | [postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-timescaledb-tsl` | `2.27.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 758.4 KiB | [postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/timescaledb-tsl/postgresql-18-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb) |
@@ -125,7 +119,6 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `timescaledb-tsl_17` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 839.9 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_17-2.27.0-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 767.8 KiB | [timescaledb-tsl_17-2.27.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.27.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 824.1 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_17-2.26.4-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 752.8 KiB | [timescaledb-tsl_17-2.26.4-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.26.4-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 749.8 KiB | [timescaledb-tsl_17-2.26.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.26.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 750.9 KiB | [timescaledb-tsl_17-2.26.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.26.2-1PGDG.rhel8.10.x86_64.rpm) |
@@ -156,10 +149,8 @@ width: full
 | `timescaledb-tsl_17` | `2.17.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 685.9 KiB | [timescaledb-tsl_17-2.17.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.17.1-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.17.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 683.4 KiB | [timescaledb-tsl_17-2.17.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-8-x86_64/timescaledb-tsl_17-2.17.0-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 770.2 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_17-2.27.0-1PIGSTY.el8.aarch64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 755.6 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_17-2.26.4-1PIGSTY.el8.aarch64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 761.4 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_17-2.27.0-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 742.2 KiB | [timescaledb-tsl_17-2.27.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.27.0-1PGDG.rhel9.7.x86_64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 751.2 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_17-2.26.4-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 727.9 KiB | [timescaledb-tsl_17-2.26.4-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.26.4-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 724.7 KiB | [timescaledb-tsl_17-2.26.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.26.3-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 725.6 KiB | [timescaledb-tsl_17-2.26.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.26.2-1PGDG.rhel9.7.x86_64.rpm) |
@@ -189,10 +180,8 @@ width: full
 | `timescaledb-tsl_17` | `2.17.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 607.4 KiB | [timescaledb-tsl_17-2.17.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.17.1-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.17.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 606.4 KiB | [timescaledb-tsl_17-2.17.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-9-x86_64/timescaledb-tsl_17-2.17.0-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 723.4 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_17-2.27.0-1PIGSTY.el9.aarch64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 710.3 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_17-2.26.4-1PIGSTY.el9.aarch64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 790.3 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_17-2.27.0-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 771.1 KiB | [timescaledb-tsl_17-2.27.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.27.0-1PGDG.rhel10.1.x86_64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 779.2 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_17-2.26.4-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 759.2 KiB | [timescaledb-tsl_17-2.26.4-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.26.4-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 755.1 KiB | [timescaledb-tsl_17-2.26.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.26.3-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.26.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 756.9 KiB | [timescaledb-tsl_17-2.26.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.26.2-1PGDG.rhel10.1.x86_64.rpm) |
@@ -213,7 +202,6 @@ width: full
 | `timescaledb-tsl_17` | `2.20.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 723.4 KiB | [timescaledb-tsl_17-2.20.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.20.2-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.20.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 722.8 KiB | [timescaledb-tsl_17-2.20.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-10-x86_64/timescaledb-tsl_17-2.20.1-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_17` | `2.27.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 741.4 KiB | [timescaledb-tsl_17-2.27.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_17-2.27.0-1PIGSTY.el10.aarch64.rpm) |
-| `timescaledb-tsl_17` | `2.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 728.0 KiB | [timescaledb-tsl_17-2.26.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_17-2.26.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-timescaledb-tsl` | `2.27.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 745.8 KiB | [postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-timescaledb-tsl` | `2.27.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 683.2 KiB | [postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-timescaledb-tsl` | `2.27.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 755.4 KiB | [postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/timescaledb-tsl/postgresql-17-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb) |
@@ -232,7 +220,6 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `timescaledb-tsl_16` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 839.9 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_16-2.27.0-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 768.1 KiB | [timescaledb-tsl_16-2.27.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.27.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 824.1 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_16-2.26.4-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 753.0 KiB | [timescaledb-tsl_16-2.26.4-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.26.4-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 750.0 KiB | [timescaledb-tsl_16-2.26.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.26.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 750.8 KiB | [timescaledb-tsl_16-2.26.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.26.2-1PGDG.rhel8.10.x86_64.rpm) |
@@ -269,10 +256,8 @@ width: full
 | `timescaledb-tsl_16` | `2.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 758.6 KiB | [timescaledb-tsl_16-2.13.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.13.1-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.13.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 757.4 KiB | [timescaledb-tsl_16-2.13.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-8-x86_64/timescaledb-tsl_16-2.13.0-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 770.9 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_16-2.27.0-1PIGSTY.el8.aarch64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 756.2 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_16-2.26.4-1PIGSTY.el8.aarch64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 762.9 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_16-2.27.0-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 741.4 KiB | [timescaledb-tsl_16-2.27.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.27.0-1PGDG.rhel9.7.x86_64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 747.7 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_16-2.26.4-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 728.6 KiB | [timescaledb-tsl_16-2.26.4-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.26.4-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 723.8 KiB | [timescaledb-tsl_16-2.26.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.26.3-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 725.9 KiB | [timescaledb-tsl_16-2.26.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.26.2-1PGDG.rhel9.7.x86_64.rpm) |
@@ -308,10 +293,8 @@ width: full
 | `timescaledb-tsl_16` | `2.13.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 716.4 KiB | [timescaledb-tsl_16-2.13.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.13.1-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.13.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 715.8 KiB | [timescaledb-tsl_16-2.13.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-9-x86_64/timescaledb-tsl_16-2.13.0-1PGDG.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 724.0 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_16-2.27.0-1PIGSTY.el9.aarch64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 710.0 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_16-2.26.4-1PIGSTY.el9.aarch64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 790.4 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_16-2.27.0-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 769.2 KiB | [timescaledb-tsl_16-2.27.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.27.0-1PGDG.rhel10.1.x86_64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 777.2 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_16-2.26.4-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 756.8 KiB | [timescaledb-tsl_16-2.26.4-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.26.4-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 756.0 KiB | [timescaledb-tsl_16-2.26.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.26.3-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.26.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 756.8 KiB | [timescaledb-tsl_16-2.26.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.26.2-1PGDG.rhel10.1.x86_64.rpm) |
@@ -332,7 +315,6 @@ width: full
 | `timescaledb-tsl_16` | `2.20.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 723.1 KiB | [timescaledb-tsl_16-2.20.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.20.2-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.20.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 723.6 KiB | [timescaledb-tsl_16-2.20.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-10-x86_64/timescaledb-tsl_16-2.20.1-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_16` | `2.27.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 742.7 KiB | [timescaledb-tsl_16-2.27.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_16-2.27.0-1PIGSTY.el10.aarch64.rpm) |
-| `timescaledb-tsl_16` | `2.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 728.3 KiB | [timescaledb-tsl_16-2.26.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_16-2.26.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-timescaledb-tsl` | `2.27.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 738.7 KiB | [postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-timescaledb-tsl` | `2.27.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 674.0 KiB | [postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-timescaledb-tsl` | `2.27.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 747.5 KiB | [postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/timescaledb-tsl/postgresql-16-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb) |
@@ -351,7 +333,6 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `timescaledb-tsl_15` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 834.2 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_15-2.27.0-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 762.5 KiB | [timescaledb-tsl_15-2.27.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.27.0-1PGDG.rhel8.10.x86_64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 822.8 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/timescaledb-tsl_15-2.26.4-1PIGSTY.el8.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 751.5 KiB | [timescaledb-tsl_15-2.26.4-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.26.4-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 748.5 KiB | [timescaledb-tsl_15-2.26.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.26.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 749.2 KiB | [timescaledb-tsl_15-2.26.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.26.2-1PGDG.rhel8.10.x86_64.rpm) |
@@ -387,10 +368,8 @@ width: full
 | `timescaledb-tsl_15` | `2.15.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 633.4 KiB | [timescaledb-tsl_15-2.15.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.15.0-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.13.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 768.2 KiB | [timescaledb-tsl_15-2.13.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-8-x86_64/timescaledb-tsl_15-2.13.1-1PGDG.rhel8.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 765.0 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_15-2.27.0-1PIGSTY.el8.aarch64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 754.4 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/timescaledb-tsl_15-2.26.4-1PIGSTY.el8.aarch64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 752.5 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_15-2.27.0-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 732.3 KiB | [timescaledb-tsl_15-2.27.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.27.0-1PGDG.rhel9.7.x86_64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 747.0 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/timescaledb-tsl_15-2.26.4-1PIGSTY.el9.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 725.8 KiB | [timescaledb-tsl_15-2.26.4-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.26.4-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 722.9 KiB | [timescaledb-tsl_15-2.26.3-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.26.3-1PGDG.rhel9.7.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 723.1 KiB | [timescaledb-tsl_15-2.26.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.26.2-1PGDG.rhel9.7.x86_64.rpm) |
@@ -434,10 +413,8 @@ width: full
 | `timescaledb-tsl_15` | `2.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 642.8 KiB | [timescaledb-tsl_15-2.9.2-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.9.2-1.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 642.3 KiB | [timescaledb-tsl_15-2.9.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-9-x86_64/timescaledb-tsl_15-2.9.1-1.rhel9.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 717.2 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_15-2.27.0-1PIGSTY.el9.aarch64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 709.3 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/timescaledb-tsl_15-2.26.4-1PIGSTY.el9.aarch64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 785.3 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_15-2.27.0-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 763.7 KiB | [timescaledb-tsl_15-2.27.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.27.0-1PGDG.rhel10.1.x86_64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 775.1 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/timescaledb-tsl_15-2.26.4-1PIGSTY.el10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 758.4 KiB | [timescaledb-tsl_15-2.26.4-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.26.4-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 755.7 KiB | [timescaledb-tsl_15-2.26.3-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.26.3-1PGDG.rhel10.1.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.26.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 755.2 KiB | [timescaledb-tsl_15-2.26.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.26.2-1PGDG.rhel10.1.x86_64.rpm) |
@@ -458,7 +435,6 @@ width: full
 | `timescaledb-tsl_15` | `2.20.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 721.9 KiB | [timescaledb-tsl_15-2.20.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.20.2-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.20.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 721.6 KiB | [timescaledb-tsl_15-2.20.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/non-free/15/redhat/rhel-10-x86_64/timescaledb-tsl_15-2.20.1-1PGDG.rhel10.x86_64.rpm) |
 | `timescaledb-tsl_15` | `2.27.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 732.0 KiB | [timescaledb-tsl_15-2.27.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_15-2.27.0-1PIGSTY.el10.aarch64.rpm) |
-| `timescaledb-tsl_15` | `2.26.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 726.0 KiB | [timescaledb-tsl_15-2.26.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/timescaledb-tsl_15-2.26.4-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-timescaledb-tsl` | `2.27.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 729.0 KiB | [postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-timescaledb-tsl` | `2.27.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 665.7 KiB | [postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/t/timescaledb-tsl/postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-timescaledb-tsl` | `2.27.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 738.9 KiB | [postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/t/timescaledb-tsl/postgresql-15-timescaledb-tsl_2.27.0-1PIGSTY~trixie_amd64.deb) |
@@ -599,9 +575,9 @@ CREATE EXTENSION timescaledb;
 
 ## Usage
 
-Source: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.26.4 release](https://github.com/timescale/timescaledb/releases/tag/2.26.4), [create_hypertable() API](https://docs.timescale.com/api/latest/hypertable/create_hypertable/), [CREATE TABLE hypertable API](https://docs.timescale.com/api/latest/hypertable/create_table/), [continuous aggregates guide](https://docs.timescale.com/use-timescale/latest/continuous-aggregates/create-a-continuous-aggregate/), [add_job() API](https://docs.timescale.com/api/latest/jobs-automation/add_job/), [add_columnstore_policy() API](https://docs.timescale.com/api/latest/hypercore/add_columnstore_policy/)
+Sources: [README](https://github.com/timescale/timescaledb/blob/main/README.md), [TimescaleDB 2.27.0 release](https://github.com/timescale/timescaledb/releases/tag/2.27.0), [CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/), [create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/), [continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/), [add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/), [GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
-`timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize hypertables, continuous aggregates, automation jobs, and moving older chunks into the columnstore.
+`timescaledb` is a PostgreSQL extension for time-series and event analytics. The current docs emphasize `CREATE TABLE ... WITH (tsdb.hypertable)`, continuous aggregates, automation jobs, and moving chunks into the columnstore.
 
 ### Hypertables
 
@@ -612,13 +588,26 @@ CREATE TABLE ts_test (
   ts timestamptz NOT NULL,
   id bigint,
   v integer
+) WITH (
+  tsdb.hypertable,
+  tsdb.orderby = 'ts DESC'
 );
-
-SELECT create_hypertable('ts_test', by_range('ts'));
 ```
 
-- `create_hypertable()` still works, but the API docs mark it as old since TimescaleDB 2.20.0 and point new users toward `CREATE TABLE ... WITH (...)`.
-- The current README also shows the newer pattern: `CREATE TABLE ... WITH (tsdb.hypertable)`.
+To convert an existing PostgreSQL table, use the generalized hypertable API:
+
+```sql
+CREATE TABLE ts_existing (
+  ts timestamptz NOT NULL,
+  id bigint,
+  v integer
+);
+SELECT create_hypertable('ts_existing', by_range('ts'));
+```
+
+- `CREATE TABLE ... WITH (tsdb.hypertable)` has been documented since TimescaleDB 2.20.0 and is the best-practice path for new hypertables.
+- For TimescaleDB 2.23.0 and later, the first `TIMESTAMP` or `TIMESTAMPTZ` column is selected automatically as the partition column unless more than one candidate makes the choice ambiguous.
+- `create_hypertable()` still works for converting existing tables.
 
 ### Continuous aggregates and jobs
 
@@ -642,23 +631,42 @@ SELECT add_job('user_defined_action', '1h');
 ```
 
 - Continuous aggregates require `time_bucket(...)` on the hypertable's time dimension.
-- In TimescaleDB 2.13 and later, real-time aggregates are disabled by default unless configured otherwise.
+- The continuous aggregate `WITH` clause supports `timescaledb.materialized_only`; the current API default is `TRUE`, so real-time aggregation is not enabled unless configured otherwise.
 
 ### Columnstore
 
 ```sql
-ALTER TABLE ts_test SET (
-  timescaledb.enable_columnstore,
-  timescaledb.orderby = 'ts DESC'
+CREATE TABLE crypto_ticks (
+  "time" timestamptz,
+  symbol text,
+  price double precision,
+  day_volume numeric
+) WITH (
+  tsdb.hypertable,
+  tsdb.segmentby = 'symbol',
+  tsdb.orderby = 'time DESC'
 );
 
-CALL add_columnstore_policy('ts_test', after => INTERVAL '1 day');
+CALL add_columnstore_policy('crypto_ticks', after => INTERVAL '60 days');
 ```
 
-- The docs treat `add_columnstore_policy()` and `convert_to_columnstore()` as the current APIs.
-- Older compression functions such as `add_compression_policy()` are documented as old APIs replaced by the columnstore interface.
+- `CREATE TABLE ... WITH (tsdb.hypertable)` enables columnstore by default unless `tsdb.columnstore = false`.
+- `add_columnstore_policy()` replaces the older `add_compression_policy()` API and requires either `after` or `created_before`, not both.
+- Bloom filters are enabled by default for new columnstore chunks. Existing chunks need recompression before they have bloom indexes.
+
+### Relevant GUCs
+
+```sql
+SET timescaledb.enable_direct_compress_insert = on;
+SET timescaledb.enable_cagg_rewrites = on;
+SET timescaledb.enable_columnar_scan_filter_pushdown = on;
+```
+
+`timescaledb.enable_direct_compress_insert` and `timescaledb.enable_direct_compress_copy` enable tech-preview direct compression during ingestion. TimescaleDB 2.27.0 adds `timescaledb.enable_cagg_rewrites` and `timescaledb.cagg_rewrites_debug_info`, and documents `timescaledb.enable_columnar_scan_filter_pushdown` as enabled by default.
 
 ### Caveats
 
-- TimescaleDB 2.26.4 is a bug-fix release over 2.26.3; the release notes recommend upgrading but do not add a new SQL usage surface for hypertables, continuous aggregates, jobs, or columnstore.
-- Relevant 2.26.4 fixes touch continuous aggregate planning and refresh, runtime chunk exclusion, background worker restart after restore, sparse indexes on `orderby`, and compressed chunk merge safety. Keep using the documented APIs above rather than changing SQL for the patch release itself.
+- This project's CSV tracks TimescaleDB `2.27.0` for PostgreSQL 15-18.
+- TimescaleDB 2.27.0 adds Hypercore columnstore performance work: vectorized filters, bloom-filter pruning for `UPDATE`/`DELETE` equality predicates, and bloom-filter pruning for `UPSERT`.
+- The 2.27.0 release notes list backward-incompatible upgrade caveats for affected compressed `int2` bloom sparse indexes and for composite bloom metadata generated by v2.26.
+- The 2.27.0 release notes announce that the June 2026 TimescaleDB release is planned to be the last version supporting PostgreSQL 15.

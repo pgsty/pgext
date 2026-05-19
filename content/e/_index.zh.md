@@ -93,7 +93,7 @@ weight: 900
 | {{< ext "columnar" "hydra" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 开源列式存储扩展 |
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 由 DuckDB 驱动的数据分析引擎 |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | {{< category "OLAP" >}} | PostgreSQL列式存储表 |
+| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | PostgreSQL列式存储表 |
 | {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 带向量化执行的 colcompress 与 rowcompress 表访问方法 |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "OLAP" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB 外部数据源包装器 |

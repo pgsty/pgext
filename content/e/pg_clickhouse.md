@@ -40,12 +40,12 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "pg_clickhouse_14 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-clickhouse : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-clickhouse : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-clickhouse : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-clickhouse : AVAIL 1" "green" >}} |
@@ -64,17 +64,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_clickhouse_18` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 740.6 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_18-0.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 724.2 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_18-0.2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_clickhouse_18` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 663.6 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_18-0.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 645.0 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_18-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_clickhouse_18` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 745.7 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_18-0.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 729.8 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_18-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_clickhouse_18` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 715.7 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_18-0.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 699.4 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_18-0.2.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_clickhouse_18` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 771.3 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_18-0.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 753.2 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_18-0.2.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_clickhouse_18` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 734.4 KiB | [pg_clickhouse_18-0.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_18-0.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_clickhouse_18` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 717.0 KiB | [pg_clickhouse_18-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_18-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-clickhouse` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 884.6 KiB | [postgresql-18-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-18-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-clickhouse` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 820.2 KiB | [postgresql-18-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-18-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-clickhouse` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 888.2 KiB | [postgresql-18-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-clickhouse/postgresql-18-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb) |
@@ -92,17 +86,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_clickhouse_17` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 740.4 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_17-0.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 723.9 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_17-0.2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_clickhouse_17` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 663.3 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_17-0.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 644.9 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_17-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_clickhouse_17` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 746.1 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_17-0.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 729.6 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_17-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_clickhouse_17` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 715.6 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_17-0.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 699.5 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_17-0.2.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_clickhouse_17` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 771.4 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_17-0.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 753.4 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_17-0.2.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_clickhouse_17` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 734.2 KiB | [pg_clickhouse_17-0.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_17-0.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_clickhouse_17` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 716.5 KiB | [pg_clickhouse_17-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_17-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-clickhouse` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 884.3 KiB | [postgresql-17-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-17-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-clickhouse` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 819.8 KiB | [postgresql-17-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-17-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-clickhouse` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 889.1 KiB | [postgresql-17-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-clickhouse/postgresql-17-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb) |
@@ -120,17 +108,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_clickhouse_16` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 740.6 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_16-0.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 723.7 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_16-0.2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_clickhouse_16` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 663.5 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_16-0.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 644.8 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_16-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_clickhouse_16` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 745.6 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_16-0.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 729.7 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_16-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_clickhouse_16` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 715.4 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_16-0.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 699.4 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_16-0.2.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_clickhouse_16` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 771.3 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_16-0.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 753.1 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_16-0.2.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_clickhouse_16` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 734.2 KiB | [pg_clickhouse_16-0.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_16-0.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_clickhouse_16` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 716.7 KiB | [pg_clickhouse_16-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_16-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-clickhouse` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 884.2 KiB | [postgresql-16-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-16-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-clickhouse` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 819.8 KiB | [postgresql-16-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-16-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-clickhouse` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 888.0 KiB | [postgresql-16-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-clickhouse/postgresql-16-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb) |
@@ -148,17 +130,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_clickhouse_15` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 744.5 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_15-0.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 727.4 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_15-0.2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_clickhouse_15` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 666.1 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_15-0.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 649.8 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_15-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_clickhouse_15` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 749.7 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_15-0.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 732.9 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_15-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_clickhouse_15` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 718.9 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_15-0.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 702.5 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_15-0.2.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_clickhouse_15` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 775.5 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_15-0.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 757.1 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_15-0.2.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_clickhouse_15` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 737.8 KiB | [pg_clickhouse_15-0.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_15-0.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_clickhouse_15` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 720.2 KiB | [pg_clickhouse_15-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_15-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-clickhouse` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 887.2 KiB | [postgresql-15-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-15-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-clickhouse` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 821.5 KiB | [postgresql-15-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-15-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-clickhouse` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 889.7 KiB | [postgresql-15-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-clickhouse/postgresql-15-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb) |
@@ -176,17 +152,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_clickhouse_14` | `0.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 744.7 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_14-0.3.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 727.3 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_clickhouse_14-0.2.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_clickhouse_14` | `0.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 666.0 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_14-0.3.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 649.7 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_clickhouse_14-0.2.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_clickhouse_14` | `0.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 748.9 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_14-0.3.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 732.7 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_clickhouse_14-0.2.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_clickhouse_14` | `0.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 719.1 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_14-0.3.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 702.4 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_clickhouse_14-0.2.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_clickhouse_14` | `0.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 775.2 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_14-0.3.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 757.1 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_clickhouse_14-0.2.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_clickhouse_14` | `0.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 737.7 KiB | [pg_clickhouse_14-0.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_14-0.3.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_clickhouse_14` | `0.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 720.3 KiB | [pg_clickhouse_14-0.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_clickhouse_14-0.2.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-clickhouse` | `0.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 886.5 KiB | [postgresql-14-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-14-clickhouse_0.3.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-clickhouse` | `0.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 821.4 KiB | [postgresql-14-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-clickhouse/postgresql-14-clickhouse_0.3.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-clickhouse` | `0.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 889.9 KiB | [postgresql-14-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-clickhouse/postgresql-14-clickhouse_0.3.0-1PIGSTY~trixie_amd64.deb) |
@@ -250,9 +220,9 @@ CREATE EXTENSION pg_clickhouse;
 
 ## Usage
 
-Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/master/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/master/doc/tutorial.md), [v0.2.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.2.0)
+Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.0), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
 
-`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support.
+`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; Pigsty packages version 0.3.0 for PostgreSQL 14-18.
 
 ### Connect PostgreSQL to ClickHouse
 
@@ -288,19 +258,40 @@ User mapping options:
 
 ```sql
 ALTER EXTENSION pg_clickhouse UPDATE;
-ALTER EXTENSION pg_clickhouse UPDATE TO '0.2';
+ALTER EXTENSION pg_clickhouse UPDATE TO '0.3';
+SELECT pgch_version();
 DROP SERVER taxi_srv CASCADE;
 ```
 
 `IMPORT FOREIGN SCHEMA` also supports `LIMIT TO (...)` and `EXCEPT (...)`. The reference warns that imported mixed-case identifiers are double-quoted in PostgreSQL and must be queried with quotes.
 
+### Query and write notes
+
+`SELECT`, `EXPLAIN`, prepared statements, `INSERT`, and `COPY` can operate on `pg_clickhouse` foreign tables. Use `EXPLAIN (VERBOSE)` to inspect the remote SQL that will be sent to ClickHouse.
+
+```sql
+EXPLAIN (VERBOSE)
+SELECT node_id, count(*)
+FROM logs
+GROUP BY node_id;
+
+INSERT INTO nodes(node_id, name, region, arch, os)
+VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
+```
+
+`COPY` into a foreign table is documented, but upstream notes that it currently uses `INSERT` statements because FDW batch insertion is still future work.
+
 ### Version and pushdown notes
 
-- The reference documents separate library and extension versions; `pgch_version()` was added in release `v0.2.0`.
+- The reference documents separate library and extension versions; `pgch_version()` reports the loaded library version.
 - Patch-only releases update the library without requiring `ALTER EXTENSION`.
-- Release `v0.2.0` added more pushdown for arrays, regex functions, `split_part()`, array operators, and current date/time expressions, plus the `pg_clickhouse.pushdown_regex` setting.
+- Release `v0.3.0` uses SQL version `0.3`; run `ALTER EXTENSION pg_clickhouse UPDATE TO '0.3'` to apply its SQL-level privilege change.
+- Release `v0.3.0` adds pushdown for `re2` functions, `soundex()`, two-argument `levenshtein()`, compatible `to_char(timestamp[tz], fmt)`, selected builtin functions, and JSON/JSONB path operations.
+- ClickHouse `JSON` maps to PostgreSQL `jsonb` or `json`; the binary driver's `JSON` mapping requires ClickHouse 24.10 or later.
+- `pg_clickhouse.pushdown_regex` controls built-in PostgreSQL regex pushdown. Upstream recommends considering the `re2` extension for regex work that should push down directly.
 
 ### Caveats
 
-- This is positioned upstream as an analytics-first extension; the roadmap still lists broader DML support as future work.
+- In 0.3.0, `clickhouse_raw_query(text, text)` is no longer executable by `PUBLIC`; grant it only to roles that need ad-hoc ClickHouse queries.
+- This is positioned upstream as an analytics-first extension; lightweight `DELETE` and `UPDATE` support remain on the roadmap.
 - For full examples, follow the official tutorial, which creates a ClickHouse `taxi` database, imports it through `IMPORT FOREIGN SCHEMA`, and queries the resulting foreign tables.

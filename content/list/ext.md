@@ -123,7 +123,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "columnar" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Hydra Columnar extension |
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Postgres for analytics, powered by DuckDB |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | DuckDB Embedded in Postgres |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | Columnstore Table in Postgres |
+| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Columnstore Table in Postgres |
 | {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | DuckDB Foreign Data Wrapper |

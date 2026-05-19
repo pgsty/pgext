@@ -20,9 +20,9 @@ weight: 300
 | {{< license "PostgreSQL" >}} | 228 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 86 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 81 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
-| {{< license "BSD 3-Clause" >}} | 31 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
+| {{< license "BSD 3-Clause" >}} | 33 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "BSD 2-Clause" >}} | 15 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
+| {{< license "BSD 2-Clause" >}} | 16 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
 | {{< license "GPL-3.0" >}} | 15 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 12 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
@@ -30,11 +30,9 @@ weight: 300
 | {{< license "LGPL-3.0" >}} | 3 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
 | {{< license "BSD 0-Clause" >}} | 2 | [许可证文本](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
-| {{< license "BSD-3-Clause" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "BSD-2-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
-| {{< license "Elastic License 2.0" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -470,7 +468,7 @@ weight: 300
 
 
 
-| {{< license "BSD 3-Clause" >}} | {{< badge content="31 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD 3-Clause" >}} | {{< badge content="33 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-3-clause" icon="scale" >}} | Permissive license with attribution and endorsement restriction clauses. |
 
@@ -496,11 +494,13 @@ weight: 300
 | 6230 | {{< alias "pg_stat_monitor" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
 | 6240 | {{< alias "pg_qualstats" >}} | 收集有关 quals 的统计信息的扩展 |
 | 6250 | {{< alias "pg_store_plans" >}} | 跟踪所有执行的 SQL 语句的计划统计信息 |
+| 6400 | {{< alias "pg_datasentinel" >}} | PostgreSQL 可观测性与活动监控扩展 |
 | 6450 | {{< alias "pg_proctab" "pgnodemx" >}} | 通过SQL接口访问操作系统进程表 |
 | 6500 | {{< alias "pg_sqlog" >}} | 提供访问PostgreSQL日志的SQL接口 |
 | 7020 | {{< alias "pgsodium" >}} | 表数据加密存储 TDE |
 | 7130 | {{< alias "pg_auditor" >}} | 审计数据变更并提供闪回能力 |
 | 7140 | {{< alias "logerrors" >}} | 用于收集日志文件中消息统计信息的函数 |
+| 7400 | {{< alias "pg_command_fw" >}} | PostgreSQL 的 DDL 与 utility 命令防火墙 |
 | 7405 | {{< alias "block_copy_command" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
 | 8600 | {{< alias "mysql_fdw" >}} | MySQL外部数据包装器 |
 | 8740 | {{< alias "hdfs_fdw" >}} | hdfs 外部数据包装器 |
@@ -544,7 +544,7 @@ weight: 300
 
 
 
-| {{< license "BSD 2-Clause" >}} | {{< badge content="15 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD 2-Clause" >}} | {{< badge content="16 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-2-clause" icon="scale" >}} | Permissive license requiring attribution but allowing commercial use. |
 
@@ -552,6 +552,7 @@ weight: 300
 |:---:|:---|:---|
 | 1040 | {{< alias "temporal_tables" >}} | 时态表功能支持 |
 | 1560 | {{< alias "geoip" >}} | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
+| 3230 | {{< alias "pg_regresql" >}} | 用 pg_class 统计信息替代物理文件大小参与查询规划 |
 | 3610 | {{< alias "md5hash" >}} | 提供128位MD5的原生数据类型 |
 | 3810 | {{< alias "acl" "pg_acl" >}} | ACL数据类型 |
 | 4275 | {{< alias "byteamagic" "pg_byteamagic" >}} | 从 PostgreSQL bytea 值检测 MIME 类型与文件格式 |
@@ -686,19 +687,6 @@ weight: 300
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 
-## BSD-3-Clause
-
-
-
-| {{< license "BSD-3-Clause" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 6400 | {{< alias "pg_datasentinel" >}} | PostgreSQL 可观测性与活动监控扩展 |
-| 7400 | {{< alias "pg_command_fw" >}} | PostgreSQL 的 DDL 与 utility 命令防火墙 |
-
 ## MPL-2.0
 
 
@@ -723,23 +711,11 @@ weight: 300
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 
-## BSD-2-Clause
+## ELv2
 
 
 
-| {{< license "BSD-2-Clause" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 3230 | {{< alias "pg_regresql" >}} | 用 pg_class 统计信息替代物理文件大小参与查询规划 |
-
-## Elastic License 2.0
-
-
-
-| {{< license "Elastic License 2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "ELv2" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 

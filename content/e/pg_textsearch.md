@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_trgm" >}} {{< ext "rum" >}} {{< ext "biscuit" >}} {{< ext "fuzzystrmatch" >}} |
 
-> [!Note] bm25 am conflicts with pg_search; must be preloaded via shared_preload_libraries.
+> [!Note] bm25 am conflicts with pg_search and vchord_bm25
 
 
 ## Packages
@@ -40,12 +40,12 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 2" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "pg_textsearch_17 : AVAIL 1" "green" >}} |      {{< bg "MISS" "pg_textsearch_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_textsearch_14 : MISS 0" "red" >}}      |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-textsearch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-textsearch : MISS 0" "red" >}}      |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-textsearch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-textsearch : MISS 0" "red" >}}      |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-18-textsearch : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.2.0" "postgresql-17-textsearch : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-16-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-textsearch : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-textsearch : MISS 0" "red" >}}      |
@@ -64,17 +64,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_textsearch_18` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 127.5 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_textsearch_18-1.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 121.4 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_textsearch_18-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_textsearch_18` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 121.9 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_textsearch_18-1.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 115.5 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_textsearch_18-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_textsearch_18` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.6 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_textsearch_18-1.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 112.5 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_textsearch_18-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_textsearch_18` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 115.7 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_textsearch_18-1.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 109.7 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_textsearch_18-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_textsearch_18` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 121.6 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_textsearch_18-1.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.5 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_textsearch_18-1.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_textsearch_18` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 117.4 KiB | [pg_textsearch_18-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_textsearch_18-1.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_textsearch_18` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 111.7 KiB | [pg_textsearch_18-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_textsearch_18-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-textsearch` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.0 MiB | [postgresql-18-textsearch_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-textsearch` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.0 MiB | [postgresql-18-textsearch_1.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-textsearch` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.0 MiB | [postgresql-18-textsearch_1.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-textsearch/postgresql-18-textsearch_1.2.0-1PIGSTY~trixie_amd64.deb) |
@@ -92,17 +86,11 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_textsearch_17` | `1.2.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 127.5 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_textsearch_17-1.2.0-1PIGSTY.el8.x86_64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 121.3 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pg_textsearch_17-1.1.0-1PIGSTY.el8.x86_64.rpm) |
 | `pg_textsearch_17` | `1.2.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 121.9 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_textsearch_17-1.2.0-1PIGSTY.el8.aarch64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 115.3 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_textsearch_17-1.1.0-1PIGSTY.el8.aarch64.rpm) |
 | `pg_textsearch_17` | `1.2.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 118.5 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_textsearch_17-1.2.0-1PIGSTY.el9.x86_64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 112.3 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_textsearch_17-1.1.0-1PIGSTY.el9.x86_64.rpm) |
 | `pg_textsearch_17` | `1.2.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 115.5 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_textsearch_17-1.2.0-1PIGSTY.el9.aarch64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 109.5 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_textsearch_17-1.1.0-1PIGSTY.el9.aarch64.rpm) |
 | `pg_textsearch_17` | `1.2.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 121.4 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_textsearch_17-1.2.0-1PIGSTY.el10.x86_64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 115.1 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_textsearch_17-1.1.0-1PIGSTY.el10.x86_64.rpm) |
 | `pg_textsearch_17` | `1.2.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 117.2 KiB | [pg_textsearch_17-1.2.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_textsearch_17-1.2.0-1PIGSTY.el10.aarch64.rpm) |
-| `pg_textsearch_17` | `1.1.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 111.8 KiB | [pg_textsearch_17-1.1.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_textsearch_17-1.1.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-textsearch` | `1.2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 1.0 MiB | [postgresql-17-textsearch_1.2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.2.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-textsearch` | `1.2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 1.0 MiB | [postgresql-17-textsearch_1.2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.2.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-textsearch` | `1.2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 1.0 MiB | [postgresql-17-textsearch_1.2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-textsearch/postgresql-17-textsearch_1.2.0-1PIGSTY~trixie_amd64.deb) |
@@ -163,11 +151,11 @@ CREATE EXTENSION pg_textsearch;
 
 ## Usage
 
-Sources: [README v1.1.0](https://github.com/timescale/pg_textsearch/blob/v1.1.0/README.md), [v1.1.0 release notes](https://github.com/timescale/pg_textsearch/releases/tag/v1.1.0)
+Sources: [README v1.2.0](https://github.com/timescale/pg_textsearch/blob/v1.2.0/README.md), [v1.2.0 release notes](https://github.com/timescale/pg_textsearch/releases/tag/v1.2.0)
 
-`pg_textsearch` provides BM25-ranked full-text search for PostgreSQL with a `bm25` access method and the `<@>` scoring operator. Upstream marks `v1.1.0` as production ready.
+`pg_textsearch` provides BM25-ranked full-text search for PostgreSQL with a `bm25` access method and the `<@>` scoring operator. Upstream marks `v1.2.0` as production ready.
 
-`v1.1.0` supports PostgreSQL 17 and 18. Prebuilt release assets are published for both PostgreSQL versions on Linux and macOS. The extension must be loaded through `shared_preload_libraries` before `CREATE EXTENSION`.
+`v1.2.0` supports PostgreSQL 17 and 18. Prebuilt release assets are published for both PostgreSQL versions on Linux and macOS. The extension must be loaded through `shared_preload_libraries` before `CREATE EXTENSION`.
 
 ### Enable the Extension
 
@@ -185,7 +173,7 @@ Install the new binary and restart PostgreSQL before running an extension upgrad
 ALTER EXTENSION pg_textsearch UPDATE;
 ```
 
-Upstream says upgrading from 1.0.0 to 1.1.0 does not require `REINDEX`.
+The `v1.2.0` release adds physical replication support and correctness fixes for update-heavy workloads. Install the matching binary and run the SQL extension upgrade before relying on the new version.
 
 ### Build and Query BM25 Indexes
 
@@ -230,7 +218,7 @@ WITH (text_config = 'english', k1 = 1.5, b = 0.8);
 
 Index options are `text_config` (required), `k1` (default `1.2`), and `b` (default `0.75`). Text search configurations such as `english`, `simple`, `french`, and `german` use PostgreSQL text search configuration names.
 
-`v1.1.0` adds native array input support for `text[]`, `varchar[]`, and `bpchar[]` columns; array elements are concatenated before tokenization.
+The extension supports native array input for `text[]`, `varchar[]`, and `bpchar[]` columns; array elements are concatenated before tokenization.
 
 ```sql
 CREATE TABLE posts (id serial PRIMARY KEY, tags text[]);
@@ -278,7 +266,7 @@ SELECT * FROM bm25_memory_usage();
 
 `bm25_force_merge(index_name)` consolidates all segments into one and is best used after bulk loads, not during steady write traffic. `bm25_memory_usage()` reports shared memory usage for memtables.
 
-Documented `pg_textsearch` GUCs in v1.1.0 include:
+Documented `pg_textsearch` GUCs in v1.2.0 include:
 
 - `pg_textsearch.default_limit`
 - `pg_textsearch.compress_segments`
@@ -287,13 +275,15 @@ Documented `pg_textsearch` GUCs in v1.1.0 include:
 - `pg_textsearch.bulk_load_threshold`
 - `pg_textsearch.memtable_spill_threshold` (deprecated; use `memory_limit` for new deployments)
 
-`pg_textsearch.memory_limit` defaults to `2GB` and caps dynamic shared memory used by memtables. The release notes also call out improved concurrent insert throughput, faster VACUUM via segment alive bitsets, subtransaction cleanup, and parallel build race fixes.
+`pg_textsearch.memory_limit` defaults to `2GB` and caps dynamic shared memory used by memtables. The README also documents `bm25_spill_index(index_name)`, `bm25_dump_index(index_name)`, and `bm25_summarize_index(index_name)` as development or diagnostic helpers.
 
 ### Caveats
 
 - `pg_textsearch` requires `shared_preload_libraries = 'pg_textsearch'` and a PostgreSQL restart before `CREATE EXTENSION`.
+- The `bm25` access method name conflicts with `pg_search` and `vchord_bm25`; avoid installing those BM25 access-method extensions into the same database.
 - Inside PL/pgSQL and stored procedures, the implicit `text <@> 'query'` form does not use planner hooks; upstream says to use `to_bm25query()` with an explicit index name there.
 - Phrase queries are not native because the index stores term frequencies, not term positions; use BM25 ranking plus a post-filter for phrase-like matching.
 - Partial indexes require `to_bm25query()` with the index name because the implicit query form skips them.
 - BM25 indexes on partitioned tables use partition-local statistics, so cross-partition scores may not be directly comparable.
 - Words longer than PostgreSQL's `tsvector` word length limit are ignored during tokenization.
+- `pg_textsearch` uses fixed LWLock tranche IDs 1001-1008; another extension using the same fixed IDs can make wait-event names inaccurate.

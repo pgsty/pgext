@@ -357,4 +357,5 @@ GRANT EXECUTE ON FUNCTION pg_sys_os_info() TO pg_monitor;
 
 - The `monitor_system_stats` role is not dropped automatically when the extension is removed.
 - macOS cannot expose full per-process details for processes owned by other users; those rows may contain only PID and process name.
+- Pigsty metadata tracks `system_stats` 4.0 for PostgreSQL 14-18; the RPM and DEB package names differ (`system_stats_$v` vs. `postgresql-$v-system-stats`).
 - Current v4.0 upstream docs keep the same user-facing function family and security model; the refresh here mainly aligns names, privileges, and platform notes with the current README and SQL script.

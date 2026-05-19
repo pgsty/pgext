@@ -208,9 +208,9 @@ CREATE EXTENSION tzf;
 
 ## Usage
 
-Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/main/README.md), [releases](https://github.com/ringsaturn/pg-tzf/releases), [Cargo.toml](https://github.com/ringsaturn/pg-tzf/blob/main/Cargo.toml)
+Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/main/README.md), [releases](https://github.com/ringsaturn/pg-tzf/releases)
 
-`tzf` is a PostgreSQL extension for fast timezone lookup from longitude and latitude coordinates.
+`tzf` is a PostgreSQL extension for fast timezone lookup from longitude and latitude coordinates. The pgext catalog maps package `pg_tzf` to extension `tzf` and tracks version `0.2.4` for PostgreSQL 14-18.
 
 ### Create the extension
 
@@ -218,7 +218,7 @@ Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/main/README.md), [re
 CREATE EXTENSION tzf;
 ```
 
-The upstream project packages one build artifact per PostgreSQL major version. Current source metadata says extension version `0.2.4`.
+The upstream project packages one build artifact per PostgreSQL major version. Its release page now lists `v0.3.0` after `v0.2.4`; this stub keeps the version and package names aligned with `db/extension.csv`.
 
 ### Functions
 

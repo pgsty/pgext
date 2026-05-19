@@ -293,11 +293,11 @@ CREATE EXTENSION tds_fdw;
 ```
 
 
-
-
 ## Usage
 
-> [tds_fdw: Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server)](https://github.com/tds-fdw/tds_fdw)
+- Sources: [README](https://github.com/tds-fdw/tds_fdw/blob/master/README.md), [foreign server](https://github.com/tds-fdw/tds_fdw/blob/master/ForeignServerCreation.md), [foreign table](https://github.com/tds-fdw/tds_fdw/blob/master/ForeignTableCreation.md), [user mapping](https://github.com/tds-fdw/tds_fdw/blob/master/UserMappingCreation.md), [foreign schema](https://github.com/tds-fdw/tds_fdw/blob/master/ForeignSchemaImporting.md), [variables](https://github.com/tds-fdw/tds_fdw/blob/master/Variables.md)
+
+`tds_fdw` is a foreign data wrapper for querying TDS databases such as Sybase and Microsoft SQL Server through a DB-Library implementation such as FreeTDS.
 
 ### Create Server
 
@@ -348,7 +348,7 @@ SERVER mssql_svr
 OPTIONS (query 'SELECT id, name, SUM(amount) AS total FROM orders GROUP BY id, name');
 ```
 
-**Table Options:** `table_name` or `query` (one required, mutually exclusive), `schema_name`, `match_column_names` (map by name vs position), `use_remote_estimate`, `row_estimate_method` (`execute` or `showplan_all`).
+**Table Options:** `table_name` or `query` (one required, mutually exclusive), `schema_name`, `match_column_names` (map by name vs position), `use_remote_estimate`, `local_tuple_estimate`, `row_estimate_method` (`execute` or `showplan_all`).
 
 **Column Options:** `column_name` (remote column name if different from local).
 
@@ -366,5 +366,22 @@ EXPLAIN (VERBOSE) SELECT * FROM mssql_table WHERE id > 100;
 ```sql
 IMPORT FOREIGN SCHEMA dbo
   FROM SERVER mssql_svr
-  INTO public;
+  INTO public
+  OPTIONS (import_default 'true');
 ```
+
+**Import Options:** `import_default`, `import_not_null`, and `keep_custom_types` for preserving Sybase user-defined types when matching PostgreSQL domains already exist.
+
+### Planner And Runtime Notes
+
+The upstream README says the current version does not support join pushdown or write operations. It does support `WHERE` and column pushdown when `match_column_names` is enabled.
+
+Set diagnostic memory-stat variables with PostgreSQL `SET`, for example:
+
+```sql
+SET tds_fdw.show_finished_memory_stats = 1;
+```
+
+Available variables are `tds_fdw.show_before_row_memory_stats`, `tds_fdw.show_after_row_memory_stats`, and `tds_fdw.show_finished_memory_stats`.
+
+Pigsty package metadata is version `2.0.5` from PGDG for PostgreSQL 14-18. Upstream docs say the FDW should support PostgreSQL 9.2+ and the current build matrix includes PostgreSQL 13-18, but this stub follows the packaged PostgreSQL versions from `db/extension.csv`.

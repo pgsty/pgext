@@ -27,6 +27,8 @@ width: full
 |    **Schemas**    | `bm25_catalog` |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "pg_search" >}} {{< ext "pg_bestmatch" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pgroonga" >}} |
 
+> [!Note] bm25 am conflicts with pg_textsearch and pg_search, build require clang upgrade
+
 
 ## Packages
 

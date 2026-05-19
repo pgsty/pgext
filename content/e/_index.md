@@ -93,7 +93,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "columnar" "hydra" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Hydra Columnar extension |
 | {{< ext "pg_analytics" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Postgres for analytics, powered by DuckDB |
 | {{< ext "pg_duckdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Embedded in Postgres |
-| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="---Ld--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
+| {{< ext "pg_mooncake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Columnstore Table in Postgres |
 | {{< ext "storage_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | colcompress and rowcompress Table Access Methods with vectorized execution |
 | {{< ext "pg_clickhouse" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "OLAP" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
 | {{< ext "duckdb_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "OLAP" >}} | DuckDB Foreign Data Wrapper |

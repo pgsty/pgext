@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `paradedb` |
 |   **See Also**    | {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] bm25 am conflicts with pg_textsearch; PG15-16 require shared_preload_libraries while PG17-18 do not.
+> [!Note] bm25 am conflicts with pg_textsearch and vchord_bm25; PG17-18 do not require shared_preload_libraries
 
 
 ## Packages
