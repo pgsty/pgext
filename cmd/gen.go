@@ -29,6 +29,7 @@ var genCmd = &cobra.Command{
   pgext gen list       # Generate all list pages (ext, pkg, cate, lang, license, catalog)
   pgext gen list lang  # Generate specific list pages, e.g. language list
   pgext gen os         # Generate OS-specific availability page
+  pgext gen matrix     # Generate global OS/PG availability matrix
   pgext gen all        # Generate all content
   pgext gen conf       # Generate Pigsty configuration files`,
 	RunE: defaultToSubcommand(genAllCmd),
@@ -386,6 +387,40 @@ If no argument is provided, generates pages for all active OS distributions.`,
 		if successCount == 0 {
 			return fmt.Errorf("failed to generate any OS pages")
 		}
+		return nil
+	},
+}
+
+// genMatrixCmd generates the global OS x PG package availability matrix.
+var genMatrixCmd = &cobra.Command{
+	Use:   "matrix",
+	Short: "Generate global OS/PG availability matrix",
+	Long: `Generate a package-oriented global availability matrix across all active
+operating systems and PostgreSQL major versions. The output includes Hugo
+content pages plus CSV/JSON data files for later visualization work.`,
+	Example: `  pgext gen matrix
+  pgext gen matrix -d data`,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		ctx := context.Background()
+
+		if err := cli.InitDB(dbURL); err != nil {
+			return fmt.Errorf("failed to initialize database: %w", err)
+		}
+		defer cli.CloseDB()
+
+		logrus.Info("Loading extension data...")
+		cache, err := cli.LoadExtensionCache(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to load extension cache: %w", err)
+		}
+
+		staticDir := filepath.Join(filepath.Dir(outputDir), "static")
+		generator := cli.NewGlobalMatrixGenerator(cache, outputDir, staticDir)
+		if err := generator.Generate(ctx); err != nil {
+			return fmt.Errorf("failed to generate global matrix: %w", err)
+		}
+
+		logrus.Infof("Generated global matrix under %s and %s", filepath.Join(outputDir, "os"), filepath.Join(staticDir, "matrix"))
 		return nil
 	},
 }
@@ -855,7 +890,7 @@ func init() {
 	rootCmd.AddCommand(genCmd)
 
 	// Add subcommands - removed genIndexCmd, added genListCmd
-	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genAllCmd, genConfCmd)
+	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genMatrixCmd, genAllCmd, genConfCmd)
 
 	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
 		"Output directory for generated files")

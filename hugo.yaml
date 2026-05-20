@@ -54,26 +54,34 @@ languages:
           name: "简体中文 ↗"
           url: "/zh"
           weight: 7
+        - identifier: galaxy
+          name: "Extension Galaxy"
+          url: "/galaxy"
+          weight: 8
+        - identifier: matrix
+          name: "Extension Matrix"
+          url: "/os/matrix"
+          weight: 9
         - identifier: pigsty
           name: "Pigsty, PG RDS ↗"
           url: "https://pigsty.io"
-          weight: 8
+          weight: 10
         - identifier: pigsty-doc
           name: "Pigsty v4.2 Doc ↗"
           url: "https://pigsty.io/docs"
-          weight: 9
+          weight: 11
         - identifier: pgext
           name: "PG Extension ↗"
           url: "https://pigsty.io/ext"
-          weight: 10
+          weight: 12
         - identifier: pgexp
           name: "PG Exporter ↗"
           url: "https://pigsty.io/docs/pg_exporter"
-          weight: 11
+          weight: 13
         - identifier: vonng
           name: "Author: Vonng ↗"
           url: "https://vonng.com/en/"
-          weight: 12
+          weight: 14
 
 
   zh:
@@ -96,6 +104,7 @@ languages:
           weight: 4
           params:
             type: search
+
       sidebar:
         - identifier: more
           name: Links
@@ -107,27 +116,37 @@ languages:
           name: "English ↗"
           url: "/"
           weight: 7
+        - identifier: galaxy
+          name: "扩展宇宙"
+          url: "/galaxy"
+          weight: 8
+        - identifier: matrix
+          name: "可用矩阵"
+          url: "/os/matrix"
+          weight: 9
         - identifier: pigsty
           name: "Pigsty, PG RDS ↗"
           url: "https://pigsty.cc"
-          weight: 8
+          weight: 10
         - identifier: pigsty-doc
           name: "Pigsty v4.2文档 ↗"
           url: "https://pigsty.io/docs/"
-          weight: 9
+          weight: 11
         - identifier: pgext
           name: "PG 扩展目录 ↗"
           url: "https://pigsty.cc/ext/"
-          weight: 10
+          weight: 12
         - identifier: pgexp
           name: "PG Exporter ↗"
           url: "https://pigsty.cc/ext"
-          weight: 11
+          weight: 13
         - identifier: vonng
           name: "作者：Vonng ↗"
           url: "https://vonng.com"
-          weight: 12
-
+          weight: 14
+        - name: PG 中文网
+          weight: 2
+          url: "https://pg.center"
 
 
 markup:
