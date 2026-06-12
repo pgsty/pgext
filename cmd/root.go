@@ -45,6 +45,7 @@ var rootCmd = &cobra.Command{
   pgext init                    # setup everything (schema + reload)
   pgext schema [-f]             # initialize pgext schema
   pgext reload                  # reload data: fetch + parse + recap
+  pgext rescan                  # reload data: scan + parse + recap
   pgext fetch                   # get repo metadata from upstream
   pgext scan                    # scan local Pigsty repo metadata
   pgext parse                   # populate apt, dnf, bin tables
@@ -124,6 +125,7 @@ func init() {
 	rootCmd.AddCommand(initCmd)
 	rootCmd.AddCommand(schemaCmd)
 	rootCmd.AddCommand(reloadCmd)
+	rootCmd.AddCommand(rescanCmd)
 
 	rootCmd.AddCommand(fetchCmd)
 	rootCmd.AddCommand(scanCmd)

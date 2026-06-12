@@ -68,6 +68,65 @@ This is equivalent to running:
 	PostRun: closeDatabase,
 }
 
+// rescanCmd reloads package data from local Pigsty repository metadata: scan + parse + recap
+var rescanCmd = &cobra.Command{
+	Use:   "rescan",
+	Short: "reload data from local repo: scan + parse + recap",
+	Long: `Reload package data from local Pigsty repository metadata:
+1. Scan local Pigsty repository metadata
+2. Parse repository data into pgext.bin
+3. Generate availability info pgext.pkg
+
+This is equivalent to running:
+  pgext scan
+  pgext parse
+  pgext recap
+`,
+	Example: `
+  pgext rescan                     # rescan from default ~/pgsty/repo
+  pgext rescan --dir /path/to/repo # rescan from custom directory
+  pgext rescan -p 8                # use 8 parallel workers
+  pgext rescan -k                  # keep temp SQLite files
+`,
+	PreRunE: initDatabase,
+	RunE: func(cmd *cobra.Command, args []string) error {
+		logrus.Info("starting data rescan...")
+
+		// Step 1: Scan local repository metadata
+		logrus.Info("step 1/3: scanning local repository metadata...")
+		scanner, err := cli.NewScanner(cli.ScanOptions{
+			RepoDir:  scanDir,
+			Parallel: workers,
+		})
+		if err != nil {
+			return fmt.Errorf("failed to create scanner: %w", err)
+		}
+		if err := scanner.ScanAll(cmd.Context()); err != nil {
+			return fmt.Errorf("failed to scan: %w", err)
+		}
+
+		// Step 2: Parse repository data
+		logrus.Info("step 2/3: parsing repository data...")
+		parser := cli.NewParser(cli.ParseOptions{
+			Parallel: workers,
+			Keep:     keep,
+		})
+		if err := parser.ParseAll(); err != nil {
+			return fmt.Errorf("failed to parse: %w", err)
+		}
+
+		// Step 3: Generate package matrix
+		logrus.Info("step 3/3: generating package matrix...")
+		if err := cli.RecapMatrix(); err != nil {
+			return fmt.Errorf("failed to recap: %w", err)
+		}
+
+		logrus.Info("rescan completed successfully!")
+		return nil
+	},
+	PostRun: closeDatabase,
+}
+
 // fetchCmd fetches repository metadata
 var fetchCmd = &cobra.Command{
 	Use:   "fetch",
@@ -206,6 +265,11 @@ func init() {
 	// scan command flags
 	scanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
 	scanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
+
+	// rescan command flags
+	rescanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
+	rescanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
+	rescanCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
 }
 
 // loadCmd loads CSV data into tables
