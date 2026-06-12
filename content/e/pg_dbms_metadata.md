@@ -65,10 +65,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_metadata_18` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.8 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_18` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.7 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_metadata_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.9 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_metadata_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.8 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_18` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_18` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_18` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.5 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_metadata_18` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.5 KiB | [pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_metadata_18-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -77,10 +77,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_metadata_17` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.7 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_17` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.6 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_metadata_17` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_17` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.2 KiB | [pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_metadata_17-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_17` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.9 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_metadata_17` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.8 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_17` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_17` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_17` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.5 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_metadata_17` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.5 KiB | [pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_metadata_17-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -89,10 +89,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_metadata_16` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.7 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_16` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.6 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_metadata_16` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_16` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.2 KiB | [pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_metadata_16-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_16` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.9 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_metadata_16` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.8 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_16` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_16` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_16` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.5 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_metadata_16` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.5 KiB | [pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_metadata_16-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -100,10 +100,10 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_metadata_15` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.7 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_metadata_15` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_15` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.2 KiB | [pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_metadata_15-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_15` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.9 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_metadata_15` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.8 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_15` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_15` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_15` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.5 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_metadata_15` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.5 KiB | [pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_metadata_15-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -112,10 +112,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_metadata_14` | `1.0.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 17.7 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_metadata_14` | `1.0.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 17.6 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_metadata_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.3 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_14` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.2 KiB | [pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_metadata_14-1.0.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_metadata_14` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.9 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_metadata_14` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.8 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_metadata_14` | `1.0.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 17.4 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_14` | `1.0.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 17.3 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_metadata_14` | `1.0.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 17.5 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_metadata_14` | `1.0.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 17.5 KiB | [pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_metadata_14-1.0.0-2PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

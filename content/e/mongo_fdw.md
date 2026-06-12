@@ -39,8 +39,8 @@ width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 6" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 5" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 2" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 1" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 1" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 5.5.3" "mongo_fdw_14 : AVAIL 1" "blue" >}} |
 | {{< os "d12.x86_64" >}} |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "mongo_fdw : MISS 0" "red" >}}      |
@@ -62,10 +62,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `mongo_fdw_18` | `5.5.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.8 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/mongo_fdw_18-5.5.3-2PGDG.rhel8.x86_64.rpm) |
 | `mongo_fdw_18` | `5.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 52.4 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/mongo_fdw_18-5.5.3-2PGDG.rhel8.aarch64.rpm) |
-| `mongo_fdw_18` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.4 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/mongo_fdw_18-5.5.3-2PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_18` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.8 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/mongo_fdw_18-5.5.3-2PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_18` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.8 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/mongo_fdw_18-5.5.3-2PGDG.rhel10.x86_64.rpm) |
-| `mongo_fdw_18` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.2 KiB | [mongo_fdw_18-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/mongo_fdw_18-5.5.3-2PGDG.rhel10.aarch64.rpm) |
+| `mongo_fdw_18` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.4 KiB | [mongo_fdw_18-5.5.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/mongo_fdw_18-5.5.3-3PGDG.rhel9.8.x86_64.rpm) |
+| `mongo_fdw_18` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.9 KiB | [mongo_fdw_18-5.5.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/mongo_fdw_18-5.5.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `mongo_fdw_18` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.5 KiB | [mongo_fdw_18-5.5.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/mongo_fdw_18-5.5.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `mongo_fdw_18` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.0 KiB | [mongo_fdw_18-5.5.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/mongo_fdw_18-5.5.3-3PGDG.rhel10.2.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -74,10 +74,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `mongo_fdw_17` | `5.5.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 54.7 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/mongo_fdw_17-5.5.3-2PGDG.rhel8.x86_64.rpm) |
 | `mongo_fdw_17` | `5.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 52.2 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/mongo_fdw_17-5.5.3-2PGDG.rhel8.aarch64.rpm) |
-| `mongo_fdw_17` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.3 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/mongo_fdw_17-5.5.3-2PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_17` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.6 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/mongo_fdw_17-5.5.3-2PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_17` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.7 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/mongo_fdw_17-5.5.3-2PGDG.rhel10.x86_64.rpm) |
-| `mongo_fdw_17` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.1 KiB | [mongo_fdw_17-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/mongo_fdw_17-5.5.3-2PGDG.rhel10.aarch64.rpm) |
+| `mongo_fdw_17` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.2 KiB | [mongo_fdw_17-5.5.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/mongo_fdw_17-5.5.3-3PGDG.rhel9.8.x86_64.rpm) |
+| `mongo_fdw_17` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.7 KiB | [mongo_fdw_17-5.5.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/mongo_fdw_17-5.5.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `mongo_fdw_17` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.4 KiB | [mongo_fdw_17-5.5.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/mongo_fdw_17-5.5.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `mongo_fdw_17` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 51.8 KiB | [mongo_fdw_17-5.5.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/mongo_fdw_17-5.5.3-3PGDG.rhel10.2.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -88,12 +88,10 @@ width: full
 | `mongo_fdw_16` | `5.5.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 74.2 KiB | [mongo_fdw_16-5.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/mongo_fdw_16-5.5.1-1PGDG.rhel8.x86_64.rpm) |
 | `mongo_fdw_16` | `5.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 52.2 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/mongo_fdw_16-5.5.3-2PGDG.rhel8.aarch64.rpm) |
 | `mongo_fdw_16` | `5.5.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 70.7 KiB | [mongo_fdw_16-5.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/mongo_fdw_16-5.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `mongo_fdw_16` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.3 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/mongo_fdw_16-5.5.3-2PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_16` | `5.5.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.2 KiB | [mongo_fdw_16-5.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/mongo_fdw_16-5.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_16` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.6 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/mongo_fdw_16-5.5.3-2PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_16` | `5.5.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 63.2 KiB | [mongo_fdw_16-5.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/mongo_fdw_16-5.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_16` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.6 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/mongo_fdw_16-5.5.3-2PGDG.rhel10.x86_64.rpm) |
-| `mongo_fdw_16` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.1 KiB | [mongo_fdw_16-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/mongo_fdw_16-5.5.3-2PGDG.rhel10.aarch64.rpm) |
+| `mongo_fdw_16` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.2 KiB | [mongo_fdw_16-5.5.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/mongo_fdw_16-5.5.3-3PGDG.rhel9.8.x86_64.rpm) |
+| `mongo_fdw_16` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 50.7 KiB | [mongo_fdw_16-5.5.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/mongo_fdw_16-5.5.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `mongo_fdw_16` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 53.3 KiB | [mongo_fdw_16-5.5.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/mongo_fdw_16-5.5.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `mongo_fdw_16` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 52.3 KiB | [mongo_fdw_16-5.5.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/mongo_fdw_16-5.5.3-3PGDG.rhel10.2.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -106,14 +104,10 @@ width: full
 | `mongo_fdw_15` | `5.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 74.3 KiB | [mongo_fdw_15-5.4.0-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/mongo_fdw_15-5.4.0-1.rhel8.x86_64.rpm) |
 | `mongo_fdw_15` | `5.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.5 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/mongo_fdw_15-5.5.3-2PGDG.rhel8.aarch64.rpm) |
 | `mongo_fdw_15` | `5.5.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.8 KiB | [mongo_fdw_15-5.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/mongo_fdw_15-5.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `mongo_fdw_15` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.4 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/mongo_fdw_15-5.5.3-2PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_15` | `5.5.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 79.2 KiB | [mongo_fdw_15-5.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/mongo_fdw_15-5.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_15` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 75.9 KiB | [mongo_fdw_15-5.5.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/mongo_fdw_15-5.5.0-1.rhel9.x86_64.rpm) |
-| `mongo_fdw_15` | `5.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 76.6 KiB | [mongo_fdw_15-5.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/mongo_fdw_15-5.4.0-1.rhel9.x86_64.rpm) |
-| `mongo_fdw_15` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.2 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/mongo_fdw_15-5.5.3-2PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_15` | `5.5.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 75.7 KiB | [mongo_fdw_15-5.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/mongo_fdw_15-5.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_15` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 56.6 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/mongo_fdw_15-5.5.3-2PGDG.rhel10.x86_64.rpm) |
-| `mongo_fdw_15` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 54.4 KiB | [mongo_fdw_15-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/mongo_fdw_15-5.5.3-2PGDG.rhel10.aarch64.rpm) |
+| `mongo_fdw_15` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.4 KiB | [mongo_fdw_15-5.5.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/mongo_fdw_15-5.5.3-3PGDG.rhel9.8.x86_64.rpm) |
+| `mongo_fdw_15` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.4 KiB | [mongo_fdw_15-5.5.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/mongo_fdw_15-5.5.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `mongo_fdw_15` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 56.3 KiB | [mongo_fdw_15-5.5.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/mongo_fdw_15-5.5.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `mongo_fdw_15` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 54.2 KiB | [mongo_fdw_15-5.5.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/mongo_fdw_15-5.5.3-3PGDG.rhel10.2.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -128,15 +122,10 @@ width: full
 | `mongo_fdw_14` | `5.2.10` | [el8.x86_64](/os/el8.x86_64) | pgdg | 63.7 KiB | [mongo_fdw_14-5.2.10-2.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/mongo_fdw_14-5.2.10-2.rhel8.x86_64.rpm) |
 | `mongo_fdw_14` | `5.5.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 53.5 KiB | [mongo_fdw_14-5.5.3-2PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/mongo_fdw_14-5.5.3-2PGDG.rhel8.aarch64.rpm) |
 | `mongo_fdw_14` | `5.5.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.8 KiB | [mongo_fdw_14-5.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/mongo_fdw_14-5.5.1-1PGDG.rhel8.aarch64.rpm) |
-| `mongo_fdw_14` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.4 KiB | [mongo_fdw_14-5.5.3-2PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.5.3-2PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_14` | `5.5.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 79.0 KiB | [mongo_fdw_14-5.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.5.1-1PGDG.rhel9.x86_64.rpm) |
-| `mongo_fdw_14` | `5.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 75.9 KiB | [mongo_fdw_14-5.5.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.5.0-1.rhel9.x86_64.rpm) |
-| `mongo_fdw_14` | `5.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 76.9 KiB | [mongo_fdw_14-5.4.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.4.0-1.rhel9.x86_64.rpm) |
-| `mongo_fdw_14` | `5.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 72.9 KiB | [mongo_fdw_14-5.3.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.3.0-1.rhel9.x86_64.rpm) |
-| `mongo_fdw_14` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.3 KiB | [mongo_fdw_14-5.5.3-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/mongo_fdw_14-5.5.3-2PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_14` | `5.5.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 75.6 KiB | [mongo_fdw_14-5.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/mongo_fdw_14-5.5.1-1PGDG.rhel9.aarch64.rpm) |
-| `mongo_fdw_14` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 56.6 KiB | [mongo_fdw_14-5.5.3-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/mongo_fdw_14-5.5.3-2PGDG.rhel10.x86_64.rpm) |
-| `mongo_fdw_14` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 54.4 KiB | [mongo_fdw_14-5.5.3-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/mongo_fdw_14-5.5.3-2PGDG.rhel10.aarch64.rpm) |
+| `mongo_fdw_14` | `5.5.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 55.3 KiB | [mongo_fdw_14-5.5.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/mongo_fdw_14-5.5.3-3PGDG.rhel9.8.x86_64.rpm) |
+| `mongo_fdw_14` | `5.5.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 53.4 KiB | [mongo_fdw_14-5.5.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/mongo_fdw_14-5.5.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `mongo_fdw_14` | `5.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 56.3 KiB | [mongo_fdw_14-5.5.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/mongo_fdw_14-5.5.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `mongo_fdw_14` | `5.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 54.2 KiB | [mongo_fdw_14-5.5.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/mongo_fdw_14-5.5.3-3PGDG.rhel10.2.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

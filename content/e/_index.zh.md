@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-共有 511 个可用的 PostgreSQL 扩展：
+共有 522 个可用的 PostgreSQL 扩展：
 
 | 扩展 | PG 版本 | 属性 | 分类 | 描述 |
 |:----------|:------------|:---------:|:---------:|:--------------|
@@ -23,6 +23,7 @@ weight: 900
 | {{< ext "pg_dispatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | 基于 pg_cron 的异步 SQL 分发器 |
 | {{< ext "pg_background" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | 在后台运行 SQL 查询 |
 | {{< ext "pg_when" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | PostgreSQL 自然语言时间解析扩展 |
+| {{< ext "pg_stl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | PostgreSQL 时间序列分析函数 |
 | {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 几何和地理空间扩展 |
 | {{< ext "postgis_topology" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 拓扑空间类型和函数 |
 | {{< ext "postgis_raster" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS 光栅类型和函数 |
@@ -63,6 +64,7 @@ weight: 900
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "RAG" >}} | PG4ML是一个机器学习框架 |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | PostgresML：用SQL运行机器学习算法并训练模型 |
+| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | ParadeDB BM25算法全文检索插件，ES全文检索 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | 使用Groonga，面向所有语言的高速全文检索平台 |
 | {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | PGGroonga 数据库管理模块 |
@@ -102,20 +104,26 @@ weight: 900
 | {{< ext "pg_partman" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 作为过程语言实现的数据库分区 |
 | {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | 使用GPU与NVMe加速大数据处理 |
+| {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | PostgreSQL ORCA 查询优化器扩展 |
+| {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "OLAP" >}} | 交叉表函数 |
-| {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Apache AGE，图数据库扩展 （Deb可用） |
+| {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
 | {{< ext "onesparse" "one_sparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
+| {{< ext "graph" "pggraph" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 图查询与遍历扩展 |
+| {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
 | {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | 通用队列的PG实现 |
 | {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | {{< ext "pgmb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | 一个简单的PostgreSQL消息代理系统 |
 | {{< ext "ulak" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 支持可靠异步投递的 PostgreSQL 事务型 Outbox 扩展 |
+| {{< ext "fsm_core" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 有限状态机工具包 |
 | {{< ext "hll" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | hyperloglog 数据类型 |
 | {{< ext "rum" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | RUM 索引访问方法 |
 | {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | AI驱动的 Postgres SQL 查询生成 |
 | {{< ext "pg_ttl_index" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | 基于TTL索引的自动数据过期清理 |
 | {{< ext "pg_graphql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | PG内的GraphQL支持 |
 | {{< ext "pg_jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | 提供JSON Schema校验能力 |
+| {{< ext "jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL JSON Schema 校验函数 |
 | {{< ext "jsquery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | {{< ext "pg_hint_plan" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 添加强制指定执行计划的能力 |
 | {{< ext "hypopg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
@@ -126,6 +134,7 @@ weight: 900
 | {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 增量维护的物化视图 |
 | {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | 增量处理流式事件 |
 | {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
+| {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL 半环溯源与不确定性管理扩展 |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB，下一代事务处理引擎 |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
@@ -265,7 +274,7 @@ weight: 900
 | {{< ext "pgsql_tweaks" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 一些日常会用到的便利函数与视图 |
 | {{< ext "pg_extra_time" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 一些关于日期与时间的扩展函数 |
 | {{< ext "pgpcre" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | PCRE/Perl风格的正则表达式支持 |
-| {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | 使用 RE2 的 ClickHouse 兼容正则函数 |
+| {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | 使用 RE2 的 ClickHouse 兼容正则函数 |
 | {{< ext "icu_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 访问ICU库提供的函数 |
 | {{< ext "pgqr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | 从数据库中直接生成QR二维码 |
 | {{< ext "envvar" "pg_envvar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | 获取环境变量的函数 |
@@ -288,6 +297,7 @@ weight: 900
 | {{< ext "pg_idkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | 生成各式各样的唯一标识符：UUIDv6, ULID, KSUID |
 | {{< ext "pgx_ulid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FUNC" >}} | ULID数据类型与函数 |
 | {{< ext "pg_uuidv7" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | UUIDv7 支持 |
+| {{< ext "pg_uuid_v8" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | 带隐藏时间戳的 PostgreSQL UUID v8 生成器 |
 | {{< ext "permuteseq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 伪随机数ID置换生成器 |
 | {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 加盐将整型ID转为短字符串ID |
 | {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | 生成带时间戳的加密安全短标识 |
@@ -477,6 +487,7 @@ weight: 900
 | {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 微软DocumentDB的核心API层实现 |
 | {{< ext "documentdb_distributed" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | DocumentDB多节点模式的API层 |
 | {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB扩展RUM索引访问方法 |
+| {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | 类似Oracle的全局临时表功能 |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Oracle兼容的会话变量/常量操作函数 |

@@ -31,6 +31,7 @@ type RepoMetadata struct {
 	ID          string
 	Type        string // rpm or deb
 	MetadataURL string
+	MirrorURL   string
 	CachedETag  sql.NullString
 	CachedTime  sql.NullTime
 	CachedSize  sql.NullInt64
@@ -82,6 +83,7 @@ func NewFetcher(opts FetchOptions) *Fetcher {
 		httpClient: &http.Client{
 			Timeout: 2 * time.Minute,
 			Transport: &http.Transport{
+				Proxy:               http.ProxyFromEnvironment,
 				MaxIdleConns:        100,
 				MaxIdleConnsPerHost: 10,
 				IdleConnTimeout:     90 * time.Second,
@@ -163,14 +165,16 @@ func (f *Fetcher) FetchAll(ctx context.Context) error {
 
 // loadRepositories loads repository configurations from database
 func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error) {
-	urlColumn := "default_meta"
+	urlColumn := "r.default_meta"
+	fallbackColumn := "r.mirror_meta"
 	if f.region == RegionChina {
-		urlColumn = "COALESCE(mirror_meta, default_meta)"
+		urlColumn = "COALESCE(r.mirror_meta, r.default_meta)"
+		fallbackColumn = "r.default_meta"
 	}
 
-	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,d.etag,d.last_modified,d.size 
+	query := fmt.Sprintf(`SELECT r.id,r.type,%s as url,COALESCE(%s, '') as mirror_url,d.etag,d.last_modified,d.size 
 		FROM pgext.repository r LEFT JOIN pgext.repo_data d ON r.id = d.id
-		WHERE %s IS NOT NULL ORDER BY r.id `, urlColumn, urlColumn)
+		WHERE %s IS NOT NULL ORDER BY r.id `, urlColumn, fallbackColumn, urlColumn)
 
 	rows, err := QueryContext(ctx, query)
 	if err != nil {
@@ -185,6 +189,7 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 			&repo.ID,
 			&repo.Type,
 			&repo.MetadataURL,
+			&repo.MirrorURL,
 			&repo.CachedETag,
 			&repo.CachedTime,
 			&repo.CachedSize,
@@ -348,8 +353,21 @@ func (f *Fetcher) fetchOne(ctx context.Context, repo *RepoMetadata) *FetchResult
 
 // fetchRPM fetches RPM repository metadata
 func (f *Fetcher) fetchRPM(ctx context.Context, repo *RepoMetadata) *FetchResult {
+	var errors []string
+	for _, metadataURL := range repo.metadataURLs() {
+		result := f.fetchRPMFromMetadataURL(ctx, repo, metadataURL)
+		if result.Error == nil {
+			return result
+		}
+		errors = append(errors, fmt.Sprintf("%s: %v", metadataURL, result.Error))
+	}
+
+	return &FetchResult{Repository: repo, Error: fmt.Errorf("%s", strings.Join(errors, "; "))}
+}
+
+func (f *Fetcher) fetchRPMFromMetadataURL(ctx context.Context, repo *RepoMetadata, metadataURL string) *FetchResult {
 	// Parse repomd.xml to find primary.sqlite.bz2
-	repomd, err := f.fetchRepoMD(ctx, repo.MetadataURL)
+	repomd, err := f.fetchRepoMD(ctx, metadataURL)
 	if err != nil {
 		return &FetchResult{Repository: repo, Error: fmt.Errorf("fetch repomd.xml: %w", err)}
 	}
@@ -361,7 +379,7 @@ func (f *Fetcher) fetchRPM(ctx context.Context, repo *RepoMetadata) *FetchResult
 	}
 
 	// Construct full URL for primary.sqlite.bz2
-	baseURL := strings.TrimSuffix(repo.MetadataURL, "repodata/repomd.xml")
+	baseURL := strings.TrimSuffix(metadataURL, "repodata/repomd.xml")
 	primaryURL := baseURL + primaryDB.Location.Href
 
 	// Download primary.sqlite.bz2
@@ -406,6 +424,14 @@ func (f *Fetcher) fetchRPM(ctx context.Context, repo *RepoMetadata) *FetchResult
 		LastMod:    lastMod,
 		Updated:    true,
 	}
+}
+
+func (r *RepoMetadata) metadataURLs() []string {
+	urls := []string{r.MetadataURL}
+	if r.MirrorURL != "" && r.MirrorURL != r.MetadataURL {
+		urls = append(urls, r.MirrorURL)
+	}
+	return urls
 }
 
 // fetchDEB fetches DEB repository metadata

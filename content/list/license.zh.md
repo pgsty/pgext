@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 228 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 86 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 81 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "PostgreSQL" >}} | 232 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 89 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 84 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 33 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD 2-Clause" >}} | 16 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -33,6 +33,7 @@ weight: 300
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
 | {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -40,7 +41,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="228 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="232 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -51,6 +52,7 @@ weight: 300
 | 1070 | {{< alias "pg_cron" >}} | 定时任务调度器 |
 | 1090 | {{< alias "pg_later" >}} | 执行查询，并在稍后异步获取查询结果 |
 | 1100 | {{< alias "pg_dispatch" >}} | 基于 pg_cron 的异步 SQL 分发器 |
+| 1130 | {{< alias "pg_stl" >}} | PostgreSQL 时间序列分析函数 |
 | 1690 | {{< alias "earthdistance" >}} | 计算地球表面上的大圆距离 |
 | 1800 | {{< alias "vector" "pgvector" >}} | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
@@ -78,11 +80,12 @@ weight: 300
 | 2480 | {{< alias "pg_parquet" >}} | 在PostgreSQL与本地/S3中的Parquet文件复制数据 |
 | 2510 | {{< alias "pg_partman" >}} | 用于按时间或 ID 管理分区表的扩展 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
+| 2550 | {{< alias "pg_sorted_heap" >}} | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
 | 2660 | {{< alias "pgmq" >}} | 基于Postgres实现类似AWS SQS/RSMQ的消息队列 |
 | 2670 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
-| 2720 | {{< alias "rum" >}} | RUM 索引访问方法 |
-| 2740 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
+| 2710 | {{< alias "rum" >}} | RUM 索引访问方法 |
+| 2730 | {{< alias "pg_ttl_index" >}} | 基于TTL索引的自动数据过期清理 |
 | 2770 | {{< alias "jsquery" >}} | 用于内省 JSONB 数据类型的查询类型 |
 | 2790 | {{< alias "hypopg" >}} | 假设索引，用于创建一个虚拟索引检验执行计划 |
 | 2800 | {{< alias "index_advisor" >}} | 查询索引建议器 |
@@ -91,6 +94,7 @@ weight: 300
 | 2830 | {{< alias "imgsmlr" >}} | 使用Haar小波分析计算图片相似度 |
 | 2840 | {{< alias "pg_ivm" >}} | 增量维护的物化视图 |
 | 2850 | {{< alias "pg_incremental" >}} | 增量处理流式事件 |
+| 2870 | {{< alias "pg_durable" >}} | 在 PostgreSQL 中使用 SQL 定义可持久化、可恢复的长时间运行函数 |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB，下一代事务处理引擎 |
 | 2990 | {{< alias "bloom" >}} | bloom 索引-基于指纹的索引 |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) 可信过程程序语言 |
@@ -154,7 +158,8 @@ weight: 300
 | 4400 | {{< alias "hashlib" "pg_hashlib" >}} | 稳定哈希函数包 |
 | 4440 | {{< alias "shacrypt" >}} | 实现SHA256-CRYPT与SHA512-CRYPT密钥加密算法 |
 | 4450 | {{< alias "cryptint" >}} | 加密INT与BIGINT类型 |
-| 4530 | {{< alias "permuteseq" >}} | 伪随机数ID置换生成器 |
+| 4530 | {{< alias "pg_uuid_v8" >}} | 带隐藏时间戳的 PostgreSQL UUID v8 生成器 |
+| 4540 | {{< alias "permuteseq" >}} | 伪随机数ID置换生成器 |
 | 4590 | {{< alias "snowflake" >}} | Snowflake 风格 64 位 ID 生成与序列工具 |
 | 4640 | {{< alias "omnisketch" >}} | 实现OmniSketch数据结构，实现近似摘要聚合 |
 | 4650 | {{< alias "ddsketch" >}} | 实现DDSketch数据结构，实现在线的Quantile聚合 |
@@ -279,7 +284,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="86 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="89 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -288,17 +293,21 @@ weight: 300
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3六边形层级索引支持 |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | H3与PostGIS集成的扩展插件 |
 | 1870 | {{< alias "pg_tiktoken" >}} | 在PostgreSQL中计算OpenAI使用的Token数 |
+| 1900 | {{< alias "pgmnemo" >}} | 面向 LLM 代理的 PostgreSQL 溯源向量记忆扩展 |
 | 2140 | {{< alias "pg_bestmatch" >}} | 在数据库内生成BM25稀疏向量 |
 | 2160 | {{< alias "pg_tokenizer" >}} | 用于全文检索的分词器 |
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
+| 2540 | {{< alias "pg_orca" >}} | PostgreSQL ORCA 查询优化器扩展 |
 | 2600 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
+| 2630 | {{< alias "graph" "pggraph" >}} | PostgreSQL 图查询与遍历扩展 |
 | 2680 | {{< alias "ulak" >}} | 支持可靠异步投递的 PostgreSQL 事务型 Outbox 扩展 |
-| 2710 | {{< alias "hll" >}} | hyperloglog 数据类型 |
-| 2730 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
-| 2750 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
-| 2760 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
+| 2690 | {{< alias "fsm_core" >}} | PostgreSQL 有限状态机工具包 |
+| 2700 | {{< alias "hll" >}} | hyperloglog 数据类型 |
+| 2720 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |
+| 2740 | {{< alias "pg_graphql" >}} | PG内的GraphQL支持 |
+| 2750 | {{< alias "pg_jsonschema" >}} | 提供JSON Schema校验能力 |
 | 2860 | {{< alias "pg_trickle" >}} | 为 PostgreSQL 18 提供流式表与差分视图维护 |
 | 2940 | {{< alias "omni" "omnigres" >}} | PostgreSQL即平台，Omnigres主扩展与加载器 |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Omnigres 基础会话认证管理模块 |
@@ -351,7 +360,6 @@ weight: 300
 | 4700 | {{< alias "tdigest" >}} | tdigest 聚合函数 |
 | 5070 | {{< alias "pg_cooldown" >}} | 从缓冲区中移除特定关系的页面 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
-| 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 | 6440 | {{< alias "pgnodemx" >}} | 使用SQL查询获取操作系统指标 |
 | 7010 | {{< alias "supautils" >}} | 用于在云环境中确保数据库集群的安全 |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
@@ -376,7 +384,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="81 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="84 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -397,6 +405,8 @@ weight: 300
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
 | 2610 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
+| 2640 | {{< alias "pgrdf" >}} | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
+| 2760 | {{< alias "jsonschema" >}} | PostgreSQL JSON Schema 校验函数 |
 | 2900 | {{< alias "provsql" >}} | PostgreSQL 半环溯源与不确定性管理扩展 |
 | 2920 | {{< alias "pg_cardano" >}} | Cardano相关工具包：加密函数，地址编解码，区块链处理 |
 | 3020 | {{< alias "pllua" >}} | Lua 程序语言 |
@@ -424,8 +434,8 @@ weight: 300
 | 4280 | {{< alias "floatfile" >}} | 将浮点数组存储到文件中而不是堆表中 |
 | 4290 | {{< alias "pg_render" >}} | 使用SQL渲染HTML页面 |
 | 4510 | {{< alias "pgx_ulid" >}} | ULID数据类型与函数 |
-| 4540 | {{< alias "pg_hashids" >}} | 加盐将整型ID转为短字符串ID |
-| 4550 | {{< alias "pg_slug_gen" >}} | 生成带时间戳的加密安全短标识 |
+| 4550 | {{< alias "pg_hashids" >}} | 加盐将整型ID转为短字符串ID |
+| 4560 | {{< alias "pg_slug_gen" >}} | 生成带时间戳的加密安全短标识 |
 | 4570 | {{< alias "sequential_uuids" >}} | 生成连续生成的UUID |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | PG原生TypeID类型与函数 |
 | 4730 | {{< alias "floatvec" >}} | 数组类型数学运算扩展 |
@@ -458,6 +468,7 @@ weight: 300
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | 微软DocumentDB的核心API层实现 |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | DocumentDB多节点模式的API层 |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB扩展RUM索引访问方法 |
+| 9090 | {{< alias "pg_projection" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
 | 9410 | {{< alias "pgmemcache" >}} | 为PG提供memcached兼容接口 |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | 使用 pglogical 执行自动 DDL 部署 |
 | 9530 | {{< alias "logical_ddl" >}} | 在 PostgreSQL 逻辑复制中复制受支持的 DDL 变更 |
@@ -722,4 +733,16 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+
+## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
+
+
+
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 

@@ -6,7 +6,7 @@ comments: false
 weight: 900
 ---
 
-There are 511 available PostgreSQL extensions:
+There are 522 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Category | Description |
 |:----------|:------------|:---------:|:--------:|:--------------|
@@ -23,6 +23,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pg_dispatch" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "TIME" >}} | Asynchronous SQL dispatcher built on pg_cron |
 | {{< ext "pg_background" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Run SQL queries in the background |
 | {{< ext "pg_when" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "TIME" >}} | Natural language time parsing for PostgreSQL |
+| {{< ext "pg_stl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "TIME" >}} | Time series analysis functions for PostgreSQL |
 | {{< ext "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS geometry and geography spatial types and functions |
 | {{< ext "postgis_topology" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS topology spatial types and functions |
 | {{< ext "postgis_raster" "postgis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "GIS" >}} | PostGIS raster types and functions |
@@ -63,6 +64,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "RAG" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
 | {{< ext "pg4ml" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dtr" color="blue" >}} | {{< category "RAG" >}} | Machine learning framework for PostgreSQL |
 | {{< ext "pgml" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "RAG" >}} | Run AL/ML workloads with SQL interface |
+| {{< ext "pgmnemo" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----dt-" color="blue" >}} | {{< category "RAG" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
 | {{< ext "pg_search" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FTS" >}} | Full text search for PostgreSQL using BM25 |
 | {{< ext "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | Use Groonga as index, fast full text search platform for all languages! |
 | {{< ext "pgroonga_database" "pgroonga" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "FTS" >}} | PGroonga database management module |
@@ -102,20 +104,26 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pg_partman" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Extension to manage partitioned tables by time or ID |
 | {{< ext "plproxy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | Database partitioning implemented as procedural language |
 | {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "OLAP" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
+| {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | ORCA query optimizer as a PostgreSQL extension |
+| {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "OLAP" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | {{< category "OLAP" >}} | functions that manipulate whole tables, including crosstab |
-| {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | AGE graph database extension |
+| {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | AGE graph database extension |
 | {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | {{< ext "onesparse" "one_sparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| {{< ext "graph" "pggraph" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Graph database capabilities for PostgreSQL |
+| {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Generic queue for PostgreSQL |
 | {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | {{< ext "pgmb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | A simple PostgreSQL Message Broker system |
 | {{< ext "ulak" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
+| {{< ext "fsm_core" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | Finite state machine toolkit for PostgreSQL |
 | {{< ext "hll" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | type for storing hyperloglog data |
 | {{< ext "rum" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | RUM index access method |
 | {{< ext "pg_ai_query" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | AI-powered SQL query generation for PostgreSQL |
 | {{< ext "pg_ttl_index" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | Automatic data expiration with TTL indexes |
 | {{< ext "pg_graphql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Add in-database GraphQL support |
 | {{< ext "pg_jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "FEAT" >}} | PostgreSQL extension providing JSON Schema validation |
+| {{< ext "jsonschema" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | JSON Schema validation functions for PostgreSQL |
 | {{< ext "jsquery" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | data type for jsonb inspection |
 | {{< ext "pg_hint_plan" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | {{< ext "hypopg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FEAT" >}} | Hypothetical indexes for PostgreSQL |
@@ -126,6 +134,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pg_ivm" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | incremental view maintenance on PostgreSQL |
 | {{< ext "pg_incremental" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | Incremental Processing by Crunchy Data |
 | {{< ext "pg_trickle" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| {{< ext "pg_durable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FEAT" >}} | Durable SQL functions for PostgreSQL |
 | {{< ext "provsql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLdt-" color="blue" >}} | {{< category "FEAT" >}} | Semiring provenance and uncertainty management for PostgreSQL |
 | {{< ext "orioledb" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "FEAT" >}} | OrioleDB, the next generation transactional engine |
 | {{< ext "pg_cardano" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FEAT" >}} | A suite of Cardano-related tools |
@@ -265,7 +274,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pgsql_tweaks" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Some functions and views for daily usage |
 | {{< ext "pg_extra_time" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Some date time functions and operators that, |
 | {{< ext "pgpcre" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Perl Compatible Regular Expression functions |
-| {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | ClickHouse-compatible regex functions using RE2 |
+| {{< ext "re2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-dtr" color="blue" >}} | {{< category "UTIL" >}} | ClickHouse-compatible regex functions using RE2 |
 | {{< ext "icu_ext" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | Access ICU functions |
 | {{< ext "pgqr" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "UTIL" >}} | QR Code generator from PostgreSQL |
 | {{< ext "envvar" "pg_envvar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "UTIL" >}} | Fetch the value of an environment variable |
@@ -288,6 +297,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "pg_idkit" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | multi-tool for generating new/niche universally unique identifiers (ex. UUIDv6, ULID, KSUID) |
 | {{< ext "pgx_ulid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "FUNC" >}} | ulid type and methods |
 | {{< ext "pg_uuidv7" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Create UUIDv7 values in postgres |
+| {{< ext "pg_uuid_v8" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | UUID v8 generator with embedded timestamps for PostgreSQL |
 | {{< ext "permuteseq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | {{< ext "pg_hashids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Short unique id generator for PostgreSQL, using hashids |
 | {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Generate cryptographically secure timestamp-based slugs |
@@ -477,6 +487,7 @@ There are 511 available PostgreSQL extensions:
 | {{< ext "documentdb_core" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Core API surface for DocumentDB on PostgreSQL |
 | {{< ext "documentdb_distributed" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Multi-Node API surface for DocumentDB |
 | {{< ext "documentdb_extended_rum" "documentdb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | DocumentDB Extended RUM index access method |
+| {{< ext "pg_projection" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "SIM" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | {{< ext "orafce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | {{< ext "pgtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Global Temporary Tables feature to PostgreSQL |
 | {{< ext "session_variable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Registration and manipulation of session variables and constants |

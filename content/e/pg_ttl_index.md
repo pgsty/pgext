@@ -2,7 +2,7 @@
 title: "pg_ttl_index"
 linkTitle: "pg_ttl_index"
 description: "Automatic data expiration with TTL indexes"
-weight: 2740
+weight: 2730
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2740** | {{< badge content="pg_ttl_index" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< ext "pg_ttl_index" >}} | `3.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2730** | {{< badge content="pg_ttl_index" link="https://github.com/ibrahimkarimeddin/postgres-extensions-pg_ttl" >}} | {{< ext "pg_ttl_index" >}} | `3.0.0` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

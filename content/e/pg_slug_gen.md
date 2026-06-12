@@ -2,7 +2,7 @@
 title: "pg_slug_gen"
 linkTitle: "pg_slug_gen"
 description: "Generate cryptographically secure timestamp-based slugs"
-weight: 4550
+weight: 4560
 categories: ["FUNC"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4550** | {{< badge content="pg_slug_gen" link="https://github.com/nandoolle/pg_slug_gen" >}} | {{< ext "pg_slug_gen" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **4560** | {{< badge content="pg_slug_gen" link="https://github.com/nandoolle/pg_slug_gen" >}} | {{< ext "pg_slug_gen" >}} | `1.0.0` | {{< category "FUNC" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

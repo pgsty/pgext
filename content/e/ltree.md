@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "ltree_plpython3u" >}} |
+|    **Need By**    | {{< ext "fsm_core" >}} {{< ext "ltree_plpython3u" >}} |
 |   **See Also**    | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "citext" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
 
 

@@ -17,9 +17,9 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 228 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 86 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 81 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "PostgreSQL" >}} | 232 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 89 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "MIT" >}} | 84 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 33 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [License Text](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD 2-Clause" >}} | 16 | [License Text](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -32,6 +32,7 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD 0-Clause" >}} | 2 | [License Text](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "ELv2" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
@@ -40,7 +41,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="228 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="232 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -51,6 +52,7 @@ PostgreSQL extension categorized by license.
 | 1070 | {{< alias "pg_cron" >}} | Job scheduler for PostgreSQL |
 | 1090 | {{< alias "pg_later" >}} | Run queries now and get results later |
 | 1100 | {{< alias "pg_dispatch" >}} | Asynchronous SQL dispatcher built on pg_cron |
+| 1130 | {{< alias "pg_stl" >}} | Time series analysis functions for PostgreSQL |
 | 1690 | {{< alias "earthdistance" >}} | calculate great-circle distances on the surface of the Earth |
 | 1800 | {{< alias "vector" "pgvector" >}} | vector data type and ivfflat and hnsw access methods |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | Advanced indexing for vector data with DiskANN |
@@ -78,11 +80,12 @@ PostgreSQL extension categorized by license.
 | 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
+| 2550 | {{< alias "pg_sorted_heap" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
-| 2720 | {{< alias "rum" >}} | RUM index access method |
-| 2740 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
+| 2710 | {{< alias "rum" >}} | RUM index access method |
+| 2730 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
 | 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2790 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | Query index advisor |
@@ -91,6 +94,7 @@ PostgreSQL extension categorized by license.
 | 2830 | {{< alias "imgsmlr" >}} | Image similarity with haar |
 | 2840 | {{< alias "pg_ivm" >}} | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | Incremental Processing by Crunchy Data |
+| 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
 | 2910 | {{< alias "orioledb" >}} | OrioleDB, the next generation transactional engine |
 | 2990 | {{< alias "bloom" >}} | bloom access method - signature file based index |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
@@ -154,7 +158,8 @@ PostgreSQL extension categorized by license.
 | 4400 | {{< alias "hashlib" "pg_hashlib" >}} | Stable hash functions for Postgres |
 | 4440 | {{< alias "shacrypt" >}} | Implements SHA256-CRYPT and SHA512-CRYPT password encryption schemes |
 | 4450 | {{< alias "cryptint" >}} | Encryption functions for int and bigint values |
-| 4530 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
+| 4530 | {{< alias "pg_uuid_v8" >}} | UUID v8 generator with embedded timestamps for PostgreSQL |
+| 4540 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
 | 4590 | {{< alias "snowflake" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4640 | {{< alias "omnisketch" >}} | data structure for on-line agg of data into approximate sketch |
 | 4650 | {{< alias "ddsketch" >}} | Provides ddsketch aggregate function |
@@ -279,7 +284,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="86 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="89 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -288,17 +293,21 @@ PostgreSQL extension categorized by license.
 | 1530 | {{< alias "h3" "pg_h3" >}} | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | H3 PostGIS integration |
 | 1870 | {{< alias "pg_tiktoken" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
+| 1900 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
 | 2140 | {{< alias "pg_bestmatch" >}} | Generate BM25 sparse vector inside PostgreSQL |
 | 2160 | {{< alias "pg_tokenizer" >}} | Tokenizers for full-text search |
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL extension for BM25-family lexical retrieval |
 | 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2540 | {{< alias "pg_orca" >}} | ORCA query optimizer as a PostgreSQL extension |
 | 2600 | {{< alias "age" >}} | AGE graph database extension |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
+| 2630 | {{< alias "graph" "pggraph" >}} | Graph database capabilities for PostgreSQL |
 | 2680 | {{< alias "ulak" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
-| 2710 | {{< alias "hll" >}} | type for storing hyperloglog data |
-| 2730 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
-| 2750 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
-| 2760 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
+| 2690 | {{< alias "fsm_core" >}} | Finite state machine toolkit for PostgreSQL |
+| 2700 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2720 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
+| 2740 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
+| 2750 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
 | 2860 | {{< alias "pg_trickle" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2940 | {{< alias "omni" "omnigres" >}} | Advanced adapter for Postgres extensions |
 | 2941 | {{< alias "omni_auth" "omnigres" >}} | Basic session management |
@@ -351,7 +360,6 @@ PostgreSQL extension categorized by license.
 | 4700 | {{< alias "tdigest" >}} | Provides tdigest aggregate function. |
 | 5070 | {{< alias "pg_cooldown" >}} | remove buffered pages for specific relations |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
-| 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 | 6440 | {{< alias "pgnodemx" >}} | Capture node OS metrics via SQL queries |
 | 7010 | {{< alias "supautils" >}} | Extension that secures a cluster on a cloud environment |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | Supabase Vault Extension |
@@ -376,7 +384,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "MIT" >}} | {{< badge content="81 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="84 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -397,6 +405,8 @@ PostgreSQL extension categorized by license.
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB Foreign Data Wrapper |
 | 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
+| 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and uncertainty management for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3020 | {{< alias "pllua" >}} | Lua as a procedural language |
@@ -424,8 +434,8 @@ PostgreSQL extension categorized by license.
 | 4280 | {{< alias "floatfile" >}} | Simple file storage for arrays of floats |
 | 4290 | {{< alias "pg_render" >}} | Render HTML in SQL |
 | 4510 | {{< alias "pgx_ulid" >}} | ulid type and methods |
-| 4540 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
-| 4550 | {{< alias "pg_slug_gen" >}} | Generate cryptographically secure timestamp-based slugs |
+| 4550 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
+| 4560 | {{< alias "pg_slug_gen" >}} | Generate cryptographically secure timestamp-based slugs |
 | 4570 | {{< alias "sequential_uuids" >}} | generator of sequential UUIDs |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | Allows to use TypeIDs in Postgres natively |
 | 4730 | {{< alias "floatvec" >}} | Math for vectors (arrays) of numbers |
@@ -458,6 +468,7 @@ PostgreSQL extension categorized by license.
 | 9010 | {{< alias "documentdb_core" "documentdb" >}} | Core API surface for DocumentDB on PostgreSQL |
 | 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | Multi-Node API surface for DocumentDB |
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | DocumentDB Extended RUM index access method |
+| 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9410 | {{< alias "pgmemcache" >}} | memcached interface |
 | 9520 | {{< alias "pgl_ddl_deploy" >}} | automated ddl deployment using pglogical |
 | 9530 | {{< alias "logical_ddl" >}} | Replicate supported DDL changes over PostgreSQL logical replication |
@@ -710,6 +721,18 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
+
+## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
+
+
+
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 
 ## ELv2
 

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4080** | {{< badge content="pg_net" link="https://github.com/supabase/pg_net" >}} | {{< ext "pg_net" >}} | `0.20.2` | {{< category "UTIL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
+| **4080** | {{< badge content="pg_net" link="https://github.com/supabase/pg_net" >}} | {{< ext "pg_net" >}} | `0.20.3` | {{< category "UTIL" >}} | {{< license "Apache-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,36 +28,36 @@ width: full
 |    **Need By**    | {{< ext "pgmb" >}} |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} |
 
-> [!Note] patched 0.9.2 on el8/el9
+> [!Note] 0.20.3 on d12/d13/el10/u24/u26; el8/el9/u22 remain on 0.9.2 due older libcurl.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_net` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.2` | {{< bg "18" "pg_net_18" "green" >}} {{< bg "17" "pg_net_17" "green" >}} {{< bg "16" "pg_net_16" "green" >}} {{< bg "15" "pg_net_15" "green" >}} {{< bg "14" "pg_net_14" "green" >}} | `pg_net_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.2` | {{< bg "18" "postgresql-18-pg-net" "green" >}} {{< bg "17" "postgresql-17-pg-net" "green" >}} {{< bg "16" "postgresql-16-pg-net" "green" >}} {{< bg "15" "postgresql-15-pg-net" "green" >}} {{< bg "14" "postgresql-14-pg-net" "green" >}} | `postgresql-$v-pg-net` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_net` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.3` | {{< bg "18" "pg_net_18" "green" >}} {{< bg "17" "pg_net_17" "green" >}} {{< bg "16" "pg_net_16" "green" >}} {{< bg "15" "pg_net_15" "green" >}} {{< bg "14" "pg_net_14" "green" >}} | `pg_net_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.20.3` | {{< bg "18" "postgresql-18-pg-net" "green" >}} {{< bg "17" "postgresql-17-pg-net" "green" >}} {{< bg "16" "postgresql-16-pg-net" "green" >}} {{< bg "15" "postgresql-15-pg-net" "green" >}} {{< bg "14" "postgresql-14-pg-net" "green" >}} | `postgresql-$v-pg-net` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 3" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 3" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 3" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 3" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_17 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_16 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_15 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_14 : AVAIL 11" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_17 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_16 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_15 : AVAIL 11" "green" >}} | {{< bg "PIGSTY 0.20.2" "pg_net_14 : AVAIL 11" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "pg_net_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "pg_net_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
 | {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.2" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-18-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-17-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-16-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-15-pg-net : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.20.3" "postgresql-14-pg-net : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -69,22 +69,19 @@ width: full
 | `pg_net_18` | `0.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 26.9 KiB | [pg_net_18-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_18-0.9.2-2PIGSTY.el8.aarch64.rpm) |
 | `pg_net_18` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 26.8 KiB | [pg_net_18-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_18-0.9.2-2PIGSTY.el9.x86_64.rpm) |
 | `pg_net_18` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 26.5 KiB | [pg_net_18-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_18-0.9.2-2PIGSTY.el9.aarch64.rpm) |
-| `pg_net_18` | `0.20.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.1 KiB | [pg_net_18-0.20.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_18-0.20.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_net_18` | `0.20.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.9 KiB | [pg_net_18-0.20.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_net_18-0.20.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_18` | `0.19.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [pg_net_18-0.19.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_net_18-0.19.7-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_18` | `0.20.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.4 KiB | [pg_net_18-0.20.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_18-0.20.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_net_18` | `0.20.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.4 KiB | [pg_net_18-0.20.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_net_18-0.20.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_18` | `0.19.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.5 KiB | [pg_net_18-0.19.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_net_18-0.19.7-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-18-pg-net` | `0.20.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.2 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.6 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.3 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 58.8 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb) |
+| `pg_net_18` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.4 KiB | [pg_net_18-0.20.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_18-0.20.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_net_18` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.2 KiB | [pg_net_18-0.20.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_net_18-0.20.3-1PGDG.rhel10.2.x86_64.rpm) |
+| `pg_net_18` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.7 KiB | [pg_net_18-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_18-0.20.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-pg-net` | `0.20.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.3 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.8 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.5 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.0 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-pg-net` | `0.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.5 KiB | [postgresql-18-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-18-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb) |
 | `postgresql-18-pg-net` | `0.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 40.9 KiB | [postgresql-18-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-18-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.2 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.9 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-net` | `0.20.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.8 KiB | [postgresql-18-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-18-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.4 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.2 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.1 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-net` | `0.20.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.0 KiB | [postgresql-18-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-18-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,38 +92,19 @@ width: full
 | `pg_net_17` | `0.9.2` | [el8.aarch64](/os/el8.aarch64) | pigsty | 26.9 KiB | [pg_net_17-0.9.2-2PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pg_net_17-0.9.2-2PIGSTY.el8.aarch64.rpm) |
 | `pg_net_17` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 26.8 KiB | [pg_net_17-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_17-0.9.2-2PIGSTY.el9.x86_64.rpm) |
 | `pg_net_17` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 26.5 KiB | [pg_net_17-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_17-0.9.2-2PIGSTY.el9.aarch64.rpm) |
-| `pg_net_17` | `0.20.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.1 KiB | [pg_net_17-0.20.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_17-0.20.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_net_17` | `0.20.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.9 KiB | [pg_net_17-0.20.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.20.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [pg_net_17-0.19.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.7-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.7 KiB | [pg_net_17-0.19.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.6-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.4 KiB | [pg_net_17-0.19.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.5-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.9 KiB | [pg_net_17-0.19.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.4-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [pg_net_17-0.19.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.3-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.2 KiB | [pg_net_17-0.19.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.19.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.9 KiB | [pg_net_17-0.19.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.19.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.16.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.3 KiB | [pg_net_17-0.16.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.16.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.15.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.0 KiB | [pg_net_17-0.15.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.15.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_17` | `0.20.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.5 KiB | [pg_net_17-0.20.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_17-0.20.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_net_17` | `0.20.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.4 KiB | [pg_net_17-0.20.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.20.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.5 KiB | [pg_net_17-0.19.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.7-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_net_17-0.19.6-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.6-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.8 KiB | [pg_net_17-0.19.5-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.5-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.4 KiB | [pg_net_17-0.19.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.4-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_net_17-0.19.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.3-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.7 KiB | [pg_net_17-0.19.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.1-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.19.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [pg_net_17-0.19.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.19.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.16.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.6 KiB | [pg_net_17-0.16.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.16.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_17` | `0.15.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.4 KiB | [pg_net_17-0.15.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_net_17-0.15.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-17-pg-net` | `0.20.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.2 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.6 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.2 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 58.8 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb) |
+| `pg_net_17` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.3 KiB | [pg_net_17-0.20.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_17-0.20.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_net_17` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.2 KiB | [pg_net_17-0.20.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_net_17-0.20.3-1PGDG.rhel10.2.x86_64.rpm) |
+| `pg_net_17` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.7 KiB | [pg_net_17-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_17-0.20.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-pg-net` | `0.20.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.4 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.7 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.4 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 58.8 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-17-pg-net` | `0.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.1 KiB | [postgresql-17-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb) |
 | `postgresql-17-pg-net` | `0.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.4 KiB | [postgresql-17-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-17-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.3 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 61.9 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-net` | `0.20.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 60.8 KiB | [postgresql-17-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-17-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.5 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.2 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.1 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-net` | `0.20.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.0 KiB | [postgresql-17-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-17-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -140,43 +118,20 @@ width: full
 | `pg_net_16` | `0.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.4 KiB | [pg_net_16-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_net_16-0.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_16` | `0.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 20.6 KiB | [pg_net_16-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_net_16-0.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_16` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 26.8 KiB | [pg_net_16-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_16-0.9.2-2PIGSTY.el9.x86_64.rpm) |
-| `pg_net_16` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.9 KiB | [pg_net_16-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_net_16-0.9.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_net_16` | `0.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 20.9 KiB | [pg_net_16-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_net_16-0.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `pg_net_16` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 26.5 KiB | [pg_net_16-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_16-0.9.2-2PIGSTY.el9.aarch64.rpm) |
-| `pg_net_16` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.4 KiB | [pg_net_16-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_net_16-0.9.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_16` | `0.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.4 KiB | [pg_net_16-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_net_16-0.9.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_16` | `0.20.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.1 KiB | [pg_net_16-0.20.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_16-0.20.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_net_16` | `0.20.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.9 KiB | [pg_net_16-0.20.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.20.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.0 KiB | [pg_net_16-0.19.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.7-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.7 KiB | [pg_net_16-0.19.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.6-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.3 KiB | [pg_net_16-0.19.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.5-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.9 KiB | [pg_net_16-0.19.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.4-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.5 KiB | [pg_net_16-0.19.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.3-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.2 KiB | [pg_net_16-0.19.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.19.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 30.8 KiB | [pg_net_16-0.19.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.19.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.16.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.3 KiB | [pg_net_16-0.16.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.16.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.15.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.1 KiB | [pg_net_16-0.15.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.15.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_16` | `0.20.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.4 KiB | [pg_net_16-0.20.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_16-0.20.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_net_16` | `0.20.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.4 KiB | [pg_net_16-0.20.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.20.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.5 KiB | [pg_net_16-0.19.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.7-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_net_16-0.19.6-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.6-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.8 KiB | [pg_net_16-0.19.5-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.5-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.3 KiB | [pg_net_16-0.19.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.4-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_net_16-0.19.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.3-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.7 KiB | [pg_net_16-0.19.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.1-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.19.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.3 KiB | [pg_net_16-0.19.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.19.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.16.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.6 KiB | [pg_net_16-0.16.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.16.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_16` | `0.15.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.3 KiB | [pg_net_16-0.15.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_net_16-0.15.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-16-pg-net` | `0.20.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.3 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.7 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.4 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 58.9 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb) |
+| `pg_net_16` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 36.4 KiB | [pg_net_16-0.20.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_16-0.20.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_net_16` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.2 KiB | [pg_net_16-0.20.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_net_16-0.20.3-1PGDG.rhel10.2.x86_64.rpm) |
+| `pg_net_16` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 36.6 KiB | [pg_net_16-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_16-0.20.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-pg-net` | `0.20.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.6 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.9 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.6 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.0 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-16-pg-net` | `0.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.2 KiB | [postgresql-16-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pg-net` | `0.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.5 KiB | [postgresql-16-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-16-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.5 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.1 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.1 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-pg-net` | `0.20.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.0 KiB | [postgresql-16-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-16-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 62.7 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 61.3 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 62.3 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-net` | `0.20.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.1 KiB | [postgresql-16-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-16-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -190,43 +145,20 @@ width: full
 | `pg_net_15` | `0.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.5 KiB | [pg_net_15-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_net_15-0.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_15` | `0.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 20.7 KiB | [pg_net_15-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_net_15-0.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_15` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 27.0 KiB | [pg_net_15-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_15-0.9.2-2PIGSTY.el9.x86_64.rpm) |
-| `pg_net_15` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.1 KiB | [pg_net_15-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_net_15-0.9.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_net_15` | `0.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.1 KiB | [pg_net_15-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_net_15-0.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `pg_net_15` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 26.8 KiB | [pg_net_15-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_15-0.9.2-2PIGSTY.el9.aarch64.rpm) |
-| `pg_net_15` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.6 KiB | [pg_net_15-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_net_15-0.9.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_15` | `0.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.6 KiB | [pg_net_15-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_net_15-0.9.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_15` | `0.20.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.6 KiB | [pg_net_15-0.20.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_15-0.20.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_net_15` | `0.20.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 35.0 KiB | [pg_net_15-0.20.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.20.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.9 KiB | [pg_net_15-0.19.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.7-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.6 KiB | [pg_net_15-0.19.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.6-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.2 KiB | [pg_net_15-0.19.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.5-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.9 KiB | [pg_net_15-0.19.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.4-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.5 KiB | [pg_net_15-0.19.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.3-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.2 KiB | [pg_net_15-0.19.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.19.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.9 KiB | [pg_net_15-0.19.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.19.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.16.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.2 KiB | [pg_net_15-0.16.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.16.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.15.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.1 KiB | [pg_net_15-0.15.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.15.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_15` | `0.20.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 37.6 KiB | [pg_net_15-0.20.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_15-0.20.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_net_15` | `0.20.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 34.3 KiB | [pg_net_15-0.20.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.20.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.4 KiB | [pg_net_15-0.19.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.7-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.0 KiB | [pg_net_15-0.19.6-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.6-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.6 KiB | [pg_net_15-0.19.5-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.5-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_net_15-0.19.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.4-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.7 KiB | [pg_net_15-0.19.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.3-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.4 KiB | [pg_net_15-0.19.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.1-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.19.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.1 KiB | [pg_net_15-0.19.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.19.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.16.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.4 KiB | [pg_net_15-0.16.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.16.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_15` | `0.15.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.1 KiB | [pg_net_15-0.15.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_net_15-0.15.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-15-pg-net` | `0.20.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.6 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.0 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.7 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.2 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb) |
+| `pg_net_15` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.8 KiB | [pg_net_15-0.20.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_15-0.20.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_net_15` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 35.7 KiB | [pg_net_15-0.20.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_net_15-0.20.3-1PGDG.rhel10.2.x86_64.rpm) |
+| `pg_net_15` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 37.8 KiB | [pg_net_15-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_15-0.20.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-pg-net` | `0.20.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 61.0 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 59.1 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.8 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.3 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-15-pg-net` | `0.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.3 KiB | [postgresql-15-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-pg-net` | `0.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.6 KiB | [postgresql-15-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-15-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 63.4 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.2 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.1 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-pg-net` | `0.20.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.1 KiB | [postgresql-15-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-15-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 63.6 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.3 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.3 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-net` | `0.20.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.2 KiB | [postgresql-15-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-15-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -240,43 +172,20 @@ width: full
 | `pg_net_14` | `0.9.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 21.5 KiB | [pg_net_14-0.9.2-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_net_14-0.9.2-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_14` | `0.9.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 20.7 KiB | [pg_net_14-0.9.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_net_14-0.9.1-1PGDG.rhel8.aarch64.rpm) |
 | `pg_net_14` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pigsty | 27.0 KiB | [pg_net_14-0.9.2-2PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_net_14-0.9.2-2PIGSTY.el9.x86_64.rpm) |
-| `pg_net_14` | `0.9.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 22.1 KiB | [pg_net_14-0.9.2-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_net_14-0.9.2-1PGDG.rhel9.x86_64.rpm) |
-| `pg_net_14` | `0.9.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 21.1 KiB | [pg_net_14-0.9.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_net_14-0.9.1-1PGDG.rhel9.x86_64.rpm) |
 | `pg_net_14` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pigsty | 26.7 KiB | [pg_net_14-0.9.2-2PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_net_14-0.9.2-2PIGSTY.el9.aarch64.rpm) |
-| `pg_net_14` | `0.9.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 21.6 KiB | [pg_net_14-0.9.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_net_14-0.9.2-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_14` | `0.9.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 20.6 KiB | [pg_net_14-0.9.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_net_14-0.9.1-1PGDG.rhel9.aarch64.rpm) |
-| `pg_net_14` | `0.20.2` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.6 KiB | [pg_net_14-0.20.2-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_14-0.20.2-1PIGSTY.el10.x86_64.rpm) |
-| `pg_net_14` | `0.20.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 34.8 KiB | [pg_net_14-0.20.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.20.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.7` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.9 KiB | [pg_net_14-0.19.7-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.7-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.6 KiB | [pg_net_14-0.19.6-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.6-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.2 KiB | [pg_net_14-0.19.5-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.5-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.4` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.9 KiB | [pg_net_14-0.19.4-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.4-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.4 KiB | [pg_net_14-0.19.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.3-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.2 KiB | [pg_net_14-0.19.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.19.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.8 KiB | [pg_net_14-0.19.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.16.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.2 KiB | [pg_net_14-0.16.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.16.0-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.15.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.1 KiB | [pg_net_14-0.15.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.15.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.20.2` | [el10.aarch64](/os/el10.aarch64) | pigsty | 37.5 KiB | [pg_net_14-0.20.2-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_14-0.20.2-1PIGSTY.el10.aarch64.rpm) |
-| `pg_net_14` | `0.20.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 34.2 KiB | [pg_net_14-0.20.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.20.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.7` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.3 KiB | [pg_net_14-0.19.7-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.7-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.0 KiB | [pg_net_14-0.19.6-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.6-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.5 KiB | [pg_net_14-0.19.5-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.5-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.1 KiB | [pg_net_14-0.19.4-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.4-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.7 KiB | [pg_net_14-0.19.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.3-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.4 KiB | [pg_net_14-0.19.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.1-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.19.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.0 KiB | [pg_net_14-0.19.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.19.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.16.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.4 KiB | [pg_net_14-0.16.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.16.0-1PGDG.rhel10.aarch64.rpm) |
-| `pg_net_14` | `0.15.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.1 KiB | [pg_net_14-0.15.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.15.1-1PGDG.rhel10.aarch64.rpm) |
-| `postgresql-14-pg-net` | `0.20.2` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.3 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.9 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.4 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 58.9 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~trixie_arm64.deb) |
+| `pg_net_14` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 37.8 KiB | [pg_net_14-0.20.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_net_14-0.20.3-1PIGSTY.el10.x86_64.rpm) |
+| `pg_net_14` | `0.20.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 35.7 KiB | [pg_net_14-0.20.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.20.3-1PGDG.rhel10.2.x86_64.rpm) |
+| `pg_net_14` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 37.7 KiB | [pg_net_14-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_14-0.20.3-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-pg-net` | `0.20.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 60.5 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 58.9 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 60.6 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 59.0 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-14-pg-net` | `0.9.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 44.2 KiB | [postgresql-14-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-2PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pg-net` | `0.9.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 43.6 KiB | [postgresql-14-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-net/postgresql-14-pg-net_0.9.2-2PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 63.2 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.0 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.0 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-net` | `0.20.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 61.9 KiB | [postgresql-14-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-14-pg-net_0.20.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 63.4 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 62.2 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 63.1 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-net` | `0.20.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 62.0 KiB | [postgresql-14-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-net/postgresql-14-pg-net_0.20.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -284,7 +193,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/pg_net" title="Repository" icon="github" subtitle="github.com/supabase/pg_net" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_net-0.20.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_net-0.20.3.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -328,76 +237,105 @@ shared_preload_libraries = 'pg_net';
 CREATE EXTENSION pg_net;
 ```
 
-
-
-
 ## Usage
 
-> [pg_net: Async HTTP/HTTPS requests in SQL](https://github.com/supabase/pg_net)
+Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3), [local package metadata](../db/extension.csv).
 
-The extension requires `shared_preload_libraries = 'pg_net'` in `postgresql.conf`.
+`pg_net` queues asynchronous HTTP and HTTPS requests from SQL. It creates the `net` schema, stores pending work in `net.http_request_queue`, and stores responses in `net._http_response`. A background worker uses `libcurl` to process queued requests.
+
+The extension requires `shared_preload_libraries = 'pg_net'` and `libcurl >= 7.83`.
 
 ### GET Request
 
 ```sql
-SELECT net.http_get('https://postman-echo.com/get?foo=bar') AS request_id;
-```
+CREATE EXTENSION pg_net;
 
-With URL-encoded params and headers:
-
-```sql
 SELECT net.http_get(
   'https://postman-echo.com/get',
-  params := '{"foo": "bar"}'::JSONB,
-  headers := '{"API-KEY": "<key>"}'::JSONB
+  params := '{"foo": "bar"}'::jsonb,
+  headers := '{"API-KEY": "<key>"}'::jsonb,
+  timeout_milliseconds := 1000
 ) AS request_id;
 ```
+
+`net.http_get(url, params, headers, timeout_milliseconds)` returns a `bigint` request id.
 
 ### POST Request
 
 ```sql
 SELECT net.http_post(
-    'https://postman-echo.com/post',
-    '{"key": "value"}'::JSONB,
-    headers := '{"Content-Type": "application/json"}'::JSONB
+  'https://postman-echo.com/post',
+  body := '{"key": "value"}'::jsonb,
+  headers := '{"Content-Type": "application/json"}'::jsonb,
+  timeout_milliseconds := 1000
 ) AS request_id;
 ```
 
-Send a table row as payload:
+Send one table row as JSON:
 
 ```sql
-WITH row AS (SELECT * FROM my_table LIMIT 1)
+WITH selected_row AS (
+  SELECT * FROM my_table LIMIT 1
+)
 SELECT net.http_post(
-    'https://api.example.com/data',
-    to_jsonb(row.*)
+  'https://api.example.com/data',
+  to_jsonb(selected_row.*)
 ) AS request_id
-FROM row;
+FROM selected_row;
 ```
 
 ### DELETE Request
 
 ```sql
-SELECT net.http_delete('https://api.example.com/resource/42') AS request_id;
+SELECT net.http_delete(
+  'https://api.example.com/resource/42',
+  timeout_milliseconds := 2000
+) AS request_id;
 ```
+
+`net.http_delete(url, params, headers, timeout_milliseconds)` is `SECURITY DEFINER` and returns a `bigint` request id.
 
 ### Checking Responses
 
 ```sql
-SELECT * FROM net._http_response;
+SELECT id, status_code, content, error_msg, created
+FROM net._http_response
+ORDER BY created DESC;
 ```
+
+Failed requests can be identified from `status_code` and `error_msg`. The response table does not preserve every original request argument, so store request metadata separately if you need retry workflows.
 
 ### Configuration
 
 ```sql
-SHOW pg_net.batch_size;       -- default: 200, max rows processed per cycle
-SHOW pg_net.ttl;              -- default: 6 hours, response retention time
-SHOW pg_net.database_name;    -- default: 'postgres'
+SHOW pg_net.batch_size;
+SHOW pg_net.ttl;
+SHOW pg_net.database_name;
+SHOW pg_net.username;
 ```
 
-Modify settings:
+- `pg_net.batch_size`, default `200`, limits how many queued requests the worker processes per cycle.
+- `pg_net.ttl`, default `6 hours`, controls response retention.
+- `pg_net.database_name`, default `postgres`, selects the database where the worker runs.
+- `pg_net.username`, default NULL, selects the worker connection user; NULL uses the bootstrap user.
+
+Settings can be changed in `postgresql.conf` or with `ALTER SYSTEM`:
 
 ```sql
 ALTER SYSTEM SET pg_net.ttl TO '1 hour';
 ALTER SYSTEM SET pg_net.batch_size TO 500;
 SELECT pg_reload_conf();
 ```
+
+Changing `pg_net.database_name` or `pg_net.username` requires restarting the worker:
+
+```sql
+SELECT net.worker_restart();
+```
+
+### Caveats
+
+- Pigsty metadata carries `pg_net` 0.20.3 for PostgreSQL 14-18, but local package notes say 0.20.3 is available only on `d12`, `d13`, `el10`, `u24`, and `u26`; `el8`, `el9`, and `u22` remain on 0.9.2 because of older `libcurl`.
+- Upstream documents PostgreSQL 12+ compatibility, but this catalog row is packaged for PostgreSQL 14-18.
+- `pg_net` supports only one database per cluster through `pg_net.database_name`.
+- v0.20.3 is a worker/maintenance release: it flushes pgstat counters for autovacuum visibility and reports worker activity to `pg_stat_activity`; no new SQL request API was documented.

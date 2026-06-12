@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2190** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.2` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2190** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.4` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,9 +34,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -53,8 +53,8 @@ width: full
 | {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
 | {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-18-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-17-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-16-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-15-pinyin : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.4" "postgresql-14-pinyin : AVAIL 1" "green" >}} |
 | {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pinyin : MISS 0" "red" >}}      |
 | {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pinyin : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pinyin : MISS 0" "red" >}}      |
 
@@ -76,8 +76,8 @@ width: full
 | `postgresql-18-pinyin` | `0.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.2 MiB | [postgresql-18-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-18-pinyin` | `0.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.4 MiB | [postgresql-18-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-18-pinyin` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.3 MiB | [postgresql-18-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-pinyin` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.4 MiB | [postgresql-18-pinyin_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-pinyin` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.3 MiB | [postgresql-18-pinyin_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pinyin` | `0.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.8 MiB | [postgresql-18-pinyin_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pinyin` | `0.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.7 MiB | [postgresql-18-pinyin_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-18-pinyin_0.0.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -96,8 +96,8 @@ width: full
 | `postgresql-17-pinyin` | `0.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.2 MiB | [postgresql-17-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-17-pinyin` | `0.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.4 MiB | [postgresql-17-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-17-pinyin` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.3 MiB | [postgresql-17-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-pinyin` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.4 MiB | [postgresql-17-pinyin_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-pinyin` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.3 MiB | [postgresql-17-pinyin_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pinyin` | `0.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.8 MiB | [postgresql-17-pinyin_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pinyin` | `0.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.7 MiB | [postgresql-17-pinyin_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-17-pinyin_0.0.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -116,8 +116,8 @@ width: full
 | `postgresql-16-pinyin` | `0.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.2 MiB | [postgresql-16-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-16-pinyin` | `0.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.4 MiB | [postgresql-16-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-16-pinyin` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.3 MiB | [postgresql-16-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-pinyin` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.4 MiB | [postgresql-16-pinyin_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-pinyin` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.3 MiB | [postgresql-16-pinyin_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pinyin` | `0.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.8 MiB | [postgresql-16-pinyin_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pinyin` | `0.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.7 MiB | [postgresql-16-pinyin_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-16-pinyin_0.0.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -136,8 +136,8 @@ width: full
 | `postgresql-15-pinyin` | `0.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.2 MiB | [postgresql-15-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-15-pinyin` | `0.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.4 MiB | [postgresql-15-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-15-pinyin` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.3 MiB | [postgresql-15-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-pinyin` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.4 MiB | [postgresql-15-pinyin_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-pinyin` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.3 MiB | [postgresql-15-pinyin_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pinyin` | `0.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.8 MiB | [postgresql-15-pinyin_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pinyin` | `0.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.7 MiB | [postgresql-15-pinyin_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-15-pinyin_0.0.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -156,8 +156,8 @@ width: full
 | `postgresql-14-pinyin` | `0.0.2` | [d13.aarch64](/os/d13.aarch64) | pigsty | 1.2 MiB | [postgresql-14-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.2-1PIGSTY~trixie_arm64.deb) |
 | `postgresql-14-pinyin` | `0.0.2` | [u22.x86_64](/os/u22.x86_64) | pigsty | 1.4 MiB | [postgresql-14-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.2-1PIGSTY~jammy_amd64.deb) |
 | `postgresql-14-pinyin` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 1.3 MiB | [postgresql-14-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.2-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-pinyin` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1.4 MiB | [postgresql-14-pinyin_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.2-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-pinyin` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 1.3 MiB | [postgresql-14-pinyin_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pinyin` | `0.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 2.8 MiB | [postgresql-14-pinyin_0.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pinyin` | `0.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 2.7 MiB | [postgresql-14-pinyin_0.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-pinyin/postgresql-14-pinyin_0.0.4-1PIGSTY~noble_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -165,7 +165,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aiyou178/pg_pinyin" title="Repository" icon="github" subtitle="github.com/aiyou178/pg_pinyin" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pinyin-0.0.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pinyin-0.0.4.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -202,13 +202,11 @@ pig install pg_pinyin -v 14;   # install for PG 14
 CREATE EXTENSION pg_pinyin;
 ```
 
-
-
 ## Usage
 
-> [pg_pinyin: Pinyin romanization and search helpers for PostgreSQL](https://github.com/aiyou178/pg_pinyin)
+> Sources: [pg_pinyin upstream README](https://github.com/aiyou178/pg_pinyin), [Chinese README](https://github.com/aiyou178/pg_pinyin/blob/main/README.zh-CN.md), [local metadata](../db/extension.csv).
 
-Convert Chinese characters to Pinyin romanization for search and indexing. Works well with `pg_trgm` for fuzzy Pinyin search or `pg_search` for word-based search.
+`pg_pinyin` converts Chinese text to Pinyin, either character by character or by word. It is useful for generated search columns, trigram search, and `pg_search` BM25 queries that need Pinyin input.
 
 ```sql
 CREATE EXTENSION pg_pinyin;
@@ -219,9 +217,13 @@ CREATE EXTENSION pg_pinyin;
 | Function | Description |
 |----------|-------------|
 | `pinyin_char_romanize(text)` | Character-level Pinyin romanization |
-| `pinyin_char_romanize(text, suffix)` | With custom dictionary suffix |
+| `pinyin_char_romanize(text, suffix text)` | Character-level romanization with a custom dictionary suffix |
 | `pinyin_word_romanize(text)` | Word-level Pinyin romanization |
-| `pinyin_word_romanize(text, suffix)` | With custom dictionary suffix |
+| `pinyin_word_romanize(text, suffix text)` | Word-level romanization with a custom dictionary suffix |
+| `pinyin_word_romanize(tokenizer_input anyelement)` | Word-level romanization from a `pg_search` tokenizer input such as `name::pdb.icu::text[]` |
+| `pinyin_word_romanize(tokenizer_input anyelement, suffix text)` | Tokenizer-input romanization with a custom dictionary suffix |
+| `pinyin_regex_phrase(text, slope integer DEFAULT NULL, max_expansions integer DEFAULT NULL, generated_pinyin boolean DEFAULT false)` | `pg_search` query helper returning `pdb.query`, available when `pg_search` was enabled before `CREATE EXTENSION pg_pinyin` |
+| `pinyin_regex_phrase_patterns(text, generated_pinyin boolean DEFAULT false)` | Internal helper returning regex phrase tokens as `text[]` |
 
 ### Generated Column + Trigram Search
 
@@ -241,9 +243,39 @@ INSERT INTO voice (description) VALUES ('郑爽ABC');
 SELECT id, description, pinyin FROM voice;
 ```
 
-### Custom Dictionary
+### Word Tokenization + pg_search
 
-Provide custom dictionary tables in schema `pinyin` with a suffix:
+For word-oriented search, use `pinyin_word_romanize`. When `pg_search` is available, it can consume tokenizer input such as `pdb.icu::text[]`.
+
+```sql
+CREATE EXTENSION IF NOT EXISTS pg_search;
+CREATE EXTENSION IF NOT EXISTS pg_pinyin;
+
+CREATE TABLE voice (
+  id bigserial PRIMARY KEY,
+  description text NOT NULL,
+  pinyin text GENERATED ALWAYS AS (public.pinyin_word_romanize(description)) STORED
+);
+
+CREATE INDEX voice_pinyin_bm25_idx
+ON voice
+USING bm25 (id, pinyin)
+WITH (key_field='id');
+
+SELECT *
+FROM voice
+WHERE pinyin @@@ public.pinyin_regex_phrase('zhengshuang');
+
+SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[]);
+```
+
+`pinyin_regex_phrase` has return type `pdb.query`, so `pg_search` must be enabled in the database before `pg_pinyin` is created. If `pg_pinyin` is created first, upstream documents that the romanization functions are installed, but `pinyin_regex_phrase` is installed as an error stub with a clear exception.
+
+### Dictionary Tables
+
+The extension seeds bundled dictionary tables under schema `pinyin` during `CREATE EXTENSION pg_pinyin`; no separate data-load step is needed for normal extension usage. The bundled data covers character mappings, word tokens, and word mappings.
+
+Provide custom dictionary tables in schema `pinyin` with a suffix. Calls using that suffix merge the base dictionary with the suffix tables, and suffix entries take priority.
 
 ```sql
 CREATE TABLE IF NOT EXISTS pinyin.pinyin_mapping_suffix1 (
@@ -260,6 +292,10 @@ INSERT INTO pinyin.pinyin_mapping_suffix1 (character, pinyin)
 VALUES ('郑', '|zhengx|')
 ON CONFLICT (character) DO UPDATE SET pinyin = EXCLUDED.pinyin;
 
--- Use custom dictionary
+INSERT INTO pinyin.pinyin_words_suffix1 (word, pinyin)
+VALUES ('郑爽', '|zhengx| |shuangx|')
+ON CONFLICT (word) DO UPDATE SET pinyin = EXCLUDED.pinyin;
+
 SELECT public.pinyin_char_romanize('郑爽ABC', '_suffix1');
+SELECT public.pinyin_word_romanize('郑爽ABC'::pdb.icu::text[], '_suffix1');
 ```

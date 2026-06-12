@@ -14,10 +14,10 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 385 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 54 | Pure SQL extensions and functions |
-| {{< language "Rust" >}} | 48 | Extensions written in Rust with the pgrx framework |
-| {{< language "C++" >}} | 11 | Extensions leveraging C++ features and libraries |
+| {{< language "C" >}} | 388 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 57 | Pure SQL extensions and functions |
+| {{< language "Rust" >}} | 52 | Extensions written in Rust with the pgrx framework |
+| {{< language "C++" >}} | 12 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="385 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="388 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -37,6 +37,7 @@ The traditional PostgreSQL extension language
 | 1070 | {{< alias "pg_cron" >}} | Job scheduler for PostgreSQL |
 | 1080 | {{< alias "pg_task" >}} | execute any sql command at any specific time at background |
 | 1110 | {{< alias "pg_background" >}} | Run SQL queries in the background |
+| 1130 | {{< alias "pg_stl" >}} | Time series analysis functions for PostgreSQL |
 | 1500 | {{< alias "postgis" >}} | PostGIS geometry and geography spatial types and functions |
 | 1501 | {{< alias "postgis_topology" "postgis" >}} | PostGIS topology spatial types and functions |
 | 1502 | {{< alias "postgis_raster" "postgis" >}} | PostGIS raster types and functions |
@@ -74,14 +75,15 @@ The traditional PostgreSQL extension language
 | 2510 | {{< alias "pg_partman" >}} | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
+| 2550 | {{< alias "pg_sorted_heap" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
 | 2600 | {{< alias "age" >}} | AGE graph database extension |
 | 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | 2650 | {{< alias "pgq" >}} | Generic queue for PostgreSQL |
 | 2680 | {{< alias "ulak" >}} | Transactional Outbox extension for PostgreSQL with reliable asynchronous delivery |
-| 2720 | {{< alias "rum" >}} | RUM index access method |
-| 2740 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
+| 2710 | {{< alias "rum" >}} | RUM index access method |
+| 2730 | {{< alias "pg_ttl_index" >}} | Automatic data expiration with TTL indexes |
 | 2770 | {{< alias "jsquery" >}} | data type for jsonb inspection |
 | 2780 | {{< alias "pg_hint_plan" >}} | Give PostgreSQL ability to manually force some decisions in execution plans. |
 | 2790 | {{< alias "hypopg" >}} | Hypothetical indexes for PostgreSQL |
@@ -222,9 +224,10 @@ The traditional PostgreSQL extension language
 | 4450 | {{< alias "cryptint" >}} | Encryption functions for int and bigint values |
 | 4460 | {{< alias "pguecc" "pg_ecdsa" >}} | uECC bindings for Postgres |
 | 4520 | {{< alias "pg_uuidv7" >}} | Create UUIDv7 values in postgres |
-| 4530 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
-| 4540 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
-| 4550 | {{< alias "pg_slug_gen" >}} | Generate cryptographically secure timestamp-based slugs |
+| 4530 | {{< alias "pg_uuid_v8" >}} | UUID v8 generator with embedded timestamps for PostgreSQL |
+| 4540 | {{< alias "permuteseq" >}} | Pseudo-randomly permute sequences with a format-preserving encryption on elements |
+| 4550 | {{< alias "pg_hashids" >}} | Short unique id generator for PostgreSQL, using hashids |
+| 4560 | {{< alias "pg_slug_gen" >}} | Generate cryptographically secure timestamp-based slugs |
 | 4570 | {{< alias "sequential_uuids" >}} | generator of sequential UUIDs |
 | 4590 | {{< alias "snowflake" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4600 | {{< alias "topn" >}} | type for top-n JSONB |
@@ -419,7 +422,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="54 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="57 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -438,9 +441,11 @@ Pure SQL extensions and functions
 | 1605 | {{< alias "pgh_output_pt_br" "pghydro" >}} | Brazilian Portuguese output pack for PgHydro |
 | 1606 | {{< alias "pgh_consistency" "pghydro" >}} | Pfafstetter consistency checks for PgHydro |
 | 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB random data generator functions |
+| 1900 | {{< alias "pgmnemo" >}} | Provenance-gated vector memory for LLM agents in PostgreSQL |
 | 2500 | {{< alias "pg_fkpart" >}} | Table partitioning by foreign key utility |
 | 2660 | {{< alias "pgmq" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
+| 2690 | {{< alias "fsm_core" >}} | Finite state machine toolkit for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | Query index advisor |
 | 3520 | {{< alias "pg_text_semver" >}} | Semantic version domain and comparison operators for PostgreSQL |
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
@@ -473,6 +478,7 @@ Pure SQL extensions and functions
 | 7160 | {{< alias "pg_jobmon" >}} | Extension for logging and monitoring functions in PostgreSQL |
 | 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
+| 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
@@ -482,7 +488,7 @@ Pure SQL extensions and functions
 
 ## Rust
 
-{{< language "Rust" >}} {{< badge content="48 Extensions" color="gray" icon="cube" >}}
+{{< language "Rust" >}} {{< badge content="52 Extensions" color="gray" icon="cube" >}}
 
 Extensions written in Rust with the pgrx framework
 
@@ -510,9 +516,13 @@ Extensions written in Rust with the pgrx framework
 | 2420 | {{< alias "pg_analytics" >}} | Postgres for analytics, powered by DuckDB |
 | 2440 | {{< alias "pg_mooncake" >}} | Columnstore Table in Postgres |
 | 2480 | {{< alias "pg_parquet" >}} | copy data between Postgres and Parquet |
-| 2750 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
-| 2760 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
+| 2630 | {{< alias "graph" "pggraph" >}} | Graph database capabilities for PostgreSQL |
+| 2640 | {{< alias "pgrdf" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| 2740 | {{< alias "pg_graphql" >}} | Add in-database GraphQL support |
+| 2750 | {{< alias "pg_jsonschema" >}} | PostgreSQL extension providing JSON Schema validation |
+| 2760 | {{< alias "jsonschema" >}} | JSON Schema validation functions for PostgreSQL |
 | 2860 | {{< alias "pg_trickle" >}} | Streaming tables and differential view maintenance for PostgreSQL 18 |
+| 2870 | {{< alias "pg_durable" >}} | Durable SQL functions for PostgreSQL |
 | 2920 | {{< alias "pg_cardano" >}} | A suite of Cardano-related tools |
 | 3040 | {{< alias "plprql" >}} | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3590 | {{< alias "pglite_fusion" >}} | Embed an SQLite database in your PostgreSQL table |
@@ -539,7 +549,7 @@ Extensions written in Rust with the pgrx framework
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="11 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="12 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -548,8 +558,9 @@ Extensions leveraging C++ features and libraries
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
 | 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
-| 2710 | {{< alias "hll" >}} | type for storing hyperloglog data |
-| 2730 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
+| 2540 | {{< alias "pg_orca" >}} | ORCA query optimizer as a PostgreSQL extension |
+| 2700 | {{< alias "hll" >}} | type for storing hyperloglog data |
+| 2720 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |
 | 2900 | {{< alias "provsql" >}} | Semiring provenance and uncertainty management for PostgreSQL |
 | 2930 | {{< alias "rdkit" >}} | Cheminformatics functionality for PostgreSQL. |
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |

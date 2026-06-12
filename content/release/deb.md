@@ -6,17 +6,43 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
-## 2026-05-15
+## 2026-06-12
 
-| Package        | Old    | New    | Comment                                        |
-|:---------------|:-------|:-------|:-----------------------------------------------|
-| psql_bm25s     | -      | 0.4.13 | new BM25 lexical retrieval extension, PG 17-18 |
-| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL minor update, PG 15-18         |
-| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 full-text search, PG 17-18      |
-| pgclone        | 4.0.0  | 4.3.2  | PGXN bump, PG 14-18                            |
-| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x bump, PG 15-18                        |
-| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN bump, ClickHouse query integration        |
-| provsql        | 1.2.3  | 1.4.0  | PGXN bump, provenance and uncertainty engine   |
+| Package        | Old    | New    | Comment                              |
+|:---------------|:-------|:-------|:-------------------------------------|
+| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18                             |
+| pg_background  | 1.9.2  | 2.0    | PG 14-18                             |
+| pg_clickhouse  | 0.2.0  | 0.3.1  | PG 14-18                             |
+| pg_dirtyread   | 2.7    | 2.8    | PG 14-18, RPM only                   |
+| pg_extra_time  | 2.0.0  | 2.1.0  | PG 14-18                             |
+| pg_net         | 0.20.2 | 0.20.3 | PG 14-18, newer distros only         |
+| pg_pinyin      | 0.0.2  | 0.0.4  | PG 14-18, pgrx 0.18.1                |
+| pg_search      | 0.23.1 | 0.24.0 | PG 15-18                             |
+| pg_task        | 2.1.12 | 2.1.29 | PG 14-18                             |
+| pg_textsearch  | 1.1.0  | 1.2.0  | PG 17-18                             |
+| pg_trickle     | 0.40.0 | 0.81.0 | PG 18 only                           |
+| pgclone        | 4.0.0  | 4.3.2  | PG 14-18                             |
+| pggraph        | 0.1.5  | 0.1.7  | PG 14-18                             |
+| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18                             |
+| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                             |
+| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                             |
+| provsql        | 1.8.0  | 1.9.0  | PG 14-18                             |
+| re2            | 0.1.1  | 0.3.0  | PG 16-18                             |
+| storage_engine | 1.3.4  | 2.4.0  | PG 15-18                             |
+| timescaledb    | 2.26.4 | 2.27.2 | PG 15-18                             |
+| toastinfo      | 1.5    | 1.6    | PG 14-18, RPM only                   |
+| fsm_core       | -      | 1.1.0  | new, PG 15-18                        |
+| jsonschema     | -      | 0.1.9  | new, PG 14-18                        |
+| pg_durable     | -      | 0.2.2  | new, PG 14-18, preload               |
+| pg_orca        | -      | 1.0.0  | new, PG 18 only                      |
+| pg_projection  | -      | 1.0.0  | new, PG 14-18                        |
+| pg_sorted_heap | -      | 0.14.0 | new, PG 16-18, preload               |
+| pg_stl         | -      | 1.0.0  | new, PG 16-18                        |
+| pg_uuid_v8     | -      | 1.0.0  | new, PG 14-18                        |
+| pgrdf          | -      | 0.5.0  | new, PG 14-17                        |
+| psql_bm25s     | -      | 0.4.13 | new, PG 17-18                        |
+
+Final validation for this wave was completed on Ubuntu 24.04 noble amd64/arm64: each arch build produced 39 DEB packages, with 69 unique packages after deduplicating `Architecture: all` packages. `pgsodium` was intentionally excluded from this batch.
 
 ## 2026-05-01
 
@@ -39,41 +65,41 @@ Built for Debian 12/13 and Ubuntu 22.04/24.04/26.04 on amd64 and arm64.
 
 ## 2026-04-25
 
-| Package        | Old    | New    | Comment                         |
-|:---------------|:-------|:-------|:--------------------------------|
-| documentdb     | 0.109  | 0.110  | bump to upstream, PG 15-18      |
-| pg_trickle     | 0.20.0 | 0.31.0 | bump, PG 18 only, pgrx 0.18.0   |
-| pg_search      | 0.23.0 | 0.23.1 | bump, PG 15-18, pgrx 0.18.0     |
-| pg_ivm         | 1.13   | 1.14   | bump, PG 14-18                  |
-| prefix         | 1.2.10 | 1.2.11 | bump, PG 14-18, PGDG            |
-| credcheck      | 4.6    | 4.7    | bump, PG 14-18, PGDG            |
-| pg_dbms_job    | 1.5    | 2.0    | bump, PG 14-18, PGDG            |
-| storage_engine | 1.0.7  | 1.2.3  | bump, PG 14-18                  |
-| pgmq           | 1.11.0 | 1.11.1 | bump, PG 14-18                  |
-| parray_gin     | 1.4.0  | 1.5.0  | bump, PG 14-18                  |
-| rdf_fdw        | 2.4.0  | 2.5.0  | bump, PG 14-18                  |
-| pg_accumulator | -      | 1.1.3  | new, PG 14-18                   |
+| Package        | Old    | New    | Comment                       |
+|:---------------|:-------|:-------|:------------------------------|
+| documentdb     | 0.109  | 0.110  | bump to upstream, PG 15-18    |
+| pg_trickle     | 0.20.0 | 0.31.0 | bump, PG 18 only, pgrx 0.18.0 |
+| pg_search      | 0.23.0 | 0.23.1 | bump, PG 15-18, pgrx 0.18.0   |
+| pg_ivm         | 1.13   | 1.14   | bump, PG 14-18                |
+| prefix         | 1.2.10 | 1.2.11 | bump, PG 14-18, PGDG          |
+| credcheck      | 4.6    | 4.7    | bump, PG 14-18, PGDG          |
+| pg_dbms_job    | 1.5    | 2.0    | bump, PG 14-18, PGDG          |
+| storage_engine | 1.0.7  | 1.2.3  | bump, PG 14-18                |
+| pgmq           | 1.11.0 | 1.11.1 | bump, PG 14-18                |
+| parray_gin     | 1.4.0  | 1.5.0  | bump, PG 14-18                |
+| rdf_fdw        | 2.4.0  | 2.5.0  | bump, PG 14-18                |
+| pg_accumulator | -      | 1.1.3  | new, PG 14-18                 |
 
 ## 2026-04-19
 
-| Package           | Old    | New    | Comment                                  |
-|:------------------|:-------|:-------|:-----------------------------------------|
-| cloudberry        | 2.0.0  | 2.1.0  | bump, split backup and PXF subpackages   |
-| cloudberry-backup | -      | 2.1.0  | new companion package                    |
-| cloudberry-pxf    | -      | 2.1.0  | new companion package                    |
-| oriolepg          | 17.16  | 17.18  | kernel update for orioledb beta15 / 1.7  |
-| orioledb          | 1.6    | 1.7    | bump, paired with oriolepg 17.18         |
-| timescaledb       | 2.26.2 | 2.26.3 | bump                                     |
-| pg_search         | 0.22.6 | 0.23.0 | bump                                     |
-| pg_trickle        | 0.17.0 | 0.20.0 | bump, PG 18 only                         |
-| pg_clickhouse     | 0.1.10 | 0.2.0  | bump                                     |
-| pg_stat_ch        | 0.3.4  | 0.3.6  | bump, PG 16-18                           |
-| pgclone           | 3.6.0  | 4.0.0  | bump                                     |
-| pgproto           | 0.2.4  | 0.3.3  | bump                                     |
-| pgxicor           | 0.1.0  | 0.1.1  | bump                                     |
-| storage_engine    | -      | 1.0.7  | new, PG 14-18                            |
-| re2               | -      | 0.1.1  | new, PG 16-18                            |
-| ulak              | -      | 0.0.2  | new, PG 14-18                            |
+| Package           | Old    | New    | Comment                                 |
+|:------------------|:-------|:-------|:----------------------------------------|
+| cloudberry        | 2.0.0  | 2.1.0  | bump, split backup and PXF subpackages  |
+| cloudberry-backup | -      | 2.1.0  | new companion package                   |
+| cloudberry-pxf    | -      | 2.1.0  | new companion package                   |
+| oriolepg          | 17.16  | 17.18  | kernel update for orioledb beta15 / 1.7 |
+| orioledb          | 1.6    | 1.7    | bump, paired with oriolepg 17.18        |
+| timescaledb       | 2.26.2 | 2.26.3 | bump                                    |
+| pg_search         | 0.22.6 | 0.23.0 | bump                                    |
+| pg_trickle        | 0.17.0 | 0.20.0 | bump, PG 18 only                        |
+| pg_clickhouse     | 0.1.10 | 0.2.0  | bump                                    |
+| pg_stat_ch        | 0.3.4  | 0.3.6  | bump, PG 16-18                          |
+| pgclone           | 3.6.0  | 4.0.0  | bump                                    |
+| pgproto           | 0.2.4  | 0.3.3  | bump                                    |
+| pgxicor           | 0.1.0  | 0.1.1  | bump                                    |
+| storage_engine    | -      | 1.0.7  | new, PG 14-18                           |
+| re2               | -      | 0.1.1  | new, PG 16-18                           |
+| ulak              | -      | 0.0.2  | new, PG 14-18                           |
 
 ## 2026-04-14
 
@@ -214,7 +240,6 @@ Drop PG 13 support for all extensions
 | pg_track_optimizer | -          | 0.9.1        | new extension                |
 | pgmb               | -          | 1.0.0        | new extension                |
 
-
 ## 2026-01-25
 
 | Name          | Old            | New            | Comment                 |
@@ -224,7 +249,6 @@ Drop PG 13 support for all extensions
 | pg_clickhouse | 0.1.2          | 0.1.3          |                         |
 | pgmq          | 1.8.1          | 1.9.0          |                         |
 | pg_search     | 0.21.2         | 0.21.4         |                         |
-
 
 ## 2026-01-16
 
@@ -250,7 +274,6 @@ Drop PG 13 support for all extensions
 | documentdb_extended_rum |        | 0.109  | new                   |
 | mobilitydb_datagen      |        | 1.3.0  | new                   |
 
-
 ## 2025-12-25
 
 | Name          | Old     | New     | Comment  |
@@ -262,7 +285,6 @@ Drop PG 13 support for all extensions
 | pg_timeseries | 0.1.7   | 0.1.8   |          |
 | supautils     | 3.0.2-1 | 3.0.2-2 | fix pg18 |
 | pg_summarize  | 0.0.1-1 | 0.0.1-2 | fix pg18 |
-
 
 ## 2025-12-16
 
@@ -319,7 +341,6 @@ Drop PG 13 support for all extensions
 | pgmq                   | 1.7.0  | 1.8.0  |                            |
 | documentdb             | 0.106  | 0.107  | ferretdb fork              |
 | PolarDB                |        | 15.15  | 15.15.5.0-38948055         |
-
 
 ## 2025-11-10
 

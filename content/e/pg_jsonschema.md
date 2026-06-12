@@ -2,7 +2,7 @@
 title: "pg_jsonschema"
 linkTitle: "pg_jsonschema"
 description: "PostgreSQL extension providing JSON Schema validation"
-weight: 2760
+weight: 2750
 categories: ["FEAT"]
 width: full
 ---
@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2760** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2750** | {{< badge content="pg_jsonschema" link="https://github.com/supabase/pg_jsonschema" >}} | {{< ext "pg_jsonschema" >}} | `0.3.4` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "fsm_core" >}} |
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "jsquery" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
 
 > [!Note] manual update from 0.16.0 by Vonng

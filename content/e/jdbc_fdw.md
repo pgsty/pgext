@@ -41,7 +41,7 @@ width: full
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
 | {{< os "el8.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
 | {{< os "el8.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      | {{< bg "PGDG 0.4.0" "jdbc_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 0.4.0" "jdbc_fdw_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
 | {{< os "el9.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
 | {{< os "el10.x86_64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
 | {{< os "el10.aarch64" >}} |      {{< bg "MISS" "jdbc_fdw_18 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_17 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_16 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "jdbc_fdw_14 : MISS 0" "red" >}}      |
@@ -63,7 +63,6 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `jdbc_fdw_16` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 49.8 KiB | [jdbc_fdw_16-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/jdbc_fdw_16-0.4.0-1PGDG.rhel8.x86_64.rpm) |
-| `jdbc_fdw_16` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 49.6 KiB | [jdbc_fdw_16-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/jdbc_fdw_16-0.4.0-1PGDG.rhel9.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -71,7 +70,6 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `jdbc_fdw_15` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.5 KiB | [jdbc_fdw_15-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/jdbc_fdw_15-0.4.0-1PGDG.rhel8.x86_64.rpm) |
-| `jdbc_fdw_15` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.0 KiB | [jdbc_fdw_15-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/jdbc_fdw_15-0.4.0-1PGDG.rhel9.x86_64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -79,7 +77,6 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `jdbc_fdw_14` | `0.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 50.5 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel8.x86_64.rpm) |
-| `jdbc_fdw_14` | `0.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 52.0 KiB | [jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/jdbc_fdw_14-0.4.0-1PGDG.rhel9.x86_64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -6,17 +6,43 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
-## 2026-05-15
+## 2026-06-12
 
-| 包名             | 旧版本    | 新版本    | 备注                               |
-|:---------------|:-------|:-------|:---------------------------------|
-| psql_bm25s     | -      | 0.4.13 | 新增 BM25 词法检索扩展，PG 17-18          |
-| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL 小版本更新，PG 15-18   |
-| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 全文搜索扩展更新，PG 17-18 |
-| pgclone        | 4.0.0  | 4.3.2  | PGXN 更新，PG 14-18                 |
-| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x 更新，PG 15-18             |
-| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN 更新，ClickHouse 查询集成          |
-| provsql        | 1.2.3  | 1.4.0  | PGXN 更新，数据溯源与不确定性管理引擎            |
+| 包名             | 旧版本    | 新版本    | 备注                   |
+|:---------------|:-------|:-------|:---------------------|
+| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18             |
+| pg_background  | 1.9.2  | 2.0    | PG 14-18             |
+| pg_clickhouse  | 0.2.0  | 0.3.1  | PG 14-18             |
+| pg_dirtyread   | 2.7    | 2.8    | PG 14-18，仅 RPM       |
+| pg_extra_time  | 2.0.0  | 2.1.0  | PG 14-18             |
+| pg_net         | 0.20.2 | 0.20.3 | PG 14-18，仅新发行版       |
+| pg_pinyin      | 0.0.2  | 0.0.4  | PG 14-18，pgrx 0.18.1 |
+| pg_search      | 0.23.1 | 0.24.0 | PG 15-18             |
+| pg_task        | 2.1.12 | 2.1.29 | PG 14-18             |
+| pg_textsearch  | 1.1.0  | 1.2.0  | PG 17-18             |
+| pg_trickle     | 0.40.0 | 0.81.0 | 仅 PG 18              |
+| pgclone        | 4.0.0  | 4.3.2  | PG 14-18             |
+| pggraph        | 0.1.5  | 0.1.7  | PG 14-18             |
+| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18             |
+| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18             |
+| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18             |
+| provsql        | 1.8.0  | 1.9.0  | PG 14-18             |
+| re2            | 0.1.1  | 0.3.0  | PG 16-18             |
+| storage_engine | 1.3.4  | 2.4.0  | PG 15-18             |
+| timescaledb    | 2.26.4 | 2.27.2 | PG 15-18             |
+| toastinfo      | 1.5    | 1.6    | PG 14-18，仅 RPM       |
+| fsm_core       | -      | 1.1.0  | 新增，PG 15-18          |
+| jsonschema     | -      | 0.1.9  | 新增，PG 14-18          |
+| pg_durable     | -      | 0.2.2  | 新增，PG 14-18，preload  |
+| pg_orca        | -      | 1.0.0  | 新增，仅 PG 18           |
+| pg_projection  | -      | 1.0.0  | 新增，PG 14-18          |
+| pg_sorted_heap | -      | 0.14.0 | 新增，PG 16-18，preload  |
+| pg_stl         | -      | 1.0.0  | 新增，PG 16-18          |
+| pg_uuid_v8     | -      | 1.0.0  | 新增，PG 14-18          |
+| pgrdf          | -      | 0.5.0  | 新增，PG 14-17          |
+| psql_bm25s     | -      | 0.4.13 | 新增，PG 17-18          |
+
+这一波最终 DEB 验证在 Ubuntu 24.04 noble 的 amd64/arm64 上完成：每个架构构建 39 个 DEB 包，去重 `Architecture: all` 包后共 69 个唯一包；`pgsodium` 本次按计划跳过。
 
 ## 2026-05-01
 

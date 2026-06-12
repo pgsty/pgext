@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2900** | {{< badge content="provsql" link="https://github.com/PierreSenellart/provsql" >}} | {{< ext "provsql" >}} | `1.4.0` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
+| **2900** | {{< badge content="provsql" link="https://github.com/PierreSenellart/provsql" >}} | {{< ext "provsql" >}} | `1.9.0` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,29 +31,29 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `provsql` | `uuid-ossp` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "provsql_18" "green" >}} {{< bg "17" "provsql_17" "green" >}} {{< bg "16" "provsql_16" "green" >}} {{< bg "15" "provsql_15" "green" >}} {{< bg "14" "provsql_14" "green" >}} | `provsql_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "postgresql-18-provsql" "green" >}} {{< bg "17" "postgresql-17-provsql" "green" >}} {{< bg "16" "postgresql-16-provsql" "green" >}} {{< bg "15" "postgresql-15-provsql" "green" >}} {{< bg "14" "postgresql-14-provsql" "green" >}} | `postgresql-$v-provsql` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.9.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `provsql` | `uuid-ossp` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.9.0` | {{< bg "18" "provsql_18" "green" >}} {{< bg "17" "provsql_17" "green" >}} {{< bg "16" "provsql_16" "green" >}} {{< bg "15" "provsql_15" "green" >}} {{< bg "14" "provsql_14" "green" >}} | `provsql_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.9.0` | {{< bg "18" "postgresql-18-provsql" "green" >}} {{< bg "17" "postgresql-17-provsql" "green" >}} {{< bg "16" "postgresql-16-provsql" "green" >}} {{< bg "15" "postgresql-15-provsql" "green" >}} {{< bg "14" "postgresql-14-provsql" "green" >}} | `postgresql-$v-provsql` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "provsql_14 : AVAIL 1" "green" >}} |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "provsql_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "provsql_14 : AVAIL 1" "green" >}} |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-18-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-17-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-16-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-15-provsql : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.8.0" "postgresql-14-provsql : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -61,110 +61,110 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_18` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 368.6 KiB | [provsql_18-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_18-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `provsql_18` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 340.5 KiB | [provsql_18-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_18-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `provsql_18` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 381.0 KiB | [provsql_18-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_18-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `provsql_18` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 365.5 KiB | [provsql_18-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_18-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `provsql_18` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 392.5 KiB | [provsql_18-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_18-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `provsql_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 361.8 KiB | [provsql_18-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_18-1.4.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-18-provsql` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 330.7 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 292.1 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 359.0 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 314.2 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 342.1 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 322.3 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 354.9 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 336.4 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 365.4 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-provsql` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 341.4 KiB | [postgresql-18-provsql_1.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.4.0-1PIGSTY~resolute_arm64.deb) |
+| `provsql_18` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 641.1 KiB | [provsql_18-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_18-1.8.0-1PIGSTY.el8.x86_64.rpm) |
+| `provsql_18` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 581.5 KiB | [provsql_18-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_18-1.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `provsql_18` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 639.4 KiB | [provsql_18-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_18-1.8.0-1PIGSTY.el9.x86_64.rpm) |
+| `provsql_18` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 609.6 KiB | [provsql_18-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_18-1.8.0-1PIGSTY.el9.aarch64.rpm) |
+| `provsql_18` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 665.4 KiB | [provsql_18-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_18-1.8.0-1PIGSTY.el10.x86_64.rpm) |
+| `provsql_18` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 612.9 KiB | [provsql_18-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_18-1.8.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-18-provsql` | `1.8.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 584.9 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 517.9 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 630.1 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 551.8 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 589.9 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 557.5 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 623.0 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 581.3 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 633.6 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-provsql` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 585.6 KiB | [postgresql-18-provsql_1.8.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-18-provsql_1.8.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_17` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 368.1 KiB | [provsql_17-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_17-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `provsql_17` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 340.3 KiB | [provsql_17-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_17-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `provsql_17` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 380.5 KiB | [provsql_17-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_17-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `provsql_17` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 365.2 KiB | [provsql_17-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_17-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `provsql_17` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 391.9 KiB | [provsql_17-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_17-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `provsql_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 361.8 KiB | [provsql_17-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_17-1.4.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-17-provsql` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 330.8 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 291.7 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 358.7 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 314.0 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 340.8 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 321.9 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 357.1 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 336.2 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 365.2 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-provsql` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 341.1 KiB | [postgresql-17-provsql_1.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.4.0-1PIGSTY~resolute_arm64.deb) |
+| `provsql_17` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 640.9 KiB | [provsql_17-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_17-1.8.0-1PIGSTY.el8.x86_64.rpm) |
+| `provsql_17` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 581.1 KiB | [provsql_17-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_17-1.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `provsql_17` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 639.1 KiB | [provsql_17-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_17-1.8.0-1PIGSTY.el9.x86_64.rpm) |
+| `provsql_17` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 609.1 KiB | [provsql_17-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_17-1.8.0-1PIGSTY.el9.aarch64.rpm) |
+| `provsql_17` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 666.1 KiB | [provsql_17-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_17-1.8.0-1PIGSTY.el10.x86_64.rpm) |
+| `provsql_17` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 613.0 KiB | [provsql_17-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_17-1.8.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-17-provsql` | `1.8.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 584.6 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 518.0 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 630.1 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 551.1 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 589.4 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 558.9 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 619.3 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 581.2 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 633.4 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-provsql` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 585.3 KiB | [postgresql-17-provsql_1.8.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-17-provsql_1.8.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_16` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 368.3 KiB | [provsql_16-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_16-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `provsql_16` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 340.5 KiB | [provsql_16-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_16-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `provsql_16` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 380.8 KiB | [provsql_16-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_16-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `provsql_16` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 365.3 KiB | [provsql_16-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_16-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `provsql_16` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 392.2 KiB | [provsql_16-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_16-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `provsql_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 361.7 KiB | [provsql_16-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_16-1.4.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-16-provsql` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 330.7 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 292.1 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 358.8 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 314.3 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 341.3 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 322.3 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 354.8 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 336.0 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 365.3 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-provsql` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 341.2 KiB | [postgresql-16-provsql_1.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.4.0-1PIGSTY~resolute_arm64.deb) |
+| `provsql_16` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 641.5 KiB | [provsql_16-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_16-1.8.0-1PIGSTY.el8.x86_64.rpm) |
+| `provsql_16` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 581.8 KiB | [provsql_16-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_16-1.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `provsql_16` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 639.1 KiB | [provsql_16-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_16-1.8.0-1PIGSTY.el9.x86_64.rpm) |
+| `provsql_16` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 609.7 KiB | [provsql_16-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_16-1.8.0-1PIGSTY.el9.aarch64.rpm) |
+| `provsql_16` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 667.1 KiB | [provsql_16-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_16-1.8.0-1PIGSTY.el10.x86_64.rpm) |
+| `provsql_16` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 614.5 KiB | [provsql_16-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_16-1.8.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-16-provsql` | `1.8.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 585.1 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 518.0 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 630.5 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 551.8 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 590.0 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 560.3 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 623.0 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 581.2 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 634.0 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-provsql` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 585.3 KiB | [postgresql-16-provsql_1.8.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-16-provsql_1.8.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_15` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 399.1 KiB | [provsql_15-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_15-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `provsql_15` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 371.7 KiB | [provsql_15-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_15-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `provsql_15` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 409.7 KiB | [provsql_15-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_15-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `provsql_15` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 394.1 KiB | [provsql_15-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_15-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `provsql_15` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 416.4 KiB | [provsql_15-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_15-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `provsql_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 386.0 KiB | [provsql_15-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_15-1.4.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-15-provsql` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 366.2 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 328.0 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 391.7 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 347.6 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 379.7 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 363.0 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 391.1 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 372.2 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 400.4 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-provsql` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 377.7 KiB | [postgresql-15-provsql_1.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.4.0-1PIGSTY~resolute_arm64.deb) |
+| `provsql_15` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 676.8 KiB | [provsql_15-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_15-1.8.0-1PIGSTY.el8.x86_64.rpm) |
+| `provsql_15` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 616.7 KiB | [provsql_15-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_15-1.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `provsql_15` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 669.8 KiB | [provsql_15-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_15-1.8.0-1PIGSTY.el9.x86_64.rpm) |
+| `provsql_15` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 640.5 KiB | [provsql_15-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_15-1.8.0-1PIGSTY.el9.aarch64.rpm) |
+| `provsql_15` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 686.8 KiB | [provsql_15-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_15-1.8.0-1PIGSTY.el10.x86_64.rpm) |
+| `provsql_15` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 633.0 KiB | [provsql_15-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_15-1.8.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-15-provsql` | `1.8.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 623.9 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 558.6 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 668.5 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 590.0 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 630.0 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 602.2 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 660.7 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 622.3 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 672.7 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-provsql` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 625.9 KiB | [postgresql-15-provsql_1.8.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-15-provsql_1.8.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `provsql_14` | `1.4.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 398.8 KiB | [provsql_14-1.4.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_14-1.4.0-1PIGSTY.el8.x86_64.rpm) |
-| `provsql_14` | `1.4.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 371.7 KiB | [provsql_14-1.4.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_14-1.4.0-1PIGSTY.el8.aarch64.rpm) |
-| `provsql_14` | `1.4.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 409.3 KiB | [provsql_14-1.4.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_14-1.4.0-1PIGSTY.el9.x86_64.rpm) |
-| `provsql_14` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 394.2 KiB | [provsql_14-1.4.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_14-1.4.0-1PIGSTY.el9.aarch64.rpm) |
-| `provsql_14` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 416.8 KiB | [provsql_14-1.4.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_14-1.4.0-1PIGSTY.el10.x86_64.rpm) |
-| `provsql_14` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 385.8 KiB | [provsql_14-1.4.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_14-1.4.0-1PIGSTY.el10.aarch64.rpm) |
-| `postgresql-14-provsql` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 365.5 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 327.9 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 392.6 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 348.0 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 379.5 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 364.0 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 391.3 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 372.2 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 400.2 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-provsql` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 377.4 KiB | [postgresql-14-provsql_1.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.4.0-1PIGSTY~resolute_arm64.deb) |
+| `provsql_14` | `1.8.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 675.6 KiB | [provsql_14-1.8.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/provsql_14-1.8.0-1PIGSTY.el8.x86_64.rpm) |
+| `provsql_14` | `1.8.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 616.0 KiB | [provsql_14-1.8.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/provsql_14-1.8.0-1PIGSTY.el8.aarch64.rpm) |
+| `provsql_14` | `1.8.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 669.3 KiB | [provsql_14-1.8.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/provsql_14-1.8.0-1PIGSTY.el9.x86_64.rpm) |
+| `provsql_14` | `1.8.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 640.0 KiB | [provsql_14-1.8.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/provsql_14-1.8.0-1PIGSTY.el9.aarch64.rpm) |
+| `provsql_14` | `1.8.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 686.2 KiB | [provsql_14-1.8.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/provsql_14-1.8.0-1PIGSTY.el10.x86_64.rpm) |
+| `provsql_14` | `1.8.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 631.3 KiB | [provsql_14-1.8.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/provsql_14-1.8.0-1PIGSTY.el10.aarch64.rpm) |
+| `postgresql-14-provsql` | `1.8.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 622.4 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 557.6 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 667.3 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 588.9 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 628.9 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 600.7 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 659.1 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 620.2 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 670.9 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-provsql` | `1.8.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 624.8 KiB | [postgresql-14-provsql_1.8.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/provsql/postgresql-14-provsql_1.8.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -172,7 +172,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/PierreSenellart/provsql" title="Repository" icon="github" subtitle="github.com/PierreSenellart/provsql" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="provsql-1.4.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="provsql-1.9.0.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -218,7 +218,7 @@ CREATE EXTENSION provsql CASCADE; -- requires uuid-ossp
 
 ## Usage
 
-Sources: [README](https://github.com/PierreSenellart/provsql/blob/master/README.md), [v1.4.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.4.0), [latest release](https://github.com/PierreSenellart/provsql/releases/tag/v1.6.0), [v1.4.0 control](https://github.com/PierreSenellart/provsql/blob/v1.4.0/provsql.common.control), [getting started](https://provsql.org/docs/user/getting-provsql.html), [configuration](https://provsql.org/docs/user/configuration.html), [semirings](https://provsql.org/docs/user/semirings.html), [v1.4.0 upgrade](https://github.com/PierreSenellart/provsql/blob/v1.4.0/sql/upgrades/provsql--1.3.1--1.4.0.sql)
+Sources: [README](https://github.com/PierreSenellart/provsql/blob/v1.9.0/doc/provsql.md), [v1.9.0 release](https://github.com/PierreSenellart/provsql/releases/tag/v1.9.0), [v1.9.0 control](https://github.com/PierreSenellart/provsql/blob/v1.9.0/provsql.common.control), [getting started](https://provsql.org/docs/user/getting-provsql.html), [configuration](https://provsql.org/docs/user/configuration.html), [semirings](https://provsql.org/docs/user/semirings.html)
 
 `provsql` adds semiring provenance and uncertainty management to PostgreSQL. Upstream documents provenance tracking, semiring evaluation, probabilities, Shapley and Banzhaf values, where-provenance, update provenance, and temporal features.
 
@@ -290,7 +290,7 @@ SELECT name, sr_how(provenance(), 'my_mapping')
 FROM mytable;
 ```
 
-`provsql` 1.4.0 adds compiled wrappers for `sr_how`, `sr_which`, `sr_tropical`, `sr_viterbi`, `sr_lukasiewicz`, `sr_minmax`, and `sr_maxmin`. For PostgreSQL 14 and later it also adds `sr_temporal`, `sr_interval_num`, and `sr_interval_int` over multirange values.
+Current docs include compiled wrappers for `sr_how`, `sr_which`, `sr_tropical`, `sr_viterbi`, `sr_lukasiewicz`, `sr_minmax`, and `sr_maxmin`. For PostgreSQL 14 and later they also include `sr_temporal`, `sr_interval_num`, and `sr_interval_int` over multirange values.
 
 ```sql
 SELECT city,
@@ -312,16 +312,30 @@ Session GUCs documented upstream include:
 SET provsql.active = on;
 SET provsql.where_provenance = on;
 SET provsql.update_provenance = on;
+SET provsql.last_eval_method = on;
 SET provsql.tool_search_path = '/opt/d4:/home/postgres/bin';
 SET provsql.aggtoken_text_as_uuid = on;
 ```
 
-`provsql.tool_search_path` is used for external probability and visualization tools such as `d4`, `c2d`, `dsharp`, `minic2d`, `weightmc`, and `graph-easy`. `provsql.aggtoken_text_as_uuid` makes aggregate-token cells render as their provenance UUIDs; `agg_token_value_text(token)` can recover the display text for those aggregate tokens.
+`provsql.tool_search_path` is used for external probability and visualization tools such as `d4`, `c2d`, `dsharp`, `minic2d`, `weightmc`, and `graph-easy`. `provsql.last_eval_method` stores the last chosen probability-evaluation method. `provsql.aggtoken_text_as_uuid` makes aggregate-token cells render as their provenance UUIDs; `agg_token_value_text(token)` can recover the display text for those aggregate tokens.
 
-The user guide separately documents where-provenance helpers, update provenance, and temporal helpers such as `get_valid_time`, `timetravel`, `timeslice`, `history`, and `undo`. Version 1.4.0 also adds circuit-inspection helpers `circuit_subgraph(root, max_depth)` and `resolve_input(uuid)`, used by ProvSQL Studio and useful for browsing circuit fragments.
+The user guide separately documents where-provenance helpers, update provenance, temporal helpers such as `get_valid_time`, `timetravel`, `timeslice`, `history`, and `undo`, circuit-inspection helpers `circuit_subgraph(root, max_depth)` and `resolve_input(uuid)`, and `setup_search_path()` for preparing the helper search path.
+
+### v1.9.0 Query and Probability Notes
+
+Release `1.9.0` materially expands SQL coverage for provenance-aware queries:
+
+- subqueries outside `FROM`, including `EXISTS`, `NOT EXISTS`, `IN`, `NOT IN`, `ANY`, `ALL`, row-valued `IN`, scalar subqueries, and `ARRAY(SELECT ...)`;
+- `LEFT`, `RIGHT`, and `FULL` outer joins, plus corrected `EXCEPT` and `EXCEPT ALL` provenance;
+- SQL-faithful `NULL` handling for aggregates and exact `HAVING` aggregate probabilities for `COUNT`, `SUM`, `MIN`, `MAX`, and `AVG`;
+- probability-method selection through the method catalog and cost chooser, with `karp-luby`, `stopping-rule`, `sieve`, `d-tree`, and `probability_bounds`;
+- idempotent `add_provenance` and `create_provenance_mapping` calls.
+
+The release removes the old `probability_benchmark` helper. `agg_token` now has native arithmetic, unary minus, and comparison support for aggregate-token expressions.
 
 ### Notes
 
-- The package row in `db/extension.csv` lists version `1.4.0`, package `provsql`, dependency `uuid-ossp`, and PostgreSQL support for 14 through 18.
-- Upstream docs say ProvSQL has been tested on PostgreSQL 10 through 18. The Pigsty row tracks `1.4.0` even though upstream GitHub now has `v1.6.0`, so package metadata should be treated as the installed version for Pigsty builds.
+- The package row in `db/extension.csv` lists version `1.9.0`, package `provsql`, dependency `uuid-ossp`, and PostgreSQL support for 14 through 18.
+- The v1.9.0 control file sets `default_version = '1.9.0'`, requires `uuid-ossp`, marks the extension trusted, and is not relocatable.
+- Upstream docs say ProvSQL has been tested on PostgreSQL 10 through 18; the Pigsty package matrix is PostgreSQL 14-18.
 - `provsql.update_provenance` and the multirange semirings require PostgreSQL 14 or later.

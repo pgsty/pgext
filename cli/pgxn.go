@@ -152,6 +152,7 @@ func newPGXNExporter(opts PgxnExportOptions) *pgxnExporter {
 		client: &http.Client{
 			Timeout: 45 * time.Second,
 			Transport: &http.Transport{
+				Proxy:               http.ProxyFromEnvironment,
 				MaxIdleConns:        128,
 				MaxIdleConnsPerHost: 32,
 				IdleConnTimeout:     90 * time.Second,

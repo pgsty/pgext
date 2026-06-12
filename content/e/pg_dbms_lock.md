@@ -63,10 +63,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_lock_18` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.7 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pg_dbms_lock_18-1.0-3PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_lock_18` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_lock_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_lock_18-1.0-3PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_lock_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.1 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_lock_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pg_dbms_lock_18-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.8 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_lock_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -75,10 +75,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_lock_17` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_dbms_lock_17-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pg_dbms_lock_17-1.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_lock_17` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.5 KiB | [pg_dbms_lock_17-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pg_dbms_lock_17-1.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_lock_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_dbms_lock_17-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_lock_17-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.4 KiB | [pg_dbms_lock_17-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_lock_17-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_lock_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_lock_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_17-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pg_dbms_lock_17-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_17-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pg_dbms_lock_17-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.8 KiB | [pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_lock_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -87,10 +87,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_lock_16` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_dbms_lock_16-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pg_dbms_lock_16-1.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_lock_16` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.5 KiB | [pg_dbms_lock_16-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pg_dbms_lock_16-1.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_lock_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_dbms_lock_16-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_lock_16-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.2 KiB | [pg_dbms_lock_16-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_lock_16-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_lock_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_lock_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_16-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pg_dbms_lock_16-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_16-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pg_dbms_lock_16-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.8 KiB | [pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_lock_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -99,10 +99,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_lock_15` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_dbms_lock_15-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pg_dbms_lock_15-1.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_lock_15` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.5 KiB | [pg_dbms_lock_15-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pg_dbms_lock_15-1.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_lock_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_dbms_lock_15-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_lock_15-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.2 KiB | [pg_dbms_lock_15-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_lock_15-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_lock_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_lock_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_15-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pg_dbms_lock_15-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_15-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pg_dbms_lock_15-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.8 KiB | [pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_lock_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -111,10 +111,10 @@ width: full
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pg_dbms_lock_14` | `1.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 12.5 KiB | [pg_dbms_lock_14-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pg_dbms_lock_14-1.0-1PGDG.rhel8.noarch.rpm) |
 | `pg_dbms_lock_14` | `1.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 12.5 KiB | [pg_dbms_lock_14-1.0-1PGDG.rhel8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pg_dbms_lock_14-1.0-1PGDG.rhel8.noarch.rpm) |
-| `pg_dbms_lock_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.4 KiB | [pg_dbms_lock_14-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_lock_14-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.2 KiB | [pg_dbms_lock_14-1.0-1PGDG.rhel9.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_lock_14-1.0-1PGDG.rhel9.noarch.rpm) |
-| `pg_dbms_lock_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm) |
-| `pg_dbms_lock_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm) |
+| `pg_dbms_lock_14` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.6 KiB | [pg_dbms_lock_14-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pg_dbms_lock_14-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.6 KiB | [pg_dbms_lock_14-1.0-3PGDG.rhel9.8.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pg_dbms_lock_14-1.0-3PGDG.rhel9.8.noarch.rpm) |
+| `pg_dbms_lock_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 12.8 KiB | [pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm) |
+| `pg_dbms_lock_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

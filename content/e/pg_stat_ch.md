@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6020** | {{< badge content="pg_stat_ch" link="https://github.com/ClickHouse/pg_stat_ch" >}} | {{< ext "pg_stat_ch" >}} | `0.3.6` | {{< category "STAT" >}} | {{< license "Apache-2.0" >}} | {{< language "C++" >}} |
+| **6020** | {{< badge content="pg_stat_ch" link="https://github.com/ClickHouse/pg_stat_ch" >}} | {{< ext "pg_stat_ch" >}} | `0.3.6` | {{< category "STAT" >}} | {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_tracing" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_kcache" >}} {{< ext "powa" >}} |
 
-> [!Note] release 0.3.6; SQL v0.1
+> [!Note] freeze due to new vcpkg dependency stack
 
 
 ## Packages
@@ -63,10 +63,10 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_18` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.9 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 826.6 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 819.7 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_18` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.7 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_18` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 872.4 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_18` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.2 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_18` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.8 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_18` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 774.1 KiB | [pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_18-0.3.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 720.3 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 649.5 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 731.0 KiB | [postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-18-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -83,10 +83,10 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_17` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.4 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 826.5 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.2 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_17` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.0 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_17` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.9 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_17` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.3 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_17` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.7 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_17` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.3 KiB | [pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_17-0.3.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 719.4 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 648.1 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 730.8 KiB | [postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-17-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -103,10 +103,10 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pg_stat_ch_16` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.4 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 828.7 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.4 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm) |
-| `pg_stat_ch_16` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.4 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm) |
+| `pg_stat_ch_16` | `0.3.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 871.8 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.x86_64.rpm) |
+| `pg_stat_ch_16` | `0.3.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 829.1 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el9.aarch64.rpm) |
+| `pg_stat_ch_16` | `0.3.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 822.6 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.x86_64.rpm) |
+| `pg_stat_ch_16` | `0.3.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 773.5 KiB | [pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_stat_ch_16-0.3.6-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d12.x86_64](/os/d12.x86_64) | pigsty | 719.6 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d12.aarch64](/os/d12.aarch64) | pigsty | 649.4 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pg-stat-ch` | `0.3.6` | [d13.x86_64](/os/d13.x86_64) | pigsty | 729.5 KiB | [postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-stat-ch/postgresql-16-pg-stat-ch_0.3.6-1PIGSTY~trixie_amd64.deb) |
@@ -166,7 +166,6 @@ shared_preload_libraries = 'pg_stat_ch';
 CREATE EXTENSION pg_stat_ch;
 ```
 
-
 ## Usage
 
 Sources: [README](https://github.com/ClickHouse/pg_stat_ch/blob/main/README.md), [release 0.3.6](https://github.com/ClickHouse/pg_stat_ch/releases/tag/v0.3.6)
@@ -223,7 +222,10 @@ SELECT pg_stat_ch_flush();
 - Parallel worker stats on PostgreSQL 18+.
 - Application name, client IP, and query text up to the upstream truncation limit.
 
+Release `0.3.6` replaces the normalize cache with a queryId-keyed LRU cache and replaces the OpenTelemetry SDK with a direct-protobuf exporter plus sampling support. Existing SQL usage remains centered on the event tables, summary views, and reset/version helper functions above.
+
 ### Caveats
 
 - The design intentionally drops events on queue overflow instead of blocking the foreground query path.
 - ClickHouse schema creation is a required part of setup; upstream quickstart scripts preload it automatically, but manual deployments must load the schema separately.
+- Pigsty's current RPM refresh for `pg_stat_ch` is PostgreSQL 16-18 on EL9/EL10 only; Debian/Ubuntu packages remain PostgreSQL 16-18 on the active targets.
