@@ -1,8 +1,8 @@
 ## Usage
 
-Sources: [README v2.3.0](https://github.com/saulojb/storage_engine/blob/v2.3.0/README.md), [release v2.3.0](https://github.com/saulojb/storage_engine/releases/tag/v2.3.0), [PGXN 2.3.0](https://pgxn.org/dist/storage_engine/2.3.0/), [current README](https://github.com/saulojb/storage_engine/blob/main/README.md)
+Sources: [README v2.4.0](https://github.com/saulojb/storage_engine/blob/v2.4.0/README.md), [release v2.4.0](https://github.com/saulojb/storage_engine/releases/tag/v2.4.0), [PGXN 2.4.0](https://pgxn.org/dist/storage_engine/2.4.0/), [current README](https://github.com/saulojb/storage_engine/blob/main/README.md)
 
-`storage_engine` 2.3.0 provides two PostgreSQL table access methods in the `engine` schema:
+`storage_engine` 2.4.0 provides two PostgreSQL table access methods in the `engine` schema:
 
 - `colcompress` for column-oriented compressed storage with vectorized filtering, vectorized aggregation, parallel scans, and stripe/chunk min/max pruning.
 - `rowcompress` for row-batch compression with parallel scans, index scans, and batch metadata.
@@ -37,7 +37,7 @@ WHERE ts > now() - interval '1 day'
 GROUP BY 1;
 ```
 
-Version 2.3 expands `colcompress` vectorized aggregation with simple `sum(expression)` shapes such as `sum(amount + price)`, post-aggregation arithmetic such as `sum(amount) + count(*)`, and corrected `avg(int8)` behavior in parallel plans.
+Version 2.4 keeps the 2.3 vectorized-aggregation work and adds planner-hook improvements for TPC-H Q7/Q18/Q20/Q21 plus Q9-style post-join aggregates. It also adds backend-local reread caches for repeated `rowcompress` index probes and repeated `colcompress` scans.
 
 ### Main Tuning Knobs
 
@@ -112,7 +112,7 @@ CALL engine.rowcompress_merge_incremental('logs', max_batches => 128);
 SELECT * FROM engine.rowcompress_scan_stats();
 ```
 
-Operational views include `engine.colcompress_options`, `engine.colcompress_stripes`, `engine.rowcompress_options`, `engine.rowcompress_batches`, and `engine.storage_health`. `engine.storage_maintenance_recommendation(table)` returns health metrics and a recommended action for one table, and `CALL engine.storage_maintenance_auto(...)` can dispatch maintenance manually or through the built-in background worker.
+Operational views include `engine.colcompress_options`, `engine.colcompress_stripes`, `engine.rowcompress_options`, `engine.rowcompress_batches`, and `engine.storage_health`. `engine.storage_maintenance_recommendation(table)` returns health metrics and a recommended action for one table, and `CALL engine.storage_maintenance_auto(...)` can dispatch maintenance manually or through the built-in background worker. In v2.4, repeated `rowcompress` probes can reuse backend-local metadata and decompressed batches, and `engine.rowcompress_scan_stats()` reports those cache effects more reliably.
 
 ### When to Use Which AM
 
@@ -122,9 +122,9 @@ Operational views include `engine.colcompress_options`, `engine.colcompress_stri
 
 ### Caveats
 
-- The packaged version in this repo is `2.3.0` for PostgreSQL 15 through 18. Upstream 2.x also tests PostgreSQL 19 devel, but PG19 is not in this repo's package matrix. PostgreSQL 12, 13, and 14 users should stay on upstream 1.3.4.
-- The upstream default branch README has moved past the packaged 2.3.0 release; this stub follows `extension.csv` and the v2.3.0 release/PGXN docs.
-- Upgrade existing installations with `ALTER EXTENSION storage_engine UPDATE TO '2.3.0';`.
+- The packaged version in this repo is `2.4.0` for PostgreSQL 15 through 18. Upstream v2.4 validation also covers PostgreSQL 19 devel, but PG19 is not in this repo's package matrix. PostgreSQL 12, 13, and 14 users should stay on upstream 1.3.4.
+- This stub follows `extension.csv` and the v2.4.0 release/PGXN docs.
+- Upgrade existing installations with `ALTER EXTENSION storage_engine UPDATE TO '2.4.0';`.
 - `colcompress` and `rowcompress` do not support foreign keys or `AFTER ROW` triggers.
 - `pg_repack` cannot be used on these table access methods. `engine.colcompress_repack()` acquires `AccessExclusiveLock`, so schedule it during maintenance windows for large tables; the incremental merge procedures are the lower-lock option for dirty stripes or batches.
 - `VACUUM FULL`, `CLUSTER`, and `CREATE UNLOGGED TABLE ... USING colcompress` are not supported; upstream recommends the extension's merge/repack functions instead.

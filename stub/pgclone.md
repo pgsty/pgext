@@ -92,3 +92,4 @@ SELECT pgclone.cancel(1);
 - The usage guide states the extension requires superuser privileges to install and use.
 - Async features need `shared_preload_libraries = 'pgclone'`; worker-pool parallelism also depends on `max_worker_processes`.
 - Consistent async clones may still be opted out with `{"consistent": false}` if a source-side snapshot issue must be bypassed.
+- Pigsty packages `4.3.2` for PostgreSQL 14-18. The June 2026 RPM rebuild used an `LLVM_BINPATH` build fix; reviewed upstream, no material stub delta beyond the package caveat and existing v4.3.2 async-snapshot note.

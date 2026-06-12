@@ -1,19 +1,12 @@
 ## Usage
 
-Sources: [README v0.40.0](https://github.com/grove/pg-trickle/blob/v0.40.0/README.md), [v0.40.0 release notes](https://github.com/grove/pg-trickle/releases/tag/v0.40.0), [SQL reference](https://github.com/grove/pg-trickle/blob/v0.40.0/docs/SQL_REFERENCE.md), [configuration guide](https://github.com/grove/pg-trickle/blob/v0.40.0/docs/CONFIGURATION.md), [GUC catalog](https://github.com/grove/pg-trickle/blob/v0.40.0/docs/GUC_CATALOG.md), [SQL API catalog](https://github.com/grove/pg-trickle/blob/v0.40.0/docs/SQL_API_CATALOG.md), [Cargo.toml](https://github.com/grove/pg-trickle/blob/v0.40.0/Cargo.toml)
+Sources: [README v0.81.0](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/README.md), [v0.81.0 release notes](https://github.com/trickle-labs/pg-trickle/releases/tag/v0.81.0), [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/SQL_REFERENCE.md), [configuration guide](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/CONFIGURATION.md), [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/GUC_CATALOG.md), [Cargo.toml](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/Cargo.toml)
 
 `pg_trickle` provides stream tables for PostgreSQL 18: regular queryable tables whose contents are maintained from a defining SQL query. It uses incremental view maintenance when possible, can fall back to full recompute, and also supports `IMMEDIATE` mode for same-transaction maintenance.
 
-Upstream v0.40.0 is still pre-1.0 and says APIs and configuration options may change before a stable 1.0 release. The Rust package is `pg_trickle` version `0.40.0`, uses Rust edition 2024, defaults to the `pg18` feature, and pins `pgrx = 0.18.0`. Build prerequisites in the README are PostgreSQL 18.x plus Rust 1.85+ with pgrx 0.18.x.
+Upstream v0.81.0 is still pre-1.0 and says APIs and configuration options may change before a stable 1.0 release. The Rust package is `pg_trickle` version `0.81.0`, uses Rust edition 2024, defaults to the `pg18` feature, and pins `pgrx = 0.18.0`. Build prerequisites in the README are PostgreSQL 18.x plus Rust 1.85+ with pgrx 0.18.x.
 
-### Enable the Extension and Build Scope
-
-Install from release packages when available, or build with pgrx:
-
-```bash
-cargo pgrx install --release
-cargo pgrx package
-```
+### Enable the Extension
 
 Add the extension to PostgreSQL startup configuration and restart:
 
@@ -84,6 +77,25 @@ SELECT pgtrickle.drop_stream_table('regional_totals');
 
 The SQL reference documents lifecycle calls such as `pgtrickle.create_stream_table()`, `pgtrickle.create_stream_table_if_not_exists()`, `pgtrickle.create_or_replace_stream_table()`, `pgtrickle.bulk_create()`, `pgtrickle.alter_stream_table()`, `pgtrickle.drop_stream_table()`, `pgtrickle.resume_stream_table()`, `pgtrickle.refresh_stream_table()`, and `pgtrickle.repair_stream_table()`.
 
+Release `0.81.0` also documents preset wrappers for common refresh profiles:
+
+```sql
+SELECT pgtrickle.create_stream_table_realtime(
+    'regional_totals_rt',
+    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
+);
+
+SELECT pgtrickle.create_stream_table_batch(
+    'regional_totals_batch',
+    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
+);
+
+SELECT pgtrickle.create_stream_table_cost_optimized(
+    'regional_totals_cost',
+    'SELECT region, SUM(amount) AS total FROM orders GROUP BY region'
+);
+```
+
 The documented SQL coverage includes joins, aggregates, window functions, set operations, scalar and table subqueries, CTEs including `WITH RECURSIVE`, LATERAL/SRFs, `JSON_TABLE`, TopK queries with `ORDER BY ... LIMIT`, views as sources, tables without primary keys, and stream-table dependency DAGs. No custom SQL operator is the main user-facing API; users primarily interact through functions, views, catalog tables, GUCs, and normal SQL queries over stream tables.
 
 ### Operations and Introspection
@@ -99,6 +111,11 @@ SELECT * FROM pgtrickle.dependency_tree();
 SELECT * FROM pgtrickle.explain_st('regional_totals');
 SELECT * FROM pgtrickle.slot_health();
 SELECT * FROM pgtrickle.check_cdc_health();
+SELECT * FROM pgtrickle.commit_latency_stats();
+SELECT * FROM pgtrickle.tune_recommendations();
+SELECT * FROM pgtrickle.preview_stream_table(
+    'SELECT region, SUM(amount) FROM orders GROUP BY region'
+);
 ```
 
 Other documented views and catalog tables include `pgtrickle.stream_tables_info`, `pgtrickle.quick_health`, `pgtrickle.pgt_cdc_status`, `pgtrickle.pgt_stream_tables`, `pgtrickle.pgt_dependencies`, `pgtrickle.pgt_refresh_history`, `pgtrickle.pgt_change_tracking`, `pgtrickle.pgt_source_gates`, and `pgtrickle.pgt_refresh_groups`.
@@ -136,7 +153,7 @@ SELECT pgtrickle.set_relay_outbox(
 
 ### Important GUCs
 
-The v0.40.0 release adds generated docs for 125 configuration parameters. Common operational GUCs include:
+The v0.81.0 release documents 129 configuration parameters. Common operational GUCs include:
 
 - `pg_trickle.enabled`
 - `pg_trickle.cdc_mode`
@@ -169,6 +186,8 @@ The v0.40.0 release adds generated docs for 125 configuration parameters. Common
 - `pg_trickle.parallel_refresh_mode`
 - `pg_trickle.max_dynamic_refresh_workers`
 - `pg_trickle.max_concurrent_refreshes`
+- `pg_trickle.worker_pool_size`
+- `pg_trickle.merge_batch_size`
 - `pg_trickle.change_buffer_schema`
 - `pg_trickle.foreign_table_polling`
 - `pg_trickle.matview_polling`
@@ -183,18 +202,23 @@ The v0.40.0 release adds generated docs for 125 configuration parameters. Common
 - `pg_trickle.otel_endpoint`
 - `pg_trickle.trace_id`
 - `pg_trickle.cdc_capture_mode`
+- `pg_trickle.commit_timestamp_tracking`
+- `pg_trickle.l1_cache_max_entries`
+- `pg_trickle.self_heal_oom`
+- `pg_trickle.self_heal_lock_timeout`
 
-`pg_trickle.event_driven_wake` and `pg_trickle.wake_debounce_ms` are preserved for upgrade compatibility in v0.40.0 but are formally deprecated and have no effect, because PostgreSQL background workers cannot use `LISTEN`; the scheduler uses latch-based polling.
+`pg_trickle.event_driven_wake` and `pg_trickle.wake_debounce_ms` are preserved for upgrade compatibility but are formally deprecated and have no effect, because PostgreSQL background workers cannot use `LISTEN`; the scheduler uses latch-based polling.
 
-### v0.40.0 Operator Notes
+### v0.81.0 Operator Notes
 
-The v0.40.0 release focuses on operator confidence. It adds generated GUC and SQL API catalogs, a security model and secret-handling guide, a drain-mode runbook with end-to-end tests, expanded Prometheus alert rules, dbt and relay parity helpers, strict unsafe-block CI gating, clearer template-cache documentation, formal deprecation of `event_driven_wake`, and secret scanning in CI.
+The v0.81.0 release adds operator-facing introspection and tuning helpers including `pgtrickle.commit_latency_stats()`, `pgtrickle.tune_recommendations()`, and `pgtrickle.preview_stream_table(query text)`. It also adds bounded LRU DVM caches through `pg_trickle.l1_cache_max_entries`, a `pg_trickle.merge_batch_size` GUC, and self-healing circuit-breaker settings for out-of-memory and lock-timeout cases.
 
-The generated SQL API catalog lists 24 SQL-callable `#[pg_extern]` functions, including `pgtrickle.metrics_summary()`, `pgtrickle.outbox_status()`, `pgtrickle.outbox_rows_consumed()`, `pgtrickle.commit_offset()`, `pgtrickle.consumer_heartbeat()`, `pgtrickle.seek_offset()`, `pgtrickle.inbox_health()`, `pgtrickle.inbox_is_my_partition()`, `pgtrickle.snapshot_stream_table()`, `pgtrickle.restore_from_snapshot()`, `pgtrickle.restore_stream_tables()`, `pgtrickle.recommend_schedule()`, and `pgtrickle.schedule_recommendations()`.
+The release notes say no schema migration is needed for the new code paths; upgrade existing installations with `ALTER EXTENSION pg_trickle UPDATE` after replacing the extension binaries.
 
 ### Caveats
 
-- `pg_trickle` v0.40.0 is PostgreSQL 18 only; the release packages are named for `pg18`, and Cargo defaults to the `pg18` pgrx feature.
+- `pg_trickle` v0.81.0 is PostgreSQL 18 only; the release packages are named for `pg18`, and Cargo defaults to the `pg18` pgrx feature.
+- Pigsty builds use `pgrx` 0.18.0; keep pgrx schema metadata from linker garbage collection when rebuilding packages.
 - The extension control file marks it `superuser = true` and `trusted = false`.
 - Direct DML on stream tables is not allowed because their contents are managed by the refresh engine.
 - `IMMEDIATE` mode bypasses CDC and uses statement-level IVM triggers; WAL CDC is asynchronous and incompatible with in-transaction maintenance.

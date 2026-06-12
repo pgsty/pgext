@@ -1,8 +1,8 @@
 ## Usage
 
-Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.0 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.0), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
+Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.1 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.1), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
 
-`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; Pigsty packages version 0.3.0 for PostgreSQL 14-18.
+`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; Pigsty packages version 0.3.1 for PostgreSQL 14-18.
 
 ### Connect PostgreSQL to ClickHouse
 
@@ -64,7 +64,9 @@ VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
 ### Version and pushdown notes
 
 - The reference documents separate library and extension versions; `pgch_version()` reports the loaded library version.
-- Patch-only releases update the library without requiring `ALTER EXTENSION`.
+- Release `v0.3.1` is binary-only for existing SQL version `0.3`; it does not require `ALTER EXTENSION UPDATE` when upgrading from `v0.3.0`.
+- Release `v0.3.1` replaces the client library with `ClickHouse/clickhouse-c`, streams result blocks, and adds rectangular multidimensional array support for `SELECT` and `INSERT`.
+- Release `v0.3.1` also adds pushdown for `pg_re2` 0.3.0 functions such as `re2extractallgroupshorizontal`, `re2extractallgroupsvertical`, `re2regexpquotemeta`, and `re2splitbyregexp`, and fixes `UInt16` casts to PostgreSQL `int4`.
 - Release `v0.3.0` uses SQL version `0.3`; run `ALTER EXTENSION pg_clickhouse UPDATE TO '0.3'` to apply its SQL-level privilege change.
 - Release `v0.3.0` adds pushdown for `re2` functions, `soundex()`, two-argument `levenshtein()`, compatible `to_char(timestamp[tz], fmt)`, selected builtin functions, and JSON/JSONB path operations.
 - ClickHouse `JSON` maps to PostgreSQL `jsonb` or `json`; the binary driver's `JSON` mapping requires ClickHouse 24.10 or later.

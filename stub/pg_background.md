@@ -1,58 +1,105 @@
 ## Usage
 
-Sources: [official README](https://github.com/vibhorkum/pg_background/blob/master/README.md), [v1.9.2 release](https://github.com/vibhorkum/pg_background/releases/tag/v1.9.2)
+Sources: [official README](https://github.com/vibhorkum/pg_background/blob/master/README.md), [v2.0 release notes](https://github.com/vibhorkum/pg_background/releases/tag/v2.0), [migration guide](https://github.com/vibhorkum/pg_background/blob/v2.0/docs/MIGRATION.md).
 
-`pg_background` executes SQL in PostgreSQL background worker processes. The worker runs inside the server and uses its own transaction, which makes it useful for asynchronous maintenance, autonomous side effects, and long-running tasks that should not block the caller.
+`pg_background` executes SQL inside PostgreSQL background worker processes. Workers run independent transactions inside the server, which is useful for asynchronous maintenance, autonomous side effects, bounded long-running tasks, and progress-tracked jobs.
+
+Version 2.0 makes the unsuffixed API canonical. The old `_v2` names remain deprecated aliases through the 2.x line, but new code should use names such as `pg_background_launch`, `pg_background_result`, and `pg_background_run`.
+
+### One-Shot Execution
+
+Use `pg_background_run` when the SQL has side effects and you only need execution metadata:
 
 ```sql
 CREATE EXTENSION pg_background;
 
-SELECT * FROM pg_background_launch_v2(
+SELECT completed, has_error, sqlstate, error_message,
+       row_count, command_tag, elapsed_ms, timed_out
+FROM pg_background_run(
+  'INSERT INTO audit_log(ts, who) VALUES (clock_timestamp(), current_user)',
+  queue_size := 0,
+  timeout_ms := 30000,
+  label := 'audit-login'
+);
+```
+
+### Launch And Fetch Results
+
+Use the launch/result pattern when the background SQL returns rows:
+
+```sql
+SELECT * FROM pg_background_launch(
   'SELECT count(*) FROM large_table',
-  65536,
-  'count-large-table'
+  queue_size := 65536,
+  label := 'count-large-table'
 ) AS h;
 
-SELECT * FROM pg_background_result_v2(h.pid, h.cookie) AS (count bigint);
+SELECT * FROM pg_background_result(h.pid, h.cookie) AS (count bigint);
+```
+
+Results can be consumed once. Keep both `pid` and `cookie`; the cookie protects later calls from PID reuse.
+
+### Fire And Forget
+
+For side effects where no result rows need to be consumed:
+
+```sql
+SELECT * FROM pg_background_submit(
+  $$VACUUM (ANALYZE) public.events$$,
+  queue_size := 65536,
+  label := 'vacuum-events'
+);
 ```
 
 ### Core API
 
-- `pg_background_launch_v2(sql, queue_size, label)` launches a tracked worker and returns `(pid, cookie)`.
-- `pg_background_submit_v2(sql, queue_size, label)` is fire-and-forget for side-effect SQL.
-- `pg_background_result_v2(pid, cookie)` consumes the worker result set once.
-- `pg_background_wait_v2(...)` and `pg_background_wait_v2_timeout(...)` wait for completion.
-- `pg_background_cancel_v2(...)` stops execution; `pg_background_detach_v2(...)` stops tracking but lets work continue.
-- `pg_background_list_v2()`, `pg_background_stats_v2()`, and `pg_background_get_progress_v2(...)` expose worker state and progress.
+- `pg_background_launch(sql, queue_size, label)` launches a worker and returns `pg_background_handle(pid, cookie)`.
+- `pg_background_submit(sql, queue_size, label)` launches fire-and-forget work and returns a handle.
+- `pg_background_result(pid, cookie)` consumes result rows once.
+- `pg_background_result_info(pid, cookie)` returns completion and row-count metadata without consuming rows.
+- `pg_background_error_info(pid, cookie)` returns structured SQL error details.
+- `pg_background_wait(pid, cookie, timeout_ms DEFAULT 0)` waits for completion; `timeout_ms <= 0` blocks indefinitely.
+- `pg_background_cancel(pid, cookie, grace_ms DEFAULT 0)` requests cooperative cancellation.
+- `pg_background_detach(pid, cookie)` stops tracking a worker while letting it continue.
+- `pg_background_outcome(pid, cookie)` returns a combined status snapshot without raising on missing state.
+- `pg_background_list` and `pg_background_activity` are monitoring views; `pg_background_stats()` returns session counters.
 
-### Typical Patterns
+Convenience helpers include `pg_background_run_query`, `pg_background_drain`, `pg_background_wait_any`, `pg_background_cancel_by_label`, and `pg_background_purge`.
 
-Run maintenance without holding the client session open:
+### Progress Reporting
 
-```sql
-SELECT * FROM pg_background_submit_v2(
-  'VACUUM (ANALYZE) public.events',
-  65536,
-  'vacuum-events'
-);
-```
-
-Use an autonomous side effect from application SQL:
+Report progress from inside the worker SQL, then poll it from the launcher:
 
 ```sql
-SELECT * FROM pg_background_submit_v2(
-  $$INSERT INTO audit_log(ts, event) VALUES (clock_timestamp(), 'job queued')$$
-);
+SELECT * FROM pg_background_launch($$
+  SELECT pg_background_report_progress(0, 'starting');
+  SELECT pg_sleep(1);
+  SELECT pg_background_report_progress(100, 'done');
+$$) AS h;
+
+SELECT * FROM pg_background_get_progress(h.pid, h.cookie);
 ```
 
-### GUCs And Security
+`pg_background_report_progress` is the 2.0 name; the earlier `pg_background_progress` name was hard-renamed.
 
-- `pg_background.max_workers` limits concurrent workers per session.
-- `pg_background.default_queue_size` controls the shared-memory queue size.
-- `pg_background.worker_timeout` sets an execution timeout; `0` means no limit.
-- The extension creates a dedicated `pg_background_worker` NOLOGIN role and ships helper functions to grant or revoke execution privileges.
+### GUCs And Loading
+
+`pg_background` does not require `shared_preload_libraries`. Preloading is optional and mainly useful when you want its GUCs available before the extension is first loaded in a session.
+
+```sql
+SET pg_background.max_workers = 10;
+SET pg_background.default_queue_size = '256KB';
+SET pg_background.worker_timeout = '5min';
+```
+
+- `pg_background.max_workers` defaults to `16`.
+- `pg_background.default_queue_size` defaults to `65536` bytes.
+- `pg_background.worker_timeout` defaults to `0`, meaning no execution timeout.
 
 ### Caveats
 
-- Prefer the V2 API. The older V1 API is still present for compatibility but lacks cookie-based PID reuse protection.
-- The `v1.9.2` release is a binary-only patch for assert-enabled PostgreSQL builds. The SQL extension version remains `1.9`, so there is no new SQL upgrade script or user-facing function delta from `1.9.1`.
+- Pigsty packages `pg_background` 2.0 for PostgreSQL 14-18; upstream 2.0 also validates PostgreSQL 19 beta.
+- Upgrades from pre-1.8 installs must first reach the 1.8/1.10 release line before updating to 2.0.
+- The original v1 PID-only API was removed. Unsuffixed names now have cookie-protected semantics and return/use `(pid, cookie)`.
+- `pg_background_cancel_v2_grace` and `pg_background_wait_v2_timeout` are folded into `pg_background_cancel(..., grace_ms)` and `pg_background_wait(..., timeout_ms)`.
+- `pg_background_status_v2` was removed; use `pg_background_outcome(pid, cookie)`.

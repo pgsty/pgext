@@ -1,4 +1,3 @@
-
 ## Usage
 
 Sources: [README](https://github.com/ClickHouse/pg_stat_ch/blob/main/README.md), [release 0.3.6](https://github.com/ClickHouse/pg_stat_ch/releases/tag/v0.3.6)
@@ -55,7 +54,10 @@ SELECT pg_stat_ch_flush();
 - Parallel worker stats on PostgreSQL 18+.
 - Application name, client IP, and query text up to the upstream truncation limit.
 
+Release `0.3.6` replaces the normalize cache with a queryId-keyed LRU cache and replaces the OpenTelemetry SDK with a direct-protobuf exporter plus sampling support. Existing SQL usage remains centered on the event tables, summary views, and reset/version helper functions above.
+
 ### Caveats
 
 - The design intentionally drops events on queue overflow instead of blocking the foreground query path.
 - ClickHouse schema creation is a required part of setup; upstream quickstart scripts preload it automatically, but manual deployments must load the schema separately.
+- Pigsty's current RPM refresh for `pg_stat_ch` is PostgreSQL 16-18 on EL9/EL10 only; Debian/Ubuntu packages remain PostgreSQL 16-18 on the active targets.

@@ -1,0 +1,165 @@
+## Usage
+
+Sources: [pg_sorted_heap README](https://github.com/skuznetsov/pg_sorted_heap), [stable API](https://github.com/skuznetsov/pg_sorted_heap/blob/main/docs/api-stable.md), [SQL API](https://github.com/skuznetsov/pg_sorted_heap/blob/main/docs/api.md), [control file](https://github.com/skuznetsov/pg_sorted_heap/blob/main/pg_sorted_heap.control).
+
+`pg_sorted_heap` adds the `sorted_heap` table access method, per-page zone-map pruning, maintenance helpers, built-in `svec`/`hsvec` vector types, a planner-integrated `sorted_hnsw` index AM, and stable GraphRAG wrappers. Upstream documents PostgreSQL 16, 17, and 18 support for the current release surface.
+
+### Sorted Heap Tables
+
+Use `USING sorted_heap` on tables with a primary key. Bulk loads are sorted by primary key on the COPY path, and compaction globally sorts existing rows while rebuilding the zone map:
+
+```sql
+CREATE EXTENSION pg_sorted_heap;
+
+CREATE TABLE events (
+  ts timestamptz,
+  src text,
+  data jsonb,
+  PRIMARY KEY (ts, src)
+) USING sorted_heap;
+
+COPY events FROM '/path/to/events.csv';
+
+SELECT sorted_heap_compact('events'::regclass);
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT *
+FROM events
+WHERE ts BETWEEN '2026-01-01' AND '2026-01-02'
+  AND src = 'sensor-42';
+```
+
+The README describes planner-injected `SortedHeapScan` paths for primary-key predicates and zone-map pruning at the heap-block level.
+
+### Maintenance And Observability
+
+Stable maintenance functions include:
+
+```sql
+SELECT sorted_heap_compact('events'::regclass);
+CALL sorted_heap_compact_online('events'::regclass);
+
+SELECT sorted_heap_merge('events'::regclass);
+CALL sorted_heap_merge_online('events'::regclass);
+
+SELECT sorted_heap_rebuild_zonemap('events'::regclass);
+SELECT sorted_heap_zonemap_stats('events'::regclass);
+```
+
+Partition helpers operate on concrete sorted-heap leaves under a parent:
+
+```sql
+SELECT * FROM sorted_heap_partition_status('events_parent'::regclass);
+SELECT * FROM sorted_heap_partition_maintenance_plan('events_parent'::regclass, 'compact');
+SELECT * FROM sorted_heap_compact_partitions('events_parent'::regclass);
+```
+
+### Vector Search
+
+The stable vector API includes `svec(dim)` for float32 vectors, `hsvec(dim)` for float16 vectors, and the `sorted_hnsw` index AM:
+
+```sql
+CREATE TABLE documents (
+  id bigserial PRIMARY KEY,
+  embedding svec(384),
+  content text
+);
+
+CREATE INDEX documents_embedding_idx
+ON documents USING sorted_hnsw (embedding)
+WITH (m = 16, ef_construction = 200);
+
+SET sorted_hnsw.ef_search = 96;
+
+SELECT id, content
+FROM documents
+ORDER BY embedding <=> '[0.1,0.2,0.3]'::svec
+LIMIT 10;
+```
+
+For compact base-table storage, use `hsvec` and the matching operator class:
+
+```sql
+CREATE TABLE documents_compact (
+  id bigserial PRIMARY KEY,
+  embedding hsvec(384),
+  content text
+);
+
+CREATE INDEX documents_compact_embedding_idx
+ON documents_compact USING sorted_hnsw (embedding hsvec_cosine_ops)
+WITH (m = 16, ef_construction = 200);
+```
+
+The shared decoded graph cache is controlled by `sorted_hnsw.shared_cache`. Upstream examples note that using it requires preloading the extension:
+
+```conf
+shared_preload_libraries = 'pg_sorted_heap'
+```
+
+```sql
+SET sorted_hnsw.shared_cache = on;
+```
+
+### GraphRAG
+
+The stable fact-shaped GraphRAG entry point expects facts clustered by `(entity_id, relation_id, target_id)` or a registered alias mapping:
+
+```sql
+CREATE TABLE facts (
+  entity_id int4,
+  relation_id int2,
+  target_id int4,
+  embedding svec(384),
+  payload text,
+  PRIMARY KEY (entity_id, relation_id, target_id)
+) USING sorted_heap;
+
+CREATE INDEX facts_embedding_idx
+ON facts USING sorted_hnsw (embedding)
+WITH (m = 24, ef_construction = 200);
+
+SET sorted_hnsw.ef_search = 128;
+
+SELECT *
+FROM sorted_heap_graph_rag(
+  'facts'::regclass,
+  '[0.1,0.2,0.3]'::svec,
+  relation_path := ARRAY[1, 2],
+  ann_k := 64,
+  top_k := 10,
+  score_mode := 'path'
+);
+```
+
+Register alternate fact column names once:
+
+```sql
+SELECT sorted_heap_graph_register(
+  'facts_alias'::regclass,
+  entity_column := 'src_id',
+  relation_column := 'edge_type',
+  target_column := 'dst_id',
+  embedding_column := 'vec',
+  payload_column := 'body'
+);
+```
+
+For routed or tenant-sharded fact tables, use `sorted_heap_graph_route(...)` and inspect routing with `sorted_heap_graph_route_plan(...)`.
+
+### Stable GUCs
+
+- `sorted_heap.enable_scan_pruning`: enable sorted-heap custom scan pruning; default `on`.
+- `sorted_heap.vacuum_rebuild_zonemap`: rebuild zone maps during `VACUUM`; default `off`.
+- `sorted_heap.lazy_update`: defer eager zone-map update maintenance; default `off`.
+- `sorted_hnsw.ef_search`: runtime HNSW search breadth; default `64`.
+- `sorted_hnsw.shared_cache`: shared decoded graph cache when preloaded; default `on`.
+- `sorted_hnsw.sq8`: SQ8 decoded cache representation; default `on`.
+- `sorted_hnsw.build_sq8`: low-memory index build mode; default `off`.
+
+### Caveats
+
+- `sorted_heap.lazy_update = on` trades scan pruning for faster update-heavy workloads until compaction or merge restores pruning.
+- `sorted_hnsw.shared_cache` should be used with `shared_preload_libraries = 'pg_sorted_heap'`.
+- Planner-integrated `sorted_hnsw` ordered scans require `LIMIT`; the SQL API says they are not chosen when there is no limit or when `LIMIT > sorted_hnsw.ef_search`.
+- The lower-level GraphRAG and legacy/manual ANN helpers remain documented, but the stable application-facing API is the compact surface in `docs/api-stable.md`.
