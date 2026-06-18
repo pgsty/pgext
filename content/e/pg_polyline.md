@@ -26,6 +26,8 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
+> [!Note] pgrx patched to 0.18.1.
+
 
 ## Packages
 
@@ -52,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-polyline : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-polyline : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-polyline : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-polyline : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-polyline : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-polyline : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-polyline : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-18-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-17-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-16-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-15-pg-polyline : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.1" "postgresql-14-pg-polyline : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-pg-polyline` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 183.7 KiB | [postgresql-18-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-polyline/postgresql-18-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-polyline` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 286.5 KiB | [postgresql-18-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-18-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-polyline` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 181.8 KiB | [postgresql-18-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-18-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-polyline` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 744.9 KiB | [postgresql-18-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-18-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-polyline` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 660.5 KiB | [postgresql-18-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-18-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +99,8 @@ width: full
 | `postgresql-17-pg-polyline` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 183.7 KiB | [postgresql-17-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-polyline/postgresql-17-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-polyline` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 286.4 KiB | [postgresql-17-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-17-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-polyline` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 182.1 KiB | [postgresql-17-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-17-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-polyline` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 742.5 KiB | [postgresql-17-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-17-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-polyline` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 657.7 KiB | [postgresql-17-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-17-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +121,8 @@ width: full
 | `postgresql-16-pg-polyline` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 183.7 KiB | [postgresql-16-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-polyline/postgresql-16-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-polyline` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 286.5 KiB | [postgresql-16-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-16-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-polyline` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 181.7 KiB | [postgresql-16-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-16-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-polyline` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 742.8 KiB | [postgresql-16-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-16-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-polyline` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 656.9 KiB | [postgresql-16-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-16-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +143,8 @@ width: full
 | `postgresql-15-pg-polyline` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 183.8 KiB | [postgresql-15-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-polyline/postgresql-15-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-polyline` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 286.3 KiB | [postgresql-15-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-15-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-polyline` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 182.2 KiB | [postgresql-15-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-15-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-polyline` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 731.5 KiB | [postgresql-15-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-15-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-polyline` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 651.6 KiB | [postgresql-15-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-15-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +165,8 @@ width: full
 | `postgresql-14-pg-polyline` | `0.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 183.8 KiB | [postgresql-14-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-polyline/postgresql-14-pg-polyline_0.0.1-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-polyline` | `0.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 286.3 KiB | [postgresql-14-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-14-pg-polyline_0.0.1-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-polyline` | `0.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 182.1 KiB | [postgresql-14-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-polyline/postgresql-14-pg-polyline_0.0.1-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-polyline` | `0.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 733.7 KiB | [postgresql-14-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-14-pg-polyline_0.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-polyline` | `0.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 649.0 KiB | [postgresql-14-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-polyline/postgresql-14-pg-polyline_0.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

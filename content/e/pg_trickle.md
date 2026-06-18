@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "pg_partman" >}} {{< ext "timeseries" >}} |
 
-> [!Note] PG18 only; pgrx schema metadata must be kept from linker garbage collection
+> [!Note] PG18 only; pgrx schema metadata must be kept from linker garbage collection; pgrx patched to 0.18.1.
 
 
 ## Packages
@@ -77,8 +77,8 @@ width: full
 | `postgresql-18-pg-trickle` | `0.81.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-trickle` | `0.81.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-trickle` | `0.81.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-trickle` | `0.81.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-18-pg-trickle` | `0.81.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.4 MiB | [postgresql-18-pg-trickle_0.81.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-trickle` | `0.81.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.9 MiB | [postgresql-18-pg-trickle_0.81.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-trickle/postgresql-18-pg-trickle_0.81.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

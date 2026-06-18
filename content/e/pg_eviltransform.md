@@ -28,6 +28,8 @@ width: full
 |   **Requires**    | {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "earthdistance" >}} {{< ext "tzf" >}} {{< ext "geoip" >}} |
 
+> [!Note] pgrx patched to 0.18.1.
+
 
 ## Packages
 
@@ -54,8 +56,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-eviltransform : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-eviltransform : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-eviltransform : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-eviltransform : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-eviltransform : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +79,8 @@ width: full
 | `postgresql-18-eviltransform` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 174.5 KiB | [postgresql-18-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-18-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-eviltransform` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 277.8 KiB | [postgresql-18-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-18-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-eviltransform` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 173.1 KiB | [postgresql-18-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-18-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-eviltransform` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 748.9 KiB | [postgresql-18-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-18-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-eviltransform` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 665.3 KiB | [postgresql-18-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-18-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +101,8 @@ width: full
 | `postgresql-17-eviltransform` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 174.5 KiB | [postgresql-17-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-17-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-eviltransform` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 277.7 KiB | [postgresql-17-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-17-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-eviltransform` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 173.2 KiB | [postgresql-17-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-17-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-eviltransform` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 747.5 KiB | [postgresql-17-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-17-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-eviltransform` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 663.1 KiB | [postgresql-17-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-17-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +123,8 @@ width: full
 | `postgresql-16-eviltransform` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 174.5 KiB | [postgresql-16-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-16-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-eviltransform` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 277.8 KiB | [postgresql-16-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-16-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-eviltransform` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 173.1 KiB | [postgresql-16-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-16-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-eviltransform` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 744.3 KiB | [postgresql-16-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-16-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-eviltransform` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 662.8 KiB | [postgresql-16-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-16-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +145,8 @@ width: full
 | `postgresql-15-eviltransform` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 174.5 KiB | [postgresql-15-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-eviltransform` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 277.7 KiB | [postgresql-15-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-eviltransform` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 173.2 KiB | [postgresql-15-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-eviltransform` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 740.4 KiB | [postgresql-15-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-eviltransform` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 655.6 KiB | [postgresql-15-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-15-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +167,8 @@ width: full
 | `postgresql-14-eviltransform` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 174.5 KiB | [postgresql-14-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-eviltransform` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 277.7 KiB | [postgresql-14-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-eviltransform` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 173.2 KiB | [postgresql-14-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-eviltransform` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 738.0 KiB | [postgresql-14-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-eviltransform` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 653.9 KiB | [postgresql-14-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-eviltransform/postgresql-14-eviltransform_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

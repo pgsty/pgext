@@ -26,6 +26,8 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pg_uuidv7" >}} {{< ext "pgx_ulid" >}} {{< ext "uuid-ossp" >}} {{< ext "pg_hashids" >}} {{< ext "permuteseq" >}} |
 
+> [!Note] pgrx patched to 0.18.1.
+
 
 ## Packages
 
@@ -52,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-typeid : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-typeid : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-typeid : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-18-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-17-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-16-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-15-typeid : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.3.0" "postgresql-14-typeid : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -75,6 +77,8 @@ width: full
 | `postgresql-18-typeid` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 255.6 KiB | [postgresql-18-typeid_0.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 363.6 KiB | [postgresql-18-typeid_0.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 254.0 KiB | [postgresql-18-typeid_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 788.0 KiB | [postgresql-18-typeid_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 702.9 KiB | [postgresql-18-typeid_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-18-typeid_0.3.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -95,6 +99,8 @@ width: full
 | `postgresql-17-typeid` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 255.7 KiB | [postgresql-17-typeid_0.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 363.4 KiB | [postgresql-17-typeid_0.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 254.2 KiB | [postgresql-17-typeid_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 788.2 KiB | [postgresql-17-typeid_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 700.4 KiB | [postgresql-17-typeid_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-17-typeid_0.3.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -115,6 +121,8 @@ width: full
 | `postgresql-16-typeid` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 255.5 KiB | [postgresql-16-typeid_0.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 363.5 KiB | [postgresql-16-typeid_0.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 254.0 KiB | [postgresql-16-typeid_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 785.2 KiB | [postgresql-16-typeid_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 699.7 KiB | [postgresql-16-typeid_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-16-typeid_0.3.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -135,6 +143,8 @@ width: full
 | `postgresql-15-typeid` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 255.7 KiB | [postgresql-15-typeid_0.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 363.4 KiB | [postgresql-15-typeid_0.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 254.2 KiB | [postgresql-15-typeid_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 778.4 KiB | [postgresql-15-typeid_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 694.3 KiB | [postgresql-15-typeid_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-15-typeid_0.3.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -155,6 +165,8 @@ width: full
 | `postgresql-14-typeid` | `0.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 256.3 KiB | [postgresql-14-typeid_0.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 363.6 KiB | [postgresql-14-typeid_0.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-typeid` | `0.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 253.4 KiB | [postgresql-14-typeid_0.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-typeid` | `0.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 778.0 KiB | [postgresql-14-typeid_0.3.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-typeid` | `0.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 691.7 KiB | [postgresql-14-typeid_0.3.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-typeid/postgresql-14-typeid_0.3.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

@@ -14,8 +14,8 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 388 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 57 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 389 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 58 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 52 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 12 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="388 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="389 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -305,6 +305,7 @@ The traditional PostgreSQL extension language
 | 5990 | {{< alias "pg_surgery" >}} | extension to perform surgery on a damaged relation |
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
+| 6030 | {{< alias "pg_stat_backtrace" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
 | 6210 | {{< alias "pg_show_plans" >}} | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
@@ -422,7 +423,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="57 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="58 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -447,6 +448,7 @@ Pure SQL extensions and functions
 | 2670 | {{< alias "pgmb" >}} | A simple PostgreSQL Message Broker system |
 | 2690 | {{< alias "fsm_core" >}} | Finite state machine toolkit for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | Query index advisor |
+| 3120 | {{< alias "pg_mockable" >}} | Create mockable wrappers for PostgreSQL functions in tests |
 | 3520 | {{< alias "pg_text_semver" >}} | Semantic version domain and comparison operators for PostgreSQL |
 | 3640 | {{< alias "pgfaceting" >}} | fast faceting queries using an inverted index |
 | 3670 | {{< alias "pg_xenophile" >}} | More than the bare necessities for PostgreSQL i18n and l10n. |

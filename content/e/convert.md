@@ -27,6 +27,8 @@ width: full
 |    **Schemas**    | `convert` |
 |   **See Also**    | {{< ext "unit" >}} |
 
+> [!Note] pgrx patched to 0.18.1.
+
 
 ## Packages
 
@@ -53,8 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-convert : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-convert : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-convert : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-convert : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-convert : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-convert : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-convert : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-18-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-17-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-16-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-15-convert : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.0" "postgresql-14-convert : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -76,6 +78,8 @@ width: full
 | `postgresql-18-convert` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 170.1 KiB | [postgresql-18-convert_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-18-convert_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-convert` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 271.4 KiB | [postgresql-18-convert_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-18-convert_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-convert` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 168.8 KiB | [postgresql-18-convert_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-18-convert_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-convert` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 732.5 KiB | [postgresql-18-convert_0.1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-18-convert_0.1.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-convert` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 650.9 KiB | [postgresql-18-convert_0.1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-18-convert_0.1.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -96,6 +100,8 @@ width: full
 | `postgresql-17-convert` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 170.0 KiB | [postgresql-17-convert_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-17-convert_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-convert` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 271.2 KiB | [postgresql-17-convert_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-17-convert_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-convert` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 168.7 KiB | [postgresql-17-convert_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-17-convert_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-convert` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 730.0 KiB | [postgresql-17-convert_0.1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-17-convert_0.1.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-convert` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 648.9 KiB | [postgresql-17-convert_0.1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-17-convert_0.1.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -116,6 +122,8 @@ width: full
 | `postgresql-16-convert` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 169.9 KiB | [postgresql-16-convert_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-16-convert_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-convert` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 271.2 KiB | [postgresql-16-convert_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-16-convert_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-convert` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 168.7 KiB | [postgresql-16-convert_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-16-convert_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-convert` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 729.9 KiB | [postgresql-16-convert_0.1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-16-convert_0.1.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-convert` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 648.5 KiB | [postgresql-16-convert_0.1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-16-convert_0.1.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -136,6 +144,8 @@ width: full
 | `postgresql-15-convert` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 169.9 KiB | [postgresql-15-convert_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-15-convert_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-convert` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 271.0 KiB | [postgresql-15-convert_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-15-convert_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-convert` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 168.8 KiB | [postgresql-15-convert_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-15-convert_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-convert` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 722.2 KiB | [postgresql-15-convert_0.1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-15-convert_0.1.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-convert` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 642.4 KiB | [postgresql-15-convert_0.1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-15-convert_0.1.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -156,6 +166,8 @@ width: full
 | `postgresql-14-convert` | `0.1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 169.9 KiB | [postgresql-14-convert_0.1.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/c/convert/postgresql-14-convert_0.1.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-convert` | `0.1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 270.9 KiB | [postgresql-14-convert_0.1.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-14-convert_0.1.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-convert` | `0.1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 168.9 KiB | [postgresql-14-convert_0.1.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/c/convert/postgresql-14-convert_0.1.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-convert` | `0.1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 719.5 KiB | [postgresql-14-convert_0.1.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-14-convert_0.1.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-convert` | `0.1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 640.4 KiB | [postgresql-14-convert_0.1.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/c/convert/postgresql-14-convert_0.1.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

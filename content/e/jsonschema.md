@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_graphql" >}} {{< ext "plv8" >}} |
 
-> [!Note] Distinct from Supabase pg_jsonschema.
+> [!Note] Distinct from Supabase pg_jsonschema; pgrx patched to 0.18.1.
 
 
 ## Packages
@@ -77,8 +77,8 @@ width: full
 | `postgresql-18-jsonschema` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 797.3 KiB | [postgresql-18-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-jsonschema` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 862.5 KiB | [postgresql-18-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-jsonschema` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 782.2 KiB | [postgresql-18-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 856.4 KiB | [postgresql-18-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 778.5 KiB | [postgresql-18-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-18-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-18-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-18-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-18-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -99,8 +99,8 @@ width: full
 | `postgresql-17-jsonschema` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 792.2 KiB | [postgresql-17-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-jsonschema` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 866.3 KiB | [postgresql-17-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-jsonschema` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 787.8 KiB | [postgresql-17-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 859.1 KiB | [postgresql-17-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 778.4 KiB | [postgresql-17-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-17-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-17-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-17-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-17-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -121,8 +121,8 @@ width: full
 | `postgresql-16-jsonschema` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 792.4 KiB | [postgresql-16-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-jsonschema` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 866.7 KiB | [postgresql-16-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-jsonschema` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 782.7 KiB | [postgresql-16-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 856.3 KiB | [postgresql-16-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 780.0 KiB | [postgresql-16-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-16-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-16-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-16-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-16-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -143,8 +143,8 @@ width: full
 | `postgresql-15-jsonschema` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 797.6 KiB | [postgresql-15-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-jsonschema` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 864.6 KiB | [postgresql-15-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-jsonschema` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 786.6 KiB | [postgresql-15-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 856.2 KiB | [postgresql-15-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 781.5 KiB | [postgresql-15-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-15-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-15-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-15-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-15-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -165,8 +165,8 @@ width: full
 | `postgresql-14-jsonschema` | `0.1.9` | [u22.aarch64](/os/u22.aarch64) | pigsty | 796.4 KiB | [postgresql-14-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-jsonschema` | `0.1.9` | [u24.x86_64](/os/u24.x86_64) | pigsty | 860.6 KiB | [postgresql-14-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-jsonschema` | `0.1.9` | [u24.aarch64](/os/u24.aarch64) | pigsty | 782.6 KiB | [postgresql-14-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 856.4 KiB | [postgresql-14-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 779.0 KiB | [postgresql-14-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-14-jsonschema` | `0.1.9` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-14-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-jsonschema` | `0.1.9` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-14-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/j/jsonschema/postgresql-14-jsonschema_0.1.9-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

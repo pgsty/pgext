@@ -27,6 +27,8 @@ width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_similarity" >}} |
 
+> [!Note] pgrx patched to 0.18.1.
+
 
 ## Packages
 
@@ -53,8 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-18-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-17-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-16-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-15-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-14-pgvectorscale : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-18-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-17-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-16-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-15-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-14-pgvectorscale : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-18-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-17-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-16-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-15-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-14-pgvectorscale : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgvectorscale : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgvectorscale : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgvectorscale : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-18-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-17-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-16-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-15-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-14-pgvectorscale : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-18-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-17-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-16-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-15-pgvectorscale : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.9.0" "postgresql-14-pgvectorscale : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -76,6 +78,8 @@ width: full
 | `postgresql-18-pgvectorscale` | `0.9.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 353.8 KiB | [postgresql-18-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgvectorscale/postgresql-18-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pgvectorscale` | `0.9.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 477.6 KiB | [postgresql-18-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-18-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pgvectorscale` | `0.9.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.7 KiB | [postgresql-18-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-18-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pgvectorscale` | `0.9.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 452.0 KiB | [postgresql-18-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-18-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pgvectorscale` | `0.9.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 376.6 KiB | [postgresql-18-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-18-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -96,6 +100,8 @@ width: full
 | `postgresql-17-pgvectorscale` | `0.9.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 354.1 KiB | [postgresql-17-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgvectorscale/postgresql-17-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pgvectorscale` | `0.9.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 477.6 KiB | [postgresql-17-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-17-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pgvectorscale` | `0.9.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.5 KiB | [postgresql-17-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-17-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pgvectorscale` | `0.9.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 451.1 KiB | [postgresql-17-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-17-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pgvectorscale` | `0.9.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 376.2 KiB | [postgresql-17-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-17-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -116,6 +122,8 @@ width: full
 | `postgresql-16-pgvectorscale` | `0.9.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 353.7 KiB | [postgresql-16-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgvectorscale/postgresql-16-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pgvectorscale` | `0.9.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 477.5 KiB | [postgresql-16-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-16-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pgvectorscale` | `0.9.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 350.2 KiB | [postgresql-16-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-16-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pgvectorscale` | `0.9.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 451.4 KiB | [postgresql-16-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-16-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pgvectorscale` | `0.9.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 376.3 KiB | [postgresql-16-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-16-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -136,6 +144,8 @@ width: full
 | `postgresql-15-pgvectorscale` | `0.9.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 353.8 KiB | [postgresql-15-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgvectorscale/postgresql-15-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pgvectorscale` | `0.9.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 477.4 KiB | [postgresql-15-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-15-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pgvectorscale` | `0.9.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.8 KiB | [postgresql-15-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-15-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pgvectorscale` | `0.9.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 451.6 KiB | [postgresql-15-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-15-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pgvectorscale` | `0.9.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 376.6 KiB | [postgresql-15-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-15-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -156,6 +166,8 @@ width: full
 | `postgresql-14-pgvectorscale` | `0.9.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 354.0 KiB | [postgresql-14-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgvectorscale/postgresql-14-pgvectorscale_0.9.0-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pgvectorscale` | `0.9.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 476.6 KiB | [postgresql-14-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-14-pgvectorscale_0.9.0-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pgvectorscale` | `0.9.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 349.1 KiB | [postgresql-14-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgvectorscale/postgresql-14-pgvectorscale_0.9.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pgvectorscale` | `0.9.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 450.7 KiB | [postgresql-14-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-14-pgvectorscale_0.9.0-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pgvectorscale` | `0.9.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 375.6 KiB | [postgresql-14-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgvectorscale/postgresql-14-pgvectorscale_0.9.0-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

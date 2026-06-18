@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_show_plans" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "pg_hint_plan" >}} {{< ext "pg_qualstats" >}} {{< ext "pg_store_plans" >}} {{< ext "pg_profile" >}} {{< ext "powa" >}} |
 
-> [!Note] manual updated pgrx by Vonng
+> [!Note] pgrx patched to 0.18.1.
 
 
 ## Packages
@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-explain-ui : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-explain-ui : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-explain-ui : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-18-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-17-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-16-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-15-pg-explain-ui : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.0.2" "postgresql-14-pg-explain-ui : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 846.9 KiB | [postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 968.9 KiB | [postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 836.3 KiB | [postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-18-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-18-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-18-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 846.8 KiB | [postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 970.2 KiB | [postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 836.2 KiB | [postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-17-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-17-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-17-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 846.7 KiB | [postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 970.4 KiB | [postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 837.1 KiB | [postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-16-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.7 MiB | [postgresql-16-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-16-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.4 KiB | [postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 969.8 KiB | [postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 837.1 KiB | [postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-15-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-15-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-15-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.2 KiB | [postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 969.7 KiB | [postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-explain-ui` | `0.0.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 837.8 KiB | [postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-explain-ui` | `0.0.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.8 MiB | [postgresql-14-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-explain-ui` | `0.0.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.6 MiB | [postgresql-14-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-explain-ui/postgresql-14-pg-explain-ui_0.0.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

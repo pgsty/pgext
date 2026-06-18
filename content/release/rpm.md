@@ -6,7 +6,36 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-06-18
+
+Updated Rust extension pgrx version to 0.18.1.
+
+| Package             | Old    | New    | Comment                    |
+|:--------------------|:-------|:-------|:---------------------------|
+| timescaledb         | 2.27.2 | 2.28.0 | PG 15-18                   |
+| documentdb          | 0.110  | 0.112  | PG 15-18                   |
+| timeseries          | 0.2.0  | 0.2.1  | PG 14-18                   |
+| pg_clickhouse       | 0.3.1  | 0.3.2  | PG 14-18                   |
+| biscuit             | 2.2.2  | 2.3.0  | PG 16-18                   |
+| toastinfo           | 1.6    | 1.7    | PG 14-18, RPM only         |
+| etcd_fdw            | 0.0.0  | 0.0.1  | PG 14-18, pgrx 0.18.1     |
+| pg_anon             | 3.0.13 | 3.1.1  | PG 14-18, pgrx 0.18.1     |
+| pg_graphql          | 1.5.12 | 1.6.1  | PG 14-18, pgrx 0.18.1     |
+| pg_kazsearch        | 2.0.0  | 2.2.0  | PG 16-18, pgrx 0.18.1     |
+| pg_session_jwt      | 0.4.0  | 0.5.0  | PG 14-18, pgrx 0.18.1     |
+| pg_tzf              | 0.2.4  | 0.3.0  | PG 14-18, pgrx 0.18.1     |
+| pg_vectorize        | 0.26.1 | 0.26.2 | PG 14-18, pgrx 0.18.1     |
+| pglinter            | 1.1.2  | 2.0.0  | PG 14-18, pgrx 0.18.1     |
+| pgmqtt              | 0.1.0  | 0.3.0  | PG 14-18, pgrx 0.18.1     |
+| timescaledb_toolkit | 1.22.0 | 1.23.0 | PG 15-18, pgrx 0.18.1     |
+| wrappers            | 0.6.0  | 0.6.1  | PG 14-18, pgrx 0.18.1     |
+| pgrdf               | 0.5.0  | 0.6.4  | PG 14-17, pgrx 0.18.1     |
+| pg_mockable         | -      | 1.1.0  | new, PG 14-18             |
+| pg_stat_backtrace   | -      | 1.0.0  | new, PG 14-18, libunwind  |
+
 ## 2026-06-12
+
+Added most Ubuntu 26.04 Resolute core extension packages.
 
 | Package        | Old    | New    | Comment                          |
 |:---------------|:-------|:-------|:---------------------------------|
@@ -15,32 +44,27 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 | pg_clickhouse  | 0.3.0  | 0.3.1  | PG 14-18                         |
 | pg_dirtyread   | 2.7    | 2.8    | PG 14-18, RPM only               |
 | pg_net         | 0.20.2 | 0.20.3 | PG 14-18, EL10 only              |
-| pg_search      | 0.23.1 | 0.24.0 | PG 15-18, pgrx 0.18.1            |
+| pg_search      | 0.23.1 | 0.24.0 | PG 15-18                         |
 | pg_stat_ch     | 0.3.6  | 0.3.6  | PG 16-18, EL9/EL10 only, rebuild |
 | pg_trickle     | 0.40.0 | 0.81.0 | PG 18 only                       |
-| pgclone        | 4.3.2  | 4.3.2  | PG 14-18, LLVM_BINPATH rebuild   |
 | plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                         |
 | provsql        | 1.8.0  | 1.9.0  | PG 14-18                         |
 | re2            | 0.1.1  | 0.3.0  | PG 16-18                         |
 | storage_engine | 2.3.0  | 2.4.0  | PG 15-18                         |
 | timescaledb    | 2.27.0 | 2.27.2 | PG 15-18                         |
 | toastinfo      | 1.5    | 1.6    | PG 14-18, RPM only               |
-| pggraph        | 0.1.5  | 0.1.7  | PG 14-18, extension: `graph`     |
-| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18, requires pgvector      |
+| pggraph        | 0.1.5  | 0.1.7  | PG 14-18                         |
+| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18                         |
 | pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                         |
-| pg_durable     | -      | 0.2.2  | new, PG 14-18, requires preload  |
-| jsonschema     | -      | 0.1.9  | new, PG 14-18                    |
 | pg_orca        | -      | 1.0.0  | new, PG 18 only                  |
 | pg_projection  | -      | 1.0.0  | new, PG 14-18                    |
-| pg_sorted_heap | -      | 0.14.0 | new, PG 16-18, requires preload  |
+| pg_sorted_heap | -      | 0.14.0 | new, PG 16-18                    |
 | pg_stl         | -      | 1.0.0  | new, PG 16-18                    |
 | pg_uuid_v8     | -      | 1.0.0  | new, PG 14-18                    |
-| pgrdf          | -      | 0.5.0  | new, PG 14-17, requires preload  |
-| pg_pinyin      | -      | 0.0.4  | new, PG 14-18, pgrx 0.18.1       |
+| pg_pinyin      | -      | 0.0.4  | new, PG 14-18                    |
 | pg_task        | -      | 2.1.29 | new, PG 14-18, pcre2grep fix     |
 | pg_extra_time  | -      | 2.1.0  | new, PG 14-18                    |
 | fsm_core       | -      | 1.1.0  | new, PG 15-18                    |
-
 
 ## 2026-05-15
 

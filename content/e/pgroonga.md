@@ -55,8 +55,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-18-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-14-pgroonga : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-18-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-14-pgroonga : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-18-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-14-pgroonga : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgroonga : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pgroonga : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pgroonga : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-18-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-14-pgroonga : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-18-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-17-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-16-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-15-pgroonga : AVAIL 1" "green" >}} | {{< bg "PIGSTY 4.0.4" "postgresql-14-pgroonga : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -78,6 +78,8 @@ width: full
 | `postgresql-18-pgroonga` | `4.0.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 680.2 KiB | [postgresql-18-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-18-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pgroonga` | `4.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 651.0 KiB | [postgresql-18-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-18-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pgroonga` | `4.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 650.1 KiB | [postgresql-18-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-18-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pgroonga` | `4.0.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 647.6 KiB | [postgresql-18-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-18-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pgroonga` | `4.0.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 641.6 KiB | [postgresql-18-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-18-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -98,6 +100,8 @@ width: full
 | `postgresql-17-pgroonga` | `4.0.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 759.0 KiB | [postgresql-17-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pgroonga` | `4.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 650.0 KiB | [postgresql-17-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pgroonga` | `4.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 649.4 KiB | [postgresql-17-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pgroonga` | `4.0.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 646.6 KiB | [postgresql-17-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pgroonga` | `4.0.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 640.8 KiB | [postgresql-17-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-17-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -118,6 +122,8 @@ width: full
 | `postgresql-16-pgroonga` | `4.0.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 746.9 KiB | [postgresql-16-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pgroonga` | `4.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 643.0 KiB | [postgresql-16-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pgroonga` | `4.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 643.0 KiB | [postgresql-16-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pgroonga` | `4.0.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 639.8 KiB | [postgresql-16-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pgroonga` | `4.0.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 634.5 KiB | [postgresql-16-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-16-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -138,6 +144,8 @@ width: full
 | `postgresql-15-pgroonga` | `4.0.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 758.6 KiB | [postgresql-15-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pgroonga` | `4.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 650.9 KiB | [postgresql-15-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pgroonga` | `4.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 651.3 KiB | [postgresql-15-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pgroonga` | `4.0.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 648.8 KiB | [postgresql-15-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pgroonga` | `4.0.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 645.0 KiB | [postgresql-15-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-15-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -158,6 +166,8 @@ width: full
 | `postgresql-14-pgroonga` | `4.0.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 698.0 KiB | [postgresql-14-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.4-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pgroonga` | `4.0.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 596.8 KiB | [postgresql-14-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.4-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pgroonga` | `4.0.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 598.6 KiB | [postgresql-14-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pgroonga` | `4.0.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 692.2 KiB | [postgresql-14-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pgroonga` | `4.0.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 684.2 KiB | [postgresql-14-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgroonga/postgresql-14-pgroonga_4.0.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

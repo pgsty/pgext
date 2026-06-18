@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
 
-> [!Note] manual updated pgrx by Vonng
+> [!Note] pgrx patched to 0.18.1.
 
 
 ## Packages
@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
 | {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
 | {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-render : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-render : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-render : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-18-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-17-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-16-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-15-pg-render : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.1.3" "postgresql-14-pg-render : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `postgresql-18-pg-render` | `0.1.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.6 KiB | [postgresql-18-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-18-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-render` | `0.1.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1013.0 KiB | [postgresql-18-pg-render_0.1.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-18-pg-render_0.1.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-render` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 841.3 KiB | [postgresql-18-pg-render_0.1.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-18-pg-render_0.1.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-render` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-18-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-18-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-render` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-18-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-18-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -97,6 +99,8 @@ width: full
 | `postgresql-17-pg-render` | `0.1.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.4 KiB | [postgresql-17-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-17-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-render` | `0.1.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1012.6 KiB | [postgresql-17-pg-render_0.1.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-render` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 839.6 KiB | [postgresql-17-pg-render_0.1.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-17-pg-render_0.1.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-render` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-17-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-17-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-render` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-17-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-17-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -117,6 +121,8 @@ width: full
 | `postgresql-16-pg-render` | `0.1.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.5 KiB | [postgresql-16-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-16-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-render` | `0.1.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1012.8 KiB | [postgresql-16-pg-render_0.1.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-render` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 839.5 KiB | [postgresql-16-pg-render_0.1.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-16-pg-render_0.1.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-render` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-16-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-16-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-render` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-16-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-16-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -137,6 +143,8 @@ width: full
 | `postgresql-15-pg-render` | `0.1.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.7 KiB | [postgresql-15-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-15-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-render` | `0.1.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1012.3 KiB | [postgresql-15-pg-render_0.1.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-render` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 841.4 KiB | [postgresql-15-pg-render_0.1.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-15-pg-render_0.1.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-render` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-15-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-15-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-render` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-15-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-15-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -157,6 +165,8 @@ width: full
 | `postgresql-14-pg-render` | `0.1.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 847.6 KiB | [postgresql-14-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-render/postgresql-14-pg-render_0.1.3-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-render` | `0.1.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 1009.6 KiB | [postgresql-14-pg-render_0.1.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.3-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-render` | `0.1.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 841.6 KiB | [postgresql-14-pg-render_0.1.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-render/postgresql-14-pg-render_0.1.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-render` | `0.1.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 1.5 MiB | [postgresql-14-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-14-pg-render_0.1.3-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-render` | `0.1.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 1.4 MiB | [postgresql-14-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-render/postgresql-14-pg-render_0.1.3-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

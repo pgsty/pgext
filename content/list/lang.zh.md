@@ -14,8 +14,8 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 388 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 57 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 389 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 58 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 52 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 12 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="388 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="389 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -305,6 +305,7 @@ weight: 200
 | 5990 | {{< alias "pg_surgery" >}} | 对损坏的关系进行手术 |
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
+| 6030 | {{< alias "pg_stat_backtrace" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
 | 6210 | {{< alias "pg_show_plans" >}} | 打印所有当前正在运行查询的执行计划 |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 内核统计信息收集 |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
@@ -422,7 +423,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="57 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="58 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -447,6 +448,7 @@ weight: 200
 | 2670 | {{< alias "pgmb" >}} | 一个简单的PostgreSQL消息代理系统 |
 | 2690 | {{< alias "fsm_core" >}} | PostgreSQL 有限状态机工具包 |
 | 2800 | {{< alias "index_advisor" >}} | 查询索引建议器 |
+| 3120 | {{< alias "pg_mockable" >}} | 为测试创建可 Mock 的 PostgreSQL 函数包装器 |
 | 3520 | {{< alias "pg_text_semver" >}} | PostgreSQL 语义版本域类型与比较运算符 |
 | 3640 | {{< alias "pgfaceting" >}} | 使用倒排索引的高速切面查询 |
 | 3670 | {{< alias "pg_xenophile" >}} | PostgreSQL i8n与l10n工具包 |

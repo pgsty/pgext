@@ -6,52 +6,78 @@ weight: 200
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL YUM/DNF 仓库。
 
+## 2026-06-18
+
+更新 Rust 扩展 pgrx 版本到 0.18.1
+
+| 包名                  | 旧版本    | 新版本    | 备注                    |
+|:--------------------|:-------|:-------|:----------------------|
+| timescaledb         | 2.27.2 | 2.28.0 | PG 15-18              |
+| documentdb          | 0.110  | 0.112  | PG 15-18              |
+| timeseries          | 0.2.0  | 0.2.1  | PG 14-18              |
+| pg_clickhouse       | 0.3.1  | 0.3.2  | PG 14-18              |
+| biscuit             | 2.2.2  | 2.3.0  | PG 16-18              |
+| toastinfo           | 1.6    | 1.7    | PG 14-18，仅 RPM        |
+| etcd_fdw            | 0.0.0  | 0.0.1  | PG 14-18，pgrx 0.18.1  |
+| pg_anon             | 3.0.13 | 3.1.1  | PG 14-18，pgrx 0.18.1  |
+| pg_graphql          | 1.5.12 | 1.6.1  | PG 14-18，pgrx 0.18.1  |
+| pg_kazsearch        | 2.0.0  | 2.2.0  | PG 16-18，pgrx 0.18.1  |
+| pg_session_jwt      | 0.4.0  | 0.5.0  | PG 14-18，pgrx 0.18.1  |
+| pg_tzf              | 0.2.4  | 0.3.0  | PG 14-18，pgrx 0.18.1  |
+| pg_vectorize        | 0.26.1 | 0.26.2 | PG 14-18，pgrx 0.18.1  |
+| pglinter            | 1.1.2  | 2.0.0  | PG 14-18，pgrx 0.18.1  |
+| pgmqtt              | 0.1.0  | 0.3.0  | PG 14-18，pgrx 0.18.1  |
+| timescaledb_toolkit | 1.22.0 | 1.23.0 | PG 15-18，pgrx 0.18.1  |
+| wrappers            | 0.6.0  | 0.6.1  | PG 14-18，pgrx 0.18.1  |
+| pgrdf               | 0.5.0  | 0.6.4  | PG 14-17，pgrx 0.18.1  |
+| pg_mockable         | -      | 1.1.0  | 新增，PG 14-18           |
+| pg_stat_backtrace   | -      | 1.0.0  | 新增，PG 14-18，libunwind |
+
+
 ## 2026-06-12
 
-| 包名             | 旧版本    | 新版本    | 备注                         |
-|:---------------|:-------|:-------|:---------------------------|
-| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18                   |
-| pg_background  | 1.9.2  | 2.0    | PG 14-18                   |
-| pg_clickhouse  | 0.3.0  | 0.3.1  | PG 14-18                   |
-| pg_dirtyread   | 2.7    | 2.8    | PG 14-18，仅 RPM             |
-| pg_net         | 0.20.2 | 0.20.3 | PG 14-18，仅 EL10            |
-| pg_search      | 0.23.1 | 0.24.0 | PG 15-18，pgrx 0.18.1       |
-| pg_stat_ch     | 0.3.6  | 0.3.6  | PG 16-18，仅 EL9/EL10，重建     |
-| pg_trickle     | 0.40.0 | 0.81.0 | 仅 PG 18                    |
-| pgclone        | 4.3.2  | 4.3.2  | PG 14-18，LLVM_BINPATH 重建   |
-| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                   |
-| provsql        | 1.8.0  | 1.9.0  | PG 14-18                   |
-| re2            | 0.1.1  | 0.3.0  | PG 16-18                   |
-| storage_engine | 2.3.0  | 2.4.0  | PG 15-18                   |
-| timescaledb    | 2.27.0 | 2.27.2 | PG 15-18                   |
-| toastinfo      | 1.5    | 1.6    | PG 14-18，仅 RPM             |
-| pggraph        | 0.1.5  | 0.1.7  | PG 14-18，扩展名 `graph`       |
-| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18，依赖 pgvector       |
-| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                   |
-| pg_durable     | -      | 0.2.2  | new，PG 14-18，需 preload     |
-| jsonschema     | -      | 0.1.9  | new，PG 14-18               |
-| pg_orca        | -      | 1.0.0  | new，仅 PG 18                |
-| pg_projection  | -      | 1.0.0  | new，PG 14-18               |
-| pg_sorted_heap | -      | 0.14.0 | new，PG 16-18，需 preload     |
-| pg_stl         | -      | 1.0.0  | new，PG 16-18               |
-| pg_uuid_v8     | -      | 1.0.0  | new，PG 14-18               |
-| pgrdf          | -      | 0.5.0  | new，PG 14-17，需 preload     |
-| pg_pinyin      | -      | 0.0.4  | new，PG 14-18，pgrx 0.18.1   |
-| pg_task        | -      | 2.1.29 | new，PG 14-18，pcre2grep fix |
-| pg_extra_time  | -      | 2.1.0  | new，PG 14-18               |
-| fsm_core       | -      | 1.1.0  | new，PG 15-18               |
+补充了 Ubuntu 26.04 Resolute 的大部分扩展内核包
+
+| 包名             | 旧版本    | 新版本    | 备注                        |
+|:---------------|:-------|:-------|:--------------------------|
+| firebird_fdw   | 1.4.1  | 1.4.2  | PG 14-18                  |
+| pg_background  | 1.9.2  | 2.0    | PG 14-18                  |
+| pg_clickhouse  | 0.3.0  | 0.3.1  | PG 14-18                  |
+| pg_dirtyread   | 2.7    | 2.8    | PG 14-18，仅 RPM            |
+| pg_net         | 0.20.2 | 0.20.3 | PG 14-18，仅 EL10           |
+| pg_search      | 0.23.1 | 0.24.0 | PG 15-18                  |
+| pg_stat_ch     | 0.3.6  | 0.3.6  | PG 16-18，仅 EL9/EL10，重建    |
+| pg_trickle     | 0.40.0 | 0.81.0 | 仅 PG 18                   |
+| plpgsql_check  | 2.9.0  | 2.9.1  | PG 14-18                  |
+| provsql        | 1.8.0  | 1.9.0  | PG 14-18                  |
+| re2            | 0.1.1  | 0.3.0  | PG 16-18                  |
+| storage_engine | 2.3.0  | 2.4.0  | PG 15-18                  |
+| timescaledb    | 2.27.0 | 2.27.2 | PG 15-18                  |
+| toastinfo      | 1.5    | 1.6    | PG 14-18，仅 RPM            |
+| pggraph        | 0.1.5  | 0.1.7  | PG 14-18                  |
+| pgmnemo        | 0.7.2  | 0.8.3  | PG 14-18                  |
+| pgsql_tweaks   | 1.0.2  | 1.0.3  | PG 14-18                  |
+| pg_orca        | -      | 1.0.0  | 新增，仅 PG 18                |
+| pg_projection  | -      | 1.0.0  | 新增，PG 14-18               |
+| pg_sorted_heap | -      | 0.14.0 | 新增，PG 16-18               |
+| pg_stl         | -      | 1.0.0  | 新增，PG 16-18               |
+| pg_uuid_v8     | -      | 1.0.0  | 新增，PG 14-18               |
+| pg_pinyin      | -      | 0.0.4  | 新增，PG 14-18               |
+| pg_task        | -      | 2.1.29 | 新增，PG 14-18，pcre2grep fix |
+| pg_extra_time  | -      | 2.1.0  | 新增，PG 14-18               |
+| fsm_core       | -      | 1.1.0  | 新增，PG 15-18               |
 
 ## 2026-05-15
 
-| 包名             | 旧版本    | 新版本    | 备注                                      |
-|:---------------|:-------|:-------|:----------------------------------------|
-| psql_bm25s     | -      | 0.4.13 | 新增 BM25 词法检索扩展，PG 17-18                 |
-| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL 小版本更新，PG 15-18         |
-| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 全文搜索扩展更新，PG 17-18      |
-| pgclone        | 4.0.0  | 4.3.2  | PGXN 更新，PG 14-18                        |
-| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x 更新，PG 15-18                    |
-| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN 更新，ClickHouse 查询集成                 |
-| provsql        | 1.2.3  | 1.4.0  | PGXN 更新，数据溯源与不确定性管理引擎                 |
+| 包名             | 旧版本    | 新版本    | 备注                               |
+|:---------------|:-------|:-------|:---------------------------------|
+| psql_bm25s     | -      | 0.4.13 | 新增 BM25 词法检索扩展，PG 17-18          |
+| timescaledb    | 2.26.4 | 2.27.0 | TimescaleDB TSL 小版本更新，PG 15-18   |
+| pg_textsearch  | 1.1.0  | 1.2.0  | Timescale BM25 全文搜索扩展更新，PG 17-18 |
+| pgclone        | 4.0.0  | 4.3.2  | PGXN 更新，PG 14-18                 |
+| storage_engine | 1.3.4  | 2.3.0  | PGXN 2.x 更新，PG 15-18             |
+| pg_clickhouse  | 0.2.0  | 0.3.0  | PGXN 更新，ClickHouse 查询集成          |
+| provsql        | 1.2.3  | 1.4.0  | PGXN 更新，数据溯源与不确定性管理引擎            |
 
 ## 2026-05-01
 

@@ -54,8 +54,8 @@ width: full
 | {{< os "u22.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
 | {{< os "u24.x86_64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
 | {{< os "u24.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-14 : FORK 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-14 : FORK 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "openhalodb-18 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-17 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-16 : FORK 0" "red" >}}      |      {{< bg "MISS" "openhalodb-15 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 1.0" "openhalodb-14 : FORK 1" >}}      |
 
 
 {{< tabs >}}
@@ -77,6 +77,8 @@ width: full
 | `openhalodb-14` | `1.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 20.9 MiB | [openhalodb-14_1.0-beta1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/o/openhalodb/openhalodb-14_1.0-beta1PIGSTY~jammy_arm64.deb) |
 | `openhalodb-14` | `1.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 19.5 MiB | [openhalodb-14_1.0-beta1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-beta1PIGSTY~noble_amd64.deb) |
 | `openhalodb-14` | `1.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 19.3 MiB | [openhalodb-14_1.0-beta1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/o/openhalodb/openhalodb-14_1.0-beta1PIGSTY~noble_arm64.deb) |
+| `openhalodb-14` | `1.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 19.1 MiB | [openhalodb-14_1.0-beta1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-beta1PIGSTY~resolute_amd64.deb) |
+| `openhalodb-14` | `1.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 18.8 MiB | [openhalodb-14_1.0-beta1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/o/openhalodb/openhalodb-14_1.0-beta1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

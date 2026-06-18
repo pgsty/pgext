@@ -7,14 +7,14 @@ categories: ["STAT"]
 width: full
 ---
 
-[**toastinfo**](https://github.com/credativ/toastinfo) : show details on toasted datums
+[**toastinfo**](https://github.com/df7cb/toastinfo) : show details on toasted datums
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6530** | {{< badge content="toastinfo" link="https://github.com/credativ/toastinfo" >}} | {{< ext "toastinfo" >}} | `1.6` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **6530** | {{< badge content="toastinfo" link="https://github.com/df7cb/toastinfo" >}} | {{< ext "toastinfo" >}} | `1.7` | {{< category "STAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,19 +31,19 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `toastinfo` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.6` | {{< bg "18" "toastinfo_18" "green" >}} {{< bg "17" "toastinfo_17" "green" >}} {{< bg "16" "toastinfo_16" "green" >}} {{< bg "15" "toastinfo_15" "green" >}} {{< bg "14" "toastinfo_14" "green" >}} | `toastinfo_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.6` | {{< bg "18" "postgresql-18-toastinfo" "green" >}} {{< bg "17" "postgresql-17-toastinfo" "green" >}} {{< bg "16" "postgresql-16-toastinfo" "green" >}} {{< bg "15" "postgresql-15-toastinfo" "green" >}} {{< bg "14" "postgresql-14-toastinfo" "green" >}} | `postgresql-$v-toastinfo` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `toastinfo` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.7` | {{< bg "18" "toastinfo_18" "green" >}} {{< bg "17" "toastinfo_17" "green" >}} {{< bg "16" "toastinfo_16" "green" >}} {{< bg "15" "toastinfo_15" "green" >}} {{< bg "14" "toastinfo_14" "green" >}} | `toastinfo_$v` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.7` | {{< bg "18" "postgresql-18-toastinfo" "green" >}} {{< bg "17" "postgresql-17-toastinfo" "green" >}} {{< bg "16" "postgresql-16-toastinfo" "green" >}} {{< bg "15" "postgresql-15-toastinfo" "green" >}} {{< bg "14" "postgresql-14-toastinfo" "green" >}} | `postgresql-$v-toastinfo` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.6" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.6" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.7" "toastinfo_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.7" "toastinfo_14 : AVAIL 2" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.7" "postgresql-18-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-17-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-16-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-15-toastinfo : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.7" "postgresql-14-toastinfo : AVAIL 3" "blue" >}} |
@@ -61,17 +61,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `toastinfo_18` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [toastinfo_18-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_18-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `toastinfo_18` | `1.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.8 KiB | [toastinfo_18-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_18-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `toastinfo_18` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 13.3 KiB | [toastinfo_18-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/toastinfo_18-1.6-1PGDG.rhel8.10.x86_64.rpm) |
-| `toastinfo_18` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.8 KiB | [toastinfo_18-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_18-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `toastinfo_18` | `1.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [toastinfo_18-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_18-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `toastinfo_18` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 13.2 KiB | [toastinfo_18-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/toastinfo_18-1.6-1PGDG.rhel8.10.aarch64.rpm) |
-| `toastinfo_18` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.5 KiB | [toastinfo_18-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_18-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `toastinfo_18` | `1.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [toastinfo_18-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_18-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `toastinfo_18` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [toastinfo_18-1.6-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/toastinfo_18-1.6-1PGDG.rhel9.8.x86_64.rpm) |
-| `toastinfo_18` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [toastinfo_18-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_18-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `toastinfo_18` | `1.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [toastinfo_18-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_18-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `toastinfo_18` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [toastinfo_18-1.6-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/toastinfo_18-1.6-1PGDG.rhel9.8.aarch64.rpm) |
-| `toastinfo_18` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.5 KiB | [toastinfo_18-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_18-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `toastinfo_18` | `1.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [toastinfo_18-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_18-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `toastinfo_18` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [toastinfo_18-1.6-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/toastinfo_18-1.6-1PGDG.rhel10.2.x86_64.rpm) |
-| `toastinfo_18` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [toastinfo_18-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_18-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `toastinfo_18` | `1.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.7 KiB | [toastinfo_18-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_18-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `toastinfo_18` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [toastinfo_18-1.6-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/toastinfo_18-1.6-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-18-toastinfo` | `1.7` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-18-toastinfo_1.7-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.7-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-toastinfo` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-18-toastinfo_1.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-18-toastinfo_1.6-1.pgdg12+1_amd64.deb) |
@@ -109,17 +109,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `toastinfo_17` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [toastinfo_17-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_17-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `toastinfo_17` | `1.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.8 KiB | [toastinfo_17-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_17-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `toastinfo_17` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 13.3 KiB | [toastinfo_17-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/toastinfo_17-1.6-1PGDG.rhel8.10.x86_64.rpm) |
-| `toastinfo_17` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.8 KiB | [toastinfo_17-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_17-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `toastinfo_17` | `1.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [toastinfo_17-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_17-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `toastinfo_17` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 13.2 KiB | [toastinfo_17-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/toastinfo_17-1.6-1PGDG.rhel8.10.aarch64.rpm) |
-| `toastinfo_17` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.5 KiB | [toastinfo_17-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_17-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `toastinfo_17` | `1.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [toastinfo_17-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_17-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `toastinfo_17` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [toastinfo_17-1.6-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/toastinfo_17-1.6-1PGDG.rhel9.8.x86_64.rpm) |
-| `toastinfo_17` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [toastinfo_17-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_17-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `toastinfo_17` | `1.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [toastinfo_17-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_17-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `toastinfo_17` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [toastinfo_17-1.6-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/toastinfo_17-1.6-1PGDG.rhel9.8.aarch64.rpm) |
-| `toastinfo_17` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.5 KiB | [toastinfo_17-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_17-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `toastinfo_17` | `1.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [toastinfo_17-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_17-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `toastinfo_17` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [toastinfo_17-1.6-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/toastinfo_17-1.6-1PGDG.rhel10.2.x86_64.rpm) |
-| `toastinfo_17` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [toastinfo_17-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_17-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `toastinfo_17` | `1.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.7 KiB | [toastinfo_17-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_17-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `toastinfo_17` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.1 KiB | [toastinfo_17-1.6-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/toastinfo_17-1.6-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-17-toastinfo` | `1.7` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-17-toastinfo_1.7-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.7-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-toastinfo` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-17-toastinfo_1.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-17-toastinfo_1.6-1.pgdg12+1_amd64.deb) |
@@ -157,17 +157,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `toastinfo_16` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [toastinfo_16-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_16-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `toastinfo_16` | `1.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.8 KiB | [toastinfo_16-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_16-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `toastinfo_16` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 13.3 KiB | [toastinfo_16-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/toastinfo_16-1.6-1PGDG.rhel8.10.x86_64.rpm) |
-| `toastinfo_16` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.8 KiB | [toastinfo_16-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_16-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `toastinfo_16` | `1.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [toastinfo_16-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_16-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `toastinfo_16` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 13.2 KiB | [toastinfo_16-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/toastinfo_16-1.6-1PGDG.rhel8.10.aarch64.rpm) |
-| `toastinfo_16` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.4 KiB | [toastinfo_16-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_16-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `toastinfo_16` | `1.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [toastinfo_16-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_16-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `toastinfo_16` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [toastinfo_16-1.6-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/toastinfo_16-1.6-1PGDG.rhel9.8.x86_64.rpm) |
-| `toastinfo_16` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.3 KiB | [toastinfo_16-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_16-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `toastinfo_16` | `1.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [toastinfo_16-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_16-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `toastinfo_16` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [toastinfo_16-1.6-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/toastinfo_16-1.6-1PGDG.rhel9.8.aarch64.rpm) |
-| `toastinfo_16` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.5 KiB | [toastinfo_16-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_16-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `toastinfo_16` | `1.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [toastinfo_16-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_16-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `toastinfo_16` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [toastinfo_16-1.6-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/toastinfo_16-1.6-1PGDG.rhel10.2.x86_64.rpm) |
-| `toastinfo_16` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [toastinfo_16-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_16-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `toastinfo_16` | `1.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.7 KiB | [toastinfo_16-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_16-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `toastinfo_16` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [toastinfo_16-1.6-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/toastinfo_16-1.6-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-16-toastinfo` | `1.7` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-16-toastinfo_1.7-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.7-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-toastinfo` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-16-toastinfo_1.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-16-toastinfo_1.6-1.pgdg12+1_amd64.deb) |
@@ -205,17 +205,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `toastinfo_15` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [toastinfo_15-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_15-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `toastinfo_15` | `1.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.8 KiB | [toastinfo_15-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_15-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `toastinfo_15` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 13.3 KiB | [toastinfo_15-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/toastinfo_15-1.6-1PGDG.rhel8.10.x86_64.rpm) |
-| `toastinfo_15` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.8 KiB | [toastinfo_15-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_15-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `toastinfo_15` | `1.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [toastinfo_15-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_15-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `toastinfo_15` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 13.2 KiB | [toastinfo_15-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/toastinfo_15-1.6-1PGDG.rhel8.10.aarch64.rpm) |
-| `toastinfo_15` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.5 KiB | [toastinfo_15-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_15-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `toastinfo_15` | `1.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [toastinfo_15-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_15-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `toastinfo_15` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.1 KiB | [toastinfo_15-1.6-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/toastinfo_15-1.6-1PGDG.rhel9.8.x86_64.rpm) |
-| `toastinfo_15` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [toastinfo_15-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_15-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `toastinfo_15` | `1.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.6 KiB | [toastinfo_15-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_15-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `toastinfo_15` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [toastinfo_15-1.6-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/toastinfo_15-1.6-1PGDG.rhel9.8.aarch64.rpm) |
-| `toastinfo_15` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.5 KiB | [toastinfo_15-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_15-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `toastinfo_15` | `1.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.7 KiB | [toastinfo_15-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_15-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `toastinfo_15` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.2 KiB | [toastinfo_15-1.6-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/toastinfo_15-1.6-1PGDG.rhel10.2.x86_64.rpm) |
-| `toastinfo_15` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [toastinfo_15-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_15-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `toastinfo_15` | `1.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.8 KiB | [toastinfo_15-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_15-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `toastinfo_15` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.1 KiB | [toastinfo_15-1.6-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/toastinfo_15-1.6-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-15-toastinfo` | `1.7` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-15-toastinfo_1.7-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.7-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-toastinfo` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-15-toastinfo_1.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-15-toastinfo_1.6-1.pgdg12+1_amd64.deb) |
@@ -253,17 +253,17 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `toastinfo_14` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.7 KiB | [toastinfo_14-1.6-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_14-1.6-1PIGSTY.el8.x86_64.rpm) |
+| `toastinfo_14` | `1.7` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.8 KiB | [toastinfo_14-1.7-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/toastinfo_14-1.7-1PIGSTY.el8.x86_64.rpm) |
 | `toastinfo_14` | `1.6` | [el8.x86_64](/os/el8.x86_64) | pgdg | 13.3 KiB | [toastinfo_14-1.6-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/toastinfo_14-1.6-1PGDG.rhel8.10.x86_64.rpm) |
-| `toastinfo_14` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.8 KiB | [toastinfo_14-1.6-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_14-1.6-1PIGSTY.el8.aarch64.rpm) |
+| `toastinfo_14` | `1.7` | [el8.aarch64](/os/el8.aarch64) | pigsty | 13.9 KiB | [toastinfo_14-1.7-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/toastinfo_14-1.7-1PIGSTY.el8.aarch64.rpm) |
 | `toastinfo_14` | `1.6` | [el8.aarch64](/os/el8.aarch64) | pgdg | 13.2 KiB | [toastinfo_14-1.6-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/toastinfo_14-1.6-1PGDG.rhel8.10.aarch64.rpm) |
-| `toastinfo_14` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.5 KiB | [toastinfo_14-1.6-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_14-1.6-1PIGSTY.el9.x86_64.rpm) |
+| `toastinfo_14` | `1.7` | [el9.x86_64](/os/el9.x86_64) | pigsty | 13.6 KiB | [toastinfo_14-1.7-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/toastinfo_14-1.7-1PIGSTY.el9.x86_64.rpm) |
 | `toastinfo_14` | `1.6` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.1 KiB | [toastinfo_14-1.6-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/toastinfo_14-1.6-1PGDG.rhel9.8.x86_64.rpm) |
-| `toastinfo_14` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.4 KiB | [toastinfo_14-1.6-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_14-1.6-1PIGSTY.el9.aarch64.rpm) |
+| `toastinfo_14` | `1.7` | [el9.aarch64](/os/el9.aarch64) | pigsty | 13.5 KiB | [toastinfo_14-1.7-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/toastinfo_14-1.7-1PIGSTY.el9.aarch64.rpm) |
 | `toastinfo_14` | `1.6` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [toastinfo_14-1.6-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/toastinfo_14-1.6-1PGDG.rhel9.8.aarch64.rpm) |
-| `toastinfo_14` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.5 KiB | [toastinfo_14-1.6-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_14-1.6-1PIGSTY.el10.x86_64.rpm) |
+| `toastinfo_14` | `1.7` | [el10.x86_64](/os/el10.x86_64) | pigsty | 13.6 KiB | [toastinfo_14-1.7-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/toastinfo_14-1.7-1PIGSTY.el10.x86_64.rpm) |
 | `toastinfo_14` | `1.6` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.2 KiB | [toastinfo_14-1.6-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/toastinfo_14-1.6-1PGDG.rhel10.2.x86_64.rpm) |
-| `toastinfo_14` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.6 KiB | [toastinfo_14-1.6-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_14-1.6-1PIGSTY.el10.aarch64.rpm) |
+| `toastinfo_14` | `1.7` | [el10.aarch64](/os/el10.aarch64) | pigsty | 13.7 KiB | [toastinfo_14-1.7-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/toastinfo_14-1.7-1PIGSTY.el10.aarch64.rpm) |
 | `toastinfo_14` | `1.6` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.1 KiB | [toastinfo_14-1.6-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/toastinfo_14-1.6-1PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-14-toastinfo` | `1.7` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-14-toastinfo_1.7-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.7-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-toastinfo` | `1.6` | [d12.x86_64](/os/d12.x86_64) | pgdg | 12.7 KiB | [postgresql-14-toastinfo_1.6-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/t/toastinfo/postgresql-14-toastinfo_1.6-1.pgdg12+1_amd64.deb) |
@@ -301,8 +301,8 @@ width: full
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/credativ/toastinfo" title="Repository" icon="github" subtitle="github.com/credativ/toastinfo" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="toastinfo-1.6.tar.gz" >}}
+{{< card link="https://github.com/df7cb/toastinfo" title="Repository" icon="github" subtitle="github.com/df7cb/toastinfo" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="toastinfo-1.7.tar.gz" >}}
 {{< /cards >}}
 
 

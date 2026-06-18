@@ -477,7 +477,7 @@ CREATE TABLE IF NOT EXISTS pgext.pkg
     os      TEXT REFERENCES pgext.os,               -- OS identifier (e.g., 'el9.x86_64', 'u24.aarch64')
     name    TEXT,                                   -- Versioned package name (e.g., 'postgresql-17-pgvector')
     pkg     TEXT,                                   -- Normalized extension package name (like pgvector, postgis)
-    ext     TEXT REFERENCES pgext.extension (name), -- Leading extension name in this package
+    ext     TEXT REFERENCES pgext.extension (name) ON DELETE CASCADE, -- Leading extension name in this package
     state   pgext.pkg_state DEFAULT 'MISS',         -- State: AVAIL, MISS, HIDE, BREAK, THROW
     hide    BOOLEAN         DEFAULT false,          -- Hide this entry in the extension category listing
     org     TEXT            DEFAULT NULL,           -- Repository source of latest package (pgdg or pigsty)

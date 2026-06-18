@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `df` `duroxide` |
 
-> [!Note] Requires shared_preload_libraries=pg_durable and a superuser worker role. Upstream README targets PG17; DEB validated PG14-18 on u24a arm64, RPM spec targets PG14-18.
+> [!Note] Requires shared_preload_libraries=pg_durable and a superuser worker role. Upstream README targets PG17; DEB validated PG14-18 on u24a arm64, RPM spec targets PG14-18; pgrx patched to 0.18.1.
 
 
 ## Packages
@@ -77,8 +77,8 @@ width: full
 | `postgresql-18-pg-durable` | `0.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.2 MiB | [postgresql-18-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-18-pg-durable` | `0.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.5 MiB | [postgresql-18-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-18-pg-durable` | `0.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.2 MiB | [postgresql-18-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-18-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.2 MiB | [postgresql-18-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-18-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-18-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-18-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-18-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -99,8 +99,8 @@ width: full
 | `postgresql-17-pg-durable` | `0.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.2 MiB | [postgresql-17-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-17-pg-durable` | `0.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.5 MiB | [postgresql-17-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-17-pg-durable` | `0.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.2 MiB | [postgresql-17-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-17-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.2 MiB | [postgresql-17-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-17-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-17-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-17-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-17-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -121,8 +121,8 @@ width: full
 | `postgresql-16-pg-durable` | `0.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.2 MiB | [postgresql-16-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-16-pg-durable` | `0.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.5 MiB | [postgresql-16-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-16-pg-durable` | `0.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.2 MiB | [postgresql-16-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-16-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.2 MiB | [postgresql-16-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-16-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-16-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-16-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-16-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -143,8 +143,8 @@ width: full
 | `postgresql-15-pg-durable` | `0.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.2 MiB | [postgresql-15-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-15-pg-durable` | `0.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.5 MiB | [postgresql-15-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-15-pg-durable` | `0.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.2 MiB | [postgresql-15-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-15-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-15-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-15-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.2 MiB | [postgresql-15-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-15-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-15-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-15-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-15-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -165,8 +165,8 @@ width: full
 | `postgresql-14-pg-durable` | `0.2.2` | [u22.aarch64](/os/u22.aarch64) | pigsty | 4.2 MiB | [postgresql-14-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-1PIGSTY~jammy_arm64.deb) |
 | `postgresql-14-pg-durable` | `0.2.2` | [u24.x86_64](/os/u24.x86_64) | pigsty | 4.5 MiB | [postgresql-14-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-1PIGSTY~noble_amd64.deb) |
 | `postgresql-14-pg-durable` | `0.2.2` | [u24.aarch64](/os/u24.aarch64) | pigsty | 4.2 MiB | [postgresql-14-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-1PIGSTY~noble_arm64.deb) |
-| `postgresql-14-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-14-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-14-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 4.2 MiB | [postgresql-14-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-1PIGSTY~resolute_arm64.deb) |
+| `postgresql-14-pg-durable` | `0.2.2` | [u26.x86_64](/os/u26.x86_64) | pigsty | 4.5 MiB | [postgresql-14-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-durable` | `0.2.2` | [u26.aarch64](/os/u26.aarch64) | pigsty | 3.8 MiB | [postgresql-14-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-durable/postgresql-14-pg-durable_0.2.2-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 

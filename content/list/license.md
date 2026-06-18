@@ -17,7 +17,7 @@ PostgreSQL extension categorized by license.
 
 | License | Count | Reference | Description |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 232 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 234 | [License Text](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 89 | [License Text](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 84 | [License Text](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 33 | [License Text](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
@@ -32,8 +32,8 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD 0-Clause" >}} | 2 | [License Text](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "ELv2" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
 
@@ -41,7 +41,7 @@ PostgreSQL extension categorized by license.
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="232 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="234 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -100,6 +100,7 @@ PostgreSQL extension categorized by license.
 | 3010 | {{< alias "plv8" >}} | PL/JavaScript (v8) trusted procedural language |
 | 3011 | {{< alias "pljs" >}} | PL/JS trusted procedural language |
 | 3110 | {{< alias "plxslt" >}} | XSLT procedural language for PostgreSQL |
+| 3120 | {{< alias "pg_mockable" >}} | Create mockable wrappers for PostgreSQL functions in tests |
 | 3200 | {{< alias "pgtap" >}} | Unit testing for PostgreSQL |
 | 3210 | {{< alias "faker" >}} | Wrapper for the Faker Python library |
 | 3240 | {{< alias "pltcl" >}} | PL/Tcl procedural language |
@@ -212,6 +213,7 @@ PostgreSQL extension categorized by license.
 | 5970 | {{< alias "adminpack" >}} | administrative functions for PostgreSQL |
 | 5980 | {{< alias "amcheck" >}} | functions for verifying relation integrity |
 | 5990 | {{< alias "pg_surgery" >}} | extension to perform surgery on a damaged relation |
+| 6030 | {{< alias "pg_stat_backtrace" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
 | 6210 | {{< alias "pg_show_plans" >}} | show query plans of all currently running SQL statements |
 | 6260 | {{< alias "pg_track_settings" >}} | Track settings changes |
 | 6280 | {{< alias "pg_wait_sampling" >}} | sampling based statistics of wait events |
@@ -722,18 +724,6 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
 
-## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
-
-
-
-| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
-
-| ID | Extension | Description |
-|:---:|:---|:---|
-| 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
-
 ## ELv2
 
 
@@ -745,4 +735,16 @@ PostgreSQL extension categorized by license.
 | ID | Extension | Description |
 |:---:|:---|:---|
 | 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
+
+## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
+
+
+
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | Extension | Description |
+|:---:|:---|:---|
+| 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 
