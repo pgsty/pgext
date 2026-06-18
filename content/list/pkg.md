@@ -60,7 +60,7 @@ There are 377 available PostgreSQL packages:
 | {{< ext "pgrouting" >}} | `4.0.1` | {{< badge content="Link" link="https://github.com/pgRouting/pgrouting" >}} | {{< category "GIS" >}} | `pgrouting_$v` | `postgresql-$v-pgrouting` |
 | {{< ext "pointcloud" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< category "GIS" >}} | `pointcloud_$v` | `postgresql-$v-pointcloud` |
 | {{< ext "h3" "pg_h3" >}} | `4.2.3` | {{< badge content="Link" link="https://github.com/zachasme/h3-pg" >}} | {{< category "GIS" >}} | `h3-pg_$v` | `postgresql-$v-h3` |
-| {{< ext "q3c" >}} | `2.0.2` | {{< badge content="Link" link="https://github.com/segasai/q3c" >}} | {{< category "GIS" >}} | `q3c_$v` | `postgresql-$v-q3c` |
+| {{< ext "q3c" >}} | `2.0.3` | {{< badge content="Link" link="https://github.com/segasai/q3c" >}} | {{< category "GIS" >}} | `q3c_$v` | `postgresql-$v-q3c` |
 | {{< ext "ogr_fdw" >}} | `1.1.7` | {{< badge content="Link" link="https://github.com/pramsey/pgsql-ogr-fdw" >}} | {{< category "GIS" >}} | `ogr_fdw_$v` | `postgresql-$v-ogr-fdw` |
 | {{< ext "geoip" >}} | `0.3.0` | {{< badge content="Link" link="https://github.com/tvondra/geoip" >}} | {{< category "GIS" >}} | `geoip_$v` | `postgresql-$v-geoip` |
 | {{< ext "pg_polyline" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/yihong0618/pg_polyline" >}} | {{< category "GIS" >}} | `pg_polyline_$v` | `postgresql-$v-pg-polyline` |

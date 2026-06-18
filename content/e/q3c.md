@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1540** | {{< badge content="q3c" link="https://github.com/segasai/q3c" >}} | {{< ext "q3c" >}} | `2.0.2` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
+| **1540** | {{< badge content="q3c" link="https://github.com/segasai/q3c" >}} | {{< ext "q3c" >}} | `2.0.3` | {{< category "GIS" >}} | {{< license "GPL-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,8 +31,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `q3c` | - |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.3` | {{< bg "18" "q3c_18" "green" >}} {{< bg "17" "q3c_17" "green" >}} {{< bg "16" "q3c_16" "green" >}} {{< bg "15" "q3c_15" "green" >}} {{< bg "14" "q3c_14" "green" >}} | `q3c_$v` | - |
 | **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.2` | {{< bg "18" "postgresql-18-q3c" "green" >}} {{< bg "17" "postgresql-17-q3c" "green" >}} {{< bg "16" "postgresql-16-q3c" "green" >}} {{< bg "15" "postgresql-15-q3c" "green" >}} {{< bg "14" "postgresql-14-q3c" "green" >}} | `postgresql-$v-q3c` | - |
 
 

@@ -51,7 +51,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3 PostGIS integration |
-| 1540 | {{< alias "q3c" >}} | 2.0.2 | q3c sky indexing plugin |
+| 1540 | {{< alias "q3c" >}} | 2.0.3 | q3c sky indexing plugin |
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.7 | foreign-data wrapper for GIS data access |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP-based geolocation query |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |

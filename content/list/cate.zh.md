@@ -51,7 +51,7 @@ PostgreSQL 扩展（524 ext / 441 pkg）归属 16 个分类。
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | 将激光雷达点云与PostGIS几何类型相集成 |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3六边形层级索引支持 |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3与PostGIS集成的扩展插件 |
-| 1540 | {{< alias "q3c" >}} | 2.0.2 | Q3C天空索引插件 |
+| 1540 | {{< alias "q3c" >}} | 2.0.3 | Q3C天空索引插件 |
 | 1550 | {{< alias "ogr_fdw" >}} | 1.1.7 | GIS 数据外部数据源包装器 |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP 地理位置扩展（围绕 MaxMind GeoLite 数据集的包装器） |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Google快速Polyline编码解码扩展 |
