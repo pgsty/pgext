@@ -467,7 +467,13 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/vibhorkum/pg_background" title="Repository" icon="github" subtitle="github.com/vibhorkum/pg_background" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_background-2.0.2.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_background;		# build rpm/deb
+```
 
 
 ## Install

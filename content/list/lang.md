@@ -14,10 +14,10 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 389 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 58 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 394 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 59 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 52 | Extensions written in Rust with the pgrx framework |
-| {{< language "C++" >}} | 12 | Extensions leveraging C++ features and libraries |
+| {{< language "C++" >}} | 13 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
 | {{< language "Python" >}} | 2 | Extensions written in Python |
 | {{< language "Java" >}} | 1 | Extensions running on JVM |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="389 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="394 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -288,6 +288,7 @@ The traditional PostgreSQL extension language
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL File I/O Functions |
 | 5240 | {{< alias "qos" "pg_qos" >}} | QoS resource governor extension for PostgreSQL sessions and queries |
 | 5250 | {{< alias "pg_pathcheck" >}} | Validate planner Path trees for freed or corrupt memory |
+| 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5810 | {{< alias "pg_savior" >}} | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | Require criteria for UPDATE and DELETE |
 | 5860 | {{< alias "table_log" >}} | record table modification logs and PITR for table/row |
@@ -306,6 +307,8 @@ The traditional PostgreSQL extension language
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL load profile repository and report builder |
 | 6010 | {{< alias "pg_tracing" >}} | Distributed Tracing for PostgreSQL |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | Capture or log C-level stack backtraces of PostgreSQL processes |
+| 6040 | {{< alias "pg_stat_log" >}} | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
+| 6050 | {{< alias "pg_stat_plans" >}} | Track per-plan call counts, execution times, and example EXPLAIN texts. |
 | 6210 | {{< alias "pg_show_plans" >}} | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
@@ -338,6 +341,7 @@ The traditional PostgreSQL extension language
 | 7010 | {{< alias "supautils" >}} | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | Postgres extension for libsodium functions |
 | 7030 | {{< alias "column_encrypt" >}} | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
+| 7040 | {{< alias "passwordpolicy" >}} | Dynamically configurable PostgreSQL password complexity checks. |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | Supabase Vault Extension |
 | 7100 | {{< alias "pgaudit" >}} | provides auditing functionality |
 | 7120 | {{< alias "pgauditlogtofile" >}} | pgAudit addon to redirect audit log to an independent file |
@@ -393,6 +397,7 @@ The traditional PostgreSQL extension language
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | Get function's definition |
 | 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL procedural language |
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | Support GB18030-2022 and UTF-8 conversion |
+| 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server Transact SQL Datatype Support |
 | 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server Transact SQL compatibility |
@@ -423,7 +428,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="58 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="59 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -481,6 +486,7 @@ Pure SQL extensions and functions
 | 8650 | {{< alias "pgbouncer_fdw" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | 8800 | {{< alias "aws_s3" >}} | aws_s3 postgres extension to import/export data from/to s3 |
 | 9090 | {{< alias "pg_projection" >}} | MongoDB-like read projections for JSONB in PostgreSQL |
+| 9200 | {{< alias "db2fce" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
@@ -551,7 +557,7 @@ Extensions written in Rust with the pgrx framework
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="12 Extensions" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="13 Extensions" color="gray" icon="cube" >}}
 
 Extensions leveraging C++ features and libraries
 
@@ -560,6 +566,7 @@ Extensions leveraging C++ features and libraries
 | 1510 | {{< alias "pgrouting" >}} | pgRouting Extension |
 | 2430 | {{< alias "pg_duckdb" >}} | DuckDB Embedded in Postgres |
 | 2460 | {{< alias "pg_clickhouse" >}} | Interfaces to query ClickHouse databases from PostgreSQL |
+| 2490 | {{< alias "pg_ducklake" >}} | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2540 | {{< alias "pg_orca" >}} | ORCA query optimizer as a PostgreSQL extension |
 | 2700 | {{< alias "hll" >}} | type for storing hyperloglog data |
 | 2720 | {{< alias "pg_ai_query" >}} | AI-powered SQL query generation for PostgreSQL |

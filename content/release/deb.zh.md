@@ -10,27 +10,38 @@ weight: 300
 
 更新 Rust 扩展 pgrx 版本到 0.18.1
 
-| 包名                  | 旧版本    | 新版本    | 备注                    |
-|:--------------------|:-------|:-------|:----------------------|
-| timescaledb         | 2.27.2 | 2.28.0 | PG 15-18              |
-| documentdb          | 0.110  | 0.112  | PG 15-18              |
-| timeseries          | 0.2.0  | 0.2.1  | PG 14-18              |
-| pg_clickhouse       | 0.3.1  | 0.3.2  | PG 14-18              |
-| biscuit             | 2.2.2  | 2.3.0  | PG 16-18              |
-| etcd_fdw            | 0.0.0  | 0.0.1  | PG 14-18，pgrx 0.18.1  |
-| pg_anon             | 3.0.13 | 3.1.1  | PG 14-18，pgrx 0.18.1  |
-| pg_graphql          | 1.5.12 | 1.6.1  | PG 14-18，pgrx 0.18.1  |
-| pg_kazsearch        | 2.0.0  | 2.2.0  | PG 16-18，pgrx 0.18.1  |
-| pg_session_jwt      | 0.4.0  | 0.5.0  | PG 14-18，pgrx 0.18.1  |
-| pg_tzf              | 0.2.4  | 0.3.0  | PG 14-18，pgrx 0.18.1  |
-| pg_vectorize        | 0.26.1 | 0.26.2 | PG 14-18，pgrx 0.18.1  |
-| pglinter            | 1.1.2  | 2.0.0  | PG 14-18，pgrx 0.18.1  |
-| pgmqtt              | 0.1.0  | 0.3.0  | PG 14-18，pgrx 0.18.1  |
-| timescaledb_toolkit | 1.22.0 | 1.23.0 | PG 15-18，pgrx 0.18.1  |
-| wrappers            | 0.6.0  | 0.6.1  | PG 14-18，pgrx 0.18.1  |
-| pgrdf               | 0.5.0  | 0.6.4  | PG 14-17，pgrx 0.18.1  |
-| pg_mockable         | -      | 1.1.0  | 新增，PG 14-18           |
-| pg_stat_backtrace   | -      | 1.0.0  | 新增，PG 14-18，libunwind |
+| 包名                  | 旧版本        | 新版本        | 备注                    |
+|:--------------------|:-----------|:-----------|:----------------------|
+| timescaledb         | 2.27.2     | 2.28.0     | PG 15-18              |
+| documentdb          | 0.110      | 0.112      | PG 15-18              |
+| timeseries          | 0.2.0      | 0.2.1      | PG 14-18              |
+| pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18              |
+| biscuit             | 2.2.2      | 2.3.0      | PG 16-18              |
+| pg_http             | 1.7.0      | 1.7.1      | PG 14-18              |
+| pg_gzip             | 1.0.0      | 1.1.0      | PG 14-18              |
+| pgvector            | 0.8.2      | 0.8.3      | PG 14-18              |
+| age                 | 1.7.0      | 1.7.0      | PG 17-18              |
+| mongo_fdw           | -          | 5.5.3      | 新增，PG 14-18           |
+| orioledb            | 1.7-beta15 | 1.8-beta16 | 为 PG 16、17、18 构建      |
+| etcd_fdw            | 0.0.0      | 0.0.1      | PG 14-18，pgrx 0.18.1  |
+| pg_anon             | 3.0.13     | 3.1.1      | PG 14-18，pgrx 0.18.1  |
+| pg_graphql          | 1.5.12     | 1.6.1      | PG 14-18，pgrx 0.18.1  |
+| pg_kazsearch        | 2.0.0      | 2.2.0      | PG 16-18，pgrx 0.18.1  |
+| pg_session_jwt      | 0.4.0      | 0.5.0      | PG 14-18，pgrx 0.18.1  |
+| pg_tzf              | 0.2.4      | 0.3.0      | PG 14-18，pgrx 0.18.1  |
+| pg_vectorize        | 0.26.1     | 0.26.2     | PG 14-18，pgrx 0.18.1  |
+| pglinter            | 1.1.2      | 2.0.0      | PG 14-18，pgrx 0.18.1  |
+| pgmqtt              | 0.1.0      | 0.3.0      | PG 14-18，pgrx 0.18.1  |
+| timescaledb_toolkit | 1.22.0     | 1.23.0     | PG 15-18，pgrx 0.18.1  |
+| wrappers            | 0.6.0      | 0.6.1      | PG 14-18，pgrx 0.18.1  |
+| pgrdf               | 0.5.0      | 0.6.4      | PG 14-17，pgrx 0.18.1  |
+| pg_ducklake         | -          | 1.0.0      | 新增，PG 14-18           |
+| pg_mockable         | -          | 1.1.0      | 新增，PG 14-18           |
+| pg_stat_backtrace   | -          | 1.0.0      | 新增，PG 14-18，libunwind |
+| multicorn           | -          | 3.2        | 新增，PG 14-18           |
+| passwordpolicy      | -          | 2.0.5      | 新增，PG 14-18           |
+| pgdisablelogerror   | -          | 1.0        | 新增，PG 14-18           |
+| plpgsql_wrap        | -          | 1.0        | 新增，PG 14-18           |
 
 ## 2026-06-12
 

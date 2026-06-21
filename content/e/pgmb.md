@@ -34,7 +34,7 @@ width: full
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmb` | `pg_cron`, `http` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pgmb_18" "green" >}} {{< bg "17" "pgmb_17" "green" >}} {{< bg "16" "pgmb_16" "green" >}} {{< bg "15" "pgmb_15" "green" >}} {{< bg "14" "pgmb_14" "green" >}} | `pgmb_$v` | `pg_cron_$v`, `pg_http_$v` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "pgmb_18" "green" >}} {{< bg "17" "pgmb_17" "green" >}} {{< bg "16" "pgmb_16" "green" >}} {{< bg "15" "pgmb_15" "green" >}} {{< bg "14" "pgmb_14" "green" >}} | `pgmb_$v` | `pg_cron_$v`, `pgsql_http_$v` |
 | **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.0.0` | {{< bg "18" "postgresql-18-pgmb" "green" >}} {{< bg "17" "postgresql-17-pgmb" "green" >}} {{< bg "16" "postgresql-16-pgmb" "green" >}} {{< bg "15" "postgresql-15-pgmb" "green" >}} {{< bg "14" "postgresql-14-pgmb" "green" >}} | `postgresql-$v-pgmb` | `postgresql-$v-cron`, `postgresql-$v-http` |
 
 

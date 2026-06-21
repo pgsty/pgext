@@ -17,9 +17,9 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 234 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "PostgreSQL" >}} | 239 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 | {{< license "Apache-2.0" >}} | 89 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
-| {{< license "MIT" >}} | 84 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
+| {{< license "MIT" >}} | 85 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
 | {{< license "BSD 3-Clause" >}} | 33 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
 | {{< license "BSD 2-Clause" >}} | 16 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
@@ -32,6 +32,7 @@ weight: 300
 | {{< license "BSD 0-Clause" >}} | 2 | [许可证文本](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
+| {{< license "BSD" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
 
@@ -41,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="234 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="239 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -214,6 +215,8 @@ weight: 300
 | 5980 | {{< alias "amcheck" >}} | 校验关系完整性 |
 | 5990 | {{< alias "pg_surgery" >}} | 对损坏的关系进行手术 |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
+| 6040 | {{< alias "pg_stat_log" >}} | 按后端类型、数据库、用户、日志级别与 SQLSTATE 统计 PostgreSQL 日志消息。 |
+| 6050 | {{< alias "pg_stat_plans" >}} | 跟踪查询计划级别的调用次数、执行时间与示例 EXPLAIN 文本。 |
 | 6210 | {{< alias "pg_show_plans" >}} | 打印所有当前正在运行查询的执行计划 |
 | 6260 | {{< alias "pg_track_settings" >}} | 跟踪设置更改 |
 | 6280 | {{< alias "pg_wait_sampling" >}} | 基于采样的等待事件统计 |
@@ -237,6 +240,7 @@ weight: 300
 | 6980 | {{< alias "auto_explain" >}} | 提供一种自动记录执行计划的手段 |
 | 6990 | {{< alias "pg_stat_statements" >}} | 跟踪所有执行的 SQL 语句的计划和执行统计信息 |
 | 7030 | {{< alias "column_encrypt" >}} | 透明列级加密扩展，提供 encrypted_text 与 encrypted_bytea 类型 |
+| 7040 | {{< alias "passwordpolicy" >}} | 可动态配置的 PostgreSQL 密码复杂度检查扩展。 |
 | 7070 | {{< alias "anon" "pg_anon" >}} | 数据匿名化处理工具 |
 | 7100 | {{< alias "pgaudit" >}} | 提供审计功能 |
 | 7120 | {{< alias "pgauditlogtofile" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
@@ -266,6 +270,8 @@ weight: 300
 | 8970 | {{< alias "dblink" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
 | 8980 | {{< alias "file_fdw" >}} | 访问外部文件的外部数据包装器 |
 | 8990 | {{< alias "postgres_fdw" >}} | 用于远程 PostgreSQL 服务器的外部数据包装器 |
+| 9200 | {{< alias "db2fce" >}} | 为 PostgreSQL 提供 DB2 兼容函数、类型、操作符与 SYSIBM.SYSDUMMY1。 |
+| 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP 等价的 PL/pgSQL 语言处理器，以 AES-256-GCM 加密存储过程源码。 |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
@@ -386,7 +392,7 @@ weight: 300
 
 
 
-| {{< license "MIT" >}} | {{< badge content="84 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "MIT" >}} | {{< badge content="85 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/MIT" icon="scale" >}} | A permissive license that allows commercial use, modification, and private use. |
 
@@ -406,6 +412,7 @@ weight: 300
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2440 | {{< alias "pg_mooncake" >}} | PostgreSQL列式存储表 |
 | 2470 | {{< alias "duckdb_fdw" >}} | DuckDB 外部数据源包装器 |
+| 2490 | {{< alias "pg_ducklake" >}} | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
 | 2610 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
 | 2640 | {{< alias "pgrdf" >}} | PostgreSQL 内 RDF、SPARQL、SHACL 与 OWL 推理扩展 |
 | 2760 | {{< alias "jsonschema" >}} | PostgreSQL JSON Schema 校验函数 |
@@ -723,6 +730,18 @@ weight: 300
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
+
+## BSD
+
+
+
+| {{< license "BSD" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 
 ## ELv2
 

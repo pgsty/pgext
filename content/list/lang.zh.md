@@ -14,10 +14,10 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 389 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 58 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 394 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 59 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 52 | 使用 pgrx 框架用 Rust 编写的扩展 |
-| {{< language "C++" >}} | 12 | 使用 C++ 特性和库的扩展 |
+| {{< language "C++" >}} | 13 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
 | {{< language "Python" >}} | 2 | 使用 Python 编写的扩展 |
 | {{< language "Java" >}} | 1 | 在 JVM 上运行的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="389 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="394 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -288,6 +288,7 @@ weight: 200
 | 5230 | {{< alias "fio" "pg_fio" >}} | PostgreSQL文件IO函数包 |
 | 5240 | {{< alias "qos" "pg_qos" >}} | PostgreSQL QoS 资源治理扩展（会话与查询限流/隔离） |
 | 5250 | {{< alias "pg_pathcheck" >}} | 校验 planner Path 树，诊断已释放或损坏的内存引用 |
+| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 | 5810 | {{< alias "pg_savior" >}} | 阻止不带条件的全表更新以避免意外事故 |
 | 5820 | {{< alias "safeupdate" >}} | 强制在 UPDATE 和 DELETE 时提供 Where 条件 |
 | 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
@@ -306,6 +307,8 @@ weight: 200
 | 6000 | {{< alias "pg_profile" >}} | PostgreSQL 数据库负载记录与AWR报表工具 |
 | 6010 | {{< alias "pg_tracing" >}} | PostgreSQL分布式Tracing |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 捕获或记录 PostgreSQL 进程的 C 层调用栈 |
+| 6040 | {{< alias "pg_stat_log" >}} | 按后端类型、数据库、用户、日志级别与 SQLSTATE 统计 PostgreSQL 日志消息。 |
+| 6050 | {{< alias "pg_stat_plans" >}} | 跟踪查询计划级别的调用次数、执行时间与示例 EXPLAIN 文本。 |
 | 6210 | {{< alias "pg_show_plans" >}} | 打印所有当前正在运行查询的执行计划 |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 内核统计信息收集 |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 提供查询聚合统计、客户端信息、执行计划详细信息和直方图 |
@@ -338,6 +341,7 @@ weight: 200
 | 7010 | {{< alias "supautils" >}} | 用于在云环境中确保数据库集群的安全 |
 | 7020 | {{< alias "pgsodium" >}} | 表数据加密存储 TDE |
 | 7030 | {{< alias "column_encrypt" >}} | 透明列级加密扩展，提供 encrypted_text 与 encrypted_bytea 类型 |
+| 7040 | {{< alias "passwordpolicy" >}} | 可动态配置的 PostgreSQL 密码复杂度检查扩展。 |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 在 Vault 中存储加密凭证的扩展 (supabase) |
 | 7100 | {{< alias "pgaudit" >}} | 提供审计功能 |
 | 7120 | {{< alias "pgauditlogtofile" >}} | pgAudit 子扩展，将审计日志写入单独的文件中 |
@@ -393,6 +397,7 @@ weight: 200
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 获取函数定义 |
 | 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL 过程语言 |
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 支持 GB18030-2022 与 UTF-8 编码转换 |
+| 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP 等价的 PL/pgSQL 语言处理器，以 AES-256-GCM 加密存储过程源码。 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server 数据类型兼容扩展 |
 | 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server SQL语法兼容性扩展 |
@@ -423,7 +428,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="58 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="59 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -481,6 +486,7 @@ weight: 200
 | 8650 | {{< alias "pgbouncer_fdw" >}} | 用SQL查询pgbouncer统计信息，并执行pgbouncer命令 |
 | 8800 | {{< alias "aws_s3" >}} | 从S3导入导出数据的外部数据源包装器 |
 | 9090 | {{< alias "pg_projection" >}} | PostgreSQL JSONB 的 MongoDB 风格投影读取函数 |
+| 9200 | {{< alias "db2fce" >}} | 为 PostgreSQL 提供 DB2 兼容函数、类型、操作符与 SYSIBM.SYSDUMMY1。 |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
 | 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
@@ -551,7 +557,7 @@ weight: 200
 
 ## C++
 
-{{< language "C++" >}} {{< badge content="12 个扩展" color="gray" icon="cube" >}}
+{{< language "C++" >}} {{< badge content="13 个扩展" color="gray" icon="cube" >}}
 
 使用 C++ 特性和库的扩展
 
@@ -560,6 +566,7 @@ weight: 200
 | 1510 | {{< alias "pgrouting" >}} | 提供寻路能力 |
 | 2430 | {{< alias "pg_duckdb" >}} | 在PostgreSQL中的嵌入式DuckDB扩展 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
+| 2490 | {{< alias "pg_ducklake" >}} | 基于 DuckDB 与 Parquet 的 DuckLake 湖仓一体扩展 |
 | 2540 | {{< alias "pg_orca" >}} | PostgreSQL ORCA 查询优化器扩展 |
 | 2700 | {{< alias "hll" >}} | hyperloglog 数据类型 |
 | 2720 | {{< alias "pg_ai_query" >}} | AI驱动的 Postgres SQL 查询生成 |

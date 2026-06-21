@@ -25,6 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_errlog` |
+|   **Requires**    | {{< ext "pg_statement_rollback" >}} |
 |   **See Also**    | {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
 
@@ -32,8 +33,8 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "pg_dbms_errlog_18" "green" >}} {{< bg "17" "pg_dbms_errlog_17" "green" >}} {{< bg "16" "pg_dbms_errlog_16" "green" >}} {{< bg "15" "pg_dbms_errlog_15" "green" >}} {{< bg "14" "pg_dbms_errlog_14" "green" >}} | `pg_dbms_errlog_$v` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | `pg_statement_rollback` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "pg_dbms_errlog_18" "green" >}} {{< bg "17" "pg_dbms_errlog_17" "green" >}} {{< bg "16" "pg_dbms_errlog_16" "green" >}} {{< bg "15" "pg_dbms_errlog_15" "green" >}} {{< bg "14" "pg_dbms_errlog_14" "green" >}} | `pg_dbms_errlog_$v` | `pg_statement_rollback_$v` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -150,14 +151,14 @@ pig install pg_dbms_errlog -v 14;   # install for PG 14
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
-shared_preload_libraries = 'pg_dbms_errlog';
+shared_preload_libraries = 'pg_statement_rollback, pg_dbms_errlog';
 ```
 
 
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pg_dbms_errlog;
+CREATE EXTENSION pg_dbms_errlog CASCADE; -- requires pg_statement_rollback
 ```
 
 

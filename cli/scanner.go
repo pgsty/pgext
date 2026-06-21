@@ -353,16 +353,11 @@ func (s *Scanner) scanRPM(ctx context.Context, repo *RepoMetadata, repomdPath st
 		}
 	}
 
-	// Check if content has changed
-	if s.hasChanged(repo, decompressed) {
-		return &ScanResult{
-			Repository: repo,
-			Data:       decompressed,
-			Updated:    true,
-		}
+	return &ScanResult{
+		Repository: repo,
+		Data:       decompressed,
+		Updated:    true,
 	}
-
-	return &ScanResult{Repository: repo, Updated: false}
 }
 
 // scanDEB scans DEB repository metadata from local filesystem
@@ -378,16 +373,11 @@ func (s *Scanner) scanDEB(ctx context.Context, repo *RepoMetadata, packagesPath 
 		return &ScanResult{Repository: repo, Error: fmt.Errorf("read Packages file: %w", err)}
 	}
 
-	// Check if content has changed
-	if s.hasChanged(repo, data) {
-		return &ScanResult{
-			Repository: repo,
-			Data:       data,
-			Updated:    true,
-		}
+	return &ScanResult{
+		Repository: repo,
+		Data:       data,
+		Updated:    true,
 	}
-
-	return &ScanResult{Repository: repo, Updated: false}
 }
 
 // parseRepoMDFile reads and parses repomd.xml from local file
@@ -410,23 +400,6 @@ func (s *Scanner) verifyChecksum(data []byte, expected string) bool {
 	hash := sha256.Sum256(data)
 	actual := hex.EncodeToString(hash[:])
 	return actual == expected
-}
-
-// hasChanged checks if repository data has changed compared to cached version
-func (s *Scanner) hasChanged(repo *RepoMetadata, data []byte) bool {
-	// If no cache, consider it changed
-	if !repo.CachedSize.Valid {
-		return true
-	}
-
-	// Check size first (quick check)
-	if int64(len(data)) != repo.CachedSize.Int64 {
-		return true
-	}
-
-	// If we have cached data in DB, we could compare checksums
-	// For now, just consider size change as the indicator
-	return false
 }
 
 // saveMetadata saves repository metadata to database

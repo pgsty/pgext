@@ -3,7 +3,7 @@ title: "By Category"
 weight: 100
 ---
 
-PostgreSQL Extensions (524 ext in 441 pkg) categorized into 16 categories.
+PostgreSQL Extensions (531 ext in 448 pkg) categorized into 16 categories.
 
 
 
@@ -29,7 +29,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 | 1080 | {{< alias "pg_task" >}} | 2.1.29 | execute any sql command at any specific time at background |
 | 1090 | {{< alias "pg_later" >}} | 0.4.0 | Run queries now and get results later |
 | 1100 | {{< alias "pg_dispatch" >}} | 0.1.5 | Asynchronous SQL dispatcher built on pg_cron |
-| 1110 | {{< alias "pg_background" >}} | 2.0 | Run SQL queries in the background |
+| 1110 | {{< alias "pg_background" >}} | 2.0.2 | Run SQL queries in the background |
 | 1120 | {{< alias "pg_when" >}} | 0.1.9 | Natural language time parsing for PostgreSQL |
 | 1130 | {{< alias "pg_stl" >}} | 1.0.0 | Time series analysis functions for PostgreSQL |
 
@@ -39,20 +39,20 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1500 | {{< alias "postgis" >}} | 3.6.3 | PostGIS geometry and geography spatial types and functions |
-| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.3 | PostGIS topology spatial types and functions |
-| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.3 | PostGIS raster types and functions |
-| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.3 | PostGIS SFCGAL functions |
-| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.3 | PostGIS tiger geocoder and reverse geocoder |
-| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.3 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
-| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.3 | Address Standardizer US dataset example |
+| 1500 | {{< alias "postgis" >}} | 3.6.4 | PostGIS geometry and geography spatial types and functions |
+| 1501 | {{< alias "postgis_topology" "postgis" >}} | 3.6.4 | PostGIS topology spatial types and functions |
+| 1502 | {{< alias "postgis_raster" "postgis" >}} | 3.6.4 | PostGIS raster types and functions |
+| 1503 | {{< alias "postgis_sfcgal" "postgis" >}} | 3.6.4 | PostGIS SFCGAL functions |
+| 1504 | {{< alias "postgis_tiger_geocoder" "postgis" >}} | 3.6.4 | PostGIS tiger geocoder and reverse geocoder |
+| 1505 | {{< alias "address_standardizer" "postgis" >}} | 3.6.4 | Used to parse an address into constituent elements. Generally used to support geocoding address normalization step. |
+| 1506 | {{< alias "address_standardizer_data_us" "postgis" >}} | 3.6.4 | Address Standardizer US dataset example |
 | 1510 | {{< alias "pgrouting" >}} | 4.0.1 | pgRouting Extension |
 | 1520 | {{< alias "pointcloud" >}} | 1.2.5 | data type for lidar point clouds |
 | 1521 | {{< alias "pointcloud_postgis" "pointcloud" >}} | 1.2.5 | integration for pointcloud LIDAR data and PostGIS geometry data |
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3 PostGIS integration |
 | 1540 | {{< alias "q3c" >}} | 2.0.3 | q3c sky indexing plugin |
-| 1550 | {{< alias "ogr_fdw" >}} | 1.1.7 | foreign-data wrapper for GIS data access |
+| 1550 | {{< alias "ogr_fdw" >}} | 1.1.8 | foreign-data wrapper for GIS data access |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP-based geolocation query |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |
 | 1580 | {{< alias "pg_eviltransform" >}} | 0.0.2 | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
@@ -75,7 +75,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.2 | vector data type and ivfflat and hnsw access methods |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.3 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.2 | The simplest way to do vector search on Postgres |
@@ -136,6 +136,7 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 | 2460 | {{< alias "pg_clickhouse" >}} | 0.3.2 | Interfaces to query ClickHouse databases from PostgreSQL |
 | 2470 | {{< alias "duckdb_fdw" >}} | 1.4.3 | DuckDB Foreign Data Wrapper |
 | 2480 | {{< alias "pg_parquet" >}} | 0.5.1 | copy data between Postgres and Parquet |
+| 2490 | {{< alias "pg_ducklake" >}} | 1.0.0 | DuckLake lakehouse extension for PostgreSQL, backed by DuckDB and Parquet |
 | 2500 | {{< alias "pg_fkpart" >}} | 1.7.0 | Table partitioning by foreign key utility |
 | 2510 | {{< alias "pg_partman" >}} | 5.4.3 | Extension to manage partitioned tables by time or ID |
 | 2520 | {{< alias "plproxy" >}} | 2.11.0 | Database partitioning implemented as procedural language |
@@ -178,8 +179,8 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.81.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.2 | Durable SQL functions for PostgreSQL |
-| 2900 | {{< alias "provsql" >}} | 1.9.0 | Semiring provenance and uncertainty management for PostgreSQL |
-| 2910 | {{< alias "orioledb" >}} | 1.7 | OrioleDB, the next generation transactional engine |
+| 2900 | {{< alias "provsql" >}} | 1.10.0 | Semiring provenance and uncertainty management for PostgreSQL |
+| 2910 | {{< alias "orioledb" >}} | 1.8 | OrioleDB, the next generation transactional engine |
 | 2920 | {{< alias "pg_cardano" >}} | 1.2.0 | A suite of Cardano-related tools |
 | 2930 | {{< alias "rdkit" >}} | 202503.6 | Cheminformatics functionality for PostgreSQL. |
 | 2940 | {{< alias "omni" "omnigres" >}} | 0.2.14 | Advanced adapter for Postgres extensions |
@@ -320,10 +321,10 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 4010 | {{< alias "gzip" "pg_gzip" >}} | 1.0.0 | gzip and gunzip functions. |
+| 4010 | {{< alias "gzip" "pg_gzip" >}} | 1.1.0 | gzip and gunzip functions. |
 | 4020 | {{< alias "bzip" "pg_bzip" >}} | 1.0.0 | Bzip compression and decompression |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | Zstandard compression algorithm implementation in PostgreSQL |
-| 4070 | {{< alias "http" "pg_http" >}} | 1.7.0 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
+| 4070 | {{< alias "http" "pg_http" >}} | 1.7.1 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
 | 4080 | {{< alias "pg_net" >}} | 0.20.3 | Async HTTP Requests |
 | 4090 | {{< alias "pg_curl" >}} | 2.4.5 | Run curl actions for data transfer in URL syntax |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
@@ -430,7 +431,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | Rewrite SQL statements with a PostgreSQL ProcessUtility hook |
 | 5040 | {{< alias "pg_squeeze" >}} | 1.9.2 | A tool to remove unused space from a relation. |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.8 | Read dead but unvacuumed rows from table |
-| 5060 | {{< alias "pgfincore" >}} | 1.3.1 | examine and manage the os buffer cache |
+| 5060 | {{< alias "pgfincore" >}} | 1.4.0 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
 | 5080 | {{< alias "ddlx" "pg_ddlx" >}} | 0.30 | DDL eXtractor functions |
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
@@ -450,6 +451,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5230 | {{< alias "fio" "pg_fio" >}} | 1.0 | PostgreSQL File I/O Functions |
 | 5240 | {{< alias "qos" "pg_qos" >}} | 1.0 | QoS resource governor extension for PostgreSQL sessions and queries |
 | 5250 | {{< alias "pg_pathcheck" >}} | 0.9.1 | Validate planner Path trees for freed or corrupt memory |
+| 5260 | {{< alias "pgdisablelogerror" >}} | 1.0 | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 | 5810 | {{< alias "pg_savior" >}} | 0.1.0 | Postgres extension to save OOPS mistakes |
 | 5820 | {{< alias "safeupdate" >}} | 1.5 | Require criteria for UPDATE and DELETE |
 | 5830 | {{< alias "pg_strict" >}} | 1.0.5 | Prevent dangerous UPDATE and DELETE without WHERE clause |
@@ -479,6 +481,8 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6010 | {{< alias "pg_tracing" >}} | 0.1.3 | Distributed Tracing for PostgreSQL |
 | 6020 | {{< alias "pg_stat_ch" >}} | 0.3.6 | Export PostgreSQL query telemetry to ClickHouse |
 | 6030 | {{< alias "pg_stat_backtrace" >}} | 1.0.0 | Capture or log C-level stack backtraces of PostgreSQL processes |
+| 6040 | {{< alias "pg_stat_log" >}} | 0.1 | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
+| 6050 | {{< alias "pg_stat_plans" >}} | 2.1.0 | Track per-plan call counts, execution times, and example EXPLAIN texts. |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.8 | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
@@ -500,7 +504,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6540 | {{< alias "explain_ui" "pg_explain_ui" >}} | 0.0.2 | easily jump into a visual plan UI for any SQL query |
 | 6850 | {{< alias "pg_relusage" >}} | 0.0.1 | Log all the queries that reference a particular column |
 | 6860 | {{< alias "pagevis" >}} | 0.1 | Visualise database pages in ascii code |
-| 6870 | {{< alias "powa" >}} | 5.1.1 | PostgreSQL Workload Analyser-core |
+| 6870 | {{< alias "powa" >}} | 5.1.2 | PostgreSQL Workload Analyser-core |
 | 6880 | {{< alias "pg_overexplain" >}} | 1.0 | Allow EXPLAIN to dump even more details |
 | 6890 | {{< alias "pg_logicalinspect" >}} | 1.0 | Logical decoding components inspection |
 | 6900 | {{< alias "pageinspect" >}} | 1.12 | inspect the contents of database pages at a low level |
@@ -524,6 +528,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7010 | {{< alias "supautils" >}} | 3.2.1 | Extension that secures a cluster on a cloud environment |
 | 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
+| 7040 | {{< alias "passwordpolicy" >}} | 2.0.5 | Dynamically configurable PostgreSQL password complexity checks. |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
 | 7060 | {{< alias "pg_session_jwt" >}} | 0.5.0 | Manage authentication sessions using JWTs |
 | 7070 | {{< alias "anon" "pg_anon" >}} | 3.1.1 | PostgreSQL Anonymizer (anon) extension |
@@ -606,6 +611,8 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9170 | {{< alias "pg_get_functiondef" "ivorysql" >}} | 1.0 | Get function's definition |
 | 9180 | {{< alias "plisql" "ivorysql" >}} | 1.0 | PL/iSQL procedural language |
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 1.0 | Support GB18030-2022 and UTF-8 conversion |
+| 9200 | {{< alias "db2fce" >}} | 0.0.17 | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
+| 9210 | {{< alias "plpgsql_wrap" >}} | 1.0 | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |

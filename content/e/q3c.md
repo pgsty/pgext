@@ -292,7 +292,13 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/segasai/q3c" title="Repository" icon="github" subtitle="github.com/segasai/q3c" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="q3c-2.0.3.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg q3c;		# build rpm
+```
 
 
 ## Install
