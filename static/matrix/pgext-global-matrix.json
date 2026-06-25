@@ -82,8 +82,8 @@
     "Counts": {
       ".": 1282,
       "A": 670,
-      "B": 8179,
-      "G": 19465,
+      "B": 8245,
+      "G": 19399,
       "O": 10,
       "P": 720,
       "R": 394
@@ -1209,22 +1209,22 @@
       "ext": "vector",
       "url": "https://pigsty.io/ext/e/vector",
       "groups": {
-        "d12.aarch64": "GGGGG",
-        "d12.x86_64": "GGGGG",
-        "d13.aarch64": "GGGGG",
-        "d13.x86_64": "GGGGG",
+        "d12.aarch64": "BBBBB",
+        "d12.x86_64": "BBBBB",
+        "d13.aarch64": "BBBBB",
+        "d13.x86_64": "BBBBB",
         "el10.aarch64": "GGGGG",
         "el10.x86_64": "GGGGG",
         "el8.aarch64": "GGGGG",
         "el8.x86_64": "GGGGG",
         "el9.aarch64": "GGGGG",
         "el9.x86_64": "GGGGG",
-        "u22.aarch64": "GGGGG",
-        "u22.x86_64": "GGGGG",
-        "u24.aarch64": "GGGGG",
-        "u24.x86_64": "GGGGG",
-        "u26.aarch64": "GGGGG",
-        "u26.x86_64": "GGGGG"
+        "u22.aarch64": "BBBBB",
+        "u22.x86_64": "BBBBB",
+        "u24.aarch64": "BBBBB",
+        "u24.x86_64": "BBBBB",
+        "u26.aarch64": "BBBBB",
+        "u26.x86_64": "BBBBB"
       },
       "pgdg_groups": {
         "d12.aarch64": "BBBBB",
@@ -14331,8 +14331,8 @@
       "groups": {
         "d12.aarch64": ".GGGG",
         "d12.x86_64": ".GGGG",
-        "d13.aarch64": ".GGGG",
-        "d13.x86_64": ".GGGG",
+        "d13.aarch64": ".BBBB",
+        "d13.x86_64": ".BBBB",
         "el10.aarch64": ".GGGG",
         "el10.x86_64": ".GGGG",
         "el8.aarch64": ".GGGG",
@@ -14343,8 +14343,8 @@
         "u22.x86_64": ".GGGG",
         "u24.aarch64": ".GGGG",
         "u24.x86_64": ".GGGG",
-        "u26.aarch64": ".GGGG",
-        "u26.x86_64": ".GGGG"
+        "u26.aarch64": ".BBBB",
+        "u26.x86_64": ".BBBB"
       },
       "pgdg_groups": {
         "d12.aarch64": ".RRRR",

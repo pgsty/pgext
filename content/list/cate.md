@@ -429,7 +429,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5010 | {{< alias "pg_repack" >}} | 1.5.3 | Reorganize tables in PostgreSQL databases with minimal locks |
 | 5020 | {{< alias "pg_rewrite" >}} | 2.1.0 | Tool allows read write to the table during the rewriting |
 | 5030 | {{< alias "pg_query_rewrite" >}} | 0.0.5 | Rewrite SQL statements with a PostgreSQL ProcessUtility hook |
-| 5040 | {{< alias "pg_squeeze" >}} | 1.9.2 | A tool to remove unused space from a relation. |
+| 5040 | {{< alias "pg_squeeze" >}} | 1.9.3 | A tool to remove unused space from a relation. |
 | 5050 | {{< alias "pg_dirtyread" >}} | 2.8 | Read dead but unvacuumed rows from table |
 | 5060 | {{< alias "pgfincore" >}} | 1.4.0 | examine and manage the os buffer cache |
 | 5070 | {{< alias "pg_cooldown" >}} | 0.1 | remove buffered pages for specific relations |
@@ -484,7 +484,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6040 | {{< alias "pg_stat_log" >}} | 0.1 | Track cumulative PostgreSQL log message statistics by backend, database, user, level, and SQLSTATE. |
 | 6050 | {{< alias "pg_stat_plans" >}} | 2.1.0 | Track per-plan call counts, execution times, and example EXPLAIN texts. |
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.8 | show query plans of all currently running SQL statements |
-| 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.1 | Kernel statistics gathering |
+| 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.2 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
 | 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.10 | track plan statistics of all SQL statements executed |
@@ -540,7 +540,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |
 | 7160 | {{< alias "pg_jobmon" >}} | 1.4.1 | Extension for logging and monitoring functions in PostgreSQL |
-| 7310 | {{< alias "credcheck" >}} | 4.7 | credcheck - postgresql plain text credential checker |
+| 7310 | {{< alias "credcheck" >}} | 5.0 | credcheck - postgresql plain text credential checker |
 | 7320 | {{< alias "pgcryptokey" >}} | 0.85 | cryptographic key management |
 | 7330 | {{< alias "pg_pwhash" >}} | 1.0 | Advanced password hashing methods for PostgreSQL |
 | 7360 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
@@ -569,7 +569,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8530 | {{< alias "jdbc_fdw" >}} | 0.4.0 | foreign-data wrapper for remote servers available over JDBC |
 | 8540 | {{< alias "pgspider_ext" >}} | 1.3.0 | foreign-data wrapper for remote PGSpider servers |
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | Foreign data wrapper for querying a MySQL server |
-| 8610 | {{< alias "oracle_fdw" >}} | 2.8.0 | foreign data wrapper for Oracle access |
+| 8610 | {{< alias "oracle_fdw" >}} | 2.9.0 | foreign data wrapper for Oracle access |
 | 8620 | {{< alias "tds_fdw" >}} | 2.0.5 | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
 | 8630 | {{< alias "db2_fdw" >}} | 18.1.1 | foreign data wrapper for DB2 access |
 | 8640 | {{< alias "sqlite_fdw" >}} | 2.5.0 | SQLite Foreign Data Wrapper |
@@ -602,7 +602,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.112 | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9100 | {{< alias "orafce" >}} | 4.16.7 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
-| 9110 | {{< alias "pgtt" >}} | 4.4 | Extension to add Global Temporary Tables feature to PostgreSQL |
+| 9110 | {{< alias "pgtt" >}} | 4.5 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
 | 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle Compatible extension on Postgres Database |

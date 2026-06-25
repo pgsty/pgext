@@ -157,7 +157,7 @@ func TestEL9ARMPatroniVersionLockUsesCurrentVersion(t *testing.T) {
 	}
 }
 
-func TestDebNodePackage2UsesBind9DNSUtils(t *testing.T) {
+func TestDebNodePackageAliasesUseBind9DNSUtils(t *testing.T) {
 	for _, osCode := range []string{"d12", "d13", "u22", "u24", "u26"} {
 		t.Run(osCode, func(t *testing.T) {
 			g := &PigstyConfigGenerator{
@@ -166,24 +166,28 @@ func TestDebNodePackage2UsesBind9DNSUtils(t *testing.T) {
 			}
 			funcs := g.getFuncMap()
 
-			packages := strings.Fields(funcs["getNodePackage2"].(func() string)())
+			packages := fieldPackages(
+				funcs["getDebNodePackage1"].(func() string)(),
+				funcs["getNodePackage2"].(func() string)(),
+				funcs["getNodePackage3"].(func() string)(),
+			)
 			hasBind9DNSUtils := false
 			for _, pkg := range packages {
 				if pkg == "bind9-dnsutils" {
 					hasBind9DNSUtils = true
 				}
 				if pkg == "dnsutils" {
-					t.Fatalf("node-package2 contains legacy dnsutils package: %q", strings.Join(packages, " "))
+					t.Fatalf("node package aliases contain legacy dnsutils package: %q", strings.Join(packages, " "))
 				}
 			}
 			if !hasBind9DNSUtils {
-				t.Fatalf("node-package2 missing bind9-dnsutils: %q", strings.Join(packages, " "))
+				t.Fatalf("node package aliases missing bind9-dnsutils: %q", strings.Join(packages, " "))
 			}
 		})
 	}
 }
 
-func TestRPMNodePackage2UsesBindUtils(t *testing.T) {
+func TestRPMNodePackageAliasesUseBindUtils(t *testing.T) {
 	for _, osCode := range []string{"el8", "el9", "el10"} {
 		t.Run(osCode, func(t *testing.T) {
 			g := &PigstyConfigGenerator{
@@ -192,18 +196,22 @@ func TestRPMNodePackage2UsesBindUtils(t *testing.T) {
 			}
 			funcs := g.getFuncMap()
 
-			packages := strings.Fields(funcs["getNodePackage2"].(func() string)())
+			packages := fieldPackages(
+				funcs["getNodePackage1"].(func() string)(),
+				funcs["getNodePackage2"].(func() string)(),
+				funcs["getNodePackage3"].(func() string)(),
+			)
 			hasBindUtils := false
 			for _, pkg := range packages {
 				if pkg == "bind-utils" {
 					hasBindUtils = true
 				}
 				if pkg == "bind9-utils" || pkg == "bind9.18-utils" {
-					t.Fatalf("node-package2 contains nonstandard RPM DNS utilities package: %q", strings.Join(packages, " "))
+					t.Fatalf("node package aliases contain nonstandard RPM DNS utilities package: %q", strings.Join(packages, " "))
 				}
 			}
 			if !hasBindUtils {
-				t.Fatalf("node-package2 missing bind-utils: %q", strings.Join(packages, " "))
+				t.Fatalf("node package aliases missing bind-utils: %q", strings.Join(packages, " "))
 			}
 		})
 	}
@@ -258,13 +266,208 @@ func TestRPMNodePackage1IncludesACL(t *testing.T) {
 	rendered := buf.String()
 
 	required := []string{
-		"rsync,acl,tcpdump",
-		"node-package1:           \"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf flamegraph chkconfig uv\"",
+		"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd",
+		"node-package1:           \"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd",
+		"node-package3:           \"zlib readline xz glibc-langpack-en",
 	}
 	for _, fragment := range required {
 		if !strings.Contains(rendered, fragment) {
 			t.Fatalf("rendered RPM config missing expected fragment: %q", fragment)
 		}
+	}
+}
+
+func TestNodePackagesDefaultRenderedAsThreeAlignedGroups(t *testing.T) {
+	tests := []struct {
+		name     string
+		rendered string
+		want     []string
+	}{
+		{
+			name:     "rpm",
+			rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+			want: []string{
+				"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate",
+				"pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv",
+				"zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node_exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig",
+			},
+		},
+		{
+			name:     "deb",
+			rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+			want: []string{
+				"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate",
+				"pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv",
+				"zlib1g,libreadline-dev,xz-utils,locales,cron,openssh-client,node-exporter,bind9-dnsutils,iproute2,iputils-ping,netcat-openbsd,procps,vim-tiny",
+			},
+		},
+	}
+
+	var commonLines []string
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := nodePackagesDefaultLines(tt.rendered)
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Fatalf("node_packages_default lines = %#v, want %#v", got, tt.want)
+			}
+			if !strings.Contains(tt.rendered, "node-package3:") {
+				t.Fatalf("rendered config missing node-package3 alias")
+			}
+			if commonLines == nil {
+				commonLines = got[:2]
+			} else if !reflect.DeepEqual(got[:2], commonLines) {
+				t.Fatalf("first two node package lines not aligned: got %#v, want %#v", got[:2], commonLines)
+			}
+		})
+	}
+}
+
+func TestNodePackagesDefaultPreservesLegacyPackagesExceptTcpdump(t *testing.T) {
+	tests := []struct {
+		name     string
+		rendered string
+		legacy   []string
+	}{
+		{
+			name:     "rpm",
+			rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+			legacy: commaPackages(
+				"lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,acl,tcpdump",
+				"python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cronie,pig,uv",
+				"zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector",
+			),
+		},
+		{
+			name:     "deb",
+			rendered: renderDEBTemplateForTest(t, "u22.x86_64", "u22"),
+			legacy: commaPackages(
+				"lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,tcpdump",
+				"python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cron,pig,uv",
+				"zlib1g,acl,bind9-dnsutils,libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector",
+			),
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			current := commaPackages(nodePackagesDefaultLines(tt.rendered)...)
+			assertNoToken(t, current, "tcpdump")
+			assertContainsAllExcept(t, current, tt.legacy, "tcpdump")
+		})
+	}
+}
+
+func TestNodePackageAliasesPreserveLegacyPackagesExceptTcpdump(t *testing.T) {
+	constants := GetConfigConstants()
+	oldRPMNodePackage1 := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf"
+	oldRPMNodePackage2 := "netcat socat ftp net-tools ipvsadm bind-utils telnet audit ca-certificates readline vim-minimal keepalived openssl openssh-server openssh-clients chrony cronie"
+	for _, osCode := range []string{"el8", "el9", "el10"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{
+				osName:    osCode + ".x86_64",
+				osCode:    osCode,
+				arch:      "x86_64",
+				constants: constants,
+			}
+			funcs := g.getFuncMap()
+
+			legacyNodePackage1 := oldRPMNodePackage1 + " chkconfig uv"
+			if osCode != "el10" {
+				legacyNodePackage1 = oldRPMNodePackage1 + " flamegraph chkconfig uv"
+			}
+			current := fieldPackages(
+				funcs["getNodePackage1"].(func() string)(),
+				funcs["getNodePackage2"].(func() string)(),
+				funcs["getNodePackage3"].(func() string)(),
+			)
+
+			assertNoToken(t, current, "tcpdump")
+			assertContainsAllExcept(t, current, fieldPackages(legacyNodePackage1, oldRPMNodePackage2), "tcpdump")
+		})
+	}
+
+	oldDEBNodePackage1 := "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony cron uv"
+	oldU24NodePackage1 := "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync acl chrony cron uv"
+	oldDEBNodePackage2 := "netcat-openbsd socat net-tools ipvsadm bind9-dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client"
+	for _, osCode := range []string{"d12", "d13", "u22", "u24", "u26"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{
+				osName:    osCode + ".x86_64",
+				osCode:    osCode,
+				arch:      "x86_64",
+				constants: constants,
+			}
+			funcs := g.getFuncMap()
+
+			legacyNodePackage1 := oldDEBNodePackage1
+			if osCode == "u24" {
+				legacyNodePackage1 = oldU24NodePackage1
+			}
+			current := fieldPackages(
+				funcs["getDebNodePackage1"].(func() string)(),
+				funcs["getNodePackage2"].(func() string)(),
+				funcs["getNodePackage3"].(func() string)(),
+			)
+
+			assertNoToken(t, current, "tcpdump")
+			assertContainsAllExcept(t, current, fieldPackages(legacyNodePackage1, oldDEBNodePackage2), "tcpdump")
+		})
+	}
+}
+
+func TestExtraModulesDownloadAliasExcludesOpenCode(t *testing.T) {
+	constants := GetConfigConstants()
+	for name, packages := range map[string]string{
+		"rpm": constants.RPMCommonPkg[2],
+		"deb": constants.DEBCommonPkg[2],
+	} {
+		t.Run(name, func(t *testing.T) {
+			if containsToken(packages, "opencode") {
+				t.Fatalf("extra-modules download alias contains opencode: %q", packages)
+			}
+		})
+	}
+
+	for name, rendered := range map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		t.Run(name+"-rendered", func(t *testing.T) {
+			for _, line := range strings.Split(rendered, "\n") {
+				if strings.Contains(line, "extra-modules:") && strings.Contains(line, "opencode") {
+					t.Fatalf("rendered extra-modules download alias contains opencode: %q", line)
+				}
+			}
+		})
+	}
+}
+
+func TestRPMNodePackageBaselineIncludesMinimalNodePackages(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, osCode := range []string{"el8", "el9", "el10"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{
+				osName:    osCode + ".x86_64",
+				osCode:    osCode,
+				arch:      "x86_64",
+				constants: constants,
+			}
+			funcs := g.getFuncMap()
+
+			nodePackage1 := funcs["getNodePackage1"].(func() string)()
+			nodePackage2 := funcs["getNodePackage2"].(func() string)()
+			nodePackage3 := funcs["getNodePackage3"].(func() string)()
+
+			for _, pkg := range []string{
+				"sudo", "curl", "zstd", "tzdata", "glibc-langpack-en", "less", "iproute",
+				"iputils", "nmap-ncat", "procps-ng", "util-linux", "tar", "gzip", "xz",
+				"psmisc", "logrotate",
+			} {
+				if !containsToken(nodePackage1, pkg) && !containsToken(nodePackage2, pkg) && !containsToken(nodePackage3, pkg) {
+					t.Fatalf("EL %s node package aliases missing %q:\nnode-package1=%q\nnode-package2=%q\nnode-package3=%q", osCode, pkg, nodePackage1, nodePackage2, nodePackage3)
+				}
+			}
+		})
 	}
 }
 
@@ -295,8 +498,9 @@ func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 	rendered := buf.String()
 
 	required := []string{
-		"zlib1g,acl,bind9-dnsutils,libreadline-dev",
-		"node-package2:           \"netcat-openbsd socat net-tools ipvsadm bind9-dnsutils",
+		"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd",
+		"node-package2:           \"pv jq git make patch lsof less ncdu",
+		"node-package3:           \"zlib1g libreadline-dev xz-utils locales",
 	}
 	for _, fragment := range required {
 		if !strings.Contains(rendered, fragment) {
@@ -308,6 +512,147 @@ func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 			t.Fatalf("rendered DEB config contains legacy dnsutils token: %q", line)
 		}
 	}
+}
+
+func TestDebNodePackageBaselineIncludesMinimalNodePackages(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, osCode := range []string{"d12", "d13", "u22", "u24", "u26"} {
+		t.Run(osCode, func(t *testing.T) {
+			g := &PigstyConfigGenerator{
+				osName:    osCode + ".x86_64",
+				osCode:    osCode,
+				arch:      "x86_64",
+				constants: constants,
+			}
+			funcs := g.getFuncMap()
+
+			nodePackage1 := funcs["getDebNodePackage1"].(func() string)()
+			nodePackage2 := funcs["getNodePackage2"].(func() string)()
+			nodePackage3 := funcs["getNodePackage3"].(func() string)()
+
+			for _, pkg := range []string{
+				"sudo", "curl", "zstd", "tzdata", "locales", "less", "iproute2",
+				"iputils-ping", "netcat-openbsd", "procps", "util-linux", "tar", "gzip",
+				"xz-utils", "psmisc", "logrotate",
+			} {
+				if !containsToken(nodePackage1, pkg) && !containsToken(nodePackage2, pkg) && !containsToken(nodePackage3, pkg) {
+					t.Fatalf("DEB %s node package aliases missing %q:\nnode-package1=%q\nnode-package2=%q\nnode-package3=%q", osCode, pkg, nodePackage1, nodePackage2, nodePackage3)
+				}
+			}
+		})
+	}
+}
+
+func renderRPMTemplateForTest(t *testing.T, osName, osCode string) string {
+	t.Helper()
+	g := &PigstyConfigGenerator{
+		osName:    osName,
+		osCode:    osCode,
+		arch:      "x86_64",
+		constants: GetConfigConstants(),
+	}
+	tmpl := template.Must(template.New("rpm").Funcs(g.getFuncMap()).Parse(rpmTemplate))
+	return renderConfigTemplateForTest(t, tmpl, g)
+}
+
+func renderDEBTemplateForTest(t *testing.T, osName, osCode string) string {
+	t.Helper()
+	g := &PigstyConfigGenerator{
+		osName:    osName,
+		osCode:    osCode,
+		arch:      "x86_64",
+		constants: GetConfigConstants(),
+	}
+	tmpl := template.Must(template.New("deb").Funcs(g.getFuncMap()).Parse(debTemplate))
+	return renderConfigTemplateForTest(t, tmpl, g)
+}
+
+func renderConfigTemplateForTest(t *testing.T, tmpl *template.Template, g *PigstyConfigGenerator) string {
+	t.Helper()
+	data := map[string]interface{}{
+		"OSName":       g.osName,
+		"OSCode":       g.osCode,
+		"Arch":         g.arch,
+		"Constants":    g.constants,
+		"Extensions":   map[string]*ExtensionData{},
+		"PGVersions":   []int{18, 17, 16, 15, 14},
+		"CategoryExts": map[string]CategoryPkgList{},
+		"Categories":   []string{},
+		"ExtMappings":  []ExtensionMapping{},
+	}
+
+	var buf bytes.Buffer
+	if err := tmpl.Execute(&buf, data); err != nil {
+		t.Fatal(err)
+	}
+	return buf.String()
+}
+
+func nodePackagesDefaultLines(rendered string) []string {
+	lines := strings.Split(rendered, "\n")
+	for i, line := range lines {
+		if line != "node_packages_default:" {
+			continue
+		}
+		var packages []string
+		for _, candidate := range lines[i+1:] {
+			if !strings.HasPrefix(candidate, "  - ") {
+				break
+			}
+			packages = append(packages, strings.TrimPrefix(candidate, "  - "))
+		}
+		return packages
+	}
+	return nil
+}
+
+func commaPackages(lines ...string) []string {
+	var tokens []string
+	for _, line := range lines {
+		for _, token := range strings.Split(line, ",") {
+			token = strings.TrimSpace(token)
+			if token != "" {
+				tokens = append(tokens, token)
+			}
+		}
+	}
+	return tokens
+}
+
+func fieldPackages(groups ...string) []string {
+	var tokens []string
+	for _, group := range groups {
+		tokens = append(tokens, strings.Fields(group)...)
+	}
+	return tokens
+}
+
+func assertContainsAllExcept(t *testing.T, current, legacy []string, except string) {
+	t.Helper()
+	currentSet := tokenSet(current)
+	for _, token := range legacy {
+		if token == except {
+			continue
+		}
+		if !currentSet[token] {
+			t.Fatalf("package list removed legacy package %q; current=%q", token, strings.Join(current, " "))
+		}
+	}
+}
+
+func assertNoToken(t *testing.T, current []string, token string) {
+	t.Helper()
+	if tokenSet(current)[token] {
+		t.Fatalf("package list still contains removable package %q; current=%q", token, strings.Join(current, " "))
+	}
+}
+
+func tokenSet(tokens []string) map[string]bool {
+	set := make(map[string]bool, len(tokens))
+	for _, token := range tokens {
+		set[token] = true
+	}
+	return set
 }
 
 func containsToken(s, token string) bool {
@@ -370,6 +715,23 @@ func TestConfigConstantsIncludeAgensAndPgEdgeAlias(t *testing.T) {
 			t.Fatalf("%s DEB alias = %q, want %q", key, got.DEB, want.DEB)
 		}
 	}
+}
+
+func TestConfigConstantsIncludeOrioleVersionTemplate(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, mapping := range constants.PGSQLExoticMap {
+		if mapping.Key != "oriole" {
+			continue
+		}
+		if mapping.RPM != "orioledb_$v oriolepg_$v" {
+			t.Fatalf("oriole RPM alias = %q", mapping.RPM)
+		}
+		if mapping.DEB != "oriolepg-$v oriolepg-$v-orioledb" {
+			t.Fatalf("oriole DEB alias = %q", mapping.DEB)
+		}
+		return
+	}
+	t.Fatal("oriole mapping not found in PGSQLExoticMap")
 }
 
 func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {

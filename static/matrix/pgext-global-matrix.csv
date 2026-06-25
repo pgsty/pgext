@@ -26,7 +26,7 @@ pg_geohash,pg_geohash,https://pigsty.io/ext/e/pg_geohash,G,G,G,G,G,G,G,G,G,G,G,G
 pghydro,pghydro,https://pigsty.io/ext/e/pghydro,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 mobilitydb,mobilitydb,https://pigsty.io/ext/e/mobilitydb,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,R,B,B,B,B,R,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B
 pg_tzf,tzf,https://pigsty.io/ext/e/tzf,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
-pgvector,vector,https://pigsty.io/ext/e/vector,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
+pgvector,vector,https://pigsty.io/ext/e/vector,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B
 vchord,vchord,https://pigsty.io/ext/e/vchord,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 pgvectorscale,vectorscale,https://pigsty.io/ext/e/vectorscale,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 pg_vectorize,vectorize,https://pigsty.io/ext/e/vectorize,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
@@ -346,7 +346,7 @@ firebird_fdw,firebird_fdw,https://pigsty.io/ext/e/firebird_fdw,G,G,G,G,G,G,G,G,G
 rdf_fdw,rdf_fdw,https://pigsty.io/ext/e/rdf_fdw,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 aws_s3,aws_s3,https://pigsty.io/ext/e/aws_s3,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 log_fdw,log_fdw,https://pigsty.io/ext/e/log_fdw,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
-documentdb,documentdb,https://pigsty.io/ext/e/documentdb,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G
+documentdb,documentdb,https://pigsty.io/ext/e/documentdb,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,B,B,B,B,.,B,B,B,B,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,G,G,G,G,.,B,B,B,B,.,B,B,B,B
 pg_projection,pg_projection,https://pigsty.io/ext/e/pg_projection,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G,G
 orafce,orafce,https://pigsty.io/ext/e/orafce,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B
 pgtt,pgtt,https://pigsty.io/ext/e/pgtt,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B,B

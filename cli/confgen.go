@@ -727,28 +727,27 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			return "openjdk-17-jdk"
 		},
 		"getNodePackage1": func() string {
-			// el10 doesn't have flamegraph package
-			basePkgs := "lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf"
-			if g.osCode == "el10" {
-				return basePkgs + " chkconfig uv"
-			}
-			return basePkgs + " flamegraph chkconfig uv"
+			return g.constants.RPMCommonPkg[3]
 		},
 		"getDebNodePackage1": func() string {
-			// u24 temporarily disables tcpdump
-			if g.osCode == "u24" {
-				return "lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync acl chrony cron uv" // tcpdump
-			}
 			return g.constants.DEBCommonPkg[3]
 		},
 		"getNodePackage2": func() string {
-			// Handle OS-specific package differences
 			if g.isRPM() {
-				// RPM systems use bind-utils
 				return g.constants.RPMCommonPkg[4]
 			}
-			// DEB systems use bind9-dnsutils
 			return g.constants.DEBCommonPkg[4]
+		},
+		"getNodePackage3": func() string {
+			if !g.isRPM() {
+				return g.constants.DEBCommonPkg[5]
+			}
+			// el10 doesn't have flamegraph package
+			basePkgs := g.constants.RPMCommonPkg[5] + " netcat ftp perf"
+			if g.osCode == "el10" {
+				return basePkgs
+			}
+			return basePkgs + " flamegraph"
 		},
 		"getDockerRepo": func() string {
 			// For el10, use RHEL repositories instead of CentOS
@@ -763,7 +762,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			if g.isEL9ARM() {
 				return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pgbadger", "pg_timetable", "pgFormatter", "pg_filedump", "pgxnclient", "timescaledb-tools", "timescaledb-event-streamer")
 			}
-			return g.constants.RPMCommonPkg[5]
+			return g.constants.RPMCommonPkg[6]
 		},
 		"getUtilPkg": func(key, rpm string) string {
 			// For el9.aarch64, lock patroni and pgsql-common versions
@@ -834,12 +833,14 @@ func GetConfigConstants() *ConfigConstants {
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
-			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
+			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
-			"lz4 unzip bzip2 zlib yum pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl grubby sysstat iotop htop rsync acl tcpdump perf flamegraph chkconfig uv",
+			"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd unzip bzip2 gzip tar tzdata chrony openssh-server util-linux rsync psmisc logrotate",
 			// 4: node-package2
-			"netcat socat ftp net-tools ipvsadm bind-utils telnet audit ca-certificates readline vim-minimal keepalived openssl openssh-server openssh-clients chrony cronie",
-			// 5: pgsql-utility
+			"pv jq git make patch lsof less ncdu htop iotop socat net-tools telnet ipvsadm tuned numactl nvme-cli sysstat keepalived etcd haproxy vector pig uv",
+			// 5: node-package3
+			"zlib readline xz glibc-langpack-en cronie openssh-clients node_exporter bind-utils iproute iputils nmap-ncat procps-ng vim-minimal yum audit grubby chkconfig",
+			// 6: pgsql-utility
 			"patroni patroni-etcd pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
 
@@ -849,12 +850,14 @@ func GetConfigConstants() *ConfigConstants {
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
-			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds opencode",
+			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
-			"lz4 unzip bzip2 zlib1g pv jq git ncdu make patch bash lsof wget tuned nvme-cli numactl sysstat iotop htop rsync tcpdump acl chrony cron uv",
+			"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd unzip bzip2 gzip tar tzdata chrony openssh-server util-linux rsync psmisc logrotate",
 			// 4: node-package2
-			"netcat-openbsd socat net-tools ipvsadm bind9-dnsutils telnet ca-certificates libreadline-dev vim-tiny keepalived openssl openssh-server openssh-client",
-			// 5: pgsql-utility
+			"pv jq git make patch lsof less ncdu htop iotop socat net-tools telnet ipvsadm tuned numactl nvme-cli sysstat keepalived etcd haproxy vector pig uv",
+			// 5: node-package3
+			"zlib1g libreadline-dev xz-utils locales cron openssh-client node-exporter bind9-dnsutils iproute2 iputils-ping netcat-openbsd procps vim-tiny",
+			// 6: pgsql-utility
 			"patroni python3-etcd pgbouncer pgbackrest pgbadger pg-timetable pgformatter postgresql-filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
 
@@ -896,7 +899,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"openhalodb", "openhalodb_14", "openhalodb-14"},
 			//{"ivorysql", "ivorysql5", "ivorysql-5"},
 			//{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
-			{"oriole", "orioledb_17 oriolepg_17", "oriolepg-17 oriolepg-17-orioledb"},
+			{"oriole", "orioledb_$v oriolepg_$v", "oriolepg-$v oriolepg-$v-orioledb"},
 			{"pgedge", "pgedge_$v spock_$v lolor_$v snowflake_$v", "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"greenplum", "open-source-greenplum-db-7", ""},
@@ -939,16 +942,16 @@ systemd_dir: /usr/lib/systemd/system
 syslog_path: /var/log/messages
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)
-repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, pgsql-utility, extra-modules ]
+repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, node-package3, pgsql-utility, extra-modules ]
 
 # default postgres packages to be downloaded
 repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,acl,tcpdump
-  - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cronie,pig,uv
-  - zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector
+  - bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate
+  - pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv
+  - zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node_exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
@@ -1018,6 +1021,7 @@ package_map:
   extra-modules:           "{{ index .Constants.RPMCommonPkg 2 }}"
   node-package1:           "{{ getNodePackage1 }}"
   node-package2:           "{{ index .Constants.RPMCommonPkg 4 }}"
+  node-package3:           "{{ getNodePackage3 }}"
   pgsql-utility:           "{{ getPgsqlUtility }}"
 
   #--------------------------------#
@@ -1085,16 +1089,16 @@ systemd_dir: /lib/systemd/system
 syslog_path: /var/log/syslog
 
 # default packages to be downloaded (if ` + "`repo_packages`" + ` is not explicitly set)
-repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, pgsql-utility, extra-modules ]
+repo_packages_default: [ node-bootstrap, infra-package, infra-addons, node-package1, node-package2, node-package3, pgsql-utility, extra-modules ]
 
 # default postgres packages to be downloaded
 repo_extra_packages_default: [ pgsql-main ]
 
 # default node packages to be installed (if ` + "`node_default_packages`" + ` is not explicitly set)
 node_packages_default:
-  - lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync{{ if ne .OSCode "u24" }},tcpdump{{ else }} #tcpdump{{ end }}
-  - python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cron,pig,uv
-  - zlib1g,acl,bind9-dnsutils,libreadline-dev,vim-tiny,node-exporter,openssh-server,openssh-client,vector
+  - bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate
+  - pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv
+  - zlib1g,libreadline-dev,xz-utils,locales,cron,openssh-client,node-exporter,bind9-dnsutils,iproute2,iputils-ping,netcat-openbsd,procps,vim-tiny
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
@@ -1161,9 +1165,10 @@ package_map:
   infra-package:           "{{ index .Constants.DEBCommonPkg 0 }}"
   infra-addons:            "{{ index .Constants.DEBCommonPkg 1 }}"
   extra-modules:           "{{ index .Constants.DEBCommonPkg 2 }}"
-  node-package1:           "{{ getDebNodePackage1 }}"{{ if eq .OSCode "u24" }} #tcpdump{{ end }}
+  node-package1:           "{{ getDebNodePackage1 }}"
   node-package2:           "{{ getNodePackage2 }}"
-  pgsql-utility:           "{{ index .Constants.DEBCommonPkg 5 }}"
+  node-package3:           "{{ getNodePackage3 }}"
+  pgsql-utility:           "{{ index .Constants.DEBCommonPkg 6 }}"
 
   #--------------------------------#
   # PGSQL: kernel packages
