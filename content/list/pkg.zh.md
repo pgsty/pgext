@@ -142,7 +142,7 @@ comments: false
 | {{< ext "jsonschema" >}} | `0.1.9` | {{< badge content="Link" link="https://github.com/theory/pg-jsonschema-boon" >}} | {{< category "FEAT" >}} | `jsonschema_$v` | `postgresql-$v-jsonschema` |
 | {{< ext "jsquery" >}} | `1.2` | {{< badge content="Link" link="https://github.com/postgrespro/jsquery" >}} | {{< category "FEAT" >}} | `jsquery_$v` | `postgresql-$v-jsquery` |
 | {{< ext "pg_hint_plan" >}} | `1.8.0` | {{< badge content="Link" link="https://github.com/ossc-db/pg_hint_plan" >}} | {{< category "FEAT" >}} | `pg_hint_plan_$v` | `postgresql-$v-pg-hint-plan` |
-| {{< ext "hypopg" >}} | `1.4.2` | {{< badge content="Link" link="https://github.com/HypoPG/hypopg" >}} | {{< category "FEAT" >}} | `hypopg_$v` | `postgresql-$v-hypopg` |
+| {{< ext "hypopg" >}} | `1.4.3` | {{< badge content="Link" link="https://github.com/HypoPG/hypopg" >}} | {{< category "FEAT" >}} | `hypopg_$v` | `postgresql-$v-hypopg` |
 | {{< ext "index_advisor" >}} | `0.2.0` | {{< badge content="Link" link="https://github.com/supabase/index_advisor" >}} | {{< category "FEAT" >}} | `index_advisor_$v` | `postgresql-$v-index-advisor` |
 | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< category "FEAT" >}} | `pg_plan_filter_$v` | `postgresql-$v-pg-plan-filter` |
 | {{< ext "pg_variables" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/postgrespro/pg_variables" >}} | {{< category "FEAT" >}} | `pg_variables_$v` | `postgresql-$v-pg-variables` |
@@ -239,7 +239,7 @@ comments: false
 | {{< ext "pg_extra_time" >}} | `2.1.0` | {{< badge content="Link" link="https://github.com/bigsmoke/pg_extra_time" >}} | {{< category "UTIL" >}} | `pg_extra_time_$v` | `postgresql-$v-pg-extra-time` |
 | {{< ext "pgpcre" >}} | `0.20190509` | {{< badge content="Link" link="https://github.com/petere/pgpcre" >}} | {{< category "UTIL" >}} | `pgpcre_$v` | `postgresql-$v-pgpcre` |
 | {{< ext "re2" >}} | `0.3.0` | {{< badge content="Link" link="https://github.com/ClickHouse/pg_re2" >}} | {{< category "UTIL" >}} | `re2_$v` | `postgresql-$v-re2` |
-| {{< ext "icu_ext" >}} | `1.10.0` | {{< badge content="Link" link="https://github.com/dverite/icu_ext" >}} | {{< category "UTIL" >}} | `icu_ext_$v` | `postgresql-$v-icu-ext` |
+| {{< ext "icu_ext" >}} | `1.11.0` | {{< badge content="Link" link="https://github.com/dverite/icu_ext" >}} | {{< category "UTIL" >}} | `icu_ext_$v` | `postgresql-$v-icu-ext` |
 | {{< ext "pgqr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/AbdulYadi/pgqr" >}} | {{< category "UTIL" >}} | `pgqr_$v` | `postgresql-$v-pgqr` |
 | {{< ext "envvar" "pg_envvar" >}} | `1.0.1` | {{< badge content="Link" link="https://github.com/theory/pg-envvar" >}} | {{< category "UTIL" >}} | `pg_envvar_$v` | `postgresql-$v-pg-envvar` |
 | {{< ext "byteamagic" "pg_byteamagic" >}} | `0.2.4` | {{< badge content="Link" link="https://github.com/nmandery/pg_byteamagic" >}} | {{< category "UTIL" >}} | `pg_byteamagic_$v` | `postgresql-$v-pg-byteamagic` |

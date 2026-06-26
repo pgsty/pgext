@@ -734,6 +734,9 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		},
 		"getNodePackage2": func() string {
 			if g.isRPM() {
+				if g.osCode == "el7" {
+					return g.constants.RPMCommonPkg[4] + " iproute"
+				}
 				return g.constants.RPMCommonPkg[4]
 			}
 			return g.constants.DEBCommonPkg[4]
@@ -1020,7 +1023,7 @@ package_map:
   infra-addons:            "{{ index .Constants.RPMCommonPkg 1 }}"
   extra-modules:           "{{ index .Constants.RPMCommonPkg 2 }}"
   node-package1:           "{{ getNodePackage1 }}"
-  node-package2:           "{{ index .Constants.RPMCommonPkg 4 }}"
+  node-package2:           "{{ getNodePackage2 }}"
   node-package3:           "{{ getNodePackage3 }}"
   pgsql-utility:           "{{ getPgsqlUtility }}"
 

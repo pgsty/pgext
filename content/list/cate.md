@@ -170,7 +170,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2760 | {{< alias "jsonschema" >}} | 0.1.9 | JSON Schema validation functions for PostgreSQL |
 | 2770 | {{< alias "jsquery" >}} | 1.2 | data type for jsonb inspection |
 | 2780 | {{< alias "pg_hint_plan" >}} | 1.8.0 | Give PostgreSQL ability to manually force some decisions in execution plans. |
-| 2790 | {{< alias "hypopg" >}} | 1.4.2 | Hypothetical indexes for PostgreSQL |
+| 2790 | {{< alias "hypopg" >}} | 1.4.3 | Hypothetical indexes for PostgreSQL |
 | 2800 | {{< alias "index_advisor" >}} | 0.2.0 | Query index advisor |
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | filter statements by their execution plans. |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
@@ -341,7 +341,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4220 | {{< alias "pg_extra_time" >}} | 2.1.0 | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
 | 4235 | {{< alias "re2" >}} | 0.3.0 | ClickHouse-compatible regex functions using RE2 |
-| 4240 | {{< alias "icu_ext" >}} | 1.10.0 | Access ICU functions |
+| 4240 | {{< alias "icu_ext" >}} | 1.11.0 | Access ICU functions |
 | 4250 | {{< alias "pgqr" >}} | 1.0 | QR Code generator from PostgreSQL |
 | 4270 | {{< alias "envvar" "pg_envvar" >}} | 1.0.1 | Fetch the value of an environment variable |
 | 4275 | {{< alias "byteamagic" "pg_byteamagic" >}} | 0.2.4 | Detect MIME types and file formats from PostgreSQL bytea values |

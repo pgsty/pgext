@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2790** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.2` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **2790** | {{< badge content="hypopg" link="https://github.com/HypoPG/hypopg" >}} | {{< ext "hypopg" >}} | `1.4.3` | {{< category "FEAT" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hypopg` | - |
+| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hypopg` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.2` | {{< bg "18" "hypopg_18" "green" >}} {{< bg "17" "hypopg_17" "green" >}} {{< bg "16" "hypopg_16" "green" >}} {{< bg "15" "hypopg_15" "green" >}} {{< bg "14" "hypopg_14" "green" >}} | `hypopg_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.2` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.3` | {{< bg "18" "postgresql-18-hypopg" "green" >}} {{< bg "17" "postgresql-17-hypopg" "green" >}} {{< bg "16" "postgresql-16-hypopg" "green" >}} {{< bg "15" "postgresql-15-hypopg" "green" >}} {{< bg "14" "postgresql-14-hypopg" "green" >}} | `postgresql-$v-hypopg` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -41,7 +41,7 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_14 : AVAIL 3" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.4.1" "hypopg_14 : AVAIL 3" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_14 : AVAIL 1" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_14 : AVAIL 1" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.4.2" "hypopg_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.4.2" "hypopg_14 : AVAIL 1" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.4.3" "postgresql-18-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-17-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-16-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-15-hypopg : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.3" "postgresql-14-hypopg : AVAIL 2" "blue" >}} |
@@ -203,6 +203,9 @@ width: full
 | `hypopg_14` | `1.3.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 73.8 KiB | [hypopg_14-1.3.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/hypopg_14-1.3.1-1.rhel8.aarch64.rpm) |
 | `hypopg_14` | `1.4.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 30.6 KiB | [hypopg_14-1.4.2-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/hypopg_14-1.4.2-3PGDG.rhel9.8.x86_64.rpm) |
 | `hypopg_14` | `1.4.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 32.1 KiB | [hypopg_14-1.4.2-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.2-3PGDG.rhel9.8.aarch64.rpm) |
+| `hypopg_14` | `1.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 31.2 KiB | [hypopg_14-1.4.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.1-1PGDG.rhel9.aarch64.rpm) |
+| `hypopg_14` | `1.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 30.4 KiB | [hypopg_14-1.4.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.4.0-1.rhel9.aarch64.rpm) |
+| `hypopg_14` | `1.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 75.2 KiB | [hypopg_14-1.3.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hypopg_14-1.3.1-1.rhel9.aarch64.rpm) |
 | `hypopg_14` | `1.4.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.1 KiB | [hypopg_14-1.4.2-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/hypopg_14-1.4.2-3PGDG.rhel10.2.x86_64.rpm) |
 | `hypopg_14` | `1.4.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.8 KiB | [hypopg_14-1.4.2-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hypopg_14-1.4.2-3PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql-14-hypopg` | `1.4.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 57.9 KiB | [postgresql-14-hypopg_1.4.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/h/hypopg/postgresql-14-hypopg_1.4.3-1.pgdg12+1_amd64.deb) |

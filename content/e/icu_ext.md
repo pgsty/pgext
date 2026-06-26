@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4240** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" >}} | `1.10.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4240** | {{< badge content="icu_ext" link="https://github.com/dverite/icu_ext" >}} | {{< ext "icu_ext" >}} | `1.11.0` | {{< category "UTIL" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -31,9 +31,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.10.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `icu_ext` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.11.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `icu_ext` | - |
 | **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.10.0` | {{< bg "18" "icu_ext_18" "green" >}} {{< bg "17" "icu_ext_17" "green" >}} {{< bg "16" "icu_ext_16" "green" >}} {{< bg "15" "icu_ext_15" "green" >}} {{< bg "14" "icu_ext_14" "green" >}} | `icu_ext_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.10.0` | {{< bg "18" "postgresql-18-icu-ext" "green" >}} {{< bg "17" "postgresql-17-icu-ext" "green" >}} {{< bg "16" "postgresql-16-icu-ext" "green" >}} {{< bg "15" "postgresql-15-icu-ext" "green" >}} {{< bg "14" "postgresql-14-icu-ext" "green" >}} | `postgresql-$v-icu-ext` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.11.0` | {{< bg "18" "postgresql-18-icu-ext" "green" >}} {{< bg "17" "postgresql-17-icu-ext" "green" >}} {{< bg "16" "postgresql-16-icu-ext" "green" >}} {{< bg "15" "postgresql-15-icu-ext" "green" >}} {{< bg "14" "postgresql-14-icu-ext" "green" >}} | `postgresql-$v-icu-ext` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -41,7 +41,7 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_14 : AVAIL 2" "green" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 1.10.0" "icu_ext_14 : AVAIL 2" "green" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_14 : AVAIL 2" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_14 : AVAIL 2" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.10.0" "icu_ext_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.10.0" "icu_ext_14 : AVAIL 2" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.11.0" "postgresql-18-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-17-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-16-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-15-icu-ext : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.11.0" "postgresql-14-icu-ext : AVAIL 3" "blue" >}} |
@@ -261,6 +261,7 @@ width: full
 | `icu_ext_14` | `1.10.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 50.0 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/icu_ext_14-1.10.0-1PIGSTY.el9.x86_64.rpm) |
 | `icu_ext_14` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 47.4 KiB | [icu_ext_14-1.10.0-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.10.0-3PGDG.rhel9.8.aarch64.rpm) |
 | `icu_ext_14` | `1.10.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 48.2 KiB | [icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/icu_ext_14-1.10.0-1PIGSTY.el9.aarch64.rpm) |
+| `icu_ext_14` | `1.9.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 46.3 KiB | [icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/icu_ext_14-1.9.0-1PGDG.rhel9.aarch64.rpm) |
 | `icu_ext_14` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 49.3 KiB | [icu_ext_14-1.10.0-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/icu_ext_14-1.10.0-3PGDG.rhel10.2.x86_64.rpm) |
 | `icu_ext_14` | `1.10.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 49.9 KiB | [icu_ext_14-1.10.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/icu_ext_14-1.10.0-1PIGSTY.el10.x86_64.rpm) |
 | `icu_ext_14` | `1.10.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 47.7 KiB | [icu_ext_14-1.10.0-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/icu_ext_14-1.10.0-3PGDG.rhel10.2.aarch64.rpm) |

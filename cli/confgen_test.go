@@ -471,6 +471,26 @@ func TestRPMNodePackageBaselineIncludesMinimalNodePackages(t *testing.T) {
 	}
 }
 
+func TestEL7NodePackage2IncludesIPRoute(t *testing.T) {
+	g := &PigstyConfigGenerator{
+		osName:    "el7.x86_64",
+		osCode:    "el7",
+		arch:      "x86_64",
+		constants: GetConfigConstants(),
+	}
+	funcs := g.getFuncMap()
+
+	nodePackage2 := funcs["getNodePackage2"].(func() string)()
+	if !containsToken(nodePackage2, "iproute") {
+		t.Fatalf("EL7 node-package2 missing iproute: %q", nodePackage2)
+	}
+
+	rendered := renderRPMTemplateForTest(t, "el7.x86_64", "el7")
+	if !strings.Contains(rendered, `node-package2:           "pv jq git make patch lsof less ncdu htop iotop socat net-tools telnet ipvsadm tuned numactl nvme-cli sysstat keepalived etcd haproxy vector pig uv iproute"`) {
+		t.Fatalf("rendered EL7 node-package2 missing iproute:\n%s", rendered)
+	}
+}
+
 func TestDebTemplateRendersBind9DNSUtils(t *testing.T) {
 	g := &PigstyConfigGenerator{
 		osName:    "u24.x86_64",
