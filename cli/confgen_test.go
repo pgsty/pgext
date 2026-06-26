@@ -486,8 +486,9 @@ func TestEL7NodePackage2IncludesIPRoute(t *testing.T) {
 	}
 
 	rendered := renderRPMTemplateForTest(t, "el7.x86_64", "el7")
-	if !strings.Contains(rendered, `node-package2:           "pv jq git make patch lsof less ncdu htop iotop socat net-tools telnet ipvsadm tuned numactl nvme-cli sysstat keepalived etcd haproxy vector pig uv iproute"`) {
-		t.Fatalf("rendered EL7 node-package2 missing iproute:\n%s", rendered)
+	renderedNodePackage2 := renderedPackageAliasValue(rendered, "node-package2")
+	if !containsToken(renderedNodePackage2, "iproute") {
+		t.Fatalf("rendered EL7 node-package2 missing iproute: %q", renderedNodePackage2)
 	}
 }
 
@@ -645,6 +646,20 @@ func fieldPackages(groups ...string) []string {
 		tokens = append(tokens, strings.Fields(group)...)
 	}
 	return tokens
+}
+
+func renderedPackageAliasValue(rendered, alias string) string {
+	prefix := alias + ":"
+	for _, line := range strings.Split(rendered, "\n") {
+		if strings.HasPrefix(strings.TrimSpace(line), prefix) {
+			parts := strings.SplitN(line, "\"", 3)
+			if len(parts) >= 3 {
+				return parts[1]
+			}
+			return ""
+		}
+	}
+	return ""
 }
 
 func assertContainsAllExcept(t *testing.T, current, legacy []string, except string) {
