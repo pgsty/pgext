@@ -13,7 +13,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const el9ARMPatroniVersion = "4.1.2"
+const el9ARMPatroniVersion = "4.1.3"
 
 func el9ARMPatroniPackages(extra ...string) string {
 	packages := []string{
@@ -85,7 +85,6 @@ type PigstyConfigGenerator struct {
 	constants *ConfigConstants
 }
 
-// isEL9ARM returns true if this is el9.aarch64 (has special patroni issues)
 func (g *PigstyConfigGenerator) isEL9ARM() bool {
 	return g.osCode == "el9" && g.arch == "aarch64"
 }
@@ -761,14 +760,12 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 			return "- { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' } ,meta: { skip_if_unavailable: 1 }}"
 		},
 		"getPgsqlUtility": func() string {
-			// For el9.aarch64, lock patroni version due to PGDG upstream issues
 			if g.isEL9ARM() {
 				return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pgbadger", "pg_timetable", "pgFormatter", "pg_filedump", "pgxnclient", "timescaledb-tools", "timescaledb-event-streamer")
 			}
 			return g.constants.RPMCommonPkg[6]
 		},
 		"getUtilPkg": func(key, rpm string) string {
-			// For el9.aarch64, lock patroni and pgsql-common versions
 			if g.isEL9ARM() {
 				if key == "pgsql-common" {
 					return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pg_exporter", "pgbackrest_exporter", "vip-manager")
