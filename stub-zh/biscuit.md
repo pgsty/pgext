@@ -1,7 +1,7 @@
 
 ## 用法
 
-> [README](https://github.com/CrystallineCore/Biscuit) | [Docs](https://biscuit.readthedocs.io/)
+> 来源：[README](https://github.com/CrystallineCore/Biscuit)、[Docs](https://biscuit.readthedocs.io/)、[v2.4.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v2.4.0)
 
 `biscuit` 是 PostgreSQL 的一种索引访问方法，专为 `LIKE` 和 `ILIKE` 模式匹配优化，也支持多列检索。上游将其定位为一种确定性的位图索引，可避免基于 trigram 的搜索常见的误命中复查开销。
 
@@ -16,6 +16,9 @@ CREATE INDEX idx_users_name ON users USING biscuit(name);
 
 CREATE INDEX idx_products_search
 ON products USING biscuit(name, description, category);
+
+CREATE INDEX idx_users_lower_name
+ON users USING biscuit (lower(name));
 ```
 
 带通配符的常见查询同样可以使用该索引：
@@ -33,7 +36,7 @@ WHERE name LIKE '%widget%'
 LIMIT 10;
 ```
 
-## 索引行为
+### 索引行为
 
 Biscuit 为每个字符串维护位图位置索引，能够同时匹配正向和反向字符位置。上游设计强调：
 
@@ -54,7 +57,7 @@ Biscuit 为每个字符串维护位图位置索引，能够同时匹配正向和
 - 子串匹配，例如 `'%abc%'`
 - 多列谓词，Biscuit 会按估计选择性重排谓词顺序
 
-## 性能说明
+### 性能说明
 
 上游 README 强调了纯位图求值及多项执行优化，包括：
 
@@ -66,7 +69,7 @@ Biscuit 为每个字符串维护位图位置索引，能够同时匹配正向和
 
 项目 README 还给出了一个 100 万行测试表的基准方案，用来比较 Biscuit 索引与 trigram 方案。
 
-## 需求
+### 需求
 
 当前上游 README 列出的源码构建要求包括：
 
@@ -75,3 +78,7 @@ Biscuit 为每个字符串维护位图位置索引，能够同时匹配正向和
 - 可选的 CRoaring，用于提升性能
 
 该项目通过 [PGXN](https://pgxn.org/dist/biscuit/) 发布包，并在 Read the Docs 上维护独立文档站。
+
+### 版本说明
+
+Biscuit 2.4.0 增加 expression-index 支持，因此 `USING biscuit (lower(col), (other_col::text))` 这类索引是有效的。该版本还扩展了 PostgreSQL 16、17、18 和 19beta1 的多版本构建支持，修复 multi-column parallel scans 中的重复行问题，并让 `biscuit_operators` 视图能容忍额外 operator classes。

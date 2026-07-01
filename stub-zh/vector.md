@@ -2,6 +2,8 @@
 
 ## 用法
 
+来源：[README](https://github.com/pgvector/pgvector/blob/v0.8.3/README.md)、[CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.3/CHANGELOG.md)
+
 适用于 PostgreSQL 的开源向量相似性搜索扩展。将向量与其他数据存储在一起，支持：
 
 - 精确与近似最近邻搜索
@@ -10,6 +12,10 @@
 - 任何具有 PostgreSQL 客户端的[编程语言](https://github.com/pgvector/pgvector#languages)
 
 此外还具备 [ACID](https://en.wikipedia.org/wiki/ACID) 合规性、时间点恢复（PITR）、JOIN 以及 PostgreSQL 的所有其他[优秀特性](https://www.postgresql.org/about/)
+
+### 版本说明
+
+`pgvector` 0.8.3 修复 vacuum 期间可能发生的 HNSW index corruption，并修复 PostgreSQL 18 下 Hamming 和 Jaccard distance 的 performance regression。iterative index scans、`halfvec`、`sparsevec`、binary vectors、HNSW 与 IVFFlat 等既有 0.8.x SQL 功能仍是主要用户可见接口。
 
 ### 快速上手
 
@@ -162,7 +168,7 @@ SELECT category_id, AVG(embedding) FROM items GROUP BY category_id;
 
 --------
 
-## 索引
+### 索引
 
 默认情况下，pgvector 执行精确最近邻搜索，提供完美的召回率。
 
@@ -514,7 +520,7 @@ SET ivfflat.max_probes = 100;
 
 --------
 
-## 向量类型
+### 向量类型
 
 ### 半精度向量
 
@@ -635,7 +641,7 @@ SELECT * FROM (
 
 --------
 
-## 性能
+### 性能
 
 ### 调优
 
@@ -748,7 +754,7 @@ pgvector 的扩展方式与 PostgreSQL 相同。
 
 --------
 
-## 语言支持
+### 语言支持
 
 可以从任何具有 PostgreSQL 客户端的编程语言中使用 pgvector。甚至可以在一种语言中生成和存储向量，在另一种语言中进行查询。
 
@@ -793,7 +799,7 @@ Zig | [pgvector-zig](https://github.com/pgvector/pgvector-zig)
 
 --------
 
-## 常见问题
+### 常见问题
 
 ### 单张表最多能存储多少向量？
 
@@ -867,7 +873,7 @@ SELECT pg_size_pretty(pg_relation_size('index_name'));
 
 --------
 
-## 故障排查
+### 故障排查
 
 ### 为什么查询没有使用索引？
 
@@ -931,7 +937,7 @@ DROP INDEX index_name;
 
 --------
 
-## 参考
+### 参考
 
 ### Vector 类型
 
@@ -1054,7 +1060,7 @@ l2_normalize(sparsevec) → sparsevec | 欧氏范数归一化 | 0.7.0
 
 --------
 
-## 安装
+### 安装
 
 ### Linux 与 Mac
 

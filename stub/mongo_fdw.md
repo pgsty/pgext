@@ -3,7 +3,7 @@
 
 ## Usage
 
-> [mongo_fdw: Foreign data wrapper for MongoDB access](https://github.com/EnterpriseDB/mongo_fdw)
+Sources: [README](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_5_3/README.md), [REL-5_5_3 release](https://github.com/EnterpriseDB/mongo_fdw/releases/tag/REL-5_5_3)
 
 ### Create Server
 
@@ -51,7 +51,11 @@ DELETE FROM warehouse WHERE warehouse_id = 100;
 
 ### Pushdown Features
 
-mongo_fdw pushes down WHERE clauses, JOINs between foreign tables on the same server, aggregate functions, and ORDER BY to MongoDB for efficient query execution.
+mongo_fdw pushes down WHERE clauses, joins between foreign tables on the same server, aggregate functions, ORDER BY, LIMIT, and OFFSET to MongoDB for efficient query execution. Use the `mongo_fdw.enable_join_pushdown`, `mongo_fdw.enable_aggregate_pushdown`, `mongo_fdw.enable_order_by_pushdown`, and `mongo_fdw.log_remote_query` GUCs when diagnosing remote plans.
+
+### Version Notes
+
+`mongo_fdw` 5.5.3, released upstream as `REL-5_5_3`, adds PostgreSQL 18 support, updates bundled `mongoc-driver` and `json-c` libraries for MongoDB 8, adds the `mongo_fdw.log_remote_query` debug GUC, and fixes nested-field, WHERE, ORDER BY, and unsafe join-pushdown cases. Upstream dropped PostgreSQL 12 support in this line.
 
 ### Notes
 

@@ -2,7 +2,7 @@
 
 ## 用法
 
-> [pg_timeseries: 时间序列便捷 API](https://github.com/ChuckHend/pg_timeseries)
+来源：[README](https://github.com/ChuckHend/pg_timeseries/blob/v0.2.1/README.md)、[v0.2.1 release](https://github.com/ChuckHend/pg_timeseries/releases/tag/v0.2.1)、[PGXN](https://pgxn.org/dist/timeseries/)
 
 本扩展为时间序列表的创建、维护和使用提供了一致的用户体验。
 
@@ -24,7 +24,7 @@ SELECT enable_ts_table('sensor_readings');
   * 每小时运行一次维护任务，创建缺失的分区和未来所需的分区
 
 
-## 使用表
+### 使用表
 
 ### 索引
 
@@ -50,7 +50,7 @@ CREATE EXTENSION citus_columnar;
 ```
 
 
-## 分析辅助函数
+### 分析辅助函数
 
 ### `first` 和 `last`
 
@@ -86,7 +86,7 @@ CREATE EXTENSION pg_ivm;
 ```
 
 
-## 依赖
+### 依赖
 
 * [pg_cron](https://github.com/citusdata/pg_cron)
 * [pg_partman](https://github.com/pgpartman/pg_partman)
@@ -95,3 +95,7 @@ CREATE EXTENSION pg_ivm;
 
 * [pg_ivm](https://github.com/sraoss/pg_ivm) — 增量物化视图
 * [Citus & Citus Columnar](https://github.com/citusdata/citus) — 压缩功能
+
+### 版本说明
+
+`timeseries` 0.2.1 主要是打包和兼容性工作：PG18 文档、RPM spec 修复、`@extschema@` 泄漏修复，以及 runtime image dependency cleanup。SQL 使用面仍是上面的 README workflow。

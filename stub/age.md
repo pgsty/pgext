@@ -3,7 +3,7 @@
 
 ## Usage
 
-> [age: AGE graph database extension](https://github.com/apache/age)
+Sources: [Apache AGE repository](https://github.com/apache/age), [PG17 v1.7.0 branch](https://github.com/apache/age/tree/PG17/v1.7.0-rc0), [PG18 v1.7.0 branch](https://github.com/apache/age/tree/PG18/v1.7.0-rc0)
 
 Apache AGE brings graph database capabilities to PostgreSQL using the openCypher query language. It enables hybrid querying that combines SQL and Cypher, property indexes on vertices and edges, and the ability to query multiple graphs.
 
@@ -77,3 +77,7 @@ JOIN cypher('my_graph', $$
 $$) AS c(name agtype, id agtype)
 ON t.graph_id = c.id;
 ```
+
+### Version Notes
+
+Apache AGE 1.7.0 is published through PostgreSQL-major-specific branches for PostgreSQL 17 and 18. The README surface remains the same graph/Cypher workflow, with support focused on the newer PostgreSQL majors rather than PG14-16.

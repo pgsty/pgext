@@ -1,6 +1,6 @@
 ## Usage
 
-> Sources: [pgRDF upstream README](https://github.com/styk-tv/pgRDF), [pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/main/guide), [local metadata](../db/extension.csv).
+> Sources: [pgRDF upstream README](https://github.com/styk-tv/pgRDF/blob/v0.6.4/README.md), [pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.4/guide), [v0.6.4 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.4), [local metadata](../db/extension.csv).
 
 `pgRDF` stores RDF data inside PostgreSQL and exposes SQL-callable helpers for Turtle/TriG/N-Quads loading, SPARQL query/update, named graphs, SHACL validation, and RDFS/OWL 2 RL materialization.
 
@@ -11,7 +11,7 @@ SELECT pgrdf.version();
 
 ### Preload And PostgreSQL Version Caveat
 
-The local Pigsty metadata packages `pgrdf` for PostgreSQL 14, 15, 16, and 17 only. Upstream also documents PostgreSQL 14-17 support and defers PostgreSQL 18 while it remains pinned to `pgrx` 0.16.
+Upstream documents PostgreSQL 14-17 support and defers PostgreSQL 18 while pgRDF remains pinned to `pgrx` 0.16.
 
 `pgrdf` must be present in `shared_preload_libraries` before PostgreSQL starts. Without preload, upstream documents that the shared-memory dictionary and plan-cache atomics are not initialized and the first pgRDF call can fail.
 
@@ -33,7 +33,7 @@ SELECT pgrdf.parse_turtle(
 
 ### Load RDF
 
-Use `parse_turtle` for inline Turtle payloads and `load_turtle` for server-side files. Graph ids are `bigint` values; named graph helpers map ids to IRIs.
+Use `parse_turtle` for inline Turtle payloads and `load_turtle` for server-side files. Graph ids are `bigint` values; named graph helpers map ids to IRIs. Version 0.6.x adds a parallel bulk loader path via `load_turtle(..., bulk_load => true)`.
 
 ```sql
 SELECT pgrdf.add_graph(100::bigint, 'http://example.org/graph/main');
@@ -47,6 +47,7 @@ SELECT pgrdf.parse_turtle(
 );
 
 SELECT pgrdf.load_turtle('/srv/rdf/foaf.ttl', 100::bigint);
+SELECT pgrdf.load_turtle('/srv/rdf/bulk.ttl', 100::bigint, bulk_load => true);
 SELECT pgrdf.count_quads(100::bigint);
 ```
 
@@ -137,3 +138,7 @@ Useful introspection and cache-management helpers documented upstream include:
 | `pgrdf.sparql_parse(text)` | Inspect parsed SPARQL without executing it |
 
 The `pgrdf.path_max_depth` setting guards property-path expansion depth.
+
+### Version Notes
+
+`pgrdf` 0.6.4 improves the deferred-index bulk-load path: for fresh bulk loads above `pgrdf.bulk_defer_index_min`, `load_turtle(..., bulk_load => true)` also defers the dictionary `unique_term` constraint, then rebuilds and validates it in the same transaction. PostgreSQL 18 remains deferred upstream while pgRDF is pinned to `pgrx` 0.16.

@@ -77,7 +77,7 @@ SELECT pg_get_backtrace(pg_backend_pid());
 
 ### 运行注意事项
 
-- Pigsty 将 `pg_stat_backtrace` 1.0.0 打包给 PostgreSQL 14-18。上游 1.0.0 同时声明兼容 PostgreSQL 19。
+- 版本 1.0.0 支持 PostgreSQL 14-18。上游 1.0.0 同时声明兼容 PostgreSQL 19。
 - 该扩展仅支持 Linux，构建和运行时都依赖 `libunwind` / `libunwind-ptrace`。
 - 在启用了 Yama ptrace 限制的主机上，后端之间互相捕获调用栈可能需要设置 `kernel.yama.ptrace_scope = 0`。
 - 展开调用栈期间，目标进程会被短暂暂停。不要在繁忙主库上对 `walwriter`、`checkpointer` 或同步复制 `walsender` 等关键进程进行紧密循环调用。

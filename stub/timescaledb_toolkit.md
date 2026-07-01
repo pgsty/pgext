@@ -1,6 +1,8 @@
 
 ## Usage
 
+Sources: [documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/docs/README.md), [v1.23.0 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.23.0), [Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/Changelog.md)
+
 TimescaleDB Toolkit provides specialized functions for time-series analytics using a **two-step aggregation pattern**. Most functions create intermediate representations that accessor functions then query, enabling efficient reuse and multiple analyses.
 
 ### Approximate Analytics
@@ -11,16 +13,16 @@ Probabilistic distinct counting with configurable precision for high-cardinality
 
 ```sql
 -- Estimate unique users per day
-SELECT 
+SELECT
     date_trunc('day', timestamp) as day,
     distinct_count(hyperloglog(64, user_id)) as unique_users
-FROM events 
+FROM events
 GROUP BY day;
 
 -- Combine counts across partitions
 SELECT distinct_count(rollup(hll))
 FROM (SELECT hyperloglog(32, session_id) as hll FROM events_2023
-      UNION ALL 
+      UNION ALL
       SELECT hyperloglog(32, session_id) FROM events_2024) t;
 ```
 
@@ -30,17 +32,17 @@ High-accuracy percentile estimation optimized for tail quantiles (P95, P99).
 
 ```sql
 -- Track response time percentiles
-SELECT 
+SELECT
     service_name,
     approx_percentile(0.50, tdigest(100, response_time)) as p50,
     approx_percentile(0.95, tdigest(100, response_time)) as p95,
     approx_percentile(0.99, tdigest(100, response_time)) as p99
-FROM api_metrics 
+FROM api_metrics
 GROUP BY service_name;
 
 -- Hourly percentiles with continuous aggregation
 CREATE MATERIALIZED VIEW hourly_percentiles AS
-SELECT 
+SELECT
     time_bucket('1 hour', timestamp) as hour,
     tdigest(200, response_time) as digest
 FROM requests GROUP BY hour;
@@ -52,11 +54,11 @@ Quantile estimation with guaranteed maximum relative error bounds.
 
 ```sql
 -- CPU utilization percentiles with 1% max error
-SELECT 
+SELECT
     host_id,
     approx_percentile(0.95, uddsketch(100, 0.01, cpu_percent)) as p95_cpu,
     error(uddsketch(100, 0.01, cpu_percent)) as actual_error
-FROM system_metrics 
+FROM system_metrics
 GROUP BY host_id;
 ```
 
@@ -68,33 +70,33 @@ Handle counters that increase monotonically with automatic reset detection.
 
 ```sql
 -- Request rate calculation
-SELECT 
+SELECT
     time_bucket('5 min', timestamp) as bucket,
     rate(counter_agg(timestamp, request_count)) as requests_per_sec,
     delta(counter_agg(timestamp, request_count)) as total_requests
-FROM metrics 
+FROM metrics
 GROUP BY bucket;
 
 -- Extrapolated rate for partial buckets
-SELECT 
+SELECT
     extrapolated_rate(
-        counter_agg(timestamp, bytes_sent, 
+        counter_agg(timestamp, bytes_sent,
                    bounds => time_bucket_range('1 hour', timestamp))
     ) as bytes_per_second
 FROM network_stats;
 ```
 
-#### Gauge Aggregates - Varying Metrics  
+#### Gauge Aggregates - Varying Metrics
 
 Analytics for metrics that vary up and down (temperature, memory usage).
 
 ```sql
 -- Temperature change analysis
-SELECT 
+SELECT
     sensor_id,
     delta(gauge_agg(timestamp, temperature)) as temp_delta,
     rate(gauge_agg(timestamp, temperature)) as temp_rate_per_sec
-FROM weather_data 
+FROM weather_data
 GROUP BY sensor_id;
 ```
 
@@ -106,11 +108,11 @@ Handle irregularly sampled data with interpolation methods (LOCF, Linear).
 
 ```sql
 -- Weighted average for irregular sensor readings
-SELECT 
+SELECT
     device_id,
     average(time_weight('LOCF', timestamp, sensor_value)) as weighted_avg,
     average(time_weight('Linear', timestamp, sensor_value)) as linear_avg
-FROM iot_readings 
+FROM iot_readings
 GROUP BY device_id;
 
 -- Combining multiple time ranges
@@ -127,11 +129,11 @@ FROM (SELECT time_weight('LOCF', ts, val) as tw FROM readings_2023
 Downsample time series while preserving visual similarity for charts.
 
 ```sql
--- Reduce 100K points to 1K for visualization  
+-- Reduce 100K points to 1K for visualization
 SELECT time, value
 FROM unnest((
     SELECT lttb(timestamp, price, 1000)
-    FROM stock_prices 
+    FROM stock_prices
     WHERE symbol = 'AAPL'
 ));
 ```
@@ -142,7 +144,7 @@ Generate human-readable graphs by reducing noise while preserving trends.
 
 ```sql
 -- Smooth daily data to weekly resolution
-SELECT time, value 
+SELECT time, value
 FROM unnest((
     SELECT asap_smooth(date, daily_sales, 52)
     FROM sales_data
@@ -158,11 +160,11 @@ Comprehensive statistical analysis with 1D and 2D regression capabilities.
 
 ```sql
 -- Multi-variable analysis
-SELECT 
+SELECT
     -- Basic statistics
     average(stats_agg(response_time)) as avg_response,
     stddev(stats_agg(response_time)) as response_stddev,
-    
+
     -- Regression analysis
     slope(stats_agg(response_time, request_size)) as size_impact,
     corr(stats_agg(response_time, request_size)) as correlation,
@@ -176,16 +178,16 @@ Efficient intermediate representation for time series operations.
 
 ```sql
 -- Create and manipulate timevector
-CREATE VIEW cpu_series AS 
+CREATE VIEW cpu_series AS
 SELECT host_id, timevector(timestamp, cpu_percent) as ts
 FROM system_metrics GROUP BY host_id;
 
 -- Chain operations on timevector
-SELECT host_id, unnest(lttb(ts, 100)) 
+SELECT host_id, unnest(lttb(ts, 100))
 FROM cpu_series;
 ```
 
-## Integration Patterns
+### Integration Patterns
 
 ### Continuous Aggregation Support
 
@@ -193,7 +195,7 @@ Most toolkit functions work seamlessly with TimescaleDB continuous aggregates:
 
 ```sql
 CREATE MATERIALIZED VIEW hourly_analytics AS
-SELECT 
+SELECT
     time_bucket('1 hour', timestamp) as hour,
     service_name,
     tdigest(100, response_time) as response_digest,
@@ -203,7 +205,7 @@ FROM api_events
 GROUP BY hour, service_name;
 
 -- Query pre-computed aggregates
-SELECT 
+SELECT
     hour,
     approx_percentile(0.95, response_digest) as p95_response,
     rate(request_counter) as req_per_sec,
@@ -219,14 +221,14 @@ Store intermediate aggregates for multiple analyses:
 ```sql
 -- Step 1: Create aggregates
 CREATE TABLE daily_summaries AS
-SELECT 
+SELECT
     date_trunc('day', timestamp) as day,
     tdigest(200, response_time) as response_digest,
     stats_agg(response_time, request_size) as stats
 FROM requests GROUP BY day;
 
 -- Step 2: Multiple analyses from same data
-SELECT 
+SELECT
     day,
     approx_percentile(0.50, response_digest) as median,
     approx_percentile(0.99, response_digest) as p99,
@@ -236,3 +238,7 @@ FROM daily_summaries;
 ```
 
 All functions in the **experimental** schema (`toolkit_experimental`) may change between versions. Use stable functions for production workloads requiring API stability.
+
+### Version Notes
+
+`timescaledb_toolkit` 1.23.0 has two behavior changes to account for in tests: `max_n`, `max_n_by`, `min_n`, and `min_n_by` return an empty result instead of raising on empty streams, and 1D aggregations now error on values that would lose 53-bit precision instead of silently returning wrong data. The release also marks `time_weight` and its rollup parallel-unsafe, updates to `pgrx` 0.18, and fixes ASAP smoothing sortedness checks.

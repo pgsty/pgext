@@ -1,6 +1,6 @@
 ## 用法
 
-- 来源：[repo README](https://github.com/ChuckHend/pg_vectorize/blob/main/README.md)，[extension README](https://github.com/ChuckHend/pg_vectorize/blob/main/extension/README.md)，[v0.26.1 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.1)
+来源：[repo README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/README.md)、[extension README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/extension/README.md)、[v0.26.2 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.2)
 
 `vectorize` 是 `pg_vectorize` 提供的 PostgreSQL 扩展。上游文档描述了两种模式：独立的 HTTP 服务，以及数据库内的 SQL 扩展。对这里打包的扩展而言，相关的是 SQL 工作流。
 
@@ -52,8 +52,8 @@ SELECT * FROM vectorize.search(
 - `vectorize.encode()`：用于直接生成 embedding。
 - `vectorize.import_embeddings()`：用于导入预计算向量。
 
-### 更新行为与 v0.26.1 说明
+### 更新行为与 v0.26.2 说明
 
 extension README 说明，`schedule => '* * * * *'` 会每分钟检查一次更新，而 `schedule => 'realtime'` 会创建 trigger，在插入和更新时立即刷新。
 
-v0.26.1 release note 只写了 "update dependencies"，因此除了现有 README 中已经记录的接口外，没有额外的上游用户侧 SQL/API 变化需要补充。
+`pg_vectorize` 0.26.2 更新 vector-serve 和安全相关依赖；除了现有 README 中已经记录的接口外，没有实质 SQL/API 变化需要补充。

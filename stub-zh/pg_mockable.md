@@ -1,6 +1,6 @@
 ## 用法
 
-> 来源：[pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable)、[PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/)、[local metadata](../db/extension.csv)、本地源码归档 `pg_mockable-1.1.0.tar.gz`。
+> 来源：[pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable/blob/v1.1.0/README.md)、[v1.1.0 tag](https://github.com/bigsmoke/pg_mockable/tree/v1.1.0)、[PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/)、[local metadata](../db/extension.csv)、本地源码归档 `pg_mockable-1.1.0.tar.gz`。
 
 `pg_mockable` 用于为 PostgreSQL 函数创建可 Mock 的包装函数。它主要面向数据库测试：应用代码调用稳定的包装函数，而测试可以临时替换包装函数的返回值。
 
@@ -73,6 +73,8 @@ SELECT mockable.wrap_function(
 );
 ```
 
+版本 1.1.0 还通过 `mockable.wrap_function(...)` 的 `raise_debug_messages$` 参数和 `mock_memory.raise_debug_messages` 列，为 wrapped/mockable routines 增加可选 debug logging。
+
 ### Mock 生命周期
 
 默认 mock 生命周期是事务级的。若值需要跨 dump/restore 或后续事务保留，可以在创建包装函数时使用持久生命周期：
@@ -96,6 +98,6 @@ CALL mockable.unmock('app.answer()');
 
 ### 注意事项
 
-- Pigsty 将 `pg_mockable` 1.1.0 打包给 PostgreSQL 14-18。它是 SQL 扩展，不需要 `shared_preload_libraries`。
+- 版本 1.1.0 支持 PostgreSQL 14-18。它是 SQL 扩展，不需要 `shared_preload_libraries`。
 - `pg_mockable` 拥有 `mockable` schema；control 文件不支持把它安装到其他 schema。
 - 包装函数权限来自被包装的原函数。上游测试会验证：包装一个私有函数不会把执行权限授予原本无法调用该函数的角色。

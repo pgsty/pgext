@@ -9,7 +9,7 @@
 > SELECT * FROM users WHERE name LIKE '%john%';
 > ```
 >
-> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/)
+> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/), [v2.4.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v2.4.0)
 
 `biscuit` is a PostgreSQL index access method for fast `LIKE` and `ILIKE` pattern matching, including multi-column searches. The upstream project positions it as a deterministic bitmap index that avoids the false-positive recheck overhead common in trigram-based searches.
 
@@ -24,6 +24,9 @@ CREATE INDEX idx_users_name ON users USING biscuit(name);
 
 CREATE INDEX idx_products_search
 ON products USING biscuit(name, description, category);
+
+CREATE INDEX idx_users_lower_name
+ON users USING biscuit (lower(name));
 ```
 
 Basic wildcard queries work with the index:
@@ -41,7 +44,7 @@ WHERE name LIKE '%widget%'
 LIMIT 10;
 ```
 
-## Index Behavior
+### Index Behavior
 
 Biscuit stores bitmap position indexes for each string and can match both forward and backward character positions. The upstream design highlights:
 
@@ -62,7 +65,7 @@ The implementation documents optimized paths for common pattern types:
 - substring patterns such as `'%abc%'`
 - multi-column predicates, where Biscuit reorders predicates by estimated selectivity
 
-## Performance Notes
+### Performance Notes
 
 The upstream README emphasizes bitmap-only evaluation and several execution optimizations, including:
 
@@ -74,7 +77,7 @@ The upstream README emphasizes bitmap-only evaluation and several execution opti
 
 The project README also includes a benchmark setup comparing Biscuit indexes with trigram-based approaches on a 1M-row table.
 
-## Requirements
+### Requirements
 
 The current upstream README lists these requirements for source builds:
 
@@ -83,3 +86,7 @@ The current upstream README lists these requirements for source builds:
 - optional CRoaring for improved performance
 
 The project publishes packages on [PGXN](https://pgxn.org/dist/biscuit/) and maintains a dedicated documentation site on Read the Docs.
+
+### Version Notes
+
+Biscuit 2.4.0 adds expression-index support, so indexes such as `USING biscuit (lower(col), (other_col::text))` are valid. The release also expands multi-version build support across PostgreSQL 16, 17, 18, and 19beta1, fixes duplicate rows in multi-column parallel scans, and makes the `biscuit_operators` view resilient to additional operator classes.

@@ -2,9 +2,9 @@
 
 ## 用法
 
-> [multicorn: 在 PostgreSQL 服务器中使用 Python 获取外部数据](https://github.com/pgsql-io/multicorn2)
+来源：[README](https://github.com/pgsql-io/multicorn2/blob/v3.2/README.md)、[CHANGELOG](https://github.com/pgsql-io/multicorn2/blob/v3.2/CHANGELOG)
 
-Multicorn2 允许您用 Python 编写外部数据包装器。您需要实现一个继承自 `multicorn.ForeignDataWrapper` 的 Python 类，Multicorn 负责将其桥接到 PostgreSQL 的 FDW 接口。
+Multicorn2 允许您用 Python 编写外部数据包装器。您需要实现一个继承自 `multicorn.ForeignDataWrapper` 的 Python 类，Multicorn 负责将其桥接到 PostgreSQL 的 FDW 接口。版本 3.2 已使用 PostgreSQL 14-18 和 Python 3.9-3.13 测试，不过上游建议近期待发行版兼容性优先使用 Python 3.10-3.12。
 
 ### 定义 Python FDW 类
 
@@ -83,3 +83,11 @@ OPTIONS (
   delimiter ','
 );
 ```
+
+### 版本说明
+
+Multicorn 3.2 增加基本 OFFSET/LIMIT pushdown 和 LDAP paging support，并修复 LDAP right-parenthesis escaping。上游 3.1 增加 PostgreSQL 18 和 Python 3.13 支持，同时停止支持 PostgreSQL 14 之前的版本。
+
+### 注意事项
+
+由于 CPython 限制，Multicorn2 和 PL/Python 在 Python 3.12 上不能在同一个 PostgreSQL 数据库中共存。它们可以安装在同一系统上，但避免在同一个数据库里同时启用。

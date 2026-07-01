@@ -1,8 +1,8 @@
 ## Usage
 
-Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.1 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.1), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
+Sources: [README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md), [reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md), [tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md), [v0.3.2 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.2), [changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
 
-`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; Pigsty packages version 0.3.1 for PostgreSQL 14-18.
+`pg_clickhouse` runs analytics queries on ClickHouse from PostgreSQL through the `clickhouse_fdw` foreign data wrapper. Upstream documents PostgreSQL 13+ and ClickHouse 23+ support; the current version is 0.3.2.
 
 ### Connect PostgreSQL to ClickHouse
 
@@ -28,6 +28,9 @@ Server options documented upstream:
 - `port`
 - `dbname`
 - `fetch_size`: HTTP streaming batch size; `0` disables streaming
+- `compression`: binary-driver compression, `none`, `lz4`, or `zstd`; v0.3.2 defaults to `lz4`
+- `secure`: explicit TLS mode, `on`, `off`, or `auto`
+- `min_tls_version`: minimum TLS protocol version for both binary and HTTP drivers
 
 User mapping options:
 
@@ -64,6 +67,9 @@ VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
 ### Version and pushdown notes
 
 - The reference documents separate library and extension versions; `pgch_version()` reports the loaded library version.
+- Release `v0.3.2` is binary-only for existing SQL version `0.3`; it does not require `ALTER EXTENSION UPDATE` when upgrading from another 0.3 build.
+- Release `v0.3.2` adds the `compression`, `secure`, and `min_tls_version` server options, adds `regexp_match()` pushdown, and adds PostgreSQL 19beta1 distribution support.
+- Release `v0.3.2` also fixes regular-expression flag pushdown and avoids pushing down regex calls when the regex argument is not a constant.
 - Release `v0.3.1` is binary-only for existing SQL version `0.3`; it does not require `ALTER EXTENSION UPDATE` when upgrading from `v0.3.0`.
 - Release `v0.3.1` replaces the client library with `ClickHouse/clickhouse-c`, streams result blocks, and adds rectangular multidimensional array support for `SELECT` and `INSERT`.
 - Release `v0.3.1` also adds pushdown for `pg_re2` 0.3.0 functions such as `re2extractallgroupshorizontal`, `re2extractallgroupsvertical`, `re2regexpquotemeta`, and `re2splitbyregexp`, and fixes `UInt16` casts to PostgreSQL `int4`.

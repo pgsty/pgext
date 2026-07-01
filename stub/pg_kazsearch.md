@@ -1,8 +1,8 @@
 ## Usage
 
-Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/main/README.md), [v2.0.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.0.0), [v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
+Sources: [README](https://github.com/darkhanakh/pg-kazsearch/blob/v2.2.0/README.md), [v2.2.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.2.0), [v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
 
-`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language. The README says it supports PostgreSQL 16-18 and creates a ready-to-use text search configuration `kazakh_cfg` and dictionary `pg_kazsearch_dict`.
+`pg_kazsearch` is a PostgreSQL full-text search extension for the Kazakh language. The README says it supports PostgreSQL 16-18 and creates a ready-to-use text search configuration `kazakh_cfg` and dictionary `pg_kazsearch_dict`. Version 2.2.0 adds Latin-script Kazakh support in the core stemmer; successful Latin and Cyrillic inputs converge to canonical Cyrillic stems.
 
 ### Quick start
 
@@ -43,9 +43,17 @@ ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
   (w_deriv = 3.5, w_short_char = 100.0);
 ```
 
+Control Latin handling with `script_mode`; the default `auto` mode detects supported modern Kazakh Latin orthography and normalizes to Cyrillic output:
+
+```sql
+ALTER TEXT SEARCH DICTIONARY pg_kazsearch_dict
+  (script_mode = cyrillic_only);
+```
+
 ### Release and packaging notes
 
-- This project's CSV tracks extension control version `0.1.0`, package/source version `2.0.0`, `pgrx` `0.17.0`, and PostgreSQL versions 16-18.
+- This project's CSV tracks package/source version `2.2.0`, extension control version `0.1.0`, `pgrx` `0.18.1`, and PostgreSQL versions 16-18.
+- Upstream release `v2.2.0` adds Latin-script Kazakh support to the core stemmer.
 - Upstream release `v2.0.0` introduced the current Rust / `pgrx` PostgreSQL extension packaging.
 - Upstream release `v2.1.0` adds an Elasticsearch plugin alongside the PostgreSQL extension; the PostgreSQL SQL usage in the README is unchanged.
 

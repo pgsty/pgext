@@ -3,7 +3,7 @@
 
 ## 用法
 
-> [orioledb: PostgreSQL 的云原生存储引擎](https://github.com/orioledb/orioledb)
+来源：[README](https://github.com/orioledb/orioledb)、[beta16 release](https://github.com/orioledb/orioledb/releases/tag/beta16)、[patched PostgreSQL tree](https://github.com/orioledb/postgres)
 
 OrioleDB 是 PostgreSQL 的新型存储引擎，为数据库容量、能力和性能提供现代化方案。它使用基于撤销日志的 MVCC、写时复制检查点和行级 WAL，消除了膨胀问题和 VACUUM 的需求。
 
@@ -65,3 +65,7 @@ CREATE DATABASE mydb LOCALE_PROVIDER icu ICU_LOCALE 'en' TEMPLATE template0;
 - 公测阶段 -- 建议用于测试，不建议用于生产
 - 需要来自 [orioledb/postgres](https://github.com/orioledb/postgres) 的补丁版 PostgreSQL 构建
 - 仅支持 ICU、C 和 POSIX 排序规则
+
+### 版本说明
+
+OrioleDB 1.8-beta16 将扩展 SQL version 提升到 `1.8`，patched PostgreSQL builds 基于 16.13、17.9 和 18.4，并增加 PostgreSQL 18 支持。新的用户可见接口包括用于 SERIALIZABLE 支持的 `orioledb.serializable`，以及用于 `pg_amcheck` 集成的 `verify_orioledb(regclass, boolean)`。该版本还包含 recovery、replication、index-scan、vacuum 和 DDL correctness 修复。

@@ -3,7 +3,7 @@
 
 ## 用法
 
-> [pg_graphql: 为数据库内置 GraphQL 支持](https://github.com/supabase/pg_graphql)
+来源：[README](https://github.com/supabase/pg_graphql/blob/v1.6.1/README.md)、[documentation](https://supabase.github.io/pg_graphql)、[v1.6.1 release](https://github.com/supabase/pg_graphql/releases/tag/v1.6.1)
 
 `pg_graphql` 从现有的 SQL 模式反射生成 GraphQL 模式，无需额外的服务器或中间件即可直接在 PostgreSQL 内部执行 GraphQL 查询。
 
@@ -87,3 +87,7 @@ $$);
 - 变更操作支持批量插入、更新和删除
 - 内置过滤、排序和分页功能
 - 遵守 PostgreSQL 行级安全（RLS）策略
+
+### 版本说明
+
+`pg_graphql` 1.6.1 修复 `byPk` argument types 中重复 `NON_NULL` wrapping 导致 GraphiQL introspection 失败的问题，修复 introspection/data 混合查询错误返回 partial results 的问题，并更新 introspection opt-in notice 相关文档。

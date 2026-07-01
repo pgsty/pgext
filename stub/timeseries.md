@@ -2,7 +2,7 @@
 
 ## Usage
 
-> [pg_timeseries: Convenience API for time series stack](https://github.com/ChuckHend/pg_timeseries)
+Sources: [README](https://github.com/ChuckHend/pg_timeseries/blob/v0.2.1/README.md), [v0.2.1 release](https://github.com/ChuckHend/pg_timeseries/releases/tag/v0.2.1), [PGXN](https://pgxn.org/dist/timeseries/)
 
 This extension provides a cohesive user experience around the creation, maintenance, and use of time-series tables.
 
@@ -24,7 +24,7 @@ With this one call, several things will happen:
   * Once an hour, a maintenance job will create any missing partitions as well as needed future ones
 
 
-## Using Your Tables
+### Using Your Tables
 
 ### Indexes
 
@@ -54,7 +54,7 @@ CREATE EXTENSION citus_columnar;
 ```
 
 
-## Analytics Helpers
+### Analytics Helpers
 
 ### `first` and `last`
 
@@ -92,7 +92,7 @@ CREATE EXTENSION pg_ivm;
 ```
 
 
-## Requirements
+### Requirements
 
 * [pg_cron](https://github.com/citusdata/pg_cron)
 * [pg_partman](https://github.com/pgpartman/pg_partman)
@@ -101,3 +101,7 @@ CREATE EXTENSION pg_ivm;
 
 * [pg_ivm](https://github.com/sraoss/pg_ivm) — for incremental materialized views
 * [Citus & Citus Columnar](https://github.com/citusdata/citus) — for compression features
+
+### Version Notes
+
+`timeseries` 0.2.1 is mostly packaging and compatibility work: PG18 docs, RPM spec fixes, `@extschema@` leakage fixes, and runtime image dependency cleanup. The SQL usage surface remains the README workflow above.

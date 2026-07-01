@@ -2,6 +2,8 @@
 
 ## 用法
 
+来源：[README](https://github.com/pramsey/pgsql-gzip/blob/v1.1.0/README.md)、[v1.1.0 release](https://github.com/pramsey/pgsql-gzip/releases/tag/v1.1.0)
+
 有时需要在将 `bytea` 对象返回给客户端之前对其进行压缩。
 
 有时从客户端接收到压缩过的 `bytea`，需要先解压才能进行处理。
@@ -15,6 +17,9 @@
 * `gzip(uncompressed TEXT, [compression_level INTEGER])` 返回 `BYTEA`
 * `gunzip(compressed BYTEA)` 返回 `BYTEA`
 
+### 版本说明
+
+`pg_gzip` 1.1.0 保持相同 SQL API，改进 Docker/package build 行为，在 `gunzip` 中使用 `Z_SYNC_FLUSH`，并修复包依赖，使其使用目标 PostgreSQL 版本而不是固定版本。
 
 ### 示例
 

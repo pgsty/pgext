@@ -1,6 +1,6 @@
 ## 用法
 
-> 来源：[overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/), [release 3.0.13](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.0.13)
+> 来源：[overview](https://postgresql-anonymizer.readthedocs.io/en/stable/)、[static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/)、[dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/)、[anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/)、[masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)、[release 3.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.1.1)
 
 `anon` 使用 `SECURITY LABEL FOR anon` 声明脱敏规则。官方文档描述了六种脱敏方法：anonymous dumps、static masking、dynamic masking、replica masking、masking views 和 masking data wrappers。
 
@@ -78,3 +78,4 @@ IS 'MASKED WITH FUNCTION anon.dummy_last_name()';
 - dynamic masking 需要在 masked role 会话使用前完成 preload/configuration
 - static masking 会破坏原始值
 - pseudonymization 不等同于 anonymization
+- 版本 3.1.1 是针对 CVE-2026-11945 的 security release，并从 import/export 行为中移除 conditional randomization；应尽快从 3.0.x 升级。

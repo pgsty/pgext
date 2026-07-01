@@ -2,6 +2,8 @@
 
 ## Usage
 
+Sources: [README](https://github.com/pgvector/pgvector/blob/v0.8.3/README.md), [CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.3/CHANGELOG.md)
+
 Open-source vector similarity search for Postgres. Store your vectors with the rest of your data. Supports:
 
 - exact and approximate nearest neighbor search
@@ -10,6 +12,10 @@ Open-source vector similarity search for Postgres. Store your vectors with the r
 - any [language](https://github.com/pgvector/pgvector#languages) with a Postgres client
 
 Plus [ACID](https://en.wikipedia.org/wiki/ACID) compliance, point-in-time recovery, JOINs, and all of the other [great features](https://www.postgresql.org/about/) of Postgres
+
+### Version Notes
+
+`pgvector` 0.8.3 fixes possible HNSW index corruption during vacuuming and fixes a PostgreSQL 18 performance regression for Hamming and Jaccard distance. Existing 0.8.x SQL features such as iterative index scans, `halfvec`, `sparsevec`, binary vectors, HNSW, and IVFFlat remain the main user-facing surface.
 
 ### Getting Started
 
@@ -162,7 +168,7 @@ SELECT category_id, AVG(embedding) FROM items GROUP BY category_id;
 
 --------
 
-## Indexing
+### Indexing
 
 By default, pgvector performs exact nearest neighbor search, which provides perfect recall.
 
@@ -514,7 +520,7 @@ Note: If this is lower than `ivfflat.probes`, `ivfflat.probes` will be used
 
 --------
 
-## Vector Types
+### Vector Types
 
 ### Half-Precision Vectors
 
@@ -635,7 +641,7 @@ SELECT * FROM (
 
 --------
 
-## Performance
+### Performance
 
 ### Tuning
 
@@ -748,7 +754,7 @@ Scale horizontally with [replicas](https://www.postgresql.org/docs/current/hot-s
 
 --------
 
-## Languages
+### Languages
 
 Use pgvector from any language with a Postgres client. You can even generate and store vectors in one language and query them in another.
 
@@ -793,7 +799,7 @@ Zig | [pgvector-zig](https://github.com/pgvector/pgvector-zig)
 
 --------
 
-## FAQ
+### FAQ
 
 ### How many vectors can be stored in a single table?
 
@@ -867,7 +873,7 @@ SELECT pg_size_pretty(pg_relation_size('index_name'));
 
 --------
 
-## Troubleshooting
+### Troubleshooting
 
 ### Why isn't a query using an index?
 
@@ -931,7 +937,7 @@ Also, note that `NULL` vectors are not indexed (as well as zero vectors for cosi
 
 --------
 
-## Reference
+### Reference
 
 ### Vector Type
 
@@ -1054,7 +1060,7 @@ l2_normalize(sparsevec) → sparsevec | Normalize with Euclidean norm | 0.7.0
 
 --------
 
-## Installation
+### Installation
 
 ### Linux and Mac
 

@@ -77,7 +77,7 @@ SELECT pg_get_backtrace(pg_backend_pid());
 
 ### Operational Caveats
 
-- Pigsty packages `pg_stat_backtrace` 1.0.0 for PostgreSQL 14-18. Upstream 1.0.0 also advertises PostgreSQL 19 compatibility.
+- Version 1.0.0 supports PostgreSQL 14-18. Upstream 1.0.0 also advertises PostgreSQL 19 compatibility.
 - The extension is Linux-only and depends on `libunwind` / `libunwind-ptrace` at build and runtime.
 - On hosts with Yama ptrace restrictions, backend-to-backend capture may require `kernel.yama.ptrace_scope = 0`.
 - The target process is briefly paused while the stack is unwound. Avoid tight loops against critical processes such as `walwriter`, `checkpointer`, or synchronous-replication `walsender` on busy primaries.

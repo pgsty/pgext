@@ -1,7 +1,7 @@
 
 ## 用法
 
-> 来源：[pgRDF upstream README](https://github.com/styk-tv/pgRDF)、[pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/main/guide)、[local metadata](../db/extension.csv)。
+> 来源：[pgRDF upstream README](https://github.com/styk-tv/pgRDF/blob/v0.6.4/README.md)、[pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.4/guide)、[v0.6.4 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.4)、[local metadata](../db/extension.csv)。
 
 `pgRDF` 在 PostgreSQL 内存储 RDF 数据，并提供可从 SQL 调用的辅助函数，用于加载 Turtle/TriG/N-Quads、执行 SPARQL 查询与更新、管理命名图、做 SHACL 校验，以及执行 RDFS/OWL 2 RL 物化推理。
 
@@ -12,7 +12,7 @@ SELECT pgrdf.version();
 
 ### 预加载与 PostgreSQL 版本注意事项
 
-本地 Pigsty 元数据只为 PostgreSQL 14、15、16 和 17 打包 `pgrdf`。上游文档也说明支持 PostgreSQL 14-17；由于仍固定在 `pgrx` 0.16，PostgreSQL 18 支持暂缓。
+上游文档说明支持 PostgreSQL 14-17；由于 pgRDF 仍固定在 `pgrx` 0.16，PostgreSQL 18 支持暂缓。
 
 `pgrdf` 必须在 PostgreSQL 启动前加入 `shared_preload_libraries`。如果没有预加载，上游文档说明共享内存字典和计划缓存原子量不会初始化，第一次调用 pgRDF 时可能失败。
 
@@ -34,7 +34,7 @@ SELECT pgrdf.parse_turtle(
 
 ### 加载 RDF
 
-内联 Turtle 载荷使用 `parse_turtle`，服务器端文件使用 `load_turtle`。图 ID 是 `bigint` 值；命名图辅助函数负责在 ID 和 IRI 之间建立映射。
+内联 Turtle 载荷使用 `parse_turtle`，服务器端文件使用 `load_turtle`。图 ID 是 `bigint` 值；命名图辅助函数负责在 ID 和 IRI 之间建立映射。版本 0.6.x 通过 `load_turtle(..., bulk_load => true)` 增加 parallel bulk loader 路径。
 
 ```sql
 SELECT pgrdf.add_graph(100::bigint, 'http://example.org/graph/main');
@@ -48,6 +48,7 @@ SELECT pgrdf.parse_turtle(
 );
 
 SELECT pgrdf.load_turtle('/srv/rdf/foaf.ttl', 100::bigint);
+SELECT pgrdf.load_turtle('/srv/rdf/bulk.ttl', 100::bigint, bulk_load => true);
 SELECT pgrdf.count_quads(100::bigint);
 ```
 
@@ -138,3 +139,7 @@ FROM pgrdf.sparql(
 | `pgrdf.sparql_parse(text)` | 查看解析后的 SPARQL 而不执行 |
 
 `pgrdf.path_max_depth` 设置用于限制属性路径展开深度。
+
+### 版本说明
+
+`pgrdf` 0.6.4 改进 deferred-index bulk-load 路径：对于高于 `pgrdf.bulk_defer_index_min` 的 fresh bulk loads，`load_turtle(..., bulk_load => true)` 也会推迟 dictionary `unique_term` constraint，然后在同一事务中重建并验证。由于 pgRDF 仍 pin 在 `pgrx` 0.16，PostgreSQL 18 仍由上游暂缓。

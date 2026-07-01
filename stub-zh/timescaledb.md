@@ -1,6 +1,6 @@
 ## 用法
 
-来源：[README](https://github.com/timescale/timescaledb/blob/main/README.md)、[TimescaleDB 2.27.2 release](https://github.com/timescale/timescaledb/releases/tag/2.27.2)、[2.27.2 changelog](https://github.com/timescale/timescaledb/blob/2.27.2/CHANGELOG.md)、[CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)、[create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)、[continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)、[add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)、[GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
+来源：[README](https://github.com/timescale/timescaledb/blob/main/README.md)、[TimescaleDB 2.28.0 release](https://github.com/timescale/timescaledb/releases/tag/2.28.0)、[2.28.0 changelog](https://github.com/timescale/timescaledb/blob/2.28.0/CHANGELOG.md)、[CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)、[create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)、[continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)、[add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)、[GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)
 
 `timescaledb` 是用于 time-series 与 event analytics 的 PostgreSQL 扩展。当前文档强调 `CREATE TABLE ... WITH (tsdb.hypertable)`、continuous aggregates、automation jobs，以及将 chunks 移入 columnstore。
 
@@ -57,6 +57,8 @@ SELECT add_job('user_defined_action', '1h');
 
 - Continuous aggregates 要求在 hypertable 的 time dimension 上使用 `time_bucket(...)`。
 - Continuous aggregate 的 `WITH` 子句支持 `timescaledb.materialized_only`；当前 API 默认值为 `TRUE`，因此除非另行配置，否则不会启用 real-time aggregation。
+- TimescaleDB 2.28.0 允许手动 `refresh_continuous_aggregate()` 调用以增量批次执行。可使用 `buckets_per_batch`、`max_batches_per_execution` 和 `refresh_newest_first` 将大型手动刷新拆成更小的工作单元。
+- TimescaleDB 2.28.0 还允许通过 `ALTER MATERIALIZED VIEW ... ADD COLUMN ... GENERATED ALWAYS AS (...) STORED` 向已有 continuous aggregate 添加新的 generated aggregate column；已有行在刷新前为 `NULL`。
 
 ### Columnstore
 
@@ -91,8 +93,8 @@ SET timescaledb.enable_columnar_scan_filter_pushdown = on;
 
 ### 注意事项
 
-- 本项目 CSV 跟踪 TimescaleDB `2.27.2`，覆盖 PostgreSQL 15-18。
-- TimescaleDB 2.27.0 增加 Hypercore columnstore 性能工作：vectorized filters、用于 `UPDATE`/`DELETE` equality predicates 的 bloom-filter pruning，以及用于 `UPSERT` 的 bloom-filter pruning。
-- 2.27.1 和 2.27.2 bugfix releases 修复 columnstore 与 catalog 边界问题，包括 grouped columnar scans 的错误结果或崩溃、当 quals 含 subplans 或不支持的 grouping forms 时跳过 `ColumnarIndexScan`、composite bloom-filter migration scripts、孤立的 compression settings，以及 job/policy information leaks。
-- 2.27.0 release notes 为受影响的 compressed `int2` bloom sparse indexes 和 v2.26 生成的 composite bloom metadata 列出 backward-incompatible upgrade caveats；2.27.1 增加 composite bloom-filter migration scripts。
-- 2.27.0 release notes 宣布，计划中的 2026 年 6 月 TimescaleDB release 将是最后一个支持 PostgreSQL 15 的版本。
+- 本项目 CSV 跟踪 TimescaleDB `2.28.0`，覆盖 PostgreSQL 15-18。
+- TimescaleDB 2.28.0 通过从 columnstore batch metadata 派生结果，而不是解压 batches，加速 compressed data 上的 `first(value, time)` 和 `last(value, time)` 聚合。
+- 2.28.0 的 columnar executor 可以在 compressed data 上计算 `CASE ... WHEN` 表达式，使 conditional aggregates 和 computed expressions 保持在 vectorized path 上。
+- TimescaleDB 2.28.0 移除了 adaptive chunking，并删除 `_timescaledb_catalog.chunk_constraint`，临时以 compatibility view 替代。不要依赖该 catalog object，改用稳定的信息视图。
+- TimescaleDB 2.28.x 是最后一个支持 PostgreSQL 15 的 minor series；下一条计划中的 minor line 只支持 PostgreSQL 16、17 和 18。

@@ -1,8 +1,8 @@
 ## 用法
 
-来源：[README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md)、[reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md)、[tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md)、[v0.3.1 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.1)、[changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
+来源：[README](https://github.com/ClickHouse/pg_clickhouse/blob/main/README.md)、[reference](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/pg_clickhouse.md)、[tutorial](https://github.com/ClickHouse/pg_clickhouse/blob/main/doc/tutorial.md)、[v0.3.2 release notes](https://github.com/ClickHouse/pg_clickhouse/releases/tag/v0.3.2)、[changelog](https://github.com/ClickHouse/pg_clickhouse/blob/main/CHANGELOG.md)
 
-`pg_clickhouse` 通过 `clickhouse_fdw` foreign data wrapper，让 PostgreSQL 可以在 ClickHouse 上执行分析查询。上游文档说明支持 PostgreSQL 13+ 与 ClickHouse 23+；Pigsty 打包版本为 0.3.1，覆盖 PostgreSQL 14-18。
+`pg_clickhouse` 通过 `clickhouse_fdw` foreign data wrapper，让 PostgreSQL 可以在 ClickHouse 上执行分析查询。上游文档说明支持 PostgreSQL 13+ 与 ClickHouse 23+；当前版本是 0.3.2。
 
 ### 连接 PostgreSQL 与 ClickHouse
 
@@ -28,6 +28,9 @@ IMPORT FOREIGN SCHEMA taxi FROM SERVER taxi_srv INTO taxi;
 - `port`
 - `dbname`
 - `fetch_size`：HTTP streaming batch size；`0` 表示禁用 streaming
+- `compression`：binary-driver compression，可取 `none`、`lz4` 或 `zstd`；v0.3.2 默认 `lz4`
+- `secure`：显式 TLS 模式，可取 `on`、`off` 或 `auto`
+- `min_tls_version`：binary 和 HTTP drivers 使用的最低 TLS protocol version
 
 用户映射选项：
 
@@ -64,6 +67,9 @@ VALUES (9, 'west-node', 'us-west-2', 'amd64', 'Linux');
 ### 版本与下推说明
 
 - reference 区分 library version 和 extension version；`pgch_version()` 返回已加载的库版本。
+- Release `v0.3.2` 对已有 SQL version `0.3` 而言只是二进制更新；从另一个 0.3 build 升级时不需要执行 `ALTER EXTENSION UPDATE`。
+- Release `v0.3.2` 增加 `compression`、`secure` 和 `min_tls_version` server options，增加 `regexp_match()` 下推，并增加 PostgreSQL 19beta1 distribution support。
+- Release `v0.3.2` 还修复 regular-expression flag pushdown，并在 regex argument 不是常量时避免下推 regex calls。
 - Release `v0.3.1` 对已有 SQL version `0.3` 而言只是二进制更新；从 `v0.3.0` 升级时不需要执行 `ALTER EXTENSION UPDATE`。
 - Release `v0.3.1` 将客户端库替换为 `ClickHouse/clickhouse-c`，支持流式读取 result blocks，并为 `SELECT` 和 `INSERT` 增加矩形多维数组支持。
 - Release `v0.3.1` 还为 `pg_re2` 0.3.0 函数增加下推，例如 `re2extractallgroupshorizontal`、`re2extractallgroupsvertical`、`re2regexpquotemeta` 和 `re2splitbyregexp`，并修复 `UInt16` 到 PostgreSQL `int4` 的 cast。

@@ -1,6 +1,6 @@
 ## 用法
 
-- 来源：[README](https://github.com/pmpetit/pglinter/blob/main/README.md), [how-to](https://github.com/pmpetit/pglinter/blob/main/docs/how-to/README.md), [examples](https://github.com/pmpetit/pglinter/blob/main/docs/examples/README.md), [rules](https://github.com/pmpetit/pglinter/blob/main/docs/rules/README.md), [1.1.2 release](https://github.com/pmpetit/pglinter/releases/tag/1.1.2)
+来源：[README](https://github.com/pmpetit/pglinter/blob/2.0.0/README.md)、[how-to](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/how-to/README.md)、[examples](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/examples/README.md)、[rules](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/rules/README.md)、[2.0.0 release](https://github.com/pmpetit/pglinter/releases/tag/2.0.0)
 
 `pglinter` 会分析 PostgreSQL 数据库中的潜在问题、性能问题和最佳实践违规。当前用户文档通过 `pglinter.get_violations()` 暴露检查结果，该函数返回已启用规则的违规行，可过滤，也可连接到 `pg_identify_object()`。
 
@@ -54,6 +54,6 @@ SELECT pglinter.import_rule_messages_from_yaml('yaml...');
 
 ### 注意事项
 
-Pigsty package metadata 记录版本 `1.1.2`，覆盖 PostgreSQL 14-18，并记录了从 `0.16.1` 到 `0.17.0` 的本地 PGRX 升级。上游 README 兼容性文字仍写 PostgreSQL 13-18 和 PGRX `0.16.1`。
+版本 `2.0.0` 移除了较旧的 `check()` 和 `check_rule()` 函数；`get_violations()` 现在是唯一 check API。当前构建使用 `pgrx` 0.18.1。
 
-上游 `1.1.2` release 增加了 `B013`。主 README 相比 docs 和导出函数仍有部分滞后，因此此 stub 使用 `get_violations()`，并省略较旧且未确认的 `check()` / `check_rule()` 示例。
+上游 `1.1.2` release 增加了 `B013`。主 README 相比 docs 和导出函数仍有部分滞后，因此此 stub 使用 `get_violations()`，并省略已移除的 `check()` / `check_rule()` 示例。

@@ -2,7 +2,7 @@
 
 ## 用法
 
-> [mongo_fdw: 访问 MongoDB 的外部数据包装器](https://github.com/EnterpriseDB/mongo_fdw)
+来源：[README](https://github.com/EnterpriseDB/mongo_fdw/blob/REL-5_5_3/README.md)、[REL-5_5_3 release](https://github.com/EnterpriseDB/mongo_fdw/releases/tag/REL-5_5_3)
 
 ### 创建服务器
 
@@ -50,7 +50,11 @@ DELETE FROM warehouse WHERE warehouse_id = 100;
 
 ### 下推特性
 
-mongo_fdw 将 WHERE 子句、同一服务器上外部表之间的 JOIN、聚合函数和 ORDER BY 下推到 MongoDB，以实现高效查询执行。
+mongo_fdw 将 WHERE 子句、同一服务器上外部表之间的 JOIN、聚合函数、ORDER BY、LIMIT 和 OFFSET 下推到 MongoDB，以实现高效查询执行。诊断远端执行计划时，可使用 `mongo_fdw.enable_join_pushdown`、`mongo_fdw.enable_aggregate_pushdown`、`mongo_fdw.enable_order_by_pushdown` 和 `mongo_fdw.log_remote_query` GUC。
+
+### 版本说明
+
+`mongo_fdw` 5.5.3，上游 tag 为 `REL-5_5_3`，增加 PostgreSQL 18 支持，为 MongoDB 8 更新 bundled `mongoc-driver` 和 `json-c` libraries，增加 `mongo_fdw.log_remote_query` debug GUC，并修复 nested-field、WHERE、ORDER BY 和 unsafe join-pushdown 场景。本线中上游已停止 PostgreSQL 12 支持。
 
 ### 注意事项
 

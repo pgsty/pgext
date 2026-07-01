@@ -1,6 +1,8 @@
 
 ## Usage
 
+Sources: [README](https://github.com/pramsey/pgsql-gzip/blob/v1.1.0/README.md), [v1.1.0 release](https://github.com/pramsey/pgsql-gzip/releases/tag/v1.1.0)
+
 Sometimes you just need to compress your `bytea` object before you return it to the client.
 
 Sometimes you receive a compressed `bytea` from the client, and you have to uncompress it before you can work with it.
@@ -13,6 +15,10 @@ This extension is **not** for storage compression. PostgreSQL already does [tupl
 * `gzip(uncompressed BYTEA, [compression_level INTEGER])` returns `BYTEA`
 * `gzip(uncompressed TEXT, [compression_level INTEGER])` returns `BYTEA`
 * `gunzip(compressed BYTEA)` returns `BYTEA`
+
+### Version Notes
+
+`pg_gzip` 1.1.0 keeps the same SQL API, improves Docker/package build behavior, uses `Z_SYNC_FLUSH` in `gunzip`, and fixes package dependencies to use the target PostgreSQL version instead of a fixed version.
 
 
 ### Examples
@@ -51,4 +57,3 @@ To convert a `bytea` back into an equivalent `text` you must use the `encode()` 
                           encode
     -----------------------------------------------------
      this text has been compressed and then decompressed
-

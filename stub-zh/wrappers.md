@@ -1,6 +1,6 @@
 ## 用法
 
-来源: [official README](https://github.com/supabase/wrappers/blob/main/README.md), [official docs](https://fdw.dev/), [v0.6.0 release](https://github.com/supabase/wrappers/releases/tag/v0.6.0)
+来源：[official README](https://github.com/supabase/wrappers/blob/v0.6.1/README.md)、[official docs](https://fdw.dev/)、[v0.6.1 release](https://github.com/supabase/wrappers/releases/tag/v0.6.1)
 
 `wrappers` 既是一个用 Rust 编写 PostgreSQL foreign data wrapper 的框架，也是 Supabase 维护的一组 FDW 打包集合。单个扩展会安装多种 wrapper 实现，然后每个 foreign server 再选择自己需要的具体 wrapper 类型。
 
@@ -37,16 +37,18 @@ CREATE FOREIGN TABLE stripe_customers (
 
 ### 覆盖范围
 
-上游提供了用于 BigQuery、ClickHouse、DuckDB、MySQL、Redis、S3、Stripe、Snowflake、Slack、Notion、OpenAPI、Infura 等数据库与服务的 wrappers。不同 wrapper 的读写支持差异很大，但 `WHERE`、`ORDER BY` 和 `LIMIT` 下推是框架的核心能力。
+上游提供了用于 BigQuery、ClickHouse、DuckDB、DynamoDB、MySQL/Doris、Redis、S3、S3 Vectors、Stripe、Snowflake、Slack、Notion、OpenAPI、Infura 等数据库与服务的 wrappers。不同 wrapper 的读写支持差异很大，但 `WHERE`、`ORDER BY` 和 `LIMIT` 下推是框架的核心能力。
 
 ### 版本说明
 
-`v0.6.0` 保持了相同的扩展模型，但扩展了 wrapper 目录和行为。官方发布说明特别提到：
+`v0.6.1` 保持了相同的扩展模型，但扩展了 wrapper 目录和行为。官方发布说明特别提到：
 
-- 新增 OpenAPI FDW 支持
-- 新增 Infura FDW 支持
-- Snowflake `timeout_secs` table option
-- 多个 wrapper 的写入路径和扫描修复
+- 新增 DynamoDB FDW 支持
+- 通过 `mysql_fdw` 支持 MySQL/Doris
+- `iceberg_fdw` 支持 schema evolution
+- `_id` options 可按名称查找 vault secret
+- 支持 COUNT、SUM、AVG、MIN 和 MAX 的 aggregate pushdown，包括 MySQL FDW 支持
+- parameter-state refresh/rescan 修复和 dependency/security updates
 
 ### 注意事项
 

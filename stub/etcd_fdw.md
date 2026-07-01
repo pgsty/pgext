@@ -2,13 +2,12 @@
 
 ## Usage
 
-- [Intro Blog](https://www.cybertec-postgresql.com/en/bringing-etcd-to-the-database-with-rust-and-pgrx/)
-- [Github Repo](https://github.com/cybertec-postgresql/etcd_fdw)
+Sources: [intro blog](https://www.cybertec-postgresql.com/en/bringing-etcd-to-the-database-with-rust-and-pgrx/), [GitHub repo](https://github.com/cybertec-postgresql/etcd_fdw), [v0.0.1 release](https://github.com/cybertec-postgresql/etcd_fdw/releases/tag/v0.0.1)
 
 
 -----------
 
-## Quick Start
+### Quick Start
 
 ### 1. Enable Extension
 
@@ -93,7 +92,7 @@ SELECT * FROM etcd_config;
 
 -----------
 
-## Reference
+### Reference
 
 ### Server Options
 
@@ -134,3 +133,6 @@ The following operations are pushed down to etcd for better performance:
 - `UPDATE` on key column is not supported. Workaround: `INSERT` new key, then `DELETE` old key.
 - Requires etcd v3 API.
 
+### Version Notes
+
+`etcd_fdw` 0.0.1 is the first public release. It uses `pgrx` 0.18.1, and the documented SQL surface is the FDW/server/table workflow above.

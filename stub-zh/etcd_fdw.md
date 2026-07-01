@@ -3,13 +3,12 @@
 
 ## 用法
 
-- [介绍博客](https://www.cybertec-postgresql.com/en/bringing-etcd-to-the-database-with-rust-and-pgrx/)
-- [Github 仓库](https://github.com/cybertec-postgresql/etcd_fdw)
+来源：[介绍博客](https://www.cybertec-postgresql.com/en/bringing-etcd-to-the-database-with-rust-and-pgrx/)、[GitHub repo](https://github.com/cybertec-postgresql/etcd_fdw)、[v0.0.1 release](https://github.com/cybertec-postgresql/etcd_fdw/releases/tag/v0.0.1)
 
 
 -----------
 
-## 快速上手
+### 快速上手
 
 ### 1. 启用扩展
 
@@ -94,7 +93,7 @@ SELECT * FROM etcd_config;
 
 -----------
 
-## 参考
+### 参考
 
 ### 服务器选项
 
@@ -134,3 +133,7 @@ SELECT * FROM etcd_config;
 
 - 不支持对键列执行 `UPDATE` 操作。替代方案：先 `INSERT` 新键，再 `DELETE` 旧键。
 - 需要 etcd v3 API。
+
+### 版本说明
+
+`etcd_fdw` 0.0.1 是第一个公开版本。它使用 `pgrx` 0.18.1；文档化 SQL surface 是上面的 FDW/server/table workflow。

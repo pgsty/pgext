@@ -1,6 +1,8 @@
 
 ## 用法
 
+来源：[documentation index](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/docs/README.md)、[v1.23.0 release](https://github.com/timescale/timescaledb-toolkit/releases/tag/1.23.0)、[Changelog](https://github.com/timescale/timescaledb-toolkit/blob/1.23.0/Changelog.md)
+
 TimescaleDB Toolkit 提供了一系列专用于时序数据分析的函数，采用**两步聚合模式**。大多数函数会先创建中间表示，再通过访问器函数进行查询，从而实现高效复用和多维分析。
 
 ### 近似分析
@@ -185,7 +187,7 @@ SELECT host_id, unnest(lttb(ts, 100))
 FROM cpu_series;
 ```
 
-## 集成模式
+### 集成模式
 
 ### 连续聚合支持
 
@@ -236,3 +238,7 @@ FROM daily_summaries;
 ```
 
 所有位于 **experimental** 模式（`toolkit_experimental`）中的函数可能会在版本间发生变化。生产环境中如需 API 稳定性保证，请使用稳定版函数。
+
+### 版本说明
+
+`timescaledb_toolkit` 1.23.0 有两项行为变化需要在测试中留意：`max_n`、`max_n_by`、`min_n` 和 `min_n_by` 在 empty streams 上返回空结果而不是报错；1D aggregations 现在会在值可能丢失 53-bit precision 时报错，而不是静默返回错误数据。该版本还将 `time_weight` 及其 rollup 标记为 parallel-unsafe，升级到 `pgrx` 0.18，并修复 ASAP smoothing sortedness checks。

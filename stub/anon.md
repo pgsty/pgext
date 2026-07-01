@@ -1,7 +1,7 @@
 
 ## Usage
 
-> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/), [release 3.0.13](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.0.13)
+> Sources: [overview](https://postgresql-anonymizer.readthedocs.io/en/stable/), [static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/), [dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/), [anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/), [masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/), [release 3.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.1.1)
 
 `anon` applies declarative masking rules with `SECURITY LABEL FOR anon`. The official docs describe six masking methods: anonymous dumps, static masking, dynamic masking, replica masking, masking views, and masking data wrappers.
 
@@ -79,3 +79,4 @@ Caveats from the official docs:
 - dynamic masking needs preload/configuration before masked-role sessions use it
 - static masking destroys the original values
 - pseudonymization is not anonymization
+- Version 3.1.1 is a security release for CVE-2026-11945 and removes conditional randomization from import/export behavior; upgrade from 3.0.x promptly.
