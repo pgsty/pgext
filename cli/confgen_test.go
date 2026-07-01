@@ -123,7 +123,7 @@ func TestGenerateExtensionMappingsFallbackToDeclaredPG(t *testing.T) {
 	}
 }
 
-func TestEL9ARMPatroniVersionLockUsesCurrentVersion(t *testing.T) {
+func TestEL9ARMPatroniUsesNoarchPackageSelectors(t *testing.T) {
 	g := &PigstyConfigGenerator{
 		osCode:    "el9",
 		arch:      "aarch64",
@@ -133,25 +133,25 @@ func TestEL9ARMPatroniVersionLockUsesCurrentVersion(t *testing.T) {
 
 	pgsqlUtility := funcs["getPgsqlUtility"].(func() string)()
 	wantPackages := []string{
-		"patroni-4.1.3",
-		"patroni-etcd-4.1.3",
+		"patroni.noarch",
+		"patroni-etcd.noarch",
 	}
 	for _, pkg := range wantPackages {
 		if !strings.Contains(pgsqlUtility, pkg) {
 			t.Fatalf("pgsql utility package list missing %q: %q", pkg, pgsqlUtility)
 		}
 	}
-	for _, stalePackage := range []string{"patroni-4.1.2", "patroni-etcd-4.1.2"} {
+	for _, stalePackage := range []string{"patroni-4.1.2", "patroni-etcd-4.1.2", "patroni-4.1.3", "patroni-etcd-4.1.3"} {
 		if strings.Contains(pgsqlUtility, stalePackage) {
 			t.Fatalf("pgsql utility package list contains stale patroni version: %q", pgsqlUtility)
 		}
 	}
 
 	getUtilPkg := funcs["getUtilPkg"].(func(string, string) string)
-	if got := getUtilPkg("patroni", "patroni patroni-etcd"); got != "patroni-4.1.3 patroni-etcd-4.1.3" {
+	if got := getUtilPkg("patroni", "patroni patroni-etcd"); got != "patroni.noarch patroni-etcd.noarch" {
 		t.Fatalf("patroni util package list = %q", got)
 	}
-	if got := getUtilPkg("pgsql-common", "patroni patroni-etcd pgbouncer"); !strings.Contains(got, "patroni-4.1.3 patroni-etcd-4.1.3") {
+	if got := getUtilPkg("pgsql-common", "patroni patroni-etcd pgbouncer"); !strings.Contains(got, "patroni.noarch patroni-etcd.noarch") {
 		t.Fatalf("pgsql-common util package list = %q", got)
 	}
 }

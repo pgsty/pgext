@@ -13,12 +13,10 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const el9ARMPatroniVersion = "4.1.3"
-
 func el9ARMPatroniPackages(extra ...string) string {
 	packages := []string{
-		fmt.Sprintf("patroni-%s", el9ARMPatroniVersion),
-		fmt.Sprintf("patroni-etcd-%s", el9ARMPatroniVersion),
+		"patroni.noarch",
+		"patroni-etcd.noarch",
 	}
 	packages = append(packages, extra...)
 	return strings.Join(packages, " ")
