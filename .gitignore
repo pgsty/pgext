@@ -52,4 +52,8 @@ public/
 __pycache__/
 vars/
 
-bin/
+bin/*
+!bin/load-stub
+!bin/dump-stub
+!bin/stub_doc.py
+!bin/test_stub_doc.py

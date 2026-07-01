@@ -82,7 +82,7 @@ Examples:
 | `pb check` |        | 验证备份仓库完整性        | `pgbackrest check` |
 | `pb start` |        | 启用 pgBackRest 操作 | `pgbackrest start` |
 | `pb stop`  |        | 禁用 pgBackRest 操作 | `pgbackrest stop`  |
-| `pb log`   | `l, lg` | 查看日志             | `tail/cat` 日志文件    |
+| `pb log`   | `l, lg` | 查看日志             | 最新日志快照 / tail     |
 {.full-width}
 
 
@@ -91,7 +91,7 @@ Examples:
 ```bash
 # 查看备份信息
 pig pb info                          # 显示所有备份信息
-pig pb info --raw -o json            # 原始 JSON 输出
+pig pb info --raw --raw-output json  # 原始 JSON 输出
 pig pb ls                            # 列出所有备份
 pig pb ls repo                       # 列出配置的仓库
 pig pb ls stanza                     # 列出所有 stanza
@@ -115,7 +115,7 @@ pig pb check                         # 验证仓库完整性
 
 # 清理
 pig pb expire                        # 按保留策略清理
-pig pb expire --dry-run              # 干运行模式
+pig pb expire --plan                 # 仅预览清理计划
 ```
 
 
@@ -160,7 +160,7 @@ pig pb info -r 2                     # 查看 repo2 的备份信息
 
 ```bash
 pig pb info                          # 显示所有备份信息
-pig pb info --raw -o json            # 原始 JSON 输出
+pig pb info --raw --raw-output json  # 原始 JSON 输出
 pig pb info --set 20250101-120000F   # 显示特定备份集详情
 ```
 
@@ -169,7 +169,7 @@ pig pb info --set 20250101-120000F   # 显示特定备份集详情
 | 参数       | 简写   | 说明             |
 |:---------|:-----|:---------------|
 | `--raw`    | `-R` | 原始输出模式（透传 pgBackRest 输出） |
-| `--output` | `-o` | 输出格式：text、json（仅 `--raw` 模式） |
+| `--raw-output` | `-O` | 原始输出格式：text、json（仅 `--raw` 模式） |
 | `--set`    |      | 显示特定备份集详情      |
 {.full-width}
 
@@ -239,7 +239,7 @@ pig pb backup --force                # 跳过主库角色检查
 ```bash
 pig pb expire                        # 按策略清理
 pig pb expire --set 20250101-*       # 删除特定备份集
-pig pb expire --dry-run              # 干运行模式（仅显示）
+pig pb expire --plan                 # 仅预览清理计划，不删除
 ```
 
 **选项：**
@@ -247,7 +247,7 @@ pig pb expire --dry-run              # 干运行模式（仅显示）
 | 参数         | 说明           |
 |:-----------|:-------------|
 | `--set`    | 删除特定备份集      |
-| `--dry-run` | 干运行模式：仅显示将删除的内容 |
+| `--plan` | 仅预览清理计划，不删除备份 |
 {.full-width}
 
 **保留策略配置：**
@@ -280,13 +280,17 @@ pig pb restore -n my-savepoint       # 恢复到命名还原点
 pig pb restore -l "0/7C82CB8"        # 恢复到 LSN
 pig pb restore -x 12345              # 恢复到事务 ID
 
-# 备份集选择（可与恢复目标组合）
-pig pb restore -b 20251225-120000F   # 从特定备份集恢复
+# 备份集选择（必须与恢复目标组合）
+pig pb restore -b 20251225-120000F -d  # 从特定备份集恢复到最新
 
 # 其他选项
 pig pb restore -t "..." -X           # 排他模式（在目标前停止）
 pig pb restore -t "..." -P           # 恢复后自动提升
-pig pb restore -y                    # 跳过确认倒计时
+pig pb restore -t "..." -T current   # 沿当前时间线恢复
+pig pb restore -d --target-action=pause  # 到达目标后暂停
+pig pb restore -d --plan             # 仅预览恢复计划
+pig pb restore -d -y                 # 跳过确认倒计时
+pig pb restore -d -- --delta         # 在 -- 后透传 pgBackRest restore 参数
 ```
 
 **恢复目标选项：**
@@ -309,7 +313,11 @@ pig pb restore -y                    # 跳过确认倒计时
 | `--data`     | `-D` | 目标数据目录                |
 | `--exclusive` | `-X` | 排他模式：在目标前停止           |
 | `--promote`  | `-P` | 恢复后自动提升为主库            |
+| `--target-action` | | 到达恢复目标后的动作：pause/promote/shutdown |
+| `--target-timeline` | `-T` | 恢复时间线：latest/current/N/0xN |
+| `--plan` | | 仅预览恢复计划，不执行 |
 | `--yes`      | `-y` | 跳过确认和倒计时              |
+| `--` 后的原生参数 |      | 透传 pgBackRest restore 参数，例如 `-- --delta` |
 {.full-width}
 
 **时间格式：**
@@ -459,16 +467,16 @@ pig pb stop --force                  # 终止正在运行的操作
 
 ### pb log
 
-查看 pgBackRest 日志文件。日志目录为 `/pg/log/pgbackrest/`。
+查看 pgBackRest 日志文件。日志目录为 `/pg/log/pgbackrest/`。父命令默认显示最新日志快照，实时跟踪请使用 `tail` 或 `-f`。
 
 ```bash
-pig pb log                           # 列出日志文件
+pig pb log                           # 显示最新日志行
 pig pb log list                      # 列出日志文件
 pig pb log tail                      # 实时查看最新日志
 pig pb log tail -n 100               # 显示最后 100 行并跟踪
-pig pb log cat                       # 显示最新日志内容
-pig pb log cat -n 50                 # 显示最后 50 行
-pig pb log cat pg-meta-backup.log    # 显示指定日志文件
+pig pb log show                      # 显示最新日志内容
+pig pb log show -n 50                # 显示最后 50 行
+pig pb log cat                       # show 的别名
 ```
 
 **子命令：**
@@ -476,8 +484,8 @@ pig pb log cat pg-meta-backup.log    # 显示指定日志文件
 | 子命令    | 别名             | 说明           |
 |:-------|:---------------|:-------------|
 | list   | ls             | 列出日志文件       |
-| tail   | follow, f      | 实时跟踪最新日志     |
-| cat    | show           | 显示日志内容       |
+| show   | cat, c         | 显示最新日志内容     |
+| tail   | t, f, follow   | 实时跟踪最新日志     |
 {.full-width}
 
 **选项：**
@@ -529,7 +537,7 @@ pig pb log cat pg-meta-backup.log    # 显示指定日志文件
 - `pb delete` 需要 `--force` 确认，并有 5 秒倒计时
 - `pb restore` 显示恢复计划，有 5 秒倒计时确认
 - `pb backup` 默认检查主库角色，防止在备库执行
-- 日志命令的文件名参数会过滤路径，防止路径遍历攻击
+- `pb log tail` 不支持结构化输出；需要 JSONL 快照时使用 `pb log show -n N -o json`
 
 **平台支持：**
 

@@ -20,10 +20,12 @@ weight: 800
 
 ## PIG Releases
 
-The latest stable version of `pig` is [v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1)
+The latest stable version of `pig` is [v1.5.0](https://github.com/pgsty/pig/releases/tag/v1.5.0)
 
 |           Version           |    Date    | Summary                                                            |                           GitHub                           |
 |:---------------------------:|:----------:|--------------------------------------------------------------------|:----------------------------------------------------------:|
+| [v1.5.0](/release/pig#v150) | 2026-07-01 | pig 1.5.0, Pigsty 4.4.0, 531 extensions, clone/fork and PITR       | [v1.5.0](https://github.com/pgsty/pig/releases/tag/v1.5.0) |
+| [v1.4.2](/release/pig#v142) | 2026-06-18 | 524 extensions, PostgreSQL 19 beta support, Patroni fixes          | [v1.4.2](https://github.com/pgsty/pig/releases/tag/v1.4.2) |
 | [v1.4.1](/release/pig#v141) | 2026-05-01 | 510 extensions, Ubuntu 26.04 support, repo calibrate               | [v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1) |
 | [v1.4.0](/release/pig#v140) | 2026-04-19 | 507 extensions, pgrx 0.18.0, more building specs                   | [v1.4.0](https://github.com/pgsty/pig/releases/tag/v1.4.0) |
 | [v1.3.4](/release/pig#v134) | 2026-04-14 | 504 extensions                                                     | [v1.3.4](https://github.com/pgsty/pig/releases/tag/v1.3.4) |

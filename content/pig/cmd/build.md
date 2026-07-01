@@ -45,7 +45,7 @@ Environment Setup:
   pig build repo                   # init build repo (=repo set -ru)
   pig build tool  [mini|full|...]  # init build toolset
   pig build rust  [-y]             # install Rust toolchain
-  pig build pgrx  [-v <ver>]       # install & init pgrx (0.16.1)
+  pig build pgrx  [-v <ver>]       # install & init pgrx (0.19.1)
   pig build proxy [id@host:port ]  # init build proxy (optional)
 
 Package Building:
@@ -285,7 +285,7 @@ cargo --version
 Installs and initializes PGRX (PostgreSQL extension framework for Rust).
 
 ```bash
-pig build pgrx                   # Install latest stable (0.16.1)
+pig build pgrx                   # Install latest stable (0.19.1)
 pig build pgrx -v 0.15.0         # Install specific version
 ```
 

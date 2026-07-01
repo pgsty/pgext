@@ -6,6 +6,20 @@ weight: 200
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL YUM repo.
 
+## 2026-07-01
+
+| Package       | Old      | New     | Comment                               |
+|:--------------|:---------|:--------|:--------------------------------------|
+| timescaledb   | 2.28.0   | 2.28.2  | PG 15-18                              |
+| documentdb    | 0.112    | 0.113   | PG 15-18                              |
+| citus         | 14.0.0-4 | 14.1.0  | PG 16-18                              |
+| pgvector      | 0.8.3    | 0.8.4   | PG 14-18                              |
+| plpgsql_check | 2.9.1    | 2.9.2   | PG 14-18                              |
+| roaringbitmap | 1.1.0    | 1.2.0-2 | PG 14-18, llvm-lto packaging fix      |
+| biscuit       | 2.3.0    | 2.4.1   | PG 16-18                              |
+| pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18                              |
+| rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18, libcurl compatibility patch |
+
 ## 2026-06-18
 
 Updated Rust extension pgrx version to 0.18.1.
@@ -13,10 +27,10 @@ Updated Rust extension pgrx version to 0.18.1.
 | Package             | Old        | New        | Comment                               |
 |:--------------------|:-----------|:-----------|:--------------------------------------|
 | timescaledb         | 2.27.2     | 2.28.0     | PG 15-18                              |
-| documentdb          | 0.110      | 0.113      | PG 15-18                              |
 | timeseries          | 0.2.0      | 0.2.1      | PG 14-18                              |
+| documentdb          | 0.110      | 0.112      | PG 15-18                              |
 | pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18                              |
-| biscuit             | 2.2.2      | 2.4.0      | PG 16-18                              |
+| biscuit             | 2.2.2      | 2.3.0      | PG 16-18                              |
 | provsql             | 1.9.0      | 1.10.0     | PG 14-18                              |
 | toastinfo           | 1.6        | 1.7        | PG 14-18, RPM only                    |
 | pgfincore           | 1.3.1      | 1.4.0      | PG 14-18, RPM only                    |
@@ -208,10 +222,10 @@ Added most Ubuntu 26.04 Resolute core extension packages.
 | Package            | Old     | New       | Comment  |
 |:-------------------|:--------|:----------|:---------|
 | pg_search          | 0.21.12 | 0.22.2    |          |
-| pgsentinel         | 1.4.0   | 1.4.1     | rpm only |   
-| pg_track_optimizer | 0.9.1   | 0.9.2     |          |   
-| pgcollection       | 1.0.0   | 2.0.0     |          |   
-| pg_ttl_index       | 2.0.0   | 3.0.0     |          |   
+| pgsentinel         | 1.4.0   | 1.4.1     | rpm only |
+| pg_track_optimizer | 0.9.1   | 0.9.2     |          |
+| pgcollection       | 1.0.0   | 2.0.0     |          |
+| pg_ttl_index       | 2.0.0   | 3.0.0     |          |
 | pg_clickhouse      | 0.1.4   | 0.1.5     |          |
 | pdu                |         | 3.0.25.12 | new      |
 | pgdog              |         | 0.1.32    | new      |

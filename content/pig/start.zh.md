@@ -116,10 +116,10 @@ Latest Pigsty Ver :  v4.0.0
 
 ## 自动化建议
 
-对于生产环境恢复任务，建议先使用 `--dry-run` 预览 PITR 执行计划，再决定是否实际执行：
+对于生产环境恢复任务，建议先使用 `--plan` 预览 PITR 执行计划，再决定是否实际执行：
 
 ```bash
-pig pitr -d --dry-run         # 仅预览恢复步骤，不执行
+pig pitr -d --plan            # 仅预览恢复步骤，不执行
 pig pitr -d -y                # 跳过确认（自动化场景）
 ```
 
@@ -145,7 +145,7 @@ test_decoding                   available  -           ETL    --s--x  PostgreSQL
 pgoutput                        available  -           ETL    --s---  PostgreSQL    CONTRIB  14-18  postgresql-18                         Logical Replication output plugin
 
 
-(522 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
+(531 Rows) (Status: installed, available, not avail | Flags: b = HasBin, d = HasDDL, s = HasLib, l = NeedLoad, t = Trusted, r = Relocatable, x = Unknown)
 ```
 
 所有的扩展元数据都在一份名为 [`extension.csv`](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv) 的数据文件中定义，

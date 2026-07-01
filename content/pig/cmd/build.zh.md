@@ -16,7 +16,7 @@ Environment Setup:
   pig build repo                   # init build repo (=repo set, with remove+update)
   pig build tool  [mini|full|...]  # init build toolset
   pig build rust  [-y]             # install Rust toolchain
-  pig build pgrx  [-v <ver>]       # install & init pgrx (0.16.1)
+  pig build pgrx  [-v <ver>]       # install & init pgrx (0.19.1)
   pig build proxy [id@host:port ]  # init build proxy (optional)
 
 Package Building:
@@ -163,7 +163,7 @@ pig build rust -y                # 强制重新安装 Rust 工具链
 安装并初始化 PGRX（Rust 的 PostgreSQL 扩展框架）。
 
 ```bash
-pig build pgrx                   # 安装最新稳定版 (0.16.1)
+pig build pgrx                   # 安装最新稳定版 (0.19.1)
 pig build pgrx -v 0.15.0         # 安装特定版本
 ```
 

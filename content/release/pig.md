@@ -6,6 +6,51 @@ breadcrumbs: false
 ---
 
 
+## v1.5.0
+
+Pig `v1.5.0` is a PostgreSQL operations release. It adds local clone/fork workflows, tightens PITR and pgBackRest safety, simplifies the command layout, and refreshes extension/build metadata.
+
+**Highlights**
+
+- New `pig pg clone` for fast local database cloning, with `--plan`, structured output, owner/connection options, identifier validation, and clearer `psql` failure details.
+- New `pig pg fork` for disposable physical forks under `/pg/data-<name>`, with list/start/stop/rm lifecycle commands, `fork.json` metadata, automatic port selection, CoW/reflink detection, and safer removal rules.
+- Safer PITR and restore flows: explicit recovery targets, restore plans, pgBackRest passthrough args, Patroni guardrails, side-restore rules, recovery wait, and post-restore guidance.
+- Better logs: `pig pg log` / `pig pb log` default to the latest log; PostgreSQL CSV logs can be emitted as JSONL with `-o json`.
+- Cleaner CLI structure: top-level command files stay flat in `cmd/`, while reusable logic moves into `cli/*` packages with shared plan/output helpers.
+- Build/release updates: default `pgrx` is now `0.19.1`, embedded Pigsty is `4.4.0`, Pig is `1.5.0`, and `go-toml/v2` is `2.4.2`.
+
+**Extension Catalog**
+
+- Available extensions: **524 -> 531**, with no removals.
+- New extensions: `pg_ducklake`, `pgdisablelogerror`, `pg_stat_log`, `pg_stat_plans`, `passwordpolicy`, `db2fce`, `plpgsql_wrap`.
+- Refreshed metadata for 38 existing entries, including `postgis 3.6.4`, `vector 0.8.3`, `biscuit 2.4.0`, `orioledb 1.8`, `documentdb 0.113`, `credcheck 5.0`, and `pgtt 4.5`.
+- OrioleDB aliases now follow the requested PostgreSQL major instead of being pinned to PG17.
+- EL9 ARM64 Patroni aliases now use `patroni.noarch` / `patroni-etcd.noarch`.
+
+**Compatibility Notes**
+
+- `pig pb restore` now requires an explicit recovery target. Use `pig pb restore -d` for latest WAL recovery.
+- `pig pitr --skip-patroni` is refused for Patroni-managed restores; custom `-D` side restores require `--no-restart`.
+- `pig pitr --target-action=shutdown` requires `--no-restart`, because PostgreSQL exits after reaching the recovery target.
+- `pig pg log -o json` emits JSONL for PostgreSQL CSV logs; YAML and `json-pretty` are not used for streaming logs.
+- Remove managed forks by name; use `--dst-data` only for unmanaged forks.
+
+**Checksums**
+
+```bash
+0f6bc1e41cf0c5250a2f09b46f77a87c248391a7249a140ca97af67337eeafaa  pig-1.5.0-1.aarch64.rpm
+9bed50fae4ff2a8247c3664c9d8a5d8946cfb4519b76764762832d7855829ea1  pig-1.5.0-1.x86_64.rpm
+f9582f4774738cb6b801efa32621c121062d4880d04d49557864e2c08e7cc992  pig-v1.5.0.darwin-amd64.tar.gz
+26fbc45759eebd387b5e79ebcd6788fa941845228613532596d5a2766387b4b5  pig-v1.5.0.darwin-arm64.tar.gz
+5407e1ed87d855cc87e45d70cf4c30fb3f66f13b2157e38b652b754b709f0941  pig-v1.5.0.linux-amd64.tar.gz
+258f53374612c51bb5d69a5e9fcd7db1e9a85357c1a1dc65748c36022488dc86  pig-v1.5.0.linux-arm64.tar.gz
+e82949269ded288fc99841662c5cd72475ffeeb1af3ecf7eb039e29058c28ccc  pig_1.5.0-1_amd64.deb
+e48d8f80a23d5e9a3e3b19f79968765c799e31243a2c9076d92b38a0c48988e7  pig_1.5.0-1_arm64.deb
+```
+
+Release: https://github.com/pgsty/pig/releases/tag/v1.5.0
+
+
 ## v1.4.2
 
 - Refresh the built-in extension catalog from **510** to **524** available extensions. This adds 14 extensions: `pg_stl`, `pgmnemo`, `psql_bm25s`, `pg_orca`, `pg_sorted_heap`, `graph`, `pgrdf`, `fsm_core`, `jsonschema`, `pg_durable`, `pg_mockable`, `pg_uuid_v8`, `pg_stat_backtrace`, and `pg_projection`.

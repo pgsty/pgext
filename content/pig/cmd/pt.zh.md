@@ -5,22 +5,13 @@ icon: RefreshCw
 weight: 650
 ---
 
----
-title: "pig patroni"
-description: "使用 pig patroni 子命令管理 Patroni 服务与集群"
-weight: 170
-icon: fas fa-infinity
-module: [PIG]
-categories: [参考]
----
-
 `pig patroni` 命令（别名 `pig pt`）用于管理 Patroni 服务和 PostgreSQL HA 集群。它封装了常用的 `patronictl` 和 `systemctl` 操作，提供简化的集群管理体验。
 
 ```bash
 pig pt - Manage Patroni cluster using patronictl commands.
 
 Cluster Operations (via patronictl):
-  pig pt list                      list cluster members
+  pig pt list [cluster]            list cluster members
   pig pt restart [member]          restart PostgreSQL (rolling restart)
   pig pt reload                    reload PostgreSQL config
   pig pt reinit <member>           reinitialize a member
@@ -40,7 +31,9 @@ Service Management (via systemctl):
   pig pt svc status                show patroni service status
 
 Logs:
-  pig pt log [-f] [-n 100]         view patroni logs
+  pig pt log [-f] [-n 50]          view patroni logs
+  pig pt log show [-n 50]          show patroni log snapshot
+  pig pt log tail [-n 50]          follow patroni logs
 ```
 
 ## 命令概览
@@ -92,9 +85,10 @@ pig pt list -W                 # 持续监视模式
 pig pt list -w 5               # 每 5 秒刷新一次
 
 # 查看和修改集群配置
-pig pt config                  # 显示当前集群配置
-pig pt config ttl=60           # 修改单个配置项（直接生效）
-pig pt config ttl=60 loop_wait=15  # 修改多个配置项
+pig pt config show             # 显示当前集群配置
+pig pt config set ttl=60       # 修改单个配置项（直接生效）
+pig pt config set ttl=60 loop_wait=15  # 修改多个配置项
+pig pt config pg max_connections=200   # 修改 PostgreSQL 参数
 
 # 集群运维操作
 pig pt restart                 # 重启所有成员的 PostgreSQL
@@ -132,6 +126,7 @@ pig pt list                    # 列出默认集群成员
 pig pt list pg-meta            # 列出指定集群
 pig pt list -W                 # 持续监视模式
 pig pt list -w 5               # 每 5 秒刷新一次
+pig pt list -w 0.5             # 每 0.5 秒刷新一次
 pig pt list pg-test -W -w 3    # 监视 pg-test 集群，3 秒刷新
 ```
 
@@ -140,8 +135,10 @@ pig pt list pg-test -W -w 3    # 监视 pg-test 集群，3 秒刷新
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
 | `--watch` | `-W` | 启用持续监视模式 |
-| `--interval` | `-w` | 监视刷新间隔（秒） |
+| `--interval` | `-w` | 监视刷新间隔（秒，支持 0.5 这类小数） |
 {.full-width}
+
+watch 模式使用实时 `patronictl` 透传输出，不能与 `-o json` / `-o yaml` 结构化输出一起使用。
 
 
 ### pt restart
@@ -161,8 +158,8 @@ pig pt restart --pending         # 重启待重启的成员
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
 | `--force` | `-f` | 跳过确认 |
-| `--role` | | 按角色筛选（leader/replica/any） |
-| `--pending` | | 仅重启待重启的成员 |
+| `--role` | `-r` | 按角色筛选（leader/replica/any） |
+| `--pending` | `-p` | 仅重启待重启的成员 |
 {.full-width}
 
 
@@ -183,6 +180,7 @@ pig pt reload
 pig pt reinit pg-test-1          # 重新初始化指定成员
 pig pt reinit pg-test-1 -f       # 跳过确认
 pig pt reinit pg-test-1 --wait   # 等待完成
+pig pt reinit pg-test-1 --plan   # 预览执行计划
 ```
 
 **选项：**
@@ -191,6 +189,7 @@ pig pt reinit pg-test-1 --wait   # 等待完成
 |:----|:----|:----|
 | `--force` | `-f` | 跳过确认 |
 | `--wait` | `-w` | 等待重新初始化完成 |
+| `--plan` | | 仅显示执行计划 |
 {.full-width}
 
 **警告：** 此操作会删除目标成员的所有数据并重新同步。
@@ -205,6 +204,8 @@ pig pt switchover                 # 交互式切换
 pig pt switchover -f              # 跳过确认
 pig pt switchover --leader pg-1   # 指定当前主库
 pig pt switchover --candidate pg-2  # 指定新主库
+pig pt switchover --scheduled "2026-07-01T12:00:00"  # 定时切换
+pig pt switchover --plan          # 预览执行计划
 ```
 
 **选项：**
@@ -212,8 +213,10 @@ pig pt switchover --candidate pg-2  # 指定新主库
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
 | `--force` | `-f` | 跳过确认 |
-| `--leader` | | 指定当前主库 |
-| `--candidate` | | 指定候选新主库 |
+| `--leader` | `-l` | 指定当前主库 |
+| `--candidate` | `-c` | 指定候选新主库 |
+| `--scheduled` | `-s` | 定时切换时间 |
+| `--plan` | | 仅显示执行计划 |
 {.full-width}
 
 
@@ -225,6 +228,7 @@ pig pt switchover --candidate pg-2  # 指定新主库
 pig pt failover                   # 交互式故障切换
 pig pt failover -f                # 跳过确认
 pig pt failover --candidate pg-2  # 指定新主库
+pig pt failover --plan            # 预览执行计划
 ```
 
 **选项：**
@@ -232,7 +236,8 @@ pig pt failover --candidate pg-2  # 指定新主库
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
 | `--force` | `-f` | 跳过确认 |
-| `--candidate` | | 指定候选新主库 |
+| `--candidate` | `-c` | 指定候选新主库 |
+| `--plan` | | 仅显示执行计划 |
 {.full-width}
 
 
@@ -274,25 +279,32 @@ pig pt resume --wait              # 等待确认
 
 ### pt config
 
-显示或修改集群配置。不带参数时显示当前配置，带 `key=value` 参数时修改配置。
+显示或修改集群配置。`show` 显示当前配置，`set` 修改 Patroni 动态配置，`pg` 修改 PostgreSQL 参数。
 
 ```bash
-pig pt config                           # 显示当前集群配置
-pig pt config show                      # 显示配置（显式）
+pig pt config show                      # 显示当前集群配置
 pig pt config edit                      # 交互式编辑配置
 pig pt config set ttl=60                # 设置 TTL 为 60 秒
 pig pt config set ttl=60 loop_wait=15   # 同时修改多个配置项
 pig pt config pg max_connections=200    # 修改 PostgreSQL 参数
+pig pt config set ttl=60 --plan         # 预览配置修改
 ```
 
 **子命令：**
 
 | 子命令 | 说明 |
 |:------|:----|
-| `show`（默认） | 显示当前配置 |
+| `show` | 显示当前配置 |
 | `edit` | 交互式编辑配置 |
 | `set key=value` | 直接设置配置项 |
 | `pg key=value` | 设置 PostgreSQL 参数 |
+{.full-width}
+
+**选项：**
+
+| 参数 | 说明 |
+|:----|:----|
+| `--plan` | 对 `set` / `pg` 操作仅显示执行计划 |
 {.full-width}
 
 **常用配置项：**
@@ -357,9 +369,19 @@ pig pt status
 ```bash
 pig pt log                     # 显示最近 50 行日志
 pig pt log -f                  # 实时跟踪日志输出
+pig pt log show                # 显示最近日志
+pig pt log tail                # 跟踪日志
 pig pt log -n 100              # 显示最近 100 行日志
 pig pt log -f -n 200           # 显示最近 200 行并持续跟踪
 ```
+
+**子命令：**
+
+| 子命令 | 别名 | 说明 |
+|:------|:----|:----|
+| `show` | `cat, c` | 输出最近 Patroni 日志 |
+| `tail` | `t, f, follow` | 持续跟踪 Patroni 日志 |
+{.full-width}
 
 **选项：**
 
@@ -369,7 +391,7 @@ pig pt log -f -n 200           # 显示最近 200 行并持续跟踪
 | `--lines` | `-n` | 50 | 显示的日志行数 |
 {.full-width}
 
-等效于执行 `journalctl -u patroni [-f] [-n N]`。
+等效于执行 `journalctl -u patroni [-f] [-n N]`。流式日志不支持结构化输出；需要 JSONL 快照时使用 `pig pt log show -n N -o json`。
 
 
 ## pt svc 子命令
@@ -403,7 +425,7 @@ pig pt svc status                # 显示服务状态
 `pig pt` 封装了 `patronictl` 的常用操作：
 - 集群查询：`list`、`config show`
 - 集群管理：`restart`、`reload`、`reinit`、`switchover`、`failover`、`pause`、`resume`
-- 配置修改：`config set`、`config edit`
+- 配置修改：`config set`、`config pg`、`config edit`
 - 服务管理命令（start/stop/restart/reload/status）调用 `systemctl`
 - `log` 命令调用 `journalctl`
 

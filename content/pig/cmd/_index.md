@@ -164,7 +164,7 @@ pig ext reload                   # Refresh extension catalog
 ```
 
 **Key Features:**
-- 464 PostgreSQL extensions
+- 531 PostgreSQL extensions
 - Multi-version PostgreSQL support
 - Automatic dependency resolution
 - Category-based browsing
@@ -239,6 +239,8 @@ pig pg kill -x                   # Terminate connections
 # Maintenance
 pig pg vacuum mydb               # Vacuum database
 pig pg analyze mydb              # Analyze database
+pig pg fork dev                  # Create local disposable physical fork
+pig pg fork list                 # List local forks
 pig pg log tail                  # Real-time log viewing
 ```
 
@@ -256,8 +258,8 @@ Manage Patroni HA cluster:
 
 ```bash
 pig pt list                      # List cluster members
-pig pt config                    # Show cluster config
-pig pt config ttl=60             # Modify cluster config
+pig pt config show               # Show cluster config
+pig pt config set ttl=60         # Modify cluster config
 pig pt status                    # Check service status
 pig pt restart                   # Restart PostgreSQL via Patroni
 pig pt switchover                # Perform planned switchover
@@ -281,7 +283,7 @@ pig pb info                      # Show backup info
 pig pb ls                        # List all backups
 pig pb backup                    # Create backup
 pig pb backup full               # Full backup
-pig pb restore                   # Restore to latest
+pig pb restore -d                # Restore to latest
 pig pb restore -t "2025-01-01"   # Restore to specific time
 pig pb log tail                  # Real-time log viewing
 ```
@@ -296,15 +298,15 @@ pig pb log tail                  # Real-time log viewing
 
 ### [`pig pitr`](/pig/cmd/pitr/) - Orchestrated PITR
 
-Orchestrated Point-In-Time Recovery that coordinates Patroni, PostgreSQL, and pgBackRest:
+Orchestrated Point-In-Time Recovery that handles local Patroni/PostgreSQL stop-start around pgBackRest restore:
 
 ```bash
 pig pitr -d                      # Restore to latest (end of WAL stream)
-pig pitr -t "2025-01-01 12:00"   # Restore to specific time
+pig pitr -t "2025-01-01 12:00:00+08"  # Restore to specific time
 pig pitr -I                      # Restore to backup consistency point
-pig pitr -d --dry-run            # Show execution plan
+pig pitr -d --plan               # Show execution plan
 pig pitr -d -y                   # Skip confirmation (automation)
-pig pitr -d --skip-patroni       # Standalone PostgreSQL (non-Patroni)
+pig pitr -d -D /tmp/pg-restore --skip-patroni --no-restart  # Side restore
 ```
 
 **Key Features:**

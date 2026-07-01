@@ -151,6 +151,8 @@ pig pg status                    # 查看状态
 pig pg psql mydb                 # 连接数据库
 pig pg ps                        # 查看当前连接
 pig pg vacuum mydb               # 清理数据库
+pig pg fork dev                  # 创建本地一次性物理副本
+pig pg fork list                 # 列出本地 fork
 pig pg log tail                  # 实时查看日志
 ```
 
@@ -161,8 +163,8 @@ pig pg log tail                  # 实时查看日志
 
 ```bash
 pig pt list                      # 列出集群成员
-pig pt config                    # 显示集群配置
-pig pt config ttl=60             # 修改集群配置
+pig pt config show               # 显示集群配置
+pig pt config set ttl=60         # 修改集群配置
 pig pt status                    # 查看服务状态
 pig pt log -f                    # 实时查看日志
 ```
@@ -189,8 +191,8 @@ pig pb log tail                  # 实时查看日志
 
 ```bash
 pig pitr -d                      # 恢复到最新数据
-pig pitr -t "2025-01-01 12:00"   # 恢复到指定时间
+pig pitr -t "2025-01-01 12:00:00+08"  # 恢复到指定时间
 pig pitr -I                      # 恢复到备份一致性点
-pig pitr -d --dry-run            # 显示执行计划（不实际执行）
+pig pitr -d --plan               # 显示执行计划（不实际执行）
 pig pitr -d -y                   # 跳过确认（自动化）
 ```

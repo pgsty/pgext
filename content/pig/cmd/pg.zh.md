@@ -32,6 +32,7 @@ Connection & Query:
   pig pg psql     [db] [-c cmd]             connect to database via psql
   pig pg ps       [-a] [-u user]            show current connections
   pig pg kill     [-x] [-u user]            terminate connections (dry-run by default)
+  pig pg clone    <src> [dst]               clone database with FILE_COPY
 
 Database Maintenance:
   pig pg vacuum   [db] [-a] [-t table]      vacuum tables
@@ -39,8 +40,16 @@ Database Maintenance:
   pig pg freeze   [db] [-a] [-t table]      vacuum freeze tables
   pig pg repack   [db] [-a] [-t table]      repack tables (online rebuild)
 
+Tuning:
+  pig pg tune     [-p profile]              generate optimized parameters
+
+Instance Fork:
+  pig pg fork init <name> [-s]              create local physical fork
+  pig pg fork list                          list managed /pg/data-* forks
+  pig pg fork start|stop|rm <name>          manage an existing fork
+
 Utilities:
-  pig pg log <list|tail|cat|less>           view PostgreSQL logs
+  pig pg log <list|tail|show|less|grep>     view PostgreSQL logs
 ```
 
 ## 命令概览
@@ -66,6 +75,7 @@ Utilities:
 | `pg psql` | `sql, connect` | 连接到数据库 | 封装 psql |
 | `pg ps` | `activity, act` | 显示当前连接 | 查询 pg_stat_activity |
 | `pg kill` | `k` | 终止连接 | 默认 dry-run 模式 |
+| `pg clone` | | 克隆单个数据库 | `CREATE DATABASE ... TEMPLATE ... FILE_COPY` |
 {.full-width}
 
 **数据库维护**：
@@ -78,6 +88,25 @@ Utilities:
 | `pg repack` | `rp` | 在线重整表 | 需要 pg_repack 扩展 |
 {.full-width}
 
+**参数调优**：
+
+| 命令 | 别名 | 描述 | 备注 |
+|:----|:----|:----|:----|
+| `pg tune` | `tuning` | 生成 PostgreSQL 调优参数 | 自动探测硬件，支持结构化输出 |
+{.full-width}
+
+**实例 Fork**：
+
+| 命令 | 别名 | 描述 | 备注 |
+|:----|:----|:----|:----|
+| `pg fork` | | `fork init` 的便捷写法 | 默认创建托管 fork，不自动启动 |
+| `pg fork init` | `create` | 创建本地一次性物理副本 | 默认 `/pg/data-<name>` |
+| `pg fork list` | | 列出托管 fork | 扫描 `/pg/data-*` |
+| `pg fork start` | | 启动已有 fork | 支持托管名或 `-d` 非托管目录 |
+| `pg fork stop` | | 停止已有 fork | 支持 shutdown mode |
+| `pg fork rm` | `remove, delete` | 删除 fork | 运行中的 fork 需 `--stop` |
+{.full-width}
+
 **日志工具**：
 
 | 命令 | 别名 | 描述 | 备注 |
@@ -85,11 +114,10 @@ Utilities:
 | `pg log` | `l` | 日志管理 | 父命令 |
 | `pg log list` | `ls` | 列出日志文件 | |
 | `pg log tail` | `t, f` | 实时查看日志 | tail -f |
-| `pg log cat` | `c` | 输出日志内容 | |
+| `pg log show` | `cat, c` | 输出日志内容 | |
 | `pg log less` | `vi, v` | 用 less 查看 | |
+| `pg log grep` | `g, search` | 搜索日志 | |
 {.full-width}
-
-> `v1.0.0` 已知问题：`pig pg log grep` 存在参数冲突导致不可用。可使用 `pig pg log cat | grep PATTERN` 作为替代。
 
 **服务子命令**（`pg svc`）：
 
@@ -119,16 +147,26 @@ pig pg psql                       # 连接到 postgres 数据库
 pig pg psql mydb                  # 连接到指定数据库
 pig pg ps                         # 查看当前连接
 pig pg kill -x                    # 终止连接（需要 -x 确认执行）
+pig pg clone meta meta_fork       # 克隆单个数据库
 
 # 数据库维护
 pig pg vacuum mydb                # 清理指定数据库
 pig pg analyze mydb               # 分析指定数据库
 pig pg repack mydb                # 在线重整数据库
 
+# 参数调优
+pig pg tune                       # 自动探测硬件并生成调优参数
+pig pg tune -p olap               # 使用 OLAP 负载画像
+
+# 实例 Fork
+pig pg fork dev                   # 创建 /pg/data-dev
+pig pg fork init dev --start      # 创建并启动 fork，自动分配高位端口
+pig pg fork list                  # 列出 /pg/data-* fork
+
 # 日志查看
 pig pg log tail                   # 实时查看最新日志
 pig pg log list --log-dir /var/log/pg  # 使用自定义日志目录
-pig pg log cat | grep ERROR       # 在 shell 中过滤日志
+pig pg log grep ERROR             # 搜索日志
 ```
 
 
@@ -392,6 +430,7 @@ pig pg kill -d mydb -x            # 终止指定数据库的连接
 pig pg kill -s idle -x            # 终止空闲连接
 pig pg kill --cancel -x           # 取消查询而非终止连接
 pig pg kill -w 5 -x               # 每 5 秒重复执行
+pig pg kill --plan                # 预览终止连接计划
 ```
 
 **选项：**
@@ -407,9 +446,37 @@ pig pg kill -w 5 -x               # 每 5 秒重复执行
 | `--all` | `-a` | 包括复制连接 |
 | `--cancel` | `-c` | 取消查询而非终止连接 |
 | `--watch` | `-w` | 每 N 秒重复执行 |
+| `--plan` | | 预览执行计划，不终止连接 |
 {.full-width}
 
 **安全说明：** `--state` 和 `--query` 参数会进行标识符验证，只接受简单的字母数字模式，以防止 SQL 注入。
+
+
+### pg clone
+
+在当前 PostgreSQL 实例内克隆一个数据库。该命令封装 `CREATE DATABASE ... TEMPLATE ... STRATEGY FILE_COPY`，并会在克隆前终止源数据库上的现有会话，语义与 Pigsty 的 `pgsql-db clone` 工作流一致。
+
+```bash
+pig pg clone meta                       # 克隆 meta 为 meta_1/meta_2/...
+pig pg clone meta meta_fork            # 克隆为指定数据库名
+pig pg clone meta meta_fork --owner dba # 尝试修改新库 owner
+pig pg clone meta meta_fork -p 5433     # 连接指定本地端口
+pig pg clone meta meta_fork --plan      # 预览克隆计划
+```
+
+**选项：**
+
+| 参数 | 简写 | 说明 |
+|:----|:----|:----|
+| `--port` | `-p` | PostgreSQL 端口（默认 `5432` 或 `$PG_PORT`） |
+| `--conn-db` | | 执行 `CREATE DATABASE` 的连接库，克隆 `postgres` 时默认 `template1` |
+| `--owner` | | 克隆后尝试修改新库 owner |
+| `--conn-limit` | | 新库连接数限制（`-1` 无限制，`0` 禁止连接） |
+| `--plan` | | 仅显示执行计划 |
+| `--yes` | `-y` | 跳过确认提示 |
+{.full-width}
+
+**说明：** PostgreSQL 18+ 且 `file_copy_method=clone` 可用时，数据库克隆可使用 CoW 语义；否则会退化为普通文件复制。该命令克隆的是单个数据库，不会创建新的 PostgreSQL 实例。
 
 
 ## 数据库维护命令
@@ -482,7 +549,7 @@ pig pg repack -a                  # 重整所有数据库
 pig pg repack mydb -t mytable     # 重整指定表
 pig pg repack mydb -n myschema    # 重整指定 schema 中的表
 pig pg repack mydb -j 4           # 使用 4 个并行任务
-pig pg repack mydb --dry-run      # 显示将被重整的表
+pig pg repack mydb --plan         # 显示将被重整的表
 ```
 
 **选项：**
@@ -494,8 +561,95 @@ pig pg repack mydb --dry-run      # 显示将被重整的表
 | `--table` | `-t` | 指定表名 |
 | `--verbose` | `-V` | 详细输出 |
 | `--jobs` | `-j` | 并行任务数（默认 1） |
-| `--dry-run` | `-N` | 显示将被重整的表 |
+| `--plan` | `-N` | 显示将被重整的表 |
 {.full-width}
+
+
+## 参数调优命令
+
+### pg tune
+
+根据当前 PostgreSQL 主版本、主机硬件资源和工作负载画像，生成一组推荐的 PostgreSQL 参数。默认自动探测 CPU、内存与数据盘容量，并以文本形式输出配置项。
+
+```bash
+pig pg tune                       # 自动探测硬件，使用 oltp 画像
+pig pg tuning                     # 别名
+pig pg tune -p olap               # 使用 OLAP 画像
+pig pg tune -p tiny               # 小规格实例
+pig pg tune -c 8 -m 32768 -d 500  # 覆盖自动探测结果
+pig pg tune -C 500                # 覆盖 max_connections
+pig pg tune -R 0.30               # 调整 shared_buffers 比例
+pig pg tune -o json               # 结构化输出 JSON
+pig pg tune -o yaml               # 结构化输出 YAML
+```
+
+**选项：**
+
+| 参数 | 简写 | 默认值 | 说明 |
+|:----|:----|:------|:----|
+| `--profile` | `-p` | oltp | 调优画像：`oltp` / `olap` / `tiny` / `crit` |
+| `--cpu` | `-c` | 0 | CPU 核数，0 表示自动探测 |
+| `--mem` | `-m` | 0 | 内存大小（MB），0 表示自动探测 |
+| `--disk` | `-d` | 0 | 数据盘容量（GB），0 表示自动探测 |
+| `--max-conn` | `-C` | 0 | 覆盖 `max_connections`，0 表示使用画像默认值 |
+| `--shmem-ratio` | `-R` | 0.25 | `shared_buffers` 占内存比例，取值范围 `0.1 ~ 0.4` |
+{.full-width}
+
+**说明：** 该命令当前生成建议参数，不会直接修改数据库配置文件。
+
+
+## 实例 Fork
+
+### pg fork
+
+创建一个本地一次性 PostgreSQL 物理副本，适合临时分析、排障、恢复验证和开发测试。托管 fork 默认写入 `/pg/data-<name>`，不会注册到 Pigsty、systemd 或 Patroni；显式指定 `-d|--dst-data` 时会创建非托管 fork，不会被 `fork list` 枚举。
+
+```bash
+pig pg fork dev                       # 创建 /pg/data-dev，不启动
+pig pg fork init dev --start          # 创建后启动，端口从 15432 开始自动探测
+pig pg fork init dev -s -p 15433      # 创建后在指定端口启动
+pig pg fork init dev -D /pg/data2 -P 15431  # 指定源目录与源端口
+pig pg fork init dev -d /tmp/dev      # 创建非托管 fork
+pig pg fork list                      # 列出托管 fork
+pig pg fork start dev                 # 启动已有托管 fork
+pig pg fork stop dev                  # 停止已有托管 fork
+pig pg fork rm dev --stop             # 停止并删除运行中的 fork
+pig pg fork init dev --plan           # 仅显示执行计划
+```
+
+**创建选项：**
+
+| 参数 | 简写 | 默认值 | 说明 |
+|:----|:----|:------|:----|
+| `--dst-data` | `-d` | `/pg/data-<name>` | 非托管目标数据目录 |
+| `--dst-port` | `-p` | 自动探测 | 目标端口，从 15432 起寻找空闲端口 |
+| `--src-data` | | `/pg/data` 或 `$PG_DATA` | 源数据目录；也可用全局 `pg -D/--data` 设置 |
+| `--src-port` | `-P` | `5432` 或 `$PG_PORT` | 源端口 |
+| `--start` | `-s` | false | 创建后启动 fork |
+| `--force` | `-f` | false | 覆盖已有且已停止的目标目录，并跳过确认 |
+| `--list` | | false | 列出 `/pg/data-*` fork |
+| `--timeout` | `-t` | 60 | 启动等待超时（秒） |
+| `--yes` | `-y` | false | 跳过确认提示 |
+| `--plan` | | false | 只显示执行计划，不执行 |
+{.full-width}
+
+**管理子命令：**
+
+| 命令 | 常用参数 | 说明 |
+|:----|:--------|:----|
+| `pig pg fork list` | `--plan`, `-o json/yaml` | 列出托管 fork |
+| `pig pg fork start <name> or -d <dir>` | `-d/--dst-data`, `-p/--dst-port`, `-t/--timeout`, `--plan` | 启动已有 fork |
+| `pig pg fork stop <name> or -d <dir>` | `-d/--dst-data`, `-m/--mode`, `-t/--timeout`, `--plan` | 停止已有 fork |
+| `pig pg fork rm <name> or -d <dir>` | `-d/--dst-data`, `--stop`, `-m/--mode`, `-t/--timeout`, `-f/--force`, `-y/--yes`, `--plan` | 删除 fork；运行中的 fork 需 `--stop` |
+{.full-width}
+
+**行为说明：**
+
+- 源实例运行时，命令会使用 PostgreSQL 低级备份 API 创建一致的物理副本；源实例停止时，可执行冷复制。
+- 命令会优先使用 CoW/reflink；如果只能普通复制，会在交互模式中提示空间风险并等待确认。
+- 为避免误删源数据，目标目录不能是 `/`、`/pg`、源 PGDATA、自身父目录或子目录；软链接会先解析到真实路径再判断。
+- 复制完成后会清理 fork 中的运行态与复制状态，并写入 `fork.json`。只有指定 `-s|--start` 时才会启动新实例。
+- 托管 fork 必须通过名称管理；非托管 fork 需要通过 `-d|--dst-data` 指定目录来启动、停止或删除。
 
 
 ## 日志命令
@@ -507,9 +661,22 @@ pig pg repack mydb --dry-run      # 显示将被重整的表
 | 参数 | 说明 |
 |:----|:----|
 | `--log-dir` | 日志目录路径（默认：`/pg/log/postgres`） |
+| `--lines` / `-n` | 显示行数（默认 50） |
+| `--follow` / `-f` | 跟踪最新日志（仅 `pg log` 父命令） |
 {.full-width}
 
-**权限处理：** 如果当前用户没有权限读取日志目录，命令会自动使用 `sudo` 重试。
+**权限处理：** 如果当前用户没有权限读取日志目录，命令会自动使用 `sudo` 重试。`-o json` 会输出 JSONL 日志记录；日志快照不支持 `yaml` 与 `json-pretty`。
+
+
+### pg log
+
+显示最新日志快照；配合 `-f` 时跟踪最新日志。
+
+```bash
+pig pg log                        # 显示最新 50 行
+pig pg log -n 100                 # 显示最新 100 行
+pig pg log -f                     # 跟踪最新日志
+```
 
 
 ### pg log list
@@ -544,22 +711,23 @@ pig pg log tail --log-dir /var/log/postgres  # 使用自定义目录
 {.full-width}
 
 
-### pg log cat
+### pg log show
 
 输出日志文件内容。
 
 ```bash
-pig pg log cat                    # 输出最新日志
-pig pg log c                      # 别名
-pig pg log cat -n 100             # 输出最后 100 行
-pig pg log cat postgresql.csv     # 输出指定日志文件
+pig pg log show                   # 输出最新日志
+pig pg log cat                    # show 的别名
+pig pg log c                      # show 的别名
+pig pg log show -n 100            # 输出最后 100 行
+pig pg log show postgresql.csv    # 输出指定日志文件
 ```
 
 **选项：**
 
 | 参数 | 简写 | 默认值 | 说明 |
 |:----|:----|:------|:----|
-| `--lines` | `-n` | 100 | 显示的行数 |
+| `--lines` | `-n` | 50 | 显示的行数 |
 {.full-width}
 
 
@@ -573,6 +741,26 @@ pig pg log vi                     # 别名
 pig pg log v                      # 别名
 pig pg log less postgresql.csv    # 打开指定日志文件
 ```
+
+
+### pg log grep
+
+搜索日志文件内容。
+
+```bash
+pig pg log grep ERROR             # 搜索 ERROR
+pig pg log grep --ignore-case error  # 忽略大小写
+pig pg log grep -C 3 ERROR        # 显示上下文
+pig pg log grep ERROR pg.csv      # 搜索指定日志文件
+```
+
+**选项：**
+
+| 参数 | 简写 | 说明 |
+|:----|:----|:----|
+| `--ignore-case` | | 忽略大小写 |
+| `--context` | `-C` | 显示上下文行数 |
+{.full-width}
 
 
 ## pg svc 子命令

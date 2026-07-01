@@ -6,16 +6,18 @@ weight: 670
 ---
 
 
-`pig pitr` 命令用于执行**编排式时间点恢复**（Orchestrated Point-In-Time Recovery）。与 `pig pb restore` 不同，此命令会自动协调 Patroni、PostgreSQL 和 pgBackRest，完成完整的 PITR 工作流。
+`pig pitr` 命令用于通过 pgBackRest 执行时间点恢复，并以保守方式处理本地 PostgreSQL 与 Patroni 生命周期。与底层的 `pig pb restore` 不同，`pig pitr` 会先做恢复前检查，必要时停止 Patroni 与 PostgreSQL，执行 restore，然后按参数决定是否启动 PostgreSQL。
+
+请注意：对于托管的默认数据目录，`pig pitr` 恢复后会让 Patroni 保持停止。请先验证恢复结果，再由人工恢复 Patroni 管理；该命令不会自动重入 Patroni 集群、执行故障切换，或验证集群成员状态。
 
 ```bash
-pig pitr - Perform PITR with automatic Patroni/PostgreSQL lifecycle management.
+pig pitr - Perform PITR with pgBackRest restore and conservative PostgreSQL stop/start handling.
 
-This command orchestrates a complete PITR workflow:
-  1. Stop Patroni service (if running)
+For the managed default data directory, this command may:
+  1. Stop Patroni only to keep the target PGDATA offline during restore
   2. Ensure PostgreSQL is stopped (with retry and fallback)
   3. Execute pgbackrest restore
-  4. Start PostgreSQL
+  4. Start PostgreSQL unless --no-restart is used
   5. Provide post-restore guidance
 
 Recovery Targets (at least one required):
@@ -26,6 +28,11 @@ Recovery Targets (at least one required):
   --lsn, -l          Recover to specific LSN
   --xid, -x          Recover to specific transaction ID
 
+Backup and Target Options:
+  --set, -b          Select backup set to start recovery from
+  --target-action    Action when target is reached: pause, promote, shutdown
+  --target-timeline  Recover along timeline: latest, current, N, or 0xN
+
 Time Format:
   - Full: "2025-01-01 12:00:00+08"
   - Date only: "2025-01-01" (defaults to 00:00:00)
@@ -33,33 +40,35 @@ Time Format:
 
 Examples:
   pig pitr -d                      # Recover to latest (most common)
-  pig pitr -t "2025-01-01 12:00"   # Recover to specific time
+  pig pitr -t "2025-01-01 12:00:00+08"  # Recover to specific time
   pig pitr -I                      # Recover to backup consistency point
-  pig pitr -d --dry-run            # Show execution plan without running
+  pig pitr -d --plan               # Show execution plan without running
   pig pitr -d -y                   # Skip confirmation (for automation)
-  pig pitr -d --skip-patroni       # Skip Patroni management
-  pig pitr -d --no-restart         # Don't auto-start PostgreSQL after restore
+  pig pitr -d --no-restart         # Leave PostgreSQL stopped after restore
+  pig pitr -d -D /tmp/pg-restore -S -N  # Side restore
 ```
 
 ## 命令概览
 
-`pig pitr` 是一个高度自动化的恢复命令，它会：
+`pig pitr` 的默认目标是恢复 Pigsty 管理的主数据目录。典型流程如下：
 
-1. 自动停止 Patroni 服务（如果正在运行）
-2. 确保 PostgreSQL 已停止（带重试和降级策略）
-3. 执行 pgBackRest 恢复
-4. 启动 PostgreSQL
-5. 提供恢复后的操作指引
+1. 验证恢复目标参数，必须指定 `-d/-I/-t/-n/-l/-x` 之一
+2. 解析 pgBackRest 配置与目标数据目录
+3. 对默认数据目录恢复时，若 Patroni 正在运行，则停止 Patroni
+4. 确保 PostgreSQL 已停止
+5. 调用 `pgbackrest restore`
+6. 除非指定 `--no-restart`，否则启动 PostgreSQL
+7. 输出恢复后验证与 Patroni 恢复指引
 
 **与 `pig pb restore` 的区别：**
 
 | 特性 | `pig pitr` | `pig pb restore` |
 |:----|:----------|:-----------------|
-| 停止 Patroni | 自动 | 手动 |
-| 停止 PostgreSQL | 自动（带重试） | 需要预先停止 |
-| 启动 PostgreSQL | 自动 | 手动 |
-| 恢复后指引 | 提供详细指引 | 无 |
-| 适用场景 | 生产环境完整恢复 | 底层操作或脚本集成 |
+| 停止 Patroni | 默认数据目录恢复时自动停止 | 手动处理 |
+| 停止 PostgreSQL | 自动检查并停止 | 必须预先停止 |
+| 启动 PostgreSQL | 默认自动启动，可用 `--no-restart` 禁用 | 手动处理 |
+| Patroni 恢复 | 不自动恢复，验证后人工处理 | 不处理 |
+| 适用场景 | 生产恢复编排 | 底层 restore 或脚本集成 |
 {.full-width}
 
 
@@ -76,7 +85,7 @@ pig pitr -t "2025-01-01 12:00:00+08"
 pig pitr -I
 
 # 查看执行计划（不实际执行）
-pig pitr -d --dry-run
+pig pitr -d --plan
 
 # 跳过确认（用于自动化）
 pig pitr -d -y
@@ -84,11 +93,14 @@ pig pitr -d -y
 # 从特定备份集恢复
 pig pitr -d -b 20251225-120000F
 
-# 独立 PostgreSQL（非 Patroni 管理）
-pig pitr -d --skip-patroni
-
-# 恢复后不自动启动 PostgreSQL
+# 恢复默认数据目录，但恢复后不启动 PostgreSQL
 pig pitr -d --no-restart
+
+# side restore：恢复到自定义目录，不触碰 Patroni 与 /pg/data
+pig pitr -d -D /tmp/pg-restore --skip-patroni --no-restart
+
+# 额外 pgBackRest restore 参数写在 -- 之后
+pig pitr -d -- --delta
 ```
 
 
@@ -106,29 +118,27 @@ pig pitr -d --no-restart
 | `--xid` | `-x` | 恢复到指定事务 ID |
 {.full-width}
 
-### 备份选择
+### 备份与目标选项
 
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
-| `--set` | `-b` | 从特定备份集恢复 |
+| `--set` | `-b` | 从特定备份集开始恢复 |
+| `--target-action` | | 到达恢复目标后的动作：pause/promote/shutdown |
+| `--target-timeline` | `-T` | 恢复时间线：latest/current/N/0xN |
+| `--exclusive` | `-X` | 排他模式：在目标前停止 |
+| `--promote` | `-P` | 到达手工恢复目标后自动提升 |
 {.full-width}
 
 ### 流程控制
 
 | 参数 | 简写 | 说明 |
 |:----|:----|:----|
-| `--skip-patroni` | `-S` | 跳过 Patroni 停止操作 |
-| `--no-restart` | `-N` | 恢复后不自动启动 PostgreSQL |
-| `--dry-run` | | 仅显示执行计划，不实际执行 |
-| `--yes` | `-y` | 跳过确认倒计时 |
-{.full-width}
-
-### 恢复选项
-
-| 参数 | 简写 | 说明 |
-|:----|:----|:----|
-| `--exclusive` | `-X` | 排他模式：在目标前停止 |
-| `--promote` | `-P` | 恢复后自动提升为主库 |
+| `--skip-patroni` | `-S` | 跳过 Patroni 停止操作，适用于独立 PostgreSQL 或自定义目录 side restore |
+| `--no-restart` | `-N` | restore 后不启动 PostgreSQL |
+| `--plan` | | 仅显示执行计划，不执行 |
+| `--yes` | `-y` | 跳过破坏性操作确认 |
+| `--timeout` | | PostgreSQL 启动/恢复等待超时，默认 120 秒 |
+| `--force-stop` | | fast stop 失败时允许 immediate shutdown 与 kill fallback |
 {.full-width}
 
 ### 配置参数
@@ -164,41 +174,37 @@ pig pitr -d --no-restart
 - 检测 Patroni 服务状态
 - 检测 PostgreSQL 运行状态
 
-### 第二阶段：停止 Patroni
+### 第二阶段：处理 Patroni
 
-如果 Patroni 服务正在运行且未指定 `--skip-patroni`：
-- 执行 `systemctl stop patroni`
-- 等待 PostgreSQL 随 Patroni 自动停止
+默认数据目录恢复时，如果 Patroni 正在运行，命令会停止 Patroni，让目标 PGDATA 在 restore 期间保持离线。恢复完成后 Patroni 会保持停止。
+
+如果 Patroni 正在运行且恢复默认数据目录，`--skip-patroni` 会被拒绝，因为 Patroni 可能在 restore 期间重新拉起 PostgreSQL。自定义 `-D` side restore 不触碰 `/pg/data`，可以配合 `--skip-patroni --no-restart` 使用。
 
 ### 第三阶段：确保 PostgreSQL 停止
 
-采用渐进式策略确保 PostgreSQL 完全停止：
-
-1. **等待自动停止**：Patroni 停止后等待 30 秒
-2. **优雅停止**：使用 `pg_ctl stop -m fast`（最多重试 3 次，指数退避）
-3. **立即停止**：使用 `pg_ctl stop -m immediate`
-4. **强制终止**：使用 `kill -9`（最后手段）
+命令会先尝试 fast stop。如果 PostgreSQL 无法停止，默认不会直接使用更激进手段；需要显式指定 `--force-stop`，才允许 immediate shutdown 与 kill fallback。
 
 ### 第四阶段：执行恢复
 
-调用 pgBackRest 执行实际的数据恢复：
+调用 pgBackRest 执行 restore，并把恢复目标、备份集、时间线、target action 等参数映射到 `pgbackrest restore`。原生 pgBackRest 参数可以写在 `--` 之后：
+
 ```bash
-pgbackrest restore --target-action=promote ...
+pig pitr -d -- --delta
 ```
 
-### 第五阶段：启动 PostgreSQL
+### 第五阶段：启动或保持停止
 
-除非指定 `--no-restart`，否则自动启动 PostgreSQL：
-- 等待启动完成（超时 120 秒）
-- 验证进程确实运行
+除非指定 `--no-restart`，命令会在 restore 后启动 PostgreSQL，并等待恢复完成。以下情况必须或通常应使用 `--no-restart`：
 
-### 第六阶段：恢复后指引
+- 自定义 `-D` side restore，因为恢复出的配置仍保留原端口，需要手动指定空闲端口启动
+- `--target-action=shutdown`，因为 PostgreSQL 到达恢复目标后会退出
+- 需要人工检查恢复目录后再决定是否启动
 
-显示详细的后续操作指引，包括：
-- 如何验证恢复的数据
-- 如何提升为主库
-- 如何恢复 Patroni 集群管理
-- 如何重新创建 pgBackRest stanza
+启动 side restore 时请手动指定空闲端口，例如：
+
+```bash
+pg_ctl -D /tmp/pg-restore -o "-p 15432" start
+```
 
 
 ## 使用示例
@@ -209,15 +215,15 @@ pgbackrest restore --target-action=promote ...
 # 1. 查看可用的备份
 pig pb info
 
-# 2. 恢复到误删前的时间点
+# 2. 预览恢复计划
+pig pitr -t "2025-01-15 09:30:00+08" --plan
+
+# 3. 执行恢复
 pig pitr -t "2025-01-15 09:30:00+08"
 
-# 3. 验证数据
+# 4. 验证数据
 pig pg psql
 SELECT * FROM important_table;
-
-# 4. 确认无误后提升为主库
-pig pg promote
 ```
 
 ### 场景二：恢复到最新状态
@@ -241,11 +247,13 @@ pig pitr -I
 pig pitr -d -y
 ```
 
-### 场景五：独立 PostgreSQL 实例
+### 场景五：自定义目录 side restore
 
 ```bash
-# 非 Patroni 管理的实例
-pig pitr -d --skip-patroni
+pig pitr -d -D /tmp/pg-restore --skip-patroni --no-restart
+
+# 使用空闲端口手动启动 side restore
+pg_ctl -D /tmp/pg-restore -o "-p 15432" start
 ```
 
 ### 场景六：仅恢复不启动
@@ -264,7 +272,7 @@ pig pg start
 
 ## 执行计划示例
 
-执行 `pig pitr -d --dry-run` 会显示类似以下的执行计划：
+执行 `pig pitr -d --plan` 会显示类似以下的执行计划：
 
 ```
 ══════════════════════════════════════════════════════════════════
@@ -289,7 +297,7 @@ Execution Steps:
 
 ══════════════════════════════════════════════════════════════════
 
-[Dry-run mode] No changes made.
+[Plan mode] No changes made.
 ```
 
 
@@ -335,25 +343,23 @@ Press Ctrl+C to cancel, or wait for countdown...
 Starting PITR in 5 seconds...
 ```
 
-### 渐进式停止策略
+### 停止策略
 
-为确保数据安全，停止 PostgreSQL 采用渐进式策略：
-1. 先尝试优雅停止（保证数据一致性）
-2. 失败后尝试立即停止
-3. 最后才使用 kill -9（仅在极端情况）
+默认路径保持保守：先使用 fast shutdown。只有显式指定 `--force-stop` 时，才允许 immediate shutdown 与 kill fallback。
 
 ### 恢复验证
 
-恢复后自动验证 PostgreSQL 是否成功启动，如果失败会提示检查日志。
+如果恢复后启动 PostgreSQL，命令会等待启动/恢复完成；失败时会提示检查日志。
 
 
 ## 设计说明
 
 **与其他命令的关系：**
 
-- `pig pitr` 内部调用 `pig pt stop`、`pig pg stop`、`pig pg start` 和 `pig pb restore`
-- 提供比单独命令更高级别的自动化协调
-- 适合生产环境的完整 PITR 工作流
+- `pig pitr` 调用 pgBackRest restore，并在本地处理 Patroni/PostgreSQL 停止与可选启动。
+- `pig pitr` 不是集群恢复总控，不负责 Patroni failover、rejoin、VIP 或应用流量切换。
+- 需要底层 restore 语义或脚本细粒度控制时，使用 `pig pb restore`。
+- 需要手工切换 Patroni 集群时，使用 `pig pt switchover` 或 `pig pt failover`。
 
 **错误处理：**
 

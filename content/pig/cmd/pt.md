@@ -11,7 +11,7 @@ The `pig patroni` command (alias `pig pt`) manages Patroni service and PostgreSQ
 pig pt - Manage Patroni cluster using patronictl commands.
 
 Cluster Operations (via patronictl):
-  pig pt list                      list cluster members
+  pig pt list [cluster]            list cluster members
   pig pt restart [member]          restart PostgreSQL (rolling restart)
   pig pt reload                    reload PostgreSQL config
   pig pt reinit <member>           reinitialize a member
@@ -31,7 +31,9 @@ Service Management (via systemctl):
   pig pt svc status                show patroni service status
 
 Logs:
-  pig pt log [-f] [-n 100]         view patroni logs
+  pig pt log [-f] [-n 50]          view patroni logs
+  pig pt log show [-n 50]          show patroni log snapshot
+  pig pt log tail [-n 50]          follow patroni logs
 ```
 
 ------
@@ -83,9 +85,10 @@ pig pt list -W                 # Continuous watch mode
 pig pt list -w 5               # Refresh every 5 seconds
 
 # View and modify cluster config
-pig pt config                  # Show current cluster config
-pig pt config ttl=60           # Modify single config item (immediate effect)
-pig pt config ttl=60 loop_wait=15  # Modify multiple config items
+pig pt config show             # Show current cluster config
+pig pt config set ttl=60       # Modify single config item (immediate effect)
+pig pt config set ttl=60 loop_wait=15  # Modify multiple config items
+pig pt config pg max_connections=200   # Modify PostgreSQL parameter
 
 # Cluster operations
 pig pt restart                 # Restart all members' PostgreSQL
@@ -124,6 +127,7 @@ pig pt list                    # List default cluster members
 pig pt list pg-meta            # List specific cluster
 pig pt list -W                 # Continuous watch mode
 pig pt list -w 5               # Refresh every 5 seconds
+pig pt list -w 0.5             # Refresh every 0.5 seconds
 pig pt list pg-test -W -w 3    # Watch pg-test cluster, 3s refresh
 ```
 
@@ -132,7 +136,9 @@ pig pt list pg-test -W -w 3    # Watch pg-test cluster, 3s refresh
 | Option | Short | Description |
 |:-------|:------|:------------|
 | `--watch` | `-W` | Enable continuous watch mode |
-| `--interval` | `-w` | Watch refresh interval (seconds) |
+| `--interval` | `-w` | Watch refresh interval in seconds (supports decimals such as 0.5) |
+
+Watch mode uses live `patronictl` passthrough output and is not available with `-o json` / `-o yaml`.
 
 
 ### pt restart
@@ -152,8 +158,8 @@ pig pt restart --pending         # Restart pending members
 | Option | Short | Description |
 |:-------|:------|:------------|
 | `--force` | `-f` | Skip confirmation |
-| `--role` | | Filter by role (primary/replica) |
-| `--pending` | | Restart only pending members |
+| `--role` | `-r` | Filter by role (leader/replica/any) |
+| `--pending` | `-p` | Restart only pending members |
 
 
 ### pt reload
@@ -173,6 +179,7 @@ Reinitialize cluster member. This re-syncs data from the primary.
 pig pt reinit pg-test-1          # Reinit specific member
 pig pt reinit pg-test-1 -f       # Skip confirmation
 pig pt reinit pg-test-1 --wait   # Wait for completion
+pig pt reinit pg-test-1 --plan   # Preview execution plan
 ```
 
 **Options:**
@@ -181,6 +188,7 @@ pig pt reinit pg-test-1 --wait   # Wait for completion
 |:-------|:------|:------------|
 | `--force` | `-f` | Skip confirmation |
 | `--wait` | `-w` | Wait for reinit completion |
+| `--plan` | | Show execution plan only |
 
 **Warning:** This operation deletes all data on the target member and re-syncs from primary.
 
@@ -194,6 +202,8 @@ pig pt switchover                 # Interactive switchover
 pig pt switchover -f              # Skip confirmation
 pig pt switchover --leader pg-1   # Specify current primary
 pig pt switchover --candidate pg-2  # Specify new primary
+pig pt switchover --scheduled "2026-07-01T12:00:00"  # Scheduled switchover
+pig pt switchover --plan          # Preview execution plan
 ```
 
 **Options:**
@@ -201,8 +211,10 @@ pig pt switchover --candidate pg-2  # Specify new primary
 | Option | Short | Description |
 |:-------|:------|:------------|
 | `--force` | `-f` | Skip confirmation |
-| `--leader` | | Specify current primary |
-| `--candidate` | | Specify candidate new primary |
+| `--leader` | `-l` | Specify current primary |
+| `--candidate` | `-c` | Specify candidate new primary |
+| `--scheduled` | `-s` | Scheduled switchover time |
+| `--plan` | | Show execution plan only |
 
 
 ### pt failover
@@ -213,6 +225,7 @@ Perform manual failover. Used when primary is unavailable.
 pig pt failover                   # Interactive failover
 pig pt failover -f                # Skip confirmation
 pig pt failover --candidate pg-2  # Specify new primary
+pig pt failover --plan            # Preview execution plan
 ```
 
 **Options:**
@@ -220,7 +233,8 @@ pig pt failover --candidate pg-2  # Specify new primary
 | Option | Short | Description |
 |:-------|:------|:------------|
 | `--force` | `-f` | Skip confirmation |
-| `--candidate` | | Specify candidate new primary |
+| `--candidate` | `-c` | Specify candidate new primary |
+| `--plan` | | Show execution plan only |
 
 
 ### pt pause
@@ -259,25 +273,31 @@ pig pt resume --wait              # Wait for confirmation
 
 ### pt config
 
-Show or modify cluster configuration. Without parameters shows current config, with `key=value` parameters modifies config.
+Show or modify cluster configuration. `show` displays current config, `set` modifies Patroni dynamic config, and `pg` modifies PostgreSQL parameters.
 
 ```bash
-pig pt config                           # Show current cluster config
-pig pt config show                      # Show config (explicit)
+pig pt config show                      # Show current cluster config
 pig pt config edit                      # Interactive config edit
 pig pt config set ttl=60                # Set TTL to 60 seconds
 pig pt config set ttl=60 loop_wait=15   # Modify multiple config items
 pig pt config pg max_connections=200    # Modify PostgreSQL parameter
+pig pt config set ttl=60 --plan         # Preview config change
 ```
 
 **Subcommands:**
 
 | Subcommand | Description |
 |:-----------|:------------|
-| `show` (default) | Show current config |
+| `show` | Show current config |
 | `edit` | Interactive config edit |
 | `set key=value` | Directly set config item |
 | `pg key=value` | Set PostgreSQL parameter |
+
+**Options:**
+
+| Option | Description |
+|:-------|:------------|
+| `--plan` | Show execution plan for `set` / `pg` changes |
 
 **Common config items:**
 
@@ -341,9 +361,18 @@ View Patroni service logs.
 ```bash
 pig pt log                     # Show last 50 log lines
 pig pt log -f                  # Real-time log following
+pig pt log show                # Show recent log snapshot
+pig pt log tail                # Follow logs
 pig pt log -n 100              # Show last 100 log lines
 pig pt log -f -n 200           # Show last 200 lines and follow
 ```
+
+**Subcommands:**
+
+| Subcommand | Aliases | Description |
+|:-----------|:--------|:------------|
+| `show` | `cat, c` | Output recent Patroni logs |
+| `tail` | `t, f, follow` | Follow Patroni logs |
 
 **Options:**
 
@@ -352,7 +381,7 @@ pig pt log -f -n 200           # Show last 200 lines and follow
 | `--follow` | `-f` | false | Real-time log following |
 | `--lines` | `-n` | 50 | Number of log lines to show |
 
-Equivalent to `journalctl -u patroni [-f] [-n N]`.
+Equivalent to `journalctl -u patroni [-f] [-n N]`. Streaming log output is not available with structured output; use `pig pt log show -n N -o json` for JSONL snapshots.
 
 ------
 
@@ -387,7 +416,7 @@ pig pt svc status                # Show service status
 `pig pt` wraps common `patronictl` operations:
 - Cluster queries: `list`, `config show`
 - Cluster management: `restart`, `reload`, `reinit`, `switchover`, `failover`, `pause`, `resume`
-- Config modification: `config set`, `config edit`
+- Config modification: `config set`, `config pg`, `config edit`
 - Service commands (start/stop/restart/reload/status) call `systemctl`
 - `log` command calls `journalctl`
 

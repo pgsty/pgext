@@ -6,6 +6,51 @@ breadcrumbs: false
 ---
 
 
+## v1.5.0
+
+Pig `v1.5.0` 聚焦 PostgreSQL 本地运维能力：新增数据库 clone / 物理 fork，收紧 PITR 与 pgBackRest 恢复安全边界，整理命令层结构，并刷新扩展与构建元数据。
+
+**主要变化**
+
+- 新增 `pig pg clone`：快速克隆本地数据库，支持 `--plan`、结构化输出、owner / 连接限制选项、标识符校验，以及更清晰的 `psql` 失败信息。
+- 新增 `pig pg fork`：在 `/pg/data-<name>` 下创建一次性物理分叉，提供 list/start/stop/rm 生命周期管理、`fork.json` 元数据、自动端口选择、CoW/reflink 检测与更安全的删除规则。
+- 收紧 PITR / restore：`pig pitr` 与 `pig pb restore` 要求显式恢复目标，支持恢复计划、pgBackRest 参数透传、Patroni 防护、side restore 约束、恢复等待与恢复后指引。
+- 改进日志输出：`pig pg log` / `pig pb log` 默认查看最新日志；PostgreSQL CSV 日志可通过 `-o json` 输出为 JSONL。
+- 简化 CLI 架构：`pg`、`pb`、`pt`、`pe`、`do`、`sty` 保持扁平的 `cmd/` 入口，复用逻辑下沉到 `cli/*`，并统一 plan/output 辅助逻辑。
+- 更新构建与发布默认值：`pgrx` 默认版本为 `0.19.1`，内置 Pigsty 为 `4.4.0`，Pig 为 `1.5.0`，`go-toml/v2` 更新到 `2.4.2`。
+
+**扩展目录**
+
+- 可用扩展数量：**524 -> 531**，没有移除项。
+- 新增扩展：`pg_ducklake`、`pgdisablelogerror`、`pg_stat_log`、`pg_stat_plans`、`passwordpolicy`、`db2fce`、`plpgsql_wrap`。
+- 刷新 38 个已有条目的元数据，代表性更新包括 `postgis 3.6.4`、`vector 0.8.3`、`biscuit 2.4.0`、`orioledb 1.8`、`documentdb 0.113`、`credcheck 5.0`、`pgtt 4.5`。
+- OrioleDB alias 改为使用请求的 PostgreSQL 主版本（`$v`），不再固定在 PG17，因此 `orioledb` 可在 RPM 与 DEB 系统上正确解析到 PG16 / PG18 等目标版本。
+- EL9 ARM64 Patroni alias 改为 `patroni.noarch` / `patroni-etcd.noarch`。
+
+**兼容性提醒**
+
+- `pig pb restore` 现在必须显式指定恢复目标；恢复到最新 WAL 请使用 `pig pb restore -d`。
+- Patroni 受管恢复会拒绝危险的 `pig pitr --skip-patroni`；自定义 `-D` side restore 必须配合 `--no-restart`。
+- `pig pitr --target-action=shutdown` 必须配合 `--no-restart`。
+- `pig pg log -o json` 输出 PostgreSQL CSV 日志的 JSONL，不用于 YAML / `json-pretty` 流式日志。
+- 受管 fork 按名称删除；`--dst-data` 只用于非受管 fork。
+
+**校验和**
+
+```bash
+0f6bc1e41cf0c5250a2f09b46f77a87c248391a7249a140ca97af67337eeafaa  pig-1.5.0-1.aarch64.rpm
+9bed50fae4ff2a8247c3664c9d8a5d8946cfb4519b76764762832d7855829ea1  pig-1.5.0-1.x86_64.rpm
+f9582f4774738cb6b801efa32621c121062d4880d04d49557864e2c08e7cc992  pig-v1.5.0.darwin-amd64.tar.gz
+26fbc45759eebd387b5e79ebcd6788fa941845228613532596d5a2766387b4b5  pig-v1.5.0.darwin-arm64.tar.gz
+5407e1ed87d855cc87e45d70cf4c30fb3f66f13b2157e38b652b754b709f0941  pig-v1.5.0.linux-amd64.tar.gz
+258f53374612c51bb5d69a5e9fcd7db1e9a85357c1a1dc65748c36022488dc86  pig-v1.5.0.linux-arm64.tar.gz
+e82949269ded288fc99841662c5cd72475ffeeb1af3ecf7eb039e29058c28ccc  pig_1.5.0-1_amd64.deb
+e48d8f80a23d5e9a3e3b19f79968765c799e31243a2c9076d92b38a0c48988e7  pig_1.5.0-1_arm64.deb
+```
+
+发布：https://github.com/pgsty/pig/releases/tag/v1.5.0
+
+
 ## v1.4.2
 
 - 内置扩展目录从 **510** 个可用扩展刷新到 **524** 个，新增 14 个扩展：`pg_stl`、`pgmnemo`、`psql_bm25s`、`pg_orca`、`pg_sorted_heap`、`graph`、`pgrdf`、`fsm_core`、`jsonschema`、`pg_durable`、`pg_mockable`、`pg_uuid_v8`、`pg_stat_backtrace`、`pg_projection`。

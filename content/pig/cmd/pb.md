@@ -38,7 +38,7 @@ Examples:
   pig pb info                      # show all backup info
   pig pb backup                    # auto: full if none, else incr
   pig pb backup full               # full backup
-  pig pb restore                   # restore to latest (default)
+  pig pb restore -d                # restore to latest (end of WAL)
   pig pb restore -t "2025-01-01 12:00:00+08"  # restore to time
   pig pb create                    # initialize stanza
   pig pb expire                    # cleanup per retention policy
@@ -80,7 +80,7 @@ Examples:
 | `pb check` | | Verify backup repository integrity | `pgbackrest check` |
 | `pb start` | | Enable pgBackRest operations | `pgbackrest start` |
 | `pb stop` | | Disable pgBackRest operations | `pgbackrest stop` |
-| `pb log` | `l, lg` | View logs | `tail/cat` log files |
+| `pb log` | `l, lg` | View logs | latest snapshot / tail |
 
 ------
 
@@ -90,6 +90,7 @@ Examples:
 # View backup info
 pig pb info                          # Show all backup info
 pig pb info -o json                  # JSON format output
+pig pb info --raw --raw-output json  # Raw pgBackRest JSON output
 pig pb ls                            # List all backups
 pig pb ls repo                       # List configured repos
 pig pb ls stanza                     # List all stanzas
@@ -100,8 +101,8 @@ pig pb backup full                   # Full backup
 pig pb backup diff                   # Differential backup
 pig pb backup incr                   # Incremental backup
 
-# Restore (PITR)
-pig pb restore                       # Restore to latest (end of WAL)
+# Restore (PITR, target required)
+pig pb restore -d                    # Restore to latest (end of WAL)
 pig pb restore -I                    # Restore to backup consistency point
 pig pb restore -t "2025-01-01 12:00:00+08"  # Restore to specific time
 pig pb restore -n savepoint          # Restore to named restore point
@@ -113,7 +114,7 @@ pig pb check                         # Verify repository integrity
 
 # Cleanup
 pig pb expire                        # Clean up per retention policy
-pig pb expire --dry-run              # Dry run mode
+pig pb expire --plan                 # Preview cleanup plan only
 ```
 
 ------
@@ -160,6 +161,7 @@ Show detailed backup repository info including all backup sets and WAL archive s
 ```bash
 pig pb info                          # Show all backup info
 pig pb info -o json                  # JSON format output
+pig pb info --raw --raw-output json  # Raw pgBackRest JSON output
 pig pb info --set 20250101-120000F   # Show specific backup set details
 ```
 
@@ -167,7 +169,9 @@ pig pb info --set 20250101-120000F   # Show specific backup set details
 
 | Option | Short | Description |
 |:---|:---|:---|
-| `--output` | `-o` | Output format: text, json |
+| `--output` | `-o` | Structured output format: text, yaml, json, json-pretty |
+| `--raw` | `-R` | Raw pgBackRest passthrough output |
+| `--raw-output` | `-O` | Raw output format: text, json (only with `--raw`) |
 | `--set` | | Show specific backup set details |
 
 
@@ -234,7 +238,7 @@ Clean up expired backups and WAL archives per retention policy.
 ```bash
 pig pb expire                        # Clean up per policy
 pig pb expire --set 20250101-*       # Delete specific backup set
-pig pb expire --dry-run              # Dry run (display only)
+pig pb expire --plan                 # Preview cleanup plan, do not delete
 ```
 
 **Options:**
@@ -242,7 +246,7 @@ pig pb expire --dry-run              # Dry run (display only)
 | Option | Description |
 |:---|:---|
 | `--set` | Delete specific backup set |
-| `--dry-run` | Dry run: only display what would be deleted |
+| `--plan` | Preview cleanup plan, do not delete backups |
 
 **Retention Policy:**
 
@@ -262,10 +266,10 @@ repo1-retention-archive=2            # WAL archive retention policy
 ### pb restore
 
 Restore from backup with point-in-time recovery (PITR) support.
+You must explicitly choose one recovery target (`-d/-I/-t/-n/-l/-x`); running without a target only shows help.
 
 ```bash
 # Recovery target (mutually exclusive)
-pig pb restore                       # Restore to latest (default)
 pig pb restore -d                    # Restore to latest (explicit)
 pig pb restore -I                    # Restore to backup consistency point
 pig pb restore -t "2025-01-01 12:00:00+08"  # Restore to specific time
@@ -275,13 +279,17 @@ pig pb restore -n my-savepoint       # Restore to named restore point
 pig pb restore -l "0/7C82CB8"        # Restore to LSN
 pig pb restore -x 12345              # Restore to transaction ID
 
-# Backup set selection (can combine with recovery target)
-pig pb restore -b 20251225-120000F   # Restore from specific backup set
+# Backup set selection (must combine with a recovery target)
+pig pb restore -b 20251225-120000F -d  # Restore specific backup to latest
 
 # Other options
 pig pb restore -t "..." -X           # Exclusive mode (stop before target)
 pig pb restore -t "..." -P           # Auto-promote after restore
-pig pb restore -y                    # Skip confirmation countdown
+pig pb restore -t "..." -T current   # Recover along current timeline
+pig pb restore -d --target-action=pause  # Pause at recovery target
+pig pb restore -d --plan             # Preview restore plan only
+pig pb restore -d -y                 # Skip confirmation countdown
+pig pb restore -d -- --delta         # Pass pgBackRest restore args after --
 ```
 
 **Recovery Target Options:**
@@ -303,7 +311,11 @@ pig pb restore -y                    # Skip confirmation countdown
 | `--data` | `-D` | Target data directory |
 | `--exclusive` | `-X` | Exclusive mode: stop before target |
 | `--promote` | `-P` | Auto-promote to primary after restore |
+| `--target-action` | | Action when target is reached: pause/promote/shutdown |
+| `--target-timeline` | `-T` | Recovery timeline: latest/current/N/0xN |
+| `--plan` | | Preview restore plan only |
 | `--yes` | `-y` | Skip confirmation and countdown |
+| raw args after `--` | | Pass native pgBackRest restore options, for example `-- --delta` |
 
 **Time Formats:**
 
@@ -450,16 +462,16 @@ During system maintenance, use this command to prevent new backup operations fro
 
 ### pb log
 
-View pgBackRest log files. Log directory is `/pg/log/pgbackrest/`.
+View pgBackRest log files. Log directory is `/pg/log/pgbackrest/`. The parent command shows the latest log snapshot; use `tail` or `-f` for streaming.
 
 ```bash
-pig pb log                           # List log files
+pig pb log                           # Show latest log lines
 pig pb log list                      # List log files
 pig pb log tail                      # Real-time view latest log
 pig pb log tail -n 100               # Show last 100 lines and follow
-pig pb log cat                       # Show latest log content
-pig pb log cat -n 50                 # Show last 50 lines
-pig pb log cat pg-meta-backup.log    # Show specific log file
+pig pb log show                      # Show latest log content
+pig pb log show -n 50                # Show last 50 lines
+pig pb log cat                       # Alias of show
 ```
 
 **Subcommands:**
@@ -467,8 +479,8 @@ pig pb log cat pg-meta-backup.log    # Show specific log file
 | Subcommand | Aliases | Description |
 |:---|:---|:---|
 | list | ls | List log files |
-| tail | follow, f | Real-time follow latest log |
-| cat | show | Show log content |
+| show | cat, c | Show latest log content |
+| tail | t, f, follow | Real-time follow latest log |
 
 **Options:**
 
@@ -518,7 +530,7 @@ For full `pgbackrest` functionality, use `pgbackrest` command directly.
 - `pb delete` requires `--force` confirmation, with 5-second countdown
 - `pb restore` displays restore plan, with 5-second countdown confirmation
 - `pb backup` checks primary role by default, prevents running on replica
-- Log command filename parameter filters paths to prevent path traversal attacks
+- `pb log tail` cannot be used with structured output; use `pb log show -n N -o json` for JSONL snapshots
 
 **Platform Support:**
 

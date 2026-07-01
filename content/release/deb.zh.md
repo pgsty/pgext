@@ -6,6 +6,22 @@ weight: 300
 
 参阅 [PGSQL 仓库](/zh/repo/pgsql)，了解如何使用 PGSQL APT 仓库。
 
+## 2026-07-01
+
+更新 DEB 扩展包，并将上一批次的 documentdb 与 biscuit 更新计入本批次。
+
+| 包名            | 旧版本      | 新版本     | 备注                     |
+|:--------------|:---------|:--------|:-----------------------|
+| timescaledb   | 2.28.0   | 2.28.2  | PG 15-18               |
+| documentdb    | 0.110    | 0.113   | PG 15-18               |
+| citus         | 14.0.0-4 | 14.1.0  | PG 16-18               |
+| pgvector      | 0.8.3    | 0.8.4   | PG 14-18               |
+| plpgsql_check | 2.9.1    | 2.9.2   | PG 14-18               |
+| roaringbitmap | 1.1.0    | 1.2.0-2 | PG 14-18，llvm-lto 打包修复 |
+| biscuit       | 2.3.0    | 2.4.1   | PG 16-18               |
+| pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18               |
+| rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18，libcurl 兼容补丁  |
+
 ## 2026-06-18
 
 更新 Rust 扩展 pgrx 版本到 0.18.1
@@ -13,10 +29,10 @@ weight: 300
 | 包名                  | 旧版本        | 新版本        | 备注                    |
 |:--------------------|:-----------|:-----------|:----------------------|
 | timescaledb         | 2.27.2     | 2.28.0     | PG 15-18              |
-| documentdb          | 0.110      | 0.113      | PG 15-18              |
 | timeseries          | 0.2.0      | 0.2.1      | PG 14-18              |
+| documentdb          | 0.110      | 0.112      | PG 15-18              |
 | pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18              |
-| biscuit             | 2.2.2      | 2.4.0      | PG 16-18              |
+| biscuit             | 2.2.2      | 2.3.0      | PG 16-18              |
 | pg_http             | 1.7.0      | 1.7.1      | PG 14-18              |
 | pg_gzip             | 1.0.0      | 1.1.0      | PG 14-18              |
 | pgvector            | 0.8.2      | 0.8.3      | PG 14-18              |
@@ -126,7 +142,7 @@ weight: 300
 | cloudberry-backup | -      | 2.1.0  | 新增配套子包                      |
 | cloudberry-pxf    | -      | 2.1.0  | 新增配套子包                      |
 | oriolepg          | 17.16  | 17.18  | 内核升级，适配 orioledb beta15/1.7 |
-| orioledb          | 1.6    | 1.7    | 升级，配套 oriolepg 17.18        ||
+| orioledb          | 1.6    | 1.7    | 升级，配套 oriolepg 17.18        |
 | postgis           | 3.6.2  | 3.6.3  | 升级                          |
 | timescaledb       | 2.26.2 | 2.26.3 | 升级                          |
 | pg_search         | 0.22.6 | 0.23.0 | 升级                          |
@@ -203,9 +219,9 @@ weight: 300
 | 包名                 | 旧版本     | 新版本       | 备注 |
 |:-------------------|:--------|:----------|:---|
 | pg_search          | 0.21.12 | 0.22.2    |    |
-| pg_track_optimizer | 0.9.1   | 0.9.2     |    |   
-| pgcollection       | 1.0.0   | 2.0.0     |    |   
-| pg_ttl_index       | 2.0.0   | 3.0.0     |    |   
+| pg_track_optimizer | 0.9.1   | 0.9.2     |    |
+| pgcollection       | 1.0.0   | 2.0.0     |    |
+| pg_ttl_index       | 2.0.0   | 3.0.0     |    |
 | pg_clickhouse      | 0.1.4   | 0.1.5     |    |
 | pdu                |         | 3.0.25.12 | 新增 |
 | pgdog              |         | 0.1.32    | 新增 |
