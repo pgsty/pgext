@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [base62: PostgreSQL 的 base62 编解码数据类型](https://github.com/adjust/pg-base62)

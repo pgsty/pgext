@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pg_fact_loader: build fact tables with Postgres](https://github.com/enova/pg_fact_loader)

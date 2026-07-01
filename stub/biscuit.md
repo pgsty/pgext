@@ -1,92 +1,115 @@
 
+
+
 ## Usage
 
-> Syntax:
->
-> ```sql
-> CREATE EXTENSION biscuit;
-> CREATE INDEX idx_users_name ON users USING biscuit(name);
-> SELECT * FROM users WHERE name LIKE '%john%';
-> ```
->
-> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/), [v2.4.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v2.4.0)
+Sources:
 
-`biscuit` is a PostgreSQL index access method for fast `LIKE` and `ILIKE` pattern matching, including multi-column searches. The upstream project positions it as a deterministic bitmap index that avoids the false-positive recheck overhead common in trigram-based searches.
+- [PGXN biscuit 2.4.1](https://pgxn.org/dist/biscuit/2.4.1/)
+- [Biscuit README](https://github.com/CrystallineCore/Biscuit)
+- [Biscuit CHANGELOG](https://github.com/CrystallineCore/Biscuit/blob/main/CHANGELOG.md)
+- [Biscuit documentation](https://biscuit.readthedocs.io/)
+- [Local package metadata](../db/extension.csv)
+
+`biscuit` is a PostgreSQL index access method for accelerating `LIKE`, `NOT LIKE`, `ILIKE`, and `NOT ILIKE` pattern matching on text. It uses bitmap-style position indexes to avoid the heap recheck overhead common in trigram searches and supports multi-column indexes for wildcard-heavy workloads.
+
+PGXN package 2.4.1 ships the SQL/control version `2.4.0`; the extension's visible `default_version` is therefore still `2.4.0`. The local Pigsty extension name is `biscuit`, while older package metadata may mention `pg_biscuit`.
+
+> [!WARNING]
+> Upstream marks Biscuit as actively developed and recommends thorough staging validation before production use. Test representative datasets, query patterns, upgrades, backup/restore, and performance behavior before relying on it for critical workloads.
 
 ### Quick Start
 
-Create the extension and build a Biscuit index on one or more text columns:
-
 ```sql
-CREATE EXTENSION biscuit;
+CREATE EXTENSION IF NOT EXISTS biscuit;
 
-CREATE INDEX idx_users_name ON users USING biscuit(name);
+CREATE TABLE users (
+  id bigserial PRIMARY KEY,
+  name text,
+  email text,
+  bio text
+);
 
-CREATE INDEX idx_products_search
-ON products USING biscuit(name, description, category);
-
-CREATE INDEX idx_users_lower_name
-ON users USING biscuit (lower(name));
-```
-
-Basic wildcard queries work with the index:
-
-```sql
-SELECT * FROM users WHERE name LIKE '%john%';
-SELECT * FROM users WHERE name NOT LIKE 'a%b%c';
-SELECT COUNT(*) FROM users WHERE name LIKE '%test%';
+CREATE INDEX users_name_biscuit
+ON users USING biscuit (name);
 
 SELECT *
-FROM products
-WHERE name LIKE '%widget%'
-  AND description LIKE '%blue%'
-  AND category LIKE 'electronics%'
-LIMIT 10;
+FROM users
+WHERE name LIKE '%john%';
 ```
 
-### Index Behavior
+`biscuit` supports ordinary wildcard patterns with `%` and `_`:
 
-Biscuit stores bitmap position indexes for each string and can match both forward and backward character positions. The upstream design highlights:
+```sql
+SELECT * FROM users WHERE name LIKE 'john%';
+SELECT * FROM users WHERE name LIKE '%smith';
+SELECT * FROM users WHERE name LIKE '%oh_';
+SELECT * FROM users WHERE name ILIKE '%john%';
+SELECT * FROM users WHERE name NOT LIKE '%test%';
+```
 
-- positive indexes for characters at exact positions
-- negative indexes for characters counted from the string end
-- case-insensitive variants for `ILIKE`
-- exact-length and minimum-length bitmaps for fast length filtering
+### Multi-Column Indexes
 
-For a pattern such as `LIKE 'abc%def'`, Biscuit can intersect prefix and suffix bitmaps plus a minimum-length filter, producing exact matches without a heap recheck phase.
+```sql
+CREATE INDEX users_search_biscuit
+ON users USING biscuit (name, email, bio);
 
-### Pattern Cases
+SELECT *
+FROM users
+WHERE name ILIKE '%john%'
+  AND email LIKE '%example.com'
+  AND bio NOT LIKE '%inactive%';
+```
 
-The implementation documents optimized paths for common pattern types:
+Biscuit can combine bitmap matches from multiple indexed columns and may reorder predicates by estimated selectivity.
 
-- exact matches such as `'abc'`
-- prefix patterns such as `'abc%'`
-- suffix patterns such as `'%xyz'`
-- substring patterns such as `'%abc%'`
-- multi-column predicates, where Biscuit reorders predicates by estimated selectivity
+### Expression Indexes
 
-### Performance Notes
+Version 2.4.0 adds expression-index support:
 
-The upstream README emphasizes bitmap-only evaluation and several execution optimizations, including:
+```sql
+CREATE INDEX users_lower_name_biscuit
+ON users USING biscuit (lower(name));
 
-- early termination when an intermediate bitmap becomes empty
-- direct use of roaring bitmaps for sparse and dense cases
-- negative-position lookups for suffix predicates
-- sorted TID output to improve heap access locality
-- special handling for aggregate queries and `LIMIT`
+SELECT *
+FROM users
+WHERE lower(name) LIKE '%john%';
+```
 
-The project README also includes a benchmark setup comparing Biscuit indexes with trigram-based approaches on a 1M-row table.
+For `char(n)` / `bpchar` columns, upstream recommends expression indexes that cast to `text`, because native `bpchar` operator classes are not yet available:
 
-### Requirements
+```sql
+CREATE INDEX legacy_code_biscuit
+ON legacy_table USING biscuit ((code::text));
+```
 
-The current upstream README lists these requirements for source builds:
+### Introspection
 
-- PostgreSQL 16 or newer
-- standard build tools such as `gcc`, `make`, and `pg_config`
-- optional CRoaring for improved performance
+```sql
+SELECT *
+FROM biscuit_operators;
 
-The project publishes packages on [PGXN](https://pgxn.org/dist/biscuit/) and maintains a dedicated documentation site on Read the Docs.
+SELECT *
+FROM biscuit_version_history;
+```
 
-### Version Notes
+The `biscuit_operators` view lists the operators registered for the Biscuit access method. In 2.4.0, the view was fixed to remain correct if additional operator classes or families are added.
 
-Biscuit 2.4.0 adds expression-index support, so indexes such as `USING biscuit (lower(col), (other_col::text))` are valid. The release also expands multi-version build support across PostgreSQL 16, 17, 18, and 19beta1, fixes duplicate rows in multi-column parallel scans, and makes the `biscuit_operators` view resilient to additional operator classes.
+### Operational Notes
+
+Biscuit's design is optimized for:
+
+- prefix, suffix, substring, and mixed wildcard `LIKE` / `ILIKE` patterns
+- multi-column predicates where bitmap intersections can reduce candidate sets
+- exact pattern matching without trigram false-positive rechecks
+- workloads where text-pattern search dominates query latency
+
+It is not a general full-text search engine and does not replace ranking, stemming, tokenization, or phrase search. Use PostgreSQL full text search, trigram indexes, or dedicated search extensions when those semantics are required.
+
+### Caveats
+
+- Upstream requires PostgreSQL 16 or newer and standard build tools. Pigsty local metadata currently packages Biscuit for PostgreSQL 16-18.
+- PGXN package version 2.4.1 carries SQL/control `default_version = '2.4.0'`; this is expected for the current source package.
+- Biscuit only targets `LIKE` / `ILIKE`-style wildcard matching. Regular expressions are not the supported search surface.
+- Non-text columns should be indexed through explicit text expressions when needed.
+- Benchmark against `pg_trgm` and your actual data distribution before replacing existing production indexes.

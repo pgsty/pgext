@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [safeupdate: 要求 UPDATE 和 DELETE 必须带条件](https://github.com/eradman/pg-safeupdate)

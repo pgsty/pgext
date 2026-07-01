@@ -1,8 +1,9 @@
 
 
-> [!WARNING] 此扩展目前存在问题，与 pg_duckdb 和 pg_mooncake 存在冲突
 
 ## 用法
+
+> [!WARNING] 此扩展目前存在问题，与 pg_duckdb 和 pg_mooncake 存在冲突
 
 ### 创建扩展
 

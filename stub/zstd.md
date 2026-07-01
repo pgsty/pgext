@@ -1,4 +1,6 @@
 
+
+
 ## Usage
 
 | Function                                                                             | Return Type |

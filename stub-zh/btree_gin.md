@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [btree_gin: B 树等价的 GIN 操作符类](https://www.postgresql.org/docs/current/btree-gin.html)

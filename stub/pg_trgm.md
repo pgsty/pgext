@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pg_trgm: Text similarity measurement and index searching based on trigrams](https://www.postgresql.org/docs/current/pgtrgm.html)

@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [hunspell_nn_no: Norwegian Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

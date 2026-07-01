@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [emailaddr: PostgreSQL 的电子邮件地址数据类型](https://github.com/petere/pgemailaddr)

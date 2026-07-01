@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pglogical_ticker: Have an accurate view on pglogical replication delay](https://github.com/enova/pglogical_ticker)

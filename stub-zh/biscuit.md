@@ -1,84 +1,115 @@
 
+
+
 ## 用法
 
-> 来源：[README](https://github.com/CrystallineCore/Biscuit)、[Docs](https://biscuit.readthedocs.io/)、[v2.4.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v2.4.0)
+来源：
 
-`biscuit` 是 PostgreSQL 的一种索引访问方法，专为 `LIKE` 和 `ILIKE` 模式匹配优化，也支持多列检索。上游将其定位为一种确定性的位图索引，可避免基于 trigram 的搜索常见的误命中复查开销。
+- [PGXN biscuit 2.4.1](https://pgxn.org/dist/biscuit/2.4.1/)
+- [Biscuit README](https://github.com/CrystallineCore/Biscuit)
+- [Biscuit CHANGELOG](https://github.com/CrystallineCore/Biscuit/blob/main/CHANGELOG.md)
+- [Biscuit documentation](https://biscuit.readthedocs.io/)
+- [本地包元数据](../db/extension.csv)
 
-### 快速上手
+`biscuit` 是 PostgreSQL 的索引访问方法，用于加速文本上的 `LIKE`、`NOT LIKE`、`ILIKE` 和 `NOT ILIKE` 模式匹配。它使用类似位图的位置索引，避免 trigram 搜索中常见的 heap recheck 开销，并支持多列索引，适合通配符查询较多的负载。
 
-创建扩展，并在一个或多个文本列上建立 Biscuit 索引：
+PGXN 2.4.1 包里携带的 SQL/control 版本是 `2.4.0`，因此扩展可见的 `default_version` 仍是 `2.4.0`。Pigsty 本地扩展名为 `biscuit`，旧包元数据中可能仍能看到 `pg_biscuit`。
 
-```sql
-CREATE EXTENSION biscuit;
+> [!WARNING]
+> 上游说明 Biscuit 仍处于活跃开发阶段，建议在生产使用前进行充分的 staging 验证。应覆盖代表性数据集、查询模式、升级、备份恢复和性能行为，再用于关键负载。
 
-CREATE INDEX idx_users_name ON users USING biscuit(name);
-
-CREATE INDEX idx_products_search
-ON products USING biscuit(name, description, category);
-
-CREATE INDEX idx_users_lower_name
-ON users USING biscuit (lower(name));
-```
-
-带通配符的常见查询同样可以使用该索引：
+### 快速开始
 
 ```sql
-SELECT * FROM users WHERE name LIKE '%john%';
-SELECT * FROM users WHERE name NOT LIKE 'a%b%c';
-SELECT COUNT(*) FROM users WHERE name LIKE '%test%';
+CREATE EXTENSION IF NOT EXISTS biscuit;
+
+CREATE TABLE users (
+  id bigserial PRIMARY KEY,
+  name text,
+  email text,
+  bio text
+);
+
+CREATE INDEX users_name_biscuit
+ON users USING biscuit (name);
 
 SELECT *
-FROM products
-WHERE name LIKE '%widget%'
-  AND description LIKE '%blue%'
-  AND category LIKE 'electronics%'
-LIMIT 10;
+FROM users
+WHERE name LIKE '%john%';
 ```
 
-### 索引行为
+`biscuit` 支持带 `%` 和 `_` 的普通通配符模式：
 
-Biscuit 为每个字符串维护位图位置索引，能够同时匹配正向和反向字符位置。上游设计强调：
+```sql
+SELECT * FROM users WHERE name LIKE 'john%';
+SELECT * FROM users WHERE name LIKE '%smith';
+SELECT * FROM users WHERE name LIKE '%oh_';
+SELECT * FROM users WHERE name ILIKE '%john%';
+SELECT * FROM users WHERE name NOT LIKE '%test%';
+```
 
-- 正向索引，用于匹配字符在精确位置上的出现
-- 反向索引，用于按字符串末尾倒数位置匹配字符
-- `ILIKE` 的大小写不敏感变体
-- 用于快速长度过滤的精确长度位图和最小长度位图
+### 多列索引
 
-对于 `LIKE 'abc%def'` 这类模式，Biscuit 可以把前缀位图、后缀位图以及最小长度过滤合并起来，从而在不执行 heap 复查的情况下得到精确结果。
+```sql
+CREATE INDEX users_search_biscuit
+ON users USING biscuit (name, email, bio);
 
-### 模式类型
+SELECT *
+FROM users
+WHERE name ILIKE '%john%'
+  AND email LIKE '%example.com'
+  AND bio NOT LIKE '%inactive%';
+```
 
-上游文档对常见模式给出了优化路径：
+Biscuit 可以合并多个索引列上的 bitmap 匹配，并可能按估计选择性重排谓词。
 
-- 精确匹配，例如 `'abc'`
-- 前缀匹配，例如 `'abc%'`
-- 后缀匹配，例如 `'%xyz'`
-- 子串匹配，例如 `'%abc%'`
-- 多列谓词，Biscuit 会按估计选择性重排谓词顺序
+### 表达式索引
 
-### 性能说明
+2.4.0 增加了 expression index 支持：
 
-上游 README 强调了纯位图求值及多项执行优化，包括：
+```sql
+CREATE INDEX users_lower_name_biscuit
+ON users USING biscuit (lower(name));
 
-- 中间位图为空时提前结束
-- 对稀疏和稠密数据直接使用 roaring bitmap
-- 后缀谓词使用反向位置查找
-- 对 TID 做排序，以提高 heap 访问局部性
-- 对聚合查询和 `LIMIT` 的特殊处理
+SELECT *
+FROM users
+WHERE lower(name) LIKE '%john%';
+```
 
-项目 README 还给出了一个 100 万行测试表的基准方案，用来比较 Biscuit 索引与 trigram 方案。
+对于 `char(n)` / `bpchar` 列，上游建议使用显式 cast 到 `text` 的表达式索引，因为原生 `bpchar` 操作符类尚不可用：
 
-### 需求
+```sql
+CREATE INDEX legacy_code_biscuit
+ON legacy_table USING biscuit ((code::text));
+```
 
-当前上游 README 列出的源码构建要求包括：
+### 查看信息
 
-- PostgreSQL 16 或更高版本
-- 标准构建工具，如 `gcc`、`make` 和 `pg_config`
-- 可选的 CRoaring，用于提升性能
+```sql
+SELECT *
+FROM biscuit_operators;
 
-该项目通过 [PGXN](https://pgxn.org/dist/biscuit/) 发布包，并在 Read the Docs 上维护独立文档站。
+SELECT *
+FROM biscuit_version_history;
+```
 
-### 版本说明
+`biscuit_operators` 视图列出 Biscuit 访问方法注册的操作符。2.4.0 修复了该视图，使它在后续增加 operator class / family 时仍能保持正确。
 
-Biscuit 2.4.0 增加 expression-index 支持，因此 `USING biscuit (lower(col), (other_col::text))` 这类索引是有效的。该版本还扩展了 PostgreSQL 16、17、18 和 19beta1 的多版本构建支持，修复 multi-column parallel scans 中的重复行问题，并让 `biscuit_operators` 视图能容忍额外 operator classes。
+### 运维说明
+
+Biscuit 的设计重点是：
+
+- prefix、suffix、substring 和混合通配符 `LIKE` / `ILIKE` 模式
+- 多列谓词中通过 bitmap 交集减少候选集
+- 不依赖 trigram false-positive recheck 的精确模式匹配
+- 文本模式搜索占主要延迟的查询
+
+它不是通用全文检索引擎，也不替代排序、词干化、分词或短语检索。如果需要这些语义，应使用 PostgreSQL 全文检索、trigram 索引或专门的搜索扩展。
+
+### 注意事项
+
+- 上游要求 PostgreSQL 16 或更高版本及标准构建工具。Pigsty 本地元数据目前为 PostgreSQL 16-18 打包 Biscuit。
+- PGXN 包版本 2.4.1 携带的 SQL/control `default_version = '2.4.0'`；这是当前源码包的预期状态。
+- Biscuit 只面向 `LIKE` / `ILIKE` 风格的通配符匹配；正则表达式不是它支持的搜索界面。
+- 如需索引非 text 列，应使用显式 text 表达式。
+- 替换现有生产索引前，应基于真实数据分布与 `pg_trgm` 做基准对比。

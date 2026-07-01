@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [credcheck: PostgreSQL 用户名和密码的凭证检查](https://github.com/MigOpsRepos/credcheck)

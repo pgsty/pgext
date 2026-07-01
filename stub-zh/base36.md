@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [base36: PostgreSQL 的 base36 编解码数据类型](https://github.com/adjust/pg-base36)

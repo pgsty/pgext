@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pg_cheat_funcs: 提供作弊（但实用）的函数](https://github.com/MasaoFujii/pg_cheat_funcs)

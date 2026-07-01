@@ -1,3 +1,6 @@
+
+
+
 ## 用法
 
 来源：[README](https://github.com/pmpetit/pglinter/blob/2.0.0/README.md)、[how-to](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/how-to/README.md)、[examples](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/examples/README.md)、[rules](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/rules/README.md)、[2.0.0 release](https://github.com/pmpetit/pglinter/releases/tag/2.0.0)

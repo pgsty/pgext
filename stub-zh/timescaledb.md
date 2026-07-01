@@ -1,3 +1,6 @@
+
+
+
 ## 用法
 
 来源：[README](https://github.com/timescale/timescaledb/blob/main/README.md)、[TimescaleDB 2.28.0 release](https://github.com/timescale/timescaledb/releases/tag/2.28.0)、[2.28.0 changelog](https://github.com/timescale/timescaledb/blob/2.28.0/CHANGELOG.md)、[CREATE TABLE API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_table/)、[create_hypertable() API](https://www.tigerdata.com/docs/reference/timescaledb/hypertables/create_hypertable/)、[continuous aggregate API](https://www.tigerdata.com/docs/reference/timescaledb/continuous-aggregates/create_materialized_view/)、[add_columnstore_policy() API](https://www.tigerdata.com/docs/reference/timescaledb/hypercore/add_columnstore_policy/)、[GUCs](https://www.tigerdata.com/docs/reference/timescaledb/configuration/gucs/)

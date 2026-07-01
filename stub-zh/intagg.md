@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [intagg: 整数聚合器和枚举器（已过时）](https://www.postgresql.org/docs/current/intagg.html)

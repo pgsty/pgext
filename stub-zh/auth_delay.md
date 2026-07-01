@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [auth_delay: 在报告认证失败前暂停](https://www.postgresql.org/docs/current/auth-delay.html)

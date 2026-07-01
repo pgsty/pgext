@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [random: PostgreSQL 的可重现随机数据生成器](https://github.com/tvondra/random)

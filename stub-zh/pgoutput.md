@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pgoutput: 逻辑复制输出插件](https://www.postgresql.org/docs/current/protocol-logical-replication.html)

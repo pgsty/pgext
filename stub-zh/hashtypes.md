@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [hashtypes: 哈希与校验和数据类型（SHA、CRC32）](https://github.com/adjust/hashtypes/)

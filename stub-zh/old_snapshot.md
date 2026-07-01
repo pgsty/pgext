@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [old_snapshot: 支持 old_snapshot_threshold 的工具函数](https://www.postgresql.org/docs/16/oldsnapshot.html)

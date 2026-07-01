@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [dict_int: integer text search dictionary](https://www.postgresql.org/docs/current/dict-int.html)

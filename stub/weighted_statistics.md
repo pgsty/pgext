@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [weighted_statistics: weighted statistical functions for PostgreSQL](https://github.com/schmidni/pg_weighted_statistics)

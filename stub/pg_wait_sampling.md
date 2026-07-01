@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pg_wait_sampling: sampling based statistics of wait events](https://github.com/postgrespro/pg_wait_sampling)

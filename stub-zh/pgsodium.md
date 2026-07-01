@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pgsodium: 基于 libsodium 的 PostgreSQL 加密函数](https://github.com/michelp/pgsodium)

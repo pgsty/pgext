@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [session_variable: Registration and manipulation of session variables and constants](https://github.com/splendiddata/session_variable)

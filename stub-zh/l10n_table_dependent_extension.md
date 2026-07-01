@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [l10n_table_dependent_extension: pg_xenophile 的本地化表依赖扩展](https://github.com/bigsmoke/pg_xenophile)

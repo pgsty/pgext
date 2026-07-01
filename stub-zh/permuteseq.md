@@ -1,4 +1,6 @@
 
+
+
 ## 用法
 
 > [permuteseq: 序列的可扩展伪随机置换](https://github.com/dverite/permuteseq)

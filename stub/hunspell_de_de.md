@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [hunspell_de_de: German Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

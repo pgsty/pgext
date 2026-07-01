@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [sslinfo: SSL certificate information functions](https://www.postgresql.org/docs/current/sslinfo.html)

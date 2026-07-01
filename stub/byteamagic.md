@@ -1,3 +1,6 @@
+
+
+
 ## Usage
 
 Sources: [official repo](https://github.com/nmandery/pg_byteamagic), [official doc](https://raw.githubusercontent.com/nmandery/pg_byteamagic/master/doc/byteamagic.md)

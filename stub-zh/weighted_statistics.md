@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [weighted_statistics: PostgreSQL 的加权统计函数](https://github.com/schmidni/pg_weighted_statistics)

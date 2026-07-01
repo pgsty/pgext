@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pg_qualstats: predicate statistics collector for PostgreSQL](https://github.com/powa-team/pg_qualstats)

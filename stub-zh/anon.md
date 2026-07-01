@@ -1,3 +1,6 @@
+
+
+
 ## 用法
 
 > 来源：[overview](https://postgresql-anonymizer.readthedocs.io/en/stable/)、[static masking](https://postgresql-anonymizer.readthedocs.io/en/stable/static_masking/)、[dynamic masking](https://postgresql-anonymizer.readthedocs.io/en/stable/dynamic_masking/)、[anonymous dumps](https://postgresql-anonymizer.readthedocs.io/en/stable/anonymous_dumps/)、[masking functions](https://postgresql-anonymizer.readthedocs.io/en/stable/masking_functions/)、[release 3.1.1](https://gitlab.com/dalibo/postgresql_anonymizer/-/releases/3.1.1)

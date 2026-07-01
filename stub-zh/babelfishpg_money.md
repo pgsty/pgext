@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [babelfishpg_money: SQL Server Money 数据类型](https://babelfishpg.org/)

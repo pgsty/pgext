@@ -1,7 +1,9 @@
 
-> [!WARNING] 此扩展已于 2025 年 3 月归档，不再维护。ParadeDB 的分析功能已整合到 pg_search 中。建议使用 pg_duckdb 或 pg_mooncake 作为数据湖分析的替代方案。
+
 
 ## 用法
+
+> [!WARNING] 此扩展已于 2025 年 3 月归档，不再维护。ParadeDB 的分析功能已整合到 pg_search 中。建议使用 pg_duckdb 或 pg_mooncake 作为数据湖分析的替代方案。
 
 https://github.com/paradedb/pg_analytics
 

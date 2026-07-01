@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [tsm_system_rows: 基于行数的 TABLESAMPLE 采样方法](https://www.postgresql.org/docs/current/tsm-system-rows.html)

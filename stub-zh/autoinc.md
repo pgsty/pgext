@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [autoinc: 自增触发器函数](https://www.postgresql.org/docs/current/contrib-spi.html)

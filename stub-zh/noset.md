@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [noset: 阻止用户通过 SET/RESET 更改会话参数](https://gitlab.com/ongresinc/extensions/noset)

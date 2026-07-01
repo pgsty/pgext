@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [emailaddr: email address data type for PostgreSQL](https://github.com/petere/pgemailaddr)

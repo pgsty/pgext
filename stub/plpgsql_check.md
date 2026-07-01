@@ -1,29 +1,41 @@
+
+
+
 ## Usage
 
-Sources: [official README](https://github.com/okbob/plpgsql_check), [v2.9.1 release notes](https://github.com/okbob/plpgsql_check/releases/tag/v2.9.1), [local package metadata](../db/extension.csv).
+Sources:
 
-`plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It detects many errors during development instead of waiting for runtime failures.
+- [PGXN plpgsql_check 2.9.2](https://pgxn.org/dist/plpgsql_check/2.9.2/)
+- [plpgsql_check README](https://github.com/okbob/plpgsql_check)
+- [plpgsql_check control file](https://pgxn.org/dist/plpgsql_check/2.9.2/)
+- [Local package metadata](../db/extension.csv)
+
+`plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
+
+The PGXN distribution version is 2.9.2, while the extension control file still declares SQL `default_version = '2.9'`. PostgreSQL 14-18 are documented as supported in the upstream README.
 
 ```sql
-CREATE EXTENSION plpgsql_check;
+CREATE EXTENSION IF NOT EXISTS plpgsql_check;
 ```
 
-### Check A Function
-
-```sql
-SELECT * FROM plpgsql_check_function('my_function()');
-SELECT * FROM plpgsql_check_function('my_function(int, text)');
-SELECT * FROM plpgsql_check_function('my_function()', fatal_errors := false);
-```
-
-The table-returning variant is useful for structured reports:
+### Check a Function
 
 ```sql
 SELECT *
-FROM plpgsql_check_function_tb('my_function()');
+FROM plpgsql_check_function('public.refresh_totals()');
+
+SELECT *
+FROM plpgsql_check_function('public.refresh_totals(int, text)', fatal_errors := false);
 ```
 
-### Output Formats
+The table-returning variant is easier to filter, store, or use in CI output:
+
+```sql
+SELECT functionid, lineno, statement, sqlstate, message, level
+FROM plpgsql_check_function_tb('public.refresh_totals()');
+```
+
+Output formats include text, JSON, and XML:
 
 ```sql
 SELECT * FROM plpgsql_check_function('fx()', format := 'text');
@@ -31,61 +43,69 @@ SELECT * FROM plpgsql_check_function('fx()', format := 'json');
 SELECT * FROM plpgsql_check_function('fx()', format := 'xml');
 ```
 
-### Check Trigger Functions
+### Trigger Functions
+
+Trigger functions need the relation they operate on:
 
 ```sql
-SELECT * FROM plpgsql_check_function('my_trigger_func()', 'my_table');
+SELECT *
+FROM plpgsql_check_function('public.audit_trigger()', 'public.accounts');
 
-SELECT * FROM plpgsql_check_function(
-  'my_trigger_func()',
-  'my_table',
-  newtable := 'newtab',
-  oldtable := 'oldtab'
+SELECT *
+FROM plpgsql_check_function(
+  'public.audit_trigger()',
+  'public.accounts',
+  newtable := 'new_rows',
+  oldtable := 'old_rows'
 );
 ```
 
-### Warning Categories
+### Warning Levels
 
 ```sql
-SELECT * FROM plpgsql_check_function(
+SELECT *
+FROM plpgsql_check_function(
   'fx()',
-  extra_warnings := true,
-  performance_warnings := true,
-  security_warnings := true,
+  extra_warnings         := true,
+  performance_warnings   := true,
+  security_warnings      := true,
   compatibility_warnings := true
 );
 ```
 
-- `extra_warnings` covers issues such as missing returns, dead code, and unused arguments.
-- `performance_warnings` covers performance-related checks.
-- `security_warnings` includes checks such as SQL injection risk.
+- `extra_warnings` covers missing returns, dead code, shadowed variables, and unused arguments.
+- `performance_warnings` covers hidden casts, type modifiers, and patterns that can block index usage.
+- `security_warnings` includes dynamic SQL and SQL-injection risk checks.
 - `compatibility_warnings` reports obsolete or version-sensitive PL/pgSQL patterns.
 
-### Batch Check All Functions
+### Batch Checks
 
 ```sql
-SELECT p.oid, p.proname, plpgsql_check_function(p.oid)
+SELECT n.nspname, p.proname, c.*
 FROM pg_catalog.pg_namespace n
 JOIN pg_catalog.pg_proc p ON p.pronamespace = n.oid
-JOIN pg_catalog.pg_language l ON p.prolang = l.oid
+JOIN pg_catalog.pg_language l ON l.oid = p.prolang
+CROSS JOIN LATERAL plpgsql_check_function_tb(p.oid) AS c
 WHERE l.lanname = 'plpgsql'
-  AND p.prorettype <> 'pg_catalog.trigger'::pg_catalog.regtype;
+  AND n.nspname NOT IN ('pg_catalog', 'information_schema');
 ```
 
-### Passive Mode
+Use this pattern in migration pipelines to catch changed dependencies, dropped columns, unsafe casts, and PL/pgSQL mistakes before release.
 
-Passive mode checks functions when they start. It is intended for development or preproduction because it adds overhead.
+### Passive Checking
+
+Passive mode checks functions when they start. It is useful in development and preproduction, but it adds overhead.
 
 ```sql
 LOAD 'plpgsql_check';
-SET plpgsql_check.mode = 'every_start';
+SET plpgsql_check.mode = 'fresh_start';
 ```
 
 Common settings:
 
 ```text
-plpgsql_check.mode = [ disabled | by_function | fresh_start | every_start ]
-plpgsql_check.fatal_errors = [ yes | no ]
+plpgsql_check.mode = disabled | by_function | fresh_start | every_start
+plpgsql_check.fatal_errors = yes | no
 plpgsql_check.show_nonperformance_warnings = false
 plpgsql_check.show_performance_warnings = false
 ```
@@ -95,56 +115,46 @@ plpgsql_check.show_performance_warnings = false
 ```sql
 SELECT plpgsql_check_profiler(true);
 
-SELECT my_function();
+SELECT public.refresh_totals();
 
-SELECT lineno, avg_time, source
-FROM plpgsql_profiler_function_tb('my_function()');
+SELECT lineno, exec_stmts, total_time, avg_time, source
+FROM plpgsql_profiler_function_tb('public.refresh_totals()');
 
 SELECT stmtid, parent_stmtid, lineno, exec_stmts, stmtname
-FROM plpgsql_profiler_function_statements_tb('my_function()');
+FROM plpgsql_profiler_function_statements_tb('public.refresh_totals()');
 
 SELECT * FROM plpgsql_profiler_functions_all();
 SELECT plpgsql_profiler_reset_all();
 ```
 
-For shared profiler statistics, preload `plpgsql` before `plpgsql_check`:
+For shared profiler statistics and reliable early initialization, preload `plpgsql` before `plpgsql_check`:
 
-```text
+```conf
 shared_preload_libraries = 'plpgsql,plpgsql_check'
 ```
 
 Without shared preload, profiler data is limited to the active session.
 
-### Tracer
+### Tracer and Coverage
 
-Tracing emits notices for function and statement entry/exit and can expose variable values. It is disabled by default and should be enabled only with superuser-controlled settings.
+Tracing emits notices for function and statement entry/exit and can expose variable values. It is disabled by default and must be enabled by a superuser-controlled setting.
 
 ```sql
 SET plpgsql_check.enable_tracer = on;
-SELECT plpgsql_check_tracer(true);
-SET plpgsql_check.tracer_verbosity = terse;
+SELECT plpgsql_check_tracer(true, 'terse');
+
+SELECT * FROM plpgsql_coverage_statements('public.refresh_totals()');
+SELECT * FROM plpgsql_coverage_branches('public.refresh_totals()');
 ```
 
-### Dependency Tracking
+### Pragmas
 
-```sql
-SELECT *
-FROM plpgsql_show_dependency_tb('my_function(int)');
-```
-
-### Coverage Metrics
-
-```sql
-SELECT * FROM plpgsql_coverage_statements('my_function()');
-SELECT * FROM plpgsql_coverage_branches('my_function()');
-```
-
-### Pragma Directives
-
-Use pragma calls inside functions to tell `plpgsql_check` about dynamic SQL, temporary tables, inferred record types, or local check settings:
+Use pragma calls inside functions to describe dynamic SQL, temporary tables, inferred record types, or local check settings:
 
 ```sql
 CREATE OR REPLACE FUNCTION fx(anyelement) RETURNS text AS $$
+DECLARE
+  r record;
 BEGIN
   PERFORM plpgsql_check_pragma('type: r (id int, processed bool)');
   RETURN $1::text;
@@ -154,7 +164,7 @@ $$ LANGUAGE plpgsql;
 
 ### Caveats
 
-- Pigsty packages `plpgsql_check` 2.9.1 for PostgreSQL 14-18 as RPMs; DEB packages come from PGDG.
-- The extension requires `plpgsql`. Preloading is optional for active checking, but needed for shared profiler storage and reliable early tracer/profiler initialization.
-- v2.9.1 fixes a possible crash when a traced inline block fails; no new user-facing SQL API was documented for this patch release.
-- The tracer can expose function arguments or variable values. Use it carefully around security-definer functions or sensitive data.
+- `plpgsql_check` requires `plpgsql`.
+- Preloading is optional for active checks, but required for shared profiler storage and robust tracer/profiler initialization.
+- Tracer output can include function arguments and local variable values; do not enable it broadly on sensitive production workloads.
+- The checker cannot perfectly understand every dynamic SQL string. Use pragmas to document expected dynamic objects and reduce false positives.

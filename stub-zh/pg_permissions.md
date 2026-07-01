@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pg_permissions: 查看对象权限并与期望状态进行比较](https://github.com/cybertec-postgresql/pg_permissions)

@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [repmgr: PostgreSQL 复制管理器](https://github.com/EnterpriseDB/repmgr)

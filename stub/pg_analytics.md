@@ -1,7 +1,9 @@
 
-> [!WARNING] This extension is archived (Mar 2025) and no longer maintained. ParadeDB's analytics work is now part of pg_search. Consider using pg_duckdb or pg_mooncake for data lake analytics instead.
+
 
 ## Usage
+
+> [!WARNING] This extension is archived (Mar 2025) and no longer maintained. ParadeDB's analytics work is now part of pg_search. Consider using pg_duckdb or pg_mooncake for data lake analytics instead.
 
 https://github.com/paradedb/pg_analytics
 

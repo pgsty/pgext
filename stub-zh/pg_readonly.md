@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pg_readonly: 将集群数据库设置为只读](https://github.com/pierreforstmann/pg_readonly)

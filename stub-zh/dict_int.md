@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [dict_int: 全文搜索的整数词典](https://www.postgresql.org/docs/current/dict-int.html)

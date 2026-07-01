@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pgpool_recovery: pgpool-II 的恢复函数](https://pgpool.net/)

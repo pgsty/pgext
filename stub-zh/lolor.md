@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [lolor: 逻辑复制友好的 PostgreSQL 大对象替代](https://github.com/pgEdge/lolor)

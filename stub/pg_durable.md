@@ -1,10 +1,19 @@
-Source: [pg_durable v0.2.2 README](https://github.com/microsoft/pg_durable/blob/v0.2.2/README.md), [User Guide](https://github.com/microsoft/pg_durable/blob/v0.2.2/USER_GUIDE.md), [control file](https://github.com/microsoft/pg_durable/blob/v0.2.2/pg_durable.control), [GUC definitions](https://github.com/microsoft/pg_durable/blob/v0.2.2/src/lib.rs).
+
+
 
 ## Usage
 
-`pg_durable` runs durable, fault-tolerant SQL workflows inside PostgreSQL. A workflow is built from SQL strings, functions, and DSL operators, then submitted with `df.start()`. State is persisted in PostgreSQL so completed steps are not re-executed after crashes or restarts.
+Sources:
 
-`pg_durable` must be loaded through `shared_preload_libraries`, followed by a PostgreSQL restart. Its background worker connects to the database named by `pg_durable.database` and runs under `pg_durable.worker_role`; upstream defaults are `postgres` and `azuresu`, and the worker role must be a superuser.
+- [pg_durable README on main](https://github.com/microsoft/pg_durable/blob/main/README.md)
+- [User Guide](https://github.com/microsoft/pg_durable/blob/main/USER_GUIDE.md)
+- [control file](https://github.com/microsoft/pg_durable/blob/main/pg_durable.control)
+- [0.2.3 to 0.2.4 upgrade SQL](https://github.com/microsoft/pg_durable/blob/main/sql/pg_durable--0.2.3--0.2.4.sql)
+- [0.2.2 to 0.2.3 upgrade SQL](https://github.com/microsoft/pg_durable/blob/v0.2.3/sql/pg_durable--0.2.2--0.2.3.sql)
+
+`pg_durable` runs durable, fault-tolerant SQL workflows inside PostgreSQL. A workflow is a graph of SQL strings, functions, timers, signals, conditions, and parallel branches submitted with `df.start()`. The extension checkpoints state in PostgreSQL so completed steps are not re-executed after crashes, restarts, or failed steps.
+
+The current main branch reports package version `0.2.4`; the latest tagged release observed for this refresh is `v0.2.3`. Upstream published packages and Docker images focus on PostgreSQL 17 and 18, while local Pigsty metadata may validate a broader PostgreSQL range separately.
 
 ### Enable and Grant Access
 
@@ -14,7 +23,9 @@ CREATE EXTENSION pg_durable;
 SELECT df.grant_usage('app_role');
 ```
 
-`CREATE EXTENSION` does not grant usage to `PUBLIC`. Use `df.grant_usage()` for application roles, and rerun it after extension upgrades so newly added functions are covered. The background worker initializes asynchronously after extension creation; retry if `df.*` calls report that the worker is not initialized yet.
+`pg_durable` must be loaded through `shared_preload_libraries`, followed by a PostgreSQL restart. The background worker initializes asynchronously after `CREATE EXTENSION`; retry if `df.*` calls report that the worker is not initialized yet. `CREATE EXTENSION` does not grant usage to `PUBLIC`, so run `df.grant_usage()` for application roles and repeat it after extension upgrades so new functions are covered.
+
+The worker connects to `pg_durable.database` and runs as `pg_durable.worker_role`. The worker role must be a superuser because it bypasses RLS to manage all users' durable instances.
 
 ### Start and Monitor Workflows
 
@@ -29,7 +40,7 @@ SELECT df.result('a1b2c3d4');
 SELECT df.cancel('a1b2c3d4', 'No longer needed');
 ```
 
-`df.start()` returns an instance ID. Use that ID with `df.status()`, `df.result()`, `df.cancel()`, `df.signal()`, and `df.explain()`.
+`df.start()` returns an instance ID. Status, result, cancel, signal, explain, and await helpers operate on the instance ID, not on the label. `df.list_instances()` has a basic overload and a paginated overload; pass at least three arguments, using `NULL` for skipped filters, when you need `created_at`, `completed_at`, and `next_cursor`.
 
 ### Compose SQL Steps
 
@@ -41,6 +52,13 @@ SELECT df.start(
   'double-total'
 );
 
+-- Pass a multi-row result set between steps.
+SELECT df.start(
+  'SELECT id FROM documents WHERE processed = false LIMIT 100' |=> 'batch'
+  ~> 'UPDATE documents SET processed = true WHERE id IN (SELECT id FROM $batch.*)',
+  'process-documents'
+);
+
 -- Branch on a SQL condition.
 SELECT df.start(
   'SELECT count(*) > 10 FROM orders'
@@ -48,17 +66,11 @@ SELECT df.start(
     !> 'SELECT ''low volume''',
   'order-volume'
 );
-
--- Run in parallel and wait for both branches.
-SELECT df.start(
-  'SELECT refresh_accounts()' & 'SELECT refresh_orders()',
-  'parallel-refresh'
-);
 ```
 
-Core operators are `~>` for sequence, `|=>` for naming a result, `&` for join, `|` for race, `?>` and `!>` for conditional branches, and `@>` for loops.
+Core operators are `~>` for sequence, `|=>` for naming a result, `&` for join, `|` for race, `?>` and `!>` for conditional branches, and `@>` for loops. Result substitution supports `$name`, `$name.column`, null-safe `$name?` / `$name.column?`, and row-set expansion through `$name.*`.
 
-### Timers, Schedules, and Signals
+### Timers, Schedules, Signals, and Variables
 
 ```sql
 SELECT df.start(
@@ -75,15 +87,31 @@ SELECT df.start(
   ~> 'SELECT finalize_invoice($invoice.id)',
   'invoice-approval'
 );
+
+SELECT df.setvar('api_url', 'https://example.internal');
+SELECT df.getvar('api_url');
 ```
 
-Useful DSL functions include `df.sleep(seconds)`, `df.wait_for_schedule(cron)`, `df.wait_for_signal(name, timeout)`, `df.signal(id, name, data)`, `df.join()`, `df.race()`, `df.if()`, `df.loop()`, and `df.explain()`.
+Useful DSL functions include `df.sleep(seconds)`, `df.wait_for_schedule(cron)`, `df.wait_for_signal(name, timeout)`, `df.signal(id, name, data)`, `df.join()`, `df.join3()`, `df.race()`, `df.if()`, `df.if_rows()`, `df.loop()`, `df.break()`, `df.await_instance()`, `df.explain()`, and durable variable helpers.
+
+### Monitoring and Runtime State
+
+```sql
+SELECT * FROM df.instance_nodes('a1b2c3d4');
+SELECT * FROM df.instance_executions('a1b2c3d4', 20);
+
+-- Requires a direct admin grant; df.grant_usage() does not include it.
+SELECT * FROM df.metrics();
+```
+
+`df.instance_nodes()` reports both stored node status and inferred status. The inferred view adds `skipped` for untaken branches or race losers and reinterprets superseded loop-iteration nodes as pending when a newer iteration has taken over. This is a read-time interpretation and does not change workflow execution semantics.
 
 ### Configuration and Caveats
 
 - Required preload: add `pg_durable` to `shared_preload_libraries` and restart PostgreSQL.
-- `pg_durable.database` must name the database where the extension is created; workflows are not processed in a different database.
-- `pg_durable.worker_role` must exist and be a superuser because the worker bypasses RLS to manage all users' instances.
+- `pg_durable.database` must name the database where the extension is created; workflows are not processed in a different database unless you explicitly use the supported database argument where available.
+- Fresh installs after the v0.2.3 provider-schema move use `_duroxide`; installs upgraded from <= 0.2.2 keep the legacy `duroxide` schema. `df.duroxide_schema()` reports which schema an install should use.
+- `pg_durable.worker_role` must exist and be a superuser.
 - Connection-related GUCs include `pg_durable.max_management_connections`, `pg_durable.max_duroxide_connections`, `pg_durable.max_user_connections`, and `pg_durable.execution_acquire_timeout`.
-- `df.http()` performs outbound HTTP work and is not included in standard grants unless `df.grant_usage(..., include_http => true)` is used.
-- Upstream marks v0.2.2 as early development and not production-ready.
+- `df.http()` performs outbound HTTP work. Standard grants exclude HTTP unless `df.grant_usage(..., include_http => true)` is used, and release builds may restrict HTTP egress by feature.
+- Upstream status is preview. The published Docker image is intended for evaluation and learning, not production.

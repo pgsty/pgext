@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [data_historization: 在分区日志表中跟踪数据变更](https://github.com/rodo/postgresql-data-historization)

@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pg_crash: 向随机进程发送随机信号](https://github.com/cybertec-postgresql/pg_crash)

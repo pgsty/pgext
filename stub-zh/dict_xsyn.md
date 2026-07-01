@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [dict_xsyn: 全文搜索的扩展同义词词典](https://www.postgresql.org/docs/current/dict-xsyn.html)

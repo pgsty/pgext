@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [hunspell_ne_np: PostgreSQL 的尼泊尔语 Hunspell 词典](https://github.com/postgrespro/hunspell_dicts)

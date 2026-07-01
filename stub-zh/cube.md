@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [cube: 多维立方体数据类型](https://www.postgresql.org/docs/current/cube.html)

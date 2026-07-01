@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [wal2mongo: PostgreSQL logical decoding output plugin for MongoDB](https://github.com/HighgoSoftware/wal2mongo)

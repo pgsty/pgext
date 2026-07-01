@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [aggs_for_arrays: 单数组的类聚合函数（逐列模式）](https://github.com/pjungwir/aggs_for_arrays)

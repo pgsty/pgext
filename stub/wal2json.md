@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [wal2json: Changing data capture in JSON format](https://github.com/eulerto/wal2json)

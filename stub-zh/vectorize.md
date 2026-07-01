@@ -1,3 +1,6 @@
+
+
+
 ## 用法
 
 来源：[repo README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/README.md)、[extension README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/extension/README.md)、[v0.26.2 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.2)

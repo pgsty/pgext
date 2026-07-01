@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [hunspell_ne_np: Nepali Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

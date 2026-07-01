@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pglogical_origin: Dummy extension for compatibility when upgrading from Postgres 9.4](https://github.com/2ndQuadrant/pglogical)

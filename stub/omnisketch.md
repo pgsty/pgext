@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [omnisketch: OmniSketch data structure for multi-dimensional stream analytics](https://github.com/tvondra/omnisketch)

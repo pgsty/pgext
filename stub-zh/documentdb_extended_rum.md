@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [documentdb_extended_rum: DocumentDB 扩展 RUM 索引访问方法](https://github.com/documentdb/documentdb)

@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [pgfaceting: fast faceted search using inverted indexes with roaring bitmaps](https://github.com/cybertec-postgresql/pgfaceting)

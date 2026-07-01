@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [pglogical_origin: 从 Postgres 9.4 升级时的兼容性虚拟扩展](https://github.com/2ndQuadrant/pglogical)

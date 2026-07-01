@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [hunspell_ru_ru: Russian Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

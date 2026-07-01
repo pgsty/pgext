@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [hashtypes: hash and checksum data types (SHA, CRC32)](https://github.com/adjust/hashtypes/)

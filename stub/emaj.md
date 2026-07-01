@@ -1,5 +1,6 @@
 
 
+
 ## Usage
 
 > [E-Maj: logs and rollbacks table content changes](https://github.com/dalibo/emaj)

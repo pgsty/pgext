@@ -1,4 +1,6 @@
 
+
+
 ## 用法
 
 - https://pgroonga.github.io/

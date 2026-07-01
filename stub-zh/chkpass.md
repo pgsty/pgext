@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [chkpass: 自动加密的密码数据类型](https://github.com/lacanoid/chkpass)

@@ -1,5 +1,6 @@
 
 
+
 ## 用法
 
 > [snowflake: PostgreSQL 的 Snowflake ID 序列](https://github.com/pgEdge/snowflake)

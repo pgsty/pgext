@@ -1,3 +1,6 @@
+
+
+
 ## 用法
 
 来源：[README](https://github.com/darkhanakh/pg-kazsearch/blob/v2.2.0/README.md)、[v2.2.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.2.0)、[v2.1.0 release](https://github.com/darkhanakh/pg-kazsearch/releases/tag/v2.1.0)
