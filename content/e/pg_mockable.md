@@ -211,7 +211,7 @@ CREATE EXTENSION pg_mockable;
 
 ## Usage
 
-> Sources: [pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable), [PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/), [local metadata](../db/extension.csv), local source tarball `pg_mockable-1.1.0.tar.gz`.
+> Sources: [pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable/blob/v1.1.0/README.md), [v1.1.0 tag](https://github.com/bigsmoke/pg_mockable/tree/v1.1.0), [PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/), [local metadata](../db/extension.csv), local source tarball `pg_mockable-1.1.0.tar.gz`.
 
 `pg_mockable` creates mockable wrapper functions for PostgreSQL routines. It is mainly useful in database tests where application code should call a stable wrapper, while tests temporarily replace the wrapper's return value.
 
@@ -284,6 +284,8 @@ SELECT mockable.wrap_function(
 );
 ```
 
+Version 1.1.0 also adds optional debug logging for wrapped/mockable routines through `raise_debug_messages$` on `mockable.wrap_function(...)` and the `mock_memory.raise_debug_messages` column.
+
 ### Mock Lifetime
 
 The default mock lifetime is transaction-scoped. For values that must survive dump/restore or later transactions, create the wrapper with a persistent lifetime:
@@ -307,6 +309,6 @@ Application code must actually call the wrapper, for example `mockable.now()` or
 
 ### Caveats
 
-- Pigsty packages `pg_mockable` 1.1.0 for PostgreSQL 14-18. It is a SQL extension and does not need `shared_preload_libraries`.
+- Version 1.1.0 supports PostgreSQL 14-18. It is a SQL extension and does not need `shared_preload_libraries`.
 - `pg_mockable` owns the `mockable` schema; installing it in another schema is not supported by the control file.
 - Wrapper privileges are derived from the wrapped routine. The tests verify that wrapping a private function does not grant execute privilege to roles that could not call the original function.

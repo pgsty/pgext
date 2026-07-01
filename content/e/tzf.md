@@ -215,9 +215,9 @@ CREATE EXTENSION tzf;
 
 ## Usage
 
-Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/main/README.md), [releases](https://github.com/ringsaturn/pg-tzf/releases)
+Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/v0.3.0/README.md), [v0.3.0 release](https://github.com/ringsaturn/pg-tzf/releases/tag/v0.3.0)
 
-`tzf` is a PostgreSQL extension for fast timezone lookup from longitude and latitude coordinates. The pgext catalog maps package `pg_tzf` to extension `tzf` and tracks version `0.2.4` for PostgreSQL 14-18.
+`tzf` is a PostgreSQL extension for fast timezone lookup from longitude and latitude coordinates. The pgext catalog maps package `pg_tzf` to extension `tzf` and tracks version `0.3.0` for PostgreSQL 14-18.
 
 ### Create the extension
 
@@ -225,7 +225,7 @@ Sources: [README](https://github.com/ringsaturn/pg-tzf/blob/main/README.md), [re
 CREATE EXTENSION tzf;
 ```
 
-The upstream project packages one build artifact per PostgreSQL major version. Its release page now lists `v0.3.0` after `v0.2.4`; this stub keeps the version and package names aligned with `db/extension.csv`.
+The upstream project packages one build artifact per PostgreSQL major version.
 
 ### Functions
 
@@ -271,3 +271,4 @@ SELECT unnest(
 - Upstream README documents support for PostgreSQL 14 through 18 builds.
 - Pre-built release tarballs contain `tzf.so`, `tzf.control`, and `tzf--<version>.sql`.
 - The current README still points to a complete schema in `sql/tzf.sql` and includes benchmark figures for the four lookup functions above.
+- Upstream v0.3.0 adds city-json powered tests for timezone lookup queries and dependency updates; the SQL API remains the four lookup functions above.

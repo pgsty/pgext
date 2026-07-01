@@ -223,7 +223,7 @@ CREATE EXTENSION vectorize CASCADE; -- requires pg_cron, pgmq, vector
 
 ## Usage
 
-- Sources: [repo README](https://github.com/ChuckHend/pg_vectorize/blob/main/README.md), [extension README](https://github.com/ChuckHend/pg_vectorize/blob/main/extension/README.md), [v0.26.1 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.1)
+Sources: [repo README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/README.md), [extension README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/extension/README.md), [v0.26.2 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.2)
 
 `vectorize` is the PostgreSQL extension from `pg_vectorize`. Upstream documents two modes: a standalone HTTP service and the in-database SQL extension. For the packaged extension here, the SQL workflow is the relevant one.
 
@@ -275,8 +275,8 @@ Upstream also documents:
 - `vectorize.encode()` for direct embedding generation.
 - `vectorize.import_embeddings()` for loading precomputed vectors.
 
-### Update Behavior And v0.26.1 Note
+### Update Behavior And v0.26.2 Note
 
 The extension README says `schedule => '* * * * *'` checks for updates every minute, while `schedule => 'realtime'` creates triggers for immediate refresh on inserts and updates.
 
-The v0.26.1 release note only says "update dependencies", so there is no upstream user-facing SQL/API delta to document beyond the existing README surface.
+`pg_vectorize` 0.26.2 updates vector-serve and security-related dependencies; there is no material SQL/API delta beyond the existing README surface.

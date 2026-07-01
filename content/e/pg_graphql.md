@@ -217,7 +217,7 @@ CREATE EXTENSION pg_graphql;
 
 ## Usage
 
-> [pg_graphql: Add in-database GraphQL support](https://github.com/supabase/pg_graphql)
+Sources: [README](https://github.com/supabase/pg_graphql/blob/v1.6.1/README.md), [documentation](https://supabase.github.io/pg_graphql), [v1.6.1 release](https://github.com/supabase/pg_graphql/releases/tag/v1.6.1)
 
 `pg_graphql` reflects a GraphQL schema from your existing SQL schema, enabling GraphQL queries directly inside PostgreSQL without additional servers or middleware.
 
@@ -301,3 +301,7 @@ $$);
 - Mutations support bulk insert, update, and delete
 - Filtering, ordering, and pagination are built in
 - PostgreSQL Row-Level Security (RLS) policies are respected
+
+### Version Notes
+
+`pg_graphql` 1.6.1 fixes double `NON_NULL` wrapping in `byPk` argument types that could break GraphiQL introspection, fixes mixed introspection/data queries returning partial results incorrectly, and updates documentation around introspection opt-in notices.

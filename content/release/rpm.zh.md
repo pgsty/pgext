@@ -16,7 +16,7 @@ weight: 200
 | documentdb          | 0.110      | 0.112      | PG 15-18                        |
 | timeseries          | 0.2.0      | 0.2.1      | PG 14-18                        |
 | pg_clickhouse       | 0.3.1      | 0.3.2      | PG 14-18                        |
-| biscuit             | 2.2.2      | 2.3.0      | PG 16-18                        |
+| biscuit             | 2.2.2      | 2.4.0      | PG 16-18                        |
 | provsql             | 1.9.0      | 1.10.0     | PG 14-18                        |
 | toastinfo           | 1.6        | 1.7        | PG 14-18，仅 RPM                  |
 | pgfincore           | 1.3.1      | 1.4.0      | PG 14-18，仅 RPM                  |

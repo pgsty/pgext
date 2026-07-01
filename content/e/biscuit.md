@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2170** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `2.3.0` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
+| **2170** | {{< badge content="biscuit" link="https://github.com/CrystallineCore/Biscuit" >}} | {{< ext "biscuit" "pg_biscuit" >}} | `2.4.0` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -35,29 +35,29 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_biscuit` | `plpgsql` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "biscuit_18" "green" >}} {{< bg "17" "biscuit_17" "green" >}} {{< bg "16" "biscuit_16" "green" >}} {{< bg "15" "biscuit_15" "red" >}} {{< bg "14" "biscuit_14" "red" >}} | `biscuit_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "postgresql-18-biscuit" "green" >}} {{< bg "17" "postgresql-17-biscuit" "green" >}} {{< bg "16" "postgresql-16-biscuit" "green" >}} {{< bg "15" "postgresql-15-biscuit" "red" >}} {{< bg "14" "postgresql-14-biscuit" "red" >}} | `postgresql-$v-biscuit` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_biscuit` | `plpgsql` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.0` | {{< bg "18" "biscuit_18" "green" >}} {{< bg "17" "biscuit_17" "green" >}} {{< bg "16" "biscuit_16" "green" >}} {{< bg "15" "biscuit_15" "red" >}} {{< bg "14" "biscuit_14" "red" >}} | `biscuit_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4.0` | {{< bg "18" "postgresql-18-biscuit" "green" >}} {{< bg "17" "postgresql-17-biscuit" "green" >}} {{< bg "16" "postgresql-16-biscuit" "green" >}} {{< bg "15" "postgresql-15-biscuit" "red" >}} {{< bg "14" "postgresql-14-biscuit" "red" >}} | `postgresql-$v-biscuit` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 2" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 2" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 4" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 2" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 2" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 2.3.0" "biscuit_16 : AVAIL 2" "green" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 3" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 3" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 5" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 5" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 5" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.4.0" "biscuit_18 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.4.0" "biscuit_16 : AVAIL 5" "blue" >}} |      {{< bg "MISS" "biscuit_15 : MISS 0" "red" >}}      |      {{< bg "MISS" "biscuit_14 : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-18-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-17-biscuit : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4.0" "postgresql-16-biscuit : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-biscuit : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-biscuit : MISS 0" "red" >}}      |
 
 
 {{< tabs >}}
@@ -65,90 +65,126 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `biscuit_18` | `2.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 62.4 KiB | [biscuit_18-2.4.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/biscuit_18-2.4.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `biscuit_18` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.7 KiB | [biscuit_18-2.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/biscuit_18-2.3.0-1PIGSTY.el8.x86_64.rpm) |
 | `biscuit_18` | `2.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 63.6 KiB | [biscuit_18-2.2.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/biscuit_18-2.2.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `biscuit_18` | `2.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.2 KiB | [biscuit_18-2.4.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/biscuit_18-2.4.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `biscuit_18` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 59.8 KiB | [biscuit_18-2.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/biscuit_18-2.3.0-1PIGSTY.el8.aarch64.rpm) |
 | `biscuit_18` | `2.2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.1 KiB | [biscuit_18-2.2.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/biscuit_18-2.2.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `biscuit_18` | `2.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.8 KiB | [biscuit_18-2.4.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/biscuit_18-2.4.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_18` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.7 KiB | [biscuit_18-2.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/biscuit_18-2.3.0-1PIGSTY.el9.x86_64.rpm) |
 | `biscuit_18` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.2 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/biscuit_18-2.2.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_18` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.3 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/biscuit_18-2.2.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `biscuit_18` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.4 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/biscuit_18-2.2.2-1PGDG.rhel9.6.x86_64.rpm) |
+| `biscuit_18` | `2.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.9 KiB | [biscuit_18-2.4.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/biscuit_18-2.4.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `biscuit_18` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 60.4 KiB | [biscuit_18-2.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/biscuit_18-2.3.0-1PIGSTY.el9.aarch64.rpm) |
 | `biscuit_18` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.6 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/biscuit_18-2.2.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `biscuit_18` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.6 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/biscuit_18-2.2.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `biscuit_18` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.8 KiB | [biscuit_18-2.2.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/biscuit_18-2.2.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `biscuit_18` | `2.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 64.7 KiB | [biscuit_18-2.4.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/biscuit_18-2.4.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `biscuit_18` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 63.2 KiB | [biscuit_18-2.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/biscuit_18-2.3.0-1PIGSTY.el10.x86_64.rpm) |
 | `biscuit_18` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 67.9 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/biscuit_18-2.2.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `biscuit_18` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 67.9 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/biscuit_18-2.2.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `biscuit_18` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.6 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/biscuit_18-2.2.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `biscuit_18` | `2.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 63.4 KiB | [biscuit_18-2.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/biscuit_18-2.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `biscuit_18` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 62.3 KiB | [biscuit_18-2.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/biscuit_18-2.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `biscuit_18` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.8 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/biscuit_18-2.2.2-1PGDG.rhel10.2.aarch64.rpm) |
-| `postgresql-18-biscuit` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 140.3 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.0 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 140.4 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 135.9 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 143.3 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 140.5 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 139.4 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 138.0 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 139.5 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-18-biscuit` | `2.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 136.4 KiB | [postgresql-18-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb) |
+| `biscuit_18` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.8 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/biscuit_18-2.2.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `biscuit_18` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.8 KiB | [biscuit_18-2.2.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/biscuit_18-2.2.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `postgresql-18-biscuit` | `2.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 143.8 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 138.7 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 143.9 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 139.7 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 146.1 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 143.3 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 141.9 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 140.2 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 141.7 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-biscuit` | `2.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 138.9 KiB | [postgresql-18-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-18-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `biscuit_17` | `2.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 62.2 KiB | [biscuit_17-2.4.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/biscuit_17-2.4.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `biscuit_17` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.6 KiB | [biscuit_17-2.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/biscuit_17-2.3.0-1PIGSTY.el8.x86_64.rpm) |
 | `biscuit_17` | `2.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 63.6 KiB | [biscuit_17-2.2.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/biscuit_17-2.2.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `biscuit_17` | `2.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.1 KiB | [biscuit_17-2.4.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/biscuit_17-2.4.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `biscuit_17` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 59.6 KiB | [biscuit_17-2.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/biscuit_17-2.3.0-1PIGSTY.el8.aarch64.rpm) |
 | `biscuit_17` | `2.2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.1 KiB | [biscuit_17-2.2.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/biscuit_17-2.2.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `biscuit_17` | `2.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.5 KiB | [biscuit_17-2.4.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/biscuit_17-2.4.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_17` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.6 KiB | [biscuit_17-2.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/biscuit_17-2.3.0-1PIGSTY.el9.x86_64.rpm) |
 | `biscuit_17` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.0 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/biscuit_17-2.2.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_17` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.0 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/biscuit_17-2.2.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `biscuit_17` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.1 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/biscuit_17-2.2.2-1PGDG.rhel9.6.x86_64.rpm) |
+| `biscuit_17` | `2.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.4 KiB | [biscuit_17-2.4.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/biscuit_17-2.4.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `biscuit_17` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 60.0 KiB | [biscuit_17-2.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/biscuit_17-2.3.0-1PIGSTY.el9.aarch64.rpm) |
 | `biscuit_17` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.6 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/biscuit_17-2.2.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `biscuit_17` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.5 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/biscuit_17-2.2.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `biscuit_17` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.7 KiB | [biscuit_17-2.2.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/biscuit_17-2.2.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `biscuit_17` | `2.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 64.5 KiB | [biscuit_17-2.4.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/biscuit_17-2.4.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `biscuit_17` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 63.0 KiB | [biscuit_17-2.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/biscuit_17-2.3.0-1PIGSTY.el10.x86_64.rpm) |
 | `biscuit_17` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.0 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/biscuit_17-2.2.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `biscuit_17` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.0 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/biscuit_17-2.2.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `biscuit_17` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.5 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/biscuit_17-2.2.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `biscuit_17` | `2.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 63.1 KiB | [biscuit_17-2.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/biscuit_17-2.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `biscuit_17` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 61.9 KiB | [biscuit_17-2.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/biscuit_17-2.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `biscuit_17` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/biscuit_17-2.2.2-1PGDG.rhel10.2.aarch64.rpm) |
-| `postgresql-17-biscuit` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 140.0 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 134.9 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 140.2 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 135.6 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 166.9 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 163.6 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 139.1 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 137.4 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 139.0 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-17-biscuit` | `2.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 135.7 KiB | [postgresql-17-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb) |
+| `biscuit_17` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/biscuit_17-2.2.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `biscuit_17` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_17-2.2.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/biscuit_17-2.2.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `postgresql-17-biscuit` | `2.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 143.7 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 138.2 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 143.7 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 139.2 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 169.7 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 166.2 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 141.9 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 139.5 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 141.2 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-biscuit` | `2.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 138.3 KiB | [postgresql-17-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-17-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `biscuit_16` | `2.4.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 62.3 KiB | [biscuit_16-2.4.0-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/biscuit_16-2.4.0-1PGDG.rhel8.10.x86_64.rpm) |
 | `biscuit_16` | `2.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 62.6 KiB | [biscuit_16-2.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/biscuit_16-2.3.0-1PIGSTY.el8.x86_64.rpm) |
 | `biscuit_16` | `2.2.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 63.7 KiB | [biscuit_16-2.2.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/biscuit_16-2.2.2-1PGDG.rhel8.10.x86_64.rpm) |
+| `biscuit_16` | `2.4.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.1 KiB | [biscuit_16-2.4.0-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/biscuit_16-2.4.0-1PGDG.rhel8.10.aarch64.rpm) |
 | `biscuit_16` | `2.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 59.7 KiB | [biscuit_16-2.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/biscuit_16-2.3.0-1PIGSTY.el8.aarch64.rpm) |
 | `biscuit_16` | `2.2.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 59.1 KiB | [biscuit_16-2.2.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/biscuit_16-2.2.2-1PGDG.rhel8.10.aarch64.rpm) |
+| `biscuit_16` | `2.4.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 62.6 KiB | [biscuit_16-2.4.0-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/biscuit_16-2.4.0-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_16` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 61.6 KiB | [biscuit_16-2.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/biscuit_16-2.3.0-1PIGSTY.el9.x86_64.rpm) |
 | `biscuit_16` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.0 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/biscuit_16-2.2.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `biscuit_16` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.0 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/biscuit_16-2.2.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `biscuit_16` | `2.2.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 65.1 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/biscuit_16-2.2.2-1PGDG.rhel9.6.x86_64.rpm) |
+| `biscuit_16` | `2.4.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.4 KiB | [biscuit_16-2.4.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/biscuit_16-2.4.0-1PGDG.rhel9.8.aarch64.rpm) |
 | `biscuit_16` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 60.1 KiB | [biscuit_16-2.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/biscuit_16-2.3.0-1PIGSTY.el9.aarch64.rpm) |
 | `biscuit_16` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.6 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/biscuit_16-2.2.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `biscuit_16` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.6 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/biscuit_16-2.2.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `biscuit_16` | `2.2.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 62.7 KiB | [biscuit_16-2.2.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/biscuit_16-2.2.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `biscuit_16` | `2.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 64.5 KiB | [biscuit_16-2.4.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/biscuit_16-2.4.0-1PGDG.rhel10.2.x86_64.rpm) |
 | `biscuit_16` | `2.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 63.1 KiB | [biscuit_16-2.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/biscuit_16-2.3.0-1PIGSTY.el10.x86_64.rpm) |
 | `biscuit_16` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.0 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/biscuit_16-2.2.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `biscuit_16` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.0 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/biscuit_16-2.2.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `biscuit_16` | `2.2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 68.6 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/biscuit_16-2.2.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `biscuit_16` | `2.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 63.2 KiB | [biscuit_16-2.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/biscuit_16-2.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `biscuit_16` | `2.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 62.0 KiB | [biscuit_16-2.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/biscuit_16-2.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `biscuit_16` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/biscuit_16-2.2.2-1PGDG.rhel10.2.aarch64.rpm) |
-| `postgresql-16-biscuit` | `2.3.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 140.0 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~bookworm_amd64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 135.0 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~bookworm_arm64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 140.2 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~trixie_amd64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 135.6 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~trixie_arm64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 166.3 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~jammy_amd64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 163.0 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~jammy_arm64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 139.1 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~noble_amd64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 137.5 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~noble_arm64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 139.1 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~resolute_amd64.deb) |
-| `postgresql-16-biscuit` | `2.3.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 135.8 KiB | [postgresql-16-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.3.0-1PIGSTY~resolute_arm64.deb) |
+| `biscuit_16` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/biscuit_16-2.2.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `biscuit_16` | `2.2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 64.7 KiB | [biscuit_16-2.2.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/biscuit_16-2.2.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `postgresql-16-biscuit` | `2.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 143.7 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 138.3 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 143.8 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 139.1 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 169.6 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 166.2 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 141.8 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 139.5 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 141.3 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-biscuit` | `2.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 138.1 KiB | [postgresql-16-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-biscuit/postgresql-16-biscuit_2.4.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -156,7 +192,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/CrystallineCore/Biscuit" title="Repository" icon="github" subtitle="github.com/CrystallineCore/Biscuit" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="Biscuit-2.3.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="Biscuit-2.4.0.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -203,7 +239,7 @@ CREATE EXTENSION biscuit CASCADE; -- requires plpgsql
 > SELECT * FROM users WHERE name LIKE '%john%';
 > ```
 >
-> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/)
+> Sources: [README](https://github.com/CrystallineCore/Biscuit), [Docs](https://biscuit.readthedocs.io/), [v2.4.0 release](https://github.com/CrystallineCore/Biscuit/releases/tag/v2.4.0)
 
 `biscuit` is a PostgreSQL index access method for fast `LIKE` and `ILIKE` pattern matching, including multi-column searches. The upstream project positions it as a deterministic bitmap index that avoids the false-positive recheck overhead common in trigram-based searches.
 
@@ -218,6 +254,9 @@ CREATE INDEX idx_users_name ON users USING biscuit(name);
 
 CREATE INDEX idx_products_search
 ON products USING biscuit(name, description, category);
+
+CREATE INDEX idx_users_lower_name
+ON users USING biscuit (lower(name));
 ```
 
 Basic wildcard queries work with the index:
@@ -235,7 +274,7 @@ WHERE name LIKE '%widget%'
 LIMIT 10;
 ```
 
-## Index Behavior
+### Index Behavior
 
 Biscuit stores bitmap position indexes for each string and can match both forward and backward character positions. The upstream design highlights:
 
@@ -256,7 +295,7 @@ The implementation documents optimized paths for common pattern types:
 - substring patterns such as `'%abc%'`
 - multi-column predicates, where Biscuit reorders predicates by estimated selectivity
 
-## Performance Notes
+### Performance Notes
 
 The upstream README emphasizes bitmap-only evaluation and several execution optimizations, including:
 
@@ -268,7 +307,7 @@ The upstream README emphasizes bitmap-only evaluation and several execution opti
 
 The project README also includes a benchmark setup comparing Biscuit indexes with trigram-based approaches on a 1M-row table.
 
-## Requirements
+### Requirements
 
 The current upstream README lists these requirements for source builds:
 
@@ -277,3 +316,7 @@ The current upstream README lists these requirements for source builds:
 - optional CRoaring for improved performance
 
 The project publishes packages on [PGXN](https://pgxn.org/dist/biscuit/) and maintains a dedicated documentation site on Read the Docs.
+
+### Version Notes
+
+Biscuit 2.4.0 adds expression-index support, so indexes such as `USING biscuit (lower(col), (other_col::text))` are valid. The release also expands multi-version build support across PostgreSQL 16, 17, 18, and 19beta1, fixes duplicate rows in multi-column parallel scans, and makes the `biscuit_operators` view resilient to additional operator classes.

@@ -102,7 +102,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
-| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.3.0 | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.4.0 | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | 1.2.0 | Full-text search with BM25 ranking |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.4 | Pinyin romanization and search helpers for PostgreSQL |
 | 2200 | {{< alias "pg_kazsearch" >}} | 2.2.0 | Kazakh full-text search extension for PostgreSQL |
@@ -281,7 +281,7 @@ Dedicate New Data Types Like: prefix, semver, uint, SIUnit, RoaringBitmap, Ratio
 | 3590 | {{< alias "pglite_fusion" >}} | 0.0.6 | Embed an SQLite database in your PostgreSQL table |
 | 3610 | {{< alias "md5hash" >}} | 1.0.1 | type for storing 128-bit binary data inline |
 | 3620 | {{< alias "asn1oid" >}} | 1.6 | asn1oid extension |
-| 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 1.1.0 | support for Roaring Bitmaps |
+| 3630 | {{< alias "roaringbitmap" "pg_roaringbitmap" >}} | 1.2.0 | support for Roaring Bitmaps |
 | 3640 | {{< alias "pgfaceting" >}} | 0.2.0 | fast faceting queries using an inverted index |
 | 3650 | {{< alias "pg_sphere" "pgsphere" >}} | 1.5.2 | spherical objects with useful functions, operators and index support |
 | 3660 | {{< alias "country" "pg_country" >}} | 0.0.3 | Country data type, ISO 3166-1 |
@@ -437,7 +437,7 @@ Utilities for Bloat Control, DirtyRead, BufferInspect, DDL Generate, ChecksumVer
 | 5090 | {{< alias "pglinter" >}} | 2.0.0 | PostgreSQL Linting and Analysis Extension |
 | 5100 | {{< alias "prioritize" "pg_prioritize" >}} | 1.0.4 | get and set the priority of PostgreSQL backends |
 | 5110 | {{< alias "pg_checksums" >}} | 1.3 | Activate/deactivate/verify checksums in offline Postgres clusters |
-| 5120 | {{< alias "pg_readonly" >}} | 1.0.4 | cluster database read only |
+| 5120 | {{< alias "pg_readonly" >}} | 1.0.5 | cluster database read only |
 | 5130 | {{< alias "pgdd" >}} | 0.6.1 | Introspect pg data dictionary via standard SQL |
 | 5140 | {{< alias "pg_permissions" >}} | 1.4 | view object permissions and compare them with the desired state |
 | 5150 | {{< alias "pgautofailover" >}} | 2.2 | pg_auto_failover |
@@ -486,7 +486,7 @@ Observability Catalogs, Monitoring Metrics & Views, Statistics, Query Plans, Wai
 | 6210 | {{< alias "pg_show_plans" >}} | 2.1.8 | show query plans of all currently running SQL statements |
 | 6220 | {{< alias "pg_stat_kcache" >}} | 2.3.2 | Kernel statistics gathering |
 | 6230 | {{< alias "pg_stat_monitor" >}} | 2.3.2 | The pg_stat_monitor is a PostgreSQL Query Performance Monitoring tool, based on PostgreSQL contrib module pg_stat_statements. pg_stat_monitor provides aggregated statistics, client information, plan details including plan, and histogram information. |
-| 6240 | {{< alias "pg_qualstats" >}} | 2.1.3 | An extension collecting statistics about quals |
+| 6240 | {{< alias "pg_qualstats" >}} | 2.1.4 | An extension collecting statistics about quals |
 | 6250 | {{< alias "pg_store_plans" >}} | 1.10 | track plan statistics of all SQL statements executed |
 | 6260 | {{< alias "pg_track_settings" >}} | 2.1.2 | Track settings changes |
 | 6270 | {{< alias "pg_track_optimizer" >}} | 0.9.2 | Track planning decisions in comparison with execution reality |
@@ -526,7 +526,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 |:---:|:---|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 3.1.0 | Strengthen PostgreSQL user password checks with cracklib |
 | 7010 | {{< alias "supautils" >}} | 3.2.1 | Extension that secures a cluster on a cloud environment |
-| 7020 | {{< alias "pgsodium" >}} | 3.1.9 | Postgres extension for libsodium functions |
+| 7020 | {{< alias "pgsodium" >}} | 3.1.11 | Postgres extension for libsodium functions |
 | 7030 | {{< alias "column_encrypt" >}} | 4.0 | Transparent column-level encryption with encrypted_text and encrypted_bytea types |
 | 7040 | {{< alias "passwordpolicy" >}} | 2.0.5 | Dynamically configurable PostgreSQL password complexity checks. |
 | 7050 | {{< alias "supabase_vault" "pg_vault" >}} | 0.3.1 | Supabase Vault Extension |
@@ -596,10 +596,10 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 9000 | {{< alias "documentdb" >}} | 0.112 | API surface for DocumentDB for PostgreSQL |
-| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.112 | Core API surface for DocumentDB on PostgreSQL |
-| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.112 | Multi-Node API surface for DocumentDB |
-| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.112 | DocumentDB Extended RUM index access method |
+| 9000 | {{< alias "documentdb" >}} | 0.113 | API surface for DocumentDB for PostgreSQL |
+| 9010 | {{< alias "documentdb_core" "documentdb" >}} | 0.113 | Core API surface for DocumentDB on PostgreSQL |
+| 9020 | {{< alias "documentdb_distributed" "documentdb" >}} | 0.113 | Multi-Node API surface for DocumentDB |
+| 9030 | {{< alias "documentdb_extended_rum" "documentdb" >}} | 0.113 | DocumentDB Extended RUM index access method |
 | 9090 | {{< alias "pg_projection" >}} | 1.0.0 | MongoDB-like read projections for JSONB in PostgreSQL |
 | 9100 | {{< alias "orafce" >}} | 4.16.7 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.5 | Extension to add Global Temporary Tables feature to PostgreSQL |
@@ -614,7 +614,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9200 | {{< alias "db2fce" >}} | 0.0.17 | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | 9210 | {{< alias "plpgsql_wrap" >}} | 1.0 | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 1.0.0 | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
-| 9250 | {{< alias "pg_dbms_lock" >}} | 1.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
+| 9250 | {{< alias "pg_dbms_lock" >}} | 2.0 | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
 | 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |

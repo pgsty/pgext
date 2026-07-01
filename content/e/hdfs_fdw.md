@@ -40,9 +40,9 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 5" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 7" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 4" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 7" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 6" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 6" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
 | {{< os "d12.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
 | {{< os "d13.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
@@ -65,8 +65,11 @@ width: full
 | `hdfs_fdw_18` | `2.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 115.1 KiB | [hdfs_fdw_18-2.3.3-3PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/hdfs_fdw_18-2.3.3-3PGDG.rhel9.8.x86_64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 116.4 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/hdfs_fdw_18-2.3.3-1PGDG.rhel9.x86_64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 113.1 KiB | [hdfs_fdw_18-2.3.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/hdfs_fdw_18-2.3.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `hdfs_fdw_18` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/hdfs_fdw_18-2.3.3-1PGDG.rhel9.aarch64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.9 KiB | [hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `hdfs_fdw_18` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 116.9 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/hdfs_fdw_18-2.3.3-1PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.4 KiB | [hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
+| `hdfs_fdw_18` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.6 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/hdfs_fdw_18-2.3.3-1PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -81,8 +84,14 @@ width: full
 | `hdfs_fdw_17` | `2.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 116.3 KiB | [hdfs_fdw_17-2.3.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/hdfs_fdw_17-2.3.3-1PGDG.rhel9.x86_64.rpm) |
 | `hdfs_fdw_17` | `2.3.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 118.8 KiB | [hdfs_fdw_17-2.3.2-3PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/hdfs_fdw_17-2.3.2-3PGDG.rhel9.x86_64.rpm) |
 | `hdfs_fdw_17` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 112.9 KiB | [hdfs_fdw_17-2.3.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/hdfs_fdw_17-2.3.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `hdfs_fdw_17` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 113.9 KiB | [hdfs_fdw_17-2.3.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/hdfs_fdw_17-2.3.3-1PGDG.rhel9.aarch64.rpm) |
+| `hdfs_fdw_17` | `2.3.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 116.4 KiB | [hdfs_fdw_17-2.3.2-3PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/hdfs_fdw_17-2.3.2-3PGDG.rhel9.aarch64.rpm) |
 | `hdfs_fdw_17` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.1 KiB | [hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `hdfs_fdw_17` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 116.7 KiB | [hdfs_fdw_17-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/hdfs_fdw_17-2.3.3-1PGDG.rhel10.x86_64.rpm) |
+| `hdfs_fdw_17` | `2.3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 116.1 KiB | [hdfs_fdw_17-2.3.2-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/hdfs_fdw_17-2.3.2-5PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_17` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.1 KiB | [hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
+| `hdfs_fdw_17` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.5 KiB | [hdfs_fdw_17-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.3-1PGDG.rhel10.aarch64.rpm) |
+| `hdfs_fdw_17` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_17-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.2-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -97,8 +106,14 @@ width: full
 | `hdfs_fdw_16` | `2.3.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 116.2 KiB | [hdfs_fdw_16-2.3.3-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/hdfs_fdw_16-2.3.3-1PGDG.rhel9.x86_64.rpm) |
 | `hdfs_fdw_16` | `2.3.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 130.6 KiB | [hdfs_fdw_16-2.3.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/hdfs_fdw_16-2.3.1-1PGDG.rhel9.x86_64.rpm) |
 | `hdfs_fdw_16` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 113.0 KiB | [hdfs_fdw_16-2.3.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hdfs_fdw_16-2.3.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `hdfs_fdw_16` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.3 KiB | [hdfs_fdw_16-2.3.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hdfs_fdw_16-2.3.3-1PGDG.rhel9.aarch64.rpm) |
+| `hdfs_fdw_16` | `2.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 128.4 KiB | [hdfs_fdw_16-2.3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/hdfs_fdw_16-2.3.1-1PGDG.rhel9.aarch64.rpm) |
 | `hdfs_fdw_16` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.2 KiB | [hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `hdfs_fdw_16` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 116.8 KiB | [hdfs_fdw_16-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/hdfs_fdw_16-2.3.3-1PGDG.rhel10.x86_64.rpm) |
+| `hdfs_fdw_16` | `2.3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.5 KiB | [hdfs_fdw_16-2.3.2-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/hdfs_fdw_16-2.3.2-5PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_16` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
+| `hdfs_fdw_16` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.5 KiB | [hdfs_fdw_16-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.3-1PGDG.rhel10.aarch64.rpm) |
+| `hdfs_fdw_16` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.3 KiB | [hdfs_fdw_16-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.2-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -121,8 +136,17 @@ width: full
 | `hdfs_fdw_15` | `2.3.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 130.0 KiB | [hdfs_fdw_15-2.3.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hdfs_fdw_15-2.3.0-1.rhel9.x86_64.rpm) |
 | `hdfs_fdw_15` | `2.2.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 119.7 KiB | [hdfs_fdw_15-2.2.0-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/hdfs_fdw_15-2.2.0-1.rhel9.x86_64.rpm) |
 | `hdfs_fdw_15` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 113.3 KiB | [hdfs_fdw_15-2.3.3-3PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.3.3-3PGDG.rhel9.8.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_15-2.3.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.3.3-1PGDG.rhel9.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 116.6 KiB | [hdfs_fdw_15-2.3.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.3.2-1PGDG.rhel9.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 115.9 KiB | [hdfs_fdw_15-2.3.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.3.1-1PGDG.rhel9.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 127.6 KiB | [hdfs_fdw_15-2.3.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.3.0-1.rhel9.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 117.3 KiB | [hdfs_fdw_15-2.2.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/hdfs_fdw_15-2.2.0-1.rhel9.aarch64.rpm) |
 | `hdfs_fdw_15` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.5 KiB | [hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `hdfs_fdw_15` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 117.2 KiB | [hdfs_fdw_15-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/hdfs_fdw_15-2.3.3-1PGDG.rhel10.x86_64.rpm) |
+| `hdfs_fdw_15` | `2.3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.9 KiB | [hdfs_fdw_15-2.3.2-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/hdfs_fdw_15-2.3.2-5PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_15` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.1 KiB | [hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.4 KiB | [hdfs_fdw_15-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.3-1PGDG.rhel10.aarch64.rpm) |
+| `hdfs_fdw_15` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.3 KiB | [hdfs_fdw_15-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.2-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -154,7 +178,11 @@ width: full
 | `hdfs_fdw_14` | `2.3.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 127.4 KiB | [hdfs_fdw_14-2.3.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hdfs_fdw_14-2.3.0-1.rhel9.aarch64.rpm) |
 | `hdfs_fdw_14` | `2.2.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 117.1 KiB | [hdfs_fdw_14-2.2.0-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/hdfs_fdw_14-2.2.0-1.rhel9.aarch64.rpm) |
 | `hdfs_fdw_14` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.5 KiB | [hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.x86_64.rpm) |
+| `hdfs_fdw_14` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 117.3 KiB | [hdfs_fdw_14-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/hdfs_fdw_14-2.3.3-1PGDG.rhel10.x86_64.rpm) |
+| `hdfs_fdw_14` | `2.3.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 115.9 KiB | [hdfs_fdw_14-2.3.2-5PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/hdfs_fdw_14-2.3.2-5PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_14` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.0 KiB | [hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
+| `hdfs_fdw_14` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.3 KiB | [hdfs_fdw_14-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.3-1PGDG.rhel10.aarch64.rpm) |
+| `hdfs_fdw_14` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_14-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.2-5PGDG.rhel10.aarch64.rpm) |
 
 {{< /tab >}}{{< /tabs >}}
 

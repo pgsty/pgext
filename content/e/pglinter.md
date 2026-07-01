@@ -214,7 +214,7 @@ CREATE EXTENSION pglinter;
 
 ## Usage
 
-- Sources: [README](https://github.com/pmpetit/pglinter/blob/main/README.md), [how-to](https://github.com/pmpetit/pglinter/blob/main/docs/how-to/README.md), [examples](https://github.com/pmpetit/pglinter/blob/main/docs/examples/README.md), [rules](https://github.com/pmpetit/pglinter/blob/main/docs/rules/README.md), [1.1.2 release](https://github.com/pmpetit/pglinter/releases/tag/1.1.2)
+Sources: [README](https://github.com/pmpetit/pglinter/blob/2.0.0/README.md), [how-to](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/how-to/README.md), [examples](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/examples/README.md), [rules](https://github.com/pmpetit/pglinter/blob/2.0.0/docs/rules/README.md), [2.0.0 release](https://github.com/pmpetit/pglinter/releases/tag/2.0.0)
 
 pglinter analyzes a PostgreSQL database for potential issues, performance problems, and best practice violations. Current user docs expose findings through `pglinter.get_violations()`, which returns enabled-rule violations as rows that can be filtered or joined to `pg_identify_object()`.
 
@@ -268,6 +268,6 @@ SELECT pglinter.import_rule_messages_from_yaml('yaml...');
 
 ### Caveats
 
-Pigsty package metadata is version `1.1.2` for PostgreSQL 14-18 and notes a local PGRX upgrade from `0.16.1` to `0.17.0`. Upstream README compatibility text still says PostgreSQL 13-18 and PGRX `0.16.1`.
+Version `2.0.0` removes the older `check()` and `check_rule()` functions; `get_violations()` is now the only check API. The current build uses `pgrx` 0.18.1.
 
-The upstream `1.1.2` release adds `B013`. The main README remains partially stale compared with the docs and exported functions, so this stub uses `get_violations()` and omits older unconfirmed `check()`/`check_rule()` examples.
+The upstream `1.1.2` release added `B013`. The main README remains partially stale compared with the docs and exported functions, so this stub uses `get_violations()` and omits removed `check()`/`check_rule()` examples.

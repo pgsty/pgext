@@ -217,7 +217,7 @@ CREATE EXTENSION pg_session_jwt;
 
 ## Usage
 
-> [pg_session_jwt: JWT session management for PostgreSQL](https://github.com/neondatabase/pg_session_jwt)
+Sources: [README](https://github.com/neondatabase/pg_session_jwt/blob/v0.5.0/README.md), [v0.5.0 tag](https://github.com/neondatabase/pg_session_jwt/tree/v0.5.0), [control file](https://github.com/neondatabase/pg_session_jwt/blob/v0.5.0/pg_session_jwt.control)
 
 `pg_session_jwt` handles authenticated sessions through JWTs. When configured with a JWK, it verifies JWT authenticity. Without a JWK, it falls back to PostgREST-compatible `request.jwt.claims`.
 
@@ -261,6 +261,8 @@ SELECT auth.session();   -- Returns full claims as JSONB
 | `auth.jwt()` | `jsonb` | Alias for `auth.session()` |
 | `auth.user_id()` | `text` | Get the `sub` claim |
 | `auth.uid()` | `uuid` | Get `sub` as UUID (or NULL) |
+| `auth.organization()` | `jsonb` | Neon Auth organization claim helper |
+| `auth.organization_id()` | `uuid` | Neon Auth organization id helper |
 
 ### Configuration
 
@@ -275,3 +277,15 @@ SELECT auth.session();   -- Returns full claims as JSONB
 CREATE POLICY user_isolation ON my_table
     USING (user_id = auth.user_id());
 ```
+
+For Neon Auth organization-scoped policies, use the `o` claim helpers:
+
+```sql
+CREATE POLICY team_select ON team
+  FOR SELECT
+  USING (organization_id = auth.organization_id());
+```
+
+### Version Notes
+
+The v0.5.0 README adds Neon Auth organization helpers and explicitly separates portable helpers such as `auth.jwt()`, `auth.user_id()`, and `auth.uid()` from Neon-specific `auth.organization()` and `auth.organization_id()`. Other auth providers should use `auth.jwt()` and extract provider-specific claims directly.

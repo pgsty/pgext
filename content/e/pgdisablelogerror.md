@@ -43,9 +43,9 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 1" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 1" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "pgdisablelogerror_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-pgdisablelogerror : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-pgdisablelogerror : AVAIL 1" "green" >}} |
@@ -69,8 +69,14 @@ width: full
 | `pgdisablelogerror_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 12.9 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgdisablelogerror_18-1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgdisablelogerror_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgdisablelogerror_18-1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pgdisablelogerror_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.8 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pgdisablelogerror_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgdisablelogerror_18-1.0-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgdisablelogerror_18-1.0-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.4 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgdisablelogerror_18-1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pgdisablelogerror_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgdisablelogerror_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_18-1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgdisablelogerror_18-1.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-18-pgdisablelogerror` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.4 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pgdisablelogerror` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.5 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-pgdisablelogerror` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.4 KiB | [postgresql-18-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgdisablelogerror/postgresql-18-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -93,8 +99,14 @@ width: full
 | `pgdisablelogerror_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgdisablelogerror_17-1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgdisablelogerror_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgdisablelogerror_17-1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pgdisablelogerror_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pgdisablelogerror_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgdisablelogerror_17-1.0-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgdisablelogerror_17-1.0-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.5 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgdisablelogerror_17-1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pgdisablelogerror_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgdisablelogerror_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_17-1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgdisablelogerror_17-1.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-17-pgdisablelogerror` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.4 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgdisablelogerror` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.5 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-pgdisablelogerror` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.4 KiB | [postgresql-17-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgdisablelogerror/postgresql-17-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -117,8 +129,14 @@ width: full
 | `pgdisablelogerror_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgdisablelogerror_16-1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgdisablelogerror_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.2 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgdisablelogerror_16-1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pgdisablelogerror_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pgdisablelogerror_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgdisablelogerror_16-1.0-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgdisablelogerror_16-1.0-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.5 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgdisablelogerror_16-1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pgdisablelogerror_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgdisablelogerror_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_16-1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgdisablelogerror_16-1.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-16-pgdisablelogerror` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.4 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgdisablelogerror` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.5 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-pgdisablelogerror` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.4 KiB | [postgresql-16-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgdisablelogerror/postgresql-16-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -141,8 +159,14 @@ width: full
 | `pgdisablelogerror_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.0 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgdisablelogerror_15-1.0-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgdisablelogerror_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 13.2 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgdisablelogerror_15-1.0-1PGDG.rhel9.6.x86_64.rpm) |
 | `pgdisablelogerror_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pgdisablelogerror_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgdisablelogerror_15-1.0-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgdisablelogerror_15-1.0-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.5 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgdisablelogerror_15-1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pgdisablelogerror_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgdisablelogerror_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_15-1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgdisablelogerror_15-1.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-15-pgdisablelogerror` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.4 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgdisablelogerror` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.5 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-pgdisablelogerror` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.4 KiB | [postgresql-15-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgdisablelogerror/postgresql-15-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -168,7 +192,11 @@ width: full
 | `pgdisablelogerror_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 12.9 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgdisablelogerror_14-1.0-1PGDG.rhel9.7.aarch64.rpm) |
 | `pgdisablelogerror_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 13.0 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgdisablelogerror_14-1.0-1PGDG.rhel9.6.aarch64.rpm) |
 | `pgdisablelogerror_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgdisablelogerror_14-1.0-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgdisablelogerror_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.1 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgdisablelogerror_14-1.0-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgdisablelogerror_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 13.5 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgdisablelogerror_14-1.0-1PGDG.rhel10.0.x86_64.rpm) |
 | `pgdisablelogerror_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgdisablelogerror_14-1.0-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgdisablelogerror_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgdisablelogerror_14-1.0-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgdisablelogerror_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.2 KiB | [pgdisablelogerror_14-1.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgdisablelogerror_14-1.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-14-pgdisablelogerror` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 11.3 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgdisablelogerror` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 11.5 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-pgdisablelogerror` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 11.3 KiB | [postgresql-14-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgdisablelogerror/postgresql-14-pgdisablelogerror_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -229,3 +257,45 @@ shared_preload_libraries = '$libdir/pgdisablelogerror';
 ```sql
 CREATE EXTENSION pgdisablelogerror;
 ```
+
+## Usage
+
+Sources: [README](https://github.com/fmbiete/pgdisablelogerror/blob/v1.0/README.md), [v1.0 release](https://github.com/fmbiete/pgdisablelogerror/releases/tag/v1.0), [control file](https://github.com/fmbiete/pgdisablelogerror/blob/v1.0/pgdisablelogerror.control)
+
+`pgdisablelogerror` suppresses PostgreSQL server log entries for configured SQLSTATE error codes. It is useful when expected application errors, such as duplicate-key violations, are too noisy in the server log.
+
+### Enable The Hook
+
+Load the module and restart PostgreSQL:
+
+```conf
+shared_preload_libraries = 'pgdisablelogerror'
+```
+
+Create the extension once in the `postgres` database:
+
+```sql
+CREATE EXTENSION pgdisablelogerror;
+```
+
+### Configure SQLSTATE Codes
+
+Set `pgdisablelogerror.sqlerrcode` to a comma-separated list of SQLSTATE codes:
+
+```conf
+pgdisablelogerror.sqlerrcode = '23505,23503'
+```
+
+An empty or NULL value disables suppression:
+
+```conf
+pgdisablelogerror.sqlerrcode = ''
+```
+
+To identify SQLSTATE values in normal PostgreSQL logs, add `%e` to `log_line_prefix`.
+
+### Caveats
+
+- Version 1.0 supports PostgreSQL 14-18.
+- This extension affects logging, not error behavior. Clients still receive the original error.
+- Use narrow SQLSTATE lists. Suppressing broad error classes can hide real operational problems.

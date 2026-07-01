@@ -213,7 +213,7 @@ CREATE EXTENSION wrappers;
 
 ## Usage
 
-Sources: [official README](https://github.com/supabase/wrappers/blob/main/README.md), [official docs](https://fdw.dev/), [v0.6.0 release](https://github.com/supabase/wrappers/releases/tag/v0.6.0)
+Sources: [official README](https://github.com/supabase/wrappers/blob/v0.6.1/README.md), [official docs](https://fdw.dev/), [v0.6.1 release](https://github.com/supabase/wrappers/releases/tag/v0.6.1)
 
 `wrappers` is both a Rust framework for writing PostgreSQL foreign data wrappers and a packaged collection of Supabase-maintained FDWs. A single extension installs many wrapper implementations, then each foreign server chooses the specific wrapper type it needs.
 
@@ -250,16 +250,18 @@ CREATE FOREIGN TABLE stripe_customers (
 
 ### What It Covers
 
-Upstream ships wrappers for databases and services such as BigQuery, ClickHouse, DuckDB, MySQL, Redis, S3, Stripe, Snowflake, Slack, Notion, OpenAPI, Infura, and many others. Read and write support varies by wrapper, but pushdown for `WHERE`, `ORDER BY`, and `LIMIT` is a core framework feature.
+Upstream ships wrappers for databases and services such as BigQuery, ClickHouse, DuckDB, DynamoDB, MySQL/Doris, Redis, S3, S3 Vectors, Stripe, Snowflake, Slack, Notion, OpenAPI, Infura, and many others. Read and write support varies by wrapper, but pushdown for `WHERE`, `ORDER BY`, and `LIMIT` is a core framework feature.
 
 ### Version Notes
 
-The `v0.6.0` release keeps the same extension model but expands the catalog and wrapper behavior. Official release notes call out:
+The `v0.6.1` release keeps the same extension model but expands the catalog and wrapper behavior. Official release notes call out:
 
-- new OpenAPI FDW support
-- new Infura FDW support
-- Snowflake `timeout_secs` table option
-- write-path and scan fixes across several wrappers
+- new DynamoDB FDW support
+- MySQL/Doris support through `mysql_fdw`
+- schema evolution support for `iceberg_fdw`
+- vault secret lookup by name in `_id` options
+- aggregate pushdown support for COUNT, SUM, AVG, MIN, and MAX, including MySQL FDW support
+- parameter-state refresh/rescan fixes and dependency/security updates
 
 ### Caveats
 

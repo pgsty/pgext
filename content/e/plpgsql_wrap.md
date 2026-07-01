@@ -44,9 +44,9 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 1" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 1" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.0" "plpgsql_wrap_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-plpgsql-wrap : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-plpgsql-wrap : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.0" "postgresql-18-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-17-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-16-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-15-plpgsql-wrap : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.0" "postgresql-14-plpgsql-wrap : AVAIL 1" "green" >}} |
@@ -70,8 +70,14 @@ width: full
 | `plpgsql_wrap_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.1 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plpgsql_wrap_18-1.0-2PGDG.rhel9.7.x86_64.rpm) |
 | `plpgsql_wrap_18` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/plpgsql_wrap_18-1.0-2PGDG.rhel9.6.x86_64.rpm) |
 | `plpgsql_wrap_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.5 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel9.8.aarch64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.5 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel9.7.aarch64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.7 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel9.6.aarch64.rpm) |
 | `plpgsql_wrap_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plpgsql_wrap_18-1.0-2PGDG.rhel10.2.x86_64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plpgsql_wrap_18-1.0-2PGDG.rhel10.1.x86_64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.6 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/plpgsql_wrap_18-1.0-2PGDG.rhel10.0.x86_64.rpm) |
 | `plpgsql_wrap_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel10.2.aarch64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel10.1.aarch64.rpm) |
+| `plpgsql_wrap_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_18-1.0-2PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/plpgsql_wrap_18-1.0-2PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-18-plpgsql-wrap` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 31.0 KiB | [postgresql-18-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-18-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-plpgsql-wrap` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.7 KiB | [postgresql-18-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-18-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-plpgsql-wrap` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.8 KiB | [postgresql-18-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plpgsql-wrap/postgresql-18-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -94,8 +100,14 @@ width: full
 | `plpgsql_wrap_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.1 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plpgsql_wrap_17-1.0-2PGDG.rhel9.7.x86_64.rpm) |
 | `plpgsql_wrap_17` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/plpgsql_wrap_17-1.0-2PGDG.rhel9.6.x86_64.rpm) |
 | `plpgsql_wrap_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel9.8.aarch64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel9.7.aarch64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.7 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel9.6.aarch64.rpm) |
 | `plpgsql_wrap_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plpgsql_wrap_17-1.0-2PGDG.rhel10.2.x86_64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plpgsql_wrap_17-1.0-2PGDG.rhel10.1.x86_64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.5 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/plpgsql_wrap_17-1.0-2PGDG.rhel10.0.x86_64.rpm) |
 | `plpgsql_wrap_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel10.2.aarch64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel10.1.aarch64.rpm) |
+| `plpgsql_wrap_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_17-1.0-2PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/plpgsql_wrap_17-1.0-2PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-17-plpgsql-wrap` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 31.0 KiB | [postgresql-17-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-17-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-plpgsql-wrap` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.6 KiB | [postgresql-17-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-17-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-plpgsql-wrap` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.7 KiB | [postgresql-17-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plpgsql-wrap/postgresql-17-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -118,8 +130,14 @@ width: full
 | `plpgsql_wrap_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.1 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plpgsql_wrap_16-1.0-2PGDG.rhel9.7.x86_64.rpm) |
 | `plpgsql_wrap_16` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/plpgsql_wrap_16-1.0-2PGDG.rhel9.6.x86_64.rpm) |
 | `plpgsql_wrap_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel9.8.aarch64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel9.7.aarch64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.7 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel9.6.aarch64.rpm) |
 | `plpgsql_wrap_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plpgsql_wrap_16-1.0-2PGDG.rhel10.2.x86_64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plpgsql_wrap_16-1.0-2PGDG.rhel10.1.x86_64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.6 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/plpgsql_wrap_16-1.0-2PGDG.rhel10.0.x86_64.rpm) |
 | `plpgsql_wrap_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel10.2.aarch64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel10.1.aarch64.rpm) |
+| `plpgsql_wrap_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_16-1.0-2PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/plpgsql_wrap_16-1.0-2PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-16-plpgsql-wrap` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 31.0 KiB | [postgresql-16-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-16-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-plpgsql-wrap` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.6 KiB | [postgresql-16-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-16-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-plpgsql-wrap` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.7 KiB | [postgresql-16-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plpgsql-wrap/postgresql-16-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -142,8 +160,14 @@ width: full
 | `plpgsql_wrap_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.1 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plpgsql_wrap_15-1.0-2PGDG.rhel9.7.x86_64.rpm) |
 | `plpgsql_wrap_15` | `1.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/plpgsql_wrap_15-1.0-2PGDG.rhel9.6.x86_64.rpm) |
 | `plpgsql_wrap_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel9.8.aarch64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.6 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel9.7.aarch64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.7 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel9.6.aarch64.rpm) |
 | `plpgsql_wrap_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plpgsql_wrap_15-1.0-2PGDG.rhel10.2.x86_64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plpgsql_wrap_15-1.0-2PGDG.rhel10.1.x86_64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.6 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/plpgsql_wrap_15-1.0-2PGDG.rhel10.0.x86_64.rpm) |
 | `plpgsql_wrap_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel10.2.aarch64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel10.1.aarch64.rpm) |
+| `plpgsql_wrap_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_15-1.0-2PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/plpgsql_wrap_15-1.0-2PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-15-plpgsql-wrap` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 31.0 KiB | [postgresql-15-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-15-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-plpgsql-wrap` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.7 KiB | [postgresql-15-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-15-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-plpgsql-wrap` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.7 KiB | [postgresql-15-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plpgsql-wrap/postgresql-15-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -169,7 +193,11 @@ width: full
 | `plpgsql_wrap_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.5 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plpgsql_wrap_14-1.0-2PGDG.rhel9.7.aarch64.rpm) |
 | `plpgsql_wrap_14` | `1.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 22.7 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/plpgsql_wrap_14-1.0-2PGDG.rhel9.6.aarch64.rpm) |
 | `plpgsql_wrap_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plpgsql_wrap_14-1.0-2PGDG.rhel10.2.x86_64.rpm) |
+| `plpgsql_wrap_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.2 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plpgsql_wrap_14-1.0-2PGDG.rhel10.1.x86_64.rpm) |
+| `plpgsql_wrap_14` | `1.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 23.5 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/plpgsql_wrap_14-1.0-2PGDG.rhel10.0.x86_64.rpm) |
 | `plpgsql_wrap_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plpgsql_wrap_14-1.0-2PGDG.rhel10.2.aarch64.rpm) |
+| `plpgsql_wrap_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plpgsql_wrap_14-1.0-2PGDG.rhel10.1.aarch64.rpm) |
+| `plpgsql_wrap_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.8 KiB | [plpgsql_wrap_14-1.0-2PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/plpgsql_wrap_14-1.0-2PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-14-plpgsql-wrap` | `1.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 30.9 KiB | [postgresql-14-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-14-plpgsql-wrap_1.0-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-plpgsql-wrap` | `1.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 30.6 KiB | [postgresql-14-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/plpgsql-wrap/postgresql-14-plpgsql-wrap_1.0-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-plpgsql-wrap` | `1.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 30.7 KiB | [postgresql-14-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/plpgsql-wrap/postgresql-14-plpgsql-wrap_1.0-1PIGSTY~trixie_amd64.deb) |
@@ -223,3 +251,75 @@ pig install plpgsql_wrap -v 14;   # install for PG 14
 ```sql
 CREATE EXTENSION plpgsql_wrap CASCADE; -- requires plpgsql
 ```
+
+## Usage
+
+Sources: [README](https://github.com/HexaCluster/plpgsql_wrap/blob/v1.0/README.md), [v1.0 release](https://github.com/HexaCluster/plpgsql_wrap/releases/tag/v1.0), [control file](https://github.com/HexaCluster/plpgsql_wrap/blob/v1.0/plpgsql_wrap.control)
+
+`plpgsql_wrap` provides an Oracle WRAP-style procedural language for PostgreSQL. Functions written with `LANGUAGE plpgsql_wrap` are validated as PL/pgSQL and then stored encrypted in `pg_proc.prosrc` as `PLPGSQLWRAP:1:<hex>`.
+
+### Install With A Key
+
+Build the extension with a 32-byte AES-256-GCM key:
+
+```bash
+export WRAP_KEY_HEX=$(openssl rand -hex 32)
+make WRAP_KEY_HEX=$WRAP_KEY_HEX
+sudo make install
+```
+
+Back up the key. Wrapped functions can only be unwrapped or restored safely when the correct compiled key is available.
+
+Install the extension in each database that needs the language:
+
+```sql
+CREATE EXTENSION plpgsql_wrap; -- requires plpgsql
+```
+
+### Create Wrapped Functions
+
+Use normal PL/pgSQL syntax with a different language name:
+
+```sql
+CREATE OR REPLACE FUNCTION public.calculate_bonus(emp_id int, yr int)
+RETURNS numeric
+LANGUAGE plpgsql_wrap
+AS $$
+DECLARE
+  v_salary numeric;
+BEGIN
+  SELECT salary INTO v_salary FROM employees WHERE id = emp_id;
+  RETURN v_salary * 0.15;
+END;
+$$;
+```
+
+The stored body is opaque:
+
+```sql
+SELECT substring(prosrc, 1, 32) AS wrapped_code
+FROM pg_proc
+WHERE proname = 'calculate_bonus';
+```
+
+### Dump, Restore, And Unwrap
+
+`pg_dump` emits the encrypted `PLPGSQLWRAP:1:` blob. A restore on a server with the same compiled key works normally. A different key leaves the blob stored, but calls fail when the validator/authentication path cannot authenticate it.
+
+Superusers can permanently unwrap a function when they know the key:
+
+```sql
+SELECT plpgsql_wrap.unwrap_procedure(
+  'myhexkey',
+  'public',
+  'calculate_bonus',
+  'emp_id int, yr int'
+);
+```
+
+### Caveats
+
+- Version 1.0 supports PostgreSQL 14-18.
+- The control file requires `plpgsql` and superuser installation.
+- This protects casual source inspection and dumps, but the compiled key is a critical secret. Treat package artifacts and build logs accordingly.
+- Syntax is validated before encryption, so ordinary PL/pgSQL syntax errors abort `CREATE FUNCTION` before encrypted storage is written.

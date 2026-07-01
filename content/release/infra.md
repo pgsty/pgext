@@ -6,13 +6,48 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 206-06-22
+## 2026-07-01
 
-| Name        | Old            | New            | Comment |
-|:------------|:---------------|:---------------|:--------|
-| pig         | 1.4.2          | 1.4.3          |         |
-| minio       | 20260417000000 | 20260618000000 |         |
-| pg_exporter | 1.2.2          | 1.3.0          |         |
+| Name                       | Old            | New            | Comment                                        |
+|:---------------------------|:---------------|:---------------|:-----------------------------------------------|
+| agentsview                 | 0.32.1         | 0.34.5         |                                                |
+| alertmanager               | 0.32.2         | 0.33.0         |                                                |
+| asciinema                  | 3.2.0          | 3.2.1          |                                                |
+| claude                     | 2.1.172        | 2.1.187        | downloaded through the 8118 proxy and verified |
+| codex                      | 0.139.0        | 0.142.0        | release tag `rust-v0.142.0`                    |
+| dblab                      | 0.40.1         | 0.42.0         |                                                |
+| duckdb                     | 1.5.3          | 1.5.4          |                                                |
+| grafana-victorialogs-ds    | 0.28.0         | 0.29.0         |                                                |
+| headscale                  | 0.28.0         | 0.29.1         |                                                |
+| hugo                       | 0.163.0        | 0.163.3        |                                                |
+| kafka                      | 4.3.0          | 4.3.1          | noarch package                                 |
+| minio                      | 20260417000000 | 20260618000000 | already staged                                 |
+| nodejs                     | 24.16.0        | 24.18.0        | kept on the 24.x line                          |
+| npgsqlrest                 | 3.16.3         | 3.18.1         |                                                |
+| opencode                   | 1.17.3         | 1.17.9         |                                                |
+| pev2                       | 1.21.0         | 1.22.0         | noarch package                                 |
+| pg_exporter                | 1.2.2          | 1.3.0          | direct-download artifact refresh               |
+| pgschema                   | 1.11.0         | 1.11.1         | direct-download artifact refresh               |
+| pgstream                   | 1.0.3          | 1.1.0          |                                                |
+| pig                        | 1.4.1          | 1.4.2          | already staged                                 |
+| rainfrog                   | 0.3.18         | 0.3.19         |                                                |
+| sabiql                     | 1.12.3         | 1.13.0         |                                                |
+| seaweedfs                  | 4.32           | 4.35           |                                                |
+| stalwart                   | 0.16.8         | 0.16.10        |                                                |
+| tigerbeetle                | 0.17.6         | 0.17.8         |                                                |
+| uv                         | 0.11.20        | 0.11.24        |                                                |
+| victoria-logs              | 1.50.0         | 1.51.0         |                                                |
+| vlagent                    | 1.50.0         | 1.51.0         | bundled with VictoriaLogs                      |
+| vlogscli                   | 1.50.0         | 1.51.0         | bundled with VictoriaLogs                      |
+| victoria-metrics           | 1.145.0        | 1.146.0        |                                                |
+| victoria-metrics-cluster   | 1.145.0        | 1.146.0        | bundled with VictoriaMetrics                   |
+| vmutils                    | 1.145.0        | 1.146.0        | bundled with VictoriaMetrics                   |
+| victoria-traces            | 0.9.2          | 0.9.3          |                                                |
+| code                       | 1.124.0        | 1.125.1        | direct-download artifact refresh               |
+| code-server                | 4.123.0        | 4.125.0        | direct-download artifact refresh               |
+| cloudflared                | 2026.6.0       | 2026.6.1       | direct-download artifact refresh               |
+| crush                      | 0.76.0         | 0.79.1         | direct-download artifact refresh               |
+| genai-toolbox              | 1.1.0          | 1.5.0          | external build artifacts synced                |
 
 
 ## 2026-06-12

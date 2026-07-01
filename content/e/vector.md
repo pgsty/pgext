@@ -39,12 +39,12 @@ width: full
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 15" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 17" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 17" "green" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 3" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 15" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 17" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 17" "green" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 5" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 17" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 19" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 19" "green" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 19" "green" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 2" "green" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 2" "green" >}} |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 16" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 18" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 18" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 16" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 18" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 18" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 18" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 20" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 20" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 18" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 20" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 20" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 7" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_18 : AVAIL 6" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_17 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_16 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_15 : AVAIL 7" "green" >}} | {{< bg "PIGSTY 0.8.3" "pgvector_14 : AVAIL 7" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 0.8.3" "postgresql-18-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-17-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-16-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-15-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-14-pgvector : AVAIL 4" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 0.8.3" "postgresql-18-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-17-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-16-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-15-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-14-pgvector : AVAIL 4" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 0.8.3" "postgresql-18-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-17-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-16-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-15-pgvector : AVAIL 4" "blue" >}} | {{< bg "PGDG 0.8.3" "postgresql-14-pgvector : AVAIL 4" "blue" >}} |
@@ -63,22 +63,37 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvector_18` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 113.8 KiB | [pgvector_18-0.8.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvector_18-0.8.3-1PIGSTY.el8.x86_64.rpm) |
+| `pgvector_18` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 108.2 KiB | [pgvector_18-0.8.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgvector_18-0.8.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_18` | `0.8.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.3 KiB | [pgvector_18-0.8.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgvector_18-0.8.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_18` | `0.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.9 KiB | [pgvector_18-0.8.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-x86_64/pgvector_18-0.8.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_18` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 105.7 KiB | [pgvector_18-0.8.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvector_18-0.8.3-1PIGSTY.el8.aarch64.rpm) |
+| `pgvector_18` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.9 KiB | [pgvector_18-0.8.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgvector_18-0.8.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_18` | `0.8.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.4 KiB | [pgvector_18-0.8.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgvector_18-0.8.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_18` | `0.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 96.7 KiB | [pgvector_18-0.8.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-8-aarch64/pgvector_18-0.8.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_18` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 107.3 KiB | [pgvector_18-0.8.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvector_18-0.8.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgvector_18` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.9 KiB | [pgvector_18-0.8.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgvector_18-0.8.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_18` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgvector_18-0.8.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_18` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgvector_18-0.8.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgvector_18` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.8 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgvector_18-0.8.2-1PGDG.rhel9.6.x86_64.rpm) |
 | `pgvector_18` | `0.8.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.5 KiB | [pgvector_18-0.8.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/pgvector_18-0.8.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgvector_18` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.3 KiB | [pgvector_18-0.8.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvector_18-0.8.3-1PIGSTY.el9.aarch64.rpm) |
+| `pgvector_18` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.8 KiB | [pgvector_18-0.8.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgvector_18-0.8.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_18` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.7 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgvector_18-0.8.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgvector_18` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.8 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgvector_18-0.8.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgvector_18` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.9 KiB | [pgvector_18-0.8.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgvector_18-0.8.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `pgvector_18` | `0.8.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.2 KiB | [pgvector_18-0.8.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/pgvector_18-0.8.1-1PGDG.rhel9.aarch64.rpm) |
 | `pgvector_18` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 108.4 KiB | [pgvector_18-0.8.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgvector_18-0.8.3-1PIGSTY.el10.x86_64.rpm) |
+| `pgvector_18` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.0 KiB | [pgvector_18-0.8.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgvector_18-0.8.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pgvector_18` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.1 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgvector_18-0.8.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgvector_18` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.1 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgvector_18-0.8.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgvector_18` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.7 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgvector_18-0.8.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `pgvector_18` | `0.8.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.9 KiB | [pgvector_18-0.8.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgvector_18-0.8.1-1PGDG.rhel10.x86_64.rpm) |
 | `pgvector_18` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 99.4 KiB | [pgvector_18-0.8.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgvector_18-0.8.3-1PIGSTY.el10.aarch64.rpm) |
+| `pgvector_18` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_18-0.8.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgvector_18-0.8.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgvector_18` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgvector_18-0.8.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgvector_18` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgvector_18-0.8.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgvector_18` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_18-0.8.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgvector_18-0.8.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `pgvector_18` | `0.8.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.8 KiB | [pgvector_18-0.8.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgvector_18-0.8.1-1PGDG.rhel10.aarch64.rpm) |
 | `postgresql-18-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 258.4 KiB | [postgresql-18-pgvector_0.8.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-18-pgvector_0.8.3-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 252.0 KiB | [postgresql-18-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgvector/postgresql-18-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-pgvector` | `0.8.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 256.3 KiB | [postgresql-18-pgvector_0.8.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-18-pgvector_0.8.2-1.pgdg12+1_amd64.deb) |
@@ -126,16 +141,19 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvector_17` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 113.5 KiB | [pgvector_17-0.8.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvector_17-0.8.3-1PIGSTY.el8.x86_64.rpm) |
+| `pgvector_17` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 108.1 KiB | [pgvector_17-0.8.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgvector_17-0.8.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_17` | `0.8.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.4 KiB | [pgvector_17-0.8.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgvector_17-0.8.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_17` | `0.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.8 KiB | [pgvector_17-0.8.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgvector_17-0.8.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_17` | `0.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.9 KiB | [pgvector_17-0.8.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgvector_17-0.8.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_17` | `0.7.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 101.6 KiB | [pgvector_17-0.7.4-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-x86_64/pgvector_17-0.7.4-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_17` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 105.6 KiB | [pgvector_17-0.8.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvector_17-0.8.3-1PIGSTY.el8.aarch64.rpm) |
+| `pgvector_17` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.9 KiB | [pgvector_17-0.8.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgvector_17-0.8.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_17` | `0.8.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.1 KiB | [pgvector_17-0.8.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgvector_17-0.8.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_17` | `0.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 96.5 KiB | [pgvector_17-0.8.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgvector_17-0.8.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_17` | `0.8.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 95.6 KiB | [pgvector_17-0.8.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgvector_17-0.8.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_17` | `0.7.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 91.5 KiB | [pgvector_17-0.7.4-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-8-aarch64/pgvector_17-0.7.4-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_17` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 107.3 KiB | [pgvector_17-0.8.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvector_17-0.8.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgvector_17` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.9 KiB | [pgvector_17-0.8.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.8.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_17` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.6 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.8.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_17` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.5 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.8.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgvector_17` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.8.2-1PGDG.rhel9.6.x86_64.rpm) |
@@ -143,11 +161,27 @@ width: full
 | `pgvector_17` | `0.8.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 107.6 KiB | [pgvector_17-0.8.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.8.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgvector_17` | `0.7.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 103.7 KiB | [pgvector_17-0.7.4-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/pgvector_17-0.7.4-1PGDG.rhel9.x86_64.rpm) |
 | `pgvector_17` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.3 KiB | [pgvector_17-0.8.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvector_17-0.8.3-1PIGSTY.el9.aarch64.rpm) |
+| `pgvector_17` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.7 KiB | [pgvector_17-0.8.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_17` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.7 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgvector_17` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.7 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgvector_17` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.8 KiB | [pgvector_17-0.8.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `pgvector_17` | `0.8.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.1 KiB | [pgvector_17-0.8.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_17` | `0.8.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.8 KiB | [pgvector_17-0.8.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.8.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_17` | `0.7.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 89.6 KiB | [pgvector_17-0.7.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/pgvector_17-0.7.4-1PGDG.rhel9.aarch64.rpm) |
 | `pgvector_17` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 108.4 KiB | [pgvector_17-0.8.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgvector_17-0.8.3-1PIGSTY.el10.x86_64.rpm) |
+| `pgvector_17` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.1 KiB | [pgvector_17-0.8.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pgvector_17` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.0 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgvector_17` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.9 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgvector_17` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.4 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `pgvector_17` | `0.8.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.1 KiB | [pgvector_17-0.8.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.1-1PGDG.rhel10.x86_64.rpm) |
+| `pgvector_17` | `0.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.7 KiB | [pgvector_17-0.8.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgvector_17-0.8.0-2PGDG.rhel10.x86_64.rpm) |
 | `pgvector_17` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 99.3 KiB | [pgvector_17-0.8.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgvector_17-0.8.3-1PIGSTY.el10.aarch64.rpm) |
+| `pgvector_17` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_17-0.8.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgvector_17` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgvector_17` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgvector_17` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.9 KiB | [pgvector_17-0.8.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `pgvector_17` | `0.8.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.8 KiB | [pgvector_17-0.8.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.1-1PGDG.rhel10.aarch64.rpm) |
+| `pgvector_17` | `0.8.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.2 KiB | [pgvector_17-0.8.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgvector_17-0.8.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-17-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 258.4 KiB | [postgresql-17-pgvector_0.8.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-17-pgvector_0.8.3-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 251.6 KiB | [postgresql-17-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgvector/postgresql-17-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-pgvector` | `0.8.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 255.8 KiB | [postgresql-17-pgvector_0.8.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-17-pgvector_0.8.2-1.pgdg12+1_amd64.deb) |
@@ -195,6 +229,7 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvector_16` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 113.8 KiB | [pgvector_16-0.8.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvector_16-0.8.3-1PIGSTY.el8.x86_64.rpm) |
+| `pgvector_16` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 108.4 KiB | [pgvector_16-0.8.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.8.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_16` | `0.8.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.8.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_16` | `0.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.8 KiB | [pgvector_16-0.8.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.8.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_16` | `0.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 105.6 KiB | [pgvector_16-0.8.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.8.0-1PGDG.rhel8.x86_64.rpm) |
@@ -210,6 +245,7 @@ width: full
 | `pgvector_16` | `0.5.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 62.9 KiB | [pgvector_16-0.5.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.5.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_16` | `0.5.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 62.4 KiB | [pgvector_16-0.5.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-x86_64/pgvector_16-0.5.0-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_16` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 105.5 KiB | [pgvector_16-0.8.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvector_16-0.8.3-1PIGSTY.el8.aarch64.rpm) |
+| `pgvector_16` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.7 KiB | [pgvector_16-0.8.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.8.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_16` | `0.8.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.0 KiB | [pgvector_16-0.8.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.8.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_16` | `0.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 96.3 KiB | [pgvector_16-0.8.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.8.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | `0.8.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 95.4 KiB | [pgvector_16-0.8.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.8.0-1PGDG.rhel8.aarch64.rpm) |
@@ -225,6 +261,7 @@ width: full
 | `pgvector_16` | `0.5.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.6 KiB | [pgvector_16-0.5.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.5.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | `0.5.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 58.0 KiB | [pgvector_16-0.5.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-8-aarch64/pgvector_16-0.5.0-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_16` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 107.2 KiB | [pgvector_16-0.8.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvector_16-0.8.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgvector_16` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.7 KiB | [pgvector_16-0.8.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.8.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_16` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.8.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_16` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.8.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgvector_16` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 108.6 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.8.2-1PGDG.rhel9.6.x86_64.rpm) |
@@ -242,11 +279,37 @@ width: full
 | `pgvector_16` | `0.5.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.4 KiB | [pgvector_16-0.5.1-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.5.1-1PGDG.rhel9.x86_64.rpm) |
 | `pgvector_16` | `0.5.0` | [el9.x86_64](/os/el9.x86_64) | pgdg | 64.1 KiB | [pgvector_16-0.5.0-1PGDG.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/pgvector_16-0.5.0-1PGDG.rhel9.x86_64.rpm) |
 | `pgvector_16` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 97.1 KiB | [pgvector_16-0.8.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvector_16-0.8.3-1PIGSTY.el9.aarch64.rpm) |
+| `pgvector_16` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.5 KiB | [pgvector_16-0.8.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_16` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgvector_16` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.4 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgvector_16` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.6 KiB | [pgvector_16-0.8.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `pgvector_16` | `0.8.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.9 KiB | [pgvector_16-0.8.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.8.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.5 KiB | [pgvector_16-0.8.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.8.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.7.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 89.6 KiB | [pgvector_16-0.7.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.7.4-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 89.2 KiB | [pgvector_16-0.7.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.7.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.7.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 88.6 KiB | [pgvector_16-0.7.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.7.2-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 88.4 KiB | [pgvector_16-0.7.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.7.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 87.6 KiB | [pgvector_16-0.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.6.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 69.2 KiB | [pgvector_16-0.6.2-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.6.2-2PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.6.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 68.8 KiB | [pgvector_16-0.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.6.2-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.6.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 67.6 KiB | [pgvector_16-0.6.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.6.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.6.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 67.0 KiB | [pgvector_16-0.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.6.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 59.8 KiB | [pgvector_16-0.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.5.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_16` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 59.6 KiB | [pgvector_16-0.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/pgvector_16-0.5.0-1PGDG.rhel9.aarch64.rpm) |
 | `pgvector_16` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 108.3 KiB | [pgvector_16-0.8.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgvector_16-0.8.3-1PIGSTY.el10.x86_64.rpm) |
+| `pgvector_16` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.0 KiB | [pgvector_16-0.8.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pgvector_16` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgvector_16` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.6 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgvector_16` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 105.3 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `pgvector_16` | `0.8.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.7 KiB | [pgvector_16-0.8.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.1-1PGDG.rhel10.x86_64.rpm) |
+| `pgvector_16` | `0.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 104.2 KiB | [pgvector_16-0.8.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgvector_16-0.8.0-2PGDG.rhel10.x86_64.rpm) |
 | `pgvector_16` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 99.0 KiB | [pgvector_16-0.8.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgvector_16-0.8.3-1PIGSTY.el10.aarch64.rpm) |
+| `pgvector_16` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.6 KiB | [pgvector_16-0.8.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgvector_16` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgvector_16` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgvector_16` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.5 KiB | [pgvector_16-0.8.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `pgvector_16` | `0.8.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 96.3 KiB | [pgvector_16-0.8.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.1-1PGDG.rhel10.aarch64.rpm) |
+| `pgvector_16` | `0.8.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 95.8 KiB | [pgvector_16-0.8.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgvector_16-0.8.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-16-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 258.6 KiB | [postgresql-16-pgvector_0.8.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-16-pgvector_0.8.3-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 251.2 KiB | [postgresql-16-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgvector/postgresql-16-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-pgvector` | `0.8.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 256.0 KiB | [postgresql-16-pgvector_0.8.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-16-pgvector_0.8.2-1.pgdg12+1_amd64.deb) |
@@ -294,6 +357,7 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvector_15` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 114.6 KiB | [pgvector_15-0.8.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvector_15-0.8.3-1PIGSTY.el8.x86_64.rpm) |
+| `pgvector_15` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 109.3 KiB | [pgvector_15-0.8.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.8.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_15` | `0.8.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 108.4 KiB | [pgvector_15-0.8.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.8.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_15` | `0.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.8 KiB | [pgvector_15-0.8.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.8.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_15` | `0.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.7 KiB | [pgvector_15-0.8.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.8.0-1PGDG.rhel8.x86_64.rpm) |
@@ -311,6 +375,7 @@ width: full
 | `pgvector_15` | `0.4.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.9 KiB | [pgvector_15-0.4.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.4.4-1.rhel8.x86_64.rpm) |
 | `pgvector_15` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.8 KiB | [pgvector_15-0.4.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-x86_64/pgvector_15-0.4.1-1.rhel8.x86_64.rpm) |
 | `pgvector_15` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.2 KiB | [pgvector_15-0.8.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvector_15-0.8.3-1PIGSTY.el8.aarch64.rpm) |
+| `pgvector_15` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.6 KiB | [pgvector_15-0.8.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.8.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_15` | `0.8.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.8 KiB | [pgvector_15-0.8.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.8.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_15` | `0.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.2 KiB | [pgvector_15-0.8.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.8.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_15` | `0.8.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 96.3 KiB | [pgvector_15-0.8.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.8.0-1PGDG.rhel8.aarch64.rpm) |
@@ -328,6 +393,7 @@ width: full
 | `pgvector_15` | `0.4.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 42.5 KiB | [pgvector_15-0.4.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.4.4-1.rhel8.aarch64.rpm) |
 | `pgvector_15` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.6 KiB | [pgvector_15-0.4.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-8-aarch64/pgvector_15-0.4.1-1.rhel8.aarch64.rpm) |
 | `pgvector_15` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 111.8 KiB | [pgvector_15-0.8.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvector_15-0.8.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgvector_15` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.2 KiB | [pgvector_15-0.8.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.8.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_15` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.2 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.8.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_15` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.1 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.8.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgvector_15` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.2 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.8.2-1PGDG.rhel9.6.x86_64.rpm) |
@@ -347,11 +413,39 @@ width: full
 | `pgvector_15` | `0.4.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.8 KiB | [pgvector_15-0.4.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.4.4-1.rhel9.x86_64.rpm) |
 | `pgvector_15` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 43.0 KiB | [pgvector_15-0.4.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/pgvector_15-0.4.1-1.rhel9.x86_64.rpm) |
 | `pgvector_15` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 101.9 KiB | [pgvector_15-0.8.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvector_15-0.8.3-1PIGSTY.el9.aarch64.rpm) |
+| `pgvector_15` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.6 KiB | [pgvector_15-0.8.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_15` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.5 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.2-1PGDG.rhel9.8.aarch64.rpm) |
+| `pgvector_15` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.5 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.2-1PGDG.rhel9.7.aarch64.rpm) |
+| `pgvector_15` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.6 KiB | [pgvector_15-0.8.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.2-1PGDG.rhel9.6.aarch64.rpm) |
+| `pgvector_15` | `0.8.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 98.8 KiB | [pgvector_15-0.8.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.8.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 98.5 KiB | [pgvector_15-0.8.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.8.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.7.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 94.2 KiB | [pgvector_15-0.7.4-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.7.4-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.7.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.8 KiB | [pgvector_15-0.7.3-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.7.3-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.7.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.5 KiB | [pgvector_15-0.7.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.7.2-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.7.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 93.1 KiB | [pgvector_15-0.7.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.7.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.7.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 92.3 KiB | [pgvector_15-0.7.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.7.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.6.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 73.5 KiB | [pgvector_15-0.6.2-2PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.6.2-2PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.6.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 73.1 KiB | [pgvector_15-0.6.2-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.6.2-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.6.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 72.0 KiB | [pgvector_15-0.6.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.6.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.6.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 71.3 KiB | [pgvector_15-0.6.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.6.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.5.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 61.5 KiB | [pgvector_15-0.5.1-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.5.1-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.5.0` | [el9.aarch64](/os/el9.aarch64) | pgdg | 60.9 KiB | [pgvector_15-0.5.0-1PGDG.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.5.0-1PGDG.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.4.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.4 KiB | [pgvector_15-0.4.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.4.4-1.rhel9.aarch64.rpm) |
+| `pgvector_15` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.6 KiB | [pgvector_15-0.4.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/pgvector_15-0.4.1-1.rhel9.aarch64.rpm) |
 | `pgvector_15` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 112.7 KiB | [pgvector_15-0.8.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgvector_15-0.8.3-1PIGSTY.el10.x86_64.rpm) |
+| `pgvector_15` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 109.1 KiB | [pgvector_15-0.8.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pgvector_15` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.8 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgvector_15` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.8 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgvector_15` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 109.3 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `pgvector_15` | `0.8.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.7 KiB | [pgvector_15-0.8.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.1-1PGDG.rhel10.x86_64.rpm) |
+| `pgvector_15` | `0.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.5 KiB | [pgvector_15-0.8.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgvector_15-0.8.0-2PGDG.rhel10.x86_64.rpm) |
 | `pgvector_15` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 103.8 KiB | [pgvector_15-0.8.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgvector_15-0.8.3-1PIGSTY.el10.aarch64.rpm) |
+| `pgvector_15` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.6 KiB | [pgvector_15-0.8.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgvector_15` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.6 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgvector_15` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.6 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgvector_15` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.6 KiB | [pgvector_15-0.8.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `pgvector_15` | `0.8.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.0 KiB | [pgvector_15-0.8.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.1-1PGDG.rhel10.aarch64.rpm) |
+| `pgvector_15` | `0.8.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 100.8 KiB | [pgvector_15-0.8.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgvector_15-0.8.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-15-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 259.4 KiB | [postgresql-15-pgvector_0.8.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-15-pgvector_0.8.3-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 252.7 KiB | [postgresql-15-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgvector/postgresql-15-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-pgvector` | `0.8.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 256.9 KiB | [postgresql-15-pgvector_0.8.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-15-pgvector_0.8.2-1.pgdg12+1_amd64.deb) |
@@ -399,6 +493,7 @@ width: full
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
 | `pgvector_14` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pigsty | 114.6 KiB | [pgvector_14-0.8.3-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgvector_14-0.8.3-1PIGSTY.el8.x86_64.rpm) |
+| `pgvector_14` | `0.8.3` | [el8.x86_64](/os/el8.x86_64) | pgdg | 109.2 KiB | [pgvector_14-0.8.3-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.8.3-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_14` | `0.8.2` | [el8.x86_64](/os/el8.x86_64) | pgdg | 108.3 KiB | [pgvector_14-0.8.2-1PGDG.rhel8.10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.8.2-1PGDG.rhel8.10.x86_64.rpm) |
 | `pgvector_14` | `0.8.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 107.6 KiB | [pgvector_14-0.8.1-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.8.1-1PGDG.rhel8.x86_64.rpm) |
 | `pgvector_14` | `0.8.0` | [el8.x86_64](/os/el8.x86_64) | pgdg | 106.5 KiB | [pgvector_14-0.8.0-1PGDG.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.8.0-1PGDG.rhel8.x86_64.rpm) |
@@ -416,6 +511,7 @@ width: full
 | `pgvector_14` | `0.4.4` | [el8.x86_64](/os/el8.x86_64) | pgdg | 44.8 KiB | [pgvector_14-0.4.4-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.4.4-1.rhel8.x86_64.rpm) |
 | `pgvector_14` | `0.4.1` | [el8.x86_64](/os/el8.x86_64) | pgdg | 41.7 KiB | [pgvector_14-0.4.1-1.rhel8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-x86_64/pgvector_14-0.4.1-1.rhel8.x86_64.rpm) |
 | `pgvector_14` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pigsty | 106.2 KiB | [pgvector_14-0.8.3-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgvector_14-0.8.3-1PIGSTY.el8.aarch64.rpm) |
+| `pgvector_14` | `0.8.3` | [el8.aarch64](/os/el8.aarch64) | pgdg | 98.5 KiB | [pgvector_14-0.8.3-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.8.3-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_14` | `0.8.2` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.7 KiB | [pgvector_14-0.8.2-1PGDG.rhel8.10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.8.2-1PGDG.rhel8.10.aarch64.rpm) |
 | `pgvector_14` | `0.8.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 97.1 KiB | [pgvector_14-0.8.1-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.8.1-1PGDG.rhel8.aarch64.rpm) |
 | `pgvector_14` | `0.8.0` | [el8.aarch64](/os/el8.aarch64) | pgdg | 96.1 KiB | [pgvector_14-0.8.0-1PGDG.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.8.0-1PGDG.rhel8.aarch64.rpm) |
@@ -433,6 +529,7 @@ width: full
 | `pgvector_14` | `0.4.4` | [el8.aarch64](/os/el8.aarch64) | pgdg | 42.5 KiB | [pgvector_14-0.4.4-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.4.4-1.rhel8.aarch64.rpm) |
 | `pgvector_14` | `0.4.1` | [el8.aarch64](/os/el8.aarch64) | pgdg | 39.5 KiB | [pgvector_14-0.4.1-1.rhel8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-8-aarch64/pgvector_14-0.4.1-1.rhel8.aarch64.rpm) |
 | `pgvector_14` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pigsty | 111.7 KiB | [pgvector_14-0.8.3-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgvector_14-0.8.3-1PIGSTY.el9.x86_64.rpm) |
+| `pgvector_14` | `0.8.3` | [el9.x86_64](/os/el9.x86_64) | pgdg | 112.9 KiB | [pgvector_14-0.8.3-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.8.3-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 112.8 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.8.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.8.2-1PGDG.rhel9.8.x86_64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 112.9 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.8.2-1PGDG.rhel9.7.x86_64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.x86_64](/os/el9.x86_64) | pgdg | 113.0 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.8.2-1PGDG.rhel9.6.x86_64.rpm) |
@@ -452,6 +549,7 @@ width: full
 | `pgvector_14` | `0.4.4` | [el9.x86_64](/os/el9.x86_64) | pgdg | 45.9 KiB | [pgvector_14-0.4.4-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.4.4-1.rhel9.x86_64.rpm) |
 | `pgvector_14` | `0.4.1` | [el9.x86_64](/os/el9.x86_64) | pgdg | 42.9 KiB | [pgvector_14-0.4.1-1.rhel9.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-x86_64/pgvector_14-0.4.1-1.rhel9.x86_64.rpm) |
 | `pgvector_14` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pigsty | 101.7 KiB | [pgvector_14-0.8.3-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgvector_14-0.8.3-1PIGSTY.el9.aarch64.rpm) |
+| `pgvector_14` | `0.8.3` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.4 KiB | [pgvector_14-0.8.3-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.8.3-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.1 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.8.2-1PGDG.rhel9.8.aarch64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.0 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.8.2-1PGDG.rhel9.7.aarch64.rpm) |
 | `pgvector_14` | `0.8.2` | [el9.aarch64](/os/el9.aarch64) | pgdg | 99.2 KiB | [pgvector_14-0.8.2-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.8.2-1PGDG.rhel9.6.aarch64.rpm) |
@@ -471,9 +569,19 @@ width: full
 | `pgvector_14` | `0.4.4` | [el9.aarch64](/os/el9.aarch64) | pgdg | 43.3 KiB | [pgvector_14-0.4.4-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.4.4-1.rhel9.aarch64.rpm) |
 | `pgvector_14` | `0.4.1` | [el9.aarch64](/os/el9.aarch64) | pgdg | 40.5 KiB | [pgvector_14-0.4.1-1.rhel9.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/pgvector_14-0.4.1-1.rhel9.aarch64.rpm) |
 | `pgvector_14` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pigsty | 112.4 KiB | [pgvector_14-0.8.3-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgvector_14-0.8.3-1PIGSTY.el10.x86_64.rpm) |
+| `pgvector_14` | `0.8.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 109.3 KiB | [pgvector_14-0.8.3-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.3-1PGDG.rhel10.2.x86_64.rpm) |
 | `pgvector_14` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.9 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.2-1PGDG.rhel10.2.x86_64.rpm) |
+| `pgvector_14` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 109.0 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.2-1PGDG.rhel10.1.x86_64.rpm) |
+| `pgvector_14` | `0.8.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 109.6 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.2-1PGDG.rhel10.0.x86_64.rpm) |
+| `pgvector_14` | `0.8.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.9 KiB | [pgvector_14-0.8.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.1-1PGDG.rhel10.x86_64.rpm) |
+| `pgvector_14` | `0.8.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 108.6 KiB | [pgvector_14-0.8.0-2PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgvector_14-0.8.0-2PGDG.rhel10.x86_64.rpm) |
 | `pgvector_14` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 103.7 KiB | [pgvector_14-0.8.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgvector_14-0.8.3-1PIGSTY.el10.aarch64.rpm) |
+| `pgvector_14` | `0.8.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.6 KiB | [pgvector_14-0.8.3-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.3-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgvector_14` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.5 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.2-1PGDG.rhel10.2.aarch64.rpm) |
+| `pgvector_14` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.3 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.2-1PGDG.rhel10.1.aarch64.rpm) |
+| `pgvector_14` | `0.8.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.5 KiB | [pgvector_14-0.8.2-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.2-1PGDG.rhel10.0.aarch64.rpm) |
+| `pgvector_14` | `0.8.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 101.2 KiB | [pgvector_14-0.8.1-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.1-1PGDG.rhel10.aarch64.rpm) |
+| `pgvector_14` | `0.8.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 100.7 KiB | [pgvector_14-0.8.0-2PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgvector_14-0.8.0-2PGDG.rhel10.aarch64.rpm) |
 | `postgresql-14-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pgdg | 259.1 KiB | [postgresql-14-pgvector_0.8.3-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-14-pgvector_0.8.3-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-pgvector` | `0.8.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 252.4 KiB | [postgresql-14-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgvector/postgresql-14-pgvector_0.8.3-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-pgvector` | `0.8.2` | [d12.x86_64](/os/d12.x86_64) | pgdg | 257.1 KiB | [postgresql-14-pgvector_0.8.2-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgvector/postgresql-14-pgvector_0.8.2-1.pgdg12+1_amd64.deb) |
@@ -563,6 +671,8 @@ CREATE EXTENSION vector;
 
 ## Usage
 
+Sources: [README](https://github.com/pgvector/pgvector/blob/v0.8.3/README.md), [CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.3/CHANGELOG.md)
+
 Open-source vector similarity search for Postgres. Store your vectors with the rest of your data. Supports:
 
 - exact and approximate nearest neighbor search
@@ -571,6 +681,10 @@ Open-source vector similarity search for Postgres. Store your vectors with the r
 - any [language](https://github.com/pgvector/pgvector#languages) with a Postgres client
 
 Plus [ACID](https://en.wikipedia.org/wiki/ACID) compliance, point-in-time recovery, JOINs, and all of the other [great features](https://www.postgresql.org/about/) of Postgres
+
+### Version Notes
+
+`pgvector` 0.8.3 fixes possible HNSW index corruption during vacuuming and fixes a PostgreSQL 18 performance regression for Hamming and Jaccard distance. Existing 0.8.x SQL features such as iterative index scans, `halfvec`, `sparsevec`, binary vectors, HNSW, and IVFFlat remain the main user-facing surface.
 
 ### Getting Started
 
@@ -723,7 +837,7 @@ SELECT category_id, AVG(embedding) FROM items GROUP BY category_id;
 
 --------
 
-## Indexing
+### Indexing
 
 By default, pgvector performs exact nearest neighbor search, which provides perfect recall.
 
@@ -1075,7 +1189,7 @@ Note: If this is lower than `ivfflat.probes`, `ivfflat.probes` will be used
 
 --------
 
-## Vector Types
+### Vector Types
 
 ### Half-Precision Vectors
 
@@ -1196,7 +1310,7 @@ SELECT * FROM (
 
 --------
 
-## Performance
+### Performance
 
 ### Tuning
 
@@ -1309,7 +1423,7 @@ Scale horizontally with [replicas](https://www.postgresql.org/docs/current/hot-s
 
 --------
 
-## Languages
+### Languages
 
 Use pgvector from any language with a Postgres client. You can even generate and store vectors in one language and query them in another.
 
@@ -1354,7 +1468,7 @@ Zig | [pgvector-zig](https://github.com/pgvector/pgvector-zig)
 
 --------
 
-## FAQ
+### FAQ
 
 ### How many vectors can be stored in a single table?
 
@@ -1428,7 +1542,7 @@ SELECT pg_size_pretty(pg_relation_size('index_name'));
 
 --------
 
-## Troubleshooting
+### Troubleshooting
 
 ### Why isn't a query using an index?
 
@@ -1492,7 +1606,7 @@ Also, note that `NULL` vectors are not indexed (as well as zero vectors for cosi
 
 --------
 
-## Reference
+### Reference
 
 ### Vector Type
 
@@ -1615,7 +1729,7 @@ l2_normalize(sparsevec) → sparsevec | Normalize with Euclidean norm | 0.7.0
 
 --------
 
-## Installation
+### Installation
 
 ### Linux and Mac
 

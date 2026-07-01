@@ -43,9 +43,9 @@ width: full
 | {{< os "el8.x86_64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 1" "blue" >}} |
 | {{< os "el8.aarch64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 1" "blue" >}} |
 | {{< os "el9.x86_64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 3" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 3" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 1" "blue" >}} |
-| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 1" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 3" "blue" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.5" "passwordpolicy_14 : AVAIL 3" "blue" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-18-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-17-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-16-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-15-passwordpolicy : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.5" "postgresql-14-passwordpolicy : AVAIL 1" "green" >}} |
@@ -69,8 +69,14 @@ width: full
 | `passwordpolicy_18` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.5 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/passwordpolicy_18-2.0.5-1PGDG.rhel9.7.x86_64.rpm) |
 | `passwordpolicy_18` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.6 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-x86_64/passwordpolicy_18-2.0.5-1PGDG.rhel9.6.x86_64.rpm) |
 | `passwordpolicy_18` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.5 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.5 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel9.7.aarch64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.6 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-9-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel9.6.aarch64.rpm) |
 | `passwordpolicy_18` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.6 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/passwordpolicy_18-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.6 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/passwordpolicy_18-2.0.5-1PGDG.rhel10.1.x86_64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.0 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/passwordpolicy_18-2.0.5-1PGDG.rhel10.0.x86_64.rpm) |
 | `passwordpolicy_18` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.7 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel10.1.aarch64.rpm) |
+| `passwordpolicy_18` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.7 KiB | [passwordpolicy_18-2.0.5-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/passwordpolicy_18-2.0.5-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-18-passwordpolicy` | `2.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 51.9 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-18-passwordpolicy` | `2.0.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 51.3 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-18-passwordpolicy` | `2.0.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 51.8 KiB | [postgresql-18-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/passwordpolicy/postgresql-18-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb) |
@@ -93,8 +99,14 @@ width: full
 | `passwordpolicy_17` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.6 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/passwordpolicy_17-2.0.5-1PGDG.rhel9.7.x86_64.rpm) |
 | `passwordpolicy_17` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-x86_64/passwordpolicy_17-2.0.5-1PGDG.rhel9.6.x86_64.rpm) |
 | `passwordpolicy_17` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.6 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.6 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel9.7.aarch64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.7 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-9-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel9.6.aarch64.rpm) |
 | `passwordpolicy_17` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/passwordpolicy_17-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/passwordpolicy_17-2.0.5-1PGDG.rhel10.1.x86_64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.1 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/passwordpolicy_17-2.0.5-1PGDG.rhel10.0.x86_64.rpm) |
 | `passwordpolicy_17` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel10.1.aarch64.rpm) |
+| `passwordpolicy_17` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_17-2.0.5-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/passwordpolicy_17-2.0.5-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-17-passwordpolicy` | `2.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 51.8 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-17-passwordpolicy` | `2.0.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 51.2 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-17-passwordpolicy` | `2.0.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 51.8 KiB | [postgresql-17-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/passwordpolicy/postgresql-17-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb) |
@@ -117,8 +129,14 @@ width: full
 | `passwordpolicy_16` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.6 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/passwordpolicy_16-2.0.5-1PGDG.rhel9.7.x86_64.rpm) |
 | `passwordpolicy_16` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-x86_64/passwordpolicy_16-2.0.5-1PGDG.rhel9.6.x86_64.rpm) |
 | `passwordpolicy_16` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.6 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.6 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel9.7.aarch64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 27.7 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-9-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel9.6.aarch64.rpm) |
 | `passwordpolicy_16` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/passwordpolicy_16-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 27.7 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/passwordpolicy_16-2.0.5-1PGDG.rhel10.1.x86_64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.1 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/passwordpolicy_16-2.0.5-1PGDG.rhel10.0.x86_64.rpm) |
 | `passwordpolicy_16` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel10.1.aarch64.rpm) |
+| `passwordpolicy_16` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 27.8 KiB | [passwordpolicy_16-2.0.5-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/passwordpolicy_16-2.0.5-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-16-passwordpolicy` | `2.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 51.8 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-16-passwordpolicy` | `2.0.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 51.2 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-16-passwordpolicy` | `2.0.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 51.8 KiB | [postgresql-16-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/passwordpolicy/postgresql-16-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb) |
@@ -141,8 +159,14 @@ width: full
 | `passwordpolicy_15` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 28.2 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel9.7.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/passwordpolicy_15-2.0.5-1PGDG.rhel9.7.x86_64.rpm) |
 | `passwordpolicy_15` | `2.0.5` | [el9.x86_64](/os/el9.x86_64) | pgdg | 28.3 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel9.6.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-x86_64/passwordpolicy_15-2.0.5-1PGDG.rhel9.6.x86_64.rpm) |
 | `passwordpolicy_15` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 28.1 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel9.8.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel9.8.aarch64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 28.1 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel9.7.aarch64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 28.3 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-9-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel9.6.aarch64.rpm) |
 | `passwordpolicy_15` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.4 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/passwordpolicy_15-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.4 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/passwordpolicy_15-2.0.5-1PGDG.rhel10.1.x86_64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.8 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/passwordpolicy_15-2.0.5-1PGDG.rhel10.0.x86_64.rpm) |
 | `passwordpolicy_15` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.4 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.4 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel10.1.aarch64.rpm) |
+| `passwordpolicy_15` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.4 KiB | [passwordpolicy_15-2.0.5-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/passwordpolicy_15-2.0.5-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-15-passwordpolicy` | `2.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 52.2 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-15-passwordpolicy` | `2.0.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 51.5 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-15-passwordpolicy` | `2.0.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 52.3 KiB | [postgresql-15-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/passwordpolicy/postgresql-15-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb) |
@@ -168,7 +192,11 @@ width: full
 | `passwordpolicy_14` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 28.3 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel9.7.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/passwordpolicy_14-2.0.5-1PGDG.rhel9.7.aarch64.rpm) |
 | `passwordpolicy_14` | `2.0.5` | [el9.aarch64](/os/el9.aarch64) | pgdg | 28.4 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel9.6.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-9-aarch64/passwordpolicy_14-2.0.5-1PGDG.rhel9.6.aarch64.rpm) |
 | `passwordpolicy_14` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.3 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.2.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/passwordpolicy_14-2.0.5-1PGDG.rhel10.2.x86_64.rpm) |
+| `passwordpolicy_14` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.3 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.1.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/passwordpolicy_14-2.0.5-1PGDG.rhel10.1.x86_64.rpm) |
+| `passwordpolicy_14` | `2.0.5` | [el10.x86_64](/os/el10.x86_64) | pgdg | 28.7 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.0.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/passwordpolicy_14-2.0.5-1PGDG.rhel10.0.x86_64.rpm) |
 | `passwordpolicy_14` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.5 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/passwordpolicy_14-2.0.5-1PGDG.rhel10.2.aarch64.rpm) |
+| `passwordpolicy_14` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.5 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/passwordpolicy_14-2.0.5-1PGDG.rhel10.1.aarch64.rpm) |
+| `passwordpolicy_14` | `2.0.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 28.5 KiB | [passwordpolicy_14-2.0.5-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/passwordpolicy_14-2.0.5-1PGDG.rhel10.0.aarch64.rpm) |
 | `postgresql-14-passwordpolicy` | `2.0.5` | [d12.x86_64](/os/d12.x86_64) | pigsty | 52.0 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~bookworm_amd64.deb) |
 | `postgresql-14-passwordpolicy` | `2.0.5` | [d12.aarch64](/os/d12.aarch64) | pigsty | 51.7 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~bookworm_arm64.deb) |
 | `postgresql-14-passwordpolicy` | `2.0.5` | [d13.x86_64](/os/d13.x86_64) | pigsty | 52.1 KiB | [postgresql-14-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/passwordpolicy/postgresql-14-passwordpolicy_2.0.5-1PIGSTY~trixie_amd64.deb) |
@@ -229,3 +257,80 @@ shared_preload_libraries = '$libdir/passwordpolicy';
 ```sql
 CREATE EXTENSION passwordpolicy;
 ```
+
+## Usage
+
+Sources: [README](https://github.com/fmbiete/passwordpolicy/blob/v2.0.5/README.md), [v2.0.5 release](https://github.com/fmbiete/passwordpolicy/releases/tag/v2.0.5), [control file](https://github.com/fmbiete/passwordpolicy/blob/v2.0.5/passwordpolicy.control)
+
+`passwordpolicy` is a configurable replacement for PostgreSQL's `passwordcheck` module. It checks passwords during `CREATE ROLE` and `ALTER ROLE`, can enforce password history and validity rules, and can simulate soft account locks after repeated failed logins.
+
+### Enable The Hook
+
+Load the module before other password-check modules, then restart PostgreSQL:
+
+```conf
+shared_preload_libraries = 'passwordpolicy'
+```
+
+Install the SQL extension in the `postgres` database when using account soft-lock or password-history features:
+
+```sql
+CREATE EXTENSION passwordpolicy;
+```
+
+### Password Complexity
+
+Settings are dynamic, but new values apply to new sessions:
+
+```conf
+password_policy.min_password_len = 15
+password_policy.min_special_chars = 1
+password_policy.min_numbers = 1
+password_policy.min_uppercase_letter = 1
+password_policy.min_lowercase_letter = 1
+password_policy.require_validuntil = off
+```
+
+Enable CrackLib dictionary checks only after creating the dictionary file:
+
+```conf
+password_policy.cracklib_dictpath = '/var/cache/cracklib/postgresql_dict'
+password_policy.enable_dictionary_check = on
+```
+
+### Soft Account Lock
+
+Soft-locking tracks failed login attempts and delays/rejects responses after the configured threshold:
+
+```conf
+password_policy_lock.number_failures = 5
+password_policy_lock.failure_delay = 5
+password_policy_lock.auto_unlock = on
+password_policy_lock.auto_unlock_after = 0
+password_policy_lock.max_number_accounts = 100
+```
+
+Inspect and reset lock state:
+
+```sql
+SELECT * FROM passwordpolicy.accounts_locked() ORDER BY usename;
+SELECT passwordpolicy.account_locked_reset('app_user');
+```
+
+If `password_policy_lock.include_all = false`, only roles listed in `passwordpolicy.accounts_lockable` are considered for soft-lock.
+
+### Password History
+
+Password history stores recent password hashes in the `postgres` database and checks new passwords against them:
+
+```conf
+password_policy_history.max_password_history = 5
+password_policy_history.max_number_accounts = 100
+```
+
+### Caveats
+
+- Version 2.0.5 supports PostgreSQL 14-18.
+- This module must be preloaded; changing `shared_preload_libraries` requires a restart.
+- PostgreSQL cannot truly block authentication before it happens, so soft-lock simulates the lock by delaying and returning an error. It does not mitigate authentication DoS attacks.
+- Size `password_policy_lock.max_number_accounts` and `password_policy_history.max_number_accounts` realistically to avoid wasted memory or missed accounts.
