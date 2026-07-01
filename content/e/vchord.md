@@ -220,6 +220,8 @@ CREATE EXTENSION vchord CASCADE; -- requires vector
 ```
 
 
+
+
 ## Usage
 
 - https://github.com/tensorchord/VectorChord

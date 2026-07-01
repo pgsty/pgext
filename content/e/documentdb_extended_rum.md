@@ -108,6 +108,7 @@ CREATE EXTENSION documentdb_extended_rum CASCADE; -- requires documentdb
 
 
 
+
 ## Usage
 
 > [documentdb_extended_rum: DocumentDB Extended RUM index access method](https://github.com/documentdb/documentdb)

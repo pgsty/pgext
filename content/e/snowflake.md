@@ -136,6 +136,7 @@ CREATE EXTENSION snowflake;
 
 
 
+
 ## Usage
 
 > [snowflake: Snowflake ID sequences for PostgreSQL](https://github.com/pgEdge/snowflake)

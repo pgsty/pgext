@@ -48,6 +48,7 @@ CREATE EXTENSION cube;
 
 
 
+
 ## Usage
 
 > [cube: multi-dimensional cube data type](https://www.postgresql.org/docs/current/cube.html)

@@ -476,6 +476,9 @@ pig install pgsql_tweaks -v 14;   # install for PG 14
 CREATE EXTENSION pgsql_tweaks;
 ```
 
+
+
+
 ## Usage
 
 Sources: [Codeberg README](https://codeberg.org/pgsql_tweaks/pgsql_tweaks), [documentation site](https://rtfm.pgsql-tweaks.org), [Codeberg tags](https://codeberg.org/pgsql_tweaks/pgsql_tweaks/tags).

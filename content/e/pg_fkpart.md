@@ -248,6 +248,7 @@ CREATE EXTENSION pg_fkpart;
 
 
 
+
 ## Usage
 
 > [pg_fkpart: Table partitioning by foreign key utility](https://github.com/lemoineat/pg_fkpart)

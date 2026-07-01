@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2401** | {{< badge content="citus_columnar" link="https://github.com/citusdata/citus" >}} | {{< ext "citus_columnar" "citus" >}} | `14.0.0` | {{< category "OLAP" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
+| **2401** | {{< badge content="citus_columnar" link="https://github.com/citusdata/citus" >}} | {{< ext "citus_columnar" "citus" >}} | `14.1.0` | {{< category "OLAP" >}} | {{< license "AGPL-3.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,43 +28,43 @@ width: full
 |   **See Also**    | {{< ext "columnar" >}} {{< ext "pg_parquet" >}} {{< ext "timescaledb" >}} {{< ext "pg_analytics" >}} {{< ext "pg_mooncake" >}} {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "orioledb" >}} |
 |    **Siblings**   | {{< ext "citus" >}} |
 
-> [!Note] conflict with hydra columnar, no pg18
+> [!Note] conflict with hydra columnar
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.0.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `citus` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.0.0` | {{< bg "18" "citus_18" "green" >}} {{< bg "17" "citus_17" "green" >}} {{< bg "16" "citus_16" "green" >}} {{< bg "15" "citus_15" "red" >}} {{< bg "14" "citus_14" "red" >}} | `citus_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.0.0` | {{< bg "18" "postgresql-18-citus" "green" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "red" >}} {{< bg "14" "postgresql-14-citus" "red" >}} | `postgresql-$v-citus` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.1.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `citus` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.1.0` | {{< bg "18" "citus_18" "green" >}} {{< bg "17" "citus_17" "green" >}} {{< bg "16" "citus_16" "green" >}} {{< bg "15" "citus_15" "red" >}} {{< bg "14" "citus_14" "red" >}} | `citus_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `14.1.0` | {{< bg "18" "postgresql-18-citus" "green" >}} {{< bg "17" "postgresql-17-citus" "green" >}} {{< bg "16" "postgresql-16-citus" "green" >}} {{< bg "15" "postgresql-15-citus" "red" >}} {{< bg "14" "postgresql-14-citus" "red" >}} | `postgresql-$v-citus` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 15" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 28" "blue" >}} |
-| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 15" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 20" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 15" "blue" >}} |
-| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 17" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 25" "blue" >}} |
-| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 17" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 15" "blue" >}} |
-| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 8" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 4" "blue" >}} |      {{< bg "MISS" "citus_14 : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.0.0" "citus_16 : AVAIL 8" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 4" "blue" >}} |      {{< bg "MISS" "citus_14 : MISS 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
-| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-citus : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.0.0" "postgresql-16-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-citus : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 15" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 28" "blue" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 2" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 15" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 20" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 15" "blue" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 17" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 25" "blue" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 10" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 17" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 21" "blue" >}} | {{< bg "PGDG 13.0.0" "citus_14 : AVAIL 15" "blue" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 8" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 4" "blue" >}} |      {{< bg "MISS" "citus_14 : MISS 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "citus_18 : AVAIL 4" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_17 : AVAIL 8" "green" >}} | {{< bg "PIGSTY 14.1.0" "citus_16 : AVAIL 8" "green" >}} | {{< bg "PGDG 13.2.0" "citus_15 : AVAIL 4" "blue" >}} |      {{< bg "MISS" "citus_14 : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.2.0" "postgresql-15-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 13.0.0" "postgresql-14-citus : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-citus : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-18-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-17-citus : AVAIL 1" "green" >}} | {{< bg "PIGSTY 14.1.0" "postgresql-16-citus : AVAIL 1" "green" >}} |      {{< bg "MISS" "postgresql-15-citus : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-citus : MISS 0" "red" >}}      |
 
 
 ## Source
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/citusdata/citus" title="Repository" icon="github" subtitle="github.com/citusdata/citus" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="citus-14.0.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="citus-14.1.0.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -99,6 +99,7 @@ pig install citus_columnar -v 16;   # install for PG 16
 ```sql
 CREATE EXTENSION citus_columnar;
 ```
+
 
 
 

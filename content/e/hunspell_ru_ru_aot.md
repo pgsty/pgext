@@ -211,6 +211,7 @@ CREATE EXTENSION hunspell_ru_ru_aot;
 
 
 
+
 ## Usage
 
 > [hunspell_ru_ru_aot: Russian (AOT) Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

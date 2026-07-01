@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+
+import stub_doc
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Dump pgext.doc Markdown columns back to stub/ and stub-zh/."
+    )
+    parser.add_argument("--pgurl", default=stub_doc.DEFAULT_PGURL, help="PostgreSQL connection URL")
+    parser.add_argument("--stub-dir", default=REPO_ROOT / "stub", type=Path, help="English stub directory")
+    parser.add_argument("--zh-stub-dir", default=REPO_ROOT / "stub-zh", type=Path, help="Chinese stub directory")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    with stub_doc.connect(args.pgurl) as conn:
+        rows = stub_doc.fetch_doc_rows(conn)
+    en_count, zh_count = stub_doc.dump_stub_docs(rows, args.stub_dir, args.zh_stub_dir)
+    print(f"dumped pgext.doc: en_doc={en_count} zh_doc={zh_count}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

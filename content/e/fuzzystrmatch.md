@@ -48,6 +48,7 @@ CREATE EXTENSION fuzzystrmatch;
 
 
 
+
 ## Usage
 
 > [fuzzystrmatch: Determine similarities and distance between strings](https://www.postgresql.org/docs/current/fuzzystrmatch.html)

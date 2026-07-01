@@ -47,6 +47,7 @@ CREATE EXTENSION tcn;
 
 
 
+
 ## Usage
 
 > [tcn: triggered change notifications via LISTEN/NOTIFY](https://www.postgresql.org/docs/current/tcn.html)

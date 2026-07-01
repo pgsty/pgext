@@ -47,6 +47,7 @@ CREATE EXTENSION intagg;
 
 
 
+
 ## Usage
 
 > [intagg: integer aggregator and enumerator (obsolete)](https://www.postgresql.org/docs/current/intagg.html)

@@ -326,6 +326,7 @@ CREATE EXTENSION pg_profile CASCADE; -- requires dblink, plpgsql
 
 
 
+
 ## Usage
 
 > [pg_profile: historical performance profiling tool for PostgreSQL](https://github.com/zubkov-andrei/pg_profile)

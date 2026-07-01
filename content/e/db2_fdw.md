@@ -204,6 +204,8 @@ CREATE EXTENSION db2_fdw;
 ```
 
 
+
+
 ## Usage
 
 Sources: [README](https://github.com/wolfgangbrandl/db2_fdw), [current upstream README](https://github.com/pg-fdw/db2_fdw/blob/master/README.md)

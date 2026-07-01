@@ -215,6 +215,8 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
+
 ## Usage
 
 Sources: [README](https://github.com/supabase/supautils/blob/master/README.md), [homepage](https://supabase.github.io/supautils/), [releases](https://github.com/supabase/supautils/releases)

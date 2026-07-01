@@ -172,6 +172,9 @@ shared_preload_libraries = 'pg_sorted_heap';
 CREATE EXTENSION pg_sorted_heap;
 ```
 
+
+
+
 ## Usage
 
 Sources: [pg_sorted_heap README](https://github.com/skuznetsov/pg_sorted_heap), [stable API](https://github.com/skuznetsov/pg_sorted_heap/blob/main/docs/api-stable.md), [SQL API](https://github.com/skuznetsov/pg_sorted_heap/blob/main/docs/api.md), [control file](https://github.com/skuznetsov/pg_sorted_heap/blob/main/pg_sorted_heap.control).

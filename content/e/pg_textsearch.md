@@ -149,6 +149,9 @@ shared_preload_libraries = 'pg_textsearch';
 CREATE EXTENSION pg_textsearch;
 ```
 
+
+
+
 ## Usage
 
 Sources: [README v1.2.0](https://github.com/timescale/pg_textsearch/blob/v1.2.0/README.md), [v1.2.0 release notes](https://github.com/timescale/pg_textsearch/releases/tag/v1.2.0)

@@ -353,6 +353,9 @@ shared_preload_libraries = 'pg_net';
 CREATE EXTENSION pg_net;
 ```
 
+
+
+
 ## Usage
 
 Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3), [local package metadata](../db/extension.csv).

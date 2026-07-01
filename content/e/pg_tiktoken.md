@@ -213,6 +213,7 @@ CREATE EXTENSION pg_tiktoken;
 
 
 
+
 ## Usage
 
 > [pg_tiktoken](https://github.com/kelvich/pg_tiktoken): tiktoken tokenizer for use with OpenAI models in PostgreSQL.

@@ -48,6 +48,7 @@ CREATE EXTENSION tsm_system_rows;
 
 
 
+
 ## Usage
 
 > [tsm_system_rows: row-count-based TABLESAMPLE method](https://www.postgresql.org/docs/current/tsm-system-rows.html)

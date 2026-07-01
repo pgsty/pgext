@@ -211,6 +211,7 @@ CREATE EXTENSION chkpass;
 
 
 
+
 ## Usage
 
 > [chkpass: auto-encrypted password data type](https://github.com/lacanoid/chkpass)

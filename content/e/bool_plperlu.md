@@ -49,6 +49,7 @@ CREATE EXTENSION bool_plperlu CASCADE; -- requires plperlu
 
 
 
+
 ## Usage
 
 > [bool_plperlu: Transform between bool and PL/Perl untrusted](https://www.postgresql.org/docs/current/plperl.html)

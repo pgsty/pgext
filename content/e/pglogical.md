@@ -297,6 +297,7 @@ CREATE EXTENSION pglogical;
 
 
 
+
 ## Usage
 
 > [pglogical: PostgreSQL Logical Replication](https://github.com/2ndQuadrant/pglogical)

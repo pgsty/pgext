@@ -211,6 +211,7 @@ CREATE EXTENSION pg_geohash;
 
 
 
+
 ## Usage
 
 > [pg_geohash: Geohash functions for PostgreSQL](https://github.com/jistok/pg_geohash)

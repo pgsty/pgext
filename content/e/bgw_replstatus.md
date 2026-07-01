@@ -248,6 +248,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [bgw_replstatus: lightweight replication status checker for load balancers](https://github.com/mhagander/bgw_replstatus)

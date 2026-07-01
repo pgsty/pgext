@@ -210,6 +210,9 @@ shared_preload_libraries = 'pg_search';
 CREATE EXTENSION pg_search;
 ```
 
+
+
+
 ## Usage
 
 Sources: [ParadeDB extension install docs](https://docs.paradedb.com/deploy/self-hosted/extension), [create-index docs](https://docs.paradedb.com/documentation/indexing/create-index.md), [match docs](https://docs.paradedb.com/documentation/full-text/match.md), [score docs](https://docs.paradedb.com/documentation/sorting/score.md), [highlight docs](https://docs.paradedb.com/documentation/full-text/highlight.md), [v0.24.0 release](https://github.com/paradedb/paradedb/releases/tag/v0.24.0), [pg_search README](https://github.com/paradedb/paradedb/blob/v0.24.0/pg_search/README.md)

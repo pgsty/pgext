@@ -211,6 +211,7 @@ CREATE EXTENSION pagevis;
 
 
 
+
 ## Usage
 
 > [pagevis: ASCII visualization of PostgreSQL database pages](https://github.com/hollobon/pagevis)

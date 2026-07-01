@@ -47,6 +47,7 @@ CREATE EXTENSION pg_buffercache;
 
 
 
+
 ## Usage
 
 > [pg_buffercache: inspect the shared buffer cache](https://www.postgresql.org/docs/current/pgbuffercache.html)

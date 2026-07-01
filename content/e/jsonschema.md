@@ -211,13 +211,23 @@ pig install jsonschema -v 14;   # install for PG 14
 CREATE EXTENSION jsonschema;
 ```
 
-Source: [jsonschema v0.1.9 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/README.md), [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/doc/jsonschema.md), [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/jsonschema.control), [SQL definition](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/sql/jsonschema--0.1.9.sql).
+
+
 
 ## Usage
+
+Sources:
+
+- [jsonschema v0.1.9 README](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/README.md)
+- [documentation](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/doc/jsonschema.md)
+- [control file](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/jsonschema.control)
+- [Cargo manifest](https://github.com/theory/pg-jsonschema-boon/blob/v0.1.9/Cargo.toml)
 
 `jsonschema` validates JSON and JSONB values against JSON Schema inside PostgreSQL. It is the `theory/pg-jsonschema-boon` extension and is distinct from Supabase `pg_jsonschema`, although it provides compatibility wrappers named `json_matches_schema()` and `jsonb_matches_schema()`.
 
 The extension supports JSON Schema draft 4, draft 6, draft 7, draft 2019-09, and draft 2020-12 through the Rust `boon` validator. It has no runtime dependency beyond PostgreSQL.
+
+Latest-check note: upstream `main` currently points at the same commit as tag `v0.1.9`, so this refresh found no material user-facing delta beyond replacing the stale generated-SQL source link.
 
 ### Validate a Schema and a Document
 

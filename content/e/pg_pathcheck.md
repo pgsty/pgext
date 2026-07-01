@@ -147,6 +147,9 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
+
+
 ## Usage
 
 Sources: [README](https://github.com/danolivo/pg_pathcheck/blob/main/README.md), [0.9.1 PG17/18 release](https://github.com/danolivo/pg_pathcheck/releases/tag/v0.9.1_pg17-18), [PGXN metadata](https://api.pgxn.org/dist/pg_pathcheck.json), [source](https://api.pgxn.org/src/pg_pathcheck/pg_pathcheck-0.9.1/pg_pathcheck.c)

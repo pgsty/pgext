@@ -47,6 +47,7 @@ CREATE EXTENSION tsm_system_time;
 
 
 
+
 ## Usage
 
 > [tsm_system_time: time-based TABLESAMPLE method](https://www.postgresql.org/docs/current/tsm-system-time.html)

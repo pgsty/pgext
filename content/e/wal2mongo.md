@@ -175,6 +175,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [wal2mongo: PostgreSQL logical decoding output plugin for MongoDB](https://github.com/HighgoSoftware/wal2mongo)

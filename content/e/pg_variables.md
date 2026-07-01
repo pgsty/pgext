@@ -211,6 +211,9 @@ pig install pg_variables -v 14;   # install for PG 14
 CREATE EXTENSION pg_variables;
 ```
 
+
+
+
 ## Usage
 
 - Sources: [README](https://github.com/postgrespro/pg_variables/blob/master/README.md), [repository tags](https://github.com/postgrespro/pg_variables/tags), [control file](https://github.com/postgrespro/pg_variables/blob/master/pg_variables.control)

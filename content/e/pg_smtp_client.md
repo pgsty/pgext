@@ -213,6 +213,8 @@ CREATE EXTENSION pg_smtp_client;
 ```
 
 
+
+
 ## Usage
 
 ### Enabling the extension

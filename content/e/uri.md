@@ -214,6 +214,7 @@ CREATE EXTENSION uri;
 
 
 
+
 ## Usage
 
 > [uri: URI data type with validation and component extraction](https://github.com/petere/pguri)

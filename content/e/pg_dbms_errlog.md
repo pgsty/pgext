@@ -183,6 +183,7 @@ CREATE EXTENSION pg_dbms_errlog CASCADE; -- requires pg_statement_rollback
 
 
 
+
 ## Usage
 
 > [pg_dbms_errlog: Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table](https://github.com/HexaCluster/pg_dbms_errlog)

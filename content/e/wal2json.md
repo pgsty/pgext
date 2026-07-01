@@ -242,6 +242,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [wal2json: Changing data capture in JSON format](https://github.com/eulerto/wal2json)

@@ -185,6 +185,7 @@ CREATE EXTENSION pg_strom;
 
 
 
+
 ## Usage
 
 > [pg_strom: Big-data processing acceleration using GPU and NVME](https://github.com/heterodb/pg-strom)

@@ -289,6 +289,7 @@ CREATE EXTENSION timestamp9;
 
 
 
+
 ## Usage
 
 > [timestamp9: nanosecond precision timestamp type for PostgreSQL](https://github.com/optiver/timestamp9)

@@ -52,6 +52,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [auto_explain: automatically log slow query plans](https://www.postgresql.org/docs/current/auto-explain.html)

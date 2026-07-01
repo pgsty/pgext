@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+from pathlib import Path
+
+sys.dont_write_bytecode = True
+
+import stub_doc
+
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Load local stub/ and stub-zh/ Markdown files into pgext.doc."
+    )
+    parser.add_argument("--pgurl", default=stub_doc.DEFAULT_PGURL, help="PostgreSQL connection URL")
+    parser.add_argument("--stub-dir", default=REPO_ROOT / "stub", type=Path, help="English stub directory")
+    parser.add_argument("--zh-stub-dir", default=REPO_ROOT / "stub-zh", type=Path, help="Chinese stub directory")
+    return parser.parse_args()
+
+
+def warn_extra(label: str, names):
+    if not names:
+        return
+    preview = ", ".join(names[:10])
+    suffix = "" if len(names) <= 10 else f", ... (+{len(names) - 10} more)"
+    print(f"warning: {len(names)} {label} files do not match pgext.extension rows: {preview}{suffix}", file=sys.stderr)
+
+
+def main() -> int:
+    args = parse_args()
+    en_docs = stub_doc.collect_stub_docs(args.stub_dir)
+    zh_docs = stub_doc.collect_stub_docs(args.zh_stub_dir)
+
+    with stub_doc.connect(args.pgurl) as conn:
+        stats = stub_doc.load_stub_docs(conn, en_docs, zh_docs)
+
+    warn_extra("English stub", stats["extra_en"])
+    warn_extra("Chinese stub", stats["extra_zh"])
+    print(
+        "loaded pgext.doc: "
+        f"base_rows={stats['base_rows']} "
+        f"en_doc={stats['en_doc']} "
+        f"zh_doc={stats['zh_doc']} "
+        f"missing_en={len(stats['missing_en'])} "
+        f"missing_zh={len(stats['missing_zh'])}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

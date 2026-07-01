@@ -211,6 +211,7 @@ CREATE EXTENSION aggs_for_arrays;
 
 
 
+
 ## Usage
 
 > [aggs_for_arrays: aggregate-like functions for single arrays (column-based)](https://github.com/pjungwir/aggs_for_arrays)

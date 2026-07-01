@@ -211,6 +211,7 @@ CREATE EXTENSION floatvec;
 
 
 
+
 ## Usage
 
 > [floatvec: element-by-element arithmetic on PostgreSQL arrays](https://github.com/pjungwir/floatvec)

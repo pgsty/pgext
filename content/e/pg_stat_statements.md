@@ -55,6 +55,7 @@ CREATE EXTENSION pg_stat_statements;
 
 
 
+
 ## Usage
 
 > [pg_stat_statements: track cumulative query execution statistics](https://www.postgresql.org/docs/current/pgstatstatements.html)

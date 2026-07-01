@@ -97,6 +97,7 @@ CREATE EXTENSION postgis_tiger_geocoder CASCADE; -- requires postgis, fuzzystrma
 
 
 
+
 ## Usage
 
 > [PostGIS TIGER Geocoder: US Census TIGER/Line geocoding for PostGIS](https://github.com/postgis/postgis)

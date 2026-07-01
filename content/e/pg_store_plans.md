@@ -288,6 +288,9 @@ shared_preload_libraries = 'pg_store_plans';
 CREATE EXTENSION pg_store_plans;
 ```
 
+
+
+
 ## Usage
 
 Sources: [official docs](https://ossc-db.github.io/pg_store_plans/), [repo](https://github.com/ossc-db/pg_store_plans), [1.10 release notes](https://github.com/ossc-db/pg_store_plans/releases/tag/1.10)

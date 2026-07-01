@@ -462,6 +462,7 @@ CREATE EXTENSION pgsentinel;
 
 
 
+
 ## Usage
 
 > [pgsentinel: active session history for PostgreSQL](https://github.com/pgsentinel/pgsentinel)

@@ -99,6 +99,7 @@ CREATE EXTENSION babelfishpg_money;
 
 
 
+
 ## Usage
 
 > [babelfishpg_money: SQL Server Money Data Type](https://babelfishpg.org/)

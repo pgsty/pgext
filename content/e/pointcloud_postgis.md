@@ -97,6 +97,7 @@ CREATE EXTENSION pointcloud_postgis CASCADE; -- requires postgis, pointcloud
 
 
 
+
 ## Usage
 
 > [pointcloud_postgis: PostGIS integration for pgPointcloud](https://github.com/pgpointcloud/pointcloud)

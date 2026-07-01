@@ -211,6 +211,7 @@ CREATE EXTENSION md5hash;
 
 
 
+
 ## Usage
 
 > [md5hash: native MD5 hash data type for PostgreSQL](https://github.com/tvondra/md5hash)

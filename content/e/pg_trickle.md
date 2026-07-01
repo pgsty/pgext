@@ -126,6 +126,9 @@ shared_preload_libraries = 'pg_trickle';
 CREATE EXTENSION pg_trickle;
 ```
 
+
+
+
 ## Usage
 
 Sources: [README v0.81.0](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/README.md), [v0.81.0 release notes](https://github.com/trickle-labs/pg-trickle/releases/tag/v0.81.0), [SQL reference](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/SQL_REFERENCE.md), [configuration guide](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/CONFIGURATION.md), [GUC catalog](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/docs/GUC_CATALOG.md), [Cargo.toml](https://github.com/trickle-labs/pg-trickle/blob/v0.81.0/Cargo.toml)

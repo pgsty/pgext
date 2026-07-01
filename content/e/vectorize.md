@@ -221,6 +221,9 @@ shared_preload_libraries = 'pg_cron, vectorize';
 CREATE EXTENSION vectorize CASCADE; -- requires pg_cron, pgmq, vector
 ```
 
+
+
+
 ## Usage
 
 Sources: [repo README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/README.md), [extension README](https://github.com/ChuckHend/pg_vectorize/blob/v0.26.2/extension/README.md), [v0.26.2 release](https://github.com/ChuckHend/pg_vectorize/releases/tag/v0.26.2)

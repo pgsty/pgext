@@ -387,6 +387,8 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
+
 ## Usage
 
 Sources: [README](https://github.com/EnterpriseDB/pg_failover_slots/blob/master/README.md), [releases](https://github.com/EnterpriseDB/pg_failover_slots/releases)

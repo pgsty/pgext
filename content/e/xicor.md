@@ -210,6 +210,9 @@ pig install xicor -v 14;   # install for PG 14
 CREATE EXTENSION xicor;
 ```
 
+
+
+
 ## Usage
 
 Sources: [README](https://github.com/Florents-Tselai/pgxicor/blob/main/README.md), [release 0.1.1](https://github.com/Florents-Tselai/pgxicor/releases/tag/v0.1.1)

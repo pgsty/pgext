@@ -254,6 +254,7 @@ CREATE EXTENSION sequential_uuids;
 
 
 
+
 ## Usage
 
 > [sequential_uuids: sequential UUID generators for better index locality](https://github.com/tvondra/sequential-uuids)

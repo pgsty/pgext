@@ -214,6 +214,7 @@ CREATE EXTENSION explain_ui;
 
 
 
+
 ## Usage
 
 > [explain_ui: generate visual explain plan URLs from SQL](https://github.com/davidgomes/pg-explain-ui)

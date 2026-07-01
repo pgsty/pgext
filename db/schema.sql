@@ -289,6 +289,41 @@ COMMENT ON COLUMN pgext.extension.zh_desc IS 'Chinese description of extension f
 COMMENT ON COLUMN pgext.extension.comment IS 'Additional notes, special instructions, or warnings';
 COMMENT ON COLUMN pgext.extension.mtime IS 'Last modification timestamp of this record';
 
+-----------------------------------
+-- Extension Documentation
+-----------------------------------
+-- Local Markdown documentation for each curated extension.
+-- English and Chinese docs are synchronized from stub/ and stub-zh/.
+CREATE TABLE IF NOT EXISTS pgext.doc
+(
+    id          INTEGER PRIMARY KEY REFERENCES pgext.extension (id) ON DELETE CASCADE,
+    ext         TEXT NOT NULL UNIQUE REFERENCES pgext.extension (name) ON DELETE CASCADE,
+    pkg         TEXT NOT NULL,
+    repo_url    TEXT,
+    license_url TEXT,
+    control_url TEXT,
+    author_url  TEXT,
+    home_url    TEXT,
+    cargo_url   TEXT,
+    en_doc      TEXT,
+    zh_doc      TEXT
+);
+
+CREATE INDEX IF NOT EXISTS doc_ext_pkg_idx ON pgext.doc (ext, pkg);
+
+COMMENT ON TABLE pgext.doc IS 'PostgreSQL extension local documentation synchronized from stub directories';
+COMMENT ON COLUMN pgext.doc.id IS 'Extension identifier copied from pgext.extension.id';
+COMMENT ON COLUMN pgext.doc.ext IS 'Extension name copied from pgext.extension.name';
+COMMENT ON COLUMN pgext.doc.pkg IS 'Package name copied from pgext.extension.pkg';
+COMMENT ON COLUMN pgext.doc.repo_url IS 'Source repository URL seeded from pgext.extension.url';
+COMMENT ON COLUMN pgext.doc.license_url IS 'Optional upstream license URL';
+COMMENT ON COLUMN pgext.doc.control_url IS 'Optional upstream control file URL';
+COMMENT ON COLUMN pgext.doc.author_url IS 'Optional upstream author or maintainer URL';
+COMMENT ON COLUMN pgext.doc.home_url IS 'Optional upstream homepage URL';
+COMMENT ON COLUMN pgext.doc.cargo_url IS 'pgrx Cargo.toml file URL for rust extension';
+COMMENT ON COLUMN pgext.doc.en_doc IS 'English Markdown documentation from stub/<ext>.md';
+COMMENT ON COLUMN pgext.doc.zh_doc IS 'Chinese Markdown documentation from stub-zh/<ext>.md';
+
 
 -----------------------------------
 -- YUM Packages

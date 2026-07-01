@@ -94,6 +94,7 @@ CREATE EXTENSION ora_btree_gin CASCADE; -- requires ivorysql_ora
 
 
 
+
 ## Usage
 
 > [ora_btree_gin: Support for indexing oracle datatypes in GIN](https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ora_btree_gin)

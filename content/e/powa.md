@@ -374,6 +374,7 @@ CREATE EXTENSION powa CASCADE; -- requires plpgsql, pg_stat_statements, btree_gi
 
 
 
+
 ## Usage
 
 > [powa: PostgreSQL Workload Analyzer](https://github.com/powa-team/powa)

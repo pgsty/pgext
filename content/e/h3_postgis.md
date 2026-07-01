@@ -98,6 +98,7 @@ CREATE EXTENSION h3_postgis CASCADE; -- requires h3, postgis, postgis_raster
 
 
 
+
 ## Usage
 
 > [h3_postgis: PostGIS integration for H3](https://github.com/zachasme/h3-pg)

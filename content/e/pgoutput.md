@@ -45,6 +45,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [pgoutput: Logical Replication output plugin](https://www.postgresql.org/docs/current/protocol-logical-replication.html)

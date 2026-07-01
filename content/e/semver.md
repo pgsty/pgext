@@ -324,6 +324,7 @@ CREATE EXTENSION semver;
 
 
 
+
 ## Usage
 
 > [semver: semantic versioning data type](https://github.com/theory/pg-semver)

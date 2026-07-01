@@ -257,6 +257,7 @@ CREATE EXTENSION mobilitydb CASCADE; -- requires postgis
 
 
 
+
 ## Usage
 
 Sources: [repo README](https://github.com/MobilityDB/MobilityDB), [MobilityDB 1.3 manual](https://mobilitydb.github.io/MobilityDB/master/), [v1.3.0 release](https://github.com/MobilityDB/MobilityDB/releases/tag/v1.3.0)

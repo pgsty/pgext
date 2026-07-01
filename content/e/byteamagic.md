@@ -207,6 +207,9 @@ pig install byteamagic -v 14;   # install for PG 14
 CREATE EXTENSION byteamagic;
 ```
 
+
+
+
 ## Usage
 
 Sources: [official repo](https://github.com/nmandery/pg_byteamagic), [official doc](https://raw.githubusercontent.com/nmandery/pg_byteamagic/master/doc/byteamagic.md)

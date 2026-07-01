@@ -18,7 +18,7 @@ TimescaleDB, Versioning & Temporal Table, Crontab, Async & Background Job Schedu
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1000 | {{< alias "timescaledb" >}} | 2.28.0 | Enables scalable inserts and complex queries for time-series data |
+| 1000 | {{< alias "timescaledb" >}} | 2.28.2 | Enables scalable inserts and complex queries for time-series data |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 1.23.0 | Library of analytical hyperfunctions, time-series pipelining, and other SQL utilities |
 | 1020 | {{< alias "timeseries" "pg_timeseries" >}} | 0.2.1 | Convenience API for time series stack |
 | 1030 | {{< alias "periods" >}} | 1.2.3 | Provide Standard SQL functionality for PERIODs and SYSTEM VERSIONING |
@@ -75,7 +75,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.3 | vector data type and ivfflat and hnsw access methods |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.4 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.2 | The simplest way to do vector search on Postgres |
@@ -86,7 +86,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 | 1870 | {{< alias "pg_tiktoken" >}} | 0.0.1 | tiktoken tokenizer for use with OpenAI models in postgres |
 | 1880 | {{< alias "pg4ml" >}} | 2.0 | Machine learning framework for PostgreSQL |
 | 1890 | {{< alias "pgml" >}} | 2.10.0 | Run AL/ML workloads with SQL interface |
-| 1900 | {{< alias "pgmnemo" >}} | 0.8.3 | Provenance-gated vector memory for LLM agents in PostgreSQL |
+| 1900 | {{< alias "pgmnemo" >}} | 0.12.1 | Provenance-gated vector memory for LLM agents in PostgreSQL |
 
 ## FTS
 
@@ -102,7 +102,7 @@ ElasticSearch Alternative with BM25, 2-gram/3-gram Fuzzy Search, Zhparser & Huns
 | 2140 | {{< alias "pg_bestmatch" >}} | 0.0.2 | Generate BM25 sparse vector inside PostgreSQL |
 | 2150 | {{< alias "vchord_bm25" >}} | 0.3.0 | A postgresql extension for bm25 ranking algorithm |
 | 2160 | {{< alias "pg_tokenizer" >}} | 0.1.1 | Tokenizers for full-text search |
-| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.4.0 | IAM-LIKE pattern matching with bitmap indexing |
+| 2170 | {{< alias "biscuit" "pg_biscuit" >}} | 2.4.1 | IAM-LIKE pattern matching with bitmap indexing |
 | 2180 | {{< alias "pg_textsearch" >}} | 1.2.0 | Full-text search with BM25 ranking |
 | 2190 | {{< alias "pg_pinyin" >}} | 0.0.4 | Pinyin romanization and search helpers for PostgreSQL |
 | 2200 | {{< alias "pg_kazsearch" >}} | 2.2.0 | Kazakh full-text search extension for PostgreSQL |
@@ -126,8 +126,8 @@ DuckDB Integration with FDW & PG Lakehouse, Access Parquet from File/S3, Shardin
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 2400 | {{< alias "citus" >}} | 14.0.0 | Distributed PostgreSQL as an extension |
-| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.0.0 | Citus columnar storage engine |
+| 2400 | {{< alias "citus" >}} | 14.1.0 | Distributed PostgreSQL as an extension |
+| 2401 | {{< alias "citus_columnar" "citus" >}} | 14.1.0 | Citus columnar storage engine |
 | 2410 | {{< alias "columnar" "hydra" >}} | 1.1.2 | Hydra Columnar extension |
 | 2420 | {{< alias "pg_analytics" >}} | 0.3.7 | Postgres for analytics, powered by DuckDB |
 | 2430 | {{< alias "pg_duckdb" >}} | 1.1.1 | DuckDB Embedded in Postgres |
@@ -240,7 +240,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.9.1 | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.9.2 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
@@ -583,7 +583,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 | 8730 | {{< alias "kafka_fdw" >}} | 0.0.3 | kafka Foreign Data Wrapper for CSV formatted messages |
 | 8740 | {{< alias "hdfs_fdw" >}} | 2.3.3 | foreign-data wrapper for remote hdfs servers |
 | 8750 | {{< alias "firebird_fdw" >}} | 1.4.2 | Foreign data wrapper for Firebird |
-| 8760 | {{< alias "rdf_fdw" >}} | 2.5.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
+| 8760 | {{< alias "rdf_fdw" >}} | 2.6.0 | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
 | 8800 | {{< alias "aws_s3" >}} | 0.0.1 | aws_s3 postgres extension to import/export data from/to s3 |
 | 8810 | {{< alias "log_fdw" >}} | 1.4 | foreign-data wrapper for Postgres log file access |
 | 8970 | {{< alias "dblink" >}} | 1.2 | connect to other PostgreSQL databases from within a database |

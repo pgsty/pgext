@@ -101,6 +101,7 @@ CREATE EXTENSION babelfishpg_tsql CASCADE; -- requires babelfishpg_common, uuid-
 
 
 
+
 ## Usage
 
 > [babelfishpg_tsql: SQL Server Transact SQL compatibility](https://babelfishpg.org/)

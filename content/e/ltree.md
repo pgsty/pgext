@@ -48,6 +48,7 @@ CREATE EXTENSION ltree;
 
 
 
+
 ## Usage
 
 > [ltree: hierarchical tree-like label data type](https://www.postgresql.org/docs/current/ltree.html)

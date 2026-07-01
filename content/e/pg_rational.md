@@ -211,6 +211,7 @@ CREATE EXTENSION pg_rational;
 
 
 
+
 ## Usage
 
 > [pg_rational: precise fractional arithmetic in 64 bits](https://github.com/begriffs/pg_rational)

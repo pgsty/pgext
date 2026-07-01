@@ -47,6 +47,7 @@ CREATE EXTENSION dict_xsyn;
 
 
 
+
 ## Usage
 
 > [dict_xsyn: extended synonym dictionary for text search](https://www.postgresql.org/docs/current/dict-xsyn.html)

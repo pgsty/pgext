@@ -210,6 +210,8 @@ CREATE EXTENSION kafka_fdw;
 ```
 
 
+
+
 ## Usage
 
 > Syntax:

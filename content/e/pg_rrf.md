@@ -190,6 +190,9 @@ pig install pg_rrf -v 14;   # install for PG 14
 CREATE EXTENSION pg_rrf;
 ```
 
+
+
+
 ## Usage
 > Sources: [README](https://github.com/yuiseki/pg_rrf/blob/main/README.md), [v0.0.3 release](https://github.com/yuiseki/pg_rrf/releases/tag/v0.0.3)
 

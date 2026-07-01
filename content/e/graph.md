@@ -212,13 +212,22 @@ pig install graph -v 14;   # install for PG 14
 CREATE EXTENSION graph;
 ```
 
-Source: [pgGraph v0.1.7 README](https://github.com/Evokoa/pgGraph/blob/v0.1.7/README.md), [Quickstart](https://github.com/Evokoa/pgGraph/blob/v0.1.7/docs/quickstart.mdx), [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v0.1.7/docs/user_guide/api-reference.mdx), [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v0.1.7/docs/user_guide/schema-registration.mdx), [Configuration](https://github.com/Evokoa/pgGraph/blob/v0.1.7/docs/user_guide/configuration.mdx).
+
+
 
 ## Usage
 
-`pggraph` is the package and PGXN distribution name, but the installed PostgreSQL extension is `graph`. The extension builds a derived graph index from ordinary PostgreSQL tables, keeps those tables as the source of truth, and exposes graph search, traversal, GQL-style pattern reads, and path functions through the `graph` schema.
+Sources:
 
-The upstream project labels v0.1.7 as early alpha. Use it first in a disposable or development database and rebuild the graph from source tables instead of treating the generated graph artifact as authoritative data.
+- [pgGraph v0.1.8 README](https://github.com/Evokoa/pgGraph/blob/v0.1.8/README.md)
+- [v0.1.8 release notes](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/release-notes.mdx)
+- [SQL API Reference](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/api-reference.mdx)
+- [Schema Registration](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/schema-registration.mdx)
+- [Administration and Security](https://github.com/Evokoa/pgGraph/blob/v0.1.8/docs/user_guide/administration-and-security.mdx)
+
+`pggraph` is the package and PGXN distribution name, but the installed PostgreSQL extension is `graph`. The extension builds derived graph artifacts from ordinary PostgreSQL tables, keeps those tables as the source of truth, and exposes graph search, traversal, shortest path, GQL-style reads, and selected mapped writes through the `graph` schema.
+
+v0.1.8 adds named graph administration, graph-scoped catalogs, graph grants and quotas, hosted maintenance jobs, relationship creation in GQL, and explicit compatibility boundaries for openCypher and SQL/PGQ preview behavior. Upstream still labels pgGraph as early alpha; test it in a disposable or development database first, and rebuild graph artifacts from source tables rather than treating them as authoritative storage.
 
 ### Basic Graph Build
 
@@ -247,54 +256,61 @@ INSERT INTO people VALUES
   ('p3', 'Carol', 'c2');
 
 SELECT * FROM graph.auto_discover('public');
+SELECT * FROM graph.build();
 
 SELECT node_count, edge_count, edge_types
 FROM graph.status();
 ```
 
-`graph.auto_discover('public')` scans primary keys and foreign keys in the schema, registers the discovered source tables and edges, then builds the graph. For production schemas, prefer explicit registration so labels, search columns, weights, and tenant behavior are intentional.
+`graph.auto_discover('public')` scans primary keys and foreign keys in the selected schema, registers discovered source tables and edges, and prepares the graph for `graph.build()`. In production schemas, prefer explicit registration so labels, search columns, filter columns, weights, tenant behavior, and graph identity are deliberate.
 
-### Manual Registration
+### Manual and Named-Graph Registration
 
 ```sql
-SELECT graph.reset();
+SELECT graph.create_graph('customer_360', namespace := 'analytics');
+SELECT graph.set_current_graph('customer_360', namespace := 'analytics');
 
 SELECT graph.add_table(
   table_name := 'public.people'::regclass,
   id_column  := 'id',
-  columns    := ARRAY['name']
+  columns    := ARRAY['name'],
+  tenant_column := NULL
 );
 
-SELECT graph.add_table(
+SELECT graph.add_table_to_graph(
+  graph_name := 'customer_360',
   table_name := 'public.companies'::regclass,
   id_column  := 'id',
-  columns    := ARRAY['name']
+  columns    := ARRAY['name'],
+  graph_namespace := 'analytics'
 );
 
-SELECT graph.add_edge(
-  from_table    := 'public.people'::regclass,
-  from_column   := 'company_id',
-  to_table      := 'public.companies'::regclass,
-  to_column     := 'id',
-  label         := 'works_at',
-  bidirectional := true
+SELECT graph.add_edge_to_graph(
+  graph_name := 'customer_360',
+  from_table := 'public.people'::regclass,
+  from_column := 'company_id',
+  to_table := 'public.companies'::regclass,
+  to_column := 'id',
+  label := 'works_at',
+  bidirectional := true,
+  graph_namespace := 'analytics'
 );
 
-SELECT * FROM graph.build();
+SELECT * FROM graph.build_graph('customer_360', graph_namespace := 'analytics');
 ```
 
-The node identifier must match a primary key or a unique `NOT NULL` index. `columns` controls the source-table properties available to search and GQL. Traversal filter pushdown uses separate `graph.add_filter_column()` registrations.
+Registration applies to the current graph selection unless you use the explicit `*_to_graph` and `*_from_graph` helpers. Node identifiers must match a primary key or a unique `NOT NULL` index. `columns` controls searchable and GQL-visible properties; traversal filter pushdown uses separate `graph.add_filter_column()` registrations. Edge-table and junction-table relationships are also supported, and `label_column` can provide dynamic edge labels up to the v0.1.8 user-facing label limit.
 
 ### Search, Traversal, and Paths
 
 ```sql
 SELECT node_table_name, node_id, node
 FROM graph.search(
-  property_key  := 'name',
+  property_key   := 'name',
   property_value := 'Alice',
-  table_filter  := 'public.people'::regclass,
-  mode          := 'exact',
-  hydrate       := true
+  table_filter   := 'public.people'::regclass,
+  mode           := 'exact',
+  hydrate        := true
 );
 
 SELECT depth, node_table_name, node_id, edge_path
@@ -315,9 +331,9 @@ FROM graph.shortest_path(
 );
 ```
 
-`hydrate := false` returns compact graph coordinates. With hydration enabled, source-row visibility is still governed by PostgreSQL ACLs and RLS, and stale coordinates fail closed rather than fabricating rows.
+With `hydrate := false`, graph functions return compact graph coordinates. With hydration enabled, PostgreSQL source-table ACLs and RLS still govern which source rows are visible. Stale coordinates fail closed rather than fabricating rows.
 
-### GQL Queries
+### GQL Queries and Relationship Writes
 
 ```sql
 SELECT row
@@ -331,12 +347,26 @@ FROM graph.gql(
 );
 ```
 
-`graph.gql()` returns one `jsonb` object per SQL row. Node labels map to registered table names and relationship types map to registered edge labels. The supported GQL/openCypher subset covers common reads, bounded paths, selected aggregates, and narrow mapped writes when mutable overlays are enabled.
+`graph.gql()` returns one `jsonb` object per SQL row. Node labels map to registered table names and relationship types map to registered edge labels. v0.1.8 extends the mutable GQL surface with registered relationship creation: mapped writes still go through PostgreSQL source-table DML, and source tables remain authoritative. Unsupported openCypher or SQL/PGQ shapes now fail with clearer capability errors instead of partial behavior.
 
-### Operational Caveats
+### Administration and Operations
 
-- Rebuild with `graph.build()` after changing registrations or after source-table changes that are not covered by the selected sync mode.
-- Dynamic edge labels use compact IDs; v0.1.7 supports up to 254 user-facing edge labels.
-- Weighted shortest paths require a numeric `weight_column`; missing or NULL weights default to `1`.
-- Important GUCs include `graph.max_nodes`, `graph.max_frontier`, `graph.memory_limit_mb`, `graph.query_freshness`, `graph.default_projection_mode`, and `graph.mutable_enabled`.
-- Mapped GQL writes require `graph.default_projection_mode = 'mutable_overlay'` and `graph.mutable_enabled = on`.
+```sql
+GRANT USAGE, CREATE ON SCHEMA graph TO graph_admin;
+
+SELECT * FROM graph.grant_graph('customer_360', 'app_reader', 'read', namespace := 'analytics');
+SELECT * FROM graph.set_graph_quota('owner', 'max_named_graphs', 25, scope_key := 'app_owner');
+SELECT * FROM graph.select_graph('customer_360', namespace := 'analytics');
+SELECT * FROM graph.add_sync_policy('customer_360', schedule_interval_secs := 300, graph_namespace := 'analytics');
+SELECT * FROM graph.run_due_jobs();
+SELECT * FROM graph.projection_status();
+```
+
+Graph administration covers catalog mutation, builds, sync replay, maintenance, quotas, runtime graph loading, and global analytics. Named graph privileges are `read`, `write`, `build`, and `admin`, but graph `read` is not enough by itself: hydrated reads still require `SELECT` on source tables. A selected graph tenant also scopes traversal, search, GQL, and Cypher calls unless an explicit matching tenant is supplied.
+
+### Caveats
+
+- Source tables remain the source of truth. Graph artifacts, projection files, sync state, and runtime engines are derived and rebuildable.
+- Use `graph.build()` or graph-scoped build helpers after registration changes, and use sync/maintenance APIs when relying on incremental projection state.
+- Internal catalog tables such as `graph._graphs`, grants, quotas, jobs, sync logs, and projection metadata are implementation details; use public SQL functions instead.
+- v0.1.8 raises the source-build baseline to Rust 1.96 and `cargo-pgrx` 0.19.1. PostgreSQL 14 through 18 remain supported upstream, with PostgreSQL 17 as the default release-gate target.

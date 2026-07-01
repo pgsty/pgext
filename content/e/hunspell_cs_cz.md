@@ -211,6 +211,7 @@ CREATE EXTENSION hunspell_cs_cz;
 
 
 
+
 ## Usage
 
 > [hunspell_cs_cz: Czech Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

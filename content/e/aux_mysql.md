@@ -122,6 +122,7 @@ CREATE EXTENSION aux_mysql;
 
 
 
+
 ## Usage
 
 > [aux_mysql: MySQL Supplementary Extension](https://github.com/HaloTech-Co-Ltd/openHalo)

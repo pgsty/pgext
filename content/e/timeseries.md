@@ -213,6 +213,7 @@ CREATE EXTENSION timeseries CASCADE; -- requires pg_cron, pg_partman
 
 
 
+
 ## Usage
 
 Sources: [README](https://github.com/ChuckHend/pg_timeseries/blob/v0.2.1/README.md), [v0.2.1 release](https://github.com/ChuckHend/pg_timeseries/releases/tag/v0.2.1), [PGXN](https://pgxn.org/dist/timeseries/)

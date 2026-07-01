@@ -211,6 +211,7 @@ CREATE EXTENSION hunspell_en_us;
 
 
 
+
 ## Usage
 
 > [hunspell_en_us: English (US) Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

@@ -126,6 +126,9 @@ shared_preload_libraries = 'pg_orca';
 CREATE EXTENSION pg_orca;
 ```
 
+
+
+
 ## Usage
 
 Sources: [pgorca README](https://github.com/quantumiodb/pgorca), [entrypoint/GUC source](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.cpp), [control file](https://github.com/quantumiodb/pgorca/blob/main/pg_orca.control).

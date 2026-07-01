@@ -226,6 +226,7 @@ CREATE EXTENSION extra_window_functions;
 
 
 
+
 ## Usage
 
 > [extra_window_functions: additional window functions for PostgreSQL](https://github.com/xocolatl/extra_window_functions)

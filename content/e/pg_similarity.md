@@ -245,6 +245,7 @@ CREATE EXTENSION pg_similarity;
 
 
 
+
 ## Usage
 
 > [pg_similarity](https://github.com/eulerto/pg_similarity): Support similarity queries on PostgreSQL.

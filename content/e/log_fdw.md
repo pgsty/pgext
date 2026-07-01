@@ -212,6 +212,8 @@ CREATE EXTENSION log_fdw;
 ```
 
 
+
+
 ## Usage
 
 > Syntax:

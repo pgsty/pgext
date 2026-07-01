@@ -340,6 +340,7 @@ CREATE EXTENSION pg_stat_kcache CASCADE; -- requires pg_stat_statements
 
 
 
+
 ## Usage
 
 > [pg_stat_kcache: kernel cache statistics for PostgreSQL](https://github.com/powa-team/pg_stat_kcache)

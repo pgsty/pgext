@@ -211,6 +211,7 @@ CREATE EXTENSION hunspell_nl_nl;
 
 
 
+
 ## Usage
 
 > [hunspell_nl_nl: Dutch Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

@@ -94,6 +94,7 @@ CREATE EXTENSION ora_btree_gist CASCADE; -- requires ivorysql_ora
 
 
 
+
 ## Usage
 
 > [ora_btree_gist: Support for oracle indexing common datatypes in GiST](https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ora_btree_gist)

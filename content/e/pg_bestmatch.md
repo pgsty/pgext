@@ -220,6 +220,8 @@ CREATE EXTENSION pg_bestmatch;
 ```
 
 
+
+
 ## Usage
 
 - repo: https://github.com/tensorchord/pg_bestmatch.rs

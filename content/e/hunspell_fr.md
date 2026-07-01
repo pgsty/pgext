@@ -211,6 +211,7 @@ CREATE EXTENSION hunspell_fr;
 
 
 
+
 ## Usage
 
 > [hunspell_fr: French Hunspell dictionary for PostgreSQL](https://github.com/postgrespro/hunspell_dicts)

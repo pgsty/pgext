@@ -45,6 +45,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 
 
+
 ## Usage
 
 > [test_decoding: SQL-based test/example module for WAL logical decoding](https://www.postgresql.org/docs/current/test-decoding.html)

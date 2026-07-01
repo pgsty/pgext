@@ -47,6 +47,7 @@ CREATE EXTENSION citext;
 
 
 
+
 ## Usage
 
 > [citext: case-insensitive character string type](https://www.postgresql.org/docs/current/citext.html)

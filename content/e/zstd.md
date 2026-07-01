@@ -213,6 +213,8 @@ CREATE EXTENSION zstd;
 ```
 
 
+
+
 ## Usage
 
 | Function                                                                             | Return Type |
