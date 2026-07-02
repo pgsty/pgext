@@ -18,6 +18,7 @@ Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 | roaringbitmap | 1.1.0    | 1.2.0-2 | PG 14-18, llvm-lto packaging fix      |
 | biscuit       | 2.3.0    | 2.4.1   | PG 16-18                              |
 | pgmnemo       | 0.8.3    | 0.12.1  | PG 14-18                              |
+| pg_ivm        | 1.14     | 1.15    | PG 14-18                              |
 | rdf_fdw       | 2.5.0    | 2.6.0   | PG 14-18, libcurl compatibility patch |
 
 ## 2026-06-18

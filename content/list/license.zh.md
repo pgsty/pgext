@@ -32,9 +32,9 @@ weight: 300
 | {{< license "BSD 0-Clause" >}} | 2 | [许可证文本](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
-| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "BSD" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -731,17 +731,17 @@ weight: 300
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 
-## ELv2
+## BSD
 
 
 
-| {{< license "ELv2" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
+| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 
 ## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
 
@@ -755,15 +755,15 @@ weight: 300
 |:---:|:---|:---|
 | 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 
-## BSD
+## ELv2
 
 
 
-| {{< license "BSD" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "ELv2" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
+| 9620 | {{< alias "pgmqtt" >}} | PostgreSQL 的 CDC 到 MQTT 代理扩展 |
 

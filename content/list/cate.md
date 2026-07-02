@@ -175,7 +175,7 @@ OpenCypher with AGE, GraphQL, JsonSchema, Hints & Hypo Index, HLL, Rum, IVM, Che
 | 2810 | {{< alias "plan_filter" "pg_plan_filter" >}} | 0.0.1 | filter statements by their execution plans. |
 | 2820 | {{< alias "pg_variables" >}} | 1.2.5 | Session-scoped variables with scalar, array, and record types |
 | 2830 | {{< alias "imgsmlr" >}} | 1.0 | Image similarity with haar |
-| 2840 | {{< alias "pg_ivm" >}} | 1.14 | incremental view maintenance on PostgreSQL |
+| 2840 | {{< alias "pg_ivm" >}} | 1.15 | incremental view maintenance on PostgreSQL |
 | 2850 | {{< alias "pg_incremental" >}} | 1.5.0 | Incremental Processing by Crunchy Data |
 | 2860 | {{< alias "pg_trickle" >}} | 0.81.0 | Streaming tables and differential view maintenance for PostgreSQL 18 |
 | 2870 | {{< alias "pg_durable" >}} | 0.2.2 | Durable SQL functions for PostgreSQL |
@@ -535,7 +535,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7080 | {{< alias "pgsmcrypto" >}} | 0.1.1 | PostgreSQL SM Algorithm Extension |
 | 7090 | {{< alias "pg_enigma" >}} | 0.5.0 | Encrypted postgres data type |
 | 7100 | {{< alias "pgaudit" >}} | 18.0 | provides auditing functionality |
-| 7120 | {{< alias "pgauditlogtofile" >}} | 1.8.4 | pgAudit addon to redirect audit log to an independent file |
+| 7120 | {{< alias "pgauditlogtofile" >}} | 1.8.5 | pgAudit addon to redirect audit log to an independent file |
 | 7130 | {{< alias "pg_auditor" >}} | 0.2 | Audit data changes and provide flashback ability |
 | 7140 | {{< alias "logerrors" >}} | 2.1.5 | Function for collecting statistics about messages in logfile |
 | 7150 | {{< alias "pg_auth_mon" >}} | 3.0 | monitor connection attempts per user |

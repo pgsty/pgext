@@ -147,7 +147,7 @@ There are 384 available PostgreSQL packages:
 | {{< ext "plan_filter" "pg_plan_filter" >}} | `0.0.1` | {{< badge content="Link" link="https://github.com/pgexperts/pg_plan_filter" >}} | {{< category "FEAT" >}} | `pg_plan_filter_$v` | `postgresql-$v-pg-plan-filter` |
 | {{< ext "pg_variables" >}} | `1.2.5` | {{< badge content="Link" link="https://github.com/postgrespro/pg_variables" >}} | {{< category "FEAT" >}} | `pg_variables_$v` | `postgresql-$v-pg-variables` |
 | {{< ext "imgsmlr" >}} | `1.0` | {{< badge content="Link" link="https://github.com/postgrespro/imgsmlr" >}} | {{< category "FEAT" >}} | `imgsmlr_$v` | `postgresql-$v-imgsmlr` |
-| {{< ext "pg_ivm" >}} | `1.14` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v` | `postgresql-$v-pg-ivm` |
+| {{< ext "pg_ivm" >}} | `1.15` | {{< badge content="Link" link="https://github.com/sraoss/pg_ivm" >}} | {{< category "FEAT" >}} | `pg_ivm_$v` | `postgresql-$v-pg-ivm` |
 | {{< ext "pg_incremental" >}} | `1.5.0` | {{< badge content="Link" link="https://github.com/CrunchyData/pg_incremental" >}} | {{< category "FEAT" >}} | `pg_incremental_$v` | `postgresql-$v-pg-incremental` |
 | {{< ext "pg_trickle" >}} | `0.81.0` | {{< badge content="Link" link="https://github.com/trickle-labs/pg-trickle" >}} | {{< category "FEAT" >}} | `pg_trickle_$v` | `postgresql-$v-pg-trickle` |
 | {{< ext "pg_durable" >}} | `0.2.2` | {{< badge content="Link" link="https://github.com/microsoft/pg_durable" >}} | {{< category "FEAT" >}} | `pg_durable_$v` | `postgresql-$v-pg-durable` |
@@ -401,7 +401,7 @@ There are 384 available PostgreSQL packages:
 | {{< ext "pgsmcrypto" >}} | `0.1.1` | {{< badge content="Link" link="https://github.com/zhuobie/pgsmcrypto" >}} | {{< category "SEC" >}} | `pgsmcrypto_$v` | `postgresql-$v-pgsmcrypto` |
 | {{< ext "pg_enigma" >}} | `0.5.0` | {{< badge content="Link" link="https://github.com/SoftwareLibreMx/pg_enigma" >}} | {{< category "SEC" >}} | `pg_enigma_$v` | `postgresql-$v-enigma` |
 | {{< ext "pgaudit" >}} | `18.0` | {{< badge content="Link" link="https://github.com/pgaudit/pgaudit" >}} | {{< category "SEC" >}} | `pgaudit_$v` | `postgresql-$v-pgaudit` |
-| {{< ext "pgauditlogtofile" >}} | `1.8.4` | {{< badge content="Link" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< category "SEC" >}} | `pgauditlogtofile_$v` | `postgresql-$v-pgauditlogtofile` |
+| {{< ext "pgauditlogtofile" >}} | `1.8.5` | {{< badge content="Link" link="https://github.com/fmbiete/pgauditlogtofile" >}} | {{< category "SEC" >}} | `pgauditlogtofile_$v` | `postgresql-$v-pgauditlogtofile` |
 | {{< ext "pg_auditor" >}} | `0.2` | {{< badge content="Link" link="https://github.com/kouber/pg_auditor" >}} | {{< category "SEC" >}} | `pg_auditor_$v` | `postgresql-$v-pg-auditor` |
 | {{< ext "logerrors" >}} | `2.1.5` | {{< badge content="Link" link="https://github.com/munakoiso/logerrors" >}} | {{< category "SEC" >}} | `logerrors_$v` | `postgresql-$v-logerrors` |
 | {{< ext "pg_auth_mon" >}} | `3.0` | {{< badge content="Link" link="https://github.com/RafiaSabih/pg_auth_mon" >}} | {{< category "SEC" >}} | `pg_auth_mon_$v` | `postgresql-$v-pg-auth-mon` |
