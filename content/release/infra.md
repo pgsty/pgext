@@ -8,29 +8,30 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 
 ## 2026-07-04
 
-| Name                       | Old     | New     | Comment |
-|:---------------------------|:--------|:--------|:--------|
-| prometheus                 | 3.12.0  | 3.13.0  |         |
-| victoria-traces            | 0.9.3   | 0.9.4   |         |
-| etcd                       | 3.6.12  | 3.6.13  |         |
-| dblab                      | 0.42.0  | 0.42.1  |         |
-| grafana-victoriametrics-ds | 0.25.0  | 0.25.1  |         |
-| headscale                  | 0.29.1  | 0.29.2  |         |
-| seaweedfs                  | 4.35    | 4.37    |         |
-| agentsview                 | 0.34.5  | 0.36.1  |         |
-| claude                     | 2.1.187 | 2.1.201 |         |
-| codex                      | 0.142.0 | 0.142.5 |         |
-| stalwart                   | 0.16.10 | 0.16.11 |         |
-| genai-toolbox              | 1.5.0   | 1.6.0   |         |
-| npgsqlrest                 | 3.18.1  | 3.19.0  |         |
-| postgrest                  | 14.13   | 14.14   |         |
-| opencode                   | 1.17.9  | 1.17.13 |         |
-| uv                         | 0.11.24 | 0.11.26 |         |
-| grafana                    | 13.0.2  | 13.1.0  |         |
-| crush                      | 0.79.1  | 0.81.0  |         |
-| code                       | 1.125.1 | 1.127.0 |         |
-| code-server                | 4.125.0 | 4.127.0 |         |
-| pig                        | 1.4.2   | 1.5.0   |         |
+| Name                       | Old            | New            | Comment |
+|:---------------------------|:---------------|:---------------|:--------|
+| prometheus                 | 3.12.0         | 3.13.0         |         |
+| victoria-traces            | 0.9.3          | 0.9.4          |         |
+| etcd                       | 3.6.12         | 3.6.13         |         |
+| dblab                      | 0.42.0         | 0.42.1         |         |
+| grafana-victoriametrics-ds | 0.25.0         | 0.25.1         |         |
+| headscale                  | 0.29.1         | 0.29.2         |         |
+| seaweedfs                  | 4.35           | 4.37           |         |
+| agentsview                 | 0.34.5         | 0.36.1         |         |
+| claude                     | 2.1.187        | 2.1.201        |         |
+| codex                      | 0.142.0        | 0.142.5        |         |
+| stalwart                   | 0.16.10        | 0.16.11        |         |
+| genai-toolbox              | 1.5.0          | 1.6.0          |         |
+| npgsqlrest                 | 3.18.1         | 3.19.0         |         |
+| postgrest                  | 14.13          | 14.14          |         |
+| opencode                   | 1.17.9         | 1.17.13        |         |
+| uv                         | 0.11.24        | 0.11.26        |         |
+| grafana                    | 13.0.2         | 13.1.0         |         |
+| crush                      | 0.79.1         | 0.81.0         |         |
+| code                       | 1.125.1        | 1.127.0        |         |
+| code-server                | 4.125.0        | 4.127.0        |         |
+| pig                        | 1.4.2          | 1.5.0          |         |
+| minio                      | 20260417000000 | 20260618000000 |         |
 
 ## 2026-07-01
 
@@ -47,7 +48,6 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | headscale                | 0.28.0         | 0.29.1         |         |
 | hugo                     | 0.163.0        | 0.163.3        |         |
 | kafka                    | 4.3.0          | 4.3.1          |         |
-| minio                    | 20260417000000 | 20260618000000 |         |
 | nodejs                   | 24.16.0        | 24.18.0        |         |
 | npgsqlrest               | 3.16.3         | 3.18.1         |         |
 | opencode                 | 1.17.3         | 1.17.9         |         |

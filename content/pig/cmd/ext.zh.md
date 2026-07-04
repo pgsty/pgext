@@ -5,16 +5,15 @@ icon: SquareTerminal
 weight: 620
 ---
 
-
 `pig ext` 命令是一个用于管理 PostgreSQL 扩展的全能工具。它允许用户搜索、安装、移除、更新和管理 PostgreSQL 扩展，甚至支持内核包的管理。
 
 ```bash
 pig ext - Manage PostgreSQL Extensions
 
   pig repo add -ru             # add all repo and update cache (brute but effective)
-  pig ext add pg17             # install optional postgresql 17 package
+  pig ext add pg18             # install optional postgresql 18 package
   pig ext list duck            # search extension in catalog
-  pig ext scan -v 17           # scan installed extension for pg 17
+  pig ext scan -v 18           # scan installed extension for pg 18
   pig ext add pg_duckdb        # install certain postgresql extension
 
 Examples:
@@ -29,25 +28,25 @@ Examples:
   pig ext reload               # reload the latest extension catalog data
 ```
 
-| 命令 | 描述 | 备注 |
-|:---|:---|:---|
-| `ext list` | 搜索扩展 | |
-| `ext info` | 显示扩展详细信息 | |
-| `ext avail` | 显示扩展可用性矩阵 | |
-| `ext status` | 显示已安装的扩展 | |
-| `ext scan` | 扫描已安装的扩展 | |
-| `ext add` | 安装扩展 | 需要 sudo 或 root 权限 |
-| `ext rm` | 移除扩展 | 需要 sudo 或 root 权限 |
-| `ext update` | 更新扩展 | 需要 sudo 或 root 权限 |
-| `ext import` | 下载扩展以供离线使用 | 需要 sudo 或 root 权限 |
-| `ext link` | 链接 PG 版本到 PATH | 需要 sudo 或 root 权限 |
-| `ext reload` | 刷新扩展目录 | |
+| 命令           | 描述             | 备注                |
+|:-------------|:---------------|:------------------|
+| `ext list`   | 搜索扩展           |                   |
+| `ext info`   | 显示扩展详细信息       |                   |
+| `ext avail`  | 显示扩展可用性矩阵      |                   |
+| `ext status` | 显示已安装的扩展       |                   |
+| `ext scan`   | 扫描已安装的扩展       |                   |
+| `ext add`    | 安装扩展           | 需要 sudo 或 root 权限 |
+| `ext rm`     | 移除扩展           | 需要 sudo 或 root 权限 |
+| `ext update` | 更新扩展           | 需要 sudo 或 root 权限 |
+| `ext import` | 下载扩展以供离线使用     | 需要 sudo 或 root 权限 |
+| `ext link`   | 链接 PG 版本到 PATH | 需要 sudo 或 root 权限 |
+| `ext reload` | 刷新扩展目录         |                   |
 {.full-width}
 
 
 ## 快速入门
 
-在安装 PostgreSQL 扩展前，你需要先添加 [`pig repo add`](/zh/pig/cmd/repo)：
+在安装 PostgreSQL 扩展前，你需要先添加 [`pig repo add`](/zh/pig/cmd/repo/)：
 
 ```bash
 pig repo add pgdg pigsty -u    # 温和方式添加 pgdg 和 pigsty 仓库
@@ -65,7 +64,7 @@ pig ext install pg_stat_statements
 pig ext install pg_stat_kcache
 ```
 
-可用扩展及其名称请查阅 [**扩展列表**](https://pgext.cloud/zh/list)。
+可用扩展及其名称请查阅 [**扩展列表**](/zh/list/)。
 
 **使用说明：**
 
@@ -95,7 +94,7 @@ pig ext install pg18          # 安装 PostgreSQL 18 内核（除 devel 包）
 ```bash
 pig ext list                     # 列出所有扩展
 pig ext list duck                # 搜索包含 "duck" 的扩展
-pig ext list -v 17               # 按 PG 版本筛选
+pig ext list -v 18               # 按 PG 版本筛选
 pig ext ls olap                  # 列出 olap 类别扩展
 pig ext ls gis -v 16             # 列出 PG 16 的 GIS 类扩展
 pig ext ls rag                   # 列出 RAG 类别扩展
@@ -114,9 +113,9 @@ pig ext ls rag                   # 列出 RAG 类别扩展
 - `available`：扩展可用但未安装（黄色）
 - `not avail`：扩展在当前系统不可用（红色）
 
-默认扩展目录定义在 [**`cli/ext/assets/extension.csv`**](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv)
+默认扩展目录定义在 [**`cli/ext/assets/extension.csv`**](https://github.com/pgsty/pig/blob/main/cli/ext/assets/extension.csv)。
 
-可用 `pig ext reload` 命令更新到最新扩展目录，数据将下载到 `~/.pig/extension.csv`。
+可用 `pig ext reload` 命令更新到最新扩展目录，数据将下载到 `~/.pig/extension.csv`；在线最新版目录同步发布于 [**pigsty.io/ext/data/extension.csv**](https://pigsty.io/ext/data/extension.csv)。
 
 
 ## ext info
@@ -142,7 +141,7 @@ pig ext av pgvector               # 显示 pgvector 的可用性
 pig ext matrix citus              # avail 命令的别名
 ```
 
-可用性矩阵会显示扩展在各个操作系统（EL8/9/10, Debian 12/13, Ubuntu 22/24）、架构（x86_64/aarch64）和 PostgreSQL 版本（14-18）上的可用情况。
+可用性矩阵会显示扩展在各个操作系统（EL8/9/10, Debian 12/13, Ubuntu 22/24/26）、架构（x86_64/aarch64）和 PostgreSQL 版本（14-18）上的可用情况。
 
 
 ## ext status
@@ -157,7 +156,7 @@ pig ext status -v 16        # 显示 PG 16 已安装扩展
 
 **选项：**
 
-- `-c|--contrib`: 结果中包含 contrib 扩展
+- `-c|--contrib`：结果中包含 contrib 扩展
 
 
 ## ext scan
@@ -173,21 +172,22 @@ pig ext scan [-v version]
 
 ## ext add
 
-安装一个或多个 PostgreSQL 扩展。也可以使用别名 `pig install`。
+安装一个或多个 PostgreSQL 扩展。`pig ext add` 的同级别名包括 `pig ext install`、`pig ext ins` 与 `pig ext a`。顶层 [`pig install`](/zh/pig/cmd/#install) 是另一个原生包管理器包装命令，也支持 PostgreSQL 与扩展包 alias 翻译。
 
 ```bash
 pig ext add pg_duckdb            # 安装 pg_duckdb
-pig ext add pg_duckdb -v 17      # 为 PG 17 安装
+pig ext add pg_duckdb -v 18      # 为 PG 18 安装
 pig ext add pg_duckdb -y         # 自动确认安装
 pig ext add vector postgis       # 安装多个扩展
+pig ext add postgis --plan       # 预览安装计划，不执行
 
 # 使用别名
 pig install pg_duckdb
-pig install pg_duckdb -v 17 -y
+pig install pg_duckdb -v 18 -y
 
 # 安装 PostgreSQL 内核
 pig ext install pgsql            # 安装最新版 postgresql 内核
-pig ext a pg17                   # 安装 postgresql 17 内核包
+pig ext a pg18                   # 安装 postgresql 18 内核包
 pig ext ins pg16                 # 安装 postgresql 16 内核包
 pig ext install pg15-core        # 安装 postgresql 15 核心包
 pig ext install pg14-main -y     # 安装 pg 14 + 常用扩展（vector, repack, wal2json）
@@ -197,6 +197,7 @@ pig ext install pg14-main -y     # 安装 pg 14 + 常用扩展（vector, repack,
 
 - `-v|--version`：指定 PG 大版本
 - `-y|--yes`：自动确认安装
+- `--plan`：预览安装计划，不执行包管理器命令
 
 
 ## ext rm
@@ -205,21 +206,33 @@ pig ext install pg14-main -y     # 安装 pg 14 + 常用扩展（vector, repack,
 
 ```bash
 pig ext rm pg_duckdb             # 移除 pg_duckdb
-pig ext rm pg_duckdb -v 17       # 移除 PG 17 版本
+pig ext rm pg_duckdb -v 18       # 移除 PG 18 版本
 pig ext rm pgvector -y           # 自动确认移除
+pig ext rm pgvector --plan       # 预览移除计划，不执行
 ```
+
+**选项：**
+
+- `-v|--version`：指定 PG 大版本
+- `-y|--yes`：自动确认移除
+- `--plan`：预览移除计划，不执行包管理器命令
 
 
 ## ext update
 
-将已安装扩展更新到最新版。
+将指定的已安装扩展更新到最新版。出于安全考虑，无参数 `pig ext update` 不会更新所有扩展，而是 no-op；必须显式写出要更新的目标。
 
 ```bash
-pig ext update                   # 更新所有已安装扩展
+pig ext update                   # no-op：必须显式指定目标
 pig ext update pg_duckdb         # 更新特定扩展
 pig ext update postgis timescaledb  # 更新多个扩展
-pig ext update -y                # 自动确认更新
+pig ext update pg_duckdb -y      # 自动确认更新
 ```
+
+**选项：**
+
+- `-v|--version`：指定 PG 大版本
+- `-y|--yes`：自动确认更新
 
 
 ## ext import
@@ -236,7 +249,7 @@ pig ext import -d /www/pigsty postgis # 指定路径导入
 
 **选项：**
 
-- `-d|--repo`: 指定仓库目录（默认：`/www/pigsty`）
+- `-d|--repo`：指定仓库目录（默认：`/www/pigsty`）
 
 
 ## ext link
@@ -245,9 +258,10 @@ pig ext import -d /www/pigsty postgis # 指定路径导入
 
 ```bash
 pig ext link 18                  # 链接 PG 18 到 PATH
-pig ext link 17                  # 链接 PG 17 到 /usr/pgsql
+pig ext link 16                  # 链接 PG 16 到 /usr/pgsql
 pig ext link /usr/pgsql-16       # 从指定路径链接到 /usr/pgsql
 pig ext link null                # 取消当前 PostgreSQL 链接
+pig ext link none                # null / none / nil / nop / no 均可取消链接
 ```
 
 该命令会创建 `/usr/pgsql` 软链接，并写入 `/etc/profile.d/pgsql.sh`。
@@ -255,7 +269,7 @@ pig ext link null                # 取消当前 PostgreSQL 链接
 
 ## ext reload
 
-从 GitHub 刷新扩展元数据。
+刷新扩展元数据。
 
 ```bash
 pig ext reload                   # 刷新扩展目录

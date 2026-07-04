@@ -6,48 +6,61 @@ icon: CircleHelp
 breadcrumbs: false
 ---
 
-Ever wished installing or upgrading PostgreSQL extensions didn’t feel like digging through outdated readmes, cryptic configure scripts, or random GitHub forks & patches? 
-The painful truth is that Postgres’s richness of extension often comes at the cost of complicated setups—especially if you’re juggling multiple distros or CPU architectures.
+Have you ever struggled with installing or upgrading PostgreSQL extensions? Digging through outdated documentation, cryptic configuration scripts, or searching GitHub for forks and patches?
+Postgres's rich extension ecosystem also means complex deployment processes, especially across multiple distributions and architectures. PIG can solve these headaches for you.
+
+This is exactly why **Pig** was created. Developed in Go, Pig is dedicated to one-stop management of Postgres and its [531](/list) extensions.
+Whether it's TimescaleDB, Citus, PGVector, 30+ Rust extensions, or all the components needed to self-host Supabase, Pig's unified CLI makes everything accessible.
+It completely eliminates source compilation and messy repositories, directly providing version-aligned RPM/DEB packages that perfectly support Debian, Ubuntu, RedHat, and other mainstream distributions on both x86 and Arm architectures, no guessing, no hassle.
+
+Pig isn't reinventing the wheel; it fully leverages native system package managers (APT, YUM, DNF) and strictly follows [PGDG official](/repo/pgdg/) packaging standards for seamless integration.
+You do not need to choose between "the standard way" and "shortcuts". Pig respects existing repositories, follows OS best practices, and coexists harmoniously with existing repositories and packages.
+If your Linux system and PostgreSQL major version are not in the [supported list](#linux-compatibility), you can use [`pig build`](/pig/cmd/build/) to compile extensions for your specific combination.
+
+Want to supercharge your Postgres and escape the hassle? Visit the [PIG official documentation](/pig/) for guides, and check out the extensive [extension list](/list),
+turning your local Postgres database into an all-capable multi-modal data platform with one click.
+If [Postgres's future is unmatched extensibility](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4), then Pig is the magic lamp that helps you unlock it. After all, no one ever complains about "too many extensions".
+
+## Automation-Friendly
+
+PIG's command system is automation-ready out of the box: consistent argument conventions, stable output behavior, `--plan` previews, and confirmation flows for high-risk operations to reduce mistakes.
 
 
-Enter **Pig**, a Go-based package manager built to tame Postgres and its ecosystem of [531](/list) extensions in one fell swoop.
-TimescaleDB, Citus, PGVector, 20+ Rust extensions, plus every must-have pieces to [Self-hosting Supabase](https://doc.pgsty.com/app/supabase) —
-Pig’s unified CLI makes them all effortlessly accessible. It cuts out messy source builds and half-baked repos,
-offering version-aligned RPM / DEB packages that work seamlessly across Debian, Ubuntu, and RedHat-flavored Linux, as well as x86 & ARM arch. No guesswork, no drama.
+> [ANNOUNCE pig: The Postgres Extension Wizard](https://www.postgresql.org/about/news/announce-pig-the-postgres-extension-wizard-2988/)
 
-Instead of reinventing the wheel, Pig piggybacks on your system’s native package manager (APT, YUM, DNF) and follows [official PGDG](/repo/pgdg) packaging conventions to ensure a glitch-free fit.
-That means you don’t have to choose between "the right way" and "the quick way"; Pig respects your existing repos, aligns with standard OS best practices, and fits neatly alongside other packages you already use.
-And if your favorite linux distro is not [listed here](/os), you can even [`pig build`](/pig/cmd/build) them from src in no time. 
 
-Ready to give your Postgres superpowers without the usual hassle? Check out [GitHub](https://github.com/pgsty/pig) And [official site](https://pigsty.io/docs/pig) for documentation,
-installation steps, and a peek at its massive [extension list](/list/). Then, watch your local Postgres instance transform into a powerhouse of specialized modules.
-
-If [the future of Postgres is unstoppable extensibility](https://medium.com/@fengruohang/postgres-is-eating-the-database-world-157c204dcfc4),
-Pig is the genie that helps you unlock it. Honestly, nobody ever complained that they had *too many* extensions.
-
-> 《[ANNOUNCE pig: The Postgres Extension Wizard](https://www.postgresql.org/about/news/announce-pig-the-postgres-extension-wizard-2988/)》
-
+--------
 
 ## Linux Compatibility
 
-| OS                                                                                    | Vendor | Major |  Minor  | Fullname          | PG Major Version                                                                                                                                                                                                  |                     Comment                     |
-|:--------------------------------------------------------------------------------------|:-------|:-----:|:-------:|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------:|
-| {{< badge content="el7.x86_64"  color="orange" >}}                                    | EL     |   7   |   7.9   | CentOS 7 x86      | {{< badge content="18" color="red" >}} {{< badge content="17" color="red" >}} {{< badge content="16" color="red" >}} {{< badge content="15" color="orange" >}} {{< badge content="14" color="orange" >}}          |     {{< badge content="EOL" color="red" >}}     |
-| {{< badge content="el8.x86_64"  link="/os/el8.x86_64"  color="green" >}}              | EL     |   8   |  8.10   | RockyLinux 8 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      | {{< badge content="Near EOL" color="orange" >}} |
-| {{< badge content="el8.aarch64" link="/os/el8.aarch64" color="green" border=false >}} | EL     |   8   |  8.10   | RockyLinux 8 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      | {{< badge content="Near EOL" color="orange" >}} |
-| {{< badge content="el9.x86_64"  link="/os/el9.x86_64"  color="green" >}}              | EL     |   9   |   9.7   | RockyLinux 9 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="el9.aarch64" link="/os/el9.aarch64" color="green" border=false >}} | EL     |   9   |   9.7   | RockyLinux 9 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="el10.x86_64" link="/os/el10.x86_64" color="green" >}}              | EL     |  10   |  10.1   | RockyLinux 10 x86 | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="el10.aarch64"link="/os/el10.aarch64"color="green" border=false >}} | EL     |  10   |  10.1   | RockyLinux 10 ARM | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="d11.x86_64"  color="orange" >}}                                    | Debian |  11   |  11.11  | Debian 11 x86     | {{< badge content="18" color="orange" >}} {{< badge content="17" color="orange" >}} {{< badge content="16" color="orange" >}} {{< badge content="15" color="orange" >}} {{< badge content="14" color="orange" >}} |     {{< badge content="EOL" color="red" >}}     |
-| {{< badge content="d11.aarch64" color="orange" border=false >}}                       | Debian |  11   |  11.11  | Debian 11 ARM     | {{< badge content="18" color="orange" >}} {{< badge content="17" color="orange" >}} {{< badge content="16" color="orange" >}} {{< badge content="15" color="orange" >}} {{< badge content="14" color="orange" >}} |     {{< badge content="EOL" color="red" >}}     |
-| {{< badge content="d12.x86_64"  link="/os/d12.x86_64"  color="green" >}}              | Debian |  12   |  12.3   | Debian 12 x86     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="d12.aarch64" link="/os/d12.aarch64" color="green" border=false >}} | Debian |  12   |  12.3   | Debian 12 ARM     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="d13.x86_64"  link="/os/d13.x86_64"  color="green" >}}              | Debian |  13   |  13.3   | Debian 13 x86     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="d13.aarch64" link="/os/d13.aarch64" color="green" border=false >}} | Debian |  13   |  13.3   | Debian 13 ARM     | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="u20.x86_64" color="orange" >}}                                     | Ubuntu |  20   | 20.04.6 | Ubuntu 20.04 x86  | {{< badge content="18" color="orange" >}} {{< badge content="17" color="orange" >}} {{< badge content="16" color="orange" >}} {{< badge content="15" color="orange" >}} {{< badge content="14" color="orange" >}} |     {{< badge content="EOL" color="red" >}}     |
-| {{< badge content="u20.aarch64"color="orange" border=false >}}                        | Ubuntu |  20   | 20.04.6 | Ubuntu 20.04 ARM  | {{< badge content="18" color="orange" >}} {{< badge content="17" color="orange" >}} {{< badge content="16" color="orange" >}} {{< badge content="15" color="orange" >}} {{< badge content="14" color="orange" >}} |     {{< badge content="EOL" color="red" >}}     |
-| {{< badge content="u22.x86_64"  link="/os/u22.x86_64"  color="green" >}}              | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="u22.aarch64" link="/os/u22.aarch64" color="green" border=false >}} | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="u24.x86_64"  link="/os/u24.x86_64"  color="green" >}}              | Ubuntu |  24   | 24.04.4 | Ubuntu 24.04 x86  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
-| {{< badge content="u24.aarch64" link="/os/u24.aarch64" color="green" border=false >}} | Ubuntu |  24   | 24.04.4 | Ubuntu 24.04 ARM  | {{< badge content="18" color="green" >}} {{< badge content="17" color="green" >}} {{< badge content="16" color="green" >}} {{< badge content="15" color="green" >}} {{< badge content="14" color="green" >}}      |    {{< badge content="OK" color="green" >}}     |
+PIG and the Pigsty extension repository support the following Linux distribution and PostgreSQL version combinations:
+
+| OS Code        | Vendor | Major |  Minor  | Full Name         | PG Versions |  Notes   |
+|:---------------|:-------|:-----:|:-------:|:------------------|:------------|:--------:|
+| `el7.x86_64`   | EL     |   7   |   7.9   | CentOS 7 x86      | 13-15       |   EOL    |
+| `el8.x86_64`   | EL     |   8   |  8.10   | RockyLinux 8 x86  | 14-18       | Near EOL |
+| `el8.aarch64`  | EL     |   8   |  8.10   | RockyLinux 8 ARM  | 14-18       | Near EOL |
+| `el9.x86_64`   | EL     |   9   |   9.7   | RockyLinux 9 x86  | 14-18       |    ✅     |
+| `el9.aarch64`  | EL     |   9   |   9.7   | RockyLinux 9 ARM  | 14-18       |    ✅     |
+| `el10.x86_64`  | EL     |  10   |  10.1   | RockyLinux 10 x86 | 14-18       |    ✅     |
+| `el10.aarch64` | EL     |  10   |  10.1   | RockyLinux 10 ARM | 14-18       |    ✅     |
+| `d11.x86_64`   | Debian |  11   |  11.11  | Debian 11 x86     | 14-18       |   EOL    |
+| `d11.aarch64`  | Debian |  11   |  11.11  | Debian 11 ARM     | 14-18       |   EOL    |
+| `d12.x86_64`   | Debian |  12   |  12.13  | Debian 12 x86     | 14-18       |    ✅     |
+| `d12.aarch64`  | Debian |  12   |  12.13  | Debian 12 ARM     | 14-18       |    ✅     |
+| `d13.x86_64`   | Debian |  13   |  13.3   | Debian 13 x86     | 14-18       |    ✅     |
+| `d13.aarch64`  | Debian |  13   |  13.3   | Debian 13 ARM     | 14-18       |    ✅     |
+| `u22.x86_64`   | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 x86  | 14-18       |    ✅     |
+| `u22.aarch64`  | Ubuntu |  22   | 22.04.5 | Ubuntu 22.04 ARM  | 14-18       |    ✅     |
+| `u24.x86_64`   | Ubuntu |  24   | 24.04.4 | Ubuntu 24.04 x86  | 14-18       |    ✅     |
+| `u24.aarch64`  | Ubuntu |  24   | 24.04.4 | Ubuntu 24.04 ARM  | 14-18       |    ✅     |
+| `u26.x86_64`   | Ubuntu |  26   | 26.04.0 | Ubuntu 26.04 x86  | 14-18       |    ✅     |
+| `u26.aarch64`  | Ubuntu |  26   | 26.04.0 | Ubuntu 26.04 ARM  | 14-18       |    ✅     |
+{.full-width}
+
+**Notes:**
+
+- **EL** refers to RHEL-compatible distributions, including RHEL, CentOS, RockyLinux, AlmaLinux, OracleLinux, etc.
+- **EOL** indicates the operating system has reached or is about to reach end of support; upgrading to a newer version is recommended
+- **✅** indicates full support; recommended for use
+- PG versions 14-18 means support for PostgreSQL 14, 15, 16, 17, and 18 major versions
