@@ -5,6 +5,10 @@ weight: 700
 ---
 
 
+## TODO
+
+- re2 0.4.0
+
 ## 最近更新
 
 - citus 14.0 with pg18 support

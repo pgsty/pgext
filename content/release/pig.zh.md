@@ -8,44 +8,41 @@ breadcrumbs: false
 
 ## v1.5.0
 
-Pig `v1.5.0` 聚焦 PostgreSQL 本地运维能力：新增数据库 clone / 物理 fork，收紧 PITR 与 pgBackRest 恢复安全边界，整理命令层结构，并刷新扩展与构建元数据。
+Pig `v1.5.0` 是一次面向 PostgreSQL 日常运维的版本：新增本地数据库 clone / fork 工作流，明确 `pg`、`pt`、`pb`、`pitr` 的职责边界，并收紧高风险操作的预览、确认与结构化输出行为。
 
 **主要变化**
 
-- 新增 `pig pg clone`：快速克隆本地数据库，支持 `--plan`、结构化输出、owner / 连接限制选项、标识符校验，以及更清晰的 `psql` 失败信息。
-- 新增 `pig pg fork`：在 `/pg/data-<name>` 下创建一次性物理分叉，提供 list/start/stop/rm 生命周期管理、`fork.json` 元数据、自动端口选择、CoW/reflink 检测与更安全的删除规则。
-- 收紧 PITR / restore：`pig pitr` 与 `pig pb restore` 要求显式恢复目标，支持恢复计划、pgBackRest 参数透传、Patroni 防护、side restore 约束、恢复等待与恢复后指引。
-- 改进日志输出：`pig pg log` / `pig pb log` 默认查看最新日志；PostgreSQL CSV 日志可通过 `-o json` 输出为 JSONL。
-- 简化 CLI 架构：`pg`、`pb`、`pt`、`pe`、`do`、`sty` 保持扁平的 `cmd/` 入口，复用逻辑下沉到 `cli/*`，并统一 plan/output 辅助逻辑。
-- 更新构建与发布默认值：`pgrx` 默认版本为 `0.19.1`，内置 Pigsty 为 `4.4.0`，Pig 为 `1.5.0`，`go-toml/v2` 更新到 `2.4.2`。
+- `pig pg` 更聚焦本地 PostgreSQL 操作。新增 `pig pg clone` 用于快速创建数据库级副本，新增 `pig pg fork` 用于创建一次性物理实例分叉，适合本地验证、恢复演练和隔离实验。
+- 恢复流程拆得更清楚：`pig pitr` 作为 Patroni / PostgreSQL / pgBackRest 的恢复编排入口；`pig pb restore` 保持为低层 pgBackRest restore 原语。恢复命令现在必须指定明确目标，并提供更具体的 plan 与恢复后指引。
+- Patroni 操作更可预期：`pig pt restart`、`reinit`、`switchover`、`failover` 等高风险操作统一由 Pig 负责确认与 plan 输出；`pig pt config pg` 会提示是否需要 `pig pt restart --pending`。
+- 自动化脚本更安全：结构化输出不再隐式确认破坏性操作，执行高风险动作需要显式 `-y/--yes`；`--plan` 与 `next_actions` 更一致，方便先预览、再执行。
+- 日志与状态输出更适合排障：`pg`、`pb`、`pt` 的日志命令补齐 latest / tail / show / grep 等常用入口，结构化日志快照使用 JSONL 语义。
+- 构建与发布默认值更新：Pig 版本为 `1.5.0`，内置 Pigsty 版本为 `4.4.0`，`pig build pgrx` 默认 `cargo-pgrx` 升级到 `0.19.1`。
 
 **扩展目录**
 
-- 可用扩展数量：**524 -> 531**，没有移除项。
+- 可用扩展数量从 **524** 增加到 **531**，没有移除项。
 - 新增扩展：`pg_ducklake`、`pgdisablelogerror`、`pg_stat_log`、`pg_stat_plans`、`passwordpolicy`、`db2fce`、`plpgsql_wrap`。
-- 刷新 38 个已有条目的元数据，代表性更新包括 `postgis 3.6.4`、`vector 0.8.3`、`biscuit 2.4.0`、`orioledb 1.8`、`documentdb 0.113`、`credcheck 5.0`、`pgtt 4.5`。
-- OrioleDB alias 改为使用请求的 PostgreSQL 主版本（`$v`），不再固定在 PG17，因此 `orioledb` 可在 RPM 与 DEB 系统上正确解析到 PG16 / PG18 等目标版本。
-- EL9 ARM64 Patroni alias 改为 `patroni.noarch` / `patroni-etcd.noarch`。
+- 刷新一批已有扩展版本与包元数据，代表性更新包括 `timescaledb 2.28.2`、`postgis 3.6.4`、`vector 0.8.4`、`biscuit 2.4.1`、`citus 14.1.0`、`orioledb 1.8`、`documentdb 0.113`、`credcheck 5.0`、`pgtt 4.5`。
+- `orioledb` alias 不再固定到 PG17，而是按请求的 PostgreSQL 主版本解析；EL9 ARM64 Patroni alias 也调整为 noarch 包。
 
 **兼容性提醒**
 
-- `pig pb restore` 现在必须显式指定恢复目标；恢复到最新 WAL 请使用 `pig pb restore -d`。
-- Patroni 受管恢复会拒绝危险的 `pig pitr --skip-patroni`；自定义 `-D` side restore 必须配合 `--no-restart`。
-- `pig pitr --target-action=shutdown` 必须配合 `--no-restart`。
-- `pig pg log -o json` 输出 PostgreSQL CSV 日志的 JSONL，不用于 YAML / `json-pretty` 流式日志。
-- 受管 fork 按名称删除；`--dst-data` 只用于非受管 fork。
+- 自动化执行破坏性操作时请使用 `-y/--yes`；结构化输出模式不会再替代人工确认。
+- `pig pb restore` / `pig pitr` 需要明确指定一个恢复目标；自动 promote 类行为请使用 `--target-action=promote`。
+- 若干易混淆短参数经过整理；日志命令的 `-o json` 表示 JSONL 快照，不用于 tail / follow 这类流式交互场景。
 
 **校验和**
 
 ```bash
-0f6bc1e41cf0c5250a2f09b46f77a87c248391a7249a140ca97af67337eeafaa  pig-1.5.0-1.aarch64.rpm
-9bed50fae4ff2a8247c3664c9d8a5d8946cfb4519b76764762832d7855829ea1  pig-1.5.0-1.x86_64.rpm
-f9582f4774738cb6b801efa32621c121062d4880d04d49557864e2c08e7cc992  pig-v1.5.0.darwin-amd64.tar.gz
-26fbc45759eebd387b5e79ebcd6788fa941845228613532596d5a2766387b4b5  pig-v1.5.0.darwin-arm64.tar.gz
-5407e1ed87d855cc87e45d70cf4c30fb3f66f13b2157e38b652b754b709f0941  pig-v1.5.0.linux-amd64.tar.gz
-258f53374612c51bb5d69a5e9fcd7db1e9a85357c1a1dc65748c36022488dc86  pig-v1.5.0.linux-arm64.tar.gz
-e82949269ded288fc99841662c5cd72475ffeeb1af3ecf7eb039e29058c28ccc  pig_1.5.0-1_amd64.deb
-e48d8f80a23d5e9a3e3b19f79968765c799e31243a2c9076d92b38a0c48988e7  pig_1.5.0-1_arm64.deb
+f0f6706fc63b5df3717d932f4d1886ceb0775a5fe38a070e657e2b7dae2cd5e8  pig-1.5.0-1.aarch64.rpm
+4d0f2edc22860ebf4559fb823bdda4142807b9c9fd5c0043cff217f14fd3173a  pig-1.5.0-1.x86_64.rpm
+3d8a80c6a9c6fa1398bd6b439ea3abb5ceae33ba69c0c8ccc4f00b1d7303dbe9  pig-v1.5.0.darwin-amd64.tar.gz
+416aa9f54cec92aca77d648a965bddf6ffe1ac896073020f781cb93dec1d832d  pig-v1.5.0.darwin-arm64.tar.gz
+8f9e95db0538d72decb4b06715d9e954aea1d439de0a4921f08ab1db4bcd865c  pig-v1.5.0.linux-amd64.tar.gz
+cea0b9e86662064d7ee9249ae510d53f68d041c44d7dfb92f480626e58b33db4  pig-v1.5.0.linux-arm64.tar.gz
+1cc2fe2e566d135a02dea1ddb0263c39cb3a3948c1cc16e24fa3ed0df5fbe5f5  pig_1.5.0-1_amd64.deb
+6f298185513bbae0292b758a7d5b86f3e640b3a6e99717dd8d290b99e321eee9  pig_1.5.0-1_arm64.deb
 ```
 
 发布：https://github.com/pgsty/pig/releases/tag/v1.5.0

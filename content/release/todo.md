@@ -6,42 +6,12 @@ weight: 700
 
 ## TODOLIST
 
-- biscuit pgdg yum
-- pgsentinel pgdg yum
-- pg_utl_smtp pgdg yum
-- pg_pwhash pgdg yum
+- re2 0.4.0
 - [spock](https://github.com/pgEdge/spock) : Logical multi-master PostgreSQL replication
 - [pg_lake](https://github.com/Snowflake-Labs/pg_lake/) : Postgres with Iceberg and data lake access
 - [pgai](https://github.com/timescale/pgai) : A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
 - [river](https://github.com/riverqueue/river)
 - omnigres on legacy systems
-- plv8 on el10
-
-## Latest Update
-
-- citus 14.0 with pg18 support
-- age 1.6.0 with pg18 support
-- pg_partman
-- pgsentinel
-- pg_timeseries 0.1.8
-- pg_duckdb 1.1.1
-- pg_summarize rebuild for pg18 on deb
-- semver 0.41.0 (rpm only)
-- pg_search 0.20.5
-- supautils rebuild for pg18 on deb
-- [pg_textsearch](https://github.com/timescale/pg_textsearch) 0.1.0 new
-- [pg_clickhouse](https://github.com/clickhouse/pg_clickhouse/) 0.1.0 new
-- [pg_ai_query](https://github.com/benodiwal/pg_ai_query) 0.1.1 new
-- timescaledb 2.23.1 -> 2.24.0
-- pg_search 0.20.0 -> 0.20.3
-- convert 0.0.4 -> 0.0.5
-- pglinter 1.0.0 -> 1.0.1
-- pgdd 0.6.0 -> 0.6.1
-- pg_session_jwt 0.3.3 -> 0.4.0
-- pg_anon 2.4.1 -> 2.5.1
-- pg_enigma 0.4.0 -> 0.5.0
-- wrappers 0.5.6 -> 0.5.7
-- pg_vectorize 0.25.0 -> 0.26.0
 
 ## Icebox
 
