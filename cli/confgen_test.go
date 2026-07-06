@@ -751,6 +751,42 @@ func TestConfigConstantsIncludeAgensAndPgEdgeAlias(t *testing.T) {
 	}
 }
 
+func TestConfigConstantsIncludePolarDBAlias(t *testing.T) {
+	constants := GetConfigConstants()
+	expected := map[string]PackageMapping{
+		"polardb": {
+			Key: "polardb",
+			RPM: "polardb-$v",
+			DEB: "polardb-$v",
+		},
+		"polar": {
+			Key: "polar",
+			RPM: "polardb-$v",
+			DEB: "polardb-$v",
+		},
+	}
+
+	found := make(map[string]PackageMapping)
+	for _, mapping := range constants.PGSQLExoticMap {
+		if _, ok := expected[mapping.Key]; ok {
+			found[mapping.Key] = mapping
+		}
+	}
+
+	for key, want := range expected {
+		got, ok := found[key]
+		if !ok {
+			t.Fatalf("%s mapping not found in PGSQLExoticMap", key)
+		}
+		if got.RPM != want.RPM {
+			t.Fatalf("%s RPM alias = %q, want %q", key, got.RPM, want.RPM)
+		}
+		if got.DEB != want.DEB {
+			t.Fatalf("%s DEB alias = %q, want %q", key, got.DEB, want.DEB)
+		}
+	}
+}
+
 func TestConfigConstantsIncludeOrioleVersionTemplate(t *testing.T) {
 	constants := GetConfigConstants()
 	for _, mapping := range constants.PGSQLExoticMap {
@@ -771,6 +807,7 @@ func TestConfigConstantsIncludeOrioleVersionTemplate(t *testing.T) {
 func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
 	required := []string{
 		"agens:  '/usr/agens-$v'",
+		"polar:  '/usr/polar-$v'",
 		"pgedge: '/usr/pgedge-$v'",
 	}
 	for _, fragment := range required {
@@ -779,6 +816,35 @@ func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
 		}
 		if !strings.Contains(debTemplate, fragment) {
 			t.Fatalf("debTemplate missing expected home map fragment: %q", fragment)
+		}
+	}
+}
+
+func TestRenderedTemplatesIncludePolarDBPackageMap(t *testing.T) {
+	for name, rendered := range map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		for _, fragment := range []string{
+			`polardb:                 "polardb-$v"`,
+			`polar:                   "polardb-$v"`,
+			`polar:  '/usr/polar-$v'`,
+		} {
+			if !strings.Contains(rendered, fragment) {
+				t.Fatalf("%s rendered template missing expected PolarDB fragment: %q", name, fragment)
+			}
+		}
+		for _, fragment := range []string{
+			`polardb-for-postgresql`,
+			`PolarDB"`,
+			`polar:  '/u01/polardb_pg_17'`,
+			`polar:  '/usr/polar-17'`,
+			`oracle:`,
+			`'/u01/polardb_pg'`,
+		} {
+			if strings.Contains(rendered, fragment) {
+				t.Fatalf("%s rendered template still contains old PolarDB fragment: %q", name, fragment)
+			}
 		}
 	}
 }
@@ -807,14 +873,14 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"name: base           ,description: 'Ubuntu Basic'       ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64]",
 		"name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,22,24,26]",
 		"name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,22,24,26]",
-		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24   ]",
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24,26]",
 		"name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   22      ]",
-		"name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24   ]",
+		"name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26]",
 		"name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ]",
 		"name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   22,24   ] ,arch: [x86_64         ]",
 		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ]",
-		"name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24   ]",
-		"name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24   ]",
+		"name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24,26]",
+		"name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24,26]",
 		"name: haproxyd       ,description: 'Haproxy Debian'     ,module: haproxy ,releases: [   12            ]",
 		"${distro_codename}-backports-3.2 main",
 		"name: haproxyu       ,description: 'Haproxy Ubuntu'     ,module: haproxy ,releases: [            24,26]",
@@ -840,6 +906,31 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 	for _, fragment := range forbidden {
 		if strings.Contains(debTemplate, fragment) {
 			t.Fatalf("debTemplate still contains incompatible repo fragment: %q", fragment)
+		}
+	}
+}
+
+func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
+	required := []string{
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64]",
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ]",
+		"name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+	}
+	for _, fragment := range required {
+		if !strings.Contains(rpmTemplate, fragment) {
+			t.Fatalf("rpmTemplate missing expected EL10 repo fragment: %q", fragment)
+		}
+	}
+
+	forbidden := []string{
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+	}
+	for _, fragment := range forbidden {
+		if strings.Contains(rpmTemplate, fragment) {
+			t.Fatalf("rpmTemplate still advertises unsupported EL10 TimescaleDB arch: %q", fragment)
 		}
 	}
 }

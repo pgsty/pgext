@@ -892,9 +892,10 @@ func GetConfigConstants() *ConfigConstants {
 
 		PGSQLExoticMap: []PackageMapping{
 
-			{"agensgraph", "agensgraph_$v", "agensgraph-$v"},
-			{"polardb", "PolarDB", "polardb-for-postgresql"},
-			{"openhalodb", "openhalodb_14", "openhalodb-14"},
+			{"agensgraph", "agensgraph-$v", "agensgraph-$v"},
+			{"polardb", "polardb-$v", "polardb-$v"},
+			{"polar", "polardb-$v", "polardb-$v"},
+			{"openhalodb", "openhalodb-14", "openhalodb-14"},
 			//{"ivorysql", "ivorysql5", "ivorysql-5"},
 			//{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
 			{"oriole", "orioledb_$v oriolepg_$v", "oriolepg-$v oriolepg-$v-orioledb"},
@@ -965,15 +966,14 @@ pg_home_map:
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
   gpsql:  '/usr/local/cloudberry'
-  polar:  '/u01/polardb_pg_17'
-  oracle: '/u01/polardb_pg'
+  polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
   pgedge: '/usr/pgedge-$v'
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:
   - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty' } ,meta: { skip_if_unavailable: 1 ,priority: 1 }} # used by intranet nodes
-  - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/infra/$basearch' ,china: 'https://repo.pigsty.cc/yum/infra/$basearch' } ,meta: { priority: 12 }}
+  - { name: pigsty-infra   ,description: 'Pigsty INFRA'       ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/infra/$basearch'               ,china: 'https://repo.pigsty.cc/yum/infra/$basearch' } ,meta: { priority: 12 }}
   - { name: pigsty-pgsql   ,description: 'Pigsty PGSQL'       ,module: pgsql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/pgsql/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/pgsql/el$releasever.$basearch' } ,meta: { priority: 11 }}
   - { name: nginx          ,description: 'Nginx Repo'         ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://nginx.org/packages/rhel/$releasever/$basearch/' }}
   - { name: docker-ce      ,description: 'Docker CE'          ,module: infra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/centos/$releasever/$basearch/stable'    ,china: 'https://mirrors.aliyun.com/docker-ce/linux/centos/$releasever/$basearch/stable' ,europe: 'https://mirrors.xtom.de/docker-ce/linux/centos/$releasever/$basearch/stable' } ,meta: { skip_if_unavailable: 1 }}
@@ -997,15 +997,16 @@ repo_upstream_default:
   - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
+  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.3/yum/release/$releasever/RPMS/$basearch'  }}
   - { name: groonga        ,description: 'Groonga'            ,module: groonga ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }}
-  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
-  - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' ,china: 'https://mirrors.aliyun.com/mongodb/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' }}
+  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
+  - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' ,china: 'https://mirrors.aliyun.com/mongodb/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' }}
   - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpmfind.net/linux/remi/enterprise/$releasever/redis72/$basearch/' }}
   - { name: grafana        ,description: 'Grafana'            ,module: grafana ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpm.grafana.com', china: 'https://mirrors.aliyun.com/grafana/yum/' }}
   - { name: kubernetes     ,description: 'Kubernetes'         ,module: kube    ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://pkgs.k8s.io/core:/stable:/v1.33/rpm/', china: 'https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.33/rpm/' }}
-  - { name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ee/el/$releasever/$basearch' }}
-  - { name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ce/el/$releasever/$basearch' }}
+  - { name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ee/el/$releasever/$basearch' }}
+  - { name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.gitlab.com/gitlab/gitlab-ce/el/$releasever/$basearch' }}
   - { name: clickhouse     ,description: 'ClickHouse'         ,module: click   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.clickhouse.com/rpm/stable/', china: 'https://mirrors.aliyun.com/clickhouse/rpm/stable/' }}
 
 # package alias map to simplify package download & installation
@@ -1112,16 +1113,15 @@ pg_home_map:
   gpsql:  '/usr/local/cloudberry'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
-  polar:  '/u01/polardb_pg_17'
-  oracle: '/u01/polardb_pg'
+  polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
   pgedge: '/usr/pgedge-$v'
 
 # default upstream repo (if ` + "`repo_upstream`" + ` is not explicitly set)
 repo_upstream_default:
   - { name: pigsty-local   ,description: 'Pigsty Local'       ,module: local   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://${admin_ip}/pigsty ./' }}
-  - { name: pigsty-pgsql   ,description: 'Pigsty PgSQL'       ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/pgsql/${distro_codename} ${distro_codename} main', china: 'https://repo.pigsty.cc/apt/pgsql/${distro_codename} ${distro_codename} main' }}
-  - { name: pigsty-infra   ,description: 'Pigsty Infra'       ,module: infra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/infra/ generic main' ,china: 'https://repo.pigsty.cc/apt/infra/ generic main' }}
+  - { name: pigsty-pgsql   ,description: 'Pigsty PgSQL'       ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/pgsql/${distro_codename} ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/pgsql/${distro_codename} ${distro_codename} main' }}
+  - { name: pigsty-infra   ,description: 'Pigsty Infra'       ,module: infra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/infra/ generic main'                              ,china: 'https://repo.pigsty.cc/apt/infra/ generic main' }}
   - { name: nginx          ,description: 'Nginx'              ,module: nginx   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://nginx.org/packages/${distro_name} ${distro_codename} nginx' }}
   - { name: docker-ce      ,description: 'Docker'             ,module: infra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://download.docker.com/linux/${distro_name} ${distro_codename} stable'                               ,china: 'https://mirrors.aliyun.com/docker-ce/linux/${distro_name} ${distro_codename} stable' }}
   - { name: base           ,description: 'Debian Basic'       ,module: node    ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://deb.debian.org/debian/ ${distro_codename} main non-free-firmware'                                  ,china: 'https://mirrors.aliyun.com/debian/ ${distro_codename} main non-free-firmware' }}
@@ -1137,15 +1137,15 @@ repo_upstream_default:
   - { name: security       ,description: 'Ubuntu Security'    ,module: node    ,releases: [         22,24,26] ,arch: [        aarch64] ,baseurl: { default: 'http://ports.ubuntu.com/ubuntu-ports/ ${distro_codename}-security    main restricted universe multiverse' ,china: 'https://mirrors.aliyun.com/ubuntu-ports/ ${distro_codename}-security  main restricted universe multiverse' }}
   - { name: pgdg           ,description: 'PGDG'               ,module: pgsql   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg main' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg main' }}
   - { name: pgdg-beta      ,description: 'PGDG Beta'          ,module: beta    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.postgresql.org/pub/repos/apt/ ${distro_codename}-pgdg-testing main 19' ,china: 'https://mirrors.aliyun.com/postgresql/repos/apt/ ${distro_codename}-pgdg-testing main 19' }}
-  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/${distro_name}/ ${distro_codename} main' }}
+  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/${distro_name}/ ${distro_codename} main' }}
   - { name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   22      ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/citusdata/community/${distro_name}/ ${distro_codename} main' } }
-  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/percona ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/percona ${distro_codename} main' }}
+  - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/percona ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/percona ${distro_codename} main' }}
   - { name: groonga        ,description: 'Groonga Debian'     ,module: groonga ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/debian/ ${distro_codename} main' }}
   - { name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/groonga/ppa/ubuntu/ ${distro_codename} main' }}
   - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   22,24   ] ,arch: [x86_64         ] ,baseurl: { default: 'https://repo.mysql.com/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools'        ,china: 'https://mirrors.tuna.tsinghua.edu.cn/mysql/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools' }}
   - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' ,china: 'https://mirrors.aliyun.com/mongodb/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' }}
-  - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.redis.io/deb ${distro_codename} main' }}
-  - { name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.llvm.org/${distro_codename}/ llvm-toolchain-${distro_codename} main' ,china: 'https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/${distro_codename}/ llvm-toolchain-${distro_codename} main' }}
+  - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.redis.io/deb ${distro_codename} main' }}
+  - { name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.llvm.org/${distro_codename}/ llvm-toolchain-${distro_codename} main' ,china: 'https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/${distro_codename}/ llvm-toolchain-${distro_codename} main' }}
   - { name: haproxyd       ,description: 'Haproxy Debian'     ,module: haproxy ,releases: [   12            ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://haproxy.debian.net/ ${distro_codename}-backports-3.2 main' }}
   - { name: haproxyu       ,description: 'Haproxy Ubuntu'     ,module: haproxy ,releases: [            24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/vbernat/haproxy-3.2/ubuntu/ ${distro_codename} main' }}
   - { name: grafana        ,description: 'Grafana'            ,module: grafana ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://apt.grafana.com stable main' ,china: 'https://mirrors.aliyun.com/grafana/apt/ stable main' }}
