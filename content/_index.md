@@ -11,12 +11,12 @@ comment: false
 
 PGEXT.CLOUD provides three things to help you harness the synergistic superpower of the PostgreSQL extensions ecosystem:
 
-- [**Catalog**](/list) : Find the extension you need, with unparalleled [**522**](/e/) extensions included
+- [**Catalog**](/list) : Find the extension you need, with unparalleled [**531**](/e/) extensions included
 - [**Repository**](/repo) : Get pre-built RPM/DEB packages on **16** mainstream [**Linux Distributions**](/os)
 - [**PIG Package Manager**](/pig/) : The Missing Package Manager for PostgreSQL & Extension Ecosystem
 
 {{< cards cols=4 >}}  
-  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 522 available PostgreSQL extensions" >}}
+  {{< card link="/list" title="Extension Catalog" icon="clipboard-list" subtitle="The complete list of 531 available PostgreSQL extensions" >}}
   {{< card link="/repo" title="Software Repository" icon="cube" subtitle="The APT / DNF repo that deliver PostgreSQL extensions in native Linux format" >}}
   {{< card link="/pig" title="Package Manager" icon="cash" subtitle="The missing package manager for PostgreSQL & Extensions Ecosystem" >}}
 {{< /cards >}}
@@ -36,7 +36,7 @@ pig install pg_duckdb -v 18   # e.g. install pg_duckdb extension for PG 18
 
 ## Highlights
 
-- **522 Extensions** : the largest catalog in the postgres ecosystem
+- **531 Extensions** : the largest catalog in the postgres ecosystem
 - **Linux Native** : RPM/DEB packages, properly built, freely compose
 - **Handy CLI** : pig on apt/dnf, zero‑config installs; out-of-the-box
 - **Compatibility** : PGDG‑Compliant, drop‑in with official PG kernel
@@ -130,7 +130,7 @@ Pigsty provides complete extension support on these [linux distributions](/os) m
 The **PGSTY.CLOUD** is used by some PostgreSQL Distribution Maker and Vendors to deliver PG extensions to their users and customers.
 
 {{< cards cols=1 >}}
-{{< card link="https://github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 522 extensions!" >}}
+{{< card link="https://github.com/pgsty/pigsty"     title="Pigsty"     icon="github" subtitle="Battery-Included Local-First PostgreSQL Distribution as an Open Source RDS, with HA, PITR, IaC, Observability and 531 extensions!" >}}
 {{< /cards >}}
 
 {{< cards cols=2 >}}

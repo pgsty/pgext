@@ -32,9 +32,9 @@ PostgreSQL extension categorized by license.
 | {{< license "BSD 0-Clause" >}} | 2 | [License Text](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
 | {{< license "MPL-2.0" >}} | 1 | [License Text](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [License Text](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "ELv2" >}} | 1 | [License Text](#) | Unknown license |
-| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
 | {{< license "BSD" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [License Text](#) | Unknown license |
+| {{< license "ELv2" >}} | 1 | [License Text](#) | Unknown license |
 
 ---------
 
@@ -731,17 +731,17 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | Strengthen PostgreSQL user password checks with cracklib |
 
-## ELv2
+## BSD
 
 
 
-| {{< license "ELv2" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "BSD" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
-| 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
+| 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
 
 ## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
 
@@ -755,15 +755,15 @@ PostgreSQL extension categorized by license.
 |:---:|:---|:---|
 | 6020 | {{< alias "pg_stat_ch" >}} | Export PostgreSQL query telemetry to ClickHouse |
 
-## BSD
+## ELv2
 
 
 
-| {{< license "BSD" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
+| {{< license "ELv2" >}} | {{< badge content="1 Extensions" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="License Text" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | Extension | Description |
 |:---:|:---|:---|
-| 5260 | {{< alias "pgdisablelogerror" >}} | Disable selected SQLSTATE error codes from PostgreSQL server logging. |
+| 9620 | {{< alias "pgmqtt" >}} | CDC-to-MQTT broker for PostgreSQL |
 
