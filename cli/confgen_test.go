@@ -356,6 +356,36 @@ func TestNodePackagesDefaultRenderedAsThreeAlignedGroups(t *testing.T) {
 	}
 }
 
+func TestRPMTemplateAppStreamExcludesDistroPostgreSQLProviders(t *testing.T) {
+	const wantMeta = "meta: { excludepkgs: 'postgresql* libpq*' }"
+
+	for _, osCode := range []string{"el8", "el9", "el10"} {
+		t.Run(osCode, func(t *testing.T) {
+			rendered := renderRPMTemplateForTest(t, osCode+".x86_64", osCode)
+			appstream := renderedRepoUpstreamLine(rendered, "appstream")
+			if appstream == "" {
+				t.Fatal("rendered RPM config missing appstream repo")
+			}
+			if !strings.Contains(appstream, "releases: [8,9,10]") {
+				t.Fatalf("appstream repo no longer covers EL8/9/10: %q", appstream)
+			}
+			if !strings.Contains(appstream, wantMeta) {
+				t.Fatalf("appstream repo missing distro PostgreSQL exclude meta: %q", appstream)
+			}
+
+			for _, repo := range []string{"baseos", "extras", "powertools", "crb", "epel"} {
+				line := renderedRepoUpstreamLine(rendered, repo)
+				if line == "" {
+					t.Fatalf("rendered RPM config missing %s repo", repo)
+				}
+				if strings.Contains(line, "excludepkgs") {
+					t.Fatalf("%s repo should not carry PostgreSQL exclude meta: %q", repo, line)
+				}
+			}
+		})
+	}
+}
+
 func TestNodePackagesDefaultPreservesLegacyPackagesExceptTcpdump(t *testing.T) {
 	tests := []struct {
 		name     string
@@ -691,6 +721,17 @@ func renderedPackageAliasValue(rendered, alias string) string {
 				return parts[1]
 			}
 			return ""
+		}
+	}
+	return ""
+}
+
+func renderedRepoUpstreamLine(rendered, name string) string {
+	prefix := "- { name: " + name
+	for _, line := range strings.Split(rendered, "\n") {
+		line = strings.TrimSpace(line)
+		if strings.HasPrefix(line, prefix) {
+			return line
 		}
 	}
 	return ""
