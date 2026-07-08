@@ -454,7 +454,7 @@ There are 384 available PostgreSQL packages:
 | {{< ext "pgtt" >}} | `4.5` | {{< badge content="Link" link="https://github.com/darold/pgtt" >}} | {{< category "SIM" >}} | `pgtt_$v` | `postgresql-$v-pgtt` |
 | {{< ext "session_variable" >}} | `3.4` | {{< badge content="Link" link="https://github.com/splendiddata/session_variable" >}} | {{< category "SIM" >}} | `session_variable_$v` | `postgresql-$v-session-variable` |
 | {{< ext "pg_statement_rollback" >}} | `1.5` | {{< badge content="Link" link="https://github.com/lzlabs/pg_statement_rollback" >}} | {{< category "SIM" >}} | `pg_statement_rollback_$v` | `postgresql-$v-pg-statement-rollback` |
-| {{< ext "ivorysql_ora" "ivorysql" >}} | `1.0` | {{< badge content="Link" link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" >}} | {{< category "SIM" >}} | `ivorysql-$v` | `ivorysql-$v` |
+| {{< ext "ivorysql_ora" "ivorysql" >}} | `1.0` | {{< badge content="Link" link="https://github.com/IvorySQL/IvorySQL/tree/master/contrib/ivorysql_ora" >}} | {{< category "SIM" >}} | `ivorysql5` | `ivorysql-5` |
 | {{< ext "db2fce" >}} | `0.0.17` | {{< badge content="Link" link="https://github.com/credativ/db2fce" >}} | {{< category "SIM" >}} | `db2fce_$v` | `postgresql-$v-db2fce` |
 | {{< ext "plpgsql_wrap" >}} | `1.0` | {{< badge content="Link" link="https://github.com/hexacluster/plpgsql_wrap/" >}} | {{< category "SIM" >}} | `plpgsql_wrap_$v` | `postgresql-$v-plpgsql-wrap` |
 | {{< ext "pg_dbms_metadata" >}} | `1.0.0` | {{< badge content="Link" link="https://github.com/HexaCluster/pg_dbms_metadata" >}} | {{< category "SIM" >}} | `pg_dbms_metadata_$v` | - |
