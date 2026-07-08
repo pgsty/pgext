@@ -118,6 +118,7 @@ type ExtensionData struct {
 	VersionPackages map[int]string // PG version -> package name from pgext.pkg
 	VersionHidden   map[int]bool   // PG version -> hidden status
 	Hidden          bool           // deprecated, kept for compatibility
+	ForkBound       bool           // true when tags contains fork; render only via manual fork aliases
 	Comment         string
 	RPMPkg          string // RPM package template from extension.rpm_pkg
 	DEBPkg          string // DEB package template from extension.deb_pkg
@@ -170,6 +171,7 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 				e.deb_pkg,
 				e.rpm_pg,
 				e.deb_pg,
+				COALESCE(e.tags @> ARRAY['fork']::text[], false) AS fork_bound,
 				p.pg,
 				p.name as pkg_name,
 				p.state,
@@ -179,7 +181,7 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 			LEFT JOIN pgext.pkg p ON p.ext = e.name AND p.os = $1
 			WHERE e.lead = true AND e.contrib IS NOT TRUE
 		)
-		SELECT ext_id, name, alias, category, cat_id, comment, rpm_pkg, deb_pkg, rpm_pg, deb_pg, pg, pkg_name, state, hide
+		SELECT ext_id, name, alias, category, cat_id, comment, rpm_pkg, deb_pkg, rpm_pg, deb_pg, fork_bound, pg, pkg_name, state, hide
 		FROM ext_avail
 		ORDER BY cat_id, ext_id, pg
 	`
@@ -194,23 +196,24 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 
 	for rows.Next() {
 		var (
-			extID    int
-			name     string
-			alias    string
-			category string
-			catID    int
-			comment  sql.NullString
-			rpmPkg   sql.NullString
-			debPkg   sql.NullString
-			rpmPG    interface{}
-			debPG    interface{}
-			pg       sql.NullInt32
-			pkgName  sql.NullString
-			state    sql.NullString
-			hide     sql.NullBool
+			extID     int
+			name      string
+			alias     string
+			category  string
+			catID     int
+			comment   sql.NullString
+			rpmPkg    sql.NullString
+			debPkg    sql.NullString
+			rpmPG     interface{}
+			debPG     interface{}
+			forkBound bool
+			pg        sql.NullInt32
+			pkgName   sql.NullString
+			state     sql.NullString
+			hide      sql.NullBool
 		)
 
-		err := rows.Scan(&extID, &name, &alias, &category, &catID, &comment, &rpmPkg, &debPkg, &rpmPG, &debPG, &pg, &pkgName, &state, &hide)
+		err := rows.Scan(&extID, &name, &alias, &category, &catID, &comment, &rpmPkg, &debPkg, &rpmPG, &debPG, &forkBound, &pg, &pkgName, &state, &hide)
 		if err != nil {
 			return nil, err
 		}
@@ -226,6 +229,7 @@ func (g *PigstyConfigGenerator) loadExtensionData() (map[string]*ExtensionData, 
 				Available:       make(map[int]bool),
 				VersionPackages: make(map[int]string),
 				VersionHidden:   make(map[int]bool),
+				ForkBound:       forkBound,
 			}
 			if comment.Valid {
 				extensions[name].Comment = comment.String
@@ -489,6 +493,9 @@ func (g *PigstyConfigGenerator) generateExtensionMappings(extensions map[string]
 	for _, ext := range sortedExts {
 		// Skip contrib extensions
 		if ext.Category == "CONTRIB" {
+			continue
+		}
+		if ext.ForkBound {
 			continue
 		}
 
@@ -879,6 +886,7 @@ func GetConfigConstants() *ConfigConstants {
 			{"pg_exporter", "pg_exporter", "pg-exporter"},
 			{"pgbackrest_exporter", "pgbackrest_exporter", "pgbackrest-exporter"},
 			{"vip-manager", "vip-manager", "vip-manager"},
+			{"pg_hardstorage", "pg-hardstorage", "pg-hardstorage"},
 			{"pgbadger", "pgbadger", "pgbadger"},
 			{"pg_activity", "pg_activity", "pg-activity"},
 			{"pg_filedump", "pg_filedump", "postgresql-filedump"},
@@ -894,15 +902,14 @@ func GetConfigConstants() *ConfigConstants {
 
 			{"agensgraph", "agensgraph-$v", "agensgraph-$v"},
 			{"polardb", "polardb-$v", "polardb-$v"},
-			{"polar", "polardb-$v", "polardb-$v"},
-			{"openhalodb", "openhalodb-14", "openhalodb-14"},
-			//{"ivorysql", "ivorysql5", "ivorysql-5"},
-			//{"babelfish", "babelfishpg_17 babelfish_17", "babelfishpg-17 babelfishpg-17-babelfish"},
-			{"oriole", "orioledb_$v oriolepg_$v", "oriolepg-$v oriolepg-$v-orioledb"},
-			{"pgedge", "pgedge_$v spock_$v lolor_$v snowflake_$v", "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake"},
+			{"openhalo", "openhalodb-$v", "openhalodb-$v"},
+			{"ivorysql", "ivorysql5", "ivorysql-5"},
+			{"babelfish", "babelfish-$v", "babelfish-$v"},
+			{"orioledb", "orioledb-$v", "orioledb-$v"},
+			{"pgedge", "pgedge-$v", "pgedge-$v"},
 			{"supabase", "pg_tle_$v,pgvector_$v,pg_cron_$v,pgsodium_$v,pg_graphql_$v,pg_jsonschema_$v,wrappers_$v,vault_$v,pgjwt_$v,pgsql_http_$v,pg_net_$v,supautils_$v,index_advisor_$v,safeupdate_$v,pg_plan_filter_$v", "postgresql-$v-pg-tle,postgresql-$v-pg-graphql,postgresql-$v-pg-jsonschema,postgresql-$v-wrappers,postgresql-$v-pgvector,postgresql-$v-cron,postgresql-$v-pgsodium,postgresql-$v-vault,postgresql-$v-pgjwt,postgresql-$v-http,postgresql-$v-pg-net,postgresql-$v-supautils,postgresql-$v-index-advisor,postgresql-$v-pg-safeupdate,postgresql-$v-pg-plan-filter"},
 			{"greenplum", "open-source-greenplum-db-7", ""},
-			{"cloudberry", "cloudberry", "cloudberry"},
+			{"cloudberry", "cloudberry cloudberry-backup cloudberry-pxf", "cloudberry cloudberry-backup cloudberry-pxf"},
 			{"percona-core", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18"},
 			{"percona-main", "percona-postgresql18,percona-postgresql18-server,percona-postgresql18-contrib,percona-postgresql18-plperl,percona-postgresql18-plpython3,percona-postgresql18-pltcl,percona-pg_tde18,percona-postgis35_18,percona-postgis35_18-client,percona-postgis35_18-utils,percona-pgvector_18,percona-wal2json18,percona-pg_repack18,percona-pgaudit18,percona-pgaudit18_set_user,percona-pg_stat_monitor18,percona-pg_gather", "percona-postgresql-18 percona-postgresql-client-18 percona-postgresql-plperl-18 percona-postgresql-plpython3-18 percona-postgresql-pltcl-18 percona-pg-tde18 percona-postgresql-18-postgis-3 percona-postgresql-18-pgvector percona-postgresql-18-wal2json percona-postgresql-18-repack percona-postgresql-18-pgaudit percona-pgaudit18-set-user percona-pg-stat-monitor18 percona-pg-gather"},
 		},
@@ -964,8 +971,8 @@ pg_home_map:
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
   ivory:  '/usr/ivory-5'
-  mysql:  '/usr/halo-14'
-  gpsql:  '/usr/local/cloudberry'
+  mysql:  '/usr/halo-$v'
+  gpsql:  '/usr/cloudberry'
   polar:  '/usr/polar-$v'
   oriole: '/usr/oriole-$v'
   pgedge: '/usr/pgedge-$v'
@@ -996,8 +1003,7 @@ repo_upstream_default:
   - { name: pgdg16-nonfree ,description: 'PostgreSQL 16+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/16/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg17-nonfree ,description: 'PostgreSQL 17+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/17/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
   - { name: pgdg18-nonfree ,description: 'PostgreSQL 18+'     ,module: extra   ,releases: [8,9,10] ,arch: [x86_64         ] ,baseurl: { default: 'https://download.postgresql.org/pub/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,china: 'https://mirrors.aliyun.com/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' ,europe: 'https://mirrors.xtom.de/postgresql/repos/yum/non-free/18/redhat/rhel-$releasever-$basearch' } ,meta: { skip_if_unavailable: 1 }}
-  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
-  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
+  - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.3/yum/release/$releasever/RPMS/$basearch'  }}
   - { name: groonga        ,description: 'Groonga'            ,module: groonga ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }}
   - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
@@ -1110,7 +1116,7 @@ pg_home_map:
   citus:  '/usr/lib/postgresql/$v'
   mssql:  '/usr/babelfish-$v/'
   agens:  '/usr/agens-$v'
-  gpsql:  '/usr/local/cloudberry'
+  gpsql:  '/usr/cloudberry'
   ivory:  '/usr/ivory-5'
   mysql:  '/usr/halo-14'
   polar:  '/usr/polar-$v'

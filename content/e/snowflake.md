@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4590** | {{< badge content="snowflake" link="https://github.com/pgEdge/snowflake" >}} | {{< ext "snowflake" >}} | `2.4` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
+| **4590** | {{< badge content="snowflake" link="https://github.com/pgEdge/snowflake" >}} | {{< ext "snowflake" >}} | `2.5.0` | {{< category "FUNC" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -34,29 +34,29 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "red" >}} {{< bg "16" "" "red" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `snowflake` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "snowflake_18" "green" >}} {{< bg "17" "snowflake_17" "red" >}} {{< bg "16" "snowflake_16" "red" >}} {{< bg "15" "snowflake_15" "red" >}} {{< bg "14" "snowflake_14" "red" >}} | `snowflake_$v` | `pgedge_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "pgedge-18-snowflake" "green" >}} {{< bg "17" "pgedge-17-snowflake" "red" >}} {{< bg "16" "pgedge-16-snowflake" "red" >}} {{< bg "15" "pgedge-15-snowflake" "red" >}} {{< bg "14" "pgedge-14-snowflake" "red" >}} | `pgedge-$v-snowflake` | `pgedge-$v` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "red" >}} | `snowflake` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.5.0` | {{< bg "18" "pgedge-18" "green" >}} {{< bg "17" "pgedge-17" "green" >}} {{< bg "16" "pgedge-16" "green" >}} {{< bg "15" "pgedge-15" "green" >}} {{< bg "14" "pgedge-14" "red" >}} | `pgedge-$v` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "snowflake_18 : FORK 0" "red" >}}      |      {{< bg "PIGSTY 2.4" "snowflake_17 : FORK 1" >}}      |      {{< bg "MISS" "snowflake_16 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_15 : FORK 0" "red" >}}      |      {{< bg "MISS" "snowflake_14 : FORK 0" "red" >}}      |
-| {{< os "d12.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "PIGSTY 2.4" "pgedge-17-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "PIGSTY 2.4" "pgedge-18-snowflake : FORK 1" >}}      |      {{< bg "MISS" "pgedge-17-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-16-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-15-snowflake : FORK 0" "red" >}}      |      {{< bg "MISS" "pgedge-14-snowflake : FORK 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "el8.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "el9.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "el9.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "el10.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "el10.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "d12.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "d13.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "d13.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u22.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u22.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u24.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u24.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u26.x86_64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
+| {{< os "u26.aarch64" >}} |      {{< bg "PIGSTY 18.4" "pgedge-18 : FORK 1" >}}      |      {{< bg "PIGSTY 17.10" "pgedge-17 : FORK 1" >}}      |      {{< bg "PIGSTY 16.14" "pgedge-16 : FORK 1" >}}      |      {{< bg "PIGSTY 15.18" "pgedge-15 : FORK 1" >}}      |      {{< bg "MISS" "pgedge-14 : FORK 0" "red" >}}      |
 
 
 {{< tabs >}}
@@ -64,36 +64,88 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `pgedge-18-snowflake` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.3 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~bookworm_amd64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.1 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~bookworm_arm64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.3 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~trixie_amd64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.1 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~trixie_arm64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.8 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~jammy_amd64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.5 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~jammy_arm64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.7 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~noble_amd64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.4 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~noble_arm64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.8 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~resolute_amd64.deb) |
-| `pgedge-18-snowflake` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.6 KiB | [pgedge-18-snowflake_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/s/snowflake/pgedge-18-snowflake_2.4-1PIGSTY~resolute_arm64.deb) |
+| `pgedge-18` | `18.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 13.2 MiB | [pgedge-18-18.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-18-18.4-1PIGSTY.el8.x86_64.rpm) |
+| `pgedge-18` | `18.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 12.8 MiB | [pgedge-18-18.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-18-18.4-1PIGSTY.el8.aarch64.rpm) |
+| `pgedge-18` | `18.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 12.1 MiB | [pgedge-18-18.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-18-18.4-1PIGSTY.el9.x86_64.rpm) |
+| `pgedge-18` | `18.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.8 MiB | [pgedge-18-18.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-18-18.4-1PIGSTY.el9.aarch64.rpm) |
+| `pgedge-18` | `18.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 12.2 MiB | [pgedge-18-18.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-18-18.4-1PIGSTY.el10.x86_64.rpm) |
+| `pgedge-18` | `18.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 12.0 MiB | [pgedge-18-18.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-18-18.4-1PIGSTY.el10.aarch64.rpm) |
+| `pgedge-18` | `18.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.5 MiB | [pgedge-18_18.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-18` | `18.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.0 MiB | [pgedge-18_18.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-18` | `18.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.5 MiB | [pgedge-18_18.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-18` | `18.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.1 MiB | [pgedge-18_18.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-18` | `18.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.9 MiB | [pgedge-18_18.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-18` | `18.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.7 MiB | [pgedge-18_18.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-18` | `18.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.7 MiB | [pgedge-18_18.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~noble_amd64.deb) |
+| `pgedge-18` | `18.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.6 MiB | [pgedge-18_18.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~noble_arm64.deb) |
+| `pgedge-18` | `18.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.8 MiB | [pgedge-18_18.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-18` | `18.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.5 MiB | [pgedge-18_18.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-18/pgedge-18_18.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
-| `snowflake_17` | `2.4` | [el8.x86_64](/os/el8.x86_64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/snowflake_17-2.4-1PIGSTY.el8.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el8.aarch64](/os/el8.aarch64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/snowflake_17-2.4-1PIGSTY.el8.aarch64.rpm) |
-| `snowflake_17` | `2.4` | [el9.x86_64](/os/el9.x86_64) | pigsty | 20.6 KiB | [snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/snowflake_17-2.4-1PIGSTY.el9.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el9.aarch64](/os/el9.aarch64) | pigsty | 20.4 KiB | [snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/snowflake_17-2.4-1PIGSTY.el9.aarch64.rpm) |
-| `snowflake_17` | `2.4` | [el10.x86_64](/os/el10.x86_64) | pigsty | 20.7 KiB | [snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/snowflake_17-2.4-1PIGSTY.el10.x86_64.rpm) |
-| `snowflake_17` | `2.4` | [el10.aarch64](/os/el10.aarch64) | pigsty | 20.6 KiB | [snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/snowflake_17-2.4-1PIGSTY.el10.aarch64.rpm) |
-| `pgedge-17-snowflake` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~bookworm_amd64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 10.1 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~bookworm_arm64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.2 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~trixie_amd64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 10.1 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~trixie_arm64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.7 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~jammy_amd64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.4 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~jammy_arm64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.6 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~noble_amd64.deb) |
-| `pgedge-17-snowflake` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.4 KiB | [pgedge-17-snowflake_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/s/snowflake/pgedge-17-snowflake_2.4-1PIGSTY~noble_arm64.deb) |
+| `pgedge-17` | `17.10` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.8 MiB | [pgedge-17-17.10-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-17-17.10-1PIGSTY.el8.x86_64.rpm) |
+| `pgedge-17` | `17.10` | [el8.aarch64](/os/el8.aarch64) | pigsty | 12.4 MiB | [pgedge-17-17.10-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-17-17.10-1PIGSTY.el8.aarch64.rpm) |
+| `pgedge-17` | `17.10` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.7 MiB | [pgedge-17-17.10-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-17-17.10-1PIGSTY.el9.x86_64.rpm) |
+| `pgedge-17` | `17.10` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.5 MiB | [pgedge-17-17.10-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-17-17.10-1PIGSTY.el9.aarch64.rpm) |
+| `pgedge-17` | `17.10` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.8 MiB | [pgedge-17-17.10-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-17-17.10-1PIGSTY.el10.x86_64.rpm) |
+| `pgedge-17` | `17.10` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.7 MiB | [pgedge-17-17.10-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-17-17.10-1PIGSTY.el10.aarch64.rpm) |
+| `pgedge-17` | `17.10` | [d12.x86_64](/os/d12.x86_64) | pigsty | 10.2 MiB | [pgedge-17_17.10-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-17` | `17.10` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.7 MiB | [pgedge-17_17.10-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-17` | `17.10` | [d13.x86_64](/os/d13.x86_64) | pigsty | 10.2 MiB | [pgedge-17_17.10-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-17` | `17.10` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.7 MiB | [pgedge-17_17.10-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-17` | `17.10` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.6 MiB | [pgedge-17_17.10-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-17` | `17.10` | [u22.aarch64](/os/u22.aarch64) | pigsty | 11.4 MiB | [pgedge-17_17.10-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-17` | `17.10` | [u24.x86_64](/os/u24.x86_64) | pigsty | 11.4 MiB | [pgedge-17_17.10-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~noble_amd64.deb) |
+| `pgedge-17` | `17.10` | [u24.aarch64](/os/u24.aarch64) | pigsty | 11.3 MiB | [pgedge-17_17.10-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~noble_arm64.deb) |
+| `pgedge-17` | `17.10` | [u26.x86_64](/os/u26.x86_64) | pigsty | 11.4 MiB | [pgedge-17_17.10-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-17` | `17.10` | [u26.aarch64](/os/u26.aarch64) | pigsty | 11.2 MiB | [pgedge-17_17.10-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-17/pgedge-17_17.10-1PIGSTY~resolute_arm64.deb) |
+
+{{< /tab >}}
+{{< tab name="PG16" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgedge-16` | `16.14` | [el8.x86_64](/os/el8.x86_64) | pigsty | 12.1 MiB | [pgedge-16-16.14-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-16-16.14-1PIGSTY.el8.x86_64.rpm) |
+| `pgedge-16` | `16.14` | [el8.aarch64](/os/el8.aarch64) | pigsty | 11.7 MiB | [pgedge-16-16.14-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-16-16.14-1PIGSTY.el8.aarch64.rpm) |
+| `pgedge-16` | `16.14` | [el9.x86_64](/os/el9.x86_64) | pigsty | 11.2 MiB | [pgedge-16-16.14-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-16-16.14-1PIGSTY.el9.x86_64.rpm) |
+| `pgedge-16` | `16.14` | [el9.aarch64](/os/el9.aarch64) | pigsty | 11.0 MiB | [pgedge-16-16.14-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-16-16.14-1PIGSTY.el9.aarch64.rpm) |
+| `pgedge-16` | `16.14` | [el10.x86_64](/os/el10.x86_64) | pigsty | 11.3 MiB | [pgedge-16-16.14-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-16-16.14-1PIGSTY.el10.x86_64.rpm) |
+| `pgedge-16` | `16.14` | [el10.aarch64](/os/el10.aarch64) | pigsty | 11.1 MiB | [pgedge-16-16.14-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-16-16.14-1PIGSTY.el10.aarch64.rpm) |
+| `pgedge-16` | `16.14` | [d12.x86_64](/os/d12.x86_64) | pigsty | 9.7 MiB | [pgedge-16_16.14-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-16` | `16.14` | [d12.aarch64](/os/d12.aarch64) | pigsty | 9.3 MiB | [pgedge-16_16.14-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-16` | `16.14` | [d13.x86_64](/os/d13.x86_64) | pigsty | 9.7 MiB | [pgedge-16_16.14-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-16` | `16.14` | [d13.aarch64](/os/d13.aarch64) | pigsty | 9.3 MiB | [pgedge-16_16.14-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-16` | `16.14` | [u22.x86_64](/os/u22.x86_64) | pigsty | 11.0 MiB | [pgedge-16_16.14-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-16` | `16.14` | [u22.aarch64](/os/u22.aarch64) | pigsty | 10.8 MiB | [pgedge-16_16.14-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-16` | `16.14` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.9 MiB | [pgedge-16_16.14-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~noble_amd64.deb) |
+| `pgedge-16` | `16.14` | [u24.aarch64](/os/u24.aarch64) | pigsty | 10.7 MiB | [pgedge-16_16.14-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~noble_arm64.deb) |
+| `pgedge-16` | `16.14` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.9 MiB | [pgedge-16_16.14-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-16` | `16.14` | [u26.aarch64](/os/u26.aarch64) | pigsty | 10.7 MiB | [pgedge-16_16.14-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-16/pgedge-16_16.14-1PIGSTY~resolute_arm64.deb) |
+
+{{< /tab >}}
+{{< tab name="PG15" >}}
+
+| **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
+|:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `pgedge-15` | `15.18` | [el8.x86_64](/os/el8.x86_64) | pigsty | 10.8 MiB | [pgedge-15-15.18-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/pgedge-15-15.18-1PIGSTY.el8.x86_64.rpm) |
+| `pgedge-15` | `15.18` | [el8.aarch64](/os/el8.aarch64) | pigsty | 10.5 MiB | [pgedge-15-15.18-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/pgedge-15-15.18-1PIGSTY.el8.aarch64.rpm) |
+| `pgedge-15` | `15.18` | [el9.x86_64](/os/el9.x86_64) | pigsty | 10.3 MiB | [pgedge-15-15.18-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/pgedge-15-15.18-1PIGSTY.el9.x86_64.rpm) |
+| `pgedge-15` | `15.18` | [el9.aarch64](/os/el9.aarch64) | pigsty | 10.1 MiB | [pgedge-15-15.18-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/pgedge-15-15.18-1PIGSTY.el9.aarch64.rpm) |
+| `pgedge-15` | `15.18` | [el10.x86_64](/os/el10.x86_64) | pigsty | 10.4 MiB | [pgedge-15-15.18-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/pgedge-15-15.18-1PIGSTY.el10.x86_64.rpm) |
+| `pgedge-15` | `15.18` | [el10.aarch64](/os/el10.aarch64) | pigsty | 10.2 MiB | [pgedge-15-15.18-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pgedge-15-15.18-1PIGSTY.el10.aarch64.rpm) |
+| `pgedge-15` | `15.18` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 MiB | [pgedge-15_15.18-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~bookworm_amd64.deb) |
+| `pgedge-15` | `15.18` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.4 MiB | [pgedge-15_15.18-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~bookworm_arm64.deb) |
+| `pgedge-15` | `15.18` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.8 MiB | [pgedge-15_15.18-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~trixie_amd64.deb) |
+| `pgedge-15` | `15.18` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.4 MiB | [pgedge-15_15.18-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~trixie_arm64.deb) |
+| `pgedge-15` | `15.18` | [u22.x86_64](/os/u22.x86_64) | pigsty | 10.1 MiB | [pgedge-15_15.18-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~jammy_amd64.deb) |
+| `pgedge-15` | `15.18` | [u22.aarch64](/os/u22.aarch64) | pigsty | 9.9 MiB | [pgedge-15_15.18-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~jammy_arm64.deb) |
+| `pgedge-15` | `15.18` | [u24.x86_64](/os/u24.x86_64) | pigsty | 10.0 MiB | [pgedge-15_15.18-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~noble_amd64.deb) |
+| `pgedge-15` | `15.18` | [u24.aarch64](/os/u24.aarch64) | pigsty | 9.8 MiB | [pgedge-15_15.18-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~noble_arm64.deb) |
+| `pgedge-15` | `15.18` | [u26.x86_64](/os/u26.x86_64) | pigsty | 10.0 MiB | [pgedge-15_15.18-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~resolute_amd64.deb) |
+| `pgedge-15` | `15.18` | [u26.aarch64](/os/u26.aarch64) | pigsty | 9.8 MiB | [pgedge-15_15.18-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgedge-15/pgedge-15_15.18-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -101,7 +153,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/pgEdge/snowflake" title="Repository" icon="github" subtitle="github.com/pgEdge/snowflake" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="snowflake-2.4.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="snowflake-2.5.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -124,6 +176,9 @@ pig repo add pgsql -u   # add both repo and update cache
 pig install snowflake;		# install via package name, for the active PG version
 
 pig install snowflake -v 18;   # install for PG 18
+pig install snowflake -v 17;   # install for PG 17
+pig install snowflake -v 16;   # install for PG 16
+pig install snowflake -v 15;   # install for PG 15
 
 ```
 

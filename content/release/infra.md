@@ -6,6 +6,12 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-07-07
+
+| Name           | Old | New   | Comment                         |
+|:---------------|:----|:------|:--------------------------------|
+| pg-hardstorage | -   | 1.0.8 | upstream RPM/DEB direct download |
+
 ## 2026-07-04
 
 | Name                       | Old            | New            | Comment |

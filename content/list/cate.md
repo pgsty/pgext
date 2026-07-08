@@ -337,10 +337,10 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4170 | {{< alias "pg_smtp_client" >}} | 0.2.1 | PostgreSQL extension to send email using SMTP |
 | 4180 | {{< alias "pg_html5_email_address" >}} | 1.2.3 | PostgreSQL email validation that is consistent with the HTML5 spec |
 | 4190 | {{< alias "url_encode" >}} | 1.2.5 | url_encode, url_decode functions |
-| 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.3 | Some functions and views for daily usage |
+| 4200 | {{< alias "pgsql_tweaks" >}} | 1.0.5 | Some functions and views for daily usage |
 | 4220 | {{< alias "pg_extra_time" >}} | 2.1.0 | Some date time functions and operators that, |
 | 4230 | {{< alias "pgpcre" >}} | 0.20190509 | Perl Compatible Regular Expression functions |
-| 4235 | {{< alias "re2" >}} | 0.3.0 | ClickHouse-compatible regex functions using RE2 |
+| 4235 | {{< alias "re2" >}} | 0.4.0 | ClickHouse-compatible regex functions using RE2 |
 | 4240 | {{< alias "icu_ext" >}} | 1.11.0 | Access ICU functions |
 | 4250 | {{< alias "pgqr" >}} | 1.0 | QR Code generator from PostgreSQL |
 | 4270 | {{< alias "envvar" "pg_envvar" >}} | 1.0.1 | Fetch the value of an environment variable |
@@ -376,7 +376,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4560 | {{< alias "pg_slug_gen" >}} | 1.0.0 | Generate cryptographically secure timestamp-based slugs |
 | 4570 | {{< alias "sequential_uuids" >}} | 1.0.3 | generator of sequential UUIDs |
 | 4580 | {{< alias "typeid" "pg_typeid" >}} | 0.3.0 | Allows to use TypeIDs in Postgres natively |
-| 4590 | {{< alias "snowflake" >}} | 2.4 | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
+| 4590 | {{< alias "snowflake" >}} | 2.5.0 | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | 4600 | {{< alias "topn" >}} | 2.7.0 | type for top-n JSONB |
 | 4610 | {{< alias "quantile" >}} | 1.1.8 | Quantile aggregation function |
 | 4620 | {{< alias "lower_quantile" >}} | 1.0.3 | Lower quantile aggregate function |
@@ -551,7 +551,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7405 | {{< alias "block_copy_command" >}} | 0.1.5 | Block COPY commands via a configurable ProcessUtility hook |
 | 7410 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
 | 7420 | {{< alias "noset" "pg_noset" >}} | 0.3.0 | Module for blocking SET variables for non-super users. |
-| 7500 | {{< alias "pg_tde" >}} | 2.1 | Percona pg_tde access method |
+| 7500 | {{< alias "pg_tde" >}} | 2.2 | Percona pg_tde access method |
 | 7960 | {{< alias "sepgsql" >}} | - | label-based mandatory access control (MAC) based on SELinux security policy. |
 | 7970 | {{< alias "auth_delay" >}} | - | pause briefly before reporting authentication failure |
 | 7980 | {{< alias "pgcrypto" >}} | 1.3 | cryptographic functions |
@@ -618,8 +618,8 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9260 | {{< alias "pg_dbms_job" >}} | 2.0 | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 2.2 | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9290 | {{< alias "pg_utl_smtp" >}} | 1.0.0 | Oracle UTL_SMTP compatibility extension for PostgreSQL |
-| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 5.5.0 | SQL Server Transact SQL Datatype Support |
-| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | 5.5.0 | SQL Server Transact SQL compatibility |
+| 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | 5.4.0 | SQL Server Transact SQL Datatype Support |
+| 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | 5.4.0 | SQL Server Transact SQL compatibility |
 | 9320 | {{< alias "babelfishpg_tds" "babelfish" >}} | 1.0.0 | SQL Server TDS protocol extension |
 | 9330 | {{< alias "babelfishpg_money" "babelfish" >}} | 1.1.0 | SQL Server Money Data Type |
 | 9400 | {{< alias "spat" >}} | 0.1.0a4 | Redis-like In-Memory DB Embedded in Postgres |
@@ -640,13 +640,13 @@ Logical Replication, Decoding, CDC in protobuf/JSON/Mongo format, Copy & Load & 
 | 9540 | {{< alias "pg_failover_slots" >}} | 1.2.1 | PG Failover Slots extension |
 | 9550 | {{< alias "db_migrator" >}} | 1.0.0 | Tools to migrate other databases to PostgreSQL |
 | 9560 | {{< alias "pgactive" >}} | 2.1.7 | Active-Active Replication Extension for PostgreSQL |
-| 9570 | {{< alias "spock" >}} | 5.0.6 | Multi-master logical replication extension for PostgreSQL |
+| 9570 | {{< alias "spock" >}} | 5.0.10 | Multi-master logical replication extension for PostgreSQL |
 | 9580 | {{< alias "lolor" >}} | 1.2.2 | Logical-replication-friendly replacement for PostgreSQL large objects |
 | 9590 | {{< alias "pgclone" >}} | 4.3.2 | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | 9620 | {{< alias "pgmqtt" >}} | 0.3.0 | CDC-to-MQTT broker for PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 2.6 | Changing data capture in JSON format |
 | 9640 | {{< alias "wal2mongo" >}} | 1.0.7 | PostgreSQL logical decoding output plugin for MongoDB |
-| 9650 | {{< alias "decoderbufs" >}} | 3.5.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
+| 9650 | {{< alias "decoderbufs" >}} | 3.6.0 | Logical decoding plugin that delivers WAL stream changes using a Protocol Buffer format |
 | 9660 | {{< alias "decoder_raw" >}} | 1.0 | Output plugin for logical replication in Raw SQL format |
 | 9700 | {{< alias "mimeo" >}} | 1.5.1 | Extension for specialized, per-table replication between PostgreSQL instances |
 | 9710 | {{< alias "repmgr" >}} | 5.5.0 | Replication manager for PostgreSQL |

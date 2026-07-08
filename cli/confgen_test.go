@@ -123,6 +123,41 @@ func TestGenerateExtensionMappingsFallbackToDeclaredPG(t *testing.T) {
 	}
 }
 
+func TestGenerateExtensionMappingsSkipsForkBoundExtensions(t *testing.T) {
+	g := &PigstyConfigGenerator{osCode: "el9"}
+	extensions := map[string]*ExtensionData{
+		"orioledb": {
+			ID:         1,
+			Name:       "orioledb",
+			Alias:      "orioledb",
+			Category:   "FEAT",
+			CategoryID: 1,
+			RPMPkg:     "orioledb_$v",
+			RPMPG:      []int{18, 17, 16},
+			Available:  map[int]bool{},
+			ForkBound:  true,
+		},
+		"pg_graphql": {
+			ID:         2,
+			Name:       "pg_graphql",
+			Alias:      "pg_graphql",
+			Category:   "FEAT",
+			CategoryID: 1,
+			RPMPkg:     "pg_graphql_$v",
+			RPMPG:      []int{18},
+			Available:  map[int]bool{},
+		},
+	}
+
+	mappings := g.generateExtensionMappings(extensions)
+	if len(mappings) != 1 {
+		t.Fatalf("expected 1 non-fork mapping, got %d: %#v", len(mappings), mappings)
+	}
+	if mappings[0].Name != "pg_graphql" {
+		t.Fatalf("mapping name = %q, want pg_graphql", mappings[0].Name)
+	}
+}
+
 func TestEL9ARMPatroniUsesNoarchPackageSelectors(t *testing.T) {
 	g := &PigstyConfigGenerator{
 		osCode:    "el9",
@@ -704,10 +739,10 @@ func TestConfigConstantsIncludeBabelfishAlias(t *testing.T) {
 		if mapping.Key != "babelfish" {
 			continue
 		}
-		if mapping.RPM != "babelfishpg-17 babelfishpg-17-babelfish" {
+		if mapping.RPM != "babelfish-$v" {
 			t.Fatalf("babelfish RPM alias = %q", mapping.RPM)
 		}
-		if mapping.DEB != "babelfishpg-17 babelfishpg-17-babelfish" {
+		if mapping.DEB != "babelfish-$v" {
 			t.Fatalf("babelfish DEB alias = %q", mapping.DEB)
 		}
 		return
@@ -718,15 +753,15 @@ func TestConfigConstantsIncludeBabelfishAlias(t *testing.T) {
 func TestConfigConstantsIncludeAgensAndPgEdgeAlias(t *testing.T) {
 	constants := GetConfigConstants()
 	expected := map[string]PackageMapping{
-		"agens": {
-			Key: "agens",
-			RPM: "agensgraph_$v",
+		"agensgraph": {
+			Key: "agensgraph",
+			RPM: "agensgraph-$v",
 			DEB: "agensgraph-$v",
 		},
 		"pgedge": {
 			Key: "pgedge",
-			RPM: "pgedge_$v spock_$v lolor_$v snowflake_$v",
-			DEB: "pgedge-$v pgedge-$v-spock pgedge-$v-lolor pgedge-$v-snowflake",
+			RPM: "pgedge-$v",
+			DEB: "pgedge-$v",
 		},
 	}
 
@@ -759,11 +794,6 @@ func TestConfigConstantsIncludePolarDBAlias(t *testing.T) {
 			RPM: "polardb-$v",
 			DEB: "polardb-$v",
 		},
-		"polar": {
-			Key: "polar",
-			RPM: "polardb-$v",
-			DEB: "polardb-$v",
-		},
 	}
 
 	found := make(map[string]PackageMapping)
@@ -790,13 +820,13 @@ func TestConfigConstantsIncludePolarDBAlias(t *testing.T) {
 func TestConfigConstantsIncludeOrioleVersionTemplate(t *testing.T) {
 	constants := GetConfigConstants()
 	for _, mapping := range constants.PGSQLExoticMap {
-		if mapping.Key != "oriole" {
+		if mapping.Key != "orioledb" {
 			continue
 		}
-		if mapping.RPM != "orioledb_$v oriolepg_$v" {
+		if mapping.RPM != "orioledb-$v" {
 			t.Fatalf("oriole RPM alias = %q", mapping.RPM)
 		}
-		if mapping.DEB != "oriolepg-$v oriolepg-$v-orioledb" {
+		if mapping.DEB != "orioledb-$v" {
 			t.Fatalf("oriole DEB alias = %q", mapping.DEB)
 		}
 		return
@@ -804,9 +834,64 @@ func TestConfigConstantsIncludeOrioleVersionTemplate(t *testing.T) {
 	t.Fatal("oriole mapping not found in PGSQLExoticMap")
 }
 
+func TestConfigConstantsIncludeCloudberryFullPackageAlias(t *testing.T) {
+	constants := GetConfigConstants()
+	for _, mapping := range constants.PGSQLExoticMap {
+		if mapping.Key != "cloudberry" {
+			continue
+		}
+		want := "cloudberry cloudberry-backup cloudberry-pxf"
+		if mapping.RPM != want {
+			t.Fatalf("cloudberry RPM alias = %q, want %q", mapping.RPM, want)
+		}
+		if mapping.DEB != want {
+			t.Fatalf("cloudberry DEB alias = %q, want %q", mapping.DEB, want)
+		}
+		return
+	}
+	t.Fatal("cloudberry mapping not found in PGSQLExoticMap")
+}
+
+func TestConfigConstantsIncludePgHardstorageToolAlias(t *testing.T) {
+	constants := GetConfigConstants()
+	expected := map[string]PackageMapping{
+		"pg-hardstorage": {
+			Key: "pg-hardstorage",
+			RPM: "pg-hardstorage",
+			DEB: "pg-hardstorage",
+		},
+		"pg_hardstorage": {
+			Key: "pg_hardstorage",
+			RPM: "pg-hardstorage",
+			DEB: "pg-hardstorage",
+		},
+	}
+
+	found := make(map[string]PackageMapping)
+	for _, mapping := range constants.PGSQLUtilMap {
+		if _, ok := expected[mapping.Key]; ok {
+			found[mapping.Key] = mapping
+		}
+	}
+
+	for key, want := range expected {
+		got, ok := found[key]
+		if !ok {
+			t.Fatalf("%s mapping not found in PGSQLUtilMap", key)
+		}
+		if got.RPM != want.RPM {
+			t.Fatalf("%s RPM alias = %q, want %q", key, got.RPM, want.RPM)
+		}
+		if got.DEB != want.DEB {
+			t.Fatalf("%s DEB alias = %q, want %q", key, got.DEB, want.DEB)
+		}
+	}
+}
+
 func TestTemplatesIncludeAgensAndPgEdgeHomeMap(t *testing.T) {
 	required := []string{
 		"agens:  '/usr/agens-$v'",
+		"gpsql:  '/usr/cloudberry'",
 		"polar:  '/usr/polar-$v'",
 		"pgedge: '/usr/pgedge-$v'",
 	}
@@ -827,7 +912,6 @@ func TestRenderedTemplatesIncludePolarDBPackageMap(t *testing.T) {
 	} {
 		for _, fragment := range []string{
 			`polardb:                 "polardb-$v"`,
-			`polar:                   "polardb-$v"`,
 			`polar:  '/usr/polar-$v'`,
 		} {
 			if !strings.Contains(rendered, fragment) {
@@ -839,6 +923,7 @@ func TestRenderedTemplatesIncludePolarDBPackageMap(t *testing.T) {
 			`PolarDB"`,
 			`polar:  '/u01/polardb_pg_17'`,
 			`polar:  '/usr/polar-17'`,
+			`polar:                   "polardb-$v"`,
 			`oracle:`,
 			`'/u01/polardb_pg'`,
 		} {

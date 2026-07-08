@@ -305,7 +305,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pg_slug_gen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | Generate cryptographically secure timestamp-based slugs |
 | {{< ext "sequential_uuids" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FUNC" >}} | generator of sequential UUIDs |
 | {{< ext "typeid" "pg_typeid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Allows to use TypeIDs in Postgres natively |
-| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
+| {{< ext "snowflake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Snowflake-style 64-bit ID generator and sequence utilities for PostgreSQL |
 | {{< ext "topn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | type for top-n JSONB |
 | {{< ext "quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Quantile aggregation function |
 | {{< ext "lower_quantile" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FUNC" >}} | Lower quantile aggregate function |
@@ -512,10 +512,10 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "SIM" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | {{< category "SIM" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
-| {{< ext "babelfishpg_common" "babelfish" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL Datatype Support |
-| {{< ext "babelfishpg_tsql" "babelfish" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL compatibility |
-| {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |
-| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
+| {{< ext "babelfishpg_common" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL Datatype Support |
+| {{< ext "babelfishpg_tsql" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server Transact SQL compatibility |
+| {{< ext "babelfishpg_tds" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd-r" color="blue" >}} | {{< category "SIM" >}} | SQL Server TDS protocol extension |
+| {{< ext "babelfishpg_money" "babelfish" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "SIM" >}} | SQL Server Money Data Type |
 | {{< ext "spat" >}} | {{< pgver "18,17,16,15,14" "r,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | Redis-like In-Memory DB Embedded in Postgres |
 | {{< ext "pgmemcache" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "SIM" >}} | memcached interface |
 | {{< ext "aux_mysql" "openhalo" >}} | {{< pgver "18,17,16,15,14" "r,r,r,r,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "SIM" >}} | MySQL Supplementary Extension |
@@ -527,8 +527,8 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pg_failover_slots" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sL--r" color="blue" >}} | {{< category "ETL" >}} | PG Failover Slots extension |
 | {{< ext "db_migrator" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | {{< category "ETL" >}} | Tools to migrate other databases to PostgreSQL |
 | {{< ext "pgactive" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Active-Active Replication Extension for PostgreSQL |
-| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
-| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
+| {{< ext "spock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | {{< category "ETL" >}} | Multi-master logical replication extension for PostgreSQL |
+| {{< ext "lolor" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | {{< category "ETL" >}} | Logical-replication-friendly replacement for PostgreSQL large objects |
 | {{< ext "pgclone" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | {{< category "ETL" >}} | Clone PostgreSQL databases, schemas, tables, and functions across environments |
 | {{< ext "pgmqtt" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "ETL" >}} | CDC-to-MQTT broker for PostgreSQL |
 | {{< ext "wal2json" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s----" color="blue" >}} | {{< category "ETL" >}} | Changing data capture in JSON format |
