@@ -41,18 +41,18 @@ $ curl -fsSL https://repo.pigsty.io/pig | bash
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v1.5.0/pig_1.5.0-1_amd64.deb
-[INFO] download = /tmp/pig_1.5.0-1_amd64.deb
-[INFO] downloading pig v1.5.0
-curl -fSL https://repo.pigsty.io/pkg/pig/v1.5.0/pig_1.5.0-1_amd64.deb -o /tmp/pig_1.5.0-1_amd64.deb
+[INFO] pkg_url = https://repo.pigsty.io/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb
+[INFO] download = /tmp/pig_1.5.1-1_amd64.deb
+[INFO] downloading pig v1.5.1
+curl -fSL https://repo.pigsty.io/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb -o /tmp/pig_1.5.1-1_amd64.deb
 ######################################################################## 100.0%
 [INFO] md5sum = b7d18865090df8c03523c79ec2744e91
-[INFO] installing: dpkg -i /tmp/pig_1.5.0-1_amd64.deb
+[INFO] installing: dpkg -i /tmp/pig_1.5.1-1_amd64.deb
 (Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_1.5.0-1_amd64.deb ...
-Unpacking pig (1.5.0-1) ...
-Setting up pig (1.5.0-1) ...
-[INFO] pig v1.5.0 installed successfully
+Preparing to unpack /tmp/pig_1.5.1-1_amd64.deb ...
+Unpacking pig (1.5.1-1) ...
+Setting up pig (1.5.1-1) ...
+[INFO] pig v1.5.1 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -64,7 +64,7 @@ PIG is a Go-written binary program, installed by default at `/usr/bin/pig`. `pig
 
 ```bash
 $ pig version
-pig version 1.5.0 linux/amd64
+pig version 1.5.1 linux/amd64
 ```
 
 Use `pig status` to print the current environment status, OS code, PG installation status, repository accessibility and latency.
@@ -73,7 +73,7 @@ Use `pig status` to print the current environment status, OS code, PG installati
 $ pig status
 
 # [Configuration] ================================
-Pig Version      : 1.5.0
+Pig Version      : 1.5.1
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -174,6 +174,7 @@ PIG detects your network environment and chooses Cloudflare global CDN or China 
 
 ```bash
 pig repo set      --region=china              # use China mirror for faster downloads
+pig repo set      --mirror                    # use Pigsty mirror/proxy for PG repos
 pig repo add pgdg --region=default --update   # force PGDG upstream repo
 ```
 
@@ -385,6 +386,7 @@ docker build -t d13:latest .
 docker run -it d13:latest /bin/bash
 
 pig repo set --region=china    # add China region repos
+pig repo set --mirror          # use Pigsty mirror/proxy for PG repos
 pig install -y pg18            # install PGDG 18 kernel packages
 pig install -y postgis timescaledb pgvector pg_duckdb
 ```

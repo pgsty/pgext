@@ -6,11 +6,35 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
-## 2026-07-07
+## 2026-07-08
 
-| Name           | Old | New   | Comment                         |
-|:---------------|:----|:------|:--------------------------------|
-| pg-hardstorage | -   | 1.0.8 | upstream RPM/DEB direct download |
+| Name                       | Old     | New     | Comment |
+|:---------------------------|:--------|:--------|:--------|
+| pg-hardstorage             | -       | 1.0.8   |         |
+| alertmanager               | 0.33.0  | 0.33.1  |         |
+| victoria-metrics           | 1.146.0 | 1.147.0 |         |
+| victoria-metrics-cluster   | 1.146.0 | 1.147.0 |         |
+| vmutils                    | 1.146.0 | 1.147.0 |         |
+| restic                     | 0.19.0  | 0.19.1  |         |
+| juicefs                    | 1.3.1   | 1.4.0   |         |
+| dblab                      | 0.42.1  | 0.43.0  |         |
+| pgstream                   | 1.1.0   | 1.1.1   |         |
+| tigerbeetle                | 0.17.8  | 0.17.9  |         |
+| grafana-victoriametrics-ds | 0.25.1  | 0.25.2  |         |
+| hugo                       | 0.163.3 | 0.164.0 |         |
+| seaweedfs                  | 4.37    | 4.38    |         |
+| v2ray                      | 5.49.0  | 5.51.2  |         |
+| sabiql                     | 1.13.0  | 1.14.0  |         |
+| claude                     | 2.1.201 | 2.1.204 |         |
+| codex                      | 0.142.5 | 0.143.0 |         |
+| stalwart                   | 0.16.11 | 0.16.12 |         |
+| opencode                   | 1.17.13 | 1.17.15 |         |
+| uv                         | 0.11.26 | 0.11.28 |         |
+| golang                     | 1.26.4  | 1.26.5  |         |
+| pgschema                   | 1.11.1  | 1.12.0  |         |
+| crush                      | 0.81.0  | 0.82.0  |         |
+| code                       | 1.127.0 | 1.128.0 |         |
+| pig                        | 1.5.0   | 1.5.1   |         |
 
 ## 2026-07-04
 

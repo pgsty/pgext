@@ -80,4 +80,3 @@ You can also check the [pigsty](https://pgsty.com) project, which makes it even 
 {{< card link="https://github.com/pgsty/pig"    title="PIG"    icon="github" subtitle="The PostgreSQL Package Manager" >}}
 {{< card link="https://github.com/pgsty/pigsty" title="PIGSTY" icon="github" subtitle="The Battery-Included PostgreSQL Distribution" >}}
 {{< /cards >}}
-

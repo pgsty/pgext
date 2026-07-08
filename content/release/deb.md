@@ -6,6 +6,27 @@ weight: 300
 
 Check [PGSQL Repo](/repo/pgsql) to learn how to use the PGSQL APT repo.
 
+## 2026-07-07
+
+| Package           | Old        | New        | Comment       |
+|:------------------|:-----------|:-----------|:--------------|
+| polardb-17        | 17.9.1.0   | 17.10.1.0  | PG 17         |
+| agensgraph-17     | 2.16.0     | 2.17.0     | PG 17.10      |
+| openhalodb-14     | 1.0-beta   | 1.0-2      | OpenHaloDB    |
+| babelfish-17      | 5.4.0      | 5.4.0      | PG 17.7       |
+| babelfish-18      | -          | 6.0.0      | PG 18.3       |
+| pgedge-15         | -          | 15.18      | Spock 5.0.10  |
+| pgedge-16         | -          | 16.14      | Spock 5.0.10  |
+| pgedge-17         | 17.9       | 17.10      | Spock 5.0.10  |
+| pgedge-18         | 18.3       | 18.4       | Spock 5.0.10  |
+| orioledb-16       | 1.8-beta16 | 1.8-beta16 | PG 16         |
+| orioledb-17       | 1.8-beta16 | 1.8-beta16 | PG 17         |
+| orioledb-18       | 1.8-beta16 | 1.8-beta16 | PG 18         |
+| ivorysql-18       | 5.0        | 5.4        | PG 18         |
+| cloudberry        | 2.1.0-1    | 2.1.0-2    | rebuild       |
+| cloudberry-backup | 2.1.0-1    | 2.1.0-2    | backup        |
+| cloudberry-pxf    | 2.1.0-1    | 2.1.0-2    | PXF           |
+
 ## 2026-07-01
 
 | Package       | Old      | New     | Comment                               |

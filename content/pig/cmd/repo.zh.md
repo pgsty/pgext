@@ -61,6 +61,7 @@ pig repo set                          # = pig repo add all --remove --update
 pig repo add pgsql                    # 添加 PGDG 和 Pigsty PGSQL 仓库
 pig repo add pigsty --region=china    # 添加 Pigsty 仓库，指定使用中国区域
 pig repo add pgdg   --region=europe   # 添加 PGDG 仓库，指定使用欧洲区域
+pig repo add pgdg   --mirror          # 使用 Pigsty 镜像/代理路径访问 PGDG
 pig repo add infra  --region=default  # 添加 INFRA 仓库 ，指定使用默认区域
 
 # 如果上面没有-u|--update 选项一步到位，请额外执行此命令
@@ -115,6 +116,8 @@ Pigsty 中可用仓库的完整定义位于 [`cli/repo/assets/repo.yml`](https:/
 
 您可以创建 `~/.pig/repo.yml` 文件，显式修改并覆盖 pig 的仓库定义。在编辑仓库定义文件时，您可以在 `baseurl` 处添加额外的区域镜像，例如指定中国，欧洲地区的镜像仓库 URL。当 pig 使用 `--region` 参数指定特定的区域时，pig 会优先查找对应区域的仓库 URL，如果不存在，则会 Fallback 到 `default` 的仓库 URL。
 
+当 `repo add` 或 `repo set` 指定 `--mirror` 时，pig 会优先为 PostgreSQL 仓库使用 Pigsty 镜像/代理路径。PGDG 仓库 URL 可被重写到 Pigsty 代理镜像，其他仓库模块仍按正常区域 URL 选择。
+
 
 ## repo list
 
@@ -158,6 +161,7 @@ pig repo add pigsty -u           # 添加并更新缓存
 pig repo add all -r              # 添加前移除现有仓库
 pig repo add all -ru             # 移除、添加并更新（完全重置）
 pig repo add pgdg --region=china # 使用中国镜像
+pig repo add pgdg -m             # 对 PGDG 使用 Pigsty 代理镜像
 ```
 
 **选项：**
@@ -165,6 +169,7 @@ pig repo add pgdg --region=china # 使用中国镜像
 - `-r|--remove`：添加新仓库前移除现有仓库
 - `-u|--update`：添加仓库后运行包缓存更新
 - `--region <region>`：使用区域镜像仓库（`default` / `china` / `europe`）
+- `-m|--mirror`：对 PostgreSQL 仓库使用 Pigsty 镜像/代理路径
 
 |   平台   | 模块位置                                    |
 |:------:|:----------------------------------------|
@@ -181,6 +186,7 @@ pig repo add pgdg --region=china # 使用中国镜像
 pig repo set                     # 替换为默认仓库
 pig repo set pgdg pigsty         # 替换为特定仓库并更新
 pig repo set all --region=china  # 使用中国镜像
+pig repo set -m                  # 对 PG 仓库使用 Pigsty 镜像/代理路径
 ```
 
 

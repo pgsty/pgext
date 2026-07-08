@@ -42,18 +42,18 @@ $ curl -fsSL https://repo.pigsty.cc/pig | bash
 [INFO] kernel = Linux
 [INFO] machine = x86_64
 [INFO] package = deb
-[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/v1.5.0/pig_1.5.0-1_amd64.deb
-[INFO] download = /tmp/pig_1.5.0-1_amd64.deb
-[INFO] downloading pig v1.5.0
-curl -fSL https://repo.pigsty.cc/pkg/pig/v1.5.0/pig_1.5.0-1_amd64.deb -o /tmp/pig_1.5.0-1_amd64.deb
+[INFO] pkg_url = https://repo.pigsty.cc/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb
+[INFO] download = /tmp/pig_1.5.1-1_amd64.deb
+[INFO] downloading pig v1.5.1
+curl -fSL https://repo.pigsty.cc/pkg/pig/v1.5.1/pig_1.5.1-1_amd64.deb -o /tmp/pig_1.5.1-1_amd64.deb
 ######################################################################## 100.0%
 [INFO] md5sum = b7d18865090df8c03523c79ec2744e91
-[INFO] installing: dpkg -i /tmp/pig_1.5.0-1_amd64.deb
+[INFO] installing: dpkg -i /tmp/pig_1.5.1-1_amd64.deb
 (Reading database ... 166001 files and directories currently installed.)
-Preparing to unpack /tmp/pig_1.5.0-1_amd64.deb ...
-Unpacking pig (1.5.0-1) ...
-Setting up pig (1.5.0-1) ...
-[INFO] pig v1.5.0 installed successfully
+Preparing to unpack /tmp/pig_1.5.1-1_amd64.deb ...
+Unpacking pig (1.5.1-1) ...
+Setting up pig (1.5.1-1) ...
+[INFO] pig v1.5.1 installed successfully
 check https://pgext.cloud for details
 ```
 
@@ -65,7 +65,7 @@ PIG 是一个由 Go 编写的二进制程序，默认安装路径为 `/usr/bin/p
 
 ```bash
 $ pig version
-pig version 1.5.0 linux/amd64
+pig version 1.5.1 linux/amd64
 ```
 
 使用 `pig status` 命令，会打印当前环境的状态，操作系统代码，PG 的安装情况，仓库的可访问性与延迟。
@@ -73,7 +73,7 @@ pig version 1.5.0 linux/amd64
 ```bash
 $ pig status
 # [Configuration] ================================
-Pig Version      : 1.5.0
+Pig Version      : 1.5.1
 Pig Config       : /home/vagrant/.pig/config.yml
 Log Level        : info
 Log Path         : stderr
@@ -174,6 +174,7 @@ PIG 会检测您的网络环境，并选择使用 Cloudflare 全球 CDN，或者
 
 ```bash
 pig repo set      --region=china              # 使用中国区域镜像仓库加速下载
+pig repo set      --mirror                    # 对 PG 仓库使用 Pigsty 镜像/代理路径
 pig repo add pgdg --region=default --update   # 强制指定使用 PGDG 上游仓库
 ```
 
@@ -383,6 +384,7 @@ docker build -t d13:latest .
 docker run -it d13:latest /bin/bash
 
 pig repo set --region=china    # 添加中国区域的仓库
+pig repo set --mirror          # 对 PG 仓库使用 Pigsty 镜像/代理路径
 pig install -y pg18            # 安装 PGDG 18 内核包
 pig install -y postgis timescaledb pgvector pg_duckdb
 ```

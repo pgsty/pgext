@@ -13,9 +13,10 @@ pig build - Build Postgres Extension
 Environment Setup:
   pig build spec                   # init build spec and directory (~ext)
   pig build repo                   # init build repo (=repo set -ru)
+  pig build repo  [--beta]         # init build repo with PostgreSQL beta repo
   pig build tool  [mini|full|...]  # init build toolset
-  pig build rust  [-y]             # install Rust toolchain
-  pig build pgrx  [-v <ver>]       # install & init pgrx (0.19.1)
+  pig build rust  [-y] [-m]        # install Rust toolchain
+  pig build pgrx  [-v <ver>] [-b]  # install & init pgrx (0.19.1)
   pig build proxy [id@host:port ]  # init build proxy (optional)
 
 Package Building:
@@ -29,18 +30,18 @@ Quick Start:
   pig build pkg citus              # build citus extension
 ```
 
-| Command | Description | Notes |
-|:---|:---|:---|
-| `build spec` | Initialize build specification directory | |
-| `build repo` | Initialize required repositories | Requires sudo or root |
-| `build tool` | Initialize build tools | Requires sudo or root |
-| `build rust` | Install Rust toolchain | Requires sudo or root |
-| `build pgrx` | Install and initialize pgrx | Requires sudo or root |
-| `build proxy` | Initialize build proxy | |
-| `build get` | Download source tarballs | |
-| `build dep` | Install extension build dependencies | Requires sudo or root |
-| `build ext` | Build extension packages | Requires sudo or root |
-| `build pkg` | Complete pipeline: get, dep, ext | Requires sudo or root |
+| Command       | Description                              | Notes                 |
+|:--------------|:-----------------------------------------|:----------------------|
+| `build spec`  | Initialize build specification directory |                       |
+| `build repo`  | Initialize required repositories         | Requires sudo or root |
+| `build tool`  | Initialize build tools                   | Requires sudo or root |
+| `build rust`  | Install Rust toolchain                   | Requires sudo or root |
+| `build pgrx`  | Install and initialize pgrx              | Requires sudo or root |
+| `build proxy` | Initialize build proxy                   |                       |
+| `build get`   | Download source tarballs                 |                       |
+| `build dep`   | Install extension build dependencies     | Requires sudo or root |
+| `build ext`   | Build extension packages                 | Requires sudo or root |
+| `build pkg`   | Complete pipeline: get, dep, ext         | Requires sudo or root |
 {.full-width}
 
 
@@ -136,9 +137,16 @@ Initialize package repositories required for building extensions.
 
 ```bash
 pig build repo                   # equivalent to: pig repo set -ru
+pig build repo -m                # use mirror/proxy routes for PostgreSQL repos
+pig build repo -b                # include PostgreSQL beta repository
 ```
 
 **What it does:** initializes build repositories with `pig repo set -ru`: remove old repositories, add required repositories, and refresh package caches.
+
+**Options:**
+
+- `-m|--mirror`: use Pigsty mirror/proxy routes for PostgreSQL repositories.
+- `-b|--beta`: include the PostgreSQL beta repository module, currently for PG19 beta builds.
 
 
 ## build tool
@@ -150,6 +158,7 @@ pig build tool                   # install default toolset
 pig build tool mini              # minimal toolset
 pig build tool full              # full toolset
 pig build tool rust              # add Rust development tools
+pig build tool -b                # include PostgreSQL beta build packages
 ```
 
 **Toolsets:**
@@ -157,6 +166,8 @@ pig build tool rust              # add Rust development tools
 - **Minimal (`mini`)**: GCC/Clang compilers, Make, core build tools, PostgreSQL development headers, and basic libraries.
 - **Default**: minimal tools plus extra compilers, development libraries, and packaging tools such as `rpmbuild` and `dpkg-dev`.
 - **Full (`full`)**: default tools plus language-specific development tools and advanced debugging or profiling utilities.
+
+On EL systems, the default build toolset installs explicit PostgreSQL development/server packages for the stable active majors. Use `--beta` when you also need the current beta major.
 
 
 ## build rust
@@ -166,9 +177,15 @@ Install the Rust toolchain required by Rust-based extensions.
 ```bash
 pig build rust                   # install with confirmation
 pig build rust -y                # force reinstall Rust toolchain
+pig build rust -m                # use rsproxy.cn and Cargo mirror config
 ```
 
 **Installed components:** Rust compiler (`rustc`), Cargo, Rust standard library, and development tools.
+
+**Options:**
+
+- `-y|--yes`: force Rust reinstallation even if Cargo already exists.
+- `-m|--mirror`: download `rustup` from the China mirror and write `~/.cargo/config.toml` for `rsproxy.cn`.
 
 
 ## build pgrx
@@ -180,9 +197,16 @@ pig build pgrx                   # install latest stable version (0.19.1)
 pig build pgrx -v 0.19.1         # install a specific pgrx version
 pig build pgrx --pg 18,17,16     # initialize pgrx for selected PG versions
 pig build pgrx --pg init         # run cargo pgrx init without PG arguments
+pig build pgrx -b                # include beta PostgreSQL pg_config in auto-detect
 ```
 
 **Prerequisites:** Rust toolchain and PostgreSQL development headers must be installed first.
+
+**Options:**
+
+- `-v|--pgrx`: cargo-pgrx version to install.
+- `--pg`: comma-separated PostgreSQL majors, `init` for no PostgreSQL arguments, or empty for auto-detection.
+- `-b|--beta`: include the current beta major during auto-detection.
 
 
 ## build proxy
@@ -215,11 +239,13 @@ Some source packages do not map directly to extension names, so `pig build get` 
 ```bash
 pig build get pdu                # download pdu-3.0.25.12.tar.gz
 pig build get pgdog              # download pgdog-0.1.32.tar.gz
-pig build get pgedge             # download both PostgreSQL and spock sources
+pig build get pgedge-17          # download PostgreSQL 17 plus pgEdge suite sources
+pig build get babelfish-18       # download Babelfish PG18 source bundle
+pig build get orioledb-16        # download OrioleDB plus PG16 patch bundle
 pig build get onesparse          # download onesparse, graphblas, and lagraph
 ```
 
-Common special source aliases include: `babelfishpg` / `babelfish`, `agensgraph` / `agentsgraph`, `oriolepg` / `orioledb`, `cloudberry`, `pgedge`, `pdu`, `pgdog`, `rdkit`, `onesparse`, and `libfepgutils`.
+Common special source aliases include: `babelfish` / `babelfish-17` / `babelfish-18`, `ivorysql`, `orioledb` / `orioledb-16` / `orioledb-17` / `orioledb-18`, `cloudberry` / `cloudberry-backup` / `cloudberry-pxf`, `pgedge` / `pgedge-15` / `pgedge-16` / `pgedge-17` / `pgedge-18`, `polardb`, `polarstore`, `zlog`, `pdu`, `pgdog`, `rdkit`, `onesparse`, `libpgfeutils`, and `libfq`.
 
 
 ## build dep
@@ -264,6 +290,7 @@ pig build pkg citus pgvector     # build multiple extensions
 pig build pkg citus --pg 17,16   # build for multiple PG versions
 pig build pkg citus -s           # include debug symbols
 pig build pkg citus -m           # prefer the pigsty.cc China mirror for sources
+pig build pkg cloudberry         # build cloudberry, backup, and pxf in order
 ```
 
 **Options:**
@@ -271,6 +298,8 @@ pig build pkg citus -m           # prefer the pigsty.cc China mirror for sources
 - `--pg`: specify one or more PostgreSQL major versions.
 - `-s|--symbol`: build debug symbol packages (RPM only).
 - `-m|--mirror`: prefer the `pigsty.cc` mirror when downloading source files.
+
+`pig build pkg cloudberry` is a suite workflow: it downloads the full Cloudberry source bundle, builds the core package first, installs the local artifact, then builds `cloudberry-backup` and `cloudberry-pxf`.
 
 
 ## Common Workflows
@@ -373,16 +402,16 @@ cargo pgrx init
 
 ### Common Extensions to Build
 
-| Extension | Type | Build Time | Complexity | Special Requirements |
-|:---|:---:|:---|:---|:---|
-| pg_repack | C | Fast | Simple | None |
-| pg_partman | SQL/PLPGSQL | Fast | Simple | None |
-| citus | C | Medium | Medium | None |
-| timescaledb | C | Slow | Complex | CMake |
-| postgis | C | Very slow | Complex | GDAL, GEOS, Proj |
-| pg_duckdb | C++ | Medium | Medium | C++17 compiler |
-| pgroonga | C | Medium | Medium | Groonga libraries |
-| pgvector | C | Fast | Simple | None |
-| plpython3 | C | Medium | Medium | Python development |
-| pgrx extensions | Rust | Slow | Complex | Rust, PGRX |
+| Extension       |    Type     | Build Time | Complexity | Special Requirements |
+|:----------------|:-----------:|:-----------|:-----------|:---------------------|
+| pg_repack       |      C      | Fast       | Simple     | None                 |
+| pg_partman      | SQL/PLPGSQL | Fast       | Simple     | None                 |
+| citus           |      C      | Medium     | Medium     | None                 |
+| timescaledb     |      C      | Slow       | Complex    | CMake                |
+| postgis         |      C      | Very slow  | Complex    | GDAL, GEOS, Proj     |
+| pg_duckdb       |     C++     | Medium     | Medium     | C++17 compiler       |
+| pgroonga        |      C      | Medium     | Medium     | Groonga libraries    |
+| pgvector        |      C      | Fast       | Simple     | None                 |
+| plpython3       |      C      | Medium     | Medium     | Python development   |
+| pgrx extensions |    Rust     | Slow       | Complex    | Rust, PGRX           |
 {.full-width}

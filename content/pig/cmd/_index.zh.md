@@ -102,10 +102,10 @@ pig ext info    pg_duckdb        # 扩展详情
 pig ext status                   # 显示已安装的扩展
 pig ext add     pg_duckdb -y     # 安装扩展
 pig ext rm      old_extension    # 移除扩展
-pig ext update                   # 更新扩展
+pig ext update pg_duckdb         # 更新指定扩展
 pig ext scan                     # 扫描已安装的扩展
 pig ext import  pg_duckdb        # 下载以供离线使用
-pig ext link    17               # 链接 PG 版本到 PATH
+pig ext link    polar            # 链接 PG/PolarDB 安装到 PATH
 pig ext reload                   # 刷新扩展目录
 ```
 
@@ -119,10 +119,10 @@ pig ext reload                   # 刷新扩展目录
 ```bash
 # 环境设置
 pig build spec                   # 初始化构建规格
-pig build repo                   # 设置仓库
+pig build repo -m                # 使用镜像/代理设置仓库
 pig build tool                   # 安装构建工具
-pig build rust -y                # 强制重装 Rust（默认不重装）
-pig build pgrx                   # 安装 PGRX 框架
+pig build rust -m                # 使用镜像配置安装 Rust
+pig build pgrx -b                # 安装 PGRX 并包含 beta PG 自动探测
 
 # 构建扩展
 pig build pkg citus              # 完整构建流程 = get + dep + ext
@@ -151,7 +151,7 @@ pig install pg_vector -y         # 自动确认安装
 安装 Pigsty 发行版，详情请参考 [`pig sty`](/zh/pig/cmd/sty/)
 
 ```bash
-pig sty init                     # 安装 Pigsty 到 ~/pigsty
+pig sty init -m                  # 从镜像安装 Pigsty 到 ~/pigsty
 pig sty boot                     # 安装 Ansible 依赖
 pig sty conf                     # 生成配置
 pig sty deploy                   # 运行部署 playbook

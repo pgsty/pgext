@@ -72,29 +72,29 @@ pig repo update                       # update system package cache
 
 In pig, APT/YUM repositories are organized as **modules**: groups of repositories serving a specific purpose.
 
-| Module | Description | Repository List |
-|:---:|:---|:---|
-| `all` | All core modules required to install PG | `node` + `infra` + `pgsql` |
-| `pgsql` | PGDG + Pigsty PG extensions | `pigsty-pgsql` + `pgdg` |
-| `pigsty` | Pigsty Infra + PGSQL repositories | pigsty-infra, pigsty-pgsql |
-| `pgdg` | PGDG official repositories | pgdg-common, pgdg14-18 |
-| `node` | Linux system repositories | base, updates, extras, epel, baseos, appstream... |
-| `infra` | Infrastructure component repositories | pigsty-infra, nginx, docker-ce |
-| `docker` | Docker repository | docker-ce |
-| `beta` | PostgreSQL 19 beta repositories | pgdg19-beta, pgdg-beta |
-| `extra` | PGDG non-free and third-party extensions | pgdg-extras, timescaledb, citus |
-| `groonga` | PGroonga repository | groonga |
-| `mssql` | WiltonDB repository (deprecated) | babelfish |
-| `percona` | Percona PG + PG_TDE | percona |
-| `llvm` | LLVM toolchain repository | llvm |
-| `kube` | Kubernetes repository | kubernetes |
-| `grafana` | Grafana repository | grafana |
-| `haproxy` | HAProxy repositories | haproxyd, haproxyu |
-| `redis` | Redis repository | redis |
-| `mongo` | MongoDB repository | mongo |
-| `mysql` | MySQL repository | mysql |
-| `click` | ClickHouse repository | clickhouse |
-| `gitlab` | GitLab repository | gitlab-ce, gitlab-ee |
+|  Module   | Description                              | Repository List                                   |
+|:---------:|:-----------------------------------------|:--------------------------------------------------|
+|   `all`   | All core modules required to install PG  | `node` + `infra` + `pgsql`                        |
+|  `pgsql`  | PGDG + Pigsty PG extensions              | `pigsty-pgsql` + `pgdg`                           |
+| `pigsty`  | Pigsty Infra + PGSQL repositories        | pigsty-infra, pigsty-pgsql                        |
+|  `pgdg`   | PGDG official repositories               | pgdg-common, pgdg14-18                            |
+|  `node`   | Linux system repositories                | base, updates, extras, epel, baseos, appstream... |
+|  `infra`  | Infrastructure component repositories    | pigsty-infra, nginx, docker-ce                    |
+| `docker`  | Docker repository                        | docker-ce                                         |
+|  `beta`   | PostgreSQL 19 beta repositories          | pgdg19-beta, pgdg-beta                            |
+|  `extra`  | PGDG non-free and third-party extensions | pgdg-extras, timescaledb, citus                   |
+| `groonga` | PGroonga repository                      | groonga                                           |
+|  `mssql`  | WiltonDB repository (deprecated)         | babelfish                                         |
+| `percona` | Percona PG + PG_TDE                      | percona                                           |
+|  `llvm`   | LLVM toolchain repository                | llvm                                              |
+|  `kube`   | Kubernetes repository                    | kubernetes                                        |
+| `grafana` | Grafana repository                       | grafana                                           |
+| `haproxy` | HAProxy repositories                     | haproxyd, haproxyu                                |
+|  `redis`  | Redis repository                         | redis                                             |
+|  `mongo`  | MongoDB repository                       | mongo                                             |
+|  `mysql`  | MySQL repository                         | mysql                                             |
+|  `click`  | ClickHouse repository                    | clickhouse                                        |
+| `gitlab`  | GitLab repository                        | gitlab-ce, gitlab-ee                              |
 {.full-width}
 
 Pig also includes APT/DNF repositories for other databases and systems such as `redis`, `kubernetes`, `grafana`, `clickhouse`, `gitlab`, `haproxy`, `mongodb`, and `mysql`.
@@ -113,6 +113,8 @@ pig repo set          # set clears/backups existing definitions and overwrites w
 The full repository definition bundled with Pigsty is in [`cli/repo/assets/repo.yml`](https://github.com/pgsty/pig/blob/main/cli/repo/assets/repo.yml).
 
 You can create `~/.pig/repo.yml` to explicitly modify and override pig's repository definitions. When editing repository definitions, you can add extra regional mirror URLs under `baseurl`, such as China or Europe mirrors. When `--region` is specified, pig first looks for the matching regional URL and falls back to the `default` URL if the region is unavailable.
+
+When `--mirror` is specified on `repo add` or `repo set`, pig prefers mirror/proxy routes for PostgreSQL repositories. PGDG repository URLs can be rewritten through the Pigsty proxy mirror, while other repository modules continue to use their normal regional URL selection.
 
 
 ## repo list
@@ -157,6 +159,7 @@ pig repo add pigsty -u           # add and update cache
 pig repo add all -r              # remove existing repos before adding
 pig repo add all -ru             # remove, add, and update (full reset)
 pig repo add pgdg --region=china # use China mirror
+pig repo add pgdg -m             # use Pigsty proxy mirror for PGDG
 ```
 
 **Options:**
@@ -164,6 +167,7 @@ pig repo add pgdg --region=china # use China mirror
 - `-r|--remove`: remove existing repositories before adding new ones
 - `-u|--update`: run package cache update after adding repositories
 - `--region <region>`: use regional mirror repositories (`default` / `china` / `europe`)
+- `-m|--mirror`: use Pigsty mirror/proxy routes for PostgreSQL repositories
 
 | Platform | Module Location |
 |:---:|:---|
@@ -180,6 +184,7 @@ Equivalent to `repo add --remove --update`. It clears existing repositories, set
 pig repo set                     # replace with default repositories
 pig repo set pgdg pigsty         # replace with selected repositories and update
 pig repo set all --region=china  # use China mirror
+pig repo set -m                  # use Pigsty mirror/proxy routes for PG repos
 ```
 
 
@@ -193,10 +198,10 @@ pig repo rm pgdg                 # remove selected repository
 pig repo rm pgdg pigsty -u       # remove and update cache
 ```
 
-| Platform | Backup Location |
-|:---:|:---|
-| EL | `/etc/yum.repos.d/backup/` |
-| Debian | `/etc/apt/sources.list.d/backup/` |
+| Platform | Backup Location                   |
+|:--------:|:----------------------------------|
+|    EL    | `/etc/yum.repos.d/backup/`        |
+|  Debian  | `/etc/apt/sources.list.d/backup/` |
 {.full-width}
 
 
@@ -209,9 +214,9 @@ pig repo update                  # update package cache
 ```
 
 | Platform | Equivalent Command |
-|:---:|:---|
-| EL | `dnf makecache` |
-| Debian | `apt update` |
+|:--------:|:-------------------|
+|    EL    | `dnf makecache`    |
+|  Debian  | `apt update`       |
 {.full-width}
 
 
@@ -224,10 +229,10 @@ pig repo create                  # create at default location (/www/pigsty)
 pig repo create /srv/repo        # create at custom location
 ```
 
-| Platform | Dependency |
-|:---:|:---|
-| EL | `createrepo_c` |
-| Debian | `dpkg-dev` |
+| Platform | Dependency     |
+|:--------:|:---------------|
+|    EL    | `createrepo_c` |
+|  Debian  | `dpkg-dev`     |
 {.full-width}
 
 

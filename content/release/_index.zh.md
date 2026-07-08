@@ -20,10 +20,11 @@ weight: 800
 
 ## PIG 发布历史
 
-当前 `pig` 最新稳定版本为：[v1.5.0](https://github.com/pgsty/pig/releases/tag/v1.5.0)。
+当前 `pig` 最新稳定版本为：[v1.5.1](https://github.com/pgsty/pig/releases/tag/v1.5.1)。
 
 | 版本                             |     日期     | 摘要                                              |                           GitHub                           |
 |:-------------------------------|:----------:|-------------------------------------------------|:----------------------------------------------------------:|
+| [v1.5.1](/zh/release/pig#v151) | 2026-07-08 | 构建/仓库镜像模式，beta 构建工具，内核包 alias 校准                | [v1.5.1](https://github.com/pgsty/pig/releases/tag/v1.5.1) |
 | [v1.5.0](/zh/release/pig#v150) | 2026-07-04 | 531 个扩展，pigsty v4.4，pg/pb/pt/pitr 重做，clone/fork | [v1.5.0](https://github.com/pgsty/pig/releases/tag/v1.5.0) |
 | [v1.4.2](/zh/release/pig#v142) | 2026-06-18 | 524 个扩展，PostgreSQL 19 beta 支持，Patroni 修复        | [v1.4.2](https://github.com/pgsty/pig/releases/tag/v1.4.2) |
 | [v1.4.1](/zh/release/pig#v141) | 2026-04-25 | 510 个扩展，支持 Ubuntu 26.04，仓库校准                    | [v1.4.1](https://github.com/pgsty/pig/releases/tag/v1.4.1) |

@@ -33,34 +33,34 @@ curl -fsSL https://repo.pigsty.cc/pig | bash
 **默认安装**（Cloudflare CDN）：
 
 ```bash
-curl -fsSL https://repo.pigsty.io/pig | bash -s 1.5.0
+curl -fsSL https://repo.pigsty.io/pig | bash -s 1.5.1
 ```
 
 **中国镜像**：
 
 ```bash
-curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.5.0
+curl -fsSL https://repo.pigsty.cc/pig | bash -s 1.5.1
 ```
 
 
 ## 发布产物下载
 
-你也可以直接从 Pigsty 软件仓库下载 `pig` 安装包（`RPM`/`DEB`/ 压缩包）。当前 `v1.5.0` 发布产物位于：
+你也可以直接从 Pigsty 软件仓库下载 `pig` 安装包（`RPM`/`DEB`/ 压缩包）。当前 `v1.5.1` 发布产物位于：
 
-- <https://repo.pigsty.io/pkg/pig/v1.5.0/>
-- <https://repo.pigsty.cc/pkg/pig/v1.5.0/>
+- <https://repo.pigsty.io/pkg/pig/v1.5.1/>
+- <https://repo.pigsty.cc/pkg/pig/v1.5.1/>
 
 ```
 latest
-└── v1.5.0
-    ├── pig_1.5.0-1_amd64.deb
-    ├── pig_1.5.0-1_arm64.deb
-    ├── pig-1.5.0-1.aarch64.rpm
-    ├── pig-1.5.0-1.x86_64.rpm
-    ├── pig-v1.5.0.linux-amd64.tar.gz
-    ├── pig-v1.5.0.linux-arm64.tar.gz
-    ├── pig-v1.5.0.darwin-amd64.tar.gz
-    └── pig-v1.5.0.darwin-arm64.tar.gz
+└── v1.5.1
+    ├── pig_1.5.1-1_amd64.deb
+    ├── pig_1.5.1-1_arm64.deb
+    ├── pig-1.5.1-1.aarch64.rpm
+    ├── pig-1.5.1-1.x86_64.rpm
+    ├── pig-v1.5.1.linux-amd64.tar.gz
+    ├── pig-v1.5.1.linux-arm64.tar.gz
+    ├── pig-v1.5.1.darwin-amd64.tar.gz
+    └── pig-v1.5.1.darwin-arm64.tar.gz
 ```
 
 将其解压后，将二进制文件放入您的 PATH 系统路径中即可。
@@ -108,6 +108,7 @@ sudo apt install -y pig
 
 ```bash
 pig update            # 将 pig 自身升级到最新版
+pig update -m         # 通过 pigsty.cc 镜像升级
 ```
 
 若要将现有 `pig` 的扩展数据升级至最新可用版本，可以使用以下命令：

@@ -99,10 +99,10 @@ pig ext info    pg_duckdb        # extension details
 pig ext status                   # show installed extensions
 pig ext add     pg_duckdb -y     # install extension
 pig ext rm      old_extension    # remove extension
-pig ext update                   # update extension
+pig ext update  pg_duckdb        # update selected extension
 pig ext scan                     # scan installed extensions
 pig ext import  pg_duckdb        # download for offline use
-pig ext link    17               # link PG version into PATH
+pig ext link    polar            # link PG/PolarDB installation into PATH
 pig ext reload                   # refresh extension catalog
 ```
 
@@ -114,10 +114,10 @@ Build PostgreSQL extensions from source. See [`pig build`](/pig/cmd/build/) for 
 ```bash
 # Environment setup
 pig build spec                   # initialize build specs
-pig build repo                   # configure repositories
+pig build repo -m                # configure repositories with mirror/proxy
 pig build tool                   # install build tools
-pig build rust -y                # force reinstall Rust (default does not reinstall)
-pig build pgrx                   # install PGRX framework
+pig build rust -m                # install Rust with mirror config
+pig build pgrx -b                # install PGRX and include beta PG auto-detect
 
 # Build extensions
 pig build pkg citus              # complete build pipeline = get + dep + ext
@@ -146,7 +146,7 @@ pig install pg_vector -y         # auto-confirm installation
 Install the Pigsty distribution. See [`pig sty`](/pig/cmd/sty/) for details.
 
 ```bash
-pig sty init                     # install Pigsty to ~/pigsty
+pig sty init -m                  # install Pigsty from mirror to ~/pigsty
 pig sty boot                     # install Ansible prerequisites
 pig sty conf                     # generate configuration
 pig sty deploy                   # run deployment playbook
