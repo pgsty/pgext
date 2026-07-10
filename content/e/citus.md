@@ -538,7 +538,6 @@ Sources:
 - [Citus v14.1.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.1.0/CHANGELOG.md)
 - [What is Citus?](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
 - [Citus Utility Functions](https://docs.citusdata.com/en/stable/develop/api_udf.html)
-- [Local package metadata](../db/extension.csv)
 
 Citus turns PostgreSQL into a distributed database by sharding tables across worker nodes while keeping PostgreSQL SQL, indexes, extensions, transactions, and operational tooling as the user-facing surface. It is commonly used for multi-tenant SaaS databases, real-time analytics, time-series/event workloads, and distributed microservice schemas.
 

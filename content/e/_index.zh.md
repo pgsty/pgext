@@ -466,7 +466,7 @@ weight: 900
 | {{< ext "passwordcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | 用于强制拒绝修改弱密码的扩展 |
 | {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | 用Python编写自定义的外部数据源包装器 |
-| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 访问ODBC可访问的任何外部数据源 |
+| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 访问ODBC可访问的任何外部数据源 |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 访问JDBC可访问的任何外部数据源 |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | 使用多种FDW访问远程数据库服务器 |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | MySQL外部数据包装器 |

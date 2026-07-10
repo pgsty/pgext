@@ -263,7 +263,7 @@ This extension does not need `CREATE EXTENSION` DDL command
 
 ## Usage
 
-> Sources: [pg_task upstream README](https://github.com/RekGRpth/pg_task), [PGXN pg_task](https://pgxn.org/dist/pg_task/), [local metadata](../db/extension.csv).
+> Sources: [pg_task upstream README](https://github.com/RekGRpth/pg_task), [PGXN pg_task](https://pgxn.org/dist/pg_task/).
 
 `pg_task` is a background-worker scheduler for running SQL asynchronously at a planned time. Upstream documents PostgreSQL, Greenplum, and Greengage support.
 

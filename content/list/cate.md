@@ -52,7 +52,7 @@ GeoSpatial Data Types, Operators, and Indexes, Hexagonal Indexing, OGR Data FDW,
 | 1530 | {{< alias "h3" "pg_h3" >}} | 4.2.3 | H3 bindings for PostgreSQL |
 | 1531 | {{< alias "h3_postgis" "pg_h3" >}} | 4.2.3 | H3 PostGIS integration |
 | 1540 | {{< alias "q3c" >}} | 2.0.3 | q3c sky indexing plugin |
-| 1550 | {{< alias "ogr_fdw" >}} | 1.1.8 | foreign-data wrapper for GIS data access |
+| 1550 | {{< alias "ogr_fdw" >}} | 1.1.9 | foreign-data wrapper for GIS data access |
 | 1560 | {{< alias "geoip" >}} | 0.3.0 | IP-based geolocation query |
 | 1570 | {{< alias "pg_polyline" >}} | 0.0.1 | Fast Google Encoded Polyline encoding & decoding for postgres |
 | 1580 | {{< alias "pg_eviltransform" >}} | 0.0.2 | Coordinate transforms for BD09/GCJ02 via PostGIS ST_Transform |
@@ -75,7 +75,7 @@ Vector Database with Ivfflat, HNSW, DiskANN Indexes, AI & ML in SQL interface, S
 
 | ID | Extension / Package | Version | Description |
 |:---:|:---|:---|:---|
-| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.4 | vector data type and ivfflat and hnsw access methods |
+| 1800 | {{< alias "vector" "pgvector" >}} | 0.8.5 | vector data type and ivfflat and hnsw access methods |
 | 1810 | {{< alias "vchord" >}} | 1.1.1 | Vector database plugin for Postgres, written in Rust |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 0.9.0 | Advanced indexing for vector data with DiskANN |
 | 1830 | {{< alias "vectorize" "pg_vectorize" >}} | 0.26.2 | The simplest way to do vector search on Postgres |
@@ -240,7 +240,7 @@ Develop, Test, Package, and Deliver Stored Procedures written in various PL/Lang
 | 3031 | {{< alias "hstore_plluau" "pllua" >}} | 2.0.12 | Hstore transform for untrusted Lua |
 | 3040 | {{< alias "plprql" >}} | 18.0.1 | Use PRQL in PostgreSQL - Pipelined Relational Query Language |
 | 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 1.10 | server-side support for debugging PL/pgSQL functions |
-| 3060 | {{< alias "plpgsql_check" >}} | 2.9.2 | extended check for plpgsql functions |
+| 3060 | {{< alias "plpgsql_check" >}} | 2.9.3 | extended check for plpgsql functions |
 | 3070 | {{< alias "plprofiler" >}} | 4.2.5 | server-side support for profiling PL/pgSQL functions |
 | 3080 | {{< alias "plsh" >}} | 1.20220917 | PL/sh procedural language |
 | 3090 | {{< alias "pljava" >}} | 1.6.10 | PL/Java procedural language |
@@ -324,7 +324,7 @@ Utilities such as send http request, perform gzip/zstd compress, send mails, Reg
 | 4010 | {{< alias "gzip" "pg_gzip" >}} | 1.1.0 | gzip and gunzip functions. |
 | 4020 | {{< alias "bzip" "pg_bzip" >}} | 1.0.0 | Bzip compression and decompression |
 | 4030 | {{< alias "zstd" "pg_zstd" >}} | 1.1.2 | Zstandard compression algorithm implementation in PostgreSQL |
-| 4070 | {{< alias "http" "pg_http" >}} | 1.7.1 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
+| 4070 | {{< alias "http" "pg_http" >}} | 1.7.2 | HTTP client for PostgreSQL, allows web page retrieval inside the database. |
 | 4080 | {{< alias "pg_net" >}} | 0.20.3 | Async HTTP Requests |
 | 4090 | {{< alias "pg_curl" >}} | 2.4.5 | Run curl actions for data transfer in URL syntax |
 | 4100 | {{< alias "pg_retry" >}} | 1.0.0 | Retry SQL statements on transient errors with exponential backoff |
@@ -387,7 +387,7 @@ Function such as id generator, aggregations, sketches, vector functions, mathema
 | 4670 | {{< alias "xicor" "pgxicor" >}} | 0.1.1 | XI Correlation Coefficient in Postgres |
 | 4680 | {{< alias "weighted_statistics" "pg_weighted_statistics" >}} | 1.0.0 | High-performance weighted statistics functions for sparse data |
 | 4690 | {{< alias "datasketches" >}} | 1.7.0 | Approximate analytics sketches and aggregates for PostgreSQL |
-| 4700 | {{< alias "tdigest" >}} | 1.4.3 | Provides tdigest aggregate function. |
+| 4700 | {{< alias "tdigest" >}} | 1.4.4 | Provides tdigest aggregate function. |
 | 4710 | {{< alias "first_last_agg" >}} | 0.1.4 | first() and last() aggregate functions |
 | 4720 | {{< alias "extra_window_functions" >}} | 1.0 | Extra Window Functions for PostgreSQL |
 | 4730 | {{< alias "floatvec" >}} | 1.1.1 | Math for vectors (arrays) of numbers |
@@ -546,7 +546,7 @@ Auditing Logs, Enforce Passwords, Keep Secrets, TDE, SM Algorithm, Login Hooks, 
 | 7360 | {{< alias "login_hook" >}} | 1.7 | login_hook - hook to execute login_hook.login() at login time |
 | 7370 | {{< alias "set_user" >}} | 4.2.0 | similar to SET ROLE but with added logging |
 | 7380 | {{< alias "pg_snakeoil" >}} | 1.4 | The PostgreSQL Antivirus |
-| 7390 | {{< alias "pgextwlist" >}} | 1.19 | PostgreSQL Extension Whitelisting |
+| 7390 | {{< alias "pgextwlist" >}} | 1.20 | PostgreSQL Extension Whitelisting |
 | 7400 | {{< alias "pg_command_fw" >}} | 0.1.0 | DDL and utility command firewall for PostgreSQL |
 | 7405 | {{< alias "block_copy_command" >}} | 0.1.5 | Block COPY commands via a configurable ProcessUtility hook |
 | 7410 | {{< alias "sslutils" >}} | 1.4 | A Postgres extension for managing SSL certificates through SQL |
@@ -565,7 +565,7 @@ Wrappers & Multicorn for FDW Development, Access other DBMS: MySQL, Mongo, SQLit
 |:---:|:---|:---|:---|
 | 8500 | {{< alias "wrappers" >}} | 0.6.1 | Foreign data wrappers developed by Supabase |
 | 8510 | {{< alias "multicorn" >}} | 3.2 | Fetch foreign data in Python in your PostgreSQL server. |
-| 8520 | {{< alias "odbc_fdw" >}} | 0.5.1 | Foreign data wrapper for accessing remote databases using ODBC |
+| 8520 | {{< alias "odbc_fdw" >}} | 0.6.1 | Foreign data wrapper for accessing remote databases using ODBC |
 | 8530 | {{< alias "jdbc_fdw" >}} | 0.4.0 | foreign-data wrapper for remote servers available over JDBC |
 | 8540 | {{< alias "pgspider_ext" >}} | 1.3.0 | foreign-data wrapper for remote PGSpider servers |
 | 8600 | {{< alias "mysql_fdw" >}} | 2.9.3 | Foreign data wrapper for querying a MySQL server |
@@ -604,7 +604,7 @@ Protocol Simulation & heterogeneous DBMS Compatibility: Oracle, MSSQL, DB2, MySQ
 | 9100 | {{< alias "orafce" >}} | 4.16.7 | Functions and operators that emulate a subset of functions and packages from the Oracle RDBMS |
 | 9110 | {{< alias "pgtt" >}} | 4.5 | Extension to add Global Temporary Tables feature to PostgreSQL |
 | 9120 | {{< alias "session_variable" >}} | 3.4 | Registration and manipulation of session variables and constants |
-| 9130 | {{< alias "pg_statement_rollback" >}} | 1.5 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
+| 9130 | {{< alias "pg_statement_rollback" >}} | 1.6 | Server side rollback at statement level for PostgreSQL like Oracle or DB2 |
 | 9140 | {{< alias "ivorysql_ora" "ivorysql" >}} | 1.0 | Oracle Compatible extension on Postgres Database |
 | 9150 | {{< alias "ora_btree_gin" "ivorysql" >}} | 1.0 | Support for indexing oracle datatypes in GIN |
 | 9160 | {{< alias "ora_btree_gist" "ivorysql" >}} | 1.0 | Support for oracle indexing common datatypes in GiST |

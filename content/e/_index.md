@@ -466,7 +466,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "passwordcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | {{< category "SEC" >}} | checks user passwords and reject weak password |
 | {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrappers developed by Supabase |
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | {{< category "FDW" >}} | Fetch foreign data in Python in your PostgreSQL server. |
-| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for accessing remote databases using ODBC |
+| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for accessing remote databases using ODBC |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote servers available over JDBC |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | foreign-data wrapper for remote PGSpider servers |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | {{< category "FDW" >}} | Foreign data wrapper for querying a MySQL server |

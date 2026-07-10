@@ -9,8 +9,8 @@ comments: false
 
 | **分类** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 531 | 158 | 358 | 71 | 0 | 515 | 513 | 505 | 494 | 473 |
-| **EL** | 526 | 153 | 358 | 71 | 5 | 507 | 508 | 500 | 489 | 468 |
+| **ALL** | 531 | 158 | 355 | 71 | 0 | 516 | 513 | 505 | 494 | 473 |
+| **EL** | 526 | 153 | 355 | 71 | 5 | 508 | 508 | 500 | 489 | 468 |
 | **Debian** | 518 | 112 | 335 | 71 | 13 | 503 | 501 | 492 | 481 | 460 |
 
 ## 分类
@@ -496,7 +496,7 @@ comments: false
 | {{< ext "passwordcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | 用于强制拒绝修改弱密码的扩展 |
 | {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Supabase提供的外部数据源包装器捆绑包 |
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | 用Python编写自定义的外部数据源包装器 |
-| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问ODBC可访问的任何外部数据源 |
+| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问ODBC可访问的任何外部数据源 |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | 访问JDBC可访问的任何外部数据源 |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | 使用多种FDW访问远程数据库服务器 |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | MySQL外部数据包装器 |

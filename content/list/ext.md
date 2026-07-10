@@ -9,8 +9,8 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 531 | 158 | 358 | 71 | 0 | 515 | 513 | 505 | 494 | 473 |
-| **EL** | 526 | 153 | 358 | 71 | 5 | 507 | 508 | 500 | 489 | 468 |
+| **ALL** | 531 | 158 | 355 | 71 | 0 | 516 | 513 | 505 | 494 | 473 |
+| **EL** | 526 | 153 | 355 | 71 | 5 | 508 | 508 | 500 | 489 | 468 |
 | **Debian** | 518 | 112 | 335 | 71 | 13 | 503 | 501 | 492 | 481 | 460 |
 
 ## Categories
@@ -496,7 +496,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "passwordcheck" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-sL---" color="blue" >}} | checks user passwords and reject weak password |
 | {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrappers developed by Supabase |
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Fetch foreign data in Python in your PostgreSQL server. |
-| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for accessing remote databases using ODBC |
+| {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for accessing remote databases using ODBC |
 | {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote servers available over JDBC |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote PGSpider servers |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a MySQL server |

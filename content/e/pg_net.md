@@ -288,7 +288,7 @@ width: full
 | `pg_net_14` | `0.19.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 31.8 KiB | [pg_net_14-0.19.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.19.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_net_14` | `0.16.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.2 KiB | [pg_net_14-0.16.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.16.0-1PGDG.rhel10.x86_64.rpm) |
 | `pg_net_14` | `0.15.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 29.1 KiB | [pg_net_14-0.15.1-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_net_14-0.15.1-1PGDG.rhel10.x86_64.rpm) |
-| `pg_net_14` | `0.20.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 35.4 KiB | [pg_net_14-0.20.4-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.20.4-1PGDG.rhel10.1.aarch64.rpm) |
+| `pg_net_14` | `0.20.4` | [el10.aarch64](/os/el10.aarch64) | pgdg | 35.4 KiB | [pg_net_14-0.20.4-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.20.4-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_net_14` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pigsty | 37.7 KiB | [pg_net_14-0.20.3-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/pg_net_14-0.20.3-1PIGSTY.el10.aarch64.rpm) |
 | `pg_net_14` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 34.9 KiB | [pg_net_14-0.20.3-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.20.3-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_net_14` | `0.20.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 34.9 KiB | [pg_net_14-0.20.3-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_net_14-0.20.3-1PGDG.rhel10.0.aarch64.rpm) |
@@ -368,7 +368,7 @@ CREATE EXTENSION pg_net;
 
 ## Usage
 
-Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3), [local package metadata](../db/extension.csv).
+Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3).
 
 `pg_net` queues asynchronous HTTP and HTTPS requests from SQL. It creates the `net` schema, stores pending work in `net.http_request_queue`, and stores responses in `net._http_response`. A background worker uses `libcurl` to process queued requests.
 
