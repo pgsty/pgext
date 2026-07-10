@@ -6,6 +6,21 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-07-10
+
+| Name        | Old      | New      | Comment                                        |
+|:------------|:---------|:---------|:-----------------------------------------------|
+| prometheus  | 3.13.0   | 3.13.1   |                                                |
+| seaweedfs   | 4.38     | 4.39     |                                                |
+| agentsview  | 0.36.1   | 0.37.5   |                                                |
+| claude      | 2.1.204  | 2.1.206  | Downloaded through the 8118 proxy and verified |
+| codex       | 0.143.0  | 0.144.1  | Release tag `rust-v0.144.1`                    |
+| npgsqlrest  | 3.19.0   | 3.20.0   |                                                |
+| opencode    | 1.17.15  | 1.17.18  |                                                |
+| crush       | 0.82.0   | 0.84.0   | Direct-download artifacts                      |
+| rclone      | 1.74.3   | 1.74.4   | Direct-download artifacts                      |
+| cloudflared | 2026.6.1 | 2026.7.1 | Direct-download artifacts                      |
+
 ## 2026-07-08
 
 | Name                       | Old     | New     | Comment |
