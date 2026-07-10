@@ -9,7 +9,6 @@
 - [Citus v14.1.0 CHANGELOG](https://github.com/citusdata/citus/blob/v14.1.0/CHANGELOG.md)
 - [What is Citus?](https://docs.citusdata.com/en/stable/get_started/what_is_citus.html)
 - [Citus Utility Functions](https://docs.citusdata.com/en/stable/develop/api_udf.html)
-- [本地包元数据](../db/extension.csv)
 
 Citus 通过把表分片到多个 worker 节点，把 PostgreSQL 扩展成分布式数据库，同时保留 PostgreSQL SQL、索引、扩展、事务和运维工具作为主要使用界面。它常用于多租户 SaaS、实时分析、时间序列/事件数据和分布式微服务 schema。
 

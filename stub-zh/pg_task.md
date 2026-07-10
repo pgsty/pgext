@@ -3,7 +3,7 @@
 
 ## 用法
 
-> 来源：[pg_task upstream README](https://github.com/RekGRpth/pg_task)、[PGXN pg_task](https://pgxn.org/dist/pg_task/)、[local metadata](../db/extension.csv)。
+> 来源：[pg_task upstream README](https://github.com/RekGRpth/pg_task)、[PGXN pg_task](https://pgxn.org/dist/pg_task/)。
 
 `pg_task` 是一个后台工作进程调度器，用于在计划时间异步执行 SQL。上游文档说明它支持 PostgreSQL、Greenplum 和 Greengage。
 

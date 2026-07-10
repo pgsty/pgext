@@ -3,7 +3,7 @@
 
 ## Usage
 
-> Sources: [pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable/blob/v1.1.0/README.md), [v1.1.0 tag](https://github.com/bigsmoke/pg_mockable/tree/v1.1.0), [PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/), [local metadata](../db/extension.csv), local source tarball `pg_mockable-1.1.0.tar.gz`.
+> Sources: [pg_mockable upstream README](https://github.com/bigsmoke/pg_mockable/blob/v1.1.0/README.md), [v1.1.0 tag](https://github.com/bigsmoke/pg_mockable/tree/v1.1.0), [PGXN pg_mockable](https://pgxn.org/dist/pg_mockable/), local source tarball `pg_mockable-1.1.0.tar.gz`.
 
 `pg_mockable` creates mockable wrapper functions for PostgreSQL routines. It is mainly useful in database tests where application code should call a stable wrapper, while tests temporarily replace the wrapper's return value.
 

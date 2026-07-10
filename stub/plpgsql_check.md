@@ -8,7 +8,6 @@ Sources:
 - [PGXN plpgsql_check 2.9.2](https://pgxn.org/dist/plpgsql_check/2.9.2/)
 - [plpgsql_check README](https://github.com/okbob/plpgsql_check)
 - [plpgsql_check control file](https://pgxn.org/dist/plpgsql_check/2.9.2/)
-- [Local package metadata](../db/extension.csv)
 
 `plpgsql_check` is a PL/pgSQL checker, linter, profiler, tracer, and coverage tool. It analyzes PL/pgSQL function bodies with PostgreSQL's own parser and executor infrastructure, so many problems that would otherwise appear only at runtime can be found during development or CI.
 

@@ -3,7 +3,7 @@
 
 ## 用法
 
-来源：[upstream README](https://github.com/credativ/toastinfo)、[upstream tags](https://github.com/credativ/toastinfo/tags)、[PGDG package metadata via local `db/extension.csv`](../db/extension.csv)。
+来源：[upstream README](https://github.com/credativ/toastinfo)、[upstream tags](https://github.com/credativ/toastinfo/tags)。
 
 `toastinfo` 暴露 PostgreSQL 存储变长值（`varlena`）的方式，包括行内、压缩和行外 TOAST 存储形式。
 

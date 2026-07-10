@@ -3,7 +3,7 @@
 
 ## 用法
 
-来源：[official README](https://github.com/supabase/pg_net)、[v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3)、[local package metadata](../db/extension.csv)。
+来源：[official README](https://github.com/supabase/pg_net)、[v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3)。
 
 `pg_net` 可以从 SQL 中排队发起异步 HTTP 和 HTTPS 请求。它会创建 `net` 模式，将待处理工作存入 `net.http_request_queue`，并将响应存入 `net._http_response`。后台工作进程使用 `libcurl` 处理队列中的请求。
 

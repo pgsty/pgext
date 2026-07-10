@@ -8,7 +8,6 @@ Sources:
 - [pgvector v0.8.4 release](https://github.com/pgvector/pgvector/releases/tag/v0.8.4)
 - [pgvector v0.8.4 README](https://github.com/pgvector/pgvector/blob/v0.8.4/README.md)
 - [pgvector v0.8.4 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.4/CHANGELOG.md)
-- [Local package metadata](../db/extension.csv)
 
 `pgvector` provides vector similarity search inside PostgreSQL. The extension name is `vector`, while Pigsty packages it as `pgvector`. It supports exact search, approximate nearest-neighbor search with HNSW and IVFFlat indexes, and multiple vector representations for dense, half-precision, binary, and sparse embeddings.
 

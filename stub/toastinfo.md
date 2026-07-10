@@ -3,7 +3,7 @@
 
 ## Usage
 
-Sources: [upstream README](https://github.com/credativ/toastinfo), [upstream tags](https://github.com/credativ/toastinfo/tags), [PGDG package metadata via local `db/extension.csv`](../db/extension.csv).
+Sources: [upstream README](https://github.com/credativ/toastinfo), [upstream tags](https://github.com/credativ/toastinfo/tags).
 
 `toastinfo` exposes how PostgreSQL stores variable-length (`varlena`) values, including inline, compressed, and out-of-line TOAST storage forms.
 

@@ -9,7 +9,6 @@ Sources:
 - [rdf_fdw README](https://github.com/jimjonesbr/rdf_fdw)
 - [rdf_fdw CHANGELOG](https://github.com/jimjonesbr/rdf_fdw/blob/master/CHANGELOG.md)
 - [rdf_fdw control file](https://pgxn.org/dist/rdf_fdw/2.6.0/)
-- [Local package metadata](../db/extension.csv)
 
 `rdf_fdw` is a PostgreSQL foreign data wrapper for querying RDF triplestores over SPARQL endpoints. It exposes SPARQL result variables as foreign-table columns, supports pushdown for common SQL clauses, includes a native `rdfnode` type for RDF terms, provides SPARQL 1.1 helper functions, and can perform SPARQL `INSERT`, `UPDATE`, and `DELETE` through writable foreign tables.
 

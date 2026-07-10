@@ -3,7 +3,7 @@
 
 ## Usage
 
-> Sources: [pg_stat_backtrace upstream README](https://github.com/Nickyoung0/pg_stat_backtrace), [upstream changelog](https://github.com/Nickyoung0/pg_stat_backtrace/blob/main/CHANGELOG.md), [local metadata](../db/extension.csv), local source tarball `pg_stat_backtrace-1.0.0.tar.gz`.
+> Sources: [pg_stat_backtrace upstream README](https://github.com/Nickyoung0/pg_stat_backtrace), [upstream changelog](https://github.com/Nickyoung0/pg_stat_backtrace/blob/main/CHANGELOG.md), local source tarball `pg_stat_backtrace-1.0.0.tar.gz`.
 
 `pg_stat_backtrace` captures or logs the C-level stack backtrace of a PostgreSQL backend or auxiliary process on the same Linux host. It uses `ptrace(PTRACE_SEIZE)` plus `libunwind`; it does not use `shared_preload_libraries` and does not send `SIGSTOP` to the target.
 

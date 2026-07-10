@@ -9,7 +9,6 @@ Sources:
 - [Biscuit README](https://github.com/CrystallineCore/Biscuit)
 - [Biscuit CHANGELOG](https://github.com/CrystallineCore/Biscuit/blob/main/CHANGELOG.md)
 - [Biscuit documentation](https://biscuit.readthedocs.io/)
-- [Local package metadata](../db/extension.csv)
 
 `biscuit` is a PostgreSQL index access method for accelerating `LIKE`, `NOT LIKE`, `ILIKE`, and `NOT ILIKE` pattern matching on text. It uses bitmap-style position indexes to avoid the heap recheck overhead common in trigram searches and supports multi-column indexes for wildcard-heavy workloads.
 

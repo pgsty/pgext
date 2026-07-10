@@ -9,7 +9,6 @@
 - [pgmnemo README](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/README.md)
 - [pgmnemo CHANGELOG](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/CHANGELOG.md)
 - [pgmnemo control file](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/extension/pgmnemo.control)
-- [本地包元数据](../db/extension.csv)
 
 `pgmnemo` 在 PostgreSQL 中存储 agent memory，并通过一个多模态计划结合 pgvector HNSW 搜索、BM25 风格文本匹配、图边邻近度、JSONB 元数据过滤、时间过滤和 outcome confidence 进行检索。它是 SQL-only 扩展，依赖 `vector`，安装到 `pgmnemo` schema；v0.12.1 control 文件中标记为 trusted，且不需要 superuser 权限。
 

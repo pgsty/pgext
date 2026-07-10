@@ -8,7 +8,6 @@ Sources:
 - [PGXN pg_roaringbitmap 1.2.0](https://pgxn.org/dist/pg_roaringbitmap/1.2.0/)
 - [pg_roaringbitmap README](https://github.com/ChenHuajun/pg_roaringbitmap)
 - [pg_roaringbitmap CHANGELOG](https://github.com/ChenHuajun/pg_roaringbitmap/blob/master/CHANGELOG.md)
-- [Local package metadata](../db/extension.csv)
 
 `pg_roaringbitmap` installs the PostgreSQL extension `roaringbitmap`, which provides compressed bitmap types and set-operation functions backed by Roaring Bitmaps. Use it for compact integer-set storage, fast unions/intersections, cohort filters, faceting, and bitmap aggregation.
 

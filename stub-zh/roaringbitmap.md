@@ -8,7 +8,6 @@
 - [PGXN pg_roaringbitmap 1.2.0](https://pgxn.org/dist/pg_roaringbitmap/1.2.0/)
 - [pg_roaringbitmap README](https://github.com/ChenHuajun/pg_roaringbitmap)
 - [pg_roaringbitmap CHANGELOG](https://github.com/ChenHuajun/pg_roaringbitmap/blob/master/CHANGELOG.md)
-- [本地包元数据](../db/extension.csv)
 
 `pg_roaringbitmap` 安装的 PostgreSQL 扩展名是 `roaringbitmap`，它提供基于 Roaring Bitmap 的压缩位图类型和集合运算函数。适合紧凑存储整数集合、快速并集/交集、用户分群、faceting 和位图聚合。
 

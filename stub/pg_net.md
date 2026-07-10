@@ -3,7 +3,7 @@
 
 ## Usage
 
-Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3), [local package metadata](../db/extension.csv).
+Sources: [official README](https://github.com/supabase/pg_net), [v0.20.3 release notes](https://github.com/supabase/pg_net/releases/tag/v0.20.3).
 
 `pg_net` queues asynchronous HTTP and HTTPS requests from SQL. It creates the `net` schema, stores pending work in `net.http_request_queue`, and stores responses in `net._http_response`. A background worker uses `libcurl` to process queued requests.
 

@@ -8,7 +8,6 @@
 - [pgvector v0.8.4 release](https://github.com/pgvector/pgvector/releases/tag/v0.8.4)
 - [pgvector v0.8.4 README](https://github.com/pgvector/pgvector/blob/v0.8.4/README.md)
 - [pgvector v0.8.4 CHANGELOG](https://github.com/pgvector/pgvector/blob/v0.8.4/CHANGELOG.md)
-- [本地包元数据](../db/extension.csv)
 
 `pgvector` 在 PostgreSQL 内提供向量相似性搜索。扩展名是 `vector`，Pigsty 中的包名是 `pgvector`。它支持精确搜索、基于 HNSW 与 IVFFlat 的近似最近邻搜索，并提供 dense、half-precision、binary、sparse 等多种向量表示。
 

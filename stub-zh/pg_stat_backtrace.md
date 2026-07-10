@@ -3,7 +3,7 @@
 
 ## 用法
 
-> 来源：[pg_stat_backtrace upstream README](https://github.com/Nickyoung0/pg_stat_backtrace)、[upstream changelog](https://github.com/Nickyoung0/pg_stat_backtrace/blob/main/CHANGELOG.md)、[local metadata](../db/extension.csv)、本地源码归档 `pg_stat_backtrace-1.0.0.tar.gz`。
+> 来源：[pg_stat_backtrace upstream README](https://github.com/Nickyoung0/pg_stat_backtrace)、[upstream changelog](https://github.com/Nickyoung0/pg_stat_backtrace/blob/main/CHANGELOG.md)、本地源码归档 `pg_stat_backtrace-1.0.0.tar.gz`。
 
 `pg_stat_backtrace` 用于捕获或记录同一 Linux 主机上 PostgreSQL 后端进程或辅助进程的 C 层调用栈。它使用 `ptrace(PTRACE_SEIZE)` 和 `libunwind`；不需要 `shared_preload_libraries`，也不会向目标进程发送 `SIGSTOP`。
 

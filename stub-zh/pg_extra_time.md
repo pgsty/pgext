@@ -3,7 +3,7 @@
 
 ## 用法
 
-> 来源：[pg_extra_time upstream README](https://github.com/bigsmoke/pg_extra_time)、[PGXN pg_extra_time](https://pgxn.org/dist/pg_extra_time/)、[local metadata](../db/extension.csv)。
+> 来源：[pg_extra_time upstream README](https://github.com/bigsmoke/pg_extra_time)、[PGXN pg_extra_time](https://pgxn.org/dist/pg_extra_time/)。
 
 `pg_extra_time` 提供一组小型 SQL 函数和类型转换，用于处理 PostgreSQL 核心函数本身不太方便表达的日期/时间、interval 和 range 计算。
 

@@ -9,7 +9,6 @@
 - [rdf_fdw README](https://github.com/jimjonesbr/rdf_fdw)
 - [rdf_fdw CHANGELOG](https://github.com/jimjonesbr/rdf_fdw/blob/master/CHANGELOG.md)
 - [rdf_fdw control file](https://pgxn.org/dist/rdf_fdw/2.6.0/)
-- [本地包元数据](../db/extension.csv)
 
 `rdf_fdw` 是通过 SPARQL endpoint 查询 RDF triplestore 的 PostgreSQL foreign data wrapper。它把 SPARQL 结果变量暴露为外部表列，支持常见 SQL 子句下推，提供用于 RDF term 的原生 `rdfnode` 类型，实现了多种 SPARQL 1.1 辅助函数，并可通过可写外部表执行 SPARQL `INSERT`、`UPDATE` 和 `DELETE`。
 

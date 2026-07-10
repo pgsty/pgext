@@ -8,7 +8,6 @@
 - [PGXN plpgsql_check 2.9.2](https://pgxn.org/dist/plpgsql_check/2.9.2/)
 - [plpgsql_check README](https://github.com/okbob/plpgsql_check)
 - [plpgsql_check control file](https://pgxn.org/dist/plpgsql_check/2.9.2/)
-- [本地包元数据](../db/extension.csv)
 
 `plpgsql_check` 是 PL/pgSQL 检查器、linter、性能分析器、跟踪器和覆盖率工具。它使用 PostgreSQL 自身的解析器和执行基础设施分析 PL/pgSQL 函数体，因此许多原本只会在运行时出现的问题可以在开发或 CI 阶段提前发现。
 

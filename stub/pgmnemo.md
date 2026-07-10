@@ -9,7 +9,6 @@ Sources:
 - [pgmnemo README](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/README.md)
 - [pgmnemo CHANGELOG](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/CHANGELOG.md)
 - [pgmnemo control file](https://github.com/pgmnemo/pgmnemo/blob/v0.12.1/extension/pgmnemo.control)
-- [Local package metadata](../db/extension.csv)
 
 `pgmnemo` stores agent memory in PostgreSQL and retrieves it through a single multimodal plan that combines pgvector HNSW search, BM25-style text matching, graph-edge proximity, JSONB metadata filtering, temporal filters, and outcome confidence. It is a SQL-only extension that requires `vector`, installs into schema `pgmnemo`, is marked trusted, and does not require superuser privileges in the v0.12.1 control file.
 

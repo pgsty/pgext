@@ -9,7 +9,6 @@
 - [Biscuit README](https://github.com/CrystallineCore/Biscuit)
 - [Biscuit CHANGELOG](https://github.com/CrystallineCore/Biscuit/blob/main/CHANGELOG.md)
 - [Biscuit documentation](https://biscuit.readthedocs.io/)
-- [本地包元数据](../db/extension.csv)
 
 `biscuit` 是 PostgreSQL 的索引访问方法，用于加速文本上的 `LIKE`、`NOT LIKE`、`ILIKE` 和 `NOT ILIKE` 模式匹配。它使用类似位图的位置索引，避免 trigram 搜索中常见的 heap recheck 开销，并支持多列索引，适合通配符查询较多的负载。
 

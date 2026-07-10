@@ -3,7 +3,7 @@
 
 ## 用法
 
-> 来源：[pgRDF upstream README](https://github.com/styk-tv/pgRDF/blob/v0.6.4/README.md)、[pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.4/guide)、[v0.6.4 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.4)、[local metadata](../db/extension.csv)。
+> 来源：[pgRDF upstream README](https://github.com/styk-tv/pgRDF/blob/v0.6.4/README.md)、[pgRDF user guide](https://github.com/styk-tv/pgRDF/tree/v0.6.4/guide)、[v0.6.4 release](https://github.com/styk-tv/pgRDF/releases/tag/v0.6.4)。
 
 `pgRDF` 在 PostgreSQL 内存储 RDF 数据，并提供可从 SQL 调用的辅助函数，用于加载 Turtle/TriG/N-Quads、执行 SPARQL 查询与更新、管理命名图、做 SHACL 校验，以及执行 RDFS/OWL 2 RL 物化推理。
 

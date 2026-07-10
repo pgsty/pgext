@@ -3,7 +3,7 @@
 
 ## 用法
 
-> 来源：[pg_pinyin upstream README](https://github.com/aiyou178/pg_pinyin)、[Chinese README](https://github.com/aiyou178/pg_pinyin/blob/main/README.zh-CN.md)、[local metadata](../db/extension.csv)。
+> 来源：[pg_pinyin upstream README](https://github.com/aiyou178/pg_pinyin)、[Chinese README](https://github.com/aiyou178/pg_pinyin/blob/main/README.zh-CN.md)。
 
 `pg_pinyin` 将中文文本转换为拼音，可以按字符转换，也可以按词转换。它适用于生成搜索列、trigram 搜索，以及需要拼音输入的 `pg_search` BM25 查询。
 
