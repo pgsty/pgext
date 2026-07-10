@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PGEXT.CLOUD — The PostgreSQL Extension Catalog</title>
+<meta name="description" content="The catalog of the PostgreSQL extension universe">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🐘</text></svg>">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="nav" id="nav"></header>
+<main id="app">
+  <div class="boot" id="boot">
+    <p class="line"><span class="p">pgext=#</span> SELECT * FROM pgext.universe; <span class="cursor"></span></p>
+  </div>
+</main>
+<footer class="footer" id="footer"></footer>
+<div class="tip" id="tip" role="tooltip"></div>
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
