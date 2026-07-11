@@ -16,96 +16,158 @@ import (
 
 // ParseOptions contains options for parse operation
 type ParseOptions struct {
-	Keep     bool // Don't truncate existing data
-	Parallel int  // Number of parallel workers
+	KeepTemp   bool // Keep temporary DNF SQLite files for debugging
+	Keep       bool // Deprecated: use KeepTemp. Retained for source compatibility.
+	Parallel   int  // Number of parallel workers
+	BestEffort bool // Allow a partial result when at least one repository succeeds
 }
 
 // Parser orchestrates the parsing of repository metadata
 type Parser struct {
-	ctx    context.Context
-	opts   ParseOptions
-	binGen *BinGenerator
+	ctx  context.Context
+	opts ParseOptions
 }
 
 // NewParser creates a new parser instance
 func NewParser(opts ParseOptions) *Parser {
+	return NewParserContext(context.Background(), opts)
+}
+
+// NewParserContext creates a parser that honors caller cancellation.
+func NewParserContext(ctx context.Context, opts ParseOptions) *Parser {
+	if opts.Keep {
+		opts.KeepTemp = true
+	}
 	// Apply defaults
 	if opts.Parallel <= 0 {
 		opts.Parallel = 8
 	}
 
-	ctx := context.Background()
-
 	return &Parser{
-		ctx:    ctx,
-		opts:   opts,
-		binGen: NewBinGenerator(ctx),
+		ctx:  ctx,
+		opts: opts,
 	}
 }
 
-// ParseRepoData is the main entry point for parsing repository data
+// ParseRepoData parses repository data and publishes a complete package catalog.
 func ParseRepoData(opts ParseOptions) error {
 	parser := NewParser(opts)
-	return parser.ParseAll()
+	return parser.ParseAndRecap()
 }
 
-// ParseAll orchestrates the complete parsing workflow
+// ParseAll parses and publishes only the core apt, dnf, and bin tables.
+// Callers are responsible for rebuilding pgext.pkg afterward.
 func (p *Parser) ParseAll() error {
-	startTime := time.Now()
+	return p.withPipelineLock(p.parseAllLocked)
+}
 
-	// Step 1: Prepare - clear existing data if needed
-	if !p.opts.Keep {
-		logrus.Info("Clearing existing package data...")
-		if err := p.clearExistingData(); err != nil {
-			return fmt.Errorf("failed to clear data: %w", err)
-		}
+func (p *Parser) parseAllLocked() error {
+	stage, _, err := p.build(false)
+	if err != nil {
+		return err
 	}
+	defer stage.Drop()
 
-	// Step 2: Load repositories that have data
+	logrus.Info("Publishing parsed package data atomically...")
+	if err := stage.publish(p.ctx, true, false); err != nil {
+		return fmt.Errorf("publish parsed package data: %w", err)
+	}
+	logrus.Warn("published apt, dnf, and bin without rebuilding pgext.pkg; run 'pgext recap' before serving the catalog")
+	return nil
+}
+
+// ParseAndRecap builds apt, dnf, bin, and pkg in run-scoped staging tables and
+// publishes all four live tables in one transaction.
+func (p *Parser) ParseAndRecap() error {
+	return p.withPipelineLock(p.parseAndRecapLocked)
+}
+
+func (p *Parser) parseAndRecapLocked() error {
+	stage, _, err := p.build(true)
+	if err != nil {
+		return err
+	}
+	defer stage.Drop()
+
+	logrus.Info("Generating staged package availability matrix...")
+	pkgCount, err := stage.buildPkg(p.ctx, stage.bin)
+	if err != nil {
+		return fmt.Errorf("generate package matrix: %w", err)
+	}
+	logrus.Infof("Generated %d staged package matrix records", pkgCount)
+
+	logrus.Info("Publishing package catalog atomically...")
+	if err := stage.publish(p.ctx, true, true); err != nil {
+		return fmt.Errorf("publish package catalog: %w", err)
+	}
+	return nil
+}
+
+// withPipelineLock prevents overlapping parse runs from publishing in reverse
+// source-snapshot order. The lock is acquired before build reads repo_data and
+// held until the selected core/full catalog has been published.
+func (p *Parser) withPipelineLock(run func() error) error {
+	lock, err := acquirePackagePipelineLock(p.ctx)
+	if err != nil {
+		return err
+	}
+	defer lock.Release()
+	return run()
+}
+
+func (p *Parser) build(includePkg bool) (_ *packageStaging, _ ParseStats, retErr error) {
+	startTime := time.Now()
+	stage, err := newPackageStaging(p.ctx, true, includePkg)
+	if err != nil {
+		return nil, ParseStats{}, fmt.Errorf("create package staging tables: %w", err)
+	}
+	defer func() {
+		if retErr != nil {
+			stage.Drop()
+		}
+	}()
+
 	repos, err := p.loadRepositories()
 	if err != nil {
-		return fmt.Errorf("failed to load repositories: %w", err)
+		return nil, ParseStats{}, fmt.Errorf("load repositories: %w", err)
 	}
-
 	if len(repos) == 0 {
-		logrus.Warn("No repositories with data to parse")
-		return nil
+		return nil, ParseStats{}, fmt.Errorf("no repositories with data to parse")
 	}
 
-	logrus.Infof("Starting parse operation (workers=%d, keep=%v)", p.opts.Parallel, p.opts.Keep)
+	logrus.Infof("Starting staged parse operation (workers=%d, best-effort=%v)",
+		p.opts.Parallel, p.opts.BestEffort)
 	logrus.Infof("Found %d repositories to process", len(repos))
 
-	// Step 3: Parse repositories in parallel
-	results := p.parseRepositories(repos)
-
-	// Step 4: Process results and show summary
+	results := p.parseRepositories(repos, stage)
 	stats := p.processResults(results)
 	p.showSummary(stats, time.Since(startTime))
 
-	// Step 5: Generate binary packages table
-	if stats.TotalSuccess > 0 {
-		logrus.Info("Generating binary package table...")
-		binCount, err := p.binGen.Generate()
-		if err != nil {
-			logrus.Errorf("Failed to generate binary packages: %v", err)
-		} else {
-			logrus.Infof("Generated %d binary package records", binCount)
+	report := RunReport{Operation: "parse", Total: stats.TotalRepos, Succeeded: stats.TotalSuccess}
+	for _, result := range results {
+		if result.Error != nil {
+			report.AddFailure(result.RepoID, result.Error)
 		}
 	}
-
-	// Step 6: Update parse timestamp
-	if stats.TotalSuccess > 0 {
-		if err := p.updateTimestamp(); err != nil {
-			logrus.Warnf("Failed to update parse timestamp: %v", err)
-		}
+	if err := report.Err(p.opts.BestEffort); err != nil {
+		return nil, stats, err
+	}
+	if report.Failed() > 0 {
+		logrus.Warnf("best-effort parse accepted %d failed repositories", report.Failed())
 	}
 
-	// Return error if all failed
-	if stats.TotalFailed > 0 && stats.TotalSuccess == 0 {
-		return fmt.Errorf("all repositories failed to parse")
+	logrus.Info("Generating staged binary package table...")
+	binGen := newBinGenerator(p.ctx, stage.dnf, stage.apt, stage.bin)
+	binCount, err := binGen.Generate()
+	if err != nil {
+		return nil, stats, fmt.Errorf("generate binary packages: %w", err)
 	}
+	if binCount == 0 {
+		return nil, stats, fmt.Errorf("generated no binary package records; refusing to replace the live catalog")
+	}
+	logrus.Infof("Generated %d staged binary package records", binCount)
 
-	return nil
+	return stage, stats, nil
 }
 
 // RepositoryData represents a repository with its metadata
@@ -134,20 +196,6 @@ type ParseStats struct {
 	APTPackages  int
 }
 
-// clearExistingData truncates the package tables
-func (p *Parser) clearExistingData() error {
-	tables := []string{"pgext.dnf", "pgext.apt", "pgext.bin"}
-
-	for _, table := range tables {
-		if _, err := ExecSQLContext(p.ctx, fmt.Sprintf("TRUNCATE TABLE %s", table)); err != nil {
-			logrus.Warnf("Failed to truncate %s: %v", table, err)
-			// Continue even if one fails
-		}
-	}
-
-	return nil
-}
-
 // loadRepositories loads all repositories that have data
 func (p *Parser) loadRepositories() ([]RepositoryData, error) {
 	query := `
@@ -168,8 +216,7 @@ func (p *Parser) loadRepositories() ([]RepositoryData, error) {
 	for rows.Next() {
 		var repo RepositoryData
 		if err := rows.Scan(&repo.ID, &repo.Type, &repo.Data); err != nil {
-			logrus.Warnf("Failed to scan repository: %v", err)
-			continue
+			return nil, fmt.Errorf("scan repository metadata: %w", err)
 		}
 		repos = append(repos, repo)
 	}
@@ -178,7 +225,7 @@ func (p *Parser) loadRepositories() ([]RepositoryData, error) {
 }
 
 // parseRepositories parses multiple repositories in parallel
-func (p *Parser) parseRepositories(repos []RepositoryData) []ParseResult {
+func (p *Parser) parseRepositories(repos []RepositoryData, stage *packageStaging) []ParseResult {
 	results := make([]ParseResult, len(repos))
 	var mu sync.Mutex // Protect results slice access
 
@@ -206,7 +253,7 @@ func (p *Parser) parseRepositories(repos []RepositoryData) []ParseResult {
 			defer sem.Release(1)
 
 			// Parse repository
-			result := p.parseOneRepository(repo)
+			result := p.parseOneRepository(repo, stage)
 
 			// Safely store result
 			mu.Lock()
@@ -231,7 +278,7 @@ func (p *Parser) parseRepositories(repos []RepositoryData) []ParseResult {
 }
 
 // parseOneRepository parses a single repository
-func (p *Parser) parseOneRepository(repo RepositoryData) ParseResult {
+func (p *Parser) parseOneRepository(repo RepositoryData, stage *packageStaging) ParseResult {
 	result := ParseResult{
 		RepoID: repo.ID,
 		Type:   repo.Type,
@@ -243,10 +290,10 @@ func (p *Parser) parseOneRepository(repo RepositoryData) ParseResult {
 	// Create new parser instance for each repository to avoid concurrent access issues
 	switch repo.Type {
 	case "rpm":
-		dnfParser := NewDNFParser(p.ctx)
+		dnfParser := newDNFParser(p.ctx, stage.dnf, p.opts.KeepTemp)
 		count, err = dnfParser.ParseRepository(repo.ID, repo.Data)
 	case "deb":
-		aptParser := NewAPTParser(p.ctx)
+		aptParser := newAPTParser(p.ctx, stage.apt)
 		count, err = aptParser.ParseRepository(repo.ID, repo.Data)
 	default:
 		err = fmt.Errorf("unsupported repository type: %s", repo.Type)
@@ -297,19 +344,4 @@ func (p *Parser) showSummary(stats ParseStats, duration time.Duration) {
 	logrus.Infof("APT/DEB:      %d repos, %d packages",
 		stats.APTCount, stats.APTPackages)
 	logrus.Info("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-}
-
-// updateTimestamp updates the parse_time in pgext.status
-func (p *Parser) updateTimestamp() error {
-	_, err := ExecSQLContext(p.ctx, `
-		UPDATE pgext.status
-		SET parse_time = CURRENT_TIMESTAMP
-		WHERE id = 0
-	`)
-
-	if err == nil {
-		logrus.Debug("Updated parse_time in pgext.status")
-	}
-
-	return err
 }

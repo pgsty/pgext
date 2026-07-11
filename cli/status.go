@@ -73,7 +73,7 @@ func gatherStatus() (*StatusInfo, error) {
 	status.ActiveOS = osList
 
 	// Get table counts
-	tables := []string{"pg", "os", "category", "repository", "extension",
+	tables := []string{"pg", "os", "category", "repository", "extension", "universe", "doc",
 		"apt", "dnf", "bin", "pkg"}
 	for _, table := range tables {
 		count, err := getTableCount(ctx, table)
@@ -173,6 +173,15 @@ func getUpdateTimes(ctx context.Context) (map[string]*time.Time, error) {
 	return times, nil
 }
 
+func packageCatalogStale(times map[string]*time.Time) bool {
+	parseTime := times["parse"]
+	if parseTime == nil {
+		return false
+	}
+	recapTime := times["recap"]
+	return recapTime == nil || parseTime.After(*recapTime)
+}
+
 // displayStatus prints the status information in a beautiful format
 func displayStatus(status *StatusInfo) {
 	// Header
@@ -219,6 +228,8 @@ func displayStatus(status *StatusInfo) {
 	fmt.Printf("│ %-15s │ %8d │\n", "category", status.TableCounts["category"])
 	fmt.Printf("│ %-15s │ %8d │\n", "repository", status.TableCounts["repository"])
 	fmt.Printf("│ %-15s │ %8d │\n", "extension", status.TableCounts["extension"])
+	fmt.Printf("│ %-15s │ %8d │\n", "universe", status.TableCounts["universe"])
+	fmt.Printf("│ %-15s │ %8d │\n", "doc", status.TableCounts["doc"])
 	fmt.Printf("│ %-15s │ %8d │\n", "apt", status.TableCounts["apt"])
 	fmt.Printf("│ %-15s │ %8d │\n", "dnf", status.TableCounts["dnf"])
 	fmt.Printf("│ %-15s │ %8d │\n", "bin", status.TableCounts["bin"])
@@ -230,6 +241,9 @@ func displayStatus(status *StatusInfo) {
 	printUpdateTime("Fetch", status.UpdateTimes["fetch"])
 	printUpdateTime("Parse", status.UpdateTimes["parse"])
 	printUpdateTime("Recap", status.UpdateTimes["recap"])
+	if packageCatalogStale(status.UpdateTimes) {
+		fmt.Println("\n⚠️  Package catalog is stale; run 'pgext recap' before serving or generating content.")
+	}
 
 	fmt.Println()
 }

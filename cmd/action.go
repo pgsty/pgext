@@ -6,30 +6,46 @@ package cmd
 import (
 	"fmt"
 	"pgext/cli"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 
-// reloadCmd reloads all data: fetch + parse + recap
+var (
+	reloadBestEffort bool
+	reloadKeepTemp   bool
+	rescanBestEffort bool
+	rescanKeepTemp   bool
+	fetchBestEffort  bool
+	scanBestEffort   bool
+	parseBestEffort  bool
+	parseKeepTemp    bool
+	parseNoPkg       bool
+)
+
+// reloadCmd reloads all data: fetch + complete parse
 var reloadCmd = &cobra.Command{
 	Use:   "reload",
-	Short: "reload data: fetch + parse + recap",
+	Short: "reload data: fetch + parse",
 	Long: `Reload all package data from repositories:
 1. Fetch repository metadata (respecting cache)
-2. Parse repository data into pgext.bin
-3. Generate availability info pgext.pkg
+2. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
+3. Generate the pgext.pkg availability matrix
 
-This is equivalent to running:
+This runs the same logical stages as:
   pgext fetch
   pgext parse
-  pgext recap
+
+The parsed package tables and availability matrix are published atomically.
 `,
 	Example: `
   pgext reload                  # reload all data
   pgext reload -p 8             # use 8 parallel workers
   pgext reload --force          # force re-fetch all repos
+  pgext reload --best-effort    # publish a partial catalog if some repos fail
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logrus.Info("starting data reload...")
@@ -37,29 +53,25 @@ This is equivalent to running:
 		// Step 1: Fetch repository metadata
 		logrus.Info("step 1/3: fetching repository metadata...")
 		fetcher := cli.NewFetcher(cli.FetchOptions{
-			Force:    force,
-			Region:   region,
-			Parallel: workers,
-			Retry:    retry,
+			Force:      force,
+			Region:     region,
+			Parallel:   workers,
+			Retry:      retry,
+			BestEffort: reloadBestEffort,
 		})
 		if err := fetcher.FetchAll(cmd.Context()); err != nil {
 			return fmt.Errorf("failed to fetch: %w", err)
 		}
 
-		// Step 2: Parse repository data
-		logrus.Info("step 2/3: parsing repository data...")
-		parser := cli.NewParser(cli.ParseOptions{
-			Parallel: workers,
-			Keep:     keep,
+		// Steps 2-3: Parse repository data and build the package matrix
+		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
+		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
+			Parallel:   workers,
+			KeepTemp:   reloadKeepTemp,
+			BestEffort: reloadBestEffort,
 		})
-		if err := parser.ParseAll(); err != nil {
-			return fmt.Errorf("failed to parse: %w", err)
-		}
-
-		// Step 3: Generate package matrix
-		logrus.Info("step 3/3: generating package matrix...")
-		if err := cli.RecapMatrix(); err != nil {
-			return fmt.Errorf("failed to recap: %w", err)
+		if err := parser.ParseAndRecap(); err != nil {
+			return fmt.Errorf("failed to build package catalog: %w", err)
 		}
 
 		logrus.Info("reload completed successfully!")
@@ -68,26 +80,29 @@ This is equivalent to running:
 	PostRun: closeDatabase,
 }
 
-// rescanCmd reloads package data from local Pigsty repository metadata: scan + parse + recap
+// rescanCmd reloads package data from local Pigsty repository metadata: scan + complete parse
 var rescanCmd = &cobra.Command{
 	Use:   "rescan",
-	Short: "reload data from local repo: scan + parse + recap",
+	Short: "reload data from local repo: scan + parse",
 	Long: `Reload package data from local Pigsty repository metadata:
 1. Scan local Pigsty repository metadata
-2. Parse repository data into pgext.bin
-3. Generate availability info pgext.pkg
+2. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
+3. Generate the pgext.pkg availability matrix
 
-This is equivalent to running:
+This runs the same logical stages as:
   pgext scan
   pgext parse
-  pgext recap
+
+The parsed package tables and availability matrix are published atomically.
 `,
 	Example: `
   pgext rescan                     # rescan from default ~/pgsty/repo
   pgext rescan --dir /path/to/repo # rescan from custom directory
   pgext rescan -p 8                # use 8 parallel workers
-  pgext rescan -k                  # keep temp SQLite files
+  pgext rescan -k                  # keep temporary DNF SQLite files
+  pgext rescan --best-effort       # publish a partial catalog if some repos fail
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logrus.Info("starting data rescan...")
@@ -95,8 +110,9 @@ This is equivalent to running:
 		// Step 1: Scan local repository metadata
 		logrus.Info("step 1/3: scanning local repository metadata...")
 		scanner, err := cli.NewScanner(cli.ScanOptions{
-			RepoDir:  scanDir,
-			Parallel: workers,
+			RepoDir:    scanDir,
+			Parallel:   workers,
+			BestEffort: rescanBestEffort,
 		})
 		if err != nil {
 			return fmt.Errorf("failed to create scanner: %w", err)
@@ -105,20 +121,15 @@ This is equivalent to running:
 			return fmt.Errorf("failed to scan: %w", err)
 		}
 
-		// Step 2: Parse repository data
-		logrus.Info("step 2/3: parsing repository data...")
-		parser := cli.NewParser(cli.ParseOptions{
-			Parallel: workers,
-			Keep:     keep,
+		// Steps 2-3: Parse repository data and build the package matrix
+		logrus.Info("steps 2-3/3: parsing repository data and generating package matrix...")
+		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
+			Parallel:   workers,
+			KeepTemp:   rescanKeepTemp,
+			BestEffort: rescanBestEffort,
 		})
-		if err := parser.ParseAll(); err != nil {
-			return fmt.Errorf("failed to parse: %w", err)
-		}
-
-		// Step 3: Generate package matrix
-		logrus.Info("step 3/3: generating package matrix...")
-		if err := cli.RecapMatrix(); err != nil {
-			return fmt.Errorf("failed to recap: %w", err)
+		if err := parser.ParseAndRecap(); err != nil {
+			return fmt.Errorf("failed to build package catalog: %w", err)
 		}
 
 		logrus.Info("rescan completed successfully!")
@@ -141,14 +152,17 @@ Use --force to ignore cache and re-download all repositories.`,
   pgext fetch --force           # force re-fetch all
   pgext fetch -p 16             # use 16 parallel workers
   pgext fetch -r china          # use China mirrors
+  pgext fetch --best-effort     # accept a partial fetch
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fetcher := cli.NewFetcher(cli.FetchOptions{
-			Force:    force,
-			Region:   region,
-			Parallel: workers,
-			Retry:    retry,
+			Force:      force,
+			Region:     region,
+			Parallel:   workers,
+			Retry:      retry,
+			BestEffort: fetchBestEffort,
 		})
 
 		if err := fetcher.FetchAll(cmd.Context()); err != nil {
@@ -160,35 +174,56 @@ Use --force to ignore cache and re-download all repositories.`,
 	PostRun: closeDatabase,
 }
 
-// parseCmd parses repository data
+type parsePipeline interface {
+	ParseAll() error
+	ParseAndRecap() error
+}
+
+func runParsePipeline(parser parsePipeline, noPkg bool) error {
+	if noPkg {
+		if err := parser.ParseAll(); err != nil {
+			return fmt.Errorf("failed to parse apt, dnf, and bin package data: %w", err)
+		}
+		return nil
+	}
+	if err := parser.ParseAndRecap(); err != nil {
+		return fmt.Errorf("failed to build package catalog: %w", err)
+	}
+	return nil
+}
+
+// parseCmd parses repository data and builds a complete package catalog.
 var parseCmd = &cobra.Command{
 	Use:   "parse",
-	Short: "parse repository data into pgext tables",
-	Long: `Parse repository metadata into structured package tables.
+	Short: "parse repository data and build the package catalog",
+	Long: `Parse cached repository metadata and build a complete package catalog.
 
-Processes cached repository metadata and populates:
+By default this atomically publishes:
 - pgext.apt: Debian/Ubuntu packages
 - pgext.dnf: RPM packages (EL, Fedora)
 - pgext.bin: Unified binary package information
+- pgext.pkg: Extension availability across PostgreSQL and operating systems
 
-Uses parallel workers for faster processing.`,
+Use --no-pkg/-N only for debugging or compatibility. It stops after publishing
+pgext.apt, pgext.dnf, and pgext.bin, leaving pgext.pkg stale until pgext recap
+is run. Uses parallel workers for faster processing.`,
 	Example: `
-  pgext parse                   # parse all repositories
+  pgext parse                   # build and atomically publish the complete catalog
   pgext parse -p 8              # use 8 parallel workers
-  pgext parse -k                # keep temp SQLite files
+  pgext parse -k                # keep temporary DNF SQLite files
+  pgext parse --best-effort     # publish a partial catalog from successful repositories
+  pgext parse --no-pkg          # stop after apt, dnf, and bin; pkg becomes stale
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		parser := cli.NewParser(cli.ParseOptions{
-			Parallel: workers,
-			Keep:     keep,
+		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
+			Parallel:   workers,
+			KeepTemp:   parseKeepTemp,
+			BestEffort: parseBestEffort,
 		})
 
-		if err := parser.ParseAll(); err != nil {
-			return fmt.Errorf("failed to parse: %w", err)
-		}
-
-		return nil
+		return runParsePipeline(parser, parseNoPkg)
 	},
 	PostRun: closeDatabase,
 }
@@ -196,18 +231,19 @@ Uses parallel workers for faster processing.`,
 // recapCmd generates package availability matrix
 var recapCmd = &cobra.Command{
 	Use:   "recap",
-	Short: "generate package availability matrix (pgext.pkg)",
-	Long: `Generate package availability matrix from binary package data.
+	Short: "rebuild package availability matrix (pgext.pkg)",
+	Long: `Rebuild the package availability matrix from current catalog data.
 
-Creates the pgext.pkg table which shows extension availability across
-PostgreSQL versions and operating systems. This is the final step in
-the data processing pipeline.`,
+Reads pgext.bin together with extension, repository, active PostgreSQL, and
+operating-system metadata. Atomically replaces pgext.pkg without fetching or
+parsing repository metadata.`,
 	Example: `
-  pgext recap                   # generate availability matrix
+  pgext recap                   # rebuild availability matrix
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if err := cli.RecapMatrix(); err != nil {
+		if err := cli.RecapMatrixContext(cmd.Context()); err != nil {
 			return fmt.Errorf("failed to recap: %w", err)
 		}
 		return nil
@@ -231,12 +267,15 @@ to local paths:
   pgext scan                        # scan from default ~/pgsty/repo
   pgext scan --dir /path/to/repo    # scan from custom directory
   pgext scan -p 16                  # use 16 parallel workers
+  pgext scan --best-effort          # accept a partial scan
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		scanner, err := cli.NewScanner(cli.ScanOptions{
-			RepoDir:  scanDir,
-			Parallel: workers,
+			RepoDir:    scanDir,
+			Parallel:   workers,
+			BestEffort: scanBestEffort,
 		})
 		if err != nil {
 			return fmt.Errorf("failed to create scanner: %w", err)
@@ -257,19 +296,28 @@ func init() {
 	fetchCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
 	fetchCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	fetchCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
+	fetchCmd.Flags().BoolVar(&fetchBestEffort, "best-effort", false, "allow partial success when some repositories fail")
 
 	// parse command flags
 	parseCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
-	parseCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
+	parseCmd.Flags().BoolVarP(&parseKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
+	parseCmd.Flags().BoolVar(&parseKeepTemp, "keep", false, "deprecated alias for --keep-temp")
+	_ = parseCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
+	parseCmd.Flags().BoolVar(&parseBestEffort, "best-effort", false, "publish a partial catalog from repositories that parse successfully")
+	parseCmd.Flags().BoolVarP(&parseNoPkg, "no-pkg", "N", false, "stop after apt, dnf, and bin; leaves pgext.pkg stale")
 
 	// scan command flags
 	scanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
 	scanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
+	scanCmd.Flags().BoolVar(&scanBestEffort, "best-effort", false, "allow partial success when some repositories fail")
 
 	// rescan command flags
 	rescanCmd.Flags().StringVar(&scanDir, "dir", "~/pgsty/repo", "local repository directory")
 	rescanCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
-	rescanCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
+	rescanCmd.Flags().BoolVarP(&rescanKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
+	rescanCmd.Flags().BoolVar(&rescanKeepTemp, "keep", false, "deprecated alias for --keep-temp")
+	_ = rescanCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
+	rescanCmd.Flags().BoolVar(&rescanBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 }
 
 // loadCmd loads CSV data into tables
@@ -283,11 +331,17 @@ Available tables:
 - os: Operating systems
 - category: Extension categories
 - repository: Package repositories
-- extension: Extension catalog
+- extension: Packaged extension catalog
+- universe: Complete extension ecosystem (superset of extension)
 
-The CSV files are embedded in the binary and loaded using PostgreSQL COPY.`,
+The CSV files are embedded in the binary and loaded using PostgreSQL COPY.
+
+WARNING: loading replaces the selected table with TRUNCATE ... CASCADE. Tables
+that reference it may also be cleared; rebuild dependent catalog data after
+loading dimension, repository, or extension tables.`,
 	Example: `
   pgext load extension          # load extension catalog
+  pgext load universe           # load complete extension universe
   pgext load repository         # load repository list
   pgext load pg                 # load PG versions
 `,
@@ -296,17 +350,8 @@ The CSV files are embedded in the binary and loaded using PostgreSQL COPY.`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		tableName := args[0]
 
-		// Validate table name
-		validTables := map[string]bool{
-			"pg":         true,
-			"os":         true,
-			"category":   true,
-			"repository": true,
-			"extension":  true,
-		}
-
-		if !validTables[tableName] {
-			return fmt.Errorf("invalid table name: %s (valid: pg, os, category, repository, extension)", tableName)
+		if !cli.IsEmbeddedTable(tableName) {
+			return fmt.Errorf("invalid table name: %s (valid: %s)", tableName, strings.Join(cli.EmbeddedTableNames(), ", "))
 		}
 
 		if err := cli.LoadTable(tableName, "", cli.RegionDefault); err != nil {

@@ -9,7 +9,7 @@ pgext serve --db mydb --listen :8080           # 库名简写 + 自定义端口
 ```
 
 连接串优先级：`--db` > 全局 `-d/--database` > 环境变量 `PGURL` > `postgres:///data`。
-前提：目标库已有 `pgext` schema（`pgext init && pgext reload`）。
+前提：目标库已有完整 `pgext` schema 与目录数据（`pgext init`）。
 
 ## 架构
 

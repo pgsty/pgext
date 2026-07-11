@@ -47,8 +47,8 @@ var ioPageCmd = &cobra.Command{
 	Long: `Generate Hugo/Docsy markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
 	Example: `  pgext gen io page              # Generate pages for all extensions
-  pgext gen io page pgvector     # Generate page for pgvector extension
-  pgext gen io page pgvector postgis  # Generate pages for specific extensions`,
+  pgext gen io page vector       # Generate page for pgvector's vector extension
+  pgext gen io page vector postgis  # Generate pages for specific extensions`,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewIOPageGenerator(cache, ioOutputDir, ioStubDir)
 

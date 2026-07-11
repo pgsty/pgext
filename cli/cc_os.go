@@ -276,7 +276,6 @@ func (g *CCOSGenerator) generateOSMatrixCell(ospkg *OSPackageInfo, pg int, osNam
 	return fmt.Sprintf("%s %s %s %d", state, org, version, count)
 }
 
-
 // GenerateAllOSPages generates OS pages for all active OS distributions
 func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 	osList, err := GetActiveOS(ctx)
@@ -337,10 +336,7 @@ func (g *CCOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 
 	if len(failedOS) > 0 {
 		logrus.Warnf("Failed to generate pages for: %v", failedOS)
-	}
-
-	if successCount == 0 {
-		return fmt.Errorf("failed to generate any OS pages")
+		return fmt.Errorf("failed to generate %d/%d OS pages: %s", len(failedOS), len(osList), strings.Join(failedOS, ", "))
 	}
 	return nil
 }

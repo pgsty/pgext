@@ -1038,8 +1038,7 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 
 func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	required := []string{
-		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64]",
-		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ]",
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
@@ -1052,7 +1051,8 @@ func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	}
 
 	forbidden := []string{
-		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9   ] ,arch: [x86_64, aarch64]",
+		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [   10] ,arch: [x86_64         ]",
 	}
 	for _, fragment := range forbidden {
 		if strings.Contains(rpmTemplate, fragment) {

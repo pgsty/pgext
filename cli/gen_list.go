@@ -787,12 +787,7 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 		licenses = append(licenses, licenseItem{name, exts, order})
 	}
 
-	sort.Slice(licenses, func(i, j int) bool {
-		if len(licenses[i].exts) != len(licenses[j].exts) {
-			return len(licenses[i].exts) > len(licenses[j].exts)
-		}
-		return licenses[i].order < licenses[j].order
-	})
+	sortLicenseItems(licenses)
 
 	var b strings.Builder
 
@@ -839,6 +834,24 @@ func (g *ListGenerator) GenerateLicenseList(locale, outputPath string) error {
 	}
 
 	return os.WriteFile(outputPath, []byte(b.String()), 0644)
+}
+
+func sortLicenseItems(licenses []licenseItem) {
+	sort.Slice(licenses, func(i, j int) bool {
+		if len(licenses[i].exts) != len(licenses[j].exts) {
+			return len(licenses[i].exts) > len(licenses[j].exts)
+		}
+		if licenses[i].order != licenses[j].order {
+			return licenses[i].order < licenses[j].order
+		}
+
+		left := strings.ToLower(licenses[i].name)
+		right := strings.ToLower(licenses[j].name)
+		if left != right {
+			return left < right
+		}
+		return licenses[i].name < licenses[j].name
+	})
 }
 
 func (g *ListGenerator) generateLicenseSection(license string, extensions []*Extension, isZh bool) string {

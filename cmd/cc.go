@@ -64,8 +64,8 @@ var ccPageCmd = &cobra.Command{
 	Long: `Generate Hugo/Docsy markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
 	Example: `  pgext gen cc page              # Generate pages for all extensions
-  pgext gen cc page pgvector     # Generate page for pgvector extension
-  pgext gen cc page pgvector postgis  # Generate pages for specific extensions`,
+  pgext gen cc page vector       # Generate page for pgvector's vector extension
+  pgext gen cc page vector postgis  # Generate pages for specific extensions`,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
 

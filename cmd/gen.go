@@ -16,8 +16,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const defaultCatalogOutputDir = "content"
+
 var (
-	outputDir string
+	genListOutputDir   = defaultCatalogOutputDir
+	genOSOutputDir     = defaultCatalogOutputDir
+	genMatrixOutputDir = defaultCatalogOutputDir
+	genMatrixStaticDir = "static"
+	genPageOutputDir   = defaultCatalogOutputDir
 )
 
 // genCmd represents the gen command
@@ -71,13 +77,13 @@ Available types: ext, pkg, cate, lang, license, catalog`,
 		}
 
 		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
+		listDir := filepath.Join(genListOutputDir, "list")
 		if err := os.MkdirAll(listDir, 0755); err != nil {
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
 
 		// Prepare e directory for ext index pages
-		extDir := filepath.Join(outputDir, "e")
+		extDir := filepath.Join(genListOutputDir, "e")
 		if err := os.MkdirAll(extDir, 0755); err != nil {
 			return fmt.Errorf("failed to create extension directory: %w", err)
 		}
@@ -293,13 +299,13 @@ If no argument is provided, generates pages for all active OS distributions.`,
 		}
 
 		// Prepare output directory
-		listDir := filepath.Join(outputDir, "list")
+		listDir := filepath.Join(genOSOutputDir, "list")
 		if err := os.MkdirAll(listDir, 0755); err != nil {
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
 
 		// Prepare os directory
-		osDir := filepath.Join(outputDir, "os")
+		osDir := filepath.Join(genOSOutputDir, "os")
 		if err := os.MkdirAll(osDir, 0755); err != nil {
 			return fmt.Errorf("failed to create os output directory: %w", err)
 		}
@@ -401,10 +407,11 @@ var genMatrixCmd = &cobra.Command{
 	Use:   "matrix",
 	Short: "Generate global OS/PG availability matrix",
 	Long: `Generate a package-oriented global availability matrix across all active
-operating systems and PostgreSQL major versions. The output includes Hugo
-content pages plus CSV/JSON data files for later visualization work.`,
+operating systems and PostgreSQL major versions. Hugo pages are written below
+--output, while CSV/JSON/HTML assets are written below --static-output.`,
 	Example: `  pgext gen matrix
-  pgext gen matrix -d data`,
+  pgext gen matrix -d data
+  pgext gen matrix -o /tmp/content --static-output /tmp/static`,
 	Args: cobra.NoArgs,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := cmd.Context()
@@ -420,13 +427,12 @@ content pages plus CSV/JSON data files for later visualization work.`,
 			return fmt.Errorf("failed to load extension cache: %w", err)
 		}
 
-		staticDir := filepath.Join(filepath.Dir(outputDir), "static")
-		generator := cli.NewGlobalMatrixGenerator(cache, outputDir, staticDir)
+		generator := cli.NewGlobalMatrixGenerator(cache, genMatrixOutputDir, genMatrixStaticDir)
 		if err := generator.Generate(ctx); err != nil {
 			return fmt.Errorf("failed to generate global matrix: %w", err)
 		}
 
-		logrus.Infof("Generated global matrix under %s and %s", filepath.Join(outputDir, "os"), filepath.Join(staticDir, "matrix"))
+		logrus.Infof("Generated global matrix under %s and %s", filepath.Join(genMatrixOutputDir, "os"), filepath.Join(genMatrixStaticDir, "matrix"))
 		return nil
 	},
 }
@@ -438,8 +444,8 @@ var genPageCmd = &cobra.Command{
 	Long: `Generate Hugo markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
 	Example: `  pgext gen page              # Generate pages for all extensions
-  pgext gen page pgvector     # Generate page for pgvector extension
-  pgext gen page pgvector postgis pg_stat_statements  # Generate pages for specific extensions`,
+  pgext gen page vector       # Generate page for pgvector's vector extension
+  pgext gen page vector postgis pg_stat_statements  # Generate pages for specific extensions`,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := cmd.Context()
 
@@ -457,7 +463,7 @@ If no extension names are provided, generates pages for all extensions.`,
 		}
 
 		// Prepare output directory
-		extDir := filepath.Join(outputDir, "e")
+		extDir := filepath.Join(genPageOutputDir, "e")
 		if err := os.MkdirAll(extDir, 0755); err != nil {
 			return fmt.Errorf("failed to create output directory: %w", err)
 		}
@@ -668,8 +674,16 @@ func init() {
 
 	genCmd.AddCommand(genPageCmd, genListCmd, genOSCmd, genMatrixCmd, genConfCmd, allCmd)
 
-	genCmd.PersistentFlags().StringVarP(&outputDir, "output", "o", "content",
+	genPageCmd.Flags().StringVarP(&genPageOutputDir, "output", "o", defaultCatalogOutputDir,
 		"Output directory for generated files")
+	genListCmd.Flags().StringVarP(&genListOutputDir, "output", "o", defaultCatalogOutputDir,
+		"Output directory for generated files")
+	genOSCmd.Flags().StringVarP(&genOSOutputDir, "output", "o", defaultCatalogOutputDir,
+		"Output directory for generated files")
+	genMatrixCmd.Flags().StringVarP(&genMatrixOutputDir, "output", "o", defaultCatalogOutputDir,
+		"Hugo content output directory")
+	genMatrixCmd.Flags().StringVar(&genMatrixStaticDir, "static-output", "static",
+		"Static matrix asset output directory")
 
 	// Add flags specific to gen conf command
 	genConfCmd.Flags().StringP("output", "o", "", "Output directory for configuration files (default: ~/pigsty/roles/node_id/vars)")

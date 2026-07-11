@@ -108,7 +108,8 @@ func (g *ExtensionGenerator) generateExtensionContent(ext *Extension, packages [
 func (g *ExtensionGenerator) generateFrontmatter(ext *Extension) string {
 	categoryTitle := "Unknown"
 	if ext.Category.Valid {
-		categoryTitle = strings.Title(ext.Category.String)
+		// Category codes are canonical display labels (for example RAG, GIS).
+		categoryTitle = ext.Category.String
 	}
 
 	desc := ext.EnDesc.String

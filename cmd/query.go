@@ -23,6 +23,7 @@ var statusCmd = &cobra.Command{
   pgext status                  # show status
   pgext status -d vonng         # check specific database
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := cli.ShowStatus(); err != nil {
@@ -97,6 +98,7 @@ var repoCmd = &cobra.Command{
 	Example: `
   pgext repo                    # show all repositories
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := cli.ShowRepositories(); err != nil {
@@ -118,16 +120,26 @@ var extCmd = &cobra.Command{
 - Version
 - Description
 - Requirements
-- URLs (website, documentation, source)`,
+- Website URL and source package filename
+
+Use --json to return the complete pgext.extension record with stable field names.`,
 	Example: `
-  pgext ext pgvector              # show pgvector info
+  pgext ext vector                # show pgvector extension info
   pgext ext timescaledb           # show timescaledb info
+  pgext ext vector --json         # emit machine-readable JSON
 `,
 	Args:    cobra.ExactArgs(1),
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		name := args[0]
-		if err := cli.ShowExt(name); err != nil {
+		jsonOutput, err := cmd.Flags().GetBool("json")
+		if err != nil {
+			return fmt.Errorf("read --json flag: %w", err)
+		}
+		if err := cli.ShowExtWithOptions(cmd.Context(), name, cli.ShowExtOptions{
+			JSON:   jsonOutput,
+			Writer: cmd.OutOrStdout(),
+		}); err != nil {
 			return fmt.Errorf("failed to show extension: %w", err)
 		}
 		return nil
@@ -140,4 +152,7 @@ func init() {
 	binCmd.Flags().IntVarP(&pgVer, "pg", "p", 0, "PostgreSQL major version (e.g., 17)")
 	binCmd.Flags().StringVarP(&osFilter, "os", "o", "", "OS filter (e.g., el9, u24)")
 	binCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
+
+	// ext command flags
+	extCmd.Flags().Bool("json", false, "output extension information as JSON")
 }

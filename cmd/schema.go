@@ -11,6 +11,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	initForce      bool
+	initBestEffort bool
+	initKeepTemp   bool
+)
+
 // schemaCmd initializes the pgext schema
 var schemaCmd = &cobra.Command{
 	Use:   "schema",
@@ -19,10 +25,11 @@ var schemaCmd = &cobra.Command{
 
 This command will:
 1. Create the pgext schema
-2. Load initial CSV data (pg, os, category, repository, extension)
+2. Load initial CSV data (pg, os, category, repository, extension, universe)
 
-If the schema already exists, this command will skip initialization.
-Use --force to drop and recreate the schema.
+If the schema already exists, this command preserves its data and applies
+supported non-destructive schema additions (currently pgext.universe).
+Use --force to drop and recreate the entire schema.
 Requires the semver extension to be available in the database.`,
 	Example: `
   pgext schema                  # initialize schema
@@ -30,6 +37,7 @@ Requires the semver extension to be available in the database.`,
   pgext schema -d vonng         # use specific database
   PGURL=meta pgext schema       # use env variable
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if err := cli.InitSchema(force); err != nil {
@@ -44,59 +52,62 @@ Requires the semver extension to be available in the database.`,
 var initCmd = &cobra.Command{
 	Use:   "init",
 	Short: "complete setup: schema + reload",
-	Long: `Perform complete initialization from scratch:
-1. Initialize pgext schema with force
+	Long: `Perform complete initialization:
+1. Initialize the pgext schema if it does not exist
 2. Fetch repository metadata
-3. Parse repository data into pgext.bin
+3. Parse repository data into pgext.apt, pgext.dnf, and pgext.bin
 4. Generate availability info pgext.pkg
 
-This is equivalent to running:
-  pgext schema --force
+Existing schema data is preserved by default.
+Use --force to drop and recreate the pgext schema before reloading.
+
+This runs the same logical stages as:
+  pgext schema [--force]
   pgext fetch
   pgext parse
-  pgext recap
+
+The parsed package tables and availability matrix are published atomically.
 `,
 	Example: `
   pgext init                    # initialize everything
+  pgext init -f                 # drop and recreate schema, then reload
   pgext init -d vonng           # use specific database
   pgext init -p 4               # use 4 parallel workers
+  pgext init --best-effort      # allow a partial catalog if some repos fail
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		logrus.Info("starting complete initialization...")
 
-		// Step 1: Initialize schema with force
+		// Step 1: Initialize schema, preserving existing data unless forced
 		logrus.Info("step 1/4: initializing schema...")
-		if err := cli.InitSchema(true); err != nil {
+		if err := cli.InitSchema(initForce); err != nil {
 			return fmt.Errorf("failed to initialize schema: %w", err)
 		}
 
 		// Step 2: Fetch repository metadata
 		logrus.Info("step 2/4: fetching repository metadata...")
 		fetcher := cli.NewFetcher(cli.FetchOptions{
-			Force:    true,
-			Region:   region,
-			Parallel: workers,
-			Retry:    retry,
+			Force:      true,
+			Region:     region,
+			Parallel:   workers,
+			Retry:      retry,
+			BestEffort: initBestEffort,
 		})
 		if err := fetcher.FetchAll(cmd.Context()); err != nil {
 			return fmt.Errorf("failed to fetch: %w", err)
 		}
 
-		// Step 3: Parse repository data
-		logrus.Info("step 3/4: parsing repository data...")
-		parser := cli.NewParser(cli.ParseOptions{
-			Parallel: workers,
-			Keep:     keep,
+		// Steps 3-4: Parse repository data and build the package matrix
+		logrus.Info("steps 3-4/4: parsing repository data and generating package matrix...")
+		parser := cli.NewParserContext(cmd.Context(), cli.ParseOptions{
+			Parallel:   workers,
+			KeepTemp:   initKeepTemp,
+			BestEffort: initBestEffort,
 		})
-		if err := parser.ParseAll(); err != nil {
-			return fmt.Errorf("failed to parse: %w", err)
-		}
-
-		// Step 4: Generate package matrix
-		logrus.Info("step 4/4: generating package matrix...")
-		if err := cli.RecapMatrix(); err != nil {
-			return fmt.Errorf("failed to recap: %w", err)
+		if err := parser.ParseAndRecap(); err != nil {
+			return fmt.Errorf("failed to build package catalog: %w", err)
 		}
 
 		logrus.Info("initialization completed successfully!")
@@ -117,6 +128,7 @@ data will be permanently deleted.`,
 	Example: `
   pgext purge                   # remove pgext schema
 `,
+	Args:    cobra.NoArgs,
 	PreRunE: initDatabase,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		fmt.Println("⚠️  WARNING: This will permanently delete the pgext schema and all data!")
@@ -145,15 +157,22 @@ func init() {
 	schemaCmd.Flags().BoolVarP(&force, "force", "f", false, "force drop and recreate schema")
 
 	// init command flags
+	initCmd.Flags().BoolVarP(&initForce, "force", "f", false, "force drop and recreate schema before reload")
 	initCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
 	initCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	initCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
-	initCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
+	initCmd.Flags().BoolVarP(&initKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
+	initCmd.Flags().BoolVar(&initKeepTemp, "keep", false, "deprecated alias for --keep-temp")
+	_ = initCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
+	initCmd.Flags().BoolVar(&initBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 
 	// reload command flags
 	reloadCmd.Flags().BoolVarP(&force, "force", "f", false, "force re-fetch all repositories")
 	reloadCmd.Flags().StringVarP(&region, "region", "r", "", "region: default or china/mirror")
 	reloadCmd.Flags().IntVarP(&workers, "parallel", "p", 8, "number of parallel workers")
 	reloadCmd.Flags().IntVar(&retry, "retry", 1, "number of retry attempts")
-	reloadCmd.Flags().BoolVarP(&keep, "keep", "k", false, "keep temporary SQLite files")
+	reloadCmd.Flags().BoolVarP(&reloadKeepTemp, "keep-temp", "k", false, "keep temporary DNF SQLite files")
+	reloadCmd.Flags().BoolVar(&reloadKeepTemp, "keep", false, "deprecated alias for --keep-temp")
+	_ = reloadCmd.Flags().MarkDeprecated("keep", "use --keep-temp")
+	reloadCmd.Flags().BoolVar(&reloadBestEffort, "best-effort", false, "publish a partial catalog when some repositories fail")
 }

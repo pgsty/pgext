@@ -11,24 +11,31 @@ import (
 	"strings"
 
 	"github.com/jackc/pgx/v5"
-	"github.com/sirupsen/logrus"
 )
 
 // APTParser handles parsing of APT/DEB repository metadata
 type APTParser struct {
-	ctx context.Context
-	tx  pgx.Tx
+	ctx   context.Context
+	tx    pgx.Tx
+	table string
 }
 
 // NewAPTParser creates a new APT parser
 func NewAPTParser(ctx context.Context) *APTParser {
-	return &APTParser{ctx: ctx}
+	return newAPTParser(ctx, liveTable("apt"))
+}
+
+func newAPTParser(ctx context.Context, table string) *APTParser {
+	return &APTParser{ctx: ctx, table: table}
 }
 
 // ParseRepository parses a single APT repository
 func (p *APTParser) ParseRepository(repoID string, data []byte) (int, error) {
 	// Parse Packages file content
-	packages := p.parsePackages(string(data))
+	packages, err := p.parsePackages(string(data))
+	if err != nil {
+		return 0, fmt.Errorf("parse APT repository %s: %w", repoID, err)
+	}
 	if len(packages) == 0 {
 		return 0, nil
 	}
@@ -41,41 +48,57 @@ func (p *APTParser) ParseRepository(repoID string, data []byte) (int, error) {
 
 	// Store transaction for use in insertPackages
 	p.tx = tx
+	defer func() {
+		rollbackPackageTransaction(tx)
+		p.tx = nil
+	}()
 
 	// Insert packages in batches
-	count := p.insertPackages(repoID, packages)
+	count, err := p.insertPackages(repoID, packages)
+	if err != nil {
+		return count, err
+	}
 
 	// Commit transaction
 	if err := tx.Commit(p.ctx); err != nil {
 		// Transaction failed, rollback is automatic
-		p.tx = nil
 		return count, fmt.Errorf("commit transaction: %w", err)
 	}
 
-	p.tx = nil
 	return count, nil
 }
 
 // parsePackages parses APT Packages file content into structured data
-func (p *APTParser) parsePackages(content string) []map[string]interface{} {
+func (p *APTParser) parsePackages(content string) ([]map[string]interface{}, error) {
 	var packages []map[string]interface{}
+	content = strings.ReplaceAll(content, "\r\n", "\n")
+	if strings.TrimSpace(content) == "" {
+		return nil, nil
+	}
 
 	// Split into individual package records
 	records := strings.Split(content, "\n\n")
 
-	for _, record := range records {
+	for i, record := range records {
 		record = strings.TrimSpace(record)
 		if record == "" {
 			continue
 		}
 
 		pkg := p.parsePackageRecord(record)
-		if pkg != nil && pkg["Package"] != nil {
-			packages = append(packages, pkg)
+		for _, field := range []string{"Package", "Version", "Architecture", "Filename"} {
+			value, ok := pkg[field].(string)
+			if !ok || strings.TrimSpace(value) == "" {
+				return nil, fmt.Errorf("record %d is missing required %s field", i+1, field)
+			}
 		}
+		packages = append(packages, pkg)
 	}
 
-	return packages
+	if len(packages) == 0 {
+		return nil, fmt.Errorf("non-empty metadata contains no package records")
+	}
+	return packages, nil
 }
 
 // parsePackageRecord parses a single package record from APT format
@@ -156,9 +179,9 @@ func (p *APTParser) processSpecialFields(pkg map[string]interface{}) {
 }
 
 // insertPackages inserts parsed packages into the database
-func (p *APTParser) insertPackages(repoID string, packages []map[string]interface{}) int {
+func (p *APTParser) insertPackages(repoID string, packages []map[string]interface{}) (int, error) {
 	if len(packages) == 0 {
-		return 0
+		return 0, nil
 	}
 
 	batch := &pgx.Batch{}
@@ -177,7 +200,7 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 	for _, pkg := range packages {
 		// Build values array for fixed fields
 		values := make([]interface{}, 0, 30) // Exactly 30 parameters expected
-		values = append(values, repoID) // First column is repo
+		values = append(values, repoID)      // First column is repo
 
 		// Add fixed field values (28 fields)
 		for _, field := range fixedFields {
@@ -215,8 +238,8 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 		}
 
 		// Queue insert - 30 columns total: 1 repo + 28 fields + 1 extra
-		batch.Queue(`
-			INSERT INTO pgext.apt (
+		batch.Queue(fmt.Sprintf(`
+			INSERT INTO %s (
 				repo, package, version, architecture, size, size_install,
 				priority, section, filename, sha256, sha1, md5sum,
 				maintainer, homepage, depends, source, provides,
@@ -228,7 +251,7 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 				$11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
 				$21, $22, $23, $24, $25, $26, $27, $28, $29, $30
 			)
-		`, values...)
+		`, p.table), values...)
 
 		count++
 
@@ -237,7 +260,7 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 			if p.tx != nil {
 				br := p.tx.SendBatch(p.ctx, batch)
 				if err := br.Close(); err != nil {
-					logrus.Warnf("failed to send batch: %v", err)
+					return count, fmt.Errorf("insert APT batch: %w", err)
 				}
 			}
 			batch = &pgx.Batch{}
@@ -248,9 +271,9 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 	if batch.Len() > 0 && p.tx != nil {
 		br := p.tx.SendBatch(p.ctx, batch)
 		if err := br.Close(); err != nil {
-			logrus.Warnf("failed to send final batch: %v", err)
+			return count, fmt.Errorf("insert final APT batch: %w", err)
 		}
 	}
 
-	return count
+	return count, nil
 }

@@ -5,9 +5,15 @@ package cli
 
 import (
 	"context"
+	"database/sql"
+	"encoding/json"
+	"errors"
 	"fmt"
+	"io"
+	"os"
 	"strings"
 
+	"github.com/jackc/pgx/v5"
 	"github.com/sirupsen/logrus"
 )
 
@@ -182,55 +188,219 @@ func displayBinTable(packages []BinPackage) {
 	fmt.Printf("Total: %d packages\n\n", len(packages))
 }
 
-// ShowExt displays extension information from pgext.extension table.
+const extensionInfoQuery = `
+	SELECT id, name, pkg, lead_ext, category, state, url, license,
+	       tags, version, repo, lang, contrib, lead, has_bin, has_lib,
+	       need_ddl, need_load, trusted, relocatable, schemas, pg_ver,
+	       requires, require_by, see_also, rpm_ver, rpm_repo, rpm_pkg,
+	       rpm_pg, rpm_deps, deb_ver, deb_repo, deb_pkg, deb_deps,
+	       deb_pg, source, extra, en_desc, zh_desc, comment, mtime::text
+	FROM pgext.extension
+	WHERE name = $1
+`
+
+// ExtensionInfo is the stable JSON representation returned by pgext ext --json.
+// Its field names deliberately follow the pgext.extension catalog vocabulary.
+type ExtensionInfo struct {
+	ID          int      `json:"id"`
+	Name        string   `json:"name"`
+	Pkg         string   `json:"pkg"`
+	LeadExt     string   `json:"lead_ext"`
+	Category    string   `json:"category"`
+	State       string   `json:"state"`
+	URL         string   `json:"url"`
+	License     string   `json:"license"`
+	Tags        []string `json:"tags"`
+	Version     string   `json:"version"`
+	Repo        string   `json:"repo"`
+	Lang        string   `json:"lang"`
+	Contrib     *bool    `json:"contrib"`
+	Lead        *bool    `json:"lead"`
+	HasBin      *bool    `json:"has_bin"`
+	HasLib      *bool    `json:"has_lib"`
+	NeedDDL     *bool    `json:"need_ddl"`
+	NeedLoad    *bool    `json:"need_load"`
+	Trusted     *bool    `json:"trusted"`
+	Relocatable *bool    `json:"relocatable"`
+	Schemas     []string `json:"schemas"`
+	PGVer       []string `json:"pg_ver"`
+	Requires    []string `json:"requires"`
+	RequireBy   []string `json:"require_by"`
+	SeeAlso     []string `json:"see_also"`
+	RPMVer      string   `json:"rpm_ver"`
+	RPMRepo     string   `json:"rpm_repo"`
+	RPMPkg      string   `json:"rpm_pkg"`
+	RPMPG       []string `json:"rpm_pg"`
+	RPMDeps     []string `json:"rpm_deps"`
+	DEBVer      string   `json:"deb_ver"`
+	DEBRepo     string   `json:"deb_repo"`
+	DEBPkg      string   `json:"deb_pkg"`
+	DEBDeps     []string `json:"deb_deps"`
+	DEBPG       []string `json:"deb_pg"`
+	Source      string   `json:"source"`
+	Extra       JsonMap  `json:"extra"`
+	EnDesc      string   `json:"en_desc"`
+	ZhDesc      string   `json:"zh_desc"`
+	Comment     string   `json:"comment"`
+	MTime       string   `json:"mtime"`
+}
+
+// ShowExtOptions controls extension output without changing the legacy ShowExt API.
+type ShowExtOptions struct {
+	JSON   bool
+	Writer io.Writer
+}
+
+// ShowExt displays extension information using the legacy text format.
 func ShowExt(extName string) error {
-	ctx := context.Background()
-	query := `SELECT name, pkg, category, repo, lang, license, ver,description, requires, website, doc_url, src_url,created_at, updated_at FROM pgext.extension WHERE name = $1`
+	return ShowExtWithOptions(context.Background(), extName, ShowExtOptions{Writer: os.Stdout})
+}
 
-	var name, pkg, category, repo, lang, license, ver, description string
-	var requires, website, docURL, srcURL string
-	var createdAt, updatedAt interface{}
-
-	err := QueryRowContext(ctx, query, extName).Scan(
-		&name, &pkg, &category, &repo, &lang, &license, &ver,
-		&description, &requires, &website, &docURL, &srcURL,
-		&createdAt, &updatedAt,
-	)
+// ShowExtWithOptions displays extension information from pgext.extension.
+func ShowExtWithOptions(ctx context.Context, extName string, opts ShowExtOptions) error {
+	info, err := LoadExtensionInfo(ctx, extName)
 	if err != nil {
-		return fmt.Errorf("extension not found: %w", err)
+		return err
 	}
 
-	// Print extension info
-	fmt.Println("\n╔═══════════════════════════════════════════╗")
-	fmt.Println("║        Extension Information              ║")
-	fmt.Println("╚═══════════════════════════════════════════╝")
-	fmt.Println()
-
-	fmt.Printf("Name:        %s\n", name)
-	fmt.Printf("Package:     %s\n", pkg)
-	fmt.Printf("Category:    %s\n", category)
-	fmt.Printf("Repository:  %s\n", repo)
-	fmt.Printf("Language:    %s\n", lang)
-	fmt.Printf("License:     %s\n", license)
-	fmt.Printf("Version:     %s\n", ver)
-	fmt.Printf("\nDescription:\n%s\n", wrapText(description, 60))
-
-	if requires != "" {
-		fmt.Printf("\nRequires:    %s\n", requires)
+	out := opts.Writer
+	if out == nil {
+		out = os.Stdout
 	}
-	if website != "" {
-		fmt.Printf("Website:     %s\n", website)
-	}
-	if docURL != "" {
-		fmt.Printf("Docs:        %s\n", docURL)
-	}
-	if srcURL != "" {
-		fmt.Printf("Source:      %s\n", srcURL)
+	if opts.JSON {
+		if err := writeExtensionInfoJSON(out, info); err != nil {
+			return fmt.Errorf("encode extension %q as JSON: %w", extName, err)
+		}
+		return nil
 	}
 
-	fmt.Println()
-
+	if err := writeExtensionInfo(out, info); err != nil {
+		return fmt.Errorf("write extension %q: %w", extName, err)
+	}
 	return nil
+}
+
+// LoadExtensionInfo loads one record from the standard packaged extension catalog.
+func LoadExtensionInfo(ctx context.Context, extName string) (*ExtensionInfo, error) {
+	ext := &Extension{}
+	var tags, schemas, pgVer, requires, requireBy, seeAlso interface{}
+	var rpmPG, rpmDeps, debPG, debDeps interface{}
+	var contrib, lead, hasBin, hasLib, needDDL, needLoad sql.NullBool
+	var extraJSON []byte
+	var mtime sql.NullString
+
+	err := QueryRowContext(ctx, extensionInfoQuery, extName).Scan(
+		&ext.ID, &ext.Name, &ext.Pkg, &ext.LeadExt, &ext.Category,
+		&ext.State, &ext.URL, &ext.License, &tags, &ext.Version,
+		&ext.Repo, &ext.Lang, &contrib, &lead, &hasBin,
+		&hasLib, &needDDL, &needLoad, &ext.Trusted,
+		&ext.Relocatable, &schemas, &pgVer, &requires, &requireBy,
+		&seeAlso, &ext.RpmVer, &ext.RpmRepo, &ext.RpmPkg, &rpmPG,
+		&rpmDeps, &ext.DebVer, &ext.DebRepo, &ext.DebPkg, &debDeps,
+		&debPG, &ext.Source, &extraJSON, &ext.EnDesc, &ext.ZhDesc,
+		&ext.Comment, &mtime,
+	)
+	if errors.Is(err, pgx.ErrNoRows) {
+		return nil, fmt.Errorf("extension %q not found", extName)
+	}
+	if err != nil {
+		return nil, fmt.Errorf("query extension %q: %w", extName, err)
+	}
+
+	ext.Tags = nullableInfoArray(tags)
+	ext.Schemas = nullableInfoArray(schemas)
+	ext.PgVer = nullableInfoArray(pgVer)
+	ext.Requires = nullableInfoArray(requires)
+	ext.RequireBy = nullableInfoArray(requireBy)
+	ext.SeeAlso = nullableInfoArray(seeAlso)
+	ext.RpmPg = nullableInfoArray(rpmPG)
+	ext.RpmDeps = nullableInfoArray(rpmDeps)
+	ext.DebPg = nullableInfoArray(debPG)
+	ext.DebDeps = nullableInfoArray(debDeps)
+	if len(extraJSON) > 0 {
+		if err := json.Unmarshal(extraJSON, &ext.Extra); err != nil {
+			return nil, fmt.Errorf("decode extension %q metadata: %w", extName, err)
+		}
+	}
+
+	info := &ExtensionInfo{
+		ID: ext.ID, Name: ext.Name, Pkg: ext.Pkg,
+		LeadExt: ext.LeadExt.String, Category: ext.Category.String,
+		State: ext.State.String, URL: ext.URL.String, License: ext.License.String,
+		Tags: ext.Tags, Version: ext.Version.String, Repo: ext.Repo.String,
+		Lang: ext.Lang.String, Contrib: nullBoolPointer(contrib), Lead: nullBoolPointer(lead),
+		HasBin: nullBoolPointer(hasBin), HasLib: nullBoolPointer(hasLib), NeedDDL: nullBoolPointer(needDDL),
+		NeedLoad: nullBoolPointer(needLoad), Schemas: ext.Schemas, PGVer: ext.PgVer,
+		Requires: ext.Requires, RequireBy: ext.RequireBy, SeeAlso: ext.SeeAlso,
+		RPMVer: ext.RpmVer.String, RPMRepo: ext.RpmRepo.String,
+		RPMPkg: ext.RpmPkg.String, RPMPG: ext.RpmPg, RPMDeps: ext.RpmDeps,
+		DEBVer: ext.DebVer.String, DEBRepo: ext.DebRepo.String,
+		DEBPkg: ext.DebPkg.String, DEBDeps: ext.DebDeps, DEBPG: ext.DebPg,
+		Source: ext.Source.String, Extra: ext.Extra, EnDesc: ext.EnDesc.String,
+		ZhDesc: ext.ZhDesc.String, Comment: ext.Comment.String, MTime: mtime.String,
+	}
+	if ext.Trusted.Valid {
+		value := ext.Trusted.Bool
+		info.Trusted = &value
+	}
+	if ext.Relocatable.Valid {
+		value := ext.Relocatable.Bool
+		info.Relocatable = &value
+	}
+	return info, nil
+}
+
+func nullBoolPointer(value sql.NullBool) *bool {
+	if !value.Valid {
+		return nil
+	}
+	result := value.Bool
+	return &result
+}
+
+func nullableInfoArray(value interface{}) []string {
+	if value == nil {
+		return nil
+	}
+	return parseArrayValue(value)
+}
+
+func writeExtensionInfoJSON(out io.Writer, info *ExtensionInfo) error {
+	encoder := json.NewEncoder(out)
+	encoder.SetIndent("", "  ")
+	return encoder.Encode(info)
+}
+
+func writeExtensionInfo(out io.Writer, info *ExtensionInfo) error {
+	var text strings.Builder
+	fmt.Fprintln(&text, "\n╔═══════════════════════════════════════════╗")
+	fmt.Fprintln(&text, "║        Extension Information              ║")
+	fmt.Fprintln(&text, "╚═══════════════════════════════════════════╝")
+	fmt.Fprintln(&text)
+	fmt.Fprintf(&text, "Name:        %s\n", info.Name)
+	fmt.Fprintf(&text, "Package:     %s\n", info.Pkg)
+	fmt.Fprintf(&text, "Category:    %s\n", info.Category)
+	fmt.Fprintf(&text, "Repository:  %s\n", info.Repo)
+	fmt.Fprintf(&text, "Language:    %s\n", info.Lang)
+	fmt.Fprintf(&text, "License:     %s\n", info.License)
+	fmt.Fprintf(&text, "Version:     %s\n", info.Version)
+	description := info.EnDesc
+	if description == "" {
+		description = info.ZhDesc
+	}
+	fmt.Fprintf(&text, "\nDescription:\n%s\n", wrapText(description, 60))
+	if len(info.Requires) > 0 {
+		fmt.Fprintf(&text, "\nRequires:    %s\n", strings.Join(info.Requires, ", "))
+	}
+	if info.URL != "" {
+		fmt.Fprintf(&text, "Website:     %s\n", info.URL)
+	}
+	if info.Source != "" {
+		fmt.Fprintf(&text, "Source:      %s\n", info.Source)
+	}
+	fmt.Fprintln(&text)
+	_, err := io.WriteString(out, text.String())
+	return err
 }
 
 // wrapText wraps text to specified width.

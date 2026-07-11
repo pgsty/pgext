@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-// Extension represents a PostgreSQL extension from pgext.extension table
+// Extension represents a packaged catalog entry from pgext.extension.
 type Extension struct {
 	ID          int            `db:"id"`
 	Name        string         `db:"name"`
@@ -244,10 +244,7 @@ func ParsePGVersions(values []string) []int {
 	seen := make(map[int]bool)
 
 	for _, val := range values {
-		stripped := strings.TrimSpace(val)
-		if strings.HasSuffix(stripped, "+") {
-			stripped = stripped[:len(stripped)-1]
-		}
+		stripped := strings.TrimSuffix(strings.TrimSpace(val), "+")
 
 		var version int
 		if _, err := fmt.Sscanf(stripped, "%d", &version); err == nil {

@@ -13,6 +13,8 @@ import (
 	"strings"
 	"time"
 
+	"pgext/db"
+
 	"github.com/jackc/pgx/v5"
 	"github.com/sirupsen/logrus"
 )
@@ -35,90 +37,46 @@ const (
 	RegionChina   Region = "china"
 )
 
-// LoadTable loads CSV data into a pgext table
-// tableName can be: extension/ext/e, repository/repo/r, category/cat/c, or any table name
-// source can be: URL, file path, "-" for stdin, or empty for default URL
+// LoadTable replaces one registered pgext table from CSV data.
+// An empty source uses the CSV embedded in the pgext binary. An explicit source
+// may be a URL, a file path, or "-" for stdin. Region is retained for API
+// compatibility; embedded catalog data is region-independent.
 func LoadTable(tableName string, source string, region Region) error {
 	if DB == nil {
 		return fmt.Errorf("database not initialized")
 	}
 
-	// Normalize table name and get default source if needed
-	table, defaultSource := normalizeTable(tableName, region)
-	if table == "" {
-		return fmt.Errorf("invalid table name: %s", tableName)
-	}
-
-	// Use default source if not specified
-	if source == "" {
-		source = defaultSource
-		if source == "" {
-			return fmt.Errorf("no source specified for table %s", table)
-		}
-		logrus.Infof("loading %s from default: %s", table, source)
-	} else {
-		logrus.Infof("loading %s from: %s", table, source)
-	}
-
-	// Fetch data
-	var data []byte
-	var err error
-
-	// Fetch the data
-	data, err = fetchContent(source)
+	_ = region
+	embedded, err := db.GetCSVFile(tableName)
 	if err != nil {
-		return fmt.Errorf("failed to fetch data: %w", err)
+		return err
+	}
+
+	data := embedded.Content
+	if source == "" {
+		logrus.Infof("loading %s from embedded %s.csv", embedded.Name, embedded.Name)
+	} else {
+		logrus.Infof("loading %s from: %s", embedded.Name, source)
+		data, err = fetchContent(source)
+		if err != nil {
+			return fmt.Errorf("failed to fetch data: %w", err)
+		}
 	}
 
 	// Load into database using COPY
-	return loadCSVData(table, data)
+	return loadCSVData(embedded.Name, data)
 }
 
-// normalizeTable normalizes table name and returns default source URL
-func normalizeTable(name string, region Region) (table string, defaultURL string) {
-	name = strings.ToLower(strings.TrimSpace(name))
+// EmbeddedTableNames returns canonical tables supported by LoadTable.
+func EmbeddedTableNames() []string { return db.CSVTableNames() }
 
-	// Map aliases to canonical names
-	switch name {
-	case "extension", "extensions", "ext", "e":
-		table = "extension"
-		if region == RegionChina {
-			defaultURL = ChinaExtensionURL
-		} else {
-			defaultURL = DefaultExtensionURL
-		}
-	case "repository", "repositories", "repo", "r":
-		table = "repository"
-		if region == RegionChina {
-			defaultURL = ChinaRepositoryURL
-		} else {
-			defaultURL = DefaultRepositoryURL
-		}
-	default:
-		// For other tables, use the name as-is
-		table = name
-		defaultURL = ""
-	}
-
-	return table, defaultURL
-}
-
-// validTables defines the allowed table names for COPY operations
-var validTables = map[string]bool{
-	"extension":  true,
-	"repository": true,
-	"category":   true,
-	"yum":        true,
-	"apt":        true,
-	"package":    true,
-	"matrix":     true,
-	"repo_data":  true,
-}
+// IsEmbeddedTable reports whether a canonical table name or alias is supported.
+func IsEmbeddedTable(name string) bool { return db.IsCSVTable(name) }
 
 // loadCSVData loads CSV data into a pgext table using COPY protocol
 func loadCSVData(table string, data []byte) error {
 	// Validate table name against whitelist to prevent SQL injection
-	if !isValidTableName(table) {
+	if !db.IsCSVTable(table) {
 		return fmt.Errorf("invalid or unauthorized table name: %s", table)
 	}
 
@@ -131,45 +89,77 @@ func loadCSVData(table string, data []byte) error {
 	}
 	defer tx.Rollback(ctx)
 
-	// Truncate existing data using parameterized identifier
-	truncateSQL := fmt.Sprintf("TRUNCATE TABLE pgext.%s CASCADE", pgx.Identifier{table}.Sanitize())
+	// This replacement API intentionally cascades. The CLI help warns callers
+	// that dependent catalog tables may be cleared as a result. Package inputs
+	// also clear pkg explicitly: repository is not a direct pkg foreign key, so
+	// PostgreSQL's cascade alone would otherwise leave a stale availability map.
+	logrus.Warnf("replacing pgext.%s with TRUNCATE ... CASCADE", table)
+	targets := []string{fmt.Sprintf("pgext.%s", pgx.Identifier{table}.Sanitize())}
+	if loadInvalidatesPackageCatalog(table) {
+		targets = append(targets, liveTable("pkg"))
+	}
+	truncateSQL := "TRUNCATE TABLE " + strings.Join(targets, ", ") + " CASCADE"
 	if _, err := tx.Exec(ctx, truncateSQL); err != nil {
 		return fmt.Errorf("failed to truncate table %s: %w", table, err)
 	}
 
-	// Use COPY protocol with sanitized identifier
-	reader := bytes.NewReader(data)
-	copySQL := fmt.Sprintf("COPY pgext.%s FROM STDIN WITH (FORMAT CSV, HEADER true)",
-		pgx.Identifier{table}.Sanitize())
-
-	copyResult, err := tx.Conn().PgConn().CopyFrom(ctx, reader, copySQL)
+	rows, err := copyCSVToTable(ctx, tx, table, data)
 	if err != nil {
 		return fmt.Errorf("failed to COPY data to %s: %w", table, err)
+	}
+	if err := updateStatusAfterLoad(ctx, tx, table); err != nil {
+		return fmt.Errorf("failed to invalidate status after loading %s: %w", table, err)
 	}
 
 	if err := tx.Commit(ctx); err != nil {
 		return fmt.Errorf("failed to commit transaction: %w", err)
 	}
 
-	logrus.Infof("loaded %d records into pgext.%s", copyResult.RowsAffected(), table)
+	logrus.Infof("loaded %d records into pgext.%s", rows, table)
 
 	return nil
 }
 
-// isValidTableName checks if a table name is in the whitelist
-func isValidTableName(name string) bool {
-	return validTables[name]
-}
-
-// getEnv gets environment variable with default value
-func getEnv(key, defaultValue string) string {
-	if value := strings.TrimSpace(os.Getenv(key)); value != "" {
-		return value
+func loadInvalidatesPackageCatalog(table string) bool {
+	switch table {
+	case "pg", "os", "repository", "extension":
+		return true
+	default:
+		return false
 	}
-	return defaultValue
 }
 
-// Use the shared embedded extension CSV data
+func updateStatusAfterLoad(ctx context.Context, tx pgx.Tx, table string) error {
+	var statement string
+	switch table {
+	case "pg":
+		statement = "UPDATE pgext.status SET recap_time = NULL, pkg_time = NULL WHERE id = 0"
+	case "os":
+		statement = "UPDATE pgext.status SET fetch_time = NULL, recap_time = NULL, pkg_time = NULL WHERE id = 0"
+	case "repository":
+		statement = "UPDATE pgext.status SET repo_time = clock_timestamp(), fetch_time = NULL, recap_time = NULL, pkg_time = NULL WHERE id = 0"
+	case "extension":
+		statement = "UPDATE pgext.status SET ext_time = clock_timestamp(), recap_time = NULL, pkg_time = NULL WHERE id = 0"
+	case "category", "universe":
+		statement = "UPDATE pgext.status SET ext_time = clock_timestamp() WHERE id = 0"
+	default:
+		return fmt.Errorf("unsupported embedded table %q", table)
+	}
+	_, err := tx.Exec(ctx, statement)
+	return err
+}
+
+// copyCSVToTable copies CSV data using the caller's transaction.
+func copyCSVToTable(ctx context.Context, tx pgx.Tx, table string, data []byte) (int64, error) {
+	copySQL := fmt.Sprintf("COPY pgext.%s FROM STDIN WITH (FORMAT CSV, HEADER true)",
+		pgx.Identifier{table}.Sanitize())
+	result, err := tx.Conn().PgConn().CopyFrom(ctx, bytes.NewReader(data), copySQL)
+	if err != nil {
+		return 0, err
+	}
+	return result.RowsAffected(), nil
+}
+
 // fetchContent fetches content from various sources
 func fetchContent(source string) ([]byte, error) {
 	// Empty source or stdin

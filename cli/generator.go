@@ -9,7 +9,6 @@ package cli
 import (
 	"context"
 	"fmt"
-	"pgext/db"
 	"strings"
 	"time"
 
@@ -68,12 +67,24 @@ func cleanVersion(ver string) string {
 
 // BinGenerator generates pgext.bin records from apt and dnf tables.
 type BinGenerator struct {
-	ctx context.Context
+	ctx      context.Context
+	dnfTable string
+	aptTable string
+	binTable string
 }
 
 // NewBinGenerator creates a new binary package generator.
 func NewBinGenerator(ctx context.Context) *BinGenerator {
-	return &BinGenerator{ctx: ctx}
+	return newBinGenerator(ctx, liveTable("dnf"), liveTable("apt"), liveTable("bin"))
+}
+
+func newBinGenerator(ctx context.Context, dnfTable, aptTable, binTable string) *BinGenerator {
+	return &BinGenerator{
+		ctx:      ctx,
+		dnfTable: dnfTable,
+		aptTable: aptTable,
+		binTable: binTable,
+	}
 }
 
 // Generate creates pgext.bin records from apt and dnf tables.
@@ -81,7 +92,7 @@ func (g *BinGenerator) Generate() (int, error) {
 	logrus.Info("generating binary package table...")
 
 	// Clear existing data
-	_, err := ExecSQLContext(g.ctx, "TRUNCATE TABLE pgext.bin RESTART IDENTITY")
+	_, err := ExecSQLContext(g.ctx, "TRUNCATE TABLE "+g.binTable+" RESTART IDENTITY")
 	if err != nil {
 		return 0, fmt.Errorf("truncate bin table: %w", err)
 	}
@@ -91,17 +102,31 @@ func (g *BinGenerator) Generate() (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("get active PG versions: %w", err)
 	}
+	if len(pgVersions) == 0 {
+		return 0, fmt.Errorf("no active PostgreSQL versions")
+	}
 
 	// Collect and insert packages for each PG version
 	total := 0
+	report := RunReport{Operation: "binary package generation", Total: len(pgVersions) * 2}
 	for _, pg := range pgVersions {
-		count, err := g.processVersion(pg)
+		count, succeeded, failures, err := g.processVersion(pg)
 		if err != nil {
-			logrus.Warnf("failed to process PG %d: %v", pg, err)
-			continue
+			return total, fmt.Errorf("process PG %d: %w", pg, err)
+		}
+		report.Succeeded += succeeded
+		for _, failure := range failures {
+			report.AddFailure(failure.Item, failure.Err)
 		}
 		logrus.Infof("  PG %d: %d packages", pg, count)
 		total += count
+	}
+	// Repository-level best-effort policy is resolved before this phase. A
+	// database query or scan failure while normalizing accepted repository data
+	// is always fatal because publishing one package-manager half would corrupt
+	// the catalog.
+	if err := report.Err(false); err != nil {
+		return total, err
 	}
 
 	logrus.Infof("generated %d binary package records", total)
@@ -130,14 +155,18 @@ func (g *BinGenerator) getActivePGVersions() ([]int, error) {
 }
 
 // processVersion collects and inserts packages for a specific PG version.
-func (g *BinGenerator) processVersion(pg int) (int, error) {
+func (g *BinGenerator) processVersion(pg int) (int, int, []RunFailure, error) {
 	var packages []BinaryPackage
+	var failures []RunFailure
+	succeeded := 0
 
 	// Collect DNF packages
 	dnf, err := g.collectDNF(pg)
 	if err != nil {
 		logrus.Warnf("DNF collection failed for PG %d: %v", pg, err)
+		failures = append(failures, RunFailure{Item: fmt.Sprintf("PG %d DNF", pg), Err: err})
 	} else {
+		succeeded++
 		packages = append(packages, dnf...)
 	}
 
@@ -145,12 +174,15 @@ func (g *BinGenerator) processVersion(pg int) (int, error) {
 	apt, err := g.collectAPT(pg)
 	if err != nil {
 		logrus.Warnf("APT collection failed for PG %d: %v", pg, err)
+		failures = append(failures, RunFailure{Item: fmt.Sprintf("PG %d APT", pg), Err: err})
 	} else {
+		succeeded++
 		packages = append(packages, apt...)
 	}
 
 	// Insert packages
-	return g.insertPackages(packages)
+	count, err := g.insertPackages(packages)
+	return count, succeeded, failures, err
 }
 
 // collectDNF collects DNF packages for a specific PG version.
@@ -160,12 +192,12 @@ func (g *BinGenerator) collectDNF(pg int) ([]BinaryPackage, error) {
 		       d.version || COALESCE('-' || d.release, ''),
 		       d.location_href, d.pkg_id,
 		       d.size_package, d.size_installed
-		FROM pgext.dnf d
+		FROM %s d
 		JOIN pgext.repository r ON d.repo = r.id
 		WHERE d.name LIKE '%%_%d%%'
 		  AND d.name NOT LIKE '%%-llvmjit%%'
 		  AND d.name NOT LIKE '%%-devel%%'
-	`, pg)
+	`, g.dnfTable, pg)
 
 	rows, err := QueryContext(g.ctx, query)
 	if err != nil {
@@ -182,7 +214,7 @@ func (g *BinGenerator) collectDNF(pg int) ([]BinaryPackage, error) {
 		err := rows.Scan(&pkg.OS, &pkg.Name, &pkg.Repo, &pkg.Ver,
 			&href, &pkg.SHA256, &sizePackage, &sizeInstalled)
 		if err != nil {
-			continue
+			return nil, fmt.Errorf("scan DNF package: %w", err)
 		}
 
 		pkg.PG = pg
@@ -194,7 +226,7 @@ func (g *BinGenerator) collectDNF(pg int) ([]BinaryPackage, error) {
 
 		packages = append(packages, pkg)
 	}
-	return packages, nil
+	return packages, rows.Err()
 }
 
 // collectAPT collects APT packages for a specific PG version.
@@ -202,11 +234,11 @@ func (g *BinGenerator) collectAPT(pg int) ([]BinaryPackage, error) {
 	query := fmt.Sprintf(`
 		SELECT r.os, a.package, a.repo, a.version,
 		       a.filename, a.sha256, a.size, a.size_install
-		FROM pgext.apt a
+		FROM %s a
 		JOIN pgext.repository r ON a.repo = r.id
 		WHERE a.package LIKE '%%-%d%%'
 		  AND a.package NOT LIKE '%%-dbgsym%%'
-	`, pg)
+	`, g.aptTable, pg)
 
 	rows, err := QueryContext(g.ctx, query)
 	if err != nil {
@@ -223,7 +255,7 @@ func (g *BinGenerator) collectAPT(pg int) ([]BinaryPackage, error) {
 		err := rows.Scan(&pkg.OS, &pkg.Name, &pkg.Repo, &pkg.Ver,
 			&filename, &pkg.SHA256, &size, &sizeInstall)
 		if err != nil {
-			continue
+			return nil, fmt.Errorf("scan APT package: %w", err)
 		}
 
 		pkg.PG = pg
@@ -235,7 +267,7 @@ func (g *BinGenerator) collectAPT(pg int) ([]BinaryPackage, error) {
 
 		packages = append(packages, pkg)
 	}
-	return packages, nil
+	return packages, rows.Err()
 }
 
 // insertPackages inserts packages into pgext.bin using batch operations.
@@ -252,18 +284,20 @@ func (g *BinGenerator) insertPackages(packages []BinaryPackage) (int, error) {
 
 	batch := &pgx.Batch{}
 	for _, pkg := range packages {
-		batch.Queue(`
-			INSERT INTO pgext.bin (
+		batch.Queue(fmt.Sprintf(`
+			INSERT INTO %s (
 				pg, os, name, repo, ver, version,
 				file, sha256, href, size, size_full
 			) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
-		`, pkg.PG, pkg.OS, pkg.Name, pkg.Repo, pkg.Ver, pkg.Version,
+		`, g.binTable), pkg.PG, pkg.OS, pkg.Name, pkg.Repo, pkg.Ver, pkg.Version,
 			pkg.File, pkg.SHA256, pkg.Href, pkg.Size, pkg.SizeFull)
 
 		// Send batch every 1000 records
 		if batch.Len() >= 1000 {
 			br := tx.SendBatch(g.ctx, batch)
-			br.Close()
+			if err := br.Close(); err != nil {
+				return 0, fmt.Errorf("insert binary package batch: %w", err)
+			}
 			batch = &pgx.Batch{}
 		}
 	}
@@ -271,7 +305,9 @@ func (g *BinGenerator) insertPackages(packages []BinaryPackage) (int, error) {
 	// Send remaining batch
 	if batch.Len() > 0 {
 		br := tx.SendBatch(g.ctx, batch)
-		br.Close()
+		if err := br.Close(); err != nil {
+			return 0, fmt.Errorf("insert final binary package batch: %w", err)
+		}
 	}
 
 	if err := tx.Commit(g.ctx); err != nil {
@@ -349,6 +385,15 @@ func RecapMatrix() error {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Minute)
 	defer cancel()
+	return RecapMatrixContext(ctx)
+}
+
+// RecapMatrixContext builds pgext.pkg in a run-scoped staging table and
+// atomically publishes the finished matrix.
+func RecapMatrixContext(ctx context.Context) error {
+	if DB == nil {
+		return fmt.Errorf("database not initialized")
+	}
 
 	logrus.Info("generate pgext.pkg from repo package data")
 
@@ -360,9 +405,15 @@ func RecapMatrix() error {
 	}
 	for rows.Next() {
 		var pg int
-		if err := rows.Scan(&pg); err == nil {
-			activePG = append(activePG, pg)
+		if err := rows.Scan(&pg); err != nil {
+			rows.Close()
+			return fmt.Errorf("scan active pg version: %w", err)
 		}
+		activePG = append(activePG, pg)
+	}
+	if err := rows.Err(); err != nil {
+		rows.Close()
+		return fmt.Errorf("iterate active pg versions: %w", err)
 	}
 	rows.Close()
 
@@ -374,9 +425,15 @@ func RecapMatrix() error {
 	}
 	for rows.Next() {
 		var os string
-		if err := rows.Scan(&os); err == nil {
-			activeOS = append(activeOS, os)
+		if err := rows.Scan(&os); err != nil {
+			rows.Close()
+			return fmt.Errorf("scan active os: %w", err)
 		}
+		activeOS = append(activeOS, os)
+	}
+	if err := rows.Err(); err != nil {
+		rows.Close()
+		return fmt.Errorf("iterate active os versions: %w", err)
 	}
 	rows.Close()
 
@@ -387,31 +444,23 @@ func RecapMatrix() error {
 	}
 	logrus.Infof("active pg: %s", strings.Join(pgVersions, ", "))
 	logrus.Infof("active os: %s", strings.Join(activeOS, ", "))
-
-	// Apply reload.sql to generate pkg table
-	logrus.Info("reload pgext.pkg")
-	if err := applyReloadPkg(ctx); err != nil {
-		return fmt.Errorf("failed to apply pkg fixes: %w", err)
+	if len(activePG) == 0 {
+		return fmt.Errorf("no active PostgreSQL versions; refusing to replace pgext.pkg")
+	}
+	if len(activeOS) == 0 {
+		return fmt.Errorf("no active operating systems; refusing to replace pgext.pkg")
 	}
 
-	// Vacuum full the pkg table
-	logrus.Info("vacuuming pgext.pkg table...")
-	if _, err := ExecSQLContext(ctx, "VACUUM FULL pgext.pkg"); err != nil {
-		return fmt.Errorf("failed to vacuum pkg: %w", err)
+	stage, err := newPackageStaging(ctx, false, true)
+	if err != nil {
+		return fmt.Errorf("create pkg staging table: %w", err)
 	}
+	defer stage.Drop()
 
-	// Cluster the pkg table
-	logrus.Info("clustering pgext.pkg table...")
-	if _, err := ExecSQLContext(ctx, "CLUSTER pgext.pkg USING pkg_pkg_os_pg_idx"); err != nil {
-		return fmt.Errorf("failed to cluster pkg: %w", err)
+	pkgCount, err := stage.rebuildAndPublishPkgFromLive(ctx)
+	if err != nil {
+		return fmt.Errorf("rebuild package matrix: %w", err)
 	}
-
-	// Count records in pgext.pkg
-	var pkgCount int64
-	if err := QueryRowContext(ctx, "SELECT COUNT(*) FROM pgext.pkg").Scan(&pkgCount); err != nil {
-		return fmt.Errorf("failed to count pkg records: %w", err)
-	}
-
 	logrus.Infof("recap completed: %d package records in pgext.pkg", pkgCount)
 	return nil
 }
@@ -419,31 +468,6 @@ func RecapMatrix() error {
 // RecapPackages is the main entry point for the recap operation
 func RecapPackages() error {
 	return RecapMatrix()
-}
-
-// applyReloadPkg executes db/reload.sql to generate pgext.pkg table
-func applyReloadPkg(ctx context.Context) error {
-	logrus.Info("run db/reload.sql...")
-	sqlBytes, err := db.ReadFile("reload.sql")
-	if err != nil {
-		return fmt.Errorf("failed to read reload.sql: %w", err)
-	}
-	sqlContent := string(sqlBytes)
-
-	// Skip if file is empty or only contains comments/whitespace
-	trimmed := strings.TrimSpace(sqlContent)
-	if trimmed == "" || !containsSQL(trimmed) {
-		logrus.Debug("reload.sql is empty, skip")
-		return nil
-	}
-
-	// Execute the SQL
-	if _, err := ExecSQLContext(ctx, sqlContent); err != nil {
-		return fmt.Errorf("failed to execute reload.sql: %w", err)
-	}
-
-	logrus.Info("pkg fixes applied successfully")
-	return nil
 }
 
 // containsSQL checks if the content has actual SQL statements (not just comments)

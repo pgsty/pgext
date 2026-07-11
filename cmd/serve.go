@@ -30,7 +30,7 @@ var serveCmd = &cobra.Command{
 	Long: `Serve the PGEXT.CLOUD web application and its query API from this binary.
 
 The server connects to a PostgreSQL database that already has the pgext
-schema loaded (pgext init && pgext reload), keeps an in-memory snapshot of
+schema and catalog loaded (pgext init), keeps an in-memory snapshot of
 the catalog as its cache, and serves both the single-page app and the JSON
 query API under /api/v1. Web assets are embedded — the binary is all you need.`,
 	Example: `

@@ -106,12 +106,6 @@ type pgxnExporter struct {
 	client *http.Client
 }
 
-type pgxnFetchResult struct {
-	record *PgxnRecord
-	err    error
-	dist   string
-}
-
 type scoredCatalogMatch struct {
 	row    CatalogRecord
 	score  int

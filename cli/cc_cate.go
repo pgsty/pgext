@@ -474,12 +474,17 @@ func (g *CCCateGenerator) GenerateAllCategoryPages(ctx context.Context) error {
 		return fmt.Errorf("failed to generate category index: %w", err)
 	}
 
+	var failed []string
 	for _, cat := range g.Cache.Categories {
 		if err := g.GenerateCategoryPage(ctx, cat); err != nil {
 			logrus.Errorf("Failed to generate category page for %s: %v", cat.Name, err)
+			failed = append(failed, cat.Name)
 		}
 	}
 
-	logrus.Infof("Generated %d category pages", len(g.Cache.Categories))
+	logrus.Infof("Generated %d/%d category pages", len(g.Cache.Categories)-len(failed), len(g.Cache.Categories))
+	if len(failed) > 0 {
+		return fmt.Errorf("failed to generate %d category pages: %s", len(failed), strings.Join(failed, ", "))
+	}
 	return nil
 }

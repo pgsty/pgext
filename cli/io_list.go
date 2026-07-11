@@ -354,7 +354,7 @@ icon: fas fa-code
 			anchor = "cpp"
 		}
 
-		b.WriteString(fmt.Sprintf("\n--------\n\n"))
+		b.WriteString("\n--------\n\n")
 		b.WriteString(fmt.Sprintf("## %s {#%s}\n\n", lang, anchor))
 		b.WriteString(fmt.Sprintf("Extensions written in %s (%d)\n\n", lang, len(exts)))
 

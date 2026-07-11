@@ -336,10 +336,7 @@ func (g *IOOSGenerator) GenerateAllOSPages(ctx context.Context) error {
 
 	if len(failedOS) > 0 {
 		logrus.Warnf("Failed to generate pages for: %v", failedOS)
-	}
-
-	if successCount == 0 {
-		return fmt.Errorf("failed to generate any OS pages")
+		return fmt.Errorf("failed to generate %d/%d OS pages: %s", len(failedOS), len(osList), strings.Join(failedOS, ", "))
 	}
 	return nil
 }

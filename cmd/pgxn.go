@@ -14,6 +14,8 @@ import (
 var (
 	pgxnOutputDir string
 	pgxnCatalog   string
+	pgxnWorkers   int
+	pgxnRetry     int
 )
 
 var pgxnCmd = &cobra.Command{
@@ -33,12 +35,13 @@ The command:
   pgext pgxn --output research/pgxn
   pgext pgxn --catalog db/extension.csv
 `,
+	Args: cobra.NoArgs,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		result, err := cli.ExportPGXNCatalog(cmd.Context(), cli.PgxnExportOptions{
 			OutputDir:   pgxnOutputDir,
 			CatalogPath: pgxnCatalog,
-			Workers:     workers,
-			Retry:       retry,
+			Workers:     pgxnWorkers,
+			Retry:       pgxnRetry,
 		})
 		if err != nil {
 			return err
@@ -51,6 +54,7 @@ The command:
 		}
 		if result.FailedCount > 0 {
 			logrus.Warnf("some distributions failed; inspect %s for details", result.Files["summary_json"])
+			return fmt.Errorf("pgxn export completed with %d failed distributions", result.FailedCount)
 		}
 		return nil
 	},
@@ -59,8 +63,8 @@ The command:
 func init() {
 	pgxnCmd.Flags().StringVarP(&pgxnOutputDir, "output", "o", "research/pgxn", "output directory for generated PGXN artifacts")
 	pgxnCmd.Flags().StringVar(&pgxnCatalog, "catalog", "db/extension.csv", "existing pgext extension catalog CSV used for matching")
-	pgxnCmd.Flags().IntVarP(&workers, "parallel", "p", 16, "number of parallel workers")
-	pgxnCmd.Flags().IntVar(&retry, "retry", 2, "number of retry attempts per PGXN request")
+	pgxnCmd.Flags().IntVarP(&pgxnWorkers, "parallel", "p", 16, "number of parallel workers")
+	pgxnCmd.Flags().IntVar(&pgxnRetry, "retry", 2, "number of retry attempts per PGXN request")
 
 	rootCmd.AddCommand(pgxnCmd)
 	rootCmd.Example += fmt.Sprintf("  %s\n", "pgext pgxn                    # crawl PGXN dist metadata into standalone tables")

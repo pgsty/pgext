@@ -24,14 +24,16 @@ import (
 
 // ScanOptions contains options for scan operation
 type ScanOptions struct {
-	RepoDir  string // Local repository directory (default: ~/pgsty/repo)
-	Parallel int    // Number of parallel workers
+	RepoDir    string // Local repository directory (default: ~/pgsty/repo)
+	Parallel   int    // Number of parallel workers
+	BestEffort bool   // Allow a partial result when at least one repository succeeds
 }
 
 // Scanner handles local repository metadata scanning
 type Scanner struct {
 	repoDir    string
 	maxWorkers int
+	bestEffort bool
 }
 
 // ScanResult represents the result of scanning a local repository
@@ -74,6 +76,7 @@ func NewScanner(opts ScanOptions) (*Scanner, error) {
 	return &Scanner{
 		repoDir:    repoDir,
 		maxWorkers: opts.Parallel,
+		bestEffort: opts.BestEffort,
 	}, nil
 }
 
@@ -97,48 +100,47 @@ func (s *Scanner) ScanAll(ctx context.Context) error {
 	results := s.scanConcurrent(ctx, repos)
 
 	// Process results
-	var updated, skipped, failed int
-	var errors []string
+	report := RunReport{Operation: "scan", Total: len(repos)}
 
 	for _, result := range results {
 		if result.Error != nil {
-			failed++
-			errors = append(errors, fmt.Sprintf("%s: %v", result.Repository.ID, result.Error))
+			report.AddFailure(result.Repository.ID, result.Error)
 			continue
 		}
 
 		if result.Updated {
 			if err := s.saveMetadata(ctx, result); err != nil {
-				failed++
-				errors = append(errors, fmt.Sprintf("%s: save failed: %v", result.Repository.ID, err))
+				report.AddFailure(result.Repository.ID, fmt.Errorf("save metadata: %w", err))
 			} else {
-				updated++
+				report.Succeeded++
 				logrus.Debugf("Updated %s (%s)", result.Repository.ID, formatBytes(int64(len(result.Data))))
 			}
 		} else {
-			skipped++
+			report.Skipped++
 			logrus.Debugf("Skipped %s (no change)", result.Repository.ID)
 		}
 	}
 
-	// Update status timestamp
-	if updated > 0 {
+	// Log summary
+	logrus.Infof("Scan complete: %d updated, %d skipped, %d failed",
+		report.Succeeded, report.Skipped, report.Failed())
+
+	// Report errors
+	for _, failure := range report.Failures {
+		logrus.Errorf("%s: %v", failure.Item, failure.Err)
+	}
+
+	if err := report.Err(s.bestEffort); err != nil {
+		return err
+	}
+	if report.Failed() > 0 {
+		logrus.Warnf("best-effort scan accepted %d failed repositories", report.Failed())
+	}
+
+	if report.Succeeded > 0 {
 		if err := s.updateFetchTime(ctx); err != nil {
 			logrus.Warnf("Failed to update fetch time: %v", err)
 		}
-	}
-
-	// Log summary
-	logrus.Infof("Scan complete: %d updated, %d skipped, %d failed", updated, skipped, failed)
-
-	// Report errors
-	for _, errMsg := range errors {
-		logrus.Error(errMsg)
-	}
-
-	// Fail if all repositories failed
-	if failed == len(repos) {
-		return fmt.Errorf("all repositories failed to scan")
 	}
 
 	return nil
@@ -169,8 +171,7 @@ func (s *Scanner) loadPigstyRepositories(ctx context.Context) ([]*RepoMetadata, 
 			&repo.CachedSize,
 		)
 		if err != nil {
-			logrus.Warnf("Failed to scan repository: %v", err)
-			continue
+			return nil, fmt.Errorf("scan repository metadata: %w", err)
 		}
 		repos = append(repos, repo)
 	}
@@ -364,13 +365,13 @@ func (s *Scanner) scanRPM(ctx context.Context, repo *RepoMetadata, repomdPath st
 func (s *Scanner) scanDEB(ctx context.Context, repo *RepoMetadata, packagesPath string) *ScanResult {
 	// Check if file exists
 	if _, err := os.Stat(packagesPath); err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("Packages file not found: %w", err)}
+		return &ScanResult{Repository: repo, Error: fmt.Errorf("packages file not found: %w", err)}
 	}
 
 	// Read Packages file
 	data, err := os.ReadFile(packagesPath)
 	if err != nil {
-		return &ScanResult{Repository: repo, Error: fmt.Errorf("read Packages file: %w", err)}
+		return &ScanResult{Repository: repo, Error: fmt.Errorf("read packages file: %w", err)}
 	}
 
 	return &ScanResult{

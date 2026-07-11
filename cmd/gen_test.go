@@ -44,6 +44,38 @@ func TestGeneratorCommandMounts(t *testing.T) {
 	}
 }
 
+func TestCatalogOutputFlagsAreScopedToCatalogGenerators(t *testing.T) {
+	for _, cmd := range []*cobra.Command{genCmd, allCmd} {
+		if flag := cmd.Flags().Lookup("output"); flag != nil {
+			t.Errorf("%s unexpectedly exposes --output", cmd.CommandPath())
+		}
+		if flag := cmd.PersistentFlags().Lookup("output"); flag != nil {
+			t.Errorf("%s unexpectedly defines persistent --output", cmd.CommandPath())
+		}
+	}
+
+	for _, cmd := range []*cobra.Command{genPageCmd, genListCmd, genOSCmd, genMatrixCmd} {
+		flag := cmd.Flags().Lookup("output")
+		if flag == nil {
+			t.Errorf("%s does not expose --output", cmd.CommandPath())
+			continue
+		}
+		if flag.Shorthand != "o" {
+			t.Errorf("%s --output shorthand = %q, want o", cmd.CommandPath(), flag.Shorthand)
+		}
+		if flag.DefValue != defaultCatalogOutputDir {
+			t.Errorf("%s --output default = %q, want %q", cmd.CommandPath(), flag.DefValue, defaultCatalogOutputDir)
+		}
+	}
+	staticOutput := genMatrixCmd.Flags().Lookup("static-output")
+	if staticOutput == nil {
+		t.Fatal("gen matrix does not expose --static-output")
+	}
+	if staticOutput.DefValue != "static" {
+		t.Fatalf("gen matrix --static-output default = %q, want static", staticOutput.DefValue)
+	}
+}
+
 func TestRunSubcommandLifecycle(t *testing.T) {
 	caller := &cobra.Command{Use: "caller"}
 	target := &cobra.Command{Use: "target"}

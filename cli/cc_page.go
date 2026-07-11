@@ -33,7 +33,10 @@ func NewCCPageGenerator(cache *ExtensionCache, outputDir, stubDir string) *CCPag
 
 // GenerateExtensionPage generates a single extension page (Chinese only)
 func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extension) error {
-	content := g.generateExtensionContent(ctx, ext)
+	content, err := g.generateExtensionContent(ctx, ext)
+	if err != nil {
+		return err
+	}
 
 	// Append stub content if exists
 	stubPath := filepath.Join(g.StubDir, ext.Name+".md")
@@ -45,11 +48,17 @@ func (g *CCPageGenerator) GenerateExtensionPage(ctx context.Context, ext *Extens
 }
 
 // generateExtensionContent generates the markdown content
-func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Extension) string {
+func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Extension) (string, error) {
 	var b strings.Builder
 
-	packages, _ := LoadPackages(ctx, ext.Pkg)
-	binaries, _ := LoadBinaries(ctx, ext.Name)
+	packages, err := LoadPackages(ctx, ext.Pkg)
+	if err != nil {
+		return "", fmt.Errorf("load packages for %s: %w", ext.Name, err)
+	}
+	binaries, err := LoadBinaries(ctx, ext.Name)
+	if err != nil {
+		return "", fmt.Errorf("load binaries for %s: %w", ext.Name, err)
+	}
 	siblings := g.Cache.GetSiblingExtensions(ext.Pkg, ext.Name)
 	allExts := g.getAllPackageExtensions(ext, siblings)
 
@@ -71,7 +80,7 @@ func (g *CCPageGenerator) generateExtensionContent(ctx context.Context, ext *Ext
 
 	b.WriteString(g.generateInstall(ext))
 
-	return b.String()
+	return b.String(), nil
 }
 
 // getAllPackageExtensions returns all extensions for the package (self + siblings), sorted by ID

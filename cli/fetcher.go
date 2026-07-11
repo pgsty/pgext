@@ -49,10 +49,11 @@ type FetchResult struct {
 
 // FetchOptions contains options for fetch operation
 type FetchOptions struct {
-	Force    bool   // Force re-download all repos
-	Region   string // Region for mirror selection (default|china)
-	Parallel int    // Number of parallel workers
-	Retry    int    // Number of retry attempts
+	Force      bool   // Force re-download all repos
+	Region     string // Region for mirror selection (default|china)
+	Parallel   int    // Number of parallel workers
+	Retry      int    // Number of retry attempts
+	BestEffort bool   // Allow a partial result when at least one repository succeeds
 }
 
 // Fetcher handles repository metadata fetching
@@ -62,6 +63,7 @@ type Fetcher struct {
 	force      bool
 	maxWorkers int
 	retries    int
+	bestEffort bool
 }
 
 // NewFetcher creates a new repository fetcher
@@ -93,6 +95,7 @@ func NewFetcher(opts FetchOptions) *Fetcher {
 		force:      opts.Force,
 		maxWorkers: opts.Parallel,
 		retries:    opts.Retry,
+		bestEffort: opts.BestEffort,
 	}
 }
 
@@ -116,48 +119,49 @@ func (f *Fetcher) FetchAll(ctx context.Context) error {
 	results := f.fetchConcurrent(ctx, repos)
 
 	// Process results
-	var updated, skipped, failed int
-	var errors []string
+	report := RunReport{Operation: "fetch", Total: len(repos)}
 
 	for _, result := range results {
 		if result.Error != nil {
-			failed++
-			errors = append(errors, fmt.Sprintf("%s: %v", result.Repository.ID, result.Error))
+			report.AddFailure(result.Repository.ID, result.Error)
 			continue
 		}
 
 		if result.Updated {
 			if err := f.saveMetadata(ctx, result); err != nil {
-				failed++
-				errors = append(errors, fmt.Sprintf("%s: save failed: %v", result.Repository.ID, err))
+				report.AddFailure(result.Repository.ID, fmt.Errorf("save metadata: %w", err))
 			} else {
-				updated++
+				report.Succeeded++
 				logrus.Debugf("Updated %s (%s)", result.Repository.ID, formatBytes(int64(len(result.Data))))
 			}
 		} else {
-			skipped++
+			report.Skipped++
 			logrus.Debugf("Skipped %s (not modified)", result.Repository.ID)
 		}
 	}
 
-	// Update status timestamp
-	if updated > 0 {
+	// Log summary
+	logrus.Infof("Fetch complete: %d updated, %d skipped, %d failed",
+		report.Succeeded, report.Skipped, report.Failed())
+
+	// Report errors
+	for _, failure := range report.Failures {
+		logrus.Errorf("%s: %v", failure.Item, failure.Err)
+	}
+
+	if err := report.Err(f.bestEffort); err != nil {
+		return err
+	}
+	if report.Failed() > 0 {
+		logrus.Warnf("best-effort fetch accepted %d failed repositories", report.Failed())
+	}
+
+	// Advance the accepted-run timestamp only after strict/best-effort policy
+	// has approved the result.
+	if report.Succeeded > 0 {
 		if err := f.updateFetchTime(ctx); err != nil {
 			logrus.Warnf("Failed to update fetch time: %v", err)
 		}
-	}
-
-	// Log summary
-	logrus.Infof("Fetch complete: %d updated, %d skipped, %d failed", updated, skipped, failed)
-
-	// Report errors
-	for _, errMsg := range errors {
-		logrus.Error(errMsg)
-	}
-
-	// Fail if all repositories failed
-	if failed == len(repos) {
-		return fmt.Errorf("all repositories failed to fetch")
 	}
 
 	return nil
@@ -195,8 +199,7 @@ func (f *Fetcher) loadRepositories(ctx context.Context) ([]*RepoMetadata, error)
 			&repo.CachedSize,
 		)
 		if err != nil {
-			logrus.Warnf("Failed to scan repository: %v", err)
-			continue
+			return nil, fmt.Errorf("scan repository metadata: %w", err)
 		}
 		repos = append(repos, repo)
 	}

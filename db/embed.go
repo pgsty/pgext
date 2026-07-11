@@ -6,8 +6,12 @@ package db
 import (
 	"embed"
 	"fmt"
-	"path/filepath"
 	"strings"
+)
+
+const (
+	universeDDLBegin = "-- BEGIN PGEXT UNIVERSE DDL"
+	universeDDLEnd   = "-- END PGEXT UNIVERSE DDL"
 )
 
 // Embed all SQL and CSV files from the db directory
@@ -24,67 +28,111 @@ func GetSchema() (string, error) {
 	return string(data), nil
 }
 
+// GetUniverseSchema returns the independently executable universe DDL block.
+// It is used to add the universe catalog to databases created by older pgext
+// versions without maintaining a second copy of the table definition.
+func GetUniverseSchema() (string, error) {
+	schema, err := GetSchema()
+	if err != nil {
+		return "", err
+	}
+
+	start := strings.Index(schema, universeDDLBegin)
+	if start < 0 {
+		return "", fmt.Errorf("embedded schema.sql is missing %q", universeDDLBegin)
+	}
+	start += len(universeDDLBegin)
+	end := strings.Index(schema[start:], universeDDLEnd)
+	if end < 0 {
+		return "", fmt.Errorf("embedded schema.sql is missing %q", universeDDLEnd)
+	}
+
+	ddl := strings.TrimSpace(schema[start : start+end])
+	if ddl == "" {
+		return "", fmt.Errorf("embedded universe DDL block is empty")
+	}
+	return ddl + "\n", nil
+}
+
 // CSVFile represents an embedded CSV file with its metadata
 type CSVFile struct {
 	Name    string // File name without extension
 	Content []byte // Raw CSV content
 }
 
-// GetCSVFiles returns all embedded CSV files
-func GetCSVFiles() ([]CSVFile, error) {
-	entries, err := embeddedFS.ReadDir(".")
+// csvTable describes one table that may be populated from an embedded CSV.
+// The registry order is the load order; extension must precede its universe
+// superset and dimension tables must precede tables that reference them.
+type csvTable struct {
+	Name    string
+	Asset   string
+	Aliases []string
+}
+
+var csvTables = []csvTable{
+	{Name: "pg", Asset: "pg.csv"},
+	{Name: "os", Asset: "os.csv"},
+	{Name: "category", Asset: "category.csv", Aliases: []string{"cat", "c"}},
+	{Name: "repository", Asset: "repository.csv", Aliases: []string{"repositories", "repo", "r"}},
+	{Name: "extension", Asset: "extension.csv", Aliases: []string{"extensions", "ext", "e"}},
+	{Name: "universe", Asset: "universe.csv"},
+}
+
+// CSVTableNames returns canonical embedded table names in load order.
+func CSVTableNames() []string {
+	names := make([]string, 0, len(csvTables))
+	for _, table := range csvTables {
+		names = append(names, table.Name)
+	}
+	return names
+}
+
+// IsCSVTable reports whether name identifies an embedded CSV table or alias.
+func IsCSVTable(name string) bool {
+	_, ok := lookupCSVTable(name)
+	return ok
+}
+
+// GetCSVFile returns the registered embedded CSV for a canonical name or alias.
+func GetCSVFile(name string) (CSVFile, error) {
+	table, ok := lookupCSVTable(name)
+	if !ok {
+		return CSVFile{}, fmt.Errorf("unknown embedded CSV table %q", name)
+	}
+
+	content, err := embeddedFS.ReadFile(table.Asset)
 	if err != nil {
-		return nil, fmt.Errorf("failed to read embedded directory: %w", err)
+		return CSVFile{}, fmt.Errorf("failed to read %s: %w", table.Asset, err)
 	}
+	return CSVFile{Name: table.Name, Content: content}, nil
+}
 
-	var csvFiles []CSVFile
-	for _, entry := range entries {
-		if entry.IsDir() {
-			continue
+// GetCSVFiles returns all registered embedded CSV files in dependency order.
+func GetCSVFiles() ([]CSVFile, error) {
+	files := make([]CSVFile, 0, len(csvTables))
+	for _, table := range csvTables {
+		file, err := GetCSVFile(table.Name)
+		if err != nil {
+			return nil, err
 		}
+		files = append(files, file)
+	}
+	return files, nil
+}
 
-		name := entry.Name()
-		if strings.HasSuffix(name, ".csv") {
-			content, err := embeddedFS.ReadFile(name)
-			if err != nil {
-				return nil, fmt.Errorf("failed to read %s: %w", name, err)
+func lookupCSVTable(name string) (csvTable, bool) {
+	name = strings.ToLower(strings.TrimSpace(name))
+	for _, table := range csvTables {
+		if name == table.Name {
+			return table, true
+		}
+		for _, alias := range table.Aliases {
+			if name == alias {
+				return table, true
 			}
-
-			// Remove .csv extension for table name
-			tableName := strings.TrimSuffix(name, filepath.Ext(name))
-			csvFiles = append(csvFiles, CSVFile{
-				Name:    tableName,
-				Content: content,
-			})
 		}
 	}
-
-	// Define the loading order for CSV files
-	// Some tables have foreign key constraints and must be loaded in order
-	loadOrder := []string{"pg", "os", "category", "repository", "extension"}
-
-	// Sort CSV files according to the defined order
-	orderedFiles := make([]CSVFile, 0, len(csvFiles))
-	fileMap := make(map[string]CSVFile)
-
-	for _, f := range csvFiles {
-		fileMap[f.Name] = f
-	}
-
-	// Add files in the specified order first
-	for _, name := range loadOrder {
-		if f, exists := fileMap[name]; exists {
-			orderedFiles = append(orderedFiles, f)
-			delete(fileMap, name)
-		}
-	}
-
-	// Add any remaining files that weren't in the order list
-	for _, f := range fileMap {
-		orderedFiles = append(orderedFiles, f)
-	}
-
-	return orderedFiles, nil
+	return csvTable{}, false
 }
 
 // ReadFile returns content of any embedded file by name

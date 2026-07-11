@@ -16,13 +16,19 @@ import (
 
 // DNFParser handles parsing of DNF/YUM repository metadata
 type DNFParser struct {
-	ctx context.Context
-	tx  pgx.Tx
+	ctx      context.Context
+	tx       pgx.Tx
+	table    string
+	keepTemp bool
 }
 
 // NewDNFParser creates a new DNF parser
 func NewDNFParser(ctx context.Context) *DNFParser {
-	return &DNFParser{ctx: ctx}
+	return newDNFParser(ctx, liveTable("dnf"), false)
+}
+
+func newDNFParser(ctx context.Context, table string, keepTemp bool) *DNFParser {
+	return &DNFParser{ctx: ctx, table: table, keepTemp: keepTemp}
 }
 
 // ParseRepository parses a single DNF/YUM repository
@@ -33,7 +39,11 @@ func (p *DNFParser) ParseRepository(repoID string, data []byte) (int, error) {
 		return 0, fmt.Errorf("create temp file: %w", err)
 	}
 	tmpPath := tmpFile.Name()
-	defer os.Remove(tmpPath)
+	if p.keepTemp {
+		logrus.Infof("keeping DNF SQLite metadata for %s at %s", repoID, tmpPath)
+	} else {
+		defer os.Remove(tmpPath)
+	}
 
 	// Write SQLite data to temp file
 	if _, err := tmpFile.Write(data); err != nil {
@@ -67,18 +77,22 @@ func (p *DNFParser) ParseRepository(repoID string, data []byte) (int, error) {
 
 	// Store transaction for use in insertPackages
 	p.tx = tx
+	defer func() {
+		rollbackPackageTransaction(tx)
+		p.tx = nil
+	}()
 
 	// Insert packages
-	count := p.insertPackages(repoID, packages)
+	count, err := p.insertPackages(repoID, packages)
+	if err != nil {
+		return count, err
+	}
 
 	// Commit transaction
 	if err := tx.Commit(p.ctx); err != nil {
 		// Transaction failed, rollback is automatic
-		p.tx = nil
 		return count, fmt.Errorf("commit transaction: %w", err)
 	}
-
-	p.tx = nil
 
 	return count, nil
 }
@@ -116,8 +130,7 @@ func (p *DNFParser) extractPackages(db *sql.DB) ([]DNFPackage, error) {
 			&pkg.SizeArchive, &pkg.LocationHref, &pkg.LocationBase, &pkg.ChecksumType,
 		)
 		if err != nil {
-			logrus.Debugf("failed to scan package: %v", err)
-			continue
+			return nil, fmt.Errorf("scan package: %w", err)
 		}
 
 		packages = append(packages, pkg)
@@ -127,9 +140,9 @@ func (p *DNFParser) extractPackages(db *sql.DB) ([]DNFPackage, error) {
 }
 
 // insertPackages inserts DNF packages into the database
-func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) int {
+func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) (int, error) {
 	if len(packages) == 0 {
-		return 0
+		return 0, nil
 	}
 
 	batch := &pgx.Batch{}
@@ -137,8 +150,8 @@ func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) int {
 
 	for _, pkg := range packages {
 		// Convert SQL null types to interface{} for pgx
-		batch.Queue(`
-			INSERT INTO pgext.dnf (
+		batch.Queue(fmt.Sprintf(`
+			INSERT INTO %s (
 				repo, pkg_key, pkg_id, name, arch, version, epoch, release,
 				summary, description, url, time_file, time_build,
 				rpm_license, rpm_vendor, rpm_group, rpm_buildhost, rpm_sourcerpm,
@@ -149,7 +162,7 @@ func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) int {
 				$1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
 				$11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
 				$21, $22, $23, $24, $25, $26, $27
-			)`,
+			)`, p.table),
 			repoID, pkg.PkgKey, pkg.PkgId, pkg.Name,
 			nullStr(pkg.Arch), nullStr(pkg.Version), nullStr(pkg.Epoch), nullStr(pkg.Release),
 			nullStr(pkg.Summary), nullStr(pkg.Description), nullStr(pkg.URL),
@@ -167,7 +180,7 @@ func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) int {
 			if p.tx != nil {
 				br := p.tx.SendBatch(p.ctx, batch)
 				if err := br.Close(); err != nil {
-					logrus.Warnf("failed to send batch: %v", err)
+					return count, fmt.Errorf("insert DNF batch: %w", err)
 				}
 			}
 			batch = &pgx.Batch{}
@@ -178,11 +191,11 @@ func (p *DNFParser) insertPackages(repoID string, packages []DNFPackage) int {
 	if batch.Len() > 0 && p.tx != nil {
 		br := p.tx.SendBatch(p.ctx, batch)
 		if err := br.Close(); err != nil {
-			logrus.Warnf("failed to send final batch: %v", err)
+			return count, fmt.Errorf("insert final DNF batch: %w", err)
 		}
 	}
 
-	return count
+	return count, nil
 }
 
 // DNFPackage represents a package from DNF/YUM repository

@@ -255,7 +255,7 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		return nil, fmt.Errorf("iterate pgext.universe: %w", err)
 	}
 	if len(snap.Exts) == 0 {
-		return nil, fmt.Errorf("pgext.universe is empty — is the pgext schema initialized? (try `pgext init && pgext reload`)")
+		return nil, fmt.Errorf("pgext.universe is empty — is the pgext catalog initialized? (try `pgext init`)")
 	}
 
 	// siblings: extensions delivered by the same package

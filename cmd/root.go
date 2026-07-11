@@ -28,7 +28,6 @@ var (
 	region  string
 	workers int
 	retry   int
-	keep    bool
 	scanDir string
 
 	// Query filter flags
@@ -44,12 +43,12 @@ var rootCmd = &cobra.Command{
 	Example: `
   pgext init                    # setup everything (schema + reload)
   pgext schema [-f]             # initialize pgext schema
-  pgext reload                  # reload data: fetch + parse + recap
-  pgext rescan                  # reload data: scan + parse + recap
+  pgext reload                  # reload data: fetch + complete parse
+  pgext rescan                  # reload data: scan + complete parse
   pgext fetch                   # get repo metadata from upstream
   pgext scan                    # scan local Pigsty repo metadata
-  pgext parse                   # populate apt, dnf, bin tables
-  pgext recap                   # generate pkg table from bin info
+  pgext parse                   # atomically populate apt, dnf, bin, pkg
+  pgext recap                   # rebuild pkg from current catalog data
   pgext status                  # show metadata status
   pgext gen cc                  # generate pigsty.cc extension content
   pgext gen io                  # generate pigsty.io extension content
