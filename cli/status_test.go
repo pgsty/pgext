@@ -11,21 +11,27 @@ func TestPackageCatalogStale(t *testing.T) {
 	later := base.Add(time.Minute)
 
 	tests := []struct {
-		name  string
-		times map[string]*time.Time
-		want  bool
+		name        string
+		times       map[string]*time.Time
+		wantCommand string
 	}{
-		{name: "never parsed", times: map[string]*time.Time{}, want: false},
-		{name: "never recapped", times: map[string]*time.Time{"parse": &base}, want: true},
-		{name: "parse newer", times: map[string]*time.Time{"parse": &base, "recap": &earlier}, want: true},
-		{name: "same transaction", times: map[string]*time.Time{"parse": &base, "recap": &base}, want: false},
-		{name: "recap newer", times: map[string]*time.Time{"parse": &base, "recap": &later}, want: false},
+		{name: "never fetched", times: map[string]*time.Time{}, wantCommand: ""},
+		{name: "fetch invalidated", times: map[string]*time.Time{"parse": &base, "recap": &base}, wantCommand: "pgext fetch"},
+		{name: "fetched but never parsed", times: map[string]*time.Time{"fetch": &base}, wantCommand: "pgext parse"},
+		{name: "fetch newer", times: map[string]*time.Time{"fetch": &base, "parse": &earlier, "recap": &later}, wantCommand: "pgext parse"},
+		{name: "never recapped", times: map[string]*time.Time{"fetch": &earlier, "parse": &base}, wantCommand: "pgext recap"},
+		{name: "parse newer", times: map[string]*time.Time{"fetch": &earlier, "parse": &base, "recap": &earlier}, wantCommand: "pgext recap"},
+		{name: "same transaction", times: map[string]*time.Time{"fetch": &base, "parse": &base, "recap": &base}, wantCommand: ""},
+		{name: "recap newer", times: map[string]*time.Time{"fetch": &earlier, "parse": &base, "recap": &later}, wantCommand: ""},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := packageCatalogStale(tt.times); got != tt.want {
-				t.Fatalf("packageCatalogStale() = %v, want %v", got, tt.want)
+			if got := packageCatalogRefreshCommand(tt.times); got != tt.wantCommand {
+				t.Fatalf("packageCatalogRefreshCommand() = %q, want %q", got, tt.wantCommand)
+			}
+			if got := packageCatalogStale(tt.times); got != (tt.wantCommand != "") {
+				t.Fatalf("packageCatalogStale() = %v, want %v", got, tt.wantCommand != "")
 			}
 		})
 	}

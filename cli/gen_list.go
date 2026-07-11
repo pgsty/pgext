@@ -22,7 +22,12 @@ type ListGenerator struct {
 	Cache     *ExtensionCache
 	OutputDir string
 	DB        interface {
-		Query(ctx context.Context, sql string, args ...interface{}) (interface{ Next() bool; Scan(dest ...interface{}) error; Close(); Err() error }, error)
+		Query(ctx context.Context, sql string, args ...interface{}) (interface {
+			Next() bool
+			Scan(dest ...interface{}) error
+			Close()
+			Err() error
+		}, error)
 	}
 }
 
@@ -844,6 +849,11 @@ func sortLicenseItems(licenses []licenseItem) {
 		if licenses[i].order != licenses[j].order {
 			return licenses[i].order < licenses[j].order
 		}
+		leftID := minExtensionID(licenses[i].exts)
+		rightID := minExtensionID(licenses[j].exts)
+		if leftID != rightID {
+			return leftID < rightID
+		}
 
 		left := strings.ToLower(licenses[i].name)
 		right := strings.ToLower(licenses[j].name)
@@ -852,6 +862,21 @@ func sortLicenseItems(licenses []licenseItem) {
 		}
 		return licenses[i].name < licenses[j].name
 	})
+}
+
+func minExtensionID(extensions []*Extension) int {
+	var minID int
+	found := false
+	for _, extension := range extensions {
+		if extension == nil {
+			continue
+		}
+		if !found || extension.ID < minID {
+			minID = extension.ID
+			found = true
+		}
+	}
+	return minID
 }
 
 func (g *ListGenerator) generateLicenseSection(license string, extensions []*Extension, isZh bool) string {

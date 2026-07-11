@@ -13,20 +13,13 @@ import (
 // TestInitSchemaAtomicIntegration requires an explicitly disposable database.
 // Example:
 //
-//	PGEXT_TEST_PGURL='postgresql://postgres@/pgext_test?host=/tmp' go test ./cli -run TestInitSchemaAtomicIntegration -v
+//	PGEXT_TEST_ALLOW_DESTRUCTIVE=yes PGEXT_TEST_PGURL='postgresql://postgres@/pgext_test?host=/tmp' go test ./cli -run TestInitSchemaAtomicIntegration -v
 func TestInitSchemaAtomicIntegration(t *testing.T) {
 	pgurl := os.Getenv("PGEXT_TEST_PGURL")
 	if pgurl == "" {
 		t.Skip("set PGEXT_TEST_PGURL to an explicitly disposable database")
 	}
-	if err := InitDB(pgurl); err != nil {
-		t.Fatalf("InitDB: %v", err)
-	}
-	t.Cleanup(func() {
-		_, _ = ExecContext(context.Background(), "DROP SCHEMA IF EXISTS pgext CASCADE")
-		CloseDB()
-		DB = nil
-	})
+	openDisposableIntegrationDB(t, pgurl)
 
 	if err := InitSchema(true); err != nil {
 		t.Fatalf("fresh InitSchema: %v", err)
@@ -80,14 +73,7 @@ func TestEnsureUniverseMigrationIntegration(t *testing.T) {
 	if pgurl == "" {
 		t.Skip("set PGEXT_TEST_PGURL to an explicitly disposable database")
 	}
-	if err := InitDB(pgurl); err != nil {
-		t.Fatalf("InitDB: %v", err)
-	}
-	t.Cleanup(func() {
-		_, _ = ExecContext(context.Background(), "DROP SCHEMA IF EXISTS pgext CASCADE")
-		CloseDB()
-		DB = nil
-	})
+	openDisposableIntegrationDB(t, pgurl)
 
 	if err := InitSchema(true); err != nil {
 		t.Fatalf("fresh InitSchema: %v", err)

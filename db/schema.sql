@@ -397,7 +397,7 @@ COMMENT ON COLUMN pgext.universe.fork_cnt IS '上游仓库 fork 数；来自 Git
 COMMENT ON COLUMN pgext.universe.last_commit_date IS '最新已知上游代码提交日期，或 contrib 策略日期；由 timestamptz 按 UTC 转换为 date。';
 COMMENT ON COLUMN pgext.universe.last_release_date IS '最新已知上游 release/tag/PGXN 发布日期，或 contrib 发布日期；由 timestamptz 按 UTC 转换为 date。';
 COMMENT ON COLUMN pgext.universe.last_update_date IS '最新已知活动日期；可来自 commit、release、tag、PGXN、官方文档或低置信度 metadata freshness。';
-COMMENT ON COLUMN pgext.universe.extra IS '稳定扩展元数据 JSONB；type、kernel、vendor 已上提为 ext_type、ext_kernel、ext_vendor，star 已移除并上提为 star_cnt，pgrx 取值统一规范为 0.xx.0。';
+COMMENT ON COLUMN pgext.universe.extra IS '稳定扩展元数据 JSONB；type、kernel、vendor 已上提为 ext_type、ext_kernel、ext_vendor，star 已移除并上提为 star_cnt，pgrx 使用规范语义化版本号。';
 COMMENT ON COLUMN pgext.universe.en_desc IS '英文功能描述，面向网站、报告和搜索展示；优先来自 control comment、仓库描述或官方文档摘要。';
 COMMENT ON COLUMN pgext.universe.zh_desc IS '中文功能描述，面向中文网站、报告和人工维护；应是对 en_desc 或官方描述的准确中文表达。';
 COMMENT ON COLUMN pgext.universe.comment IS '最终目录层面的人工备注、限制说明或维护提示；不用于保存采集过程日志。';

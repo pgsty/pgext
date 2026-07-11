@@ -12,7 +12,8 @@ import (
 
 // TestPackageStagingIntegration validates CREATE LIKE column parity, INSERT
 // SELECT compatibility, and the real reload.sql rewrite without publishing a
-// staged catalog. PGEXT_TEST_PGURL must name an explicitly disposable database.
+// staged catalog. PGEXT_TEST_PGURL must name an explicitly disposable database,
+// and PGEXT_TEST_ALLOW_DESTRUCTIVE must be set to yes.
 func TestPackageStagingIntegration(t *testing.T) {
 	setupDisposableIntegrationDB(t)
 
@@ -578,14 +579,7 @@ func setupDisposableIntegrationDB(t *testing.T) {
 	if pgurl == "" {
 		t.Skip("set PGEXT_TEST_PGURL to an explicitly disposable database")
 	}
-	if err := InitDB(pgurl); err != nil {
-		t.Fatalf("initialize database: %v", err)
-	}
-	t.Cleanup(func() {
-		_, _ = ExecContext(context.Background(), "DROP SCHEMA IF EXISTS pgext CASCADE")
-		CloseDB()
-		DB = nil
-	})
+	openDisposableIntegrationDB(t, pgurl)
 	if err := InitSchema(true); err != nil {
 		t.Fatalf("initialize fresh schema: %v", err)
 	}

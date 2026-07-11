@@ -22,7 +22,7 @@ var (
 	genListOutputDir   = defaultCatalogOutputDir
 	genOSOutputDir     = defaultCatalogOutputDir
 	genMatrixOutputDir = defaultCatalogOutputDir
-	genMatrixStaticDir = "static"
+	genMatrixStaticDir = ""
 	genPageOutputDir   = defaultCatalogOutputDir
 )
 
@@ -59,7 +59,7 @@ Available types: ext, pkg, cate, lang, license, catalog`,
   pgext gen list ext pkg      # Generate extension and package list pages
   pgext gen list cate lang    # Generate category and language list pages`,
 	ValidArgs: []string{"ext", "pkg", "cate", "lang", "license", "catalog"},
-	Args:      cobra.OnlyValidArgs,
+	Args:      onlyValidArgsCaseInsensitive,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := cmd.Context()
 
@@ -408,7 +408,9 @@ var genMatrixCmd = &cobra.Command{
 	Short: "Generate global OS/PG availability matrix",
 	Long: `Generate a package-oriented global availability matrix across all active
 operating systems and PostgreSQL major versions. Hugo pages are written below
---output, while CSV/JSON/HTML assets are written below --static-output.`,
+--output, while CSV/JSON/HTML assets are written below --static-output. When
+--static-output is omitted, it defaults to a static directory alongside the
+content output directory.`,
 	Example: `  pgext gen matrix
   pgext gen matrix -d data
   pgext gen matrix -o /tmp/content --static-output /tmp/static`,
@@ -427,14 +429,30 @@ operating systems and PostgreSQL major versions. Hugo pages are written below
 			return fmt.Errorf("failed to load extension cache: %w", err)
 		}
 
-		generator := cli.NewGlobalMatrixGenerator(cache, genMatrixOutputDir, genMatrixStaticDir)
+		staticOutputDir := resolveMatrixStaticOutputDir(genMatrixOutputDir, genMatrixStaticDir)
+		generator := cli.NewGlobalMatrixGenerator(cache, genMatrixOutputDir, staticOutputDir)
 		if err := generator.Generate(ctx); err != nil {
 			return fmt.Errorf("failed to generate global matrix: %w", err)
 		}
 
-		logrus.Infof("Generated global matrix under %s and %s", filepath.Join(genMatrixOutputDir, "os"), filepath.Join(genMatrixStaticDir, "matrix"))
+		logrus.Infof("Generated global matrix under %s and %s", filepath.Join(genMatrixOutputDir, "os"), filepath.Join(staticOutputDir, "matrix"))
 		return nil
 	},
+}
+
+func resolveMatrixStaticOutputDir(contentOutputDir, explicitStaticOutputDir string) string {
+	if explicitStaticOutputDir != "" {
+		return explicitStaticOutputDir
+	}
+	return filepath.Join(filepath.Dir(contentOutputDir), "static")
+}
+
+func onlyValidArgsCaseInsensitive(cmd *cobra.Command, args []string) error {
+	normalized := make([]string, len(args))
+	for i, arg := range args {
+		normalized[i] = strings.ToLower(arg)
+	}
+	return cobra.OnlyValidArgs(cmd, normalized)
 }
 
 // genPageCmd generates individual extension detail pages
@@ -682,8 +700,8 @@ func init() {
 		"Output directory for generated files")
 	genMatrixCmd.Flags().StringVarP(&genMatrixOutputDir, "output", "o", defaultCatalogOutputDir,
 		"Hugo content output directory")
-	genMatrixCmd.Flags().StringVar(&genMatrixStaticDir, "static-output", "static",
-		"Static matrix asset output directory")
+	genMatrixCmd.Flags().StringVar(&genMatrixStaticDir, "static-output", "",
+		"Static matrix asset output directory (default: alongside --output)")
 
 	// Add flags specific to gen conf command
 	genConfCmd.Flags().StringP("output", "o", "", "Output directory for configuration files (default: ~/pigsty/roles/node_id/vars)")

@@ -48,3 +48,32 @@ func TestAPTParserAcceptsEmptyAndValidMetadata(t *testing.T) {
 		t.Fatalf("valid metadata parsed as %#v", packages)
 	}
 }
+
+func TestAPTParserAcceptsCaseInsensitiveFieldsAndTabContinuation(t *testing.T) {
+	parser := newAPTParser(context.Background(), liveTable("apt"))
+	packages, err := parser.parsePackages(strings.Join([]string{
+		"package: first",
+		"VERSION: 1.0",
+		"architecture: amd64",
+		"filename: pool/first.deb",
+		"description: first line",
+		"\tsecond line",
+		" \t",
+		"Package: second",
+		"Version: 2.0",
+		"Architecture: arm64",
+		"Filename: pool/second.deb",
+	}, "\n"))
+	if err != nil {
+		t.Fatalf("parse Debian control variants: %v", err)
+	}
+	if len(packages) != 2 {
+		t.Fatalf("parsed %d packages, want 2", len(packages))
+	}
+	if got := packages[0]["Description"]; got != "first line\nsecond line" {
+		t.Fatalf("multiline Description = %#v, want two joined lines", got)
+	}
+	if got := packages[1]["Package"]; got != "second" {
+		t.Fatalf("second Package = %#v, want second", got)
+	}
+}

@@ -68,4 +68,7 @@ func TestLoadRepositoryInvalidatesDependentCatalogIntegration(t *testing.T) {
 	if !packageCatalogStale(map[string]*time.Time{"parse": &parseTime.Time}) {
 		t.Fatal("repository load did not mark the package catalog stale")
 	}
+	if got := packageCatalogRefreshCommand(map[string]*time.Time{"parse": &parseTime.Time}); got != "pgext fetch" {
+		t.Fatalf("repository load refresh command = %q, want pgext fetch", got)
+	}
 }

@@ -58,13 +58,13 @@ func TestGenerateLicenseListIsDeterministicForEqualRankLicenses(t *testing.T) {
 	}
 
 	previous := -1
-	for _, section := range []string{"Alpha", "alpha", "beta", "Zulu"} {
+	for _, section := range []string{"alpha", "Alpha", "beta", "Zulu"} {
 		index := bytes.Index(forward, []byte("\n## "+section+"\n"))
 		if index < 0 {
 			t.Fatalf("generated output is missing %s section", section)
 		}
 		if index <= previous {
-			t.Fatalf("%s section appears out of deterministic name order", section)
+			t.Fatalf("%s section appears out of deterministic extension ID order", section)
 		}
 		previous = index
 	}

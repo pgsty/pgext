@@ -71,8 +71,36 @@ func TestCatalogOutputFlagsAreScopedToCatalogGenerators(t *testing.T) {
 	if staticOutput == nil {
 		t.Fatal("gen matrix does not expose --static-output")
 	}
-	if staticOutput.DefValue != "static" {
-		t.Fatalf("gen matrix --static-output default = %q, want static", staticOutput.DefValue)
+	if staticOutput.DefValue != "" {
+		t.Fatalf("gen matrix --static-output default = %q, want empty derived default", staticOutput.DefValue)
+	}
+}
+
+func TestResolveMatrixStaticOutputDir(t *testing.T) {
+	for _, tt := range []struct {
+		name     string
+		content  string
+		explicit string
+		want     string
+	}{
+		{name: "repository defaults", content: "content", want: "static"},
+		{name: "custom content root", content: "/tmp/site/content", want: "/tmp/site/static"},
+		{name: "explicit override", content: "/tmp/site/content", explicit: "/tmp/assets", want: "/tmp/assets"},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := resolveMatrixStaticOutputDir(tt.content, tt.explicit); got != tt.want {
+				t.Fatalf("resolveMatrixStaticOutputDir(%q, %q) = %q, want %q", tt.content, tt.explicit, got, tt.want)
+			}
+		})
+	}
+}
+
+func TestGenListArgsAreCaseInsensitive(t *testing.T) {
+	if err := genListCmd.Args(genListCmd, []string{"EXT", "License"}); err != nil {
+		t.Fatalf("uppercase list types rejected: %v", err)
+	}
+	if err := genListCmd.Args(genListCmd, []string{"unknown"}); err == nil {
+		t.Fatal("unknown list type accepted")
 	}
 }
 

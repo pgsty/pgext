@@ -174,12 +174,23 @@ func getUpdateTimes(ctx context.Context) (map[string]*time.Time, error) {
 }
 
 func packageCatalogStale(times map[string]*time.Time) bool {
+	return packageCatalogRefreshCommand(times) != ""
+}
+
+func packageCatalogRefreshCommand(times map[string]*time.Time) string {
+	fetchTime := times["fetch"]
 	parseTime := times["parse"]
-	if parseTime == nil {
-		return false
+	if fetchTime == nil && parseTime != nil {
+		return "pgext fetch"
+	}
+	if fetchTime != nil && (parseTime == nil || fetchTime.After(*parseTime)) {
+		return "pgext parse"
 	}
 	recapTime := times["recap"]
-	return recapTime == nil || parseTime.After(*recapTime)
+	if parseTime != nil && (recapTime == nil || parseTime.After(*recapTime)) {
+		return "pgext recap"
+	}
+	return ""
 }
 
 // displayStatus prints the status information in a beautiful format
@@ -241,8 +252,8 @@ func displayStatus(status *StatusInfo) {
 	printUpdateTime("Fetch", status.UpdateTimes["fetch"])
 	printUpdateTime("Parse", status.UpdateTimes["parse"])
 	printUpdateTime("Recap", status.UpdateTimes["recap"])
-	if packageCatalogStale(status.UpdateTimes) {
-		fmt.Println("\n⚠️  Package catalog is stale; run 'pgext recap' before serving or generating content.")
+	if refreshCommand := packageCatalogRefreshCommand(status.UpdateTimes); refreshCommand != "" {
+		fmt.Printf("\n⚠️  Package catalog is stale; run '%s' before serving or generating content.\n", refreshCommand)
 	}
 
 	fmt.Println()

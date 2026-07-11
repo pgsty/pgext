@@ -7,6 +7,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"regexp"
 	"strconv"
 	"strings"
 
@@ -19,6 +20,25 @@ type APTParser struct {
 	tx    pgx.Tx
 	table string
 }
+
+var (
+	aptParagraphSeparator = regexp.MustCompile(`\n[ \t]*\n`)
+	aptFixedFields        = []string{
+		"Package", "Version", "Architecture", "Size", "Installed-Size",
+		"Priority", "Section", "Filename", "SHA256", "SHA1", "MD5sum",
+		"Maintainer", "Homepage", "Depends", "Source", "Provides",
+		"Recommends", "Suggests", "Conflicts", "Breaks", "Replaces",
+		"Enhances", "Pre-Depends", "Build-Ids", "Package-Type",
+		"Auto-Built-Package", "Multi-Arch", "Description",
+	}
+	aptCanonicalFields = func() map[string]string {
+		fields := make(map[string]string, len(aptFixedFields))
+		for _, field := range aptFixedFields {
+			fields[strings.ToLower(field)] = field
+		}
+		return fields
+	}()
+)
 
 // NewAPTParser creates a new APT parser
 func NewAPTParser(ctx context.Context) *APTParser {
@@ -77,7 +97,7 @@ func (p *APTParser) parsePackages(content string) ([]map[string]interface{}, err
 	}
 
 	// Split into individual package records
-	records := strings.Split(content, "\n\n")
+	records := aptParagraphSeparator.Split(content, -1)
 
 	for i, record := range records {
 		record = strings.TrimSpace(record)
@@ -113,8 +133,8 @@ func (p *APTParser) parsePackageRecord(record string) map[string]interface{} {
 			continue
 		}
 
-		// Check if this is a continuation line (starts with space)
-		if strings.HasPrefix(line, " ") {
+		// Debian control continuation lines may start with a space or tab.
+		if line[0] == ' ' || line[0] == '\t' {
 			// Continuation of previous field
 			if currentKey != "" {
 				currentValue = append(currentValue, strings.TrimSpace(line))
@@ -128,7 +148,7 @@ func (p *APTParser) parsePackageRecord(record string) map[string]interface{} {
 			// Parse new field
 			colonIdx := strings.Index(line, ":")
 			if colonIdx > 0 {
-				currentKey = line[:colonIdx]
+				currentKey = canonicalAPTFieldName(line[:colonIdx])
 				value := strings.TrimSpace(line[colonIdx+1:])
 				currentValue = []string{value}
 			}
@@ -144,6 +164,13 @@ func (p *APTParser) parsePackageRecord(record string) map[string]interface{} {
 	p.processSpecialFields(pkg)
 
 	return pkg
+}
+
+func canonicalAPTFieldName(field string) string {
+	if canonical, ok := aptCanonicalFields[strings.ToLower(field)]; ok {
+		return canonical
+	}
+	return field
 }
 
 // saveField saves a field value, handling multi-line values
@@ -187,23 +214,13 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 	batch := &pgx.Batch{}
 	count := 0
 
-	// Fixed fields that map to table columns
-	fixedFields := []string{
-		"Package", "Version", "Architecture", "Size", "Installed-Size",
-		"Priority", "Section", "Filename", "SHA256", "SHA1", "MD5sum",
-		"Maintainer", "Homepage", "Depends", "Source", "Provides",
-		"Recommends", "Suggests", "Conflicts", "Breaks", "Replaces",
-		"Enhances", "Pre-Depends", "Build-Ids", "Package-Type",
-		"Auto-Built-Package", "Multi-Arch", "Description",
-	}
-
 	for _, pkg := range packages {
 		// Build values array for fixed fields
 		values := make([]interface{}, 0, 30) // Exactly 30 parameters expected
 		values = append(values, repoID)      // First column is repo
 
 		// Add fixed field values (28 fields)
-		for _, field := range fixedFields {
+		for _, field := range aptFixedFields {
 			if val, ok := pkg[field]; ok {
 				values = append(values, val)
 			} else {
@@ -215,7 +232,7 @@ func (p *APTParser) insertPackages(repoID string, packages []map[string]interfac
 		extraFields := make(map[string]interface{})
 		for key, value := range pkg {
 			isFixed := false
-			for _, field := range fixedFields {
+			for _, field := range aptFixedFields {
 				if key == field {
 					isFixed = true
 					break

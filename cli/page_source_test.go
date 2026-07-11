@@ -123,18 +123,21 @@ func TestPageGeneratorsRenderSiteSpecificBinaryURL(t *testing.T) {
 
 func TestExtensionGeneratorUsesPackagesHeading(t *testing.T) {
 	g := NewExtensionGenerator(&ExtensionCache{PGVersions: []int{18}}, "")
-	ext := &Extension{
-		Pkg:     "demo",
-		Repo:    sql.NullString{Valid: true, String: "PIGSTY"},
-		Version: sql.NullString{Valid: true, String: "1.0.0"},
-	}
+	for _, contrib := range []bool{false, true} {
+		ext := &Extension{
+			Pkg:     "demo",
+			Repo:    sql.NullString{Valid: true, String: "PIGSTY"},
+			Version: sql.NullString{Valid: true, String: "1.0.0"},
+			Contrib: contrib,
+		}
 
-	got := g.generatePackagesTable(ext, nil)
-	if !strings.Contains(got, "\n## Packages\n\n") {
-		t.Fatalf("packages heading = %q", got)
-	}
-	if strings.Contains(got, "Version / Source") {
-		t.Fatalf("unexpected modified packages heading: %q", got)
+		got := g.generatePackagesTable(ext, nil)
+		if !strings.Contains(got, "\n## Packages\n\n") {
+			t.Fatalf("contrib=%v packages heading = %q", contrib, got)
+		}
+		if strings.Contains(got, "Version / Source") {
+			t.Fatalf("contrib=%v unexpected modified packages heading: %q", contrib, got)
+		}
 	}
 }
 
@@ -145,19 +148,23 @@ func TestIOAndCCPageGeneratorHeadings(t *testing.T) {
 		Version:  sql.NullString{Valid: true, String: "1.0.0"},
 	}
 
-	ioContent := NewIOPageGenerator(nil, "", "").generatePackages(ext)
-	if !strings.Contains(ioContent, "\n## Version\n\n") {
-		t.Fatalf("io packages heading = %q", ioContent)
-	}
-	if strings.Contains(ioContent, "Version / Source") {
-		t.Fatalf("unexpected modified io packages heading: %q", ioContent)
-	}
+	cache := &ExtensionCache{PGVersions: []int{18}}
+	for _, contrib := range []bool{false, true} {
+		ext.Contrib = contrib
+		ioContent := NewIOPageGenerator(cache, "", "").generatePackages(ext)
+		if !strings.Contains(ioContent, "\n## Version\n\n") {
+			t.Fatalf("contrib=%v io packages heading = %q", contrib, ioContent)
+		}
+		if strings.Contains(ioContent, "Version / Source") {
+			t.Fatalf("contrib=%v unexpected modified io packages heading: %q", contrib, ioContent)
+		}
 
-	ccContent := NewCCPageGenerator(nil, "", "").generatePackages(ext)
-	if !strings.Contains(ccContent, "\n## 版本\n\n") {
-		t.Fatalf("cc packages heading = %q", ccContent)
-	}
-	if strings.Contains(ccContent, "版本 / 来源") {
-		t.Fatalf("unexpected modified cc packages heading: %q", ccContent)
+		ccContent := NewCCPageGenerator(cache, "", "").generatePackages(ext)
+		if !strings.Contains(ccContent, "\n## 版本\n\n") {
+			t.Fatalf("contrib=%v cc packages heading = %q", contrib, ccContent)
+		}
+		if strings.Contains(ccContent, "版本 / 来源") {
+			t.Fatalf("contrib=%v unexpected modified cc packages heading: %q", contrib, ccContent)
+		}
 	}
 }

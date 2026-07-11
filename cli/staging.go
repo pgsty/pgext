@@ -208,10 +208,10 @@ func stagedReloadSQL(sqlContent, pkgTable, binTable string) (string, error) {
 	return sqlContent, nil
 }
 
-// publish atomically replaces the requested live table groups. PostgreSQL's
-// transactional TRUNCATE and AccessExclusive locks ensure concurrent readers
-// see either the complete old catalog or the complete new catalog, never an
-// empty or half-populated intermediate state.
+// publish transactionally replaces the requested live table groups. The
+// AccessExclusive locks keep ordinary short READ COMMITTED readers from seeing
+// a half-populated catalog. PostgreSQL TRUNCATE is not MVCC-safe, however, so a
+// transaction holding an older snapshot can observe an empty truncated table.
 func (s *packageStaging) publish(ctx context.Context, core, pkg bool) error {
 	tx, err := beginPackageCatalogTransaction(ctx)
 	if err != nil {
