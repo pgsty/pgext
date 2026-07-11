@@ -121,7 +121,7 @@ func TestPageGeneratorsRenderSiteSpecificBinaryURL(t *testing.T) {
 	}
 }
 
-func TestExtensionGeneratorUsesVersionSourceHeading(t *testing.T) {
+func TestExtensionGeneratorUsesPackagesHeading(t *testing.T) {
 	g := NewExtensionGenerator(&ExtensionCache{PGVersions: []int{18}}, "")
 	ext := &Extension{
 		Pkg:     "demo",
@@ -130,15 +130,15 @@ func TestExtensionGeneratorUsesVersionSourceHeading(t *testing.T) {
 	}
 
 	got := g.generatePackagesTable(ext, nil)
-	if !strings.Contains(got, "## Version / Source") {
+	if !strings.Contains(got, "\n## Packages\n\n") {
 		t.Fatalf("packages heading = %q", got)
 	}
-	if strings.Contains(got, "## Packages") {
-		t.Fatalf("unexpected legacy packages heading: %q", got)
+	if strings.Contains(got, "Version / Source") {
+		t.Fatalf("unexpected modified packages heading: %q", got)
 	}
 }
 
-func TestIOAndCCPageGeneratorsUseVersionSourceHeading(t *testing.T) {
+func TestIOAndCCPageGeneratorHeadings(t *testing.T) {
 	ext := &Extension{
 		Category: sql.NullString{Valid: true, String: "FEAT"},
 		Repo:     sql.NullString{Valid: true, String: "PIGSTY"},
@@ -146,12 +146,18 @@ func TestIOAndCCPageGeneratorsUseVersionSourceHeading(t *testing.T) {
 	}
 
 	ioContent := NewIOPageGenerator(nil, "", "").generatePackages(ext)
-	if !strings.Contains(ioContent, "## Version / Source") {
+	if !strings.Contains(ioContent, "\n## Version\n\n") {
 		t.Fatalf("io packages heading = %q", ioContent)
+	}
+	if strings.Contains(ioContent, "Version / Source") {
+		t.Fatalf("unexpected modified io packages heading: %q", ioContent)
 	}
 
 	ccContent := NewCCPageGenerator(nil, "", "").generatePackages(ext)
-	if !strings.Contains(ccContent, "## 版本 / 来源") {
+	if !strings.Contains(ccContent, "\n## 版本\n\n") {
 		t.Fatalf("cc packages heading = %q", ccContent)
+	}
+	if strings.Contains(ccContent, "版本 / 来源") {
+		t.Fatalf("unexpected modified cc packages heading: %q", ccContent)
 	}
 }
