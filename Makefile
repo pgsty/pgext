@@ -66,6 +66,7 @@ load:
 	cat db/category.csv   | psql $(PGURL) -c "COPY pgext.category   FROM STDIN CSV HEADER;"
 	cat db/repository.csv | psql $(PGURL) -c "COPY pgext.repository FROM STDIN CSV HEADER;"
 	cat db/extension.csv  | psql $(PGURL) -c "COPY pgext.extension  FROM STDIN CSV HEADER;"
+	cat db/universe.csv   | psql $(PGURL) -c "COPY pgext.universe   FROM STDIN CSV HEADER;"
 
 # dump extension data to data dir
 dd:

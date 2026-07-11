@@ -246,7 +246,7 @@ CREATE TABLE IF NOT EXISTS pgext.extension
 
 CREATE INDEX IF NOT EXISTS ext_name_pkg_idx ON pgext.extension (name, pkg);
 
-COMMENT ON TABLE pgext.extension IS 'PostgreSQL Extension Central Catalog Table';
+COMMENT ON TABLE pgext.extension IS 'Packaged PostgreSQL extension standard catalog; pgext.universe is its ecosystem superset';
 COMMENT ON COLUMN pgext.extension.id IS 'Unique integer identifier for each extension';
 COMMENT ON COLUMN pgext.extension.name IS 'Extension name as it appears in PostgreSQL system catalog (pg_extension)';
 COMMENT ON COLUMN pgext.extension.pkg IS 'Normalized package name used for package management (may differ from extension name)';
@@ -288,6 +288,121 @@ COMMENT ON COLUMN pgext.extension.en_desc IS 'English description of extension f
 COMMENT ON COLUMN pgext.extension.zh_desc IS 'Chinese description of extension functionality and purpose';
 COMMENT ON COLUMN pgext.extension.comment IS 'Additional notes, special instructions, or warnings';
 COMMENT ON COLUMN pgext.extension.mtime IS 'Last modification timestamp of this record';
+
+-- BEGIN PGEXT UNIVERSE DDL
+-----------------------------------
+-- Extension Universe
+-----------------------------------
+-- The complete PostgreSQL extension ecosystem. pgext.extension is the
+-- packaged standard catalog and every extension row is also present here.
+CREATE TABLE IF NOT EXISTS pgext.universe
+(
+    id                INTEGER PRIMARY KEY,
+    name              TEXT NOT NULL UNIQUE,
+    pkg               TEXT NOT NULL,
+    lead_ext          TEXT,
+    category          TEXT,
+    state             TEXT,
+    url               TEXT,
+    license           TEXT,
+    tags              TEXT[],
+    version           TEXT,
+    repo              TEXT,
+    lang              TEXT,
+    contrib           BOOLEAN,
+    lead              BOOLEAN,
+    has_bin           BOOLEAN,
+    has_lib           BOOLEAN,
+    need_ddl          BOOLEAN,
+    need_load         BOOLEAN,
+    trusted           BOOLEAN,
+    relocatable       BOOLEAN,
+    schemas           TEXT[],
+    pg_ver            TEXT[],
+    requires          TEXT[],
+    require_by        TEXT[],
+    see_also          TEXT[],
+    rpm_ver           TEXT,
+    rpm_repo          TEXT,
+    rpm_pkg           TEXT,
+    rpm_pg            TEXT[],
+    rpm_deps          TEXT[],
+    deb_ver           TEXT,
+    deb_repo          TEXT,
+    deb_pkg           TEXT,
+    deb_deps          TEXT[],
+    deb_pg            TEXT[],
+    source            TEXT,
+    ext_type          TEXT,
+    ext_kernel        TEXT,
+    ext_vendor        TEXT,
+    star_cnt          INTEGER,
+    watch_cnt         INTEGER,
+    fork_cnt          INTEGER,
+    last_commit_date  DATE,
+    last_release_date DATE,
+    last_update_date  DATE,
+    extra             JSONB,
+    en_desc           TEXT,
+    zh_desc           TEXT,
+    comment           TEXT,
+    mtime             DATE DEFAULT CURRENT_DATE
+);
+
+CREATE INDEX IF NOT EXISTS universe_name_pkg_idx ON pgext.universe (name, pkg);
+
+COMMENT ON TABLE pgext.universe IS 'PostgreSQL 扩展生态全集。该表是 pgext.extension 打包标准目录的超集，还包含源码可用但尚未打包的扩展、云厂商或托管服务专有扩展，以及经过发现和校准后确认应纳入目录的扩展。它不是任务队列或中间暂存表；面向网站报告、扩展分析、后续打包评估和人工维护。';
+COMMENT ON COLUMN pgext.universe.id IS '扩展记录的全局数值 ID；作为 universe 主键，用于稳定排序、引用和与历史扩展目录兼容。';
+COMMENT ON COLUMN pgext.universe.name IS '实际 PostgreSQL extension 名称，通常来自 *.control 文件名、CREATE EXTENSION 名称或官方文档；在 universe 中唯一。';
+COMMENT ON COLUMN pgext.universe.pkg IS '归一化后的项目包名或源码包名；一个包可以提供多个 extension，因此它可能不同于 name。';
+COMMENT ON COLUMN pgext.universe.lead_ext IS '同一软件包包含多个 extension 时的主扩展名称；单扩展包通常等于 name 或为空。';
+COMMENT ON COLUMN pgext.universe.category IS '功能分类代码，限定在 TIME、GIS、RAG、FTS、OLAP、FEAT、LANG、TYPE、UTIL、FUNC、ADMIN、STAT、SEC、FDW、SIM、ETL 等目录分类中。';
+COMMENT ON COLUMN pgext.universe.state IS '扩展生命周期或收录状态；已打包基线通常为 available，新增非打包扩展通常为 n/a，历史值可能包含 deprecated、removed、not-ready。';
+COMMENT ON COLUMN pgext.universe.url IS '扩展主页、源码仓库、发行页面或云厂商文档的规范 URL；用于人工核查、仓库元数据匹配和报告跳转。';
+COMMENT ON COLUMN pgext.universe.license IS '归一化后的许可证名称，例如 PostgreSQL、MIT、Apache-2.0、GPL-3.0、Commercial、Unknown。';
+COMMENT ON COLUMN pgext.universe.tags IS '扩展标签数组，用于补充分类检索，例如 pgrx、vector、fdw、auth、timeseries、cloud 等。';
+COMMENT ON COLUMN pgext.universe.version IS '已知的最新扩展版本或项目版本；优先来自 control 文件、发布信息、包元数据或官方文档。';
+COMMENT ON COLUMN pgext.universe.repo IS '扩展在当前目录中的来源或打包归属标记；基线扩展常见值包括 PGDG、PIGSTY、CONTRIB、MIXED，新增未打包扩展通常为 n/a。';
+COMMENT ON COLUMN pgext.universe.lang IS '主要实现语言或扩展形态，例如 C、C++、SQL、Rust、Python、Java、Data；用于生态分析和打包风险判断。';
+COMMENT ON COLUMN pgext.universe.contrib IS '是否属于 PostgreSQL 官方 contrib 扩展；仅核心 PostgreSQL 随附扩展应为 true。';
+COMMENT ON COLUMN pgext.universe.lead IS '是否为所在 pkg 的主扩展；网站包页面和安装矩阵通常以主扩展代表一个软件包。';
+COMMENT ON COLUMN pgext.universe.has_bin IS '扩展软件包是否包含需要安装或暴露给用户的命令行二进制程序。';
+COMMENT ON COLUMN pgext.universe.has_lib IS '扩展是否包含 PostgreSQL 可加载共享库；C/C++/Rust 等编译型扩展通常为 true，纯 SQL 扩展通常为 false。';
+COMMENT ON COLUMN pgext.universe.need_ddl IS '是否需要执行 CREATE EXTENSION 或等价 DDL 才能启用；仅提供外部工具或数据文件的包可能为 false。';
+COMMENT ON COLUMN pgext.universe.need_load IS '是否需要显式 LOAD、shared_preload_libraries、session_preload_libraries 或类似预加载配置；普通 module_pathname 不应单独视为需要预加载。';
+COMMENT ON COLUMN pgext.universe.trusted IS '扩展是否可由非超级用户在满足权限条件时安装；对应 PostgreSQL trusted extension 语义。';
+COMMENT ON COLUMN pgext.universe.relocatable IS '扩展对象是否允许安装到非默认 schema 或迁移 schema；来自 control 文件 relocatable 字段或文档判断。';
+COMMENT ON COLUMN pgext.universe.schemas IS '扩展固定或推荐使用的 schema 列表；不可重定位或有固定对象路径要求的扩展会填写。';
+COMMENT ON COLUMN pgext.universe.pg_ver IS '扩展声明支持的 PostgreSQL 主版本数组；不等同于二进制包实际可用性。';
+COMMENT ON COLUMN pgext.universe.requires IS '安装或使用该扩展前需要先安装的其他 PostgreSQL extension 名称数组。';
+COMMENT ON COLUMN pgext.universe.require_by IS '依赖该扩展的其他 PostgreSQL extension 名称数组；通常由全局依赖关系反向生成。';
+COMMENT ON COLUMN pgext.universe.see_also IS '相关、替代或可比较的扩展名称数组，用于目录导航和人工评估。';
+COMMENT ON COLUMN pgext.universe.rpm_ver IS 'RPM/YUM/DNF 渠道中已知的最新包版本；为空表示未维护 RPM 包信息。';
+COMMENT ON COLUMN pgext.universe.rpm_repo IS 'RPM 包来源仓库或组织，例如 PGDG、PIGSTY、EPEL；用于解释 rpm_pkg 的来源。';
+COMMENT ON COLUMN pgext.universe.rpm_pkg IS 'RPM 包名模板，通常用 $v 表示 PostgreSQL 主版本占位符，例如 postgresql$v-pgvector。';
+COMMENT ON COLUMN pgext.universe.rpm_pg IS '该扩展存在 RPM 包的 PostgreSQL 主版本数组；来自包仓库解析或人工维护。';
+COMMENT ON COLUMN pgext.universe.rpm_deps IS 'RPM 包层面的依赖包名数组，记录系统库、其他 RPM 包或扩展包依赖。';
+COMMENT ON COLUMN pgext.universe.deb_ver IS 'DEB/APT 渠道中已知的最新包版本；为空表示未维护 DEB 包信息。';
+COMMENT ON COLUMN pgext.universe.deb_repo IS 'DEB 包来源仓库或组织，例如 PGDG、PIGSTY；用于解释 deb_pkg 的来源。';
+COMMENT ON COLUMN pgext.universe.deb_pkg IS 'DEB 包名模板，通常用 $v 表示 PostgreSQL 主版本占位符，例如 postgresql-$v-pgvector。';
+COMMENT ON COLUMN pgext.universe.deb_deps IS 'DEB 包层面的依赖包名数组，记录系统库、其他 DEB 包或扩展包依赖。';
+COMMENT ON COLUMN pgext.universe.deb_pg IS '该扩展存在 DEB 包的 PostgreSQL 主版本数组；来自包仓库解析或人工维护。';
+COMMENT ON COLUMN pgext.universe.source IS 'Pigsty 自行构建时使用的源码包文件名或源码包标识；不是发现来源 URL，也不是仓库主页。';
+COMMENT ON COLUMN pgext.universe.ext_type IS '扩展形态标签，从原 extra.type 上提而来；取值为 standard、preload、puresql、headless，用于区分普通 SQL+共享库扩展、预加载扩展、纯 SQL 扩展和无 CREATE EXTENSION 前端的共享库模块。';
+COMMENT ON COLUMN pgext.universe.ext_kernel IS '扩展绑定或要求的 PostgreSQL 内核、发行版或兼容内核标识，从原 extra.kernel 上提而来，例如 ivorysql、babelfish、pgedge、orioledb、percona-pg。';
+COMMENT ON COLUMN pgext.universe.ext_vendor IS '扩展所属厂商、云服务商或专有发行方，从原 extra.vendor 上提而来，例如 AWS、HighGo、pgEdge、Percona、HaloTech。';
+COMMENT ON COLUMN pgext.universe.star_cnt IS '上游仓库 star 数；来自 GitHub/Gitea 等公开仓库元数据，非仓库或低置信度来源保持 NULL。';
+COMMENT ON COLUMN pgext.universe.watch_cnt IS '上游仓库 watch/subscriber 数；优先表示 GitHub subscribers_count 或 Gitea watchers_count。';
+COMMENT ON COLUMN pgext.universe.fork_cnt IS '上游仓库 fork 数；来自 GitHub/Gitea/GitLab 等公开仓库元数据。';
+COMMENT ON COLUMN pgext.universe.last_commit_date IS '最新已知上游代码提交日期，或 contrib 策略日期；由 timestamptz 按 UTC 转换为 date。';
+COMMENT ON COLUMN pgext.universe.last_release_date IS '最新已知上游 release/tag/PGXN 发布日期，或 contrib 发布日期；由 timestamptz 按 UTC 转换为 date。';
+COMMENT ON COLUMN pgext.universe.last_update_date IS '最新已知活动日期；可来自 commit、release、tag、PGXN、官方文档或低置信度 metadata freshness。';
+COMMENT ON COLUMN pgext.universe.extra IS '稳定扩展元数据 JSONB；type、kernel、vendor 已上提为 ext_type、ext_kernel、ext_vendor，star 已移除并上提为 star_cnt，pgrx 取值统一规范为 0.xx.0。';
+COMMENT ON COLUMN pgext.universe.en_desc IS '英文功能描述，面向网站、报告和搜索展示；优先来自 control comment、仓库描述或官方文档摘要。';
+COMMENT ON COLUMN pgext.universe.zh_desc IS '中文功能描述，面向中文网站、报告和人工维护；应是对 en_desc 或官方描述的准确中文表达。';
+COMMENT ON COLUMN pgext.universe.comment IS '最终目录层面的人工备注、限制说明或维护提示；不用于保存采集过程日志。';
+COMMENT ON COLUMN pgext.universe.mtime IS '该扩展记录最后一次人工或脚本维护日期；用于判断目录数据新鲜度。';
+-- END PGEXT UNIVERSE DDL
 
 -----------------------------------
 -- Extension Documentation
