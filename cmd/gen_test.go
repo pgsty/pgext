@@ -1,24 +1,151 @@
 package cmd
 
 import (
+	"context"
+	"errors"
+	"strings"
 	"testing"
 
 	"github.com/spf13/cobra"
 )
 
-func TestGenCommandIncludesAllSubcommand(t *testing.T) {
-	t.Helper()
+type defaultCommandContextKey struct{}
 
-	for _, subcmd := range genCmd.Commands() {
-		if subcmd == genAllCmd {
-			return
+func TestGeneratorCommandMounts(t *testing.T) {
+	for _, tt := range []struct {
+		name   string
+		cmd    *cobra.Command
+		parent *cobra.Command
+	}{
+		{name: "gen cc", cmd: ccCmd, parent: genCmd},
+		{name: "gen io", cmd: ioCmd, parent: genCmd},
+		{name: "gen all", cmd: allCmd, parent: genCmd},
+	} {
+		if got := tt.cmd.Parent(); got != tt.parent {
+			t.Errorf("%s parent = %v, want %s", tt.name, got, tt.parent.CommandPath())
 		}
 	}
 
-	t.Fatal("gen command does not include all subcommand")
+	if genCmd.RunE == nil {
+		t.Error("gen should delegate to all when invoked without a subcommand")
+	}
+	for _, legacyArg := range []string{"typo"} {
+		if err := genCmd.Args(genCmd, []string{legacyArg}); err == nil {
+			t.Errorf("gen accepted unexpected argument %q", legacyArg)
+		}
+	}
+	if err := allCmd.Args(allCmd, []string{"typo"}); err == nil {
+		t.Error("gen all accepted an unexpected positional argument")
+	}
+	for _, cmd := range rootCmd.Commands() {
+		if cmd == ccCmd || cmd == ioCmd || cmd == allCmd {
+			t.Errorf("%s remains mounted directly under root", cmd.Name())
+		}
+	}
 }
 
-func TestDefaultCommandsRunAllSubcommand(t *testing.T) {
+func TestRunSubcommandLifecycle(t *testing.T) {
+	caller := &cobra.Command{Use: "caller"}
+	target := &cobra.Command{Use: "target"}
+	caller.SetContext(context.WithValue(context.Background(), defaultCommandContextKey{}, "caller"))
+	target.SetContext(context.WithValue(context.Background(), defaultCommandContextKey{}, "target"))
+
+	var order []string
+	checkContext := func(cmd *cobra.Command) {
+		if got := cmd.Context().Value(defaultCommandContextKey{}); got != "caller" {
+			t.Fatalf("context value = %v, want caller", got)
+		}
+	}
+	target.Args = func(cmd *cobra.Command, args []string) error {
+		checkContext(cmd)
+		order = append(order, "args")
+		return nil
+	}
+	target.PreRunE = func(cmd *cobra.Command, args []string) error {
+		checkContext(cmd)
+		order = append(order, "pre")
+		return nil
+	}
+	target.RunE = func(cmd *cobra.Command, args []string) error {
+		checkContext(cmd)
+		order = append(order, "run")
+		return nil
+	}
+	target.PostRunE = func(cmd *cobra.Command, args []string) error {
+		checkContext(cmd)
+		order = append(order, "post")
+		return nil
+	}
+
+	if err := runSubcommand(caller, target, nil); err != nil {
+		t.Fatalf("runSubcommand failed: %v", err)
+	}
+	if got, want := strings.Join(order, ","), "args,pre,run,post"; got != want {
+		t.Fatalf("hook order = %q, want %q", got, want)
+	}
+	if got := target.Context().Value(defaultCommandContextKey{}); got != "target" {
+		t.Fatalf("target context after run = %v, want target", got)
+	}
+}
+
+func TestAllCommandRunsEveryGenerator(t *testing.T) {
+	originalRunner := runAllGeneratorCommand
+	t.Cleanup(func() { runAllGeneratorCommand = originalRunner })
+
+	sentinel := errors.New("page failed")
+	var got []*cobra.Command
+	runAllGeneratorCommand = func(caller, target *cobra.Command, args []string) error {
+		got = append(got, target)
+		if target == genPageCmd {
+			return sentinel
+		}
+		return nil
+	}
+
+	err := allCmd.RunE(allCmd, nil)
+	if !errors.Is(err, sentinel) {
+		t.Fatalf("all error = %v, want wrapped page error", err)
+	}
+
+	want := []*cobra.Command{
+		ccCmd,
+		ioCmd,
+		genPageCmd,
+		genListCmd,
+		genOSCmd,
+		genMatrixCmd,
+		genConfCmd,
+	}
+	if len(got) != len(want) {
+		t.Fatalf("all ran %d commands, want %d", len(got), len(want))
+	}
+	for i := range want {
+		if got[i] != want[i] {
+			t.Errorf("all command %d = %s, want %s", i, got[i].CommandPath(), want[i].CommandPath())
+		}
+	}
+}
+
+func TestGeneratorExamplesUseMountedPaths(t *testing.T) {
+	var visit func(*cobra.Command)
+	visit = func(cmd *cobra.Command) {
+		if strings.Contains(cmd.Example, "pgext cc") {
+			t.Errorf("%s example contains legacy pgext cc path", cmd.CommandPath())
+		}
+		if strings.Contains(cmd.Example, "pgext io") {
+			t.Errorf("%s example contains legacy pgext io path", cmd.CommandPath())
+		}
+		if strings.Contains(cmd.Example, "pgext all") {
+			t.Errorf("%s example contains invalid root-level pgext all path", cmd.CommandPath())
+		}
+		for _, child := range cmd.Commands() {
+			visit(child)
+		}
+	}
+	visit(rootCmd)
+}
+
+func TestGeneratorCommandsRunAllSubcommandByDefault(t *testing.T) {
 	tests := []struct {
 		name   string
 		parent *cobra.Command
@@ -27,7 +154,7 @@ func TestDefaultCommandsRunAllSubcommand(t *testing.T) {
 		{
 			name:   "gen",
 			parent: genCmd,
-			target: genAllCmd,
+			target: allCmd,
 		},
 		{
 			name:   "cc",
@@ -45,14 +172,24 @@ func TestDefaultCommandsRunAllSubcommand(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			called := false
 			originalRunE := tt.target.RunE
+			originalParentContext := tt.parent.Context()
+			originalTargetContext := tt.target.Context()
+			tt.parent.SetContext(context.WithValue(context.Background(), defaultCommandContextKey{}, tt.name))
 			tt.target.RunE = func(cmd *cobra.Command, args []string) error {
 				called = true
+				if got := cmd.Context().Value(defaultCommandContextKey{}); got != tt.name {
+					t.Fatalf("context value = %v, want %q", got, tt.name)
+				}
 				if len(args) != 0 {
 					t.Fatalf("expected no args, got %v", args)
 				}
 				return nil
 			}
-			defer func() { tt.target.RunE = originalRunE }()
+			defer func() {
+				tt.target.RunE = originalRunE
+				tt.parent.SetContext(originalParentContext)
+				tt.target.SetContext(originalTargetContext)
+			}()
 
 			if tt.parent.RunE == nil {
 				t.Fatalf("%s command has no default RunE", tt.name)

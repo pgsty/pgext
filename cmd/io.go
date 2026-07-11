@@ -1,7 +1,7 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-IO command - generates Hugo/Docsy content for pigsty.io (English only)
+`gen io` command - generates Hugo/Docsy content for pigsty.io (English only)
 */
 package cmd
 
@@ -23,18 +23,20 @@ var (
 	ioStubDir   string
 )
 
-// ioCmd represents the io command
+// ioCmd represents the gen io command
 var ioCmd = &cobra.Command{
 	Use:   "io",
 	Short: "Generate Hugo/Docsy content for pigsty.io",
 	Long: `Generate Hugo/Docsy-compatible markdown files for pigsty.io English documentation site.
 
 This command generates native Markdown content without Hextra shortcodes,
-suitable for the Hugo Docsy theme used by pigsty.io.`,
-	Example: `  pgext io page       # Generate extension detail pages
-  pgext io list       # Generate all list pages
-  pgext io os         # Generate OS-specific availability pages
-  pgext io all        # Generate all content`,
+suitable for the Hugo Docsy theme used by pigsty.io. Run without a
+subcommand to generate all pigsty.io extension content.`,
+	Example: `  pgext gen io page       # Generate extension detail pages
+  pgext gen io list       # Generate all list pages
+  pgext gen io os         # Generate OS-specific availability pages
+  pgext gen io all        # Generate all content`,
+	Args: cobra.NoArgs,
 	RunE: defaultToSubcommand(ioAllCmd),
 }
 
@@ -44,9 +46,9 @@ var ioPageCmd = &cobra.Command{
 	Short: "Generate extension detail pages for pigsty.io",
 	Long: `Generate Hugo/Docsy markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
-	Example: `  pgext io page              # Generate pages for all extensions
-  pgext io page pgvector     # Generate page for pgvector extension
-  pgext io page pgvector postgis  # Generate pages for specific extensions`,
+	Example: `  pgext gen io page              # Generate pages for all extensions
+  pgext gen io page pgvector     # Generate page for pgvector extension
+  pgext gen io page pgvector postgis  # Generate pages for specific extensions`,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewIOPageGenerator(cache, ioOutputDir, ioStubDir)
 
@@ -89,6 +91,7 @@ If no extension names are provided, generates pages for all extensions.`,
 		logrus.Infof("Successfully generated %d/%d extension pages", successCount, len(extensionsToGenerate))
 		if len(failedExtensions) > 0 {
 			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
+			return fmt.Errorf("failed to generate %d extension pages: %s", len(failedExtensions), strings.Join(failedExtensions, ", "))
 		}
 		return nil
 	}),
@@ -99,7 +102,8 @@ var ioListCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "Generate list pages for pigsty.io",
 	Long:    `Generate list pages including extension list, package list, category list, language list, and license list.`,
-	Example: `  pgext io list    # Generate all list pages`,
+	Example: `  pgext gen io list    # Generate all list pages`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		logrus.Info("Generating list pages...")
 		if err := cli.NewIOListGenerator(cache, ioOutputDir).GenerateAllLists(); err != nil {
@@ -116,8 +120,8 @@ var ioOSCmd = &cobra.Command{
 	Short: "Generate OS-specific availability pages for pigsty.io",
 	Long: `Generate markdown pages showing extension availability for specific OS distributions.
 If no argument is provided, generates pages for all active OS distributions.`,
-	Example: `  pgext io os               # Generate pages for all active OS distributions
-  pgext io os el9.x86_64    # Generate page for RHEL 9 x86_64`,
+	Example: `  pgext gen io os               # Generate pages for all active OS distributions
+  pgext gen io os el9.x86_64    # Generate page for RHEL 9 x86_64`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewIOOSGenerator(cache, ioOutputDir)
@@ -142,8 +146,8 @@ var ioCateCmd = &cobra.Command{
 	Short: "Generate per-category PKG index pages for pigsty.io",
 	Long: `Generate markdown pages showing PKG-centric index for each extension category.
 If no argument is provided, generates pages for all 16 categories.`,
-	Example: `  pgext io cate              # Generate pages for all categories
-  pgext io cate fts          # Generate page for FTS category`,
+	Example: `  pgext gen io cate              # Generate pages for all categories
+  pgext gen io cate fts          # Generate page for FTS category`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewIOCateGenerator(cache, ioOutputDir)
@@ -172,7 +176,8 @@ var ioAttrCmd = &cobra.Command{
 	Use:     "attr",
 	Short:   "Generate extension attribute pages for pigsty.io",
 	Long:    `Generate attribute pages including load, headless, deps, multi, and fork sub-pages.`,
-	Example: `  pgext io attr    # Generate all attribute pages`,
+	Example: `  pgext gen io attr    # Generate all attribute pages`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		logrus.Info("Generating attribute pages...")
 		if err := cli.NewIOAttrGenerator(cache, ioOutputDir).GenerateAllAttrPages(); err != nil {
@@ -187,8 +192,9 @@ var ioAttrCmd = &cobra.Command{
 var ioAllCmd = &cobra.Command{
 	Use:     "all",
 	Short:   "Generate all content for pigsty.io",
-	Long:    `Generate all content including extension pages, list pages, and OS availability pages.`,
-	Example: `  pgext io all    # Generate all content`,
+	Long:    `Generate all pigsty.io extension detail, list, OS, category, and attribute pages.`,
+	Example: `  pgext gen io all    # Generate all content`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		var errors []error
 		var wg sync.WaitGroup
@@ -239,6 +245,7 @@ var ioAllCmd = &cobra.Command{
 		logrus.Infof("Extension pages: %d generated", successCount)
 		if len(failedExtensions) > 0 {
 			logrus.Warnf("Failed extensions: %v", failedExtensions)
+			errors = append(errors, fmt.Errorf("extension pages: %d failed: %s", len(failedExtensions), strings.Join(failedExtensions, ", ")))
 		}
 
 		if len(errors) > 0 {
@@ -254,7 +261,7 @@ var ioAllCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(ioCmd)
+	genCmd.AddCommand(ioCmd)
 	ioCmd.AddCommand(ioPageCmd, ioListCmd, ioOSCmd, ioCateCmd, ioAttrCmd, ioAllCmd)
 
 	defaultOutput := filepath.Join(os.Getenv("HOME"), "pgsty", "pigsty.io", "content", "ext")

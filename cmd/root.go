@@ -51,6 +51,10 @@ var rootCmd = &cobra.Command{
   pgext parse                   # populate apt, dnf, bin tables
   pgext recap                   # generate pkg table from bin info
   pgext status                  # show metadata status
+  pgext gen cc                  # generate pigsty.cc extension content
+  pgext gen io                  # generate pigsty.io extension content
+  pgext gen page                # generate PGEXT catalog pages
+  pgext gen all                 # run every generator
   pgext purge                   # drop pgext schema
   pgext pkg <name>              # show package availability matrix
   pgext bin <name> -p 17 -o el9 # show binary packages with URLs

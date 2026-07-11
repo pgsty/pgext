@@ -1,7 +1,7 @@
 /*
 Copyright 2018-2025 Ruohang Feng <rh@vonng.com>
 
-CC command - generates Hugo/Docsy content for pigsty.cc (Chinese only)
+`gen cc` command - generates Hugo/Docsy content for pigsty.cc (Chinese only)
 */
 package cmd
 
@@ -26,7 +26,7 @@ var (
 // runWithCache wraps common boilerplate: InitDB, LoadExtensionCache, then call fn
 func runWithCache(fn func(ctx context.Context, cache *cli.ExtensionCache, args []string) error) func(*cobra.Command, []string) error {
 	return func(cmd *cobra.Command, args []string) error {
-		ctx := context.Background()
+		ctx := cmd.Context()
 		if err := cli.InitDB(dbURL); err != nil {
 			return fmt.Errorf("failed to initialize database: %w", err)
 		}
@@ -40,18 +40,20 @@ func runWithCache(fn func(ctx context.Context, cache *cli.ExtensionCache, args [
 	}
 }
 
-// ccCmd represents the cc command
+// ccCmd represents the gen cc command
 var ccCmd = &cobra.Command{
 	Use:   "cc",
 	Short: "Generate Hugo/Docsy content for pigsty.cc",
 	Long: `Generate Hugo/Docsy-compatible markdown files for pigsty.cc Chinese documentation site.
 
 This command generates native Markdown content without Hextra shortcodes,
-suitable for the Hugo Docsy theme used by pigsty.cc.`,
-	Example: `  pgext cc page       # Generate extension detail pages
-  pgext cc list       # Generate all list pages
-  pgext cc os         # Generate OS-specific availability pages
-  pgext cc all        # Generate all content`,
+suitable for the Hugo Docsy theme used by pigsty.cc. Run without a
+subcommand to generate all pigsty.cc extension content.`,
+	Example: `  pgext gen cc page       # Generate extension detail pages
+  pgext gen cc list       # Generate all list pages
+  pgext gen cc os         # Generate OS-specific availability pages
+  pgext gen cc all        # Generate all content`,
+	Args: cobra.NoArgs,
 	RunE: defaultToSubcommand(ccAllCmd),
 }
 
@@ -61,9 +63,9 @@ var ccPageCmd = &cobra.Command{
 	Short: "Generate extension detail pages for pigsty.cc",
 	Long: `Generate Hugo/Docsy markdown detail pages for PostgreSQL extensions.
 If no extension names are provided, generates pages for all extensions.`,
-	Example: `  pgext cc page              # Generate pages for all extensions
-  pgext cc page pgvector     # Generate page for pgvector extension
-  pgext cc page pgvector postgis  # Generate pages for specific extensions`,
+	Example: `  pgext gen cc page              # Generate pages for all extensions
+  pgext gen cc page pgvector     # Generate page for pgvector extension
+  pgext gen cc page pgvector postgis  # Generate pages for specific extensions`,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCPageGenerator(cache, ccOutputDir, ccStubDir)
 
@@ -106,6 +108,7 @@ If no extension names are provided, generates pages for all extensions.`,
 		logrus.Infof("Successfully generated %d/%d extension pages", successCount, len(extensionsToGenerate))
 		if len(failedExtensions) > 0 {
 			logrus.Warnf("Failed to generate pages for: %v", failedExtensions)
+			return fmt.Errorf("failed to generate %d extension pages: %s", len(failedExtensions), strings.Join(failedExtensions, ", "))
 		}
 		return nil
 	}),
@@ -116,7 +119,8 @@ var ccListCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "Generate list pages for pigsty.cc",
 	Long:    `Generate list pages including extension list, package list, category list, language list, and license list.`,
-	Example: `  pgext cc list    # Generate all list pages`,
+	Example: `  pgext gen cc list    # Generate all list pages`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		logrus.Info("Generating list pages...")
 		if err := cli.NewCCListGenerator(cache, ccOutputDir).GenerateAllLists(); err != nil {
@@ -133,8 +137,8 @@ var ccOSCmd = &cobra.Command{
 	Short: "Generate OS-specific availability pages for pigsty.cc",
 	Long: `Generate markdown pages showing extension availability for specific OS distributions.
 If no argument is provided, generates pages for all active OS distributions.`,
-	Example: `  pgext cc os               # Generate pages for all active OS distributions
-  pgext cc os el9.x86_64    # Generate page for RHEL 9 x86_64`,
+	Example: `  pgext gen cc os               # Generate pages for all active OS distributions
+  pgext gen cc os el9.x86_64    # Generate page for RHEL 9 x86_64`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCOSGenerator(cache, ccOutputDir)
@@ -159,8 +163,8 @@ var ccCateCmd = &cobra.Command{
 	Short: "Generate per-category PKG index pages for pigsty.cc",
 	Long: `Generate markdown pages showing PKG-centric index for each extension category.
 If no argument is provided, generates pages for all 16 categories.`,
-	Example: `  pgext cc cate              # Generate pages for all categories
-  pgext cc cate fts          # Generate page for FTS category`,
+	Example: `  pgext gen cc cate              # Generate pages for all categories
+  pgext gen cc cate fts          # Generate page for FTS category`,
 	Args: cobra.MaximumNArgs(1),
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		generator := cli.NewCCCateGenerator(cache, ccOutputDir)
@@ -189,7 +193,8 @@ var ccAttrCmd = &cobra.Command{
 	Use:     "attr",
 	Short:   "Generate extension attribute pages for pigsty.cc",
 	Long:    `Generate attribute pages including load, headless, deps, multi, and fork sub-pages.`,
-	Example: `  pgext cc attr    # Generate all attribute pages`,
+	Example: `  pgext gen cc attr    # Generate all attribute pages`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		logrus.Info("Generating attribute pages...")
 		if err := cli.NewCCAttrGenerator(cache, ccOutputDir).GenerateAllAttrPages(); err != nil {
@@ -204,8 +209,9 @@ var ccAttrCmd = &cobra.Command{
 var ccAllCmd = &cobra.Command{
 	Use:     "all",
 	Short:   "Generate all content for pigsty.cc",
-	Long:    `Generate all content including extension pages, list pages, and OS availability pages.`,
-	Example: `  pgext cc all    # Generate all content`,
+	Long:    `Generate all pigsty.cc extension detail, list, OS, category, and attribute pages.`,
+	Example: `  pgext gen cc all    # Generate all content`,
+	Args:    cobra.NoArgs,
 	RunE: runWithCache(func(ctx context.Context, cache *cli.ExtensionCache, args []string) error {
 		var errors []error
 		var wg sync.WaitGroup
@@ -256,6 +262,7 @@ var ccAllCmd = &cobra.Command{
 		logrus.Infof("Extension pages: %d generated", successCount)
 		if len(failedExtensions) > 0 {
 			logrus.Warnf("Failed extensions: %v", failedExtensions)
+			errors = append(errors, fmt.Errorf("extension pages: %d failed: %s", len(failedExtensions), strings.Join(failedExtensions, ", ")))
 		}
 
 		if len(errors) > 0 {
@@ -271,7 +278,7 @@ var ccAllCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(ccCmd)
+	genCmd.AddCommand(ccCmd)
 	ccCmd.AddCommand(ccPageCmd, ccListCmd, ccOSCmd, ccCateCmd, ccAttrCmd, ccAllCmd)
 
 	defaultOutput := filepath.Join(os.Getenv("HOME"), "pgsty", "pigsty.cc", "content", "ext")
