@@ -41,7 +41,7 @@ password_policy.cracklib_dictpath = '/var/cache/cracklib/postgresql_dict'
 password_policy.enable_dictionary_check = on
 ```
 
-### Soft Account Lock
+### 软账号锁定
 
 Soft-locking 会跟踪登录失败次数，并在超过阈值后延迟或拒绝响应：
 

@@ -3,6 +3,8 @@
 
 ## Usage
 
+`vectorscale` extends `pgvector` with the StreamingDiskANN index access method for approximate nearest-neighbor search. The example below creates a vector table, builds a `diskann` index, and runs a distance-ordered query.
+
 ```sql
 CREATE EXTENSION vectorscale CASCADE;
 

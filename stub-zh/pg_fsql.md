@@ -3,9 +3,9 @@
 
 ## 用法
 
-> 来源：[README](https://github.com/yurc/pg_fsql/blob/main/README.md), [control file](https://raw.githubusercontent.com/yurc/pg_fsql/main/pg_fsql.control)
+> 来源：[README](https://github.com/yurc/pg_fsql/blob/main/README.md), [控制文件](https://raw.githubusercontent.com/yurc/pg_fsql/main/pg_fsql.control)
 
-`pg_fsql` 是 PostgreSQL 的递归 SQL 模板引擎。它把基于 C 的占位符渲染、PL/pgSQL 模板执行、层级化模板组合，以及可选的 SPI plan cache 结合在一起。上游项目强调它不需要 superuser 权限。
+`pg_fsql` 是 PostgreSQL 的递归 SQL 模板引擎。它把基于 C 的占位符渲染、PL/pgSQL 模板执行、层级化模板组合，以及可选的 SPI 计划缓存结合在一起。上游项目强调它不需要超级用户权限。
 
 ### 快速开始
 
@@ -72,7 +72,7 @@ README 记录了六种命令类型：
 - `fsql.explain(path, data)`，跟踪展开过程
 - `fsql.validate()`，检查模板
 - `fsql.depends_on(path)`，查看依赖关系
-- `fsql.clear_cache()`，释放缓存的 SPI plans
+- `fsql.clear_cache()`，释放缓存的 SPI 计划
 
 ### 层级模板示例
 
@@ -91,4 +91,4 @@ SELECT fsql.render('report', '{"city":"Moscow"}');
 
 ### 说明
 
-README 列出 PostgreSQL 14+ 和 `plpgsql`。control file 当前仍声明 SQL extension version `1.0`，尽管包任务跟踪的 release 为 `1.1.0`。仓库没有额外的官方 release notes，因此用户侧行为仍应以当前 README 为准。
+README 列出 PostgreSQL 14+ 和 `plpgsql`。控制文件当前仍声明 SQL 扩展版本 `1.0`，尽管软件包任务跟踪的发行版为 `1.1.0`。仓库没有额外的官方发行说明，因此用户侧行为仍应以当前 README 为准。

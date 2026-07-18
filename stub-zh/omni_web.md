@@ -7,7 +7,7 @@
 
 `omni_web` 扩展提供 Web 栈实用函数，通常与 `omni_httpd` 配合使用。
 
-### Cookies
+### Cookie
 
 将 `Cookie` 头部解析为键值对：
 

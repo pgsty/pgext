@@ -49,14 +49,14 @@ SELECT pglinter.import_rule_messages_from_yaml('yaml...');
 
 ### 规则家族
 
-**Base (B-series)：** B001 tables without PK、B002 redundant indexes、B003 missing FK indexes、B004 unused indexes、B005 uppercase names、B006 unused tables、B007 cross-schema FKs、B008 FK type mismatches、B009 shared trigger functions、B010 reserved keywords、B011 multiple owners per schema、B012 composite primary keys with more than four columns、B013 row-by-row trigger processing without a `WHERE` clause。
+**基础规则（B 系列）：** B001 表缺少主键、B002 冗余索引、B003 外键缺少索引、B004 未使用的索引、B005 大写名称、B006 未使用的表、B007 跨模式外键、B008 外键类型不匹配、B009 共享触发器函数、B010 使用保留关键字、B011 单个模式存在多个所有者、B012 复合主键超过四列、B013 触发器逐行处理且没有 `WHERE` 子句。
 
-**Cluster (C-series)：** C002 insecure pg_hba.conf entries、C003 MD5 password encryption。
+**集群规则（C 系列）：** C002 不安全的 pg_hba.conf 条目、C003 使用 MD5 密码加密。
 
-**Schema (S-series)：** S001 no default role grants、S002 env prefixes/suffixes、S003 unsecured public schema、S004 system role ownership、S005 multiple owners per schema。
+**模式规则（S 系列）：** S001 未设置默认角色授权、S002 名称带环境前缀或后缀、S003 public 模式未加固、S004 对象归系统角色所有、S005 单个模式存在多个所有者。
 
 ### 注意事项
 
-版本 `2.0.0` 移除了较旧的 `check()` 和 `check_rule()` 函数；`get_violations()` 现在是唯一 check API。当前构建使用 `pgrx` 0.18.1。
+版本 `2.0.0` 移除了较旧的 `check()` 和 `check_rule()` 函数；`get_violations()` 现在是唯一的检查 API。当前构建使用 `pgrx` 0.18.1。
 
-上游 `1.1.2` release 增加了 `B013`。主 README 相比 docs 和导出函数仍有部分滞后，因此此 stub 使用 `get_violations()`，并省略已移除的 `check()` / `check_rule()` 示例。
+上游 `1.1.2` 版本增加了 `B013`。主 README 相比其他文档和导出函数仍有部分滞后，因此本文使用 `get_violations()`，并省略已移除的 `check()` / `check_rule()` 示例。

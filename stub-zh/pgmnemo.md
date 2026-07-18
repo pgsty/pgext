@@ -41,7 +41,7 @@ SELECT pgmnemo.ingest(
 
 `pgmnemo.ingest()` 是基础写入路径。它会应用 provenance gate，在提供 embedding 时校验 1024 维度，按 `pgmnemo.max_query_text_chars` 截断过长 lesson 文本，并在存在来源信息时写入 `verified_at`。
 
-### Provenance Gate
+### 来源验证门槛
 
 ```sql
 SHOW pgmnemo.gate_strict;
@@ -128,7 +128,7 @@ FROM pgmnemo.navigate_expand_typed(
 
 用 `navigate_locate()` 在字符预算内找候选 ID，再用 expand 函数只获取被选中 ID 的完整内容和图邻居。
 
-### Typed Writes
+### 类型化写入
 
 ```sql
 SELECT pgmnemo.canonical_slug('concept', 'JWT Rotation');

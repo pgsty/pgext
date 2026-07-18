@@ -3,6 +3,8 @@
 
 ## 用法
 
+`vectorscale` 使用 StreamingDiskANN 索引访问方法扩展 `pgvector`，用于近似最近邻搜索。下面的示例会创建向量表、构建 `diskann` 索引，并按向量距离执行排序查询。
+
 ```sql
 CREATE EXTENSION vectorscale CASCADE;
 

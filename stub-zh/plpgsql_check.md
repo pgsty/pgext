@@ -146,7 +146,7 @@ SELECT * FROM plpgsql_coverage_statements('public.refresh_totals()');
 SELECT * FROM plpgsql_coverage_branches('public.refresh_totals()');
 ```
 
-### Pragmas
+### 编译指令
 
 可以在函数内部用 pragma 调用描述动态 SQL、临时表、推断出的 record 类型或局部检查设置：
 

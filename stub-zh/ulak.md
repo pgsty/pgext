@@ -5,7 +5,7 @@
 
 > 来源：[README](https://github.com/zeybek/ulak/blob/main/README.md), [wiki](https://github.com/zeybek/ulak/wiki), [v0.0.2 release](https://github.com/zeybek/ulak/releases/tag/v0.0.2)
 
-`ulak` 在 PostgreSQL 内实现 transactional outbox pattern。消息会在事务中写入，然后由后台 worker 异步投递，并带有重试、circuit breaking 和 dead-letter 处理。
+`ulak` 在 PostgreSQL 内实现事务性发件箱模式。消息会在事务中写入，然后由后台工作进程异步投递，并带有重试、熔断和死信处理。
 
 ### 启用扩展
 
@@ -85,4 +85,4 @@ README 点名列出了这些 `ulak.` GUC：
 
 ### 说明
 
-`v0.0.2` release notes 只记录了 Docker publish workflow 修复，因此当前 README 和 wiki 仍是用户侧最权威的使用来源。
+`v0.0.2` 版本说明只记录了 Docker 发布流程修复，因此当前 README 和 wiki 仍是用户侧最权威的使用来源。

@@ -90,7 +90,7 @@ TRUNCATE big_emp;
 
 所有已文档化的 GUC 都是 session-scoped `USERSET` 变量：
 
-| GUC | Default | Effect |
+| GUC | 默认值 | 作用 |
 |---|---:|---|
 | `pg_savior.enabled` | `on` | 总开关；为 `off` 时不运行检查。 |
 | `pg_savior.bypass` | `off` | 允许当前 session 跳过保护。 |

@@ -3,9 +3,9 @@
 
 ## 用法
 
-来源：[README](https://github.com/supabase/supautils/blob/master/README.md)，[homepage](https://supabase.github.io/supautils/)，[releases](https://github.com/supabase/supautils/releases)
+来源：[README](https://github.com/supabase/supautils/blob/master/README.md)，[主页](https://supabase.github.io/supautils/)，[发行版](https://github.com/supabase/supautils/releases)
 
-`supautils` 是一个可加载库，允许通过配置把部分原本仅限超级用户的 PostgreSQL 能力安全地开放给非超级用户。上游特别强调：它不会在数据库里创建表、函数或 security label。
+`supautils` 是一个可加载库，允许通过配置把部分原本仅限超级用户的 PostgreSQL 能力安全地开放给非超级用户。上游特别强调：它不会在数据库里创建表、函数或安全标签。
 
 ### 加载方式
 
@@ -24,7 +24,7 @@ ALTER ROLE role1 SET session_preload_libraries TO 'supautils';
 
 ### 特权代理角色能力
 
-README 记录了一个 privileged proxy role，可在不授予 `SUPERUSER` 的前提下创建 publication、foreign data wrapper、event trigger 和 privileged extension。
+README 记录了一个特权代理角色，可在不授予 `SUPERUSER` 的前提下创建发布、外部数据包装器、事件触发器和特权扩展。
 
 ```sql
 SET ROLE privileged_role;
@@ -32,7 +32,7 @@ CREATE PUBLICATION p FOR ALL TABLES;
 DROP PUBLICATION p;
 ```
 
-对于 event trigger，README 说明这些触发器会对非超级用户生效，但会跳过超级用户和 reserved roles；同时它也明确记录了一条限制：在创建 publication、foreign data wrapper 或 extension 时，这些触发器不会触发。
+对于事件触发器，README 说明这些触发器会对非超级用户生效，但会跳过超级用户和保留角色；同时它也明确记录了一条限制：在创建发布、外部数据包装器或扩展时，这些触发器不会触发。
 
 ### 重要配置项
 
@@ -52,19 +52,19 @@ DROP PUBLICATION p;
 
 ### 常见示例
 
-允许非超级用户创建指定 privileged extension：
+允许非超级用户创建指定特权扩展：
 
 ```ini
 supautils.privileged_extensions = 'hstore'
 ```
 
-允许某个角色管理自己并不拥有的表上的 RLS policy：
+允许某个角色管理自己并不拥有的表上的 RLS 策略：
 
 ```ini
 supautils.policy_grants = '{ "my_role": ["public.not_my_table"] }'
 ```
 
-在 `CREATE EXTENSION` 时强制把扩展装入指定 schema：
+在 `CREATE EXTENSION` 时强制把扩展装入指定模式：
 
 ```ini
 supautils.extensions_parameter_overrides = '{ "pg_cron": { "schema": "pg_catalog" } }'
@@ -80,7 +80,7 @@ supautils.reserved_memberships = 'pg_read_server_files'
 ### 发布说明
 
 - `v3.2.1` 发布于 2026-04-02，公开说明以维护类改动为主，没有新增用户可见 SQL 接口。
-- `v3.2.0` 新增了缺失 `GRANT` 权限时的 hint。
+- `v3.2.0` 新增了缺失 `GRANT` 权限时的提示。
 
 ### 注意事项
 

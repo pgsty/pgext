@@ -73,7 +73,7 @@ SELECT db2_diag('db2srv');
 
 ### 数据类型映射
 
-| DB2 Type | PostgreSQL Types |
+| Db2 类型 | PostgreSQL 类型 |
 |----------|------------------|
 | CHAR | char |
 | VARCHAR | varchar |

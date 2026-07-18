@@ -50,7 +50,7 @@ SELECT * FROM powa_statements;
 SELECT * FROM powa_snapshot_metas;
 ```
 
-### Web UI
+### Web 界面
 
 PoWA Web 界面（单独安装）提供：
 

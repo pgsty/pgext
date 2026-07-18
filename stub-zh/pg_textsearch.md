@@ -5,7 +5,7 @@
 
 来源：[README v1.2.0](https://github.com/timescale/pg_textsearch/blob/v1.2.0/README.md), [v1.2.0 release notes](https://github.com/timescale/pg_textsearch/releases/tag/v1.2.0)
 
-`pg_textsearch` 为 PostgreSQL 提供 BM25-ranked full-text search，包含 `bm25` access method 和 `<@>` scoring operator。上游将 `v1.2.0` 标记为 production ready。
+`pg_textsearch` 为 PostgreSQL 提供支持 BM25 排序的全文搜索，包含 `bm25` 访问方法和 `<@>` 评分运算符。上游将 `v1.2.0` 标记为可用于生产环境。
 
 `v1.2.0` 支持 PostgreSQL 17 和 18。Linux 与 macOS 上两个 PostgreSQL 版本都有预构建 release assets。执行 `CREATE EXTENSION` 前，必须通过 `shared_preload_libraries` 加载该扩展。
 

@@ -5,11 +5,11 @@
 
 - 来源：[README](https://github.com/rustwizard/pg_command_fw/blob/master/README.md)
 
-`pg_command_fw` 是 PostgreSQL command firewall。它通过 `ProcessUtility` hook 拦截 DDL 和 utility commands，并通过 post-parse analyze hook 阻断部分内置文件读取函数。每个命令类别都有自己的 GUC 控制。
+`pg_command_fw` 是 PostgreSQL 命令防火墙。它通过 `ProcessUtility` 钩子拦截 DDL 和工具命令，并通过解析后分析钩子阻断部分内置文件读取函数。每个命令类别都有自己的 GUC 控制。
 
 ### 启用扩展
 
-该扩展必须 preload：
+该扩展必须预加载：
 
 ```ini
 shared_preload_libraries = 'pg_command_fw'
@@ -21,11 +21,11 @@ shared_preload_libraries = 'pg_command_fw'
 CREATE EXTENSION pg_command_fw;
 ```
 
-Pigsty 包元数据记录版本 `0.1.0`，覆盖 PostgreSQL 15-18，并说明需要 preload 才能在所有会话中激活 hooks。上游 README 也记录 PostgreSQL 15-18 支持。
+Pigsty 包元数据记录版本 `0.1.0`，覆盖 PostgreSQL 15-18，并说明需要预加载才能在所有会话中激活钩子。上游 README 也记录 PostgreSQL 15-18 支持。
 
 ### 命令类别
 
-上游 README 记录了这些 firewall 类别：
+上游 README 记录了这些防火墙类别：
 
 - `TRUNCATE`：`pg_command_fw.block_truncate`，默认 `on`，阻断非超级用户。
 - `DROP TABLE`：`pg_command_fw.block_drop_table`，默认 `off`，启用后阻断非超级用户。
@@ -52,26 +52,26 @@ Pigsty 包元数据记录版本 `0.1.0`，覆盖 PostgreSQL 15-18，并说明需
 - `pg_command_fw.hint`
 - `pg_command_fw.audit_log_enabled`
 
-设置 `production_schemas` 时，`DROP TABLE` 检查仅限这些 schema 中显式带 schema 的表名；README 说明未限定名称不会通过 `search_path` 解析。
+设置 `production_schemas` 时，`DROP TABLE` 检查仅限这些模式中显式带模式名的表名；README 说明未限定名称不会通过 `search_path` 解析。
 
 ### 审计日志
 
 扩展会在 `command_fw.audit_log` 中记录被拦截的命令。README 记录的列包括：
 
-- timestamp
+- timestamp 时间戳
 - session 和 current user 名称
-- 原始 query text
-- command type
-- target schema 或 object
-- client address
+- 原始查询文本
+- 命令类型
+- 目标模式或对象
+- 客户端地址
 - 命令是否被阻断
 - 内部阻断原因
 
-被阻断的审计插入是 best-effort，因为该行会随被阻断事务回滚；请使用 PostgreSQL server log 作为被阻断事件的权威记录。
+被阻断的审计插入只会尽力完成，因为该行会随被阻断事务回滚；请使用 PostgreSQL 服务器日志作为被阻断事件的权威记录。
 
 ### 示例
 
-在生产 schema 中阻断 `TRUNCATE` 和 `DROP TABLE`：
+在生产模式中阻断 `TRUNCATE` 和 `DROP TABLE`：
 
 ```sql
 ALTER SYSTEM SET pg_command_fw.block_truncate = on;
@@ -88,7 +88,7 @@ ALTER SYSTEM SET pg_command_fw.blocked_roles = 'app_deploy';
 SELECT pg_reload_conf();
 ```
 
-在维护会话中临时禁用 firewall：
+在维护会话中临时禁用防火墙：
 
 ```sql
 SET pg_command_fw.enabled = off;

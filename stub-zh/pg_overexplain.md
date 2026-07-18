@@ -31,7 +31,7 @@ EXPLAIN (DEBUG) SELECT * FROM my_table WHERE id = 1;
 
 显示每个查询的字段：
 - **Command Type** -- 查询类型（select、update 等）
-- **Flags** -- hasReturning、hasModifyingCTE、canSetTag、transientPlan 等
+- **标志** -- hasReturning、hasModifyingCTE、canSetTag、transientPlan 等
 - **Subplans Needing Rewind** -- 需要回退的子计划 ID
 - **Relation OIDs** -- 计划依赖的 OID
 - **Parse Location** -- 查询字符串中的位置

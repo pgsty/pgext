@@ -47,8 +47,8 @@ SELECT auth.session();   -- 返回完整声明（JSONB）
 | `auth.jwt()` | `jsonb` | `auth.session()` 的别名 |
 | `auth.user_id()` | `text` | 获取 `sub` 声明 |
 | `auth.uid()` | `uuid` | 获取 `sub` 作为 UUID（或 NULL） |
-| `auth.organization()` | `jsonb` | Neon Auth organization claim helper |
-| `auth.organization_id()` | `uuid` | Neon Auth organization id helper |
+| `auth.organization()` | `jsonb` | Neon Auth 组织声明辅助函数 |
+| `auth.organization_id()` | `uuid` | Neon Auth 组织 ID 辅助函数 |
 
 ### 配置
 
@@ -64,7 +64,7 @@ CREATE POLICY user_isolation ON my_table
     USING (user_id = auth.user_id());
 ```
 
-对 Neon Auth 的 organization-scoped policies，使用 `o` claim helpers：
+对于 Neon Auth 的组织范围策略，使用 `o` 声明辅助函数：
 
 ```sql
 CREATE POLICY team_select ON team
@@ -74,4 +74,4 @@ CREATE POLICY team_select ON team
 
 ### 版本说明
 
-v0.5.0 README 增加 Neon Auth organization helpers，并明确区分 `auth.jwt()`、`auth.user_id()`、`auth.uid()` 等 portable helpers，以及 Neon-specific 的 `auth.organization()` 和 `auth.organization_id()`。其他 auth provider 应使用 `auth.jwt()` 并直接提取 provider-specific claims。
+v0.5.0 README 增加了 Neon Auth 组织辅助函数，并明确区分 `auth.jwt()`、`auth.user_id()`、`auth.uid()` 等通用辅助函数，以及 Neon 专用的 `auth.organization()` 和 `auth.organization_id()`。其他认证服务商应使用 `auth.jwt()` 并直接提取服务商专用声明。

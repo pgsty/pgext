@@ -18,7 +18,7 @@ CREATE EXTENSION pointcloud_postgis;
 
 ## 核心概念
 
-### Schema
+### 模式
 
 PostgreSQL Pointcloud 使用"schema 文档"来描述特定 LIDAR 点的内容。每个点包含多个维度，每个维度可以是任意数据类型，并可应用缩放和/或偏移量来转换实际值与数据库存储值。schema 文档格式与 [PDAL](https://pdal.io/) 库使用的格式相同。
 
@@ -150,7 +150,7 @@ SELECT * FROM pointcloud_columns;
 维度压缩在内部使用三种方案：游程编码（低变异性）、公共位移除（窄位范围变异性）、以及基于 zlib 的原始 deflate 压缩。
 
 
-## 函数：Schema
+## 函数：模式
 
 ### PC_SchemaGetNDims
 
