@@ -27,8 +27,6 @@ width: full
 |    **Schemas**    | `smtp_client` |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_html5_email_address" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pg_curl" >}} {{< ext "pgjq" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

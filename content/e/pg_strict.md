@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "safeupdate" >}} {{< ext "pg_savior" >}} {{< ext "pg_upless" >}} {{< ext "pg_drop_events" >}} {{< ext "pg_readonly" >}} {{< ext "table_log" >}} {{< ext "pgaudit" >}} {{< ext "pg_permissions" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

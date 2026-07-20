@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4250** | {{< badge content="pgqr" link="https://github.com/AbdulYadi/pgqr" >}} | {{< ext "pgqr" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **4250** | {{< badge content="pgqr" link="https://github.com/AbdulYadi/pgqr" >}} | {{< ext "pgqr" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -27,8 +27,6 @@ width: full
 |    **Schemas**    | `convert` |
 |   **See Also**    | {{< ext "unit" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

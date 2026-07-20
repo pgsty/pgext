@@ -27,8 +27,6 @@ width: full
 |    **Schemas**    | `dd` |
 |   **See Also**    | {{< ext "pg_catcheck" >}} {{< ext "pg_orphaned" >}} {{< ext "pg_checksums" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

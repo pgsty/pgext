@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.5` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **7140** | {{< badge content="logerrors" link="https://github.com/munakoiso/logerrors" >}} | {{< ext "logerrors" >}} | `2.1.5` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

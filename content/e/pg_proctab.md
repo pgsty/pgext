@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6450** | {{< badge content="pg_proctab" link="https://github.com/markwkm/pg_proctab" >}} | {{< ext "pg_proctab" "pgnodemx" >}} | `1.7` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6450** | {{< badge content="pg_proctab" link="https://github.com/markwkm/pg_proctab" >}} | {{< ext "pg_proctab" "pgnodemx" >}} | `1.7` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

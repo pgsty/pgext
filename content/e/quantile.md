@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4610** | {{< badge content="quantile" link="https://github.com/tvondra/quantile" >}} | {{< ext "quantile" >}} | `1.1.8` | {{< category "FUNC" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4610** | {{< badge content="quantile" link="https://github.com/tvondra/quantile" >}} | {{< ext "quantile" >}} | `1.1.8` | {{< category "FUNC" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1060** | {{< badge content="table_version" link="https://github.com/linz/postgresql-tableversion" >}} | {{< ext "table_version" >}} | `1.11.1` | {{< category "TIME" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
+| **1060** | {{< badge content="table_version" link="https://github.com/linz/postgresql-tableversion" >}} | {{< ext "table_version" >}} | `1.11.1` | {{< category "TIME" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

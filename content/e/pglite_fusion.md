@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "duckdb_fdw" >}} {{< ext "sqlite_fdw" >}} {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

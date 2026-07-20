@@ -19,21 +19,25 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `dbms_lock` |
+|   **Requires**    | {{< ext "pg_background" >}} |
 |   **See Also**    | {{< ext "orafce" >}} {{< ext "session_variable" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_job" >}} {{< ext "oracle_fdw" >}} {{< ext "pgtt" >}} {{< ext "pg_statement_rollback" >}} {{< ext "mysql_fdw" >}} |
+
+> [!Note] Requires pg_background >= 2.0; the PIGSTY DEB carries a downstream pg_background v2 API compatibility patch.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_lock` | - |
-| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "pg_dbms_lock_18" "green" >}} {{< bg "17" "pg_dbms_lock_17" "green" >}} {{< bg "16" "pg_dbms_lock_16" "green" >}} {{< bg "15" "pg_dbms_lock_15" "green" >}} {{< bg "14" "pg_dbms_lock_14" "green" >}} | `pg_dbms_lock_$v` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_lock` | `pg_background` |
+| **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "pg_dbms_lock_18" "green" >}} {{< bg "17" "pg_dbms_lock_17" "green" >}} {{< bg "16" "pg_dbms_lock_16" "green" >}} {{< bg "15" "pg_dbms_lock_15" "green" >}} {{< bg "14" "pg_dbms_lock_14" "green" >}} | `pg_dbms_lock_$v` | `pg_background_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "postgresql-18-pg-dbms-lock" "green" >}} {{< bg "17" "postgresql-17-pg-dbms-lock" "green" >}} {{< bg "16" "postgresql-16-pg-dbms-lock" "green" >}} {{< bg "15" "postgresql-15-pg-dbms-lock" "green" >}} {{< bg "14" "postgresql-14-pg-dbms-lock" "green" >}} | `postgresql-$v-pg-dbms-lock` | `postgresql-$v-pg-background` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -44,16 +48,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_18 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_lock_14 : AVAIL 3" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_lock : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-lock : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-lock : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -77,6 +81,16 @@ width: full
 | `pg_dbms_lock_18` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_18-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_lock_18-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_18` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.1 KiB | [pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_lock_18-1.0-3PGDG.rhel10.noarch.rpm) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.7 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.7 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.8 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.8 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.8 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.8 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-18-pg-dbms-lock` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-18-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-18-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -99,6 +113,16 @@ width: full
 | `pg_dbms_lock_17` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_17-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_lock_17-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_lock_17-1.0-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_17` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_lock_17-1.0-2PGDG.rhel10.noarch.rpm) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.7 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.7 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-17-pg-dbms-lock` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-17-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-17-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -121,6 +145,16 @@ width: full
 | `pg_dbms_lock_16` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_16-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_lock_16-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_lock_16-1.0-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_16` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_lock_16-1.0-2PGDG.rhel10.noarch.rpm) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.7 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.7 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.9 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.9 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.8 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.8 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-16-pg-dbms-lock` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-16-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-16-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -143,6 +177,16 @@ width: full
 | `pg_dbms_lock_15` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_15-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_lock_15-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_lock_15-1.0-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_15` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_lock_15-1.0-2PGDG.rhel10.noarch.rpm) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.7 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.7 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-15-pg-dbms-lock` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-15-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-15-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -165,6 +209,16 @@ width: full
 | `pg_dbms_lock_14` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_14-2.0-1PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_lock_14-2.0-1PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 12.7 KiB | [pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_lock_14-1.0-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_dbms_lock_14` | `1.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 13.0 KiB | [pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_lock_14-1.0-2PGDG.rhel10.noarch.rpm) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 8.7 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 8.7 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 8.7 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 8.7 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 8.8 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 8.8 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 8.8 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 8.8 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~noble_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 8.9 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-14-pg-dbms-lock` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 8.9 KiB | [postgresql-14-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-lock/postgresql-14-pg-dbms-lock_2.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -172,15 +226,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/HexaCluster/pg_dbms_lock" title="Repository" icon="github" subtitle="github.com/HexaCluster/pg_dbms_lock" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dbms_lock-2.0.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_dbms_lock;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -200,7 +260,7 @@ pig install pg_dbms_lock -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION pg_dbms_lock;
+CREATE EXTENSION pg_dbms_lock CASCADE; -- requires pg_background
 ```
 
 

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1040** | {{< badge content="temporal_tables" link="https://pgxn.org/dist/temporal_tables/" >}} | {{< ext "temporal_tables" >}} | `1.2.2` | {{< category "TIME" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **1040** | {{< badge content="temporal_tables" link="https://pgxn.org/dist/temporal_tables/" >}} | {{< ext "temporal_tables" >}} | `1.2.2` | {{< category "TIME" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

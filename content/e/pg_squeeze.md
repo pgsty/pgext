@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.3` | {{< category "ADMIN" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **5040** | {{< badge content="pg_squeeze" link="https://github.com/cybertec-postgresql/pg_squeeze" >}} | {{< ext "pg_squeeze" >}} | `1.9.3` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

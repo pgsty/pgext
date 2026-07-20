@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6250** | {{< badge content="pg_store_plans" link="https://github.com/ossc-db/pg_store_plans" >}} | {{< ext "pg_store_plans" >}} | `1.10` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6250** | {{< badge content="pg_store_plans" link="https://github.com/ossc-db/pg_store_plans" >}} | {{< ext "pg_store_plans" >}} | `1.10` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

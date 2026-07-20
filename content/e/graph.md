@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2630** | {{< badge content="graph" link="https://github.com/evokoa/pggraph" >}} | {{< ext "graph" "pggraph" >}} | `0.1.7` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **2630** | {{< badge content="graph" link="https://github.com/evokoa/pggraph" >}} | {{< ext "graph" "pggraph" >}} | `0.1.8` | {{< category "FEAT" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -33,9 +33,9 @@ width: full
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pggraph` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "pggraph_18" "green" >}} {{< bg "17" "pggraph_17" "green" >}} {{< bg "16" "pggraph_16" "green" >}} {{< bg "15" "pggraph_15" "green" >}} {{< bg "14" "pggraph_14" "green" >}} | `pggraph_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.7` | {{< bg "18" "postgresql-18-pggraph" "green" >}} {{< bg "17" "postgresql-17-pggraph" "green" >}} {{< bg "16" "postgresql-16-pggraph" "green" >}} {{< bg "15" "postgresql-15-pggraph" "green" >}} {{< bg "14" "postgresql-14-pggraph" "green" >}} | `postgresql-$v-pggraph` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.8` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pggraph` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.8` | {{< bg "18" "pggraph_18" "green" >}} {{< bg "17" "pggraph_17" "green" >}} {{< bg "16" "pggraph_16" "green" >}} {{< bg "15" "pggraph_15" "green" >}} {{< bg "14" "pggraph_14" "green" >}} | `pggraph_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.1.8` | {{< bg "18" "postgresql-18-pggraph" "green" >}} {{< bg "17" "postgresql-17-pggraph" "green" >}} {{< bg "16" "postgresql-16-pggraph" "green" >}} {{< bg "15" "postgresql-15-pggraph" "green" >}} {{< bg "14" "postgresql-14-pggraph" "green" >}} | `postgresql-$v-pggraph` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -174,7 +174,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/evokoa/pggraph" title="Repository" icon="github" subtitle="github.com/evokoa/pggraph" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pggraph-0.1.7.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pggraph-0.1.8.tar.gz" >}}
 {{< /cards >}}
 
 

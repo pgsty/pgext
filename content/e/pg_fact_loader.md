@@ -27,6 +27,8 @@ width: full
 |    **Schemas**    | `fact_loader` |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "pg_jobmon" >}} {{< ext "mimeo" >}} {{< ext "timescaledb" >}} {{< ext "citus" >}} {{< ext "tablefunc" >}} {{< ext "pg_bulkload" >}} |
 
+> [!Note] PGDG provides the regular DEB channel; Pigsty fills the missing PostgreSQL 18 packages on Debian/Ubuntu and builds PG14-18 for Ubuntu 26.04 (Resolute).
+
 
 ## Packages
 
@@ -34,7 +36,7 @@ width: full
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
 | **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_fact_loader` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "pg_fact_loader_18" "green" >}} {{< bg "17" "pg_fact_loader_17" "green" >}} {{< bg "16" "pg_fact_loader_16" "green" >}} {{< bg "15" "pg_fact_loader_15" "green" >}} {{< bg "14" "pg_fact_loader_14" "green" >}} | `pg_fact_loader_$v` | - |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pg-fact-loader" "red" >}} {{< bg "17" "postgresql-17-pg-fact-loader" "green" >}} {{< bg "16" "postgresql-16-pg-fact-loader" "green" >}} {{< bg "15" "postgresql-15-pg-fact-loader" "green" >}} {{< bg "14" "postgresql-14-pg-fact-loader" "green" >}} | `postgresql-$v-pg-fact-loader` | - |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0.1` | {{< bg "18" "postgresql-18-pg-fact-loader" "green" >}} {{< bg "17" "postgresql-17-pg-fact-loader" "green" >}} {{< bg "16" "postgresql-16-pg-fact-loader" "green" >}} {{< bg "15" "postgresql-15-pg-fact-loader" "green" >}} {{< bg "14" "postgresql-14-pg-fact-loader" "green" >}} | `postgresql-$v-pg-fact-loader` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -45,16 +47,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.0.1" "pg_fact_loader_14 : AVAIL 2" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-fact-loader : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "postgresql-18-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-17-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-16-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-15-pg-fact-loader : MISS 0" "red" >}}      |      {{< bg "MISS" "postgresql-14-pg-fact-loader : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PGDG 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "blue" >}} | {{< bg "PGDG 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "blue" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-18-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-17-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-16-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-15-pg-fact-loader : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0.1" "postgresql-14-pg-fact-loader : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -72,6 +74,16 @@ width: full
 | `pg_fact_loader_18` | `2.0.1` | [el10.x86_64](/os/el10.x86_64) | pgdg | 35.1 KiB | [pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm) |
 | `pg_fact_loader_18` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 34.7 KiB | [pg_fact_loader_18-2.0.1-3PGDG.rhel10.2.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_fact_loader_18-2.0.1-3PGDG.rhel10.2.noarch.rpm) |
 | `pg_fact_loader_18` | `2.0.1` | [el10.aarch64](/os/el10.aarch64) | pgdg | 35.0 KiB | [pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_fact_loader_18-2.0.1-3PGDG.rhel10.noarch.rpm) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [d12.x86_64](/os/d12.x86_64) | pigsty | 39.6 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [d12.aarch64](/os/d12.aarch64) | pigsty | 39.6 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [d13.x86_64](/os/d13.x86_64) | pigsty | 39.7 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [d13.aarch64](/os/d13.aarch64) | pigsty | 39.7 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u22.x86_64](/os/u22.x86_64) | pigsty | 40.6 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pigsty | 40.6 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pigsty | 40.4 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pigsty | 40.4 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.4 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-fact-loader` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 40.4 KiB | [postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-18-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -100,6 +112,8 @@ width: full
 | `postgresql-17-pg-fact-loader` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 40.6 KiB | [postgresql-17-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb) |
 | `postgresql-17-pg-fact-loader` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.5 KiB | [postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-17-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `postgresql-17-pg-fact-loader` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.4 KiB | [postgresql-17-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-fact-loader` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 40.4 KiB | [postgresql-17-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-17-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -129,6 +143,8 @@ width: full
 | `postgresql-16-pg-fact-loader` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 40.6 KiB | [postgresql-16-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb) |
 | `postgresql-16-pg-fact-loader` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.5 KiB | [postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-16-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `postgresql-16-pg-fact-loader` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.4 KiB | [postgresql-16-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-fact-loader` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 40.4 KiB | [postgresql-16-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-16-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -158,6 +174,8 @@ width: full
 | `postgresql-15-pg-fact-loader` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 40.6 KiB | [postgresql-15-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb) |
 | `postgresql-15-pg-fact-loader` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.5 KiB | [postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-15-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `postgresql-15-pg-fact-loader` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.4 KiB | [postgresql-15-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-fact-loader` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 40.4 KiB | [postgresql-15-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-15-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -187,6 +205,8 @@ width: full
 | `postgresql-14-pg-fact-loader` | `2.0.1` | [u22.aarch64](/os/u22.aarch64) | pgdg | 40.6 KiB | [postgresql-14-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-14-pg-fact-loader_2.0.1-5.pgdg22.04+1_arm64.deb) |
 | `postgresql-14-pg-fact-loader` | `2.0.1` | [u24.x86_64](/os/u24.x86_64) | pgdg | 40.5 KiB | [postgresql-14-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-14-pg-fact-loader_2.0.1-5.pgdg24.04+1_amd64.deb) |
 | `postgresql-14-pg-fact-loader` | `2.0.1` | [u24.aarch64](/os/u24.aarch64) | pgdg | 40.5 KiB | [postgresql-14-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/p/pg-fact-loader/postgresql-14-pg-fact-loader_2.0.1-5.pgdg24.04+1_arm64.deb) |
+| `postgresql-14-pg-fact-loader` | `2.0.1` | [u26.x86_64](/os/u26.x86_64) | pigsty | 40.4 KiB | [postgresql-14-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-14-pg-fact-loader_2.0.1-2PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-fact-loader` | `2.0.1` | [u26.aarch64](/os/u26.aarch64) | pigsty | 40.4 KiB | [postgresql-14-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-fact-loader/postgresql-14-pg-fact-loader_2.0.1-2PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -194,7 +214,13 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/enova/pg_fact_loader" title="Repository" icon="github" subtitle="github.com/enova/pg_fact_loader" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_fact_loader-2.0.1.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_fact_loader;		# build deb
+```
 
 
 ## Install

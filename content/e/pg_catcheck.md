@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5160** | {{< badge content="pg_catcheck" link="https://github.com/EnterpriseDB/pg_catcheck" >}} | {{< ext "pg_catcheck" >}} | `1.6.0` | {{< category "ADMIN" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **5160** | {{< badge content="pg_catcheck" link="https://github.com/EnterpriseDB/pg_catcheck" >}} | {{< ext "pg_catcheck" >}} | `1.6.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

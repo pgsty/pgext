@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5050** | {{< badge content="pg_dirtyread" link="https://github.com/df7cb/pg_dirtyread" >}} | {{< ext "pg_dirtyread" >}} | `2.8` | {{< category "ADMIN" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **5050** | {{< badge content="pg_dirtyread" link="https://github.com/df7cb/pg_dirtyread" >}} | {{< ext "pg_dirtyread" >}} | `2.8` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

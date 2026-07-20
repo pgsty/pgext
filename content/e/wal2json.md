@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9630** | {{< badge content="wal2json" link="https://github.com/eulerto/wal2json" >}} | {{< ext "wal2json" >}} | `2.6` | {{< category "ETL" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **9630** | {{< badge content="wal2json" link="https://github.com/eulerto/wal2json" >}} | {{< ext "wal2json" >}} | `2.6` | {{< category "ETL" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

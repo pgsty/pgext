@@ -27,7 +27,7 @@ width: full
 |   **Requires**    | {{< ext "pg_duckdb" >}} |
 |   **See Also**    | {{< ext "pg_duckdb" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_analytics" >}} {{< ext "columnar" >}} {{< ext "citus_columnar" >}} {{< ext "pg_parquet" >}} {{< ext "orioledb" >}} {{< ext "timescaledb" >}} |
 
-> [!Note] unpublished release; pgrx patched to 0.18.1.
+> [!Note] unpublished release.
 
 
 ## Packages

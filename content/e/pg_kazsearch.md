@@ -14,23 +14,21 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2200** | {{< badge content="pg_kazsearch" link="https://github.com/darkhanakh/pg-kazsearch" >}} | {{< ext "pg_kazsearch" >}} | `2.2.0` | {{< category "FTS" >}} | {{< license "LGPL-3.0" >}} | {{< language "Rust" >}} |
+| **2200** | {{< badge content="pg_kazsearch" link="https://github.com/darkhanakh/pg-kazsearch" >}} | {{< ext "pg_kazsearch" >}} | `2.3.0` | {{< category "FTS" >}} | {{< license "LGPL-3.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] Upstream release/package version is 2.0.0; extension control version is 0.1.0; pgrx patched to 0.18.1.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_kazsearch` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "pg_kazsearch_18" "green" >}} {{< bg "17" "pg_kazsearch_17" "green" >}} {{< bg "16" "pg_kazsearch_16" "green" >}} {{< bg "15" "pg_kazsearch_15" "red" >}} {{< bg "14" "pg_kazsearch_14" "red" >}} | `pg_kazsearch_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.2.0` | {{< bg "18" "postgresql-18-pg-kazsearch" "green" >}} {{< bg "17" "postgresql-17-pg-kazsearch" "green" >}} {{< bg "16" "postgresql-16-pg-kazsearch" "green" >}} {{< bg "15" "postgresql-15-pg-kazsearch" "red" >}} {{< bg "14" "postgresql-14-pg-kazsearch" "red" >}} | `postgresql-$v-pg-kazsearch` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "red" >}} {{< bg "14" "" "red" >}} | `pg_kazsearch` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "pg_kazsearch_18" "green" >}} {{< bg "17" "pg_kazsearch_17" "green" >}} {{< bg "16" "pg_kazsearch_16" "green" >}} {{< bg "15" "pg_kazsearch_15" "red" >}} {{< bg "14" "pg_kazsearch_14" "red" >}} | `pg_kazsearch_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.0` | {{< bg "18" "postgresql-18-pg-kazsearch" "green" >}} {{< bg "17" "postgresql-17-pg-kazsearch" "green" >}} {{< bg "16" "postgresql-16-pg-kazsearch" "green" >}} {{< bg "15" "postgresql-15-pg-kazsearch" "red" >}} {{< bg "14" "postgresql-14-pg-kazsearch" "red" >}} | `postgresql-$v-pg-kazsearch` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -125,7 +123,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/darkhanakh/pg-kazsearch" title="Repository" icon="github" subtitle="github.com/darkhanakh/pg-kazsearch" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_kazsearch-2.2.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_kazsearch-2.3.0.tar.gz" >}}
 {{< /cards >}}
 
 

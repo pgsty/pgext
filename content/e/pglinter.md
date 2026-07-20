@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "amcheck" >}} {{< ext "supautils" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

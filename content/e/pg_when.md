@@ -21,8 +21,6 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

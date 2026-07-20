@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2930** | {{< badge content="rdkit" link="https://github.com/rdkit/rdkit" >}} | {{< ext "rdkit" >}} | `202503.6` | {{< category "FEAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C++" >}} |
+| **2930** | {{< badge content="rdkit" link="https://github.com/rdkit/rdkit" >}} | {{< ext "rdkit" >}} | `202503.6` | {{< category "FEAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C++" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

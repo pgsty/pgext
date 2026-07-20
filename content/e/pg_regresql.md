@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3230** | {{< badge content="pg_regresql" link="https://github.com/boringsql/regresql" >}} | {{< ext "pg_regresql" >}} | `2.0.0` | {{< category "LANG" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **3230** | {{< badge content="pg_regresql" link="https://github.com/boringsql/regresql" >}} | {{< ext "pg_regresql" >}} | `2.0.0` | {{< category "LANG" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

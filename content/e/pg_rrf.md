@@ -21,16 +21,14 @@ width: full
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rrf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_rrf_18" "red" >}} {{< bg "17" "pg_rrf_17" "green" >}} {{< bg "16" "pg_rrf_16" "green" >}} {{< bg "15" "pg_rrf_15" "green" >}} {{< bg "14" "pg_rrf_14" "green" >}} | `pg_rrf_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-rrf" "red" >}} {{< bg "17" "postgresql-17-pg-rrf" "green" >}} {{< bg "16" "postgresql-16-pg-rrf" "green" >}} {{< bg "15" "postgresql-15-pg-rrf" "green" >}} {{< bg "14" "postgresql-14-pg-rrf" "green" >}} | `postgresql-$v-pg-rrf` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_rrf` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "pg_rrf_18" "green" >}} {{< bg "17" "pg_rrf_17" "green" >}} {{< bg "16" "pg_rrf_16" "green" >}} {{< bg "15" "pg_rrf_15" "green" >}} {{< bg "14" "pg_rrf_14" "green" >}} | `pg_rrf_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.3` | {{< bg "18" "postgresql-18-pg-rrf" "green" >}} {{< bg "17" "postgresql-17-pg-rrf" "green" >}} {{< bg "16" "postgresql-16-pg-rrf" "green" >}} {{< bg "15" "postgresql-15-pg-rrf" "green" >}} {{< bg "14" "postgresql-14-pg-rrf" "green" >}} | `postgresql-$v-pg-rrf` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -176,6 +174,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pg_rrf;		# install via package name, for the active PG version
 
+pig install pg_rrf -v 18;   # install for PG 18
 pig install pg_rrf -v 17;   # install for PG 17
 pig install pg_rrf -v 16;   # install for PG 16
 pig install pg_rrf -v 15;   # install for PG 15

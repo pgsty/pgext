@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6000** | {{< badge content="pg_profile" link="https://github.com/zubkov-andrei/pg_profile" >}} | {{< ext "pg_profile" >}} | `4.11` | {{< category "STAT" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **6000** | {{< badge content="pg_profile" link="https://github.com/zubkov-andrei/pg_profile" >}} | {{< ext "pg_profile" >}} | `4.11` | {{< category "STAT" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

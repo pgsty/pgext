@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3070** | {{< badge content="plprofiler" link="https://github.com/bigsql/plprofiler" >}} | {{< ext "plprofiler" >}} | `4.2.5` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
+| **3070** | {{< badge content="plprofiler" link="https://github.com/bigsql/plprofiler" >}} | {{< ext "plprofiler" >}} | `4.2.5` | {{< category "LANG" >}} | {{< license "Artistic-1.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

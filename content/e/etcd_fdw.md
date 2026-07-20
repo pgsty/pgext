@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "wrappers" >}} {{< ext "redis_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "postgres_fdw" >}} {{< ext "mysql_fdw" >}} {{< ext "mongo_fdw" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

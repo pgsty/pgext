@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5060** | {{< badge content="pgfincore" link="https://github.com/klando/pgfincore" >}} | {{< ext "pgfincore" >}} | `1.4.0` | {{< category "ADMIN" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **5060** | {{< badge content="pgfincore" link="https://github.com/klando/pgfincore" >}} | {{< ext "pgfincore" >}} | `1.4.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

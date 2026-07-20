@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_graphql" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

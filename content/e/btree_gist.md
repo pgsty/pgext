@@ -24,7 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
+|    **Need By**    | {{< ext "emaj" >}} {{< ext "omni_auth" >}} {{< ext "periods" >}} {{< ext "pg_lake_table" >}} {{< ext "pgautofailover" >}} {{< ext "powa" >}} |
 |   **See Also**    | {{< ext "btree_gin" >}} {{< ext "unaccent" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} {{< ext "prefix" >}} {{< ext "citext" >}} |
 
 

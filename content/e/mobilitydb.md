@@ -14,12 +14,12 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1650** | {{< badge content="mobilitydb" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb" >}} | `1.3.0` | {{< category "GIS" >}} | {{< license "GPL-3.0" >}} | {{< language "C" >}} |
+| **1650** | {{< badge content="mobilitydb" link="https://github.com/MobilityDB/MobilityDB" >}} | {{< ext "mobilitydb" >}} | `1.3.0` | {{< category "GIS" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -29,25 +29,26 @@ width: full
 |   **See Also**    | {{< ext "pgrouting" >}} {{< ext "h3_postgis" >}} {{< ext "timescaledb" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 |    **Siblings**   | {{< ext "mobilitydb_datagen" >}} |
 
-> [!Note] need another schema
+> [!Note] RPM complete on EL8/9/10 x86_64/aarch64 for PG14-18; PGDG DEB supports PG14-18 overall, but Ubuntu 22.04 lacks PG18 on both architectures; package also ships mobilitydb_datagen; preload postgis-3 and set max_locks_per_transaction=128; v1.2 to v1.3 requires dump/restore.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mobilitydb` | `postgis` |
-| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `mobilitydb` | `postgis` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.3.0` | {{< bg "18" "mobilitydb_18" "green" >}} {{< bg "17" "mobilitydb_17" "green" >}} {{< bg "16" "mobilitydb_16" "green" >}} {{< bg "15" "mobilitydb_15" "green" >}} {{< bg "14" "mobilitydb_14" "green" >}} | `mobilitydb_$v` | `postgis36_$v` |
+| **DEB** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.3.0` | {{< bg "18" "postgresql-18-mobilitydb" "green" >}} {{< bg "17" "postgresql-17-mobilitydb" "green" >}} {{< bg "16" "postgresql-16-mobilitydb" "green" >}} {{< bg "15" "postgresql-15-mobilitydb" "green" >}} {{< bg "14" "postgresql-14-mobilitydb" "green" >}} | `postgresql-$v-mobilitydb` | `postgresql-$v-postgis-3` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
 |:------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|:-------------------------------------------:|
-| {{< os "el8.x86_64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
-| {{< os "el8.aarch64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
-| {{< os "el9.x86_64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
-| {{< os "el9.aarch64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
-| {{< os "el10.x86_64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
-| {{< os "el10.aarch64" >}} |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |      {{< bg "MISS" "mobilitydb : MISS 0" "red" >}}      |
+| {{< os "el8.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el8.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el9.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.x86_64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
+| {{< os "el10.aarch64" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_18 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_17 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_16 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_15 : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.3.0" "mobilitydb_14 : AVAIL 1" "green" >}} |
 | {{< os "d12.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
 | {{< os "d12.aarch64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
 | {{< os "d13.x86_64" >}} | {{< bg "PGDG 1.3.0" "postgresql-18-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-17-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-16-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-15-mobilitydb : AVAIL 3" "blue" >}} | {{< bg "PGDG 1.3.0" "postgresql-14-mobilitydb : AVAIL 3" "blue" >}} |
@@ -65,6 +66,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `mobilitydb_18` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 807.2 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/mobilitydb_18-1.3.0-1PIGSTY.el8.x86_64.rpm) |
+| `mobilitydb_18` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 751.5 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/mobilitydb_18-1.3.0-1PIGSTY.el8.aarch64.rpm) |
+| `mobilitydb_18` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 809.4 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/mobilitydb_18-1.3.0-1PIGSTY.el9.x86_64.rpm) |
+| `mobilitydb_18` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 771.8 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/mobilitydb_18-1.3.0-1PIGSTY.el9.aarch64.rpm) |
+| `mobilitydb_18` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 734.4 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/mobilitydb_18-1.3.0-1PIGSTY.el10.x86_64.rpm) |
+| `mobilitydb_18` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 708.2 KiB | [mobilitydb_18-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/mobilitydb_18-1.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-18-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.9 KiB | [postgresql-18-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.3 KiB | [postgresql-18-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb) |
 | `postgresql-18-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 709.5 KiB | [postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-18-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
@@ -95,6 +102,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `mobilitydb_17` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 807.4 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/mobilitydb_17-1.3.0-1PIGSTY.el8.x86_64.rpm) |
+| `mobilitydb_17` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 751.6 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/mobilitydb_17-1.3.0-1PIGSTY.el8.aarch64.rpm) |
+| `mobilitydb_17` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 809.3 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/mobilitydb_17-1.3.0-1PIGSTY.el9.x86_64.rpm) |
+| `mobilitydb_17` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 772.8 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/mobilitydb_17-1.3.0-1PIGSTY.el9.aarch64.rpm) |
+| `mobilitydb_17` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 733.9 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/mobilitydb_17-1.3.0-1PIGSTY.el10.x86_64.rpm) |
+| `mobilitydb_17` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 708.1 KiB | [mobilitydb_17-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/mobilitydb_17-1.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-17-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.6 KiB | [postgresql-17-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 716.0 KiB | [postgresql-17-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb) |
 | `postgresql-17-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 709.8 KiB | [postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-17-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
@@ -127,6 +140,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `mobilitydb_16` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 807.1 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/mobilitydb_16-1.3.0-1PIGSTY.el8.x86_64.rpm) |
+| `mobilitydb_16` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 751.6 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/mobilitydb_16-1.3.0-1PIGSTY.el8.aarch64.rpm) |
+| `mobilitydb_16` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 809.3 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/mobilitydb_16-1.3.0-1PIGSTY.el9.x86_64.rpm) |
+| `mobilitydb_16` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 771.4 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/mobilitydb_16-1.3.0-1PIGSTY.el9.aarch64.rpm) |
+| `mobilitydb_16` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 734.1 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/mobilitydb_16-1.3.0-1PIGSTY.el10.x86_64.rpm) |
+| `mobilitydb_16` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 708.3 KiB | [mobilitydb_16-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/mobilitydb_16-1.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-16-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.6 KiB | [postgresql-16-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.2 KiB | [postgresql-16-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb) |
 | `postgresql-16-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.5 KiB | [postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-16-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
@@ -159,6 +178,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `mobilitydb_15` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 806.7 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/mobilitydb_15-1.3.0-1PIGSTY.el8.x86_64.rpm) |
+| `mobilitydb_15` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 750.8 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/mobilitydb_15-1.3.0-1PIGSTY.el8.aarch64.rpm) |
+| `mobilitydb_15` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 808.2 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/mobilitydb_15-1.3.0-1PIGSTY.el9.x86_64.rpm) |
+| `mobilitydb_15` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 771.9 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/mobilitydb_15-1.3.0-1PIGSTY.el9.aarch64.rpm) |
+| `mobilitydb_15` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 733.4 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/mobilitydb_15-1.3.0-1PIGSTY.el10.x86_64.rpm) |
+| `mobilitydb_15` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 707.8 KiB | [mobilitydb_15-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/mobilitydb_15-1.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-15-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.3 KiB | [postgresql-15-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 715.7 KiB | [postgresql-15-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb) |
 | `postgresql-15-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.7 KiB | [postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-15-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
@@ -191,6 +216,12 @@ width: full
 
 | **Package** | **Version** | **OS** | **ORG** | **SIZE** | **File URL** |
 |:------------|:-----------:|:------:|:-------:|:--------:|:--------------|
+| `mobilitydb_14` | `1.3.0` | [el8.x86_64](/os/el8.x86_64) | pigsty | 806.8 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el8.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el8.x86_64/mobilitydb_14-1.3.0-1PIGSTY.el8.x86_64.rpm) |
+| `mobilitydb_14` | `1.3.0` | [el8.aarch64](/os/el8.aarch64) | pigsty | 751.2 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el8.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el8.aarch64/mobilitydb_14-1.3.0-1PIGSTY.el8.aarch64.rpm) |
+| `mobilitydb_14` | `1.3.0` | [el9.x86_64](/os/el9.x86_64) | pigsty | 809.0 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el9.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el9.x86_64/mobilitydb_14-1.3.0-1PIGSTY.el9.x86_64.rpm) |
+| `mobilitydb_14` | `1.3.0` | [el9.aarch64](/os/el9.aarch64) | pigsty | 772.9 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el9.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el9.aarch64/mobilitydb_14-1.3.0-1PIGSTY.el9.aarch64.rpm) |
+| `mobilitydb_14` | `1.3.0` | [el10.x86_64](/os/el10.x86_64) | pigsty | 733.1 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el10.x86_64.rpm](https://repo.pigsty.io/yum/pgsql/el10.x86_64/mobilitydb_14-1.3.0-1PIGSTY.el10.x86_64.rpm) |
+| `mobilitydb_14` | `1.3.0` | [el10.aarch64](/os/el10.aarch64) | pigsty | 708.1 KiB | [mobilitydb_14-1.3.0-1PIGSTY.el10.aarch64.rpm](https://repo.pigsty.io/yum/pgsql/el10.aarch64/mobilitydb_14-1.3.0-1PIGSTY.el10.aarch64.rpm) |
 | `postgresql-14-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 716.5 KiB | [postgresql-14-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 716.4 KiB | [postgresql-14-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~rc1-1.pgdg12+1_amd64.deb) |
 | `postgresql-14-mobilitydb` | `1.3.0` | [d12.x86_64](/os/d12.x86_64) | pgdg | 708.7 KiB | [postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb](https://apt.postgresql.org/pub/repos/apt/pool/main/m/mobilitydb/postgresql-14-mobilitydb_1.3.0~alpha-3.pgdg12+1_amd64.deb) |
@@ -224,15 +255,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/MobilityDB/MobilityDB" title="Repository" icon="github" subtitle="github.com/MobilityDB/MobilityDB" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="mobilitydb-1.3.0.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg mobilitydb;		# build rpm
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -246,6 +283,13 @@ pig install mobilitydb -v 16;   # install for PG 16
 pig install mobilitydb -v 15;   # install for PG 15
 pig install mobilitydb -v 14;   # install for PG 14
 
+```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'postgis-3';
 ```
 
 

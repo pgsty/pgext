@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "pgcozy" >}} |
 |   **See Also**    | {{< ext "pg_repack" >}} {{< ext "pgfincore" >}} {{< ext "pgcozy" >}} {{< ext "pg_prewarm" >}} {{< ext "pgmeminfo" >}} {{< ext "pg_squeeze" >}} {{< ext "old_snapshot" >}} {{< ext "system_stats" >}} |
 
 

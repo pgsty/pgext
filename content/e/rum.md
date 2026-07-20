@@ -24,7 +24,6 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
-|    **Need By**    | {{< ext "documentdb" >}} |
 |   **See Also**    | {{< ext "pg_trgm" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} |
 
 > [!Note] 1.3.15 build pass on pg 16,17,18

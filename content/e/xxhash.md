@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4430** | {{< badge content="xxhash" link="https://github.com/hatarist/pg_xxhash" >}} | {{< ext "xxhash" "pg_xxhash" >}} | `0.0.1` | {{< category "UTIL" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4430** | {{< badge content="xxhash" link="https://github.com/hatarist/pg_xxhash" >}} | {{< ext "xxhash" "pg_xxhash" >}} | `0.0.1` | {{< category "UTIL" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

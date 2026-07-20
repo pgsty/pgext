@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2640** | {{< badge content="pgrdf" link="https://github.com/styk-tv/pgRDF" >}} | {{< ext "pgrdf" >}} | `0.6.4` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2640** | {{< badge content="pgrdf" link="https://github.com/styk-tv/pgRDF" >}} | {{< ext "pgrdf" >}} | `0.6.20` | {{< category "FEAT" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,16 +27,16 @@ width: full
 |    **Schemas**    | `pgrdf` |
 |   **See Also**    | {{< ext "rdf_fdw" >}} {{< ext "pg_sparql" >}} {{< ext "rdkit" >}} |
 
-> [!Note] PG14-17 only; production hook/cache deployments should preload pgrdf; pgrx patched to 0.18.1.
+> [!Note] Production hook/cache deployments should preload pgrdf.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "" "red" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrdf` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "pgrdf_18" "red" >}} {{< bg "17" "pgrdf_17" "green" >}} {{< bg "16" "pgrdf_16" "green" >}} {{< bg "15" "pgrdf_15" "green" >}} {{< bg "14" "pgrdf_14" "green" >}} | `pgrdf_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.4` | {{< bg "18" "postgresql-18-pgrdf" "red" >}} {{< bg "17" "postgresql-17-pgrdf" "green" >}} {{< bg "16" "postgresql-16-pgrdf" "green" >}} {{< bg "15" "postgresql-15-pgrdf" "green" >}} {{< bg "14" "postgresql-14-pgrdf" "green" >}} | `postgresql-$v-pgrdf` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.20` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgrdf` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.20` | {{< bg "18" "pgrdf_18" "green" >}} {{< bg "17" "pgrdf_17" "green" >}} {{< bg "16" "pgrdf_16" "green" >}} {{< bg "15" "pgrdf_15" "green" >}} {{< bg "14" "pgrdf_14" "green" >}} | `pgrdf_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.20` | {{< bg "18" "postgresql-18-pgrdf" "green" >}} {{< bg "17" "postgresql-17-pgrdf" "green" >}} {{< bg "16" "postgresql-16-pgrdf" "green" >}} {{< bg "15" "postgresql-15-pgrdf" "green" >}} {{< bg "14" "postgresql-14-pgrdf" "green" >}} | `postgresql-$v-pgrdf` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -153,7 +153,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/styk-tv/pgRDF" title="Repository" icon="github" subtitle="github.com/styk-tv/pgRDF" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgrdf-0.6.4.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgrdf-0.6.20.tar.gz" >}}
 {{< /cards >}}
 
 
@@ -175,6 +175,7 @@ pig repo add pgsql -u   # add both repo and update cache
 ```bash
 pig install pgrdf;		# install via package name, for the active PG version
 
+pig install pgrdf -v 18;   # install for PG 18
 pig install pgrdf -v 17;   # install for PG 17
 pig install pgrdf -v 16;   # install for PG 16
 pig install pgrdf -v 15;   # install for PG 15

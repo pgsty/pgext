@@ -27,8 +27,6 @@ width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tiktoken" >}} {{< ext "pgml" >}} {{< ext "pg_bestmatch" >}} {{< ext "pg_similarity" >}} {{< ext "smlar" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

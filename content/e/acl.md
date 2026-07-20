@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3810** | {{< badge content="acl" link="https://github.com/arkhipov/acl" >}} | {{< ext "acl" "pg_acl" >}} | `1.0.4` | {{< category "TYPE" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **3810** | {{< badge content="acl" link="https://github.com/arkhipov/acl" >}} | {{< ext "acl" "pg_acl" >}} | `1.0.4` | {{< category "TYPE" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

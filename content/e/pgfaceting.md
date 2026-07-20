@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3640** | {{< badge content="pgfaceting" link="https://github.com/cybertec-postgresql/pgfaceting" >}} | {{< ext "pgfaceting" >}} | `0.2.0` | {{< category "TYPE" >}} | {{< license "BSD 3-Clause" >}} | {{< language "SQL" >}} |
+| **3640** | {{< badge content="pgfaceting" link="https://github.com/cybertec-postgresql/pgfaceting" >}} | {{< ext "pgfaceting" >}} | `0.2.0` | {{< category "TYPE" >}} | {{< license "BSD-3-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `graphql` |
 |   **See Also**    | {{< ext "age" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_net" >}} {{< ext "http" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "wrappers" >}} |
 
-> [!Note] not an official release by Vonng; pgrx patched to 0.18.1.
+> [!Note] not an official release by Vonng.
 
 
 ## Packages

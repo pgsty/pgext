@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1580** | {{< badge content="pg_eviltransform" link="https://github.com/aiyou178/pg_eviltransform" >}} | {{< ext "pg_eviltransform" >}} | `0.0.2` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **1580** | {{< badge content="pg_eviltransform" link="https://github.com/aiyou178/pg_eviltransform" >}} | {{< ext "pg_eviltransform" >}} | `0.0.4` | {{< category "GIS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,16 +28,14 @@ width: full
 |   **Requires**    | {{< ext "postgis" >}} |
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "pgrouting" >}} {{< ext "pg_geohash" >}} {{< ext "h3" >}} {{< ext "q3c" >}} {{< ext "earthdistance" >}} {{< ext "tzf" >}} {{< ext "geoip" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_eviltransform` | `postgis` |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} {{< bg "14" "pg_eviltransform_14" "green" >}} | `pg_eviltransform_$v` | `postgis36_$v` |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.2` | {{< bg "18" "postgresql-18-eviltransform" "green" >}} {{< bg "17" "postgresql-17-eviltransform" "green" >}} {{< bg "16" "postgresql-16-eviltransform" "green" >}} {{< bg "15" "postgresql-15-eviltransform" "green" >}} {{< bg "14" "postgresql-14-eviltransform" "green" >}} | `postgresql-$v-eviltransform` | `postgresql-$v-postgis` |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_eviltransform` | `postgis` |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_eviltransform_18" "green" >}} {{< bg "17" "pg_eviltransform_17" "green" >}} {{< bg "16" "pg_eviltransform_16" "green" >}} {{< bg "15" "pg_eviltransform_15" "green" >}} {{< bg "14" "pg_eviltransform_14" "green" >}} | `pg_eviltransform_$v` | `postgis36_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-eviltransform" "green" >}} {{< bg "17" "postgresql-17-eviltransform" "green" >}} {{< bg "16" "postgresql-16-eviltransform" "green" >}} {{< bg "15" "postgresql-15-eviltransform" "green" >}} {{< bg "14" "postgresql-14-eviltransform" "green" >}} | `postgresql-$v-eviltransform` | `postgresql-$v-postgis` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -176,7 +174,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aiyou178/pg_eviltransform" title="Repository" icon="github" subtitle="github.com/aiyou178/pg_eviltransform" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_eviltransform-0.0.2.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_eviltransform-0.0.4.tar.gz" >}}
 {{< /cards >}}
 
 

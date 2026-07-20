@@ -273,12 +273,12 @@ zhparser supports the following token types from SCWS:
 | Code | Description |
 |------|-------------|
 | `a` | Adjective |
-| `b` | Differentiation (区别词) |
+| `b` | Distinguishing word |
 | `c` | Conjunction |
 | `d` | Adverb |
 | `e` | Exclamation |
-| `f` | Position word (方位词) |
-| `g` | Root word (词根) |
+| `f` | Position word |
+| `g` | Root word |
 | `h` | Prefix |
 | `i` | Idiom |
 | `j` | Abbreviation |
@@ -290,14 +290,14 @@ zhparser supports the following token types from SCWS:
 | `p` | Preposition |
 | `q` | Classifier |
 | `r` | Pronoun |
-| `s` | Space word (处所词) |
+| `s` | Locative word |
 | `t` | Time word |
 | `u` | Auxiliary |
 | `v` | Verb |
 | `w` | Punctuation |
 | `x` | Unknown |
 | `y` | Modal particle |
-| `z` | Status word (状态词) |
+| `z` | State word |
 
 ## Custom Dictionaries
 

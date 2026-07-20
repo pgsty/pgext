@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "postgis" >}} {{< ext "geoip" >}} {{< ext "pg_cron" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

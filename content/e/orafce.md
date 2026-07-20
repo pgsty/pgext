@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.16.7` | {{< category "SIM" >}} | {{< license "BSD 0-Clause" >}} | {{< language "C" >}} |
+| **9100** | {{< badge content="orafce" link="https://github.com/orafce/orafce" >}} | {{< ext "orafce" >}} | `4.16.7` | {{< category "SIM" >}} | {{< license "0BSD" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

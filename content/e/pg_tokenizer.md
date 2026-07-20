@@ -27,7 +27,7 @@ width: full
 |    **Schemas**    | `tokenizer_catalog` |
 |   **See Also**    | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_trgm" >}} |
 
-> [!Note] PG18 fix by Vonng; pgrx patched to 0.18.1.
+> [!Note] PG18 fix by Vonng.
 
 
 ## Packages

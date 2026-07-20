@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6230** | {{< badge content="pg_stat_monitor" link="https://github.com/percona/pg_stat_monitor" >}} | {{< ext "pg_stat_monitor" >}} | `2.3.2` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6230** | {{< badge content="pg_stat_monitor" link="https://github.com/percona/pg_stat_monitor" >}} | {{< ext "pg_stat_monitor" >}} | `2.3.2` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

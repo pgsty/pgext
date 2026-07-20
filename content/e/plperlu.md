@@ -25,8 +25,7 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `pg_catalog` |
-|   **Requires**    | {{< ext "plperlu" >}} |
-|    **Need By**    | {{< ext "bool_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "plperlu" >}} {{< ext "pg_utl_smtp" >}} {{< ext "sparql" >}} |
+|    **Need By**    | {{< ext "bool_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "pg_utl_smtp" >}} {{< ext "sparql" >}} |
 |   **See Also**    | {{< ext "plperl" >}} {{< ext "plluau" >}} {{< ext "pltclu" >}} {{< ext "bool_plperl" >}} {{< ext "hstore_plperl" >}} {{< ext "jsonb_plperl" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} |
 |    **Siblings**   | {{< ext "bool_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} |
 
@@ -46,7 +45,7 @@ width: full
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION plperlu CASCADE; -- requires plperlu
+CREATE EXTENSION plperlu;
 ```
 
 

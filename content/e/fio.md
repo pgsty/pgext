@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5230** | {{< badge content="fio" link="https://github.com/csimsek/pgsql-fio" >}} | {{< ext "fio" "pg_fio" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **5230** | {{< badge content="fio" link="https://github.com/csimsek/pgsql-fio" >}} | {{< ext "fio" "pg_fio" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

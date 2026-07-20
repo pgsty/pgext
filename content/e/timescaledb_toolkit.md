@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "timescaledb" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} {{< ext "emaj" >}} {{< ext "pg_cron" >}} {{< ext "pg_partman" >}} {{< ext "table_version" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

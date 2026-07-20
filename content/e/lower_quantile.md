@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4620** | {{< badge content="lower_quantile" link="https://github.com/tvondra/lower_quantile" >}} | {{< ext "lower_quantile" >}} | `1.0.3` | {{< category "FUNC" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4620** | {{< badge content="lower_quantile" link="https://github.com/tvondra/lower_quantile" >}} | {{< ext "lower_quantile" >}} | `1.0.3` | {{< category "FUNC" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

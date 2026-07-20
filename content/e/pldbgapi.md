@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3050** | {{< badge content="pldbgapi" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< ext "pldbgapi" "pldebugger" >}} | `1.10` | {{< category "LANG" >}} | {{< license "Artistic" >}} | {{< language "C" >}} |
+| **3050** | {{< badge content="pldbgapi" link="https://github.com/EnterpriseDB/pldebugger" >}} | {{< ext "pldbgapi" "pldebugger" >}} | `1.10` | {{< category "LANG" >}} | {{< license "Artistic-2.0" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -284,7 +284,7 @@ pig install pldbgapi -v 14;   # install for PG 14
 [**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
 
 ```ini
-shared_preload_libraries = 'pldbgapi';
+shared_preload_libraries = '$libdir/plugin_debugger';
 ```
 
 

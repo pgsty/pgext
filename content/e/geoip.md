@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1560** | {{< badge content="geoip" link="https://github.com/tvondra/geoip" >}} | {{< ext "geoip" >}} | `0.3.0` | {{< category "GIS" >}} | {{< license "BSD 2-Clause" >}} | {{< language "SQL" >}} |
+| **1560** | {{< badge content="geoip" link="https://github.com/tvondra/geoip" >}} | {{< ext "geoip" >}} | `0.3.0` | {{< category "GIS" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5260** | {{< badge content="pgdisablelogerror" link="https://github.com/fmbiete/pgdisablelogerror" >}} | {{< ext "pgdisablelogerror" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "BSD" >}} | {{< language "C" >}} |
+| **5260** | {{< badge content="pgdisablelogerror" link="https://github.com/fmbiete/pgdisablelogerror" >}} | {{< ext "pgdisablelogerror" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4630** | {{< badge content="count_distinct" link="https://github.com/tvondra/count_distinct" >}} | {{< ext "count_distinct" >}} | `3.0.2` | {{< category "FUNC" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4630** | {{< badge content="count_distinct" link="https://github.com/tvondra/count_distinct" >}} | {{< ext "count_distinct" >}} | `3.0.2` | {{< category "FUNC" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

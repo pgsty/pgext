@@ -14,14 +14,14 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7405** | {{< badge content="block_copy_command" link="https://github.com/rustwizard/block_copy_command" >}} | {{< ext "block_copy_command" >}} | `0.1.5` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "Rust" >}} |
+| **7405** | {{< badge content="block_copy_command" link="https://github.com/rustwizard/block_copy_command" >}} | {{< ext "block_copy_command" >}} | `0.1.5` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] Requires shared_preload_libraries = block_copy_command; pgrx patched to 0.18.1.
+> [!Note] Requires shared_preload_libraries = block_copy_command.
 
 
 ## Packages

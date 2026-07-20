@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5210** | {{< badge content="pg_crash" link="https://github.com/cybertec-postgresql/pg_crash" >}} | {{< ext "pg_crash" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **5210** | {{< badge content="pg_crash" link="https://github.com/cybertec-postgresql/pg_crash" >}} | {{< ext "pg_crash" >}} | `1.0` | {{< category "ADMIN" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

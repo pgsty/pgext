@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6400** | {{< badge content="pg_datasentinel" link="https://github.com/datasentinel/pg_datasentinel" >}} | {{< ext "pg_datasentinel" >}} | `1.0` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6400** | {{< badge content="pg_datasentinel" link="https://github.com/datasentinel/pg_datasentinel" >}} | {{< ext "pg_datasentinel" >}} | `1.0` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

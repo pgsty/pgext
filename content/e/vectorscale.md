@@ -27,8 +27,6 @@ width: full
 |   **Requires**    | {{< ext "vector" >}} |
 |   **See Also**    | {{< ext "vchord" >}} {{< ext "vectorize" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_similarity" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 
@@ -217,6 +215,8 @@ CREATE EXTENSION vectorscale CASCADE; -- requires vector
 
 
 ## Usage
+
+`vectorscale` extends `pgvector` with the StreamingDiskANN index access method for approximate nearest-neighbor search. The example below creates a vector table, builds a `diskann` index, and runs a distance-ordered query.
 
 ```sql
 CREATE EXTENSION vectorscale CASCADE;

@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **6240** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.4` | {{< category "STAT" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **6240** | {{< badge content="pg_qualstats" link="https://github.com/powa-team/pg_qualstats" >}} | {{< ext "pg_qualstats" >}} | `2.1.4` | {{< category "STAT" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

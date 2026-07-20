@@ -27,8 +27,6 @@ width: full
 |    **Schemas**    | `bm_catalog` |
 |   **See Also**    | {{< ext "vector" >}} {{< ext "pg_search" >}} {{< ext "vchord_bm25" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "zhparser" >}} {{< ext "pg_tokenizer" >}} {{< ext "vectorize" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

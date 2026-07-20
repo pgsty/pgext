@@ -25,7 +25,6 @@ width: full
 | **Relationships** |   |
 |:-----------------:|:----|
 |    **Schemas**    | `net` |
-|    **Need By**    | {{< ext "pgmb" >}} |
 |   **See Also**    | {{< ext "http" >}} {{< ext "pg_curl" >}} {{< ext "pgjwt" >}} {{< ext "pg_smtp_client" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "pgjq" >}} |
 
 > [!Note] 0.20.3 on d12/d13/el10/u24/u26; el8/el9/u22 remain on 0.9.2 due older libcurl.

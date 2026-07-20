@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "url_encode" >}} {{< ext "pg_cardano" >}} {{< ext "base36" >}} {{< ext "base62" >}} {{< ext "pg_polyline" >}} {{< ext "uri" >}} {{< ext "pg_curl" >}} {{< ext "pg_rewrite" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

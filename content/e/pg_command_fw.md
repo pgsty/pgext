@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7400** | {{< badge content="pg_command_fw" link="https://github.com/rustwizard/pg_command_fw" >}} | {{< ext "pg_command_fw" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "Rust" >}} |
+| **7400** | {{< badge content="pg_command_fw" link="https://github.com/rustwizard/pg_command_fw" >}} | {{< ext "pg_command_fw" >}} | `0.1.0` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgaudit" >}} {{< ext "pgextwlist" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} |
 
-> [!Note] Requires shared_preload_libraries = pg_command_fw to activate hooks for all sessions; pgrx patched to 0.18.1.
+> [!Note] Requires shared_preload_libraries = pg_command_fw to activate hooks for all sessions.
 
 
 ## Packages

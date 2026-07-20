@@ -14,23 +14,23 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9620** | {{< badge content="pgmqtt" link="https://github.com/RayElg/pgmqtt" >}} | {{< ext "pgmqtt" >}} | `0.3.0` | {{< category "ETL" >}} | {{< license "ELv2" >}} | {{< language "Rust" >}} |
+| **9620** | {{< badge content="pgmqtt" link="https://github.com/RayElg/pgmqtt" >}} | {{< ext "pgmqtt" >}} | `0.4.1` | {{< category "ETL" >}} | {{< license "Elastic-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
 | {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
-> [!Note] requires wal_level = logical for CDC; pgrx patched to 0.18.1.
+> [!Note] requires wal_level = logical for CDC.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmqtt` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "pgmqtt_18" "green" >}} {{< bg "17" "pgmqtt_17" "green" >}} {{< bg "16" "pgmqtt_16" "green" >}} {{< bg "15" "pgmqtt_15" "green" >}} {{< bg "14" "pgmqtt_14" "green" >}} | `pgmqtt_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.3.0` | {{< bg "18" "postgresql-18-pgmqtt" "green" >}} {{< bg "17" "postgresql-17-pgmqtt" "green" >}} {{< bg "16" "postgresql-16-pgmqtt" "green" >}} {{< bg "15" "postgresql-15-pgmqtt" "green" >}} {{< bg "14" "postgresql-14-pgmqtt" "green" >}} | `postgresql-$v-pgmqtt` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgmqtt` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "pgmqtt_18" "green" >}} {{< bg "17" "pgmqtt_17" "green" >}} {{< bg "16" "pgmqtt_16" "green" >}} {{< bg "15" "pgmqtt_15" "green" >}} {{< bg "14" "pgmqtt_14" "green" >}} | `pgmqtt_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.4.1` | {{< bg "18" "postgresql-18-pgmqtt" "green" >}} {{< bg "17" "postgresql-17-pgmqtt" "green" >}} {{< bg "16" "postgresql-16-pgmqtt" "green" >}} {{< bg "15" "postgresql-15-pgmqtt" "green" >}} {{< bg "14" "postgresql-14-pgmqtt" "green" >}} | `postgresql-$v-pgmqtt` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -169,7 +169,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/RayElg/pgmqtt" title="Repository" icon="github" subtitle="github.com/RayElg/pgmqtt" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmqtt-0.3.0.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgmqtt-0.4.1.tar.gz" >}}
 {{< /cards >}}
 
 

@@ -27,8 +27,6 @@ width: full
 |    **Need By**    | {{< ext "fsm_core" >}} |
 |   **See Also**    | {{< ext "pg_graphql" >}} {{< ext "jsquery" >}} {{< ext "plv8" >}} {{< ext "jsonb_plperl" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

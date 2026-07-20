@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5110** | {{< badge content="pg_checksums" link="https://github.com/credativ/pg_checksums" >}} | {{< ext "pg_checksums" >}} | `1.3` | {{< category "ADMIN" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **5110** | {{< badge content="pg_checksums" link="https://github.com/credativ/pg_checksums" >}} | {{< ext "pg_checksums" >}} | `1.3` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

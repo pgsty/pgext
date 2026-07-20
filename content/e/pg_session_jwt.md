@@ -27,8 +27,6 @@ width: full
 |    **Schemas**    | `auth` |
 |   **See Also**    | {{< ext "pgjwt" >}} {{< ext "pgaudit" >}} {{< ext "pgsodium" >}} {{< ext "supabase_vault" >}} {{< ext "anon" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

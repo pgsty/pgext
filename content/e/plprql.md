@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_tle" >}} {{< ext "plpgsql" >}} {{< ext "plv8" >}} {{< ext "plperl" >}} {{< ext "plpython3u" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

@@ -14,25 +14,28 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.3.3` | {{< category "FDW" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **8740** | {{< badge content="hdfs_fdw" link="https://github.com/EnterpriseDB/hdfs_fdw" >}} | {{< ext "hdfs_fdw" >}} | `2.3.3` | {{< category "FDW" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--s-d-r" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="yes" color="green" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_parquet" >}} {{< ext "mongo_fdw" >}} {{< ext "kafka_fdw" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "jdbc_fdw" >}} {{< ext "aws_s3" >}} {{< ext "duckdb_fdw" >}} |
 
+> [!Note] Package/source version 2.3.3; SQL extension version 2.0.5. Live queries require a compatible Hive JDBC driver and Hadoop/Hive service.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdfs_fdw` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.3.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `hdfs_fdw` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.3.3` | {{< bg "18" "hdfs_fdw_18" "green" >}} {{< bg "17" "hdfs_fdw_17" "green" >}} {{< bg "16" "hdfs_fdw_16" "green" >}} {{< bg "15" "hdfs_fdw_15" "green" >}} {{< bg "14" "hdfs_fdw_14" "green" >}} | `hdfs_fdw_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.3.3` | {{< bg "18" "postgresql-18-hdfs-fdw" "green" >}} {{< bg "17" "postgresql-17-hdfs-fdw" "green" >}} {{< bg "16" "postgresql-16-hdfs-fdw" "green" >}} {{< bg "15" "postgresql-15-hdfs-fdw" "green" >}} {{< bg "14" "postgresql-14-hdfs-fdw" "green" >}} | `postgresql-$v-hdfs-fdw` | `default-jre-headless` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -43,16 +46,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 6" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 6" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 3" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_17 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_16 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_15 : AVAIL 3" "blue" >}} | {{< bg "PGDG 2.3.3" "hdfs_fdw_14 : AVAIL 3" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "hdfs_fdw : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-18-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-17-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-16-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-15-hdfs-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.3.3" "postgresql-14-hdfs-fdw : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -70,6 +73,16 @@ width: full
 | `hdfs_fdw_18` | `2.3.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 116.9 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/hdfs_fdw_18-2.3.3-1PGDG.rhel10.x86_64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.4 KiB | [hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/hdfs_fdw_18-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
 | `hdfs_fdw_18` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.6 KiB | [hdfs_fdw_18-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/hdfs_fdw_18-2.3.3-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 100.8 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 97.7 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 101.0 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 98.1 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 109.6 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 108.2 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 104.2 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.0 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.2 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.5 KiB | [postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-18-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -92,6 +105,16 @@ width: full
 | `hdfs_fdw_17` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.1 KiB | [hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
 | `hdfs_fdw_17` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.5 KiB | [hdfs_fdw_17-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.3-1PGDG.rhel10.aarch64.rpm) |
 | `hdfs_fdw_17` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_17-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/hdfs_fdw_17-2.3.2-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 100.7 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 97.8 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 100.9 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 98.0 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.8 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 121.3 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 104.1 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 102.9 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.4 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-17-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -114,6 +137,16 @@ width: full
 | `hdfs_fdw_16` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
 | `hdfs_fdw_16` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.5 KiB | [hdfs_fdw_16-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.3-1PGDG.rhel10.aarch64.rpm) |
 | `hdfs_fdw_16` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.3 KiB | [hdfs_fdw_16-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/hdfs_fdw_16-2.3.2-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 100.5 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 97.7 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 100.8 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 98.0 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.2 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 120.7 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 103.9 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 102.8 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.3 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.3 KiB | [postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-16-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -147,6 +180,16 @@ width: full
 | `hdfs_fdw_15` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.1 KiB | [hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
 | `hdfs_fdw_15` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.4 KiB | [hdfs_fdw_15-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.3-1PGDG.rhel10.aarch64.rpm) |
 | `hdfs_fdw_15` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.3 KiB | [hdfs_fdw_15-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/hdfs_fdw_15-2.3.2-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 100.5 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 97.5 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 100.9 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 97.9 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.5 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 120.8 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 104.4 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.1 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.7 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.5 KiB | [postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-15-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -183,6 +226,16 @@ width: full
 | `hdfs_fdw_14` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.0 KiB | [hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.3-3PGDG.rhel10.2.aarch64.rpm) |
 | `hdfs_fdw_14` | `2.3.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 115.3 KiB | [hdfs_fdw_14-2.3.3-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.3-1PGDG.rhel10.aarch64.rpm) |
 | `hdfs_fdw_14` | `2.3.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 114.2 KiB | [hdfs_fdw_14-2.3.2-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/hdfs_fdw_14-2.3.2-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 100.5 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 97.5 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 100.8 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 97.8 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 122.3 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 120.6 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 104.2 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 103.0 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 103.6 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-hdfs-fdw` | `2.3.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 102.4 KiB | [postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/h/hdfs-fdw/postgresql-14-hdfs-fdw_2.3.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -190,15 +243,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/EnterpriseDB/hdfs_fdw" title="Repository" icon="github" subtitle="github.com/EnterpriseDB/hdfs_fdw" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="hdfs_fdw-2.3.3.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg hdfs_fdw;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

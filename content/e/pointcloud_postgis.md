@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1521** | {{< badge content="pointcloud_postgis" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< ext "pointcloud_postgis" "pointcloud" >}} | `1.2.5` | {{< category "GIS" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **1521** | {{< badge content="pointcloud_postgis" link="https://github.com/pgpointcloud/pointcloud" >}} | {{< ext "pointcloud_postgis" "pointcloud" >}} | `1.2.5` | {{< category "GIS" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

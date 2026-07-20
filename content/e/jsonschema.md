@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_graphql" >}} {{< ext "plv8" >}} |
 
-> [!Note] Distinct from Supabase pg_jsonschema; pgrx patched to 0.18.1.
+> [!Note] Distinct from Supabase pg_jsonschema.
 
 
 ## Packages

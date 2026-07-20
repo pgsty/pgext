@@ -28,8 +28,6 @@ width: full
 |   **Requires**    | {{< ext "pgmq" >}} |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_background" >}} {{< ext "timescaledb" >}} {{< ext "timescaledb_toolkit" >}} {{< ext "timeseries" >}} {{< ext "periods" >}} {{< ext "temporal_tables" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

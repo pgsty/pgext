@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **2190** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.4` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
+| **2190** | {{< badge content="pg_pinyin" link="https://github.com/aiyou178/pg_pinyin" >}} | {{< ext "pg_pinyin" >}} | `0.0.5` | {{< category "FTS" >}} | {{< license "MIT" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -27,16 +27,16 @@ width: full
 |    **Schemas**    | `pinyin` |
 |   **See Also**    | {{< ext "zhparser" >}} {{< ext "pg_search" >}} {{< ext "pg_trgm" >}} {{< ext "pg_bigm" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_tokenizer" >}} {{< ext "fuzzystrmatch" >}} |
 
-> [!Note] optional tokenizer-input overload can integrate with pg_search; pgrx patched to 0.18.1.
+> [!Note] optional tokenizer-input overload can integrate with pg_search.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.4` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_pinyin` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "pg_pinyin_18" "green" >}} {{< bg "17" "pg_pinyin_17" "green" >}} {{< bg "16" "pg_pinyin_16" "green" >}} {{< bg "15" "pg_pinyin_15" "green" >}} {{< bg "14" "pg_pinyin_14" "green" >}} | `pg_pinyin_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.0.5` | {{< bg "18" "postgresql-18-pinyin" "green" >}} {{< bg "17" "postgresql-17-pinyin" "green" >}} {{< bg "16" "postgresql-16-pinyin" "green" >}} {{< bg "15" "postgresql-15-pinyin" "green" >}} {{< bg "14" "postgresql-14-pinyin" "green" >}} | `postgresql-$v-pinyin` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -175,7 +175,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/aiyou178/pg_pinyin" title="Repository" icon="github" subtitle="github.com/aiyou178/pg_pinyin" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pinyin-0.0.4.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_pinyin-0.0.5.tar.gz" >}}
 {{< /cards >}}
 
 

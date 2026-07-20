@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "pg_partman" >}} {{< ext "timeseries" >}} |
 
-> [!Note] PG18 only; pgrx schema metadata must be kept from linker garbage collection; pgrx patched to 0.18.1.
+> [!Note] PG18 only; pgrx schema metadata must be kept from linker garbage collection.
 
 
 ## Packages

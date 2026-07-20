@@ -24,6 +24,7 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|    **Need By**    | {{< ext "index_advisor" >}} |
 |   **See Also**    | {{< ext "index_advisor" >}} {{< ext "pg_qualstats" >}} {{< ext "powa" >}} {{< ext "pg_hint_plan" >}} {{< ext "auto_explain" >}} {{< ext "pg_stat_statements" >}} {{< ext "btree_gin" >}} {{< ext "pg_show_plans" >}} |
 
 

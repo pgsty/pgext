@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pgsodium" >}} {{< ext "pgcryptokey" >}} {{< ext "pgcrypto" >}} {{< ext "pg_tde" >}} {{< ext "sslutils" >}} {{< ext "faker" >}} {{< ext "uuid-ossp" >}} {{< ext "lo" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

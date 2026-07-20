@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "vectorize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "pg_net" >}} |
 
-> [!Note] PG18 fix by https://github.com/Vonng/pg_summarize; pgrx patched to 0.18.1.
+> [!Note] PG18 fix by https://github.com/Vonng/pg_summarize.
 
 
 ## Packages

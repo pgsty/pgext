@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3650** | {{< badge content="pg_sphere" link="https://github.com/postgrespro/pgsphere" >}} | {{< ext "pg_sphere" "pgsphere" >}} | `1.5.2` | {{< category "TYPE" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **3650** | {{< badge content="pg_sphere" link="https://github.com/postgrespro/pgsphere" >}} | {{< ext "pg_sphere" "pgsphere" >}} | `1.5.2` | {{< category "TYPE" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

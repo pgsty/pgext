@@ -26,7 +26,7 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_idkit" >}} {{< ext "pg_uuidv7" >}} {{< ext "sequential_uuids" >}} {{< ext "uuid-ossp" >}} {{< ext "pg_hashids" >}} {{< ext "permuteseq" >}} |
 
-> [!Note] shared_preload_libraries = pgx_ulid is only required for gen_monotonic_ulid(); other functions work without it; pgrx patched to 0.18.1.
+> [!Note] shared_preload_libraries = pgx_ulid is only required for gen_monotonic_ulid(); other functions work without it.
 
 
 ## Packages

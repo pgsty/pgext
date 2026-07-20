@@ -26,6 +26,7 @@ width: full
 |:-----------------:|:----|
 |    **Schemas**    | `pgh_raster` |
 |   **Requires**    | {{< ext "plpgsql" >}} {{< ext "postgis" >}} {{< ext "postgis_raster" >}} {{< ext "pghydro" >}} |
+|    **Need By**    | {{< ext "pgh_hgm" >}} |
 |    **Siblings**   | {{< ext "pghydro" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} |
 
 

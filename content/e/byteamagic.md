@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4275** | {{< badge content="byteamagic" link="https://github.com/nmandery/pg_byteamagic" >}} | {{< ext "byteamagic" "pg_byteamagic" >}} | `0.2.4` | {{< category "UTIL" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4275** | {{< badge content="byteamagic" link="https://github.com/nmandery/pg_byteamagic" >}} | {{< ext "byteamagic" "pg_byteamagic" >}} | `0.2.4` | {{< category "UTIL" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

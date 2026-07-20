@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.6.1` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
+| **8500** | {{< badge content="wrappers" link="https://github.com/supabase/wrappers" >}} | {{< ext "wrappers" >}} | `0.6.2` | {{< category "FDW" >}} | {{< license "Apache-2.0" >}} | {{< language "Rust" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -26,16 +26,14 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} {{< ext "pgspider_ext" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wrappers` | - |
-| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} | `wrappers_$v` | - |
-| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.1` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} | `postgresql-$v-wrappers` | - |
+| **EXT** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `wrappers` | - |
+| **RPM** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.2` | {{< bg "18" "wrappers_18" "green" >}} {{< bg "17" "wrappers_17" "green" >}} {{< bg "16" "wrappers_16" "green" >}} {{< bg "15" "wrappers_15" "green" >}} {{< bg "14" "wrappers_14" "green" >}} | `wrappers_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.6.2` | {{< bg "18" "postgresql-18-wrappers" "green" >}} {{< bg "17" "postgresql-17-wrappers" "green" >}} {{< bg "16" "postgresql-16-wrappers" "green" >}} {{< bg "15" "postgresql-15-wrappers" "green" >}} {{< bg "14" "postgresql-14-wrappers" "green" >}} | `postgresql-$v-wrappers` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -174,7 +172,7 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/supabase/wrappers" title="Repository" icon="github" subtitle="github.com/supabase/wrappers" >}}
-{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.6.1.tar.gz" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="wrappers-0.6.2.tar.gz" >}}
 {{< /cards >}}
 
 

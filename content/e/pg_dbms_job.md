@@ -7,19 +7,19 @@ categories: ["SIM"]
 width: full
 ---
 
-[**pg_dbms_job**](https://github.com/MigOpsRepos/pg_dbms_job) : Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
+[**pg_dbms_job**](https://github.com/HexaCluster/pg_dbms_job) : Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9260** | {{< badge content="pg_dbms_job" link="https://github.com/MigOpsRepos/pg_dbms_job" >}} | {{< ext "pg_dbms_job" >}} | `2.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "SQL" >}} |
+| **9260** | {{< badge content="pg_dbms_job" link="https://github.com/HexaCluster/pg_dbms_job" >}} | {{< ext "pg_dbms_job" >}} | `2.0` | {{< category "SIM" >}} | {{< license "PostgreSQL" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="--sLd--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="Yes" color="orange" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -27,13 +27,16 @@ width: full
 |    **Schemas**    | `dbms_job` |
 |   **See Also**    | {{< ext "pg_cron" >}} {{< ext "pg_task" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pgagent" >}} {{< ext "pg_jobmon" >}} {{< ext "oracle_fdw" >}} {{< ext "orafce" >}} |
 
+> [!Note] Background worker; requires shared_preload_libraries=pg_dbms_job and restart. Worker connections also require valid database, user, and authentication settings.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_job` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_job` | - |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.0` | {{< bg "18" "pg_dbms_job_18" "green" >}} {{< bg "17" "pg_dbms_job_17" "green" >}} {{< bg "16" "pg_dbms_job_16" "green" >}} {{< bg "15" "pg_dbms_job_15" "green" >}} {{< bg "14" "pg_dbms_job_14" "green" >}} | `pg_dbms_job_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.0` | {{< bg "18" "postgresql-18-pg-dbms-job" "green" >}} {{< bg "17" "postgresql-17-pg-dbms-job" "green" >}} {{< bg "16" "postgresql-16-pg-dbms-job" "green" >}} {{< bg "15" "postgresql-15-pg-dbms-job" "green" >}} {{< bg "14" "postgresql-14-pg-dbms-job" "green" >}} | `postgresql-$v-pg-dbms-job` | `libpq5` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -44,16 +47,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_14 : AVAIL 4" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_18 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_17 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_16 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_15 : AVAIL 4" "blue" >}} | {{< bg "PGDG 2.0" "pg_dbms_job_14 : AVAIL 4" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_job : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.0" "postgresql-18-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-17-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-16-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-15-pg-dbms-job : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.0" "postgresql-14-pg-dbms-job : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -81,6 +84,16 @@ width: full
 | `pg_dbms_job_18` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_18-2.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_job_18-2.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_dbms_job_18` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_18-2.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_job_18-2.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `pg_dbms_job_18` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_job_18-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.6 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.7 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 46.4 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 45.6 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 49.2 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 48.2 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 48.2 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.2 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 48.1 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-dbms-job` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.4 KiB | [postgresql-18-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-18-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -107,6 +120,16 @@ width: full
 | `pg_dbms_job_17` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_17-2.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_job_17-2.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_dbms_job_17` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_17-2.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_job_17-2.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `pg_dbms_job_17` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_job_17-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.3 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.5 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 46.4 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 45.4 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 51.5 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.6 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 48.1 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.1 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 48.1 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-dbms-job` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.3 KiB | [postgresql-17-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-17-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -133,6 +156,16 @@ width: full
 | `pg_dbms_job_16` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_16-2.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_job_16-2.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_dbms_job_16` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_16-2.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_job_16-2.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `pg_dbms_job_16` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_job_16-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.3 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.5 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 46.3 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 45.4 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 51.4 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.4 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 48.0 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.1 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 48.0 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-dbms-job` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.3 KiB | [postgresql-16-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-16-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -159,6 +192,16 @@ width: full
 | `pg_dbms_job_15` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_15-2.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_job_15-2.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_dbms_job_15` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_15-2.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_job_15-2.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `pg_dbms_job_15` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.5 KiB | [pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_job_15-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.3 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.5 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 46.3 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 45.4 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 51.4 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.4 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 48.0 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.1 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 48.0 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-dbms-job` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.3 KiB | [postgresql-15-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-15-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -189,22 +232,38 @@ width: full
 | `pg_dbms_job_14` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_14-2.0-1PGDG.rhel10.1.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_job_14-2.0-1PGDG.rhel10.1.aarch64.rpm) |
 | `pg_dbms_job_14` | `2.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 30.6 KiB | [pg_dbms_job_14-2.0-1PGDG.rhel10.0.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_job_14-2.0-1PGDG.rhel10.0.aarch64.rpm) |
 | `pg_dbms_job_14` | `1.5` | [el10.aarch64](/os/el10.aarch64) | pgdg | 26.6 KiB | [pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_job_14-1.5-5PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 46.3 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 45.5 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 46.3 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 45.4 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 51.3 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 50.4 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 48.0 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 47.1 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 48.0 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-dbms-job` | `2.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 47.3 KiB | [postgresql-14-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-job/postgresql-14-pg-dbms-job_2.0-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/MigOpsRepos/pg_dbms_job" title="Repository" icon="github" subtitle="github.com/MigOpsRepos/pg_dbms_job" >}}
+{{< card link="https://github.com/HexaCluster/pg_dbms_job" title="Repository" icon="github" subtitle="github.com/HexaCluster/pg_dbms_job" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dbms_job-2.0.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_dbms_job;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -218,6 +277,13 @@ pig install pg_dbms_job -v 16;   # install for PG 16
 pig install pg_dbms_job -v 15;   # install for PG 15
 pig install pg_dbms_job -v 14;   # install for PG 14
 
+```
+
+
+[**Config**](https://ext.pgsty.com/usage/config/) this extension to [**`shared_preload_libraries`**](https://www.postgresql.org/docs/current/runtime-config-client.html#GUC-SHARED-PRELOAD-LIBRARIES):
+
+```ini
+shared_preload_libraries = 'pg_dbms_job';
 ```
 
 

@@ -7,14 +7,14 @@ categories: ["LANG"]
 width: full
 ---
 
-[**faker**](https://github.com/anpandu/postgresql_faker) : Wrapper for the Faker Python library
+[**faker**](https://gitlab.com/dalibo/postgresql_faker) : Wrapper for the Faker Python library
 
 
 ## Overview
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **3210** | {{< badge content="faker" link="https://github.com/anpandu/postgresql_faker" >}} | {{< ext "faker" >}} | `0.5.3` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
+| **3210** | {{< badge content="faker" link="https://gitlab.com/dalibo/postgresql_faker" >}} | {{< ext "faker" >}} | `0.5.3` | {{< category "LANG" >}} | {{< license "PostgreSQL" >}} | {{< language "Python" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -24,15 +24,19 @@ width: full
 
 | **Relationships** |   |
 |:-----------------:|:----|
+|   **Requires**    | {{< ext "plpython3u" >}} |
 |   **See Also**    | {{< ext "plpython3u" >}} {{< ext "pgtap" >}} {{< ext "dbt2" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} {{< ext "random" >}} {{< ext "pg_tle" >}} |
+
+> [!Note] Requires PL/Python3 and Python Faker; the PIGSTY DEB carries a PG17+ parser compatibility patch.
 
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `faker` | - |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `0.5.3` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `faker` | `plpython3u` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `0.5.3` | {{< bg "18" "postgresql_faker_18" "green" >}} {{< bg "17" "postgresql_faker_17" "green" >}} {{< bg "16" "postgresql_faker_16" "green" >}} {{< bg "15" "postgresql_faker_15" "green" >}} {{< bg "14" "postgresql_faker_14" "green" >}} | `postgresql_faker_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `0.5.3` | {{< bg "18" "postgresql-18-faker" "green" >}} {{< bg "17" "postgresql-17-faker" "green" >}} {{< bg "16" "postgresql-16-faker" "green" >}} {{< bg "15" "postgresql-15-faker" "green" >}} {{< bg "14" "postgresql-14-faker" "green" >}} | `postgresql-$v-faker` | `postgresql-plpython3-$v`, `python3-fake-factory` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -43,16 +47,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 0.5.3" "postgresql_faker_14 : AVAIL 2" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |      {{< bg "MISS" "faker : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-18-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-17-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-16-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-15-faker : AVAIL 1" "green" >}} | {{< bg "PIGSTY 0.5.3" "postgresql-14-faker : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -70,6 +74,16 @@ width: full
 | `postgresql_faker_18` | `0.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/postgresql_faker_18-0.5.3-7PGDG.rhel10.x86_64.rpm) |
 | `postgresql_faker_18` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.3 KiB | [postgresql_faker_18-0.5.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/postgresql_faker_18-0.5.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql_faker_18` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_18-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/postgresql_faker_18-0.5.3-7PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-faker` | `0.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.9 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 42.0 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.9 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 42.1 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.0 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 41.1 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 41.2 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.2 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 41.4 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-faker` | `0.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 41.5 KiB | [postgresql-18-faker_0.5.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-18-faker_0.5.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -86,6 +100,16 @@ width: full
 | `postgresql_faker_17` | `0.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [postgresql_faker_17-0.5.3-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/postgresql_faker_17-0.5.3-7PGDG.rhel10.x86_64.rpm) |
 | `postgresql_faker_17` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.3 KiB | [postgresql_faker_17-0.5.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/postgresql_faker_17-0.5.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql_faker_17` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_17-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/postgresql_faker_17-0.5.3-7PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-faker` | `0.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.9 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.9 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.9 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 42.0 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.2 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 41.3 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 41.2 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.2 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 41.4 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-faker` | `0.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 41.4 KiB | [postgresql-17-faker_0.5.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-17-faker_0.5.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -102,6 +126,16 @@ width: full
 | `postgresql_faker_16` | `0.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [postgresql_faker_16-0.5.3-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/postgresql_faker_16-0.5.3-7PGDG.rhel10.x86_64.rpm) |
 | `postgresql_faker_16` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.3 KiB | [postgresql_faker_16-0.5.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/postgresql_faker_16-0.5.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql_faker_16` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_16-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/postgresql_faker_16-0.5.3-7PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-faker` | `0.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.9 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.9 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.9 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 42.0 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.2 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 41.3 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 41.2 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.2 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 41.4 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-faker` | `0.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 41.5 KiB | [postgresql-16-faker_0.5.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-16-faker_0.5.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -118,6 +152,16 @@ width: full
 | `postgresql_faker_15` | `0.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [postgresql_faker_15-0.5.3-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/postgresql_faker_15-0.5.3-7PGDG.rhel10.x86_64.rpm) |
 | `postgresql_faker_15` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.3 KiB | [postgresql_faker_15-0.5.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/postgresql_faker_15-0.5.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql_faker_15` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_15-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/postgresql_faker_15-0.5.3-7PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-faker` | `0.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.9 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.9 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.9 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 42.0 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.2 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 41.3 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 41.2 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.2 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 41.4 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-faker` | `0.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 41.5 KiB | [postgresql-15-faker_0.5.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-15-faker_0.5.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -136,22 +180,38 @@ width: full
 | `postgresql_faker_14` | `0.5.3` | [el10.x86_64](/os/el10.x86_64) | pgdg | 44.3 KiB | [postgresql_faker_14-0.5.3-7PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/postgresql_faker_14-0.5.3-7PGDG.rhel10.x86_64.rpm) |
 | `postgresql_faker_14` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.3 KiB | [postgresql_faker_14-0.5.3-9PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/postgresql_faker_14-0.5.3-9PGDG.rhel10.2.aarch64.rpm) |
 | `postgresql_faker_14` | `0.5.3` | [el10.aarch64](/os/el10.aarch64) | pgdg | 44.5 KiB | [postgresql_faker_14-0.5.3-7PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/postgresql_faker_14-0.5.3-7PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-faker` | `0.5.3` | [d12.x86_64](/os/d12.x86_64) | pigsty | 41.8 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [d12.aarch64](/os/d12.aarch64) | pigsty | 41.9 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [d13.x86_64](/os/d13.x86_64) | pigsty | 41.8 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [d13.aarch64](/os/d13.aarch64) | pigsty | 42.0 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u22.x86_64](/os/u22.x86_64) | pigsty | 41.2 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u22.aarch64](/os/u22.aarch64) | pigsty | 41.3 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u24.x86_64](/os/u24.x86_64) | pigsty | 41.2 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u24.aarch64](/os/u24.aarch64) | pigsty | 41.2 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u26.x86_64](/os/u26.x86_64) | pigsty | 41.4 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-faker` | `0.5.3` | [u26.aarch64](/os/u26.aarch64) | pigsty | 41.4 KiB | [postgresql-14-faker_0.5.3-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/postgresql-faker/postgresql-14-faker_0.5.3-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
 ## Source
 
 {{< cards cols=3 >}}
-{{< card link="https://github.com/anpandu/postgresql_faker" title="Repository" icon="github" subtitle="github.com/anpandu/postgresql_faker" >}}
+{{< card link="https://gitlab.com/dalibo/postgresql_faker" title="Repository" icon="link" subtitle="gitlab.com/dalibo/postgresql_faker" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="postgresql_faker-0.5.3.tar.bz2" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg faker;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):
@@ -171,7 +231,7 @@ pig install faker -v 14;   # install for PG 14
 [**Create**](https://ext.pgsty.com/usage/create) this extension with:
 
 ```sql
-CREATE EXTENSION faker;
+CREATE EXTENSION faker CASCADE; -- requires plpython3u
 ```
 
 

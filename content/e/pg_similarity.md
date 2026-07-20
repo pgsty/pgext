@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **1840** | {{< badge content="pg_similarity" link="https://github.com/eulerto/pg_similarity" >}} | {{< ext "pg_similarity" >}} | `1.0` | {{< category "RAG" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **1840** | {{< badge content="pg_similarity" link="https://github.com/eulerto/pg_similarity" >}} | {{< ext "pg_similarity" >}} | `1.0` | {{< category "RAG" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

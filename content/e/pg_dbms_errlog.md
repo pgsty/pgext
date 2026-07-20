@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **9270** | {{< badge content="pg_dbms_errlog" link="https://github.com/HexaCluster/pg_dbms_errlog" >}} | {{< ext "pg_dbms_errlog" >}} | `2.2` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
+| **9270** | {{< badge content="pg_dbms_errlog" link="https://github.com/HexaCluster/pg_dbms_errlog" >}} | {{< ext "pg_dbms_errlog" >}} | `2.4` | {{< category "SIM" >}} | {{< license "ISC" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
@@ -28,13 +28,16 @@ width: full
 |   **Requires**    | {{< ext "pg_statement_rollback" >}} |
 |   **See Also**    | {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} |
 
+> [!Note] Requires pg_statement_rollback and shared_preload_libraries=pg_dbms_errlog; restart required.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | `pg_statement_rollback` |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pg_dbms_errlog` | `pg_statement_rollback` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `2.2` | {{< bg "18" "pg_dbms_errlog_18" "green" >}} {{< bg "17" "pg_dbms_errlog_17" "green" >}} {{< bg "16" "pg_dbms_errlog_16" "green" >}} {{< bg "15" "pg_dbms_errlog_15" "green" >}} {{< bg "14" "pg_dbms_errlog_14" "green" >}} | `pg_dbms_errlog_$v` | `pg_statement_rollback_$v` |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `2.4` | {{< bg "18" "postgresql-18-pg-dbms-errlog" "green" >}} {{< bg "17" "postgresql-17-pg-dbms-errlog" "green" >}} {{< bg "16" "postgresql-16-pg-dbms-errlog" "green" >}} {{< bg "15" "postgresql-15-pg-dbms-errlog" "green" >}} {{< bg "14" "postgresql-14-pg-dbms-errlog" "green" >}} | `postgresql-$v-pg-dbms-errlog` | `postgresql-$v-pg-statement-rollback` |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -45,16 +48,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 2.2" "pg_dbms_errlog_14 : AVAIL 2" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |      {{< bg "MISS" "pg_dbms_errlog : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 2.4" "postgresql-18-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-17-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-16-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-15-pg-dbms-errlog : AVAIL 1" "green" >}} | {{< bg "PIGSTY 2.4" "postgresql-14-pg-dbms-errlog : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -72,6 +75,16 @@ width: full
 | `pg_dbms_errlog_18` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_dbms_errlog_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_dbms_errlog_18` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pg_dbms_errlog_18-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 62.1 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 61.1 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 62.2 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 61.1 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 67.3 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 66.5 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.7 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 64.6 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-18-pg-dbms-errlog` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 64.0 KiB | [postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-18-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -88,6 +101,16 @@ width: full
 | `pg_dbms_errlog_17` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_dbms_errlog_17` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.8 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_dbms_errlog_17` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.3 KiB | [pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pg_dbms_errlog_17-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 62.0 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 61.1 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 62.2 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 61.1 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 73.9 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 73.1 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.6 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 64.5 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-17-pg-dbms-errlog` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 64.1 KiB | [postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-17-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -104,6 +127,16 @@ width: full
 | `pg_dbms_errlog_16` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 32.6 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_dbms_errlog_16` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 31.9 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_dbms_errlog_16` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.2 KiB | [pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pg_dbms_errlog_16-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 62.0 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 60.9 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 62.2 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 61.0 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 73.4 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 72.7 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.5 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.0 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 64.5 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-16-pg-dbms-errlog` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 63.9 KiB | [postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-16-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -120,6 +153,16 @@ width: full
 | `pg_dbms_errlog_15` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.5 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_dbms_errlog_15` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.8 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_dbms_errlog_15` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.2 KiB | [pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pg_dbms_errlog_15-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 62.3 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 61.3 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 62.5 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 61.3 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 74.0 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 73.2 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 65.1 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.6 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 64.5 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-15-pg-dbms-errlog` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 64.2 KiB | [postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-15-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -136,6 +179,16 @@ width: full
 | `pg_dbms_errlog_14` | `2.2` | [el10.x86_64](/os/el10.x86_64) | pgdg | 33.4 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.x86_64.rpm) |
 | `pg_dbms_errlog_14` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 32.9 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.2.aarch64.rpm) |
 | `pg_dbms_errlog_14` | `2.2` | [el10.aarch64](/os/el10.aarch64) | pgdg | 33.1 KiB | [pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pg_dbms_errlog_14-2.2-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [d12.x86_64](/os/d12.x86_64) | pigsty | 62.1 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~bookworm_amd64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [d12.aarch64](/os/d12.aarch64) | pigsty | 61.0 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~bookworm_arm64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [d13.x86_64](/os/d13.x86_64) | pigsty | 62.3 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~trixie_amd64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [d13.aarch64](/os/d13.aarch64) | pigsty | 61.0 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~trixie_arm64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u22.x86_64](/os/u22.x86_64) | pigsty | 73.7 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~jammy_amd64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u22.aarch64](/os/u22.aarch64) | pigsty | 72.9 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~jammy_arm64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u24.x86_64](/os/u24.x86_64) | pigsty | 64.9 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~noble_amd64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u24.aarch64](/os/u24.aarch64) | pigsty | 64.4 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~noble_arm64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u26.x86_64](/os/u26.x86_64) | pigsty | 64.4 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~resolute_amd64.deb) |
+| `postgresql-14-pg-dbms-errlog` | `2.4` | [u26.aarch64](/os/u26.aarch64) | pigsty | 64.0 KiB | [postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pg-dbms-errlog/postgresql-14-pg-dbms-errlog_2.4-1PIGSTY~resolute_arm64.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -143,15 +196,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/HexaCluster/pg_dbms_errlog" title="Repository" icon="github" subtitle="github.com/HexaCluster/pg_dbms_errlog" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pg_dbms_errlog-2.4.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pg_dbms_errlog;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

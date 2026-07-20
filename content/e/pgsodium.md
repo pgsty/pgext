@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **7020** | {{< badge content="pgsodium" link="https://github.com/michelp/pgsodium" >}} | {{< ext "pgsodium" >}} | `3.1.11` | {{< category "SEC" >}} | {{< license "BSD 3-Clause" >}} | {{< language "C" >}} |
+| **7020** | {{< badge content="pgsodium" link="https://github.com/michelp/pgsodium" >}} | {{< ext "pgsodium" >}} | `3.1.11` | {{< category "SEC" >}} | {{< license "BSD-3-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

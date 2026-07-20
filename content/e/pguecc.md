@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **4460** | {{< badge content="pguecc" link="https://github.com/ameensol/pg-ecdsa" >}} | {{< ext "pguecc" "pg_ecdsa" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "BSD 2-Clause" >}} | {{< language "C" >}} |
+| **4460** | {{< badge content="pguecc" link="https://github.com/ameensol/pg-ecdsa" >}} | {{< ext "pguecc" "pg_ecdsa" >}} | `1.0` | {{< category "UTIL" >}} | {{< license "BSD-2-Clause" >}} | {{< language "C" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |

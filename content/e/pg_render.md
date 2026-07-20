@@ -26,8 +26,6 @@ width: full
 |:-----------------:|:----|
 |   **See Also**    | {{< ext "pg_html5_email_address" >}} {{< ext "pg_readme" >}} {{< ext "gzip" >}} {{< ext "bzip" >}} {{< ext "zstd" >}} {{< ext "http" >}} {{< ext "pg_net" >}} {{< ext "pg_curl" >}} |
 
-> [!Note] pgrx patched to 0.18.1.
-
 
 ## Packages
 

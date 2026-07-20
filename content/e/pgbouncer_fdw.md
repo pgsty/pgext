@@ -19,7 +19,7 @@ width: full
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
 |:----------:|:----------:|:-----------:|:---------:|:-------:|:-----------:|:-------:|
-| {{< badge content="--s-d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
+| {{< badge content="----d--" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="No" color="blue" >}} | {{< badge content="Yes" color="green" >}} | {{< badge content="no" color="orange" >}} | {{< badge content="no" color="orange" >}} |
 
 
 | **Relationships** |   |
@@ -27,13 +27,16 @@ width: full
 |   **Requires**    | {{< ext "dblink" >}} |
 |   **See Also**    | {{< ext "dblink" >}} {{< ext "postgres_fdw" >}} {{< ext "pg_stat_monitor" >}} {{< ext "pg_stat_statements" >}} {{< ext "wrappers" >}} {{< ext "multicorn" >}} {{< ext "odbc_fdw" >}} {{< ext "jdbc_fdw" >}} |
 
+> [!Note] Requires dblink and PgBouncer >= 1.17; live queries require a configured PgBouncer admin console.
+
 
 ## Packages
 
 | Type | Repo | Version | PG Major Compatibility | Package Pattern | Dependencies |
 |:----:|:----:|:-------:|:---------------------:|:----------------|:------------:|
-| **EXT** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgbouncer_fdw` | `dblink` |
+| **EXT** | {{< badge content="MIXED" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "" "green" >}} {{< bg "17" "" "green" >}} {{< bg "16" "" "green" >}} {{< bg "15" "" "green" >}} {{< bg "14" "" "green" >}} | `pgbouncer_fdw` | `dblink` |
 | **RPM** | {{< badge content="PGDG" link="/repo/pgdg" >}} | `1.4.0` | {{< bg "18" "pgbouncer_fdw_18" "green" >}} {{< bg "17" "pgbouncer_fdw_17" "green" >}} {{< bg "16" "pgbouncer_fdw_16" "green" >}} {{< bg "15" "pgbouncer_fdw_15" "green" >}} {{< bg "14" "pgbouncer_fdw_14" "green" >}} | `pgbouncer_fdw_$v` | - |
+| **DEB** | {{< badge content="PIGSTY" link="/repo/pgsql" >}} | `1.4.0` | {{< bg "18" "postgresql-18-pgbouncer-fdw" "green" >}} {{< bg "17" "postgresql-17-pgbouncer-fdw" "green" >}} {{< bg "16" "postgresql-16-pgbouncer-fdw" "green" >}} {{< bg "15" "postgresql-15-pgbouncer-fdw" "green" >}} {{< bg "14" "postgresql-14-pgbouncer-fdw" "green" >}} | `postgresql-$v-pgbouncer-fdw` | - |
 
 
 | **Linux** / **PG** |                  **PG18**                   |                  **PG17**                   |                  **PG16**                   |                  **PG15**                   |                  **PG14**                   |
@@ -44,16 +47,16 @@ width: full
 | {{< os "el9.aarch64" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_17 : AVAIL 5" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_16 : AVAIL 7" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_15 : AVAIL 7" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_14 : AVAIL 7" "blue" >}} |
 | {{< os "el10.x86_64" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_14 : AVAIL 2" "blue" >}} |
 | {{< os "el10.aarch64" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_18 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_17 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_16 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_15 : AVAIL 2" "blue" >}} | {{< bg "PGDG 1.4.0" "pgbouncer_fdw_14 : AVAIL 2" "blue" >}} |
-| {{< os "d12.x86_64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "d12.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.x86_64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "d13.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.x86_64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u22.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.x86_64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u24.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u26.x86_64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
-| {{< os "u26.aarch64" >}} |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |      {{< bg "MISS" "pgbouncer_fdw : MISS 0" "red" >}}      |
+| {{< os "d12.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "d12.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "d13.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u22.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u24.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.x86_64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
+| {{< os "u26.aarch64" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-18-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-17-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-16-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-15-pgbouncer-fdw : AVAIL 1" "green" >}} | {{< bg "PIGSTY 1.4.0" "postgresql-14-pgbouncer-fdw : AVAIL 1" "green" >}} |
 
 
 {{< tabs >}}
@@ -71,6 +74,16 @@ width: full
 | `pgbouncer_fdw_18` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-x86_64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.x86_64.rpm) |
 | `pgbouncer_fdw_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.0 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgbouncer_fdw_18` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/18/redhat/rhel-10-aarch64/pgbouncer_fdw_18-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-18-pgbouncer-fdw` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-18-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG17" >}}
@@ -99,6 +112,16 @@ width: full
 | `pgbouncer_fdw_17` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-x86_64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.x86_64.rpm) |
 | `pgbouncer_fdw_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.0 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgbouncer_fdw_17` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/17/redhat/rhel-10-aarch64/pgbouncer_fdw_17-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-17-pgbouncer-fdw` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-17-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG16" >}}
@@ -135,6 +158,16 @@ width: full
 | `pgbouncer_fdw_16` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-x86_64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.x86_64.rpm) |
 | `pgbouncer_fdw_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.0 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgbouncer_fdw_16` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/16/redhat/rhel-10-aarch64/pgbouncer_fdw_16-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-16-pgbouncer-fdw` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-16-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG15" >}}
@@ -171,6 +204,16 @@ width: full
 | `pgbouncer_fdw_15` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-x86_64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.x86_64.rpm) |
 | `pgbouncer_fdw_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.0 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgbouncer_fdw_15` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/15/redhat/rhel-10-aarch64/pgbouncer_fdw_15-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-15-pgbouncer-fdw` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-15-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}
 {{< tab name="PG14" >}}
@@ -209,6 +252,16 @@ width: full
 | `pgbouncer_fdw_14` | `1.4.0` | [el10.x86_64](/os/el10.x86_64) | pgdg | 22.4 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.x86_64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-x86_64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.x86_64.rpm) |
 | `pgbouncer_fdw_14` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.0 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.2.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.2.aarch64.rpm) |
 | `pgbouncer_fdw_14` | `1.4.0` | [el10.aarch64](/os/el10.aarch64) | pgdg | 22.4 KiB | [pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm](https://download.postgresql.org/pub/repos/yum/14/redhat/rhel-10-aarch64/pgbouncer_fdw_14-1.4.0-1PGDG.rhel10.aarch64.rpm) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [d12.x86_64](/os/d12.x86_64) | pigsty | 16.1 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [d12.aarch64](/os/d12.aarch64) | pigsty | 16.1 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb](https://repo.pigsty.io/apt/pgsql/bookworm/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~bookworm_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [d13.x86_64](/os/d13.x86_64) | pigsty | 16.1 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [d13.aarch64](/os/d13.aarch64) | pigsty | 16.1 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb](https://repo.pigsty.io/apt/pgsql/trixie/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~trixie_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u22.x86_64](/os/u22.x86_64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u22.aarch64](/os/u22.aarch64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb](https://repo.pigsty.io/apt/pgsql/jammy/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~jammy_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u24.x86_64](/os/u24.x86_64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u24.aarch64](/os/u24.aarch64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb](https://repo.pigsty.io/apt/pgsql/noble/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~noble_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u26.x86_64](/os/u26.x86_64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
+| `postgresql-14-pgbouncer-fdw` | `1.4.0` | [u26.aarch64](/os/u26.aarch64) | pigsty | 16.2 KiB | [postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb](https://repo.pigsty.io/apt/pgsql/resolute/pool/main/p/pgbouncer-fdw/postgresql-14-pgbouncer-fdw_1.4.0-1PIGSTY~resolute_all.deb) |
 
 {{< /tab >}}{{< /tabs >}}
 
@@ -216,15 +269,21 @@ width: full
 
 {{< cards cols=3 >}}
 {{< card link="https://github.com/CrunchyData/pgbouncer_fdw" title="Repository" icon="github" subtitle="github.com/CrunchyData/pgbouncer_fdw" >}}
+{{< card link="/list" title="Source Tarball" icon="clipboard-list" subtitle="pgbouncer_fdw-1.4.0.tar.gz" >}}
 {{< /cards >}}
+
+
+```bash
+pig build pkg pgbouncer_fdw;		# build deb
+```
 
 
 ## Install
 
-Make sure [**PGDG**](/repo/pgdg) repo available:
+Make sure [**PGDG**](/repo/pgdg) and [**PIGSTY**](/repo/pgsql) repo available:
 
 ```bash
-pig repo add pgdg -u    # add pgdg repo and update cache
+pig repo add pgsql -u   # add both repo and update cache
 ```
 
 [**Install**](https://ext.pgsty.com/usage/install) this extension with [**pig**](/pig):

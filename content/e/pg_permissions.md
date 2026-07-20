@@ -14,7 +14,7 @@ width: full
 
 |    ID    | Extension |  Package   | Version |        Category        |           License            |       Language       |
 |:--------:|:---------:|:----------:|:-------:|:----------------------:|:----------------------------:|:--------------------:|
-| **5140** | {{< badge content="pg_permissions" link="https://github.com/cybertec-postgresql/pg_permissions" >}} | {{< ext "pg_permissions" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "BSD 2-Clause" >}} | {{< language "SQL" >}} |
+| **5140** | {{< badge content="pg_permissions" link="https://github.com/cybertec-postgresql/pg_permissions" >}} | {{< ext "pg_permissions" >}} | `1.4` | {{< category "ADMIN" >}} | {{< license "BSD-2-Clause" >}} | {{< language "SQL" >}} |
 
 
 |  Attribute | Has Binary | Has Library | Need Load | Has DDL | Relocatable | Trusted |
