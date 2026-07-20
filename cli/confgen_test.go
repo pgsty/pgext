@@ -506,6 +506,99 @@ func TestExtraModulesDownloadAliasExcludesOpenCode(t *testing.T) {
 	}
 }
 
+func TestKafkaStackAliasIncludesMonitoringPackages(t *testing.T) {
+	tests := []struct {
+		name     string
+		rendered string
+		want     string
+	}{
+		{
+			name:     "rpm",
+			rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+			want:     "kafka kafka_exporter jmx-exporter",
+		},
+		{
+			name:     "deb",
+			rendered: renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+			want:     "kafka kafka-exporter jmx-exporter",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := renderedPackageAliasValue(tt.rendered, "kafka-stack"); got != tt.want {
+				t.Fatalf("kafka-stack alias = %q, want %q", got, tt.want)
+			}
+			if got := renderedPackageAliasValue(tt.rendered, "kafka"); got != "" {
+				t.Fatalf("rendered config still exposes legacy kafka alias: %q", got)
+			}
+			if got := renderedPackageAliasValue(tt.rendered, "jmx-exporter"); got != "" {
+				t.Fatalf("rendered config exposes standalone jmx-exporter alias: %q", got)
+			}
+		})
+	}
+}
+
+func TestMySQL84RepoAndPackageContract(t *testing.T) {
+	rpm := renderRPMTemplateForTest(t, "el9.x86_64", "el9")
+	deb := renderDEBTemplateForTest(t, "u24.x86_64", "u24")
+
+	rpmMySQL := renderedRepoUpstreamLine(rpm, "mysql")
+	for _, fragment := range []string{
+		"description: 'MySQL 8.4 LTS'",
+		"mysql-8.4-community",
+		"mirrors.ustc.edu.cn/mysql-repo",
+	} {
+		if !strings.Contains(rpmMySQL, fragment) {
+			t.Fatalf("RPM mysql repo missing %q: %q", fragment, rpmMySQL)
+		}
+	}
+	for _, repo := range []string{"mysql-tools", "pxb84"} {
+		line := renderedRepoUpstreamLine(rpm, repo)
+		if line == "" {
+			t.Fatalf("RPM config missing %s repository", repo)
+		}
+		if strings.Contains(line, "meta:") {
+			t.Fatalf("RPM %s repo should not carry meta: %q", repo, line)
+		}
+	}
+	if strings.Contains(rpmMySQL, "meta:") {
+		t.Fatalf("RPM mysql repo should not carry meta: %q", rpmMySQL)
+	}
+
+	debMySQL := renderedRepoUpstreamLine(deb, "mysql")
+	for _, fragment := range []string{
+		"description: 'MySQL 8.4 LTS'",
+		"releases: [   12,13,22,24   ]",
+		"mysql-8.4-lts",
+		"mirrors.ustc.edu.cn/mysql-repo",
+	} {
+		if !strings.Contains(debMySQL, fragment) {
+			t.Fatalf("DEB mysql repo missing %q: %q", fragment, debMySQL)
+		}
+	}
+	if strings.Contains(debMySQL, "meta:") {
+		t.Fatalf("DEB mysql repo should not carry meta: %q", debMySQL)
+	}
+	if strings.Contains(debMySQL, "mysql-tools") || strings.Contains(debMySQL, "mysql-8.0") {
+		t.Fatalf("DEB mysql repo still enables a non-8.4 server/tools component: %q", debMySQL)
+	}
+	debPXB := renderedRepoUpstreamLine(deb, "pxb84")
+	if !strings.Contains(debPXB, "repo.percona.com/pxb-84-lts/apt") {
+		t.Fatalf("DEB pxb84 repo missing upstream URL: %q", debPXB)
+	}
+	if strings.Contains(debPXB, "meta:") {
+		t.Fatalf("DEB pxb84 repo should not carry meta: %q", debPXB)
+	}
+
+	if got := renderedPackageAliasValue(rpm, "mysql"); got != "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld_exporter" {
+		t.Fatalf("RPM mysql alias = %q", got)
+	}
+	if got := renderedPackageAliasValue(deb, "mysql"); got != "mysql-server mysql-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld-exporter" {
+		t.Fatalf("DEB mysql alias = %q", got)
+	}
+}
+
 func TestRPMNodePackageBaselineIncludesMinimalNodePackages(t *testing.T) {
 	constants := GetConfigConstants()
 	for _, osCode := range []string{"el8", "el9", "el10"} {
@@ -720,7 +813,6 @@ func renderedPackageAliasValue(rendered, alias string) string {
 			if len(parts) >= 3 {
 				return parts[1]
 			}
-			return ""
 		}
 	}
 	return ""
@@ -1003,7 +1095,8 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 		"name: citus          ,description: 'Citus'              ,module: extra   ,releases: [11,12,   22      ]",
 		"name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26]",
 		"name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ]",
-		"name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   22,24   ] ,arch: [x86_64         ]",
+		"name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [   12,13,22,24   ] ,arch: [x86_64         ]",
+		"name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [   12,13,22,24   ]",
 		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ]",
 		"name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24,26]",
 		"name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24,26]",
@@ -1039,7 +1132,9 @@ func TestDebTemplateRepoReleaseCompatibility(t *testing.T) {
 func TestRPMTemplateEL10RepoReleaseCompatibility(t *testing.T) {
 	required := []string{
 		"name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
-		"name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: mysql-tools    ,description: 'MySQL 8.4 Tools'    ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
+		"name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: gitlab-ee      ,description: 'Gitlab EE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",
 		"name: gitlab-ce      ,description: 'Gitlab CE'          ,module: gitlab  ,releases: [8,9,10] ,arch: [x86_64, aarch64]",

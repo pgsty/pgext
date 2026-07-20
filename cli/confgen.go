@@ -1008,7 +1008,9 @@ repo_upstream_default:
   - { name: timescaledb    ,description: 'TimescaleDB'        ,module: extra   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packagecloud.io/timescale/timescaledb/el/$releasever/$basearch'  }}
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/yum/percona/el$releasever.$basearch' ,china: 'https://repo.pigsty.cc/yum/percona/el$releasever.$basearch' ,origin: 'http://repo.percona.com/ppg-18.3/yum/release/$releasever/RPMS/$basearch'  }}
   - { name: groonga        ,description: 'Groonga'            ,module: groonga ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/almalinux/$releasever/$basearch/' }}
-  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
+  - { name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-8.4-community/el/$releasever/$basearch/'       ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-8.4-community/el/$releasever/$basearch/' }}
+  - { name: mysql-tools    ,description: 'MySQL 8.4 Tools'    ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mysql.com/yum/mysql-tools-8.4-community/el/$releasever/$basearch/' ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/yum/mysql-tools-8.4-community/el/$releasever/$basearch/' }}
+  - { name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.percona.com/pxb-84-lts/yum/release/$releasever/RPMS/$basearch/' }}
   - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' ,china: 'https://mirrors.aliyun.com/mongodb/yum/redhat/$releasever/mongodb-org/8.0/$basearch/' }}
   - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpmfind.net/linux/remi/enterprise/$releasever/redis72/$basearch/' }}
   - { name: grafana        ,description: 'Grafana'            ,module: grafana ,releases: [8,9,10] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://rpm.grafana.com', china: 'https://mirrors.aliyun.com/grafana/yum/' }}
@@ -1042,7 +1044,8 @@ package_map:
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
-  kafka:                   "kafka kafka_exporter"
+  kafka-stack:             "kafka kafka_exporter jmx-exporter"
+  mysql:                   "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld_exporter"
   kube-runtime:            "containerd.io"
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
@@ -1150,7 +1153,8 @@ repo_upstream_default:
   - { name: percona        ,description: 'Percona TDE'        ,module: percona ,releases: [   12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.pigsty.io/apt/percona ${distro_codename} main' ,china: 'https://repo.pigsty.cc/apt/percona ${distro_codename} main' }}
   - { name: groonga        ,description: 'Groonga Debian'     ,module: groonga ,releases: [11,12,13         ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.groonga.org/debian/ ${distro_codename} main' }}
   - { name: groonga        ,description: 'Groonga Ubuntu'     ,module: groonga ,releases: [         22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://ppa.launchpadcontent.net/groonga/ppa/ubuntu/ ${distro_codename} main' }}
-  - { name: mysql          ,description: 'MySQL'              ,module: mysql   ,releases: [11,12,   22,24   ] ,arch: [x86_64         ] ,baseurl: { default: 'https://repo.mysql.com/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools'        ,china: 'https://mirrors.tuna.tsinghua.edu.cn/mysql/apt/${distro_name} ${distro_codename} mysql-8.0 mysql-tools' }}
+  - { name: mysql          ,description: 'MySQL 8.4 LTS'      ,module: mysql   ,releases: [   12,13,22,24   ] ,arch: [x86_64         ] ,baseurl: { default: 'https://repo.mysql.com/apt/${distro_name} ${distro_codename} mysql-8.4-lts' ,china: 'https://mirrors.ustc.edu.cn/mysql-repo/apt/${distro_name} ${distro_codename} mysql-8.4-lts' }}
+  - { name: pxb84          ,description: 'Percona XtraBackup' ,module: mysql   ,releases: [   12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.percona.com/pxb-84-lts/apt ${distro_codename} main' }}
   - { name: mongo          ,description: 'MongoDB'            ,module: mongo   ,releases: [   12,   22,24   ] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://repo.mongodb.org/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' ,china: 'https://mirrors.aliyun.com/mongodb/apt/${distro_name} ${distro_codename}/mongodb-org/8.0 multiverse' }}
   - { name: redis          ,description: 'Redis'              ,module: redis   ,releases: [11,12,   22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'https://packages.redis.io/deb ${distro_codename} main' }}
   - { name: llvm           ,description: 'LLVM'               ,module: llvm    ,releases: [11,12,13,22,24,26] ,arch: [x86_64, aarch64] ,baseurl: { default: 'http://apt.llvm.org/${distro_codename}/ llvm-toolchain-${distro_codename} main' ,china: 'https://mirrors.tuna.tsinghua.edu.cn/llvm-apt/${distro_codename}/ llvm-toolchain-${distro_codename} main' }}
@@ -1187,7 +1191,8 @@ package_map:
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .DEB }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .DEB }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
-  kafka:                   "kafka kafka-exporter"
+  kafka-stack:             "kafka kafka-exporter jmx-exporter"
+  mysql:                   "mysql-server mysql-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld-exporter"
   kube-runtime:            "containerd.io"
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
