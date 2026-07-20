@@ -6,6 +6,13 @@ weight: 400
 
 Check [Infra Repo](/repo/infra) for usage instructions.
 
+## 2026-07-19
+
+| Name                | Old | New    | Comment                                                |
+|:--------------------|:----|:-------|:-------------------------------------------------------|
+| k3s                 | -   | 1.36.2 | Upstream `v1.36.2+k3s1`; amd64 and arm64               |
+| k3s-images          | -   | 1.36.2 | Exact-match system image package for both architectures |
+
 ## 2026-07-10
 
 | Name        | Old      | New      | Comment                                        |
