@@ -9,9 +9,9 @@ comments: false
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 531 | 158 | 355 | 71 | 0 | 516 | 513 | 505 | 494 | 473 |
-| **EL** | 526 | 153 | 355 | 71 | 5 | 508 | 508 | 500 | 489 | 468 |
-| **Debian** | 518 | 112 | 335 | 71 | 13 | 503 | 501 | 492 | 481 | 460 |
+| **ALL** | 539 | 158 | 375 | 71 | 0 | 527 | 522 | 513 | 494 | 473 |
+| **EL** | 536 | 155 | 375 | 71 | 3 | 520 | 518 | 510 | 491 | 470 |
+| **Debian** | 536 | 112 | 353 | 71 | 3 | 524 | 519 | 510 | 491 | 470 |
 
 ## Categories
 
@@ -21,7 +21,7 @@ comments: false
 | {{< category gis >}} | 29 | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} {{< ext "pointcloud_postgis" >}} {{< ext "h3" >}} {{< ext "h3_postgis" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} {{< ext "mobilitydb" >}} {{< ext "mobilitydb_datagen" >}} {{< ext "tzf" >}} {{< ext "earthdistance" >}} |
 | {{< category rag >}} | 12 | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_similarity" >}} {{< ext "pg_rrf" >}} {{< ext "smlar" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pgmnemo" >}} |
 | {{< category fts >}} | 25 | {{< ext "pg_search" >}} {{< ext "pgroonga" >}} {{< ext "pgroonga_database" >}} {{< ext "pg_bigm" >}} {{< ext "zhparser" >}} {{< ext "pg_bestmatch" >}} {{< ext "vchord_bm25" >}} {{< ext "pg_tokenizer" >}} {{< ext "biscuit" >}} {{< ext "pg_textsearch" >}} {{< ext "pg_pinyin" >}} {{< ext "pg_kazsearch" >}} {{< ext "psql_bm25s" >}} {{< ext "hunspell_cs_cz" >}} {{< ext "hunspell_de_de" >}} {{< ext "hunspell_en_us" >}} {{< ext "hunspell_fr" >}} {{< ext "hunspell_ne_np" >}} {{< ext "hunspell_nl_nl" >}} {{< ext "hunspell_nn_no" >}} {{< ext "hunspell_pt_pt" >}} {{< ext "hunspell_ru_ru" >}} {{< ext "hunspell_ru_ru_aot" >}} {{< ext "fuzzystrmatch" >}} {{< ext "pg_trgm" >}} |
-| {{< category olap >}} | 18 | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "pg_clickhouse" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fkpart" >}} {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_sorted_heap" >}} {{< ext "tablefunc" >}} |
+| {{< category olap >}} | 26 | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "pg_clickhouse" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fkpart" >}} {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_sorted_heap" >}} {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} {{< ext "tablefunc" >}} |
 | {{< category feat >}} | 73 | {{< ext "age" >}} {{< ext "pg_liquid" >}} {{< ext "onesparse" >}} {{< ext "graph" >}} {{< ext "pgrdf" >}} {{< ext "pgq" >}} {{< ext "pgmq" >}} {{< ext "pgmb" >}} {{< ext "ulak" >}} {{< ext "fsm_core" >}} {{< ext "hll" >}} {{< ext "rum" >}} {{< ext "pg_ai_query" >}} {{< ext "pg_ttl_index" >}} {{< ext "pg_graphql" >}} {{< ext "pg_jsonschema" >}} {{< ext "jsonschema" >}} {{< ext "jsquery" >}} {{< ext "pg_hint_plan" >}} {{< ext "hypopg" >}} {{< ext "index_advisor" >}} {{< ext "plan_filter" >}} {{< ext "pg_variables" >}} {{< ext "imgsmlr" >}} {{< ext "pg_ivm" >}} {{< ext "pg_incremental" >}} {{< ext "pg_trickle" >}} {{< ext "pg_durable" >}} {{< ext "provsql" >}} {{< ext "orioledb" >}} {{< ext "pg_cardano" >}} {{< ext "rdkit" >}} {{< ext "omni" >}} {{< ext "omni_auth" >}} {{< ext "omni_aws" >}} {{< ext "omni_cloudevents" >}} {{< ext "omni_containers" >}} {{< ext "omni_credentials" >}} {{< ext "omni_csv" >}} {{< ext "omni_datasets" >}} {{< ext "omni_email" >}} {{< ext "omni_http" >}} {{< ext "omni_httpc" >}} {{< ext "omni_httpd" >}} {{< ext "omni_id" >}} {{< ext "omni_json" >}} {{< ext "omni_kube" >}} {{< ext "omni_ledger" >}} {{< ext "omni_manifest" >}} {{< ext "omni_mimetypes" >}} {{< ext "omni_os" >}} {{< ext "omni_polyfill" >}} {{< ext "omni_python" >}} {{< ext "omni_regex" >}} {{< ext "omni_rest" >}} {{< ext "omni_schema" >}} {{< ext "omni_seq" >}} {{< ext "omni_service" >}} {{< ext "omni_session" >}} {{< ext "omni_shmem" >}} {{< ext "omni_sql" >}} {{< ext "omni_sqlite" >}} {{< ext "omni_test" >}} {{< ext "omni_txn" >}} {{< ext "omni_types" >}} {{< ext "omni_var" >}} {{< ext "omni_vfs" >}} {{< ext "omni_vfs_types_v1" >}} {{< ext "omni_web" >}} {{< ext "omni_worker" >}} {{< ext "omni_xml" >}} {{< ext "omni_yaml" >}} {{< ext "bloom" >}} |
 | {{< category lang >}} | 35 | {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} {{< ext "plprql" >}} {{< ext "pldbgapi" >}} {{< ext "plpgsql_check" >}} {{< ext "plprofiler" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_regresql" >}} {{< ext "pltcl" >}} {{< ext "pltclu" >}} {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "hstore_plperl" >}} {{< ext "jsonb_plperl" >}} {{< ext "plperlu" >}} {{< ext "bool_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "plpgsql" >}} {{< ext "plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
 | {{< category type >}} | 41 | {{< ext "prefix" >}} {{< ext "semver" >}} {{< ext "pg_text_semver" >}} {{< ext "unit" >}} {{< ext "pgpdf" >}} {{< ext "pglite_fusion" >}} {{< ext "md5hash" >}} {{< ext "asn1oid" >}} {{< ext "roaringbitmap" >}} {{< ext "pgfaceting" >}} {{< ext "pg_sphere" >}} {{< ext "country" >}} {{< ext "pg_xenophile" >}} {{< ext "l10n_table_dependent_extension" >}} {{< ext "currency" >}} {{< ext "collection" >}} {{< ext "pgmp" >}} {{< ext "numeral" >}} {{< ext "pg_rational" >}} {{< ext "uint" >}} {{< ext "uint128" >}} {{< ext "hashtypes" >}} {{< ext "ip4r" >}} {{< ext "uri" >}} {{< ext "emailaddr" >}} {{< ext "acl" >}} {{< ext "debversion" >}} {{< ext "pg_duration" >}} {{< ext "pg_bikram_sambat" >}} {{< ext "pg_rrule" >}} {{< ext "pgcalendar" >}} {{< ext "timestamp9" >}} {{< ext "pgbson" >}} {{< ext "chkpass" >}} {{< ext "isn" >}} {{< ext "seg" >}} {{< ext "cube" >}} {{< ext "ltree" >}} {{< ext "hstore" >}} {{< ext "citext" >}} {{< ext "xml2" >}} |
@@ -36,7 +36,7 @@ comments: false
 
 ## Extensions
 
-There are 531 available PostgreSQL extensions:
+There are 539 available PostgreSQL extensions:
 
 | Extension | PG Versions | Attribute | Description |
 |:----------|:------------|:---------:|:--------------|
@@ -79,7 +79,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pgh_output_en_au" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Australian English output pack for PgHydro |
 | {{< ext "pgh_output_pt_br" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Brazilian Portuguese output pack for PgHydro |
 | {{< ext "pgh_consistency" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Pfafstetter consistency checks for PgHydro |
-| {{< ext "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | MobilityDB geospatial trajectory data management & analysis platform |
+| {{< ext "mobilitydb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | MobilityDB geospatial trajectory data management & analysis platform |
 | {{< ext "mobilitydb_datagen" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | MobilityDB random data generator functions |
 | {{< ext "tzf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Fast lookup timezone name by GPS coordinates |
 | {{< ext "earthdistance" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-d--" color="blue" >}} | calculate great-circle distances on the surface of the Earth |
@@ -88,7 +88,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "vectorscale" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Advanced indexing for vector data with DiskANN |
 | {{< ext "vectorize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | The simplest way to do vector search on Postgres |
 | {{< ext "pg_similarity" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | support similarity queries |
-| {{< ext "pg_rrf" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Reciprocal rank fusion functions for hybrid search |
+| {{< ext "pg_rrf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Reciprocal rank fusion functions for hybrid search |
 | {{< ext "smlar" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Effective similarity search |
 | {{< ext "pg_summarize" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Text Summarization using LLMs. Built using pgrx |
 | {{< ext "pg_tiktoken" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | tiktoken tokenizer for use with OpenAI models in postgres |
@@ -137,12 +137,20 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pg_strom" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | {{< ext "pg_orca" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | ORCA query optimizer as a PostgreSQL extension |
 | {{< ext "pg_sorted_heap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
+| {{< ext "pg_lake" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="-bsLd--" color="blue" >}} | Data lake extension by Snowflake |
+| {{< ext "pg_extension_base" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Extension development kit by Snowflake |
+| {{< ext "pg_extension_updater" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Automatic extension updater |
+| {{< ext "pg_map" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Map type for PostgreSQL, bundled as a required pg_lake component. |
+| {{< ext "pg_lake_engine" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Query engine for data lake queries |
+| {{< ext "pg_lake_iceberg" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Iceberg implementation in Postgres |
+| {{< ext "pg_lake_table" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Data lake tables and Iceberg tables |
+| {{< ext "pg_lake_copy" >}} | {{< pgver "18,17,16,15,14" "g,g,g,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | Copy to/from data lake files |
 | {{< ext "tablefunc" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | functions that manipulate whole tables, including crosstab |
 | {{< ext "age" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--sLd--" color="blue" >}} | AGE graph database extension |
 | {{< ext "pg_liquid" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
 | {{< ext "onesparse" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-d--" color="blue" >}} | Sparse linear algebra and graph extension for PostgreSQL 18 |
 | {{< ext "graph" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Graph database capabilities for PostgreSQL |
-| {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
+| {{< ext "pgrdf" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | RDF, SPARQL, SHACL, and OWL reasoning for PostgreSQL |
 | {{< ext "pgq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Generic queue for PostgreSQL |
 | {{< ext "pgmq" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | A lightweight message queue. Like AWS SQS and RSMQ but on Postgres. |
 | {{< ext "pgmb" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | A simple PostgreSQL Message Broker system |
@@ -229,7 +237,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "pg_mockable" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Create mockable wrappers for PostgreSQL functions in tests |
 | {{< ext "pgtap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Unit testing for PostgreSQL |
 | {{< ext "faker" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Wrapper for the Faker Python library |
-| {{< ext "dbt2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | OSDL-DBT-2 test kit |
+| {{< ext "dbt2" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | OSDL-DBT-2 test kit |
 | {{< ext "pg_regresql" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd-r" color="blue" >}} | Trust pg_class statistics for planning instead of physical relation size |
 | {{< ext "pltcl" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c-s-dt-" color="blue" >}} | PL/Tcl procedural language |
 | {{< ext "pltclu" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="c---d--" color="blue" >}} | PL/TclU untrusted procedural language |
@@ -497,14 +505,14 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "wrappers" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrappers developed by Supabase |
 | {{< ext "multicorn" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Fetch foreign data in Python in your PostgreSQL server. |
 | {{< ext "odbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for accessing remote databases using ODBC |
-| {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "r,r,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote servers available over JDBC |
+| {{< ext "jdbc_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote servers available over JDBC |
 | {{< ext "pgspider_ext" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote PGSpider servers |
 | {{< ext "mysql_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a MySQL server |
 | {{< ext "oracle_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | foreign data wrapper for Oracle access |
 | {{< ext "tds_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a TDS database (Sybase or Microsoft SQL Server) |
 | {{< ext "db2_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | foreign data wrapper for DB2 access |
 | {{< ext "sqlite_fdw" >}} | {{< pgver "18,17,16,15,14" "r,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQLite Foreign Data Wrapper |
-| {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
+| {{< ext "pgbouncer_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Extension for querying PgBouncer stats from normal SQL views & running pgbouncer commands from normal SQL functions |
 | {{< ext "etcd_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Foreign data wrapper for etcd |
 | {{< ext "informix_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for Informix access |
 | {{< ext "nominatim_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Nominatim Foreign Data Wrapper for PostgreSQL |
@@ -512,7 +520,7 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "redis_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for querying a Redis server |
 | {{< ext "redis" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Send redis pub/sub messages to Redis from PostgreSQL Directly |
 | {{< ext "kafka_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | kafka Foreign Data Wrapper for CSV formatted messages |
-| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | foreign-data wrapper for remote hdfs servers |
+| {{< ext "hdfs_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | foreign-data wrapper for remote hdfs servers |
 | {{< ext "firebird_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for Firebird |
 | {{< ext "rdf_fdw" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d-r" color="blue" >}} | Foreign data wrapper for RDF triplestores over SPARQL endpoints |
 | {{< ext "aws_s3" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d-r" color="blue" >}} | aws_s3 postgres extension to import/export data from/to s3 |
@@ -537,9 +545,9 @@ There are 531 available PostgreSQL extensions:
 | {{< ext "gb18030_2022" >}} | {{< pgver "18,17,16,15,14" "g,r,r,r,r" >}} | {{< badge content="--s-dt-" color="blue" >}} | Support GB18030-2022 and UTF-8 conversion |
 | {{< ext "db2fce" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | {{< ext "plpgsql_wrap" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
-| {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
-| {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
-| {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--s-d--" color="blue" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
+| {{< ext "pg_dbms_metadata" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
+| {{< ext "pg_dbms_lock" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
+| {{< ext "pg_dbms_job" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | {{< ext "pg_dbms_errlog" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="--sLd--" color="blue" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | {{< ext "pg_utl_smtp" >}} | {{< pgver "18,17,16,15,14" "g,g,g,g,g" >}} | {{< badge content="----d--" color="blue" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | {{< ext "babelfishpg_common" >}} | {{< pgver "18,17,16,15,14" "g,g,r,r,r" >}} | {{< badge content="--s-d-r" color="blue" >}} | SQL Server Transact SQL Datatype Support |

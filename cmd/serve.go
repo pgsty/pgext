@@ -18,9 +18,10 @@ import (
 )
 
 var (
-	serveDB       string
-	serveListen   string
-	serveCacheTTL time.Duration
+	serveDB          string
+	serveListen      string
+	serveCacheTTL    time.Duration
+	serveReloadToken string
 )
 
 // serveCmd runs the pgext.cloud web server
@@ -49,9 +50,10 @@ query API under /api/v1. Web assets are embedded — the binary is all you need.
 		ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 		defer stop()
 		if err := server.Serve(ctx, server.Options{
-			Listen:   serveListen,
-			CacheTTL: serveCacheTTL,
-			Pool:     cli.DB,
+			Listen:      serveListen,
+			CacheTTL:    serveCacheTTL,
+			Pool:        cli.DB,
+			ReloadToken: serveReloadToken,
 		}); err != nil {
 			return fmt.Errorf("server failed: %w", err)
 		}
@@ -64,5 +66,6 @@ func init() {
 	serveCmd.Flags().StringVar(&serveDB, "db", "", "database connection URL or name (default: $PGURL or postgres:///data)")
 	serveCmd.Flags().StringVar(&serveListen, "listen", ":8432", "listen address")
 	serveCmd.Flags().DurationVar(&serveCacheTTL, "cache-ttl", 5*time.Minute, "catalog snapshot refresh interval")
+	serveCmd.Flags().StringVar(&serveReloadToken, "reload-token", os.Getenv("PGEXT_RELOAD_TOKEN"), "token enabling POST /api/v1/reload (default: $PGEXT_RELOAD_TOKEN; disabled when empty)")
 	rootCmd.AddCommand(serveCmd)
 }

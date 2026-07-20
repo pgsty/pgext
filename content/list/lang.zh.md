@@ -14,8 +14,8 @@ weight: 200
 
 | 语言 | 数量 | 描述 |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 394 | 传统的 PostgreSQL 扩展开发语言 |
-| {{< language "SQL" >}} | 59 | 纯 SQL 扩展和函数 |
+| {{< language "C" >}} | 403 | 传统的 PostgreSQL 扩展开发语言 |
+| {{< language "SQL" >}} | 58 | 纯 SQL 扩展和函数 |
 | {{< language "Rust" >}} | 52 | 使用 pgrx 框架用 Rust 编写的扩展 |
 | {{< language "C++" >}} | 13 | 使用 C++ 特性和库的扩展 |
 | {{< language "Data" >}} | 10 | 仅包含数据的扩展 |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="394 个扩展" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="403 个扩展" color="gray" icon="cube" >}}
 
 传统的 PostgreSQL 扩展开发语言
 
@@ -76,6 +76,14 @@ weight: 200
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 2530 | {{< alias "pg_strom" >}} | 使用GPU与NVMe加速大数据处理 |
 | 2550 | {{< alias "pg_sorted_heap" >}} | 带 zone map 剪枝和内置向量搜索的有序堆表访问方法 |
+| 2560 | {{< alias "pg_lake" >}} | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
+| 2561 | {{< alias "pg_extension_base" "pg_lake" >}} | Snowflake 提供的 PostgreSQL 扩展开发基础设施，支持库预加载、扩展生命周期后台工作进程和依赖管理 |
+| 2562 | {{< alias "pg_extension_updater" "pg_lake" >}} | 在数据库启动时自动执行 ALTER EXTENSION UPDATE 的扩展更新器 |
+| 2563 | {{< alias "pg_map" "pg_lake" >}} | pg_lake 内置并依赖的 PostgreSQL Map 数据类型。 |
+| 2564 | {{< alias "pg_lake_engine" "pg_lake" >}} | 用于数据湖查询的查询引擎 |
+| 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | PostgreSQL 中的 Iceberg 实现 |
+| 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 数据湖表和 Iceberg 表 |
+| 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2590 | {{< alias "tablefunc" >}} | 交叉表函数 |
 | 2600 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | 2610 | {{< alias "pg_liquid" >}} | 受 Liquid 启发的 Datalog 图查询扩展 |
@@ -398,6 +406,7 @@ weight: 200
 | 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL 过程语言 |
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | 支持 GB18030-2022 与 UTF-8 编码转换 |
 | 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP 等价的 PL/pgSQL 语言处理器，以 AES-256-GCM 加密存储过程源码。 |
+| 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server 数据类型兼容扩展 |
 | 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server SQL语法兼容性扩展 |
@@ -428,7 +437,7 @@ weight: 200
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="59 个扩展" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="58 个扩展" color="gray" icon="cube" >}}
 
 纯 SQL 扩展和函数
 
@@ -489,7 +498,6 @@ weight: 200
 | 9200 | {{< alias "db2fce" >}} | 为 PostgreSQL 提供 DB2 兼容函数、类型、操作符与 SYSIBM.SYSDUMMY1。 |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | 添加 Oracle DBMS_METADATA 兼容性支持的扩展 |
 | 9250 | {{< alias "pg_dbms_lock" >}} | 为PG添加对 Oracle DBMS_LOCK 的完整兼容性支持 |
-| 9260 | {{< alias "pg_dbms_job" >}} | 添加 Oracle DBMS_JOB 兼容性支持的扩展 |
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP 兼容扩展（基于 plperlu） |
 | 9550 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | 在PostgreSQL实例间进行表级复制 |

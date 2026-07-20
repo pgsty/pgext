@@ -5,15 +5,15 @@ excludeSearch: true
 comments: false
 ---
 
-The PostgreSQL Extension Catalog contains **531** extensions and **384** packages.
+The PostgreSQL Extension Catalog contains **539** extensions and **385** packages.
 
 ## Extension Stat
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 531 | 158 | 355 | 71 | 0 | 516 | 513 | 505 | 494 | 473 |
-| **EL** | 526 | 153 | 355 | 71 | 5 | 508 | 508 | 500 | 489 | 468 |
-| **Debian** | 518 | 112 | 335 | 71 | 13 | 503 | 501 | 492 | 481 | 460 |
+| **ALL** | 539 | 158 | 375 | 71 | 0 | 527 | 522 | 513 | 494 | 473 |
+| **EL** | 536 | 155 | 375 | 71 | 3 | 520 | 518 | 510 | 491 | 470 |
+| **Debian** | 536 | 112 | 353 | 71 | 3 | 524 | 519 | 510 | 491 | 470 |
 
 ## Package Stat
 
@@ -21,9 +21,9 @@ The PostgreSQL Extension Catalog contains **531** extensions and **384** package
 
 | **Category** | **All** | **PGDG** | **PIGSTY** | **CONTRIB** | **MISS** | **PG18** | **PG17** | **PG16** | **PG15** | **PG14** |
 |:---------|--------:|--------:|----------:|-----------:|--------:|--------:|--------:|--------:|--------:|--------:|
-| **ALL** | 384 | 142 | 294 | 0 | 0 | 371 | 375 | 368 | 358 | 343 |
-| **EL** | 382 | 140 | 294 | 0 | 63 | 367 | 373 | 366 | 356 | 341 |
-| **Debian** | 371 | 97 | 274 | 0 | 74 | 358 | 363 | 355 | 345 | 330 |
+| **ALL** | 385 | 142 | 306 | 0 | 0 | 375 | 377 | 369 | 358 | 343 |
+| **EL** | 384 | 141 | 306 | 0 | 62 | 371 | 375 | 368 | 357 | 342 |
+| **Debian** | 382 | 97 | 285 | 0 | 64 | 372 | 374 | 366 | 355 | 340 |
 
 ## Categories
 
@@ -37,7 +37,7 @@ The PostgreSQL Extension Catalog contains **531** extensions and **384** package
 | {{< category func >}} | {{< ext "pg_idkit" >}} {{< ext "pgx_ulid" >}} {{< ext "pg_uuidv7" >}} {{< ext "pg_uuid_v8" >}} {{< ext "permuteseq" >}} {{< ext "pg_hashids" >}} {{< ext "pg_slug_gen" >}} {{< ext "sequential_uuids" >}} {{< ext "typeid" >}} {{< ext "snowflake" >}} {{< ext "topn" >}} {{< ext "quantile" >}} {{< ext "lower_quantile" >}} {{< ext "count_distinct" >}} {{< ext "omnisketch" >}} {{< ext "ddsketch" >}} {{< ext "vasco" >}} {{< ext "xicor" >}} {{< ext "weighted_statistics" >}} {{< ext "datasketches" >}} {{< ext "tdigest" >}} {{< ext "first_last_agg" >}} {{< ext "extra_window_functions" >}} {{< ext "floatvec" >}} {{< ext "aggs_for_vecs" >}} {{< ext "aggs_for_arrays" >}} {{< ext "pg_csv" >}} {{< ext "arraymath" >}} {{< ext "pg_math" >}} {{< ext "random" >}} {{< ext "base36" >}} {{< ext "base62" >}} {{< ext "pg_base58" >}} {{< ext "financial" >}} {{< ext "pg_accumulator" >}} {{< ext "convert" >}} {{< ext "parray_gin" >}} {{< ext "refint" >}} {{< ext "autoinc" >}} {{< ext "insert_username" >}} {{< ext "moddatetime" >}} {{< ext "tsm_system_time" >}} {{< ext "dict_xsyn" >}} {{< ext "tsm_system_rows" >}} {{< ext "tcn" >}} {{< ext "uuid-ossp" >}} {{< ext "btree_gist" >}} {{< ext "btree_gin" >}} {{< ext "intarray" >}} {{< ext "intagg" >}} {{< ext "dict_int" >}} {{< ext "unaccent" >}} |
 | {{< category gis >}} | {{< ext "postgis" >}} {{< ext "postgis_topology" >}} {{< ext "postgis_raster" >}} {{< ext "postgis_sfcgal" >}} {{< ext "postgis_tiger_geocoder" >}} {{< ext "address_standardizer" >}} {{< ext "address_standardizer_data_us" >}} {{< ext "pgrouting" >}} {{< ext "pointcloud" >}} {{< ext "pointcloud_postgis" >}} {{< ext "h3" >}} {{< ext "h3_postgis" >}} {{< ext "q3c" >}} {{< ext "ogr_fdw" >}} {{< ext "geoip" >}} {{< ext "pg_polyline" >}} {{< ext "pg_eviltransform" >}} {{< ext "pg_geohash" >}} {{< ext "pghydro" >}} {{< ext "pgh_raster" >}} {{< ext "pgh_hgm" >}} {{< ext "pgh_output" >}} {{< ext "pgh_output_en_au" >}} {{< ext "pgh_output_pt_br" >}} {{< ext "pgh_consistency" >}} {{< ext "mobilitydb" >}} {{< ext "mobilitydb_datagen" >}} {{< ext "tzf" >}} {{< ext "earthdistance" >}} |
 | {{< category lang >}} | {{< ext "pg_tle" >}} {{< ext "plv8" >}} {{< ext "pljs" >}} {{< ext "pllua" >}} {{< ext "hstore_pllua" >}} {{< ext "plluau" >}} {{< ext "hstore_plluau" >}} {{< ext "plprql" >}} {{< ext "pldbgapi" >}} {{< ext "plpgsql_check" >}} {{< ext "plprofiler" >}} {{< ext "plsh" >}} {{< ext "pljava" >}} {{< ext "plr" >}} {{< ext "plxslt" >}} {{< ext "pg_mockable" >}} {{< ext "pgtap" >}} {{< ext "faker" >}} {{< ext "dbt2" >}} {{< ext "pg_regresql" >}} {{< ext "pltcl" >}} {{< ext "pltclu" >}} {{< ext "plperl" >}} {{< ext "bool_plperl" >}} {{< ext "hstore_plperl" >}} {{< ext "jsonb_plperl" >}} {{< ext "plperlu" >}} {{< ext "bool_plperlu" >}} {{< ext "jsonb_plperlu" >}} {{< ext "hstore_plperlu" >}} {{< ext "plpgsql" >}} {{< ext "plpython3u" >}} {{< ext "jsonb_plpython3u" >}} {{< ext "ltree_plpython3u" >}} {{< ext "hstore_plpython3u" >}} |
-| {{< category olap >}} | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "pg_clickhouse" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fkpart" >}} {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_sorted_heap" >}} {{< ext "tablefunc" >}} |
+| {{< category olap >}} | {{< ext "citus" >}} {{< ext "citus_columnar" >}} {{< ext "columnar" >}} {{< ext "pg_analytics" >}} {{< ext "pg_duckdb" >}} {{< ext "pg_mooncake" >}} {{< ext "storage_engine" >}} {{< ext "pg_clickhouse" >}} {{< ext "duckdb_fdw" >}} {{< ext "pg_parquet" >}} {{< ext "pg_ducklake" >}} {{< ext "pg_fkpart" >}} {{< ext "pg_partman" >}} {{< ext "plproxy" >}} {{< ext "pg_strom" >}} {{< ext "pg_orca" >}} {{< ext "pg_sorted_heap" >}} {{< ext "pg_lake" >}} {{< ext "pg_extension_base" >}} {{< ext "pg_extension_updater" >}} {{< ext "pg_map" >}} {{< ext "pg_lake_engine" >}} {{< ext "pg_lake_iceberg" >}} {{< ext "pg_lake_table" >}} {{< ext "pg_lake_copy" >}} {{< ext "tablefunc" >}} |
 | {{< category rag >}} | {{< ext "vector" >}} {{< ext "vchord" >}} {{< ext "vectorscale" >}} {{< ext "vectorize" >}} {{< ext "pg_similarity" >}} {{< ext "pg_rrf" >}} {{< ext "smlar" >}} {{< ext "pg_summarize" >}} {{< ext "pg_tiktoken" >}} {{< ext "pg4ml" >}} {{< ext "pgml" >}} {{< ext "pgmnemo" >}} |
 | {{< category sec >}} | {{< ext "passwordcheck_cracklib" >}} {{< ext "supautils" >}} {{< ext "pgsodium" >}} {{< ext "column_encrypt" >}} {{< ext "passwordpolicy" >}} {{< ext "supabase_vault" >}} {{< ext "pg_session_jwt" >}} {{< ext "anon" >}} {{< ext "pgsmcrypto" >}} {{< ext "pg_enigma" >}} {{< ext "pgaudit" >}} {{< ext "pgauditlogtofile" >}} {{< ext "pg_auditor" >}} {{< ext "logerrors" >}} {{< ext "pg_auth_mon" >}} {{< ext "pg_jobmon" >}} {{< ext "credcheck" >}} {{< ext "pgcryptokey" >}} {{< ext "pg_pwhash" >}} {{< ext "login_hook" >}} {{< ext "set_user" >}} {{< ext "pg_snakeoil" >}} {{< ext "pgextwlist" >}} {{< ext "pg_command_fw" >}} {{< ext "block_copy_command" >}} {{< ext "sslutils" >}} {{< ext "noset" >}} {{< ext "pg_tde" >}} {{< ext "sepgsql" >}} {{< ext "auth_delay" >}} {{< ext "pgcrypto" >}} {{< ext "passwordcheck" >}} |
 | {{< category sim >}} | {{< ext "documentdb" >}} {{< ext "documentdb_core" >}} {{< ext "documentdb_distributed" >}} {{< ext "documentdb_extended_rum" >}} {{< ext "pg_projection" >}} {{< ext "orafce" >}} {{< ext "pgtt" >}} {{< ext "session_variable" >}} {{< ext "pg_statement_rollback" >}} {{< ext "ivorysql_ora" >}} {{< ext "ora_btree_gin" >}} {{< ext "ora_btree_gist" >}} {{< ext "pg_get_functiondef" >}} {{< ext "plisql" >}} {{< ext "gb18030_2022" >}} {{< ext "db2fce" >}} {{< ext "plpgsql_wrap" >}} {{< ext "pg_dbms_metadata" >}} {{< ext "pg_dbms_lock" >}} {{< ext "pg_dbms_job" >}} {{< ext "pg_dbms_errlog" >}} {{< ext "pg_utl_smtp" >}} {{< ext "babelfishpg_common" >}} {{< ext "babelfishpg_tsql" >}} {{< ext "babelfishpg_tds" >}} {{< ext "babelfishpg_money" >}} {{< ext "spat" >}} {{< ext "pgmemcache" >}} {{< ext "aux_mysql" >}} |

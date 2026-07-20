@@ -17,24 +17,24 @@ weight: 300
 
 | 许可证 | 数量 | 参考 | 描述 |
 |:--------|:-----:|:-------:|:-----------|
-| {{< license "PostgreSQL" >}} | 239 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
-| {{< license "Apache-2.0" >}} | 89 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
+| {{< license "PostgreSQL" >}} | 243 | [许可证文本](https://opensource.org/licenses/postgresql) | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
+| {{< license "Apache-2.0" >}} | 97 | [许可证文本](https://opensource.org/licenses/Apache-2.0) | Permissive license with patent protection and attribution requirements. |
 | {{< license "MIT" >}} | 85 | [许可证文本](https://opensource.org/licenses/MIT) | A permissive license that allows commercial use, modification, and private use. |
-| {{< license "BSD 3-Clause" >}} | 33 | [许可证文本](https://opensource.org/license/bsd-3-clause) | Permissive license with attribution and endorsement restriction clauses. |
+| {{< license "BSD-3-Clause" >}} | 32 | [许可证文本](#) | Unknown license |
 | {{< license "GPL-2.0" >}} | 21 | [许可证文本](https://opensource.org/licenses/GPL-2.0) | Strong copyleft license requiring derivative works to be open source. |
-| {{< license "BSD 2-Clause" >}} | 16 | [许可证文本](https://opensource.org/license/bsd-2-clause) | Permissive license requiring attribution but allowing commercial use. |
-| {{< license "GPL-3.0" >}} | 15 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
+| {{< license "BSD-2-Clause" >}} | 16 | [许可证文本](#) | Unknown license |
+| {{< license "GPL-3.0" >}} | 13 | [许可证文本](https://opensource.org/licenses/GPL-3.0) | Strong copyleft license with additional patent and hardware restrictions. |
 | {{< license "AGPL-3.0" >}} | 12 | [许可证文本](https://opensource.org/licenses/AGPL-3.0) | Network copyleft license extending GPL to cover network-distributed software. |
 | {{< license "ISC" >}} | 6 | [许可证文本](https://opensource.org/licenses/ISC) | A permissive license similar to MIT, allowing commercial use and modification. |
-| {{< license "Artistic" >}} | 3 | [许可证文本](https://opensource.org/license/artistic-2-0) | Copyleft license allowing modification with certain distribution requirements. |
 | {{< license "LGPL-3.0" >}} | 3 | [许可证文本](https://opensource.org/licenses/LGPL-3.0) | Weak copyleft license with additional patent and hardware provisions. |
 | {{< license "Timescale" >}} | 2 | [许可证文本](https://www.timescale.com/legal/licenses) | Proprietary license with restrictions on commercial use and distribution. |
-| {{< license "BSD 0-Clause" >}} | 2 | [许可证文本](https://opensource.org/license/0bsd) | Public domain equivalent license with no restrictions on use. |
+| {{< license "0BSD" >}} | 2 | [许可证文本](#) | Unknown license |
+| {{< license "Artistic-2.0" >}} | 2 | [许可证文本](#) | Unknown license |
 | {{< license "MPL-2.0" >}} | 1 | [许可证文本](https://opensource.org/licenses/MPL-2.0) | Weak copyleft license allowing proprietary combinations with file-level copyleft. |
 | {{< license "LGPL-2.1" >}} | 1 | [许可证文本](https://opensource.org/licenses/LGPL-2.1) | Weak copyleft license allowing proprietary applications to link dynamically. |
-| {{< license "BSD" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Artistic-1.0" >}} | 1 | [许可证文本](#) | Unknown license |
 | {{< license "Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause" >}} | 1 | [许可证文本](#) | Unknown license |
-| {{< license "ELv2" >}} | 1 | [许可证文本](#) | Unknown license |
+| {{< license "Elastic-2.0" >}} | 1 | [许可证文本](#) | Unknown license |
 
 ---------
 
@@ -42,7 +42,7 @@ weight: 300
 
 
 
-| {{< license "PostgreSQL" >}} | {{< badge content="239 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "PostgreSQL" >}} | {{< badge content="243 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/postgresql" icon="scale" >}} | Very liberal license based on the BSD license, allowing almost unlimited freedom. |
 
@@ -54,6 +54,8 @@ weight: 300
 | 1090 | {{< alias "pg_later" >}} | 执行查询，并在稍后异步获取查询结果 |
 | 1100 | {{< alias "pg_dispatch" >}} | 基于 pg_cron 的异步 SQL 分发器 |
 | 1130 | {{< alias "pg_stl" >}} | PostgreSQL 时间序列分析函数 |
+| 1650 | {{< alias "mobilitydb" >}} | MobilityDB地理空间投影数据管理分析平台 |
+| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 1690 | {{< alias "earthdistance" >}} | 计算地球表面上的大圆距离 |
 | 1800 | {{< alias "vector" "pgvector" >}} | 向量数据类型和 ivfflat / hnsw 访问方法 |
 | 1820 | {{< alias "vectorscale" "pgvectorscale" >}} | 使用DiskANN算法对向量进行高效索引 |
@@ -199,6 +201,7 @@ weight: 300
 | 5190 | {{< alias "pgcozy" >}} | 根据先前的pg_buffercache快照预热内存缓冲区 |
 | 5200 | {{< alias "pg_orphaned" >}} | 处理孤儿文件的扩展插件 |
 | 5220 | {{< alias "pg_cheat_funcs" >}} | 一些超级实用的作弊函数 |
+| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
 | 5850 | {{< alias "pg_drop_events" >}} | 记录删表删列删视图的事务号，辅助PITR确定时间点 |
 | 5860 | {{< alias "table_log" >}} | 记录某张表的修改日志并做表/行级时间点恢复 |
 | 5870 | {{< alias "pgelog" >}} | 通过伪自治事务实现扩展日志记录 |
@@ -266,6 +269,7 @@ weight: 300
 | 8670 | {{< alias "informix_fdw" >}} | Informix 外部数据包装器 |
 | 8710 | {{< alias "redis_fdw" >}} | 查询外部Redis数据源 |
 | 8730 | {{< alias "kafka_fdw" >}} | Kafka外部数据源包装器 |
+| 8740 | {{< alias "hdfs_fdw" >}} | hdfs 外部数据包装器 |
 | 8750 | {{< alias "firebird_fdw" >}} | Firebird外部数据源包装器 |
 | 8970 | {{< alias "dblink" >}} | 从数据库内连接到其他 PostgreSQL 数据库 |
 | 8980 | {{< alias "file_fdw" >}} | 访问外部文件的外部数据包装器 |
@@ -292,7 +296,7 @@ weight: 300
 
 
 
-| {{< license "Apache-2.0" >}} | {{< badge content="89 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Apache-2.0" >}} | {{< badge content="97 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/Apache-2.0" icon="scale" >}} | Permissive license with patent protection and attribution requirements. |
 
@@ -307,6 +311,14 @@ weight: 300
 | 2210 | {{< alias "psql_bm25s" >}} | PostgreSQL BM25 系列全文检索扩展，提供原生索引访问方法和 BM25 排序 |
 | 2460 | {{< alias "pg_clickhouse" >}} | 从PostgreSQL中查询ClickHouse的接口 |
 | 2540 | {{< alias "pg_orca" >}} | PostgreSQL ORCA 查询优化器扩展 |
+| 2560 | {{< alias "pg_lake" >}} | Snowflake 开源的 PostgreSQL 数据湖与 Iceberg 集成扩展 |
+| 2561 | {{< alias "pg_extension_base" "pg_lake" >}} | Snowflake 提供的 PostgreSQL 扩展开发基础设施，支持库预加载、扩展生命周期后台工作进程和依赖管理 |
+| 2562 | {{< alias "pg_extension_updater" "pg_lake" >}} | 在数据库启动时自动执行 ALTER EXTENSION UPDATE 的扩展更新器 |
+| 2563 | {{< alias "pg_map" "pg_lake" >}} | pg_lake 内置并依赖的 PostgreSQL Map 数据类型。 |
+| 2564 | {{< alias "pg_lake_engine" "pg_lake" >}} | 用于数据湖查询的查询引擎 |
+| 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | PostgreSQL 中的 Iceberg 实现 |
+| 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | 数据湖表和 Iceberg 表 |
+| 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | 在 PostgreSQL 与对象存储数据湖文件之间执行 COPY 的扩展 |
 | 2600 | {{< alias "age" >}} | Apache AGE，图数据库扩展 （Deb可用） |
 | 2620 | {{< alias "onesparse" "one_sparse" >}} | PostgreSQL 18 的稀疏线性代数与图算法扩展 |
 | 2630 | {{< alias "graph" "pggraph" >}} | PostgreSQL 图查询与遍历扩展 |
@@ -484,13 +496,13 @@ weight: 300
 | 9650 | {{< alias "decoderbufs" >}} | 将WAL逻辑解码为ProtocolBuffer协议的消息 |
 | 9820 | {{< alias "pg_fact_loader" >}} | 在 Postgres 中构建事实表 |
 
-## BSD 3-Clause
+## BSD-3-Clause
 
 
 
-| {{< license "BSD 3-Clause" >}} | {{< badge content="33 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD-3-Clause" >}} | {{< badge content="32 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-3-clause" icon="scale" >}} | Permissive license with attribution and endorsement restriction clauses. |
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -523,7 +535,6 @@ weight: 300
 | 7400 | {{< alias "pg_command_fw" >}} | PostgreSQL 的 DDL 与 utility 命令防火墙 |
 | 7405 | {{< alias "block_copy_command" >}} | 通过可配置的 ProcessUtility hook 阻止 COPY 命令 |
 | 8600 | {{< alias "mysql_fdw" >}} | MySQL外部数据包装器 |
-| 8740 | {{< alias "hdfs_fdw" >}} | hdfs 外部数据包装器 |
 | 9550 | {{< alias "db_migrator" >}} | 使用FDW从其他DBMS迁移到PostgreSQL |
 | 9630 | {{< alias "wal2json" >}} | 用逻辑解码捕获 JSON 格式的 CDC 变更 |
 | 9830 | {{< alias "pg_bulkload" >}} | 向 PostgreSQL 中高速加载数据 |
@@ -560,13 +571,13 @@ weight: 300
 | 3710 | {{< alias "numeral" >}} | 数值类型扩展 |
 | 4310 | {{< alias "ddl_historization" >}} | 用SQL将所有DDL变更写入到数据库表中 |
 
-## BSD 2-Clause
+## BSD-2-Clause
 
 
 
-| {{< license "BSD 2-Clause" >}} | {{< badge content="16 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "BSD-2-Clause" >}} | {{< badge content="16 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/bsd-2-clause" icon="scale" >}} | Permissive license requiring attribution but allowing commercial use. |
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
@@ -591,7 +602,7 @@ weight: 300
 
 
 
-| {{< license "GPL-3.0" >}} | {{< badge content="15 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "GPL-3.0" >}} | {{< badge content="13 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="https://opensource.org/licenses/GPL-3.0" icon="scale" >}} | Strong copyleft license with additional patent and hardware restrictions. |
 
@@ -599,8 +610,6 @@ weight: 300
 |:---:|:---|:---|
 | 1050 | {{< alias "emaj" >}} | 让数据库的子集具有细粒度日志和时间旅行功能 |
 | 1110 | {{< alias "pg_background" >}} | 在后台运行 SQL 查询 |
-| 1650 | {{< alias "mobilitydb" >}} | MobilityDB地理空间投影数据管理分析平台 |
-| 1651 | {{< alias "mobilitydb_datagen" "mobilitydb" >}} | MobilityDB随机数据生成函数 |
 | 3570 | {{< alias "pgpdf" >}} | PDF数据类型，管理函数与全文检索 |
 | 3620 | {{< alias "asn1oid" >}} | ASN1OID数据类型支持 |
 | 4330 | {{< alias "schedoc" "pg_schedoc" >}} | 在Django与DBT之间通过注释文档交换元数据 |
@@ -653,20 +662,6 @@ weight: 300
 | 9130 | {{< alias "pg_statement_rollback" >}} | 在服务端提供类似Oracle/DB2的语句级回滚能力 |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | 模仿 Oracle DBMS_ERRLOG 模块来记录特定表的DML错误 |
 
-## Artistic
-
-
-
-| {{< license "Artistic" >}} | {{< badge content="3 个扩展" color="gray" icon="cube" >}}  |
-|:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/artistic-2-0" icon="scale" >}} | Copyleft license allowing modification with certain distribution requirements. |
-
-| ID | 扩展 | 描述 |
-|:---:|:---|:---|
-| 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 用于调试 PL/pgSQL 函数的服务器端支持 |
-| 3070 | {{< alias "plprofiler" >}} | 剖析 PL/pgSQL 函数 |
-| 3220 | {{< alias "dbt2" >}} | OSDL-DBT-2 测试组件 |
-
 ## LGPL-3.0
 
 
@@ -694,18 +689,31 @@ weight: 300
 | 1000 | {{< alias "timescaledb" >}} | 时序数据库扩展插件 |
 | 1010 | {{< alias "timescaledb_toolkit" >}} | 超表分析查询，时间序列流式处理，以及其他SQL工具 |
 
-## BSD 0-Clause
+## 0BSD
 
 
 
-| {{< license "BSD 0-Clause" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "0BSD" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
-| {{< badge content="许可证文本" color="gray" link="https://opensource.org/license/0bsd" icon="scale" >}} | Public domain equivalent license with no restrictions on use. |
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
 | 2520 | {{< alias "plproxy" >}} | 作为过程语言实现的数据库分区 |
 | 9100 | {{< alias "orafce" >}} | 模拟 Oracle RDBMS 的一部分函数和包的函数和运算符 |
+
+## Artistic-2.0
+
+
+
+| {{< license "Artistic-2.0" >}} | {{< badge content="2 个扩展" color="gray" icon="cube" >}}  |
+|:----|:---|
+| {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
+
+| ID | 扩展 | 描述 |
+|:---:|:---|:---|
+| 3050 | {{< alias "pldbgapi" "pldebugger" >}} | 用于调试 PL/pgSQL 函数的服务器端支持 |
+| 3220 | {{< alias "dbt2" >}} | OSDL-DBT-2 测试组件 |
 
 ## MPL-2.0
 
@@ -731,17 +739,17 @@ weight: 300
 |:---:|:---|:---|
 | 7000 | {{< alias "passwordcheck_cracklib" >}} | 使用cracklib加固PG用户密码 |
 
-## BSD
+## Artistic-1.0
 
 
 
-| {{< license "BSD" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Artistic-1.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 
 | ID | 扩展 | 描述 |
 |:---:|:---|:---|
-| 5260 | {{< alias "pgdisablelogerror" >}} | 按 SQLSTATE 错误码禁止部分错误写入 PostgreSQL 服务器日志。 |
+| 3070 | {{< alias "plprofiler" >}} | 剖析 PL/pgSQL 函数 |
 
 ## Apache-2.0 AND MIT AND BSD-2-Clause AND BSD-3-Clause
 
@@ -755,11 +763,11 @@ weight: 300
 |:---:|:---|:---|
 | 6020 | {{< alias "pg_stat_ch" >}} | 将 PostgreSQL 查询遥测实时导出到 ClickHouse |
 
-## ELv2
+## Elastic-2.0
 
 
 
-| {{< license "ELv2" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
+| {{< license "Elastic-2.0" >}} | {{< badge content="1 个扩展" color="gray" icon="cube" >}}  |
 |:----|:---|
 | {{< badge content="许可证文本" color="gray" link="#" icon="scale" >}} | Unknown license |
 

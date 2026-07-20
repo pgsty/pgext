@@ -85,14 +85,16 @@ func TestUniverseSchemaMatchesCSV(t *testing.T) {
 	}
 
 	extensionPos := strings.Index(schema, "CREATE TABLE IF NOT EXISTS pgext.extension")
-	universePos := strings.Index(schema, "CREATE TABLE IF NOT EXISTS pgext.universe")
+	universePos := strings.Index(schema, "CREATE TABLE pgext.universe")
 	if extensionPos < 0 || universePos < 0 || extensionPos >= universePos {
 		t.Fatalf("extension DDL must precede universe DDL: extension=%d universe=%d", extensionPos, universePos)
 	}
 	for _, fragment := range []string{
-		"CREATE INDEX IF NOT EXISTS universe_name_pkg_idx ON pgext.universe (name, pkg)",
+		"CREATE INDEX universe_pkg_idx ON pgext.universe (pkg)",
 		"COMMENT ON TABLE pgext.universe",
-		"COMMENT ON COLUMN pgext.universe.ext_type",
+		"COMMENT ON COLUMN pgext.universe.kind",
+		"COMMENT ON COLUMN pgext.universe.required_by",
+		"CREATE OR REPLACE VIEW pgext.ext",
 		"COMMENT ON COLUMN pgext.universe.mtime",
 	} {
 		if !strings.Contains(schema, fragment) {
@@ -168,6 +170,10 @@ func schemaTableColumns(t *testing.T, schema, table string) []string {
 	t.Helper()
 	marker := "CREATE TABLE IF NOT EXISTS pgext." + table
 	start := strings.Index(schema, marker)
+	if start < 0 {
+		marker = "CREATE TABLE pgext." + table
+		start = strings.Index(schema, marker)
+	}
 	if start < 0 {
 		t.Fatalf("schema table %s not found", table)
 	}

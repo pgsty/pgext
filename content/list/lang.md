@@ -14,8 +14,8 @@ weight: 200
 
 | Language | Count | Description |
 |:-------:|:-----:|:--------------|
-| {{< language "C" >}} | 394 | The traditional PostgreSQL extension language |
-| {{< language "SQL" >}} | 59 | Pure SQL extensions and functions |
+| {{< language "C" >}} | 403 | The traditional PostgreSQL extension language |
+| {{< language "SQL" >}} | 58 | Pure SQL extensions and functions |
 | {{< language "Rust" >}} | 52 | Extensions written in Rust with the pgrx framework |
 | {{< language "C++" >}} | 13 | Extensions leveraging C++ features and libraries |
 | {{< language "Data" >}} | 10 | Data-only extensions |
@@ -25,7 +25,7 @@ weight: 200
 
 ## C
 
-{{< language "C" >}} {{< badge content="394 Extensions" color="gray" icon="cube" >}}
+{{< language "C" >}} {{< badge content="403 Extensions" color="gray" icon="cube" >}}
 
 The traditional PostgreSQL extension language
 
@@ -76,6 +76,14 @@ The traditional PostgreSQL extension language
 | 2520 | {{< alias "plproxy" >}} | Database partitioning implemented as procedural language |
 | 2530 | {{< alias "pg_strom" >}} | PG-Strom - big-data processing acceleration using GPU and NVME |
 | 2550 | {{< alias "pg_sorted_heap" >}} | Sorted heap table AM with zone map scan pruning and built-in vector search |
+| 2560 | {{< alias "pg_lake" >}} | Data lake extension by Snowflake |
+| 2561 | {{< alias "pg_extension_base" "pg_lake" >}} | Extension development kit by Snowflake |
+| 2562 | {{< alias "pg_extension_updater" "pg_lake" >}} | Automatic extension updater |
+| 2563 | {{< alias "pg_map" "pg_lake" >}} | Map type for PostgreSQL, bundled as a required pg_lake component. |
+| 2564 | {{< alias "pg_lake_engine" "pg_lake" >}} | Query engine for data lake queries |
+| 2565 | {{< alias "pg_lake_iceberg" "pg_lake" >}} | Iceberg implementation in Postgres |
+| 2566 | {{< alias "pg_lake_table" "pg_lake" >}} | Data lake tables and Iceberg tables |
+| 2567 | {{< alias "pg_lake_copy" "pg_lake" >}} | Copy to/from data lake files |
 | 2590 | {{< alias "tablefunc" >}} | functions that manipulate whole tables, including crosstab |
 | 2600 | {{< alias "age" >}} | AGE graph database extension |
 | 2610 | {{< alias "pg_liquid" >}} | Liquid-inspired Datalog graph query extension for PostgreSQL |
@@ -398,6 +406,7 @@ The traditional PostgreSQL extension language
 | 9180 | {{< alias "plisql" "ivorysql" >}} | PL/iSQL procedural language |
 | 9190 | {{< alias "gb18030_2022" "ivorysql" >}} | Support GB18030-2022 and UTF-8 conversion |
 | 9210 | {{< alias "plpgsql_wrap" >}} | Oracle WRAP-equivalent PL/pgSQL language handler storing AES-256-GCM encrypted procedure source. |
+| 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9270 | {{< alias "pg_dbms_errlog" >}} | Emulate DBMS_ERRLOG Oracle module to log DML errors in a dedicated table. |
 | 9300 | {{< alias "babelfishpg_common" "babelfish" >}} | SQL Server Transact SQL Datatype Support |
 | 9310 | {{< alias "babelfishpg_tsql" "babelfish" >}} | SQL Server Transact SQL compatibility |
@@ -428,7 +437,7 @@ The traditional PostgreSQL extension language
 
 ## SQL
 
-{{< language "SQL" >}} {{< badge content="59 Extensions" color="gray" icon="cube" >}}
+{{< language "SQL" >}} {{< badge content="58 Extensions" color="gray" icon="cube" >}}
 
 Pure SQL extensions and functions
 
@@ -489,7 +498,6 @@ Pure SQL extensions and functions
 | 9200 | {{< alias "db2fce" >}} | DB2 compatibility functions, types, operators, and SYSIBM.SYSDUMMY1 for PostgreSQL. |
 | 9240 | {{< alias "pg_dbms_metadata" >}} | Extension to add Oracle DBMS_METADATA compatibility to PostgreSQL |
 | 9250 | {{< alias "pg_dbms_lock" >}} | Extension to add Oracle DBMS_LOCK full compatibility to PostgreSQL |
-| 9260 | {{< alias "pg_dbms_job" >}} | Extension to add Oracle DBMS_JOB full compatibility to PostgreSQL |
 | 9290 | {{< alias "pg_utl_smtp" >}} | Oracle UTL_SMTP compatibility extension for PostgreSQL |
 | 9550 | {{< alias "db_migrator" >}} | Tools to migrate other databases to PostgreSQL |
 | 9700 | {{< alias "mimeo" >}} | Extension for specialized, per-table replication between PostgreSQL instances |

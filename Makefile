@@ -51,7 +51,7 @@ s: serve
 serve:
 	cd out && python3 -m http.server 3001
 
-
+da: dump dd d2
 # dump extension data to data dir
 dump:
 	psql $(PGURL) -c "COPY (SELECT * FROM pgext.pg         ORDER BY pg DESC)  TO STDOUT CSV HEADER;"  > db/pg.csv
@@ -67,6 +67,11 @@ load:
 	cat db/repository.csv | psql $(PGURL) -c "COPY pgext.repository FROM STDIN CSV HEADER;"
 	cat db/extension.csv  | psql $(PGURL) -c "COPY pgext.extension  FROM STDIN CSV HEADER;"
 	cat db/universe.csv   | psql $(PGURL) -c "COPY pgext.universe   FROM STDIN CSV HEADER;"
+
+dumps:
+	pg_dump $(PGURL) -c -x -n pgext -f tmp/pgext.sql
+loads:
+	psql $(PGURL) -f tmp/pgext.sql
 
 # dump extension data to data dir
 dd:

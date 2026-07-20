@@ -5,6 +5,7 @@ package server
 
 import (
 	"context"
+	"crypto/subtle"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -22,12 +23,12 @@ import (
    API surface (all JSON, read-only except /reload):
 
      GET  /api/v1/meta                  server + snapshot + dimensions
-     GET  /api/v1/ext                   list/search: q cat repo license lang pg type vendor scope sort limit offset
+     GET  /api/v1/ext                   list/search: q + catalog/runtime/build/doc/relation dimensions
      GET  /api/v1/ext/{name}            one extension, full record
      GET  /api/v1/ext/{name}/matrix     package availability: pg × os cells
      GET  /api/v1/ext/{name}/files      binary artifacts with download URLs (?pg= &os=)
      GET  /api/v1/ext/{name}/doc        usage doc markdown (?lang=en|zh)
-     GET  /api/v1/dim/{key}             aggregate: category license lang repo vendor kernel type pg
+     GET  /api/v1/dim/{key}             aggregate: 19 universe/doc/pkg dimensions
      GET  /api/v1/bootstrap             compact positional payload for the SPA
      POST /api/v1/reload                refresh the snapshot from the database
      GET  /healthz                      liveness + snapshot age
@@ -35,32 +36,55 @@ import (
 
 // Filter mirrors the SPA search semantics: free words plus key:value operators.
 type Filter struct {
-	Words   []string
-	Cat     string
-	Repo    string
-	License string
-	Lang    string
-	PG      int
-	Type    string
-	Vendor  string
-	Scope   string // "", "packaged", "cloud"
+	Words      []string
+	Cat        string
+	Repo       string
+	License    string
+	Lang       string
+	PG         []int
+	OS         string
+	Kind       string
+	Lifecycle  string
+	Kernel     string
+	Vendor     string
+	Scope      string // "", "packaged", "source", "kernel", "vendor", "contrib"
+	Tag        string
+	Pkg        string
+	Capability string
+	Build      string
+	Docs       string
+	Relation   string
+	PGRX       string
+	Active     string
 }
 
 // ParseFilter reads filters from query params; `q` may embed operators
-// like `cat:GIS lang:rust pg:18 vendor:aws is:packaged`.
+// like `cat:GIS tag:vector pg:18 build:pgrx is:packaged`.
 func ParseFilter(v url.Values) Filter {
 	f := Filter{
-		Cat:     strings.ToUpper(v.Get("cat")),
-		Repo:    strings.ToUpper(v.Get("repo")),
-		License: v.Get("license"),
-		Lang:    v.Get("lang"),
-		Type:    strings.ToLower(v.Get("type")),
-		Vendor:  v.Get("vendor"),
-		Scope:   strings.ToLower(v.Get("scope")),
+		Cat:        strings.ToUpper(v.Get("cat")),
+		Repo:       strings.ToUpper(v.Get("repo")),
+		License:    v.Get("license"),
+		Lang:       first(v.Get("lang"), v.Get("lng")),
+		OS:         v.Get("os"),
+		Kind:       strings.ToLower(first(v.Get("kind"), v.Get("type"))),
+		Lifecycle:  strings.ToLower(v.Get("lifecycle")),
+		Kernel:     v.Get("kernel"),
+		Vendor:     v.Get("vendor"),
+		Scope:      strings.ToLower(v.Get("scope")),
+		Tag:        v.Get("tag"),
+		Pkg:        first(v.Get("pkg"), v.Get("package")),
+		Capability: strings.ToLower(first(v.Get("capability"), v.Get("cap"))),
+		Build:      strings.ToLower(v.Get("build")),
+		Docs:       strings.ToLower(first(v.Get("docs"), v.Get("doc"))),
+		Relation:   strings.ToLower(first(v.Get("relation"), v.Get("rel"))),
+		PGRX:       v.Get("pgrx"),
+		Active:     strings.ToLower(first(v.Get("active"), v.Get("year"))),
 	}
-	if n, err := strconv.Atoi(v.Get("pg")); err == nil {
-		f.PG = n
+	if f.Scope == "cloud" { // legacy query alias
+		f.Scope = "vendor"
 	}
+	f.PG = parsePGValues(v.Get("pg"))
 	for _, tok := range strings.Fields(v.Get("q")) {
 		key, val, ok := strings.Cut(tok, ":")
 		if !ok || val == "" {
@@ -77,21 +101,47 @@ func ParseFilter(v url.Values) Filter {
 		case "lang", "lng":
 			f.Lang = val
 		case "pg":
-			if n, err := strconv.Atoi(val); err == nil {
-				f.PG = n
-			}
-		case "type":
-			f.Type = strings.ToLower(val)
+			f.PG = parsePGValues(val)
+		case "type", "kind":
+			f.Kind = strings.ToLower(val)
+		case "lifecycle", "life":
+			f.Lifecycle = strings.ToLower(val)
+		case "kernel":
+			f.Kernel = val
+		case "os", "target":
+			f.OS = val
 		case "vendor":
 			f.Vendor = val
+		case "tag", "tags":
+			f.Tag = val
+		case "pkg", "package", "project":
+			f.Pkg = val
+		case "cap", "capability", "feature":
+			f.Capability = strings.ToLower(val)
+		case "build", "builder":
+			f.Build = strings.ToLower(val)
+		case "doc", "docs":
+			f.Docs = strings.ToLower(val)
+		case "rel", "relation", "dependency":
+			f.Relation = strings.ToLower(val)
+		case "pgrx":
+			f.PGRX = val
+		case "active", "year":
+			f.Active = strings.ToLower(val)
 		case "is":
 			switch strings.ToLower(val) {
 			case "packaged":
 				f.Scope = "packaged"
-			case "cloud":
-				f.Scope = "cloud"
+			case "source", "source-only", "unpackaged":
+				f.Scope = "source"
+			case "kernel":
+				f.Scope = "kernel"
+			case "vendor", "cloud":
+				f.Scope = "vendor"
 			case "contrib":
-				f.Repo = "CONTRIB"
+				f.Scope = "contrib"
+			case "binary", "library", "create-extension", "preload", "trusted", "relocatable":
+				f.Capability = strings.ToLower(val)
 			}
 		default:
 			f.Words = append(f.Words, strings.ToLower(tok))
@@ -100,34 +150,82 @@ func ParseFilter(v url.Values) Filter {
 	return f
 }
 
-func (f Filter) match(e *Ext) (int, bool) {
+func (f Filter) match(e *Ext, snap *Snapshot) (int, bool) {
 	if f.Cat != "" && e.Category != f.Cat {
 		return 0, false
 	}
 	if f.Repo != "" && !strings.EqualFold(e.Repo, f.Repo) {
 		return 0, false
 	}
-	if f.License != "" && !strings.EqualFold(e.License, f.License) {
-		return 0, false
+	if f.License != "" {
+		if strings.EqualFold(f.License, "Unknown") {
+			if e.License != "" && !strings.EqualFold(e.License, "Unknown") {
+				return 0, false
+			}
+		} else if !strings.EqualFold(e.License, f.License) {
+			return 0, false
+		}
 	}
 	if f.Lang != "" && !strings.EqualFold(e.Lang, f.Lang) {
 		return 0, false
 	}
-	if f.PG != 0 && !containsInt(e.PG, f.PG) {
+	if len(f.PG) > 0 && !containsAllInts(e.PG, f.PG) {
 		return 0, false
 	}
-	if f.Type != "" && e.ExtType != f.Type {
+	if f.OS != "" && !hasTargets(e, snap, f.PG, f.OS) {
 		return 0, false
 	}
-	if f.Scope == "packaged" && e.State != "available" {
+	if f.Kind != "" && !strings.EqualFold(e.Kind, f.Kind) {
 		return 0, false
 	}
-	if f.Scope == "cloud" && e.ExtKernel == "" && e.ExtVendor == "" {
+	if f.Lifecycle != "" && !strings.EqualFold(e.Lifecycle, f.Lifecycle) {
+		return 0, false
+	}
+	if f.Tag != "" && !containsEqualFold(e.Tags, f.Tag) {
+		return 0, false
+	}
+	if f.Pkg != "" && !strings.EqualFold(e.Pkg, f.Pkg) {
+		return 0, false
+	}
+	if f.Capability != "" && !matchesCapability(e, f.Capability) {
+		return 0, false
+	}
+	if f.Build != "" && !matchesBuild(e, f.Build) {
+		return 0, false
+	}
+	if f.Docs != "" && docClass(e) != f.Docs {
+		return 0, false
+	}
+	if f.Relation != "" && !matchesRelation(e, f.Relation) {
+		return 0, false
+	}
+	if f.PGRX != "" && !strings.EqualFold(e.PGRXVer, f.PGRX) {
+		return 0, false
+	}
+	if f.Active != "" && activityYear(e) != f.Active {
+		return 0, false
+	}
+	if f.Scope == "packaged" && !e.Packaged {
+		return 0, false
+	}
+	if f.Scope == "source" && (e.Packaged || (e.RepoURL == "" && e.Tarball == "")) {
+		return 0, false
+	}
+	if f.Scope == "kernel" && e.Kernel == "" {
+		return 0, false
+	}
+	if f.Scope == "vendor" && e.Vendor == "" {
+		return 0, false
+	}
+	if f.Scope == "contrib" && !e.Contrib {
+		return 0, false
+	}
+	if f.Kernel != "" && !strings.Contains(strings.ToLower(e.Kernel), strings.ToLower(f.Kernel)) {
 		return 0, false
 	}
 	if f.Vendor != "" {
 		v := strings.ToLower(f.Vendor)
-		if !strings.Contains(strings.ToLower(e.ExtVendor), v) && !strings.Contains(strings.ToLower(e.ExtKernel), v) {
+		if !strings.Contains(strings.ToLower(e.Vendor), v) {
 			return 0, false
 		}
 	}
@@ -141,11 +239,14 @@ func (f Filter) match(e *Ext) (int, bool) {
 			score += 60
 		case strings.Contains(name, w) || strings.Contains(pkg, w):
 			score += 30
-		case strings.Contains(strings.ToLower(e.EnDesc), w) || strings.Contains(e.ZhDesc, w):
+		case containsFold(e.Tags, w):
+			score += 18
+		case strings.Contains(strings.ToLower(e.EnDesc), w) || strings.Contains(e.ZhDesc, w) || strings.Contains(strings.ToLower(e.Comment), w):
 			score += 10
 		case strings.EqualFold(e.Category, w),
-			strings.Contains(strings.ToLower(e.ExtVendor), w),
-			strings.Contains(strings.ToLower(e.ExtKernel), w):
+			strings.Contains(strings.ToLower(e.Vendor), w),
+			strings.Contains(strings.ToLower(e.Kernel), w),
+			strings.Contains(strings.ToLower(e.Lifecycle), w):
 			score += 8
 		default:
 			return 0, false
@@ -163,7 +264,7 @@ func (f Filter) Apply(snap *Snapshot, sortKey string) []*Ext {
 	}
 	hits := make([]hit, 0, 64)
 	for _, e := range snap.Exts {
-		if score, ok := f.match(e); ok {
+		if score, ok := f.match(e, snap); ok {
 			hits = append(hits, hit{e, score})
 		}
 	}
@@ -177,8 +278,8 @@ func (f Filter) Apply(snap *Snapshot, sortKey string) []*Ext {
 		case "name":
 			return a.Name < b.Name
 		case "updated":
-			if a.LastCommit != b.LastCommit {
-				return a.LastCommit > b.LastCommit
+			if a.LastActive != b.LastActive {
+				return a.LastActive > b.LastActive
 			}
 			return starOf(a) > starOf(b)
 		default: // stars
@@ -195,6 +296,169 @@ func (f Filter) Apply(snap *Snapshot, sortKey string) []*Ext {
 	return out
 }
 
+func first(values ...string) string {
+	for _, value := range values {
+		if value != "" {
+			return value
+		}
+	}
+	return ""
+}
+
+func containsFold(values []string, needle string) bool {
+	for _, value := range values {
+		if strings.Contains(strings.ToLower(value), needle) {
+			return true
+		}
+	}
+	return false
+}
+
+func containsEqualFold(values []string, needle string) bool {
+	for _, value := range values {
+		if strings.EqualFold(value, needle) {
+			return true
+		}
+	}
+	return false
+}
+
+func matchesCapability(e *Ext, value string) bool {
+	switch strings.ToLower(value) {
+	case "binary", "bin":
+		return e.HasBin
+	case "library", "lib":
+		return e.HasLib
+	case "create-extension", "ddl":
+		return e.NeedDDL
+	case "preload", "load":
+		return e.NeedLoad
+	case "trusted":
+		return e.Trusted
+	case "relocatable":
+		return e.Relocatable
+	default:
+		return false
+	}
+}
+
+func matchesBuild(e *Ext, value string) bool {
+	switch strings.ToLower(value) {
+	case "rpm":
+		return e.RPMBuild
+	case "deb":
+		return e.DEBBuild
+	case "pgrx":
+		return e.PGRXVer != ""
+	case "source":
+		return e.RepoURL != "" || e.Tarball != ""
+	case "packaged", "binary-package":
+		return e.Packaged
+	default:
+		return false
+	}
+}
+
+func docClass(e *Ext) string {
+	switch {
+	case e.HasEnDoc && e.HasZhDoc:
+		return "bilingual"
+	case e.HasEnDoc:
+		return "english-only"
+	case e.HasZhDoc:
+		return "chinese-only"
+	default:
+		return "undocumented"
+	}
+}
+
+func matchesRelation(e *Ext, value string) bool {
+	switch strings.ToLower(value) {
+	case "requires":
+		return len(e.Requires) > 0
+	case "required-by":
+		return len(e.RequiredBy) > 0
+	case "see-also":
+		return len(e.SeeAlso) > 0
+	case "no-relations":
+		return len(e.Requires) == 0 && len(e.RequiredBy) == 0 && len(e.SeeAlso) == 0
+	default:
+		return false
+	}
+}
+
+func activityYear(e *Ext) string {
+	if len(e.LastActive) >= 4 {
+		year := e.LastActive[:4]
+		if _, err := strconv.Atoi(year); err == nil {
+			return year
+		}
+	}
+	return "unknown"
+}
+
+func hasTarget(e *Ext, snap *Snapshot, pg int, os string) bool {
+	if len(e.TargetIdx) == 0 || len(snap.OSs) == 0 {
+		return false
+	}
+	osIndex := -1
+	for i, target := range snap.OSs {
+		if target == os {
+			osIndex = i
+			break
+		}
+	}
+	if osIndex < 0 {
+		return false
+	}
+	for _, idx := range e.TargetIdx {
+		pi, oi := idx/len(snap.OSs), idx%len(snap.OSs)
+		if oi == osIndex && pi >= 0 && pi < len(snap.PGs) && (pg == 0 || snap.PGs[pi] == pg) {
+			return true
+		}
+	}
+	return false
+}
+
+func hasTargets(e *Ext, snap *Snapshot, pgs []int, os string) bool {
+	if len(pgs) == 0 {
+		return hasTarget(e, snap, 0, os)
+	}
+	for _, pg := range pgs {
+		if !hasTarget(e, snap, pg, os) {
+			return false
+		}
+	}
+	return true
+}
+
+func parsePGValues(raw string) []int {
+	seen := make(map[int]struct{})
+	var values []int
+	for _, part := range strings.FieldsFunc(raw, func(r rune) bool { return r == ',' || r == ';' || r == ' ' }) {
+		pg, err := strconv.Atoi(part)
+		if err != nil || pg <= 0 || pg >= 100 {
+			continue
+		}
+		if _, ok := seen[pg]; ok {
+			continue
+		}
+		seen[pg] = struct{}{}
+		values = append(values, pg)
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(values)))
+	return values
+}
+
+func containsAllInts(xs, wanted []int) bool {
+	for _, value := range wanted {
+		if !containsInt(xs, value) {
+			return false
+		}
+	}
+	return true
+}
+
 func containsInt(xs []int, x int) bool {
 	for _, v := range xs {
 		if v == x {
@@ -207,9 +471,10 @@ func containsInt(xs []int, x int) bool {
 /* ---------------- handlers ---------------- */
 
 type api struct {
-	store *Store
-	cache *ttlCache
-	pool  *pgxpool.Pool
+	store       *Store
+	cache       *ttlCache
+	pool        *pgxpool.Pool
+	reloadToken string
 }
 
 func writeJSON(w http.ResponseWriter, code int, v any) {
@@ -229,12 +494,19 @@ func writeErr(w http.ResponseWriter, code int, format string, args ...any) {
 func (a *api) handleMeta(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
 	writeJSON(w, 200, map[string]any{
-		"server":    "pgext",
-		"generated": snap.LoadedAt.Format(time.RFC3339),
+		"server":     "pgext",
+		"generated":  snap.LoadedAt.Format(time.RFC3339),
+		"dimensions": dimKeys,
 		"counts": map[string]int{
-			"total":    len(snap.Exts),
-			"packaged": snap.CountAvail,
-			"vendor":   snap.CountVendor,
+			"total":             len(snap.Exts),
+			"packaged":          snap.CountPackaged,
+			"projects":          snap.CountProjects,
+			"packaged_projects": snap.CountPackagedProject,
+			"source_only":       snap.CountSourceOnly,
+			"vendor":            snap.CountVendor,
+			"kernel":            snap.CountKernel,
+			"contrib":           snap.CountContrib,
+			"docs":              snap.CountDocs,
 		},
 		"pg":         snap.PGs,
 		"os":         snap.OSs,
@@ -345,6 +617,7 @@ type FileRow struct {
 	Ver     string `json:"ver"`
 	Version string `json:"version,omitempty"`
 	File    string `json:"file"`
+	SHA256  string `json:"sha256,omitempty"`
 	Size    int    `json:"size"`
 	URL     string `json:"url"`
 }
@@ -362,7 +635,7 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 	a.cached(w, r, snap.Version, func(ctx context.Context) (any, error) {
 		rows, err := a.pool.Query(ctx, `
 			SELECT b.pg, b.os, b.name, b.repo, coalesce(r.org,''), coalesce(b.ver,''), coalesce(b.version,''),
-			       coalesce(b.file,''), coalesce(b.size,0),
+			       coalesce(b.file,''), coalesce(b.sha256,''), coalesce(b.size,0),
 			       CASE WHEN b.href ~ '^https?://' THEN b.href
 			            ELSE coalesce(r.default_url,'') || '/' || coalesce(b.href,'') END
 			FROM pgext.bin b JOIN pgext.repository r ON b.repo = r.id
@@ -377,7 +650,7 @@ func (a *api) handleFiles(w http.ResponseWriter, r *http.Request) {
 		files := []FileRow{}
 		for rows.Next() {
 			var f FileRow
-			if err := rows.Scan(&f.PG, &f.OS, &f.Name, &f.Repo, &f.Org, &f.Ver, &f.Version, &f.File, &f.Size, &f.URL); err != nil {
+			if err := rows.Scan(&f.PG, &f.OS, &f.Name, &f.Repo, &f.Org, &f.Ver, &f.Version, &f.File, &f.SHA256, &f.Size, &f.URL); err != nil {
 				return nil, err
 			}
 			files = append(files, f)
@@ -426,7 +699,11 @@ func (a *api) handleDoc(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-var dimKeys = []string{"category", "license", "lang", "repo", "vendor", "kernel", "type", "pg"}
+var dimKeys = []string{
+	"category", "tag", "package", "kind", "lifecycle", "license", "lang",
+	"distribution", "repo", "pg", "os", "build", "pgrx",
+	"capability", "docs", "relation", "vendor", "kernel", "activity",
+}
 
 func (a *api) handleDim(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
@@ -455,8 +732,22 @@ func (a *api) handleDim(w http.ResponseWriter, r *http.Request) {
 		switch key {
 		case "category":
 			add(e.Category, e)
+		case "tag", "tags":
+			seen := map[string]bool{}
+			for _, tag := range e.Tags {
+				if !seen[strings.ToLower(tag)] {
+					add(tag, e)
+					seen[strings.ToLower(tag)] = true
+				}
+			}
+		case "package", "pkg":
+			add(e.Pkg, e)
 		case "license":
-			add(e.License, e)
+			if e.License == "" {
+				add("Unknown", e)
+			} else {
+				add(e.License, e)
+			}
 		case "lang":
 			add(e.Lang, e)
 		case "repo":
@@ -464,15 +755,74 @@ func (a *api) handleDim(w http.ResponseWriter, r *http.Request) {
 				add(e.Repo, e)
 			}
 		case "vendor":
-			add(e.ExtVendor, e)
+			add(e.Vendor, e)
 		case "kernel":
-			add(e.ExtKernel, e)
-		case "type":
-			add(e.ExtType, e)
+			add(e.Kernel, e)
+		case "kind", "type":
+			add(e.Kind, e)
+		case "lifecycle":
+			add(e.Lifecycle, e)
 		case "pg":
 			for _, v := range e.PG {
 				add(strconv.Itoa(v), e)
 			}
+		case "os":
+			if len(snap.OSs) == 0 {
+				continue
+			}
+			seen := map[int]bool{}
+			for _, idx := range e.TargetIdx {
+				oi := idx % len(snap.OSs)
+				if oi >= 0 && oi < len(snap.OSs) && !seen[oi] {
+					add(snap.OSs[oi], e)
+					seen[oi] = true
+				}
+			}
+		case "distribution":
+			if e.Packaged {
+				add("packaged", e)
+			}
+			if !e.Packaged && (e.RepoURL != "" || e.Tarball != "") {
+				add("source", e)
+			}
+			if e.Vendor != "" {
+				add("vendor", e)
+			}
+			if e.Kernel != "" {
+				add("kernel", e)
+			}
+			if e.Contrib {
+				add("contrib", e)
+			}
+		case "capability", "cap":
+			for _, capability := range []string{"binary", "library", "create-extension", "preload", "trusted", "relocatable"} {
+				if matchesCapability(e, capability) {
+					add(capability, e)
+				}
+			}
+		case "build":
+			for _, build := range []string{"rpm", "deb", "pgrx", "source", "packaged"} {
+				if matchesBuild(e, build) {
+					add(build, e)
+				}
+			}
+		case "docs", "doc":
+			add(docClass(e), e)
+		case "relation", "rel":
+			added := false
+			for _, relation := range []string{"requires", "required-by", "see-also"} {
+				if matchesRelation(e, relation) {
+					add(relation, e)
+					added = true
+				}
+			}
+			if !added {
+				add("no-relations", e)
+			}
+		case "pgrx":
+			add(e.PGRXVer, e)
+		case "activity":
+			add(activityYear(e), e)
 		default:
 			writeErr(w, 400, "unknown dimension %q (valid: %s)", key, strings.Join(dimKeys, " "))
 			return
@@ -495,11 +845,14 @@ func (a *api) handleDim(w http.ResponseWriter, r *http.Request) {
 /*
 bootstrap: compact positional rows for the SPA.
 
-	Column order — keep in sync with decode() in web/app.js:
+	Column order — keep in sync with decodeBoot() in web/app.js:
 	  0 name  1 category  2 avail  3 repo  4 license  5 lang  6 version  7 stars
-	  8 en_desc  9 zh_desc  10 ext_type  11 vendor  12 kernel  13 pg_ver[]
+	  8 en_desc  9 zh_desc  10 kind  11 vendor  12 kernel  13 pg_ver[]
 	  14 flags(lead1 contrib2 bin4 lib8 ddl16 load32 trusted64 reloc128)
-	  15 docbits(en1 zh2)  16 last_commit
+	  15 docbits(en1 zh2)  16 last_commit  17 pkg  18 lead_ext  19 lifecycle
+	  20 tags[]  21 last_active  22 checked_at
+	  23 buildbits(rpm1 deb2 pgrx4 source8)  24 target_idx[]  25 family_size  26 comment
+	  27 relationbits(requires1 required_by2 see_also4)  28 pgrx_ver
 */
 func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 	snap := a.store.Get()
@@ -523,13 +876,38 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 			docbits |= 2
 		}
 		avail := 0
-		if e.State == "available" {
+		if e.Packaged {
 			avail = 1
+		}
+		buildbits := 0
+		if e.RPMBuild {
+			buildbits |= 1
+		}
+		if e.DEBBuild {
+			buildbits |= 2
+		}
+		if e.PGRXVer != "" {
+			buildbits |= 4
+		}
+		if e.RepoURL != "" || e.Tarball != "" {
+			buildbits |= 8
+		}
+		relationbits := 0
+		if len(e.Requires) > 0 {
+			relationbits |= 1
+		}
+		if len(e.RequiredBy) > 0 {
+			relationbits |= 2
+		}
+		if len(e.SeeAlso) > 0 {
+			relationbits |= 4
 		}
 		rows[i] = []any{
 			e.Name, e.Category, avail, e.Repo, e.License, e.Lang, e.Version, e.Stars,
-			e.EnDesc, e.ZhDesc, e.ExtType, e.ExtVendor, e.ExtKernel, e.PG,
-			flags, docbits, e.LastCommit,
+			e.EnDesc, e.ZhDesc, e.Kind, e.Vendor, e.Kernel, e.PG,
+			flags, docbits, e.LastCommit, e.Pkg, e.LeadExt, e.Lifecycle, e.Tags,
+			e.LastActive, e.CheckedAt, buildbits, e.TargetIdx, e.FamilySize, e.Comment,
+			relationbits, e.PGRXVer,
 		}
 	}
 	w.Header().Set("ETag", snap.Version)
@@ -540,9 +918,15 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 		"pg":        snap.PGs,
 		"os":        snap.OSs,
 		"counts": map[string]int{
-			"total":    len(snap.Exts),
-			"packaged": snap.CountAvail,
-			"vendor":   snap.CountVendor,
+			"total":             len(snap.Exts),
+			"packaged":          snap.CountPackaged,
+			"projects":          snap.CountProjects,
+			"packaged_projects": snap.CountPackagedProject,
+			"source_only":       snap.CountSourceOnly,
+			"vendor":            snap.CountVendor,
+			"kernel":            snap.CountKernel,
+			"contrib":           snap.CountContrib,
+			"docs":              snap.CountDocs,
 		},
 		"cats": snap.Cats,
 		"rows": rows,
@@ -550,11 +934,24 @@ func (a *api) handleBootstrap(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *api) handleReload(w http.ResponseWriter, r *http.Request) {
+	if a.reloadToken == "" {
+		writeErr(w, http.StatusNotFound, "catalog reload is disabled")
+		return
+	}
+	got := strings.TrimSpace(r.Header.Get("X-PGEXT-Reload-Token"))
+	if auth := r.Header.Get("Authorization"); got == "" && strings.HasPrefix(auth, "Bearer ") {
+		got = strings.TrimSpace(strings.TrimPrefix(auth, "Bearer "))
+	}
+	if subtle.ConstantTimeCompare([]byte(got), []byte(a.reloadToken)) != 1 {
+		writeErr(w, http.StatusUnauthorized, "invalid reload token")
+		return
+	}
 	ctx, cancel := context.WithTimeout(r.Context(), 30*time.Second)
 	defer cancel()
 	snap, err := a.store.Reload(ctx)
 	if err != nil {
-		writeErr(w, 500, "reload failed: %v", err)
+		logrus.Errorf("catalog reload failed: %v", err)
+		writeErr(w, 500, "catalog reload failed")
 		return
 	}
 	writeJSON(w, 200, map[string]any{
@@ -605,12 +1002,13 @@ func (a *api) cached(w http.ResponseWriter, r *http.Request, ver string, fn func
 			return
 		}
 		logrus.Errorf("query failed for %s: %v", r.URL.Path, err)
-		writeErr(w, 500, "query failed: %v", err)
+		writeErr(w, 500, "catalog query failed")
 		return
 	}
 	body, err := json.Marshal(v)
 	if err != nil {
-		writeErr(w, 500, "encode failed: %v", err)
+		logrus.Errorf("encode failed for %s: %v", r.URL.Path, err)
+		writeErr(w, 500, "response encoding failed")
 		return
 	}
 	a.cache.Set(key, body)

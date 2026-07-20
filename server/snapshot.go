@@ -7,6 +7,7 @@ import (
 	"context"
 	"crypto/sha1"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"sort"
 	"strconv"
@@ -19,77 +20,119 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// Ext is one extension record from pgext.universe, enriched with doc metadata.
+// Ext is one canonical extension record from pgext.universe. New universe
+// columns are exposed directly; the state/repo/ext_* fields remain as v1 API
+// compatibility aliases for existing clients.
 type Ext struct {
 	ID       int    `json:"id"`
 	Name     string `json:"name"`
 	Pkg      string `json:"pkg"`
-	LeadExt  string `json:"lead_ext,omitempty"`
+	LeadExt  string `json:"lead_ext"`
 	Category string `json:"category"`
-	State    string `json:"state"`
-	URL      string `json:"url,omitempty"`
-	License  string `json:"license,omitempty"`
-	Lang     string `json:"lang,omitempty"`
-	Repo     string `json:"repo,omitempty"`
-	Version  string `json:"version,omitempty"`
 
-	Tags        []string `json:"tags,omitempty"`
-	Contrib     bool     `json:"contrib"`
-	Lead        bool     `json:"lead"`
-	HasBin      bool     `json:"has_bin"`
-	HasLib      bool     `json:"has_lib"`
-	NeedDDL     bool     `json:"need_ddl"`
-	NeedLoad    bool     `json:"need_load"`
-	Trusted     bool     `json:"trusted"`
-	Relocatable bool     `json:"relocatable"`
+	Packaged  bool     `json:"packaged"`
+	Lifecycle string   `json:"lifecycle,omitempty"`
+	Kind      string   `json:"kind"`
+	Kernel    string   `json:"kernel,omitempty"`
+	Vendor    string   `json:"vendor,omitempty"`
+	Contrib   bool     `json:"contrib"`
+	Lang      string   `json:"lang"`
+	License   string   `json:"license,omitempty"`
+	Tags      []string `json:"tags,omitempty"`
 
-	Schemas   []string `json:"schemas,omitempty"`
-	PG        []int    `json:"pg_ver,omitempty"`
-	Requires  []string `json:"requires,omitempty"`
-	RequireBy []string `json:"require_by,omitempty"`
-	SeeAlso   []string `json:"see_also,omitempty"`
-	Siblings  []string `json:"siblings,omitempty"`
+	Version    string `json:"version,omitempty"`
+	URL        string `json:"url,omitempty"`
+	RepoURL    string `json:"repo_url,omitempty"`
+	HomeURL    string `json:"home_url,omitempty"`
+	DocURL     string `json:"doc_url,omitempty"`
+	LicenseURL string `json:"license_url,omitempty"`
+	ControlURL string `json:"control_url,omitempty"`
+	AuthorURL  string `json:"author_url,omitempty"`
+	CargoURL   string `json:"cargo_url,omitempty"`
+	PGXNURL    string `json:"pgxn_url,omitempty"`
 
-	RPMVer  string   `json:"rpm_ver,omitempty"`
-	RPMRepo string   `json:"rpm_repo,omitempty"`
-	RPMPkg  string   `json:"rpm_pkg,omitempty"`
-	RPMPG   []int    `json:"rpm_pg,omitempty"`
-	RPMDeps []string `json:"rpm_deps,omitempty"`
-	DEBVer  string   `json:"deb_ver,omitempty"`
-	DEBRepo string   `json:"deb_repo,omitempty"`
-	DEBPkg  string   `json:"deb_pkg,omitempty"`
-	DEBPG   []int    `json:"deb_pg,omitempty"`
-	DEBDeps []string `json:"deb_deps,omitempty"`
+	HasBin      bool `json:"has_bin"`
+	HasLib      bool `json:"has_lib"`
+	NeedDDL     bool `json:"need_ddl"`
+	NeedLoad    bool `json:"need_load"`
+	Trusted     bool `json:"trusted"`
+	Relocatable bool `json:"relocatable"`
+	Lead        bool `json:"lead"`
 
-	Source    string `json:"source,omitempty"`
-	ExtType   string `json:"ext_type,omitempty"`
-	ExtKernel string `json:"ext_kernel,omitempty"`
-	ExtVendor string `json:"ext_vendor,omitempty"`
+	Libs        []string `json:"libs,omitempty"`
+	PreloadLibs []string `json:"preload_libs,omitempty"`
+	Schemas     []string `json:"schemas,omitempty"`
+	PG          []int    `json:"pg_ver,omitempty"`
+	Requires    []string `json:"requires,omitempty"`
+	RequiredBy  []string `json:"required_by,omitempty"`
+	RequireBy   []string `json:"require_by,omitempty"` // v1 compatibility
+	SeeAlso     []string `json:"see_also,omitempty"`
+	Siblings    []string `json:"siblings,omitempty"`
 
-	Stars *int `json:"star_cnt,omitempty"`
-	Watch *int `json:"watch_cnt,omitempty"`
-	Fork  *int `json:"fork_cnt,omitempty"`
+	Tarball  string   `json:"tarball,omitempty"`
+	PGRXVer  string   `json:"pgrx_ver,omitempty"`
+	RPMVer   string   `json:"rpm_ver,omitempty"`
+	RPMRepo  string   `json:"rpm_repo,omitempty"`
+	RPMPkg   string   `json:"rpm_pkg,omitempty"`
+	RPMPG    []int    `json:"rpm_pg,omitempty"`
+	RPMDeps  []string `json:"rpm_deps,omitempty"`
+	RPMBuild bool     `json:"rpm_build"`
+	DEBVer   string   `json:"deb_ver,omitempty"`
+	DEBRepo  string   `json:"deb_repo,omitempty"`
+	DEBPkg   string   `json:"deb_pkg,omitempty"`
+	DEBPG    []int    `json:"deb_pg,omitempty"`
+	DEBDeps  []string `json:"deb_deps,omitempty"`
+	DEBBuild bool     `json:"deb_build"`
 
-	LastCommit  string `json:"last_commit,omitempty"`
-	LastRelease string `json:"last_release,omitempty"`
-	LastUpdate  string `json:"last_update,omitempty"`
+	Stars    *int `json:"stars,omitempty"`
+	Watchers *int `json:"watchers,omitempty"`
+	Forks    *int `json:"forks,omitempty"`
+	StarCnt  *int `json:"star_cnt,omitempty"`  // v1 compatibility
+	WatchCnt *int `json:"watch_cnt,omitempty"` // v1 compatibility
+	ForkCnt  *int `json:"fork_cnt,omitempty"`  // v1 compatibility
 
-	EnDesc string `json:"en_desc,omitempty"`
-	ZhDesc string `json:"zh_desc,omitempty"`
+	RepoCreatedAt string `json:"repo_created_at,omitempty"`
+	LastCommit    string `json:"last_commit,omitempty"`
+	LastRelease   string `json:"last_release,omitempty"`
+	LastActive    string `json:"last_active,omitempty"`
+	CheckedAt     string `json:"checked_at,omitempty"`
+	MTime         string `json:"mtime,omitempty"`
+
+	EnDesc  string          `json:"en_desc,omitempty"`
+	ZhDesc  string          `json:"zh_desc,omitempty"`
+	Comment string          `json:"comment,omitempty"`
+	Extra   json.RawMessage `json:"extra,omitempty"`
+
+	// Compact package availability indices. Each value is
+	// pgIndex*len(snapshot.OSs)+osIndex and is shared by a package family.
+	TargetIdx  []int `json:"target_idx,omitempty"`
+	FamilySize int   `json:"family_size"`
 
 	HasEnDoc bool      `json:"has_en_doc"`
 	HasZhDoc bool      `json:"has_zh_doc"`
 	DocLinks *DocLinks `json:"doc_links,omitempty"`
+
+	// Legacy aliases retained for API v1 clients.
+	State      string `json:"state"`
+	Repo       string `json:"repo,omitempty"`
+	Source     string `json:"source,omitempty"`
+	ExtType    string `json:"ext_type,omitempty"`
+	ExtKernel  string `json:"ext_kernel,omitempty"`
+	ExtVendor  string `json:"ext_vendor,omitempty"`
+	LastUpdate string `json:"last_update,omitempty"`
 }
 
-// DocLinks carries the reference URLs curated in pgext.doc.
+// DocLinks carries the most useful upstream references as a compatibility
+// bundle. The same URLs are also first-class Ext fields in the new schema.
 type DocLinks struct {
 	Repo    string `json:"repo_url,omitempty"`
 	License string `json:"license_url,omitempty"`
 	Control string `json:"control_url,omitempty"`
 	Author  string `json:"author_url,omitempty"`
 	Home    string `json:"home_url,omitempty"`
+	Docs    string `json:"doc_url,omitempty"`
 	Cargo   string `json:"cargo_url,omitempty"`
+	PGXN    string `json:"pgxn_url,omitempty"`
 }
 
 // Category is one row of pgext.category with a member count.
@@ -106,7 +149,7 @@ type Category struct {
 // answered from here; only per-extension package/doc queries hit the pool.
 type Snapshot struct {
 	LoadedAt time.Time
-	Version  string // strong ETag for bootstrap/list payloads
+	Version  string // stable content ETag for bootstrap/list payloads
 
 	Exts   []*Ext
 	ByName map[string]*Ext
@@ -114,8 +157,17 @@ type Snapshot struct {
 	PGs    []int    // active PostgreSQL majors, descending
 	OSs    []string // active OS targets, canonical order
 
-	CountAvail  int
-	CountVendor int
+	CountPackaged        int
+	CountProjects        int
+	CountPackagedProject int
+	CountVendor          int
+	CountKernel          int
+	CountContrib         int
+	CountDocs            int
+	CountSourceOnly      int
+
+	// CountAvail is kept internally for older tests/callers.
+	CountAvail int
 }
 
 // Store holds the current snapshot and refreshes it in the background.
@@ -146,8 +198,8 @@ func (s *Store) Reload(ctx context.Context) (*Snapshot, error) {
 	}
 	s.snap.Store(snap)
 	s.lastReload = time.Now()
-	logrus.Infof("snapshot loaded: %d extensions (%d packaged, %d vendor), %d categories, pg=%v, %d os targets",
-		len(snap.Exts), snap.CountAvail, snap.CountVendor, len(snap.Cats), snap.PGs, len(snap.OSs))
+	logrus.Infof("snapshot loaded: %d extensions, %d projects (%d packaged extensions), %d categories, pg=%v, %d os targets",
+		len(snap.Exts), snap.CountProjects, snap.CountPackaged, len(snap.Cats), snap.PGs, len(snap.OSs))
 	return snap, nil
 }
 
@@ -175,19 +227,59 @@ func (s *Store) StartRefresher(ctx context.Context, ttl time.Duration) {
 }
 
 const universeQuery = `
-SELECT id, name, pkg, lead_ext, category, state, url, license, tags, version, repo, lang,
-       contrib, lead, has_bin, has_lib, need_ddl, need_load, trusted, relocatable,
-       schemas, pg_ver, requires, require_by, see_also,
-       rpm_ver, rpm_repo, rpm_pkg, rpm_pg, rpm_deps,
-       deb_ver, deb_repo, deb_pkg, deb_pg, deb_deps,
-       source, ext_type, ext_kernel, ext_vendor,
-       star_cnt, watch_cnt, fork_cnt,
-       last_commit_date::text, last_release_date::text, last_update_date::text,
-       en_desc, zh_desc
+SELECT id, name, pkg, lead_ext, category,
+       packaged, lifecycle, kind, kernel, vendor, contrib, lang, license, tags,
+       version, url, repo_url, home_url, doc_url, license_url, control_url, author_url, cargo_url, pgxn_url,
+       has_bin, has_lib, need_ddl, need_load, trusted, relocatable,
+       libs, schemas, pg_ver, requires, required_by, see_also,
+       tarball, pgrx_ver,
+       rpm_ver, rpm_repo, rpm_pkg, rpm_pg, rpm_deps, rpm_build,
+       deb_ver, deb_repo, deb_pkg, deb_pg, deb_deps, deb_build,
+       stars, watchers, forks,
+       repo_created_at::text, last_commit::text, last_release::text, last_active::text, checked_at::text,
+       en_desc, zh_desc, comment, extra, mtime::text,
+       COALESCE(extra->>'repo',
+         CASE WHEN contrib THEN 'CONTRIB'
+              WHEN rpm_repo = deb_repo THEN rpm_repo
+              WHEN rpm_repo IS NULL THEN deb_repo
+              WHEN deb_repo IS NULL THEN rpm_repo
+              ELSE 'MIXED' END,
+         'n/a') AS repo
 FROM pgext.universe`
 
+func verifyUniverseSchema(ctx context.Context, pool *pgxpool.Pool) error {
+	const q = `
+	SELECT coalesce(string_agg(required, ', ' ORDER BY required), '')
+	FROM unnest(ARRAY['packaged','lifecycle','kind','kernel','vendor','repo_url','required_by','rpm_build','deb_build','last_active','checked_at']) AS required
+	WHERE NOT EXISTS (
+		SELECT 1 FROM information_schema.columns
+		WHERE table_schema = 'pgext' AND table_name = 'universe' AND column_name = required
+	)`
+	var missing string
+	if err := pool.QueryRow(ctx, q).Scan(&missing); err != nil {
+		return fmt.Errorf("inspect pgext.universe schema: %w", err)
+	}
+	if missing != "" {
+		return fmt.Errorf("pgext.universe uses an incompatible schema (missing: %s); load the current db/schema.sql before starting pgext serve", missing)
+	}
+	return nil
+}
+
 func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
-	snap := &Snapshot{LoadedAt: time.Now(), ByName: map[string]*Ext{}}
+	if err := verifyUniverseSchema(ctx, pool); err != nil {
+		return nil, err
+	}
+	snap := &Snapshot{LoadedAt: time.Now().UTC(), ByName: map[string]*Ext{}}
+
+	// Dimensions are loaded first because compact target indices depend on
+	// their canonical order.
+	if err := pool.QueryRow(ctx, `SELECT array_agg(pg ORDER BY pg DESC) FROM pgext.active_pg`).Scan(&snap.PGs); err != nil {
+		return nil, fmt.Errorf("query pgext.active_pg: %w", err)
+	}
+	if err := pool.QueryRow(ctx, `SELECT array_agg(os) FROM pgext.active_os`).Scan(&snap.OSs); err != nil {
+		return nil, fmt.Errorf("query pgext.active_os: %w", err)
+	}
+	sortOS(snap.OSs)
 
 	rows, err := pool.Query(ctx, universeQuery)
 	if err != nil {
@@ -195,60 +287,84 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	}
 	defer rows.Close()
 	byPkg := map[string][]*Ext{}
+	packagedProjects := map[string]struct{}{}
 	for rows.Next() {
 		var e Ext
-		var pkg, leadExt, url, license, version, repo, lang *string
-		var rpmVer, rpmRepo, rpmPkg, debVer, debRepo, debPkg *string
-		var source, extType, extKernel, extVendor *string
-		var lastCommit, lastRelease, lastUpdate, enDesc, zhDesc *string
-		var contrib, lead, hasBin, hasLib, needDDL, needLoad, trusted, reloc *bool
-		var tags, schemas, pgVer, requires, requireBy, seeAlso, rpmPG, rpmDeps, debPG, debDeps []string
+		var lifecycle, kernel, vendor, license, version *string
+		var repoURL, homeURL, docURL, licenseURL, controlURL, authorURL, cargoURL, pgxnURL *string
+		var hasBin, hasLib, needLoad, trusted, relocatable *bool
+		var tarball, pgrxVer, rpmVer, rpmRepo, rpmPkg, debVer, debRepo, debPkg *string
+		var repoCreated, lastCommit, lastRelease, lastActive, checkedAt *string
+		var enDesc, zhDesc, comment *string
+		var tags, libs, schemas, pgVer, requires, requiredBy, seeAlso, rpmDeps, debDeps []string
+		var rpmPG, debPG []int16
+		var extra []byte
 		if err := rows.Scan(
-			&e.ID, &e.Name, &pkg, &leadExt, &e.Category, &e.State, &url, &license, &tags, &version, &repo, &lang,
-			&contrib, &lead, &hasBin, &hasLib, &needDDL, &needLoad, &trusted, &reloc,
-			&schemas, &pgVer, &requires, &requireBy, &seeAlso,
-			&rpmVer, &rpmRepo, &rpmPkg, &rpmPG, &rpmDeps,
-			&debVer, &debRepo, &debPkg, &debPG, &debDeps,
-			&source, &extType, &extKernel, &extVendor,
-			&e.Stars, &e.Watch, &e.Fork,
-			&lastCommit, &lastRelease, &lastUpdate,
-			&enDesc, &zhDesc,
+			&e.ID, &e.Name, &e.Pkg, &e.LeadExt, &e.Category,
+			&e.Packaged, &lifecycle, &e.Kind, &kernel, &vendor, &e.Contrib, &e.Lang, &license, &tags,
+			&version, &e.URL, &repoURL, &homeURL, &docURL, &licenseURL, &controlURL, &authorURL, &cargoURL, &pgxnURL,
+			&hasBin, &hasLib, &e.NeedDDL, &needLoad, &trusted, &relocatable,
+			&libs, &schemas, &pgVer, &requires, &requiredBy, &seeAlso,
+			&tarball, &pgrxVer,
+			&rpmVer, &rpmRepo, &rpmPkg, &rpmPG, &rpmDeps, &e.RPMBuild,
+			&debVer, &debRepo, &debPkg, &debPG, &debDeps, &e.DEBBuild,
+			&e.Stars, &e.Watchers, &e.Forks,
+			&repoCreated, &lastCommit, &lastRelease, &lastActive, &checkedAt,
+			&enDesc, &zhDesc, &comment, &extra, &e.MTime, &e.Repo,
 		); err != nil {
 			return nil, fmt.Errorf("scan pgext.universe: %w", err)
 		}
-		e.Contrib, e.Lead, e.HasBin, e.HasLib = boolOf(contrib), boolOf(lead), boolOf(hasBin), boolOf(hasLib)
-		e.NeedDDL, e.NeedLoad, e.Trusted, e.Relocatable = boolOf(needDDL), boolOf(needLoad), boolOf(trusted), boolOf(reloc)
-		e.Pkg = strOr(pkg, e.Name)
-		e.LeadExt = strOr(leadExt, e.Name)
-		e.URL = deref(url)
-		e.License = deref(license)
+		e.Lifecycle, e.Kernel, e.Vendor, e.License = deref(lifecycle), deref(kernel), deref(vendor), deref(license)
 		e.Version = deref(version)
-		e.Repo = deref(repo)
-		e.Lang = deref(lang)
-		e.Tags = tags
-		e.Schemas = schemas
-		e.PG = atois(pgVer)
-		e.Requires = requires
-		e.RequireBy = requireBy
-		e.SeeAlso = seeAlso
-		e.RPMVer, e.RPMRepo, e.RPMPkg = deref(rpmVer), deref(rpmRepo), deref(rpmPkg)
-		e.RPMPG, e.RPMDeps = atois(rpmPG), rpmDeps
-		e.DEBVer, e.DEBRepo, e.DEBPkg = deref(debVer), deref(debRepo), deref(debPkg)
-		e.DEBPG, e.DEBDeps = atois(debPG), debDeps
-		e.Source = deref(source)
-		e.ExtType = deref(extType)
-		e.ExtKernel = deref(extKernel)
-		e.ExtVendor = deref(extVendor)
-		e.LastCommit, e.LastRelease, e.LastUpdate = deref(lastCommit), deref(lastRelease), deref(lastUpdate)
-		e.EnDesc, e.ZhDesc = deref(enDesc), deref(zhDesc)
+		e.RepoURL, e.HomeURL, e.DocURL = deref(repoURL), deref(homeURL), deref(docURL)
+		e.LicenseURL, e.ControlURL = deref(licenseURL), deref(controlURL)
+		e.AuthorURL, e.CargoURL, e.PGXNURL = deref(authorURL), deref(cargoURL), deref(pgxnURL)
+		e.HasBin, e.HasLib, e.NeedLoad = boolOf(hasBin), boolOf(hasLib), boolOf(needLoad)
+		e.Trusted, e.Relocatable = boolOf(trusted), boolOf(relocatable)
+		e.Lead = e.Name == e.LeadExt
+		e.Tags, e.Libs, e.Schemas = tags, libs, schemas
+		e.PG, e.Requires, e.RequiredBy, e.RequireBy, e.SeeAlso = atois(pgVer), requires, requiredBy, requiredBy, seeAlso
+		e.Tarball, e.PGRXVer = deref(tarball), deref(pgrxVer)
+		e.RPMVer, e.RPMRepo, e.RPMPkg, e.RPMPG, e.RPMDeps = deref(rpmVer), deref(rpmRepo), deref(rpmPkg), ints16(rpmPG), rpmDeps
+		e.DEBVer, e.DEBRepo, e.DEBPkg, e.DEBPG, e.DEBDeps = deref(debVer), deref(debRepo), deref(debPkg), ints16(debPG), debDeps
+		e.RepoCreatedAt, e.LastCommit, e.LastRelease = deref(repoCreated), deref(lastCommit), deref(lastRelease)
+		e.LastActive, e.CheckedAt = deref(lastActive), deref(checkedAt)
+		e.EnDesc, e.ZhDesc, e.Comment = deref(enDesc), deref(zhDesc), deref(comment)
+		e.Extra = json.RawMessage(extra)
+
+		// v1 aliases.
+		if e.Packaged {
+			e.State = "available"
+		} else {
+			e.State = "n/a"
+		}
+		e.Source, e.ExtType, e.ExtKernel, e.ExtVendor = e.Tarball, e.Kind, e.Kernel, e.Vendor
+		e.LastUpdate = e.LastActive
+		e.StarCnt, e.WatchCnt, e.ForkCnt = e.Stars, e.Watchers, e.Forks
+
+		links := DocLinks{Repo: e.RepoURL, License: e.LicenseURL, Control: e.ControlURL, Author: e.AuthorURL, Home: e.HomeURL, Docs: e.DocURL, Cargo: e.CargoURL, PGXN: e.PGXNURL}
+		if links != (DocLinks{}) {
+			e.DocLinks = &links
+		}
+
 		snap.Exts = append(snap.Exts, &e)
 		snap.ByName[e.Name] = &e
 		byPkg[e.Pkg] = append(byPkg[e.Pkg], &e)
-		if e.State == "available" {
+		if e.Packaged {
+			snap.CountPackaged++
 			snap.CountAvail++
+			packagedProjects[e.Pkg] = struct{}{}
+		} else if e.RepoURL != "" || e.Tarball != "" {
+			snap.CountSourceOnly++
 		}
-		if e.ExtKernel != "" || e.ExtVendor != "" {
+		if e.Vendor != "" {
 			snap.CountVendor++
+		}
+		if e.Kernel != "" {
+			snap.CountKernel++
+		}
+		if e.Contrib {
+			snap.CountContrib++
 		}
 	}
 	if err := rows.Err(); err != nil {
@@ -257,29 +373,42 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 	if len(snap.Exts) == 0 {
 		return nil, fmt.Errorf("pgext.universe is empty — is the pgext catalog initialized? (try `pgext init`)")
 	}
+	snap.CountProjects = len(byPkg)
+	snap.CountPackagedProject = len(packagedProjects)
 
-	// siblings: extensions delivered by the same package
-	for _, e := range snap.Exts {
-		if group := byPkg[e.Pkg]; len(group) > 1 {
-			for _, g := range group {
-				if g.Name != e.Name {
-					e.Siblings = append(e.Siblings, g.Name)
+	// Package families and exact active target availability.
+	for _, group := range byPkg {
+		for _, e := range group {
+			e.FamilySize = len(group)
+			if len(group) > 1 {
+				for _, sibling := range group {
+					if sibling.Name != e.Name {
+						e.Siblings = append(e.Siblings, sibling.Name)
+					}
 				}
+				sort.Strings(e.Siblings)
 			}
-			sort.Strings(e.Siblings)
 		}
 	}
+	for _, e := range snap.Exts {
+		e.PreloadLibs = preloadLibraries(e, snap.ByName)
+	}
+	if err := loadTargets(ctx, pool, snap, byPkg); err != nil {
+		return nil, err
+	}
 
-	// default order: stars desc, then name — the canonical browse order
+	// Default browse order: stars, credible activity, then name.
 	sort.SliceStable(snap.Exts, func(i, j int) bool {
 		si, sj := starOf(snap.Exts[i]), starOf(snap.Exts[j])
 		if si != sj {
 			return si > sj
 		}
+		if snap.Exts[i].LastActive != snap.Exts[j].LastActive {
+			return snap.Exts[i].LastActive > snap.Exts[j].LastActive
+		}
 		return snap.Exts[i].Name < snap.Exts[j].Name
 	})
 
-	// categories with member counts
 	catCount := map[string]int{}
 	for _, e := range snap.Exts {
 		catCount[e.Category]++
@@ -295,27 +424,16 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		if err := crows.Scan(&c.ID, &c.Name, &zh, &en); err != nil {
 			return nil, fmt.Errorf("scan pgext.category: %w", err)
 		}
-		c.ZhDesc, c.EnDesc = deref(zh), deref(en)
-		c.Count = catCount[c.Name]
+		c.ZhDesc, c.EnDesc, c.Count = deref(zh), deref(en), catCount[c.Name]
 		snap.Cats = append(snap.Cats, c)
 	}
 	if err := crows.Err(); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("iterate pgext.category: %w", err)
 	}
 
-	// active dimensions
-	if err := pool.QueryRow(ctx, `SELECT array_agg(pg ORDER BY pg DESC) FROM pgext.active_pg`).Scan(&snap.PGs); err != nil {
-		return nil, fmt.Errorf("query pgext.active_pg: %w", err)
-	}
-	if err := pool.QueryRow(ctx, `SELECT array_agg(os) FROM pgext.active_os`).Scan(&snap.OSs); err != nil {
-		return nil, fmt.Errorf("query pgext.active_os: %w", err)
-	}
-	sortOS(snap.OSs)
-
-	// doc metadata (text bodies are fetched on demand, links live in memory)
+	// Only doc presence is fetched here; URLs already live in universe.
 	drows, err := pool.Query(ctx, `
-		SELECT ext, repo_url, license_url, control_url, author_url, home_url, cargo_url,
-		       en_doc IS NOT NULL AND en_doc != '', zh_doc IS NOT NULL AND zh_doc != ''
+		SELECT ext, en_doc IS NOT NULL AND en_doc != '', zh_doc IS NOT NULL AND zh_doc != ''
 		FROM pgext.doc`)
 	if err != nil {
 		logrus.Warnf("pgext.doc unavailable, usage docs disabled: %v", err)
@@ -323,31 +441,113 @@ func loadSnapshot(ctx context.Context, pool *pgxpool.Pool) (*Snapshot, error) {
 		defer drows.Close()
 		for drows.Next() {
 			var ext string
-			var l DocLinks
-			var repo, license, control, author, home, cargo *string
 			var hasEn, hasZh bool
-			if err := drows.Scan(&ext, &repo, &license, &control, &author, &home, &cargo, &hasEn, &hasZh); err != nil {
+			if err := drows.Scan(&ext, &hasEn, &hasZh); err != nil {
 				return nil, fmt.Errorf("scan pgext.doc: %w", err)
 			}
-			l.Repo, l.License, l.Control = deref(repo), deref(license), deref(control)
-			l.Author, l.Home, l.Cargo = deref(author), deref(home), deref(cargo)
 			if e, ok := snap.ByName[ext]; ok {
 				e.HasEnDoc, e.HasZhDoc = hasEn, hasZh
-				if l != (DocLinks{}) {
-					e.DocLinks = &l
+				if hasEn || hasZh {
+					snap.CountDocs++
 				}
 			}
 		}
 		if err := drows.Err(); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("iterate pgext.doc: %w", err)
 		}
 	}
 
-	// version stamp: content-addressed enough for ETag purposes
+	// Stable content hash: refreshing identical data keeps browser and query
+	// caches warm. LoadedAt is deliberately excluded.
 	h := sha1.New()
-	fmt.Fprintf(h, "%d/%d/%d/%s", len(snap.Exts), snap.CountAvail, snap.CountVendor, snap.LoadedAt.Format(time.RFC3339))
+	if err := json.NewEncoder(h).Encode(struct {
+		Exts []*Ext
+		Cats []Category
+		PGs  []int
+		OSs  []string
+	}{snap.Exts, snap.Cats, snap.PGs, snap.OSs}); err != nil {
+		return nil, fmt.Errorf("hash catalog snapshot: %w", err)
+	}
 	snap.Version = `"` + hex.EncodeToString(h.Sum(nil))[:16] + `"`
 	return snap, nil
+}
+
+// preloadLibraries mirrors the cc/io page generators: preload dependencies
+// first, then the extension itself, preserving order and removing duplicates.
+func preloadLibraries(e *Ext, byName map[string]*Ext) []string {
+	if e == nil || !e.NeedLoad {
+		return nil
+	}
+	seen := map[string]bool{}
+	libs := []string{}
+	add := func(values []string, fallback string) {
+		if len(values) == 0 && fallback != "" {
+			values = []string{fallback}
+		}
+		for _, value := range values {
+			for _, lib := range strings.Split(value, ",") {
+				lib = strings.TrimSpace(lib)
+				if lib != "" && !seen[lib] {
+					seen[lib] = true
+					libs = append(libs, lib)
+				}
+			}
+		}
+	}
+	for _, name := range e.Requires {
+		if dep := byName[name]; dep != nil && dep.NeedLoad {
+			add(dep.Libs, dep.Name)
+		}
+	}
+	add(e.Libs, e.Name)
+	return libs
+}
+
+func loadTargets(ctx context.Context, pool *pgxpool.Pool, snap *Snapshot, byPkg map[string][]*Ext) error {
+	pgIdx := make(map[int]int, len(snap.PGs))
+	osIdx := make(map[string]int, len(snap.OSs))
+	for i, pg := range snap.PGs {
+		pgIdx[pg] = i
+	}
+	for i, os := range snap.OSs {
+		osIdx[os] = i
+	}
+	targets := map[string]map[int]struct{}{}
+	rows, err := pool.Query(ctx, `SELECT pkg, pg, os FROM pgext.pkg WHERE state::text = 'AVAIL'`)
+	if err != nil {
+		return fmt.Errorf("query pgext.pkg targets: %w", err)
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var pkg, os string
+		var pg int
+		if err := rows.Scan(&pkg, &pg, &os); err != nil {
+			return fmt.Errorf("scan pgext.pkg targets: %w", err)
+		}
+		pi, pok := pgIdx[pg]
+		oi, ook := osIdx[os]
+		if !pok || !ook {
+			continue
+		}
+		if targets[pkg] == nil {
+			targets[pkg] = map[int]struct{}{}
+		}
+		targets[pkg][pi*len(snap.OSs)+oi] = struct{}{}
+	}
+	if err := rows.Err(); err != nil {
+		return fmt.Errorf("iterate pgext.pkg targets: %w", err)
+	}
+	for pkg, set := range targets {
+		idx := make([]int, 0, len(set))
+		for n := range set {
+			idx = append(idx, n)
+		}
+		sort.Ints(idx)
+		for _, e := range byPkg[pkg] {
+			e.TargetIdx = idx
+		}
+	}
+	return nil
 }
 
 // sortOS orders OS targets canonically: EL before Debian before Ubuntu,
@@ -394,13 +594,6 @@ func deref(s *string) string {
 
 func boolOf(b *bool) bool { return b != nil && *b }
 
-func strOr(s *string, def string) string {
-	if s == nil || *s == "" {
-		return def
-	}
-	return *s
-}
-
 func atois(ss []string) []int {
 	if len(ss) == 0 {
 		return nil
@@ -410,6 +603,18 @@ func atois(ss []string) []int {
 		if n, err := strconv.Atoi(strings.TrimSpace(s)); err == nil {
 			out = append(out, n)
 		}
+	}
+	sort.Sort(sort.Reverse(sort.IntSlice(out)))
+	return out
+}
+
+func ints16(ss []int16) []int {
+	if len(ss) == 0 {
+		return nil
+	}
+	out := make([]int, len(ss))
+	for i, n := range ss {
+		out[i] = int(n)
 	}
 	sort.Sort(sort.Reverse(sort.IntSlice(out)))
 	return out

@@ -23,9 +23,10 @@ var webFS embed.FS
 
 // Options configures the pgext web server.
 type Options struct {
-	Listen   string        // listen address, e.g. ":8432"
-	CacheTTL time.Duration // snapshot refresh interval & response cache TTL
-	Pool     *pgxpool.Pool // connected database pool (pgext schema expected)
+	Listen      string        // listen address, e.g. ":8432"
+	CacheTTL    time.Duration // snapshot refresh interval & response cache TTL
+	Pool        *pgxpool.Pool // connected database pool (pgext schema expected)
+	ReloadToken string        // enables authenticated POST /api/v1/reload when non-empty
 }
 
 // Serve runs the web server until ctx is cancelled.
@@ -45,7 +46,7 @@ func Serve(ctx context.Context, opts Options) error {
 	}
 	store.StartRefresher(ctx, opts.CacheTTL)
 
-	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool}
+	a := &api{store: store, cache: newTTLCache(opts.CacheTTL, 2048), pool: opts.Pool, reloadToken: opts.ReloadToken}
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/v1/meta", a.handleMeta)
@@ -63,7 +64,7 @@ func Serve(ctx context.Context, opts Options) error {
 
 	srv := &http.Server{
 		Addr:              opts.Listen,
-		Handler:           withLogging(withCORS(withGzip(withRecover(mux)))),
+		Handler:           withLogging(withSecurityHeaders(withCORS(withGzip(withRecover(mux))))),
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout:      120 * time.Second,
 		IdleTimeout:       120 * time.Second,
@@ -109,6 +110,10 @@ func init() {
 			assetETags[name] = `"` + hex.EncodeToString(sum[:8]) + `"`
 		}
 	}
+	// The shell ETag covers its referenced assets as well as its own source.
+	// This makes the fingerprint query strings advance on every UI change.
+	sum := sha1.Sum([]byte(assetETags["index.html"] + assetETags["style.css"] + assetETags["app.js"]))
+	assetETags["index.html"] = `"` + hex.EncodeToString(sum[:8]) + `"`
 }
 
 func serveEmbedded(w http.ResponseWriter, r *http.Request, name, ctype string) {
@@ -119,11 +124,11 @@ func serveEmbedded(w http.ResponseWriter, r *http.Request, name, ctype string) {
 	}
 	etag := assetETags[name]
 	if etag != "" {
+		w.Header().Set("ETag", etag)
 		if r.Header.Get("If-None-Match") == etag {
 			w.WriteHeader(http.StatusNotModified)
 			return
 		}
-		w.Header().Set("ETag", etag)
 	}
 	w.Header().Set("Content-Type", ctype)
 	w.Header().Set("Cache-Control", "public, max-age=300")
@@ -142,6 +147,31 @@ func handleAsset(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// serveIndex keeps the shell revalidated and fingerprints its embedded asset
+// URLs. A newly deployed binary therefore cannot be paired with a five-minute
+// stale app.js from the previous catalog contract.
+func serveIndex(w http.ResponseWriter, r *http.Request) {
+	b, err := webFS.ReadFile("web/index.html")
+	if err != nil {
+		http.NotFound(w, r)
+		return
+	}
+	version := func(name string) string { return strings.Trim(assetETags[name], `"`) }
+	html := string(b)
+	html = strings.ReplaceAll(html, `/assets/style.css`, `/assets/style.css?v=`+version("style.css"))
+	html = strings.ReplaceAll(html, `/assets/app.js`, `/assets/app.js?v=`+version("app.js"))
+	etag := assetETags["index.html"]
+	w.Header().Set("ETag", etag)
+	w.Header().Set("Cache-Control", "no-cache")
+	if r.Header.Get("If-None-Match") == etag {
+		w.WriteHeader(http.StatusNotModified)
+		return
+	}
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte(html))
+}
+
 // handleSPA serves the app shell for any non-API GET; unknown API paths get a JSON 404.
 func handleSPA(w http.ResponseWriter, r *http.Request) {
 	if strings.HasPrefix(r.URL.Path, "/api/") {
@@ -152,5 +182,5 @@ func handleSPA(w http.ResponseWriter, r *http.Request) {
 		writeErr(w, http.StatusMethodNotAllowed, "method not allowed")
 		return
 	}
-	serveEmbedded(w, r, "index.html", "text/html; charset=utf-8")
+	serveIndex(w, r)
 }

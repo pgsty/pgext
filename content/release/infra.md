@@ -13,6 +13,33 @@ Check [Infra Repo](/repo/infra) for usage instructions.
 | k3s                 | -   | 1.36.2 | Upstream `v1.36.2+k3s1`; amd64 and arm64               |
 | k3s-images          | -   | 1.36.2 | Exact-match system image package for both architectures |
 
+## 2026-07-16
+
+| Name             | Old      | New      | Comment                                        |
+|:-----------------|:---------|:---------|:-----------------------------------------------|
+| jmx-exporter     | -        | 1.6.0    | New noarch package                             |
+| node_exporter    | 1.11.1   | 1.12.1   |                                                |
+| redis_exporter   | 1.86.0   | 1.87.0   |                                                |
+| etcd             | 3.6.13   | 3.7.0    |                                                |
+| dblab            | 0.43.0   | 0.44.1   |                                                |
+| pgstream         | 1.1.1    | 1.2.0    |                                                |
+| rainfrog         | 0.3.19   | 0.3.20   |                                                |
+| rustfs           | 1.0.0-b8 | 1.0.0-b9 | Prerelease line                                |
+| agentsview       | 0.37.5   | 0.38.1   |                                                |
+| claude           | 2.1.206  | 2.1.211  | Downloaded through the 8118 proxy and verified |
+| codex            | 0.144.1  | 0.144.4  | Release tag `rust-v0.144.4`                    |
+| stalwart         | 0.16.12  | 0.16.13  |                                                |
+| npgsqlrest       | 3.20.0   | 3.21.0   |                                                |
+| postgrest        | 14.14    | 14.15    |                                                |
+| opencode         | 1.17.18  | 1.18.2   |                                                |
+| uv               | 0.11.28  | 0.11.29  |                                                |
+| vector           | 0.56.0   | 0.57.0   | Direct-download artifacts                      |
+| pg-hardstorage   | 1.0.8    | 1.0.10   | Direct-download artifacts                      |
+| crush            | 0.84.0   | 0.85.0   | Direct-download artifacts                      |
+| code             | 1.128.0  | 1.129.0  | Direct-download artifacts                      |
+| code-server      | 4.127.0  | 4.128.0  | Direct-download artifacts                      |
+| cloudflared      | 2026.7.1 | 2026.7.2 | Direct-download artifacts                      |
+
 ## 2026-07-10
 
 | Name        | Old      | New      | Comment                                        |
