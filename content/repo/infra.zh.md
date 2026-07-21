@@ -219,23 +219,23 @@ sudo yum makecache;
 |        [prometheus](https://github.com/prometheus/prometheus)        | 3.9.1  | Apache-2.0 | 开源时序数据库与监控平台      |
 |       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2 | Apache-2.0 | 向 Prometheus 推送指标 |
 |      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.30.0 | Apache-2.0 | 管理告警事件            |
-| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0 | Apache-2.0 | 向端点发送探针           |
+| [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0 | Apache-2.0 | 向端点发送探针           |
 
 
 ### 指标导出器
 
 |                                   名称                                    |   版本   |    许可证     | 备注                   |
 |:-----------------------------------------------------------------------:|:------:|:----------:|:---------------------|
-|           [pg_exporter](https://github.com/pgsty/pg_exporter)           | 1.1.2  | Apache-2.0 | 高级 Postgres 指标导出器    |
-|  [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.22.0 |    MIT     | 导出 pgbackrest 指标     |
-|      [node_exporter](https://github.com/prometheus/node_exporter)       | 1.10.2 | Apache-2.0 | 导出 Linux 节点指标        |
-|   [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)   | 1.7.0  |  GPL-3.0   | 导出 keepalived/VIP 指标 |
-| [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) | 1.5.1  | Apache-2.0 | 导出 nginx 指标          |
-|  [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)  | 3.8.1  |    MIT     | 导出 zfs 指标            |
-|    [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)     | 0.18.0 | Apache-2.0 | 导出 mysql 指标          |
-|      [redis_exporter](https://github.com/oliver006/redis_exporter)      | 1.80.1 |    MIT     | 导出 redis 指标          |
-|      [kafka_exporter](https://github.com/danielqsj/kafka_exporter)      | 1.9.0  | Apache-2.0 | 导出 kafka 指标          |
-|     [mongodb_exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2 | Apache-2.0 | 导出 mongodb 指标        |
+|           [pg-exporter](https://github.com/pgsty/pg_exporter)           | 1.1.2  | Apache-2.0 | 高级 Postgres 指标导出器    |
+|  [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.22.0 |    MIT     | 导出 pgbackrest 指标     |
+|      [node-exporter](https://github.com/prometheus/node_exporter)       | 1.10.2 | Apache-2.0 | 导出 Linux 节点指标        |
+|   [keepalived-exporter](https://github.com/mehdy/keepalived-exporter)   | 1.7.0  |  GPL-3.0   | 导出 keepalived/VIP 指标 |
+| [nginx-exporter](https://github.com/nginxinc/nginx-prometheus-exporter) | 1.5.1  | Apache-2.0 | 导出 nginx 指标          |
+|  [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/)  | 3.8.1  |    MIT     | 导出 zfs 指标            |
+|    [mysqld-exporter](https://github.com/prometheus/mysqld_exporter)     | 0.18.0 | Apache-2.0 | 导出 mysql 指标          |
+|      [redis-exporter](https://github.com/oliver006/redis_exporter)      | 1.80.1 |    MIT     | 导出 redis 指标          |
+|      [kafka-exporter](https://github.com/danielqsj/kafka_exporter)      | 1.9.0  | Apache-2.0 | 导出 kafka 指标          |
+|     [mongodb-exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2 | Apache-2.0 | 导出 mongodb 指标        |
 |                [mtail](https://github.com/google/mtail)                 | 3.0.8  | Apache-2.0 | 分析日志并生成指标            |
 |        [vector](https://github.com/vectordotdev/vector/releases)        | 0.52.0 |  MPL-2.0   | 多功能日志收集器             |
 

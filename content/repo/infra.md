@@ -219,23 +219,23 @@ sudo yum makecache;
 |        [prometheus](https://github.com/prometheus/prometheus)        |  3.9.1  | Apache-2.0 | FOSS TSDB and monitoring platform |
 |       [pushgateway](https://github.com/prometheus/pushgateway)       | 1.11.2  | Apache-2.0 | push metrics to prometheus        |
 |      [alertmanager](https://github.com/prometheus/alertmanager)      | 0.30.0  | Apache-2.0 | manage alerting event             |
-| [blackbox_exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0  | Apache-2.0 | send probe to endpoints           |
+| [blackbox-exporter](https://github.com/prometheus/blackbox_exporter) | 0.27.0  | Apache-2.0 | send probe to endpoints           |
 
 
 ### Metric Exporters
 
 |                                  Name                                   | Version |  License   | Comment                            |
 |:-----------------------------------------------------------------------:|:-------:|:----------:|:-----------------------------------|
-|           [pg_exporter](https://github.com/pgsty/pg_exporter)           |  1.1.2  | Apache-2.0 | Advanced Postgres Metrics Exporter |
-|  [pgbackrest_exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.22.0  |    MIT     | expose pgbackrest metrics          |
-|      [node_exporter](https://github.com/prometheus/node_exporter)       | 1.10.2  | Apache-2.0 | expose linux node metrics          |
-|   [keepalived_exporter](https://github.com/mehdy/keepalived-exporter)   |  1.7.0  |  GPL-3.0   | expose keepalived/VIP metrics      |
-| [nginx_exporter](https://github.com/nginxinc/nginx-prometheus-exporter) |  1.5.1  | Apache-2.0 | expose nginx metrics               |
-|  [zfs_exporter](https://github.com/waitingsong/zfs_exporter/releases/)  |  3.8.1  |    MIT     | expose zfs metrics                 |
-|    [mysqld_exporter](https://github.com/prometheus/mysqld_exporter)     | 0.18.0  | Apache-2.0 | expose mysql metrics               |
-|      [redis_exporter](https://github.com/oliver006/redis_exporter)      | 1.80.1  |    MIT     | expose redis metrics               |
-|      [kafka_exporter](https://github.com/danielqsj/kafka_exporter)      |  1.9.0  | Apache-2.0 | expose kafka metrics               |
-|     [mongodb_exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2  | Apache-2.0 | expose mongodb metrics             |
+|           [pg-exporter](https://github.com/pgsty/pg_exporter)           |  1.1.2  | Apache-2.0 | Advanced Postgres Metrics Exporter |
+|  [pgbackrest-exporter](https://github.com/woblerr/pgbackrest_exporter)  | 0.22.0  |    MIT     | expose pgbackrest metrics          |
+|      [node-exporter](https://github.com/prometheus/node_exporter)       | 1.10.2  | Apache-2.0 | expose linux node metrics          |
+|   [keepalived-exporter](https://github.com/mehdy/keepalived-exporter)   |  1.7.0  |  GPL-3.0   | expose keepalived/VIP metrics      |
+| [nginx-exporter](https://github.com/nginxinc/nginx-prometheus-exporter) |  1.5.1  | Apache-2.0 | expose nginx metrics               |
+|  [zfs-exporter](https://github.com/waitingsong/zfs_exporter/releases/)  |  3.8.1  |    MIT     | expose zfs metrics                 |
+|    [mysqld-exporter](https://github.com/prometheus/mysqld_exporter)     | 0.18.0  | Apache-2.0 | expose mysql metrics               |
+|      [redis-exporter](https://github.com/oliver006/redis_exporter)      | 1.80.1  |    MIT     | expose redis metrics               |
+|      [kafka-exporter](https://github.com/danielqsj/kafka_exporter)      |  1.9.0  | Apache-2.0 | expose kafka metrics               |
+|     [mongodb-exporter](https://github.com/percona/mongodb_exporter)     | 0.47.2  | Apache-2.0 | expose mongodb metrics             |
 |                [mtail](https://github.com/google/mtail)                 |  3.0.8  | Apache-2.0 | tail log and generate metrics      |
 |        [vector](https://github.com/vectordotdev/vector/releases)        | 0.52.0  |  MPL-2.0   | the versatile logging collector    |
 

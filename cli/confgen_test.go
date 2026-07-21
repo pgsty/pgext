@@ -186,8 +186,9 @@ func TestEL9ARMPatroniUsesNoarchPackageSelectors(t *testing.T) {
 	if got := getUtilPkg("patroni", "patroni patroni-etcd"); got != "patroni.noarch patroni-etcd.noarch" {
 		t.Fatalf("patroni util package list = %q", got)
 	}
-	if got := getUtilPkg("pgsql-common", "patroni patroni-etcd pgbouncer"); !strings.Contains(got, "patroni.noarch patroni-etcd.noarch") {
-		t.Fatalf("pgsql-common util package list = %q", got)
+	wantCommon := "patroni.noarch patroni-etcd.noarch pgbouncer pgbackrest pg-exporter pgbackrest-exporter vip-manager"
+	if got := getUtilPkg("pgsql-common", "patroni patroni-etcd pgbouncer"); got != wantCommon {
+		t.Fatalf("pgsql-common util package list = %q, want %q", got, wantCommon)
 	}
 }
 
@@ -323,7 +324,7 @@ func TestNodePackagesDefaultRenderedAsThreeAlignedGroups(t *testing.T) {
 			want: []string{
 				"bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate",
 				"pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv",
-				"zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node_exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig",
+				"zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node-exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig",
 			},
 		},
 		{
@@ -398,7 +399,7 @@ func TestNodePackagesDefaultPreservesLegacyPackagesExceptTcpdump(t *testing.T) {
 			legacy: commaPackages(
 				"lz4,unzip,bzip2,pv,jq,git,ncdu,make,patch,bash,lsof,wget,tuned,nvme-cli,numactl,sysstat,iotop,htop,rsync,acl,tcpdump",
 				"python3,socat,net-tools,ipvsadm,telnet,ca-certificates,openssl,keepalived,etcd,haproxy,chrony,cronie,pig,uv",
-				"zlib,yum,audit,bind-utils,readline,vim-minimal,node_exporter,grubby,openssh-server,openssh-clients,chkconfig,vector",
+				"zlib,yum,audit,bind-utils,readline,vim-minimal,node-exporter,grubby,openssh-server,openssh-clients,chkconfig,vector",
 			),
 		},
 		{
@@ -515,7 +516,7 @@ func TestKafkaStackAliasIncludesMonitoringPackages(t *testing.T) {
 		{
 			name:     "rpm",
 			rendered: renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
-			want:     "kafka kafka_exporter jmx-exporter",
+			want:     "kafka kafka-exporter jmx-exporter",
 		},
 		{
 			name:     "deb",
@@ -591,11 +592,40 @@ func TestMySQL84RepoAndPackageContract(t *testing.T) {
 		t.Fatalf("DEB pxb84 repo should not carry meta: %q", debPXB)
 	}
 
-	if got := renderedPackageAliasValue(rpm, "mysql"); got != "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld_exporter" {
+	if got := renderedPackageAliasValue(rpm, "mysql"); got != "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld-exporter" {
 		t.Fatalf("RPM mysql alias = %q", got)
 	}
 	if got := renderedPackageAliasValue(deb, "mysql"); got != "mysql-server mysql-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld-exporter" {
 		t.Fatalf("DEB mysql alias = %q", got)
+	}
+}
+
+func TestInfraPackageNamesAndLegacyAliases(t *testing.T) {
+	legacyAliases := map[string]string{
+		"blackbox_exporter":   "blackbox-exporter",
+		"kafka_exporter":      "kafka-exporter",
+		"keepalived_exporter": "keepalived-exporter",
+		"mongodb_exporter":    "mongodb-exporter",
+		"mysqld_exporter":     "mysqld-exporter",
+		"nginx_exporter":      "nginx-exporter",
+		"node_exporter":       "node-exporter",
+		"pg_exporter":         "pg-exporter",
+		"pgbackrest_exporter": "pgbackrest-exporter",
+		"redis_exporter":      "redis-exporter",
+		"zfs_exporter":        "zfs-exporter",
+	}
+
+	for name, rendered := range map[string]string{
+		"rpm": renderRPMTemplateForTest(t, "el9.x86_64", "el9"),
+		"deb": renderDEBTemplateForTest(t, "u24.x86_64", "u24"),
+	} {
+		t.Run(name, func(t *testing.T) {
+			for oldName, newName := range legacyAliases {
+				if got := renderedPackageAliasValue(rendered, oldName); got != newName {
+					t.Errorf("legacy alias %s = %q, want %q", oldName, got, newName)
+				}
+			}
+		})
 	}
 }
 

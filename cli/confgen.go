@@ -774,7 +774,7 @@ func (g *PigstyConfigGenerator) getFuncMap() template.FuncMap {
 		"getUtilPkg": func(key, rpm string) string {
 			if g.isEL9ARM() {
 				if key == "pgsql-common" {
-					return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pg_exporter", "pgbackrest_exporter", "vip-manager")
+					return el9ARMPatroniPackages("pgbouncer", "pgbackrest", "pg-exporter", "pgbackrest-exporter", "vip-manager")
 				}
 				if key == "patroni" {
 					return el9ARMPatroniPackages()
@@ -809,6 +809,8 @@ type ConfigConstants struct {
 	// Package groups
 	RPMCommonPkg []string
 	DEBCommonPkg []string
+	// Legacy exporter package names mapped to their normalized package names.
+	InfraAliasMap []PackageMapping
 
 	// Kernel packages
 	PGSQLKernelMap []PackageMapping
@@ -835,17 +837,17 @@ func GetConfigConstants() *ConfigConstants {
 	constants := &ConfigConstants{
 		RPMCommonPkg: []string{
 			// 0: infra-package
-			"nginx dnsmasq etcd haproxy vip-manager node_exporter keepalived_exporter pg_exporter pgbackrest_exporter redis_exporter redis minio mcli pig",
+			"nginx dnsmasq etcd haproxy vip-manager node-exporter keepalived-exporter pg-exporter pgbackrest-exporter redis-exporter redis minio mcli pig",
 			// 1: infra-addons
 			"grafana grafana-plugins grafana-victoriametrics-ds grafana-victorialogs-ds victoria-metrics victoria-logs victoria-traces vlogscli vmutils vector alertmanager",
 			// 2: extra-modules
-			"blackbox_exporter nginx_exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
+			"blackbox-exporter nginx-exporter pev2 certbot python3-certbot-nginx docker-ce docker-compose-plugin ferretdb2 duckdb restic juicefs vray grafana-infinity-ds",
 			// 3: node-package1
 			"bash python3 sudo acl ca-certificates openssl curl wget lz4 zstd unzip bzip2 gzip tar tzdata chrony openssh-server util-linux rsync psmisc logrotate",
 			// 4: node-package2
 			"pv jq git make patch lsof less ncdu htop iotop socat net-tools telnet ipvsadm tuned numactl nvme-cli sysstat keepalived etcd haproxy vector pig uv",
 			// 5: node-package3
-			"zlib readline xz glibc-langpack-en cronie openssh-clients node_exporter bind-utils iproute iputils nmap-ncat procps-ng vim-minimal yum audit grubby chkconfig",
+			"zlib readline xz glibc-langpack-en cronie openssh-clients node-exporter bind-utils iproute iputils nmap-ncat procps-ng vim-minimal yum audit grubby chkconfig",
 			// 6: pgsql-utility
 			"patroni patroni-etcd pgbouncer pgbackrest pgbadger pg_timetable pgFormatter pg_filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
@@ -867,6 +869,18 @@ func GetConfigConstants() *ConfigConstants {
 			"patroni python3-etcd pgbouncer pgbackrest pgbadger pg-timetable pgformatter postgresql-filedump pgxnclient timescaledb-tools timescaledb-event-streamer",
 		},
 
+		InfraAliasMap: []PackageMapping{
+			{"blackbox_exporter", "blackbox-exporter", "blackbox-exporter"},
+			{"kafka_exporter", "kafka-exporter", "kafka-exporter"},
+			{"keepalived_exporter", "keepalived-exporter", "keepalived-exporter"},
+			{"mongodb_exporter", "mongodb-exporter", "mongodb-exporter"},
+			{"mysqld_exporter", "mysqld-exporter", "mysqld-exporter"},
+			{"nginx_exporter", "nginx-exporter", "nginx-exporter"},
+			{"node_exporter", "node-exporter", "node-exporter"},
+			{"redis_exporter", "redis-exporter", "redis-exporter"},
+			{"zfs_exporter", "zfs-exporter", "zfs-exporter"},
+		},
+
 		PGSQLKernelMap: []PackageMapping{
 			{"pgsql", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib postgresql$v-plperl postgresql$v-plpython3 postgresql$v-pltcl", "postgresql-$v postgresql-client-$v postgresql-plpython3-$v postgresql-plperl-$v postgresql-pltcl-$v"},
 			{"pgsql-mini", "postgresql$v postgresql$v-server postgresql$v-libs postgresql$v-contrib", "postgresql-$v postgresql-client-$v"},
@@ -880,12 +894,12 @@ func GetConfigConstants() *ConfigConstants {
 		},
 
 		PGSQLUtilMap: []PackageMapping{
-			{"pgsql-common", "patroni patroni-etcd pgbouncer pgbackrest pg_exporter pgbackrest_exporter vip-manager", "patroni python3-etcd pgbouncer pgbackrest pg-exporter pgbackrest-exporter vip-manager"},
+			{"pgsql-common", "patroni patroni-etcd pgbouncer pgbackrest pg-exporter pgbackrest-exporter vip-manager", "patroni python3-etcd pgbouncer pgbackrest pg-exporter pgbackrest-exporter vip-manager"},
 			{"patroni", "patroni patroni-etcd", "patroni python3-etcd"},
 			{"pgbouncer", "pgbouncer", "pgbouncer"},
 			{"pgbackrest", "pgbackrest", "pgbackrest"},
-			{"pg_exporter", "pg_exporter", "pg-exporter"},
-			{"pgbackrest_exporter", "pgbackrest_exporter", "pgbackrest-exporter"},
+			{"pg_exporter", "pg-exporter", "pg-exporter"},
+			{"pgbackrest_exporter", "pgbackrest-exporter", "pgbackrest-exporter"},
 			{"vip-manager", "vip-manager", "vip-manager"},
 			{"pg-hardstorage", "pg-hardstorage", "pg-hardstorage"},
 			{"pg_hardstorage", "pg-hardstorage", "pg-hardstorage"},
@@ -959,12 +973,12 @@ repo_extra_packages_default: [ pgsql-main ]
 node_packages_default:
   - bash,python3,sudo,acl,ca-certificates,openssl,curl,wget,lz4,zstd,unzip,bzip2,gzip,tar,tzdata,chrony,openssh-server,util-linux,rsync,psmisc,logrotate
   - pv,jq,git,make,patch,lsof,less,ncdu,htop,iotop,socat,net-tools,telnet,ipvsadm,tuned,numactl,nvme-cli,sysstat,keepalived,etcd,haproxy,vector,pig,uv
-  - zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node_exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig
+  - zlib,readline,xz,glibc-langpack-en,cronie,openssh-clients,node-exporter,bind-utils,iproute,iputils,nmap-ncat,procps-ng,vim-minimal,yum,audit,grubby,chkconfig
 
 # default infra packages to be installed (if ` + "`infra_packages`" + ` is not explicitly set)
 infra_packages_default:
   - grafana,grafana-plugins,grafana-victorialogs-ds,grafana-victoriametrics-ds,victoria-metrics,victoria-logs,victoria-traces,vmutils,vlogscli,alertmanager
-  - node_exporter,blackbox_exporter,nginx_exporter,pg_exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
+  - node-exporter,blackbox-exporter,nginx-exporter,pg-exporter,pev2,nginx,dnsmasq,ansible,etcd,python3-requests,redis,mcli,restic,certbot,python3-certbot-nginx
 
 # postgres home dir in various mode
 pg_home_map:
@@ -1044,19 +1058,22 @@ package_map:
   #--------------------------------#{{ range .Constants.PGSQLExoticMap }}{{ if and (or (eq .Key "greenplum") (eq .Key "gpsql")) (eq $.Arch "aarch64") }}{{ else if .RPM }}
   {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}{{ end }}
   java-runtime:            "{{ getJavaRuntime }}"
-  kafka-stack:             "kafka kafka_exporter jmx-exporter"
-  mysql:                   "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld_exporter"
+  kafka-stack:             "kafka kafka-exporter jmx-exporter"
+  mysql:                   "mysql-community-server mysql-community-client mysql-shell mysql-router-community percona-xtrabackup-84 mysqld-exporter"
   kube-runtime:            "containerd.io"
   sealos:                  "sealos"
   kubernetes:              "kubeadm kubelet kubectl"
   docker:                  "docker-ce docker-compose-plugin"
-  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld_exporter mongodb_exporter kafka_exporter"
+  infra-extra:             "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds rclone mysqld-exporter mongodb-exporter kafka-exporter"
   victoria:                "victoria-metrics victoria-metrics-cluster vmutils grafana-victoriametrics-ds victoria-logs vlogscli vlagent victoria-traces grafana-victorialogs-ds"
   vmetrics:                "victoria-metrics victoria-metrics-cluster vmutils"
   vlogs:                   "victoria-logs vlogscli vlagent"
   vtraces:                 "victoria-traces"
   tigerbeetle:             "tigerbeetle"
   clickhouse:              "clickhouse-server clickhouse-client clickhouse-common-static"
+
+  # legacy underscore exporter package names{{ range .Constants.InfraAliasMap }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .RPM }}"{{ end }}
 
   #--------------------------------#
   # PGSQL: tools & utils
@@ -1204,6 +1221,9 @@ package_map:
   vtraces:                 "victoria-traces"
   tigerbeetle:             "tigerbeetle"
   clickhouse:              "clickhouse-server clickhouse-client clickhouse-common-static"
+
+  # legacy underscore exporter package names{{ range .Constants.InfraAliasMap }}
+  {{ printf "%-24s" (printf "%s:" .Key) }} "{{ .DEB }}"{{ end }}
 
   #--------------------------------#
   # PGSQL: tools & utils
